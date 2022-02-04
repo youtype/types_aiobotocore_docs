@@ -1,0 +1,172 @@
+<a id="paginators-for-aiobotocore-machinelearning-module"></a>
+
+# Paginators for aiobotocore MachineLearning module
+
+> [Index](..) > [MachineLearning](.) > Paginators
+
+Auto-generated documentation for
+[MachineLearning](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning)
+type annotations stubs module
+[types-aiobotocore-machinelearning](https://pypi.org/project/types-aiobotocore-machinelearning/).
+
+- [Paginators for aiobotocore MachineLearning module](#paginators-for-aiobotocore-machinelearning-module)
+  - [DescribeBatchPredictionsPaginator](#describebatchpredictionspaginator)
+  - [DescribeDataSourcesPaginator](#describedatasourcespaginator)
+  - [DescribeEvaluationsPaginator](#describeevaluationspaginator)
+  - [DescribeMLModelsPaginator](#describemlmodelspaginator)
+
+<a id="describebatchpredictionspaginator"></a>
+
+## DescribeBatchPredictionsPaginator
+
+Type annotations for
+`aiobotocore.create_client("machinelearning").get_paginator("describe_batch_predictions")`.
+
+Can be used directly:
+
+```python
+from aiobotocore.session import Session
+
+from types_aiobotocore_machinelearning.paginator import DescribeBatchPredictionsPaginator
+
+def get_describe_batch_predictions_paginator() -> DescribeBatchPredictionsPaginator:
+    return Session().create_client("machinelearning").get_paginator("describe_batch_predictions")
+```
+
+Boto3 documentation:
+[MachineLearning.Paginator.DescribeBatchPredictions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Paginator.DescribeBatchPredictions)
+
+Arguments for `DescribeBatchPredictionsPaginator.paginate` method:
+
+- `FilterVariable`:
+  [BatchPredictionFilterVariableType](./literals.md#batchpredictionfiltervariabletype)
+- `EQ`: `str`
+- `GT`: `str`
+- `LT`: `str`
+- `GE`: `str`
+- `LE`: `str`
+- `NE`: `str`
+- `Prefix`: `str`
+- `SortOrder`: [SortOrderType](./literals.md#sortordertype)
+- `PaginationConfig`:
+  [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+
+`DescribeBatchPredictionsPaginator.paginate` returns
+`_PageIterator`\[[DescribeBatchPredictionsOutputTypeDef](./type_defs.md#describebatchpredictionsoutputtypedef)\].
+
+<a id="describedatasourcespaginator"></a>
+
+## DescribeDataSourcesPaginator
+
+Type annotations for
+`aiobotocore.create_client("machinelearning").get_paginator("describe_data_sources")`.
+
+Can be used directly:
+
+```python
+from aiobotocore.session import Session
+
+from types_aiobotocore_machinelearning.paginator import DescribeDataSourcesPaginator
+
+def get_describe_data_sources_paginator() -> DescribeDataSourcesPaginator:
+    return Session().create_client("machinelearning").get_paginator("describe_data_sources")
+```
+
+Boto3 documentation:
+[MachineLearning.Paginator.DescribeDataSources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Paginator.DescribeDataSources)
+
+Arguments for `DescribeDataSourcesPaginator.paginate` method:
+
+- `FilterVariable`:
+  [DataSourceFilterVariableType](./literals.md#datasourcefiltervariabletype)
+- `EQ`: `str`
+- `GT`: `str`
+- `LT`: `str`
+- `GE`: `str`
+- `LE`: `str`
+- `NE`: `str`
+- `Prefix`: `str`
+- `SortOrder`: [SortOrderType](./literals.md#sortordertype)
+- `PaginationConfig`:
+  [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+
+`DescribeDataSourcesPaginator.paginate` returns
+`_PageIterator`\[[DescribeDataSourcesOutputTypeDef](./type_defs.md#describedatasourcesoutputtypedef)\].
+
+<a id="describeevaluationspaginator"></a>
+
+## DescribeEvaluationsPaginator
+
+Type annotations for
+`aiobotocore.create_client("machinelearning").get_paginator("describe_evaluations")`.
+
+Can be used directly:
+
+```python
+from aiobotocore.session import Session
+
+from types_aiobotocore_machinelearning.paginator import DescribeEvaluationsPaginator
+
+def get_describe_evaluations_paginator() -> DescribeEvaluationsPaginator:
+    return Session().create_client("machinelearning").get_paginator("describe_evaluations")
+```
+
+Boto3 documentation:
+[MachineLearning.Paginator.DescribeEvaluations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Paginator.DescribeEvaluations)
+
+Arguments for `DescribeEvaluationsPaginator.paginate` method:
+
+- `FilterVariable`:
+  [EvaluationFilterVariableType](./literals.md#evaluationfiltervariabletype)
+- `EQ`: `str`
+- `GT`: `str`
+- `LT`: `str`
+- `GE`: `str`
+- `LE`: `str`
+- `NE`: `str`
+- `Prefix`: `str`
+- `SortOrder`: [SortOrderType](./literals.md#sortordertype)
+- `PaginationConfig`:
+  [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+
+`DescribeEvaluationsPaginator.paginate` returns
+`_PageIterator`\[[DescribeEvaluationsOutputTypeDef](./type_defs.md#describeevaluationsoutputtypedef)\].
+
+<a id="describemlmodelspaginator"></a>
+
+## DescribeMLModelsPaginator
+
+Type annotations for
+`aiobotocore.create_client("machinelearning").get_paginator("describe_ml_models")`.
+
+Can be used directly:
+
+```python
+from aiobotocore.session import Session
+
+from types_aiobotocore_machinelearning.paginator import DescribeMLModelsPaginator
+
+def get_describe_ml_models_paginator() -> DescribeMLModelsPaginator:
+    return Session().create_client("machinelearning").get_paginator("describe_ml_models")
+```
+
+Boto3 documentation:
+[MachineLearning.Paginator.DescribeMLModels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Paginator.DescribeMLModels)
+
+Arguments for `DescribeMLModelsPaginator.paginate` method:
+
+- `FilterVariable`:
+  [MLModelFilterVariableType](./literals.md#mlmodelfiltervariabletype)
+- `EQ`: `str`
+- `GT`: `str`
+- `LT`: `str`
+- `GE`: `str`
+- `LE`: `str`
+- `NE`: `str`
+- `Prefix`: `str`
+- `SortOrder`: [SortOrderType](./literals.md#sortordertype)
+- `PaginationConfig`:
+  [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+
+`DescribeMLModelsPaginator.paginate` returns
+`_PageIterator`\[[DescribeMLModelsOutputTypeDef](./type_defs.md#describemlmodelsoutputtypedef)\].

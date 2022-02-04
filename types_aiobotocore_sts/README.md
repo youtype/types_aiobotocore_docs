@@ -1,0 +1,119 @@
+<a id="type-annotations-for-aiobotocore-sts-module"></a>
+
+# Type annotations for aiobotocore STS module
+
+> [Index](..) > STS
+
+Auto-generated documentation for
+[STS](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sts.html#STS)
+type annotations stubs module
+[types-aiobotocore-sts](https://pypi.org/project/types-aiobotocore-sts/).
+
+```bash
+# install with types-aiobotocore
+pip install 'types-aiobotocore[sts]'
+
+# install as a standalone
+pip install types-aiobotocore-sts
+```
+
+- [Type annotations for aiobotocore STS module](#type-annotations-for-aiobotocore-sts-module)
+  - [STSClient](#stsclient)
+    - [Methods](#methods)
+    - [Exceptions](#exceptions)
+  - [Literals](#literals)
+  - [Typed dictionaries](#typed-dictionaries)
+
+<a id="stsclient"></a>
+
+## STSClient
+
+Type annotations for `aiobotocore.create_client("sts")` as
+[STSClient](./client.md)
+
+Can be used directly:
+
+```python
+from types_aiobotocore_sts.client import STSClient
+```
+
+<a id="methods"></a>
+
+### Methods
+
+- [assume_role](./client.md#assume_role)
+- [assume_role_with_saml](./client.md#assume_role_with_saml)
+- [assume_role_with_web_identity](./client.md#assume_role_with_web_identity)
+- [can_paginate](./client.md#can_paginate)
+- [decode_authorization_message](./client.md#decode_authorization_message)
+- [exceptions](./client.md#exceptions)
+- [generate_presigned_url](./client.md#generate_presigned_url)
+- [get_access_key_info](./client.md#get_access_key_info)
+- [get_caller_identity](./client.md#get_caller_identity)
+- [get_federation_token](./client.md#get_federation_token)
+- [get_session_token](./client.md#get_session_token)
+
+<a id="exceptions"></a>
+
+### Exceptions
+
+STSClient [exceptions](./client.md#exceptions)
+
+- ClientError
+- ExpiredTokenException
+- IDPCommunicationErrorException
+- IDPRejectedClaimException
+- InvalidAuthorizationMessageException
+- InvalidIdentityTokenException
+- MalformedPolicyDocumentException
+- PackedPolicyTooLargeException
+- RegionDisabledException
+
+<a id="literals"></a>
+
+## Literals
+
+Type annotations for [literals](./literals.md) used in methods and schema.
+
+Can be used directly:
+
+```python
+from types_aiobotocore_sts.literals import ServiceName, ...
+```
+
+- [ServiceName](./literals.md#servicename)
+
+<a id="typed-dictionaries"></a>
+
+## Typed dictionaries
+
+Type annotations for [typed dictionaries](./type_defs.md) used in methods and
+schema.
+
+Can be used directly:
+
+```python
+from mypy_boto3_sts.type_defs import AssumeRoleRequestRequestTypeDef, ...
+```
+
+- [AssumeRoleRequestRequestTypeDef](./type_defs.md#assumerolerequestrequesttypedef)
+- [AssumeRoleResponseTypeDef](./type_defs.md#assumeroleresponsetypedef)
+- [AssumeRoleWithSAMLRequestRequestTypeDef](./type_defs.md#assumerolewithsamlrequestrequesttypedef)
+- [AssumeRoleWithSAMLResponseTypeDef](./type_defs.md#assumerolewithsamlresponsetypedef)
+- [AssumeRoleWithWebIdentityRequestRequestTypeDef](./type_defs.md#assumerolewithwebidentityrequestrequesttypedef)
+- [AssumeRoleWithWebIdentityResponseTypeDef](./type_defs.md#assumerolewithwebidentityresponsetypedef)
+- [AssumedRoleUserTypeDef](./type_defs.md#assumedroleusertypedef)
+- [CredentialsTypeDef](./type_defs.md#credentialstypedef)
+- [DecodeAuthorizationMessageRequestRequestTypeDef](./type_defs.md#decodeauthorizationmessagerequestrequesttypedef)
+- [DecodeAuthorizationMessageResponseTypeDef](./type_defs.md#decodeauthorizationmessageresponsetypedef)
+- [FederatedUserTypeDef](./type_defs.md#federatedusertypedef)
+- [GetAccessKeyInfoRequestRequestTypeDef](./type_defs.md#getaccesskeyinforequestrequesttypedef)
+- [GetAccessKeyInfoResponseTypeDef](./type_defs.md#getaccesskeyinforesponsetypedef)
+- [GetCallerIdentityResponseTypeDef](./type_defs.md#getcalleridentityresponsetypedef)
+- [GetFederationTokenRequestRequestTypeDef](./type_defs.md#getfederationtokenrequestrequesttypedef)
+- [GetFederationTokenResponseTypeDef](./type_defs.md#getfederationtokenresponsetypedef)
+- [GetSessionTokenRequestRequestTypeDef](./type_defs.md#getsessiontokenrequestrequesttypedef)
+- [GetSessionTokenResponseTypeDef](./type_defs.md#getsessiontokenresponsetypedef)
+- [PolicyDescriptorTypeTypeDef](./type_defs.md#policydescriptortypetypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [TagTypeDef](./type_defs.md#tagtypedef)

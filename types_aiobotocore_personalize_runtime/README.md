@@ -1,0 +1,92 @@
+<a id="type-annotations-for-aiobotocore-personalizeruntime-module"></a>
+
+# Type annotations for aiobotocore PersonalizeRuntime module
+
+> [Index](..) > PersonalizeRuntime
+
+Auto-generated documentation for
+[PersonalizeRuntime](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize-runtime.html#PersonalizeRuntime)
+type annotations stubs module
+[types-aiobotocore-personalize-runtime](https://pypi.org/project/types-aiobotocore-personalize-runtime/).
+
+```bash
+# install with types-aiobotocore
+pip install 'types-aiobotocore[personalize-runtime]'
+
+# install as a standalone
+pip install types-aiobotocore-personalize-runtime
+```
+
+- [Type annotations for aiobotocore PersonalizeRuntime module](#type-annotations-for-aiobotocore-personalizeruntime-module)
+  - [PersonalizeRuntimeClient](#personalizeruntimeclient)
+    - [Methods](#methods)
+    - [Exceptions](#exceptions)
+  - [Literals](#literals)
+  - [Typed dictionaries](#typed-dictionaries)
+
+<a id="personalizeruntimeclient"></a>
+
+## PersonalizeRuntimeClient
+
+Type annotations for `aiobotocore.create_client("personalize-runtime")` as
+[PersonalizeRuntimeClient](./client.md)
+
+Can be used directly:
+
+```python
+from types_aiobotocore_personalize_runtime.client import PersonalizeRuntimeClient
+```
+
+<a id="methods"></a>
+
+### Methods
+
+- [can_paginate](./client.md#can_paginate)
+- [exceptions](./client.md#exceptions)
+- [generate_presigned_url](./client.md#generate_presigned_url)
+- [get_personalized_ranking](./client.md#get_personalized_ranking)
+- [get_recommendations](./client.md#get_recommendations)
+
+<a id="exceptions"></a>
+
+### Exceptions
+
+PersonalizeRuntimeClient [exceptions](./client.md#exceptions)
+
+- ClientError
+- InvalidInputException
+- ResourceNotFoundException
+
+<a id="literals"></a>
+
+## Literals
+
+Type annotations for [literals](./literals.md) used in methods and schema.
+
+Can be used directly:
+
+```python
+from types_aiobotocore_personalize_runtime.literals import ServiceName, ...
+```
+
+- [ServiceName](./literals.md#servicename)
+
+<a id="typed-dictionaries"></a>
+
+## Typed dictionaries
+
+Type annotations for [typed dictionaries](./type_defs.md) used in methods and
+schema.
+
+Can be used directly:
+
+```python
+from mypy_boto3_personalize_runtime.type_defs import GetPersonalizedRankingRequestRequestTypeDef, ...
+```
+
+- [GetPersonalizedRankingRequestRequestTypeDef](./type_defs.md#getpersonalizedrankingrequestrequesttypedef)
+- [GetPersonalizedRankingResponseTypeDef](./type_defs.md#getpersonalizedrankingresponsetypedef)
+- [GetRecommendationsRequestRequestTypeDef](./type_defs.md#getrecommendationsrequestrequesttypedef)
+- [GetRecommendationsResponseTypeDef](./type_defs.md#getrecommendationsresponsetypedef)
+- [PredictedItemTypeDef](./type_defs.md#predicteditemtypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)

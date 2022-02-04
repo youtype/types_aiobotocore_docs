@@ -1,0 +1,105 @@
+<a id="paginators-for-aiobotocore-serverlessapplicationrepository-module"></a>
+
+# Paginators for aiobotocore ServerlessApplicationRepository module
+
+> [Index](..) > [ServerlessApplicationRepository](.) > Paginators
+
+Auto-generated documentation for
+[ServerlessApplicationRepository](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository)
+type annotations stubs module
+[types-aiobotocore-serverlessrepo](https://pypi.org/project/types-aiobotocore-serverlessrepo/).
+
+- [Paginators for aiobotocore ServerlessApplicationRepository module](#paginators-for-aiobotocore-serverlessapplicationrepository-module)
+  - [ListApplicationDependenciesPaginator](#listapplicationdependenciespaginator)
+  - [ListApplicationVersionsPaginator](#listapplicationversionspaginator)
+  - [ListApplicationsPaginator](#listapplicationspaginator)
+
+<a id="listapplicationdependenciespaginator"></a>
+
+## ListApplicationDependenciesPaginator
+
+Type annotations for
+`aiobotocore.create_client("serverlessrepo").get_paginator("list_application_dependencies")`.
+
+Can be used directly:
+
+```python
+from aiobotocore.session import Session
+
+from types_aiobotocore_serverlessrepo.paginator import ListApplicationDependenciesPaginator
+
+def get_list_application_dependencies_paginator() -> ListApplicationDependenciesPaginator:
+    return Session().create_client("serverlessrepo").get_paginator("list_application_dependencies")
+```
+
+Boto3 documentation:
+[ServerlessApplicationRepository.Paginator.ListApplicationDependencies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Paginator.ListApplicationDependencies)
+
+Arguments for `ListApplicationDependenciesPaginator.paginate` method:
+
+- `ApplicationId`: `str` *(required)*
+- `SemanticVersion`: `str`
+- `PaginationConfig`:
+  [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+
+`ListApplicationDependenciesPaginator.paginate` returns
+`_PageIterator`\[[ListApplicationDependenciesResponseTypeDef](./type_defs.md#listapplicationdependenciesresponsetypedef)\].
+
+<a id="listapplicationversionspaginator"></a>
+
+## ListApplicationVersionsPaginator
+
+Type annotations for
+`aiobotocore.create_client("serverlessrepo").get_paginator("list_application_versions")`.
+
+Can be used directly:
+
+```python
+from aiobotocore.session import Session
+
+from types_aiobotocore_serverlessrepo.paginator import ListApplicationVersionsPaginator
+
+def get_list_application_versions_paginator() -> ListApplicationVersionsPaginator:
+    return Session().create_client("serverlessrepo").get_paginator("list_application_versions")
+```
+
+Boto3 documentation:
+[ServerlessApplicationRepository.Paginator.ListApplicationVersions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Paginator.ListApplicationVersions)
+
+Arguments for `ListApplicationVersionsPaginator.paginate` method:
+
+- `ApplicationId`: `str` *(required)*
+- `PaginationConfig`:
+  [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+
+`ListApplicationVersionsPaginator.paginate` returns
+`_PageIterator`\[[ListApplicationVersionsResponseTypeDef](./type_defs.md#listapplicationversionsresponsetypedef)\].
+
+<a id="listapplicationspaginator"></a>
+
+## ListApplicationsPaginator
+
+Type annotations for
+`aiobotocore.create_client("serverlessrepo").get_paginator("list_applications")`.
+
+Can be used directly:
+
+```python
+from aiobotocore.session import Session
+
+from types_aiobotocore_serverlessrepo.paginator import ListApplicationsPaginator
+
+def get_list_applications_paginator() -> ListApplicationsPaginator:
+    return Session().create_client("serverlessrepo").get_paginator("list_applications")
+```
+
+Boto3 documentation:
+[ServerlessApplicationRepository.Paginator.ListApplications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Paginator.ListApplications)
+
+Arguments for `ListApplicationsPaginator.paginate` method:
+
+- `PaginationConfig`:
+  [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+
+`ListApplicationsPaginator.paginate` returns
+`_PageIterator`\[[ListApplicationsResponseTypeDef](./type_defs.md#listapplicationsresponsetypedef)\].

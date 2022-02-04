@@ -1,0 +1,321 @@
+<a id="pinpointsmsvoiceclient-for-aiobotocore-pinpointsmsvoice-module"></a>
+
+# PinpointSMSVoiceClient for aiobotocore PinpointSMSVoice module
+
+> [Index](..) > [PinpointSMSVoice](.) > PinpointSMSVoiceClient
+
+Auto-generated documentation for
+[PinpointSMSVoice](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-sms-voice.html#PinpointSMSVoice)
+type annotations stubs module
+[types-aiobotocore-pinpoint-sms-voice](https://pypi.org/project/types-aiobotocore-pinpoint-sms-voice/).
+
+- [PinpointSMSVoiceClient for aiobotocore PinpointSMSVoice module](#pinpointsmsvoiceclient-for-aiobotocore-pinpointsmsvoice-module)
+  - [PinpointSMSVoiceClient](#pinpointsmsvoiceclient)
+  - [Exceptions](#exceptions)
+  - [Methods](#methods)
+    - [exceptions](#exceptions)
+    - [can_paginate](#can_paginate)
+    - [create_configuration_set](#create_configuration_set)
+    - [create_configuration_set_event_destination](#create_configuration_set_event_destination)
+    - [delete_configuration_set](#delete_configuration_set)
+    - [delete_configuration_set_event_destination](#delete_configuration_set_event_destination)
+    - [generate_presigned_url](#generate_presigned_url)
+    - [get_configuration_set_event_destinations](#get_configuration_set_event_destinations)
+    - [send_voice_message](#send_voice_message)
+    - [update_configuration_set_event_destination](#update_configuration_set_event_destination)
+
+<a id="pinpointsmsvoiceclient"></a>
+
+## PinpointSMSVoiceClient
+
+Type annotations for `aiobotocore.create_client("pinpoint-sms-voice")`
+
+Can be used directly:
+
+```python
+from aiobotocore.session import Session
+from types_aiobotocore_pinpoint_sms_voice.client import PinpointSMSVoiceClient
+
+def get_pinpoint-sms-voice_client() -> PinpointSMSVoiceClient:
+    return Session().client("pinpoint-sms-voice")
+```
+
+Boto3 documentation:
+[PinpointSMSVoice.Client](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-sms-voice.html#PinpointSMSVoice.Client)
+
+<a id="exceptions"></a>
+
+## Exceptions
+
+`boto3` client exceptions are generated in runtime. This class can be used for
+static analysis directly:
+
+```python
+from types_aiobotocore_pinpoint_sms_voice.client import Exceptions
+
+def handle_error(exc: Exceptions.AlreadyExistsException) -> None:
+    ...
+```
+
+Exceptions:
+
+- `Exceptions.AlreadyExistsException`
+- `Exceptions.BadRequestException`
+- `Exceptions.ClientError`
+- `Exceptions.InternalServiceErrorException`
+- `Exceptions.LimitExceededException`
+- `Exceptions.NotFoundException`
+- `Exceptions.TooManyRequestsException`
+
+<a id="methods"></a>
+
+## Methods
+
+<a id="exceptions"></a>
+
+### exceptions
+
+PinpointSMSVoiceClient exceptions.
+
+Type annotations for
+`aiobotocore.create_client("pinpoint-sms-voice").exceptions` method.
+
+Boto3 documentation:
+[PinpointSMSVoice.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-sms-voice.html#PinpointSMSVoice.Client.exceptions)
+
+Returns [Exceptions](#exceptions).
+
+<a id="can_paginate"></a>
+
+### can_paginate
+
+Check if an operation can be paginated.
+
+Type annotations for
+`aiobotocore.create_client("pinpoint-sms-voice").can_paginate` method.
+
+Boto3 documentation:
+[PinpointSMSVoice.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-sms-voice.html#PinpointSMSVoice.Client.can_paginate)
+
+Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
+
+Arguments:
+
+- `operation_name`: `str` *(required)*
+
+Returns a `Coroutine` for `bool`.
+
+<a id="create_configuration_set"></a>
+
+### create_configuration_set
+
+Create a new configuration set.
+
+Type annotations for
+`aiobotocore.create_client("pinpoint-sms-voice").create_configuration_set`
+method.
+
+Boto3 documentation:
+[PinpointSMSVoice.Client.create_configuration_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-sms-voice.html#PinpointSMSVoice.Client.create_configuration_set)
+
+Asynchronous method. Use `await create_configuration_set(...)` for a
+synchronous call.
+
+Arguments mapping described in
+[CreateConfigurationSetRequestRequestTypeDef](./type_defs.md#createconfigurationsetrequestrequesttypedef).
+
+Keyword-only arguments:
+
+- `ConfigurationSetName`: `str`
+
+Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="create_configuration_set_event_destination"></a>
+
+### create_configuration_set_event_destination
+
+Create a new event destination in a configuration set.
+
+Type annotations for
+`aiobotocore.create_client("pinpoint-sms-voice").create_configuration_set_event_destination`
+method.
+
+Boto3 documentation:
+[PinpointSMSVoice.Client.create_configuration_set_event_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-sms-voice.html#PinpointSMSVoice.Client.create_configuration_set_event_destination)
+
+Asynchronous method. Use
+`await create_configuration_set_event_destination(...)` for a synchronous call.
+
+Arguments mapping described in
+[CreateConfigurationSetEventDestinationRequestRequestTypeDef](./type_defs.md#createconfigurationseteventdestinationrequestrequesttypedef).
+
+Keyword-only arguments:
+
+- `ConfigurationSetName`: `str` *(required)*
+- `EventDestination`:
+  [EventDestinationDefinitionTypeDef](./type_defs.md#eventdestinationdefinitiontypedef)
+- `EventDestinationName`: `str`
+
+Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="delete_configuration_set"></a>
+
+### delete_configuration_set
+
+Deletes an existing configuration set.
+
+Type annotations for
+`aiobotocore.create_client("pinpoint-sms-voice").delete_configuration_set`
+method.
+
+Boto3 documentation:
+[PinpointSMSVoice.Client.delete_configuration_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-sms-voice.html#PinpointSMSVoice.Client.delete_configuration_set)
+
+Asynchronous method. Use `await delete_configuration_set(...)` for a
+synchronous call.
+
+Arguments mapping described in
+[DeleteConfigurationSetRequestRequestTypeDef](./type_defs.md#deleteconfigurationsetrequestrequesttypedef).
+
+Keyword-only arguments:
+
+- `ConfigurationSetName`: `str` *(required)*
+
+Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="delete_configuration_set_event_destination"></a>
+
+### delete_configuration_set_event_destination
+
+Deletes an event destination in a configuration set.
+
+Type annotations for
+`aiobotocore.create_client("pinpoint-sms-voice").delete_configuration_set_event_destination`
+method.
+
+Boto3 documentation:
+[PinpointSMSVoice.Client.delete_configuration_set_event_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-sms-voice.html#PinpointSMSVoice.Client.delete_configuration_set_event_destination)
+
+Asynchronous method. Use
+`await delete_configuration_set_event_destination(...)` for a synchronous call.
+
+Arguments mapping described in
+[DeleteConfigurationSetEventDestinationRequestRequestTypeDef](./type_defs.md#deleteconfigurationseteventdestinationrequestrequesttypedef).
+
+Keyword-only arguments:
+
+- `ConfigurationSetName`: `str` *(required)*
+- `EventDestinationName`: `str` *(required)*
+
+Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="generate_presigned_url"></a>
+
+### generate_presigned_url
+
+Generate a presigned url given a client, its method, and arguments.
+
+Type annotations for
+`aiobotocore.create_client("pinpoint-sms-voice").generate_presigned_url`
+method.
+
+Boto3 documentation:
+[PinpointSMSVoice.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-sms-voice.html#PinpointSMSVoice.Client.generate_presigned_url)
+
+Asynchronous method. Use `await generate_presigned_url(...)` for a synchronous
+call.
+
+Arguments:
+
+- `ClientMethod`: `str` *(required)*
+- `Params`: `Mapping`\[`str`, `Any`\]
+- `ExpiresIn`: `int`
+- `HttpMethod`: `str`
+
+Returns a `Coroutine` for `str`.
+
+<a id="get_configuration_set_event_destinations"></a>
+
+### get_configuration_set_event_destinations
+
+Obtain information about an event destination, including the types of events it
+reports, the Amazon Resource Name (ARN) of the destination, and the name of the
+event destination.
+
+Type annotations for
+`aiobotocore.create_client("pinpoint-sms-voice").get_configuration_set_event_destinations`
+method.
+
+Boto3 documentation:
+[PinpointSMSVoice.Client.get_configuration_set_event_destinations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-sms-voice.html#PinpointSMSVoice.Client.get_configuration_set_event_destinations)
+
+Asynchronous method. Use `await get_configuration_set_event_destinations(...)`
+for a synchronous call.
+
+Arguments mapping described in
+[GetConfigurationSetEventDestinationsRequestRequestTypeDef](./type_defs.md#getconfigurationseteventdestinationsrequestrequesttypedef).
+
+Keyword-only arguments:
+
+- `ConfigurationSetName`: `str` *(required)*
+
+Returns a `Coroutine` for
+[GetConfigurationSetEventDestinationsResponseTypeDef](./type_defs.md#getconfigurationseteventdestinationsresponsetypedef).
+
+<a id="send_voice_message"></a>
+
+### send_voice_message
+
+Create a new voice message and send it to a recipient's phone number.
+
+Type annotations for
+`aiobotocore.create_client("pinpoint-sms-voice").send_voice_message` method.
+
+Boto3 documentation:
+[PinpointSMSVoice.Client.send_voice_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-sms-voice.html#PinpointSMSVoice.Client.send_voice_message)
+
+Asynchronous method. Use `await send_voice_message(...)` for a synchronous
+call.
+
+Arguments mapping described in
+[SendVoiceMessageRequestRequestTypeDef](./type_defs.md#sendvoicemessagerequestrequesttypedef).
+
+Keyword-only arguments:
+
+- `CallerId`: `str`
+- `ConfigurationSetName`: `str`
+- `Content`:
+  [VoiceMessageContentTypeDef](./type_defs.md#voicemessagecontenttypedef)
+- `DestinationPhoneNumber`: `str`
+- `OriginationPhoneNumber`: `str`
+
+Returns a `Coroutine` for
+[SendVoiceMessageResponseTypeDef](./type_defs.md#sendvoicemessageresponsetypedef).
+
+<a id="update_configuration_set_event_destination"></a>
+
+### update_configuration_set_event_destination
+
+Update an event destination in a configuration set.
+
+Type annotations for
+`aiobotocore.create_client("pinpoint-sms-voice").update_configuration_set_event_destination`
+method.
+
+Boto3 documentation:
+[PinpointSMSVoice.Client.update_configuration_set_event_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-sms-voice.html#PinpointSMSVoice.Client.update_configuration_set_event_destination)
+
+Asynchronous method. Use
+`await update_configuration_set_event_destination(...)` for a synchronous call.
+
+Arguments mapping described in
+[UpdateConfigurationSetEventDestinationRequestRequestTypeDef](./type_defs.md#updateconfigurationseteventdestinationrequestrequesttypedef).
+
+Keyword-only arguments:
+
+- `ConfigurationSetName`: `str` *(required)*
+- `EventDestinationName`: `str` *(required)*
+- `EventDestination`:
+  [EventDestinationDefinitionTypeDef](./type_defs.md#eventdestinationdefinitiontypedef)
+
+Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
