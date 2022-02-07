@@ -30,17 +30,19 @@ type annotations stubs module
 ## ListBatchInferenceJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("personalize").get_paginator("list_batch_inference_jobs")`.
+`session.create_client("personalize").get_paginator("list_batch_inference_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_personalize.paginator import ListBatchInferenceJobsPaginator
 
-def get_list_batch_inference_jobs_paginator() -> ListBatchInferenceJobsPaginator:
-    return Session().create_client("personalize").get_paginator("list_batch_inference_jobs")
+session = get_session()
+async with session.create_client("personalize") as client:
+    client: PersonalizeClient
+    paginator: ListBatchInferenceJobsPaginator = client.get_paginator("list_batch_inference_jobs")
 ```
 
 Boto3 documentation:
@@ -60,17 +62,19 @@ Arguments for `ListBatchInferenceJobsPaginator.paginate` method:
 ## ListBatchSegmentJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("personalize").get_paginator("list_batch_segment_jobs")`.
+`session.create_client("personalize").get_paginator("list_batch_segment_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_personalize.paginator import ListBatchSegmentJobsPaginator
 
-def get_list_batch_segment_jobs_paginator() -> ListBatchSegmentJobsPaginator:
-    return Session().create_client("personalize").get_paginator("list_batch_segment_jobs")
+session = get_session()
+async with session.create_client("personalize") as client:
+    client: PersonalizeClient
+    paginator: ListBatchSegmentJobsPaginator = client.get_paginator("list_batch_segment_jobs")
 ```
 
 Boto3 documentation:
@@ -90,17 +94,19 @@ Arguments for `ListBatchSegmentJobsPaginator.paginate` method:
 ## ListCampaignsPaginator
 
 Type annotations for
-`aiobotocore.create_client("personalize").get_paginator("list_campaigns")`.
+`session.create_client("personalize").get_paginator("list_campaigns")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_personalize.paginator import ListCampaignsPaginator
 
-def get_list_campaigns_paginator() -> ListCampaignsPaginator:
-    return Session().create_client("personalize").get_paginator("list_campaigns")
+session = get_session()
+async with session.create_client("personalize") as client:
+    client: PersonalizeClient
+    paginator: ListCampaignsPaginator = client.get_paginator("list_campaigns")
 ```
 
 Boto3 documentation:
@@ -120,17 +126,19 @@ Arguments for `ListCampaignsPaginator.paginate` method:
 ## ListDatasetExportJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("personalize").get_paginator("list_dataset_export_jobs")`.
+`session.create_client("personalize").get_paginator("list_dataset_export_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_personalize.paginator import ListDatasetExportJobsPaginator
 
-def get_list_dataset_export_jobs_paginator() -> ListDatasetExportJobsPaginator:
-    return Session().create_client("personalize").get_paginator("list_dataset_export_jobs")
+session = get_session()
+async with session.create_client("personalize") as client:
+    client: PersonalizeClient
+    paginator: ListDatasetExportJobsPaginator = client.get_paginator("list_dataset_export_jobs")
 ```
 
 Boto3 documentation:
@@ -150,17 +158,19 @@ Arguments for `ListDatasetExportJobsPaginator.paginate` method:
 ## ListDatasetGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("personalize").get_paginator("list_dataset_groups")`.
+`session.create_client("personalize").get_paginator("list_dataset_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_personalize.paginator import ListDatasetGroupsPaginator
 
-def get_list_dataset_groups_paginator() -> ListDatasetGroupsPaginator:
-    return Session().create_client("personalize").get_paginator("list_dataset_groups")
+session = get_session()
+async with session.create_client("personalize") as client:
+    client: PersonalizeClient
+    paginator: ListDatasetGroupsPaginator = client.get_paginator("list_dataset_groups")
 ```
 
 Boto3 documentation:
@@ -179,17 +189,19 @@ Arguments for `ListDatasetGroupsPaginator.paginate` method:
 ## ListDatasetImportJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("personalize").get_paginator("list_dataset_import_jobs")`.
+`session.create_client("personalize").get_paginator("list_dataset_import_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_personalize.paginator import ListDatasetImportJobsPaginator
 
-def get_list_dataset_import_jobs_paginator() -> ListDatasetImportJobsPaginator:
-    return Session().create_client("personalize").get_paginator("list_dataset_import_jobs")
+session = get_session()
+async with session.create_client("personalize") as client:
+    client: PersonalizeClient
+    paginator: ListDatasetImportJobsPaginator = client.get_paginator("list_dataset_import_jobs")
 ```
 
 Boto3 documentation:
@@ -209,17 +221,19 @@ Arguments for `ListDatasetImportJobsPaginator.paginate` method:
 ## ListDatasetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("personalize").get_paginator("list_datasets")`.
+`session.create_client("personalize").get_paginator("list_datasets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_personalize.paginator import ListDatasetsPaginator
 
-def get_list_datasets_paginator() -> ListDatasetsPaginator:
-    return Session().create_client("personalize").get_paginator("list_datasets")
+session = get_session()
+async with session.create_client("personalize") as client:
+    client: PersonalizeClient
+    paginator: ListDatasetsPaginator = client.get_paginator("list_datasets")
 ```
 
 Boto3 documentation:
@@ -239,17 +253,19 @@ Arguments for `ListDatasetsPaginator.paginate` method:
 ## ListEventTrackersPaginator
 
 Type annotations for
-`aiobotocore.create_client("personalize").get_paginator("list_event_trackers")`.
+`session.create_client("personalize").get_paginator("list_event_trackers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_personalize.paginator import ListEventTrackersPaginator
 
-def get_list_event_trackers_paginator() -> ListEventTrackersPaginator:
-    return Session().create_client("personalize").get_paginator("list_event_trackers")
+session = get_session()
+async with session.create_client("personalize") as client:
+    client: PersonalizeClient
+    paginator: ListEventTrackersPaginator = client.get_paginator("list_event_trackers")
 ```
 
 Boto3 documentation:
@@ -269,17 +285,19 @@ Arguments for `ListEventTrackersPaginator.paginate` method:
 ## ListFiltersPaginator
 
 Type annotations for
-`aiobotocore.create_client("personalize").get_paginator("list_filters")`.
+`session.create_client("personalize").get_paginator("list_filters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_personalize.paginator import ListFiltersPaginator
 
-def get_list_filters_paginator() -> ListFiltersPaginator:
-    return Session().create_client("personalize").get_paginator("list_filters")
+session = get_session()
+async with session.create_client("personalize") as client:
+    client: PersonalizeClient
+    paginator: ListFiltersPaginator = client.get_paginator("list_filters")
 ```
 
 Boto3 documentation:
@@ -299,17 +317,19 @@ Arguments for `ListFiltersPaginator.paginate` method:
 ## ListRecipesPaginator
 
 Type annotations for
-`aiobotocore.create_client("personalize").get_paginator("list_recipes")`.
+`session.create_client("personalize").get_paginator("list_recipes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_personalize.paginator import ListRecipesPaginator
 
-def get_list_recipes_paginator() -> ListRecipesPaginator:
-    return Session().create_client("personalize").get_paginator("list_recipes")
+session = get_session()
+async with session.create_client("personalize") as client:
+    client: PersonalizeClient
+    paginator: ListRecipesPaginator = client.get_paginator("list_recipes")
 ```
 
 Boto3 documentation:
@@ -331,17 +351,19 @@ Arguments for `ListRecipesPaginator.paginate` method:
 ## ListRecommendersPaginator
 
 Type annotations for
-`aiobotocore.create_client("personalize").get_paginator("list_recommenders")`.
+`session.create_client("personalize").get_paginator("list_recommenders")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_personalize.paginator import ListRecommendersPaginator
 
-def get_list_recommenders_paginator() -> ListRecommendersPaginator:
-    return Session().create_client("personalize").get_paginator("list_recommenders")
+session = get_session()
+async with session.create_client("personalize") as client:
+    client: PersonalizeClient
+    paginator: ListRecommendersPaginator = client.get_paginator("list_recommenders")
 ```
 
 Boto3 documentation:
@@ -361,17 +383,19 @@ Arguments for `ListRecommendersPaginator.paginate` method:
 ## ListSchemasPaginator
 
 Type annotations for
-`aiobotocore.create_client("personalize").get_paginator("list_schemas")`.
+`session.create_client("personalize").get_paginator("list_schemas")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_personalize.paginator import ListSchemasPaginator
 
-def get_list_schemas_paginator() -> ListSchemasPaginator:
-    return Session().create_client("personalize").get_paginator("list_schemas")
+session = get_session()
+async with session.create_client("personalize") as client:
+    client: PersonalizeClient
+    paginator: ListSchemasPaginator = client.get_paginator("list_schemas")
 ```
 
 Boto3 documentation:
@@ -390,17 +414,19 @@ Arguments for `ListSchemasPaginator.paginate` method:
 ## ListSolutionVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("personalize").get_paginator("list_solution_versions")`.
+`session.create_client("personalize").get_paginator("list_solution_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_personalize.paginator import ListSolutionVersionsPaginator
 
-def get_list_solution_versions_paginator() -> ListSolutionVersionsPaginator:
-    return Session().create_client("personalize").get_paginator("list_solution_versions")
+session = get_session()
+async with session.create_client("personalize") as client:
+    client: PersonalizeClient
+    paginator: ListSolutionVersionsPaginator = client.get_paginator("list_solution_versions")
 ```
 
 Boto3 documentation:
@@ -420,17 +446,19 @@ Arguments for `ListSolutionVersionsPaginator.paginate` method:
 ## ListSolutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("personalize").get_paginator("list_solutions")`.
+`session.create_client("personalize").get_paginator("list_solutions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_personalize.paginator import ListSolutionsPaginator
 
-def get_list_solutions_paginator() -> ListSolutionsPaginator:
-    return Session().create_client("personalize").get_paginator("list_solutions")
+session = get_session()
+async with session.create_client("personalize") as client:
+    client: PersonalizeClient
+    paginator: ListSolutionsPaginator = client.get_paginator("list_solutions")
 ```
 
 Boto3 documentation:

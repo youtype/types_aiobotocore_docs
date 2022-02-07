@@ -103,22 +103,25 @@ type annotations stubs module
     - [update_provisioning_artifact](#update_provisioning_artifact)
     - [update_service_action](#update_service_action)
     - [update_tag_option](#update_tag_option)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="servicecatalogclient"></a>
 
 ## ServiceCatalogClient
 
-Type annotations for `aiobotocore.create_client("servicecatalog")`
+Type annotations for `session.create_client("servicecatalog")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog.client import ServiceCatalogClient
 
-def get_servicecatalog_client() -> ServiceCatalogClient:
-    return Session().client("servicecatalog")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
 ```
 
 Boto3 documentation:
@@ -160,7 +163,7 @@ Exceptions:
 
 ServiceCatalogClient exceptions.
 
-Type annotations for `aiobotocore.create_client("servicecatalog").exceptions`
+Type annotations for `session.create_client("servicecatalog").exceptions`
 method.
 
 Boto3 documentation:
@@ -175,7 +178,7 @@ Returns [Exceptions](#exceptions).
 Accepts an offer to share the specified portfolio.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").accept_portfolio_share` method.
+`session.create_client("servicecatalog").accept_portfolio_share` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.accept_portfolio_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.accept_portfolio_share)
@@ -202,7 +205,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates the specified budget with the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").associate_budget_with_resource`
+`session.create_client("servicecatalog").associate_budget_with_resource`
 method.
 
 Boto3 documentation:
@@ -228,7 +231,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates the specified principal ARN with the specified portfolio.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").associate_principal_with_portfolio`
+`session.create_client("servicecatalog").associate_principal_with_portfolio`
 method.
 
 Boto3 documentation:
@@ -257,7 +260,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates the specified product with the specified portfolio.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").associate_product_with_portfolio`
+`session.create_client("servicecatalog").associate_product_with_portfolio`
 method.
 
 Boto3 documentation:
@@ -285,7 +288,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates a self-service action with a provisioning artifact.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").associate_service_action_with_provisioning_artifact`
+`session.create_client("servicecatalog").associate_service_action_with_provisioning_artifact`
 method.
 
 Boto3 documentation:
@@ -314,7 +317,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associate the specified TagOption with the specified portfolio or product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").associate_tag_option_with_resource`
+`session.create_client("servicecatalog").associate_tag_option_with_resource`
 method.
 
 Boto3 documentation:
@@ -340,7 +343,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates multiple self-service actions with provisioning artifacts.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").batch_associate_service_action_with_provisioning_artifact`
+`session.create_client("servicecatalog").batch_associate_service_action_with_provisioning_artifact`
 method.
 
 Boto3 documentation:
@@ -371,7 +374,7 @@ Disassociates a batch of self-service actions from the specified provisioning
 artifact.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").batch_disassociate_service_action_from_provisioning_artifact`
+`session.create_client("servicecatalog").batch_disassociate_service_action_from_provisioning_artifact`
 method.
 
 Boto3 documentation:
@@ -400,19 +403,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("servicecatalog").can_paginate`
+Type annotations for `session.create_client("servicecatalog").can_paginate`
 method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="copy_product"></a>
 
@@ -421,7 +422,7 @@ Returns a `Coroutine` for `bool`.
 Copies the specified source product to the specified target product or a new
 product.
 
-Type annotations for `aiobotocore.create_client("servicecatalog").copy_product`
+Type annotations for `session.create_client("servicecatalog").copy_product`
 method.
 
 Boto3 documentation:
@@ -456,7 +457,7 @@ Returns a `Coroutine` for
 Creates a constraint.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").create_constraint` method.
+`session.create_client("servicecatalog").create_constraint` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.create_constraint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.create_constraint)
@@ -485,8 +486,8 @@ Returns a `Coroutine` for
 
 Creates a portfolio.
 
-Type annotations for
-`aiobotocore.create_client("servicecatalog").create_portfolio` method.
+Type annotations for `session.create_client("servicecatalog").create_portfolio`
+method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.create_portfolio](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.create_portfolio)
@@ -515,7 +516,7 @@ Returns a `Coroutine` for
 Shares the specified portfolio with the specified account or organization node.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").create_portfolio_share` method.
+`session.create_client("servicecatalog").create_portfolio_share` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.create_portfolio_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.create_portfolio_share)
@@ -544,8 +545,8 @@ Returns a `Coroutine` for
 
 Creates a product.
 
-Type annotations for
-`aiobotocore.create_client("servicecatalog").create_product` method.
+Type annotations for `session.create_client("servicecatalog").create_product`
+method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.create_product](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.create_product)
@@ -582,7 +583,7 @@ Returns a `Coroutine` for
 Creates a plan.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").create_provisioned_product_plan`
+`session.create_client("servicecatalog").create_provisioned_product_plan`
 method.
 
 Boto3 documentation:
@@ -622,8 +623,7 @@ Creates a provisioning artifact (also known as a version) for the specified
 product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").create_provisioning_artifact`
-method.
+`session.create_client("servicecatalog").create_provisioning_artifact` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.create_provisioning_artifact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.create_provisioning_artifact)
@@ -653,7 +653,7 @@ Returns a `Coroutine` for
 Creates a self-service action.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").create_service_action` method.
+`session.create_client("servicecatalog").create_service_action` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.create_service_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.create_service_action)
@@ -687,7 +687,7 @@ Returns a `Coroutine` for
 Creates a TagOption.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").create_tag_option` method.
+`session.create_client("servicecatalog").create_tag_option` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.create_tag_option](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.create_tag_option)
@@ -712,7 +712,7 @@ Returns a `Coroutine` for
 Deletes the specified constraint.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").delete_constraint` method.
+`session.create_client("servicecatalog").delete_constraint` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.delete_constraint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.delete_constraint)
@@ -735,8 +735,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified portfolio.
 
-Type annotations for
-`aiobotocore.create_client("servicecatalog").delete_portfolio` method.
+Type annotations for `session.create_client("servicecatalog").delete_portfolio`
+method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.delete_portfolio](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.delete_portfolio)
@@ -761,7 +761,7 @@ Stops sharing the specified portfolio with the specified account or
 organization node.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").delete_portfolio_share` method.
+`session.create_client("servicecatalog").delete_portfolio_share` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.delete_portfolio_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.delete_portfolio_share)
@@ -789,8 +789,8 @@ Returns a `Coroutine` for
 
 Deletes the specified product.
 
-Type annotations for
-`aiobotocore.create_client("servicecatalog").delete_product` method.
+Type annotations for `session.create_client("servicecatalog").delete_product`
+method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.delete_product](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.delete_product)
@@ -814,7 +814,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified plan.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").delete_provisioned_product_plan`
+`session.create_client("servicecatalog").delete_provisioned_product_plan`
 method.
 
 Boto3 documentation:
@@ -842,8 +842,7 @@ Deletes the specified provisioning artifact (also known as a version) for the
 specified product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").delete_provisioning_artifact`
-method.
+`session.create_client("servicecatalog").delete_provisioning_artifact` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.delete_provisioning_artifact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.delete_provisioning_artifact)
@@ -869,7 +868,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a self-service action.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").delete_service_action` method.
+`session.create_client("servicecatalog").delete_service_action` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.delete_service_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.delete_service_action)
@@ -894,7 +893,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified TagOption.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").delete_tag_option` method.
+`session.create_client("servicecatalog").delete_tag_option` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.delete_tag_option](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.delete_tag_option)
@@ -917,7 +916,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Gets information about the specified constraint.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").describe_constraint` method.
+`session.create_client("servicecatalog").describe_constraint` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.describe_constraint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.describe_constraint)
@@ -943,8 +942,7 @@ Returns a `Coroutine` for
 Gets the status of the specified copy product operation.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").describe_copy_product_status`
-method.
+`session.create_client("servicecatalog").describe_copy_product_status` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.describe_copy_product_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.describe_copy_product_status)
@@ -970,7 +968,7 @@ Returns a `Coroutine` for
 Gets information about the specified portfolio.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").describe_portfolio` method.
+`session.create_client("servicecatalog").describe_portfolio` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.describe_portfolio](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.describe_portfolio)
@@ -996,7 +994,7 @@ Returns a `Coroutine` for
 Gets the status of the specified portfolio share operation.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").describe_portfolio_share_status`
+`session.create_client("servicecatalog").describe_portfolio_share_status`
 method.
 
 Boto3 documentation:
@@ -1023,7 +1021,7 @@ Returns a summary of each of the portfolio shares that were created for the
 specified portfolio.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").describe_portfolio_shares` method.
+`session.create_client("servicecatalog").describe_portfolio_shares` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.describe_portfolio_shares](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.describe_portfolio_shares)
@@ -1052,8 +1050,8 @@ Returns a `Coroutine` for
 
 Gets information about the specified product.
 
-Type annotations for
-`aiobotocore.create_client("servicecatalog").describe_product` method.
+Type annotations for `session.create_client("servicecatalog").describe_product`
+method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.describe_product](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.describe_product)
@@ -1079,7 +1077,7 @@ Returns a `Coroutine` for
 Gets information about the specified product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").describe_product_as_admin` method.
+`session.create_client("servicecatalog").describe_product_as_admin` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.describe_product_as_admin](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.describe_product_as_admin)
@@ -1107,7 +1105,7 @@ Returns a `Coroutine` for
 Gets information about the specified product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").describe_product_view` method.
+`session.create_client("servicecatalog").describe_product_view` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.describe_product_view](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.describe_product_view)
@@ -1133,8 +1131,7 @@ Returns a `Coroutine` for
 Gets information about the specified provisioned product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").describe_provisioned_product`
-method.
+`session.create_client("servicecatalog").describe_provisioned_product` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.describe_provisioned_product](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.describe_provisioned_product)
@@ -1161,7 +1158,7 @@ Returns a `Coroutine` for
 Gets information about the resource changes for the specified plan.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").describe_provisioned_product_plan`
+`session.create_client("servicecatalog").describe_provisioned_product_plan`
 method.
 
 Boto3 documentation:
@@ -1191,7 +1188,7 @@ Gets information about the specified provisioning artifact (also known as a
 version) for the specified product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").describe_provisioning_artifact`
+`session.create_client("servicecatalog").describe_provisioning_artifact`
 method.
 
 Boto3 documentation:
@@ -1223,7 +1220,7 @@ Gets information about the configuration required to provision the specified
 product using the specified provisioning artifact.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").describe_provisioning_parameters`
+`session.create_client("servicecatalog").describe_provisioning_parameters`
 method.
 
 Boto3 documentation:
@@ -1254,8 +1251,8 @@ Returns a `Coroutine` for
 
 Gets information about the specified request operation.
 
-Type annotations for
-`aiobotocore.create_client("servicecatalog").describe_record` method.
+Type annotations for `session.create_client("servicecatalog").describe_record`
+method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.describe_record](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.describe_record)
@@ -1282,7 +1279,7 @@ Returns a `Coroutine` for
 Describes a self-service action.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").describe_service_action` method.
+`session.create_client("servicecatalog").describe_service_action` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.describe_service_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.describe_service_action)
@@ -1309,7 +1306,7 @@ Finds the default parameters for a specific self-service action on a specific
 provisioned product and returns a map of the results to the user.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").describe_service_action_execution_parameters`
+`session.create_client("servicecatalog").describe_service_action_execution_parameters`
 method.
 
 Boto3 documentation:
@@ -1338,7 +1335,7 @@ Returns a `Coroutine` for
 Gets information about the specified TagOption.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").describe_tag_option` method.
+`session.create_client("servicecatalog").describe_tag_option` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.describe_tag_option](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.describe_tag_option)
@@ -1363,7 +1360,7 @@ Returns a `Coroutine` for
 Disable portfolio sharing through AWS Organizations feature.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").disable_aws_organizations_access`
+`session.create_client("servicecatalog").disable_aws_organizations_access`
 method.
 
 Boto3 documentation:
@@ -1381,7 +1378,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates the specified budget from the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").disassociate_budget_from_resource`
+`session.create_client("servicecatalog").disassociate_budget_from_resource`
 method.
 
 Boto3 documentation:
@@ -1407,7 +1404,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates a previously associated principal ARN from a specified portfolio.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").disassociate_principal_from_portfolio`
+`session.create_client("servicecatalog").disassociate_principal_from_portfolio`
 method.
 
 Boto3 documentation:
@@ -1434,7 +1431,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates the specified product from the specified portfolio.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").disassociate_product_from_portfolio`
+`session.create_client("servicecatalog").disassociate_product_from_portfolio`
 method.
 
 Boto3 documentation:
@@ -1462,7 +1459,7 @@ Disassociates the specified self-service action association from the specified
 provisioning artifact.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").disassociate_service_action_from_provisioning_artifact`
+`session.create_client("servicecatalog").disassociate_service_action_from_provisioning_artifact`
 method.
 
 Boto3 documentation:
@@ -1491,7 +1488,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates the specified TagOption from the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").disassociate_tag_option_from_resource`
+`session.create_client("servicecatalog").disassociate_tag_option_from_resource`
 method.
 
 Boto3 documentation:
@@ -1517,7 +1514,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Enable portfolio sharing feature through AWS Organizations.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").enable_aws_organizations_access`
+`session.create_client("servicecatalog").enable_aws_organizations_access`
 method.
 
 Boto3 documentation:
@@ -1536,7 +1533,7 @@ Provisions or modifies a product based on the resource changes for the
 specified plan.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").execute_provisioned_product_plan`
+`session.create_client("servicecatalog").execute_provisioned_product_plan`
 method.
 
 Boto3 documentation:
@@ -1564,7 +1561,7 @@ Returns a `Coroutine` for
 Executes a self-service action against a provisioned product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").execute_provisioned_product_service_action`
+`session.create_client("servicecatalog").execute_provisioned_product_service_action`
 method.
 
 Boto3 documentation:
@@ -1594,7 +1591,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").generate_presigned_url` method.
+`session.create_client("servicecatalog").generate_presigned_url` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.generate_presigned_url)
@@ -1618,7 +1615,7 @@ Returns a `Coroutine` for `str`.
 Get the Access Status for AWS Organization portfolio share feature.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_aws_organizations_access_status`
+`session.create_client("servicecatalog").get_aws_organizations_access_status`
 method.
 
 Boto3 documentation:
@@ -1639,7 +1636,7 @@ along with a list of one or more output keys, and responds with the key/value
 pairs of those outputs.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_provisioned_product_outputs`
+`session.create_client("servicecatalog").get_provisioned_product_outputs`
 method.
 
 Boto3 documentation:
@@ -1671,8 +1668,7 @@ Requests the import of a resource as a Service Catalog provisioned product that
 is associated to a Service Catalog product and provisioning artifact.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").import_as_provisioned_product`
-method.
+`session.create_client("servicecatalog").import_as_provisioned_product` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.import_as_provisioned_product](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.import_as_provisioned_product)
@@ -1702,7 +1698,7 @@ Returns a `Coroutine` for
 Lists all portfolios for which sharing was accepted by this account.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").list_accepted_portfolio_shares`
+`session.create_client("servicecatalog").list_accepted_portfolio_shares`
 method.
 
 Boto3 documentation:
@@ -1732,7 +1728,7 @@ Returns a `Coroutine` for
 Lists all the budgets associated to the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").list_budgets_for_resource` method.
+`session.create_client("servicecatalog").list_budgets_for_resource` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.list_budgets_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.list_budgets_for_resource)
@@ -1760,7 +1756,7 @@ Returns a `Coroutine` for
 Lists the constraints for the specified portfolio and product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").list_constraints_for_portfolio`
+`session.create_client("servicecatalog").list_constraints_for_portfolio`
 method.
 
 Boto3 documentation:
@@ -1790,7 +1786,7 @@ Returns a `Coroutine` for
 Lists the paths to the specified product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").list_launch_paths` method.
+`session.create_client("servicecatalog").list_launch_paths` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.list_launch_paths](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.list_launch_paths)
@@ -1817,7 +1813,7 @@ Returns a `Coroutine` for
 Lists the organization nodes that have access to the specified portfolio.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").list_organization_portfolio_access`
+`session.create_client("servicecatalog").list_organization_portfolio_access`
 method.
 
 Boto3 documentation:
@@ -1849,7 +1845,7 @@ Returns a `Coroutine` for
 Lists the account IDs that have access to the specified portfolio.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").list_portfolio_access` method.
+`session.create_client("servicecatalog").list_portfolio_access` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.list_portfolio_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.list_portfolio_access)
@@ -1877,8 +1873,8 @@ Returns a `Coroutine` for
 
 Lists all portfolios in the catalog.
 
-Type annotations for
-`aiobotocore.create_client("servicecatalog").list_portfolios` method.
+Type annotations for `session.create_client("servicecatalog").list_portfolios`
+method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.list_portfolios](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.list_portfolios)
@@ -1904,8 +1900,7 @@ Returns a `Coroutine` for
 Lists all portfolios that the specified product is associated with.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").list_portfolios_for_product`
-method.
+`session.create_client("servicecatalog").list_portfolios_for_product` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.list_portfolios_for_product](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.list_portfolios_for_product)
@@ -1933,8 +1928,7 @@ Returns a `Coroutine` for
 Lists all principal ARNs associated with the specified portfolio.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").list_principals_for_portfolio`
-method.
+`session.create_client("servicecatalog").list_principals_for_portfolio` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.list_principals_for_portfolio](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.list_principals_for_portfolio)
@@ -1963,7 +1957,7 @@ Lists the plans for the specified provisioned product or all plans to which the
 user has access.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").list_provisioned_product_plans`
+`session.create_client("servicecatalog").list_provisioned_product_plans`
 method.
 
 Boto3 documentation:
@@ -1995,8 +1989,7 @@ Lists all provisioning artifacts (also known as versions) for the specified
 product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").list_provisioning_artifacts`
-method.
+`session.create_client("servicecatalog").list_provisioning_artifacts` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.list_provisioning_artifacts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.list_provisioning_artifacts)
@@ -2023,7 +2016,7 @@ Lists all provisioning artifacts (also known as versions) for the specified
 self-service action.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").list_provisioning_artifacts_for_service_action`
+`session.create_client("servicecatalog").list_provisioning_artifacts_for_service_action`
 method.
 
 Boto3 documentation:
@@ -2053,7 +2046,7 @@ Returns a `Coroutine` for
 Lists the specified requests or all performed requests.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").list_record_history` method.
+`session.create_client("servicecatalog").list_record_history` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.list_record_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.list_record_history)
@@ -2084,8 +2077,7 @@ Returns a `Coroutine` for
 Lists the resources associated with the specified TagOption.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").list_resources_for_tag_option`
-method.
+`session.create_client("servicecatalog").list_resources_for_tag_option` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.list_resources_for_tag_option](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.list_resources_for_tag_option)
@@ -2113,7 +2105,7 @@ Returns a `Coroutine` for
 Lists all self-service actions.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").list_service_actions` method.
+`session.create_client("servicecatalog").list_service_actions` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.list_service_actions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.list_service_actions)
@@ -2141,7 +2133,7 @@ Returns a paginated list of self-service actions associated with the specified
 Product ID and Provisioning Artifact ID.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").list_service_actions_for_provisioning_artifact`
+`session.create_client("servicecatalog").list_service_actions_for_provisioning_artifact`
 method.
 
 Boto3 documentation:
@@ -2173,7 +2165,7 @@ Returns summary information about stack instances that are associated with the
 specified `CFN_STACKSET` type provisioned product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").list_stack_instances_for_provisioned_product`
+`session.create_client("servicecatalog").list_stack_instances_for_provisioned_product`
 method.
 
 Boto3 documentation:
@@ -2202,8 +2194,8 @@ Returns a `Coroutine` for
 
 Lists the specified TagOptions or all TagOptions.
 
-Type annotations for
-`aiobotocore.create_client("servicecatalog").list_tag_options` method.
+Type annotations for `session.create_client("servicecatalog").list_tag_options`
+method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.list_tag_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.list_tag_options)
@@ -2230,7 +2222,7 @@ Returns a `Coroutine` for
 Provisions the specified product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").provision_product` method.
+`session.create_client("servicecatalog").provision_product` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.provision_product](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.provision_product)
@@ -2268,7 +2260,7 @@ Returns a `Coroutine` for
 Rejects an offer to share the specified portfolio.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").reject_portfolio_share` method.
+`session.create_client("servicecatalog").reject_portfolio_share` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.reject_portfolio_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.reject_portfolio_share)
@@ -2295,7 +2287,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Lists the provisioned products that are available (not terminated).
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").scan_provisioned_products` method.
+`session.create_client("servicecatalog").scan_provisioned_products` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.scan_provisioned_products](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.scan_provisioned_products)
@@ -2323,8 +2315,8 @@ Returns a `Coroutine` for
 
 Gets information about the products to which the caller has access.
 
-Type annotations for
-`aiobotocore.create_client("servicecatalog").search_products` method.
+Type annotations for `session.create_client("servicecatalog").search_products`
+method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.search_products](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.search_products)
@@ -2356,7 +2348,7 @@ Gets information about the products for the specified portfolio or all
 products.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").search_products_as_admin` method.
+`session.create_client("servicecatalog").search_products_as_admin` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.search_products_as_admin](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.search_products_as_admin)
@@ -2392,8 +2384,7 @@ Gets information about the provisioned products that meet the specified
 criteria.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").search_provisioned_products`
-method.
+`session.create_client("servicecatalog").search_provisioned_products` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.search_provisioned_products](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.search_provisioned_products)
@@ -2427,8 +2418,7 @@ Returns a `Coroutine` for
 Terminates the specified provisioned product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").terminate_provisioned_product`
-method.
+`session.create_client("servicecatalog").terminate_provisioned_product` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.terminate_provisioned_product](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.terminate_provisioned_product)
@@ -2458,7 +2448,7 @@ Returns a `Coroutine` for
 Updates the specified constraint.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").update_constraint` method.
+`session.create_client("servicecatalog").update_constraint` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.update_constraint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.update_constraint)
@@ -2484,8 +2474,8 @@ Returns a `Coroutine` for
 
 Updates the specified portfolio.
 
-Type annotations for
-`aiobotocore.create_client("servicecatalog").update_portfolio` method.
+Type annotations for `session.create_client("servicecatalog").update_portfolio`
+method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.update_portfolio](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.update_portfolio)
@@ -2515,7 +2505,7 @@ Returns a `Coroutine` for
 Updates the specified portfolio share.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").update_portfolio_share` method.
+`session.create_client("servicecatalog").update_portfolio_share` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.update_portfolio_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.update_portfolio_share)
@@ -2544,8 +2534,8 @@ Returns a `Coroutine` for
 
 Updates the specified product.
 
-Type annotations for
-`aiobotocore.create_client("servicecatalog").update_product` method.
+Type annotations for `session.create_client("servicecatalog").update_product`
+method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.update_product](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.update_product)
@@ -2579,8 +2569,7 @@ Returns a `Coroutine` for
 Requests updates to the configuration of the specified provisioned product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").update_provisioned_product`
-method.
+`session.create_client("servicecatalog").update_provisioned_product` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.update_provisioned_product](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.update_provisioned_product)
@@ -2619,7 +2608,7 @@ Returns a `Coroutine` for
 Requests updates to the properties of the specified provisioned product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").update_provisioned_product_properties`
+`session.create_client("servicecatalog").update_provisioned_product_properties`
 method.
 
 Boto3 documentation:
@@ -2651,8 +2640,7 @@ Updates the specified provisioning artifact (also known as a version) for the
 specified product.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").update_provisioning_artifact`
-method.
+`session.create_client("servicecatalog").update_provisioning_artifact` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.update_provisioning_artifact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.update_provisioning_artifact)
@@ -2684,7 +2672,7 @@ Returns a `Coroutine` for
 Updates a self-service action.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").update_service_action` method.
+`session.create_client("servicecatalog").update_service_action` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.update_service_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.update_service_action)
@@ -2715,7 +2703,7 @@ Returns a `Coroutine` for
 Updates the specified TagOption.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").update_tag_option` method.
+`session.create_client("servicecatalog").update_tag_option` method.
 
 Boto3 documentation:
 [ServiceCatalog.Client.update_tag_option](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.update_tag_option)
@@ -2734,13 +2722,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateTagOptionOutputTypeDef](./type_defs.md#updatetagoptionoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("servicecatalog").__aenter__`
+method.
+
+Boto3 documentation:
+[ServiceCatalog.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ServiceCatalogClient](#servicecatalogclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("servicecatalog").__aexit__`
+method.
+
+Boto3 documentation:
+[ServiceCatalog.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html#ServiceCatalog.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("servicecatalog").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_accepted_portfolio_shares")` ->
   [ListAcceptedPortfolioSharesPaginator](./paginators.md#listacceptedportfoliosharespaginator)

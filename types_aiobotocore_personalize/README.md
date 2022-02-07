@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[personalize]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[personalize]'
+
+# standalone installation
 pip install types-aiobotocore-personalize
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-personalize
 
 ## PersonalizeClient
 
-Type annotations for `aiobotocore.create_client("personalize")` as
+Type annotations for `session.create_client("personalize")` as
 [PersonalizeClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_personalize.client import PersonalizeClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_batch_inference_job](./client.md#create_batch_inference_job)
 - [create_batch_segment_job](./client.md#create_batch_segment_job)
@@ -126,7 +132,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_personalize.paginators import ListBatchInferenceJobsPaginator, ...
+from types_aiobotocore_personalize.paginator import ListBatchInferenceJobsPaginator, ...
 ```
 
 - [ListBatchInferenceJobsPaginator](./paginators.md#listbatchinferencejobspaginator)

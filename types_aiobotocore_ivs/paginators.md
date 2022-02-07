@@ -21,17 +21,19 @@ type annotations stubs module
 ## ListChannelsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ivs").get_paginator("list_channels")`.
+`session.create_client("ivs").get_paginator("list_channels")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ivs.paginator import ListChannelsPaginator
 
-def get_list_channels_paginator() -> ListChannelsPaginator:
-    return Session().create_client("ivs").get_paginator("list_channels")
+session = get_session()
+async with session.create_client("ivs") as client:
+    client: IVSClient
+    paginator: ListChannelsPaginator = client.get_paginator("list_channels")
 ```
 
 Boto3 documentation:
@@ -52,17 +54,19 @@ Arguments for `ListChannelsPaginator.paginate` method:
 ## ListPlaybackKeyPairsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ivs").get_paginator("list_playback_key_pairs")`.
+`session.create_client("ivs").get_paginator("list_playback_key_pairs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ivs.paginator import ListPlaybackKeyPairsPaginator
 
-def get_list_playback_key_pairs_paginator() -> ListPlaybackKeyPairsPaginator:
-    return Session().create_client("ivs").get_paginator("list_playback_key_pairs")
+session = get_session()
+async with session.create_client("ivs") as client:
+    client: IVSClient
+    paginator: ListPlaybackKeyPairsPaginator = client.get_paginator("list_playback_key_pairs")
 ```
 
 Boto3 documentation:
@@ -81,17 +85,19 @@ Arguments for `ListPlaybackKeyPairsPaginator.paginate` method:
 ## ListRecordingConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ivs").get_paginator("list_recording_configurations")`.
+`session.create_client("ivs").get_paginator("list_recording_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ivs.paginator import ListRecordingConfigurationsPaginator
 
-def get_list_recording_configurations_paginator() -> ListRecordingConfigurationsPaginator:
-    return Session().create_client("ivs").get_paginator("list_recording_configurations")
+session = get_session()
+async with session.create_client("ivs") as client:
+    client: IVSClient
+    paginator: ListRecordingConfigurationsPaginator = client.get_paginator("list_recording_configurations")
 ```
 
 Boto3 documentation:
@@ -110,17 +116,19 @@ Arguments for `ListRecordingConfigurationsPaginator.paginate` method:
 ## ListStreamKeysPaginator
 
 Type annotations for
-`aiobotocore.create_client("ivs").get_paginator("list_stream_keys")`.
+`session.create_client("ivs").get_paginator("list_stream_keys")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ivs.paginator import ListStreamKeysPaginator
 
-def get_list_stream_keys_paginator() -> ListStreamKeysPaginator:
-    return Session().create_client("ivs").get_paginator("list_stream_keys")
+session = get_session()
+async with session.create_client("ivs") as client:
+    client: IVSClient
+    paginator: ListStreamKeysPaginator = client.get_paginator("list_stream_keys")
 ```
 
 Boto3 documentation:
@@ -140,17 +148,19 @@ Arguments for `ListStreamKeysPaginator.paginate` method:
 ## ListStreamsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ivs").get_paginator("list_streams")`.
+`session.create_client("ivs").get_paginator("list_streams")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ivs.paginator import ListStreamsPaginator
 
-def get_list_streams_paginator() -> ListStreamsPaginator:
-    return Session().create_client("ivs").get_paginator("list_streams")
+session = get_session()
+async with session.create_client("ivs") as client:
+    client: IVSClient
+    paginator: ListStreamsPaginator = client.get_paginator("list_streams")
 ```
 
 Boto3 documentation:

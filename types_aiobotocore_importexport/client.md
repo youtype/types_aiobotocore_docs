@@ -22,22 +22,25 @@ type annotations stubs module
     - [get_status](#get_status)
     - [list_jobs](#list_jobs)
     - [update_job](#update_job)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="importexportclient"></a>
 
 ## ImportExportClient
 
-Type annotations for `aiobotocore.create_client("importexport")`
+Type annotations for `session.create_client("importexport")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_importexport.client import ImportExportClient
 
-def get_importexport_client() -> ImportExportClient:
-    return Session().client("importexport")
+session = get_session()
+async with session.create_client("importexport") as client:
+    client: ImportExportClient
 ```
 
 Boto3 documentation:
@@ -91,8 +94,7 @@ Exceptions:
 
 ImportExportClient exceptions.
 
-Type annotations for `aiobotocore.create_client("importexport").exceptions`
-method.
+Type annotations for `session.create_client("importexport").exceptions` method.
 
 Boto3 documentation:
 [ImportExport.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/importexport.html#ImportExport.Client.exceptions)
@@ -105,19 +107,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("importexport").can_paginate`
+Type annotations for `session.create_client("importexport").can_paginate`
 method.
 
 Boto3 documentation:
 [ImportExport.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/importexport.html#ImportExport.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_job"></a>
 
@@ -125,8 +125,7 @@ Returns a `Coroutine` for `bool`.
 
 This operation cancels a specified job.
 
-Type annotations for `aiobotocore.create_client("importexport").cancel_job`
-method.
+Type annotations for `session.create_client("importexport").cancel_job` method.
 
 Boto3 documentation:
 [ImportExport.Client.cancel_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/importexport.html#ImportExport.Client.cancel_job)
@@ -151,8 +150,7 @@ Returns a `Coroutine` for
 This operation initiates the process of scheduling an upload or download of
 your data.
 
-Type annotations for `aiobotocore.create_client("importexport").create_job`
-method.
+Type annotations for `session.create_client("importexport").create_job` method.
 
 Boto3 documentation:
 [ImportExport.Client.create_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/importexport.html#ImportExport.Client.create_job)
@@ -180,7 +178,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("importexport").generate_presigned_url` method.
+`session.create_client("importexport").generate_presigned_url` method.
 
 Boto3 documentation:
 [ImportExport.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/importexport.html#ImportExport.Client.generate_presigned_url)
@@ -204,8 +202,8 @@ Returns a `Coroutine` for `str`.
 This operation generates a pre-paid UPS shipping label that you will use to
 ship your device to AWS for processing.
 
-Type annotations for
-`aiobotocore.create_client("importexport").get_shipping_label` method.
+Type annotations for `session.create_client("importexport").get_shipping_label`
+method.
 
 Boto3 documentation:
 [ImportExport.Client.get_shipping_label](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/importexport.html#ImportExport.Client.get_shipping_label)
@@ -242,8 +240,7 @@ This operation returns information about a job, including where the job is in
 the processing pipeline, the status of the results, and the signature value
 associated with the job.
 
-Type annotations for `aiobotocore.create_client("importexport").get_status`
-method.
+Type annotations for `session.create_client("importexport").get_status` method.
 
 Boto3 documentation:
 [ImportExport.Client.get_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/importexport.html#ImportExport.Client.get_status)
@@ -267,8 +264,7 @@ Returns a `Coroutine` for
 
 This operation returns the jobs associated with the requester.
 
-Type annotations for `aiobotocore.create_client("importexport").list_jobs`
-method.
+Type annotations for `session.create_client("importexport").list_jobs` method.
 
 Boto3 documentation:
 [ImportExport.Client.list_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/importexport.html#ImportExport.Client.list_jobs)
@@ -294,8 +290,7 @@ Returns a `Coroutine` for
 You use this operation to change the parameters specified in the original
 manifest file by supplying a new manifest file.
 
-Type annotations for `aiobotocore.create_client("importexport").update_job`
-method.
+Type annotations for `session.create_client("importexport").update_job` method.
 
 Boto3 documentation:
 [ImportExport.Client.update_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/importexport.html#ImportExport.Client.update_job)
@@ -316,11 +311,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateJobOutputTypeDef](./type_defs.md#updatejoboutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("importexport").__aenter__` method.
+
+Boto3 documentation:
+[ImportExport.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/importexport.html#ImportExport.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ImportExportClient](#importexportclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("importexport").__aexit__` method.
+
+Boto3 documentation:
+[ImportExport.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/importexport.html#ImportExport.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("importexport").get_paginator`
+Type annotations for `session.create_client("importexport").get_paginator`
 method with overloads.
 
 - `client.get_paginator("list_jobs")` ->

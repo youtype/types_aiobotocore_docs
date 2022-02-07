@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[personalize-events]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[personalize-events]'
+
+# standalone installation
 pip install types-aiobotocore-personalize-events
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-personalize-events
 
 ## PersonalizeEventsClient
 
-Type annotations for `aiobotocore.create_client("personalize-events")` as
+Type annotations for `session.create_client("personalize-events")` as
 [PersonalizeEventsClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_personalize_events.client import PersonalizeEventsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [exceptions](./client.md#exceptions)
 - [generate_presigned_url](./client.md#generate_presigned_url)

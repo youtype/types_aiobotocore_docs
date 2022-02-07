@@ -68,6 +68,8 @@ type annotations stubs module
     - [update_service](#update_service)
     - [update_service_primary_task_set](#update_service_primary_task_set)
     - [update_task_set](#update_task_set)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -75,16 +77,17 @@ type annotations stubs module
 
 ## ECSClient
 
-Type annotations for `aiobotocore.create_client("ecs")`
+Type annotations for `session.create_client("ecs")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_ecs.client import ECSClient
 
-def get_ecs_client() -> ECSClient:
-    return Session().client("ecs")
+session = get_session()
+async with session.create_client("ecs") as client:
+    client: ECSClient
 ```
 
 Boto3 documentation:
@@ -142,7 +145,7 @@ Exceptions:
 
 ECSClient exceptions.
 
-Type annotations for `aiobotocore.create_client("ecs").exceptions` method.
+Type annotations for `session.create_client("ecs").exceptions` method.
 
 Boto3 documentation:
 [ECS.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.exceptions)
@@ -155,18 +158,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("ecs").can_paginate` method.
+Type annotations for `session.create_client("ecs").can_paginate` method.
 
 Boto3 documentation:
 [ECS.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_capacity_provider"></a>
 
@@ -174,8 +175,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates a new capacity provider.
 
-Type annotations for
-`aiobotocore.create_client("ecs").create_capacity_provider` method.
+Type annotations for `session.create_client("ecs").create_capacity_provider`
+method.
 
 Boto3 documentation:
 [ECS.Client.create_capacity_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.create_capacity_provider)
@@ -203,7 +204,7 @@ Returns a `Coroutine` for
 
 Creates a new Amazon ECS cluster.
 
-Type annotations for `aiobotocore.create_client("ecs").create_cluster` method.
+Type annotations for `session.create_client("ecs").create_cluster` method.
 
 Boto3 documentation:
 [ECS.Client.create_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.create_cluster)
@@ -235,7 +236,7 @@ Returns a `Coroutine` for
 Runs and maintains your desired number of tasks from a specified task
 definition.
 
-Type annotations for `aiobotocore.create_client("ecs").create_service` method.
+Type annotations for `session.create_client("ecs").create_service` method.
 
 Boto3 documentation:
 [ECS.Client.create_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.create_service)
@@ -288,7 +289,7 @@ Returns a `Coroutine` for
 
 Create a task set in the specified cluster and service.
 
-Type annotations for `aiobotocore.create_client("ecs").create_task_set` method.
+Type annotations for `session.create_client("ecs").create_task_set` method.
 
 Boto3 documentation:
 [ECS.Client.create_task_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.create_task_set)
@@ -328,7 +329,7 @@ Returns a `Coroutine` for
 Disables an account setting for a specified IAM user, IAM role, or the root
 user for an account.
 
-Type annotations for `aiobotocore.create_client("ecs").delete_account_setting`
+Type annotations for `session.create_client("ecs").delete_account_setting`
 method.
 
 Boto3 documentation:
@@ -354,8 +355,7 @@ Returns a `Coroutine` for
 
 Deletes one or more custom attributes from an Amazon ECS resource.
 
-Type annotations for `aiobotocore.create_client("ecs").delete_attributes`
-method.
+Type annotations for `session.create_client("ecs").delete_attributes` method.
 
 Boto3 documentation:
 [ECS.Client.delete_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.delete_attributes)
@@ -381,8 +381,8 @@ Returns a `Coroutine` for
 
 Deletes the specified capacity provider.
 
-Type annotations for
-`aiobotocore.create_client("ecs").delete_capacity_provider` method.
+Type annotations for `session.create_client("ecs").delete_capacity_provider`
+method.
 
 Boto3 documentation:
 [ECS.Client.delete_capacity_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.delete_capacity_provider)
@@ -406,7 +406,7 @@ Returns a `Coroutine` for
 
 Deletes the specified cluster.
 
-Type annotations for `aiobotocore.create_client("ecs").delete_cluster` method.
+Type annotations for `session.create_client("ecs").delete_cluster` method.
 
 Boto3 documentation:
 [ECS.Client.delete_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.delete_cluster)
@@ -429,7 +429,7 @@ Returns a `Coroutine` for
 
 Deletes a specified service within a cluster.
 
-Type annotations for `aiobotocore.create_client("ecs").delete_service` method.
+Type annotations for `session.create_client("ecs").delete_service` method.
 
 Boto3 documentation:
 [ECS.Client.delete_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.delete_service)
@@ -454,7 +454,7 @@ Returns a `Coroutine` for
 
 Deletes a specified task set within a service.
 
-Type annotations for `aiobotocore.create_client("ecs").delete_task_set` method.
+Type annotations for `session.create_client("ecs").delete_task_set` method.
 
 Boto3 documentation:
 [ECS.Client.delete_task_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.delete_task_set)
@@ -481,7 +481,7 @@ Returns a `Coroutine` for
 Deregisters an Amazon ECS container instance from the specified cluster.
 
 Type annotations for
-`aiobotocore.create_client("ecs").deregister_container_instance` method.
+`session.create_client("ecs").deregister_container_instance` method.
 
 Boto3 documentation:
 [ECS.Client.deregister_container_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.deregister_container_instance)
@@ -507,8 +507,8 @@ Returns a `Coroutine` for
 
 Deregisters the specified task definition by family and revision.
 
-Type annotations for
-`aiobotocore.create_client("ecs").deregister_task_definition` method.
+Type annotations for `session.create_client("ecs").deregister_task_definition`
+method.
 
 Boto3 documentation:
 [ECS.Client.deregister_task_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.deregister_task_definition)
@@ -532,8 +532,8 @@ Returns a `Coroutine` for
 
 Describes one or more of your capacity providers.
 
-Type annotations for
-`aiobotocore.create_client("ecs").describe_capacity_providers` method.
+Type annotations for `session.create_client("ecs").describe_capacity_providers`
+method.
 
 Boto3 documentation:
 [ECS.Client.describe_capacity_providers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.describe_capacity_providers)
@@ -561,8 +561,7 @@ Returns a `Coroutine` for
 
 Describes one or more of your clusters.
 
-Type annotations for `aiobotocore.create_client("ecs").describe_clusters`
-method.
+Type annotations for `session.create_client("ecs").describe_clusters` method.
 
 Boto3 documentation:
 [ECS.Client.describe_clusters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.describe_clusters)
@@ -587,7 +586,7 @@ Returns a `Coroutine` for
 Describes one or more container instances.
 
 Type annotations for
-`aiobotocore.create_client("ecs").describe_container_instances` method.
+`session.create_client("ecs").describe_container_instances` method.
 
 Boto3 documentation:
 [ECS.Client.describe_container_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.describe_container_instances)
@@ -614,8 +613,7 @@ Returns a `Coroutine` for
 
 Describes the specified services running in your cluster.
 
-Type annotations for `aiobotocore.create_client("ecs").describe_services`
-method.
+Type annotations for `session.create_client("ecs").describe_services` method.
 
 Boto3 documentation:
 [ECS.Client.describe_services](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.describe_services)
@@ -641,8 +639,8 @@ Returns a `Coroutine` for
 
 Describes a task definition.
 
-Type annotations for
-`aiobotocore.create_client("ecs").describe_task_definition` method.
+Type annotations for `session.create_client("ecs").describe_task_definition`
+method.
 
 Boto3 documentation:
 [ECS.Client.describe_task_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.describe_task_definition)
@@ -668,8 +666,7 @@ Returns a `Coroutine` for
 
 Describes the task sets in the specified cluster and service.
 
-Type annotations for `aiobotocore.create_client("ecs").describe_task_sets`
-method.
+Type annotations for `session.create_client("ecs").describe_task_sets` method.
 
 Boto3 documentation:
 [ECS.Client.describe_task_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.describe_task_sets)
@@ -697,7 +694,7 @@ Returns a `Coroutine` for
 
 Describes a specified task or tasks.
 
-Type annotations for `aiobotocore.create_client("ecs").describe_tasks` method.
+Type annotations for `session.create_client("ecs").describe_tasks` method.
 
 Boto3 documentation:
 [ECS.Client.describe_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.describe_tasks)
@@ -723,7 +720,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("ecs").discover_poll_endpoint`
+Type annotations for `session.create_client("ecs").discover_poll_endpoint`
 method.
 
 Boto3 documentation:
@@ -749,7 +746,7 @@ Returns a `Coroutine` for
 
 Runs a command remotely on a container within a task.
 
-Type annotations for `aiobotocore.create_client("ecs").execute_command` method.
+Type annotations for `session.create_client("ecs").execute_command` method.
 
 Boto3 documentation:
 [ECS.Client.execute_command](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.execute_command)
@@ -776,7 +773,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("ecs").generate_presigned_url`
+Type annotations for `session.create_client("ecs").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -800,7 +797,7 @@ Returns a `Coroutine` for `str`.
 
 Lists the account settings for a specified principal.
 
-Type annotations for `aiobotocore.create_client("ecs").list_account_settings`
+Type annotations for `session.create_client("ecs").list_account_settings`
 method.
 
 Boto3 documentation:
@@ -831,7 +828,7 @@ Returns a `Coroutine` for
 Lists the attributes for Amazon ECS resources within a specified target type
 and cluster.
 
-Type annotations for `aiobotocore.create_client("ecs").list_attributes` method.
+Type annotations for `session.create_client("ecs").list_attributes` method.
 
 Boto3 documentation:
 [ECS.Client.list_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.list_attributes)
@@ -860,7 +857,7 @@ Returns a `Coroutine` for
 
 Returns a list of existing clusters.
 
-Type annotations for `aiobotocore.create_client("ecs").list_clusters` method.
+Type annotations for `session.create_client("ecs").list_clusters` method.
 
 Boto3 documentation:
 [ECS.Client.list_clusters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.list_clusters)
@@ -884,8 +881,8 @@ Returns a `Coroutine` for
 
 Returns a list of container instances in a specified cluster.
 
-Type annotations for
-`aiobotocore.create_client("ecs").list_container_instances` method.
+Type annotations for `session.create_client("ecs").list_container_instances`
+method.
 
 Boto3 documentation:
 [ECS.Client.list_container_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.list_container_instances)
@@ -914,7 +911,7 @@ Returns a `Coroutine` for
 
 Returns a list of services.
 
-Type annotations for `aiobotocore.create_client("ecs").list_services` method.
+Type annotations for `session.create_client("ecs").list_services` method.
 
 Boto3 documentation:
 [ECS.Client.list_services](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.list_services)
@@ -942,7 +939,7 @@ Returns a `Coroutine` for
 
 List the tags for an Amazon ECS resource.
 
-Type annotations for `aiobotocore.create_client("ecs").list_tags_for_resource`
+Type annotations for `session.create_client("ecs").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -968,7 +965,7 @@ Returns a `Coroutine` for
 Returns a list of task definition families that are registered to your account.
 
 Type annotations for
-`aiobotocore.create_client("ecs").list_task_definition_families` method.
+`session.create_client("ecs").list_task_definition_families` method.
 
 Boto3 documentation:
 [ECS.Client.list_task_definition_families](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.list_task_definition_families)
@@ -996,7 +993,7 @@ Returns a `Coroutine` for
 
 Returns a list of task definitions that are registered to your account.
 
-Type annotations for `aiobotocore.create_client("ecs").list_task_definitions`
+Type annotations for `session.create_client("ecs").list_task_definitions`
 method.
 
 Boto3 documentation:
@@ -1025,7 +1022,7 @@ Returns a `Coroutine` for
 
 Returns a list of tasks.
 
-Type annotations for `aiobotocore.create_client("ecs").list_tasks` method.
+Type annotations for `session.create_client("ecs").list_tasks` method.
 
 Boto3 documentation:
 [ECS.Client.list_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.list_tasks)
@@ -1056,8 +1053,7 @@ Returns a `Coroutine` for
 
 Modifies an account setting.
 
-Type annotations for `aiobotocore.create_client("ecs").put_account_setting`
-method.
+Type annotations for `session.create_client("ecs").put_account_setting` method.
 
 Boto3 documentation:
 [ECS.Client.put_account_setting](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.put_account_setting)
@@ -1084,8 +1080,8 @@ Returns a `Coroutine` for
 Modifies an account setting for all IAM users on an account for whom no
 individual account setting has been specified.
 
-Type annotations for
-`aiobotocore.create_client("ecs").put_account_setting_default` method.
+Type annotations for `session.create_client("ecs").put_account_setting_default`
+method.
 
 Boto3 documentation:
 [ECS.Client.put_account_setting_default](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.put_account_setting_default)
@@ -1110,7 +1106,7 @@ Returns a `Coroutine` for
 
 Create or update an attribute on an Amazon ECS resource.
 
-Type annotations for `aiobotocore.create_client("ecs").put_attributes` method.
+Type annotations for `session.create_client("ecs").put_attributes` method.
 
 Boto3 documentation:
 [ECS.Client.put_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.put_attributes)
@@ -1138,7 +1134,7 @@ Modifies the available capacity providers and the default capacity provider
 strategy for a cluster.
 
 Type annotations for
-`aiobotocore.create_client("ecs").put_cluster_capacity_providers` method.
+`session.create_client("ecs").put_cluster_capacity_providers` method.
 
 Boto3 documentation:
 [ECS.Client.put_cluster_capacity_providers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.put_cluster_capacity_providers)
@@ -1166,8 +1162,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("ecs").register_container_instance` method.
+Type annotations for `session.create_client("ecs").register_container_instance`
+method.
 
 Boto3 documentation:
 [ECS.Client.register_container_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.register_container_instance)
@@ -1203,8 +1199,8 @@ Returns a `Coroutine` for
 Registers a new task definition from the supplied `family` and
 `containerDefinitions`.
 
-Type annotations for
-`aiobotocore.create_client("ecs").register_task_definition` method.
+Type annotations for `session.create_client("ecs").register_task_definition`
+method.
 
 Boto3 documentation:
 [ECS.Client.register_task_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.register_task_definition)
@@ -1252,7 +1248,7 @@ Returns a `Coroutine` for
 
 Starts a new task using the specified task definition.
 
-Type annotations for `aiobotocore.create_client("ecs").run_task` method.
+Type annotations for `session.create_client("ecs").run_task` method.
 
 Boto3 documentation:
 [ECS.Client.run_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.run_task)
@@ -1296,7 +1292,7 @@ Returns a `Coroutine` for
 Starts a new task from the specified task definition on the specified container
 instance or instances.
 
-Type annotations for `aiobotocore.create_client("ecs").start_task` method.
+Type annotations for `session.create_client("ecs").start_task` method.
 
 Boto3 documentation:
 [ECS.Client.start_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.start_task)
@@ -1331,7 +1327,7 @@ Returns a `Coroutine` for
 
 Stops a running task.
 
-Type annotations for `aiobotocore.create_client("ecs").stop_task` method.
+Type annotations for `session.create_client("ecs").stop_task` method.
 
 Boto3 documentation:
 [ECS.Client.stop_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.stop_task)
@@ -1357,7 +1353,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("ecs").submit_attachment_state_changes` method.
+`session.create_client("ecs").submit_attachment_state_changes` method.
 
 Boto3 documentation:
 [ECS.Client.submit_attachment_state_changes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.submit_attachment_state_changes)
@@ -1385,7 +1381,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("ecs").submit_container_state_change` method.
+`session.create_client("ecs").submit_container_state_change` method.
 
 Boto3 documentation:
 [ECS.Client.submit_container_state_change](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.submit_container_state_change)
@@ -1417,8 +1413,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("ecs").submit_task_state_change` method.
+Type annotations for `session.create_client("ecs").submit_task_state_change`
+method.
 
 Boto3 documentation:
 [ECS.Client.submit_task_state_change](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.submit_task_state_change)
@@ -1454,7 +1450,7 @@ Returns a `Coroutine` for
 
 Associates the specified tags to a resource with the specified `resourceArn`.
 
-Type annotations for `aiobotocore.create_client("ecs").tag_resource` method.
+Type annotations for `session.create_client("ecs").tag_resource` method.
 
 Boto3 documentation:
 [ECS.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.tag_resource)
@@ -1477,7 +1473,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes specified tags from a resource.
 
-Type annotations for `aiobotocore.create_client("ecs").untag_resource` method.
+Type annotations for `session.create_client("ecs").untag_resource` method.
 
 Boto3 documentation:
 [ECS.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.untag_resource)
@@ -1500,8 +1496,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Modifies the parameters for a capacity provider.
 
-Type annotations for
-`aiobotocore.create_client("ecs").update_capacity_provider` method.
+Type annotations for `session.create_client("ecs").update_capacity_provider`
+method.
 
 Boto3 documentation:
 [ECS.Client.update_capacity_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.update_capacity_provider)
@@ -1528,7 +1524,7 @@ Returns a `Coroutine` for
 
 Updates the cluster.
 
-Type annotations for `aiobotocore.create_client("ecs").update_cluster` method.
+Type annotations for `session.create_client("ecs").update_cluster` method.
 
 Boto3 documentation:
 [ECS.Client.update_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.update_cluster)
@@ -1555,7 +1551,7 @@ Returns a `Coroutine` for
 
 Modifies the settings to use for a cluster.
 
-Type annotations for `aiobotocore.create_client("ecs").update_cluster_settings`
+Type annotations for `session.create_client("ecs").update_cluster_settings`
 method.
 
 Boto3 documentation:
@@ -1583,7 +1579,7 @@ Returns a `Coroutine` for
 
 Updates the Amazon ECS container agent on a specified container instance.
 
-Type annotations for `aiobotocore.create_client("ecs").update_container_agent`
+Type annotations for `session.create_client("ecs").update_container_agent`
 method.
 
 Boto3 documentation:
@@ -1610,7 +1606,7 @@ Returns a `Coroutine` for
 Modifies the status of an Amazon ECS container instance.
 
 Type annotations for
-`aiobotocore.create_client("ecs").update_container_instances_state` method.
+`session.create_client("ecs").update_container_instances_state` method.
 
 Boto3 documentation:
 [ECS.Client.update_container_instances_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.update_container_instances_state)
@@ -1638,7 +1634,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("ecs").update_service` method.
+Type annotations for `session.create_client("ecs").update_service` method.
 
 Boto3 documentation:
 [ECS.Client.update_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.update_service)
@@ -1679,7 +1675,7 @@ Returns a `Coroutine` for
 Modifies which task set in a service is the primary task set.
 
 Type annotations for
-`aiobotocore.create_client("ecs").update_service_primary_task_set` method.
+`session.create_client("ecs").update_service_primary_task_set` method.
 
 Boto3 documentation:
 [ECS.Client.update_service_primary_task_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.update_service_primary_task_set)
@@ -1705,7 +1701,7 @@ Returns a `Coroutine` for
 
 Modifies a task set.
 
-Type annotations for `aiobotocore.create_client("ecs").update_task_set` method.
+Type annotations for `session.create_client("ecs").update_task_set` method.
 
 Boto3 documentation:
 [ECS.Client.update_task_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.update_task_set)
@@ -1725,12 +1721,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateTaskSetResponseTypeDef](./type_defs.md#updatetasksetresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("ecs").__aenter__` method.
+
+Boto3 documentation:
+[ECS.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ECSClient](#ecsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("ecs").__aexit__` method.
+
+Boto3 documentation:
+[ECS.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("ecs").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("ecs").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_account_settings")` ->
   [ListAccountSettingsPaginator](./paginators.md#listaccountsettingspaginator)
@@ -1753,7 +1781,7 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("ecs").get_waiter` method with
+Type annotations for `session.create_client("ecs").get_waiter` method with
 overloads.
 
 - `client.get_waiter("services_inactive")` ->

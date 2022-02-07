@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[amplifyuibuilder]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[amplifyuibuilder]'
+
+# standalone installation
 pip install types-aiobotocore-amplifyuibuilder
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-amplifyuibuilder
 
 ## AmplifyUIBuilderClient
 
-Type annotations for `aiobotocore.create_client("amplifyuibuilder")` as
+Type annotations for `session.create_client("amplifyuibuilder")` as
 [AmplifyUIBuilderClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_amplifyuibuilder.client import AmplifyUIBuilderClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_component](./client.md#create_component)
 - [create_theme](./client.md#create_theme)
@@ -84,7 +90,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_amplifyuibuilder.paginators import ListComponentsPaginator, ...
+from types_aiobotocore_amplifyuibuilder.paginator import ListComponentsPaginator, ...
 ```
 
 - [ListComponentsPaginator](./paginators.md#listcomponentspaginator)

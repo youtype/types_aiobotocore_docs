@@ -31,21 +31,24 @@ type annotations stubs module
     - [update_database](#update_database)
     - [update_table](#update_table)
     - [write_records](#write_records)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="timestreamwriteclient"></a>
 
 ## TimestreamWriteClient
 
-Type annotations for `aiobotocore.create_client("timestream-write")`
+Type annotations for `session.create_client("timestream-write")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_timestream_write.client import TimestreamWriteClient
 
-def get_timestream-write_client() -> TimestreamWriteClient:
-    return Session().client("timestream-write")
+session = get_session()
+async with session.create_client("timestream-write") as client:
+    client: TimestreamWriteClient
 ```
 
 Boto3 documentation:
@@ -88,7 +91,7 @@ Exceptions:
 
 TimestreamWriteClient exceptions.
 
-Type annotations for `aiobotocore.create_client("timestream-write").exceptions`
+Type annotations for `session.create_client("timestream-write").exceptions`
 method.
 
 Boto3 documentation:
@@ -102,19 +105,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("timestream-write").can_paginate` method.
+Type annotations for `session.create_client("timestream-write").can_paginate`
+method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_database"></a>
 
@@ -123,7 +124,7 @@ Returns a `Coroutine` for `bool`.
 Creates a new Timestream database.
 
 Type annotations for
-`aiobotocore.create_client("timestream-write").create_database` method.
+`session.create_client("timestream-write").create_database` method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.create_database](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.create_database)
@@ -149,8 +150,8 @@ Returns a `Coroutine` for
 The CreateTable operation adds a new table to an existing database in your
 account.
 
-Type annotations for
-`aiobotocore.create_client("timestream-write").create_table` method.
+Type annotations for `session.create_client("timestream-write").create_table`
+method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.create_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.create_table)
@@ -180,7 +181,7 @@ Returns a `Coroutine` for
 Deletes a given Timestream database.
 
 Type annotations for
-`aiobotocore.create_client("timestream-write").delete_database` method.
+`session.create_client("timestream-write").delete_database` method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.delete_database](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.delete_database)
@@ -200,8 +201,8 @@ Keyword-only arguments:
 
 Deletes a given Timestream table.
 
-Type annotations for
-`aiobotocore.create_client("timestream-write").delete_table` method.
+Type annotations for `session.create_client("timestream-write").delete_table`
+method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.delete_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.delete_table)
@@ -225,7 +226,7 @@ the database was created, and the total number of tables found within the
 database.
 
 Type annotations for
-`aiobotocore.create_client("timestream-write").describe_database` method.
+`session.create_client("timestream-write").describe_database` method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.describe_database](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.describe_database)
@@ -250,7 +251,7 @@ DescribeEndpoints returns a list of available endpoints to make Timestream API
 calls against.
 
 Type annotations for
-`aiobotocore.create_client("timestream-write").describe_endpoints` method.
+`session.create_client("timestream-write").describe_endpoints` method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.describe_endpoints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.describe_endpoints)
@@ -268,8 +269,8 @@ Returns a `Coroutine` for
 Returns information about the table, including the table name, database name,
 retention duration of the memory store and the magnetic store.
 
-Type annotations for
-`aiobotocore.create_client("timestream-write").describe_table` method.
+Type annotations for `session.create_client("timestream-write").describe_table`
+method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.describe_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.describe_table)
@@ -294,7 +295,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("timestream-write").generate_presigned_url` method.
+`session.create_client("timestream-write").generate_presigned_url` method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.generate_presigned_url)
@@ -317,8 +318,8 @@ Returns a `Coroutine` for `str`.
 
 Returns a list of your Timestream databases.
 
-Type annotations for
-`aiobotocore.create_client("timestream-write").list_databases` method.
+Type annotations for `session.create_client("timestream-write").list_databases`
+method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.list_databases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.list_databases)
@@ -343,8 +344,8 @@ Returns a `Coroutine` for
 A list of tables, along with the name, status and retention properties of each
 table.
 
-Type annotations for
-`aiobotocore.create_client("timestream-write").list_tables` method.
+Type annotations for `session.create_client("timestream-write").list_tables`
+method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.list_tables](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.list_tables)
@@ -370,7 +371,7 @@ Returns a `Coroutine` for
 List all tags on a Timestream resource.
 
 Type annotations for
-`aiobotocore.create_client("timestream-write").list_tags_for_resource` method.
+`session.create_client("timestream-write").list_tags_for_resource` method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.list_tags_for_resource)
@@ -394,8 +395,8 @@ Returns a `Coroutine` for
 
 Associate a set of tags with a Timestream resource.
 
-Type annotations for
-`aiobotocore.create_client("timestream-write").tag_resource` method.
+Type annotations for `session.create_client("timestream-write").tag_resource`
+method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.tag_resource)
@@ -418,8 +419,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the association of tags from a Timestream resource.
 
-Type annotations for
-`aiobotocore.create_client("timestream-write").untag_resource` method.
+Type annotations for `session.create_client("timestream-write").untag_resource`
+method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.untag_resource)
@@ -443,7 +444,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Modifies the KMS key for an existing database.
 
 Type annotations for
-`aiobotocore.create_client("timestream-write").update_database` method.
+`session.create_client("timestream-write").update_database` method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.update_database](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.update_database)
@@ -468,8 +469,8 @@ Returns a `Coroutine` for
 Modifies the retention duration of the memory store and magnetic store for your
 Timestream table.
 
-Type annotations for
-`aiobotocore.create_client("timestream-write").update_table` method.
+Type annotations for `session.create_client("timestream-write").update_table`
+method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.update_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.update_table)
@@ -498,8 +499,8 @@ Returns a `Coroutine` for
 The WriteRecords operation enables you to write your time series data into
 Timestream.
 
-Type annotations for
-`aiobotocore.create_client("timestream-write").write_records` method.
+Type annotations for `session.create_client("timestream-write").write_records`
+method.
 
 Boto3 documentation:
 [TimestreamWrite.Client.write_records](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.write_records)
@@ -519,3 +520,37 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [WriteRecordsResponseTypeDef](./type_defs.md#writerecordsresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("timestream-write").__aenter__`
+method.
+
+Boto3 documentation:
+[TimestreamWrite.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [TimestreamWriteClient](#timestreamwriteclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("timestream-write").__aexit__`
+method.
+
+Boto3 documentation:
+[TimestreamWrite.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-write.html#TimestreamWrite.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

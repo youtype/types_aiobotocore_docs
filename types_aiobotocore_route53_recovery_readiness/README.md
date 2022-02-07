@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[route53-recovery-readiness]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[route53-recovery-readiness]'
+
+# standalone installation
 pip install types-aiobotocore-route53-recovery-readiness
 ```
 
@@ -29,8 +33,8 @@ pip install types-aiobotocore-route53-recovery-readiness
 
 ## Route53RecoveryReadinessClient
 
-Type annotations for `aiobotocore.create_client("route53-recovery-readiness")`
-as [Route53RecoveryReadinessClient](./client.md)
+Type annotations for `session.create_client("route53-recovery-readiness")` as
+[Route53RecoveryReadinessClient](./client.md)
 
 Can be used directly:
 
@@ -42,6 +46,8 @@ from types_aiobotocore_route53_recovery_readiness.client import Route53RecoveryR
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_cell](./client.md#create_cell)
 - [create_cross_account_authorization](./client.md#create_cross_account_authorization)
@@ -103,7 +109,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_route53_recovery_readiness.paginators import GetCellReadinessSummaryPaginator, ...
+from types_aiobotocore_route53_recovery_readiness.paginator import GetCellReadinessSummaryPaginator, ...
 ```
 
 - [GetCellReadinessSummaryPaginator](./paginators.md#getcellreadinesssummarypaginator)

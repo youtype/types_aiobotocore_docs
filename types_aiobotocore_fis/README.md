@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[fis]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[fis]'
+
+# standalone installation
 pip install types-aiobotocore-fis
 ```
 
@@ -28,8 +32,7 @@ pip install types-aiobotocore-fis
 
 ## FISClient
 
-Type annotations for `aiobotocore.create_client("fis")` as
-[FISClient](./client.md)
+Type annotations for `session.create_client("fis")` as [FISClient](./client.md)
 
 Can be used directly:
 
@@ -41,6 +44,8 @@ from types_aiobotocore_fis.client import FISClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_experiment_template](./client.md#create_experiment_template)
 - [delete_experiment_template](./client.md#delete_experiment_template)

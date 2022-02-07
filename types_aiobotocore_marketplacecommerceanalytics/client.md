@@ -19,22 +19,24 @@ type annotations stubs module
     - [generate_data_set](#generate_data_set)
     - [generate_presigned_url](#generate_presigned_url)
     - [start_support_data_export](#start_support_data_export)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="marketplacecommerceanalyticsclient"></a>
 
 ## MarketplaceCommerceAnalyticsClient
 
-Type annotations for
-`aiobotocore.create_client("marketplacecommerceanalytics")`
+Type annotations for `session.create_client("marketplacecommerceanalytics")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_marketplacecommerceanalytics.client import MarketplaceCommerceAnalyticsClient
 
-def get_marketplacecommerceanalytics_client() -> MarketplaceCommerceAnalyticsClient:
-    return Session().client("marketplacecommerceanalytics")
+session = get_session()
+async with session.create_client("marketplacecommerceanalytics") as client:
+    client: MarketplaceCommerceAnalyticsClient
 ```
 
 Boto3 documentation:
@@ -70,7 +72,7 @@ Exceptions:
 MarketplaceCommerceAnalyticsClient exceptions.
 
 Type annotations for
-`aiobotocore.create_client("marketplacecommerceanalytics").exceptions` method.
+`session.create_client("marketplacecommerceanalytics").exceptions` method.
 
 Boto3 documentation:
 [MarketplaceCommerceAnalytics.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplacecommerceanalytics.html#MarketplaceCommerceAnalytics.Client.exceptions)
@@ -84,19 +86,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("marketplacecommerceanalytics").can_paginate`
-method.
+`session.create_client("marketplacecommerceanalytics").can_paginate` method.
 
 Boto3 documentation:
 [MarketplaceCommerceAnalytics.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplacecommerceanalytics.html#MarketplaceCommerceAnalytics.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_data_set"></a>
 
@@ -107,7 +106,7 @@ the requested data set to the specified S3 bucket and notifies the specified
 SNS topic once the data is available.
 
 Type annotations for
-`aiobotocore.create_client("marketplacecommerceanalytics").generate_data_set`
+`session.create_client("marketplacecommerceanalytics").generate_data_set`
 method.
 
 Boto3 documentation:
@@ -138,7 +137,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("marketplacecommerceanalytics").generate_presigned_url`
+`session.create_client("marketplacecommerceanalytics").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -165,7 +164,7 @@ customer support data to the specified S3 bucket and notifies the specified SNS
 topic once the data is available.
 
 Type annotations for
-`aiobotocore.create_client("marketplacecommerceanalytics").start_support_data_export`
+`session.create_client("marketplacecommerceanalytics").start_support_data_export`
 method.
 
 Boto3 documentation:
@@ -190,3 +189,38 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [StartSupportDataExportResultTypeDef](./type_defs.md#startsupportdataexportresulttypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for
+`session.create_client("marketplacecommerceanalytics").__aenter__` method.
+
+Boto3 documentation:
+[MarketplaceCommerceAnalytics.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplacecommerceanalytics.html#MarketplaceCommerceAnalytics.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[MarketplaceCommerceAnalyticsClient](#marketplacecommerceanalyticsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for
+`session.create_client("marketplacecommerceanalytics").__aexit__` method.
+
+Boto3 documentation:
+[MarketplaceCommerceAnalytics.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplacecommerceanalytics.html#MarketplaceCommerceAnalytics.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

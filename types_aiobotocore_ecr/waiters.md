@@ -18,7 +18,7 @@ type annotations stubs module
 ## ImageScanCompleteWaiter
 
 Type annotations for
-`aiobotocore.create_client("ecr").get_waiter("image_scan_complete")`.
+`session.create_client("ecr").get_waiter("image_scan_complete")`.
 
 Can be used directly:
 
@@ -28,7 +28,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ecr.waiter import ImageScanCompleteWaiter
 
 def get_image_scan_complete_waiter() -> ImageScanCompleteWaiter:
-    return Session().create_client("ecr").get_waiter("image_scan_complete")
+    return Session().client("ecr").get_waiter("image_scan_complete")
 ```
 
 Boto3 documentation:
@@ -49,7 +49,7 @@ Arguments for `ImageScanCompleteWaiter.wait` method:
 ## LifecyclePolicyPreviewCompleteWaiter
 
 Type annotations for
-`aiobotocore.create_client("ecr").get_waiter("lifecycle_policy_preview_complete")`.
+`session.create_client("ecr").get_waiter("lifecycle_policy_preview_complete")`.
 
 Can be used directly:
 
@@ -59,7 +59,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ecr.waiter import LifecyclePolicyPreviewCompleteWaiter
 
 def get_lifecycle_policy_preview_complete_waiter() -> LifecyclePolicyPreviewCompleteWaiter:
-    return Session().create_client("ecr").get_waiter("lifecycle_policy_preview_complete")
+    return Session().client("ecr").get_waiter("lifecycle_policy_preview_complete")
 ```
 
 Boto3 documentation:

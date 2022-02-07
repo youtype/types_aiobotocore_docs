@@ -55,21 +55,24 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_app](#update_app)
     - [update_resiliency_policy](#update_resiliency_policy)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="resiliencehubclient"></a>
 
 ## ResilienceHubClient
 
-Type annotations for `aiobotocore.create_client("resiliencehub")`
+Type annotations for `session.create_client("resiliencehub")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_resiliencehub.client import ResilienceHubClient
 
-def get_resiliencehub_client() -> ResilienceHubClient:
-    return Session().client("resiliencehub")
+session = get_session()
+async with session.create_client("resiliencehub") as client:
+    client: ResilienceHubClient
 ```
 
 Boto3 documentation:
@@ -110,7 +113,7 @@ Exceptions:
 
 ResilienceHubClient exceptions.
 
-Type annotations for `aiobotocore.create_client("resiliencehub").exceptions`
+Type annotations for `session.create_client("resiliencehub").exceptions`
 method.
 
 Boto3 documentation:
@@ -125,7 +128,7 @@ Returns [Exceptions](#exceptions).
 Adds the resource mapping for the draft application version.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").add_draft_app_version_resource_mappings`
+`session.create_client("resiliencehub").add_draft_app_version_resource_mappings`
 method.
 
 Boto3 documentation:
@@ -153,19 +156,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("resiliencehub").can_paginate`
+Type annotations for `session.create_client("resiliencehub").can_paginate`
 method.
 
 Boto3 documentation:
 [ResilienceHub.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_app"></a>
 
@@ -173,7 +174,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a Resilience Hub application.
 
-Type annotations for `aiobotocore.create_client("resiliencehub").create_app`
+Type annotations for `session.create_client("resiliencehub").create_app`
 method.
 
 Boto3 documentation:
@@ -202,8 +203,7 @@ Returns a `Coroutine` for
 Creates a new recommendation template.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").create_recommendation_template`
-method.
+`session.create_client("resiliencehub").create_recommendation_template` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.create_recommendation_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.create_recommendation_template)
@@ -236,7 +236,7 @@ Returns a `Coroutine` for
 Creates a resiliency policy for an application.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").create_resiliency_policy` method.
+`session.create_client("resiliencehub").create_resiliency_policy` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.create_resiliency_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.create_resiliency_policy)
@@ -269,7 +269,7 @@ Returns a `Coroutine` for
 
 Deletes an AWS Resilience Hub application.
 
-Type annotations for `aiobotocore.create_client("resiliencehub").delete_app`
+Type annotations for `session.create_client("resiliencehub").delete_app`
 method.
 
 Boto3 documentation:
@@ -296,7 +296,7 @@ Returns a `Coroutine` for
 Deletes an AWS Resilience Hub application assessment.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").delete_app_assessment` method.
+`session.create_client("resiliencehub").delete_app_assessment` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.delete_app_assessment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.delete_app_assessment)
@@ -322,8 +322,7 @@ Returns a `Coroutine` for
 Deletes a recommendation template.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").delete_recommendation_template`
-method.
+`session.create_client("resiliencehub").delete_recommendation_template` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.delete_recommendation_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.delete_recommendation_template)
@@ -349,7 +348,7 @@ Returns a `Coroutine` for
 Deletes a resiliency policy.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").delete_resiliency_policy` method.
+`session.create_client("resiliencehub").delete_resiliency_policy` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.delete_resiliency_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.delete_resiliency_policy)
@@ -374,7 +373,7 @@ Returns a `Coroutine` for
 
 Describes an AWS Resilience Hub application.
 
-Type annotations for `aiobotocore.create_client("resiliencehub").describe_app`
+Type annotations for `session.create_client("resiliencehub").describe_app`
 method.
 
 Boto3 documentation:
@@ -399,7 +398,7 @@ Returns a `Coroutine` for
 Describes an assessment for an AWS Resilience Hub application.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").describe_app_assessment` method.
+`session.create_client("resiliencehub").describe_app_assessment` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.describe_app_assessment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.describe_app_assessment)
@@ -425,7 +424,7 @@ Returns the resolution status for the specified resolution identifier for an
 application version.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").describe_app_version_resources_resolution_status`
+`session.create_client("resiliencehub").describe_app_version_resources_resolution_status`
 method.
 
 Boto3 documentation:
@@ -455,8 +454,7 @@ Describes details about an AWS Resilience Hub See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionTemplate).
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").describe_app_version_template`
-method.
+`session.create_client("resiliencehub").describe_app_version_template` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.describe_app_version_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.describe_app_version_template)
@@ -482,7 +480,7 @@ Returns a `Coroutine` for
 Describes the status of importing resources to an application version.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").describe_draft_app_version_resources_import_status`
+`session.create_client("resiliencehub").describe_draft_app_version_resources_import_status`
 method.
 
 Boto3 documentation:
@@ -509,7 +507,7 @@ Returns a `Coroutine` for
 Describes a specified resiliency policy for an AWS Resilience Hub application.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").describe_resiliency_policy` method.
+`session.create_client("resiliencehub").describe_resiliency_policy` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.describe_resiliency_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.describe_resiliency_policy)
@@ -534,7 +532,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").generate_presigned_url` method.
+`session.create_client("resiliencehub").generate_presigned_url` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.generate_presigned_url)
@@ -559,7 +557,7 @@ Imports resources from sources such as a CloudFormation stack, resource-groups,
 or application registry app to a draft application version.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").import_resources_to_draft_app_version`
+`session.create_client("resiliencehub").import_resources_to_draft_app_version`
 method.
 
 Boto3 documentation:
@@ -586,7 +584,7 @@ Returns a `Coroutine` for
 Lists the alarm recommendations for a AWS Resilience Hub application.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").list_alarm_recommendations` method.
+`session.create_client("resiliencehub").list_alarm_recommendations` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.list_alarm_recommendations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.list_alarm_recommendations)
@@ -613,7 +611,7 @@ Returns a `Coroutine` for
 Lists the assessments for an AWS Resilience Hub application.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").list_app_assessments` method.
+`session.create_client("resiliencehub").list_app_assessments` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.list_app_assessments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.list_app_assessments)
@@ -647,8 +645,7 @@ Returns a `Coroutine` for
 Lists the compliances for an AWS Resilience Hub component.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").list_app_component_compliances`
-method.
+`session.create_client("resiliencehub").list_app_component_compliances` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.list_app_component_compliances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.list_app_component_compliances)
@@ -675,7 +672,7 @@ Returns a `Coroutine` for
 Lists the recommendations for an AWS Resilience Hub component.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").list_app_component_recommendations`
+`session.create_client("resiliencehub").list_app_component_recommendations`
 method.
 
 Boto3 documentation:
@@ -703,7 +700,7 @@ Returns a `Coroutine` for
 Lists how the resources in an application version are mapped/sourced from.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").list_app_version_resource_mappings`
+`session.create_client("resiliencehub").list_app_version_resource_mappings`
 method.
 
 Boto3 documentation:
@@ -732,7 +729,7 @@ Returns a `Coroutine` for
 Lists all the resources in an application version.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").list_app_version_resources` method.
+`session.create_client("resiliencehub").list_app_version_resources` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.list_app_version_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.list_app_version_resources)
@@ -760,8 +757,8 @@ Returns a `Coroutine` for
 
 Lists the different versions for the Resilience Hub applications.
 
-Type annotations for
-`aiobotocore.create_client("resiliencehub").list_app_versions` method.
+Type annotations for `session.create_client("resiliencehub").list_app_versions`
+method.
 
 Boto3 documentation:
 [ResilienceHub.Client.list_app_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.list_app_versions)
@@ -786,8 +783,7 @@ Returns a `Coroutine` for
 
 Lists your Resilience Hub applications.
 
-Type annotations for `aiobotocore.create_client("resiliencehub").list_apps`
-method.
+Type annotations for `session.create_client("resiliencehub").list_apps` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.list_apps](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.list_apps)
@@ -814,8 +810,7 @@ Returns a `Coroutine` for
 Lists the recommendation templates for the Resilience Hub applications.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").list_recommendation_templates`
-method.
+`session.create_client("resiliencehub").list_recommendation_templates` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.list_recommendation_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.list_recommendation_templates)
@@ -847,7 +842,7 @@ Returns a `Coroutine` for
 Lists the resiliency policies for the Resilience Hub applications.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").list_resiliency_policies` method.
+`session.create_client("resiliencehub").list_resiliency_policies` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.list_resiliency_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.list_resiliency_policies)
@@ -875,7 +870,7 @@ Lists the standard operating procedure (SOP) recommendations for the Resilience
 Hub applications.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").list_sop_recommendations` method.
+`session.create_client("resiliencehub").list_sop_recommendations` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.list_sop_recommendations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.list_sop_recommendations)
@@ -902,7 +897,7 @@ Returns a `Coroutine` for
 Lists the suggested resiliency policies for the Resilience Hub applications.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").list_suggested_resiliency_policies`
+`session.create_client("resiliencehub").list_suggested_resiliency_policies`
 method.
 
 Boto3 documentation:
@@ -929,7 +924,7 @@ Returns a `Coroutine` for
 Lists the tags for your resources in your Resilience Hub applications.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").list_tags_for_resource` method.
+`session.create_client("resiliencehub").list_tags_for_resource` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.list_tags_for_resource)
@@ -954,7 +949,7 @@ Returns a `Coroutine` for
 Lists the test recommendations for the Resilience Hub application.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").list_test_recommendations` method.
+`session.create_client("resiliencehub").list_test_recommendations` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.list_test_recommendations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.list_test_recommendations)
@@ -981,7 +976,7 @@ Returns a `Coroutine` for
 Lists the resources that are not currently supported in AWS Resilience Hub.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").list_unsupported_app_version_resources`
+`session.create_client("resiliencehub").list_unsupported_app_version_resources`
 method.
 
 Boto3 documentation:
@@ -1011,7 +1006,7 @@ Returns a `Coroutine` for
 Publishes a new version of a specific Resilience Hub application.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").publish_app_version` method.
+`session.create_client("resiliencehub").publish_app_version` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.publish_app_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.publish_app_version)
@@ -1036,8 +1031,7 @@ Returns a `Coroutine` for
 Adds or updates the app template for a draft version of a Resilience Hub app.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").put_draft_app_version_template`
-method.
+`session.create_client("resiliencehub").put_draft_app_version_template` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.put_draft_app_version_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.put_draft_app_version_template)
@@ -1063,7 +1057,7 @@ Returns a `Coroutine` for
 Removes resource mappings from a draft application version.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").remove_draft_app_version_resource_mappings`
+`session.create_client("resiliencehub").remove_draft_app_version_resource_mappings`
 method.
 
 Boto3 documentation:
@@ -1093,8 +1087,7 @@ Returns a `Coroutine` for
 Resolves the resources for an application version.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").resolve_app_version_resources`
-method.
+`session.create_client("resiliencehub").resolve_app_version_resources` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.resolve_app_version_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.resolve_app_version_resources)
@@ -1120,7 +1113,7 @@ Returns a `Coroutine` for
 Creates a new application assessment for an application.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").start_app_assessment` method.
+`session.create_client("resiliencehub").start_app_assessment` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.start_app_assessment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.start_app_assessment)
@@ -1148,7 +1141,7 @@ Returns a `Coroutine` for
 
 Applies one or more tags to a resource.
 
-Type annotations for `aiobotocore.create_client("resiliencehub").tag_resource`
+Type annotations for `session.create_client("resiliencehub").tag_resource`
 method.
 
 Boto3 documentation:
@@ -1172,8 +1165,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from a resource.
 
-Type annotations for
-`aiobotocore.create_client("resiliencehub").untag_resource` method.
+Type annotations for `session.create_client("resiliencehub").untag_resource`
+method.
 
 Boto3 documentation:
 [ResilienceHub.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.untag_resource)
@@ -1196,7 +1189,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an application.
 
-Type annotations for `aiobotocore.create_client("resiliencehub").update_app`
+Type annotations for `session.create_client("resiliencehub").update_app`
 method.
 
 Boto3 documentation:
@@ -1224,7 +1217,7 @@ Returns a `Coroutine` for
 Updates a resiliency policy.
 
 Type annotations for
-`aiobotocore.create_client("resiliencehub").update_resiliency_policy` method.
+`session.create_client("resiliencehub").update_resiliency_policy` method.
 
 Boto3 documentation:
 [ResilienceHub.Client.update_resiliency_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.update_resiliency_policy)
@@ -1248,3 +1241,36 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateResiliencyPolicyResponseTypeDef](./type_defs.md#updateresiliencypolicyresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("resiliencehub").__aenter__`
+method.
+
+Boto3 documentation:
+[ResilienceHub.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ResilienceHubClient](#resiliencehubclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("resiliencehub").__aexit__` method.
+
+Boto3 documentation:
+[ResilienceHub.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resiliencehub.html#ResilienceHub.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

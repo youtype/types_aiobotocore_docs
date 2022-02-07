@@ -67,22 +67,25 @@ type annotations stubs module
     - [update_api_destination](#update_api_destination)
     - [update_archive](#update_archive)
     - [update_connection](#update_connection)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="eventbridgeclient"></a>
 
 ## EventBridgeClient
 
-Type annotations for `aiobotocore.create_client("events")`
+Type annotations for `session.create_client("events")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_events.client import EventBridgeClient
 
-def get_events_client() -> EventBridgeClient:
-    return Session().client("events")
+session = get_session()
+async with session.create_client("events") as client:
+    client: EventBridgeClient
 ```
 
 Boto3 documentation:
@@ -127,7 +130,7 @@ Exceptions:
 
 EventBridgeClient exceptions.
 
-Type annotations for `aiobotocore.create_client("events").exceptions` method.
+Type annotations for `session.create_client("events").exceptions` method.
 
 Boto3 documentation:
 [EventBridge.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.exceptions)
@@ -140,8 +143,8 @@ Returns [Exceptions](#exceptions).
 
 Activates a partner event source that has been deactivated.
 
-Type annotations for
-`aiobotocore.create_client("events").activate_event_source` method.
+Type annotations for `session.create_client("events").activate_event_source`
+method.
 
 Boto3 documentation:
 [EventBridge.Client.activate_event_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.activate_event_source)
@@ -162,18 +165,16 @@ Keyword-only arguments:
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("events").can_paginate` method.
+Type annotations for `session.create_client("events").can_paginate` method.
 
 Boto3 documentation:
 [EventBridge.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_replay"></a>
 
@@ -181,8 +182,7 @@ Returns a `Coroutine` for `bool`.
 
 Cancels the specified replay.
 
-Type annotations for `aiobotocore.create_client("events").cancel_replay`
-method.
+Type annotations for `session.create_client("events").cancel_replay` method.
 
 Boto3 documentation:
 [EventBridge.Client.cancel_replay](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.cancel_replay)
@@ -206,8 +206,8 @@ Returns a `Coroutine` for
 Creates an API destination, which is an HTTP invocation endpoint configured as
 a target for events.
 
-Type annotations for
-`aiobotocore.create_client("events").create_api_destination` method.
+Type annotations for `session.create_client("events").create_api_destination`
+method.
 
 Boto3 documentation:
 [EventBridge.Client.create_api_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.create_api_destination)
@@ -238,8 +238,7 @@ Returns a `Coroutine` for
 
 Creates an archive of events with the specified settings.
 
-Type annotations for `aiobotocore.create_client("events").create_archive`
-method.
+Type annotations for `session.create_client("events").create_archive` method.
 
 Boto3 documentation:
 [EventBridge.Client.create_archive](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.create_archive)
@@ -266,7 +265,7 @@ Returns a `Coroutine` for
 
 Creates a connection.
 
-Type annotations for `aiobotocore.create_client("events").create_connection`
+Type annotations for `session.create_client("events").create_connection`
 method.
 
 Boto3 documentation:
@@ -297,8 +296,7 @@ Returns a `Coroutine` for
 
 Creates a new event bus within your account.
 
-Type annotations for `aiobotocore.create_client("events").create_event_bus`
-method.
+Type annotations for `session.create_client("events").create_event_bus` method.
 
 Boto3 documentation:
 [EventBridge.Client.create_event_bus](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.create_event_bus)
@@ -324,7 +322,7 @@ Returns a `Coroutine` for
 Called by an SaaS partner to create a partner event source.
 
 Type annotations for
-`aiobotocore.create_client("events").create_partner_event_source` method.
+`session.create_client("events").create_partner_event_source` method.
 
 Boto3 documentation:
 [EventBridge.Client.create_partner_event_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.create_partner_event_source)
@@ -350,8 +348,8 @@ Returns a `Coroutine` for
 You can use this operation to temporarily stop receiving events from the
 specified partner event source.
 
-Type annotations for
-`aiobotocore.create_client("events").deactivate_event_source` method.
+Type annotations for `session.create_client("events").deactivate_event_source`
+method.
 
 Boto3 documentation:
 [EventBridge.Client.deactivate_event_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.deactivate_event_source)
@@ -372,8 +370,8 @@ Keyword-only arguments:
 
 Removes all authorization parameters from the connection.
 
-Type annotations for
-`aiobotocore.create_client("events").deauthorize_connection` method.
+Type annotations for `session.create_client("events").deauthorize_connection`
+method.
 
 Boto3 documentation:
 [EventBridge.Client.deauthorize_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.deauthorize_connection)
@@ -397,8 +395,8 @@ Returns a `Coroutine` for
 
 Deletes the specified API destination.
 
-Type annotations for
-`aiobotocore.create_client("events").delete_api_destination` method.
+Type annotations for `session.create_client("events").delete_api_destination`
+method.
 
 Boto3 documentation:
 [EventBridge.Client.delete_api_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.delete_api_destination)
@@ -421,8 +419,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified archive.
 
-Type annotations for `aiobotocore.create_client("events").delete_archive`
-method.
+Type annotations for `session.create_client("events").delete_archive` method.
 
 Boto3 documentation:
 [EventBridge.Client.delete_archive](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.delete_archive)
@@ -444,7 +441,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a connection.
 
-Type annotations for `aiobotocore.create_client("events").delete_connection`
+Type annotations for `session.create_client("events").delete_connection`
 method.
 
 Boto3 documentation:
@@ -468,8 +465,7 @@ Returns a `Coroutine` for
 
 Deletes the specified custom event bus or partner event bus.
 
-Type annotations for `aiobotocore.create_client("events").delete_event_bus`
-method.
+Type annotations for `session.create_client("events").delete_event_bus` method.
 
 Boto3 documentation:
 [EventBridge.Client.delete_event_bus](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.delete_event_bus)
@@ -490,7 +486,7 @@ Keyword-only arguments:
 This operation is used by SaaS partners to delete a partner event source.
 
 Type annotations for
-`aiobotocore.create_client("events").delete_partner_event_source` method.
+`session.create_client("events").delete_partner_event_source` method.
 
 Boto3 documentation:
 [EventBridge.Client.delete_partner_event_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.delete_partner_event_source)
@@ -512,7 +508,7 @@ Keyword-only arguments:
 
 Deletes the specified rule.
 
-Type annotations for `aiobotocore.create_client("events").delete_rule` method.
+Type annotations for `session.create_client("events").delete_rule` method.
 
 Boto3 documentation:
 [EventBridge.Client.delete_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.delete_rule)
@@ -534,8 +530,8 @@ Keyword-only arguments:
 
 Retrieves details about an API destination.
 
-Type annotations for
-`aiobotocore.create_client("events").describe_api_destination` method.
+Type annotations for `session.create_client("events").describe_api_destination`
+method.
 
 Boto3 documentation:
 [EventBridge.Client.describe_api_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.describe_api_destination)
@@ -559,8 +555,7 @@ Returns a `Coroutine` for
 
 Retrieves details about an archive.
 
-Type annotations for `aiobotocore.create_client("events").describe_archive`
-method.
+Type annotations for `session.create_client("events").describe_archive` method.
 
 Boto3 documentation:
 [EventBridge.Client.describe_archive](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.describe_archive)
@@ -583,7 +578,7 @@ Returns a `Coroutine` for
 
 Retrieves details about a connection.
 
-Type annotations for `aiobotocore.create_client("events").describe_connection`
+Type annotations for `session.create_client("events").describe_connection`
 method.
 
 Boto3 documentation:
@@ -608,7 +603,7 @@ Returns a `Coroutine` for
 
 Displays details about an event bus in your account.
 
-Type annotations for `aiobotocore.create_client("events").describe_event_bus`
+Type annotations for `session.create_client("events").describe_event_bus`
 method.
 
 Boto3 documentation:
@@ -634,8 +629,8 @@ Returns a `Coroutine` for
 This operation lists details about a partner event source that is shared with
 your account.
 
-Type annotations for
-`aiobotocore.create_client("events").describe_event_source` method.
+Type annotations for `session.create_client("events").describe_event_source`
+method.
 
 Boto3 documentation:
 [EventBridge.Client.describe_event_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.describe_event_source)
@@ -661,7 +656,7 @@ An SaaS partner can use this operation to list details about a partner event
 source that they have created.
 
 Type annotations for
-`aiobotocore.create_client("events").describe_partner_event_source` method.
+`session.create_client("events").describe_partner_event_source` method.
 
 Boto3 documentation:
 [EventBridge.Client.describe_partner_event_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.describe_partner_event_source)
@@ -685,8 +680,7 @@ Returns a `Coroutine` for
 
 Retrieves details about a replay.
 
-Type annotations for `aiobotocore.create_client("events").describe_replay`
-method.
+Type annotations for `session.create_client("events").describe_replay` method.
 
 Boto3 documentation:
 [EventBridge.Client.describe_replay](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.describe_replay)
@@ -709,8 +703,7 @@ Returns a `Coroutine` for
 
 Describes the specified rule.
 
-Type annotations for `aiobotocore.create_client("events").describe_rule`
-method.
+Type annotations for `session.create_client("events").describe_rule` method.
 
 Boto3 documentation:
 [EventBridge.Client.describe_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.describe_rule)
@@ -734,7 +727,7 @@ Returns a `Coroutine` for
 
 Disables the specified rule.
 
-Type annotations for `aiobotocore.create_client("events").disable_rule` method.
+Type annotations for `session.create_client("events").disable_rule` method.
 
 Boto3 documentation:
 [EventBridge.Client.disable_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.disable_rule)
@@ -755,7 +748,7 @@ Keyword-only arguments:
 
 Enables the specified rule.
 
-Type annotations for `aiobotocore.create_client("events").enable_rule` method.
+Type annotations for `session.create_client("events").enable_rule` method.
 
 Boto3 documentation:
 [EventBridge.Client.enable_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.enable_rule)
@@ -776,8 +769,8 @@ Keyword-only arguments:
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("events").generate_presigned_url` method.
+Type annotations for `session.create_client("events").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [EventBridge.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.generate_presigned_url)
@@ -800,8 +793,8 @@ Returns a `Coroutine` for `str`.
 
 Retrieves a list of API destination in the account in the current Region.
 
-Type annotations for
-`aiobotocore.create_client("events").list_api_destinations` method.
+Type annotations for `session.create_client("events").list_api_destinations`
+method.
 
 Boto3 documentation:
 [EventBridge.Client.list_api_destinations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.list_api_destinations)
@@ -828,8 +821,7 @@ Returns a `Coroutine` for
 
 Lists your archives.
 
-Type annotations for `aiobotocore.create_client("events").list_archives`
-method.
+Type annotations for `session.create_client("events").list_archives` method.
 
 Boto3 documentation:
 [EventBridge.Client.list_archives](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.list_archives)
@@ -856,8 +848,7 @@ Returns a `Coroutine` for
 
 Retrieves a list of connections from the account.
 
-Type annotations for `aiobotocore.create_client("events").list_connections`
-method.
+Type annotations for `session.create_client("events").list_connections` method.
 
 Boto3 documentation:
 [EventBridge.Client.list_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.list_connections)
@@ -884,8 +875,7 @@ Returns a `Coroutine` for
 Lists all the event buses in your account, including the default event bus,
 custom event buses, and partner event buses.
 
-Type annotations for `aiobotocore.create_client("events").list_event_buses`
-method.
+Type annotations for `session.create_client("events").list_event_buses` method.
 
 Boto3 documentation:
 [EventBridge.Client.list_event_buses](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.list_event_buses)
@@ -911,7 +901,7 @@ Returns a `Coroutine` for
 You can use this to see all the partner event sources that have been shared
 with your Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("events").list_event_sources`
+Type annotations for `session.create_client("events").list_event_sources`
 method.
 
 Boto3 documentation:
@@ -940,8 +930,7 @@ An SaaS partner can use this operation to display the Amazon Web Services
 account ID that a particular partner event source name is associated with.
 
 Type annotations for
-`aiobotocore.create_client("events").list_partner_event_source_accounts`
-method.
+`session.create_client("events").list_partner_event_source_accounts` method.
 
 Boto3 documentation:
 [EventBridge.Client.list_partner_event_source_accounts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.list_partner_event_source_accounts)
@@ -969,7 +958,7 @@ An SaaS partner can use this operation to list all the partner event source
 names that they have created.
 
 Type annotations for
-`aiobotocore.create_client("events").list_partner_event_sources` method.
+`session.create_client("events").list_partner_event_sources` method.
 
 Boto3 documentation:
 [EventBridge.Client.list_partner_event_sources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.list_partner_event_sources)
@@ -995,7 +984,7 @@ Returns a `Coroutine` for
 
 Lists your replays.
 
-Type annotations for `aiobotocore.create_client("events").list_replays` method.
+Type annotations for `session.create_client("events").list_replays` method.
 
 Boto3 documentation:
 [EventBridge.Client.list_replays](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.list_replays)
@@ -1023,7 +1012,7 @@ Returns a `Coroutine` for
 Lists the rules for the specified target.
 
 Type annotations for
-`aiobotocore.create_client("events").list_rule_names_by_target` method.
+`session.create_client("events").list_rule_names_by_target` method.
 
 Boto3 documentation:
 [EventBridge.Client.list_rule_names_by_target](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.list_rule_names_by_target)
@@ -1050,7 +1039,7 @@ Returns a `Coroutine` for
 
 Lists your Amazon EventBridge rules.
 
-Type annotations for `aiobotocore.create_client("events").list_rules` method.
+Type annotations for `session.create_client("events").list_rules` method.
 
 Boto3 documentation:
 [EventBridge.Client.list_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.list_rules)
@@ -1076,8 +1065,8 @@ Returns a `Coroutine` for
 
 Displays the tags associated with an EventBridge resource.
 
-Type annotations for
-`aiobotocore.create_client("events").list_tags_for_resource` method.
+Type annotations for `session.create_client("events").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [EventBridge.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.list_tags_for_resource)
@@ -1101,7 +1090,7 @@ Returns a `Coroutine` for
 
 Lists the targets assigned to the specified rule.
 
-Type annotations for `aiobotocore.create_client("events").list_targets_by_rule`
+Type annotations for `session.create_client("events").list_targets_by_rule`
 method.
 
 Boto3 documentation:
@@ -1129,7 +1118,7 @@ Returns a `Coroutine` for
 
 Sends custom events to Amazon EventBridge so that they can be matched to rules.
 
-Type annotations for `aiobotocore.create_client("events").put_events` method.
+Type annotations for `session.create_client("events").put_events` method.
 
 Boto3 documentation:
 [EventBridge.Client.put_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.put_events)
@@ -1155,7 +1144,7 @@ Returns a `Coroutine` for
 This is used by SaaS partners to write events to a customer's partner event
 bus.
 
-Type annotations for `aiobotocore.create_client("events").put_partner_events`
+Type annotations for `session.create_client("events").put_partner_events`
 method.
 
 Boto3 documentation:
@@ -1183,8 +1172,7 @@ Returns a `Coroutine` for
 Running `PutPermission` permits the specified Amazon Web Services account or
 Amazon Web Services organization to put events to the specified *event bus*.
 
-Type annotations for `aiobotocore.create_client("events").put_permission`
-method.
+Type annotations for `session.create_client("events").put_permission` method.
 
 Boto3 documentation:
 [EventBridge.Client.put_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.put_permission)
@@ -1209,7 +1197,7 @@ Keyword-only arguments:
 
 Creates or updates the specified rule.
 
-Type annotations for `aiobotocore.create_client("events").put_rule` method.
+Type annotations for `session.create_client("events").put_rule` method.
 
 Boto3 documentation:
 [EventBridge.Client.put_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.put_rule)
@@ -1240,7 +1228,7 @@ Returns a `Coroutine` for
 Adds the specified targets to the specified rule, or updates the targets if
 they are already associated with the rule.
 
-Type annotations for `aiobotocore.create_client("events").put_targets` method.
+Type annotations for `session.create_client("events").put_targets` method.
 
 Boto3 documentation:
 [EventBridge.Client.put_targets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.put_targets)
@@ -1267,7 +1255,7 @@ Returns a `Coroutine` for
 Revokes the permission of another Amazon Web Services account to be able to put
 events to the specified event bus.
 
-Type annotations for `aiobotocore.create_client("events").remove_permission`
+Type annotations for `session.create_client("events").remove_permission`
 method.
 
 Boto3 documentation:
@@ -1290,8 +1278,7 @@ Keyword-only arguments:
 
 Removes the specified targets from the specified rule.
 
-Type annotations for `aiobotocore.create_client("events").remove_targets`
-method.
+Type annotations for `session.create_client("events").remove_targets` method.
 
 Boto3 documentation:
 [EventBridge.Client.remove_targets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.remove_targets)
@@ -1317,7 +1304,7 @@ Returns a `Coroutine` for
 
 Starts the specified replay.
 
-Type annotations for `aiobotocore.create_client("events").start_replay` method.
+Type annotations for `session.create_client("events").start_replay` method.
 
 Boto3 documentation:
 [EventBridge.Client.start_replay](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.start_replay)
@@ -1348,7 +1335,7 @@ Returns a `Coroutine` for
 Assigns one or more tags (key-value pairs) to the specified EventBridge
 resource.
 
-Type annotations for `aiobotocore.create_client("events").tag_resource` method.
+Type annotations for `session.create_client("events").tag_resource` method.
 
 Boto3 documentation:
 [EventBridge.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.tag_resource)
@@ -1371,7 +1358,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Tests whether the specified event pattern matches the provided event.
 
-Type annotations for `aiobotocore.create_client("events").test_event_pattern`
+Type annotations for `session.create_client("events").test_event_pattern`
 method.
 
 Boto3 documentation:
@@ -1397,8 +1384,7 @@ Returns a `Coroutine` for
 
 Removes one or more tags from the specified EventBridge resource.
 
-Type annotations for `aiobotocore.create_client("events").untag_resource`
-method.
+Type annotations for `session.create_client("events").untag_resource` method.
 
 Boto3 documentation:
 [EventBridge.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.untag_resource)
@@ -1421,8 +1407,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an API destination.
 
-Type annotations for
-`aiobotocore.create_client("events").update_api_destination` method.
+Type annotations for `session.create_client("events").update_api_destination`
+method.
 
 Boto3 documentation:
 [EventBridge.Client.update_api_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.update_api_destination)
@@ -1452,8 +1438,7 @@ Returns a `Coroutine` for
 
 Updates the specified archive.
 
-Type annotations for `aiobotocore.create_client("events").update_archive`
-method.
+Type annotations for `session.create_client("events").update_archive` method.
 
 Boto3 documentation:
 [EventBridge.Client.update_archive](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.update_archive)
@@ -1479,7 +1464,7 @@ Returns a `Coroutine` for
 
 Updates settings for a connection.
 
-Type annotations for `aiobotocore.create_client("events").update_connection`
+Type annotations for `session.create_client("events").update_connection`
 method.
 
 Boto3 documentation:
@@ -1502,11 +1487,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateConnectionResponseTypeDef](./type_defs.md#updateconnectionresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("events").__aenter__` method.
+
+Boto3 documentation:
+[EventBridge.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [EventBridgeClient](#eventbridgeclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("events").__aexit__` method.
+
+Boto3 documentation:
+[EventBridge.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("events").get_paginator` method
+Type annotations for `session.create_client("events").get_paginator` method
 with overloads.
 
 - `client.get_paginator("list_rule_names_by_target")` ->

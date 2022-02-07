@@ -74,6 +74,8 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_dataset_entries](#update_dataset_entries)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -81,16 +83,17 @@ type annotations stubs module
 
 ## RekognitionClient
 
-Type annotations for `aiobotocore.create_client("rekognition")`
+Type annotations for `session.create_client("rekognition")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_rekognition.client import RekognitionClient
 
-def get_rekognition_client() -> RekognitionClient:
-    return Session().client("rekognition")
+session = get_session()
+async with session.create_client("rekognition") as client:
+    client: RekognitionClient
 ```
 
 Boto3 documentation:
@@ -142,8 +145,7 @@ Exceptions:
 
 RekognitionClient exceptions.
 
-Type annotations for `aiobotocore.create_client("rekognition").exceptions`
-method.
+Type annotations for `session.create_client("rekognition").exceptions` method.
 
 Boto3 documentation:
 [Rekognition.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.exceptions)
@@ -156,19 +158,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("rekognition").can_paginate`
+Type annotations for `session.create_client("rekognition").can_paginate`
 method.
 
 Boto3 documentation:
 [Rekognition.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="compare_faces"></a>
 
@@ -177,7 +177,7 @@ Returns a `Coroutine` for `bool`.
 Compares a face in the *source* input image with each of the 100 largest faces
 detected in the *target* input image.
 
-Type annotations for `aiobotocore.create_client("rekognition").compare_faces`
+Type annotations for `session.create_client("rekognition").compare_faces`
 method.
 
 Boto3 documentation:
@@ -204,8 +204,8 @@ Returns a `Coroutine` for
 
 Creates a collection in an AWS Region.
 
-Type annotations for
-`aiobotocore.create_client("rekognition").create_collection` method.
+Type annotations for `session.create_client("rekognition").create_collection`
+method.
 
 Boto3 documentation:
 [Rekognition.Client.create_collection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.create_collection)
@@ -229,7 +229,7 @@ Returns a `Coroutine` for
 
 Creates a new Amazon Rekognition Custom Labels dataset.
 
-Type annotations for `aiobotocore.create_client("rekognition").create_dataset`
+Type annotations for `session.create_client("rekognition").create_dataset`
 method.
 
 Boto3 documentation:
@@ -255,7 +255,7 @@ Returns a `Coroutine` for
 
 Creates a new Amazon Rekognition Custom Labels project.
 
-Type annotations for `aiobotocore.create_client("rekognition").create_project`
+Type annotations for `session.create_client("rekognition").create_project`
 method.
 
 Boto3 documentation:
@@ -280,7 +280,7 @@ Returns a `Coroutine` for
 Creates a new version of a model and begins training.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").create_project_version` method.
+`session.create_client("rekognition").create_project_version` method.
 
 Boto3 documentation:
 [Rekognition.Client.create_project_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.create_project_version)
@@ -313,7 +313,7 @@ Creates an Amazon Rekognition stream processor that you can use to detect and
 recognize faces in a streaming video.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").create_stream_processor` method.
+`session.create_client("rekognition").create_stream_processor` method.
 
 Boto3 documentation:
 [Rekognition.Client.create_stream_processor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.create_stream_processor)
@@ -348,8 +348,8 @@ Returns a `Coroutine` for
 
 Deletes the specified collection.
 
-Type annotations for
-`aiobotocore.create_client("rekognition").delete_collection` method.
+Type annotations for `session.create_client("rekognition").delete_collection`
+method.
 
 Boto3 documentation:
 [Rekognition.Client.delete_collection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.delete_collection)
@@ -372,7 +372,7 @@ Returns a `Coroutine` for
 
 Deletes an existing Amazon Rekognition Custom Labels dataset.
 
-Type annotations for `aiobotocore.create_client("rekognition").delete_dataset`
+Type annotations for `session.create_client("rekognition").delete_dataset`
 method.
 
 Boto3 documentation:
@@ -395,7 +395,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes faces from a collection.
 
-Type annotations for `aiobotocore.create_client("rekognition").delete_faces`
+Type annotations for `session.create_client("rekognition").delete_faces`
 method.
 
 Boto3 documentation:
@@ -420,7 +420,7 @@ Returns a `Coroutine` for
 
 Deletes an Amazon Rekognition Custom Labels project.
 
-Type annotations for `aiobotocore.create_client("rekognition").delete_project`
+Type annotations for `session.create_client("rekognition").delete_project`
 method.
 
 Boto3 documentation:
@@ -445,7 +445,7 @@ Returns a `Coroutine` for
 Deletes an Amazon Rekognition Custom Labels model.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").delete_project_version` method.
+`session.create_client("rekognition").delete_project_version` method.
 
 Boto3 documentation:
 [Rekognition.Client.delete_project_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.delete_project_version)
@@ -470,7 +470,7 @@ Returns a `Coroutine` for
 Deletes the stream processor identified by `Name`.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").delete_stream_processor` method.
+`session.create_client("rekognition").delete_stream_processor` method.
 
 Boto3 documentation:
 [Rekognition.Client.delete_stream_processor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.delete_stream_processor)
@@ -493,8 +493,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Describes the specified collection.
 
-Type annotations for
-`aiobotocore.create_client("rekognition").describe_collection` method.
+Type annotations for `session.create_client("rekognition").describe_collection`
+method.
 
 Boto3 documentation:
 [Rekognition.Client.describe_collection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.describe_collection)
@@ -518,8 +518,8 @@ Returns a `Coroutine` for
 
 Describes an Amazon Rekognition Custom Labels dataset.
 
-Type annotations for
-`aiobotocore.create_client("rekognition").describe_dataset` method.
+Type annotations for `session.create_client("rekognition").describe_dataset`
+method.
 
 Boto3 documentation:
 [Rekognition.Client.describe_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.describe_dataset)
@@ -544,7 +544,7 @@ Lists and describes the versions of a model in an Amazon Rekognition Custom
 Labels project.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").describe_project_versions` method.
+`session.create_client("rekognition").describe_project_versions` method.
 
 Boto3 documentation:
 [Rekognition.Client.describe_project_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.describe_project_versions)
@@ -571,8 +571,8 @@ Returns a `Coroutine` for
 
 Gets information about your Amazon Rekognition Custom Labels projects.
 
-Type annotations for
-`aiobotocore.create_client("rekognition").describe_projects` method.
+Type annotations for `session.create_client("rekognition").describe_projects`
+method.
 
 Boto3 documentation:
 [Rekognition.Client.describe_projects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.describe_projects)
@@ -598,7 +598,7 @@ Returns a `Coroutine` for
 Provides information about a stream processor created by CreateStreamProcessor.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").describe_stream_processor` method.
+`session.create_client("rekognition").describe_stream_processor` method.
 
 Boto3 documentation:
 [Rekognition.Client.describe_stream_processor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.describe_stream_processor)
@@ -624,7 +624,7 @@ Detects custom labels in a supplied image by using an Amazon Rekognition Custom
 Labels model.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").detect_custom_labels` method.
+`session.create_client("rekognition").detect_custom_labels` method.
 
 Boto3 documentation:
 [Rekognition.Client.detect_custom_labels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.detect_custom_labels)
@@ -651,7 +651,7 @@ Returns a `Coroutine` for
 
 Detects faces within an image that is provided as input.
 
-Type annotations for `aiobotocore.create_client("rekognition").detect_faces`
+Type annotations for `session.create_client("rekognition").detect_faces`
 method.
 
 Boto3 documentation:
@@ -677,7 +677,7 @@ Returns a `Coroutine` for
 Detects instances of real-world entities within an image (JPEG or PNG) provided
 as input.
 
-Type annotations for `aiobotocore.create_client("rekognition").detect_labels`
+Type annotations for `session.create_client("rekognition").detect_labels`
 method.
 
 Boto3 documentation:
@@ -704,7 +704,7 @@ Returns a `Coroutine` for
 Detects unsafe content in a specified JPEG or PNG format image.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").detect_moderation_labels` method.
+`session.create_client("rekognition").detect_moderation_labels` method.
 
 Boto3 documentation:
 [Rekognition.Client.detect_moderation_labels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.detect_moderation_labels)
@@ -733,7 +733,7 @@ Detects Personal Protective Equipment (PPE) worn by people detected in an
 image.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").detect_protective_equipment` method.
+`session.create_client("rekognition").detect_protective_equipment` method.
 
 Boto3 documentation:
 [Rekognition.Client.detect_protective_equipment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.detect_protective_equipment)
@@ -759,8 +759,7 @@ Returns a `Coroutine` for
 
 Detects text in the input image and converts it into machine-readable text.
 
-Type annotations for `aiobotocore.create_client("rekognition").detect_text`
-method.
+Type annotations for `session.create_client("rekognition").detect_text` method.
 
 Boto3 documentation:
 [Rekognition.Client.detect_text](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.detect_text)
@@ -787,7 +786,7 @@ Distributes the entries (images) in a training dataset across the training
 dataset and the test dataset for a project.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").distribute_dataset_entries` method.
+`session.create_client("rekognition").distribute_dataset_entries` method.
 
 Boto3 documentation:
 [Rekognition.Client.distribute_dataset_entries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.distribute_dataset_entries)
@@ -813,7 +812,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").generate_presigned_url` method.
+`session.create_client("rekognition").generate_presigned_url` method.
 
 Boto3 documentation:
 [Rekognition.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.generate_presigned_url)
@@ -837,8 +836,8 @@ Returns a `Coroutine` for `str`.
 Gets the name and additional information about a celebrity based on their
 Amazon Rekognition ID.
 
-Type annotations for
-`aiobotocore.create_client("rekognition").get_celebrity_info` method.
+Type annotations for `session.create_client("rekognition").get_celebrity_info`
+method.
 
 Boto3 documentation:
 [Rekognition.Client.get_celebrity_info](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.get_celebrity_info)
@@ -864,7 +863,7 @@ Gets the celebrity recognition results for a Amazon Rekognition Video analysis
 started by StartCelebrityRecognition .
 
 Type annotations for
-`aiobotocore.create_client("rekognition").get_celebrity_recognition` method.
+`session.create_client("rekognition").get_celebrity_recognition` method.
 
 Boto3 documentation:
 [Rekognition.Client.get_celebrity_recognition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.get_celebrity_recognition)
@@ -894,7 +893,7 @@ Gets the inappropriate, unwanted, or offensive content analysis results for a
 Amazon Rekognition Video analysis started by StartContentModeration.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").get_content_moderation` method.
+`session.create_client("rekognition").get_content_moderation` method.
 
 Boto3 documentation:
 [Rekognition.Client.get_content_moderation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.get_content_moderation)
@@ -923,8 +922,8 @@ Returns a `Coroutine` for
 Gets face detection results for a Amazon Rekognition Video analysis started by
 StartFaceDetection .
 
-Type annotations for
-`aiobotocore.create_client("rekognition").get_face_detection` method.
+Type annotations for `session.create_client("rekognition").get_face_detection`
+method.
 
 Boto3 documentation:
 [Rekognition.Client.get_face_detection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.get_face_detection)
@@ -951,7 +950,7 @@ Returns a `Coroutine` for
 Gets the face search results for Amazon Rekognition Video face search started
 by StartFaceSearch.
 
-Type annotations for `aiobotocore.create_client("rekognition").get_face_search`
+Type annotations for `session.create_client("rekognition").get_face_search`
 method.
 
 Boto3 documentation:
@@ -979,8 +978,8 @@ Returns a `Coroutine` for
 Gets the label detection results of a Amazon Rekognition Video analysis started
 by StartLabelDetection .
 
-Type annotations for
-`aiobotocore.create_client("rekognition").get_label_detection` method.
+Type annotations for `session.create_client("rekognition").get_label_detection`
+method.
 
 Boto3 documentation:
 [Rekognition.Client.get_label_detection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.get_label_detection)
@@ -1008,8 +1007,8 @@ Returns a `Coroutine` for
 Gets the path tracking results of a Amazon Rekognition Video analysis started
 by StartPersonTracking .
 
-Type annotations for
-`aiobotocore.create_client("rekognition").get_person_tracking` method.
+Type annotations for `session.create_client("rekognition").get_person_tracking`
+method.
 
 Boto3 documentation:
 [Rekognition.Client.get_person_tracking](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.get_person_tracking)
@@ -1038,7 +1037,7 @@ Gets the segment detection results of a Amazon Rekognition Video analysis
 started by StartSegmentDetection .
 
 Type annotations for
-`aiobotocore.create_client("rekognition").get_segment_detection` method.
+`session.create_client("rekognition").get_segment_detection` method.
 
 Boto3 documentation:
 [Rekognition.Client.get_segment_detection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.get_segment_detection)
@@ -1065,8 +1064,8 @@ Returns a `Coroutine` for
 Gets the text detection results of a Amazon Rekognition Video analysis started
 by StartTextDetection .
 
-Type annotations for
-`aiobotocore.create_client("rekognition").get_text_detection` method.
+Type annotations for `session.create_client("rekognition").get_text_detection`
+method.
 
 Boto3 documentation:
 [Rekognition.Client.get_text_detection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.get_text_detection)
@@ -1092,8 +1091,7 @@ Returns a `Coroutine` for
 
 Detects faces in the input image and adds them to the specified collection.
 
-Type annotations for `aiobotocore.create_client("rekognition").index_faces`
-method.
+Type annotations for `session.create_client("rekognition").index_faces` method.
 
 Boto3 documentation:
 [Rekognition.Client.index_faces](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.index_faces)
@@ -1122,8 +1120,8 @@ Returns a `Coroutine` for
 
 Returns list of collection IDs in your account.
 
-Type annotations for
-`aiobotocore.create_client("rekognition").list_collections` method.
+Type annotations for `session.create_client("rekognition").list_collections`
+method.
 
 Boto3 documentation:
 [Rekognition.Client.list_collections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.list_collections)
@@ -1148,7 +1146,7 @@ Returns a `Coroutine` for
 Lists the entries (images) within a dataset.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").list_dataset_entries` method.
+`session.create_client("rekognition").list_dataset_entries` method.
 
 Boto3 documentation:
 [Rekognition.Client.list_dataset_entries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.list_dataset_entries)
@@ -1178,8 +1176,8 @@ Returns a `Coroutine` for
 
 Lists the labels in a dataset.
 
-Type annotations for
-`aiobotocore.create_client("rekognition").list_dataset_labels` method.
+Type annotations for `session.create_client("rekognition").list_dataset_labels`
+method.
 
 Boto3 documentation:
 [Rekognition.Client.list_dataset_labels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.list_dataset_labels)
@@ -1205,8 +1203,7 @@ Returns a `Coroutine` for
 
 Returns metadata for faces in the specified collection.
 
-Type annotations for `aiobotocore.create_client("rekognition").list_faces`
-method.
+Type annotations for `session.create_client("rekognition").list_faces` method.
 
 Boto3 documentation:
 [Rekognition.Client.list_faces](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.list_faces)
@@ -1233,7 +1230,7 @@ Gets a list of stream processors that you have created with
 CreateStreamProcessor .
 
 Type annotations for
-`aiobotocore.create_client("rekognition").list_stream_processors` method.
+`session.create_client("rekognition").list_stream_processors` method.
 
 Boto3 documentation:
 [Rekognition.Client.list_stream_processors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.list_stream_processors)
@@ -1260,7 +1257,7 @@ Returns a list of tags in an Amazon Rekognition collection, stream processor,
 or Custom Labels model.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").list_tags_for_resource` method.
+`session.create_client("rekognition").list_tags_for_resource` method.
 
 Boto3 documentation:
 [Rekognition.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.list_tags_for_resource)
@@ -1285,7 +1282,7 @@ Returns a `Coroutine` for
 Returns an array of celebrities recognized in the input image.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").recognize_celebrities` method.
+`session.create_client("rekognition").recognize_celebrities` method.
 
 Boto3 documentation:
 [Rekognition.Client.recognize_celebrities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.recognize_celebrities)
@@ -1310,7 +1307,7 @@ Returns a `Coroutine` for
 For a given input face ID, searches for matching faces in the collection the
 face belongs to.
 
-Type annotations for `aiobotocore.create_client("rekognition").search_faces`
+Type annotations for `session.create_client("rekognition").search_faces`
 method.
 
 Boto3 documentation:
@@ -1339,7 +1336,7 @@ For a given input image, first detects the largest face in the image, and then
 searches the specified collection for matching faces.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").search_faces_by_image` method.
+`session.create_client("rekognition").search_faces_by_image` method.
 
 Boto3 documentation:
 [Rekognition.Client.search_faces_by_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.search_faces_by_image)
@@ -1368,7 +1365,7 @@ Returns a `Coroutine` for
 Starts asynchronous recognition of celebrities in a stored video.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").start_celebrity_recognition` method.
+`session.create_client("rekognition").start_celebrity_recognition` method.
 
 Boto3 documentation:
 [Rekognition.Client.start_celebrity_recognition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.start_celebrity_recognition)
@@ -1398,7 +1395,7 @@ Starts asynchronous detection of inappropriate, unwanted, or offensive content
 in a stored video.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").start_content_moderation` method.
+`session.create_client("rekognition").start_content_moderation` method.
 
 Boto3 documentation:
 [Rekognition.Client.start_content_moderation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.start_content_moderation)
@@ -1428,7 +1425,7 @@ Returns a `Coroutine` for
 Starts asynchronous detection of faces in a stored video.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").start_face_detection` method.
+`session.create_client("rekognition").start_face_detection` method.
 
 Boto3 documentation:
 [Rekognition.Client.start_face_detection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.start_face_detection)
@@ -1458,8 +1455,8 @@ Returns a `Coroutine` for
 Starts the asynchronous search for faces in a collection that match the faces
 of persons detected in a stored video.
 
-Type annotations for
-`aiobotocore.create_client("rekognition").start_face_search` method.
+Type annotations for `session.create_client("rekognition").start_face_search`
+method.
 
 Boto3 documentation:
 [Rekognition.Client.start_face_search](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.start_face_search)
@@ -1489,7 +1486,7 @@ Returns a `Coroutine` for
 Starts asynchronous detection of labels in a stored video.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").start_label_detection` method.
+`session.create_client("rekognition").start_label_detection` method.
 
 Boto3 documentation:
 [Rekognition.Client.start_label_detection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.start_label_detection)
@@ -1519,7 +1516,7 @@ Returns a `Coroutine` for
 Starts the asynchronous tracking of a person's path in a stored video.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").start_person_tracking` method.
+`session.create_client("rekognition").start_person_tracking` method.
 
 Boto3 documentation:
 [Rekognition.Client.start_person_tracking](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.start_person_tracking)
@@ -1548,7 +1545,7 @@ Returns a `Coroutine` for
 Starts the running of the version of a model.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").start_project_version` method.
+`session.create_client("rekognition").start_project_version` method.
 
 Boto3 documentation:
 [Rekognition.Client.start_project_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.start_project_version)
@@ -1574,7 +1571,7 @@ Returns a `Coroutine` for
 Starts asynchronous detection of segment detection in a stored video.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").start_segment_detection` method.
+`session.create_client("rekognition").start_segment_detection` method.
 
 Boto3 documentation:
 [Rekognition.Client.start_segment_detection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.start_segment_detection)
@@ -1607,7 +1604,7 @@ Returns a `Coroutine` for
 Starts processing a stream processor.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").start_stream_processor` method.
+`session.create_client("rekognition").start_stream_processor` method.
 
 Boto3 documentation:
 [Rekognition.Client.start_stream_processor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.start_stream_processor)
@@ -1631,7 +1628,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Starts asynchronous detection of text in a stored video.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").start_text_detection` method.
+`session.create_client("rekognition").start_text_detection` method.
 
 Boto3 documentation:
 [Rekognition.Client.start_text_detection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.start_text_detection)
@@ -1662,7 +1659,7 @@ Returns a `Coroutine` for
 Stops a running model.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").stop_project_version` method.
+`session.create_client("rekognition").stop_project_version` method.
 
 Boto3 documentation:
 [Rekognition.Client.stop_project_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.stop_project_version)
@@ -1687,7 +1684,7 @@ Returns a `Coroutine` for
 Stops a running stream processor that was created by CreateStreamProcessor .
 
 Type annotations for
-`aiobotocore.create_client("rekognition").stop_stream_processor` method.
+`session.create_client("rekognition").stop_stream_processor` method.
 
 Boto3 documentation:
 [Rekognition.Client.stop_stream_processor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.stop_stream_processor)
@@ -1711,7 +1708,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds one or more key-value tags to an Amazon Rekognition collection, stream
 processor, or Custom Labels model.
 
-Type annotations for `aiobotocore.create_client("rekognition").tag_resource`
+Type annotations for `session.create_client("rekognition").tag_resource`
 method.
 
 Boto3 documentation:
@@ -1736,7 +1733,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes one or more tags from an Amazon Rekognition collection, stream
 processor, or Custom Labels model.
 
-Type annotations for `aiobotocore.create_client("rekognition").untag_resource`
+Type annotations for `session.create_client("rekognition").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1761,7 +1758,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds or updates one or more entries (images) in a dataset.
 
 Type annotations for
-`aiobotocore.create_client("rekognition").update_dataset_entries` method.
+`session.create_client("rekognition").update_dataset_entries` method.
 
 Boto3 documentation:
 [Rekognition.Client.update_dataset_entries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.update_dataset_entries)
@@ -1780,11 +1777,43 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("rekognition").__aenter__` method.
+
+Boto3 documentation:
+[Rekognition.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [RekognitionClient](#rekognitionclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("rekognition").__aexit__` method.
+
+Boto3 documentation:
+[Rekognition.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("rekognition").get_paginator`
+Type annotations for `session.create_client("rekognition").get_paginator`
 method with overloads.
 
 - `client.get_paginator("describe_project_versions")` ->
@@ -1806,8 +1835,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("rekognition").get_waiter`
-method with overloads.
+Type annotations for `session.create_client("rekognition").get_waiter` method
+with overloads.
 
 - `client.get_waiter("project_version_running")` ->
   [ProjectVersionRunningWaiter](./waiters.md#projectversionrunningwaiter)

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[autoscaling-plans]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[autoscaling-plans]'
+
+# standalone installation
 pip install types-aiobotocore-autoscaling-plans
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-autoscaling-plans
 
 ## AutoScalingPlansClient
 
-Type annotations for `aiobotocore.create_client("autoscaling-plans")` as
+Type annotations for `session.create_client("autoscaling-plans")` as
 [AutoScalingPlansClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_autoscaling_plans.client import AutoScalingPlansClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_scaling_plan](./client.md#create_scaling_plan)
 - [delete_scaling_plan](./client.md#delete_scaling_plan)
@@ -77,7 +83,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_autoscaling_plans.paginators import DescribeScalingPlanResourcesPaginator, ...
+from types_aiobotocore_autoscaling_plans.paginator import DescribeScalingPlanResourcesPaginator, ...
 ```
 
 - [DescribeScalingPlanResourcesPaginator](./paginators.md#describescalingplanresourcespaginator)

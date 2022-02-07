@@ -24,7 +24,7 @@ type annotations stubs module
 ## BotAliasAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").get_waiter("bot_alias_available")`.
+`session.create_client("lexv2-models").get_waiter("bot_alias_available")`.
 
 Can be used directly:
 
@@ -34,7 +34,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_lexv2_models.waiter import BotAliasAvailableWaiter
 
 def get_bot_alias_available_waiter() -> BotAliasAvailableWaiter:
-    return Session().create_client("lexv2-models").get_waiter("bot_alias_available")
+    return Session().client("lexv2-models").get_waiter("bot_alias_available")
 ```
 
 Boto3 documentation:
@@ -51,7 +51,7 @@ Arguments for `BotAliasAvailableWaiter.wait` method:
 ## BotAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").get_waiter("bot_available")`.
+`session.create_client("lexv2-models").get_waiter("bot_available")`.
 
 Can be used directly:
 
@@ -61,7 +61,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_lexv2_models.waiter import BotAvailableWaiter
 
 def get_bot_available_waiter() -> BotAvailableWaiter:
-    return Session().create_client("lexv2-models").get_waiter("bot_available")
+    return Session().client("lexv2-models").get_waiter("bot_available")
 ```
 
 Boto3 documentation:
@@ -77,7 +77,7 @@ Arguments for `BotAvailableWaiter.wait` method:
 ## BotExportCompletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").get_waiter("bot_export_completed")`.
+`session.create_client("lexv2-models").get_waiter("bot_export_completed")`.
 
 Can be used directly:
 
@@ -87,7 +87,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_lexv2_models.waiter import BotExportCompletedWaiter
 
 def get_bot_export_completed_waiter() -> BotExportCompletedWaiter:
-    return Session().create_client("lexv2-models").get_waiter("bot_export_completed")
+    return Session().client("lexv2-models").get_waiter("bot_export_completed")
 ```
 
 Boto3 documentation:
@@ -103,7 +103,7 @@ Arguments for `BotExportCompletedWaiter.wait` method:
 ## BotImportCompletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").get_waiter("bot_import_completed")`.
+`session.create_client("lexv2-models").get_waiter("bot_import_completed")`.
 
 Can be used directly:
 
@@ -113,7 +113,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_lexv2_models.waiter import BotImportCompletedWaiter
 
 def get_bot_import_completed_waiter() -> BotImportCompletedWaiter:
-    return Session().create_client("lexv2-models").get_waiter("bot_import_completed")
+    return Session().client("lexv2-models").get_waiter("bot_import_completed")
 ```
 
 Boto3 documentation:
@@ -129,7 +129,7 @@ Arguments for `BotImportCompletedWaiter.wait` method:
 ## BotLocaleBuiltWaiter
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").get_waiter("bot_locale_built")`.
+`session.create_client("lexv2-models").get_waiter("bot_locale_built")`.
 
 Can be used directly:
 
@@ -139,7 +139,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_lexv2_models.waiter import BotLocaleBuiltWaiter
 
 def get_bot_locale_built_waiter() -> BotLocaleBuiltWaiter:
-    return Session().create_client("lexv2-models").get_waiter("bot_locale_built")
+    return Session().client("lexv2-models").get_waiter("bot_locale_built")
 ```
 
 Boto3 documentation:
@@ -157,7 +157,7 @@ Arguments for `BotLocaleBuiltWaiter.wait` method:
 ## BotLocaleCreatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").get_waiter("bot_locale_created")`.
+`session.create_client("lexv2-models").get_waiter("bot_locale_created")`.
 
 Can be used directly:
 
@@ -167,7 +167,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_lexv2_models.waiter import BotLocaleCreatedWaiter
 
 def get_bot_locale_created_waiter() -> BotLocaleCreatedWaiter:
-    return Session().create_client("lexv2-models").get_waiter("bot_locale_created")
+    return Session().client("lexv2-models").get_waiter("bot_locale_created")
 ```
 
 Boto3 documentation:
@@ -185,7 +185,7 @@ Arguments for `BotLocaleCreatedWaiter.wait` method:
 ## BotLocaleExpressTestingAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").get_waiter("bot_locale_express_testing_available")`.
+`session.create_client("lexv2-models").get_waiter("bot_locale_express_testing_available")`.
 
 Can be used directly:
 
@@ -195,7 +195,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_lexv2_models.waiter import BotLocaleExpressTestingAvailableWaiter
 
 def get_bot_locale_express_testing_available_waiter() -> BotLocaleExpressTestingAvailableWaiter:
-    return Session().create_client("lexv2-models").get_waiter("bot_locale_express_testing_available")
+    return Session().client("lexv2-models").get_waiter("bot_locale_express_testing_available")
 ```
 
 Boto3 documentation:
@@ -213,7 +213,7 @@ Arguments for `BotLocaleExpressTestingAvailableWaiter.wait` method:
 ## BotVersionAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").get_waiter("bot_version_available")`.
+`session.create_client("lexv2-models").get_waiter("bot_version_available")`.
 
 Can be used directly:
 
@@ -223,7 +223,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_lexv2_models.waiter import BotVersionAvailableWaiter
 
 def get_bot_version_available_waiter() -> BotVersionAvailableWaiter:
-    return Session().create_client("lexv2-models").get_waiter("bot_version_available")
+    return Session().client("lexv2-models").get_waiter("bot_version_available")
 ```
 
 Boto3 documentation:

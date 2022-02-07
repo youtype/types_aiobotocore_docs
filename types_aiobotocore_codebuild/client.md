@@ -61,22 +61,25 @@ type annotations stubs module
     - [update_project_visibility](#update_project_visibility)
     - [update_report_group](#update_report_group)
     - [update_webhook](#update_webhook)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="codebuildclient"></a>
 
 ## CodeBuildClient
 
-Type annotations for `aiobotocore.create_client("codebuild")`
+Type annotations for `session.create_client("codebuild")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_codebuild.client import CodeBuildClient
 
-def get_codebuild_client() -> CodeBuildClient:
-    return Session().client("codebuild")
+session = get_session()
+async with session.create_client("codebuild") as client:
+    client: CodeBuildClient
 ```
 
 Boto3 documentation:
@@ -115,8 +118,7 @@ Exceptions:
 
 CodeBuildClient exceptions.
 
-Type annotations for `aiobotocore.create_client("codebuild").exceptions`
-method.
+Type annotations for `session.create_client("codebuild").exceptions` method.
 
 Boto3 documentation:
 [CodeBuild.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.exceptions)
@@ -129,8 +131,8 @@ Returns [Exceptions](#exceptions).
 
 Deletes one or more builds.
 
-Type annotations for
-`aiobotocore.create_client("codebuild").batch_delete_builds` method.
+Type annotations for `session.create_client("codebuild").batch_delete_builds`
+method.
 
 Boto3 documentation:
 [CodeBuild.Client.batch_delete_builds](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.batch_delete_builds)
@@ -155,7 +157,7 @@ Returns a `Coroutine` for
 Retrieves information about one or more batch builds.
 
 Type annotations for
-`aiobotocore.create_client("codebuild").batch_get_build_batches` method.
+`session.create_client("codebuild").batch_get_build_batches` method.
 
 Boto3 documentation:
 [CodeBuild.Client.batch_get_build_batches](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.batch_get_build_batches)
@@ -179,7 +181,7 @@ Returns a `Coroutine` for
 
 Gets information about one or more builds.
 
-Type annotations for `aiobotocore.create_client("codebuild").batch_get_builds`
+Type annotations for `session.create_client("codebuild").batch_get_builds`
 method.
 
 Boto3 documentation:
@@ -203,8 +205,8 @@ Returns a `Coroutine` for
 
 Gets information about one or more build projects.
 
-Type annotations for
-`aiobotocore.create_client("codebuild").batch_get_projects` method.
+Type annotations for `session.create_client("codebuild").batch_get_projects`
+method.
 
 Boto3 documentation:
 [CodeBuild.Client.batch_get_projects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.batch_get_projects)
@@ -229,7 +231,7 @@ Returns a `Coroutine` for
 Returns an array of report groups.
 
 Type annotations for
-`aiobotocore.create_client("codebuild").batch_get_report_groups` method.
+`session.create_client("codebuild").batch_get_report_groups` method.
 
 Boto3 documentation:
 [CodeBuild.Client.batch_get_report_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.batch_get_report_groups)
@@ -253,7 +255,7 @@ Returns a `Coroutine` for
 
 Returns an array of reports.
 
-Type annotations for `aiobotocore.create_client("codebuild").batch_get_reports`
+Type annotations for `session.create_client("codebuild").batch_get_reports`
 method.
 
 Boto3 documentation:
@@ -277,19 +279,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("codebuild").can_paginate`
-method.
+Type annotations for `session.create_client("codebuild").can_paginate` method.
 
 Boto3 documentation:
 [CodeBuild.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_project"></a>
 
@@ -297,7 +296,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a build project.
 
-Type annotations for `aiobotocore.create_client("codebuild").create_project`
+Type annotations for `session.create_client("codebuild").create_project`
 method.
 
 Boto3 documentation:
@@ -351,8 +350,8 @@ Returns a `Coroutine` for
 
 Creates a report group.
 
-Type annotations for
-`aiobotocore.create_client("codebuild").create_report_group` method.
+Type annotations for `session.create_client("codebuild").create_report_group`
+method.
 
 Boto3 documentation:
 [CodeBuild.Client.create_report_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.create_report_group)
@@ -383,7 +382,7 @@ For an existing CodeBuild build project that has its source code stored in a
 GitHub or Bitbucket repository, enables CodeBuild to start rebuilding the
 source code every time a code change is pushed to the repository.
 
-Type annotations for `aiobotocore.create_client("codebuild").create_webhook`
+Type annotations for `session.create_client("codebuild").create_webhook`
 method.
 
 Boto3 documentation:
@@ -411,8 +410,8 @@ Returns a `Coroutine` for
 
 Deletes a batch build.
 
-Type annotations for
-`aiobotocore.create_client("codebuild").delete_build_batch` method.
+Type annotations for `session.create_client("codebuild").delete_build_batch`
+method.
 
 Boto3 documentation:
 [CodeBuild.Client.delete_build_batch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.delete_build_batch)
@@ -436,7 +435,7 @@ Returns a `Coroutine` for
 
 Deletes a build project.
 
-Type annotations for `aiobotocore.create_client("codebuild").delete_project`
+Type annotations for `session.create_client("codebuild").delete_project`
 method.
 
 Boto3 documentation:
@@ -459,8 +458,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a report.
 
-Type annotations for `aiobotocore.create_client("codebuild").delete_report`
-method.
+Type annotations for `session.create_client("codebuild").delete_report` method.
 
 Boto3 documentation:
 [CodeBuild.Client.delete_report](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.delete_report)
@@ -482,8 +480,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a report group.
 
-Type annotations for
-`aiobotocore.create_client("codebuild").delete_report_group` method.
+Type annotations for `session.create_client("codebuild").delete_report_group`
+method.
 
 Boto3 documentation:
 [CodeBuild.Client.delete_report_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.delete_report_group)
@@ -508,7 +506,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a resource policy that is identified by its resource ARN.
 
 Type annotations for
-`aiobotocore.create_client("codebuild").delete_resource_policy` method.
+`session.create_client("codebuild").delete_resource_policy` method.
 
 Boto3 documentation:
 [CodeBuild.Client.delete_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.delete_resource_policy)
@@ -532,7 +530,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
 
 Type annotations for
-`aiobotocore.create_client("codebuild").delete_source_credentials` method.
+`session.create_client("codebuild").delete_source_credentials` method.
 
 Boto3 documentation:
 [CodeBuild.Client.delete_source_credentials](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.delete_source_credentials)
@@ -558,7 +556,7 @@ For an existing CodeBuild build project that has its source code stored in a
 GitHub or Bitbucket repository, stops CodeBuild from rebuilding the source code
 every time a code change is pushed to the repository.
 
-Type annotations for `aiobotocore.create_client("codebuild").delete_webhook`
+Type annotations for `session.create_client("codebuild").delete_webhook`
 method.
 
 Boto3 documentation:
@@ -582,7 +580,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Retrieves one or more code coverage reports.
 
 Type annotations for
-`aiobotocore.create_client("codebuild").describe_code_coverages` method.
+`session.create_client("codebuild").describe_code_coverages` method.
 
 Boto3 documentation:
 [CodeBuild.Client.describe_code_coverages](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.describe_code_coverages)
@@ -613,8 +611,8 @@ Returns a `Coroutine` for
 
 Returns a list of details about test cases for a report.
 
-Type annotations for
-`aiobotocore.create_client("codebuild").describe_test_cases` method.
+Type annotations for `session.create_client("codebuild").describe_test_cases`
+method.
 
 Boto3 documentation:
 [CodeBuild.Client.describe_test_cases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.describe_test_cases)
@@ -642,7 +640,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("codebuild").generate_presigned_url` method.
+`session.create_client("codebuild").generate_presigned_url` method.
 
 Boto3 documentation:
 [CodeBuild.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.generate_presigned_url)
@@ -666,7 +664,7 @@ Returns a `Coroutine` for `str`.
 Analyzes and accumulates test report values for the specified test reports.
 
 Type annotations for
-`aiobotocore.create_client("codebuild").get_report_group_trend` method.
+`session.create_client("codebuild").get_report_group_trend` method.
 
 Boto3 documentation:
 [CodeBuild.Client.get_report_group_trend](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.get_report_group_trend)
@@ -694,8 +692,8 @@ Returns a `Coroutine` for
 
 Gets a resource policy that is identified by its resource ARN.
 
-Type annotations for
-`aiobotocore.create_client("codebuild").get_resource_policy` method.
+Type annotations for `session.create_client("codebuild").get_resource_policy`
+method.
 
 Boto3 documentation:
 [CodeBuild.Client.get_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.get_resource_policy)
@@ -721,7 +719,7 @@ Imports the source repository credentials for an CodeBuild project that has its
 source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
 
 Type annotations for
-`aiobotocore.create_client("codebuild").import_source_credentials` method.
+`session.create_client("codebuild").import_source_credentials` method.
 
 Boto3 documentation:
 [CodeBuild.Client.import_source_credentials](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.import_source_credentials)
@@ -750,7 +748,7 @@ Returns a `Coroutine` for
 Resets the cache for a project.
 
 Type annotations for
-`aiobotocore.create_client("codebuild").invalidate_project_cache` method.
+`session.create_client("codebuild").invalidate_project_cache` method.
 
 Boto3 documentation:
 [CodeBuild.Client.invalidate_project_cache](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.invalidate_project_cache)
@@ -773,8 +771,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Retrieves the identifiers of your build batches in the current region.
 
-Type annotations for
-`aiobotocore.create_client("codebuild").list_build_batches` method.
+Type annotations for `session.create_client("codebuild").list_build_batches`
+method.
 
 Boto3 documentation:
 [CodeBuild.Client.list_build_batches](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.list_build_batches)
@@ -802,7 +800,7 @@ Returns a `Coroutine` for
 Retrieves the identifiers of the build batches for a specific project.
 
 Type annotations for
-`aiobotocore.create_client("codebuild").list_build_batches_for_project` method.
+`session.create_client("codebuild").list_build_batches_for_project` method.
 
 Boto3 documentation:
 [CodeBuild.Client.list_build_batches_for_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.list_build_batches_for_project)
@@ -830,8 +828,7 @@ Returns a `Coroutine` for
 
 Gets a list of build IDs, with each build ID representing a single build.
 
-Type annotations for `aiobotocore.create_client("codebuild").list_builds`
-method.
+Type annotations for `session.create_client("codebuild").list_builds` method.
 
 Boto3 documentation:
 [CodeBuild.Client.list_builds](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.list_builds)
@@ -857,7 +854,7 @@ Gets a list of build identifiers for the specified build project, with each
 build identifier representing a single build.
 
 Type annotations for
-`aiobotocore.create_client("codebuild").list_builds_for_project` method.
+`session.create_client("codebuild").list_builds_for_project` method.
 
 Boto3 documentation:
 [CodeBuild.Client.list_builds_for_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.list_builds_for_project)
@@ -884,8 +881,7 @@ Returns a `Coroutine` for
 Gets information about Docker images that are managed by CodeBuild.
 
 Type annotations for
-`aiobotocore.create_client("codebuild").list_curated_environment_images`
-method.
+`session.create_client("codebuild").list_curated_environment_images` method.
 
 Boto3 documentation:
 [CodeBuild.Client.list_curated_environment_images](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.list_curated_environment_images)
@@ -903,8 +899,7 @@ Returns a `Coroutine` for
 Gets a list of build project names, with each build project name representing a
 single build project.
 
-Type annotations for `aiobotocore.create_client("codebuild").list_projects`
-method.
+Type annotations for `session.create_client("codebuild").list_projects` method.
 
 Boto3 documentation:
 [CodeBuild.Client.list_projects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.list_projects)
@@ -930,8 +925,8 @@ Returns a `Coroutine` for
 Gets a list ARNs for the report groups in the current Amazon Web Services
 account.
 
-Type annotations for
-`aiobotocore.create_client("codebuild").list_report_groups` method.
+Type annotations for `session.create_client("codebuild").list_report_groups`
+method.
 
 Boto3 documentation:
 [CodeBuild.Client.list_report_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.list_report_groups)
@@ -960,8 +955,7 @@ Returns a `Coroutine` for
 Returns a list of ARNs for the reports in the current Amazon Web Services
 account.
 
-Type annotations for `aiobotocore.create_client("codebuild").list_reports`
-method.
+Type annotations for `session.create_client("codebuild").list_reports` method.
 
 Boto3 documentation:
 [CodeBuild.Client.list_reports](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.list_reports)
@@ -988,7 +982,7 @@ Returns a `Coroutine` for
 Returns a list of ARNs for the reports that belong to a `ReportGroup` .
 
 Type annotations for
-`aiobotocore.create_client("codebuild").list_reports_for_report_group` method.
+`session.create_client("codebuild").list_reports_for_report_group` method.
 
 Boto3 documentation:
 [CodeBuild.Client.list_reports_for_report_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.list_reports_for_report_group)
@@ -1017,8 +1011,8 @@ Returns a `Coroutine` for
 Gets a list of projects that are shared with other Amazon Web Services accounts
 or users.
 
-Type annotations for
-`aiobotocore.create_client("codebuild").list_shared_projects` method.
+Type annotations for `session.create_client("codebuild").list_shared_projects`
+method.
 
 Boto3 documentation:
 [CodeBuild.Client.list_shared_projects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.list_shared_projects)
@@ -1048,7 +1042,7 @@ Gets a list of report groups that are shared with other Amazon Web Services
 accounts or users.
 
 Type annotations for
-`aiobotocore.create_client("codebuild").list_shared_report_groups` method.
+`session.create_client("codebuild").list_shared_report_groups` method.
 
 Boto3 documentation:
 [CodeBuild.Client.list_shared_report_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.list_shared_report_groups)
@@ -1077,7 +1071,7 @@ Returns a `Coroutine` for
 Returns a list of `SourceCredentialsInfo` objects.
 
 Type annotations for
-`aiobotocore.create_client("codebuild").list_source_credentials` method.
+`session.create_client("codebuild").list_source_credentials` method.
 
 Boto3 documentation:
 [CodeBuild.Client.list_source_credentials](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.list_source_credentials)
@@ -1094,8 +1088,8 @@ Returns a `Coroutine` for
 
 Stores a resource policy for the ARN of a `Project` or `ReportGroup` object.
 
-Type annotations for
-`aiobotocore.create_client("codebuild").put_resource_policy` method.
+Type annotations for `session.create_client("codebuild").put_resource_policy`
+method.
 
 Boto3 documentation:
 [CodeBuild.Client.put_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.put_resource_policy)
@@ -1120,8 +1114,7 @@ Returns a `Coroutine` for
 
 Restarts a build.
 
-Type annotations for `aiobotocore.create_client("codebuild").retry_build`
-method.
+Type annotations for `session.create_client("codebuild").retry_build` method.
 
 Boto3 documentation:
 [CodeBuild.Client.retry_build](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.retry_build)
@@ -1145,7 +1138,7 @@ Returns a `Coroutine` for
 
 Restarts a failed batch build.
 
-Type annotations for `aiobotocore.create_client("codebuild").retry_build_batch`
+Type annotations for `session.create_client("codebuild").retry_build_batch`
 method.
 
 Boto3 documentation:
@@ -1171,8 +1164,7 @@ Returns a `Coroutine` for
 
 Starts running a build.
 
-Type annotations for `aiobotocore.create_client("codebuild").start_build`
-method.
+Type annotations for `session.create_client("codebuild").start_build` method.
 
 Boto3 documentation:
 [CodeBuild.Client.start_build](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.start_build)
@@ -1235,7 +1227,7 @@ Returns a `Coroutine` for
 
 Starts a batch build for a project.
 
-Type annotations for `aiobotocore.create_client("codebuild").start_build_batch`
+Type annotations for `session.create_client("codebuild").start_build_batch`
 method.
 
 Boto3 documentation:
@@ -1299,8 +1291,7 @@ Returns a `Coroutine` for
 
 Attempts to stop running a build.
 
-Type annotations for `aiobotocore.create_client("codebuild").stop_build`
-method.
+Type annotations for `session.create_client("codebuild").stop_build` method.
 
 Boto3 documentation:
 [CodeBuild.Client.stop_build](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.stop_build)
@@ -1323,7 +1314,7 @@ Returns a `Coroutine` for
 
 Stops a running batch build.
 
-Type annotations for `aiobotocore.create_client("codebuild").stop_build_batch`
+Type annotations for `session.create_client("codebuild").stop_build_batch`
 method.
 
 Boto3 documentation:
@@ -1347,7 +1338,7 @@ Returns a `Coroutine` for
 
 Changes the settings of a build project.
 
-Type annotations for `aiobotocore.create_client("codebuild").update_project`
+Type annotations for `session.create_client("codebuild").update_project`
 method.
 
 Boto3 documentation:
@@ -1399,7 +1390,7 @@ Returns a `Coroutine` for
 Changes the public visibility for a project.
 
 Type annotations for
-`aiobotocore.create_client("codebuild").update_project_visibility` method.
+`session.create_client("codebuild").update_project_visibility` method.
 
 Boto3 documentation:
 [CodeBuild.Client.update_project_visibility](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.update_project_visibility)
@@ -1427,8 +1418,8 @@ Returns a `Coroutine` for
 
 Updates a report group.
 
-Type annotations for
-`aiobotocore.create_client("codebuild").update_report_group` method.
+Type annotations for `session.create_client("codebuild").update_report_group`
+method.
 
 Boto3 documentation:
 [CodeBuild.Client.update_report_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.update_report_group)
@@ -1455,7 +1446,7 @@ Returns a `Coroutine` for
 
 Updates the webhook associated with an CodeBuild build project.
 
-Type annotations for `aiobotocore.create_client("codebuild").update_webhook`
+Type annotations for `session.create_client("codebuild").update_webhook`
 method.
 
 Boto3 documentation:
@@ -1478,12 +1469,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateWebhookOutputTypeDef](./type_defs.md#updatewebhookoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("codebuild").__aenter__` method.
+
+Boto3 documentation:
+[CodeBuild.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CodeBuildClient](#codebuildclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("codebuild").__aexit__` method.
+
+Boto3 documentation:
+[CodeBuild.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html#CodeBuild.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("codebuild").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("codebuild").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_code_coverages")` ->
   [DescribeCodeCoveragesPaginator](./paginators.md#describecodecoveragespaginator)

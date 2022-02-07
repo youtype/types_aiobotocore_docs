@@ -26,22 +26,25 @@ type annotations stubs module
     - [put_scaling_policy](#put_scaling_policy)
     - [put_scheduled_action](#put_scheduled_action)
     - [register_scalable_target](#register_scalable_target)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="applicationautoscalingclient"></a>
 
 ## ApplicationAutoScalingClient
 
-Type annotations for `aiobotocore.create_client("application-autoscaling")`
+Type annotations for `session.create_client("application-autoscaling")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_application_autoscaling.client import ApplicationAutoScalingClient
 
-def get_application-autoscaling_client() -> ApplicationAutoScalingClient:
-    return Session().client("application-autoscaling")
+session = get_session()
+async with session.create_client("application-autoscaling") as client:
+    client: ApplicationAutoScalingClient
 ```
 
 Boto3 documentation:
@@ -83,7 +86,7 @@ Exceptions:
 ApplicationAutoScalingClient exceptions.
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").exceptions` method.
+`session.create_client("application-autoscaling").exceptions` method.
 
 Boto3 documentation:
 [ApplicationAutoScaling.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-autoscaling.html#ApplicationAutoScaling.Client.exceptions)
@@ -97,18 +100,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").can_paginate` method.
+`session.create_client("application-autoscaling").can_paginate` method.
 
 Boto3 documentation:
 [ApplicationAutoScaling.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-autoscaling.html#ApplicationAutoScaling.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="delete_scaling_policy"></a>
 
@@ -118,7 +119,7 @@ Deletes the specified scaling policy for an Application Auto Scaling scalable
 target.
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").delete_scaling_policy`
+`session.create_client("application-autoscaling").delete_scaling_policy`
 method.
 
 Boto3 documentation:
@@ -149,7 +150,7 @@ Deletes the specified scheduled action for an Application Auto Scaling scalable
 target.
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").delete_scheduled_action`
+`session.create_client("application-autoscaling").delete_scheduled_action`
 method.
 
 Boto3 documentation:
@@ -180,7 +181,7 @@ Deregisters an Application Auto Scaling scalable target when you have finished
 using it.
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").deregister_scalable_target`
+`session.create_client("application-autoscaling").deregister_scalable_target`
 method.
 
 Boto3 documentation:
@@ -209,7 +210,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Gets information about the scalable targets in the specified namespace.
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").describe_scalable_targets`
+`session.create_client("application-autoscaling").describe_scalable_targets`
 method.
 
 Boto3 documentation:
@@ -242,7 +243,7 @@ Provides descriptive information about the scaling activities in the specified
 namespace from the previous six weeks.
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").describe_scaling_activities`
+`session.create_client("application-autoscaling").describe_scaling_activities`
 method.
 
 Boto3 documentation:
@@ -275,7 +276,7 @@ Describes the Application Auto Scaling scaling policies for the specified
 service namespace.
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").describe_scaling_policies`
+`session.create_client("application-autoscaling").describe_scaling_policies`
 method.
 
 Boto3 documentation:
@@ -309,7 +310,7 @@ Describes the Application Auto Scaling scheduled actions for the specified
 service namespace.
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").describe_scheduled_actions`
+`session.create_client("application-autoscaling").describe_scheduled_actions`
 method.
 
 Boto3 documentation:
@@ -342,7 +343,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").generate_presigned_url`
+`session.create_client("application-autoscaling").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -368,8 +369,7 @@ Creates or updates a scaling policy for an Application Auto Scaling scalable
 target.
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").put_scaling_policy`
-method.
+`session.create_client("application-autoscaling").put_scaling_policy` method.
 
 Boto3 documentation:
 [ApplicationAutoScaling.Client.put_scaling_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-autoscaling.html#ApplicationAutoScaling.Client.put_scaling_policy)
@@ -405,8 +405,7 @@ Creates or updates a scheduled action for an Application Auto Scaling scalable
 target.
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").put_scheduled_action`
-method.
+`session.create_client("application-autoscaling").put_scheduled_action` method.
 
 Boto3 documentation:
 [ApplicationAutoScaling.Client.put_scheduled_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-autoscaling.html#ApplicationAutoScaling.Client.put_scheduled_action)
@@ -441,7 +440,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Registers or updates a scalable target.
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").register_scalable_target`
+`session.create_client("application-autoscaling").register_scalable_target`
 method.
 
 Boto3 documentation:
@@ -468,13 +467,48 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for
+`session.create_client("application-autoscaling").__aenter__` method.
+
+Boto3 documentation:
+[ApplicationAutoScaling.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-autoscaling.html#ApplicationAutoScaling.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[ApplicationAutoScalingClient](#applicationautoscalingclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for
+`session.create_client("application-autoscaling").__aexit__` method.
+
+Boto3 documentation:
+[ApplicationAutoScaling.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-autoscaling.html#ApplicationAutoScaling.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").get_paginator` method
-with overloads.
+`session.create_client("application-autoscaling").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_scalable_targets")` ->
   [DescribeScalableTargetsPaginator](./paginators.md#describescalabletargetspaginator)

@@ -28,17 +28,19 @@ type annotations stubs module
 ## DescribeCodeCoveragesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codebuild").get_paginator("describe_code_coverages")`.
+`session.create_client("codebuild").get_paginator("describe_code_coverages")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codebuild.paginator import DescribeCodeCoveragesPaginator
 
-def get_describe_code_coverages_paginator() -> DescribeCodeCoveragesPaginator:
-    return Session().create_client("codebuild").get_paginator("describe_code_coverages")
+session = get_session()
+async with session.create_client("codebuild") as client:
+    client: CodeBuildClient
+    paginator: DescribeCodeCoveragesPaginator = client.get_paginator("describe_code_coverages")
 ```
 
 Boto3 documentation:
@@ -63,17 +65,19 @@ Arguments for `DescribeCodeCoveragesPaginator.paginate` method:
 ## DescribeTestCasesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codebuild").get_paginator("describe_test_cases")`.
+`session.create_client("codebuild").get_paginator("describe_test_cases")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codebuild.paginator import DescribeTestCasesPaginator
 
-def get_describe_test_cases_paginator() -> DescribeTestCasesPaginator:
-    return Session().create_client("codebuild").get_paginator("describe_test_cases")
+session = get_session()
+async with session.create_client("codebuild") as client:
+    client: CodeBuildClient
+    paginator: DescribeTestCasesPaginator = client.get_paginator("describe_test_cases")
 ```
 
 Boto3 documentation:
@@ -94,17 +98,19 @@ Arguments for `DescribeTestCasesPaginator.paginate` method:
 ## ListBuildBatchesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codebuild").get_paginator("list_build_batches")`.
+`session.create_client("codebuild").get_paginator("list_build_batches")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codebuild.paginator import ListBuildBatchesPaginator
 
-def get_list_build_batches_paginator() -> ListBuildBatchesPaginator:
-    return Session().create_client("codebuild").get_paginator("list_build_batches")
+session = get_session()
+async with session.create_client("codebuild") as client:
+    client: CodeBuildClient
+    paginator: ListBuildBatchesPaginator = client.get_paginator("list_build_batches")
 ```
 
 Boto3 documentation:
@@ -125,17 +131,19 @@ Arguments for `ListBuildBatchesPaginator.paginate` method:
 ## ListBuildBatchesForProjectPaginator
 
 Type annotations for
-`aiobotocore.create_client("codebuild").get_paginator("list_build_batches_for_project")`.
+`session.create_client("codebuild").get_paginator("list_build_batches_for_project")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codebuild.paginator import ListBuildBatchesForProjectPaginator
 
-def get_list_build_batches_for_project_paginator() -> ListBuildBatchesForProjectPaginator:
-    return Session().create_client("codebuild").get_paginator("list_build_batches_for_project")
+session = get_session()
+async with session.create_client("codebuild") as client:
+    client: CodeBuildClient
+    paginator: ListBuildBatchesForProjectPaginator = client.get_paginator("list_build_batches_for_project")
 ```
 
 Boto3 documentation:
@@ -157,17 +165,19 @@ Arguments for `ListBuildBatchesForProjectPaginator.paginate` method:
 ## ListBuildsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codebuild").get_paginator("list_builds")`.
+`session.create_client("codebuild").get_paginator("list_builds")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codebuild.paginator import ListBuildsPaginator
 
-def get_list_builds_paginator() -> ListBuildsPaginator:
-    return Session().create_client("codebuild").get_paginator("list_builds")
+session = get_session()
+async with session.create_client("codebuild") as client:
+    client: CodeBuildClient
+    paginator: ListBuildsPaginator = client.get_paginator("list_builds")
 ```
 
 Boto3 documentation:
@@ -187,17 +197,19 @@ Arguments for `ListBuildsPaginator.paginate` method:
 ## ListBuildsForProjectPaginator
 
 Type annotations for
-`aiobotocore.create_client("codebuild").get_paginator("list_builds_for_project")`.
+`session.create_client("codebuild").get_paginator("list_builds_for_project")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codebuild.paginator import ListBuildsForProjectPaginator
 
-def get_list_builds_for_project_paginator() -> ListBuildsForProjectPaginator:
-    return Session().create_client("codebuild").get_paginator("list_builds_for_project")
+session = get_session()
+async with session.create_client("codebuild") as client:
+    client: CodeBuildClient
+    paginator: ListBuildsForProjectPaginator = client.get_paginator("list_builds_for_project")
 ```
 
 Boto3 documentation:
@@ -218,17 +230,19 @@ Arguments for `ListBuildsForProjectPaginator.paginate` method:
 ## ListProjectsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codebuild").get_paginator("list_projects")`.
+`session.create_client("codebuild").get_paginator("list_projects")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codebuild.paginator import ListProjectsPaginator
 
-def get_list_projects_paginator() -> ListProjectsPaginator:
-    return Session().create_client("codebuild").get_paginator("list_projects")
+session = get_session()
+async with session.create_client("codebuild") as client:
+    client: CodeBuildClient
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
 ```
 
 Boto3 documentation:
@@ -249,17 +263,19 @@ Arguments for `ListProjectsPaginator.paginate` method:
 ## ListReportGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codebuild").get_paginator("list_report_groups")`.
+`session.create_client("codebuild").get_paginator("list_report_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codebuild.paginator import ListReportGroupsPaginator
 
-def get_list_report_groups_paginator() -> ListReportGroupsPaginator:
-    return Session().create_client("codebuild").get_paginator("list_report_groups")
+session = get_session()
+async with session.create_client("codebuild") as client:
+    client: CodeBuildClient
+    paginator: ListReportGroupsPaginator = client.get_paginator("list_report_groups")
 ```
 
 Boto3 documentation:
@@ -281,17 +297,19 @@ Arguments for `ListReportGroupsPaginator.paginate` method:
 ## ListReportsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codebuild").get_paginator("list_reports")`.
+`session.create_client("codebuild").get_paginator("list_reports")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codebuild.paginator import ListReportsPaginator
 
-def get_list_reports_paginator() -> ListReportsPaginator:
-    return Session().create_client("codebuild").get_paginator("list_reports")
+session = get_session()
+async with session.create_client("codebuild") as client:
+    client: CodeBuildClient
+    paginator: ListReportsPaginator = client.get_paginator("list_reports")
 ```
 
 Boto3 documentation:
@@ -312,17 +330,19 @@ Arguments for `ListReportsPaginator.paginate` method:
 ## ListReportsForReportGroupPaginator
 
 Type annotations for
-`aiobotocore.create_client("codebuild").get_paginator("list_reports_for_report_group")`.
+`session.create_client("codebuild").get_paginator("list_reports_for_report_group")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codebuild.paginator import ListReportsForReportGroupPaginator
 
-def get_list_reports_for_report_group_paginator() -> ListReportsForReportGroupPaginator:
-    return Session().create_client("codebuild").get_paginator("list_reports_for_report_group")
+session = get_session()
+async with session.create_client("codebuild") as client:
+    client: CodeBuildClient
+    paginator: ListReportsForReportGroupPaginator = client.get_paginator("list_reports_for_report_group")
 ```
 
 Boto3 documentation:
@@ -344,17 +364,19 @@ Arguments for `ListReportsForReportGroupPaginator.paginate` method:
 ## ListSharedProjectsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codebuild").get_paginator("list_shared_projects")`.
+`session.create_client("codebuild").get_paginator("list_shared_projects")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codebuild.paginator import ListSharedProjectsPaginator
 
-def get_list_shared_projects_paginator() -> ListSharedProjectsPaginator:
-    return Session().create_client("codebuild").get_paginator("list_shared_projects")
+session = get_session()
+async with session.create_client("codebuild") as client:
+    client: CodeBuildClient
+    paginator: ListSharedProjectsPaginator = client.get_paginator("list_shared_projects")
 ```
 
 Boto3 documentation:
@@ -376,17 +398,19 @@ Arguments for `ListSharedProjectsPaginator.paginate` method:
 ## ListSharedReportGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codebuild").get_paginator("list_shared_report_groups")`.
+`session.create_client("codebuild").get_paginator("list_shared_report_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codebuild.paginator import ListSharedReportGroupsPaginator
 
-def get_list_shared_report_groups_paginator() -> ListSharedReportGroupsPaginator:
-    return Session().create_client("codebuild").get_paginator("list_shared_report_groups")
+session = get_session()
+async with session.create_client("codebuild") as client:
+    client: CodeBuildClient
+    paginator: ListSharedReportGroupsPaginator = client.get_paginator("list_shared_report_groups")
 ```
 
 Boto3 documentation:

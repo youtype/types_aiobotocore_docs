@@ -49,21 +49,24 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_device_metadata](#update_device_metadata)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="panoramaclient"></a>
 
 ## PanoramaClient
 
-Type annotations for `aiobotocore.create_client("panorama")`
+Type annotations for `session.create_client("panorama")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_panorama.client import PanoramaClient
 
-def get_panorama_client() -> PanoramaClient:
-    return Session().client("panorama")
+session = get_session()
+async with session.create_client("panorama") as client:
+    client: PanoramaClient
 ```
 
 Boto3 documentation:
@@ -103,7 +106,7 @@ Exceptions:
 
 PanoramaClient exceptions.
 
-Type annotations for `aiobotocore.create_client("panorama").exceptions` method.
+Type annotations for `session.create_client("panorama").exceptions` method.
 
 Boto3 documentation:
 [Panorama.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.exceptions)
@@ -116,19 +119,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("panorama").can_paginate`
-method.
+Type annotations for `session.create_client("panorama").can_paginate` method.
 
 Boto3 documentation:
 [Panorama.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_application_instance"></a>
 
@@ -137,7 +137,7 @@ Returns a `Coroutine` for `bool`.
 Creates an application instance and deploys it to a device.
 
 Type annotations for
-`aiobotocore.create_client("panorama").create_application_instance` method.
+`session.create_client("panorama").create_application_instance` method.
 
 Boto3 documentation:
 [Panorama.Client.create_application_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.create_application_instance)
@@ -170,8 +170,8 @@ Returns a `Coroutine` for
 
 Creates a job to run on one or more devices.
 
-Type annotations for
-`aiobotocore.create_client("panorama").create_job_for_devices` method.
+Type annotations for `session.create_client("panorama").create_job_for_devices`
+method.
 
 Boto3 documentation:
 [Panorama.Client.create_job_for_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.create_job_for_devices)
@@ -200,7 +200,7 @@ Returns a `Coroutine` for
 Creates a camera stream node.
 
 Type annotations for
-`aiobotocore.create_client("panorama").create_node_from_template_job` method.
+`session.create_client("panorama").create_node_from_template_job` method.
 
 Boto3 documentation:
 [Panorama.Client.create_node_from_template_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.create_node_from_template_job)
@@ -232,8 +232,7 @@ Returns a `Coroutine` for
 
 Creates a package and storage location in an Amazon S3 access point.
 
-Type annotations for `aiobotocore.create_client("panorama").create_package`
-method.
+Type annotations for `session.create_client("panorama").create_package` method.
 
 Boto3 documentation:
 [Panorama.Client.create_package](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.create_package)
@@ -258,7 +257,7 @@ Returns a `Coroutine` for
 Imports a node package.
 
 Type annotations for
-`aiobotocore.create_client("panorama").create_package_import_job` method.
+`session.create_client("panorama").create_package_import_job` method.
 
 Boto3 documentation:
 [Panorama.Client.create_package_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.create_package_import_job)
@@ -293,8 +292,7 @@ Returns a `Coroutine` for
 
 Deletes a device.
 
-Type annotations for `aiobotocore.create_client("panorama").delete_device`
-method.
+Type annotations for `session.create_client("panorama").delete_device` method.
 
 Boto3 documentation:
 [Panorama.Client.delete_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.delete_device)
@@ -317,8 +315,7 @@ Returns a `Coroutine` for
 
 Deletes a package.
 
-Type annotations for `aiobotocore.create_client("panorama").delete_package`
-method.
+Type annotations for `session.create_client("panorama").delete_package` method.
 
 Boto3 documentation:
 [Panorama.Client.delete_package](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.delete_package)
@@ -342,7 +339,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deregisters a package version.
 
 Type annotations for
-`aiobotocore.create_client("panorama").deregister_package_version` method.
+`session.create_client("panorama").deregister_package_version` method.
 
 Boto3 documentation:
 [Panorama.Client.deregister_package_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.deregister_package_version)
@@ -370,7 +367,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Returns information about an application instance on a device.
 
 Type annotations for
-`aiobotocore.create_client("panorama").describe_application_instance` method.
+`session.create_client("panorama").describe_application_instance` method.
 
 Boto3 documentation:
 [Panorama.Client.describe_application_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.describe_application_instance)
@@ -395,7 +392,7 @@ Returns a `Coroutine` for
 Returns information about an application instance's configuration manifest.
 
 Type annotations for
-`aiobotocore.create_client("panorama").describe_application_instance_details`
+`session.create_client("panorama").describe_application_instance_details`
 method.
 
 Boto3 documentation:
@@ -420,7 +417,7 @@ Returns a `Coroutine` for
 
 Returns information about a device.
 
-Type annotations for `aiobotocore.create_client("panorama").describe_device`
+Type annotations for `session.create_client("panorama").describe_device`
 method.
 
 Boto3 documentation:
@@ -444,8 +441,8 @@ Returns a `Coroutine` for
 
 Returns information about a device job.
 
-Type annotations for
-`aiobotocore.create_client("panorama").describe_device_job` method.
+Type annotations for `session.create_client("panorama").describe_device_job`
+method.
 
 Boto3 documentation:
 [Panorama.Client.describe_device_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.describe_device_job)
@@ -469,8 +466,7 @@ Returns a `Coroutine` for
 
 Returns information about a node.
 
-Type annotations for `aiobotocore.create_client("panorama").describe_node`
-method.
+Type annotations for `session.create_client("panorama").describe_node` method.
 
 Boto3 documentation:
 [Panorama.Client.describe_node](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.describe_node)
@@ -495,7 +491,7 @@ Returns a `Coroutine` for
 Returns information about a job to create a camera stream node.
 
 Type annotations for
-`aiobotocore.create_client("panorama").describe_node_from_template_job` method.
+`session.create_client("panorama").describe_node_from_template_job` method.
 
 Boto3 documentation:
 [Panorama.Client.describe_node_from_template_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.describe_node_from_template_job)
@@ -519,7 +515,7 @@ Returns a `Coroutine` for
 
 Returns information about a package.
 
-Type annotations for `aiobotocore.create_client("panorama").describe_package`
+Type annotations for `session.create_client("panorama").describe_package`
 method.
 
 Boto3 documentation:
@@ -544,7 +540,7 @@ Returns a `Coroutine` for
 Returns information about a package import job.
 
 Type annotations for
-`aiobotocore.create_client("panorama").describe_package_import_job` method.
+`session.create_client("panorama").describe_package_import_job` method.
 
 Boto3 documentation:
 [Panorama.Client.describe_package_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.describe_package_import_job)
@@ -569,7 +565,7 @@ Returns a `Coroutine` for
 Returns information about a package version.
 
 Type annotations for
-`aiobotocore.create_client("panorama").describe_package_version` method.
+`session.create_client("panorama").describe_package_version` method.
 
 Boto3 documentation:
 [Panorama.Client.describe_package_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.describe_package_version)
@@ -596,8 +592,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("panorama").generate_presigned_url` method.
+Type annotations for `session.create_client("panorama").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Panorama.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.generate_presigned_url)
@@ -621,7 +617,7 @@ Returns a `Coroutine` for `str`.
 Returns a list of application instance dependencies.
 
 Type annotations for
-`aiobotocore.create_client("panorama").list_application_instance_dependencies`
+`session.create_client("panorama").list_application_instance_dependencies`
 method.
 
 Boto3 documentation:
@@ -649,7 +645,7 @@ Returns a `Coroutine` for
 Returns a list of application node instances.
 
 Type annotations for
-`aiobotocore.create_client("panorama").list_application_instance_node_instances`
+`session.create_client("panorama").list_application_instance_node_instances`
 method.
 
 Boto3 documentation:
@@ -677,7 +673,7 @@ Returns a `Coroutine` for
 Returns a list of application instances.
 
 Type annotations for
-`aiobotocore.create_client("panorama").list_application_instances` method.
+`session.create_client("panorama").list_application_instances` method.
 
 Boto3 documentation:
 [Panorama.Client.list_application_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.list_application_instances)
@@ -704,8 +700,7 @@ Returns a `Coroutine` for
 
 Returns a list of devices.
 
-Type annotations for `aiobotocore.create_client("panorama").list_devices`
-method.
+Type annotations for `session.create_client("panorama").list_devices` method.
 
 Boto3 documentation:
 [Panorama.Client.list_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.list_devices)
@@ -729,7 +724,7 @@ Returns a `Coroutine` for
 
 Returns a list of jobs.
 
-Type annotations for `aiobotocore.create_client("panorama").list_devices_jobs`
+Type annotations for `session.create_client("panorama").list_devices_jobs`
 method.
 
 Boto3 documentation:
@@ -756,7 +751,7 @@ Returns a `Coroutine` for
 Returns a list of camera stream node jobs.
 
 Type annotations for
-`aiobotocore.create_client("panorama").list_node_from_template_jobs` method.
+`session.create_client("panorama").list_node_from_template_jobs` method.
 
 Boto3 documentation:
 [Panorama.Client.list_node_from_template_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.list_node_from_template_jobs)
@@ -781,7 +776,7 @@ Returns a `Coroutine` for
 
 Returns a list of nodes.
 
-Type annotations for `aiobotocore.create_client("panorama").list_nodes` method.
+Type annotations for `session.create_client("panorama").list_nodes` method.
 
 Boto3 documentation:
 [Panorama.Client.list_nodes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.list_nodes)
@@ -811,7 +806,7 @@ Returns a `Coroutine` for
 Returns a list of package import jobs.
 
 Type annotations for
-`aiobotocore.create_client("panorama").list_package_import_jobs` method.
+`session.create_client("panorama").list_package_import_jobs` method.
 
 Boto3 documentation:
 [Panorama.Client.list_package_import_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.list_package_import_jobs)
@@ -836,8 +831,7 @@ Returns a `Coroutine` for
 
 Returns a list of packages.
 
-Type annotations for `aiobotocore.create_client("panorama").list_packages`
-method.
+Type annotations for `session.create_client("panorama").list_packages` method.
 
 Boto3 documentation:
 [Panorama.Client.list_packages](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.list_packages)
@@ -861,8 +855,8 @@ Returns a `Coroutine` for
 
 Returns a list of tags for a resource.
 
-Type annotations for
-`aiobotocore.create_client("panorama").list_tags_for_resource` method.
+Type annotations for `session.create_client("panorama").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Panorama.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.list_tags_for_resource)
@@ -886,7 +880,7 @@ Returns a `Coroutine` for
 
 Creates a device and returns a configuration archive.
 
-Type annotations for `aiobotocore.create_client("panorama").provision_device`
+Type annotations for `session.create_client("panorama").provision_device`
 method.
 
 Boto3 documentation:
@@ -915,7 +909,7 @@ Returns a `Coroutine` for
 Registers a package version.
 
 Type annotations for
-`aiobotocore.create_client("panorama").register_package_version` method.
+`session.create_client("panorama").register_package_version` method.
 
 Boto3 documentation:
 [Panorama.Client.register_package_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.register_package_version)
@@ -943,7 +937,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes an application instance.
 
 Type annotations for
-`aiobotocore.create_client("panorama").remove_application_instance` method.
+`session.create_client("panorama").remove_application_instance` method.
 
 Boto3 documentation:
 [Panorama.Client.remove_application_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.remove_application_instance)
@@ -966,8 +960,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Tags a resource.
 
-Type annotations for `aiobotocore.create_client("panorama").tag_resource`
-method.
+Type annotations for `session.create_client("panorama").tag_resource` method.
 
 Boto3 documentation:
 [Panorama.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.tag_resource)
@@ -990,8 +983,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from a resource.
 
-Type annotations for `aiobotocore.create_client("panorama").untag_resource`
-method.
+Type annotations for `session.create_client("panorama").untag_resource` method.
 
 Boto3 documentation:
 [Panorama.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.untag_resource)
@@ -1014,8 +1006,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a device's metadata.
 
-Type annotations for
-`aiobotocore.create_client("panorama").update_device_metadata` method.
+Type annotations for `session.create_client("panorama").update_device_metadata`
+method.
 
 Boto3 documentation:
 [Panorama.Client.update_device_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.update_device_metadata)
@@ -1033,3 +1025,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateDeviceMetadataResponseTypeDef](./type_defs.md#updatedevicemetadataresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("panorama").__aenter__` method.
+
+Boto3 documentation:
+[Panorama.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [PanoramaClient](#panoramaclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("panorama").__aexit__` method.
+
+Boto3 documentation:
+[Panorama.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/panorama.html#Panorama.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

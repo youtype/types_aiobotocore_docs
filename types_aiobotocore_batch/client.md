@@ -40,22 +40,25 @@ type annotations stubs module
     - [update_compute_environment](#update_compute_environment)
     - [update_job_queue](#update_job_queue)
     - [update_scheduling_policy](#update_scheduling_policy)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="batchclient"></a>
 
 ## BatchClient
 
-Type annotations for `aiobotocore.create_client("batch")`
+Type annotations for `session.create_client("batch")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_batch.client import BatchClient
 
-def get_batch_client() -> BatchClient:
-    return Session().client("batch")
+session = get_session()
+async with session.create_client("batch") as client:
+    client: BatchClient
 ```
 
 Boto3 documentation:
@@ -91,7 +94,7 @@ Exceptions:
 
 BatchClient exceptions.
 
-Type annotations for `aiobotocore.create_client("batch").exceptions` method.
+Type annotations for `session.create_client("batch").exceptions` method.
 
 Boto3 documentation:
 [Batch.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.exceptions)
@@ -104,18 +107,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("batch").can_paginate` method.
+Type annotations for `session.create_client("batch").can_paginate` method.
 
 Boto3 documentation:
 [Batch.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_job"></a>
 
@@ -123,7 +124,7 @@ Returns a `Coroutine` for `bool`.
 
 Cancels a job in an Batch job queue.
 
-Type annotations for `aiobotocore.create_client("batch").cancel_job` method.
+Type annotations for `session.create_client("batch").cancel_job` method.
 
 Boto3 documentation:
 [Batch.Client.cancel_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.cancel_job)
@@ -147,7 +148,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates an Batch compute environment.
 
 Type annotations for
-`aiobotocore.create_client("batch").create_compute_environment` method.
+`session.create_client("batch").create_compute_environment` method.
 
 Boto3 documentation:
 [Batch.Client.create_compute_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.create_compute_environment)
@@ -178,8 +179,7 @@ Returns a `Coroutine` for
 
 Creates an Batch job queue.
 
-Type annotations for `aiobotocore.create_client("batch").create_job_queue`
-method.
+Type annotations for `session.create_client("batch").create_job_queue` method.
 
 Boto3 documentation:
 [Batch.Client.create_job_queue](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.create_job_queue)
@@ -209,8 +209,8 @@ Returns a `Coroutine` for
 
 Creates an Batch scheduling policy.
 
-Type annotations for
-`aiobotocore.create_client("batch").create_scheduling_policy` method.
+Type annotations for `session.create_client("batch").create_scheduling_policy`
+method.
 
 Boto3 documentation:
 [Batch.Client.create_scheduling_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.create_scheduling_policy)
@@ -238,7 +238,7 @@ Returns a `Coroutine` for
 Deletes an Batch compute environment.
 
 Type annotations for
-`aiobotocore.create_client("batch").delete_compute_environment` method.
+`session.create_client("batch").delete_compute_environment` method.
 
 Boto3 documentation:
 [Batch.Client.delete_compute_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.delete_compute_environment)
@@ -261,8 +261,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified job queue.
 
-Type annotations for `aiobotocore.create_client("batch").delete_job_queue`
-method.
+Type annotations for `session.create_client("batch").delete_job_queue` method.
 
 Boto3 documentation:
 [Batch.Client.delete_job_queue](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.delete_job_queue)
@@ -284,8 +283,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified scheduling policy.
 
-Type annotations for
-`aiobotocore.create_client("batch").delete_scheduling_policy` method.
+Type annotations for `session.create_client("batch").delete_scheduling_policy`
+method.
 
 Boto3 documentation:
 [Batch.Client.delete_scheduling_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.delete_scheduling_policy)
@@ -308,8 +307,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deregisters an Batch job definition.
 
-Type annotations for
-`aiobotocore.create_client("batch").deregister_job_definition` method.
+Type annotations for `session.create_client("batch").deregister_job_definition`
+method.
 
 Boto3 documentation:
 [Batch.Client.deregister_job_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.deregister_job_definition)
@@ -333,7 +332,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Describes one or more of your compute environments.
 
 Type annotations for
-`aiobotocore.create_client("batch").describe_compute_environments` method.
+`session.create_client("batch").describe_compute_environments` method.
 
 Boto3 documentation:
 [Batch.Client.describe_compute_environments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.describe_compute_environments)
@@ -359,8 +358,8 @@ Returns a `Coroutine` for
 
 Describes a list of job definitions.
 
-Type annotations for
-`aiobotocore.create_client("batch").describe_job_definitions` method.
+Type annotations for `session.create_client("batch").describe_job_definitions`
+method.
 
 Boto3 documentation:
 [Batch.Client.describe_job_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.describe_job_definitions)
@@ -388,7 +387,7 @@ Returns a `Coroutine` for
 
 Describes one or more of your job queues.
 
-Type annotations for `aiobotocore.create_client("batch").describe_job_queues`
+Type annotations for `session.create_client("batch").describe_job_queues`
 method.
 
 Boto3 documentation:
@@ -415,7 +414,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("batch").describe_jobs` method.
+Type annotations for `session.create_client("batch").describe_jobs` method.
 
 Boto3 documentation:
 [Batch.Client.describe_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.describe_jobs)
@@ -439,7 +438,7 @@ Returns a `Coroutine` for
 Describes one or more of your scheduling policies.
 
 Type annotations for
-`aiobotocore.create_client("batch").describe_scheduling_policies` method.
+`session.create_client("batch").describe_scheduling_policies` method.
 
 Boto3 documentation:
 [Batch.Client.describe_scheduling_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.describe_scheduling_policies)
@@ -463,8 +462,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("batch").generate_presigned_url` method.
+Type annotations for `session.create_client("batch").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Batch.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.generate_presigned_url)
@@ -487,7 +486,7 @@ Returns a `Coroutine` for `str`.
 
 Returns a list of Batch jobs.
 
-Type annotations for `aiobotocore.create_client("batch").list_jobs` method.
+Type annotations for `session.create_client("batch").list_jobs` method.
 
 Boto3 documentation:
 [Batch.Client.list_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.list_jobs)
@@ -517,8 +516,8 @@ Returns a `Coroutine` for
 
 Returns a list of Batch scheduling policies.
 
-Type annotations for
-`aiobotocore.create_client("batch").list_scheduling_policies` method.
+Type annotations for `session.create_client("batch").list_scheduling_policies`
+method.
 
 Boto3 documentation:
 [Batch.Client.list_scheduling_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.list_scheduling_policies)
@@ -543,8 +542,8 @@ Returns a `Coroutine` for
 
 Lists the tags for an Batch resource.
 
-Type annotations for
-`aiobotocore.create_client("batch").list_tags_for_resource` method.
+Type annotations for `session.create_client("batch").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Batch.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.list_tags_for_resource)
@@ -568,8 +567,8 @@ Returns a `Coroutine` for
 
 Registers an Batch job definition.
 
-Type annotations for
-`aiobotocore.create_client("batch").register_job_definition` method.
+Type annotations for `session.create_client("batch").register_job_definition`
+method.
 
 Boto3 documentation:
 [Batch.Client.register_job_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.register_job_definition)
@@ -607,7 +606,7 @@ Returns a `Coroutine` for
 
 Submits an Batch job from a job definition.
 
-Type annotations for `aiobotocore.create_client("batch").submit_job` method.
+Type annotations for `session.create_client("batch").submit_job` method.
 
 Boto3 documentation:
 [Batch.Client.submit_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.submit_job)
@@ -646,7 +645,7 @@ Returns a `Coroutine` for
 
 Associates the specified tags to a resource with the specified `resourceArn`.
 
-Type annotations for `aiobotocore.create_client("batch").tag_resource` method.
+Type annotations for `session.create_client("batch").tag_resource` method.
 
 Boto3 documentation:
 [Batch.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.tag_resource)
@@ -669,7 +668,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Terminates a job in a job queue.
 
-Type annotations for `aiobotocore.create_client("batch").terminate_job` method.
+Type annotations for `session.create_client("batch").terminate_job` method.
 
 Boto3 documentation:
 [Batch.Client.terminate_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.terminate_job)
@@ -692,8 +691,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes specified tags from an Batch resource.
 
-Type annotations for `aiobotocore.create_client("batch").untag_resource`
-method.
+Type annotations for `session.create_client("batch").untag_resource` method.
 
 Boto3 documentation:
 [Batch.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.untag_resource)
@@ -717,7 +715,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates an Batch compute environment.
 
 Type annotations for
-`aiobotocore.create_client("batch").update_compute_environment` method.
+`session.create_client("batch").update_compute_environment` method.
 
 Boto3 documentation:
 [Batch.Client.update_compute_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.update_compute_environment)
@@ -746,8 +744,7 @@ Returns a `Coroutine` for
 
 Updates a job queue.
 
-Type annotations for `aiobotocore.create_client("batch").update_job_queue`
-method.
+Type annotations for `session.create_client("batch").update_job_queue` method.
 
 Boto3 documentation:
 [Batch.Client.update_job_queue](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.update_job_queue)
@@ -775,8 +772,8 @@ Returns a `Coroutine` for
 
 Updates a scheduling policy.
 
-Type annotations for
-`aiobotocore.create_client("batch").update_scheduling_policy` method.
+Type annotations for `session.create_client("batch").update_scheduling_policy`
+method.
 
 Boto3 documentation:
 [Batch.Client.update_scheduling_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.update_scheduling_policy)
@@ -795,12 +792,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("batch").__aenter__` method.
+
+Boto3 documentation:
+[Batch.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [BatchClient](#batchclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("batch").__aexit__` method.
+
+Boto3 documentation:
+[Batch.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html#Batch.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("batch").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("batch").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_compute_environments")` ->
   [DescribeComputeEnvironmentsPaginator](./paginators.md#describecomputeenvironmentspaginator)

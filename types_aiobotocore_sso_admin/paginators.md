@@ -26,17 +26,19 @@ type annotations stubs module
 ## ListAccountAssignmentCreationStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").get_paginator("list_account_assignment_creation_status")`.
+`session.create_client("sso-admin").get_paginator("list_account_assignment_creation_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sso_admin.paginator import ListAccountAssignmentCreationStatusPaginator
 
-def get_list_account_assignment_creation_status_paginator() -> ListAccountAssignmentCreationStatusPaginator:
-    return Session().create_client("sso-admin").get_paginator("list_account_assignment_creation_status")
+session = get_session()
+async with session.create_client("sso-admin") as client:
+    client: SSOAdminClient
+    paginator: ListAccountAssignmentCreationStatusPaginator = client.get_paginator("list_account_assignment_creation_status")
 ```
 
 Boto3 documentation:
@@ -58,17 +60,19 @@ Arguments for `ListAccountAssignmentCreationStatusPaginator.paginate` method:
 ## ListAccountAssignmentDeletionStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").get_paginator("list_account_assignment_deletion_status")`.
+`session.create_client("sso-admin").get_paginator("list_account_assignment_deletion_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sso_admin.paginator import ListAccountAssignmentDeletionStatusPaginator
 
-def get_list_account_assignment_deletion_status_paginator() -> ListAccountAssignmentDeletionStatusPaginator:
-    return Session().create_client("sso-admin").get_paginator("list_account_assignment_deletion_status")
+session = get_session()
+async with session.create_client("sso-admin") as client:
+    client: SSOAdminClient
+    paginator: ListAccountAssignmentDeletionStatusPaginator = client.get_paginator("list_account_assignment_deletion_status")
 ```
 
 Boto3 documentation:
@@ -90,17 +94,19 @@ Arguments for `ListAccountAssignmentDeletionStatusPaginator.paginate` method:
 ## ListAccountAssignmentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").get_paginator("list_account_assignments")`.
+`session.create_client("sso-admin").get_paginator("list_account_assignments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sso_admin.paginator import ListAccountAssignmentsPaginator
 
-def get_list_account_assignments_paginator() -> ListAccountAssignmentsPaginator:
-    return Session().create_client("sso-admin").get_paginator("list_account_assignments")
+session = get_session()
+async with session.create_client("sso-admin") as client:
+    client: SSOAdminClient
+    paginator: ListAccountAssignmentsPaginator = client.get_paginator("list_account_assignments")
 ```
 
 Boto3 documentation:
@@ -122,17 +128,19 @@ Arguments for `ListAccountAssignmentsPaginator.paginate` method:
 ## ListAccountsForProvisionedPermissionSetPaginator
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").get_paginator("list_accounts_for_provisioned_permission_set")`.
+`session.create_client("sso-admin").get_paginator("list_accounts_for_provisioned_permission_set")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sso_admin.paginator import ListAccountsForProvisionedPermissionSetPaginator
 
-def get_list_accounts_for_provisioned_permission_set_paginator() -> ListAccountsForProvisionedPermissionSetPaginator:
-    return Session().create_client("sso-admin").get_paginator("list_accounts_for_provisioned_permission_set")
+session = get_session()
+async with session.create_client("sso-admin") as client:
+    client: SSOAdminClient
+    paginator: ListAccountsForProvisionedPermissionSetPaginator = client.get_paginator("list_accounts_for_provisioned_permission_set")
 ```
 
 Boto3 documentation:
@@ -156,17 +164,19 @@ method:
 ## ListInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").get_paginator("list_instances")`.
+`session.create_client("sso-admin").get_paginator("list_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sso_admin.paginator import ListInstancesPaginator
 
-def get_list_instances_paginator() -> ListInstancesPaginator:
-    return Session().create_client("sso-admin").get_paginator("list_instances")
+session = get_session()
+async with session.create_client("sso-admin") as client:
+    client: SSOAdminClient
+    paginator: ListInstancesPaginator = client.get_paginator("list_instances")
 ```
 
 Boto3 documentation:
@@ -185,17 +195,19 @@ Arguments for `ListInstancesPaginator.paginate` method:
 ## ListManagedPoliciesInPermissionSetPaginator
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").get_paginator("list_managed_policies_in_permission_set")`.
+`session.create_client("sso-admin").get_paginator("list_managed_policies_in_permission_set")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sso_admin.paginator import ListManagedPoliciesInPermissionSetPaginator
 
-def get_list_managed_policies_in_permission_set_paginator() -> ListManagedPoliciesInPermissionSetPaginator:
-    return Session().create_client("sso-admin").get_paginator("list_managed_policies_in_permission_set")
+session = get_session()
+async with session.create_client("sso-admin") as client:
+    client: SSOAdminClient
+    paginator: ListManagedPoliciesInPermissionSetPaginator = client.get_paginator("list_managed_policies_in_permission_set")
 ```
 
 Boto3 documentation:
@@ -216,17 +228,19 @@ Arguments for `ListManagedPoliciesInPermissionSetPaginator.paginate` method:
 ## ListPermissionSetProvisioningStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").get_paginator("list_permission_set_provisioning_status")`.
+`session.create_client("sso-admin").get_paginator("list_permission_set_provisioning_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sso_admin.paginator import ListPermissionSetProvisioningStatusPaginator
 
-def get_list_permission_set_provisioning_status_paginator() -> ListPermissionSetProvisioningStatusPaginator:
-    return Session().create_client("sso-admin").get_paginator("list_permission_set_provisioning_status")
+session = get_session()
+async with session.create_client("sso-admin") as client:
+    client: SSOAdminClient
+    paginator: ListPermissionSetProvisioningStatusPaginator = client.get_paginator("list_permission_set_provisioning_status")
 ```
 
 Boto3 documentation:
@@ -248,17 +262,19 @@ Arguments for `ListPermissionSetProvisioningStatusPaginator.paginate` method:
 ## ListPermissionSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").get_paginator("list_permission_sets")`.
+`session.create_client("sso-admin").get_paginator("list_permission_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sso_admin.paginator import ListPermissionSetsPaginator
 
-def get_list_permission_sets_paginator() -> ListPermissionSetsPaginator:
-    return Session().create_client("sso-admin").get_paginator("list_permission_sets")
+session = get_session()
+async with session.create_client("sso-admin") as client:
+    client: SSOAdminClient
+    paginator: ListPermissionSetsPaginator = client.get_paginator("list_permission_sets")
 ```
 
 Boto3 documentation:
@@ -278,17 +294,19 @@ Arguments for `ListPermissionSetsPaginator.paginate` method:
 ## ListPermissionSetsProvisionedToAccountPaginator
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").get_paginator("list_permission_sets_provisioned_to_account")`.
+`session.create_client("sso-admin").get_paginator("list_permission_sets_provisioned_to_account")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sso_admin.paginator import ListPermissionSetsProvisionedToAccountPaginator
 
-def get_list_permission_sets_provisioned_to_account_paginator() -> ListPermissionSetsProvisionedToAccountPaginator:
-    return Session().create_client("sso-admin").get_paginator("list_permission_sets_provisioned_to_account")
+session = get_session()
+async with session.create_client("sso-admin") as client:
+    client: SSOAdminClient
+    paginator: ListPermissionSetsProvisionedToAccountPaginator = client.get_paginator("list_permission_sets_provisioned_to_account")
 ```
 
 Boto3 documentation:
@@ -312,17 +330,19 @@ method:
 ## ListTagsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").get_paginator("list_tags_for_resource")`.
+`session.create_client("sso-admin").get_paginator("list_tags_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sso_admin.paginator import ListTagsForResourcePaginator
 
-def get_list_tags_for_resource_paginator() -> ListTagsForResourcePaginator:
-    return Session().create_client("sso-admin").get_paginator("list_tags_for_resource")
+session = get_session()
+async with session.create_client("sso-admin") as client:
+    client: SSOAdminClient
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
 ```
 
 Boto3 documentation:

@@ -17,7 +17,7 @@ type annotations stubs module
 ## CertificateValidatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("acm").get_waiter("certificate_validated")`.
+`session.create_client("acm").get_waiter("certificate_validated")`.
 
 Can be used directly:
 
@@ -27,7 +27,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_acm.waiter import CertificateValidatedWaiter
 
 def get_certificate_validated_waiter() -> CertificateValidatedWaiter:
-    return Session().create_client("acm").get_waiter("certificate_validated")
+    return Session().client("acm").get_waiter("certificate_validated")
 ```
 
 Boto3 documentation:

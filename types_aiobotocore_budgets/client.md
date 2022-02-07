@@ -38,22 +38,25 @@ type annotations stubs module
     - [update_budget_action](#update_budget_action)
     - [update_notification](#update_notification)
     - [update_subscriber](#update_subscriber)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="budgetsclient"></a>
 
 ## BudgetsClient
 
-Type annotations for `aiobotocore.create_client("budgets")`
+Type annotations for `session.create_client("budgets")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_budgets.client import BudgetsClient
 
-def get_budgets_client() -> BudgetsClient:
-    return Session().client("budgets")
+session = get_session()
+async with session.create_client("budgets") as client:
+    client: BudgetsClient
 ```
 
 Boto3 documentation:
@@ -96,7 +99,7 @@ Exceptions:
 
 BudgetsClient exceptions.
 
-Type annotations for `aiobotocore.create_client("budgets").exceptions` method.
+Type annotations for `session.create_client("budgets").exceptions` method.
 
 Boto3 documentation:
 [Budgets.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.exceptions)
@@ -109,19 +112,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("budgets").can_paginate`
-method.
+Type annotations for `session.create_client("budgets").can_paginate` method.
 
 Boto3 documentation:
 [Budgets.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_budget"></a>
 
@@ -129,8 +129,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a budget and, if included, notifications and subscribers.
 
-Type annotations for `aiobotocore.create_client("budgets").create_budget`
-method.
+Type annotations for `session.create_client("budgets").create_budget` method.
 
 Boto3 documentation:
 [Budgets.Client.create_budget](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.create_budget)
@@ -155,8 +154,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a budget action.
 
-Type annotations for
-`aiobotocore.create_client("budgets").create_budget_action` method.
+Type annotations for `session.create_client("budgets").create_budget_action`
+method.
 
 Boto3 documentation:
 [Budgets.Client.create_budget_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.create_budget_action)
@@ -194,7 +193,7 @@ Returns a `Coroutine` for
 
 Creates a notification.
 
-Type annotations for `aiobotocore.create_client("budgets").create_notification`
+Type annotations for `session.create_client("budgets").create_notification`
 method.
 
 Boto3 documentation:
@@ -224,7 +223,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a subscriber.
 
-Type annotations for `aiobotocore.create_client("budgets").create_subscriber`
+Type annotations for `session.create_client("budgets").create_subscriber`
 method.
 
 Boto3 documentation:
@@ -252,8 +251,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a budget.
 
-Type annotations for `aiobotocore.create_client("budgets").delete_budget`
-method.
+Type annotations for `session.create_client("budgets").delete_budget` method.
 
 Boto3 documentation:
 [Budgets.Client.delete_budget](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.delete_budget)
@@ -276,8 +274,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a budget action.
 
-Type annotations for
-`aiobotocore.create_client("budgets").delete_budget_action` method.
+Type annotations for `session.create_client("budgets").delete_budget_action`
+method.
 
 Boto3 documentation:
 [Budgets.Client.delete_budget_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.delete_budget_action)
@@ -303,7 +301,7 @@ Returns a `Coroutine` for
 
 Deletes a notification.
 
-Type annotations for `aiobotocore.create_client("budgets").delete_notification`
+Type annotations for `session.create_client("budgets").delete_notification`
 method.
 
 Boto3 documentation:
@@ -330,7 +328,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a subscriber.
 
-Type annotations for `aiobotocore.create_client("budgets").delete_subscriber`
+Type annotations for `session.create_client("budgets").delete_subscriber`
 method.
 
 Boto3 documentation:
@@ -358,8 +356,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Describes a budget.
 
-Type annotations for `aiobotocore.create_client("budgets").describe_budget`
-method.
+Type annotations for `session.create_client("budgets").describe_budget` method.
 
 Boto3 documentation:
 [Budgets.Client.describe_budget](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.describe_budget)
@@ -383,8 +380,8 @@ Returns a `Coroutine` for
 
 Describes a budget action detail.
 
-Type annotations for
-`aiobotocore.create_client("budgets").describe_budget_action` method.
+Type annotations for `session.create_client("budgets").describe_budget_action`
+method.
 
 Boto3 documentation:
 [Budgets.Client.describe_budget_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.describe_budget_action)
@@ -411,7 +408,7 @@ Returns a `Coroutine` for
 Describes a budget action history detail.
 
 Type annotations for
-`aiobotocore.create_client("budgets").describe_budget_action_histories` method.
+`session.create_client("budgets").describe_budget_action_histories` method.
 
 Boto3 documentation:
 [Budgets.Client.describe_budget_action_histories](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.describe_budget_action_histories)
@@ -441,8 +438,7 @@ Returns a `Coroutine` for
 Describes all of the budget actions for an account.
 
 Type annotations for
-`aiobotocore.create_client("budgets").describe_budget_actions_for_account`
-method.
+`session.create_client("budgets").describe_budget_actions_for_account` method.
 
 Boto3 documentation:
 [Budgets.Client.describe_budget_actions_for_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.describe_budget_actions_for_account)
@@ -469,8 +465,7 @@ Returns a `Coroutine` for
 Describes all of the budget actions for a budget.
 
 Type annotations for
-`aiobotocore.create_client("budgets").describe_budget_actions_for_budget`
-method.
+`session.create_client("budgets").describe_budget_actions_for_budget` method.
 
 Boto3 documentation:
 [Budgets.Client.describe_budget_actions_for_budget](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.describe_budget_actions_for_budget)
@@ -498,8 +493,7 @@ Returns a `Coroutine` for
 Describes the history for `DAILY` , `MONTHLY` , and `QUARTERLY` budgets.
 
 Type annotations for
-`aiobotocore.create_client("budgets").describe_budget_performance_history`
-method.
+`session.create_client("budgets").describe_budget_performance_history` method.
 
 Boto3 documentation:
 [Budgets.Client.describe_budget_performance_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.describe_budget_performance_history)
@@ -527,7 +521,7 @@ Returns a `Coroutine` for
 
 Lists the budgets that are associated with an account.
 
-Type annotations for `aiobotocore.create_client("budgets").describe_budgets`
+Type annotations for `session.create_client("budgets").describe_budgets`
 method.
 
 Boto3 documentation:
@@ -554,8 +548,7 @@ Returns a `Coroutine` for
 Lists the notifications that are associated with a budget.
 
 Type annotations for
-`aiobotocore.create_client("budgets").describe_notifications_for_budget`
-method.
+`session.create_client("budgets").describe_notifications_for_budget` method.
 
 Boto3 documentation:
 [Budgets.Client.describe_notifications_for_budget](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.describe_notifications_for_budget)
@@ -583,7 +576,7 @@ Returns a `Coroutine` for
 Lists the subscribers that are associated with a notification.
 
 Type annotations for
-`aiobotocore.create_client("budgets").describe_subscribers_for_notification`
+`session.create_client("budgets").describe_subscribers_for_notification`
 method.
 
 Boto3 documentation:
@@ -613,8 +606,8 @@ Returns a `Coroutine` for
 
 Executes a budget action.
 
-Type annotations for
-`aiobotocore.create_client("budgets").execute_budget_action` method.
+Type annotations for `session.create_client("budgets").execute_budget_action`
+method.
 
 Boto3 documentation:
 [Budgets.Client.execute_budget_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.execute_budget_action)
@@ -642,8 +635,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("budgets").generate_presigned_url` method.
+Type annotations for `session.create_client("budgets").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Budgets.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.generate_presigned_url)
@@ -666,8 +659,7 @@ Returns a `Coroutine` for `str`.
 
 Updates a budget.
 
-Type annotations for `aiobotocore.create_client("budgets").update_budget`
-method.
+Type annotations for `session.create_client("budgets").update_budget` method.
 
 Boto3 documentation:
 [Budgets.Client.update_budget](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.update_budget)
@@ -690,8 +682,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a budget action.
 
-Type annotations for
-`aiobotocore.create_client("budgets").update_budget_action` method.
+Type annotations for `session.create_client("budgets").update_budget_action`
+method.
 
 Boto3 documentation:
 [Budgets.Client.update_budget_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.update_budget_action)
@@ -726,7 +718,7 @@ Returns a `Coroutine` for
 
 Updates a notification.
 
-Type annotations for `aiobotocore.create_client("budgets").update_notification`
+Type annotations for `session.create_client("budgets").update_notification`
 method.
 
 Boto3 documentation:
@@ -755,7 +747,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a subscriber.
 
-Type annotations for `aiobotocore.create_client("budgets").update_subscriber`
+Type annotations for `session.create_client("budgets").update_subscriber`
 method.
 
 Boto3 documentation:
@@ -779,12 +771,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("budgets").__aenter__` method.
+
+Boto3 documentation:
+[Budgets.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [BudgetsClient](#budgetsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("budgets").__aexit__` method.
+
+Boto3 documentation:
+[Budgets.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("budgets").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("budgets").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_budget_action_histories")` ->
   [DescribeBudgetActionHistoriesPaginator](./paginators.md#describebudgetactionhistoriespaginator)

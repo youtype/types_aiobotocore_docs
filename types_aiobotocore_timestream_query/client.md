@@ -29,22 +29,25 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_scheduled_query](#update_scheduled_query)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="timestreamqueryclient"></a>
 
 ## TimestreamQueryClient
 
-Type annotations for `aiobotocore.create_client("timestream-query")`
+Type annotations for `session.create_client("timestream-query")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_timestream_query.client import TimestreamQueryClient
 
-def get_timestream-query_client() -> TimestreamQueryClient:
-    return Session().client("timestream-query")
+session = get_session()
+async with session.create_client("timestream-query") as client:
+    client: TimestreamQueryClient
 ```
 
 Boto3 documentation:
@@ -87,7 +90,7 @@ Exceptions:
 
 TimestreamQueryClient exceptions.
 
-Type annotations for `aiobotocore.create_client("timestream-query").exceptions`
+Type annotations for `session.create_client("timestream-query").exceptions`
 method.
 
 Boto3 documentation:
@@ -101,19 +104,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("timestream-query").can_paginate` method.
+Type annotations for `session.create_client("timestream-query").can_paginate`
+method.
 
 Boto3 documentation:
 [TimestreamQuery.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_query"></a>
 
@@ -121,8 +122,8 @@ Returns a `Coroutine` for `bool`.
 
 Cancels a query that has been issued.
 
-Type annotations for
-`aiobotocore.create_client("timestream-query").cancel_query` method.
+Type annotations for `session.create_client("timestream-query").cancel_query`
+method.
 
 Boto3 documentation:
 [TimestreamQuery.Client.cancel_query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.cancel_query)
@@ -147,7 +148,7 @@ Create a scheduled query that will be run on your behalf at the configured
 schedule.
 
 Type annotations for
-`aiobotocore.create_client("timestream-query").create_scheduled_query` method.
+`session.create_client("timestream-query").create_scheduled_query` method.
 
 Boto3 documentation:
 [TimestreamQuery.Client.create_scheduled_query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.create_scheduled_query)
@@ -188,7 +189,7 @@ Returns a `Coroutine` for
 Deletes a given scheduled query.
 
 Type annotations for
-`aiobotocore.create_client("timestream-query").delete_scheduled_query` method.
+`session.create_client("timestream-query").delete_scheduled_query` method.
 
 Boto3 documentation:
 [TimestreamQuery.Client.delete_scheduled_query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.delete_scheduled_query)
@@ -211,7 +212,7 @@ DescribeEndpoints returns a list of available endpoints to make Timestream API
 calls against.
 
 Type annotations for
-`aiobotocore.create_client("timestream-query").describe_endpoints` method.
+`session.create_client("timestream-query").describe_endpoints` method.
 
 Boto3 documentation:
 [TimestreamQuery.Client.describe_endpoints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.describe_endpoints)
@@ -229,8 +230,7 @@ Returns a `Coroutine` for
 Provides detailed information about a scheduled query.
 
 Type annotations for
-`aiobotocore.create_client("timestream-query").describe_scheduled_query`
-method.
+`session.create_client("timestream-query").describe_scheduled_query` method.
 
 Boto3 documentation:
 [TimestreamQuery.Client.describe_scheduled_query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.describe_scheduled_query)
@@ -255,7 +255,7 @@ Returns a `Coroutine` for
 You can use this API to run a scheduled query manually.
 
 Type annotations for
-`aiobotocore.create_client("timestream-query").execute_scheduled_query` method.
+`session.create_client("timestream-query").execute_scheduled_query` method.
 
 Boto3 documentation:
 [TimestreamQuery.Client.execute_scheduled_query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.execute_scheduled_query)
@@ -279,7 +279,7 @@ Keyword-only arguments:
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("timestream-query").generate_presigned_url` method.
+`session.create_client("timestream-query").generate_presigned_url` method.
 
 Boto3 documentation:
 [TimestreamQuery.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.generate_presigned_url)
@@ -303,7 +303,7 @@ Returns a `Coroutine` for `str`.
 Gets a list of all scheduled queries in the caller's Amazon account and Region.
 
 Type annotations for
-`aiobotocore.create_client("timestream-query").list_scheduled_queries` method.
+`session.create_client("timestream-query").list_scheduled_queries` method.
 
 Boto3 documentation:
 [TimestreamQuery.Client.list_scheduled_queries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.list_scheduled_queries)
@@ -329,7 +329,7 @@ Returns a `Coroutine` for
 List all tags on a Timestream query resource.
 
 Type annotations for
-`aiobotocore.create_client("timestream-query").list_tags_for_resource` method.
+`session.create_client("timestream-query").list_tags_for_resource` method.
 
 Boto3 documentation:
 [TimestreamQuery.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.list_tags_for_resource)
@@ -356,8 +356,8 @@ Returns a `Coroutine` for
 A synchronous operation that allows you to submit a query with parameters to be
 stored by Timestream for later running.
 
-Type annotations for
-`aiobotocore.create_client("timestream-query").prepare_query` method.
+Type annotations for `session.create_client("timestream-query").prepare_query`
+method.
 
 Boto3 documentation:
 [TimestreamQuery.Client.prepare_query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.prepare_query)
@@ -382,8 +382,7 @@ Returns a `Coroutine` for
 `Query` is a synchronous operation that enables you to run a query against your
 Amazon Timestream data.
 
-Type annotations for `aiobotocore.create_client("timestream-query").query`
-method.
+Type annotations for `session.create_client("timestream-query").query` method.
 
 Boto3 documentation:
 [TimestreamQuery.Client.query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.query)
@@ -409,8 +408,8 @@ Returns a `Coroutine` for
 
 Associate a set of tags with a Timestream resource.
 
-Type annotations for
-`aiobotocore.create_client("timestream-query").tag_resource` method.
+Type annotations for `session.create_client("timestream-query").tag_resource`
+method.
 
 Boto3 documentation:
 [TimestreamQuery.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.tag_resource)
@@ -433,8 +432,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the association of tags from a Timestream query resource.
 
-Type annotations for
-`aiobotocore.create_client("timestream-query").untag_resource` method.
+Type annotations for `session.create_client("timestream-query").untag_resource`
+method.
 
 Boto3 documentation:
 [TimestreamQuery.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.untag_resource)
@@ -458,7 +457,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Update a scheduled query.
 
 Type annotations for
-`aiobotocore.create_client("timestream-query").update_scheduled_query` method.
+`session.create_client("timestream-query").update_scheduled_query` method.
 
 Boto3 documentation:
 [TimestreamQuery.Client.update_scheduled_query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.update_scheduled_query)
@@ -475,13 +474,46 @@ Keyword-only arguments:
 - `State`: [ScheduledQueryStateType](./literals.md#scheduledquerystatetype)
   *(required)*
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("timestream-query").__aenter__`
+method.
+
+Boto3 documentation:
+[TimestreamQuery.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [TimestreamQueryClient](#timestreamqueryclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("timestream-query").__aexit__`
+method.
+
+Boto3 documentation:
+[TimestreamQuery.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/timestream-query.html#TimestreamQuery.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("timestream-query").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("timestream-query").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_scheduled_queries")` ->
   [ListScheduledQueriesPaginator](./paginators.md#listscheduledqueriespaginator)

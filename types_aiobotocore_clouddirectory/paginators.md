@@ -35,17 +35,19 @@ type annotations stubs module
 ## ListAppliedSchemaArnsPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_applied_schema_arns")`.
+`session.create_client("clouddirectory").get_paginator("list_applied_schema_arns")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListAppliedSchemaArnsPaginator
 
-def get_list_applied_schema_arns_paginator() -> ListAppliedSchemaArnsPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_applied_schema_arns")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListAppliedSchemaArnsPaginator = client.get_paginator("list_applied_schema_arns")
 ```
 
 Boto3 documentation:
@@ -66,17 +68,19 @@ Arguments for `ListAppliedSchemaArnsPaginator.paginate` method:
 ## ListAttachedIndicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_attached_indices")`.
+`session.create_client("clouddirectory").get_paginator("list_attached_indices")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListAttachedIndicesPaginator
 
-def get_list_attached_indices_paginator() -> ListAttachedIndicesPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_attached_indices")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListAttachedIndicesPaginator = client.get_paginator("list_attached_indices")
 ```
 
 Boto3 documentation:
@@ -100,17 +104,19 @@ Arguments for `ListAttachedIndicesPaginator.paginate` method:
 ## ListDevelopmentSchemaArnsPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_development_schema_arns")`.
+`session.create_client("clouddirectory").get_paginator("list_development_schema_arns")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListDevelopmentSchemaArnsPaginator
 
-def get_list_development_schema_arns_paginator() -> ListDevelopmentSchemaArnsPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_development_schema_arns")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListDevelopmentSchemaArnsPaginator = client.get_paginator("list_development_schema_arns")
 ```
 
 Boto3 documentation:
@@ -129,17 +135,19 @@ Arguments for `ListDevelopmentSchemaArnsPaginator.paginate` method:
 ## ListDirectoriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_directories")`.
+`session.create_client("clouddirectory").get_paginator("list_directories")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListDirectoriesPaginator
 
-def get_list_directories_paginator() -> ListDirectoriesPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_directories")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListDirectoriesPaginator = client.get_paginator("list_directories")
 ```
 
 Boto3 documentation:
@@ -159,17 +167,19 @@ Arguments for `ListDirectoriesPaginator.paginate` method:
 ## ListFacetAttributesPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_facet_attributes")`.
+`session.create_client("clouddirectory").get_paginator("list_facet_attributes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListFacetAttributesPaginator
 
-def get_list_facet_attributes_paginator() -> ListFacetAttributesPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_facet_attributes")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListFacetAttributesPaginator = client.get_paginator("list_facet_attributes")
 ```
 
 Boto3 documentation:
@@ -190,17 +200,19 @@ Arguments for `ListFacetAttributesPaginator.paginate` method:
 ## ListFacetNamesPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_facet_names")`.
+`session.create_client("clouddirectory").get_paginator("list_facet_names")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListFacetNamesPaginator
 
-def get_list_facet_names_paginator() -> ListFacetNamesPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_facet_names")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListFacetNamesPaginator = client.get_paginator("list_facet_names")
 ```
 
 Boto3 documentation:
@@ -220,17 +232,19 @@ Arguments for `ListFacetNamesPaginator.paginate` method:
 ## ListIncomingTypedLinksPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_incoming_typed_links")`.
+`session.create_client("clouddirectory").get_paginator("list_incoming_typed_links")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListIncomingTypedLinksPaginator
 
-def get_list_incoming_typed_links_paginator() -> ListIncomingTypedLinksPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_incoming_typed_links")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListIncomingTypedLinksPaginator = client.get_paginator("list_incoming_typed_links")
 ```
 
 Boto3 documentation:
@@ -258,17 +272,19 @@ Arguments for `ListIncomingTypedLinksPaginator.paginate` method:
 ## ListIndexPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_index")`.
+`session.create_client("clouddirectory").get_paginator("list_index")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListIndexPaginator
 
-def get_list_index_paginator() -> ListIndexPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_index")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListIndexPaginator = client.get_paginator("list_index")
 ```
 
 Boto3 documentation:
@@ -294,17 +310,19 @@ Arguments for `ListIndexPaginator.paginate` method:
 ## ListManagedSchemaArnsPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_managed_schema_arns")`.
+`session.create_client("clouddirectory").get_paginator("list_managed_schema_arns")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListManagedSchemaArnsPaginator
 
-def get_list_managed_schema_arns_paginator() -> ListManagedSchemaArnsPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_managed_schema_arns")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListManagedSchemaArnsPaginator = client.get_paginator("list_managed_schema_arns")
 ```
 
 Boto3 documentation:
@@ -324,17 +342,19 @@ Arguments for `ListManagedSchemaArnsPaginator.paginate` method:
 ## ListObjectAttributesPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_object_attributes")`.
+`session.create_client("clouddirectory").get_paginator("list_object_attributes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListObjectAttributesPaginator
 
-def get_list_object_attributes_paginator() -> ListObjectAttributesPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_object_attributes")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListObjectAttributesPaginator = client.get_paginator("list_object_attributes")
 ```
 
 Boto3 documentation:
@@ -359,17 +379,19 @@ Arguments for `ListObjectAttributesPaginator.paginate` method:
 ## ListObjectParentPathsPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_object_parent_paths")`.
+`session.create_client("clouddirectory").get_paginator("list_object_parent_paths")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListObjectParentPathsPaginator
 
-def get_list_object_parent_paths_paginator() -> ListObjectParentPathsPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_object_parent_paths")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListObjectParentPathsPaginator = client.get_paginator("list_object_parent_paths")
 ```
 
 Boto3 documentation:
@@ -391,17 +413,19 @@ Arguments for `ListObjectParentPathsPaginator.paginate` method:
 ## ListObjectPoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_object_policies")`.
+`session.create_client("clouddirectory").get_paginator("list_object_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListObjectPoliciesPaginator
 
-def get_list_object_policies_paginator() -> ListObjectPoliciesPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_object_policies")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListObjectPoliciesPaginator = client.get_paginator("list_object_policies")
 ```
 
 Boto3 documentation:
@@ -425,17 +449,19 @@ Arguments for `ListObjectPoliciesPaginator.paginate` method:
 ## ListOutgoingTypedLinksPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_outgoing_typed_links")`.
+`session.create_client("clouddirectory").get_paginator("list_outgoing_typed_links")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListOutgoingTypedLinksPaginator
 
-def get_list_outgoing_typed_links_paginator() -> ListOutgoingTypedLinksPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_outgoing_typed_links")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListOutgoingTypedLinksPaginator = client.get_paginator("list_outgoing_typed_links")
 ```
 
 Boto3 documentation:
@@ -463,17 +489,19 @@ Arguments for `ListOutgoingTypedLinksPaginator.paginate` method:
 ## ListPolicyAttachmentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_policy_attachments")`.
+`session.create_client("clouddirectory").get_paginator("list_policy_attachments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListPolicyAttachmentsPaginator
 
-def get_list_policy_attachments_paginator() -> ListPolicyAttachmentsPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_policy_attachments")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListPolicyAttachmentsPaginator = client.get_paginator("list_policy_attachments")
 ```
 
 Boto3 documentation:
@@ -497,17 +525,19 @@ Arguments for `ListPolicyAttachmentsPaginator.paginate` method:
 ## ListPublishedSchemaArnsPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_published_schema_arns")`.
+`session.create_client("clouddirectory").get_paginator("list_published_schema_arns")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListPublishedSchemaArnsPaginator
 
-def get_list_published_schema_arns_paginator() -> ListPublishedSchemaArnsPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_published_schema_arns")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListPublishedSchemaArnsPaginator = client.get_paginator("list_published_schema_arns")
 ```
 
 Boto3 documentation:
@@ -527,17 +557,19 @@ Arguments for `ListPublishedSchemaArnsPaginator.paginate` method:
 ## ListTagsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_tags_for_resource")`.
+`session.create_client("clouddirectory").get_paginator("list_tags_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListTagsForResourcePaginator
 
-def get_list_tags_for_resource_paginator() -> ListTagsForResourcePaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_tags_for_resource")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
 ```
 
 Boto3 documentation:
@@ -557,17 +589,19 @@ Arguments for `ListTagsForResourcePaginator.paginate` method:
 ## ListTypedLinkFacetAttributesPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_typed_link_facet_attributes")`.
+`session.create_client("clouddirectory").get_paginator("list_typed_link_facet_attributes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListTypedLinkFacetAttributesPaginator
 
-def get_list_typed_link_facet_attributes_paginator() -> ListTypedLinkFacetAttributesPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_typed_link_facet_attributes")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListTypedLinkFacetAttributesPaginator = client.get_paginator("list_typed_link_facet_attributes")
 ```
 
 Boto3 documentation:
@@ -588,17 +622,19 @@ Arguments for `ListTypedLinkFacetAttributesPaginator.paginate` method:
 ## ListTypedLinkFacetNamesPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("list_typed_link_facet_names")`.
+`session.create_client("clouddirectory").get_paginator("list_typed_link_facet_names")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import ListTypedLinkFacetNamesPaginator
 
-def get_list_typed_link_facet_names_paginator() -> ListTypedLinkFacetNamesPaginator:
-    return Session().create_client("clouddirectory").get_paginator("list_typed_link_facet_names")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: ListTypedLinkFacetNamesPaginator = client.get_paginator("list_typed_link_facet_names")
 ```
 
 Boto3 documentation:
@@ -618,17 +654,19 @@ Arguments for `ListTypedLinkFacetNamesPaginator.paginate` method:
 ## LookupPolicyPaginator
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator("lookup_policy")`.
+`session.create_client("clouddirectory").get_paginator("lookup_policy")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_clouddirectory.paginator import LookupPolicyPaginator
 
-def get_lookup_policy_paginator() -> LookupPolicyPaginator:
-    return Session().create_client("clouddirectory").get_paginator("lookup_policy")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
+    paginator: LookupPolicyPaginator = client.get_paginator("lookup_policy")
 ```
 
 Boto3 documentation:

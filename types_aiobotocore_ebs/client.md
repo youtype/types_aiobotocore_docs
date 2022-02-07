@@ -22,21 +22,24 @@ type annotations stubs module
     - [list_snapshot_blocks](#list_snapshot_blocks)
     - [put_snapshot_block](#put_snapshot_block)
     - [start_snapshot](#start_snapshot)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="ebsclient"></a>
 
 ## EBSClient
 
-Type annotations for `aiobotocore.create_client("ebs")`
+Type annotations for `session.create_client("ebs")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_ebs.client import EBSClient
 
-def get_ebs_client() -> EBSClient:
-    return Session().client("ebs")
+session = get_session()
+async with session.create_client("ebs") as client:
+    client: EBSClient
 ```
 
 Boto3 documentation:
@@ -78,7 +81,7 @@ Exceptions:
 
 EBSClient exceptions.
 
-Type annotations for `aiobotocore.create_client("ebs").exceptions` method.
+Type annotations for `session.create_client("ebs").exceptions` method.
 
 Boto3 documentation:
 [EBS.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ebs.html#EBS.Client.exceptions)
@@ -91,18 +94,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("ebs").can_paginate` method.
+Type annotations for `session.create_client("ebs").can_paginate` method.
 
 Boto3 documentation:
 [EBS.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ebs.html#EBS.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="complete_snapshot"></a>
 
@@ -111,8 +112,7 @@ Returns a `Coroutine` for `bool`.
 Seals and completes the snapshot after all of the required blocks of data have
 been written to it.
 
-Type annotations for `aiobotocore.create_client("ebs").complete_snapshot`
-method.
+Type annotations for `session.create_client("ebs").complete_snapshot` method.
 
 Boto3 documentation:
 [EBS.Client.complete_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ebs.html#EBS.Client.complete_snapshot)
@@ -141,7 +141,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("ebs").generate_presigned_url`
+Type annotations for `session.create_client("ebs").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -165,8 +165,7 @@ Returns a `Coroutine` for `str`.
 
 Returns the data in a block in an Amazon Elastic Block Store snapshot.
 
-Type annotations for `aiobotocore.create_client("ebs").get_snapshot_block`
-method.
+Type annotations for `session.create_client("ebs").get_snapshot_block` method.
 
 Boto3 documentation:
 [EBS.Client.get_snapshot_block](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ebs.html#EBS.Client.get_snapshot_block)
@@ -193,8 +192,7 @@ Returns a `Coroutine` for
 Returns information about the blocks that are different between two Amazon
 Elastic Block Store snapshots of the same volume/snapshot lineage.
 
-Type annotations for `aiobotocore.create_client("ebs").list_changed_blocks`
-method.
+Type annotations for `session.create_client("ebs").list_changed_blocks` method.
 
 Boto3 documentation:
 [EBS.Client.list_changed_blocks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ebs.html#EBS.Client.list_changed_blocks)
@@ -222,7 +220,7 @@ Returns a `Coroutine` for
 
 Returns information about the blocks in an Amazon Elastic Block Store snapshot.
 
-Type annotations for `aiobotocore.create_client("ebs").list_snapshot_blocks`
+Type annotations for `session.create_client("ebs").list_snapshot_blocks`
 method.
 
 Boto3 documentation:
@@ -250,8 +248,7 @@ Returns a `Coroutine` for
 
 Writes a block of data to a snapshot.
 
-Type annotations for `aiobotocore.create_client("ebs").put_snapshot_block`
-method.
+Type annotations for `session.create_client("ebs").put_snapshot_block` method.
 
 Boto3 documentation:
 [EBS.Client.put_snapshot_block](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ebs.html#EBS.Client.put_snapshot_block)
@@ -283,7 +280,7 @@ Returns a `Coroutine` for
 
 Creates a new Amazon EBS snapshot.
 
-Type annotations for `aiobotocore.create_client("ebs").start_snapshot` method.
+Type annotations for `session.create_client("ebs").start_snapshot` method.
 
 Boto3 documentation:
 [EBS.Client.start_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ebs.html#EBS.Client.start_snapshot)
@@ -306,3 +303,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [StartSnapshotResponseTypeDef](./type_defs.md#startsnapshotresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("ebs").__aenter__` method.
+
+Boto3 documentation:
+[EBS.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ebs.html#EBS.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [EBSClient](#ebsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("ebs").__aexit__` method.
+
+Boto3 documentation:
+[EBS.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ebs.html#EBS.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

@@ -17,21 +17,24 @@ type annotations stubs module
     - [can_paginate](#can_paginate)
     - [generate_presigned_url](#generate_presigned_url)
     - [get_media](#get_media)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="kinesisvideomediaclient"></a>
 
 ## KinesisVideoMediaClient
 
-Type annotations for `aiobotocore.create_client("kinesis-video-media")`
+Type annotations for `session.create_client("kinesis-video-media")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_kinesis_video_media.client import KinesisVideoMediaClient
 
-def get_kinesis-video-media_client() -> KinesisVideoMediaClient:
-    return Session().client("kinesis-video-media")
+session = get_session()
+async with session.create_client("kinesis-video-media") as client:
+    client: KinesisVideoMediaClient
 ```
 
 Boto3 documentation:
@@ -71,8 +74,8 @@ Exceptions:
 
 KinesisVideoMediaClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("kinesis-video-media").exceptions` method.
+Type annotations for `session.create_client("kinesis-video-media").exceptions`
+method.
 
 Boto3 documentation:
 [KinesisVideoMedia.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-media.html#KinesisVideoMedia.Client.exceptions)
@@ -86,18 +89,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-media").can_paginate` method.
+`session.create_client("kinesis-video-media").can_paginate` method.
 
 Boto3 documentation:
 [KinesisVideoMedia.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-media.html#KinesisVideoMedia.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -106,8 +107,7 @@ Returns a `Coroutine` for `bool`.
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-media").generate_presigned_url`
-method.
+`session.create_client("kinesis-video-media").generate_presigned_url` method.
 
 Boto3 documentation:
 [KinesisVideoMedia.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-media.html#KinesisVideoMedia.Client.generate_presigned_url)
@@ -130,8 +130,8 @@ Returns a `Coroutine` for `str`.
 
 Use this API to retrieve media content from a Kinesis video stream.
 
-Type annotations for
-`aiobotocore.create_client("kinesis-video-media").get_media` method.
+Type annotations for `session.create_client("kinesis-video-media").get_media`
+method.
 
 Boto3 documentation:
 [KinesisVideoMedia.Client.get_media](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-media.html#KinesisVideoMedia.Client.get_media)
@@ -150,3 +150,37 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [GetMediaOutputTypeDef](./type_defs.md#getmediaoutputtypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("kinesis-video-media").__aenter__`
+method.
+
+Boto3 documentation:
+[KinesisVideoMedia.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-media.html#KinesisVideoMedia.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [KinesisVideoMediaClient](#kinesisvideomediaclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("kinesis-video-media").__aexit__`
+method.
+
+Boto3 documentation:
+[KinesisVideoMedia.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-media.html#KinesisVideoMedia.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

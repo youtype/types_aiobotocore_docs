@@ -33,22 +33,25 @@ type annotations stubs module
     - [notify_application_state](#notify_application_state)
     - [notify_migration_task_state](#notify_migration_task_state)
     - [put_resource_attributes](#put_resource_attributes)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="migrationhubclient"></a>
 
 ## MigrationHubClient
 
-Type annotations for `aiobotocore.create_client("mgh")`
+Type annotations for `session.create_client("mgh")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_mgh.client import MigrationHubClient
 
-def get_mgh_client() -> MigrationHubClient:
-    return Session().client("mgh")
+session = get_session()
+async with session.create_client("mgh") as client:
+    client: MigrationHubClient
 ```
 
 Boto3 documentation:
@@ -92,7 +95,7 @@ Exceptions:
 
 MigrationHubClient exceptions.
 
-Type annotations for `aiobotocore.create_client("mgh").exceptions` method.
+Type annotations for `session.create_client("mgh").exceptions` method.
 
 Boto3 documentation:
 [MigrationHub.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgh.html#MigrationHub.Client.exceptions)
@@ -106,8 +109,8 @@ Returns [Exceptions](#exceptions).
 Associates a created artifact of an AWS cloud resource, the target receiving
 the migration, with the migration task performed by a migration tool.
 
-Type annotations for
-`aiobotocore.create_client("mgh").associate_created_artifact` method.
+Type annotations for `session.create_client("mgh").associate_created_artifact`
+method.
 
 Boto3 documentation:
 [MigrationHub.Client.associate_created_artifact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgh.html#MigrationHub.Client.associate_created_artifact)
@@ -136,7 +139,7 @@ Associates a discovered resource ID from Application Discovery Service with a
 migration task.
 
 Type annotations for
-`aiobotocore.create_client("mgh").associate_discovered_resource` method.
+`session.create_client("mgh").associate_discovered_resource` method.
 
 Boto3 documentation:
 [MigrationHub.Client.associate_discovered_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgh.html#MigrationHub.Client.associate_discovered_resource)
@@ -164,18 +167,16 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("mgh").can_paginate` method.
+Type annotations for `session.create_client("mgh").can_paginate` method.
 
 Boto3 documentation:
 [MigrationHub.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgh.html#MigrationHub.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_progress_update_stream"></a>
 
@@ -186,7 +187,7 @@ control as well as a namespace for migration task names that is implicitly
 linked to your AWS account.
 
 Type annotations for
-`aiobotocore.create_client("mgh").create_progress_update_stream` method.
+`session.create_client("mgh").create_progress_update_stream` method.
 
 Boto3 documentation:
 [MigrationHub.Client.create_progress_update_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgh.html#MigrationHub.Client.create_progress_update_stream)
@@ -212,7 +213,7 @@ Deletes a progress update stream, including all of its tasks, which was
 previously created as an AWS resource used for access control.
 
 Type annotations for
-`aiobotocore.create_client("mgh").delete_progress_update_stream` method.
+`session.create_client("mgh").delete_progress_update_stream` method.
 
 Boto3 documentation:
 [MigrationHub.Client.delete_progress_update_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgh.html#MigrationHub.Client.delete_progress_update_stream)
@@ -236,8 +237,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Gets the migration status of an application.
 
-Type annotations for
-`aiobotocore.create_client("mgh").describe_application_state` method.
+Type annotations for `session.create_client("mgh").describe_application_state`
+method.
 
 Boto3 documentation:
 [MigrationHub.Client.describe_application_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgh.html#MigrationHub.Client.describe_application_state)
@@ -261,7 +262,7 @@ Returns a `Coroutine` for
 
 Retrieves a list of all attributes associated with a specific migration task.
 
-Type annotations for `aiobotocore.create_client("mgh").describe_migration_task`
+Type annotations for `session.create_client("mgh").describe_migration_task`
 method.
 
 Boto3 documentation:
@@ -289,7 +290,7 @@ Disassociates a created artifact of an AWS resource with a migration task
 performed by a migration tool that was previously associated.
 
 Type annotations for
-`aiobotocore.create_client("mgh").disassociate_created_artifact` method.
+`session.create_client("mgh").disassociate_created_artifact` method.
 
 Boto3 documentation:
 [MigrationHub.Client.disassociate_created_artifact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgh.html#MigrationHub.Client.disassociate_created_artifact)
@@ -317,7 +318,7 @@ Disassociate an Application Discovery Service discovered resource from a
 migration task.
 
 Type annotations for
-`aiobotocore.create_client("mgh").disassociate_discovered_resource` method.
+`session.create_client("mgh").disassociate_discovered_resource` method.
 
 Boto3 documentation:
 [MigrationHub.Client.disassociate_discovered_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgh.html#MigrationHub.Client.disassociate_discovered_resource)
@@ -343,7 +344,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("mgh").generate_presigned_url`
+Type annotations for `session.create_client("mgh").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -368,7 +369,7 @@ Returns a `Coroutine` for `str`.
 Registers a new migration task which represents a server, database, etc., being
 migrated to AWS by a migration tool.
 
-Type annotations for `aiobotocore.create_client("mgh").import_migration_task`
+Type annotations for `session.create_client("mgh").import_migration_task`
 method.
 
 Boto3 documentation:
@@ -394,7 +395,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Lists all the migration statuses for your applications.
 
-Type annotations for `aiobotocore.create_client("mgh").list_application_states`
+Type annotations for `session.create_client("mgh").list_application_states`
 method.
 
 Boto3 documentation:
@@ -422,7 +423,7 @@ Returns a `Coroutine` for
 Lists the created artifacts attached to a given migration task in an update
 stream.
 
-Type annotations for `aiobotocore.create_client("mgh").list_created_artifacts`
+Type annotations for `session.create_client("mgh").list_created_artifacts`
 method.
 
 Boto3 documentation:
@@ -450,8 +451,8 @@ Returns a `Coroutine` for
 
 Lists discovered resources associated with the given `MigrationTask` .
 
-Type annotations for
-`aiobotocore.create_client("mgh").list_discovered_resources` method.
+Type annotations for `session.create_client("mgh").list_discovered_resources`
+method.
 
 Boto3 documentation:
 [MigrationHub.Client.list_discovered_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgh.html#MigrationHub.Client.list_discovered_resources)
@@ -479,7 +480,7 @@ Returns a `Coroutine` for
 Lists all, or filtered by resource name, migration tasks associated with the
 user account making this call.
 
-Type annotations for `aiobotocore.create_client("mgh").list_migration_tasks`
+Type annotations for `session.create_client("mgh").list_migration_tasks`
 method.
 
 Boto3 documentation:
@@ -508,7 +509,7 @@ Lists progress update streams associated with the user account making this
 call.
 
 Type annotations for
-`aiobotocore.create_client("mgh").list_progress_update_streams` method.
+`session.create_client("mgh").list_progress_update_streams` method.
 
 Boto3 documentation:
 [MigrationHub.Client.list_progress_update_streams](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgh.html#MigrationHub.Client.list_progress_update_streams)
@@ -533,8 +534,8 @@ Returns a `Coroutine` for
 
 Sets the migration state of an application.
 
-Type annotations for
-`aiobotocore.create_client("mgh").notify_application_state` method.
+Type annotations for `session.create_client("mgh").notify_application_state`
+method.
 
 Boto3 documentation:
 [MigrationHub.Client.notify_application_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgh.html#MigrationHub.Client.notify_application_state)
@@ -562,8 +563,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Notifies Migration Hub of the current status, progress, or other detail
 regarding a migration task.
 
-Type annotations for
-`aiobotocore.create_client("mgh").notify_migration_task_state` method.
+Type annotations for `session.create_client("mgh").notify_migration_task_state`
+method.
 
 Boto3 documentation:
 [MigrationHub.Client.notify_migration_task_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgh.html#MigrationHub.Client.notify_migration_task_state)
@@ -591,7 +592,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 .
 
-Type annotations for `aiobotocore.create_client("mgh").put_resource_attributes`
+Type annotations for `session.create_client("mgh").put_resource_attributes`
 method.
 
 Boto3 documentation:
@@ -614,12 +615,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("mgh").__aenter__` method.
+
+Boto3 documentation:
+[MigrationHub.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgh.html#MigrationHub.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [MigrationHubClient](#migrationhubclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("mgh").__aexit__` method.
+
+Boto3 documentation:
+[MigrationHub.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgh.html#MigrationHub.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("mgh").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("mgh").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_application_states")` ->
   [ListApplicationStatesPaginator](./paginators.md#listapplicationstatespaginator)

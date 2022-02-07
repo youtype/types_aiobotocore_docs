@@ -18,7 +18,7 @@ type annotations stubs module
 ## FleetStartedWaiter
 
 Type annotations for
-`aiobotocore.create_client("appstream").get_waiter("fleet_started")`.
+`session.create_client("appstream").get_waiter("fleet_started")`.
 
 Can be used directly:
 
@@ -28,7 +28,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_appstream.waiter import FleetStartedWaiter
 
 def get_fleet_started_waiter() -> FleetStartedWaiter:
-    return Session().create_client("appstream").get_waiter("fleet_started")
+    return Session().client("appstream").get_waiter("fleet_started")
 ```
 
 Boto3 documentation:
@@ -45,7 +45,7 @@ Arguments for `FleetStartedWaiter.wait` method:
 ## FleetStoppedWaiter
 
 Type annotations for
-`aiobotocore.create_client("appstream").get_waiter("fleet_stopped")`.
+`session.create_client("appstream").get_waiter("fleet_stopped")`.
 
 Can be used directly:
 
@@ -55,7 +55,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_appstream.waiter import FleetStoppedWaiter
 
 def get_fleet_stopped_waiter() -> FleetStoppedWaiter:
-    return Session().create_client("appstream").get_waiter("fleet_stopped")
+    return Session().client("appstream").get_waiter("fleet_stopped")
 ```
 
 Boto3 documentation:

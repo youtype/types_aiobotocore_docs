@@ -31,22 +31,25 @@ type annotations stubs module
     - [restore_backup](#restore_backup)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="cloudhsmv2client"></a>
 
 ## CloudHSMV2Client
 
-Type annotations for `aiobotocore.create_client("cloudhsmv2")`
+Type annotations for `session.create_client("cloudhsmv2")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_cloudhsmv2.client import CloudHSMV2Client
 
-def get_cloudhsmv2_client() -> CloudHSMV2Client:
-    return Session().client("cloudhsmv2")
+session = get_session()
+async with session.create_client("cloudhsmv2") as client:
+    client: CloudHSMV2Client
 ```
 
 Boto3 documentation:
@@ -86,8 +89,7 @@ Exceptions:
 
 CloudHSMV2Client exceptions.
 
-Type annotations for `aiobotocore.create_client("cloudhsmv2").exceptions`
-method.
+Type annotations for `session.create_client("cloudhsmv2").exceptions` method.
 
 Boto3 documentation:
 [CloudHSMV2.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.exceptions)
@@ -100,19 +102,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("cloudhsmv2").can_paginate`
-method.
+Type annotations for `session.create_client("cloudhsmv2").can_paginate` method.
 
 Boto3 documentation:
 [CloudHSMV2.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="copy_backup_to_region"></a>
 
@@ -121,7 +120,7 @@ Returns a `Coroutine` for `bool`.
 Copy an AWS CloudHSM cluster backup to a different region.
 
 Type annotations for
-`aiobotocore.create_client("cloudhsmv2").copy_backup_to_region` method.
+`session.create_client("cloudhsmv2").copy_backup_to_region` method.
 
 Boto3 documentation:
 [CloudHSMV2.Client.copy_backup_to_region](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.copy_backup_to_region)
@@ -147,7 +146,7 @@ Returns a `Coroutine` for
 
 Creates a new AWS CloudHSM cluster.
 
-Type annotations for `aiobotocore.create_client("cloudhsmv2").create_cluster`
+Type annotations for `session.create_client("cloudhsmv2").create_cluster`
 method.
 
 Boto3 documentation:
@@ -177,8 +176,7 @@ Returns a `Coroutine` for
 Creates a new hardware security module (HSM) in the specified AWS CloudHSM
 cluster.
 
-Type annotations for `aiobotocore.create_client("cloudhsmv2").create_hsm`
-method.
+Type annotations for `session.create_client("cloudhsmv2").create_hsm` method.
 
 Boto3 documentation:
 [CloudHSMV2.Client.create_hsm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.create_hsm)
@@ -203,7 +201,7 @@ Returns a `Coroutine` for
 
 Deletes a specified AWS CloudHSM backup.
 
-Type annotations for `aiobotocore.create_client("cloudhsmv2").delete_backup`
+Type annotations for `session.create_client("cloudhsmv2").delete_backup`
 method.
 
 Boto3 documentation:
@@ -227,7 +225,7 @@ Returns a `Coroutine` for
 
 Deletes the specified AWS CloudHSM cluster.
 
-Type annotations for `aiobotocore.create_client("cloudhsmv2").delete_cluster`
+Type annotations for `session.create_client("cloudhsmv2").delete_cluster`
 method.
 
 Boto3 documentation:
@@ -251,8 +249,7 @@ Returns a `Coroutine` for
 
 Deletes the specified HSM.
 
-Type annotations for `aiobotocore.create_client("cloudhsmv2").delete_hsm`
-method.
+Type annotations for `session.create_client("cloudhsmv2").delete_hsm` method.
 
 Boto3 documentation:
 [CloudHSMV2.Client.delete_hsm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.delete_hsm)
@@ -278,7 +275,7 @@ Returns a `Coroutine` for
 
 Gets information about backups of AWS CloudHSM clusters.
 
-Type annotations for `aiobotocore.create_client("cloudhsmv2").describe_backups`
+Type annotations for `session.create_client("cloudhsmv2").describe_backups`
 method.
 
 Boto3 documentation:
@@ -305,8 +302,8 @@ Returns a `Coroutine` for
 
 Gets information about AWS CloudHSM clusters.
 
-Type annotations for
-`aiobotocore.create_client("cloudhsmv2").describe_clusters` method.
+Type annotations for `session.create_client("cloudhsmv2").describe_clusters`
+method.
 
 Boto3 documentation:
 [CloudHSMV2.Client.describe_clusters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.describe_clusters)
@@ -332,7 +329,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("cloudhsmv2").generate_presigned_url` method.
+`session.create_client("cloudhsmv2").generate_presigned_url` method.
 
 Boto3 documentation:
 [CloudHSMV2.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.generate_presigned_url)
@@ -356,8 +353,8 @@ Returns a `Coroutine` for `str`.
 Claims an AWS CloudHSM cluster by submitting the cluster certificate issued by
 your issuing certificate authority (CA) and the CA's root certificate.
 
-Type annotations for
-`aiobotocore.create_client("cloudhsmv2").initialize_cluster` method.
+Type annotations for `session.create_client("cloudhsmv2").initialize_cluster`
+method.
 
 Boto3 documentation:
 [CloudHSMV2.Client.initialize_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.initialize_cluster)
@@ -383,8 +380,7 @@ Returns a `Coroutine` for
 
 Gets a list of tags for the specified AWS CloudHSM cluster.
 
-Type annotations for `aiobotocore.create_client("cloudhsmv2").list_tags`
-method.
+Type annotations for `session.create_client("cloudhsmv2").list_tags` method.
 
 Boto3 documentation:
 [CloudHSMV2.Client.list_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.list_tags)
@@ -410,7 +406,7 @@ Returns a `Coroutine` for
 Modifies attributes for AWS CloudHSM backup.
 
 Type annotations for
-`aiobotocore.create_client("cloudhsmv2").modify_backup_attributes` method.
+`session.create_client("cloudhsmv2").modify_backup_attributes` method.
 
 Boto3 documentation:
 [CloudHSMV2.Client.modify_backup_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.modify_backup_attributes)
@@ -435,7 +431,7 @@ Returns a `Coroutine` for
 
 Modifies AWS CloudHSM cluster.
 
-Type annotations for `aiobotocore.create_client("cloudhsmv2").modify_cluster`
+Type annotations for `session.create_client("cloudhsmv2").modify_cluster`
 method.
 
 Boto3 documentation:
@@ -463,7 +459,7 @@ Returns a `Coroutine` for
 Restores a specified AWS CloudHSM backup that is in the `PENDING_DELETION`
 state.
 
-Type annotations for `aiobotocore.create_client("cloudhsmv2").restore_backup`
+Type annotations for `session.create_client("cloudhsmv2").restore_backup`
 method.
 
 Boto3 documentation:
@@ -487,8 +483,7 @@ Returns a `Coroutine` for
 
 Adds or overwrites one or more tags for the specified AWS CloudHSM cluster.
 
-Type annotations for `aiobotocore.create_client("cloudhsmv2").tag_resource`
-method.
+Type annotations for `session.create_client("cloudhsmv2").tag_resource` method.
 
 Boto3 documentation:
 [CloudHSMV2.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.tag_resource)
@@ -511,7 +506,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the specified tag or tags from the specified AWS CloudHSM cluster.
 
-Type annotations for `aiobotocore.create_client("cloudhsmv2").untag_resource`
+Type annotations for `session.create_client("cloudhsmv2").untag_resource`
 method.
 
 Boto3 documentation:
@@ -529,12 +524,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("cloudhsmv2").__aenter__` method.
+
+Boto3 documentation:
+[CloudHSMV2.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CloudHSMV2Client](#cloudhsmv2client).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("cloudhsmv2").__aexit__` method.
+
+Boto3 documentation:
+[CloudHSMV2.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsmv2.html#CloudHSMV2.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("cloudhsmv2").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("cloudhsmv2").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_backups")` ->
   [DescribeBackupsPaginator](./paginators.md#describebackupspaginator)

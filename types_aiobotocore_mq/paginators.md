@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListBrokersPaginator
 
 Type annotations for
-`aiobotocore.create_client("mq").get_paginator("list_brokers")`.
+`session.create_client("mq").get_paginator("list_brokers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mq.paginator import ListBrokersPaginator
 
-def get_list_brokers_paginator() -> ListBrokersPaginator:
-    return Session().create_client("mq").get_paginator("list_brokers")
+session = get_session()
+async with session.create_client("mq") as client:
+    client: MQClient
+    paginator: ListBrokersPaginator = client.get_paginator("list_brokers")
 ```
 
 Boto3 documentation:

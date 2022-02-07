@@ -49,21 +49,24 @@ type annotations stubs module
     - [update_domain_metadata](#update_domain_metadata)
     - [update_fleet_metadata](#update_fleet_metadata)
     - [update_identity_provider_configuration](#update_identity_provider_configuration)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="worklinkclient"></a>
 
 ## WorkLinkClient
 
-Type annotations for `aiobotocore.create_client("worklink")`
+Type annotations for `session.create_client("worklink")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_worklink.client import WorkLinkClient
 
-def get_worklink_client() -> WorkLinkClient:
-    return Session().client("worklink")
+session = get_session()
+async with session.create_client("worklink") as client:
+    client: WorkLinkClient
 ```
 
 Boto3 documentation:
@@ -103,7 +106,7 @@ Exceptions:
 
 WorkLinkClient exceptions.
 
-Type annotations for `aiobotocore.create_client("worklink").exceptions` method.
+Type annotations for `session.create_client("worklink").exceptions` method.
 
 Boto3 documentation:
 [WorkLink.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.exceptions)
@@ -116,7 +119,7 @@ Returns [Exceptions](#exceptions).
 
 Specifies a domain to be associated to Amazon WorkLink.
 
-Type annotations for `aiobotocore.create_client("worklink").associate_domain`
+Type annotations for `session.create_client("worklink").associate_domain`
 method.
 
 Boto3 documentation:
@@ -143,7 +146,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates a website authorization provider with a specified fleet.
 
 Type annotations for
-`aiobotocore.create_client("worklink").associate_website_authorization_provider`
+`session.create_client("worklink").associate_website_authorization_provider`
 method.
 
 Boto3 documentation:
@@ -174,7 +177,7 @@ Imports the root certificate of a certificate authority (CA) used to obtain TLS
 certificates used by associated websites within the company network.
 
 Type annotations for
-`aiobotocore.create_client("worklink").associate_website_certificate_authority`
+`session.create_client("worklink").associate_website_certificate_authority`
 method.
 
 Boto3 documentation:
@@ -201,19 +204,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("worklink").can_paginate`
-method.
+Type annotations for `session.create_client("worklink").can_paginate` method.
 
 Boto3 documentation:
 [WorkLink.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_fleet"></a>
 
@@ -221,8 +221,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a fleet.
 
-Type annotations for `aiobotocore.create_client("worklink").create_fleet`
-method.
+Type annotations for `session.create_client("worklink").create_fleet` method.
 
 Boto3 documentation:
 [WorkLink.Client.create_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.create_fleet)
@@ -248,8 +247,7 @@ Returns a `Coroutine` for
 
 Deletes a fleet.
 
-Type annotations for `aiobotocore.create_client("worklink").delete_fleet`
-method.
+Type annotations for `session.create_client("worklink").delete_fleet` method.
 
 Boto3 documentation:
 [WorkLink.Client.delete_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.delete_fleet)
@@ -273,8 +271,7 @@ Describes the configuration for delivering audit streams to the customer
 account.
 
 Type annotations for
-`aiobotocore.create_client("worklink").describe_audit_stream_configuration`
-method.
+`session.create_client("worklink").describe_audit_stream_configuration` method.
 
 Boto3 documentation:
 [WorkLink.Client.describe_audit_stream_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.describe_audit_stream_configuration)
@@ -300,7 +297,7 @@ Describes the networking configuration to access the internal websites
 associated with the specified fleet.
 
 Type annotations for
-`aiobotocore.create_client("worklink").describe_company_network_configuration`
+`session.create_client("worklink").describe_company_network_configuration`
 method.
 
 Boto3 documentation:
@@ -325,7 +322,7 @@ Returns a `Coroutine` for
 
 Provides information about a user's device.
 
-Type annotations for `aiobotocore.create_client("worklink").describe_device`
+Type annotations for `session.create_client("worklink").describe_device`
 method.
 
 Boto3 documentation:
@@ -351,7 +348,7 @@ Returns a `Coroutine` for
 Describes the device policy configuration for the specified fleet.
 
 Type annotations for
-`aiobotocore.create_client("worklink").describe_device_policy_configuration`
+`session.create_client("worklink").describe_device_policy_configuration`
 method.
 
 Boto3 documentation:
@@ -376,7 +373,7 @@ Returns a `Coroutine` for
 
 Provides information about the domain.
 
-Type annotations for `aiobotocore.create_client("worklink").describe_domain`
+Type annotations for `session.create_client("worklink").describe_domain`
 method.
 
 Boto3 documentation:
@@ -403,7 +400,7 @@ Provides basic information for the specified fleet, excluding identity
 provider, networking, and device configuration details.
 
 Type annotations for
-`aiobotocore.create_client("worklink").describe_fleet_metadata` method.
+`session.create_client("worklink").describe_fleet_metadata` method.
 
 Boto3 documentation:
 [WorkLink.Client.describe_fleet_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.describe_fleet_metadata)
@@ -428,7 +425,7 @@ Returns a `Coroutine` for
 Describes the identity provider configuration of the specified fleet.
 
 Type annotations for
-`aiobotocore.create_client("worklink").describe_identity_provider_configuration`
+`session.create_client("worklink").describe_identity_provider_configuration`
 method.
 
 Boto3 documentation:
@@ -454,7 +451,7 @@ Returns a `Coroutine` for
 Provides information about the certificate authority.
 
 Type annotations for
-`aiobotocore.create_client("worklink").describe_website_certificate_authority`
+`session.create_client("worklink").describe_website_certificate_authority`
 method.
 
 Boto3 documentation:
@@ -480,8 +477,8 @@ Returns a `Coroutine` for
 
 Disassociates a domain from Amazon WorkLink.
 
-Type annotations for
-`aiobotocore.create_client("worklink").disassociate_domain` method.
+Type annotations for `session.create_client("worklink").disassociate_domain`
+method.
 
 Boto3 documentation:
 [WorkLink.Client.disassociate_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.disassociate_domain)
@@ -506,7 +503,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates a website authorization provider from a specified fleet.
 
 Type annotations for
-`aiobotocore.create_client("worklink").disassociate_website_authorization_provider`
+`session.create_client("worklink").disassociate_website_authorization_provider`
 method.
 
 Boto3 documentation:
@@ -533,7 +530,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes a certificate authority (CA).
 
 Type annotations for
-`aiobotocore.create_client("worklink").disassociate_website_certificate_authority`
+`session.create_client("worklink").disassociate_website_certificate_authority`
 method.
 
 Boto3 documentation:
@@ -558,8 +555,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("worklink").generate_presigned_url` method.
+Type annotations for `session.create_client("worklink").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [WorkLink.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.generate_presigned_url)
@@ -582,8 +579,7 @@ Returns a `Coroutine` for `str`.
 
 Retrieves a list of devices registered with the specified fleet.
 
-Type annotations for `aiobotocore.create_client("worklink").list_devices`
-method.
+Type annotations for `session.create_client("worklink").list_devices` method.
 
 Boto3 documentation:
 [WorkLink.Client.list_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.list_devices)
@@ -608,8 +604,7 @@ Returns a `Coroutine` for
 
 Retrieves a list of domains associated to a specified fleet.
 
-Type annotations for `aiobotocore.create_client("worklink").list_domains`
-method.
+Type annotations for `session.create_client("worklink").list_domains` method.
 
 Boto3 documentation:
 [WorkLink.Client.list_domains](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.list_domains)
@@ -634,8 +629,7 @@ Returns a `Coroutine` for
 
 Retrieves a list of fleets for the current account and Region.
 
-Type annotations for `aiobotocore.create_client("worklink").list_fleets`
-method.
+Type annotations for `session.create_client("worklink").list_fleets` method.
 
 Boto3 documentation:
 [WorkLink.Client.list_fleets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.list_fleets)
@@ -659,8 +653,8 @@ Returns a `Coroutine` for
 
 Retrieves a list of tags for the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("worklink").list_tags_for_resource` method.
+Type annotations for `session.create_client("worklink").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [WorkLink.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.list_tags_for_resource)
@@ -686,7 +680,7 @@ Retrieves a list of website authorization providers associated with a specified
 fleet.
 
 Type annotations for
-`aiobotocore.create_client("worklink").list_website_authorization_providers`
+`session.create_client("worklink").list_website_authorization_providers`
 method.
 
 Boto3 documentation:
@@ -715,7 +709,7 @@ Retrieves a list of certificate authorities added for the current account and
 Region.
 
 Type annotations for
-`aiobotocore.create_client("worklink").list_website_certificate_authorities`
+`session.create_client("worklink").list_website_certificate_authorities`
 method.
 
 Boto3 documentation:
@@ -742,8 +736,8 @@ Returns a `Coroutine` for
 
 Moves a domain to ACTIVE status if it was in the INACTIVE status.
 
-Type annotations for
-`aiobotocore.create_client("worklink").restore_domain_access` method.
+Type annotations for `session.create_client("worklink").restore_domain_access`
+method.
 
 Boto3 documentation:
 [WorkLink.Client.restore_domain_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.restore_domain_access)
@@ -767,8 +761,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Moves a domain to INACTIVE status if it was in the ACTIVE status.
 
-Type annotations for
-`aiobotocore.create_client("worklink").revoke_domain_access` method.
+Type annotations for `session.create_client("worklink").revoke_domain_access`
+method.
 
 Boto3 documentation:
 [WorkLink.Client.revoke_domain_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.revoke_domain_access)
@@ -792,8 +786,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Signs the user out from all of their devices.
 
-Type annotations for `aiobotocore.create_client("worklink").sign_out_user`
-method.
+Type annotations for `session.create_client("worklink").sign_out_user` method.
 
 Boto3 documentation:
 [WorkLink.Client.sign_out_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.sign_out_user)
@@ -817,8 +810,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds or overwrites one or more tags for the specified resource, such as a
 fleet.
 
-Type annotations for `aiobotocore.create_client("worklink").tag_resource`
-method.
+Type annotations for `session.create_client("worklink").tag_resource` method.
 
 Boto3 documentation:
 [WorkLink.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.tag_resource)
@@ -841,8 +833,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from the specified resource.
 
-Type annotations for `aiobotocore.create_client("worklink").untag_resource`
-method.
+Type annotations for `session.create_client("worklink").untag_resource` method.
 
 Boto3 documentation:
 [WorkLink.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.untag_resource)
@@ -866,8 +857,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the audit stream configuration for the fleet.
 
 Type annotations for
-`aiobotocore.create_client("worklink").update_audit_stream_configuration`
-method.
+`session.create_client("worklink").update_audit_stream_configuration` method.
 
 Boto3 documentation:
 [WorkLink.Client.update_audit_stream_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.update_audit_stream_configuration)
@@ -892,7 +882,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the company network configuration for the fleet.
 
 Type annotations for
-`aiobotocore.create_client("worklink").update_company_network_configuration`
+`session.create_client("worklink").update_company_network_configuration`
 method.
 
 Boto3 documentation:
@@ -920,8 +910,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the device policy configuration for the fleet.
 
 Type annotations for
-`aiobotocore.create_client("worklink").update_device_policy_configuration`
-method.
+`session.create_client("worklink").update_device_policy_configuration` method.
 
 Boto3 documentation:
 [WorkLink.Client.update_device_policy_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.update_device_policy_configuration)
@@ -945,8 +934,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates domain metadata, such as DisplayName.
 
-Type annotations for
-`aiobotocore.create_client("worklink").update_domain_metadata` method.
+Type annotations for `session.create_client("worklink").update_domain_metadata`
+method.
 
 Boto3 documentation:
 [WorkLink.Client.update_domain_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.update_domain_metadata)
@@ -971,8 +960,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates fleet metadata, such as DisplayName.
 
-Type annotations for
-`aiobotocore.create_client("worklink").update_fleet_metadata` method.
+Type annotations for `session.create_client("worklink").update_fleet_metadata`
+method.
 
 Boto3 documentation:
 [WorkLink.Client.update_fleet_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.update_fleet_metadata)
@@ -998,7 +987,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the identity provider configuration for the fleet.
 
 Type annotations for
-`aiobotocore.create_client("worklink").update_identity_provider_configuration`
+`session.create_client("worklink").update_identity_provider_configuration`
 method.
 
 Boto3 documentation:
@@ -1019,3 +1008,35 @@ Keyword-only arguments:
 - `IdentityProviderSamlMetadata`: `str`
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("worklink").__aenter__` method.
+
+Boto3 documentation:
+[WorkLink.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [WorkLinkClient](#worklinkclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("worklink").__aexit__` method.
+
+Boto3 documentation:
+[WorkLink.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/worklink.html#WorkLink.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

@@ -21,17 +21,19 @@ type annotations stubs module
 ## ListConfigurationSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ses").get_paginator("list_configuration_sets")`.
+`session.create_client("ses").get_paginator("list_configuration_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ses.paginator import ListConfigurationSetsPaginator
 
-def get_list_configuration_sets_paginator() -> ListConfigurationSetsPaginator:
-    return Session().create_client("ses").get_paginator("list_configuration_sets")
+session = get_session()
+async with session.create_client("ses") as client:
+    client: SESClient
+    paginator: ListConfigurationSetsPaginator = client.get_paginator("list_configuration_sets")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `ListConfigurationSetsPaginator.paginate` method:
 ## ListCustomVerificationEmailTemplatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ses").get_paginator("list_custom_verification_email_templates")`.
+`session.create_client("ses").get_paginator("list_custom_verification_email_templates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ses.paginator import ListCustomVerificationEmailTemplatesPaginator
 
-def get_list_custom_verification_email_templates_paginator() -> ListCustomVerificationEmailTemplatesPaginator:
-    return Session().create_client("ses").get_paginator("list_custom_verification_email_templates")
+session = get_session()
+async with session.create_client("ses") as client:
+    client: SESClient
+    paginator: ListCustomVerificationEmailTemplatesPaginator = client.get_paginator("list_custom_verification_email_templates")
 ```
 
 Boto3 documentation:
@@ -79,17 +83,19 @@ Arguments for `ListCustomVerificationEmailTemplatesPaginator.paginate` method:
 ## ListIdentitiesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ses").get_paginator("list_identities")`.
+`session.create_client("ses").get_paginator("list_identities")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ses.paginator import ListIdentitiesPaginator
 
-def get_list_identities_paginator() -> ListIdentitiesPaginator:
-    return Session().create_client("ses").get_paginator("list_identities")
+session = get_session()
+async with session.create_client("ses") as client:
+    client: SESClient
+    paginator: ListIdentitiesPaginator = client.get_paginator("list_identities")
 ```
 
 Boto3 documentation:
@@ -109,17 +115,19 @@ Arguments for `ListIdentitiesPaginator.paginate` method:
 ## ListReceiptRuleSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ses").get_paginator("list_receipt_rule_sets")`.
+`session.create_client("ses").get_paginator("list_receipt_rule_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ses.paginator import ListReceiptRuleSetsPaginator
 
-def get_list_receipt_rule_sets_paginator() -> ListReceiptRuleSetsPaginator:
-    return Session().create_client("ses").get_paginator("list_receipt_rule_sets")
+session = get_session()
+async with session.create_client("ses") as client:
+    client: SESClient
+    paginator: ListReceiptRuleSetsPaginator = client.get_paginator("list_receipt_rule_sets")
 ```
 
 Boto3 documentation:
@@ -138,17 +146,19 @@ Arguments for `ListReceiptRuleSetsPaginator.paginate` method:
 ## ListTemplatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ses").get_paginator("list_templates")`.
+`session.create_client("ses").get_paginator("list_templates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ses.paginator import ListTemplatesPaginator
 
-def get_list_templates_paginator() -> ListTemplatesPaginator:
-    return Session().create_client("ses").get_paginator("list_templates")
+session = get_session()
+async with session.create_client("ses") as client:
+    client: SESClient
+    paginator: ListTemplatesPaginator = client.get_paginator("list_templates")
 ```
 
 Boto3 documentation:

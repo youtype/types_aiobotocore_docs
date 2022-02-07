@@ -19,17 +19,19 @@ type annotations stubs module
 ## DescribeServicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("pricing").get_paginator("describe_services")`.
+`session.create_client("pricing").get_paginator("describe_services")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_pricing.paginator import DescribeServicesPaginator
 
-def get_describe_services_paginator() -> DescribeServicesPaginator:
-    return Session().create_client("pricing").get_paginator("describe_services")
+session = get_session()
+async with session.create_client("pricing") as client:
+    client: PricingClient
+    paginator: DescribeServicesPaginator = client.get_paginator("describe_services")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `DescribeServicesPaginator.paginate` method:
 ## GetAttributeValuesPaginator
 
 Type annotations for
-`aiobotocore.create_client("pricing").get_paginator("get_attribute_values")`.
+`session.create_client("pricing").get_paginator("get_attribute_values")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_pricing.paginator import GetAttributeValuesPaginator
 
-def get_get_attribute_values_paginator() -> GetAttributeValuesPaginator:
-    return Session().create_client("pricing").get_paginator("get_attribute_values")
+session = get_session()
+async with session.create_client("pricing") as client:
+    client: PricingClient
+    paginator: GetAttributeValuesPaginator = client.get_paginator("get_attribute_values")
 ```
 
 Boto3 documentation:
@@ -81,17 +85,19 @@ Arguments for `GetAttributeValuesPaginator.paginate` method:
 ## GetProductsPaginator
 
 Type annotations for
-`aiobotocore.create_client("pricing").get_paginator("get_products")`.
+`session.create_client("pricing").get_paginator("get_products")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_pricing.paginator import GetProductsPaginator
 
-def get_get_products_paginator() -> GetProductsPaginator:
-    return Session().create_client("pricing").get_paginator("get_products")
+session = get_session()
+async with session.create_client("pricing") as client:
+    client: PricingClient
+    paginator: GetProductsPaginator = client.get_paginator("get_products")
 ```
 
 Boto3 documentation:

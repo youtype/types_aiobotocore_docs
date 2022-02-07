@@ -20,17 +20,19 @@ type annotations stubs module
 ## ListApplicationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").get_paginator("list_applications")`.
+`session.create_client("servicecatalog-appregistry").get_paginator("list_applications")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog_appregistry.paginator import ListApplicationsPaginator
 
-def get_list_applications_paginator() -> ListApplicationsPaginator:
-    return Session().create_client("servicecatalog-appregistry").get_paginator("list_applications")
+session = get_session()
+async with session.create_client("servicecatalog-appregistry") as client:
+    client: AppRegistryClient
+    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")
 ```
 
 Boto3 documentation:
@@ -49,17 +51,19 @@ Arguments for `ListApplicationsPaginator.paginate` method:
 ## ListAssociatedAttributeGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").get_paginator("list_associated_attribute_groups")`.
+`session.create_client("servicecatalog-appregistry").get_paginator("list_associated_attribute_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog_appregistry.paginator import ListAssociatedAttributeGroupsPaginator
 
-def get_list_associated_attribute_groups_paginator() -> ListAssociatedAttributeGroupsPaginator:
-    return Session().create_client("servicecatalog-appregistry").get_paginator("list_associated_attribute_groups")
+session = get_session()
+async with session.create_client("servicecatalog-appregistry") as client:
+    client: AppRegistryClient
+    paginator: ListAssociatedAttributeGroupsPaginator = client.get_paginator("list_associated_attribute_groups")
 ```
 
 Boto3 documentation:
@@ -79,17 +83,19 @@ Arguments for `ListAssociatedAttributeGroupsPaginator.paginate` method:
 ## ListAssociatedResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").get_paginator("list_associated_resources")`.
+`session.create_client("servicecatalog-appregistry").get_paginator("list_associated_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog_appregistry.paginator import ListAssociatedResourcesPaginator
 
-def get_list_associated_resources_paginator() -> ListAssociatedResourcesPaginator:
-    return Session().create_client("servicecatalog-appregistry").get_paginator("list_associated_resources")
+session = get_session()
+async with session.create_client("servicecatalog-appregistry") as client:
+    client: AppRegistryClient
+    paginator: ListAssociatedResourcesPaginator = client.get_paginator("list_associated_resources")
 ```
 
 Boto3 documentation:
@@ -109,17 +115,19 @@ Arguments for `ListAssociatedResourcesPaginator.paginate` method:
 ## ListAttributeGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").get_paginator("list_attribute_groups")`.
+`session.create_client("servicecatalog-appregistry").get_paginator("list_attribute_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog_appregistry.paginator import ListAttributeGroupsPaginator
 
-def get_list_attribute_groups_paginator() -> ListAttributeGroupsPaginator:
-    return Session().create_client("servicecatalog-appregistry").get_paginator("list_attribute_groups")
+session = get_session()
+async with session.create_client("servicecatalog-appregistry") as client:
+    client: AppRegistryClient
+    paginator: ListAttributeGroupsPaginator = client.get_paginator("list_attribute_groups")
 ```
 
 Boto3 documentation:

@@ -19,17 +19,19 @@ type annotations stubs module
 ## ListSigningJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("signer").get_paginator("list_signing_jobs")`.
+`session.create_client("signer").get_paginator("list_signing_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_signer.paginator import ListSigningJobsPaginator
 
-def get_list_signing_jobs_paginator() -> ListSigningJobsPaginator:
-    return Session().create_client("signer").get_paginator("list_signing_jobs")
+session = get_session()
+async with session.create_client("signer") as client:
+    client: signerClient
+    paginator: ListSigningJobsPaginator = client.get_paginator("list_signing_jobs")
 ```
 
 Boto3 documentation:
@@ -55,17 +57,19 @@ Arguments for `ListSigningJobsPaginator.paginate` method:
 ## ListSigningPlatformsPaginator
 
 Type annotations for
-`aiobotocore.create_client("signer").get_paginator("list_signing_platforms")`.
+`session.create_client("signer").get_paginator("list_signing_platforms")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_signer.paginator import ListSigningPlatformsPaginator
 
-def get_list_signing_platforms_paginator() -> ListSigningPlatformsPaginator:
-    return Session().create_client("signer").get_paginator("list_signing_platforms")
+session = get_session()
+async with session.create_client("signer") as client:
+    client: signerClient
+    paginator: ListSigningPlatformsPaginator = client.get_paginator("list_signing_platforms")
 ```
 
 Boto3 documentation:
@@ -87,17 +91,19 @@ Arguments for `ListSigningPlatformsPaginator.paginate` method:
 ## ListSigningProfilesPaginator
 
 Type annotations for
-`aiobotocore.create_client("signer").get_paginator("list_signing_profiles")`.
+`session.create_client("signer").get_paginator("list_signing_profiles")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_signer.paginator import ListSigningProfilesPaginator
 
-def get_list_signing_profiles_paginator() -> ListSigningProfilesPaginator:
-    return Session().create_client("signer").get_paginator("list_signing_profiles")
+session = get_session()
+async with session.create_client("signer") as client:
+    client: signerClient
+    paginator: ListSigningProfilesPaginator = client.get_paginator("list_signing_profiles")
 ```
 
 Boto3 documentation:

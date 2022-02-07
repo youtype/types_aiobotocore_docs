@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[mediapackage-vod]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[mediapackage-vod]'
+
+# standalone installation
 pip install types-aiobotocore-mediapackage-vod
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-mediapackage-vod
 
 ## MediaPackageVodClient
 
-Type annotations for `aiobotocore.create_client("mediapackage-vod")` as
+Type annotations for `session.create_client("mediapackage-vod")` as
 [MediaPackageVodClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_mediapackage_vod.client import MediaPackageVodClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [configure_logs](./client.md#configure_logs)
 - [create_asset](./client.md#create_asset)
@@ -88,7 +94,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_mediapackage_vod.paginators import ListAssetsPaginator, ...
+from types_aiobotocore_mediapackage_vod.paginator import ListAssetsPaginator, ...
 ```
 
 - [ListAssetsPaginator](./paginators.md#listassetspaginator)

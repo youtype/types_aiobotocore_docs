@@ -43,22 +43,25 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_file_system](#update_file_system)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="efsclient"></a>
 
 ## EFSClient
 
-Type annotations for `aiobotocore.create_client("efs")`
+Type annotations for `session.create_client("efs")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_efs.client import EFSClient
 
-def get_efs_client() -> EFSClient:
-    return Session().client("efs")
+session = get_session()
+async with session.create_client("efs") as client:
+    client: EFSClient
 ```
 
 Boto3 documentation:
@@ -120,7 +123,7 @@ Exceptions:
 
 EFSClient exceptions.
 
-Type annotations for `aiobotocore.create_client("efs").exceptions` method.
+Type annotations for `session.create_client("efs").exceptions` method.
 
 Boto3 documentation:
 [EFS.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.exceptions)
@@ -133,18 +136,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("efs").can_paginate` method.
+Type annotations for `session.create_client("efs").can_paginate` method.
 
 Boto3 documentation:
 [EFS.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_access_point"></a>
 
@@ -152,8 +153,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates an EFS access point.
 
-Type annotations for `aiobotocore.create_client("efs").create_access_point`
-method.
+Type annotations for `session.create_client("efs").create_access_point` method.
 
 Boto3 documentation:
 [EFS.Client.create_access_point](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.create_access_point)
@@ -181,8 +181,7 @@ Returns a `Coroutine` for
 
 Creates a new, empty file system.
 
-Type annotations for `aiobotocore.create_client("efs").create_file_system`
-method.
+Type annotations for `session.create_client("efs").create_file_system` method.
 
 Boto3 documentation:
 [EFS.Client.create_file_system](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.create_file_system)
@@ -214,8 +213,7 @@ Returns a `Coroutine` for
 
 Creates a mount target for a file system.
 
-Type annotations for `aiobotocore.create_client("efs").create_mount_target`
-method.
+Type annotations for `session.create_client("efs").create_mount_target` method.
 
 Boto3 documentation:
 [EFS.Client.create_mount_target](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.create_mount_target)
@@ -242,7 +240,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("efs").create_tags` method.
+Type annotations for `session.create_client("efs").create_tags` method.
 
 Boto3 documentation:
 [EFS.Client.create_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.create_tags)
@@ -263,8 +261,7 @@ Keyword-only arguments:
 
 Deletes the specified access point.
 
-Type annotations for `aiobotocore.create_client("efs").delete_access_point`
-method.
+Type annotations for `session.create_client("efs").delete_access_point` method.
 
 Boto3 documentation:
 [EFS.Client.delete_access_point](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.delete_access_point)
@@ -285,8 +282,7 @@ Keyword-only arguments:
 
 Deletes a file system, permanently severing access to its contents.
 
-Type annotations for `aiobotocore.create_client("efs").delete_file_system`
-method.
+Type annotations for `session.create_client("efs").delete_file_system` method.
 
 Boto3 documentation:
 [EFS.Client.delete_file_system](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.delete_file_system)
@@ -307,8 +303,8 @@ Keyword-only arguments:
 
 Deletes the `FileSystemPolicy` for the specified file system.
 
-Type annotations for
-`aiobotocore.create_client("efs").delete_file_system_policy` method.
+Type annotations for `session.create_client("efs").delete_file_system_policy`
+method.
 
 Boto3 documentation:
 [EFS.Client.delete_file_system_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.delete_file_system_policy)
@@ -329,8 +325,7 @@ Keyword-only arguments:
 
 Deletes the specified mount target.
 
-Type annotations for `aiobotocore.create_client("efs").delete_mount_target`
-method.
+Type annotations for `session.create_client("efs").delete_mount_target` method.
 
 Boto3 documentation:
 [EFS.Client.delete_mount_target](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.delete_mount_target)
@@ -351,7 +346,7 @@ Keyword-only arguments:
 
 .
 
-Type annotations for `aiobotocore.create_client("efs").delete_tags` method.
+Type annotations for `session.create_client("efs").delete_tags` method.
 
 Boto3 documentation:
 [EFS.Client.delete_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.delete_tags)
@@ -373,7 +368,7 @@ Keyword-only arguments:
 Returns the description of a specific Amazon EFS access point if the
 `AccessPointId` is provided.
 
-Type annotations for `aiobotocore.create_client("efs").describe_access_points`
+Type annotations for `session.create_client("efs").describe_access_points`
 method.
 
 Boto3 documentation:
@@ -404,7 +399,7 @@ associated with the user making the request, in the current Amazon Web Services
 Region.
 
 Type annotations for
-`aiobotocore.create_client("efs").describe_account_preferences` method.
+`session.create_client("efs").describe_account_preferences` method.
 
 Boto3 documentation:
 [EFS.Client.describe_account_preferences](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.describe_account_preferences)
@@ -429,7 +424,7 @@ Returns a `Coroutine` for
 
 Returns the backup policy for the specified EFS file system.
 
-Type annotations for `aiobotocore.create_client("efs").describe_backup_policy`
+Type annotations for `session.create_client("efs").describe_backup_policy`
 method.
 
 Boto3 documentation:
@@ -454,8 +449,8 @@ Returns a `Coroutine` for
 
 Returns the `FileSystemPolicy` for the specified EFS file system.
 
-Type annotations for
-`aiobotocore.create_client("efs").describe_file_system_policy` method.
+Type annotations for `session.create_client("efs").describe_file_system_policy`
+method.
 
 Boto3 documentation:
 [EFS.Client.describe_file_system_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.describe_file_system_policy)
@@ -480,7 +475,7 @@ Returns a `Coroutine` for
 Returns the description of a specific Amazon EFS file system if either the file
 system `CreationToken` or the `FileSystemId` is provided.
 
-Type annotations for `aiobotocore.create_client("efs").describe_file_systems`
+Type annotations for `session.create_client("efs").describe_file_systems`
 method.
 
 Boto3 documentation:
@@ -510,7 +505,7 @@ Returns the current `LifecycleConfiguration` object for the specified Amazon
 EFS file system.
 
 Type annotations for
-`aiobotocore.create_client("efs").describe_lifecycle_configuration` method.
+`session.create_client("efs").describe_lifecycle_configuration` method.
 
 Boto3 documentation:
 [EFS.Client.describe_lifecycle_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.describe_lifecycle_configuration)
@@ -535,8 +530,7 @@ Returns a `Coroutine` for
 Returns the security groups currently in effect for a mount target.
 
 Type annotations for
-`aiobotocore.create_client("efs").describe_mount_target_security_groups`
-method.
+`session.create_client("efs").describe_mount_target_security_groups` method.
 
 Boto3 documentation:
 [EFS.Client.describe_mount_target_security_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.describe_mount_target_security_groups)
@@ -561,7 +555,7 @@ Returns a `Coroutine` for
 Returns the descriptions of all the current mount targets, or a specific mount
 target, for a file system.
 
-Type annotations for `aiobotocore.create_client("efs").describe_mount_targets`
+Type annotations for `session.create_client("efs").describe_mount_targets`
 method.
 
 Boto3 documentation:
@@ -590,7 +584,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("efs").describe_tags` method.
+Type annotations for `session.create_client("efs").describe_tags` method.
 
 Boto3 documentation:
 [EFS.Client.describe_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.describe_tags)
@@ -615,7 +609,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("efs").generate_presigned_url`
+Type annotations for `session.create_client("efs").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -639,7 +633,7 @@ Returns a `Coroutine` for `str`.
 
 Lists all tags for a top-level EFS resource.
 
-Type annotations for `aiobotocore.create_client("efs").list_tags_for_resource`
+Type annotations for `session.create_client("efs").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -667,7 +661,7 @@ Returns a `Coroutine` for
 Modifies the set of security groups in effect for a mount target.
 
 Type annotations for
-`aiobotocore.create_client("efs").modify_mount_target_security_groups` method.
+`session.create_client("efs").modify_mount_target_security_groups` method.
 
 Boto3 documentation:
 [EFS.Client.modify_mount_target_security_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.modify_mount_target_security_groups)
@@ -691,7 +685,7 @@ Use this operation to set the account preference in the current Amazon Web
 Services Region to use long 17 character (63 bit) or short 8 character (32 bit)
 resource IDs for new EFS file system and mount target resources.
 
-Type annotations for `aiobotocore.create_client("efs").put_account_preferences`
+Type annotations for `session.create_client("efs").put_account_preferences`
 method.
 
 Boto3 documentation:
@@ -717,8 +711,7 @@ Returns a `Coroutine` for
 
 Updates the file system's backup policy.
 
-Type annotations for `aiobotocore.create_client("efs").put_backup_policy`
-method.
+Type annotations for `session.create_client("efs").put_backup_policy` method.
 
 Boto3 documentation:
 [EFS.Client.put_backup_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.put_backup_policy)
@@ -743,7 +736,7 @@ Returns a `Coroutine` for
 
 Applies an Amazon EFS `FileSystemPolicy` to an Amazon EFS file system.
 
-Type annotations for `aiobotocore.create_client("efs").put_file_system_policy`
+Type annotations for `session.create_client("efs").put_file_system_policy`
 method.
 
 Boto3 documentation:
@@ -770,8 +763,8 @@ Returns a `Coroutine` for
 
 Enables lifecycle management by creating a new `LifecycleConfiguration` object.
 
-Type annotations for
-`aiobotocore.create_client("efs").put_lifecycle_configuration` method.
+Type annotations for `session.create_client("efs").put_lifecycle_configuration`
+method.
 
 Boto3 documentation:
 [EFS.Client.put_lifecycle_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.put_lifecycle_configuration)
@@ -798,7 +791,7 @@ Returns a `Coroutine` for
 
 Creates a tag for an EFS resource.
 
-Type annotations for `aiobotocore.create_client("efs").tag_resource` method.
+Type annotations for `session.create_client("efs").tag_resource` method.
 
 Boto3 documentation:
 [EFS.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.tag_resource)
@@ -819,7 +812,7 @@ Keyword-only arguments:
 
 Removes tags from an EFS resource.
 
-Type annotations for `aiobotocore.create_client("efs").untag_resource` method.
+Type annotations for `session.create_client("efs").untag_resource` method.
 
 Boto3 documentation:
 [EFS.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.untag_resource)
@@ -841,8 +834,7 @@ Keyword-only arguments:
 Updates the throughput mode or the amount of provisioned throughput of an
 existing file system.
 
-Type annotations for `aiobotocore.create_client("efs").update_file_system`
-method.
+Type annotations for `session.create_client("efs").update_file_system` method.
 
 Boto3 documentation:
 [EFS.Client.update_file_system](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.update_file_system)
@@ -862,12 +854,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [FileSystemDescriptionResponseMetadataTypeDef](./type_defs.md#filesystemdescriptionresponsemetadatatypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("efs").__aenter__` method.
+
+Boto3 documentation:
+[EFS.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [EFSClient](#efsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("efs").__aexit__` method.
+
+Boto3 documentation:
+[EFS.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html#EFS.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("efs").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("efs").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_file_systems")` ->
   [DescribeFileSystemsPaginator](./paginators.md#describefilesystemspaginator)

@@ -17,7 +17,7 @@ type annotations stubs module
 ## SuccessfulSigningJobWaiter
 
 Type annotations for
-`aiobotocore.create_client("signer").get_waiter("successful_signing_job")`.
+`session.create_client("signer").get_waiter("successful_signing_job")`.
 
 Can be used directly:
 
@@ -27,7 +27,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_signer.waiter import SuccessfulSigningJobWaiter
 
 def get_successful_signing_job_waiter() -> SuccessfulSigningJobWaiter:
-    return Session().create_client("signer").get_waiter("successful_signing_job")
+    return Session().client("signer").get_waiter("successful_signing_job")
 ```
 
 Boto3 documentation:

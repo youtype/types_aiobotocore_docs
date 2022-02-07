@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[cloudformation]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[cloudformation]'
+
+# standalone installation
 pip install types-aiobotocore-cloudformation
 ```
 
@@ -33,7 +37,7 @@ pip install types-aiobotocore-cloudformation
 
 ## CloudFormationClient
 
-Type annotations for `aiobotocore.create_client("cloudformation")` as
+Type annotations for `session.create_client("cloudformation")` as
 [CloudFormationClient](./client.md)
 
 Can be used directly:
@@ -46,6 +50,8 @@ from types_aiobotocore_cloudformation.client import CloudFormationClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [activate_type](./client.md#activate_type)
 - [batch_describe_type_configurations](./client.md#batch_describe_type_configurations)
 - [can_paginate](./client.md#can_paginate)
@@ -151,7 +157,7 @@ CloudFormationClient [exceptions](./client.md#exceptions)
 
 ## CloudFormationServiceResource
 
-Type annotations for `aiobotocore.resource("cloudformation")` as
+Type annotations for `session.resource("cloudformation")` as
 [CloudFormationServiceResource](./service_resource.md#cloudformationserviceresource)
 
 Can be used directly:
@@ -180,7 +186,7 @@ from types_aiobotocore_cloudformation.service_resource import ServiceResourceSta
 ### Resources
 
 Type annotations for additional resources from
-`aiobotocore.resource("cloudformation").*`.
+`session.resource("cloudformation").*`.
 
 Can be used directly:
 
@@ -203,7 +209,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_cloudformation.paginators import DescribeAccountLimitsPaginator, ...
+from types_aiobotocore_cloudformation.paginator import DescribeAccountLimitsPaginator, ...
 ```
 
 - [DescribeAccountLimitsPaginator](./paginators.md#describeaccountlimitspaginator)
@@ -231,7 +237,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_cloudformation.waiters import ChangeSetCreateCompleteWaiter, ...
+from types_aiobotocore_cloudformation.waiter import ChangeSetCreateCompleteWaiter, ...
 ```
 
 - [ChangeSetCreateCompleteWaiter](./waiters.md#changesetcreatecompletewaiter)

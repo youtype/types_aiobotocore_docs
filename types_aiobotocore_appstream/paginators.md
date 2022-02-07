@@ -26,17 +26,19 @@ type annotations stubs module
 ## DescribeDirectoryConfigsPaginator
 
 Type annotations for
-`aiobotocore.create_client("appstream").get_paginator("describe_directory_configs")`.
+`session.create_client("appstream").get_paginator("describe_directory_configs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appstream.paginator import DescribeDirectoryConfigsPaginator
 
-def get_describe_directory_configs_paginator() -> DescribeDirectoryConfigsPaginator:
-    return Session().create_client("appstream").get_paginator("describe_directory_configs")
+session = get_session()
+async with session.create_client("appstream") as client:
+    client: AppStreamClient
+    paginator: DescribeDirectoryConfigsPaginator = client.get_paginator("describe_directory_configs")
 ```
 
 Boto3 documentation:
@@ -56,17 +58,19 @@ Arguments for `DescribeDirectoryConfigsPaginator.paginate` method:
 ## DescribeFleetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("appstream").get_paginator("describe_fleets")`.
+`session.create_client("appstream").get_paginator("describe_fleets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appstream.paginator import DescribeFleetsPaginator
 
-def get_describe_fleets_paginator() -> DescribeFleetsPaginator:
-    return Session().create_client("appstream").get_paginator("describe_fleets")
+session = get_session()
+async with session.create_client("appstream") as client:
+    client: AppStreamClient
+    paginator: DescribeFleetsPaginator = client.get_paginator("describe_fleets")
 ```
 
 Boto3 documentation:
@@ -86,17 +90,19 @@ Arguments for `DescribeFleetsPaginator.paginate` method:
 ## DescribeImageBuildersPaginator
 
 Type annotations for
-`aiobotocore.create_client("appstream").get_paginator("describe_image_builders")`.
+`session.create_client("appstream").get_paginator("describe_image_builders")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appstream.paginator import DescribeImageBuildersPaginator
 
-def get_describe_image_builders_paginator() -> DescribeImageBuildersPaginator:
-    return Session().create_client("appstream").get_paginator("describe_image_builders")
+session = get_session()
+async with session.create_client("appstream") as client:
+    client: AppStreamClient
+    paginator: DescribeImageBuildersPaginator = client.get_paginator("describe_image_builders")
 ```
 
 Boto3 documentation:
@@ -116,17 +122,19 @@ Arguments for `DescribeImageBuildersPaginator.paginate` method:
 ## DescribeImagesPaginator
 
 Type annotations for
-`aiobotocore.create_client("appstream").get_paginator("describe_images")`.
+`session.create_client("appstream").get_paginator("describe_images")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appstream.paginator import DescribeImagesPaginator
 
-def get_describe_images_paginator() -> DescribeImagesPaginator:
-    return Session().create_client("appstream").get_paginator("describe_images")
+session = get_session()
+async with session.create_client("appstream") as client:
+    client: AppStreamClient
+    paginator: DescribeImagesPaginator = client.get_paginator("describe_images")
 ```
 
 Boto3 documentation:
@@ -148,17 +156,19 @@ Arguments for `DescribeImagesPaginator.paginate` method:
 ## DescribeSessionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("appstream").get_paginator("describe_sessions")`.
+`session.create_client("appstream").get_paginator("describe_sessions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appstream.paginator import DescribeSessionsPaginator
 
-def get_describe_sessions_paginator() -> DescribeSessionsPaginator:
-    return Session().create_client("appstream").get_paginator("describe_sessions")
+session = get_session()
+async with session.create_client("appstream") as client:
+    client: AppStreamClient
+    paginator: DescribeSessionsPaginator = client.get_paginator("describe_sessions")
 ```
 
 Boto3 documentation:
@@ -182,17 +192,19 @@ Arguments for `DescribeSessionsPaginator.paginate` method:
 ## DescribeStacksPaginator
 
 Type annotations for
-`aiobotocore.create_client("appstream").get_paginator("describe_stacks")`.
+`session.create_client("appstream").get_paginator("describe_stacks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appstream.paginator import DescribeStacksPaginator
 
-def get_describe_stacks_paginator() -> DescribeStacksPaginator:
-    return Session().create_client("appstream").get_paginator("describe_stacks")
+session = get_session()
+async with session.create_client("appstream") as client:
+    client: AppStreamClient
+    paginator: DescribeStacksPaginator = client.get_paginator("describe_stacks")
 ```
 
 Boto3 documentation:
@@ -212,17 +224,19 @@ Arguments for `DescribeStacksPaginator.paginate` method:
 ## DescribeUserStackAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("appstream").get_paginator("describe_user_stack_associations")`.
+`session.create_client("appstream").get_paginator("describe_user_stack_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appstream.paginator import DescribeUserStackAssociationsPaginator
 
-def get_describe_user_stack_associations_paginator() -> DescribeUserStackAssociationsPaginator:
-    return Session().create_client("appstream").get_paginator("describe_user_stack_associations")
+session = get_session()
+async with session.create_client("appstream") as client:
+    client: AppStreamClient
+    paginator: DescribeUserStackAssociationsPaginator = client.get_paginator("describe_user_stack_associations")
 ```
 
 Boto3 documentation:
@@ -245,17 +259,19 @@ Arguments for `DescribeUserStackAssociationsPaginator.paginate` method:
 ## DescribeUsersPaginator
 
 Type annotations for
-`aiobotocore.create_client("appstream").get_paginator("describe_users")`.
+`session.create_client("appstream").get_paginator("describe_users")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appstream.paginator import DescribeUsersPaginator
 
-def get_describe_users_paginator() -> DescribeUsersPaginator:
-    return Session().create_client("appstream").get_paginator("describe_users")
+session = get_session()
+async with session.create_client("appstream") as client:
+    client: AppStreamClient
+    paginator: DescribeUsersPaginator = client.get_paginator("describe_users")
 ```
 
 Boto3 documentation:
@@ -276,17 +292,19 @@ Arguments for `DescribeUsersPaginator.paginate` method:
 ## ListAssociatedFleetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("appstream").get_paginator("list_associated_fleets")`.
+`session.create_client("appstream").get_paginator("list_associated_fleets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appstream.paginator import ListAssociatedFleetsPaginator
 
-def get_list_associated_fleets_paginator() -> ListAssociatedFleetsPaginator:
-    return Session().create_client("appstream").get_paginator("list_associated_fleets")
+session = get_session()
+async with session.create_client("appstream") as client:
+    client: AppStreamClient
+    paginator: ListAssociatedFleetsPaginator = client.get_paginator("list_associated_fleets")
 ```
 
 Boto3 documentation:
@@ -306,17 +324,19 @@ Arguments for `ListAssociatedFleetsPaginator.paginate` method:
 ## ListAssociatedStacksPaginator
 
 Type annotations for
-`aiobotocore.create_client("appstream").get_paginator("list_associated_stacks")`.
+`session.create_client("appstream").get_paginator("list_associated_stacks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appstream.paginator import ListAssociatedStacksPaginator
 
-def get_list_associated_stacks_paginator() -> ListAssociatedStacksPaginator:
-    return Session().create_client("appstream").get_paginator("list_associated_stacks")
+session = get_session()
+async with session.create_client("appstream") as client:
+    client: AppStreamClient
+    paginator: ListAssociatedStacksPaginator = client.get_paginator("list_associated_stacks")
 ```
 
 Boto3 documentation:

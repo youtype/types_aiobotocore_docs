@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[iotwireless]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[iotwireless]'
+
+# standalone installation
 pip install types-aiobotocore-iotwireless
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-iotwireless
 
 ## IoTWirelessClient
 
-Type annotations for `aiobotocore.create_client("iotwireless")` as
+Type annotations for `session.create_client("iotwireless")` as
 [IoTWirelessClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_iotwireless.client import IoTWirelessClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_aws_account_with_partner_account](./client.md#associate_aws_account_with_partner_account)
 - [associate_multicast_group_with_fuota_task](./client.md#associate_multicast_group_with_fuota_task)
 - [associate_wireless_device_with_fuota_task](./client.md#associate_wireless_device_with_fuota_task)

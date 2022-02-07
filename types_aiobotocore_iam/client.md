@@ -174,6 +174,8 @@ type annotations stubs module
     - [upload_server_certificate](#upload_server_certificate)
     - [upload_signing_certificate](#upload_signing_certificate)
     - [upload_ssh_public_key](#upload_ssh_public_key)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -181,16 +183,17 @@ type annotations stubs module
 
 ## IAMClient
 
-Type annotations for `aiobotocore.create_client("iam")`
+Type annotations for `session.create_client("iam")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_iam.client import IAMClient
 
-def get_iam_client() -> IAMClient:
-    return Session().client("iam")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
 ```
 
 Boto3 documentation:
@@ -251,7 +254,7 @@ Exceptions:
 
 IAMClient exceptions.
 
-Type annotations for `aiobotocore.create_client("iam").exceptions` method.
+Type annotations for `session.create_client("iam").exceptions` method.
 
 Boto3 documentation:
 [IAM.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.exceptions)
@@ -266,7 +269,7 @@ Adds a new client ID (also known as audience) to the list of client IDs already
 registered for the specified IAM OpenID Connect (OIDC) provider resource.
 
 Type annotations for
-`aiobotocore.create_client("iam").add_client_id_to_open_id_connect_provider`
+`session.create_client("iam").add_client_id_to_open_id_connect_provider`
 method.
 
 Boto3 documentation:
@@ -290,7 +293,7 @@ Keyword-only arguments:
 Adds the specified IAM role to the specified instance profile.
 
 Type annotations for
-`aiobotocore.create_client("iam").add_role_to_instance_profile` method.
+`session.create_client("iam").add_role_to_instance_profile` method.
 
 Boto3 documentation:
 [IAM.Client.add_role_to_instance_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.add_role_to_instance_profile)
@@ -312,8 +315,7 @@ Keyword-only arguments:
 
 Adds the specified user to the specified group.
 
-Type annotations for `aiobotocore.create_client("iam").add_user_to_group`
-method.
+Type annotations for `session.create_client("iam").add_user_to_group` method.
 
 Boto3 documentation:
 [IAM.Client.add_user_to_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.add_user_to_group)
@@ -334,8 +336,7 @@ Keyword-only arguments:
 
 Attaches the specified managed policy to the specified IAM group.
 
-Type annotations for `aiobotocore.create_client("iam").attach_group_policy`
-method.
+Type annotations for `session.create_client("iam").attach_group_policy` method.
 
 Boto3 documentation:
 [IAM.Client.attach_group_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.attach_group_policy)
@@ -357,8 +358,7 @@ Keyword-only arguments:
 
 Attaches the specified managed policy to the specified IAM role.
 
-Type annotations for `aiobotocore.create_client("iam").attach_role_policy`
-method.
+Type annotations for `session.create_client("iam").attach_role_policy` method.
 
 Boto3 documentation:
 [IAM.Client.attach_role_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.attach_role_policy)
@@ -380,8 +380,7 @@ Keyword-only arguments:
 
 Attaches the specified managed policy to the specified user.
 
-Type annotations for `aiobotocore.create_client("iam").attach_user_policy`
-method.
+Type annotations for `session.create_client("iam").attach_user_policy` method.
 
 Boto3 documentation:
 [IAM.Client.attach_user_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.attach_user_policy)
@@ -403,18 +402,16 @@ Keyword-only arguments:
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("iam").can_paginate` method.
+Type annotations for `session.create_client("iam").can_paginate` method.
 
 Boto3 documentation:
 [IAM.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="change_password"></a>
 
@@ -422,7 +419,7 @@ Returns a `Coroutine` for `bool`.
 
 Changes the password of the IAM user who is calling this operation.
 
-Type annotations for `aiobotocore.create_client("iam").change_password` method.
+Type annotations for `session.create_client("iam").change_password` method.
 
 Boto3 documentation:
 [IAM.Client.change_password](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.change_password)
@@ -444,8 +441,7 @@ Keyword-only arguments:
 Creates a new Amazon Web Services secret access key and corresponding Amazon
 Web Services access key ID for the specified user.
 
-Type annotations for `aiobotocore.create_client("iam").create_access_key`
-method.
+Type annotations for `session.create_client("iam").create_access_key` method.
 
 Boto3 documentation:
 [IAM.Client.create_access_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.create_access_key)
@@ -468,7 +464,7 @@ Returns a `Coroutine` for
 
 Creates an alias for your Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("iam").create_account_alias`
+Type annotations for `session.create_client("iam").create_account_alias`
 method.
 
 Boto3 documentation:
@@ -490,7 +486,7 @@ Keyword-only arguments:
 
 Creates a new group.
 
-Type annotations for `aiobotocore.create_client("iam").create_group` method.
+Type annotations for `session.create_client("iam").create_group` method.
 
 Boto3 documentation:
 [IAM.Client.create_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.create_group)
@@ -514,7 +510,7 @@ Returns a `Coroutine` for
 
 Creates a new instance profile.
 
-Type annotations for `aiobotocore.create_client("iam").create_instance_profile`
+Type annotations for `session.create_client("iam").create_instance_profile`
 method.
 
 Boto3 documentation:
@@ -541,7 +537,7 @@ Returns a `Coroutine` for
 
 Creates a password for the specified IAM user.
 
-Type annotations for `aiobotocore.create_client("iam").create_login_profile`
+Type annotations for `session.create_client("iam").create_login_profile`
 method.
 
 Boto3 documentation:
@@ -570,7 +566,7 @@ Creates an IAM entity to describe an identity provider (IdP) that supports
 `OpenID Connect (OIDC) <http://openid.net/connect/>`\_\_ .
 
 Type annotations for
-`aiobotocore.create_client("iam").create_open_id_connect_provider` method.
+`session.create_client("iam").create_open_id_connect_provider` method.
 
 Boto3 documentation:
 [IAM.Client.create_open_id_connect_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.create_open_id_connect_provider)
@@ -597,7 +593,7 @@ Returns a `Coroutine` for
 
 Creates a new managed policy for your Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("iam").create_policy` method.
+Type annotations for `session.create_client("iam").create_policy` method.
 
 Boto3 documentation:
 [IAM.Client.create_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.create_policy)
@@ -624,7 +620,7 @@ Returns a `Coroutine` for
 
 Creates a new version of the specified managed policy.
 
-Type annotations for `aiobotocore.create_client("iam").create_policy_version`
+Type annotations for `session.create_client("iam").create_policy_version`
 method.
 
 Boto3 documentation:
@@ -651,7 +647,7 @@ Returns a `Coroutine` for
 
 Creates a new role for your Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("iam").create_role` method.
+Type annotations for `session.create_client("iam").create_role` method.
 
 Boto3 documentation:
 [IAM.Client.create_role](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.create_role)
@@ -681,7 +677,7 @@ Returns a `Coroutine` for
 Creates an IAM resource that describes an identity provider (IdP) that supports
 SAML 2.0.
 
-Type annotations for `aiobotocore.create_client("iam").create_saml_provider`
+Type annotations for `session.create_client("iam").create_saml_provider`
 method.
 
 Boto3 documentation:
@@ -708,8 +704,8 @@ Returns a `Coroutine` for
 
 Creates an IAM role that is linked to a specific Amazon Web Services service.
 
-Type annotations for
-`aiobotocore.create_client("iam").create_service_linked_role` method.
+Type annotations for `session.create_client("iam").create_service_linked_role`
+method.
 
 Boto3 documentation:
 [IAM.Client.create_service_linked_role](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.create_service_linked_role)
@@ -737,7 +733,7 @@ Generates a set of credentials consisting of a user name and password that can
 be used to access the service specified in the request.
 
 Type annotations for
-`aiobotocore.create_client("iam").create_service_specific_credential` method.
+`session.create_client("iam").create_service_specific_credential` method.
 
 Boto3 documentation:
 [IAM.Client.create_service_specific_credential](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.create_service_specific_credential)
@@ -762,7 +758,7 @@ Returns a `Coroutine` for
 
 Creates a new IAM user for your Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("iam").create_user` method.
+Type annotations for `session.create_client("iam").create_user` method.
 
 Boto3 documentation:
 [IAM.Client.create_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.create_user)
@@ -788,8 +784,8 @@ Returns a `Coroutine` for
 
 Creates a new virtual MFA device for the Amazon Web Services account.
 
-Type annotations for
-`aiobotocore.create_client("iam").create_virtual_mfa_device` method.
+Type annotations for `session.create_client("iam").create_virtual_mfa_device`
+method.
 
 Boto3 documentation:
 [IAM.Client.create_virtual_mfa_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.create_virtual_mfa_device)
@@ -816,7 +812,7 @@ Returns a `Coroutine` for
 Deactivates the specified MFA device and removes it from association with the
 user name for which it was originally enabled.
 
-Type annotations for `aiobotocore.create_client("iam").deactivate_mfa_device`
+Type annotations for `session.create_client("iam").deactivate_mfa_device`
 method.
 
 Boto3 documentation:
@@ -839,8 +835,7 @@ Keyword-only arguments:
 
 Deletes the access key pair associated with the specified IAM user.
 
-Type annotations for `aiobotocore.create_client("iam").delete_access_key`
-method.
+Type annotations for `session.create_client("iam").delete_access_key` method.
 
 Boto3 documentation:
 [IAM.Client.delete_access_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_access_key)
@@ -861,7 +856,7 @@ Keyword-only arguments:
 
 Deletes the specified Amazon Web Services account alias.
 
-Type annotations for `aiobotocore.create_client("iam").delete_account_alias`
+Type annotations for `session.create_client("iam").delete_account_alias`
 method.
 
 Boto3 documentation:
@@ -884,7 +879,7 @@ Keyword-only arguments:
 Deletes the password policy for the Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("iam").delete_account_password_policy` method.
+`session.create_client("iam").delete_account_password_policy` method.
 
 Boto3 documentation:
 [IAM.Client.delete_account_password_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_account_password_policy)
@@ -898,7 +893,7 @@ synchronous call.
 
 Deletes the specified IAM group.
 
-Type annotations for `aiobotocore.create_client("iam").delete_group` method.
+Type annotations for `session.create_client("iam").delete_group` method.
 
 Boto3 documentation:
 [IAM.Client.delete_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_group)
@@ -919,8 +914,7 @@ Keyword-only arguments:
 Deletes the specified inline policy that is embedded in the specified IAM
 group.
 
-Type annotations for `aiobotocore.create_client("iam").delete_group_policy`
-method.
+Type annotations for `session.create_client("iam").delete_group_policy` method.
 
 Boto3 documentation:
 [IAM.Client.delete_group_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_group_policy)
@@ -942,7 +936,7 @@ Keyword-only arguments:
 
 Deletes the specified instance profile.
 
-Type annotations for `aiobotocore.create_client("iam").delete_instance_profile`
+Type annotations for `session.create_client("iam").delete_instance_profile`
 method.
 
 Boto3 documentation:
@@ -966,7 +960,7 @@ Deletes the password for the specified IAM user, which terminates the user's
 ability to access Amazon Web Services services through the Amazon Web Services
 Management Console.
 
-Type annotations for `aiobotocore.create_client("iam").delete_login_profile`
+Type annotations for `session.create_client("iam").delete_login_profile`
 method.
 
 Boto3 documentation:
@@ -989,7 +983,7 @@ Keyword-only arguments:
 Deletes an OpenID Connect identity provider (IdP) resource object in IAM.
 
 Type annotations for
-`aiobotocore.create_client("iam").delete_open_id_connect_provider` method.
+`session.create_client("iam").delete_open_id_connect_provider` method.
 
 Boto3 documentation:
 [IAM.Client.delete_open_id_connect_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_open_id_connect_provider)
@@ -1010,7 +1004,7 @@ Keyword-only arguments:
 
 Deletes the specified managed policy.
 
-Type annotations for `aiobotocore.create_client("iam").delete_policy` method.
+Type annotations for `session.create_client("iam").delete_policy` method.
 
 Boto3 documentation:
 [IAM.Client.delete_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_policy)
@@ -1030,7 +1024,7 @@ Keyword-only arguments:
 
 Deletes the specified version from the specified managed policy.
 
-Type annotations for `aiobotocore.create_client("iam").delete_policy_version`
+Type annotations for `session.create_client("iam").delete_policy_version`
 method.
 
 Boto3 documentation:
@@ -1053,7 +1047,7 @@ Keyword-only arguments:
 
 Deletes the specified role.
 
-Type annotations for `aiobotocore.create_client("iam").delete_role` method.
+Type annotations for `session.create_client("iam").delete_role` method.
 
 Boto3 documentation:
 [IAM.Client.delete_role](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_role)
@@ -1074,7 +1068,7 @@ Keyword-only arguments:
 Deletes the permissions boundary for the specified IAM role.
 
 Type annotations for
-`aiobotocore.create_client("iam").delete_role_permissions_boundary` method.
+`session.create_client("iam").delete_role_permissions_boundary` method.
 
 Boto3 documentation:
 [IAM.Client.delete_role_permissions_boundary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_role_permissions_boundary)
@@ -1095,8 +1089,7 @@ Keyword-only arguments:
 
 Deletes the specified inline policy that is embedded in the specified IAM role.
 
-Type annotations for `aiobotocore.create_client("iam").delete_role_policy`
-method.
+Type annotations for `session.create_client("iam").delete_role_policy` method.
 
 Boto3 documentation:
 [IAM.Client.delete_role_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_role_policy)
@@ -1118,7 +1111,7 @@ Keyword-only arguments:
 
 Deletes a SAML provider resource in IAM.
 
-Type annotations for `aiobotocore.create_client("iam").delete_saml_provider`
+Type annotations for `session.create_client("iam").delete_saml_provider`
 method.
 
 Boto3 documentation:
@@ -1140,8 +1133,8 @@ Keyword-only arguments:
 
 Deletes the specified server certificate.
 
-Type annotations for
-`aiobotocore.create_client("iam").delete_server_certificate` method.
+Type annotations for `session.create_client("iam").delete_server_certificate`
+method.
 
 Boto3 documentation:
 [IAM.Client.delete_server_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_server_certificate)
@@ -1163,8 +1156,8 @@ Keyword-only arguments:
 Submits a service-linked role deletion request and returns a `DeletionTaskId` ,
 which you can use to check the status of the deletion.
 
-Type annotations for
-`aiobotocore.create_client("iam").delete_service_linked_role` method.
+Type annotations for `session.create_client("iam").delete_service_linked_role`
+method.
 
 Boto3 documentation:
 [IAM.Client.delete_service_linked_role](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_service_linked_role)
@@ -1189,7 +1182,7 @@ Returns a `Coroutine` for
 Deletes the specified service-specific credential.
 
 Type annotations for
-`aiobotocore.create_client("iam").delete_service_specific_credential` method.
+`session.create_client("iam").delete_service_specific_credential` method.
 
 Boto3 documentation:
 [IAM.Client.delete_service_specific_credential](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_service_specific_credential)
@@ -1211,8 +1204,8 @@ Keyword-only arguments:
 
 Deletes a signing certificate associated with the specified IAM user.
 
-Type annotations for
-`aiobotocore.create_client("iam").delete_signing_certificate` method.
+Type annotations for `session.create_client("iam").delete_signing_certificate`
+method.
 
 Boto3 documentation:
 [IAM.Client.delete_signing_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_signing_certificate)
@@ -1234,7 +1227,7 @@ Keyword-only arguments:
 
 Deletes the specified SSH public key.
 
-Type annotations for `aiobotocore.create_client("iam").delete_ssh_public_key`
+Type annotations for `session.create_client("iam").delete_ssh_public_key`
 method.
 
 Boto3 documentation:
@@ -1257,7 +1250,7 @@ Keyword-only arguments:
 
 Deletes the specified IAM user.
 
-Type annotations for `aiobotocore.create_client("iam").delete_user` method.
+Type annotations for `session.create_client("iam").delete_user` method.
 
 Boto3 documentation:
 [IAM.Client.delete_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_user)
@@ -1278,7 +1271,7 @@ Keyword-only arguments:
 Deletes the permissions boundary for the specified IAM user.
 
 Type annotations for
-`aiobotocore.create_client("iam").delete_user_permissions_boundary` method.
+`session.create_client("iam").delete_user_permissions_boundary` method.
 
 Boto3 documentation:
 [IAM.Client.delete_user_permissions_boundary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_user_permissions_boundary)
@@ -1299,8 +1292,7 @@ Keyword-only arguments:
 
 Deletes the specified inline policy that is embedded in the specified IAM user.
 
-Type annotations for `aiobotocore.create_client("iam").delete_user_policy`
-method.
+Type annotations for `session.create_client("iam").delete_user_policy` method.
 
 Boto3 documentation:
 [IAM.Client.delete_user_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_user_policy)
@@ -1322,8 +1314,8 @@ Keyword-only arguments:
 
 Deletes a virtual MFA device.
 
-Type annotations for
-`aiobotocore.create_client("iam").delete_virtual_mfa_device` method.
+Type annotations for `session.create_client("iam").delete_virtual_mfa_device`
+method.
 
 Boto3 documentation:
 [IAM.Client.delete_virtual_mfa_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.delete_virtual_mfa_device)
@@ -1344,8 +1336,7 @@ Keyword-only arguments:
 
 Removes the specified managed policy from the specified IAM group.
 
-Type annotations for `aiobotocore.create_client("iam").detach_group_policy`
-method.
+Type annotations for `session.create_client("iam").detach_group_policy` method.
 
 Boto3 documentation:
 [IAM.Client.detach_group_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.detach_group_policy)
@@ -1367,8 +1358,7 @@ Keyword-only arguments:
 
 Removes the specified managed policy from the specified role.
 
-Type annotations for `aiobotocore.create_client("iam").detach_role_policy`
-method.
+Type annotations for `session.create_client("iam").detach_role_policy` method.
 
 Boto3 documentation:
 [IAM.Client.detach_role_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.detach_role_policy)
@@ -1390,8 +1380,7 @@ Keyword-only arguments:
 
 Removes the specified managed policy from the specified user.
 
-Type annotations for `aiobotocore.create_client("iam").detach_user_policy`
-method.
+Type annotations for `session.create_client("iam").detach_user_policy` method.
 
 Boto3 documentation:
 [IAM.Client.detach_user_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.detach_user_policy)
@@ -1413,8 +1402,7 @@ Keyword-only arguments:
 
 Enables the specified MFA device and associates it with the specified IAM user.
 
-Type annotations for `aiobotocore.create_client("iam").enable_mfa_device`
-method.
+Type annotations for `session.create_client("iam").enable_mfa_device` method.
 
 Boto3 documentation:
 [IAM.Client.enable_mfa_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.enable_mfa_device)
@@ -1437,8 +1425,8 @@ Keyword-only arguments:
 
 Generates a credential report for the Amazon Web Services account.
 
-Type annotations for
-`aiobotocore.create_client("iam").generate_credential_report` method.
+Type annotations for `session.create_client("iam").generate_credential_report`
+method.
 
 Boto3 documentation:
 [IAM.Client.generate_credential_report](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.generate_credential_report)
@@ -1456,7 +1444,7 @@ Returns a `Coroutine` for
 Generates a report for service last accessed data for Organizations.
 
 Type annotations for
-`aiobotocore.create_client("iam").generate_organizations_access_report` method.
+`session.create_client("iam").generate_organizations_access_report` method.
 
 Boto3 documentation:
 [IAM.Client.generate_organizations_access_report](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.generate_organizations_access_report)
@@ -1481,7 +1469,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("iam").generate_presigned_url`
+Type annotations for `session.create_client("iam").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -1508,8 +1496,7 @@ group, role, or policy) was last used in an attempt to access Amazon Web
 Services services.
 
 Type annotations for
-`aiobotocore.create_client("iam").generate_service_last_accessed_details`
-method.
+`session.create_client("iam").generate_service_last_accessed_details` method.
 
 Boto3 documentation:
 [IAM.Client.generate_service_last_accessed_details](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.generate_service_last_accessed_details)
@@ -1535,8 +1522,8 @@ Returns a `Coroutine` for
 
 Retrieves information about when the specified access key was last used.
 
-Type annotations for
-`aiobotocore.create_client("iam").get_access_key_last_used` method.
+Type annotations for `session.create_client("iam").get_access_key_last_used`
+method.
 
 Boto3 documentation:
 [IAM.Client.get_access_key_last_used](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_access_key_last_used)
@@ -1562,7 +1549,7 @@ Retrieves information about all IAM users, groups, roles, and policies in your
 Amazon Web Services account, including their relationships to one another.
 
 Type annotations for
-`aiobotocore.create_client("iam").get_account_authorization_details` method.
+`session.create_client("iam").get_account_authorization_details` method.
 
 Boto3 documentation:
 [IAM.Client.get_account_authorization_details](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_account_authorization_details)
@@ -1588,8 +1575,8 @@ Returns a `Coroutine` for
 
 Retrieves the password policy for the Amazon Web Services account.
 
-Type annotations for
-`aiobotocore.create_client("iam").get_account_password_policy` method.
+Type annotations for `session.create_client("iam").get_account_password_policy`
+method.
 
 Boto3 documentation:
 [IAM.Client.get_account_password_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_account_password_policy)
@@ -1607,8 +1594,7 @@ Returns a `Coroutine` for
 Retrieves information about IAM entity usage and IAM quotas in the Amazon Web
 Services account.
 
-Type annotations for `aiobotocore.create_client("iam").get_account_summary`
-method.
+Type annotations for `session.create_client("iam").get_account_summary` method.
 
 Boto3 documentation:
 [IAM.Client.get_account_summary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_account_summary)
@@ -1626,7 +1612,7 @@ Returns a `Coroutine` for
 Gets a list of all of the context keys referenced in the input policies.
 
 Type annotations for
-`aiobotocore.create_client("iam").get_context_keys_for_custom_policy` method.
+`session.create_client("iam").get_context_keys_for_custom_policy` method.
 
 Boto3 documentation:
 [IAM.Client.get_context_keys_for_custom_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_context_keys_for_custom_policy)
@@ -1652,8 +1638,7 @@ Gets a list of all of the context keys referenced in all the IAM policies that
 are attached to the specified IAM entity.
 
 Type annotations for
-`aiobotocore.create_client("iam").get_context_keys_for_principal_policy`
-method.
+`session.create_client("iam").get_context_keys_for_principal_policy` method.
 
 Boto3 documentation:
 [IAM.Client.get_context_keys_for_principal_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_context_keys_for_principal_policy)
@@ -1678,7 +1663,7 @@ Returns a `Coroutine` for
 
 Retrieves a credential report for the Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("iam").get_credential_report`
+Type annotations for `session.create_client("iam").get_credential_report`
 method.
 
 Boto3 documentation:
@@ -1696,7 +1681,7 @@ Returns a `Coroutine` for
 
 Returns a list of IAM users that are in the specified IAM group.
 
-Type annotations for `aiobotocore.create_client("iam").get_group` method.
+Type annotations for `session.create_client("iam").get_group` method.
 
 Boto3 documentation:
 [IAM.Client.get_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_group)
@@ -1722,8 +1707,7 @@ Returns a `Coroutine` for
 Retrieves the specified inline policy document that is embedded in the
 specified IAM group.
 
-Type annotations for `aiobotocore.create_client("iam").get_group_policy`
-method.
+Type annotations for `session.create_client("iam").get_group_policy` method.
 
 Boto3 documentation:
 [IAM.Client.get_group_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_group_policy)
@@ -1748,7 +1732,7 @@ Returns a `Coroutine` for
 Retrieves information about the specified instance profile, including the
 instance profile's path, GUID, ARN, and role.
 
-Type annotations for `aiobotocore.create_client("iam").get_instance_profile`
+Type annotations for `session.create_client("iam").get_instance_profile`
 method.
 
 Boto3 documentation:
@@ -1773,8 +1757,7 @@ Returns a `Coroutine` for
 
 Retrieves the user name for the specified IAM user.
 
-Type annotations for `aiobotocore.create_client("iam").get_login_profile`
-method.
+Type annotations for `session.create_client("iam").get_login_profile` method.
 
 Boto3 documentation:
 [IAM.Client.get_login_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_login_profile)
@@ -1799,7 +1782,7 @@ Returns information about the specified OpenID Connect (OIDC) provider resource
 object in IAM.
 
 Type annotations for
-`aiobotocore.create_client("iam").get_open_id_connect_provider` method.
+`session.create_client("iam").get_open_id_connect_provider` method.
 
 Boto3 documentation:
 [IAM.Client.get_open_id_connect_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_open_id_connect_provider)
@@ -1825,7 +1808,7 @@ Retrieves the service last accessed data report for Organizations that was
 previously generated using the ` GenerateOrganizationsAccessReport` operation.
 
 Type annotations for
-`aiobotocore.create_client("iam").get_organizations_access_report` method.
+`session.create_client("iam").get_organizations_access_report` method.
 
 Boto3 documentation:
 [IAM.Client.get_organizations_access_report](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_organizations_access_report)
@@ -1854,7 +1837,7 @@ Retrieves information about the specified managed policy, including the
 policy's default version and the total number of IAM users, groups, and roles
 to which the policy is attached.
 
-Type annotations for `aiobotocore.create_client("iam").get_policy` method.
+Type annotations for `session.create_client("iam").get_policy` method.
 
 Boto3 documentation:
 [IAM.Client.get_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_policy)
@@ -1878,8 +1861,7 @@ Returns a `Coroutine` for
 Retrieves information about the specified version of the specified managed
 policy, including the policy document.
 
-Type annotations for `aiobotocore.create_client("iam").get_policy_version`
-method.
+Type annotations for `session.create_client("iam").get_policy_version` method.
 
 Boto3 documentation:
 [IAM.Client.get_policy_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_policy_version)
@@ -1906,7 +1888,7 @@ Retrieves information about the specified role, including the role's path,
 GUID, ARN, and the role's trust policy that grants permission to assume the
 role.
 
-Type annotations for `aiobotocore.create_client("iam").get_role` method.
+Type annotations for `session.create_client("iam").get_role` method.
 
 Boto3 documentation:
 [IAM.Client.get_role](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_role)
@@ -1930,7 +1912,7 @@ Returns a `Coroutine` for
 Retrieves the specified inline policy document that is embedded with the
 specified IAM role.
 
-Type annotations for `aiobotocore.create_client("iam").get_role_policy` method.
+Type annotations for `session.create_client("iam").get_role_policy` method.
 
 Boto3 documentation:
 [IAM.Client.get_role_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_role_policy)
@@ -1955,8 +1937,7 @@ Returns a `Coroutine` for
 Returns the SAML provider metadocument that was uploaded when the IAM SAML
 provider resource object was created or updated.
 
-Type annotations for `aiobotocore.create_client("iam").get_saml_provider`
-method.
+Type annotations for `session.create_client("iam").get_saml_provider` method.
 
 Boto3 documentation:
 [IAM.Client.get_saml_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_saml_provider)
@@ -1979,7 +1960,7 @@ Returns a `Coroutine` for
 
 Retrieves information about the specified server certificate stored in IAM.
 
-Type annotations for `aiobotocore.create_client("iam").get_server_certificate`
+Type annotations for `session.create_client("iam").get_server_certificate`
 method.
 
 Boto3 documentation:
@@ -2006,7 +1987,7 @@ Retrieves a service last accessed report that was created using the
 `GenerateServiceLastAccessedDetails` operation.
 
 Type annotations for
-`aiobotocore.create_client("iam").get_service_last_accessed_details` method.
+`session.create_client("iam").get_service_last_accessed_details` method.
 
 Boto3 documentation:
 [IAM.Client.get_service_last_accessed_details](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_service_last_accessed_details)
@@ -2035,7 +2016,7 @@ After you generate a group or policy report using the
 parameter in `GetServiceLastAccessedDetailsWithEntities`.
 
 Type annotations for
-`aiobotocore.create_client("iam").get_service_last_accessed_details_with_entities`
+`session.create_client("iam").get_service_last_accessed_details_with_entities`
 method.
 
 Boto3 documentation:
@@ -2065,8 +2046,7 @@ Returns a `Coroutine` for
 Retrieves the status of your service-linked role deletion.
 
 Type annotations for
-`aiobotocore.create_client("iam").get_service_linked_role_deletion_status`
-method.
+`session.create_client("iam").get_service_linked_role_deletion_status` method.
 
 Boto3 documentation:
 [IAM.Client.get_service_linked_role_deletion_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_service_linked_role_deletion_status)
@@ -2090,8 +2070,7 @@ Returns a `Coroutine` for
 
 Retrieves the specified SSH public key, including metadata about the key.
 
-Type annotations for `aiobotocore.create_client("iam").get_ssh_public_key`
-method.
+Type annotations for `session.create_client("iam").get_ssh_public_key` method.
 
 Boto3 documentation:
 [IAM.Client.get_ssh_public_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_ssh_public_key)
@@ -2118,7 +2097,7 @@ Returns a `Coroutine` for
 Retrieves information about the specified IAM user, including the user's
 creation date, path, unique ID, and ARN.
 
-Type annotations for `aiobotocore.create_client("iam").get_user` method.
+Type annotations for `session.create_client("iam").get_user` method.
 
 Boto3 documentation:
 [IAM.Client.get_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_user)
@@ -2142,7 +2121,7 @@ Returns a `Coroutine` for
 Retrieves the specified inline policy document that is embedded in the
 specified IAM user.
 
-Type annotations for `aiobotocore.create_client("iam").get_user_policy` method.
+Type annotations for `session.create_client("iam").get_user_policy` method.
 
 Boto3 documentation:
 [IAM.Client.get_user_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.get_user_policy)
@@ -2167,8 +2146,7 @@ Returns a `Coroutine` for
 Returns information about the access key IDs associated with the specified IAM
 user.
 
-Type annotations for `aiobotocore.create_client("iam").list_access_keys`
-method.
+Type annotations for `session.create_client("iam").list_access_keys` method.
 
 Boto3 documentation:
 [IAM.Client.list_access_keys](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_access_keys)
@@ -2194,7 +2172,7 @@ Returns a `Coroutine` for
 Lists the account alias associated with the Amazon Web Services account (Note:
 you can have only one).
 
-Type annotations for `aiobotocore.create_client("iam").list_account_aliases`
+Type annotations for `session.create_client("iam").list_account_aliases`
 method.
 
 Boto3 documentation:
@@ -2221,7 +2199,7 @@ Returns a `Coroutine` for
 Lists all managed policies that are attached to the specified IAM group.
 
 Type annotations for
-`aiobotocore.create_client("iam").list_attached_group_policies` method.
+`session.create_client("iam").list_attached_group_policies` method.
 
 Boto3 documentation:
 [IAM.Client.list_attached_group_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_attached_group_policies)
@@ -2248,8 +2226,8 @@ Returns a `Coroutine` for
 
 Lists all managed policies that are attached to the specified IAM role.
 
-Type annotations for
-`aiobotocore.create_client("iam").list_attached_role_policies` method.
+Type annotations for `session.create_client("iam").list_attached_role_policies`
+method.
 
 Boto3 documentation:
 [IAM.Client.list_attached_role_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_attached_role_policies)
@@ -2276,8 +2254,8 @@ Returns a `Coroutine` for
 
 Lists all managed policies that are attached to the specified IAM user.
 
-Type annotations for
-`aiobotocore.create_client("iam").list_attached_user_policies` method.
+Type annotations for `session.create_client("iam").list_attached_user_policies`
+method.
 
 Boto3 documentation:
 [IAM.Client.list_attached_user_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_attached_user_policies)
@@ -2305,8 +2283,8 @@ Returns a `Coroutine` for
 Lists all IAM users, groups, and roles that the specified managed policy is
 attached to.
 
-Type annotations for
-`aiobotocore.create_client("iam").list_entities_for_policy` method.
+Type annotations for `session.create_client("iam").list_entities_for_policy`
+method.
 
 Boto3 documentation:
 [IAM.Client.list_entities_for_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_entities_for_policy)
@@ -2336,8 +2314,7 @@ Returns a `Coroutine` for
 Lists the names of the inline policies that are embedded in the specified IAM
 group.
 
-Type annotations for `aiobotocore.create_client("iam").list_group_policies`
-method.
+Type annotations for `session.create_client("iam").list_group_policies` method.
 
 Boto3 documentation:
 [IAM.Client.list_group_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_group_policies)
@@ -2363,7 +2340,7 @@ Returns a `Coroutine` for
 
 Lists the IAM groups that have the specified path prefix.
 
-Type annotations for `aiobotocore.create_client("iam").list_groups` method.
+Type annotations for `session.create_client("iam").list_groups` method.
 
 Boto3 documentation:
 [IAM.Client.list_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_groups)
@@ -2388,7 +2365,7 @@ Returns a `Coroutine` for
 
 Lists the IAM groups that the specified IAM user belongs to.
 
-Type annotations for `aiobotocore.create_client("iam").list_groups_for_user`
+Type annotations for `session.create_client("iam").list_groups_for_user`
 method.
 
 Boto3 documentation:
@@ -2415,8 +2392,8 @@ Returns a `Coroutine` for
 
 Lists the tags that are attached to the specified IAM instance profile.
 
-Type annotations for
-`aiobotocore.create_client("iam").list_instance_profile_tags` method.
+Type annotations for `session.create_client("iam").list_instance_profile_tags`
+method.
 
 Boto3 documentation:
 [IAM.Client.list_instance_profile_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_instance_profile_tags)
@@ -2442,7 +2419,7 @@ Returns a `Coroutine` for
 
 Lists the instance profiles that have the specified path prefix.
 
-Type annotations for `aiobotocore.create_client("iam").list_instance_profiles`
+Type annotations for `session.create_client("iam").list_instance_profiles`
 method.
 
 Boto3 documentation:
@@ -2470,7 +2447,7 @@ Returns a `Coroutine` for
 Lists the instance profiles that have the specified associated IAM role.
 
 Type annotations for
-`aiobotocore.create_client("iam").list_instance_profiles_for_role` method.
+`session.create_client("iam").list_instance_profiles_for_role` method.
 
 Boto3 documentation:
 [IAM.Client.list_instance_profiles_for_role](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_instance_profiles_for_role)
@@ -2497,7 +2474,7 @@ Returns a `Coroutine` for
 Lists the tags that are attached to the specified IAM virtual multi-factor
 authentication (MFA) device.
 
-Type annotations for `aiobotocore.create_client("iam").list_mfa_device_tags`
+Type annotations for `session.create_client("iam").list_mfa_device_tags`
 method.
 
 Boto3 documentation:
@@ -2524,8 +2501,7 @@ Returns a `Coroutine` for
 
 Lists the MFA devices for an IAM user.
 
-Type annotations for `aiobotocore.create_client("iam").list_mfa_devices`
-method.
+Type annotations for `session.create_client("iam").list_mfa_devices` method.
 
 Boto3 documentation:
 [IAM.Client.list_mfa_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_mfa_devices)
@@ -2552,7 +2528,7 @@ Lists the tags that are attached to the specified OpenID Connect
 (OIDC)-compatible identity provider.
 
 Type annotations for
-`aiobotocore.create_client("iam").list_open_id_connect_provider_tags` method.
+`session.create_client("iam").list_open_id_connect_provider_tags` method.
 
 Boto3 documentation:
 [IAM.Client.list_open_id_connect_provider_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_open_id_connect_provider_tags)
@@ -2580,7 +2556,7 @@ Lists information about the IAM OpenID Connect (OIDC) provider resource objects
 defined in the Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("iam").list_open_id_connect_providers` method.
+`session.create_client("iam").list_open_id_connect_providers` method.
 
 Boto3 documentation:
 [IAM.Client.list_open_id_connect_providers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_open_id_connect_providers)
@@ -2599,7 +2575,7 @@ Lists all the managed policies that are available in your Amazon Web Services
 account, including your own customer-defined managed policies and all Amazon
 Web Services managed policies.
 
-Type annotations for `aiobotocore.create_client("iam").list_policies` method.
+Type annotations for `session.create_client("iam").list_policies` method.
 
 Boto3 documentation:
 [IAM.Client.list_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_policies)
@@ -2629,8 +2605,7 @@ Retrieves a list of policies that the IAM identity (user, group, or role) can
 use to access each specified service.
 
 Type annotations for
-`aiobotocore.create_client("iam").list_policies_granting_service_access`
-method.
+`session.create_client("iam").list_policies_granting_service_access` method.
 
 Boto3 documentation:
 [IAM.Client.list_policies_granting_service_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_policies_granting_service_access)
@@ -2656,8 +2631,7 @@ Returns a `Coroutine` for
 
 Lists the tags that are attached to the specified IAM customer managed policy.
 
-Type annotations for `aiobotocore.create_client("iam").list_policy_tags`
-method.
+Type annotations for `session.create_client("iam").list_policy_tags` method.
 
 Boto3 documentation:
 [IAM.Client.list_policy_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_policy_tags)
@@ -2683,7 +2657,7 @@ Returns a `Coroutine` for
 Lists information about the versions of the specified managed policy, including
 the version that is currently set as the policy's default version.
 
-Type annotations for `aiobotocore.create_client("iam").list_policy_versions`
+Type annotations for `session.create_client("iam").list_policy_versions`
 method.
 
 Boto3 documentation:
@@ -2711,8 +2685,7 @@ Returns a `Coroutine` for
 Lists the names of the inline policies that are embedded in the specified IAM
 role.
 
-Type annotations for `aiobotocore.create_client("iam").list_role_policies`
-method.
+Type annotations for `session.create_client("iam").list_role_policies` method.
 
 Boto3 documentation:
 [IAM.Client.list_role_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_role_policies)
@@ -2738,7 +2711,7 @@ Returns a `Coroutine` for
 
 Lists the tags that are attached to the specified role.
 
-Type annotations for `aiobotocore.create_client("iam").list_role_tags` method.
+Type annotations for `session.create_client("iam").list_role_tags` method.
 
 Boto3 documentation:
 [IAM.Client.list_role_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_role_tags)
@@ -2763,7 +2736,7 @@ Returns a `Coroutine` for
 
 Lists the IAM roles that have the specified path prefix.
 
-Type annotations for `aiobotocore.create_client("iam").list_roles` method.
+Type annotations for `session.create_client("iam").list_roles` method.
 
 Boto3 documentation:
 [IAM.Client.list_roles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_roles)
@@ -2789,7 +2762,7 @@ Returns a `Coroutine` for
 Lists the tags that are attached to the specified Security Assertion Markup
 Language (SAML) identity provider.
 
-Type annotations for `aiobotocore.create_client("iam").list_saml_provider_tags`
+Type annotations for `session.create_client("iam").list_saml_provider_tags`
 method.
 
 Boto3 documentation:
@@ -2816,8 +2789,7 @@ Returns a `Coroutine` for
 
 Lists the SAML provider resource objects defined in IAM in the account.
 
-Type annotations for `aiobotocore.create_client("iam").list_saml_providers`
-method.
+Type annotations for `session.create_client("iam").list_saml_providers` method.
 
 Boto3 documentation:
 [IAM.Client.list_saml_providers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_saml_providers)
@@ -2835,7 +2807,7 @@ Returns a `Coroutine` for
 Lists the tags that are attached to the specified IAM server certificate.
 
 Type annotations for
-`aiobotocore.create_client("iam").list_server_certificate_tags` method.
+`session.create_client("iam").list_server_certificate_tags` method.
 
 Boto3 documentation:
 [IAM.Client.list_server_certificate_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_server_certificate_tags)
@@ -2862,8 +2834,8 @@ Returns a `Coroutine` for
 Lists the server certificates stored in IAM that have the specified path
 prefix.
 
-Type annotations for
-`aiobotocore.create_client("iam").list_server_certificates` method.
+Type annotations for `session.create_client("iam").list_server_certificates`
+method.
 
 Boto3 documentation:
 [IAM.Client.list_server_certificates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_server_certificates)
@@ -2891,7 +2863,7 @@ Returns information about the service-specific credentials associated with the
 specified IAM user.
 
 Type annotations for
-`aiobotocore.create_client("iam").list_service_specific_credentials` method.
+`session.create_client("iam").list_service_specific_credentials` method.
 
 Boto3 documentation:
 [IAM.Client.list_service_specific_credentials](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_service_specific_credentials)
@@ -2917,8 +2889,8 @@ Returns a `Coroutine` for
 Returns information about the signing certificates associated with the
 specified IAM user.
 
-Type annotations for
-`aiobotocore.create_client("iam").list_signing_certificates` method.
+Type annotations for `session.create_client("iam").list_signing_certificates`
+method.
 
 Boto3 documentation:
 [IAM.Client.list_signing_certificates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_signing_certificates)
@@ -2945,7 +2917,7 @@ Returns a `Coroutine` for
 Returns information about the SSH public keys associated with the specified IAM
 user.
 
-Type annotations for `aiobotocore.create_client("iam").list_ssh_public_keys`
+Type annotations for `session.create_client("iam").list_ssh_public_keys`
 method.
 
 Boto3 documentation:
@@ -2972,8 +2944,7 @@ Returns a `Coroutine` for
 
 Lists the names of the inline policies embedded in the specified IAM user.
 
-Type annotations for `aiobotocore.create_client("iam").list_user_policies`
-method.
+Type annotations for `session.create_client("iam").list_user_policies` method.
 
 Boto3 documentation:
 [IAM.Client.list_user_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_user_policies)
@@ -2999,7 +2970,7 @@ Returns a `Coroutine` for
 
 Lists the tags that are attached to the specified IAM user.
 
-Type annotations for `aiobotocore.create_client("iam").list_user_tags` method.
+Type annotations for `session.create_client("iam").list_user_tags` method.
 
 Boto3 documentation:
 [IAM.Client.list_user_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_user_tags)
@@ -3024,7 +2995,7 @@ Returns a `Coroutine` for
 
 Lists the IAM users that have the specified path prefix.
 
-Type annotations for `aiobotocore.create_client("iam").list_users` method.
+Type annotations for `session.create_client("iam").list_users` method.
 
 Boto3 documentation:
 [IAM.Client.list_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_users)
@@ -3050,8 +3021,8 @@ Returns a `Coroutine` for
 Lists the virtual MFA devices defined in the Amazon Web Services account by
 assignment status.
 
-Type annotations for
-`aiobotocore.create_client("iam").list_virtual_mfa_devices` method.
+Type annotations for `session.create_client("iam").list_virtual_mfa_devices`
+method.
 
 Boto3 documentation:
 [IAM.Client.list_virtual_mfa_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.list_virtual_mfa_devices)
@@ -3079,8 +3050,7 @@ Returns a `Coroutine` for
 Adds or updates an inline policy document that is embedded in the specified IAM
 group.
 
-Type annotations for `aiobotocore.create_client("iam").put_group_policy`
-method.
+Type annotations for `session.create_client("iam").put_group_policy` method.
 
 Boto3 documentation:
 [IAM.Client.put_group_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.put_group_policy)
@@ -3104,7 +3074,7 @@ Adds or updates the policy that is specified as the IAM role's permissions
 boundary.
 
 Type annotations for
-`aiobotocore.create_client("iam").put_role_permissions_boundary` method.
+`session.create_client("iam").put_role_permissions_boundary` method.
 
 Boto3 documentation:
 [IAM.Client.put_role_permissions_boundary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.put_role_permissions_boundary)
@@ -3127,7 +3097,7 @@ Keyword-only arguments:
 Adds or updates an inline policy document that is embedded in the specified IAM
 role.
 
-Type annotations for `aiobotocore.create_client("iam").put_role_policy` method.
+Type annotations for `session.create_client("iam").put_role_policy` method.
 
 Boto3 documentation:
 [IAM.Client.put_role_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.put_role_policy)
@@ -3151,7 +3121,7 @@ Adds or updates the policy that is specified as the IAM user's permissions
 boundary.
 
 Type annotations for
-`aiobotocore.create_client("iam").put_user_permissions_boundary` method.
+`session.create_client("iam").put_user_permissions_boundary` method.
 
 Boto3 documentation:
 [IAM.Client.put_user_permissions_boundary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.put_user_permissions_boundary)
@@ -3174,7 +3144,7 @@ Keyword-only arguments:
 Adds or updates an inline policy document that is embedded in the specified IAM
 user.
 
-Type annotations for `aiobotocore.create_client("iam").put_user_policy` method.
+Type annotations for `session.create_client("iam").put_user_policy` method.
 
 Boto3 documentation:
 [IAM.Client.put_user_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.put_user_policy)
@@ -3199,7 +3169,7 @@ client IDs registered for the specified IAM OpenID Connect (OIDC) provider
 resource object.
 
 Type annotations for
-`aiobotocore.create_client("iam").remove_client_id_from_open_id_connect_provider`
+`session.create_client("iam").remove_client_id_from_open_id_connect_provider`
 method.
 
 Boto3 documentation:
@@ -3224,7 +3194,7 @@ Keyword-only arguments:
 Removes the specified IAM role from the specified EC2 instance profile.
 
 Type annotations for
-`aiobotocore.create_client("iam").remove_role_from_instance_profile` method.
+`session.create_client("iam").remove_role_from_instance_profile` method.
 
 Boto3 documentation:
 [IAM.Client.remove_role_from_instance_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.remove_role_from_instance_profile)
@@ -3246,7 +3216,7 @@ Keyword-only arguments:
 
 Removes the specified user from the specified group.
 
-Type annotations for `aiobotocore.create_client("iam").remove_user_from_group`
+Type annotations for `session.create_client("iam").remove_user_from_group`
 method.
 
 Boto3 documentation:
@@ -3270,7 +3240,7 @@ Keyword-only arguments:
 Resets the password for a service-specific credential.
 
 Type annotations for
-`aiobotocore.create_client("iam").reset_service_specific_credential` method.
+`session.create_client("iam").reset_service_specific_credential` method.
 
 Boto3 documentation:
 [IAM.Client.reset_service_specific_credential](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.reset_service_specific_credential)
@@ -3296,8 +3266,7 @@ Returns a `Coroutine` for
 Synchronizes the specified MFA device with its IAM resource object on the
 Amazon Web Services servers.
 
-Type annotations for `aiobotocore.create_client("iam").resync_mfa_device`
-method.
+Type annotations for `session.create_client("iam").resync_mfa_device` method.
 
 Boto3 documentation:
 [IAM.Client.resync_mfa_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.resync_mfa_device)
@@ -3321,8 +3290,8 @@ Keyword-only arguments:
 Sets the specified version of the specified policy as the policy's default
 (operative) version.
 
-Type annotations for
-`aiobotocore.create_client("iam").set_default_policy_version` method.
+Type annotations for `session.create_client("iam").set_default_policy_version`
+method.
 
 Boto3 documentation:
 [IAM.Client.set_default_policy_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.set_default_policy_version)
@@ -3346,8 +3315,7 @@ Sets the specified version of the global endpoint token as the token version
 used for the Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("iam").set_security_token_service_preferences`
-method.
+`session.create_client("iam").set_security_token_service_preferences` method.
 
 Boto3 documentation:
 [IAM.Client.set_security_token_service_preferences](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.set_security_token_service_preferences)
@@ -3372,7 +3340,7 @@ Simulate how a set of IAM policies and optionally a resource-based policy works
 with a list of API operations and Amazon Web Services resources to determine
 the policies' effective permissions.
 
-Type annotations for `aiobotocore.create_client("iam").simulate_custom_policy`
+Type annotations for `session.create_client("iam").simulate_custom_policy`
 method.
 
 Boto3 documentation:
@@ -3410,8 +3378,8 @@ Simulate how a set of IAM policies attached to an IAM entity works with a list
 of API operations and Amazon Web Services resources to determine the policies'
 effective permissions.
 
-Type annotations for
-`aiobotocore.create_client("iam").simulate_principal_policy` method.
+Type annotations for `session.create_client("iam").simulate_principal_policy`
+method.
 
 Boto3 documentation:
 [IAM.Client.simulate_principal_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.simulate_principal_policy)
@@ -3447,7 +3415,7 @@ Returns a `Coroutine` for
 
 Adds one or more tags to an IAM instance profile.
 
-Type annotations for `aiobotocore.create_client("iam").tag_instance_profile`
+Type annotations for `session.create_client("iam").tag_instance_profile`
 method.
 
 Boto3 documentation:
@@ -3471,7 +3439,7 @@ Keyword-only arguments:
 Adds one or more tags to an IAM virtual multi-factor authentication (MFA)
 device.
 
-Type annotations for `aiobotocore.create_client("iam").tag_mfa_device` method.
+Type annotations for `session.create_client("iam").tag_mfa_device` method.
 
 Boto3 documentation:
 [IAM.Client.tag_mfa_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.tag_mfa_device)
@@ -3493,7 +3461,7 @@ Keyword-only arguments:
 Adds one or more tags to an OpenID Connect (OIDC)-compatible identity provider.
 
 Type annotations for
-`aiobotocore.create_client("iam").tag_open_id_connect_provider` method.
+`session.create_client("iam").tag_open_id_connect_provider` method.
 
 Boto3 documentation:
 [IAM.Client.tag_open_id_connect_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.tag_open_id_connect_provider)
@@ -3515,7 +3483,7 @@ Keyword-only arguments:
 
 Adds one or more tags to an IAM customer managed policy.
 
-Type annotations for `aiobotocore.create_client("iam").tag_policy` method.
+Type annotations for `session.create_client("iam").tag_policy` method.
 
 Boto3 documentation:
 [IAM.Client.tag_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.tag_policy)
@@ -3536,7 +3504,7 @@ Keyword-only arguments:
 
 Adds one or more tags to an IAM role.
 
-Type annotations for `aiobotocore.create_client("iam").tag_role` method.
+Type annotations for `session.create_client("iam").tag_role` method.
 
 Boto3 documentation:
 [IAM.Client.tag_role](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.tag_role)
@@ -3558,8 +3526,7 @@ Keyword-only arguments:
 Adds one or more tags to a Security Assertion Markup Language (SAML) identity
 provider.
 
-Type annotations for `aiobotocore.create_client("iam").tag_saml_provider`
-method.
+Type annotations for `session.create_client("iam").tag_saml_provider` method.
 
 Boto3 documentation:
 [IAM.Client.tag_saml_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.tag_saml_provider)
@@ -3580,7 +3547,7 @@ Keyword-only arguments:
 
 Adds one or more tags to an IAM server certificate.
 
-Type annotations for `aiobotocore.create_client("iam").tag_server_certificate`
+Type annotations for `session.create_client("iam").tag_server_certificate`
 method.
 
 Boto3 documentation:
@@ -3603,7 +3570,7 @@ Keyword-only arguments:
 
 Adds one or more tags to an IAM user.
 
-Type annotations for `aiobotocore.create_client("iam").tag_user` method.
+Type annotations for `session.create_client("iam").tag_user` method.
 
 Boto3 documentation:
 [IAM.Client.tag_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.tag_user)
@@ -3624,7 +3591,7 @@ Keyword-only arguments:
 
 Removes the specified tags from the IAM instance profile.
 
-Type annotations for `aiobotocore.create_client("iam").untag_instance_profile`
+Type annotations for `session.create_client("iam").untag_instance_profile`
 method.
 
 Boto3 documentation:
@@ -3648,8 +3615,7 @@ Keyword-only arguments:
 Removes the specified tags from the IAM virtual multi-factor authentication
 (MFA) device.
 
-Type annotations for `aiobotocore.create_client("iam").untag_mfa_device`
-method.
+Type annotations for `session.create_client("iam").untag_mfa_device` method.
 
 Boto3 documentation:
 [IAM.Client.untag_mfa_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.untag_mfa_device)
@@ -3672,7 +3638,7 @@ Removes the specified tags from the specified OpenID Connect (OIDC)-compatible
 identity provider in IAM.
 
 Type annotations for
-`aiobotocore.create_client("iam").untag_open_id_connect_provider` method.
+`session.create_client("iam").untag_open_id_connect_provider` method.
 
 Boto3 documentation:
 [IAM.Client.untag_open_id_connect_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.untag_open_id_connect_provider)
@@ -3694,7 +3660,7 @@ Keyword-only arguments:
 
 Removes the specified tags from the customer managed policy.
 
-Type annotations for `aiobotocore.create_client("iam").untag_policy` method.
+Type annotations for `session.create_client("iam").untag_policy` method.
 
 Boto3 documentation:
 [IAM.Client.untag_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.untag_policy)
@@ -3715,7 +3681,7 @@ Keyword-only arguments:
 
 Removes the specified tags from the role.
 
-Type annotations for `aiobotocore.create_client("iam").untag_role` method.
+Type annotations for `session.create_client("iam").untag_role` method.
 
 Boto3 documentation:
 [IAM.Client.untag_role](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.untag_role)
@@ -3737,8 +3703,7 @@ Keyword-only arguments:
 Removes the specified tags from the specified Security Assertion Markup
 Language (SAML) identity provider in IAM.
 
-Type annotations for `aiobotocore.create_client("iam").untag_saml_provider`
-method.
+Type annotations for `session.create_client("iam").untag_saml_provider` method.
 
 Boto3 documentation:
 [IAM.Client.untag_saml_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.untag_saml_provider)
@@ -3760,8 +3725,8 @@ Keyword-only arguments:
 
 Removes the specified tags from the IAM server certificate.
 
-Type annotations for
-`aiobotocore.create_client("iam").untag_server_certificate` method.
+Type annotations for `session.create_client("iam").untag_server_certificate`
+method.
 
 Boto3 documentation:
 [IAM.Client.untag_server_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.untag_server_certificate)
@@ -3783,7 +3748,7 @@ Keyword-only arguments:
 
 Removes the specified tags from the user.
 
-Type annotations for `aiobotocore.create_client("iam").untag_user` method.
+Type annotations for `session.create_client("iam").untag_user` method.
 
 Boto3 documentation:
 [IAM.Client.untag_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.untag_user)
@@ -3805,8 +3770,7 @@ Keyword-only arguments:
 Changes the status of the specified access key from Active to Inactive, or vice
 versa.
 
-Type annotations for `aiobotocore.create_client("iam").update_access_key`
-method.
+Type annotations for `session.create_client("iam").update_access_key` method.
 
 Boto3 documentation:
 [IAM.Client.update_access_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.update_access_key)
@@ -3829,7 +3793,7 @@ Keyword-only arguments:
 Updates the password policy settings for the Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("iam").update_account_password_policy` method.
+`session.create_client("iam").update_account_password_policy` method.
 
 Boto3 documentation:
 [IAM.Client.update_account_password_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.update_account_password_policy)
@@ -3858,8 +3822,8 @@ Keyword-only arguments:
 
 Updates the policy that grants an IAM entity permission to assume a role.
 
-Type annotations for
-`aiobotocore.create_client("iam").update_assume_role_policy` method.
+Type annotations for `session.create_client("iam").update_assume_role_policy`
+method.
 
 Boto3 documentation:
 [IAM.Client.update_assume_role_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.update_assume_role_policy)
@@ -3881,7 +3845,7 @@ Keyword-only arguments:
 
 Updates the name and/or the path of the specified IAM group.
 
-Type annotations for `aiobotocore.create_client("iam").update_group` method.
+Type annotations for `session.create_client("iam").update_group` method.
 
 Boto3 documentation:
 [IAM.Client.update_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.update_group)
@@ -3903,7 +3867,7 @@ Keyword-only arguments:
 
 Changes the password for the specified IAM user.
 
-Type annotations for `aiobotocore.create_client("iam").update_login_profile`
+Type annotations for `session.create_client("iam").update_login_profile`
 method.
 
 Boto3 documentation:
@@ -3929,7 +3893,7 @@ Replaces the existing list of server certificate thumbprints associated with an
 OpenID Connect (OIDC) provider resource object with a new list of thumbprints.
 
 Type annotations for
-`aiobotocore.create_client("iam").update_open_id_connect_provider_thumbprint`
+`session.create_client("iam").update_open_id_connect_provider_thumbprint`
 method.
 
 Boto3 documentation:
@@ -3952,7 +3916,7 @@ Keyword-only arguments:
 
 Updates the description or maximum session duration setting of a role.
 
-Type annotations for `aiobotocore.create_client("iam").update_role` method.
+Type annotations for `session.create_client("iam").update_role` method.
 
 Boto3 documentation:
 [IAM.Client.update_role](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.update_role)
@@ -3976,7 +3940,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Use UpdateRole instead.
 
-Type annotations for `aiobotocore.create_client("iam").update_role_description`
+Type annotations for `session.create_client("iam").update_role_description`
 method.
 
 Boto3 documentation:
@@ -4002,7 +3966,7 @@ Returns a `Coroutine` for
 
 Updates the metadata document for an existing SAML provider resource object.
 
-Type annotations for `aiobotocore.create_client("iam").update_saml_provider`
+Type annotations for `session.create_client("iam").update_saml_provider`
 method.
 
 Boto3 documentation:
@@ -4029,8 +3993,8 @@ Returns a `Coroutine` for
 Updates the name and/or the path of the specified server certificate stored in
 IAM.
 
-Type annotations for
-`aiobotocore.create_client("iam").update_server_certificate` method.
+Type annotations for `session.create_client("iam").update_server_certificate`
+method.
 
 Boto3 documentation:
 [IAM.Client.update_server_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.update_server_certificate)
@@ -4054,7 +4018,7 @@ Keyword-only arguments:
 Sets the status of a service-specific credential to `Active` or `Inactive`.
 
 Type annotations for
-`aiobotocore.create_client("iam").update_service_specific_credential` method.
+`session.create_client("iam").update_service_specific_credential` method.
 
 Boto3 documentation:
 [IAM.Client.update_service_specific_credential](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.update_service_specific_credential)
@@ -4078,8 +4042,8 @@ Keyword-only arguments:
 Changes the status of the specified user signing certificate from active to
 disabled, or vice versa.
 
-Type annotations for
-`aiobotocore.create_client("iam").update_signing_certificate` method.
+Type annotations for `session.create_client("iam").update_signing_certificate`
+method.
 
 Boto3 documentation:
 [IAM.Client.update_signing_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.update_signing_certificate)
@@ -4102,7 +4066,7 @@ Keyword-only arguments:
 
 Sets the status of an IAM user's SSH public key to active or inactive.
 
-Type annotations for `aiobotocore.create_client("iam").update_ssh_public_key`
+Type annotations for `session.create_client("iam").update_ssh_public_key`
 method.
 
 Boto3 documentation:
@@ -4126,7 +4090,7 @@ Keyword-only arguments:
 
 Updates the name and/or the path of the specified IAM user.
 
-Type annotations for `aiobotocore.create_client("iam").update_user` method.
+Type annotations for `session.create_client("iam").update_user` method.
 
 Boto3 documentation:
 [IAM.Client.update_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.update_user)
@@ -4148,8 +4112,8 @@ Keyword-only arguments:
 
 Uploads a server certificate entity for the Amazon Web Services account.
 
-Type annotations for
-`aiobotocore.create_client("iam").upload_server_certificate` method.
+Type annotations for `session.create_client("iam").upload_server_certificate`
+method.
 
 Boto3 documentation:
 [IAM.Client.upload_server_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.upload_server_certificate)
@@ -4179,8 +4143,8 @@ Returns a `Coroutine` for
 Uploads an X.509 signing certificate and associates it with the specified IAM
 user.
 
-Type annotations for
-`aiobotocore.create_client("iam").upload_signing_certificate` method.
+Type annotations for `session.create_client("iam").upload_signing_certificate`
+method.
 
 Boto3 documentation:
 [IAM.Client.upload_signing_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.upload_signing_certificate)
@@ -4205,7 +4169,7 @@ Returns a `Coroutine` for
 
 Uploads an SSH public key and associates it with the specified IAM user.
 
-Type annotations for `aiobotocore.create_client("iam").upload_ssh_public_key`
+Type annotations for `session.create_client("iam").upload_ssh_public_key`
 method.
 
 Boto3 documentation:
@@ -4225,12 +4189,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UploadSSHPublicKeyResponseTypeDef](./type_defs.md#uploadsshpublickeyresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("iam").__aenter__` method.
+
+Boto3 documentation:
+[IAM.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [IAMClient](#iamclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("iam").__aexit__` method.
+
+Boto3 documentation:
+[IAM.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html#IAM.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("iam").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("iam").get_paginator` method with
+overloads.
 
 - `client.get_paginator("get_account_authorization_details")` ->
   [GetAccountAuthorizationDetailsPaginator](./paginators.md#getaccountauthorizationdetailspaginator)
@@ -4291,7 +4287,7 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("iam").get_waiter` method with
+Type annotations for `session.create_client("iam").get_waiter` method with
 overloads.
 
 - `client.get_waiter("instance_profile_exists")` ->

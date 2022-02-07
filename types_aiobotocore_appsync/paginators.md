@@ -23,17 +23,19 @@ type annotations stubs module
 ## ListApiKeysPaginator
 
 Type annotations for
-`aiobotocore.create_client("appsync").get_paginator("list_api_keys")`.
+`session.create_client("appsync").get_paginator("list_api_keys")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appsync.paginator import ListApiKeysPaginator
 
-def get_list_api_keys_paginator() -> ListApiKeysPaginator:
-    return Session().create_client("appsync").get_paginator("list_api_keys")
+session = get_session()
+async with session.create_client("appsync") as client:
+    client: AppSyncClient
+    paginator: ListApiKeysPaginator = client.get_paginator("list_api_keys")
 ```
 
 Boto3 documentation:
@@ -53,17 +55,19 @@ Arguments for `ListApiKeysPaginator.paginate` method:
 ## ListDataSourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("appsync").get_paginator("list_data_sources")`.
+`session.create_client("appsync").get_paginator("list_data_sources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appsync.paginator import ListDataSourcesPaginator
 
-def get_list_data_sources_paginator() -> ListDataSourcesPaginator:
-    return Session().create_client("appsync").get_paginator("list_data_sources")
+session = get_session()
+async with session.create_client("appsync") as client:
+    client: AppSyncClient
+    paginator: ListDataSourcesPaginator = client.get_paginator("list_data_sources")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `ListDataSourcesPaginator.paginate` method:
 ## ListFunctionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("appsync").get_paginator("list_functions")`.
+`session.create_client("appsync").get_paginator("list_functions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appsync.paginator import ListFunctionsPaginator
 
-def get_list_functions_paginator() -> ListFunctionsPaginator:
-    return Session().create_client("appsync").get_paginator("list_functions")
+session = get_session()
+async with session.create_client("appsync") as client:
+    client: AppSyncClient
+    paginator: ListFunctionsPaginator = client.get_paginator("list_functions")
 ```
 
 Boto3 documentation:
@@ -113,17 +119,19 @@ Arguments for `ListFunctionsPaginator.paginate` method:
 ## ListGraphqlApisPaginator
 
 Type annotations for
-`aiobotocore.create_client("appsync").get_paginator("list_graphql_apis")`.
+`session.create_client("appsync").get_paginator("list_graphql_apis")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appsync.paginator import ListGraphqlApisPaginator
 
-def get_list_graphql_apis_paginator() -> ListGraphqlApisPaginator:
-    return Session().create_client("appsync").get_paginator("list_graphql_apis")
+session = get_session()
+async with session.create_client("appsync") as client:
+    client: AppSyncClient
+    paginator: ListGraphqlApisPaginator = client.get_paginator("list_graphql_apis")
 ```
 
 Boto3 documentation:
@@ -142,17 +150,19 @@ Arguments for `ListGraphqlApisPaginator.paginate` method:
 ## ListResolversPaginator
 
 Type annotations for
-`aiobotocore.create_client("appsync").get_paginator("list_resolvers")`.
+`session.create_client("appsync").get_paginator("list_resolvers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appsync.paginator import ListResolversPaginator
 
-def get_list_resolvers_paginator() -> ListResolversPaginator:
-    return Session().create_client("appsync").get_paginator("list_resolvers")
+session = get_session()
+async with session.create_client("appsync") as client:
+    client: AppSyncClient
+    paginator: ListResolversPaginator = client.get_paginator("list_resolvers")
 ```
 
 Boto3 documentation:
@@ -173,17 +183,19 @@ Arguments for `ListResolversPaginator.paginate` method:
 ## ListResolversByFunctionPaginator
 
 Type annotations for
-`aiobotocore.create_client("appsync").get_paginator("list_resolvers_by_function")`.
+`session.create_client("appsync").get_paginator("list_resolvers_by_function")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appsync.paginator import ListResolversByFunctionPaginator
 
-def get_list_resolvers_by_function_paginator() -> ListResolversByFunctionPaginator:
-    return Session().create_client("appsync").get_paginator("list_resolvers_by_function")
+session = get_session()
+async with session.create_client("appsync") as client:
+    client: AppSyncClient
+    paginator: ListResolversByFunctionPaginator = client.get_paginator("list_resolvers_by_function")
 ```
 
 Boto3 documentation:
@@ -204,17 +216,19 @@ Arguments for `ListResolversByFunctionPaginator.paginate` method:
 ## ListTypesPaginator
 
 Type annotations for
-`aiobotocore.create_client("appsync").get_paginator("list_types")`.
+`session.create_client("appsync").get_paginator("list_types")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appsync.paginator import ListTypesPaginator
 
-def get_list_types_paginator() -> ListTypesPaginator:
-    return Session().create_client("appsync").get_paginator("list_types")
+session = get_session()
+async with session.create_client("appsync") as client:
+    client: AppSyncClient
+    paginator: ListTypesPaginator = client.get_paginator("list_types")
 ```
 
 Boto3 documentation:

@@ -51,22 +51,25 @@ type annotations stubs module
     - [update_connectivity](#update_connectivity)
     - [update_monitoring](#update_monitoring)
     - [update_security](#update_security)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="kafkaclient"></a>
 
 ## KafkaClient
 
-Type annotations for `aiobotocore.create_client("kafka")`
+Type annotations for `session.create_client("kafka")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_kafka.client import KafkaClient
 
-def get_kafka_client() -> KafkaClient:
-    return Session().client("kafka")
+session = get_session()
+async with session.create_client("kafka") as client:
+    client: KafkaClient
 ```
 
 Boto3 documentation:
@@ -108,7 +111,7 @@ Exceptions:
 
 KafkaClient exceptions.
 
-Type annotations for `aiobotocore.create_client("kafka").exceptions` method.
+Type annotations for `session.create_client("kafka").exceptions` method.
 
 Boto3 documentation:
 [Kafka.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.exceptions)
@@ -122,7 +125,7 @@ Returns [Exceptions](#exceptions).
 Associates one or more Scram Secrets with an Amazon MSK cluster.
 
 Type annotations for
-`aiobotocore.create_client("kafka").batch_associate_scram_secret` method.
+`session.create_client("kafka").batch_associate_scram_secret` method.
 
 Boto3 documentation:
 [Kafka.Client.batch_associate_scram_secret](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.batch_associate_scram_secret)
@@ -148,7 +151,7 @@ Returns a `Coroutine` for
 Disassociates one or more Scram Secrets from an Amazon MSK cluster.
 
 Type annotations for
-`aiobotocore.create_client("kafka").batch_disassociate_scram_secret` method.
+`session.create_client("kafka").batch_disassociate_scram_secret` method.
 
 Boto3 documentation:
 [Kafka.Client.batch_disassociate_scram_secret](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.batch_disassociate_scram_secret)
@@ -173,18 +176,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("kafka").can_paginate` method.
+Type annotations for `session.create_client("kafka").can_paginate` method.
 
 Boto3 documentation:
 [Kafka.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_cluster"></a>
 
@@ -192,8 +193,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a new MSK cluster.
 
-Type annotations for `aiobotocore.create_client("kafka").create_cluster`
-method.
+Type annotations for `session.create_client("kafka").create_cluster` method.
 
 Boto3 documentation:
 [Kafka.Client.create_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.create_cluster)
@@ -233,8 +233,7 @@ Returns a `Coroutine` for
 
 Creates a new MSK cluster.
 
-Type annotations for `aiobotocore.create_client("kafka").create_cluster_v2`
-method.
+Type annotations for `session.create_client("kafka").create_cluster_v2` method.
 
 Boto3 documentation:
 [Kafka.Client.create_cluster_v2](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.create_cluster_v2)
@@ -262,7 +261,7 @@ Returns a `Coroutine` for
 
 Creates a new MSK configuration.
 
-Type annotations for `aiobotocore.create_client("kafka").create_configuration`
+Type annotations for `session.create_client("kafka").create_configuration`
 method.
 
 Boto3 documentation:
@@ -292,8 +291,7 @@ Returns a `Coroutine` for
 Deletes the MSK cluster specified by the Amazon Resource Name (ARN) in the
 request.
 
-Type annotations for `aiobotocore.create_client("kafka").delete_cluster`
-method.
+Type annotations for `session.create_client("kafka").delete_cluster` method.
 
 Boto3 documentation:
 [Kafka.Client.delete_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.delete_cluster)
@@ -317,7 +315,7 @@ Returns a `Coroutine` for
 
 Deletes an MSK Configuration.
 
-Type annotations for `aiobotocore.create_client("kafka").delete_configuration`
+Type annotations for `session.create_client("kafka").delete_configuration`
 method.
 
 Boto3 documentation:
@@ -343,8 +341,7 @@ Returns a `Coroutine` for
 Returns a description of the MSK cluster whose Amazon Resource Name (ARN) is
 specified in the request.
 
-Type annotations for `aiobotocore.create_client("kafka").describe_cluster`
-method.
+Type annotations for `session.create_client("kafka").describe_cluster` method.
 
 Boto3 documentation:
 [Kafka.Client.describe_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.describe_cluster)
@@ -368,7 +365,7 @@ Returns a `Coroutine` for
 Returns a description of the cluster operation specified by the ARN.
 
 Type annotations for
-`aiobotocore.create_client("kafka").describe_cluster_operation` method.
+`session.create_client("kafka").describe_cluster_operation` method.
 
 Boto3 documentation:
 [Kafka.Client.describe_cluster_operation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.describe_cluster_operation)
@@ -393,7 +390,7 @@ Returns a `Coroutine` for
 Returns a description of the MSK cluster whose Amazon Resource Name (ARN) is
 specified in the request.
 
-Type annotations for `aiobotocore.create_client("kafka").describe_cluster_v2`
+Type annotations for `session.create_client("kafka").describe_cluster_v2`
 method.
 
 Boto3 documentation:
@@ -418,8 +415,8 @@ Returns a `Coroutine` for
 
 Returns a description of this MSK configuration.
 
-Type annotations for
-`aiobotocore.create_client("kafka").describe_configuration` method.
+Type annotations for `session.create_client("kafka").describe_configuration`
+method.
 
 Boto3 documentation:
 [Kafka.Client.describe_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.describe_configuration)
@@ -444,7 +441,7 @@ Returns a `Coroutine` for
 Returns a description of this revision of the configuration.
 
 Type annotations for
-`aiobotocore.create_client("kafka").describe_configuration_revision` method.
+`session.create_client("kafka").describe_configuration_revision` method.
 
 Boto3 documentation:
 [Kafka.Client.describe_configuration_revision](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.describe_configuration_revision)
@@ -469,8 +466,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("kafka").generate_presigned_url` method.
+Type annotations for `session.create_client("kafka").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Kafka.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.generate_presigned_url)
@@ -493,7 +490,7 @@ Returns a `Coroutine` for `str`.
 
 A list of brokers that a client application can use to bootstrap.
 
-Type annotations for `aiobotocore.create_client("kafka").get_bootstrap_brokers`
+Type annotations for `session.create_client("kafka").get_bootstrap_brokers`
 method.
 
 Boto3 documentation:
@@ -519,7 +516,7 @@ Returns a `Coroutine` for
 Gets the Apache Kafka versions to which you can update the MSK cluster.
 
 Type annotations for
-`aiobotocore.create_client("kafka").get_compatible_kafka_versions` method.
+`session.create_client("kafka").get_compatible_kafka_versions` method.
 
 Boto3 documentation:
 [Kafka.Client.get_compatible_kafka_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.get_compatible_kafka_versions)
@@ -544,8 +541,8 @@ Returns a `Coroutine` for
 Returns a list of all the operations that have been performed on the specified
 MSK cluster.
 
-Type annotations for
-`aiobotocore.create_client("kafka").list_cluster_operations` method.
+Type annotations for `session.create_client("kafka").list_cluster_operations`
+method.
 
 Boto3 documentation:
 [Kafka.Client.list_cluster_operations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.list_cluster_operations)
@@ -571,7 +568,7 @@ Returns a `Coroutine` for
 
 Returns a list of all the MSK clusters in the current Region.
 
-Type annotations for `aiobotocore.create_client("kafka").list_clusters` method.
+Type annotations for `session.create_client("kafka").list_clusters` method.
 
 Boto3 documentation:
 [Kafka.Client.list_clusters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.list_clusters)
@@ -596,8 +593,7 @@ Returns a `Coroutine` for
 
 Returns a list of all the MSK clusters in the current Region.
 
-Type annotations for `aiobotocore.create_client("kafka").list_clusters_v2`
-method.
+Type annotations for `session.create_client("kafka").list_clusters_v2` method.
 
 Boto3 documentation:
 [Kafka.Client.list_clusters_v2](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.list_clusters_v2)
@@ -624,7 +620,7 @@ Returns a `Coroutine` for
 Returns a list of all the MSK configurations in this Region.
 
 Type annotations for
-`aiobotocore.create_client("kafka").list_configuration_revisions` method.
+`session.create_client("kafka").list_configuration_revisions` method.
 
 Boto3 documentation:
 [Kafka.Client.list_configuration_revisions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.list_configuration_revisions)
@@ -650,7 +646,7 @@ Returns a `Coroutine` for
 
 Returns a list of all the MSK configurations in this Region.
 
-Type annotations for `aiobotocore.create_client("kafka").list_configurations`
+Type annotations for `session.create_client("kafka").list_configurations`
 method.
 
 Boto3 documentation:
@@ -676,7 +672,7 @@ Returns a `Coroutine` for
 
 Returns a list of Apache Kafka versions.
 
-Type annotations for `aiobotocore.create_client("kafka").list_kafka_versions`
+Type annotations for `session.create_client("kafka").list_kafka_versions`
 method.
 
 Boto3 documentation:
@@ -702,7 +698,7 @@ Returns a `Coroutine` for
 
 Returns a list of the broker nodes in the cluster.
 
-Type annotations for `aiobotocore.create_client("kafka").list_nodes` method.
+Type annotations for `session.create_client("kafka").list_nodes` method.
 
 Boto3 documentation:
 [Kafka.Client.list_nodes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.list_nodes)
@@ -727,7 +723,7 @@ Returns a `Coroutine` for
 
 Returns a list of the Scram Secrets associated with an Amazon MSK cluster.
 
-Type annotations for `aiobotocore.create_client("kafka").list_scram_secrets`
+Type annotations for `session.create_client("kafka").list_scram_secrets`
 method.
 
 Boto3 documentation:
@@ -754,8 +750,8 @@ Returns a `Coroutine` for
 
 Returns a list of the tags associated with the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("kafka").list_tags_for_resource` method.
+Type annotations for `session.create_client("kafka").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Kafka.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.list_tags_for_resource)
@@ -779,7 +775,7 @@ Returns a `Coroutine` for
 
 Reboots brokers.
 
-Type annotations for `aiobotocore.create_client("kafka").reboot_broker` method.
+Type annotations for `session.create_client("kafka").reboot_broker` method.
 
 Boto3 documentation:
 [Kafka.Client.reboot_broker](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.reboot_broker)
@@ -803,7 +799,7 @@ Returns a `Coroutine` for
 
 Adds tags to the specified MSK resource.
 
-Type annotations for `aiobotocore.create_client("kafka").tag_resource` method.
+Type annotations for `session.create_client("kafka").tag_resource` method.
 
 Boto3 documentation:
 [Kafka.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.tag_resource)
@@ -824,8 +820,7 @@ Keyword-only arguments:
 
 Removes the tags associated with the keys that are provided in the query.
 
-Type annotations for `aiobotocore.create_client("kafka").untag_resource`
-method.
+Type annotations for `session.create_client("kafka").untag_resource` method.
 
 Boto3 documentation:
 [Kafka.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.untag_resource)
@@ -846,7 +841,7 @@ Keyword-only arguments:
 
 Updates the number of broker nodes in the cluster.
 
-Type annotations for `aiobotocore.create_client("kafka").update_broker_count`
+Type annotations for `session.create_client("kafka").update_broker_count`
 method.
 
 Boto3 documentation:
@@ -873,7 +868,7 @@ Returns a `Coroutine` for
 
 Updates the EBS storage associated with MSK brokers.
 
-Type annotations for `aiobotocore.create_client("kafka").update_broker_storage`
+Type annotations for `session.create_client("kafka").update_broker_storage`
 method.
 
 Boto3 documentation:
@@ -902,7 +897,7 @@ Returns a `Coroutine` for
 
 Updates EC2 instance type.
 
-Type annotations for `aiobotocore.create_client("kafka").update_broker_type`
+Type annotations for `session.create_client("kafka").update_broker_type`
 method.
 
 Boto3 documentation:
@@ -931,7 +926,7 @@ Updates the cluster with the configuration that is specified in the request
 body.
 
 Type annotations for
-`aiobotocore.create_client("kafka").update_cluster_configuration` method.
+`session.create_client("kafka").update_cluster_configuration` method.
 
 Boto3 documentation:
 [Kafka.Client.update_cluster_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.update_cluster_configuration)
@@ -960,7 +955,7 @@ Returns a `Coroutine` for
 Updates the Apache Kafka version for the cluster.
 
 Type annotations for
-`aiobotocore.create_client("kafka").update_cluster_kafka_version` method.
+`session.create_client("kafka").update_cluster_kafka_version` method.
 
 Boto3 documentation:
 [Kafka.Client.update_cluster_kafka_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.update_cluster_kafka_version)
@@ -988,7 +983,7 @@ Returns a `Coroutine` for
 
 Updates an MSK configuration.
 
-Type annotations for `aiobotocore.create_client("kafka").update_configuration`
+Type annotations for `session.create_client("kafka").update_configuration`
 method.
 
 Boto3 documentation:
@@ -1016,7 +1011,7 @@ Returns a `Coroutine` for
 
 Updates the cluster's connectivity configuration.
 
-Type annotations for `aiobotocore.create_client("kafka").update_connectivity`
+Type annotations for `session.create_client("kafka").update_connectivity`
 method.
 
 Boto3 documentation:
@@ -1045,8 +1040,7 @@ Returns a `Coroutine` for
 
 Updates the monitoring settings for the cluster.
 
-Type annotations for `aiobotocore.create_client("kafka").update_monitoring`
-method.
+Type annotations for `session.create_client("kafka").update_monitoring` method.
 
 Boto3 documentation:
 [Kafka.Client.update_monitoring](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.update_monitoring)
@@ -1075,8 +1069,7 @@ Returns a `Coroutine` for
 
 Updates the security settings for the cluster.
 
-Type annotations for `aiobotocore.create_client("kafka").update_security`
-method.
+Type annotations for `session.create_client("kafka").update_security` method.
 
 Boto3 documentation:
 [Kafka.Client.update_security](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.update_security)
@@ -1098,12 +1091,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateSecurityResponseTypeDef](./type_defs.md#updatesecurityresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("kafka").__aenter__` method.
+
+Boto3 documentation:
+[Kafka.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [KafkaClient](#kafkaclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("kafka").__aexit__` method.
+
+Boto3 documentation:
+[Kafka.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafka.html#Kafka.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("kafka").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("kafka").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_cluster_operations")` ->
   [ListClusterOperationsPaginator](./paginators.md#listclusteroperationspaginator)

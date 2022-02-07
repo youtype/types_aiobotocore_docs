@@ -22,23 +22,25 @@ type annotations stubs module
     - [get_hls_streaming_session_url](#get_hls_streaming_session_url)
     - [get_media_for_fragment_list](#get_media_for_fragment_list)
     - [list_fragments](#list_fragments)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="kinesisvideoarchivedmediaclient"></a>
 
 ## KinesisVideoArchivedMediaClient
 
-Type annotations for
-`aiobotocore.create_client("kinesis-video-archived-media")`
+Type annotations for `session.create_client("kinesis-video-archived-media")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_kinesis_video_archived_media.client import KinesisVideoArchivedMediaClient
 
-def get_kinesis-video-archived-media_client() -> KinesisVideoArchivedMediaClient:
-    return Session().client("kinesis-video-archived-media")
+session = get_session()
+async with session.create_client("kinesis-video-archived-media") as client:
+    client: KinesisVideoArchivedMediaClient
 ```
 
 Boto3 documentation:
@@ -82,7 +84,7 @@ Exceptions:
 KinesisVideoArchivedMediaClient exceptions.
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-archived-media").exceptions` method.
+`session.create_client("kinesis-video-archived-media").exceptions` method.
 
 Boto3 documentation:
 [KinesisVideoArchivedMedia.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-archived-media.html#KinesisVideoArchivedMedia.Client.exceptions)
@@ -96,19 +98,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-archived-media").can_paginate`
-method.
+`session.create_client("kinesis-video-archived-media").can_paginate` method.
 
 Boto3 documentation:
 [KinesisVideoArchivedMedia.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-archived-media.html#KinesisVideoArchivedMedia.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -117,7 +116,7 @@ Returns a `Coroutine` for `bool`.
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-archived-media").generate_presigned_url`
+`session.create_client("kinesis-video-archived-media").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -143,7 +142,7 @@ Downloads an MP4 file (clip) containing the archived, on-demand media from the
 specified video stream over the specified time range.
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-archived-media").get_clip` method.
+`session.create_client("kinesis-video-archived-media").get_clip` method.
 
 Boto3 documentation:
 [KinesisVideoArchivedMedia.Client.get_clip](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-archived-media.html#KinesisVideoArchivedMedia.Client.get_clip)
@@ -172,7 +171,7 @@ Retrieves an MPEG Dynamic Adaptive Streaming over HTTP (DASH) URL for the
 stream.
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-archived-media").get_dash_streaming_session_url`
+`session.create_client("kinesis-video-archived-media").get_dash_streaming_session_url`
 method.
 
 Boto3 documentation:
@@ -208,7 +207,7 @@ Returns a `Coroutine` for
 Retrieves an HTTP Live Streaming (HLS) URL for the stream.
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-archived-media").get_hls_streaming_session_url`
+`session.create_client("kinesis-video-archived-media").get_hls_streaming_session_url`
 method.
 
 Boto3 documentation:
@@ -246,7 +245,7 @@ Gets media for a list of fragments (specified by fragment number) from the
 archived data in an Amazon Kinesis video stream.
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-archived-media").get_media_for_fragment_list`
+`session.create_client("kinesis-video-archived-media").get_media_for_fragment_list`
 method.
 
 Boto3 documentation:
@@ -275,8 +274,7 @@ Returns a list of Fragment objects from the specified stream and timestamp
 range within the archived data.
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-archived-media").list_fragments`
-method.
+`session.create_client("kinesis-video-archived-media").list_fragments` method.
 
 Boto3 documentation:
 [KinesisVideoArchivedMedia.Client.list_fragments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-archived-media.html#KinesisVideoArchivedMedia.Client.list_fragments)
@@ -298,13 +296,48 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [ListFragmentsOutputTypeDef](./type_defs.md#listfragmentsoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for
+`session.create_client("kinesis-video-archived-media").__aenter__` method.
+
+Boto3 documentation:
+[KinesisVideoArchivedMedia.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-archived-media.html#KinesisVideoArchivedMedia.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[KinesisVideoArchivedMediaClient](#kinesisvideoarchivedmediaclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for
+`session.create_client("kinesis-video-archived-media").__aexit__` method.
+
+Boto3 documentation:
+[KinesisVideoArchivedMedia.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-archived-media.html#KinesisVideoArchivedMedia.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-archived-media").get_paginator`
-method with overloads.
+`session.create_client("kinesis-video-archived-media").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_fragments")` ->
   [ListFragmentsPaginator](./paginators.md#listfragmentspaginator)

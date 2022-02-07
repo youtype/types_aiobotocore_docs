@@ -43,21 +43,24 @@ type annotations stubs module
     - [update_component](#update_component)
     - [update_component_configuration](#update_component_configuration)
     - [update_log_pattern](#update_log_pattern)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="applicationinsightsclient"></a>
 
 ## ApplicationInsightsClient
 
-Type annotations for `aiobotocore.create_client("application-insights")`
+Type annotations for `session.create_client("application-insights")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_application_insights.client import ApplicationInsightsClient
 
-def get_application-insights_client() -> ApplicationInsightsClient:
-    return Session().client("application-insights")
+session = get_session()
+async with session.create_client("application-insights") as client:
+    client: ApplicationInsightsClient
 ```
 
 Boto3 documentation:
@@ -99,8 +102,8 @@ Exceptions:
 
 ApplicationInsightsClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("application-insights").exceptions` method.
+Type annotations for `session.create_client("application-insights").exceptions`
+method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.exceptions)
@@ -114,18 +117,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").can_paginate` method.
+`session.create_client("application-insights").can_paginate` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_application"></a>
 
@@ -134,7 +135,7 @@ Returns a `Coroutine` for `bool`.
 Adds an application that is created from a resource group.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").create_application` method.
+`session.create_client("application-insights").create_application` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.create_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.create_application)
@@ -165,7 +166,7 @@ Returns a `Coroutine` for
 Creates a custom component by grouping similar standalone instances to monitor.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").create_component` method.
+`session.create_client("application-insights").create_component` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.create_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.create_component)
@@ -190,7 +191,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds an log pattern to a `LogPatternSet` .
 
 Type annotations for
-`aiobotocore.create_client("application-insights").create_log_pattern` method.
+`session.create_client("application-insights").create_log_pattern` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.create_log_pattern](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.create_log_pattern)
@@ -219,7 +220,7 @@ Returns a `Coroutine` for
 Removes the specified application from monitoring.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").delete_application` method.
+`session.create_client("application-insights").delete_application` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.delete_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.delete_application)
@@ -243,7 +244,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Ungroups a custom component.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").delete_component` method.
+`session.create_client("application-insights").delete_component` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.delete_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.delete_component)
@@ -267,7 +268,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes the specified log pattern from a `LogPatternSet` .
 
 Type annotations for
-`aiobotocore.create_client("application-insights").delete_log_pattern` method.
+`session.create_client("application-insights").delete_log_pattern` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.delete_log_pattern](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.delete_log_pattern)
@@ -293,8 +294,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Describes the application.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").describe_application`
-method.
+`session.create_client("application-insights").describe_application` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.describe_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.describe_application)
@@ -320,7 +320,7 @@ Describes a component and lists the resources that are grouped together in a
 component.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").describe_component` method.
+`session.create_client("application-insights").describe_component` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.describe_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.describe_component)
@@ -346,7 +346,7 @@ Returns a `Coroutine` for
 Describes the monitoring configuration of the component.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").describe_component_configuration`
+`session.create_client("application-insights").describe_component_configuration`
 method.
 
 Boto3 documentation:
@@ -373,7 +373,7 @@ Returns a `Coroutine` for
 Describes the recommended monitoring configuration of the component.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").describe_component_configuration_recommendation`
+`session.create_client("application-insights").describe_component_configuration_recommendation`
 method.
 
 Boto3 documentation:
@@ -402,8 +402,7 @@ Returns a `Coroutine` for
 Describe a specific log pattern from a `LogPatternSet` .
 
 Type annotations for
-`aiobotocore.create_client("application-insights").describe_log_pattern`
-method.
+`session.create_client("application-insights").describe_log_pattern` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.describe_log_pattern](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.describe_log_pattern)
@@ -430,8 +429,7 @@ Returns a `Coroutine` for
 Describes an anomaly or error with the application.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").describe_observation`
-method.
+`session.create_client("application-insights").describe_observation` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.describe_observation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.describe_observation)
@@ -456,7 +454,7 @@ Returns a `Coroutine` for
 Describes an application problem.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").describe_problem` method.
+`session.create_client("application-insights").describe_problem` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.describe_problem](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.describe_problem)
@@ -480,7 +478,7 @@ Returns a `Coroutine` for
 Describes the anomalies or errors associated with the problem.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").describe_problem_observations`
+`session.create_client("application-insights").describe_problem_observations`
 method.
 
 Boto3 documentation:
@@ -506,8 +504,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").generate_presigned_url`
-method.
+`session.create_client("application-insights").generate_presigned_url` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.generate_presigned_url)
@@ -531,7 +528,7 @@ Returns a `Coroutine` for `str`.
 Lists the IDs of the applications that you are monitoring.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").list_applications` method.
+`session.create_client("application-insights").list_applications` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.list_applications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.list_applications)
@@ -556,7 +553,7 @@ Returns a `Coroutine` for
 Lists the auto-grouped, standalone, and custom components of the application.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").list_components` method.
+`session.create_client("application-insights").list_components` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.list_components](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.list_components)
@@ -583,7 +580,7 @@ Lists the INFO, WARN, and ERROR events for periodic configuration updates
 performed by Application Insights.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").list_configuration_history`
+`session.create_client("application-insights").list_configuration_history`
 method.
 
 Boto3 documentation:
@@ -615,8 +612,7 @@ Returns a `Coroutine` for
 Lists the log pattern sets in the specific application.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").list_log_pattern_sets`
-method.
+`session.create_client("application-insights").list_log_pattern_sets` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.list_log_pattern_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.list_log_pattern_sets)
@@ -643,7 +639,7 @@ Returns a `Coroutine` for
 Lists the log patterns in the specific log `LogPatternSet` .
 
 Type annotations for
-`aiobotocore.create_client("application-insights").list_log_patterns` method.
+`session.create_client("application-insights").list_log_patterns` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.list_log_patterns](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.list_log_patterns)
@@ -670,7 +666,7 @@ Returns a `Coroutine` for
 Lists the problems with your application.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").list_problems` method.
+`session.create_client("application-insights").list_problems` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.list_problems](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.list_problems)
@@ -700,8 +696,7 @@ Retrieve a list of the tags (keys and values) that are associated with a
 specified application.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").list_tags_for_resource`
-method.
+`session.create_client("application-insights").list_tags_for_resource` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.list_tags_for_resource)
@@ -726,7 +721,7 @@ Returns a `Coroutine` for
 Add one or more tags (keys and values) to a specified application.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").tag_resource` method.
+`session.create_client("application-insights").tag_resource` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.tag_resource)
@@ -750,7 +745,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Remove one or more tags (keys and values) from a specified application.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").untag_resource` method.
+`session.create_client("application-insights").untag_resource` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.untag_resource)
@@ -774,7 +769,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the application.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").update_application` method.
+`session.create_client("application-insights").update_application` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.update_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.update_application)
@@ -805,7 +800,7 @@ Updates the custom component name and/or the list of resources that make up the
 component.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").update_component` method.
+`session.create_client("application-insights").update_component` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.update_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.update_component)
@@ -831,7 +826,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the monitoring configurations for the component.
 
 Type annotations for
-`aiobotocore.create_client("application-insights").update_component_configuration`
+`session.create_client("application-insights").update_component_configuration`
 method.
 
 Boto3 documentation:
@@ -861,7 +856,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds a log pattern to a `LogPatternSet` .
 
 Type annotations for
-`aiobotocore.create_client("application-insights").update_log_pattern` method.
+`session.create_client("application-insights").update_log_pattern` method.
 
 Boto3 documentation:
 [ApplicationInsights.Client.update_log_pattern](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.update_log_pattern)
@@ -882,3 +877,38 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateLogPatternResponseTypeDef](./type_defs.md#updatelogpatternresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("application-insights").__aenter__`
+method.
+
+Boto3 documentation:
+[ApplicationInsights.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[ApplicationInsightsClient](#applicationinsightsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("application-insights").__aexit__`
+method.
+
+Boto3 documentation:
+[ApplicationInsights.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/application-insights.html#ApplicationInsights.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

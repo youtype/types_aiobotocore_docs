@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[codecommit]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[codecommit]'
+
+# standalone installation
 pip install types-aiobotocore-codecommit
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-codecommit
 
 ## CodeCommitClient
 
-Type annotations for `aiobotocore.create_client("codecommit")` as
+Type annotations for `session.create_client("codecommit")` as
 [CodeCommitClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_codecommit.client import CodeCommitClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_approval_rule_template_with_repository](./client.md#associate_approval_rule_template_with_repository)
 - [batch_associate_approval_rule_template_with_repositories](./client.md#batch_associate_approval_rule_template_with_repositories)
 - [batch_describe_merge_conflicts](./client.md#batch_describe_merge_conflicts)
@@ -327,7 +333,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_codecommit.paginators import DescribePullRequestEventsPaginator, ...
+from types_aiobotocore_codecommit.paginator import DescribePullRequestEventsPaginator, ...
 ```
 
 - [DescribePullRequestEventsPaginator](./paginators.md#describepullrequesteventspaginator)

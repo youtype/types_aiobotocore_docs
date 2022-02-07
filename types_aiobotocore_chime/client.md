@@ -206,22 +206,25 @@ type annotations stubs module
     - [update_user_settings](#update_user_settings)
     - [update_voice_connector](#update_voice_connector)
     - [update_voice_connector_group](#update_voice_connector_group)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="chimeclient"></a>
 
 ## ChimeClient
 
-Type annotations for `aiobotocore.create_client("chime")`
+Type annotations for `session.create_client("chime")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_chime.client import ChimeClient
 
-def get_chime_client() -> ChimeClient:
-    return Session().client("chime")
+session = get_session()
+async with session.create_client("chime") as client:
+    client: ChimeClient
 ```
 
 Boto3 documentation:
@@ -266,7 +269,7 @@ Exceptions:
 
 ChimeClient exceptions.
 
-Type annotations for `aiobotocore.create_client("chime").exceptions` method.
+Type annotations for `session.create_client("chime").exceptions` method.
 
 Boto3 documentation:
 [Chime.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.exceptions)
@@ -280,7 +283,7 @@ Returns [Exceptions](#exceptions).
 Associates a phone number with the specified Amazon Chime user.
 
 Type annotations for
-`aiobotocore.create_client("chime").associate_phone_number_with_user` method.
+`session.create_client("chime").associate_phone_number_with_user` method.
 
 Boto3 documentation:
 [Chime.Client.associate_phone_number_with_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.associate_phone_number_with_user)
@@ -306,7 +309,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates phone numbers with the specified Amazon Chime Voice Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").associate_phone_numbers_with_voice_connector`
+`session.create_client("chime").associate_phone_numbers_with_voice_connector`
 method.
 
 Boto3 documentation:
@@ -335,7 +338,7 @@ Returns a `Coroutine` for
 Associates phone numbers with the specified Amazon Chime Voice Connector group.
 
 Type annotations for
-`aiobotocore.create_client("chime").associate_phone_numbers_with_voice_connector_group`
+`session.create_client("chime").associate_phone_numbers_with_voice_connector_group`
 method.
 
 Boto3 documentation:
@@ -365,7 +368,7 @@ Associates the specified sign-in delegate groups with the specified Amazon
 Chime account.
 
 Type annotations for
-`aiobotocore.create_client("chime").associate_signin_delegate_groups_with_account`
+`session.create_client("chime").associate_signin_delegate_groups_with_account`
 method.
 
 Boto3 documentation:
@@ -393,7 +396,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates up to 100 new attendees for an active Amazon Chime SDK meeting.
 
-Type annotations for `aiobotocore.create_client("chime").batch_create_attendee`
+Type annotations for `session.create_client("chime").batch_create_attendee`
 method.
 
 Boto3 documentation:
@@ -422,7 +425,7 @@ Returns a `Coroutine` for
 Adds a specified number of users to a channel.
 
 Type annotations for
-`aiobotocore.create_client("chime").batch_create_channel_membership` method.
+`session.create_client("chime").batch_create_channel_membership` method.
 
 Boto3 documentation:
 [Chime.Client.batch_create_channel_membership](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.batch_create_channel_membership)
@@ -450,7 +453,7 @@ Returns a `Coroutine` for
 Adds up to 50 members to a chat room in an Amazon Chime Enterprise account.
 
 Type annotations for
-`aiobotocore.create_client("chime").batch_create_room_membership` method.
+`session.create_client("chime").batch_create_room_membership` method.
 
 Boto3 documentation:
 [Chime.Client.batch_create_room_membership](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.batch_create_room_membership)
@@ -478,8 +481,8 @@ Returns a `Coroutine` for
 
 Moves phone numbers into the **Deletion queue**.
 
-Type annotations for
-`aiobotocore.create_client("chime").batch_delete_phone_number` method.
+Type annotations for `session.create_client("chime").batch_delete_phone_number`
+method.
 
 Boto3 documentation:
 [Chime.Client.batch_delete_phone_number](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.batch_delete_phone_number)
@@ -503,7 +506,7 @@ Returns a `Coroutine` for
 
 Suspends up to 50 users from a `Team` or `EnterpriseLWA` Amazon Chime account.
 
-Type annotations for `aiobotocore.create_client("chime").batch_suspend_user`
+Type annotations for `session.create_client("chime").batch_suspend_user`
 method.
 
 Boto3 documentation:
@@ -530,7 +533,7 @@ Returns a `Coroutine` for
 Removes the suspension from up to 50 previously suspended users for the
 specified Amazon Chime `EnterpriseLWA` account.
 
-Type annotations for `aiobotocore.create_client("chime").batch_unsuspend_user`
+Type annotations for `session.create_client("chime").batch_unsuspend_user`
 method.
 
 Boto3 documentation:
@@ -556,8 +559,8 @@ Returns a `Coroutine` for
 
 Updates phone number product types or calling names.
 
-Type annotations for
-`aiobotocore.create_client("chime").batch_update_phone_number` method.
+Type annotations for `session.create_client("chime").batch_update_phone_number`
+method.
 
 Boto3 documentation:
 [Chime.Client.batch_update_phone_number](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.batch_update_phone_number)
@@ -584,8 +587,7 @@ Returns a `Coroutine` for
 Updates user details within the UpdateUserRequestItem object for up to 20 users
 for the specified Amazon Chime account.
 
-Type annotations for `aiobotocore.create_client("chime").batch_update_user`
-method.
+Type annotations for `session.create_client("chime").batch_update_user` method.
 
 Boto3 documentation:
 [Chime.Client.batch_update_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.batch_update_user)
@@ -611,18 +613,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("chime").can_paginate` method.
+Type annotations for `session.create_client("chime").can_paginate` method.
 
 Boto3 documentation:
 [Chime.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_account"></a>
 
@@ -630,8 +630,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates an Amazon Chime account under the administrator's AWS account.
 
-Type annotations for `aiobotocore.create_client("chime").create_account`
-method.
+Type annotations for `session.create_client("chime").create_account` method.
 
 Boto3 documentation:
 [Chime.Client.create_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_account)
@@ -654,7 +653,7 @@ Returns a `Coroutine` for
 
 Creates an Amazon Chime SDK messaging `AppInstance` under an AWS account.
 
-Type annotations for `aiobotocore.create_client("chime").create_app_instance`
+Type annotations for `session.create_client("chime").create_app_instance`
 method.
 
 Boto3 documentation:
@@ -682,8 +681,8 @@ Returns a `Coroutine` for
 
 Promotes an `AppInstanceUser` to an `AppInstanceAdmin`.
 
-Type annotations for
-`aiobotocore.create_client("chime").create_app_instance_admin` method.
+Type annotations for `session.create_client("chime").create_app_instance_admin`
+method.
 
 Boto3 documentation:
 [Chime.Client.create_app_instance_admin](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_app_instance_admin)
@@ -708,8 +707,8 @@ Returns a `Coroutine` for
 
 Creates a user under an Amazon Chime `AppInstance`.
 
-Type annotations for
-`aiobotocore.create_client("chime").create_app_instance_user` method.
+Type annotations for `session.create_client("chime").create_app_instance_user`
+method.
 
 Boto3 documentation:
 [Chime.Client.create_app_instance_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_app_instance_user)
@@ -738,8 +737,7 @@ Returns a `Coroutine` for
 
 Creates a new attendee for an active Amazon Chime SDK meeting.
 
-Type annotations for `aiobotocore.create_client("chime").create_attendee`
-method.
+Type annotations for `session.create_client("chime").create_attendee` method.
 
 Boto3 documentation:
 [Chime.Client.create_attendee](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_attendee)
@@ -764,7 +762,7 @@ Returns a `Coroutine` for
 
 Creates a bot for an Amazon Chime Enterprise account.
 
-Type annotations for `aiobotocore.create_client("chime").create_bot` method.
+Type annotations for `session.create_client("chime").create_bot` method.
 
 Boto3 documentation:
 [Chime.Client.create_bot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_bot)
@@ -789,8 +787,7 @@ Returns a `Coroutine` for
 
 Creates a channel to which you can add users and send messages.
 
-Type annotations for `aiobotocore.create_client("chime").create_channel`
-method.
+Type annotations for `session.create_client("chime").create_channel` method.
 
 Boto3 documentation:
 [Chime.Client.create_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_channel)
@@ -820,7 +817,7 @@ Returns a `Coroutine` for
 
 Permanently bans a member from a channel.
 
-Type annotations for `aiobotocore.create_client("chime").create_channel_ban`
+Type annotations for `session.create_client("chime").create_channel_ban`
 method.
 
 Boto3 documentation:
@@ -847,8 +844,8 @@ Returns a `Coroutine` for
 
 Adds a user to a channel.
 
-Type annotations for
-`aiobotocore.create_client("chime").create_channel_membership` method.
+Type annotations for `session.create_client("chime").create_channel_membership`
+method.
 
 Boto3 documentation:
 [Chime.Client.create_channel_membership](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_channel_membership)
@@ -876,8 +873,8 @@ Returns a `Coroutine` for
 
 Creates a new `ChannelModerator`.
 
-Type annotations for
-`aiobotocore.create_client("chime").create_channel_moderator` method.
+Type annotations for `session.create_client("chime").create_channel_moderator`
+method.
 
 Boto3 documentation:
 [Chime.Client.create_channel_moderator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_channel_moderator)
@@ -904,7 +901,7 @@ Returns a `Coroutine` for
 Creates a media capture pipeline.
 
 Type annotations for
-`aiobotocore.create_client("chime").create_media_capture_pipeline` method.
+`session.create_client("chime").create_media_capture_pipeline` method.
 
 Boto3 documentation:
 [Chime.Client.create_media_capture_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_media_capture_pipeline)
@@ -939,8 +936,7 @@ Returns a `Coroutine` for
 Creates a new Amazon Chime SDK meeting in the specified media Region with no
 initial attendees.
 
-Type annotations for `aiobotocore.create_client("chime").create_meeting`
-method.
+Type annotations for `session.create_client("chime").create_meeting` method.
 
 Boto3 documentation:
 [Chime.Client.create_meeting](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_meeting)
@@ -971,8 +967,8 @@ Uses the join token and call metadata in a meeting request (From number, To
 number, and so forth) to initiate an outbound call to a public switched
 telephone network (PSTN) and join them into a Chime meeting.
 
-Type annotations for
-`aiobotocore.create_client("chime").create_meeting_dial_out` method.
+Type annotations for `session.create_client("chime").create_meeting_dial_out`
+method.
 
 Boto3 documentation:
 [Chime.Client.create_meeting_dial_out](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_meeting_dial_out)
@@ -1001,7 +997,7 @@ Creates a new Amazon Chime SDK meeting in the specified media Region, with
 attendees.
 
 Type annotations for
-`aiobotocore.create_client("chime").create_meeting_with_attendees` method.
+`session.create_client("chime").create_meeting_with_attendees` method.
 
 Boto3 documentation:
 [Chime.Client.create_meeting_with_attendees](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_meeting_with_attendees)
@@ -1033,8 +1029,8 @@ Returns a `Coroutine` for
 
 Creates an order for phone numbers to be provisioned.
 
-Type annotations for
-`aiobotocore.create_client("chime").create_phone_number_order` method.
+Type annotations for `session.create_client("chime").create_phone_number_order`
+method.
 
 Boto3 documentation:
 [Chime.Client.create_phone_number_order](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_phone_number_order)
@@ -1062,7 +1058,7 @@ Returns a `Coroutine` for
 Creates a proxy session on the specified Amazon Chime Voice Connector for the
 specified participant phone numbers.
 
-Type annotations for `aiobotocore.create_client("chime").create_proxy_session`
+Type annotations for `session.create_client("chime").create_proxy_session`
 method.
 
 Boto3 documentation:
@@ -1097,7 +1093,7 @@ Returns a `Coroutine` for
 
 Creates a chat room for the specified Amazon Chime Enterprise account.
 
-Type annotations for `aiobotocore.create_client("chime").create_room` method.
+Type annotations for `session.create_client("chime").create_room` method.
 
 Boto3 documentation:
 [Chime.Client.create_room](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_room)
@@ -1122,8 +1118,8 @@ Returns a `Coroutine` for
 
 Adds a member to a chat room in an Amazon Chime Enterprise account.
 
-Type annotations for
-`aiobotocore.create_client("chime").create_room_membership` method.
+Type annotations for `session.create_client("chime").create_room_membership`
+method.
 
 Boto3 documentation:
 [Chime.Client.create_room_membership](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_room_membership)
@@ -1151,7 +1147,7 @@ Returns a `Coroutine` for
 Creates a SIP media application.
 
 Type annotations for
-`aiobotocore.create_client("chime").create_sip_media_application` method.
+`session.create_client("chime").create_sip_media_application` method.
 
 Boto3 documentation:
 [Chime.Client.create_sip_media_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_sip_media_application)
@@ -1182,7 +1178,7 @@ the request, and it invokes the endpoint of the specified
 `sipMediaApplicationId` .
 
 Type annotations for
-`aiobotocore.create_client("chime").create_sip_media_application_call` method.
+`session.create_client("chime").create_sip_media_application_call` method.
 
 Boto3 documentation:
 [Chime.Client.create_sip_media_application_call](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_sip_media_application_call)
@@ -1210,8 +1206,7 @@ Returns a `Coroutine` for
 Creates a SIP rule which can be used to run a SIP media application as a target
 for a specific trigger type.
 
-Type annotations for `aiobotocore.create_client("chime").create_sip_rule`
-method.
+Type annotations for `session.create_client("chime").create_sip_rule` method.
 
 Boto3 documentation:
 [Chime.Client.create_sip_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_sip_rule)
@@ -1241,7 +1236,7 @@ Returns a `Coroutine` for
 
 Creates a user under the specified Amazon Chime account.
 
-Type annotations for `aiobotocore.create_client("chime").create_user` method.
+Type annotations for `session.create_client("chime").create_user` method.
 
 Boto3 documentation:
 [Chime.Client.create_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_user)
@@ -1267,8 +1262,8 @@ Returns a `Coroutine` for
 
 Creates an Amazon Chime Voice Connector under the administrator's AWS account.
 
-Type annotations for
-`aiobotocore.create_client("chime").create_voice_connector` method.
+Type annotations for `session.create_client("chime").create_voice_connector`
+method.
 
 Boto3 documentation:
 [Chime.Client.create_voice_connector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_voice_connector)
@@ -1297,7 +1292,7 @@ Creates an Amazon Chime Voice Connector group under the administrator's AWS
 account.
 
 Type annotations for
-`aiobotocore.create_client("chime").create_voice_connector_group` method.
+`session.create_client("chime").create_voice_connector_group` method.
 
 Boto3 documentation:
 [Chime.Client.create_voice_connector_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.create_voice_connector_group)
@@ -1323,8 +1318,7 @@ Returns a `Coroutine` for
 
 Deletes the specified Amazon Chime account.
 
-Type annotations for `aiobotocore.create_client("chime").delete_account`
-method.
+Type annotations for `session.create_client("chime").delete_account` method.
 
 Boto3 documentation:
 [Chime.Client.delete_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_account)
@@ -1346,7 +1340,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an `AppInstance` and all associated data asynchronously.
 
-Type annotations for `aiobotocore.create_client("chime").delete_app_instance`
+Type annotations for `session.create_client("chime").delete_app_instance`
 method.
 
 Boto3 documentation:
@@ -1368,8 +1362,8 @@ Keyword-only arguments:
 
 Demotes an `AppInstanceAdmin` to an `AppInstanceUser`.
 
-Type annotations for
-`aiobotocore.create_client("chime").delete_app_instance_admin` method.
+Type annotations for `session.create_client("chime").delete_app_instance_admin`
+method.
 
 Boto3 documentation:
 [Chime.Client.delete_app_instance_admin](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_app_instance_admin)
@@ -1392,7 +1386,7 @@ Keyword-only arguments:
 Deletes the streaming configurations of an `AppInstance` .
 
 Type annotations for
-`aiobotocore.create_client("chime").delete_app_instance_streaming_configurations`
+`session.create_client("chime").delete_app_instance_streaming_configurations`
 method.
 
 Boto3 documentation:
@@ -1415,8 +1409,8 @@ Keyword-only arguments:
 
 Deletes an `AppInstanceUser` .
 
-Type annotations for
-`aiobotocore.create_client("chime").delete_app_instance_user` method.
+Type annotations for `session.create_client("chime").delete_app_instance_user`
+method.
 
 Boto3 documentation:
 [Chime.Client.delete_app_instance_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_app_instance_user)
@@ -1438,8 +1432,7 @@ Keyword-only arguments:
 Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
 their `JoinToken`.
 
-Type annotations for `aiobotocore.create_client("chime").delete_attendee`
-method.
+Type annotations for `session.create_client("chime").delete_attendee` method.
 
 Boto3 documentation:
 [Chime.Client.delete_attendee](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_attendee)
@@ -1461,8 +1454,7 @@ Keyword-only arguments:
 Immediately makes a channel and its memberships inaccessible and marks them for
 deletion.
 
-Type annotations for `aiobotocore.create_client("chime").delete_channel`
-method.
+Type annotations for `session.create_client("chime").delete_channel` method.
 
 Boto3 documentation:
 [Chime.Client.delete_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_channel)
@@ -1483,7 +1475,7 @@ Keyword-only arguments:
 
 Removes a user from a channel's ban list.
 
-Type annotations for `aiobotocore.create_client("chime").delete_channel_ban`
+Type annotations for `session.create_client("chime").delete_channel_ban`
 method.
 
 Boto3 documentation:
@@ -1507,8 +1499,8 @@ Keyword-only arguments:
 
 Removes a member from a channel.
 
-Type annotations for
-`aiobotocore.create_client("chime").delete_channel_membership` method.
+Type annotations for `session.create_client("chime").delete_channel_membership`
+method.
 
 Boto3 documentation:
 [Chime.Client.delete_channel_membership](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_channel_membership)
@@ -1531,8 +1523,8 @@ Keyword-only arguments:
 
 Deletes a channel message.
 
-Type annotations for
-`aiobotocore.create_client("chime").delete_channel_message` method.
+Type annotations for `session.create_client("chime").delete_channel_message`
+method.
 
 Boto3 documentation:
 [Chime.Client.delete_channel_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_channel_message)
@@ -1555,8 +1547,8 @@ Keyword-only arguments:
 
 Deletes a channel moderator.
 
-Type annotations for
-`aiobotocore.create_client("chime").delete_channel_moderator` method.
+Type annotations for `session.create_client("chime").delete_channel_moderator`
+method.
 
 Boto3 documentation:
 [Chime.Client.delete_channel_moderator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_channel_moderator)
@@ -1580,7 +1572,7 @@ Keyword-only arguments:
 Deletes the events configuration that allows a bot to receive outgoing events.
 
 Type annotations for
-`aiobotocore.create_client("chime").delete_events_configuration` method.
+`session.create_client("chime").delete_events_configuration` method.
 
 Boto3 documentation:
 [Chime.Client.delete_events_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_events_configuration)
@@ -1603,7 +1595,7 @@ Keyword-only arguments:
 Deletes the media capture pipeline.
 
 Type annotations for
-`aiobotocore.create_client("chime").delete_media_capture_pipeline` method.
+`session.create_client("chime").delete_media_capture_pipeline` method.
 
 Boto3 documentation:
 [Chime.Client.delete_media_capture_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_media_capture_pipeline)
@@ -1624,8 +1616,7 @@ Keyword-only arguments:
 
 Deletes the specified Amazon Chime SDK meeting.
 
-Type annotations for `aiobotocore.create_client("chime").delete_meeting`
-method.
+Type annotations for `session.create_client("chime").delete_meeting` method.
 
 Boto3 documentation:
 [Chime.Client.delete_meeting](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_meeting)
@@ -1645,7 +1636,7 @@ Keyword-only arguments:
 
 Moves the specified phone number into the **Deletion queue**.
 
-Type annotations for `aiobotocore.create_client("chime").delete_phone_number`
+Type annotations for `session.create_client("chime").delete_phone_number`
 method.
 
 Boto3 documentation:
@@ -1668,7 +1659,7 @@ Keyword-only arguments:
 Deletes the specified proxy session from the specified Amazon Chime Voice
 Connector.
 
-Type annotations for `aiobotocore.create_client("chime").delete_proxy_session`
+Type annotations for `session.create_client("chime").delete_proxy_session`
 method.
 
 Boto3 documentation:
@@ -1691,7 +1682,7 @@ Keyword-only arguments:
 
 Deletes a chat room in an Amazon Chime Enterprise account.
 
-Type annotations for `aiobotocore.create_client("chime").delete_room` method.
+Type annotations for `session.create_client("chime").delete_room` method.
 
 Boto3 documentation:
 [Chime.Client.delete_room](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_room)
@@ -1712,8 +1703,8 @@ Keyword-only arguments:
 
 Removes a member from a chat room in an Amazon Chime Enterprise account.
 
-Type annotations for
-`aiobotocore.create_client("chime").delete_room_membership` method.
+Type annotations for `session.create_client("chime").delete_room_membership`
+method.
 
 Boto3 documentation:
 [Chime.Client.delete_room_membership](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_room_membership)
@@ -1737,7 +1728,7 @@ Keyword-only arguments:
 Deletes a SIP media application.
 
 Type annotations for
-`aiobotocore.create_client("chime").delete_sip_media_application` method.
+`session.create_client("chime").delete_sip_media_application` method.
 
 Boto3 documentation:
 [Chime.Client.delete_sip_media_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_sip_media_application)
@@ -1758,8 +1749,7 @@ Keyword-only arguments:
 
 Deletes a SIP rule.
 
-Type annotations for `aiobotocore.create_client("chime").delete_sip_rule`
-method.
+Type annotations for `session.create_client("chime").delete_sip_rule` method.
 
 Boto3 documentation:
 [Chime.Client.delete_sip_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_sip_rule)
@@ -1779,8 +1769,8 @@ Keyword-only arguments:
 
 Deletes the specified Amazon Chime Voice Connector.
 
-Type annotations for
-`aiobotocore.create_client("chime").delete_voice_connector` method.
+Type annotations for `session.create_client("chime").delete_voice_connector`
+method.
 
 Boto3 documentation:
 [Chime.Client.delete_voice_connector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_voice_connector)
@@ -1803,7 +1793,7 @@ Deletes the emergency calling configuration details from the specified Amazon
 Chime Voice Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").delete_voice_connector_emergency_calling_configuration`
+`session.create_client("chime").delete_voice_connector_emergency_calling_configuration`
 method.
 
 Boto3 documentation:
@@ -1827,7 +1817,7 @@ Keyword-only arguments:
 Deletes the specified Amazon Chime Voice Connector group.
 
 Type annotations for
-`aiobotocore.create_client("chime").delete_voice_connector_group` method.
+`session.create_client("chime").delete_voice_connector_group` method.
 
 Boto3 documentation:
 [Chime.Client.delete_voice_connector_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_voice_connector_group)
@@ -1850,7 +1840,7 @@ Deletes the origination settings for the specified Amazon Chime Voice
 Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").delete_voice_connector_origination` method.
+`session.create_client("chime").delete_voice_connector_origination` method.
 
 Boto3 documentation:
 [Chime.Client.delete_voice_connector_origination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_voice_connector_origination)
@@ -1873,7 +1863,7 @@ Deletes the proxy configuration from the specified Amazon Chime Voice
 Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").delete_voice_connector_proxy` method.
+`session.create_client("chime").delete_voice_connector_proxy` method.
 
 Boto3 documentation:
 [Chime.Client.delete_voice_connector_proxy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_voice_connector_proxy)
@@ -1896,7 +1886,7 @@ Deletes the streaming configuration for the specified Amazon Chime Voice
 Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").delete_voice_connector_streaming_configuration`
+`session.create_client("chime").delete_voice_connector_streaming_configuration`
 method.
 
 Boto3 documentation:
@@ -1921,7 +1911,7 @@ Deletes the termination settings for the specified Amazon Chime Voice
 Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").delete_voice_connector_termination` method.
+`session.create_client("chime").delete_voice_connector_termination` method.
 
 Boto3 documentation:
 [Chime.Client.delete_voice_connector_termination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.delete_voice_connector_termination)
@@ -1944,7 +1934,7 @@ Deletes the specified SIP credentials used by your equipment to authenticate
 during call termination.
 
 Type annotations for
-`aiobotocore.create_client("chime").delete_voice_connector_termination_credentials`
+`session.create_client("chime").delete_voice_connector_termination_credentials`
 method.
 
 Boto3 documentation:
@@ -1968,7 +1958,7 @@ Keyword-only arguments:
 
 Returns the full details of an `AppInstance` .
 
-Type annotations for `aiobotocore.create_client("chime").describe_app_instance`
+Type annotations for `session.create_client("chime").describe_app_instance`
 method.
 
 Boto3 documentation:
@@ -1994,7 +1984,7 @@ Returns a `Coroutine` for
 Returns the full details of an `AppInstanceAdmin` .
 
 Type annotations for
-`aiobotocore.create_client("chime").describe_app_instance_admin` method.
+`session.create_client("chime").describe_app_instance_admin` method.
 
 Boto3 documentation:
 [Chime.Client.describe_app_instance_admin](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.describe_app_instance_admin)
@@ -2020,7 +2010,7 @@ Returns a `Coroutine` for
 Returns the full details of an `AppInstanceUser` .
 
 Type annotations for
-`aiobotocore.create_client("chime").describe_app_instance_user` method.
+`session.create_client("chime").describe_app_instance_user` method.
 
 Boto3 documentation:
 [Chime.Client.describe_app_instance_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.describe_app_instance_user)
@@ -2044,8 +2034,7 @@ Returns a `Coroutine` for
 
 Returns the full details of a channel in an Amazon Chime `AppInstance` .
 
-Type annotations for `aiobotocore.create_client("chime").describe_channel`
-method.
+Type annotations for `session.create_client("chime").describe_channel` method.
 
 Boto3 documentation:
 [Chime.Client.describe_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.describe_channel)
@@ -2069,7 +2058,7 @@ Returns a `Coroutine` for
 
 Returns the full details of a channel ban.
 
-Type annotations for `aiobotocore.create_client("chime").describe_channel_ban`
+Type annotations for `session.create_client("chime").describe_channel_ban`
 method.
 
 Boto3 documentation:
@@ -2097,7 +2086,7 @@ Returns a `Coroutine` for
 Returns the full details of a user's channel membership.
 
 Type annotations for
-`aiobotocore.create_client("chime").describe_channel_membership` method.
+`session.create_client("chime").describe_channel_membership` method.
 
 Boto3 documentation:
 [Chime.Client.describe_channel_membership](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.describe_channel_membership)
@@ -2125,7 +2114,7 @@ Returns the details of a channel based on the membership of the specified
 `AppInstanceUser` .
 
 Type annotations for
-`aiobotocore.create_client("chime").describe_channel_membership_for_app_instance_user`
+`session.create_client("chime").describe_channel_membership_for_app_instance_user`
 method.
 
 Boto3 documentation:
@@ -2155,7 +2144,7 @@ Returns the full details of a channel moderated by the specified
 `AppInstanceUser` .
 
 Type annotations for
-`aiobotocore.create_client("chime").describe_channel_moderated_by_app_instance_user`
+`session.create_client("chime").describe_channel_moderated_by_app_instance_user`
 method.
 
 Boto3 documentation:
@@ -2184,7 +2173,7 @@ Returns a `Coroutine` for
 Returns the full details of a single ChannelModerator.
 
 Type annotations for
-`aiobotocore.create_client("chime").describe_channel_moderator` method.
+`session.create_client("chime").describe_channel_moderator` method.
 
 Boto3 documentation:
 [Chime.Client.describe_channel_moderator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.describe_channel_moderator)
@@ -2212,8 +2201,7 @@ Disassociates the primary provisioned phone number from the specified Amazon
 Chime user.
 
 Type annotations for
-`aiobotocore.create_client("chime").disassociate_phone_number_from_user`
-method.
+`session.create_client("chime").disassociate_phone_number_from_user` method.
 
 Boto3 documentation:
 [Chime.Client.disassociate_phone_number_from_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.disassociate_phone_number_from_user)
@@ -2239,7 +2227,7 @@ Disassociates the specified phone numbers from the specified Amazon Chime Voice
 Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").disassociate_phone_numbers_from_voice_connector`
+`session.create_client("chime").disassociate_phone_numbers_from_voice_connector`
 method.
 
 Boto3 documentation:
@@ -2268,7 +2256,7 @@ Disassociates the specified phone numbers from the specified Amazon Chime Voice
 Connector group.
 
 Type annotations for
-`aiobotocore.create_client("chime").disassociate_phone_numbers_from_voice_connector_group`
+`session.create_client("chime").disassociate_phone_numbers_from_voice_connector_group`
 method.
 
 Boto3 documentation:
@@ -2297,7 +2285,7 @@ Disassociates the specified sign-in delegate groups from the specified Amazon
 Chime account.
 
 Type annotations for
-`aiobotocore.create_client("chime").disassociate_signin_delegate_groups_from_account`
+`session.create_client("chime").disassociate_signin_delegate_groups_from_account`
 method.
 
 Boto3 documentation:
@@ -2323,8 +2311,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("chime").generate_presigned_url` method.
+Type annotations for `session.create_client("chime").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Chime.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.generate_presigned_url)
@@ -2348,7 +2336,7 @@ Returns a `Coroutine` for `str`.
 Retrieves details for the specified Amazon Chime account, such as account type
 and supported licenses.
 
-Type annotations for `aiobotocore.create_client("chime").get_account` method.
+Type annotations for `session.create_client("chime").get_account` method.
 
 Boto3 documentation:
 [Chime.Client.get_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_account)
@@ -2372,7 +2360,7 @@ Returns a `Coroutine` for
 Retrieves account settings for the specified Amazon Chime account ID, such as
 remote control and dialout settings.
 
-Type annotations for `aiobotocore.create_client("chime").get_account_settings`
+Type annotations for `session.create_client("chime").get_account_settings`
 method.
 
 Boto3 documentation:
@@ -2398,8 +2386,7 @@ Returns a `Coroutine` for
 Gets the retention settings for an `AppInstance` .
 
 Type annotations for
-`aiobotocore.create_client("chime").get_app_instance_retention_settings`
-method.
+`session.create_client("chime").get_app_instance_retention_settings` method.
 
 Boto3 documentation:
 [Chime.Client.get_app_instance_retention_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_app_instance_retention_settings)
@@ -2424,7 +2411,7 @@ Returns a `Coroutine` for
 Gets the streaming settings for an `AppInstance` .
 
 Type annotations for
-`aiobotocore.create_client("chime").get_app_instance_streaming_configurations`
+`session.create_client("chime").get_app_instance_streaming_configurations`
 method.
 
 Boto3 documentation:
@@ -2450,7 +2437,7 @@ Returns a `Coroutine` for
 Gets the Amazon Chime SDK attendee details for a specified meeting ID and
 attendee ID.
 
-Type annotations for `aiobotocore.create_client("chime").get_attendee` method.
+Type annotations for `session.create_client("chime").get_attendee` method.
 
 Boto3 documentation:
 [Chime.Client.get_attendee](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_attendee)
@@ -2475,7 +2462,7 @@ Returns a `Coroutine` for
 Retrieves details for the specified bot, such as bot email address, bot type,
 status, and display name.
 
-Type annotations for `aiobotocore.create_client("chime").get_bot` method.
+Type annotations for `session.create_client("chime").get_bot` method.
 
 Boto3 documentation:
 [Chime.Client.get_bot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_bot)
@@ -2499,7 +2486,7 @@ Returns a `Coroutine` for
 
 Gets the full details of a channel message.
 
-Type annotations for `aiobotocore.create_client("chime").get_channel_message`
+Type annotations for `session.create_client("chime").get_channel_message`
 method.
 
 Boto3 documentation:
@@ -2527,8 +2514,8 @@ Returns a `Coroutine` for
 Gets details for an events configuration that allows a bot to receive outgoing
 events, such as an HTTPS endpoint or Lambda function ARN.
 
-Type annotations for
-`aiobotocore.create_client("chime").get_events_configuration` method.
+Type annotations for `session.create_client("chime").get_events_configuration`
+method.
 
 Boto3 documentation:
 [Chime.Client.get_events_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_events_configuration)
@@ -2554,7 +2541,7 @@ Returns a `Coroutine` for
 Retrieves global settings for the administrator's AWS account, such as Amazon
 Chime Business Calling and Amazon Chime Voice Connector settings.
 
-Type annotations for `aiobotocore.create_client("chime").get_global_settings`
+Type annotations for `session.create_client("chime").get_global_settings`
 method.
 
 Boto3 documentation:
@@ -2573,7 +2560,7 @@ Returns a `Coroutine` for
 Gets an existing media capture pipeline.
 
 Type annotations for
-`aiobotocore.create_client("chime").get_media_capture_pipeline` method.
+`session.create_client("chime").get_media_capture_pipeline` method.
 
 Boto3 documentation:
 [Chime.Client.get_media_capture_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_media_capture_pipeline)
@@ -2597,7 +2584,7 @@ Returns a `Coroutine` for
 
 Gets the Amazon Chime SDK meeting details for the specified meeting ID.
 
-Type annotations for `aiobotocore.create_client("chime").get_meeting` method.
+Type annotations for `session.create_client("chime").get_meeting` method.
 
 Boto3 documentation:
 [Chime.Client.get_meeting](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_meeting)
@@ -2621,7 +2608,7 @@ Returns a `Coroutine` for
 The details of the endpoint for the messaging session.
 
 Type annotations for
-`aiobotocore.create_client("chime").get_messaging_session_endpoint` method.
+`session.create_client("chime").get_messaging_session_endpoint` method.
 
 Boto3 documentation:
 [Chime.Client.get_messaging_session_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_messaging_session_endpoint)
@@ -2639,8 +2626,7 @@ Returns a `Coroutine` for
 Retrieves details for the specified phone number ID, such as associations,
 capabilities, and product type.
 
-Type annotations for `aiobotocore.create_client("chime").get_phone_number`
-method.
+Type annotations for `session.create_client("chime").get_phone_number` method.
 
 Boto3 documentation:
 [Chime.Client.get_phone_number](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_phone_number)
@@ -2665,8 +2651,8 @@ Retrieves details for the specified phone number order, such as the order
 creation timestamp, phone numbers in E.164 format, product type, and order
 status.
 
-Type annotations for
-`aiobotocore.create_client("chime").get_phone_number_order` method.
+Type annotations for `session.create_client("chime").get_phone_number_order`
+method.
 
 Boto3 documentation:
 [Chime.Client.get_phone_number_order](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_phone_number_order)
@@ -2691,8 +2677,8 @@ Returns a `Coroutine` for
 Retrieves the phone number settings for the administrator's AWS account, such
 as the default outbound calling name.
 
-Type annotations for
-`aiobotocore.create_client("chime").get_phone_number_settings` method.
+Type annotations for `session.create_client("chime").get_phone_number_settings`
+method.
 
 Boto3 documentation:
 [Chime.Client.get_phone_number_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_phone_number_settings)
@@ -2710,8 +2696,7 @@ Returns a `Coroutine` for
 Gets the specified proxy session details for the specified Amazon Chime Voice
 Connector.
 
-Type annotations for `aiobotocore.create_client("chime").get_proxy_session`
-method.
+Type annotations for `session.create_client("chime").get_proxy_session` method.
 
 Boto3 documentation:
 [Chime.Client.get_proxy_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_proxy_session)
@@ -2735,8 +2720,8 @@ Returns a `Coroutine` for
 
 Gets the retention settings for the specified Amazon Chime Enterprise account.
 
-Type annotations for
-`aiobotocore.create_client("chime").get_retention_settings` method.
+Type annotations for `session.create_client("chime").get_retention_settings`
+method.
 
 Boto3 documentation:
 [Chime.Client.get_retention_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_retention_settings)
@@ -2761,7 +2746,7 @@ Returns a `Coroutine` for
 Retrieves room details, such as the room name, for a room in an Amazon Chime
 Enterprise account.
 
-Type annotations for `aiobotocore.create_client("chime").get_room` method.
+Type annotations for `session.create_client("chime").get_room` method.
 
 Boto3 documentation:
 [Chime.Client.get_room](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_room)
@@ -2786,8 +2771,8 @@ Returns a `Coroutine` for
 Retrieves the information for a SIP media application, including name, AWS
 Region, and endpoints.
 
-Type annotations for
-`aiobotocore.create_client("chime").get_sip_media_application` method.
+Type annotations for `session.create_client("chime").get_sip_media_application`
+method.
 
 Boto3 documentation:
 [Chime.Client.get_sip_media_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_sip_media_application)
@@ -2812,7 +2797,7 @@ Returns a `Coroutine` for
 Returns the logging configuration for the specified SIP media application.
 
 Type annotations for
-`aiobotocore.create_client("chime").get_sip_media_application_logging_configuration`
+`session.create_client("chime").get_sip_media_application_logging_configuration`
 method.
 
 Boto3 documentation:
@@ -2839,7 +2824,7 @@ Returns a `Coroutine` for
 Retrieves the details of a SIP rule, such as the rule ID, name, triggers, and
 target endpoints.
 
-Type annotations for `aiobotocore.create_client("chime").get_sip_rule` method.
+Type annotations for `session.create_client("chime").get_sip_rule` method.
 
 Boto3 documentation:
 [Chime.Client.get_sip_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_sip_rule)
@@ -2863,7 +2848,7 @@ Returns a `Coroutine` for
 Retrieves details for the specified user ID, such as primary email address,
 license type,and personal meeting PIN.
 
-Type annotations for `aiobotocore.create_client("chime").get_user` method.
+Type annotations for `session.create_client("chime").get_user` method.
 
 Boto3 documentation:
 [Chime.Client.get_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_user)
@@ -2888,8 +2873,7 @@ Returns a `Coroutine` for
 Retrieves settings for the specified user ID, such as any associated phone
 number settings.
 
-Type annotations for `aiobotocore.create_client("chime").get_user_settings`
-method.
+Type annotations for `session.create_client("chime").get_user_settings` method.
 
 Boto3 documentation:
 [Chime.Client.get_user_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_user_settings)
@@ -2914,7 +2898,7 @@ Returns a `Coroutine` for
 Retrieves details for the specified Amazon Chime Voice Connector, such as
 timestamps,name, outbound host, and encryption requirements.
 
-Type annotations for `aiobotocore.create_client("chime").get_voice_connector`
+Type annotations for `session.create_client("chime").get_voice_connector`
 method.
 
 Boto3 documentation:
@@ -2941,7 +2925,7 @@ Gets the emergency calling configuration details for the specified Amazon Chime
 Voice Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").get_voice_connector_emergency_calling_configuration`
+`session.create_client("chime").get_voice_connector_emergency_calling_configuration`
 method.
 
 Boto3 documentation:
@@ -2968,8 +2952,8 @@ Returns a `Coroutine` for
 Retrieves details for the specified Amazon Chime Voice Connector group, such as
 timestamps,name, and associated `VoiceConnectorItems` .
 
-Type annotations for
-`aiobotocore.create_client("chime").get_voice_connector_group` method.
+Type annotations for `session.create_client("chime").get_voice_connector_group`
+method.
 
 Boto3 documentation:
 [Chime.Client.get_voice_connector_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_voice_connector_group)
@@ -2995,7 +2979,7 @@ Retrieves the logging configuration details for the specified Amazon Chime
 Voice Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").get_voice_connector_logging_configuration`
+`session.create_client("chime").get_voice_connector_logging_configuration`
 method.
 
 Boto3 documentation:
@@ -3022,7 +3006,7 @@ Retrieves origination setting details for the specified Amazon Chime Voice
 Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").get_voice_connector_origination` method.
+`session.create_client("chime").get_voice_connector_origination` method.
 
 Boto3 documentation:
 [Chime.Client.get_voice_connector_origination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_voice_connector_origination)
@@ -3047,8 +3031,8 @@ Returns a `Coroutine` for
 Gets the proxy configuration details for the specified Amazon Chime Voice
 Connector.
 
-Type annotations for
-`aiobotocore.create_client("chime").get_voice_connector_proxy` method.
+Type annotations for `session.create_client("chime").get_voice_connector_proxy`
+method.
 
 Boto3 documentation:
 [Chime.Client.get_voice_connector_proxy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_voice_connector_proxy)
@@ -3074,7 +3058,7 @@ Retrieves the streaming configuration details for the specified Amazon Chime
 Voice Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").get_voice_connector_streaming_configuration`
+`session.create_client("chime").get_voice_connector_streaming_configuration`
 method.
 
 Boto3 documentation:
@@ -3102,7 +3086,7 @@ Retrieves termination setting details for the specified Amazon Chime Voice
 Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").get_voice_connector_termination` method.
+`session.create_client("chime").get_voice_connector_termination` method.
 
 Boto3 documentation:
 [Chime.Client.get_voice_connector_termination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_voice_connector_termination)
@@ -3128,8 +3112,7 @@ Retrieves information about the last time a SIP `OPTIONS` ping was received
 from your SIP infrastructure for the specified Amazon Chime Voice Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").get_voice_connector_termination_health`
-method.
+`session.create_client("chime").get_voice_connector_termination_health` method.
 
 Boto3 documentation:
 [Chime.Client.get_voice_connector_termination_health](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.get_voice_connector_termination_health)
@@ -3154,7 +3137,7 @@ Returns a `Coroutine` for
 Sends email to a maximum of 50 users, inviting them to the specified Amazon
 Chime `Team` account.
 
-Type annotations for `aiobotocore.create_client("chime").invite_users` method.
+Type annotations for `session.create_client("chime").invite_users` method.
 
 Boto3 documentation:
 [Chime.Client.invite_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.invite_users)
@@ -3179,7 +3162,7 @@ Returns a `Coroutine` for
 
 Lists the Amazon Chime accounts under the administrator's AWS account.
 
-Type annotations for `aiobotocore.create_client("chime").list_accounts` method.
+Type annotations for `session.create_client("chime").list_accounts` method.
 
 Boto3 documentation:
 [Chime.Client.list_accounts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_accounts)
@@ -3205,8 +3188,8 @@ Returns a `Coroutine` for
 
 Returns a list of the administrators in the `AppInstance` .
 
-Type annotations for
-`aiobotocore.create_client("chime").list_app_instance_admins` method.
+Type annotations for `session.create_client("chime").list_app_instance_admins`
+method.
 
 Boto3 documentation:
 [Chime.Client.list_app_instance_admins](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_app_instance_admins)
@@ -3232,8 +3215,8 @@ Returns a `Coroutine` for
 
 List all `AppInstanceUsers` created under a single `AppInstance` .
 
-Type annotations for
-`aiobotocore.create_client("chime").list_app_instance_users` method.
+Type annotations for `session.create_client("chime").list_app_instance_users`
+method.
 
 Boto3 documentation:
 [Chime.Client.list_app_instance_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_app_instance_users)
@@ -3259,7 +3242,7 @@ Returns a `Coroutine` for
 
 Lists all Amazon Chime `AppInstance` s created under a single AWS account.
 
-Type annotations for `aiobotocore.create_client("chime").list_app_instances`
+Type annotations for `session.create_client("chime").list_app_instances`
 method.
 
 Boto3 documentation:
@@ -3285,7 +3268,7 @@ Returns a `Coroutine` for
 
 Lists the tags applied to an Amazon Chime SDK attendee resource.
 
-Type annotations for `aiobotocore.create_client("chime").list_attendee_tags`
+Type annotations for `session.create_client("chime").list_attendee_tags`
 method.
 
 Boto3 documentation:
@@ -3311,8 +3294,7 @@ Returns a `Coroutine` for
 
 Lists the attendees for the specified Amazon Chime SDK meeting.
 
-Type annotations for `aiobotocore.create_client("chime").list_attendees`
-method.
+Type annotations for `session.create_client("chime").list_attendees` method.
 
 Boto3 documentation:
 [Chime.Client.list_attendees](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_attendees)
@@ -3338,7 +3320,7 @@ Returns a `Coroutine` for
 Lists the bots associated with the administrator's Amazon Chime Enterprise
 account ID.
 
-Type annotations for `aiobotocore.create_client("chime").list_bots` method.
+Type annotations for `session.create_client("chime").list_bots` method.
 
 Boto3 documentation:
 [Chime.Client.list_bots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_bots)
@@ -3363,8 +3345,7 @@ Returns a `Coroutine` for
 
 Lists all the users banned from a particular channel.
 
-Type annotations for `aiobotocore.create_client("chime").list_channel_bans`
-method.
+Type annotations for `session.create_client("chime").list_channel_bans` method.
 
 Boto3 documentation:
 [Chime.Client.list_channel_bans](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_channel_bans)
@@ -3390,8 +3371,8 @@ Returns a `Coroutine` for
 
 Lists all channel memberships in a channel.
 
-Type annotations for
-`aiobotocore.create_client("chime").list_channel_memberships` method.
+Type annotations for `session.create_client("chime").list_channel_memberships`
+method.
 
 Boto3 documentation:
 [Chime.Client.list_channel_memberships](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_channel_memberships)
@@ -3420,7 +3401,7 @@ Returns a `Coroutine` for
 Lists all channels that a particular `AppInstanceUser` is a part of.
 
 Type annotations for
-`aiobotocore.create_client("chime").list_channel_memberships_for_app_instance_user`
+`session.create_client("chime").list_channel_memberships_for_app_instance_user`
 method.
 
 Boto3 documentation:
@@ -3449,7 +3430,7 @@ Returns a `Coroutine` for
 
 List all the messages in a channel.
 
-Type annotations for `aiobotocore.create_client("chime").list_channel_messages`
+Type annotations for `session.create_client("chime").list_channel_messages`
 method.
 
 Boto3 documentation:
@@ -3480,8 +3461,8 @@ Returns a `Coroutine` for
 
 Lists all the moderators for a channel.
 
-Type annotations for
-`aiobotocore.create_client("chime").list_channel_moderators` method.
+Type annotations for `session.create_client("chime").list_channel_moderators`
+method.
 
 Boto3 documentation:
 [Chime.Client.list_channel_moderators](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_channel_moderators)
@@ -3508,7 +3489,7 @@ Returns a `Coroutine` for
 
 Lists all Channels created under a single Chime App as a paginated list.
 
-Type annotations for `aiobotocore.create_client("chime").list_channels` method.
+Type annotations for `session.create_client("chime").list_channels` method.
 
 Boto3 documentation:
 [Chime.Client.list_channels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_channels)
@@ -3536,7 +3517,7 @@ Returns a `Coroutine` for
 A list of the channels moderated by an `AppInstanceUser` .
 
 Type annotations for
-`aiobotocore.create_client("chime").list_channels_moderated_by_app_instance_user`
+`session.create_client("chime").list_channels_moderated_by_app_instance_user`
 method.
 
 Boto3 documentation:
@@ -3566,7 +3547,7 @@ Returns a `Coroutine` for
 Returns a list of media capture pipelines.
 
 Type annotations for
-`aiobotocore.create_client("chime").list_media_capture_pipelines` method.
+`session.create_client("chime").list_media_capture_pipelines` method.
 
 Boto3 documentation:
 [Chime.Client.list_media_capture_pipelines](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_media_capture_pipelines)
@@ -3591,8 +3572,7 @@ Returns a `Coroutine` for
 
 Lists the tags applied to an Amazon Chime SDK meeting resource.
 
-Type annotations for `aiobotocore.create_client("chime").list_meeting_tags`
-method.
+Type annotations for `session.create_client("chime").list_meeting_tags` method.
 
 Boto3 documentation:
 [Chime.Client.list_meeting_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_meeting_tags)
@@ -3615,7 +3595,7 @@ Returns a `Coroutine` for
 
 Lists up to 100 active Amazon Chime SDK meetings.
 
-Type annotations for `aiobotocore.create_client("chime").list_meetings` method.
+Type annotations for `session.create_client("chime").list_meetings` method.
 
 Boto3 documentation:
 [Chime.Client.list_meetings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_meetings)
@@ -3639,8 +3619,8 @@ Returns a `Coroutine` for
 
 Lists the phone number orders for the administrator's Amazon Chime account.
 
-Type annotations for
-`aiobotocore.create_client("chime").list_phone_number_orders` method.
+Type annotations for `session.create_client("chime").list_phone_number_orders`
+method.
 
 Boto3 documentation:
 [Chime.Client.list_phone_number_orders](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_phone_number_orders)
@@ -3666,7 +3646,7 @@ Returns a `Coroutine` for
 Lists the phone numbers for the specified Amazon Chime account, Amazon Chime
 user, Amazon Chime Voice Connector, or Amazon Chime Voice Connector group.
 
-Type annotations for `aiobotocore.create_client("chime").list_phone_numbers`
+Type annotations for `session.create_client("chime").list_phone_numbers`
 method.
 
 Boto3 documentation:
@@ -3698,7 +3678,7 @@ Returns a `Coroutine` for
 
 Lists the proxy sessions for the specified Amazon Chime Voice Connector.
 
-Type annotations for `aiobotocore.create_client("chime").list_proxy_sessions`
+Type annotations for `session.create_client("chime").list_proxy_sessions`
 method.
 
 Boto3 documentation:
@@ -3727,7 +3707,7 @@ Returns a `Coroutine` for
 Lists the membership details for the specified room in an Amazon Chime
 Enterprise account, such as the members' IDs, email addresses, and names.
 
-Type annotations for `aiobotocore.create_client("chime").list_room_memberships`
+Type annotations for `session.create_client("chime").list_room_memberships`
 method.
 
 Boto3 documentation:
@@ -3755,7 +3735,7 @@ Returns a `Coroutine` for
 
 Lists the room details for the specified Amazon Chime Enterprise account.
 
-Type annotations for `aiobotocore.create_client("chime").list_rooms` method.
+Type annotations for `session.create_client("chime").list_rooms` method.
 
 Boto3 documentation:
 [Chime.Client.list_rooms](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_rooms)
@@ -3782,7 +3762,7 @@ Returns a `Coroutine` for
 Lists the SIP media applications under the administrator's AWS account.
 
 Type annotations for
-`aiobotocore.create_client("chime").list_sip_media_applications` method.
+`session.create_client("chime").list_sip_media_applications` method.
 
 Boto3 documentation:
 [Chime.Client.list_sip_media_applications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_sip_media_applications)
@@ -3807,8 +3787,7 @@ Returns a `Coroutine` for
 
 Lists the SIP rules under the administrator's AWS account.
 
-Type annotations for `aiobotocore.create_client("chime").list_sip_rules`
-method.
+Type annotations for `session.create_client("chime").list_sip_rules` method.
 
 Boto3 documentation:
 [Chime.Client.list_sip_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_sip_rules)
@@ -3834,8 +3813,7 @@ Returns a `Coroutine` for
 Lists supported phone number countries.
 
 Type annotations for
-`aiobotocore.create_client("chime").list_supported_phone_number_countries`
-method.
+`session.create_client("chime").list_supported_phone_number_countries` method.
 
 Boto3 documentation:
 [Chime.Client.list_supported_phone_number_countries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_supported_phone_number_countries)
@@ -3861,8 +3839,8 @@ Returns a `Coroutine` for
 
 Lists the tags applied to an Amazon Chime SDK meeting resource.
 
-Type annotations for
-`aiobotocore.create_client("chime").list_tags_for_resource` method.
+Type annotations for `session.create_client("chime").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Chime.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_tags_for_resource)
@@ -3886,7 +3864,7 @@ Returns a `Coroutine` for
 
 Lists the users that belong to the specified Amazon Chime account.
 
-Type annotations for `aiobotocore.create_client("chime").list_users` method.
+Type annotations for `session.create_client("chime").list_users` method.
 
 Boto3 documentation:
 [Chime.Client.list_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_users)
@@ -3915,7 +3893,7 @@ Lists the Amazon Chime Voice Connector groups for the administrator's AWS
 account.
 
 Type annotations for
-`aiobotocore.create_client("chime").list_voice_connector_groups` method.
+`session.create_client("chime").list_voice_connector_groups` method.
 
 Boto3 documentation:
 [Chime.Client.list_voice_connector_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.list_voice_connector_groups)
@@ -3941,7 +3919,7 @@ Returns a `Coroutine` for
 Lists the SIP credentials for the specified Amazon Chime Voice Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").list_voice_connector_termination_credentials`
+`session.create_client("chime").list_voice_connector_termination_credentials`
 method.
 
 Boto3 documentation:
@@ -3967,7 +3945,7 @@ Returns a `Coroutine` for
 
 Lists the Amazon Chime Voice Connectors for the administrator's AWS account.
 
-Type annotations for `aiobotocore.create_client("chime").list_voice_connectors`
+Type annotations for `session.create_client("chime").list_voice_connectors`
 method.
 
 Boto3 documentation:
@@ -3994,7 +3972,7 @@ Returns a `Coroutine` for
 Logs out the specified user from all of the devices they are currently logged
 into.
 
-Type annotations for `aiobotocore.create_client("chime").logout_user` method.
+Type annotations for `session.create_client("chime").logout_user` method.
 
 Boto3 documentation:
 [Chime.Client.logout_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.logout_user)
@@ -4018,8 +3996,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Sets the amount of time in days that a given `AppInstance` retains data.
 
 Type annotations for
-`aiobotocore.create_client("chime").put_app_instance_retention_settings`
-method.
+`session.create_client("chime").put_app_instance_retention_settings` method.
 
 Boto3 documentation:
 [Chime.Client.put_app_instance_retention_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.put_app_instance_retention_settings)
@@ -4047,7 +4024,7 @@ Returns a `Coroutine` for
 The data streaming configurations of an `AppInstance` .
 
 Type annotations for
-`aiobotocore.create_client("chime").put_app_instance_streaming_configurations`
+`session.create_client("chime").put_app_instance_streaming_configurations`
 method.
 
 Boto3 documentation:
@@ -4076,8 +4053,8 @@ Returns a `Coroutine` for
 Creates an events configuration that allows a bot to receive outgoing events
 sent by Amazon Chime.
 
-Type annotations for
-`aiobotocore.create_client("chime").put_events_configuration` method.
+Type annotations for `session.create_client("chime").put_events_configuration`
+method.
 
 Boto3 documentation:
 [Chime.Client.put_events_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.put_events_configuration)
@@ -4104,8 +4081,8 @@ Returns a `Coroutine` for
 
 Puts retention settings for the specified Amazon Chime Enterprise account.
 
-Type annotations for
-`aiobotocore.create_client("chime").put_retention_settings` method.
+Type annotations for `session.create_client("chime").put_retention_settings`
+method.
 
 Boto3 documentation:
 [Chime.Client.put_retention_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.put_retention_settings)
@@ -4133,7 +4110,7 @@ Returns a `Coroutine` for
 Updates the logging configuration for the specified SIP media application.
 
 Type annotations for
-`aiobotocore.create_client("chime").put_sip_media_application_logging_configuration`
+`session.create_client("chime").put_sip_media_application_logging_configuration`
 method.
 
 Boto3 documentation:
@@ -4163,7 +4140,7 @@ Puts emergency calling configuration details to the specified Amazon Chime
 Voice Connector, such as emergency phone numbers and calling countries.
 
 Type annotations for
-`aiobotocore.create_client("chime").put_voice_connector_emergency_calling_configuration`
+`session.create_client("chime").put_voice_connector_emergency_calling_configuration`
 method.
 
 Boto3 documentation:
@@ -4193,7 +4170,7 @@ Returns a `Coroutine` for
 Adds a logging configuration for the specified Amazon Chime Voice Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").put_voice_connector_logging_configuration`
+`session.create_client("chime").put_voice_connector_logging_configuration`
 method.
 
 Boto3 documentation:
@@ -4222,7 +4199,7 @@ Returns a `Coroutine` for
 Adds origination settings for the specified Amazon Chime Voice Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").put_voice_connector_origination` method.
+`session.create_client("chime").put_voice_connector_origination` method.
 
 Boto3 documentation:
 [Chime.Client.put_voice_connector_origination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.put_voice_connector_origination)
@@ -4249,8 +4226,8 @@ Returns a `Coroutine` for
 Puts the specified proxy configuration to the specified Amazon Chime Voice
 Connector.
 
-Type annotations for
-`aiobotocore.create_client("chime").put_voice_connector_proxy` method.
+Type annotations for `session.create_client("chime").put_voice_connector_proxy`
+method.
 
 Boto3 documentation:
 [Chime.Client.put_voice_connector_proxy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.put_voice_connector_proxy)
@@ -4279,7 +4256,7 @@ Returns a `Coroutine` for
 Adds a streaming configuration for the specified Amazon Chime Voice Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").put_voice_connector_streaming_configuration`
+`session.create_client("chime").put_voice_connector_streaming_configuration`
 method.
 
 Boto3 documentation:
@@ -4309,7 +4286,7 @@ Returns a `Coroutine` for
 Adds termination settings for the specified Amazon Chime Voice Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").put_voice_connector_termination` method.
+`session.create_client("chime").put_voice_connector_termination` method.
 
 Boto3 documentation:
 [Chime.Client.put_voice_connector_termination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.put_voice_connector_termination)
@@ -4337,7 +4314,7 @@ Adds termination SIP credentials for the specified Amazon Chime Voice
 Connector.
 
 Type annotations for
-`aiobotocore.create_client("chime").put_voice_connector_termination_credentials`
+`session.create_client("chime").put_voice_connector_termination_credentials`
 method.
 
 Boto3 documentation:
@@ -4362,8 +4339,8 @@ Keyword-only arguments:
 
 Redacts message content, but not metadata.
 
-Type annotations for
-`aiobotocore.create_client("chime").redact_channel_message` method.
+Type annotations for `session.create_client("chime").redact_channel_message`
+method.
 
 Boto3 documentation:
 [Chime.Client.redact_channel_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.redact_channel_message)
@@ -4390,7 +4367,7 @@ Returns a `Coroutine` for
 Redacts the specified message from the specified Amazon Chime conversation.
 
 Type annotations for
-`aiobotocore.create_client("chime").redact_conversation_message` method.
+`session.create_client("chime").redact_conversation_message` method.
 
 Boto3 documentation:
 [Chime.Client.redact_conversation_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.redact_conversation_message)
@@ -4415,7 +4392,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Redacts the specified message from the specified Amazon Chime channel.
 
-Type annotations for `aiobotocore.create_client("chime").redact_room_message`
+Type annotations for `session.create_client("chime").redact_room_message`
 method.
 
 Boto3 documentation:
@@ -4441,8 +4418,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Regenerates the security token for a bot.
 
-Type annotations for
-`aiobotocore.create_client("chime").regenerate_security_token` method.
+Type annotations for `session.create_client("chime").regenerate_security_token`
+method.
 
 Boto3 documentation:
 [Chime.Client.regenerate_security_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.regenerate_security_token)
@@ -4468,7 +4445,7 @@ Returns a `Coroutine` for
 Resets the personal meeting PIN for the specified user on an Amazon Chime
 account.
 
-Type annotations for `aiobotocore.create_client("chime").reset_personal_pin`
+Type annotations for `session.create_client("chime").reset_personal_pin`
 method.
 
 Boto3 documentation:
@@ -4495,7 +4472,7 @@ Returns a `Coroutine` for
 Moves a phone number from the **Deletion queue** back into the phone number
 **Inventory** .
 
-Type annotations for `aiobotocore.create_client("chime").restore_phone_number`
+Type annotations for `session.create_client("chime").restore_phone_number`
 method.
 
 Boto3 documentation:
@@ -4521,7 +4498,7 @@ Returns a `Coroutine` for
 Searches for phone numbers that can be ordered.
 
 Type annotations for
-`aiobotocore.create_client("chime").search_available_phone_numbers` method.
+`session.create_client("chime").search_available_phone_numbers` method.
 
 Boto3 documentation:
 [Chime.Client.search_available_phone_numbers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.search_available_phone_numbers)
@@ -4552,7 +4529,7 @@ Returns a `Coroutine` for
 
 Sends a message to a particular channel that the member is a part of.
 
-Type annotations for `aiobotocore.create_client("chime").send_channel_message`
+Type annotations for `session.create_client("chime").send_channel_message`
 method.
 
 Boto3 documentation:
@@ -4587,7 +4564,7 @@ Returns a `Coroutine` for
 Starts transcription for the specified `meetingId` .
 
 Type annotations for
-`aiobotocore.create_client("chime").start_meeting_transcription` method.
+`session.create_client("chime").start_meeting_transcription` method.
 
 Boto3 documentation:
 [Chime.Client.start_meeting_transcription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.start_meeting_transcription)
@@ -4614,7 +4591,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Stops transcription for the specified `meetingId` .
 
 Type annotations for
-`aiobotocore.create_client("chime").stop_meeting_transcription` method.
+`session.create_client("chime").stop_meeting_transcription` method.
 
 Boto3 documentation:
 [Chime.Client.stop_meeting_transcription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.stop_meeting_transcription)
@@ -4637,7 +4614,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Applies the specified tags to the specified Amazon Chime SDK attendee.
 
-Type annotations for `aiobotocore.create_client("chime").tag_attendee` method.
+Type annotations for `session.create_client("chime").tag_attendee` method.
 
 Boto3 documentation:
 [Chime.Client.tag_attendee](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.tag_attendee)
@@ -4659,7 +4636,7 @@ Keyword-only arguments:
 
 Applies the specified tags to the specified Amazon Chime SDK meeting.
 
-Type annotations for `aiobotocore.create_client("chime").tag_meeting` method.
+Type annotations for `session.create_client("chime").tag_meeting` method.
 
 Boto3 documentation:
 [Chime.Client.tag_meeting](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.tag_meeting)
@@ -4680,7 +4657,7 @@ Keyword-only arguments:
 
 Applies the specified tags to the specified Amazon Chime SDK meeting resource.
 
-Type annotations for `aiobotocore.create_client("chime").tag_resource` method.
+Type annotations for `session.create_client("chime").tag_resource` method.
 
 Boto3 documentation:
 [Chime.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.tag_resource)
@@ -4701,8 +4678,7 @@ Keyword-only arguments:
 
 Untags the specified tags from the specified Amazon Chime SDK attendee.
 
-Type annotations for `aiobotocore.create_client("chime").untag_attendee`
-method.
+Type annotations for `session.create_client("chime").untag_attendee` method.
 
 Boto3 documentation:
 [Chime.Client.untag_attendee](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.untag_attendee)
@@ -4724,7 +4700,7 @@ Keyword-only arguments:
 
 Untags the specified tags from the specified Amazon Chime SDK meeting.
 
-Type annotations for `aiobotocore.create_client("chime").untag_meeting` method.
+Type annotations for `session.create_client("chime").untag_meeting` method.
 
 Boto3 documentation:
 [Chime.Client.untag_meeting](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.untag_meeting)
@@ -4745,8 +4721,7 @@ Keyword-only arguments:
 
 Untags the specified tags from the specified Amazon Chime SDK meeting resource.
 
-Type annotations for `aiobotocore.create_client("chime").untag_resource`
-method.
+Type annotations for `session.create_client("chime").untag_resource` method.
 
 Boto3 documentation:
 [Chime.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.untag_resource)
@@ -4767,8 +4742,7 @@ Keyword-only arguments:
 
 Updates account details for the specified Amazon Chime account.
 
-Type annotations for `aiobotocore.create_client("chime").update_account`
-method.
+Type annotations for `session.create_client("chime").update_account` method.
 
 Boto3 documentation:
 [Chime.Client.update_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_account)
@@ -4793,8 +4767,8 @@ Returns a `Coroutine` for
 
 Updates the settings for the specified Amazon Chime account.
 
-Type annotations for
-`aiobotocore.create_client("chime").update_account_settings` method.
+Type annotations for `session.create_client("chime").update_account_settings`
+method.
 
 Boto3 documentation:
 [Chime.Client.update_account_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_account_settings)
@@ -4819,7 +4793,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates `AppInstance` metadata.
 
-Type annotations for `aiobotocore.create_client("chime").update_app_instance`
+Type annotations for `session.create_client("chime").update_app_instance`
 method.
 
 Boto3 documentation:
@@ -4846,8 +4820,8 @@ Returns a `Coroutine` for
 
 Updates the details of an `AppInstanceUser`.
 
-Type annotations for
-`aiobotocore.create_client("chime").update_app_instance_user` method.
+Type annotations for `session.create_client("chime").update_app_instance_user`
+method.
 
 Boto3 documentation:
 [Chime.Client.update_app_instance_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_app_instance_user)
@@ -4874,7 +4848,7 @@ Returns a `Coroutine` for
 Updates the status of the specified bot, such as starting or stopping the bot
 from running in your Amazon Chime Enterprise account.
 
-Type annotations for `aiobotocore.create_client("chime").update_bot` method.
+Type annotations for `session.create_client("chime").update_bot` method.
 
 Boto3 documentation:
 [Chime.Client.update_bot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_bot)
@@ -4899,8 +4873,7 @@ Returns a `Coroutine` for
 
 Update a channel's attributes.
 
-Type annotations for `aiobotocore.create_client("chime").update_channel`
-method.
+Type annotations for `session.create_client("chime").update_channel` method.
 
 Boto3 documentation:
 [Chime.Client.update_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_channel)
@@ -4927,8 +4900,8 @@ Returns a `Coroutine` for
 
 Updates the content of a message.
 
-Type annotations for
-`aiobotocore.create_client("chime").update_channel_message` method.
+Type annotations for `session.create_client("chime").update_channel_message`
+method.
 
 Boto3 documentation:
 [Chime.Client.update_channel_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_channel_message)
@@ -4957,7 +4930,7 @@ Returns a `Coroutine` for
 The details of the time when a user last read messages in a channel.
 
 Type annotations for
-`aiobotocore.create_client("chime").update_channel_read_marker` method.
+`session.create_client("chime").update_channel_read_marker` method.
 
 Boto3 documentation:
 [Chime.Client.update_channel_read_marker](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_channel_read_marker)
@@ -4983,8 +4956,8 @@ Returns a `Coroutine` for
 Updates global settings for the administrator's AWS account, such as Amazon
 Chime Business Calling and Amazon Chime Voice Connector settings.
 
-Type annotations for
-`aiobotocore.create_client("chime").update_global_settings` method.
+Type annotations for `session.create_client("chime").update_global_settings`
+method.
 
 Boto3 documentation:
 [Chime.Client.update_global_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_global_settings)
@@ -5009,7 +4982,7 @@ Keyword-only arguments:
 Updates phone number details, such as product type or calling name, for the
 specified phone number ID.
 
-Type annotations for `aiobotocore.create_client("chime").update_phone_number`
+Type annotations for `session.create_client("chime").update_phone_number`
 method.
 
 Boto3 documentation:
@@ -5039,7 +5012,7 @@ Updates the phone number settings for the administrator's AWS account, such as
 the default outbound calling name.
 
 Type annotations for
-`aiobotocore.create_client("chime").update_phone_number_settings` method.
+`session.create_client("chime").update_phone_number_settings` method.
 
 Boto3 documentation:
 [Chime.Client.update_phone_number_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_phone_number_settings)
@@ -5060,7 +5033,7 @@ Keyword-only arguments:
 
 Updates the specified proxy session details, such as voice or SMS capabilities.
 
-Type annotations for `aiobotocore.create_client("chime").update_proxy_session`
+Type annotations for `session.create_client("chime").update_proxy_session`
 method.
 
 Boto3 documentation:
@@ -5090,7 +5063,7 @@ Returns a `Coroutine` for
 Updates room details, such as the room name, for a room in an Amazon Chime
 Enterprise account.
 
-Type annotations for `aiobotocore.create_client("chime").update_room` method.
+Type annotations for `session.create_client("chime").update_room` method.
 
 Boto3 documentation:
 [Chime.Client.update_room](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_room)
@@ -5116,8 +5089,8 @@ Returns a `Coroutine` for
 Updates room membership details, such as the member role, for a room in an
 Amazon Chime Enterprise account.
 
-Type annotations for
-`aiobotocore.create_client("chime").update_room_membership` method.
+Type annotations for `session.create_client("chime").update_room_membership`
+method.
 
 Boto3 documentation:
 [Chime.Client.update_room_membership](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_room_membership)
@@ -5145,7 +5118,7 @@ Returns a `Coroutine` for
 Updates the details of the specified SIP media application.
 
 Type annotations for
-`aiobotocore.create_client("chime").update_sip_media_application` method.
+`session.create_client("chime").update_sip_media_application` method.
 
 Boto3 documentation:
 [Chime.Client.update_sip_media_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_sip_media_application)
@@ -5174,7 +5147,7 @@ Allows you to trigger a Lambda function at any time while a call is active, and
 replace the current actions with new actions returned by the invocation.
 
 Type annotations for
-`aiobotocore.create_client("chime").update_sip_media_application_call` method.
+`session.create_client("chime").update_sip_media_application_call` method.
 
 Boto3 documentation:
 [Chime.Client.update_sip_media_application_call](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_sip_media_application_call)
@@ -5200,8 +5173,7 @@ Returns a `Coroutine` for
 
 Updates the details of the specified SIP rule.
 
-Type annotations for `aiobotocore.create_client("chime").update_sip_rule`
-method.
+Type annotations for `session.create_client("chime").update_sip_rule` method.
 
 Boto3 documentation:
 [Chime.Client.update_sip_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_sip_rule)
@@ -5228,7 +5200,7 @@ Returns a `Coroutine` for
 
 Updates user details for a specified user ID.
 
-Type annotations for `aiobotocore.create_client("chime").update_user` method.
+Type annotations for `session.create_client("chime").update_user` method.
 
 Boto3 documentation:
 [Chime.Client.update_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_user)
@@ -5256,7 +5228,7 @@ Returns a `Coroutine` for
 
 Updates the settings for the specified user, such as phone number settings.
 
-Type annotations for `aiobotocore.create_client("chime").update_user_settings`
+Type annotations for `session.create_client("chime").update_user_settings`
 method.
 
 Boto3 documentation:
@@ -5281,8 +5253,8 @@ Keyword-only arguments:
 
 Updates details for the specified Amazon Chime Voice Connector.
 
-Type annotations for
-`aiobotocore.create_client("chime").update_voice_connector` method.
+Type annotations for `session.create_client("chime").update_voice_connector`
+method.
 
 Boto3 documentation:
 [Chime.Client.update_voice_connector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_voice_connector)
@@ -5310,7 +5282,7 @@ Updates details of the specified Amazon Chime Voice Connector group, such as
 the name and Amazon Chime Voice Connector priority ranking.
 
 Type annotations for
-`aiobotocore.create_client("chime").update_voice_connector_group` method.
+`session.create_client("chime").update_voice_connector_group` method.
 
 Boto3 documentation:
 [Chime.Client.update_voice_connector_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.update_voice_connector_group)
@@ -5332,12 +5304,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateVoiceConnectorGroupResponseTypeDef](./type_defs.md#updatevoiceconnectorgroupresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("chime").__aenter__` method.
+
+Boto3 documentation:
+[Chime.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ChimeClient](#chimeclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("chime").__aexit__` method.
+
+Boto3 documentation:
+[Chime.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime.html#Chime.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("chime").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("chime").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_accounts")` ->
   [ListAccountsPaginator](./paginators.md#listaccountspaginator)

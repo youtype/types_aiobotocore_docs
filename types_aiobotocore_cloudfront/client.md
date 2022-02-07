@@ -108,6 +108,8 @@ type annotations stubs module
     - [update_realtime_log_config](#update_realtime_log_config)
     - [update_response_headers_policy](#update_response_headers_policy)
     - [update_streaming_distribution](#update_streaming_distribution)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -115,16 +117,17 @@ type annotations stubs module
 
 ## CloudFrontClient
 
-Type annotations for `aiobotocore.create_client("cloudfront")`
+Type annotations for `session.create_client("cloudfront")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_cloudfront.client import CloudFrontClient
 
-def get_cloudfront_client() -> CloudFrontClient:
-    return Session().client("cloudfront")
+session = get_session()
+async with session.create_client("cloudfront") as client:
+    client: CloudFrontClient
 ```
 
 Boto3 documentation:
@@ -285,8 +288,7 @@ Exceptions:
 
 CloudFrontClient exceptions.
 
-Type annotations for `aiobotocore.create_client("cloudfront").exceptions`
-method.
+Type annotations for `session.create_client("cloudfront").exceptions` method.
 
 Boto3 documentation:
 [CloudFront.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.exceptions)
@@ -300,7 +302,7 @@ Returns [Exceptions](#exceptions).
 Associates an alias (also known as a CNAME or an alternate domain name) with a
 CloudFront distribution.
 
-Type annotations for `aiobotocore.create_client("cloudfront").associate_alias`
+Type annotations for `session.create_client("cloudfront").associate_alias`
 method.
 
 Boto3 documentation:
@@ -322,19 +324,16 @@ Keyword-only arguments:
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("cloudfront").can_paginate`
-method.
+Type annotations for `session.create_client("cloudfront").can_paginate` method.
 
 Boto3 documentation:
 [CloudFront.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_cache_policy"></a>
 
@@ -342,8 +341,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates a cache policy.
 
-Type annotations for
-`aiobotocore.create_client("cloudfront").create_cache_policy` method.
+Type annotations for `session.create_client("cloudfront").create_cache_policy`
+method.
 
 Boto3 documentation:
 [CloudFront.Client.create_cache_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.create_cache_policy)
@@ -370,7 +369,7 @@ Returns a `Coroutine` for
 Creates a new origin access identity.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").create_cloud_front_origin_access_identity`
+`session.create_client("cloudfront").create_cloud_front_origin_access_identity`
 method.
 
 Boto3 documentation:
@@ -397,8 +396,8 @@ Returns a `Coroutine` for
 
 Creates a new web distribution.
 
-Type annotations for
-`aiobotocore.create_client("cloudfront").create_distribution` method.
+Type annotations for `session.create_client("cloudfront").create_distribution`
+method.
 
 Boto3 documentation:
 [CloudFront.Client.create_distribution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.create_distribution)
@@ -425,7 +424,7 @@ Returns a `Coroutine` for
 Create a new distribution with tags.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").create_distribution_with_tags` method.
+`session.create_client("cloudfront").create_distribution_with_tags` method.
 
 Boto3 documentation:
 [CloudFront.Client.create_distribution_with_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.create_distribution_with_tags)
@@ -452,7 +451,7 @@ Returns a `Coroutine` for
 Create a new field-level encryption configuration.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").create_field_level_encryption_config`
+`session.create_client("cloudfront").create_field_level_encryption_config`
 method.
 
 Boto3 documentation:
@@ -480,7 +479,7 @@ Returns a `Coroutine` for
 Create a field-level encryption profile.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").create_field_level_encryption_profile`
+`session.create_client("cloudfront").create_field_level_encryption_profile`
 method.
 
 Boto3 documentation:
@@ -507,7 +506,7 @@ Returns a `Coroutine` for
 
 Creates a CloudFront function.
 
-Type annotations for `aiobotocore.create_client("cloudfront").create_function`
+Type annotations for `session.create_client("cloudfront").create_function`
 method.
 
 Boto3 documentation:
@@ -535,8 +534,8 @@ Returns a `Coroutine` for
 
 Create a new invalidation.
 
-Type annotations for
-`aiobotocore.create_client("cloudfront").create_invalidation` method.
+Type annotations for `session.create_client("cloudfront").create_invalidation`
+method.
 
 Boto3 documentation:
 [CloudFront.Client.create_invalidation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.create_invalidation)
@@ -565,7 +564,7 @@ Creates a key group that you can use with
 [CloudFront signed URLs and signed cookies](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html)\_
 .
 
-Type annotations for `aiobotocore.create_client("cloudfront").create_key_group`
+Type annotations for `session.create_client("cloudfront").create_key_group`
 method.
 
 Boto3 documentation:
@@ -592,8 +591,7 @@ Enables additional CloudWatch metrics for the specified CloudFront
 distribution.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").create_monitoring_subscription`
-method.
+`session.create_client("cloudfront").create_monitoring_subscription` method.
 
 Boto3 documentation:
 [CloudFront.Client.create_monitoring_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.create_monitoring_subscription)
@@ -621,7 +619,7 @@ Returns a `Coroutine` for
 Creates an origin request policy.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").create_origin_request_policy` method.
+`session.create_client("cloudfront").create_origin_request_policy` method.
 
 Boto3 documentation:
 [CloudFront.Client.create_origin_request_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.create_origin_request_policy)
@@ -650,8 +648,8 @@ Uploads a public key to CloudFront that you can use with
 , or with
 `field-level encryption <https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level- en...`.
 
-Type annotations for
-`aiobotocore.create_client("cloudfront").create_public_key` method.
+Type annotations for `session.create_client("cloudfront").create_public_key`
+method.
 
 Boto3 documentation:
 [CloudFront.Client.create_public_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.create_public_key)
@@ -676,7 +674,7 @@ Returns a `Coroutine` for
 Creates a real-time log configuration.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").create_realtime_log_config` method.
+`session.create_client("cloudfront").create_realtime_log_config` method.
 
 Boto3 documentation:
 [CloudFront.Client.create_realtime_log_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.create_realtime_log_config)
@@ -705,8 +703,7 @@ Returns a `Coroutine` for
 Creates a response headers policy.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").create_response_headers_policy`
-method.
+`session.create_client("cloudfront").create_response_headers_policy` method.
 
 Boto3 documentation:
 [CloudFront.Client.create_response_headers_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.create_response_headers_policy)
@@ -733,7 +730,7 @@ Returns a `Coroutine` for
 This API is deprecated.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").create_streaming_distribution` method.
+`session.create_client("cloudfront").create_streaming_distribution` method.
 
 Boto3 documentation:
 [CloudFront.Client.create_streaming_distribution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.create_streaming_distribution)
@@ -760,7 +757,7 @@ Returns a `Coroutine` for
 This API is deprecated.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").create_streaming_distribution_with_tags`
+`session.create_client("cloudfront").create_streaming_distribution_with_tags`
 method.
 
 Boto3 documentation:
@@ -787,8 +784,8 @@ Returns a `Coroutine` for
 
 Deletes a cache policy.
 
-Type annotations for
-`aiobotocore.create_client("cloudfront").delete_cache_policy` method.
+Type annotations for `session.create_client("cloudfront").delete_cache_policy`
+method.
 
 Boto3 documentation:
 [CloudFront.Client.delete_cache_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.delete_cache_policy)
@@ -811,7 +808,7 @@ Keyword-only arguments:
 Delete an origin access identity.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").delete_cloud_front_origin_access_identity`
+`session.create_client("cloudfront").delete_cloud_front_origin_access_identity`
 method.
 
 Boto3 documentation:
@@ -834,8 +831,8 @@ Keyword-only arguments:
 
 Delete a distribution.
 
-Type annotations for
-`aiobotocore.create_client("cloudfront").delete_distribution` method.
+Type annotations for `session.create_client("cloudfront").delete_distribution`
+method.
 
 Boto3 documentation:
 [CloudFront.Client.delete_distribution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.delete_distribution)
@@ -858,7 +855,7 @@ Keyword-only arguments:
 Remove a field-level encryption configuration.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").delete_field_level_encryption_config`
+`session.create_client("cloudfront").delete_field_level_encryption_config`
 method.
 
 Boto3 documentation:
@@ -882,7 +879,7 @@ Keyword-only arguments:
 Remove a field-level encryption profile.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").delete_field_level_encryption_profile`
+`session.create_client("cloudfront").delete_field_level_encryption_profile`
 method.
 
 Boto3 documentation:
@@ -905,7 +902,7 @@ Keyword-only arguments:
 
 Deletes a CloudFront function.
 
-Type annotations for `aiobotocore.create_client("cloudfront").delete_function`
+Type annotations for `session.create_client("cloudfront").delete_function`
 method.
 
 Boto3 documentation:
@@ -927,7 +924,7 @@ Keyword-only arguments:
 
 Deletes a key group.
 
-Type annotations for `aiobotocore.create_client("cloudfront").delete_key_group`
+Type annotations for `session.create_client("cloudfront").delete_key_group`
 method.
 
 Boto3 documentation:
@@ -951,8 +948,7 @@ Disables additional CloudWatch metrics for the specified CloudFront
 distribution.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").delete_monitoring_subscription`
-method.
+`session.create_client("cloudfront").delete_monitoring_subscription` method.
 
 Boto3 documentation:
 [CloudFront.Client.delete_monitoring_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.delete_monitoring_subscription)
@@ -976,7 +972,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes an origin request policy.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").delete_origin_request_policy` method.
+`session.create_client("cloudfront").delete_origin_request_policy` method.
 
 Boto3 documentation:
 [CloudFront.Client.delete_origin_request_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.delete_origin_request_policy)
@@ -998,8 +994,8 @@ Keyword-only arguments:
 
 Remove a public key you previously added to CloudFront.
 
-Type annotations for
-`aiobotocore.create_client("cloudfront").delete_public_key` method.
+Type annotations for `session.create_client("cloudfront").delete_public_key`
+method.
 
 Boto3 documentation:
 [CloudFront.Client.delete_public_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.delete_public_key)
@@ -1021,7 +1017,7 @@ Keyword-only arguments:
 Deletes a real-time log configuration.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").delete_realtime_log_config` method.
+`session.create_client("cloudfront").delete_realtime_log_config` method.
 
 Boto3 documentation:
 [CloudFront.Client.delete_realtime_log_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.delete_realtime_log_config)
@@ -1044,8 +1040,7 @@ Keyword-only arguments:
 Deletes a response headers policy.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").delete_response_headers_policy`
-method.
+`session.create_client("cloudfront").delete_response_headers_policy` method.
 
 Boto3 documentation:
 [CloudFront.Client.delete_response_headers_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.delete_response_headers_policy)
@@ -1068,7 +1063,7 @@ Keyword-only arguments:
 Delete a streaming distribution.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").delete_streaming_distribution` method.
+`session.create_client("cloudfront").delete_streaming_distribution` method.
 
 Boto3 documentation:
 [CloudFront.Client.delete_streaming_distribution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.delete_streaming_distribution)
@@ -1091,8 +1086,8 @@ Keyword-only arguments:
 Gets configuration information and metadata about a CloudFront function, but
 not the function’s code.
 
-Type annotations for
-`aiobotocore.create_client("cloudfront").describe_function` method.
+Type annotations for `session.create_client("cloudfront").describe_function`
+method.
 
 Boto3 documentation:
 [CloudFront.Client.describe_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.describe_function)
@@ -1117,7 +1112,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").generate_presigned_url` method.
+`session.create_client("cloudfront").generate_presigned_url` method.
 
 Boto3 documentation:
 [CloudFront.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.generate_presigned_url)
@@ -1141,7 +1136,7 @@ Returns a `Coroutine` for `str`.
 Gets a cache policy, including the following metadata * The policy’s
 identifier.
 
-Type annotations for `aiobotocore.create_client("cloudfront").get_cache_policy`
+Type annotations for `session.create_client("cloudfront").get_cache_policy`
 method.
 
 Boto3 documentation:
@@ -1166,7 +1161,7 @@ Returns a `Coroutine` for
 Gets a cache policy configuration.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_cache_policy_config` method.
+`session.create_client("cloudfront").get_cache_policy_config` method.
 
 Boto3 documentation:
 [CloudFront.Client.get_cache_policy_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.get_cache_policy_config)
@@ -1191,7 +1186,7 @@ Returns a `Coroutine` for
 Get the information about an origin access identity.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_cloud_front_origin_access_identity`
+`session.create_client("cloudfront").get_cloud_front_origin_access_identity`
 method.
 
 Boto3 documentation:
@@ -1217,7 +1212,7 @@ Returns a `Coroutine` for
 Get the configuration information about an origin access identity.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_cloud_front_origin_access_identity_config`
+`session.create_client("cloudfront").get_cloud_front_origin_access_identity_config`
 method.
 
 Boto3 documentation:
@@ -1243,7 +1238,7 @@ Returns a `Coroutine` for
 
 Get the information about a distribution.
 
-Type annotations for `aiobotocore.create_client("cloudfront").get_distribution`
+Type annotations for `session.create_client("cloudfront").get_distribution`
 method.
 
 Boto3 documentation:
@@ -1268,7 +1263,7 @@ Returns a `Coroutine` for
 Get the configuration information about a distribution.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_distribution_config` method.
+`session.create_client("cloudfront").get_distribution_config` method.
 
 Boto3 documentation:
 [CloudFront.Client.get_distribution_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.get_distribution_config)
@@ -1293,7 +1288,7 @@ Returns a `Coroutine` for
 Get the field-level encryption configuration information.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_field_level_encryption` method.
+`session.create_client("cloudfront").get_field_level_encryption` method.
 
 Boto3 documentation:
 [CloudFront.Client.get_field_level_encryption](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.get_field_level_encryption)
@@ -1318,8 +1313,7 @@ Returns a `Coroutine` for
 Get the field-level encryption configuration information.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_field_level_encryption_config`
-method.
+`session.create_client("cloudfront").get_field_level_encryption_config` method.
 
 Boto3 documentation:
 [CloudFront.Client.get_field_level_encryption_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.get_field_level_encryption_config)
@@ -1344,7 +1338,7 @@ Returns a `Coroutine` for
 Get the field-level encryption profile information.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_field_level_encryption_profile`
+`session.create_client("cloudfront").get_field_level_encryption_profile`
 method.
 
 Boto3 documentation:
@@ -1370,7 +1364,7 @@ Returns a `Coroutine` for
 Get the field-level encryption profile configuration information.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_field_level_encryption_profile_config`
+`session.create_client("cloudfront").get_field_level_encryption_profile_config`
 method.
 
 Boto3 documentation:
@@ -1395,8 +1389,7 @@ Returns a `Coroutine` for
 
 Gets the code of a CloudFront function.
 
-Type annotations for `aiobotocore.create_client("cloudfront").get_function`
-method.
+Type annotations for `session.create_client("cloudfront").get_function` method.
 
 Boto3 documentation:
 [CloudFront.Client.get_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.get_function)
@@ -1420,7 +1413,7 @@ Returns a `Coroutine` for
 
 Get the information about an invalidation.
 
-Type annotations for `aiobotocore.create_client("cloudfront").get_invalidation`
+Type annotations for `session.create_client("cloudfront").get_invalidation`
 method.
 
 Boto3 documentation:
@@ -1446,7 +1439,7 @@ Returns a `Coroutine` for
 Gets a key group, including the date and time when the key group was last
 modified.
 
-Type annotations for `aiobotocore.create_client("cloudfront").get_key_group`
+Type annotations for `session.create_client("cloudfront").get_key_group`
 method.
 
 Boto3 documentation:
@@ -1470,8 +1463,8 @@ Returns a `Coroutine` for
 
 Gets a key group configuration.
 
-Type annotations for
-`aiobotocore.create_client("cloudfront").get_key_group_config` method.
+Type annotations for `session.create_client("cloudfront").get_key_group_config`
+method.
 
 Boto3 documentation:
 [CloudFront.Client.get_key_group_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.get_key_group_config)
@@ -1497,7 +1490,7 @@ Gets information about whether additional CloudWatch metrics are enabled for
 the specified CloudFront distribution.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_monitoring_subscription` method.
+`session.create_client("cloudfront").get_monitoring_subscription` method.
 
 Boto3 documentation:
 [CloudFront.Client.get_monitoring_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.get_monitoring_subscription)
@@ -1523,7 +1516,7 @@ Gets an origin request policy, including the following metadata * The policy’s
 identifier.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_origin_request_policy` method.
+`session.create_client("cloudfront").get_origin_request_policy` method.
 
 Boto3 documentation:
 [CloudFront.Client.get_origin_request_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.get_origin_request_policy)
@@ -1548,8 +1541,7 @@ Returns a `Coroutine` for
 Gets an origin request policy configuration.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_origin_request_policy_config`
-method.
+`session.create_client("cloudfront").get_origin_request_policy_config` method.
 
 Boto3 documentation:
 [CloudFront.Client.get_origin_request_policy_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.get_origin_request_policy_config)
@@ -1573,7 +1565,7 @@ Returns a `Coroutine` for
 
 Gets a public key.
 
-Type annotations for `aiobotocore.create_client("cloudfront").get_public_key`
+Type annotations for `session.create_client("cloudfront").get_public_key`
 method.
 
 Boto3 documentation:
@@ -1598,7 +1590,7 @@ Returns a `Coroutine` for
 Gets a public key configuration.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_public_key_config` method.
+`session.create_client("cloudfront").get_public_key_config` method.
 
 Boto3 documentation:
 [CloudFront.Client.get_public_key_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.get_public_key_config)
@@ -1623,7 +1615,7 @@ Returns a `Coroutine` for
 Gets a real-time log configuration.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_realtime_log_config` method.
+`session.create_client("cloudfront").get_realtime_log_config` method.
 
 Boto3 documentation:
 [CloudFront.Client.get_realtime_log_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.get_realtime_log_config)
@@ -1650,7 +1642,7 @@ Gets a response headers policy, including metadata (the policy’s identifier an
 the date and time when the policy was last modified).
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_response_headers_policy` method.
+`session.create_client("cloudfront").get_response_headers_policy` method.
 
 Boto3 documentation:
 [CloudFront.Client.get_response_headers_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.get_response_headers_policy)
@@ -1675,7 +1667,7 @@ Returns a `Coroutine` for
 Gets a response headers policy configuration.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_response_headers_policy_config`
+`session.create_client("cloudfront").get_response_headers_policy_config`
 method.
 
 Boto3 documentation:
@@ -1702,7 +1694,7 @@ Gets information about a specified RTMP distribution, including the
 distribution configuration.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_streaming_distribution` method.
+`session.create_client("cloudfront").get_streaming_distribution` method.
 
 Boto3 documentation:
 [CloudFront.Client.get_streaming_distribution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.get_streaming_distribution)
@@ -1727,8 +1719,7 @@ Returns a `Coroutine` for
 Get the configuration information about a streaming distribution.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_streaming_distribution_config`
-method.
+`session.create_client("cloudfront").get_streaming_distribution_config` method.
 
 Boto3 documentation:
 [CloudFront.Client.get_streaming_distribution_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.get_streaming_distribution_config)
@@ -1752,8 +1743,8 @@ Returns a `Coroutine` for
 
 Gets a list of cache policies.
 
-Type annotations for
-`aiobotocore.create_client("cloudfront").list_cache_policies` method.
+Type annotations for `session.create_client("cloudfront").list_cache_policies`
+method.
 
 Boto3 documentation:
 [CloudFront.Client.list_cache_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.list_cache_policies)
@@ -1780,7 +1771,7 @@ Returns a `Coroutine` for
 Lists origin access identities.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").list_cloud_front_origin_access_identities`
+`session.create_client("cloudfront").list_cloud_front_origin_access_identities`
 method.
 
 Boto3 documentation:
@@ -1809,7 +1800,7 @@ conflict or overlap with the provided alias, and the associated CloudFront
 distributions and Amazon Web Services accounts for each conflicting alias.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").list_conflicting_aliases` method.
+`session.create_client("cloudfront").list_conflicting_aliases` method.
 
 Boto3 documentation:
 [CloudFront.Client.list_conflicting_aliases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.list_conflicting_aliases)
@@ -1836,8 +1827,8 @@ Returns a `Coroutine` for
 
 List CloudFront distributions.
 
-Type annotations for
-`aiobotocore.create_client("cloudfront").list_distributions` method.
+Type annotations for `session.create_client("cloudfront").list_distributions`
+method.
 
 Boto3 documentation:
 [CloudFront.Client.list_distributions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.list_distributions)
@@ -1864,7 +1855,7 @@ Gets a list of distribution IDs for distributions that have a cache behavior
 that’s associated with the specified cache policy.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").list_distributions_by_cache_policy_id`
+`session.create_client("cloudfront").list_distributions_by_cache_policy_id`
 method.
 
 Boto3 documentation:
@@ -1893,8 +1884,7 @@ Gets a list of distribution IDs for distributions that have a cache behavior
 that references the specified key group.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").list_distributions_by_key_group`
-method.
+`session.create_client("cloudfront").list_distributions_by_key_group` method.
 
 Boto3 documentation:
 [CloudFront.Client.list_distributions_by_key_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.list_distributions_by_key_group)
@@ -1922,7 +1912,7 @@ Gets a list of distribution IDs for distributions that have a cache behavior
 that’s associated with the specified origin request policy.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").list_distributions_by_origin_request_policy_id`
+`session.create_client("cloudfront").list_distributions_by_origin_request_policy_id`
 method.
 
 Boto3 documentation:
@@ -1952,7 +1942,7 @@ Gets a list of distributions that have a cache behavior that’s associated with
 the specified real-time log configuration.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").list_distributions_by_realtime_log_config`
+`session.create_client("cloudfront").list_distributions_by_realtime_log_config`
 method.
 
 Boto3 documentation:
@@ -1982,7 +1972,7 @@ Gets a list of distribution IDs for distributions that have a cache behavior
 that’s associated with the specified response headers policy.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").list_distributions_by_response_headers_policy_id`
+`session.create_client("cloudfront").list_distributions_by_response_headers_policy_id`
 method.
 
 Boto3 documentation:
@@ -2011,8 +2001,7 @@ Returns a `Coroutine` for
 List the distributions that are associated with a specified WAF web ACL.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").list_distributions_by_web_acl_id`
-method.
+`session.create_client("cloudfront").list_distributions_by_web_acl_id` method.
 
 Boto3 documentation:
 [CloudFront.Client.list_distributions_by_web_acl_id](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.list_distributions_by_web_acl_id)
@@ -2040,7 +2029,7 @@ List all field-level encryption configurations that have been created in
 CloudFront for this account.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").list_field_level_encryption_configs`
+`session.create_client("cloudfront").list_field_level_encryption_configs`
 method.
 
 Boto3 documentation:
@@ -2068,7 +2057,7 @@ Request a list of field-level encryption profiles that have been created in
 CloudFront for this account.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").list_field_level_encryption_profiles`
+`session.create_client("cloudfront").list_field_level_encryption_profiles`
 method.
 
 Boto3 documentation:
@@ -2094,7 +2083,7 @@ Returns a `Coroutine` for
 
 Gets a list of all CloudFront functions in your Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("cloudfront").list_functions`
+Type annotations for `session.create_client("cloudfront").list_functions`
 method.
 
 Boto3 documentation:
@@ -2120,8 +2109,8 @@ Returns a `Coroutine` for
 
 Lists invalidation batches.
 
-Type annotations for
-`aiobotocore.create_client("cloudfront").list_invalidations` method.
+Type annotations for `session.create_client("cloudfront").list_invalidations`
+method.
 
 Boto3 documentation:
 [CloudFront.Client.list_invalidations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.list_invalidations)
@@ -2147,7 +2136,7 @@ Returns a `Coroutine` for
 
 Gets a list of key groups.
 
-Type annotations for `aiobotocore.create_client("cloudfront").list_key_groups`
+Type annotations for `session.create_client("cloudfront").list_key_groups`
 method.
 
 Boto3 documentation:
@@ -2173,7 +2162,7 @@ Returns a `Coroutine` for
 Gets a list of origin request policies.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").list_origin_request_policies` method.
+`session.create_client("cloudfront").list_origin_request_policies` method.
 
 Boto3 documentation:
 [CloudFront.Client.list_origin_request_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.list_origin_request_policies)
@@ -2200,7 +2189,7 @@ Returns a `Coroutine` for
 
 List all public keys that have been added to CloudFront for this account.
 
-Type annotations for `aiobotocore.create_client("cloudfront").list_public_keys`
+Type annotations for `session.create_client("cloudfront").list_public_keys`
 method.
 
 Boto3 documentation:
@@ -2226,7 +2215,7 @@ Returns a `Coroutine` for
 Gets a list of real-time log configurations.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").list_realtime_log_configs` method.
+`session.create_client("cloudfront").list_realtime_log_configs` method.
 
 Boto3 documentation:
 [CloudFront.Client.list_realtime_log_configs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.list_realtime_log_configs)
@@ -2252,8 +2241,7 @@ Returns a `Coroutine` for
 Gets a list of response headers policies.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").list_response_headers_policies`
-method.
+`session.create_client("cloudfront").list_response_headers_policies` method.
 
 Boto3 documentation:
 [CloudFront.Client.list_response_headers_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.list_response_headers_policies)
@@ -2281,7 +2269,7 @@ Returns a `Coroutine` for
 List streaming distributions.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").list_streaming_distributions` method.
+`session.create_client("cloudfront").list_streaming_distributions` method.
 
 Boto3 documentation:
 [CloudFront.Client.list_streaming_distributions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.list_streaming_distributions)
@@ -2307,7 +2295,7 @@ Returns a `Coroutine` for
 List tags for a CloudFront resource.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").list_tags_for_resource` method.
+`session.create_client("cloudfront").list_tags_for_resource` method.
 
 Boto3 documentation:
 [CloudFront.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.list_tags_for_resource)
@@ -2332,7 +2320,7 @@ Returns a `Coroutine` for
 Publishes a CloudFront function by copying the function code from the
 `DEVELOPMENT` stage to `LIVE`.
 
-Type annotations for `aiobotocore.create_client("cloudfront").publish_function`
+Type annotations for `session.create_client("cloudfront").publish_function`
 method.
 
 Boto3 documentation:
@@ -2357,8 +2345,7 @@ Returns a `Coroutine` for
 
 Add tags to a CloudFront resource.
 
-Type annotations for `aiobotocore.create_client("cloudfront").tag_resource`
-method.
+Type annotations for `session.create_client("cloudfront").tag_resource` method.
 
 Boto3 documentation:
 [CloudFront.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.tag_resource)
@@ -2379,7 +2366,7 @@ Keyword-only arguments:
 
 Tests a CloudFront function.
 
-Type annotations for `aiobotocore.create_client("cloudfront").test_function`
+Type annotations for `session.create_client("cloudfront").test_function`
 method.
 
 Boto3 documentation:
@@ -2407,7 +2394,7 @@ Returns a `Coroutine` for
 
 Remove tags from a CloudFront resource.
 
-Type annotations for `aiobotocore.create_client("cloudfront").untag_resource`
+Type annotations for `session.create_client("cloudfront").untag_resource`
 method.
 
 Boto3 documentation:
@@ -2429,8 +2416,8 @@ Keyword-only arguments:
 
 Updates a cache policy configuration.
 
-Type annotations for
-`aiobotocore.create_client("cloudfront").update_cache_policy` method.
+Type annotations for `session.create_client("cloudfront").update_cache_policy`
+method.
 
 Boto3 documentation:
 [CloudFront.Client.update_cache_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.update_cache_policy)
@@ -2459,7 +2446,7 @@ Returns a `Coroutine` for
 Update an origin access identity.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").update_cloud_front_origin_access_identity`
+`session.create_client("cloudfront").update_cloud_front_origin_access_identity`
 method.
 
 Boto3 documentation:
@@ -2488,8 +2475,8 @@ Returns a `Coroutine` for
 
 Updates the configuration for a web distribution.
 
-Type annotations for
-`aiobotocore.create_client("cloudfront").update_distribution` method.
+Type annotations for `session.create_client("cloudfront").update_distribution`
+method.
 
 Boto3 documentation:
 [CloudFront.Client.update_distribution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.update_distribution)
@@ -2518,7 +2505,7 @@ Returns a `Coroutine` for
 Update a field-level encryption configuration.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").update_field_level_encryption_config`
+`session.create_client("cloudfront").update_field_level_encryption_config`
 method.
 
 Boto3 documentation:
@@ -2548,7 +2535,7 @@ Returns a `Coroutine` for
 Update a field-level encryption profile.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").update_field_level_encryption_profile`
+`session.create_client("cloudfront").update_field_level_encryption_profile`
 method.
 
 Boto3 documentation:
@@ -2577,7 +2564,7 @@ Returns a `Coroutine` for
 
 Updates a CloudFront function.
 
-Type annotations for `aiobotocore.create_client("cloudfront").update_function`
+Type annotations for `session.create_client("cloudfront").update_function`
 method.
 
 Boto3 documentation:
@@ -2606,7 +2593,7 @@ Returns a `Coroutine` for
 
 Updates a key group.
 
-Type annotations for `aiobotocore.create_client("cloudfront").update_key_group`
+Type annotations for `session.create_client("cloudfront").update_key_group`
 method.
 
 Boto3 documentation:
@@ -2634,7 +2621,7 @@ Returns a `Coroutine` for
 Updates an origin request policy configuration.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").update_origin_request_policy` method.
+`session.create_client("cloudfront").update_origin_request_policy` method.
 
 Boto3 documentation:
 [CloudFront.Client.update_origin_request_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.update_origin_request_policy)
@@ -2662,8 +2649,8 @@ Returns a `Coroutine` for
 
 Update public key information.
 
-Type annotations for
-`aiobotocore.create_client("cloudfront").update_public_key` method.
+Type annotations for `session.create_client("cloudfront").update_public_key`
+method.
 
 Boto3 documentation:
 [CloudFront.Client.update_public_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.update_public_key)
@@ -2690,7 +2677,7 @@ Returns a `Coroutine` for
 Updates a real-time log configuration.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").update_realtime_log_config` method.
+`session.create_client("cloudfront").update_realtime_log_config` method.
 
 Boto3 documentation:
 [CloudFront.Client.update_realtime_log_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.update_realtime_log_config)
@@ -2719,8 +2706,7 @@ Returns a `Coroutine` for
 Updates a response headers policy.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").update_response_headers_policy`
-method.
+`session.create_client("cloudfront").update_response_headers_policy` method.
 
 Boto3 documentation:
 [CloudFront.Client.update_response_headers_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.update_response_headers_policy)
@@ -2749,7 +2735,7 @@ Returns a `Coroutine` for
 Update a streaming distribution.
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").update_streaming_distribution` method.
+`session.create_client("cloudfront").update_streaming_distribution` method.
 
 Boto3 documentation:
 [CloudFront.Client.update_streaming_distribution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.update_streaming_distribution)
@@ -2771,12 +2757,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateStreamingDistributionResultTypeDef](./type_defs.md#updatestreamingdistributionresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("cloudfront").__aenter__` method.
+
+Boto3 documentation:
+[CloudFront.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CloudFrontClient](#cloudfrontclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("cloudfront").__aexit__` method.
+
+Boto3 documentation:
+[CloudFront.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html#CloudFront.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("cloudfront").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("cloudfront").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_cloud_front_origin_access_identities")` ->
   [ListCloudFrontOriginAccessIdentitiesPaginator](./paginators.md#listcloudfrontoriginaccessidentitiespaginator)
@@ -2791,8 +2809,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("cloudfront").get_waiter`
-method with overloads.
+Type annotations for `session.create_client("cloudfront").get_waiter` method
+with overloads.
 
 - `client.get_waiter("distribution_deployed")` ->
   [DistributionDeployedWaiter](./waiters.md#distributiondeployedwaiter)

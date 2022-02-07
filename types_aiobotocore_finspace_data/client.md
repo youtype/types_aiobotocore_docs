@@ -30,22 +30,25 @@ type annotations stubs module
     - [list_datasets](#list_datasets)
     - [update_changeset](#update_changeset)
     - [update_dataset](#update_dataset)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="finspacedataclient"></a>
 
 ## FinSpaceDataClient
 
-Type annotations for `aiobotocore.create_client("finspace-data")`
+Type annotations for `session.create_client("finspace-data")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_finspace_data.client import FinSpaceDataClient
 
-def get_finspace-data_client() -> FinSpaceDataClient:
-    return Session().client("finspace-data")
+session = get_session()
+async with session.create_client("finspace-data") as client:
+    client: FinSpaceDataClient
 ```
 
 Boto3 documentation:
@@ -86,7 +89,7 @@ Exceptions:
 
 FinSpaceDataClient exceptions.
 
-Type annotations for `aiobotocore.create_client("finspace-data").exceptions`
+Type annotations for `session.create_client("finspace-data").exceptions`
 method.
 
 Boto3 documentation:
@@ -100,19 +103,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("finspace-data").can_paginate`
+Type annotations for `session.create_client("finspace-data").can_paginate`
 method.
 
 Boto3 documentation:
 [FinSpaceData.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace-data.html#FinSpaceData.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_changeset"></a>
 
@@ -120,8 +121,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates a new Changeset in a FinSpace Dataset.
 
-Type annotations for
-`aiobotocore.create_client("finspace-data").create_changeset` method.
+Type annotations for `session.create_client("finspace-data").create_changeset`
+method.
 
 Boto3 documentation:
 [FinSpaceData.Client.create_changeset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace-data.html#FinSpaceData.Client.create_changeset)
@@ -148,8 +149,8 @@ Returns a `Coroutine` for
 
 Creates a Dataview for a Dataset.
 
-Type annotations for
-`aiobotocore.create_client("finspace-data").create_data_view` method.
+Type annotations for `session.create_client("finspace-data").create_data_view`
+method.
 
 Boto3 documentation:
 [FinSpaceData.Client.create_data_view](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace-data.html#FinSpaceData.Client.create_data_view)
@@ -180,8 +181,8 @@ Returns a `Coroutine` for
 
 Creates a new FinSpace Dataset.
 
-Type annotations for
-`aiobotocore.create_client("finspace-data").create_dataset` method.
+Type annotations for `session.create_client("finspace-data").create_dataset`
+method.
 
 Boto3 documentation:
 [FinSpaceData.Client.create_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace-data.html#FinSpaceData.Client.create_dataset)
@@ -214,8 +215,8 @@ Returns a `Coroutine` for
 
 Deletes a FinSpace Dataset.
 
-Type annotations for
-`aiobotocore.create_client("finspace-data").delete_dataset` method.
+Type annotations for `session.create_client("finspace-data").delete_dataset`
+method.
 
 Boto3 documentation:
 [FinSpaceData.Client.delete_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace-data.html#FinSpaceData.Client.delete_dataset)
@@ -240,7 +241,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("finspace-data").generate_presigned_url` method.
+`session.create_client("finspace-data").generate_presigned_url` method.
 
 Boto3 documentation:
 [FinSpaceData.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace-data.html#FinSpaceData.Client.generate_presigned_url)
@@ -263,7 +264,7 @@ Returns a `Coroutine` for `str`.
 
 Get information about a Changeset.
 
-Type annotations for `aiobotocore.create_client("finspace-data").get_changeset`
+Type annotations for `session.create_client("finspace-data").get_changeset`
 method.
 
 Boto3 documentation:
@@ -288,7 +289,7 @@ Returns a `Coroutine` for
 
 Gets information about a Dataview.
 
-Type annotations for `aiobotocore.create_client("finspace-data").get_data_view`
+Type annotations for `session.create_client("finspace-data").get_data_view`
 method.
 
 Boto3 documentation:
@@ -313,7 +314,7 @@ Returns a `Coroutine` for
 
 Returns information about a Dataset.
 
-Type annotations for `aiobotocore.create_client("finspace-data").get_dataset`
+Type annotations for `session.create_client("finspace-data").get_dataset`
 method.
 
 Boto3 documentation:
@@ -338,7 +339,7 @@ Returns a `Coroutine` for
 Request programmatic credentials to use with FinSpace SDK.
 
 Type annotations for
-`aiobotocore.create_client("finspace-data").get_programmatic_access_credentials`
+`session.create_client("finspace-data").get_programmatic_access_credentials`
 method.
 
 Boto3 documentation:
@@ -366,7 +367,7 @@ A temporary Amazon S3 location, where you can copy your files from a source
 location to stage or use as a scratch space in FinSpace notebook.
 
 Type annotations for
-`aiobotocore.create_client("finspace-data").get_working_location` method.
+`session.create_client("finspace-data").get_working_location` method.
 
 Boto3 documentation:
 [FinSpaceData.Client.get_working_location](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace-data.html#FinSpaceData.Client.get_working_location)
@@ -390,8 +391,8 @@ Returns a `Coroutine` for
 
 Lists the FinSpace Changesets for a Dataset.
 
-Type annotations for
-`aiobotocore.create_client("finspace-data").list_changesets` method.
+Type annotations for `session.create_client("finspace-data").list_changesets`
+method.
 
 Boto3 documentation:
 [FinSpaceData.Client.list_changesets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace-data.html#FinSpaceData.Client.list_changesets)
@@ -416,8 +417,8 @@ Returns a `Coroutine` for
 
 Lists all available Dataviews for a Dataset.
 
-Type annotations for
-`aiobotocore.create_client("finspace-data").list_data_views` method.
+Type annotations for `session.create_client("finspace-data").list_data_views`
+method.
 
 Boto3 documentation:
 [FinSpaceData.Client.list_data_views](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace-data.html#FinSpaceData.Client.list_data_views)
@@ -442,7 +443,7 @@ Returns a `Coroutine` for
 
 Lists all of the active Datasets that a user has access to.
 
-Type annotations for `aiobotocore.create_client("finspace-data").list_datasets`
+Type annotations for `session.create_client("finspace-data").list_datasets`
 method.
 
 Boto3 documentation:
@@ -467,8 +468,8 @@ Returns a `Coroutine` for
 
 Updates a FinSpace Changeset.
 
-Type annotations for
-`aiobotocore.create_client("finspace-data").update_changeset` method.
+Type annotations for `session.create_client("finspace-data").update_changeset`
+method.
 
 Boto3 documentation:
 [FinSpaceData.Client.update_changeset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace-data.html#FinSpaceData.Client.update_changeset)
@@ -495,8 +496,8 @@ Returns a `Coroutine` for
 
 Updates a FinSpace Dataset.
 
-Type annotations for
-`aiobotocore.create_client("finspace-data").update_dataset` method.
+Type annotations for `session.create_client("finspace-data").update_dataset`
+method.
 
 Boto3 documentation:
 [FinSpaceData.Client.update_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace-data.html#FinSpaceData.Client.update_dataset)
@@ -519,11 +520,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateDatasetResponseTypeDef](./type_defs.md#updatedatasetresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("finspace-data").__aenter__`
+method.
+
+Boto3 documentation:
+[FinSpaceData.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace-data.html#FinSpaceData.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [FinSpaceDataClient](#finspacedataclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("finspace-data").__aexit__` method.
+
+Boto3 documentation:
+[FinSpaceData.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace-data.html#FinSpaceData.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("finspace-data").get_paginator`
+Type annotations for `session.create_client("finspace-data").get_paginator`
 method with overloads.
 
 - `client.get_paginator("list_changesets")` ->

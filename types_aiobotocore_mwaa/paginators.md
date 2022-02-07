@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListEnvironmentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mwaa").get_paginator("list_environments")`.
+`session.create_client("mwaa").get_paginator("list_environments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mwaa.paginator import ListEnvironmentsPaginator
 
-def get_list_environments_paginator() -> ListEnvironmentsPaginator:
-    return Session().create_client("mwaa").get_paginator("list_environments")
+session = get_session()
+async with session.create_client("mwaa") as client:
+    client: MWAAClient
+    paginator: ListEnvironmentsPaginator = client.get_paginator("list_environments")
 ```
 
 Boto3 documentation:

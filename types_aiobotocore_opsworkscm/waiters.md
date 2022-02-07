@@ -17,7 +17,7 @@ type annotations stubs module
 ## NodeAssociatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("opsworkscm").get_waiter("node_associated")`.
+`session.create_client("opsworkscm").get_waiter("node_associated")`.
 
 Can be used directly:
 
@@ -27,7 +27,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_opsworkscm.waiter import NodeAssociatedWaiter
 
 def get_node_associated_waiter() -> NodeAssociatedWaiter:
-    return Session().create_client("opsworkscm").get_waiter("node_associated")
+    return Session().client("opsworkscm").get_waiter("node_associated")
 ```
 
 Boto3 documentation:

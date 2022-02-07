@@ -53,22 +53,25 @@ type annotations stubs module
     - [update_branch](#update_branch)
     - [update_domain_association](#update_domain_association)
     - [update_webhook](#update_webhook)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="amplifyclient"></a>
 
 ## AmplifyClient
 
-Type annotations for `aiobotocore.create_client("amplify")`
+Type annotations for `session.create_client("amplify")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_amplify.client import AmplifyClient
 
-def get_amplify_client() -> AmplifyClient:
-    return Session().client("amplify")
+session = get_session()
+async with session.create_client("amplify") as client:
+    client: AmplifyClient
 ```
 
 Boto3 documentation:
@@ -109,7 +112,7 @@ Exceptions:
 
 AmplifyClient exceptions.
 
-Type annotations for `aiobotocore.create_client("amplify").exceptions` method.
+Type annotations for `session.create_client("amplify").exceptions` method.
 
 Boto3 documentation:
 [Amplify.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.exceptions)
@@ -122,19 +125,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("amplify").can_paginate`
-method.
+Type annotations for `session.create_client("amplify").can_paginate` method.
 
 Boto3 documentation:
 [Amplify.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_app"></a>
 
@@ -142,7 +142,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a new Amplify app.
 
-Type annotations for `aiobotocore.create_client("amplify").create_app` method.
+Type annotations for `session.create_client("amplify").create_app` method.
 
 Boto3 documentation:
 [Amplify.Client.create_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.create_app)
@@ -186,7 +186,7 @@ Returns a `Coroutine` for
 Creates a new backend environment for an Amplify app.
 
 Type annotations for
-`aiobotocore.create_client("amplify").create_backend_environment` method.
+`session.create_client("amplify").create_backend_environment` method.
 
 Boto3 documentation:
 [Amplify.Client.create_backend_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.create_backend_environment)
@@ -213,8 +213,7 @@ Returns a `Coroutine` for
 
 Creates a new branch for an Amplify app.
 
-Type annotations for `aiobotocore.create_client("amplify").create_branch`
-method.
+Type annotations for `session.create_client("amplify").create_branch` method.
 
 Boto3 documentation:
 [Amplify.Client.create_branch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.create_branch)
@@ -254,7 +253,7 @@ Returns a `Coroutine` for
 
 Creates a deployment for a manually deployed Amplify app.
 
-Type annotations for `aiobotocore.create_client("amplify").create_deployment`
+Type annotations for `session.create_client("amplify").create_deployment`
 method.
 
 Boto3 documentation:
@@ -281,7 +280,7 @@ Returns a `Coroutine` for
 Creates a new domain association for an Amplify app.
 
 Type annotations for
-`aiobotocore.create_client("amplify").create_domain_association` method.
+`session.create_client("amplify").create_domain_association` method.
 
 Boto3 documentation:
 [Amplify.Client.create_domain_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.create_domain_association)
@@ -312,8 +311,7 @@ Returns a `Coroutine` for
 
 Creates a new webhook on an Amplify app.
 
-Type annotations for `aiobotocore.create_client("amplify").create_webhook`
-method.
+Type annotations for `session.create_client("amplify").create_webhook` method.
 
 Boto3 documentation:
 [Amplify.Client.create_webhook](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.create_webhook)
@@ -338,7 +336,7 @@ Returns a `Coroutine` for
 
 Deletes an existing Amplify app specified by an app ID.
 
-Type annotations for `aiobotocore.create_client("amplify").delete_app` method.
+Type annotations for `session.create_client("amplify").delete_app` method.
 
 Boto3 documentation:
 [Amplify.Client.delete_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.delete_app)
@@ -362,7 +360,7 @@ Returns a `Coroutine` for
 Deletes a backend environment for an Amplify app.
 
 Type annotations for
-`aiobotocore.create_client("amplify").delete_backend_environment` method.
+`session.create_client("amplify").delete_backend_environment` method.
 
 Boto3 documentation:
 [Amplify.Client.delete_backend_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.delete_backend_environment)
@@ -387,8 +385,7 @@ Returns a `Coroutine` for
 
 Deletes a branch for an Amplify app.
 
-Type annotations for `aiobotocore.create_client("amplify").delete_branch`
-method.
+Type annotations for `session.create_client("amplify").delete_branch` method.
 
 Boto3 documentation:
 [Amplify.Client.delete_branch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.delete_branch)
@@ -413,7 +410,7 @@ Returns a `Coroutine` for
 Deletes a domain association for an Amplify app.
 
 Type annotations for
-`aiobotocore.create_client("amplify").delete_domain_association` method.
+`session.create_client("amplify").delete_domain_association` method.
 
 Boto3 documentation:
 [Amplify.Client.delete_domain_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.delete_domain_association)
@@ -438,7 +435,7 @@ Returns a `Coroutine` for
 
 Deletes a job for a branch of an Amplify app.
 
-Type annotations for `aiobotocore.create_client("amplify").delete_job` method.
+Type annotations for `session.create_client("amplify").delete_job` method.
 
 Boto3 documentation:
 [Amplify.Client.delete_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.delete_job)
@@ -463,8 +460,7 @@ Returns a `Coroutine` for
 
 Deletes a webhook.
 
-Type annotations for `aiobotocore.create_client("amplify").delete_webhook`
-method.
+Type annotations for `session.create_client("amplify").delete_webhook` method.
 
 Boto3 documentation:
 [Amplify.Client.delete_webhook](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.delete_webhook)
@@ -488,8 +484,8 @@ Returns a `Coroutine` for
 Returns the website access logs for a specific time range using a presigned
 URL.
 
-Type annotations for
-`aiobotocore.create_client("amplify").generate_access_logs` method.
+Type annotations for `session.create_client("amplify").generate_access_logs`
+method.
 
 Boto3 documentation:
 [Amplify.Client.generate_access_logs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.generate_access_logs)
@@ -516,8 +512,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("amplify").generate_presigned_url` method.
+Type annotations for `session.create_client("amplify").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Amplify.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.generate_presigned_url)
@@ -540,7 +536,7 @@ Returns a `Coroutine` for `str`.
 
 Returns an existing Amplify app by appID.
 
-Type annotations for `aiobotocore.create_client("amplify").get_app` method.
+Type annotations for `session.create_client("amplify").get_app` method.
 
 Boto3 documentation:
 [Amplify.Client.get_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.get_app)
@@ -563,7 +559,7 @@ Returns a `Coroutine` for
 
 Returns the artifact info that corresponds to an artifact id.
 
-Type annotations for `aiobotocore.create_client("amplify").get_artifact_url`
+Type annotations for `session.create_client("amplify").get_artifact_url`
 method.
 
 Boto3 documentation:
@@ -587,8 +583,8 @@ Returns a `Coroutine` for
 
 Returns a backend environment for an Amplify app.
 
-Type annotations for
-`aiobotocore.create_client("amplify").get_backend_environment` method.
+Type annotations for `session.create_client("amplify").get_backend_environment`
+method.
 
 Boto3 documentation:
 [Amplify.Client.get_backend_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.get_backend_environment)
@@ -613,7 +609,7 @@ Returns a `Coroutine` for
 
 Returns a branch for an Amplify app.
 
-Type annotations for `aiobotocore.create_client("amplify").get_branch` method.
+Type annotations for `session.create_client("amplify").get_branch` method.
 
 Boto3 documentation:
 [Amplify.Client.get_branch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.get_branch)
@@ -637,8 +633,8 @@ Returns a `Coroutine` for
 
 Returns the domain information for an Amplify app.
 
-Type annotations for
-`aiobotocore.create_client("amplify").get_domain_association` method.
+Type annotations for `session.create_client("amplify").get_domain_association`
+method.
 
 Boto3 documentation:
 [Amplify.Client.get_domain_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.get_domain_association)
@@ -663,7 +659,7 @@ Returns a `Coroutine` for
 
 Returns a job for a branch of an Amplify app.
 
-Type annotations for `aiobotocore.create_client("amplify").get_job` method.
+Type annotations for `session.create_client("amplify").get_job` method.
 
 Boto3 documentation:
 [Amplify.Client.get_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.get_job)
@@ -688,7 +684,7 @@ Returns a `Coroutine` for
 
 Returns the webhook information that corresponds to a specified webhook ID.
 
-Type annotations for `aiobotocore.create_client("amplify").get_webhook` method.
+Type annotations for `session.create_client("amplify").get_webhook` method.
 
 Boto3 documentation:
 [Amplify.Client.get_webhook](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.get_webhook)
@@ -711,7 +707,7 @@ Returns a `Coroutine` for
 
 Returns a list of the existing Amplify apps.
 
-Type annotations for `aiobotocore.create_client("amplify").list_apps` method.
+Type annotations for `session.create_client("amplify").list_apps` method.
 
 Boto3 documentation:
 [Amplify.Client.list_apps](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.list_apps)
@@ -735,8 +731,7 @@ Returns a `Coroutine` for
 
 Returns a list of artifacts for a specified app, branch, and job.
 
-Type annotations for `aiobotocore.create_client("amplify").list_artifacts`
-method.
+Type annotations for `session.create_client("amplify").list_artifacts` method.
 
 Boto3 documentation:
 [Amplify.Client.list_artifacts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.list_artifacts)
@@ -764,7 +759,7 @@ Returns a `Coroutine` for
 Lists the backend environments for an Amplify app.
 
 Type annotations for
-`aiobotocore.create_client("amplify").list_backend_environments` method.
+`session.create_client("amplify").list_backend_environments` method.
 
 Boto3 documentation:
 [Amplify.Client.list_backend_environments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.list_backend_environments)
@@ -791,8 +786,7 @@ Returns a `Coroutine` for
 
 Lists the branches of an Amplify app.
 
-Type annotations for `aiobotocore.create_client("amplify").list_branches`
-method.
+Type annotations for `session.create_client("amplify").list_branches` method.
 
 Boto3 documentation:
 [Amplify.Client.list_branches](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.list_branches)
@@ -818,7 +812,7 @@ Returns a `Coroutine` for
 Returns the domain associations for an Amplify app.
 
 Type annotations for
-`aiobotocore.create_client("amplify").list_domain_associations` method.
+`session.create_client("amplify").list_domain_associations` method.
 
 Boto3 documentation:
 [Amplify.Client.list_domain_associations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.list_domain_associations)
@@ -844,7 +838,7 @@ Returns a `Coroutine` for
 
 Lists the jobs for a branch of an Amplify app.
 
-Type annotations for `aiobotocore.create_client("amplify").list_jobs` method.
+Type annotations for `session.create_client("amplify").list_jobs` method.
 
 Boto3 documentation:
 [Amplify.Client.list_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.list_jobs)
@@ -870,8 +864,8 @@ Returns a `Coroutine` for
 
 Returns a list of tags for a specified Amazon Resource Name (ARN).
 
-Type annotations for
-`aiobotocore.create_client("amplify").list_tags_for_resource` method.
+Type annotations for `session.create_client("amplify").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Amplify.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.list_tags_for_resource)
@@ -895,8 +889,7 @@ Returns a `Coroutine` for
 
 Returns a list of webhooks for an Amplify app.
 
-Type annotations for `aiobotocore.create_client("amplify").list_webhooks`
-method.
+Type annotations for `session.create_client("amplify").list_webhooks` method.
 
 Boto3 documentation:
 [Amplify.Client.list_webhooks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.list_webhooks)
@@ -921,7 +914,7 @@ Returns a `Coroutine` for
 
 Starts a deployment for a manually deployed app.
 
-Type annotations for `aiobotocore.create_client("amplify").start_deployment`
+Type annotations for `session.create_client("amplify").start_deployment`
 method.
 
 Boto3 documentation:
@@ -948,7 +941,7 @@ Returns a `Coroutine` for
 
 Starts a new job for a branch of an Amplify app.
 
-Type annotations for `aiobotocore.create_client("amplify").start_job` method.
+Type annotations for `session.create_client("amplify").start_job` method.
 
 Boto3 documentation:
 [Amplify.Client.start_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.start_job)
@@ -978,7 +971,7 @@ Returns a `Coroutine` for
 
 Stops a job that is in progress for a branch of an Amplify app.
 
-Type annotations for `aiobotocore.create_client("amplify").stop_job` method.
+Type annotations for `session.create_client("amplify").stop_job` method.
 
 Boto3 documentation:
 [Amplify.Client.stop_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.stop_job)
@@ -1003,8 +996,7 @@ Returns a `Coroutine` for
 
 Tags the resource with a tag key and value.
 
-Type annotations for `aiobotocore.create_client("amplify").tag_resource`
-method.
+Type annotations for `session.create_client("amplify").tag_resource` method.
 
 Boto3 documentation:
 [Amplify.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.tag_resource)
@@ -1027,8 +1019,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Untags a resource with a specified Amazon Resource Name (ARN).
 
-Type annotations for `aiobotocore.create_client("amplify").untag_resource`
-method.
+Type annotations for `session.create_client("amplify").untag_resource` method.
 
 Boto3 documentation:
 [Amplify.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.untag_resource)
@@ -1051,7 +1042,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an existing Amplify app.
 
-Type annotations for `aiobotocore.create_client("amplify").update_app` method.
+Type annotations for `session.create_client("amplify").update_app` method.
 
 Boto3 documentation:
 [Amplify.Client.update_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.update_app)
@@ -1094,8 +1085,7 @@ Returns a `Coroutine` for
 
 Updates a branch for an Amplify app.
 
-Type annotations for `aiobotocore.create_client("amplify").update_branch`
-method.
+Type annotations for `session.create_client("amplify").update_branch` method.
 
 Boto3 documentation:
 [Amplify.Client.update_branch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.update_branch)
@@ -1135,7 +1125,7 @@ Returns a `Coroutine` for
 Creates a new domain association for an Amplify app.
 
 Type annotations for
-`aiobotocore.create_client("amplify").update_domain_association` method.
+`session.create_client("amplify").update_domain_association` method.
 
 Boto3 documentation:
 [Amplify.Client.update_domain_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.update_domain_association)
@@ -1166,8 +1156,7 @@ Returns a `Coroutine` for
 
 Updates a webhook.
 
-Type annotations for `aiobotocore.create_client("amplify").update_webhook`
-method.
+Type annotations for `session.create_client("amplify").update_webhook` method.
 
 Boto3 documentation:
 [Amplify.Client.update_webhook](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.update_webhook)
@@ -1186,12 +1175,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateWebhookResultTypeDef](./type_defs.md#updatewebhookresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("amplify").__aenter__` method.
+
+Boto3 documentation:
+[Amplify.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [AmplifyClient](#amplifyclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("amplify").__aexit__` method.
+
+Boto3 documentation:
+[Amplify.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplify.html#Amplify.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("amplify").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("amplify").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_apps")` ->
   [ListAppsPaginator](./paginators.md#listappspaginator)

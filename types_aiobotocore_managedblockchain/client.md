@@ -39,21 +39,24 @@ type annotations stubs module
     - [update_member](#update_member)
     - [update_node](#update_node)
     - [vote_on_proposal](#vote_on_proposal)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="managedblockchainclient"></a>
 
 ## ManagedBlockchainClient
 
-Type annotations for `aiobotocore.create_client("managedblockchain")`
+Type annotations for `session.create_client("managedblockchain")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_managedblockchain.client import ManagedBlockchainClient
 
-def get_managedblockchain_client() -> ManagedBlockchainClient:
-    return Session().client("managedblockchain")
+session = get_session()
+async with session.create_client("managedblockchain") as client:
+    client: ManagedBlockchainClient
 ```
 
 Boto3 documentation:
@@ -97,8 +100,8 @@ Exceptions:
 
 ManagedBlockchainClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("managedblockchain").exceptions` method.
+Type annotations for `session.create_client("managedblockchain").exceptions`
+method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.exceptions)
@@ -111,19 +114,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("managedblockchain").can_paginate` method.
+Type annotations for `session.create_client("managedblockchain").can_paginate`
+method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_member"></a>
 
@@ -131,8 +132,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates a member within a Managed Blockchain network.
 
-Type annotations for
-`aiobotocore.create_client("managedblockchain").create_member` method.
+Type annotations for `session.create_client("managedblockchain").create_member`
+method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.create_member](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.create_member)
@@ -161,7 +162,7 @@ Returns a `Coroutine` for
 Creates a new blockchain network using Amazon Managed Blockchain.
 
 Type annotations for
-`aiobotocore.create_client("managedblockchain").create_network` method.
+`session.create_client("managedblockchain").create_network` method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.create_network](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.create_network)
@@ -196,8 +197,8 @@ Returns a `Coroutine` for
 
 Creates a node on the specified blockchain network.
 
-Type annotations for
-`aiobotocore.create_client("managedblockchain").create_node` method.
+Type annotations for `session.create_client("managedblockchain").create_node`
+method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.create_node](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.create_node)
@@ -229,7 +230,7 @@ network can vote on, for example, a proposal to add a new member to the
 network.
 
 Type annotations for
-`aiobotocore.create_client("managedblockchain").create_proposal` method.
+`session.create_client("managedblockchain").create_proposal` method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.create_proposal](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.create_proposal)
@@ -258,8 +259,8 @@ Returns a `Coroutine` for
 
 Deletes a member.
 
-Type annotations for
-`aiobotocore.create_client("managedblockchain").delete_member` method.
+Type annotations for `session.create_client("managedblockchain").delete_member`
+method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.delete_member](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.delete_member)
@@ -282,8 +283,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a node that your AWS account owns.
 
-Type annotations for
-`aiobotocore.create_client("managedblockchain").delete_node` method.
+Type annotations for `session.create_client("managedblockchain").delete_node`
+method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.delete_node](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.delete_node)
@@ -308,7 +309,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("managedblockchain").generate_presigned_url` method.
+`session.create_client("managedblockchain").generate_presigned_url` method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.generate_presigned_url)
@@ -331,8 +332,8 @@ Returns a `Coroutine` for `str`.
 
 Returns detailed information about a member.
 
-Type annotations for
-`aiobotocore.create_client("managedblockchain").get_member` method.
+Type annotations for `session.create_client("managedblockchain").get_member`
+method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.get_member](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.get_member)
@@ -356,8 +357,8 @@ Returns a `Coroutine` for
 
 Returns detailed information about a network.
 
-Type annotations for
-`aiobotocore.create_client("managedblockchain").get_network` method.
+Type annotations for `session.create_client("managedblockchain").get_network`
+method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.get_network](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.get_network)
@@ -380,7 +381,7 @@ Returns a `Coroutine` for
 
 Returns detailed information about a node.
 
-Type annotations for `aiobotocore.create_client("managedblockchain").get_node`
+Type annotations for `session.create_client("managedblockchain").get_node`
 method.
 
 Boto3 documentation:
@@ -406,8 +407,8 @@ Returns a `Coroutine` for
 
 Returns detailed information about a proposal.
 
-Type annotations for
-`aiobotocore.create_client("managedblockchain").get_proposal` method.
+Type annotations for `session.create_client("managedblockchain").get_proposal`
+method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.get_proposal](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.get_proposal)
@@ -432,7 +433,7 @@ Returns a `Coroutine` for
 Returns a list of all invitations for the current AWS account.
 
 Type annotations for
-`aiobotocore.create_client("managedblockchain").list_invitations` method.
+`session.create_client("managedblockchain").list_invitations` method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.list_invitations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.list_invitations)
@@ -457,8 +458,8 @@ Returns a `Coroutine` for
 Returns a list of the members in a network and properties of their
 configurations.
 
-Type annotations for
-`aiobotocore.create_client("managedblockchain").list_members` method.
+Type annotations for `session.create_client("managedblockchain").list_members`
+method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.list_members](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.list_members)
@@ -487,8 +488,8 @@ Returns a `Coroutine` for
 Returns information about the networks in which the current AWS account
 participates.
 
-Type annotations for
-`aiobotocore.create_client("managedblockchain").list_networks` method.
+Type annotations for `session.create_client("managedblockchain").list_networks`
+method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.list_networks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.list_networks)
@@ -515,8 +516,8 @@ Returns a `Coroutine` for
 
 Returns information about the nodes within a network.
 
-Type annotations for
-`aiobotocore.create_client("managedblockchain").list_nodes` method.
+Type annotations for `session.create_client("managedblockchain").list_nodes`
+method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.list_nodes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.list_nodes)
@@ -545,7 +546,7 @@ Returns the list of votes for a specified proposal, including the value of each
 vote and the unique identifier of the member that cast the vote.
 
 Type annotations for
-`aiobotocore.create_client("managedblockchain").list_proposal_votes` method.
+`session.create_client("managedblockchain").list_proposal_votes` method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.list_proposal_votes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.list_proposal_votes)
@@ -573,7 +574,7 @@ Returns a `Coroutine` for
 Returns a list of proposals for the network.
 
 Type annotations for
-`aiobotocore.create_client("managedblockchain").list_proposals` method.
+`session.create_client("managedblockchain").list_proposals` method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.list_proposals](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.list_proposals)
@@ -599,7 +600,7 @@ Returns a `Coroutine` for
 Returns a list of tags for the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("managedblockchain").list_tags_for_resource` method.
+`session.create_client("managedblockchain").list_tags_for_resource` method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.list_tags_for_resource)
@@ -624,7 +625,7 @@ Returns a `Coroutine` for
 Rejects an invitation to join a network.
 
 Type annotations for
-`aiobotocore.create_client("managedblockchain").reject_invitation` method.
+`session.create_client("managedblockchain").reject_invitation` method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.reject_invitation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.reject_invitation)
@@ -647,8 +648,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds or overwrites the specified tags for the specified Amazon Managed
 Blockchain resource.
 
-Type annotations for
-`aiobotocore.create_client("managedblockchain").tag_resource` method.
+Type annotations for `session.create_client("managedblockchain").tag_resource`
+method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.tag_resource)
@@ -672,7 +673,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes the specified tags from the Amazon Managed Blockchain resource.
 
 Type annotations for
-`aiobotocore.create_client("managedblockchain").untag_resource` method.
+`session.create_client("managedblockchain").untag_resource` method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.untag_resource)
@@ -695,8 +696,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a member configuration with new parameters.
 
-Type annotations for
-`aiobotocore.create_client("managedblockchain").update_member` method.
+Type annotations for `session.create_client("managedblockchain").update_member`
+method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.update_member](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.update_member)
@@ -721,8 +722,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a node configuration with new parameters.
 
-Type annotations for
-`aiobotocore.create_client("managedblockchain").update_node` method.
+Type annotations for `session.create_client("managedblockchain").update_node`
+method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.update_node](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.update_node)
@@ -749,7 +750,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Casts a vote for a specified `ProposalId` on behalf of a member.
 
 Type annotations for
-`aiobotocore.create_client("managedblockchain").vote_on_proposal` method.
+`session.create_client("managedblockchain").vote_on_proposal` method.
 
 Boto3 documentation:
 [ManagedBlockchain.Client.vote_on_proposal](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.vote_on_proposal)
@@ -767,3 +768,37 @@ Keyword-only arguments:
 - `Vote`: [VoteValueType](./literals.md#votevaluetype) *(required)*
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("managedblockchain").__aenter__`
+method.
+
+Boto3 documentation:
+[ManagedBlockchain.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ManagedBlockchainClient](#managedblockchainclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("managedblockchain").__aexit__`
+method.
+
+Boto3 documentation:
+[ManagedBlockchain.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/managedblockchain.html#ManagedBlockchain.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

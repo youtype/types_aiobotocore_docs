@@ -18,17 +18,19 @@ type annotations stubs module
 ## DescribeEnvironmentMembershipsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloud9").get_paginator("describe_environment_memberships")`.
+`session.create_client("cloud9").get_paginator("describe_environment_memberships")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloud9.paginator import DescribeEnvironmentMembershipsPaginator
 
-def get_describe_environment_memberships_paginator() -> DescribeEnvironmentMembershipsPaginator:
-    return Session().create_client("cloud9").get_paginator("describe_environment_memberships")
+session = get_session()
+async with session.create_client("cloud9") as client:
+    client: Cloud9Client
+    paginator: DescribeEnvironmentMembershipsPaginator = client.get_paginator("describe_environment_memberships")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `DescribeEnvironmentMembershipsPaginator.paginate` method:
 ## ListEnvironmentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloud9").get_paginator("list_environments")`.
+`session.create_client("cloud9").get_paginator("list_environments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloud9.paginator import ListEnvironmentsPaginator
 
-def get_list_environments_paginator() -> ListEnvironmentsPaginator:
-    return Session().create_client("cloud9").get_paginator("list_environments")
+session = get_session()
+async with session.create_client("cloud9") as client:
+    client: Cloud9Client
+    paginator: ListEnvironmentsPaginator = client.get_paginator("list_environments")
 ```
 
 Boto3 documentation:

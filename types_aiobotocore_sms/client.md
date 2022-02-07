@@ -51,22 +51,25 @@ type annotations stubs module
     - [terminate_app](#terminate_app)
     - [update_app](#update_app)
     - [update_replication_job](#update_replication_job)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="smsclient"></a>
 
 ## SMSClient
 
-Type annotations for `aiobotocore.create_client("sms")`
+Type annotations for `session.create_client("sms")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_sms.client import SMSClient
 
-def get_sms_client() -> SMSClient:
-    return Session().client("sms")
+session = get_session()
+async with session.create_client("sms") as client:
+    client: SMSClient
 ```
 
 Boto3 documentation:
@@ -112,7 +115,7 @@ Exceptions:
 
 SMSClient exceptions.
 
-Type annotations for `aiobotocore.create_client("sms").exceptions` method.
+Type annotations for `session.create_client("sms").exceptions` method.
 
 Boto3 documentation:
 [SMS.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.exceptions)
@@ -125,18 +128,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("sms").can_paginate` method.
+Type annotations for `session.create_client("sms").can_paginate` method.
 
 Boto3 documentation:
 [SMS.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_app"></a>
 
@@ -144,7 +145,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates an application.
 
-Type annotations for `aiobotocore.create_client("sms").create_app` method.
+Type annotations for `session.create_client("sms").create_app` method.
 
 Boto3 documentation:
 [SMS.Client.create_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.create_app)
@@ -173,7 +174,7 @@ Returns a `Coroutine` for
 
 Creates a replication job.
 
-Type annotations for `aiobotocore.create_client("sms").create_replication_job`
+Type annotations for `session.create_client("sms").create_replication_job`
 method.
 
 Boto3 documentation:
@@ -207,7 +208,7 @@ Returns a `Coroutine` for
 
 Deletes the specified application.
 
-Type annotations for `aiobotocore.create_client("sms").delete_app` method.
+Type annotations for `session.create_client("sms").delete_app` method.
 
 Boto3 documentation:
 [SMS.Client.delete_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.delete_app)
@@ -232,7 +233,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the launch configuration for the specified application.
 
 Type annotations for
-`aiobotocore.create_client("sms").delete_app_launch_configuration` method.
+`session.create_client("sms").delete_app_launch_configuration` method.
 
 Boto3 documentation:
 [SMS.Client.delete_app_launch_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.delete_app_launch_configuration)
@@ -256,7 +257,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the replication configuration for the specified application.
 
 Type annotations for
-`aiobotocore.create_client("sms").delete_app_replication_configuration` method.
+`session.create_client("sms").delete_app_replication_configuration` method.
 
 Boto3 documentation:
 [SMS.Client.delete_app_replication_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.delete_app_replication_configuration)
@@ -280,7 +281,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the validation configuration for the specified application.
 
 Type annotations for
-`aiobotocore.create_client("sms").delete_app_validation_configuration` method.
+`session.create_client("sms").delete_app_validation_configuration` method.
 
 Boto3 documentation:
 [SMS.Client.delete_app_validation_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.delete_app_validation_configuration)
@@ -303,7 +304,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified replication job.
 
-Type annotations for `aiobotocore.create_client("sms").delete_replication_job`
+Type annotations for `session.create_client("sms").delete_replication_job`
 method.
 
 Boto3 documentation:
@@ -327,7 +328,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes all servers from your server catalog.
 
-Type annotations for `aiobotocore.create_client("sms").delete_server_catalog`
+Type annotations for `session.create_client("sms").delete_server_catalog`
 method.
 
 Boto3 documentation:
@@ -344,7 +345,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Disassociates the specified connector from Server Migration Service.
 
-Type annotations for `aiobotocore.create_client("sms").disassociate_connector`
+Type annotations for `session.create_client("sms").disassociate_connector`
 method.
 
 Boto3 documentation:
@@ -369,8 +370,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generates a target change set for a currently launched stack and writes it to
 an Amazon S3 object in the customer’s Amazon S3 bucket.
 
-Type annotations for `aiobotocore.create_client("sms").generate_change_set`
-method.
+Type annotations for `session.create_client("sms").generate_change_set` method.
 
 Boto3 documentation:
 [SMS.Client.generate_change_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.generate_change_set)
@@ -395,7 +395,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("sms").generate_presigned_url`
+Type annotations for `session.create_client("sms").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -420,8 +420,7 @@ Returns a `Coroutine` for `str`.
 Generates an CloudFormation template based on the current launch configuration
 and writes it to an Amazon S3 object in the customer’s Amazon S3 bucket.
 
-Type annotations for `aiobotocore.create_client("sms").generate_template`
-method.
+Type annotations for `session.create_client("sms").generate_template` method.
 
 Boto3 documentation:
 [SMS.Client.generate_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.generate_template)
@@ -445,7 +444,7 @@ Returns a `Coroutine` for
 
 Retrieve information about the specified application.
 
-Type annotations for `aiobotocore.create_client("sms").get_app` method.
+Type annotations for `session.create_client("sms").get_app` method.
 
 Boto3 documentation:
 [SMS.Client.get_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.get_app)
@@ -470,7 +469,7 @@ Retrieves the application launch configuration associated with the specified
 application.
 
 Type annotations for
-`aiobotocore.create_client("sms").get_app_launch_configuration` method.
+`session.create_client("sms").get_app_launch_configuration` method.
 
 Boto3 documentation:
 [SMS.Client.get_app_launch_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.get_app_launch_configuration)
@@ -496,7 +495,7 @@ Retrieves the application replication configuration associated with the
 specified application.
 
 Type annotations for
-`aiobotocore.create_client("sms").get_app_replication_configuration` method.
+`session.create_client("sms").get_app_replication_configuration` method.
 
 Boto3 documentation:
 [SMS.Client.get_app_replication_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.get_app_replication_configuration)
@@ -521,7 +520,7 @@ Returns a `Coroutine` for
 Retrieves information about a configuration for validating an application.
 
 Type annotations for
-`aiobotocore.create_client("sms").get_app_validation_configuration` method.
+`session.create_client("sms").get_app_validation_configuration` method.
 
 Boto3 documentation:
 [SMS.Client.get_app_validation_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.get_app_validation_configuration)
@@ -545,8 +544,8 @@ Returns a `Coroutine` for
 
 Retrieves output from validating an application.
 
-Type annotations for
-`aiobotocore.create_client("sms").get_app_validation_output` method.
+Type annotations for `session.create_client("sms").get_app_validation_output`
+method.
 
 Boto3 documentation:
 [SMS.Client.get_app_validation_output](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.get_app_validation_output)
@@ -570,7 +569,7 @@ Returns a `Coroutine` for
 
 Describes the connectors registered with the Server Migration Service.
 
-Type annotations for `aiobotocore.create_client("sms").get_connectors` method.
+Type annotations for `session.create_client("sms").get_connectors` method.
 
 Boto3 documentation:
 [SMS.Client.get_connectors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.get_connectors)
@@ -594,7 +593,7 @@ Returns a `Coroutine` for
 
 Describes the specified replication job or all of your replication jobs.
 
-Type annotations for `aiobotocore.create_client("sms").get_replication_jobs`
+Type annotations for `session.create_client("sms").get_replication_jobs`
 method.
 
 Boto3 documentation:
@@ -621,7 +620,7 @@ Returns a `Coroutine` for
 
 Describes the replication runs for the specified replication job.
 
-Type annotations for `aiobotocore.create_client("sms").get_replication_runs`
+Type annotations for `session.create_client("sms").get_replication_runs`
 method.
 
 Boto3 documentation:
@@ -648,7 +647,7 @@ Returns a `Coroutine` for
 
 Describes the servers in your server catalog.
 
-Type annotations for `aiobotocore.create_client("sms").get_servers` method.
+Type annotations for `session.create_client("sms").get_servers` method.
 
 Boto3 documentation:
 [SMS.Client.get_servers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.get_servers)
@@ -674,8 +673,7 @@ Returns a `Coroutine` for
 
 Allows application import from Migration Hub.
 
-Type annotations for `aiobotocore.create_client("sms").import_app_catalog`
-method.
+Type annotations for `session.create_client("sms").import_app_catalog` method.
 
 Boto3 documentation:
 [SMS.Client.import_app_catalog](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.import_app_catalog)
@@ -698,7 +696,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Gathers a complete list of on-premises servers.
 
-Type annotations for `aiobotocore.create_client("sms").import_server_catalog`
+Type annotations for `session.create_client("sms").import_server_catalog`
 method.
 
 Boto3 documentation:
@@ -715,7 +713,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Launches the specified application as a stack in CloudFormation.
 
-Type annotations for `aiobotocore.create_client("sms").launch_app` method.
+Type annotations for `session.create_client("sms").launch_app` method.
 
 Boto3 documentation:
 [SMS.Client.launch_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.launch_app)
@@ -737,7 +735,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Retrieves summaries for all applications.
 
-Type annotations for `aiobotocore.create_client("sms").list_apps` method.
+Type annotations for `session.create_client("sms").list_apps` method.
 
 Boto3 documentation:
 [SMS.Client.list_apps](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.list_apps)
@@ -764,7 +762,7 @@ Provides information to Server Migration Service about whether application
 validation is successful.
 
 Type annotations for
-`aiobotocore.create_client("sms").notify_app_validation_output` method.
+`session.create_client("sms").notify_app_validation_output` method.
 
 Boto3 documentation:
 [SMS.Client.notify_app_validation_output](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.notify_app_validation_output)
@@ -790,7 +788,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates or updates the launch configuration for the specified application.
 
 Type annotations for
-`aiobotocore.create_client("sms").put_app_launch_configuration` method.
+`session.create_client("sms").put_app_launch_configuration` method.
 
 Boto3 documentation:
 [SMS.Client.put_app_launch_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.put_app_launch_configuration)
@@ -818,7 +816,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates or updates the replication configuration for the specified application.
 
 Type annotations for
-`aiobotocore.create_client("sms").put_app_replication_configuration` method.
+`session.create_client("sms").put_app_replication_configuration` method.
 
 Boto3 documentation:
 [SMS.Client.put_app_replication_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.put_app_replication_configuration)
@@ -844,7 +842,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates or updates a validation configuration for the specified application.
 
 Type annotations for
-`aiobotocore.create_client("sms").put_app_validation_configuration` method.
+`session.create_client("sms").put_app_validation_configuration` method.
 
 Boto3 documentation:
 [SMS.Client.put_app_validation_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.put_app_validation_configuration)
@@ -872,7 +870,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Starts replicating the specified application by creating replication jobs for
 each server in the application.
 
-Type annotations for `aiobotocore.create_client("sms").start_app_replication`
+Type annotations for `session.create_client("sms").start_app_replication`
 method.
 
 Boto3 documentation:
@@ -897,7 +895,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Starts an on-demand replication run for the specified application.
 
 Type annotations for
-`aiobotocore.create_client("sms").start_on_demand_app_replication` method.
+`session.create_client("sms").start_on_demand_app_replication` method.
 
 Boto3 documentation:
 [SMS.Client.start_on_demand_app_replication](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.start_on_demand_app_replication)
@@ -922,7 +920,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Starts an on-demand replication run for the specified replication job.
 
 Type annotations for
-`aiobotocore.create_client("sms").start_on_demand_replication_run` method.
+`session.create_client("sms").start_on_demand_replication_run` method.
 
 Boto3 documentation:
 [SMS.Client.start_on_demand_replication_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.start_on_demand_replication_run)
@@ -948,7 +946,7 @@ Returns a `Coroutine` for
 Stops replicating the specified application by deleting the replication job for
 each server in the application.
 
-Type annotations for `aiobotocore.create_client("sms").stop_app_replication`
+Type annotations for `session.create_client("sms").stop_app_replication`
 method.
 
 Boto3 documentation:
@@ -972,7 +970,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Terminates the stack for the specified application.
 
-Type annotations for `aiobotocore.create_client("sms").terminate_app` method.
+Type annotations for `session.create_client("sms").terminate_app` method.
 
 Boto3 documentation:
 [SMS.Client.terminate_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.terminate_app)
@@ -994,7 +992,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the specified application.
 
-Type annotations for `aiobotocore.create_client("sms").update_app` method.
+Type annotations for `session.create_client("sms").update_app` method.
 
 Boto3 documentation:
 [SMS.Client.update_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.update_app)
@@ -1023,7 +1021,7 @@ Returns a `Coroutine` for
 
 Updates the specified settings for the specified replication job.
 
-Type annotations for `aiobotocore.create_client("sms").update_replication_job`
+Type annotations for `session.create_client("sms").update_replication_job`
 method.
 
 Boto3 documentation:
@@ -1049,12 +1047,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("sms").__aenter__` method.
+
+Boto3 documentation:
+[SMS.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SMSClient](#smsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("sms").__aexit__` method.
+
+Boto3 documentation:
+[SMS.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms.html#SMS.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("sms").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("sms").get_paginator` method with
+overloads.
 
 - `client.get_paginator("get_connectors")` ->
   [GetConnectorsPaginator](./paginators.md#getconnectorspaginator)

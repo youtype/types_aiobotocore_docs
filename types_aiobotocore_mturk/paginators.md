@@ -25,17 +25,19 @@ type annotations stubs module
 ## ListAssignmentsForHITPaginator
 
 Type annotations for
-`aiobotocore.create_client("mturk").get_paginator("list_assignments_for_hit")`.
+`session.create_client("mturk").get_paginator("list_assignments_for_hit")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mturk.paginator import ListAssignmentsForHITPaginator
 
-def get_list_assignments_for_hit_paginator() -> ListAssignmentsForHITPaginator:
-    return Session().create_client("mturk").get_paginator("list_assignments_for_hit")
+session = get_session()
+async with session.create_client("mturk") as client:
+    client: MTurkClient
+    paginator: ListAssignmentsForHITPaginator = client.get_paginator("list_assignments_for_hit")
 ```
 
 Boto3 documentation:
@@ -57,17 +59,19 @@ Arguments for `ListAssignmentsForHITPaginator.paginate` method:
 ## ListBonusPaymentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mturk").get_paginator("list_bonus_payments")`.
+`session.create_client("mturk").get_paginator("list_bonus_payments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mturk.paginator import ListBonusPaymentsPaginator
 
-def get_list_bonus_payments_paginator() -> ListBonusPaymentsPaginator:
-    return Session().create_client("mturk").get_paginator("list_bonus_payments")
+session = get_session()
+async with session.create_client("mturk") as client:
+    client: MTurkClient
+    paginator: ListBonusPaymentsPaginator = client.get_paginator("list_bonus_payments")
 ```
 
 Boto3 documentation:
@@ -88,17 +92,19 @@ Arguments for `ListBonusPaymentsPaginator.paginate` method:
 ## ListHITsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mturk").get_paginator("list_hits")`.
+`session.create_client("mturk").get_paginator("list_hits")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mturk.paginator import ListHITsPaginator
 
-def get_list_hits_paginator() -> ListHITsPaginator:
-    return Session().create_client("mturk").get_paginator("list_hits")
+session = get_session()
+async with session.create_client("mturk") as client:
+    client: MTurkClient
+    paginator: ListHITsPaginator = client.get_paginator("list_hits")
 ```
 
 Boto3 documentation:
@@ -117,17 +123,19 @@ Arguments for `ListHITsPaginator.paginate` method:
 ## ListHITsForQualificationTypePaginator
 
 Type annotations for
-`aiobotocore.create_client("mturk").get_paginator("list_hits_for_qualification_type")`.
+`session.create_client("mturk").get_paginator("list_hits_for_qualification_type")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mturk.paginator import ListHITsForQualificationTypePaginator
 
-def get_list_hits_for_qualification_type_paginator() -> ListHITsForQualificationTypePaginator:
-    return Session().create_client("mturk").get_paginator("list_hits_for_qualification_type")
+session = get_session()
+async with session.create_client("mturk") as client:
+    client: MTurkClient
+    paginator: ListHITsForQualificationTypePaginator = client.get_paginator("list_hits_for_qualification_type")
 ```
 
 Boto3 documentation:
@@ -147,17 +155,19 @@ Arguments for `ListHITsForQualificationTypePaginator.paginate` method:
 ## ListQualificationRequestsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mturk").get_paginator("list_qualification_requests")`.
+`session.create_client("mturk").get_paginator("list_qualification_requests")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mturk.paginator import ListQualificationRequestsPaginator
 
-def get_list_qualification_requests_paginator() -> ListQualificationRequestsPaginator:
-    return Session().create_client("mturk").get_paginator("list_qualification_requests")
+session = get_session()
+async with session.create_client("mturk") as client:
+    client: MTurkClient
+    paginator: ListQualificationRequestsPaginator = client.get_paginator("list_qualification_requests")
 ```
 
 Boto3 documentation:
@@ -177,17 +187,19 @@ Arguments for `ListQualificationRequestsPaginator.paginate` method:
 ## ListQualificationTypesPaginator
 
 Type annotations for
-`aiobotocore.create_client("mturk").get_paginator("list_qualification_types")`.
+`session.create_client("mturk").get_paginator("list_qualification_types")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mturk.paginator import ListQualificationTypesPaginator
 
-def get_list_qualification_types_paginator() -> ListQualificationTypesPaginator:
-    return Session().create_client("mturk").get_paginator("list_qualification_types")
+session = get_session()
+async with session.create_client("mturk") as client:
+    client: MTurkClient
+    paginator: ListQualificationTypesPaginator = client.get_paginator("list_qualification_types")
 ```
 
 Boto3 documentation:
@@ -209,17 +221,19 @@ Arguments for `ListQualificationTypesPaginator.paginate` method:
 ## ListReviewableHITsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mturk").get_paginator("list_reviewable_hits")`.
+`session.create_client("mturk").get_paginator("list_reviewable_hits")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mturk.paginator import ListReviewableHITsPaginator
 
-def get_list_reviewable_hits_paginator() -> ListReviewableHITsPaginator:
-    return Session().create_client("mturk").get_paginator("list_reviewable_hits")
+session = get_session()
+async with session.create_client("mturk") as client:
+    client: MTurkClient
+    paginator: ListReviewableHITsPaginator = client.get_paginator("list_reviewable_hits")
 ```
 
 Boto3 documentation:
@@ -240,17 +254,19 @@ Arguments for `ListReviewableHITsPaginator.paginate` method:
 ## ListWorkerBlocksPaginator
 
 Type annotations for
-`aiobotocore.create_client("mturk").get_paginator("list_worker_blocks")`.
+`session.create_client("mturk").get_paginator("list_worker_blocks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mturk.paginator import ListWorkerBlocksPaginator
 
-def get_list_worker_blocks_paginator() -> ListWorkerBlocksPaginator:
-    return Session().create_client("mturk").get_paginator("list_worker_blocks")
+session = get_session()
+async with session.create_client("mturk") as client:
+    client: MTurkClient
+    paginator: ListWorkerBlocksPaginator = client.get_paginator("list_worker_blocks")
 ```
 
 Boto3 documentation:
@@ -269,17 +285,19 @@ Arguments for `ListWorkerBlocksPaginator.paginate` method:
 ## ListWorkersWithQualificationTypePaginator
 
 Type annotations for
-`aiobotocore.create_client("mturk").get_paginator("list_workers_with_qualification_type")`.
+`session.create_client("mturk").get_paginator("list_workers_with_qualification_type")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mturk.paginator import ListWorkersWithQualificationTypePaginator
 
-def get_list_workers_with_qualification_type_paginator() -> ListWorkersWithQualificationTypePaginator:
-    return Session().create_client("mturk").get_paginator("list_workers_with_qualification_type")
+session = get_session()
+async with session.create_client("mturk") as client:
+    client: MTurkClient
+    paginator: ListWorkersWithQualificationTypePaginator = client.get_paginator("list_workers_with_qualification_type")
 ```
 
 Boto3 documentation:

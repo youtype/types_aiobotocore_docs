@@ -26,21 +26,24 @@ type annotations stubs module
     - [start_document_analysis](#start_document_analysis)
     - [start_document_text_detection](#start_document_text_detection)
     - [start_expense_analysis](#start_expense_analysis)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="textractclient"></a>
 
 ## TextractClient
 
-Type annotations for `aiobotocore.create_client("textract")`
+Type annotations for `session.create_client("textract")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_textract.client import TextractClient
 
-def get_textract_client() -> TextractClient:
-    return Session().client("textract")
+session = get_session()
+async with session.create_client("textract") as client:
+    client: TextractClient
 ```
 
 Boto3 documentation:
@@ -88,7 +91,7 @@ Exceptions:
 
 TextractClient exceptions.
 
-Type annotations for `aiobotocore.create_client("textract").exceptions` method.
+Type annotations for `session.create_client("textract").exceptions` method.
 
 Boto3 documentation:
 [Textract.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract.Client.exceptions)
@@ -101,7 +104,7 @@ Returns [Exceptions](#exceptions).
 
 Analyzes an input document for relationships between detected items.
 
-Type annotations for `aiobotocore.create_client("textract").analyze_document`
+Type annotations for `session.create_client("textract").analyze_document`
 method.
 
 Boto3 documentation:
@@ -130,7 +133,7 @@ Returns a `Coroutine` for
 `AnalyzeExpense` synchronously analyzes an input document for financially
 related relationships between text.
 
-Type annotations for `aiobotocore.create_client("textract").analyze_expense`
+Type annotations for `session.create_client("textract").analyze_expense`
 method.
 
 Boto3 documentation:
@@ -154,7 +157,7 @@ Returns a `Coroutine` for
 
 Analyzes identity documents for relevant information.
 
-Type annotations for `aiobotocore.create_client("textract").analyze_id` method.
+Type annotations for `session.create_client("textract").analyze_id` method.
 
 Boto3 documentation:
 [Textract.Client.analyze_id](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract.Client.analyze_id)
@@ -178,19 +181,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("textract").can_paginate`
-method.
+Type annotations for `session.create_client("textract").can_paginate` method.
 
 Boto3 documentation:
 [Textract.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="detect_document_text"></a>
 
@@ -198,8 +198,8 @@ Returns a `Coroutine` for `bool`.
 
 Detects text in the input document.
 
-Type annotations for
-`aiobotocore.create_client("textract").detect_document_text` method.
+Type annotations for `session.create_client("textract").detect_document_text`
+method.
 
 Boto3 documentation:
 [Textract.Client.detect_document_text](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract.Client.detect_document_text)
@@ -223,8 +223,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("textract").generate_presigned_url` method.
+Type annotations for `session.create_client("textract").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Textract.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract.Client.generate_presigned_url)
@@ -248,8 +248,8 @@ Returns a `Coroutine` for `str`.
 Gets the results for an Amazon Textract asynchronous operation that analyzes
 text in a document.
 
-Type annotations for
-`aiobotocore.create_client("textract").get_document_analysis` method.
+Type annotations for `session.create_client("textract").get_document_analysis`
+method.
 
 Boto3 documentation:
 [Textract.Client.get_document_analysis](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract.Client.get_document_analysis)
@@ -277,7 +277,7 @@ Gets the results for an Amazon Textract asynchronous operation that detects
 text in a document.
 
 Type annotations for
-`aiobotocore.create_client("textract").get_document_text_detection` method.
+`session.create_client("textract").get_document_text_detection` method.
 
 Boto3 documentation:
 [Textract.Client.get_document_text_detection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract.Client.get_document_text_detection)
@@ -304,8 +304,8 @@ Returns a `Coroutine` for
 Gets the results for an Amazon Textract asynchronous operation that analyzes
 invoices and receipts.
 
-Type annotations for
-`aiobotocore.create_client("textract").get_expense_analysis` method.
+Type annotations for `session.create_client("textract").get_expense_analysis`
+method.
 
 Boto3 documentation:
 [Textract.Client.get_expense_analysis](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract.Client.get_expense_analysis)
@@ -333,7 +333,7 @@ Starts the asynchronous analysis of an input document for relationships between
 detected items such as key-value pairs, tables, and selection elements.
 
 Type annotations for
-`aiobotocore.create_client("textract").start_document_analysis` method.
+`session.create_client("textract").start_document_analysis` method.
 
 Boto3 documentation:
 [Textract.Client.start_document_analysis](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract.Client.start_document_analysis)
@@ -368,7 +368,7 @@ Returns a `Coroutine` for
 Starts the asynchronous detection of text in a document.
 
 Type annotations for
-`aiobotocore.create_client("textract").start_document_text_detection` method.
+`session.create_client("textract").start_document_text_detection` method.
 
 Boto3 documentation:
 [Textract.Client.start_document_text_detection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract.Client.start_document_text_detection)
@@ -401,8 +401,8 @@ Returns a `Coroutine` for
 Starts the asynchronous analysis of invoices or receipts for data like contact
 information, items purchased, and vendor names.
 
-Type annotations for
-`aiobotocore.create_client("textract").start_expense_analysis` method.
+Type annotations for `session.create_client("textract").start_expense_analysis`
+method.
 
 Boto3 documentation:
 [Textract.Client.start_expense_analysis](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract.Client.start_expense_analysis)
@@ -427,3 +427,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [StartExpenseAnalysisResponseTypeDef](./type_defs.md#startexpenseanalysisresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("textract").__aenter__` method.
+
+Boto3 documentation:
+[Textract.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [TextractClient](#textractclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("textract").__aexit__` method.
+
+Boto3 documentation:
+[Textract.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

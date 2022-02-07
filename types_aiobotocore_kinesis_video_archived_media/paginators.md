@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListFragmentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-archived-media").get_paginator("list_fragments")`.
+`session.create_client("kinesis-video-archived-media").get_paginator("list_fragments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kinesis_video_archived_media.paginator import ListFragmentsPaginator
 
-def get_list_fragments_paginator() -> ListFragmentsPaginator:
-    return Session().create_client("kinesis-video-archived-media").get_paginator("list_fragments")
+session = get_session()
+async with session.create_client("kinesis-video-archived-media") as client:
+    client: KinesisVideoArchivedMediaClient
+    paginator: ListFragmentsPaginator = client.get_paginator("list_fragments")
 ```
 
 Boto3 documentation:

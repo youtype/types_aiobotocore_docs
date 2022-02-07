@@ -32,22 +32,25 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_gateway_information](#update_gateway_information)
     - [update_hypervisor](#update_hypervisor)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="backupgatewayclient"></a>
 
 ## BackupGatewayClient
 
-Type annotations for `aiobotocore.create_client("backup-gateway")`
+Type annotations for `session.create_client("backup-gateway")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_backup_gateway.client import BackupGatewayClient
 
-def get_backup-gateway_client() -> BackupGatewayClient:
-    return Session().client("backup-gateway")
+session = get_session()
+async with session.create_client("backup-gateway") as client:
+    client: BackupGatewayClient
 ```
 
 Boto3 documentation:
@@ -86,7 +89,7 @@ Exceptions:
 
 BackupGatewayClient exceptions.
 
-Type annotations for `aiobotocore.create_client("backup-gateway").exceptions`
+Type annotations for `session.create_client("backup-gateway").exceptions`
 method.
 
 Boto3 documentation:
@@ -101,8 +104,7 @@ Returns [Exceptions](#exceptions).
 Associates a backup gateway with your server.
 
 Type annotations for
-`aiobotocore.create_client("backup-gateway").associate_gateway_to_server`
-method.
+`session.create_client("backup-gateway").associate_gateway_to_server` method.
 
 Boto3 documentation:
 [BackupGateway.Client.associate_gateway_to_server](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.associate_gateway_to_server)
@@ -127,19 +129,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("backup-gateway").can_paginate`
+Type annotations for `session.create_client("backup-gateway").can_paginate`
 method.
 
 Boto3 documentation:
 [BackupGateway.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_gateway"></a>
 
@@ -147,8 +147,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates a backup gateway.
 
-Type annotations for
-`aiobotocore.create_client("backup-gateway").create_gateway` method.
+Type annotations for `session.create_client("backup-gateway").create_gateway`
+method.
 
 Boto3 documentation:
 [BackupGateway.Client.create_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.create_gateway)
@@ -175,8 +175,8 @@ Returns a `Coroutine` for
 
 Deletes a backup gateway.
 
-Type annotations for
-`aiobotocore.create_client("backup-gateway").delete_gateway` method.
+Type annotations for `session.create_client("backup-gateway").delete_gateway`
+method.
 
 Boto3 documentation:
 [BackupGateway.Client.delete_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.delete_gateway)
@@ -200,7 +200,7 @@ Returns a `Coroutine` for
 Deletes a hypervisor.
 
 Type annotations for
-`aiobotocore.create_client("backup-gateway").delete_hypervisor` method.
+`session.create_client("backup-gateway").delete_hypervisor` method.
 
 Boto3 documentation:
 [BackupGateway.Client.delete_hypervisor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.delete_hypervisor)
@@ -224,7 +224,7 @@ Returns a `Coroutine` for
 Disassociates a backup gateway from the specified server.
 
 Type annotations for
-`aiobotocore.create_client("backup-gateway").disassociate_gateway_from_server`
+`session.create_client("backup-gateway").disassociate_gateway_from_server`
 method.
 
 Boto3 documentation:
@@ -250,7 +250,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("backup-gateway").generate_presigned_url` method.
+`session.create_client("backup-gateway").generate_presigned_url` method.
 
 Boto3 documentation:
 [BackupGateway.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.generate_presigned_url)
@@ -274,7 +274,7 @@ Returns a `Coroutine` for `str`.
 Connect to a hypervisor by importing its configuration.
 
 Type annotations for
-`aiobotocore.create_client("backup-gateway").import_hypervisor_configuration`
+`session.create_client("backup-gateway").import_hypervisor_configuration`
 method.
 
 Boto3 documentation:
@@ -305,8 +305,8 @@ Returns a `Coroutine` for
 Lists backup gateways owned by an Amazon Web Services account in an Amazon Web
 Services Region.
 
-Type annotations for
-`aiobotocore.create_client("backup-gateway").list_gateways` method.
+Type annotations for `session.create_client("backup-gateway").list_gateways`
+method.
 
 Boto3 documentation:
 [BackupGateway.Client.list_gateways](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.list_gateways)
@@ -330,8 +330,8 @@ Returns a `Coroutine` for
 
 Lists your hypervisors.
 
-Type annotations for
-`aiobotocore.create_client("backup-gateway").list_hypervisors` method.
+Type annotations for `session.create_client("backup-gateway").list_hypervisors`
+method.
 
 Boto3 documentation:
 [BackupGateway.Client.list_hypervisors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.list_hypervisors)
@@ -357,7 +357,7 @@ Lists the tags applied to the resource identified by its Amazon Resource Name
 (ARN).
 
 Type annotations for
-`aiobotocore.create_client("backup-gateway").list_tags_for_resource` method.
+`session.create_client("backup-gateway").list_tags_for_resource` method.
 
 Boto3 documentation:
 [BackupGateway.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.list_tags_for_resource)
@@ -382,7 +382,7 @@ Returns a `Coroutine` for
 Lists your virtual machines.
 
 Type annotations for
-`aiobotocore.create_client("backup-gateway").list_virtual_machines` method.
+`session.create_client("backup-gateway").list_virtual_machines` method.
 
 Boto3 documentation:
 [BackupGateway.Client.list_virtual_machines](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.list_virtual_machines)
@@ -408,8 +408,7 @@ Returns a `Coroutine` for
 Set the maintenance start time for a gateway.
 
 Type annotations for
-`aiobotocore.create_client("backup-gateway").put_maintenance_start_time`
-method.
+`session.create_client("backup-gateway").put_maintenance_start_time` method.
 
 Boto3 documentation:
 [BackupGateway.Client.put_maintenance_start_time](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.put_maintenance_start_time)
@@ -437,7 +436,7 @@ Returns a `Coroutine` for
 
 Tag the resource.
 
-Type annotations for `aiobotocore.create_client("backup-gateway").tag_resource`
+Type annotations for `session.create_client("backup-gateway").tag_resource`
 method.
 
 Boto3 documentation:
@@ -464,8 +463,7 @@ Tests your hypervisor configuration to validate that backup gateway can connect
 with the hypervisor and its resources.
 
 Type annotations for
-`aiobotocore.create_client("backup-gateway").test_hypervisor_configuration`
-method.
+`session.create_client("backup-gateway").test_hypervisor_configuration` method.
 
 Boto3 documentation:
 [BackupGateway.Client.test_hypervisor_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.test_hypervisor_configuration)
@@ -491,8 +489,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from the resource.
 
-Type annotations for
-`aiobotocore.create_client("backup-gateway").untag_resource` method.
+Type annotations for `session.create_client("backup-gateway").untag_resource`
+method.
 
 Boto3 documentation:
 [BackupGateway.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.untag_resource)
@@ -517,8 +515,7 @@ Returns a `Coroutine` for
 Updates a gateway's name.
 
 Type annotations for
-`aiobotocore.create_client("backup-gateway").update_gateway_information`
-method.
+`session.create_client("backup-gateway").update_gateway_information` method.
 
 Boto3 documentation:
 [BackupGateway.Client.update_gateway_information](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.update_gateway_information)
@@ -544,7 +541,7 @@ Returns a `Coroutine` for
 Updates a hypervisor metadata, including its host, username, and password.
 
 Type annotations for
-`aiobotocore.create_client("backup-gateway").update_hypervisor` method.
+`session.create_client("backup-gateway").update_hypervisor` method.
 
 Boto3 documentation:
 [BackupGateway.Client.update_hypervisor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.update_hypervisor)
@@ -564,13 +561,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateHypervisorOutputTypeDef](./type_defs.md#updatehypervisoroutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("backup-gateway").__aenter__`
+method.
+
+Boto3 documentation:
+[BackupGateway.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [BackupGatewayClient](#backupgatewayclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("backup-gateway").__aexit__`
+method.
+
+Boto3 documentation:
+[BackupGateway.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup-gateway.html#BackupGateway.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("backup-gateway").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("backup-gateway").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_gateways")` ->
   [ListGatewaysPaginator](./paginators.md#listgatewayspaginator)

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[chime-sdk-messaging]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[chime-sdk-messaging]'
+
+# standalone installation
 pip install types-aiobotocore-chime-sdk-messaging
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-chime-sdk-messaging
 
 ## ChimeSDKMessagingClient
 
-Type annotations for `aiobotocore.create_client("chime-sdk-messaging")` as
+Type annotations for `session.create_client("chime-sdk-messaging")` as
 [ChimeSDKMessagingClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_chime_sdk_messaging.client import ChimeSDKMessagingClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_channel_flow](./client.md#associate_channel_flow)
 - [batch_create_channel_membership](./client.md#batch_create_channel_membership)
 - [can_paginate](./client.md#can_paginate)

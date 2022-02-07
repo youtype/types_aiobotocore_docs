@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[imagebuilder]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[imagebuilder]'
+
+# standalone installation
 pip install types-aiobotocore-imagebuilder
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-imagebuilder
 
 ## imagebuilderClient
 
-Type annotations for `aiobotocore.create_client("imagebuilder")` as
+Type annotations for `session.create_client("imagebuilder")` as
 [imagebuilderClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_imagebuilder.client import imagebuilderClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_image_creation](./client.md#cancel_image_creation)
 - [create_component](./client.md#create_component)

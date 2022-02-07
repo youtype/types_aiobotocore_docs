@@ -24,17 +24,19 @@ type annotations stubs module
 ## ListDetectorsPaginator
 
 Type annotations for
-`aiobotocore.create_client("guardduty").get_paginator("list_detectors")`.
+`session.create_client("guardduty").get_paginator("list_detectors")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_guardduty.paginator import ListDetectorsPaginator
 
-def get_list_detectors_paginator() -> ListDetectorsPaginator:
-    return Session().create_client("guardduty").get_paginator("list_detectors")
+session = get_session()
+async with session.create_client("guardduty") as client:
+    client: GuardDutyClient
+    paginator: ListDetectorsPaginator = client.get_paginator("list_detectors")
 ```
 
 Boto3 documentation:
@@ -53,17 +55,19 @@ Arguments for `ListDetectorsPaginator.paginate` method:
 ## ListFiltersPaginator
 
 Type annotations for
-`aiobotocore.create_client("guardduty").get_paginator("list_filters")`.
+`session.create_client("guardduty").get_paginator("list_filters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_guardduty.paginator import ListFiltersPaginator
 
-def get_list_filters_paginator() -> ListFiltersPaginator:
-    return Session().create_client("guardduty").get_paginator("list_filters")
+session = get_session()
+async with session.create_client("guardduty") as client:
+    client: GuardDutyClient
+    paginator: ListFiltersPaginator = client.get_paginator("list_filters")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `ListFiltersPaginator.paginate` method:
 ## ListFindingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("guardduty").get_paginator("list_findings")`.
+`session.create_client("guardduty").get_paginator("list_findings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_guardduty.paginator import ListFindingsPaginator
 
-def get_list_findings_paginator() -> ListFindingsPaginator:
-    return Session().create_client("guardduty").get_paginator("list_findings")
+session = get_session()
+async with session.create_client("guardduty") as client:
+    client: GuardDutyClient
+    paginator: ListFindingsPaginator = client.get_paginator("list_findings")
 ```
 
 Boto3 documentation:
@@ -116,17 +122,19 @@ Arguments for `ListFindingsPaginator.paginate` method:
 ## ListIPSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("guardduty").get_paginator("list_ip_sets")`.
+`session.create_client("guardduty").get_paginator("list_ip_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_guardduty.paginator import ListIPSetsPaginator
 
-def get_list_ip_sets_paginator() -> ListIPSetsPaginator:
-    return Session().create_client("guardduty").get_paginator("list_ip_sets")
+session = get_session()
+async with session.create_client("guardduty") as client:
+    client: GuardDutyClient
+    paginator: ListIPSetsPaginator = client.get_paginator("list_ip_sets")
 ```
 
 Boto3 documentation:
@@ -146,17 +154,19 @@ Arguments for `ListIPSetsPaginator.paginate` method:
 ## ListInvitationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("guardduty").get_paginator("list_invitations")`.
+`session.create_client("guardduty").get_paginator("list_invitations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_guardduty.paginator import ListInvitationsPaginator
 
-def get_list_invitations_paginator() -> ListInvitationsPaginator:
-    return Session().create_client("guardduty").get_paginator("list_invitations")
+session = get_session()
+async with session.create_client("guardduty") as client:
+    client: GuardDutyClient
+    paginator: ListInvitationsPaginator = client.get_paginator("list_invitations")
 ```
 
 Boto3 documentation:
@@ -175,17 +185,19 @@ Arguments for `ListInvitationsPaginator.paginate` method:
 ## ListMembersPaginator
 
 Type annotations for
-`aiobotocore.create_client("guardduty").get_paginator("list_members")`.
+`session.create_client("guardduty").get_paginator("list_members")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_guardduty.paginator import ListMembersPaginator
 
-def get_list_members_paginator() -> ListMembersPaginator:
-    return Session().create_client("guardduty").get_paginator("list_members")
+session = get_session()
+async with session.create_client("guardduty") as client:
+    client: GuardDutyClient
+    paginator: ListMembersPaginator = client.get_paginator("list_members")
 ```
 
 Boto3 documentation:
@@ -206,17 +218,19 @@ Arguments for `ListMembersPaginator.paginate` method:
 ## ListOrganizationAdminAccountsPaginator
 
 Type annotations for
-`aiobotocore.create_client("guardduty").get_paginator("list_organization_admin_accounts")`.
+`session.create_client("guardduty").get_paginator("list_organization_admin_accounts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_guardduty.paginator import ListOrganizationAdminAccountsPaginator
 
-def get_list_organization_admin_accounts_paginator() -> ListOrganizationAdminAccountsPaginator:
-    return Session().create_client("guardduty").get_paginator("list_organization_admin_accounts")
+session = get_session()
+async with session.create_client("guardduty") as client:
+    client: GuardDutyClient
+    paginator: ListOrganizationAdminAccountsPaginator = client.get_paginator("list_organization_admin_accounts")
 ```
 
 Boto3 documentation:
@@ -235,17 +249,19 @@ Arguments for `ListOrganizationAdminAccountsPaginator.paginate` method:
 ## ListThreatIntelSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("guardduty").get_paginator("list_threat_intel_sets")`.
+`session.create_client("guardduty").get_paginator("list_threat_intel_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_guardduty.paginator import ListThreatIntelSetsPaginator
 
-def get_list_threat_intel_sets_paginator() -> ListThreatIntelSetsPaginator:
-    return Session().create_client("guardduty").get_paginator("list_threat_intel_sets")
+session = get_session()
+async with session.create_client("guardduty") as client:
+    client: GuardDutyClient
+    paginator: ListThreatIntelSetsPaginator = client.get_paginator("list_threat_intel_sets")
 ```
 
 Boto3 documentation:

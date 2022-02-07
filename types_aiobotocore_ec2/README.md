@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[ec2]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[ec2]'
+
+# standalone installation
 pip install types-aiobotocore-ec2
 ```
 
@@ -33,8 +37,7 @@ pip install types-aiobotocore-ec2
 
 ## EC2Client
 
-Type annotations for `aiobotocore.create_client("ec2")` as
-[EC2Client](./client.md)
+Type annotations for `session.create_client("ec2")` as [EC2Client](./client.md)
 
 Can be used directly:
 
@@ -46,6 +49,8 @@ from types_aiobotocore_ec2.client import EC2Client
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_reserved_instances_exchange_quote](./client.md#accept_reserved_instances_exchange_quote)
 - [accept_transit_gateway_multicast_domain_associations](./client.md#accept_transit_gateway_multicast_domain_associations)
 - [accept_transit_gateway_peering_attachment](./client.md#accept_transit_gateway_peering_attachment)
@@ -579,7 +584,7 @@ EC2Client [exceptions](./client.md#exceptions)
 
 ## EC2ServiceResource
 
-Type annotations for `aiobotocore.resource("ec2")` as
+Type annotations for `session.resource("ec2")` as
 [EC2ServiceResource](./service_resource.md#ec2serviceresource)
 
 Can be used directly:
@@ -622,7 +627,7 @@ from types_aiobotocore_ec2.service_resource import ServiceResourceClassicAddress
 
 ### Resources
 
-Type annotations for additional resources from `aiobotocore.resource("ec2").*`.
+Type annotations for additional resources from `session.resource("ec2").*`.
 
 Can be used directly:
 
@@ -663,7 +668,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_ec2.paginators import DescribeAddressesAttributePaginator, ...
+from types_aiobotocore_ec2.paginator import DescribeAddressesAttributePaginator, ...
 ```
 
 - [DescribeAddressesAttributePaginator](./paginators.md#describeaddressesattributepaginator)
@@ -795,7 +800,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_ec2.waiters import BundleTaskCompleteWaiter, ...
+from types_aiobotocore_ec2.waiter import BundleTaskCompleteWaiter, ...
 ```
 
 - [BundleTaskCompleteWaiter](./waiters.md#bundletaskcompletewaiter)

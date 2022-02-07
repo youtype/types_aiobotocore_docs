@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[ds]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[ds]'
+
+# standalone installation
 pip install types-aiobotocore-ds
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-ds
 
 ## DirectoryServiceClient
 
-Type annotations for `aiobotocore.create_client("ds")` as
+Type annotations for `session.create_client("ds")` as
 [DirectoryServiceClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_ds.client import DirectoryServiceClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_shared_directory](./client.md#accept_shared_directory)
 - [add_ip_routes](./client.md#add_ip_routes)
 - [add_region](./client.md#add_region)
@@ -162,7 +168,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_ds.paginators import DescribeDirectoriesPaginator, ...
+from types_aiobotocore_ds.paginator import DescribeDirectoriesPaginator, ...
 ```
 
 - [DescribeDirectoriesPaginator](./paginators.md#describedirectoriespaginator)

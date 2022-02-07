@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[datapipeline]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[datapipeline]'
+
+# standalone installation
 pip install types-aiobotocore-datapipeline
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-datapipeline
 
 ## DataPipelineClient
 
-Type annotations for `aiobotocore.create_client("datapipeline")` as
+Type annotations for `session.create_client("datapipeline")` as
 [DataPipelineClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_datapipeline.client import DataPipelineClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [activate_pipeline](./client.md#activate_pipeline)
 - [add_tags](./client.md#add_tags)
 - [can_paginate](./client.md#can_paginate)
@@ -89,7 +95,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_datapipeline.paginators import DescribeObjectsPaginator, ...
+from types_aiobotocore_datapipeline.paginator import DescribeObjectsPaginator, ...
 ```
 
 - [DescribeObjectsPaginator](./paginators.md#describeobjectspaginator)

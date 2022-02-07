@@ -26,17 +26,19 @@ type annotations stubs module
 ## GetBotAliasesPaginator
 
 Type annotations for
-`aiobotocore.create_client("lex-models").get_paginator("get_bot_aliases")`.
+`session.create_client("lex-models").get_paginator("get_bot_aliases")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lex_models.paginator import GetBotAliasesPaginator
 
-def get_get_bot_aliases_paginator() -> GetBotAliasesPaginator:
-    return Session().create_client("lex-models").get_paginator("get_bot_aliases")
+session = get_session()
+async with session.create_client("lex-models") as client:
+    client: LexModelBuildingServiceClient
+    paginator: GetBotAliasesPaginator = client.get_paginator("get_bot_aliases")
 ```
 
 Boto3 documentation:
@@ -57,17 +59,19 @@ Arguments for `GetBotAliasesPaginator.paginate` method:
 ## GetBotChannelAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lex-models").get_paginator("get_bot_channel_associations")`.
+`session.create_client("lex-models").get_paginator("get_bot_channel_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lex_models.paginator import GetBotChannelAssociationsPaginator
 
-def get_get_bot_channel_associations_paginator() -> GetBotChannelAssociationsPaginator:
-    return Session().create_client("lex-models").get_paginator("get_bot_channel_associations")
+session = get_session()
+async with session.create_client("lex-models") as client:
+    client: LexModelBuildingServiceClient
+    paginator: GetBotChannelAssociationsPaginator = client.get_paginator("get_bot_channel_associations")
 ```
 
 Boto3 documentation:
@@ -89,17 +93,19 @@ Arguments for `GetBotChannelAssociationsPaginator.paginate` method:
 ## GetBotVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lex-models").get_paginator("get_bot_versions")`.
+`session.create_client("lex-models").get_paginator("get_bot_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lex_models.paginator import GetBotVersionsPaginator
 
-def get_get_bot_versions_paginator() -> GetBotVersionsPaginator:
-    return Session().create_client("lex-models").get_paginator("get_bot_versions")
+session = get_session()
+async with session.create_client("lex-models") as client:
+    client: LexModelBuildingServiceClient
+    paginator: GetBotVersionsPaginator = client.get_paginator("get_bot_versions")
 ```
 
 Boto3 documentation:
@@ -119,17 +125,19 @@ Arguments for `GetBotVersionsPaginator.paginate` method:
 ## GetBotsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lex-models").get_paginator("get_bots")`.
+`session.create_client("lex-models").get_paginator("get_bots")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lex_models.paginator import GetBotsPaginator
 
-def get_get_bots_paginator() -> GetBotsPaginator:
-    return Session().create_client("lex-models").get_paginator("get_bots")
+session = get_session()
+async with session.create_client("lex-models") as client:
+    client: LexModelBuildingServiceClient
+    paginator: GetBotsPaginator = client.get_paginator("get_bots")
 ```
 
 Boto3 documentation:
@@ -149,17 +157,19 @@ Arguments for `GetBotsPaginator.paginate` method:
 ## GetBuiltinIntentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lex-models").get_paginator("get_builtin_intents")`.
+`session.create_client("lex-models").get_paginator("get_builtin_intents")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lex_models.paginator import GetBuiltinIntentsPaginator
 
-def get_get_builtin_intents_paginator() -> GetBuiltinIntentsPaginator:
-    return Session().create_client("lex-models").get_paginator("get_builtin_intents")
+session = get_session()
+async with session.create_client("lex-models") as client:
+    client: LexModelBuildingServiceClient
+    paginator: GetBuiltinIntentsPaginator = client.get_paginator("get_builtin_intents")
 ```
 
 Boto3 documentation:
@@ -180,17 +190,19 @@ Arguments for `GetBuiltinIntentsPaginator.paginate` method:
 ## GetBuiltinSlotTypesPaginator
 
 Type annotations for
-`aiobotocore.create_client("lex-models").get_paginator("get_builtin_slot_types")`.
+`session.create_client("lex-models").get_paginator("get_builtin_slot_types")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lex_models.paginator import GetBuiltinSlotTypesPaginator
 
-def get_get_builtin_slot_types_paginator() -> GetBuiltinSlotTypesPaginator:
-    return Session().create_client("lex-models").get_paginator("get_builtin_slot_types")
+session = get_session()
+async with session.create_client("lex-models") as client:
+    client: LexModelBuildingServiceClient
+    paginator: GetBuiltinSlotTypesPaginator = client.get_paginator("get_builtin_slot_types")
 ```
 
 Boto3 documentation:
@@ -211,17 +223,19 @@ Arguments for `GetBuiltinSlotTypesPaginator.paginate` method:
 ## GetIntentVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lex-models").get_paginator("get_intent_versions")`.
+`session.create_client("lex-models").get_paginator("get_intent_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lex_models.paginator import GetIntentVersionsPaginator
 
-def get_get_intent_versions_paginator() -> GetIntentVersionsPaginator:
-    return Session().create_client("lex-models").get_paginator("get_intent_versions")
+session = get_session()
+async with session.create_client("lex-models") as client:
+    client: LexModelBuildingServiceClient
+    paginator: GetIntentVersionsPaginator = client.get_paginator("get_intent_versions")
 ```
 
 Boto3 documentation:
@@ -241,17 +255,19 @@ Arguments for `GetIntentVersionsPaginator.paginate` method:
 ## GetIntentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lex-models").get_paginator("get_intents")`.
+`session.create_client("lex-models").get_paginator("get_intents")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lex_models.paginator import GetIntentsPaginator
 
-def get_get_intents_paginator() -> GetIntentsPaginator:
-    return Session().create_client("lex-models").get_paginator("get_intents")
+session = get_session()
+async with session.create_client("lex-models") as client:
+    client: LexModelBuildingServiceClient
+    paginator: GetIntentsPaginator = client.get_paginator("get_intents")
 ```
 
 Boto3 documentation:
@@ -271,17 +287,19 @@ Arguments for `GetIntentsPaginator.paginate` method:
 ## GetSlotTypeVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lex-models").get_paginator("get_slot_type_versions")`.
+`session.create_client("lex-models").get_paginator("get_slot_type_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lex_models.paginator import GetSlotTypeVersionsPaginator
 
-def get_get_slot_type_versions_paginator() -> GetSlotTypeVersionsPaginator:
-    return Session().create_client("lex-models").get_paginator("get_slot_type_versions")
+session = get_session()
+async with session.create_client("lex-models") as client:
+    client: LexModelBuildingServiceClient
+    paginator: GetSlotTypeVersionsPaginator = client.get_paginator("get_slot_type_versions")
 ```
 
 Boto3 documentation:
@@ -301,17 +319,19 @@ Arguments for `GetSlotTypeVersionsPaginator.paginate` method:
 ## GetSlotTypesPaginator
 
 Type annotations for
-`aiobotocore.create_client("lex-models").get_paginator("get_slot_types")`.
+`session.create_client("lex-models").get_paginator("get_slot_types")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lex_models.paginator import GetSlotTypesPaginator
 
-def get_get_slot_types_paginator() -> GetSlotTypesPaginator:
-    return Session().create_client("lex-models").get_paginator("get_slot_types")
+session = get_session()
+async with session.create_client("lex-models") as client:
+    client: LexModelBuildingServiceClient
+    paginator: GetSlotTypesPaginator = client.get_paginator("get_slot_types")
 ```
 
 Boto3 documentation:

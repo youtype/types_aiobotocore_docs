@@ -21,17 +21,19 @@ type annotations stubs module
 ## ListAppsListsPaginator
 
 Type annotations for
-`aiobotocore.create_client("fms").get_paginator("list_apps_lists")`.
+`session.create_client("fms").get_paginator("list_apps_lists")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_fms.paginator import ListAppsListsPaginator
 
-def get_list_apps_lists_paginator() -> ListAppsListsPaginator:
-    return Session().create_client("fms").get_paginator("list_apps_lists")
+session = get_session()
+async with session.create_client("fms") as client:
+    client: FMSClient
+    paginator: ListAppsListsPaginator = client.get_paginator("list_apps_lists")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `ListAppsListsPaginator.paginate` method:
 ## ListComplianceStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("fms").get_paginator("list_compliance_status")`.
+`session.create_client("fms").get_paginator("list_compliance_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_fms.paginator import ListComplianceStatusPaginator
 
-def get_list_compliance_status_paginator() -> ListComplianceStatusPaginator:
-    return Session().create_client("fms").get_paginator("list_compliance_status")
+session = get_session()
+async with session.create_client("fms") as client:
+    client: FMSClient
+    paginator: ListComplianceStatusPaginator = client.get_paginator("list_compliance_status")
 ```
 
 Boto3 documentation:
@@ -81,17 +85,19 @@ Arguments for `ListComplianceStatusPaginator.paginate` method:
 ## ListMemberAccountsPaginator
 
 Type annotations for
-`aiobotocore.create_client("fms").get_paginator("list_member_accounts")`.
+`session.create_client("fms").get_paginator("list_member_accounts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_fms.paginator import ListMemberAccountsPaginator
 
-def get_list_member_accounts_paginator() -> ListMemberAccountsPaginator:
-    return Session().create_client("fms").get_paginator("list_member_accounts")
+session = get_session()
+async with session.create_client("fms") as client:
+    client: FMSClient
+    paginator: ListMemberAccountsPaginator = client.get_paginator("list_member_accounts")
 ```
 
 Boto3 documentation:
@@ -110,17 +116,19 @@ Arguments for `ListMemberAccountsPaginator.paginate` method:
 ## ListPoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("fms").get_paginator("list_policies")`.
+`session.create_client("fms").get_paginator("list_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_fms.paginator import ListPoliciesPaginator
 
-def get_list_policies_paginator() -> ListPoliciesPaginator:
-    return Session().create_client("fms").get_paginator("list_policies")
+session = get_session()
+async with session.create_client("fms") as client:
+    client: FMSClient
+    paginator: ListPoliciesPaginator = client.get_paginator("list_policies")
 ```
 
 Boto3 documentation:
@@ -139,17 +147,19 @@ Arguments for `ListPoliciesPaginator.paginate` method:
 ## ListProtocolsListsPaginator
 
 Type annotations for
-`aiobotocore.create_client("fms").get_paginator("list_protocols_lists")`.
+`session.create_client("fms").get_paginator("list_protocols_lists")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_fms.paginator import ListProtocolsListsPaginator
 
-def get_list_protocols_lists_paginator() -> ListProtocolsListsPaginator:
-    return Session().create_client("fms").get_paginator("list_protocols_lists")
+session = get_session()
+async with session.create_client("fms") as client:
+    client: FMSClient
+    paginator: ListProtocolsListsPaginator = client.get_paginator("list_protocols_lists")
 ```
 
 Boto3 documentation:

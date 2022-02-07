@@ -35,6 +35,8 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_server](#update_server)
     - [update_server_engine_attributes](#update_server_engine_attributes)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -42,16 +44,17 @@ type annotations stubs module
 
 ## OpsWorksCMClient
 
-Type annotations for `aiobotocore.create_client("opsworkscm")`
+Type annotations for `session.create_client("opsworkscm")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_opsworkscm.client import OpsWorksCMClient
 
-def get_opsworkscm_client() -> OpsWorksCMClient:
-    return Session().client("opsworkscm")
+session = get_session()
+async with session.create_client("opsworkscm") as client:
+    client: OpsWorksCMClient
 ```
 
 Boto3 documentation:
@@ -91,8 +94,7 @@ Exceptions:
 
 OpsWorksCMClient exceptions.
 
-Type annotations for `aiobotocore.create_client("opsworkscm").exceptions`
-method.
+Type annotations for `session.create_client("opsworkscm").exceptions` method.
 
 Boto3 documentation:
 [OpsWorksCM.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworkscm.html#OpsWorksCM.Client.exceptions)
@@ -105,7 +107,7 @@ Returns [Exceptions](#exceptions).
 
 Associates a new node with the server.
 
-Type annotations for `aiobotocore.create_client("opsworkscm").associate_node`
+Type annotations for `session.create_client("opsworkscm").associate_node`
 method.
 
 Boto3 documentation:
@@ -133,19 +135,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("opsworkscm").can_paginate`
-method.
+Type annotations for `session.create_client("opsworkscm").can_paginate` method.
 
 Boto3 documentation:
 [OpsWorksCM.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworkscm.html#OpsWorksCM.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_backup"></a>
 
@@ -153,7 +152,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates an application-level backup of a server.
 
-Type annotations for `aiobotocore.create_client("opsworkscm").create_backup`
+Type annotations for `session.create_client("opsworkscm").create_backup`
 method.
 
 Boto3 documentation:
@@ -179,7 +178,7 @@ Returns a `Coroutine` for
 
 Creates and immedately starts a new server.
 
-Type annotations for `aiobotocore.create_client("opsworkscm").create_server`
+Type annotations for `session.create_client("opsworkscm").create_server`
 method.
 
 Boto3 documentation:
@@ -224,7 +223,7 @@ Returns a `Coroutine` for
 
 Deletes a backup.
 
-Type annotations for `aiobotocore.create_client("opsworkscm").delete_backup`
+Type annotations for `session.create_client("opsworkscm").delete_backup`
 method.
 
 Boto3 documentation:
@@ -248,7 +247,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the server and the underlying AWS CloudFormation stacks (including the
 server's EC2 instance).
 
-Type annotations for `aiobotocore.create_client("opsworkscm").delete_server`
+Type annotations for `session.create_client("opsworkscm").delete_server`
 method.
 
 Boto3 documentation:
@@ -272,7 +271,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Describes your OpsWorks-CM account attributes.
 
 Type annotations for
-`aiobotocore.create_client("opsworkscm").describe_account_attributes` method.
+`session.create_client("opsworkscm").describe_account_attributes` method.
 
 Boto3 documentation:
 [OpsWorksCM.Client.describe_account_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworkscm.html#OpsWorksCM.Client.describe_account_attributes)
@@ -289,7 +288,7 @@ Returns a `Coroutine` for
 
 Describes backups.
 
-Type annotations for `aiobotocore.create_client("opsworkscm").describe_backups`
+Type annotations for `session.create_client("opsworkscm").describe_backups`
 method.
 
 Boto3 documentation:
@@ -316,7 +315,7 @@ Returns a `Coroutine` for
 
 Describes events for a specified server.
 
-Type annotations for `aiobotocore.create_client("opsworkscm").describe_events`
+Type annotations for `session.create_client("opsworkscm").describe_events`
 method.
 
 Boto3 documentation:
@@ -344,8 +343,7 @@ Returns the current status of an existing association or disassociation
 request.
 
 Type annotations for
-`aiobotocore.create_client("opsworkscm").describe_node_association_status`
-method.
+`session.create_client("opsworkscm").describe_node_association_status` method.
 
 Boto3 documentation:
 [OpsWorksCM.Client.describe_node_association_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworkscm.html#OpsWorksCM.Client.describe_node_association_status)
@@ -371,7 +369,7 @@ Returns a `Coroutine` for
 Lists all configuration management servers that are identified with your
 account.
 
-Type annotations for `aiobotocore.create_client("opsworkscm").describe_servers`
+Type annotations for `session.create_client("opsworkscm").describe_servers`
 method.
 
 Boto3 documentation:
@@ -398,8 +396,8 @@ Returns a `Coroutine` for
 Disassociates a node from an AWS OpsWorks CM server, and removes the node from
 the server's managed nodes.
 
-Type annotations for
-`aiobotocore.create_client("opsworkscm").disassociate_node` method.
+Type annotations for `session.create_client("opsworkscm").disassociate_node`
+method.
 
 Boto3 documentation:
 [OpsWorksCM.Client.disassociate_node](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworkscm.html#OpsWorksCM.Client.disassociate_node)
@@ -426,8 +424,7 @@ Returns a `Coroutine` for
 Exports a specified server engine attribute as a base64-encoded string.
 
 Type annotations for
-`aiobotocore.create_client("opsworkscm").export_server_engine_attribute`
-method.
+`session.create_client("opsworkscm").export_server_engine_attribute` method.
 
 Boto3 documentation:
 [OpsWorksCM.Client.export_server_engine_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworkscm.html#OpsWorksCM.Client.export_server_engine_attribute)
@@ -455,7 +452,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("opsworkscm").generate_presigned_url` method.
+`session.create_client("opsworkscm").generate_presigned_url` method.
 
 Boto3 documentation:
 [OpsWorksCM.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworkscm.html#OpsWorksCM.Client.generate_presigned_url)
@@ -480,7 +477,7 @@ Returns a list of tags that are applied to the specified AWS OpsWorks for Chef
 Automate or AWS OpsWorks for Puppet Enterprise servers or backups.
 
 Type annotations for
-`aiobotocore.create_client("opsworkscm").list_tags_for_resource` method.
+`session.create_client("opsworkscm").list_tags_for_resource` method.
 
 Boto3 documentation:
 [OpsWorksCM.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworkscm.html#OpsWorksCM.Client.list_tags_for_resource)
@@ -507,7 +504,7 @@ Returns a `Coroutine` for
 Restores a backup to a server that is in a `CONNECTION_LOST` , `HEALTHY` ,
 `RUNNING` , `UNHEALTHY` , or `TERMINATED` state.
 
-Type annotations for `aiobotocore.create_client("opsworkscm").restore_server`
+Type annotations for `session.create_client("opsworkscm").restore_server`
 method.
 
 Boto3 documentation:
@@ -534,8 +531,8 @@ Returns a `Coroutine` for
 
 Manually starts server maintenance.
 
-Type annotations for
-`aiobotocore.create_client("opsworkscm").start_maintenance` method.
+Type annotations for `session.create_client("opsworkscm").start_maintenance`
+method.
 
 Boto3 documentation:
 [OpsWorksCM.Client.start_maintenance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworkscm.html#OpsWorksCM.Client.start_maintenance)
@@ -561,8 +558,7 @@ Returns a `Coroutine` for
 Applies tags to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet
 Enterprise server, or to server backups.
 
-Type annotations for `aiobotocore.create_client("opsworkscm").tag_resource`
-method.
+Type annotations for `session.create_client("opsworkscm").tag_resource` method.
 
 Boto3 documentation:
 [OpsWorksCM.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworkscm.html#OpsWorksCM.Client.tag_resource)
@@ -585,7 +581,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes specified tags from an AWS OpsWorks-CM server or backup.
 
-Type annotations for `aiobotocore.create_client("opsworkscm").untag_resource`
+Type annotations for `session.create_client("opsworkscm").untag_resource`
 method.
 
 Boto3 documentation:
@@ -609,7 +605,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates settings for a server.
 
-Type annotations for `aiobotocore.create_client("opsworkscm").update_server`
+Type annotations for `session.create_client("opsworkscm").update_server`
 method.
 
 Boto3 documentation:
@@ -638,8 +634,7 @@ Returns a `Coroutine` for
 Updates engine-specific attributes on a specified server.
 
 Type annotations for
-`aiobotocore.create_client("opsworkscm").update_server_engine_attributes`
-method.
+`session.create_client("opsworkscm").update_server_engine_attributes` method.
 
 Boto3 documentation:
 [OpsWorksCM.Client.update_server_engine_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworkscm.html#OpsWorksCM.Client.update_server_engine_attributes)
@@ -659,12 +654,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateServerEngineAttributesResponseTypeDef](./type_defs.md#updateserverengineattributesresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("opsworkscm").__aenter__` method.
+
+Boto3 documentation:
+[OpsWorksCM.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworkscm.html#OpsWorksCM.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [OpsWorksCMClient](#opsworkscmclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("opsworkscm").__aexit__` method.
+
+Boto3 documentation:
+[OpsWorksCM.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworkscm.html#OpsWorksCM.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("opsworkscm").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("opsworkscm").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_backups")` ->
   [DescribeBackupsPaginator](./paginators.md#describebackupspaginator)
@@ -679,8 +706,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("opsworkscm").get_waiter`
-method with overloads.
+Type annotations for `session.create_client("opsworkscm").get_waiter` method
+with overloads.
 
 - `client.get_waiter("node_associated")` ->
   [NodeAssociatedWaiter](./waiters.md#nodeassociatedwaiter)

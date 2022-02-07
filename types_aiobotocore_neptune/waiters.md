@@ -18,7 +18,7 @@ type annotations stubs module
 ## DBInstanceAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("neptune").get_waiter("db_instance_available")`.
+`session.create_client("neptune").get_waiter("db_instance_available")`.
 
 Can be used directly:
 
@@ -28,7 +28,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_neptune.waiter import DBInstanceAvailableWaiter
 
 def get_db_instance_available_waiter() -> DBInstanceAvailableWaiter:
-    return Session().create_client("neptune").get_waiter("db_instance_available")
+    return Session().client("neptune").get_waiter("db_instance_available")
 ```
 
 Boto3 documentation:
@@ -47,7 +47,7 @@ Arguments for `DBInstanceAvailableWaiter.wait` method:
 ## DBInstanceDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("neptune").get_waiter("db_instance_deleted")`.
+`session.create_client("neptune").get_waiter("db_instance_deleted")`.
 
 Can be used directly:
 
@@ -57,7 +57,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_neptune.waiter import DBInstanceDeletedWaiter
 
 def get_db_instance_deleted_waiter() -> DBInstanceDeletedWaiter:
-    return Session().create_client("neptune").get_waiter("db_instance_deleted")
+    return Session().client("neptune").get_waiter("db_instance_deleted")
 ```
 
 Boto3 documentation:

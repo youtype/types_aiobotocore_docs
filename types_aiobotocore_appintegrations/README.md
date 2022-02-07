@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[appintegrations]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[appintegrations]'
+
+# standalone installation
 pip install types-aiobotocore-appintegrations
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-appintegrations
 
 ## AppIntegrationsServiceClient
 
-Type annotations for `aiobotocore.create_client("appintegrations")` as
+Type annotations for `session.create_client("appintegrations")` as
 [AppIntegrationsServiceClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_appintegrations.client import AppIntegrationsServiceClien
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_data_integration](./client.md#create_data_integration)
 - [create_event_integration](./client.md#create_event_integration)

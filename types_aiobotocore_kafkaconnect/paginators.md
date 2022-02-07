@@ -19,17 +19,19 @@ type annotations stubs module
 ## ListConnectorsPaginator
 
 Type annotations for
-`aiobotocore.create_client("kafkaconnect").get_paginator("list_connectors")`.
+`session.create_client("kafkaconnect").get_paginator("list_connectors")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kafkaconnect.paginator import ListConnectorsPaginator
 
-def get_list_connectors_paginator() -> ListConnectorsPaginator:
-    return Session().create_client("kafkaconnect").get_paginator("list_connectors")
+session = get_session()
+async with session.create_client("kafkaconnect") as client:
+    client: KafkaConnectClient
+    paginator: ListConnectorsPaginator = client.get_paginator("list_connectors")
 ```
 
 Boto3 documentation:
@@ -49,17 +51,19 @@ Arguments for `ListConnectorsPaginator.paginate` method:
 ## ListCustomPluginsPaginator
 
 Type annotations for
-`aiobotocore.create_client("kafkaconnect").get_paginator("list_custom_plugins")`.
+`session.create_client("kafkaconnect").get_paginator("list_custom_plugins")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kafkaconnect.paginator import ListCustomPluginsPaginator
 
-def get_list_custom_plugins_paginator() -> ListCustomPluginsPaginator:
-    return Session().create_client("kafkaconnect").get_paginator("list_custom_plugins")
+session = get_session()
+async with session.create_client("kafkaconnect") as client:
+    client: KafkaConnectClient
+    paginator: ListCustomPluginsPaginator = client.get_paginator("list_custom_plugins")
 ```
 
 Boto3 documentation:
@@ -78,17 +82,19 @@ Arguments for `ListCustomPluginsPaginator.paginate` method:
 ## ListWorkerConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("kafkaconnect").get_paginator("list_worker_configurations")`.
+`session.create_client("kafkaconnect").get_paginator("list_worker_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kafkaconnect.paginator import ListWorkerConfigurationsPaginator
 
-def get_list_worker_configurations_paginator() -> ListWorkerConfigurationsPaginator:
-    return Session().create_client("kafkaconnect").get_paginator("list_worker_configurations")
+session = get_session()
+async with session.create_client("kafkaconnect") as client:
+    client: KafkaConnectClient
+    paginator: ListWorkerConfigurationsPaginator = client.get_paginator("list_worker_configurations")
 ```
 
 Boto3 documentation:

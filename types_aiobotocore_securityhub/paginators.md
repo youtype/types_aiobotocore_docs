@@ -28,17 +28,19 @@ type annotations stubs module
 ## DescribeActionTargetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("securityhub").get_paginator("describe_action_targets")`.
+`session.create_client("securityhub").get_paginator("describe_action_targets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_securityhub.paginator import DescribeActionTargetsPaginator
 
-def get_describe_action_targets_paginator() -> DescribeActionTargetsPaginator:
-    return Session().create_client("securityhub").get_paginator("describe_action_targets")
+session = get_session()
+async with session.create_client("securityhub") as client:
+    client: SecurityHubClient
+    paginator: DescribeActionTargetsPaginator = client.get_paginator("describe_action_targets")
 ```
 
 Boto3 documentation:
@@ -58,17 +60,19 @@ Arguments for `DescribeActionTargetsPaginator.paginate` method:
 ## DescribeProductsPaginator
 
 Type annotations for
-`aiobotocore.create_client("securityhub").get_paginator("describe_products")`.
+`session.create_client("securityhub").get_paginator("describe_products")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_securityhub.paginator import DescribeProductsPaginator
 
-def get_describe_products_paginator() -> DescribeProductsPaginator:
-    return Session().create_client("securityhub").get_paginator("describe_products")
+session = get_session()
+async with session.create_client("securityhub") as client:
+    client: SecurityHubClient
+    paginator: DescribeProductsPaginator = client.get_paginator("describe_products")
 ```
 
 Boto3 documentation:
@@ -88,17 +92,19 @@ Arguments for `DescribeProductsPaginator.paginate` method:
 ## DescribeStandardsPaginator
 
 Type annotations for
-`aiobotocore.create_client("securityhub").get_paginator("describe_standards")`.
+`session.create_client("securityhub").get_paginator("describe_standards")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_securityhub.paginator import DescribeStandardsPaginator
 
-def get_describe_standards_paginator() -> DescribeStandardsPaginator:
-    return Session().create_client("securityhub").get_paginator("describe_standards")
+session = get_session()
+async with session.create_client("securityhub") as client:
+    client: SecurityHubClient
+    paginator: DescribeStandardsPaginator = client.get_paginator("describe_standards")
 ```
 
 Boto3 documentation:
@@ -117,17 +123,19 @@ Arguments for `DescribeStandardsPaginator.paginate` method:
 ## DescribeStandardsControlsPaginator
 
 Type annotations for
-`aiobotocore.create_client("securityhub").get_paginator("describe_standards_controls")`.
+`session.create_client("securityhub").get_paginator("describe_standards_controls")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_securityhub.paginator import DescribeStandardsControlsPaginator
 
-def get_describe_standards_controls_paginator() -> DescribeStandardsControlsPaginator:
-    return Session().create_client("securityhub").get_paginator("describe_standards_controls")
+session = get_session()
+async with session.create_client("securityhub") as client:
+    client: SecurityHubClient
+    paginator: DescribeStandardsControlsPaginator = client.get_paginator("describe_standards_controls")
 ```
 
 Boto3 documentation:
@@ -147,17 +155,19 @@ Arguments for `DescribeStandardsControlsPaginator.paginate` method:
 ## GetEnabledStandardsPaginator
 
 Type annotations for
-`aiobotocore.create_client("securityhub").get_paginator("get_enabled_standards")`.
+`session.create_client("securityhub").get_paginator("get_enabled_standards")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_securityhub.paginator import GetEnabledStandardsPaginator
 
-def get_get_enabled_standards_paginator() -> GetEnabledStandardsPaginator:
-    return Session().create_client("securityhub").get_paginator("get_enabled_standards")
+session = get_session()
+async with session.create_client("securityhub") as client:
+    client: SecurityHubClient
+    paginator: GetEnabledStandardsPaginator = client.get_paginator("get_enabled_standards")
 ```
 
 Boto3 documentation:
@@ -177,17 +187,19 @@ Arguments for `GetEnabledStandardsPaginator.paginate` method:
 ## GetFindingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("securityhub").get_paginator("get_findings")`.
+`session.create_client("securityhub").get_paginator("get_findings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_securityhub.paginator import GetFindingsPaginator
 
-def get_get_findings_paginator() -> GetFindingsPaginator:
-    return Session().create_client("securityhub").get_paginator("get_findings")
+session = get_session()
+async with session.create_client("securityhub") as client:
+    client: SecurityHubClient
+    paginator: GetFindingsPaginator = client.get_paginator("get_findings")
 ```
 
 Boto3 documentation:
@@ -210,17 +222,19 @@ Arguments for `GetFindingsPaginator.paginate` method:
 ## GetInsightsPaginator
 
 Type annotations for
-`aiobotocore.create_client("securityhub").get_paginator("get_insights")`.
+`session.create_client("securityhub").get_paginator("get_insights")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_securityhub.paginator import GetInsightsPaginator
 
-def get_get_insights_paginator() -> GetInsightsPaginator:
-    return Session().create_client("securityhub").get_paginator("get_insights")
+session = get_session()
+async with session.create_client("securityhub") as client:
+    client: SecurityHubClient
+    paginator: GetInsightsPaginator = client.get_paginator("get_insights")
 ```
 
 Boto3 documentation:
@@ -240,17 +254,19 @@ Arguments for `GetInsightsPaginator.paginate` method:
 ## ListEnabledProductsForImportPaginator
 
 Type annotations for
-`aiobotocore.create_client("securityhub").get_paginator("list_enabled_products_for_import")`.
+`session.create_client("securityhub").get_paginator("list_enabled_products_for_import")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_securityhub.paginator import ListEnabledProductsForImportPaginator
 
-def get_list_enabled_products_for_import_paginator() -> ListEnabledProductsForImportPaginator:
-    return Session().create_client("securityhub").get_paginator("list_enabled_products_for_import")
+session = get_session()
+async with session.create_client("securityhub") as client:
+    client: SecurityHubClient
+    paginator: ListEnabledProductsForImportPaginator = client.get_paginator("list_enabled_products_for_import")
 ```
 
 Boto3 documentation:
@@ -269,17 +285,19 @@ Arguments for `ListEnabledProductsForImportPaginator.paginate` method:
 ## ListFindingAggregatorsPaginator
 
 Type annotations for
-`aiobotocore.create_client("securityhub").get_paginator("list_finding_aggregators")`.
+`session.create_client("securityhub").get_paginator("list_finding_aggregators")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_securityhub.paginator import ListFindingAggregatorsPaginator
 
-def get_list_finding_aggregators_paginator() -> ListFindingAggregatorsPaginator:
-    return Session().create_client("securityhub").get_paginator("list_finding_aggregators")
+session = get_session()
+async with session.create_client("securityhub") as client:
+    client: SecurityHubClient
+    paginator: ListFindingAggregatorsPaginator = client.get_paginator("list_finding_aggregators")
 ```
 
 Boto3 documentation:
@@ -298,17 +316,19 @@ Arguments for `ListFindingAggregatorsPaginator.paginate` method:
 ## ListInvitationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("securityhub").get_paginator("list_invitations")`.
+`session.create_client("securityhub").get_paginator("list_invitations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_securityhub.paginator import ListInvitationsPaginator
 
-def get_list_invitations_paginator() -> ListInvitationsPaginator:
-    return Session().create_client("securityhub").get_paginator("list_invitations")
+session = get_session()
+async with session.create_client("securityhub") as client:
+    client: SecurityHubClient
+    paginator: ListInvitationsPaginator = client.get_paginator("list_invitations")
 ```
 
 Boto3 documentation:
@@ -327,17 +347,19 @@ Arguments for `ListInvitationsPaginator.paginate` method:
 ## ListMembersPaginator
 
 Type annotations for
-`aiobotocore.create_client("securityhub").get_paginator("list_members")`.
+`session.create_client("securityhub").get_paginator("list_members")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_securityhub.paginator import ListMembersPaginator
 
-def get_list_members_paginator() -> ListMembersPaginator:
-    return Session().create_client("securityhub").get_paginator("list_members")
+session = get_session()
+async with session.create_client("securityhub") as client:
+    client: SecurityHubClient
+    paginator: ListMembersPaginator = client.get_paginator("list_members")
 ```
 
 Boto3 documentation:
@@ -357,17 +379,19 @@ Arguments for `ListMembersPaginator.paginate` method:
 ## ListOrganizationAdminAccountsPaginator
 
 Type annotations for
-`aiobotocore.create_client("securityhub").get_paginator("list_organization_admin_accounts")`.
+`session.create_client("securityhub").get_paginator("list_organization_admin_accounts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_securityhub.paginator import ListOrganizationAdminAccountsPaginator
 
-def get_list_organization_admin_accounts_paginator() -> ListOrganizationAdminAccountsPaginator:
-    return Session().create_client("securityhub").get_paginator("list_organization_admin_accounts")
+session = get_session()
+async with session.create_client("securityhub") as client:
+    client: SecurityHubClient
+    paginator: ListOrganizationAdminAccountsPaginator = client.get_paginator("list_organization_admin_accounts")
 ```
 
 Boto3 documentation:

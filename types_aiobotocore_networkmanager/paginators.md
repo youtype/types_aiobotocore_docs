@@ -35,17 +35,19 @@ type annotations stubs module
 ## DescribeGlobalNetworksPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("describe_global_networks")`.
+`session.create_client("networkmanager").get_paginator("describe_global_networks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import DescribeGlobalNetworksPaginator
 
-def get_describe_global_networks_paginator() -> DescribeGlobalNetworksPaginator:
-    return Session().create_client("networkmanager").get_paginator("describe_global_networks")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: DescribeGlobalNetworksPaginator = client.get_paginator("describe_global_networks")
 ```
 
 Boto3 documentation:
@@ -65,17 +67,19 @@ Arguments for `DescribeGlobalNetworksPaginator.paginate` method:
 ## GetConnectPeerAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("get_connect_peer_associations")`.
+`session.create_client("networkmanager").get_paginator("get_connect_peer_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import GetConnectPeerAssociationsPaginator
 
-def get_get_connect_peer_associations_paginator() -> GetConnectPeerAssociationsPaginator:
-    return Session().create_client("networkmanager").get_paginator("get_connect_peer_associations")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: GetConnectPeerAssociationsPaginator = client.get_paginator("get_connect_peer_associations")
 ```
 
 Boto3 documentation:
@@ -96,17 +100,19 @@ Arguments for `GetConnectPeerAssociationsPaginator.paginate` method:
 ## GetConnectionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("get_connections")`.
+`session.create_client("networkmanager").get_paginator("get_connections")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import GetConnectionsPaginator
 
-def get_get_connections_paginator() -> GetConnectionsPaginator:
-    return Session().create_client("networkmanager").get_paginator("get_connections")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: GetConnectionsPaginator = client.get_paginator("get_connections")
 ```
 
 Boto3 documentation:
@@ -128,17 +134,19 @@ Arguments for `GetConnectionsPaginator.paginate` method:
 ## GetCoreNetworkChangeSetPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("get_core_network_change_set")`.
+`session.create_client("networkmanager").get_paginator("get_core_network_change_set")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import GetCoreNetworkChangeSetPaginator
 
-def get_get_core_network_change_set_paginator() -> GetCoreNetworkChangeSetPaginator:
-    return Session().create_client("networkmanager").get_paginator("get_core_network_change_set")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: GetCoreNetworkChangeSetPaginator = client.get_paginator("get_core_network_change_set")
 ```
 
 Boto3 documentation:
@@ -159,17 +167,19 @@ Arguments for `GetCoreNetworkChangeSetPaginator.paginate` method:
 ## GetCustomerGatewayAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("get_customer_gateway_associations")`.
+`session.create_client("networkmanager").get_paginator("get_customer_gateway_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import GetCustomerGatewayAssociationsPaginator
 
-def get_get_customer_gateway_associations_paginator() -> GetCustomerGatewayAssociationsPaginator:
-    return Session().create_client("networkmanager").get_paginator("get_customer_gateway_associations")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: GetCustomerGatewayAssociationsPaginator = client.get_paginator("get_customer_gateway_associations")
 ```
 
 Boto3 documentation:
@@ -190,17 +200,19 @@ Arguments for `GetCustomerGatewayAssociationsPaginator.paginate` method:
 ## GetDevicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("get_devices")`.
+`session.create_client("networkmanager").get_paginator("get_devices")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import GetDevicesPaginator
 
-def get_get_devices_paginator() -> GetDevicesPaginator:
-    return Session().create_client("networkmanager").get_paginator("get_devices")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: GetDevicesPaginator = client.get_paginator("get_devices")
 ```
 
 Boto3 documentation:
@@ -222,17 +234,19 @@ Arguments for `GetDevicesPaginator.paginate` method:
 ## GetLinkAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("get_link_associations")`.
+`session.create_client("networkmanager").get_paginator("get_link_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import GetLinkAssociationsPaginator
 
-def get_get_link_associations_paginator() -> GetLinkAssociationsPaginator:
-    return Session().create_client("networkmanager").get_paginator("get_link_associations")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: GetLinkAssociationsPaginator = client.get_paginator("get_link_associations")
 ```
 
 Boto3 documentation:
@@ -254,17 +268,19 @@ Arguments for `GetLinkAssociationsPaginator.paginate` method:
 ## GetLinksPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("get_links")`.
+`session.create_client("networkmanager").get_paginator("get_links")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import GetLinksPaginator
 
-def get_get_links_paginator() -> GetLinksPaginator:
-    return Session().create_client("networkmanager").get_paginator("get_links")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: GetLinksPaginator = client.get_paginator("get_links")
 ```
 
 Boto3 documentation:
@@ -288,17 +304,19 @@ Arguments for `GetLinksPaginator.paginate` method:
 ## GetNetworkResourceCountsPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("get_network_resource_counts")`.
+`session.create_client("networkmanager").get_paginator("get_network_resource_counts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import GetNetworkResourceCountsPaginator
 
-def get_get_network_resource_counts_paginator() -> GetNetworkResourceCountsPaginator:
-    return Session().create_client("networkmanager").get_paginator("get_network_resource_counts")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: GetNetworkResourceCountsPaginator = client.get_paginator("get_network_resource_counts")
 ```
 
 Boto3 documentation:
@@ -319,17 +337,19 @@ Arguments for `GetNetworkResourceCountsPaginator.paginate` method:
 ## GetNetworkResourceRelationshipsPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("get_network_resource_relationships")`.
+`session.create_client("networkmanager").get_paginator("get_network_resource_relationships")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import GetNetworkResourceRelationshipsPaginator
 
-def get_get_network_resource_relationships_paginator() -> GetNetworkResourceRelationshipsPaginator:
-    return Session().create_client("networkmanager").get_paginator("get_network_resource_relationships")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: GetNetworkResourceRelationshipsPaginator = client.get_paginator("get_network_resource_relationships")
 ```
 
 Boto3 documentation:
@@ -355,17 +375,19 @@ Arguments for `GetNetworkResourceRelationshipsPaginator.paginate` method:
 ## GetNetworkResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("get_network_resources")`.
+`session.create_client("networkmanager").get_paginator("get_network_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import GetNetworkResourcesPaginator
 
-def get_get_network_resources_paginator() -> GetNetworkResourcesPaginator:
-    return Session().create_client("networkmanager").get_paginator("get_network_resources")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: GetNetworkResourcesPaginator = client.get_paginator("get_network_resources")
 ```
 
 Boto3 documentation:
@@ -391,17 +413,19 @@ Arguments for `GetNetworkResourcesPaginator.paginate` method:
 ## GetNetworkTelemetryPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("get_network_telemetry")`.
+`session.create_client("networkmanager").get_paginator("get_network_telemetry")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import GetNetworkTelemetryPaginator
 
-def get_get_network_telemetry_paginator() -> GetNetworkTelemetryPaginator:
-    return Session().create_client("networkmanager").get_paginator("get_network_telemetry")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: GetNetworkTelemetryPaginator = client.get_paginator("get_network_telemetry")
 ```
 
 Boto3 documentation:
@@ -427,17 +451,19 @@ Arguments for `GetNetworkTelemetryPaginator.paginate` method:
 ## GetSitesPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("get_sites")`.
+`session.create_client("networkmanager").get_paginator("get_sites")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import GetSitesPaginator
 
-def get_get_sites_paginator() -> GetSitesPaginator:
-    return Session().create_client("networkmanager").get_paginator("get_sites")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: GetSitesPaginator = client.get_paginator("get_sites")
 ```
 
 Boto3 documentation:
@@ -458,17 +484,19 @@ Arguments for `GetSitesPaginator.paginate` method:
 ## GetTransitGatewayConnectPeerAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("get_transit_gateway_connect_peer_associations")`.
+`session.create_client("networkmanager").get_paginator("get_transit_gateway_connect_peer_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import GetTransitGatewayConnectPeerAssociationsPaginator
 
-def get_get_transit_gateway_connect_peer_associations_paginator() -> GetTransitGatewayConnectPeerAssociationsPaginator:
-    return Session().create_client("networkmanager").get_paginator("get_transit_gateway_connect_peer_associations")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: GetTransitGatewayConnectPeerAssociationsPaginator = client.get_paginator("get_transit_gateway_connect_peer_associations")
 ```
 
 Boto3 documentation:
@@ -490,17 +518,19 @@ method:
 ## GetTransitGatewayRegistrationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("get_transit_gateway_registrations")`.
+`session.create_client("networkmanager").get_paginator("get_transit_gateway_registrations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import GetTransitGatewayRegistrationsPaginator
 
-def get_get_transit_gateway_registrations_paginator() -> GetTransitGatewayRegistrationsPaginator:
-    return Session().create_client("networkmanager").get_paginator("get_transit_gateway_registrations")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: GetTransitGatewayRegistrationsPaginator = client.get_paginator("get_transit_gateway_registrations")
 ```
 
 Boto3 documentation:
@@ -521,17 +551,19 @@ Arguments for `GetTransitGatewayRegistrationsPaginator.paginate` method:
 ## ListAttachmentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("list_attachments")`.
+`session.create_client("networkmanager").get_paginator("list_attachments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import ListAttachmentsPaginator
 
-def get_list_attachments_paginator() -> ListAttachmentsPaginator:
-    return Session().create_client("networkmanager").get_paginator("list_attachments")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: ListAttachmentsPaginator = client.get_paginator("list_attachments")
 ```
 
 Boto3 documentation:
@@ -554,17 +586,19 @@ Arguments for `ListAttachmentsPaginator.paginate` method:
 ## ListConnectPeersPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("list_connect_peers")`.
+`session.create_client("networkmanager").get_paginator("list_connect_peers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import ListConnectPeersPaginator
 
-def get_list_connect_peers_paginator() -> ListConnectPeersPaginator:
-    return Session().create_client("networkmanager").get_paginator("list_connect_peers")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: ListConnectPeersPaginator = client.get_paginator("list_connect_peers")
 ```
 
 Boto3 documentation:
@@ -585,17 +619,19 @@ Arguments for `ListConnectPeersPaginator.paginate` method:
 ## ListCoreNetworkPolicyVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("list_core_network_policy_versions")`.
+`session.create_client("networkmanager").get_paginator("list_core_network_policy_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import ListCoreNetworkPolicyVersionsPaginator
 
-def get_list_core_network_policy_versions_paginator() -> ListCoreNetworkPolicyVersionsPaginator:
-    return Session().create_client("networkmanager").get_paginator("list_core_network_policy_versions")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: ListCoreNetworkPolicyVersionsPaginator = client.get_paginator("list_core_network_policy_versions")
 ```
 
 Boto3 documentation:
@@ -615,17 +651,19 @@ Arguments for `ListCoreNetworkPolicyVersionsPaginator.paginate` method:
 ## ListCoreNetworksPaginator
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator("list_core_networks")`.
+`session.create_client("networkmanager").get_paginator("list_core_networks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_networkmanager.paginator import ListCoreNetworksPaginator
 
-def get_list_core_networks_paginator() -> ListCoreNetworksPaginator:
-    return Session().create_client("networkmanager").get_paginator("list_core_networks")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
+    paginator: ListCoreNetworksPaginator = client.get_paginator("list_core_networks")
 ```
 
 Boto3 documentation:

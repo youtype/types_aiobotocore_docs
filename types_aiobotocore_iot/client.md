@@ -252,22 +252,25 @@ type annotations stubs module
     - [update_thing_groups_for_thing](#update_thing_groups_for_thing)
     - [update_topic_rule_destination](#update_topic_rule_destination)
     - [validate_security_profile_behaviors](#validate_security_profile_behaviors)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="iotclient"></a>
 
 ## IoTClient
 
-Type annotations for `aiobotocore.create_client("iot")`
+Type annotations for `session.create_client("iot")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_iot.client import IoTClient
 
-def get_iot_client() -> IoTClient:
-    return Session().client("iot")
+session = get_session()
+async with session.create_client("iot") as client:
+    client: IoTClient
 ```
 
 Boto3 documentation:
@@ -332,7 +335,7 @@ Exceptions:
 
 IoTClient exceptions.
 
-Type annotations for `aiobotocore.create_client("iot").exceptions` method.
+Type annotations for `session.create_client("iot").exceptions` method.
 
 Boto3 documentation:
 [IoT.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.exceptions)
@@ -345,8 +348,8 @@ Returns [Exceptions](#exceptions).
 
 Accepts a pending certificate transfer.
 
-Type annotations for
-`aiobotocore.create_client("iot").accept_certificate_transfer` method.
+Type annotations for `session.create_client("iot").accept_certificate_transfer`
+method.
 
 Boto3 documentation:
 [IoT.Client.accept_certificate_transfer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.accept_certificate_transfer)
@@ -368,8 +371,8 @@ Keyword-only arguments:
 
 Adds a thing to a billing group.
 
-Type annotations for
-`aiobotocore.create_client("iot").add_thing_to_billing_group` method.
+Type annotations for `session.create_client("iot").add_thing_to_billing_group`
+method.
 
 Boto3 documentation:
 [IoT.Client.add_thing_to_billing_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.add_thing_to_billing_group)
@@ -395,8 +398,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds a thing to a thing group.
 
-Type annotations for
-`aiobotocore.create_client("iot").add_thing_to_thing_group` method.
+Type annotations for `session.create_client("iot").add_thing_to_thing_group`
+method.
 
 Boto3 documentation:
 [IoT.Client.add_thing_to_thing_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.add_thing_to_thing_group)
@@ -423,8 +426,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Associates a group with a continuous job.
 
-Type annotations for
-`aiobotocore.create_client("iot").associate_targets_with_job` method.
+Type annotations for `session.create_client("iot").associate_targets_with_job`
+method.
 
 Boto3 documentation:
 [IoT.Client.associate_targets_with_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.associate_targets_with_job)
@@ -452,7 +455,7 @@ Returns a `Coroutine` for
 Attaches the specified policy to the specified principal (certificate or other
 credential).
 
-Type annotations for `aiobotocore.create_client("iot").attach_policy` method.
+Type annotations for `session.create_client("iot").attach_policy` method.
 
 Boto3 documentation:
 [IoT.Client.attach_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.attach_policy)
@@ -474,7 +477,7 @@ Keyword-only arguments:
 Attaches the specified policy to the specified principal (certificate or other
 credential).
 
-Type annotations for `aiobotocore.create_client("iot").attach_principal_policy`
+Type annotations for `session.create_client("iot").attach_principal_policy`
 method.
 
 Boto3 documentation:
@@ -498,7 +501,7 @@ Keyword-only arguments:
 Associates a Device Defender security profile with a thing group or this
 account.
 
-Type annotations for `aiobotocore.create_client("iot").attach_security_profile`
+Type annotations for `session.create_client("iot").attach_security_profile`
 method.
 
 Boto3 documentation:
@@ -523,7 +526,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Attaches the specified principal to the specified thing.
 
-Type annotations for `aiobotocore.create_client("iot").attach_thing_principal`
+Type annotations for `session.create_client("iot").attach_thing_principal`
 method.
 
 Boto3 documentation:
@@ -548,18 +551,16 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("iot").can_paginate` method.
+Type annotations for `session.create_client("iot").can_paginate` method.
 
 Boto3 documentation:
 [IoT.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_audit_mitigation_actions_task"></a>
 
@@ -568,7 +569,7 @@ Returns a `Coroutine` for `bool`.
 Cancels a mitigation action task that is in progress.
 
 Type annotations for
-`aiobotocore.create_client("iot").cancel_audit_mitigation_actions_task` method.
+`session.create_client("iot").cancel_audit_mitigation_actions_task` method.
 
 Boto3 documentation:
 [IoT.Client.cancel_audit_mitigation_actions_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.cancel_audit_mitigation_actions_task)
@@ -591,8 +592,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Cancels an audit that is in progress.
 
-Type annotations for `aiobotocore.create_client("iot").cancel_audit_task`
-method.
+Type annotations for `session.create_client("iot").cancel_audit_task` method.
 
 Boto3 documentation:
 [IoT.Client.cancel_audit_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.cancel_audit_task)
@@ -614,8 +614,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Cancels a pending transfer for the specified certificate.
 
-Type annotations for
-`aiobotocore.create_client("iot").cancel_certificate_transfer` method.
+Type annotations for `session.create_client("iot").cancel_certificate_transfer`
+method.
 
 Boto3 documentation:
 [IoT.Client.cancel_certificate_transfer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.cancel_certificate_transfer)
@@ -637,8 +637,7 @@ Keyword-only arguments:
 Cancels a Device Defender ML Detect mitigation action.
 
 Type annotations for
-`aiobotocore.create_client("iot").cancel_detect_mitigation_actions_task`
-method.
+`session.create_client("iot").cancel_detect_mitigation_actions_task` method.
 
 Boto3 documentation:
 [IoT.Client.cancel_detect_mitigation_actions_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.cancel_detect_mitigation_actions_task)
@@ -661,7 +660,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Cancels a job.
 
-Type annotations for `aiobotocore.create_client("iot").cancel_job` method.
+Type annotations for `session.create_client("iot").cancel_job` method.
 
 Boto3 documentation:
 [IoT.Client.cancel_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.cancel_job)
@@ -687,7 +686,7 @@ Returns a `Coroutine` for
 
 Cancels the execution of a job for a given thing.
 
-Type annotations for `aiobotocore.create_client("iot").cancel_job_execution`
+Type annotations for `session.create_client("iot").cancel_job_execution`
 method.
 
 Boto3 documentation:
@@ -713,8 +712,8 @@ Keyword-only arguments:
 
 Clears the default authorizer.
 
-Type annotations for
-`aiobotocore.create_client("iot").clear_default_authorizer` method.
+Type annotations for `session.create_client("iot").clear_default_authorizer`
+method.
 
 Boto3 documentation:
 [IoT.Client.clear_default_authorizer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.clear_default_authorizer)
@@ -731,7 +730,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Confirms a topic rule destination.
 
 Type annotations for
-`aiobotocore.create_client("iot").confirm_topic_rule_destination` method.
+`session.create_client("iot").confirm_topic_rule_destination` method.
 
 Boto3 documentation:
 [IoT.Client.confirm_topic_rule_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.confirm_topic_rule_destination)
@@ -754,8 +753,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a Device Defender audit suppression.
 
-Type annotations for
-`aiobotocore.create_client("iot").create_audit_suppression` method.
+Type annotations for `session.create_client("iot").create_audit_suppression`
+method.
 
 Boto3 documentation:
 [IoT.Client.create_audit_suppression](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_audit_suppression)
@@ -785,8 +784,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates an authorizer.
 
-Type annotations for `aiobotocore.create_client("iot").create_authorizer`
-method.
+Type annotations for `session.create_client("iot").create_authorizer` method.
 
 Boto3 documentation:
 [IoT.Client.create_authorizer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_authorizer)
@@ -816,7 +814,7 @@ Returns a `Coroutine` for
 
 Creates a billing group.
 
-Type annotations for `aiobotocore.create_client("iot").create_billing_group`
+Type annotations for `session.create_client("iot").create_billing_group`
 method.
 
 Boto3 documentation:
@@ -844,8 +842,8 @@ Returns a `Coroutine` for
 
 Creates an X.509 certificate using the specified certificate signing request.
 
-Type annotations for
-`aiobotocore.create_client("iot").create_certificate_from_csr` method.
+Type annotations for `session.create_client("iot").create_certificate_from_csr`
+method.
 
 Boto3 documentation:
 [IoT.Client.create_certificate_from_csr](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_certificate_from_csr)
@@ -871,7 +869,7 @@ Returns a `Coroutine` for
 Use this API to define a Custom Metric published by your devices to Device
 Defender.
 
-Type annotations for `aiobotocore.create_client("iot").create_custom_metric`
+Type annotations for `session.create_client("iot").create_custom_metric`
 method.
 
 Boto3 documentation:
@@ -902,8 +900,7 @@ Returns a `Coroutine` for
 Create a dimension that you can use to limit the scope of a metric used in a
 security profile for IoT Device Defender.
 
-Type annotations for `aiobotocore.create_client("iot").create_dimension`
-method.
+Type annotations for `session.create_client("iot").create_dimension` method.
 
 Boto3 documentation:
 [IoT.Client.create_dimension](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_dimension)
@@ -931,8 +928,8 @@ Returns a `Coroutine` for
 
 Creates a domain configuration.
 
-Type annotations for
-`aiobotocore.create_client("iot").create_domain_configuration` method.
+Type annotations for `session.create_client("iot").create_domain_configuration`
+method.
 
 Boto3 documentation:
 [IoT.Client.create_domain_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_domain_configuration)
@@ -963,8 +960,8 @@ Returns a `Coroutine` for
 
 Creates a dynamic thing group.
 
-Type annotations for
-`aiobotocore.create_client("iot").create_dynamic_thing_group` method.
+Type annotations for `session.create_client("iot").create_dynamic_thing_group`
+method.
 
 Boto3 documentation:
 [IoT.Client.create_dynamic_thing_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_dynamic_thing_group)
@@ -994,8 +991,7 @@ Returns a `Coroutine` for
 
 Creates a fleet metric.
 
-Type annotations for `aiobotocore.create_client("iot").create_fleet_metric`
-method.
+Type annotations for `session.create_client("iot").create_fleet_metric` method.
 
 Boto3 documentation:
 [IoT.Client.create_fleet_metric](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_fleet_metric)
@@ -1029,7 +1025,7 @@ Returns a `Coroutine` for
 
 Creates a job.
 
-Type annotations for `aiobotocore.create_client("iot").create_job` method.
+Type annotations for `session.create_client("iot").create_job` method.
 
 Boto3 documentation:
 [IoT.Client.create_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_job)
@@ -1067,8 +1063,7 @@ Returns a `Coroutine` for
 
 Creates a job template.
 
-Type annotations for `aiobotocore.create_client("iot").create_job_template`
-method.
+Type annotations for `session.create_client("iot").create_job_template` method.
 
 Boto3 documentation:
 [IoT.Client.create_job_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_job_template)
@@ -1104,8 +1099,8 @@ Returns a `Coroutine` for
 Creates a 2048-bit RSA key pair and issues an X.509 certificate using the
 issued public key.
 
-Type annotations for
-`aiobotocore.create_client("iot").create_keys_and_certificate` method.
+Type annotations for `session.create_client("iot").create_keys_and_certificate`
+method.
 
 Boto3 documentation:
 [IoT.Client.create_keys_and_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_keys_and_certificate)
@@ -1130,8 +1125,8 @@ Returns a `Coroutine` for
 Defines an action that can be applied to audit findings by using
 StartAuditMitigationActionsTask.
 
-Type annotations for
-`aiobotocore.create_client("iot").create_mitigation_action` method.
+Type annotations for `session.create_client("iot").create_mitigation_action`
+method.
 
 Boto3 documentation:
 [IoT.Client.create_mitigation_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_mitigation_action)
@@ -1160,8 +1155,7 @@ Returns a `Coroutine` for
 
 Creates an IoT OTA update on a target group of things or groups.
 
-Type annotations for `aiobotocore.create_client("iot").create_ota_update`
-method.
+Type annotations for `session.create_client("iot").create_ota_update` method.
 
 Boto3 documentation:
 [IoT.Client.create_ota_update](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_ota_update)
@@ -1202,7 +1196,7 @@ Returns a `Coroutine` for
 
 Creates an IoT policy.
 
-Type annotations for `aiobotocore.create_client("iot").create_policy` method.
+Type annotations for `session.create_client("iot").create_policy` method.
 
 Boto3 documentation:
 [IoT.Client.create_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_policy)
@@ -1227,7 +1221,7 @@ Returns a `Coroutine` for
 
 Creates a new version of the specified IoT policy.
 
-Type annotations for `aiobotocore.create_client("iot").create_policy_version`
+Type annotations for `session.create_client("iot").create_policy_version`
 method.
 
 Boto3 documentation:
@@ -1254,8 +1248,8 @@ Returns a `Coroutine` for
 
 Creates a provisioning claim.
 
-Type annotations for
-`aiobotocore.create_client("iot").create_provisioning_claim` method.
+Type annotations for `session.create_client("iot").create_provisioning_claim`
+method.
 
 Boto3 documentation:
 [IoT.Client.create_provisioning_claim](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_provisioning_claim)
@@ -1280,7 +1274,7 @@ Returns a `Coroutine` for
 Creates a fleet provisioning template.
 
 Type annotations for
-`aiobotocore.create_client("iot").create_provisioning_template` method.
+`session.create_client("iot").create_provisioning_template` method.
 
 Boto3 documentation:
 [IoT.Client.create_provisioning_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_provisioning_template)
@@ -1312,7 +1306,7 @@ Returns a `Coroutine` for
 Creates a new version of a fleet provisioning template.
 
 Type annotations for
-`aiobotocore.create_client("iot").create_provisioning_template_version` method.
+`session.create_client("iot").create_provisioning_template_version` method.
 
 Boto3 documentation:
 [IoT.Client.create_provisioning_template_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_provisioning_template_version)
@@ -1338,8 +1332,7 @@ Returns a `Coroutine` for
 
 Creates a role alias.
 
-Type annotations for `aiobotocore.create_client("iot").create_role_alias`
-method.
+Type annotations for `session.create_client("iot").create_role_alias` method.
 
 Boto3 documentation:
 [IoT.Client.create_role_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_role_alias)
@@ -1365,7 +1358,7 @@ Returns a `Coroutine` for
 
 Creates a scheduled audit that is run at a specified time interval.
 
-Type annotations for `aiobotocore.create_client("iot").create_scheduled_audit`
+Type annotations for `session.create_client("iot").create_scheduled_audit`
 method.
 
 Boto3 documentation:
@@ -1396,7 +1389,7 @@ Returns a `Coroutine` for
 
 Creates a Device Defender security profile.
 
-Type annotations for `aiobotocore.create_client("iot").create_security_profile`
+Type annotations for `session.create_client("iot").create_security_profile`
 method.
 
 Boto3 documentation:
@@ -1430,7 +1423,7 @@ Returns a `Coroutine` for
 
 Creates a stream for delivering one or more large files in chunks over MQTT.
 
-Type annotations for `aiobotocore.create_client("iot").create_stream` method.
+Type annotations for `session.create_client("iot").create_stream` method.
 
 Boto3 documentation:
 [IoT.Client.create_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_stream)
@@ -1458,7 +1451,7 @@ Returns a `Coroutine` for
 
 Creates a thing record in the registry.
 
-Type annotations for `aiobotocore.create_client("iot").create_thing` method.
+Type annotations for `session.create_client("iot").create_thing` method.
 
 Boto3 documentation:
 [IoT.Client.create_thing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_thing)
@@ -1485,8 +1478,7 @@ Returns a `Coroutine` for
 
 Create a thing group.
 
-Type annotations for `aiobotocore.create_client("iot").create_thing_group`
-method.
+Type annotations for `session.create_client("iot").create_thing_group` method.
 
 Boto3 documentation:
 [IoT.Client.create_thing_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_thing_group)
@@ -1514,8 +1506,7 @@ Returns a `Coroutine` for
 
 Creates a new thing type.
 
-Type annotations for `aiobotocore.create_client("iot").create_thing_type`
-method.
+Type annotations for `session.create_client("iot").create_thing_type` method.
 
 Boto3 documentation:
 [IoT.Client.create_thing_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_thing_type)
@@ -1541,8 +1532,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("iot").create_topic_rule`
-method.
+Type annotations for `session.create_client("iot").create_topic_rule` method.
 
 Boto3 documentation:
 [IoT.Client.create_topic_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_topic_rule)
@@ -1567,7 +1557,7 @@ Keyword-only arguments:
 Creates a topic rule destination.
 
 Type annotations for
-`aiobotocore.create_client("iot").create_topic_rule_destination` method.
+`session.create_client("iot").create_topic_rule_destination` method.
 
 Boto3 documentation:
 [IoT.Client.create_topic_rule_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.create_topic_rule_destination)
@@ -1594,7 +1584,7 @@ Returns a `Coroutine` for
 Restores the default settings for Device Defender audits for this account.
 
 Type annotations for
-`aiobotocore.create_client("iot").delete_account_audit_configuration` method.
+`session.create_client("iot").delete_account_audit_configuration` method.
 
 Boto3 documentation:
 [IoT.Client.delete_account_audit_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_account_audit_configuration)
@@ -1617,8 +1607,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a Device Defender audit suppression.
 
-Type annotations for
-`aiobotocore.create_client("iot").delete_audit_suppression` method.
+Type annotations for `session.create_client("iot").delete_audit_suppression`
+method.
 
 Boto3 documentation:
 [IoT.Client.delete_audit_suppression](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_audit_suppression)
@@ -1644,8 +1634,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an authorizer.
 
-Type annotations for `aiobotocore.create_client("iot").delete_authorizer`
-method.
+Type annotations for `session.create_client("iot").delete_authorizer` method.
 
 Boto3 documentation:
 [IoT.Client.delete_authorizer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_authorizer)
@@ -1667,7 +1656,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the billing group.
 
-Type annotations for `aiobotocore.create_client("iot").delete_billing_group`
+Type annotations for `session.create_client("iot").delete_billing_group`
 method.
 
 Boto3 documentation:
@@ -1692,7 +1681,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a registered CA certificate.
 
-Type annotations for `aiobotocore.create_client("iot").delete_ca_certificate`
+Type annotations for `session.create_client("iot").delete_ca_certificate`
 method.
 
 Boto3 documentation:
@@ -1716,8 +1705,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified certificate.
 
-Type annotations for `aiobotocore.create_client("iot").delete_certificate`
-method.
+Type annotations for `session.create_client("iot").delete_certificate` method.
 
 Boto3 documentation:
 [IoT.Client.delete_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_certificate)
@@ -1739,7 +1727,7 @@ Keyword-only arguments:
 
 Deletes a Device Defender detect custom metric.
 
-Type annotations for `aiobotocore.create_client("iot").delete_custom_metric`
+Type annotations for `session.create_client("iot").delete_custom_metric`
 method.
 
 Boto3 documentation:
@@ -1763,8 +1751,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the specified dimension from your Amazon Web Services accounts.
 
-Type annotations for `aiobotocore.create_client("iot").delete_dimension`
-method.
+Type annotations for `session.create_client("iot").delete_dimension` method.
 
 Boto3 documentation:
 [IoT.Client.delete_dimension](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_dimension)
@@ -1786,8 +1773,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified domain configuration.
 
-Type annotations for
-`aiobotocore.create_client("iot").delete_domain_configuration` method.
+Type annotations for `session.create_client("iot").delete_domain_configuration`
+method.
 
 Boto3 documentation:
 [IoT.Client.delete_domain_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_domain_configuration)
@@ -1810,8 +1797,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a dynamic thing group.
 
-Type annotations for
-`aiobotocore.create_client("iot").delete_dynamic_thing_group` method.
+Type annotations for `session.create_client("iot").delete_dynamic_thing_group`
+method.
 
 Boto3 documentation:
 [IoT.Client.delete_dynamic_thing_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_dynamic_thing_group)
@@ -1835,8 +1822,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified fleet metric.
 
-Type annotations for `aiobotocore.create_client("iot").delete_fleet_metric`
-method.
+Type annotations for `session.create_client("iot").delete_fleet_metric` method.
 
 Boto3 documentation:
 [IoT.Client.delete_fleet_metric](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_fleet_metric)
@@ -1858,7 +1844,7 @@ Keyword-only arguments:
 
 Deletes a job and its related job executions.
 
-Type annotations for `aiobotocore.create_client("iot").delete_job` method.
+Type annotations for `session.create_client("iot").delete_job` method.
 
 Boto3 documentation:
 [IoT.Client.delete_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_job)
@@ -1880,7 +1866,7 @@ Keyword-only arguments:
 
 Deletes a job execution.
 
-Type annotations for `aiobotocore.create_client("iot").delete_job_execution`
+Type annotations for `session.create_client("iot").delete_job_execution`
 method.
 
 Boto3 documentation:
@@ -1906,8 +1892,7 @@ Keyword-only arguments:
 
 Deletes the specified job template.
 
-Type annotations for `aiobotocore.create_client("iot").delete_job_template`
-method.
+Type annotations for `session.create_client("iot").delete_job_template` method.
 
 Boto3 documentation:
 [IoT.Client.delete_job_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_job_template)
@@ -1928,8 +1913,8 @@ Keyword-only arguments:
 
 Deletes a defined mitigation action from your Amazon Web Services accounts.
 
-Type annotations for
-`aiobotocore.create_client("iot").delete_mitigation_action` method.
+Type annotations for `session.create_client("iot").delete_mitigation_action`
+method.
 
 Boto3 documentation:
 [IoT.Client.delete_mitigation_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_mitigation_action)
@@ -1952,8 +1937,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Delete an OTA update.
 
-Type annotations for `aiobotocore.create_client("iot").delete_ota_update`
-method.
+Type annotations for `session.create_client("iot").delete_ota_update` method.
 
 Boto3 documentation:
 [IoT.Client.delete_ota_update](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_ota_update)
@@ -1977,7 +1961,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified policy.
 
-Type annotations for `aiobotocore.create_client("iot").delete_policy` method.
+Type annotations for `session.create_client("iot").delete_policy` method.
 
 Boto3 documentation:
 [IoT.Client.delete_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_policy)
@@ -1997,7 +1981,7 @@ Keyword-only arguments:
 
 Deletes the specified version of the specified policy.
 
-Type annotations for `aiobotocore.create_client("iot").delete_policy_version`
+Type annotations for `session.create_client("iot").delete_policy_version`
 method.
 
 Boto3 documentation:
@@ -2021,7 +2005,7 @@ Keyword-only arguments:
 Deletes a fleet provisioning template.
 
 Type annotations for
-`aiobotocore.create_client("iot").delete_provisioning_template` method.
+`session.create_client("iot").delete_provisioning_template` method.
 
 Boto3 documentation:
 [IoT.Client.delete_provisioning_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_provisioning_template)
@@ -2045,7 +2029,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a fleet provisioning template version.
 
 Type annotations for
-`aiobotocore.create_client("iot").delete_provisioning_template_version` method.
+`session.create_client("iot").delete_provisioning_template_version` method.
 
 Boto3 documentation:
 [IoT.Client.delete_provisioning_template_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_provisioning_template_version)
@@ -2069,8 +2053,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a CA certificate registration code.
 
-Type annotations for
-`aiobotocore.create_client("iot").delete_registration_code` method.
+Type annotations for `session.create_client("iot").delete_registration_code`
+method.
 
 Boto3 documentation:
 [IoT.Client.delete_registration_code](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_registration_code)
@@ -2089,8 +2073,7 @@ Deletes a role alias Requires permission to access the
 authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions)\_
 action.
 
-Type annotations for `aiobotocore.create_client("iot").delete_role_alias`
-method.
+Type annotations for `session.create_client("iot").delete_role_alias` method.
 
 Boto3 documentation:
 [IoT.Client.delete_role_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_role_alias)
@@ -2112,7 +2095,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a scheduled audit.
 
-Type annotations for `aiobotocore.create_client("iot").delete_scheduled_audit`
+Type annotations for `session.create_client("iot").delete_scheduled_audit`
 method.
 
 Boto3 documentation:
@@ -2136,7 +2119,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a Device Defender security profile.
 
-Type annotations for `aiobotocore.create_client("iot").delete_security_profile`
+Type annotations for `session.create_client("iot").delete_security_profile`
 method.
 
 Boto3 documentation:
@@ -2161,7 +2144,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a stream.
 
-Type annotations for `aiobotocore.create_client("iot").delete_stream` method.
+Type annotations for `session.create_client("iot").delete_stream` method.
 
 Boto3 documentation:
 [IoT.Client.delete_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_stream)
@@ -2183,7 +2166,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified thing.
 
-Type annotations for `aiobotocore.create_client("iot").delete_thing` method.
+Type annotations for `session.create_client("iot").delete_thing` method.
 
 Boto3 documentation:
 [IoT.Client.delete_thing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_thing)
@@ -2206,8 +2189,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a thing group.
 
-Type annotations for `aiobotocore.create_client("iot").delete_thing_group`
-method.
+Type annotations for `session.create_client("iot").delete_thing_group` method.
 
 Boto3 documentation:
 [IoT.Client.delete_thing_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_thing_group)
@@ -2231,8 +2213,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified thing type.
 
-Type annotations for `aiobotocore.create_client("iot").delete_thing_type`
-method.
+Type annotations for `session.create_client("iot").delete_thing_type` method.
 
 Boto3 documentation:
 [IoT.Client.delete_thing_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_thing_type)
@@ -2254,8 +2235,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the rule.
 
-Type annotations for `aiobotocore.create_client("iot").delete_topic_rule`
-method.
+Type annotations for `session.create_client("iot").delete_topic_rule` method.
 
 Boto3 documentation:
 [IoT.Client.delete_topic_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_topic_rule)
@@ -2276,7 +2256,7 @@ Keyword-only arguments:
 Deletes a topic rule destination.
 
 Type annotations for
-`aiobotocore.create_client("iot").delete_topic_rule_destination` method.
+`session.create_client("iot").delete_topic_rule_destination` method.
 
 Boto3 documentation:
 [IoT.Client.delete_topic_rule_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.delete_topic_rule_destination)
@@ -2299,7 +2279,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a logging level.
 
-Type annotations for `aiobotocore.create_client("iot").delete_v2_logging_level`
+Type annotations for `session.create_client("iot").delete_v2_logging_level`
 method.
 
 Boto3 documentation:
@@ -2323,7 +2303,7 @@ Keyword-only arguments:
 
 Deprecates a thing type.
 
-Type annotations for `aiobotocore.create_client("iot").deprecate_thing_type`
+Type annotations for `session.create_client("iot").deprecate_thing_type`
 method.
 
 Boto3 documentation:
@@ -2349,7 +2329,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Gets information about the Device Defender audit settings for this account.
 
 Type annotations for
-`aiobotocore.create_client("iot").describe_account_audit_configuration` method.
+`session.create_client("iot").describe_account_audit_configuration` method.
 
 Boto3 documentation:
 [IoT.Client.describe_account_audit_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_account_audit_configuration)
@@ -2366,7 +2346,7 @@ Returns a `Coroutine` for
 
 Gets information about a single audit finding.
 
-Type annotations for `aiobotocore.create_client("iot").describe_audit_finding`
+Type annotations for `session.create_client("iot").describe_audit_finding`
 method.
 
 Boto3 documentation:
@@ -2393,8 +2373,7 @@ Gets information about an audit mitigation task that is used to apply
 mitigation actions to a set of audit findings.
 
 Type annotations for
-`aiobotocore.create_client("iot").describe_audit_mitigation_actions_task`
-method.
+`session.create_client("iot").describe_audit_mitigation_actions_task` method.
 
 Boto3 documentation:
 [IoT.Client.describe_audit_mitigation_actions_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_audit_mitigation_actions_task)
@@ -2418,8 +2397,8 @@ Returns a `Coroutine` for
 
 Gets information about a Device Defender audit suppression.
 
-Type annotations for
-`aiobotocore.create_client("iot").describe_audit_suppression` method.
+Type annotations for `session.create_client("iot").describe_audit_suppression`
+method.
 
 Boto3 documentation:
 [IoT.Client.describe_audit_suppression](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_audit_suppression)
@@ -2446,8 +2425,7 @@ Returns a `Coroutine` for
 
 Gets information about a Device Defender audit.
 
-Type annotations for `aiobotocore.create_client("iot").describe_audit_task`
-method.
+Type annotations for `session.create_client("iot").describe_audit_task` method.
 
 Boto3 documentation:
 [IoT.Client.describe_audit_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_audit_task)
@@ -2471,8 +2449,7 @@ Returns a `Coroutine` for
 
 Describes an authorizer.
 
-Type annotations for `aiobotocore.create_client("iot").describe_authorizer`
-method.
+Type annotations for `session.create_client("iot").describe_authorizer` method.
 
 Boto3 documentation:
 [IoT.Client.describe_authorizer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_authorizer)
@@ -2496,7 +2473,7 @@ Returns a `Coroutine` for
 
 Returns information about a billing group.
 
-Type annotations for `aiobotocore.create_client("iot").describe_billing_group`
+Type annotations for `session.create_client("iot").describe_billing_group`
 method.
 
 Boto3 documentation:
@@ -2521,7 +2498,7 @@ Returns a `Coroutine` for
 
 Describes a registered CA certificate.
 
-Type annotations for `aiobotocore.create_client("iot").describe_ca_certificate`
+Type annotations for `session.create_client("iot").describe_ca_certificate`
 method.
 
 Boto3 documentation:
@@ -2546,7 +2523,7 @@ Returns a `Coroutine` for
 
 Gets information about the specified certificate.
 
-Type annotations for `aiobotocore.create_client("iot").describe_certificate`
+Type annotations for `session.create_client("iot").describe_certificate`
 method.
 
 Boto3 documentation:
@@ -2571,7 +2548,7 @@ Returns a `Coroutine` for
 
 Gets information about a Device Defender detect custom metric.
 
-Type annotations for `aiobotocore.create_client("iot").describe_custom_metric`
+Type annotations for `session.create_client("iot").describe_custom_metric`
 method.
 
 Boto3 documentation:
@@ -2596,8 +2573,8 @@ Returns a `Coroutine` for
 
 Describes the default authorizer.
 
-Type annotations for
-`aiobotocore.create_client("iot").describe_default_authorizer` method.
+Type annotations for `session.create_client("iot").describe_default_authorizer`
+method.
 
 Boto3 documentation:
 [IoT.Client.describe_default_authorizer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_default_authorizer)
@@ -2615,8 +2592,7 @@ Returns a `Coroutine` for
 Gets information about a Device Defender ML Detect mitigation action.
 
 Type annotations for
-`aiobotocore.create_client("iot").describe_detect_mitigation_actions_task`
-method.
+`session.create_client("iot").describe_detect_mitigation_actions_task` method.
 
 Boto3 documentation:
 [IoT.Client.describe_detect_mitigation_actions_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_detect_mitigation_actions_task)
@@ -2641,8 +2617,7 @@ Returns a `Coroutine` for
 Provides details about a dimension that is defined in your Amazon Web Services
 accounts.
 
-Type annotations for `aiobotocore.create_client("iot").describe_dimension`
-method.
+Type annotations for `session.create_client("iot").describe_dimension` method.
 
 Boto3 documentation:
 [IoT.Client.describe_dimension](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_dimension)
@@ -2667,7 +2642,7 @@ Returns a `Coroutine` for
 Gets summary information about a domain configuration.
 
 Type annotations for
-`aiobotocore.create_client("iot").describe_domain_configuration` method.
+`session.create_client("iot").describe_domain_configuration` method.
 
 Boto3 documentation:
 [IoT.Client.describe_domain_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_domain_configuration)
@@ -2692,8 +2667,7 @@ Returns a `Coroutine` for
 Returns a unique endpoint specific to the Amazon Web Services account making
 the call.
 
-Type annotations for `aiobotocore.create_client("iot").describe_endpoint`
-method.
+Type annotations for `session.create_client("iot").describe_endpoint` method.
 
 Boto3 documentation:
 [IoT.Client.describe_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_endpoint)
@@ -2717,7 +2691,7 @@ Returns a `Coroutine` for
 Describes event configurations.
 
 Type annotations for
-`aiobotocore.create_client("iot").describe_event_configurations` method.
+`session.create_client("iot").describe_event_configurations` method.
 
 Boto3 documentation:
 [IoT.Client.describe_event_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_event_configurations)
@@ -2734,7 +2708,7 @@ Returns a `Coroutine` for
 
 Gets information about the specified fleet metric.
 
-Type annotations for `aiobotocore.create_client("iot").describe_fleet_metric`
+Type annotations for `session.create_client("iot").describe_fleet_metric`
 method.
 
 Boto3 documentation:
@@ -2759,7 +2733,7 @@ Returns a `Coroutine` for
 
 Describes a search index.
 
-Type annotations for `aiobotocore.create_client("iot").describe_index` method.
+Type annotations for `session.create_client("iot").describe_index` method.
 
 Boto3 documentation:
 [IoT.Client.describe_index](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_index)
@@ -2782,7 +2756,7 @@ Returns a `Coroutine` for
 
 Describes a job.
 
-Type annotations for `aiobotocore.create_client("iot").describe_job` method.
+Type annotations for `session.create_client("iot").describe_job` method.
 
 Boto3 documentation:
 [IoT.Client.describe_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_job)
@@ -2805,7 +2779,7 @@ Returns a `Coroutine` for
 
 Describes a job execution.
 
-Type annotations for `aiobotocore.create_client("iot").describe_job_execution`
+Type annotations for `session.create_client("iot").describe_job_execution`
 method.
 
 Boto3 documentation:
@@ -2832,7 +2806,7 @@ Returns a `Coroutine` for
 
 Returns information about a job template.
 
-Type annotations for `aiobotocore.create_client("iot").describe_job_template`
+Type annotations for `session.create_client("iot").describe_job_template`
 method.
 
 Boto3 documentation:
@@ -2858,7 +2832,7 @@ Returns a `Coroutine` for
 View details of a managed job template.
 
 Type annotations for
-`aiobotocore.create_client("iot").describe_managed_job_template` method.
+`session.create_client("iot").describe_managed_job_template` method.
 
 Boto3 documentation:
 [IoT.Client.describe_managed_job_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_managed_job_template)
@@ -2883,8 +2857,8 @@ Returns a `Coroutine` for
 
 Gets information about a mitigation action.
 
-Type annotations for
-`aiobotocore.create_client("iot").describe_mitigation_action` method.
+Type annotations for `session.create_client("iot").describe_mitigation_action`
+method.
 
 Boto3 documentation:
 [IoT.Client.describe_mitigation_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_mitigation_action)
@@ -2909,7 +2883,7 @@ Returns a `Coroutine` for
 Returns information about a fleet provisioning template.
 
 Type annotations for
-`aiobotocore.create_client("iot").describe_provisioning_template` method.
+`session.create_client("iot").describe_provisioning_template` method.
 
 Boto3 documentation:
 [IoT.Client.describe_provisioning_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_provisioning_template)
@@ -2934,8 +2908,7 @@ Returns a `Coroutine` for
 Returns information about a fleet provisioning template version.
 
 Type annotations for
-`aiobotocore.create_client("iot").describe_provisioning_template_version`
-method.
+`session.create_client("iot").describe_provisioning_template_version` method.
 
 Boto3 documentation:
 [IoT.Client.describe_provisioning_template_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_provisioning_template_version)
@@ -2960,8 +2933,7 @@ Returns a `Coroutine` for
 
 Describes a role alias.
 
-Type annotations for `aiobotocore.create_client("iot").describe_role_alias`
-method.
+Type annotations for `session.create_client("iot").describe_role_alias` method.
 
 Boto3 documentation:
 [IoT.Client.describe_role_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_role_alias)
@@ -2985,8 +2957,8 @@ Returns a `Coroutine` for
 
 Gets information about a scheduled audit.
 
-Type annotations for
-`aiobotocore.create_client("iot").describe_scheduled_audit` method.
+Type annotations for `session.create_client("iot").describe_scheduled_audit`
+method.
 
 Boto3 documentation:
 [IoT.Client.describe_scheduled_audit](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_scheduled_audit)
@@ -3010,8 +2982,8 @@ Returns a `Coroutine` for
 
 Gets information about a Device Defender security profile.
 
-Type annotations for
-`aiobotocore.create_client("iot").describe_security_profile` method.
+Type annotations for `session.create_client("iot").describe_security_profile`
+method.
 
 Boto3 documentation:
 [IoT.Client.describe_security_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_security_profile)
@@ -3035,7 +3007,7 @@ Returns a `Coroutine` for
 
 Gets information about a stream.
 
-Type annotations for `aiobotocore.create_client("iot").describe_stream` method.
+Type annotations for `session.create_client("iot").describe_stream` method.
 
 Boto3 documentation:
 [IoT.Client.describe_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_stream)
@@ -3058,7 +3030,7 @@ Returns a `Coroutine` for
 
 Gets information about the specified thing.
 
-Type annotations for `aiobotocore.create_client("iot").describe_thing` method.
+Type annotations for `session.create_client("iot").describe_thing` method.
 
 Boto3 documentation:
 [IoT.Client.describe_thing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_thing)
@@ -3081,7 +3053,7 @@ Returns a `Coroutine` for
 
 Describe a thing group.
 
-Type annotations for `aiobotocore.create_client("iot").describe_thing_group`
+Type annotations for `session.create_client("iot").describe_thing_group`
 method.
 
 Boto3 documentation:
@@ -3107,7 +3079,7 @@ Returns a `Coroutine` for
 Describes a bulk thing provisioning task.
 
 Type annotations for
-`aiobotocore.create_client("iot").describe_thing_registration_task` method.
+`session.create_client("iot").describe_thing_registration_task` method.
 
 Boto3 documentation:
 [IoT.Client.describe_thing_registration_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_thing_registration_task)
@@ -3131,8 +3103,7 @@ Returns a `Coroutine` for
 
 Gets information about the specified thing type.
 
-Type annotations for `aiobotocore.create_client("iot").describe_thing_type`
-method.
+Type annotations for `session.create_client("iot").describe_thing_type` method.
 
 Boto3 documentation:
 [IoT.Client.describe_thing_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.describe_thing_type)
@@ -3156,7 +3127,7 @@ Returns a `Coroutine` for
 
 Detaches a policy from the specified target.
 
-Type annotations for `aiobotocore.create_client("iot").detach_policy` method.
+Type annotations for `session.create_client("iot").detach_policy` method.
 
 Boto3 documentation:
 [IoT.Client.detach_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.detach_policy)
@@ -3177,7 +3148,7 @@ Keyword-only arguments:
 
 Removes the specified policy from the specified certificate.
 
-Type annotations for `aiobotocore.create_client("iot").detach_principal_policy`
+Type annotations for `session.create_client("iot").detach_principal_policy`
 method.
 
 Boto3 documentation:
@@ -3201,7 +3172,7 @@ Keyword-only arguments:
 Disassociates a Device Defender security profile from a thing group or from
 this account.
 
-Type annotations for `aiobotocore.create_client("iot").detach_security_profile`
+Type annotations for `session.create_client("iot").detach_security_profile`
 method.
 
 Boto3 documentation:
@@ -3226,7 +3197,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Detaches the specified principal from the specified thing.
 
-Type annotations for `aiobotocore.create_client("iot").detach_thing_principal`
+Type annotations for `session.create_client("iot").detach_thing_principal`
 method.
 
 Boto3 documentation:
@@ -3251,8 +3222,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Disables the rule.
 
-Type annotations for `aiobotocore.create_client("iot").disable_topic_rule`
-method.
+Type annotations for `session.create_client("iot").disable_topic_rule` method.
 
 Boto3 documentation:
 [IoT.Client.disable_topic_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.disable_topic_rule)
@@ -3273,8 +3243,7 @@ Keyword-only arguments:
 
 Enables the rule.
 
-Type annotations for `aiobotocore.create_client("iot").enable_topic_rule`
-method.
+Type annotations for `session.create_client("iot").enable_topic_rule` method.
 
 Boto3 documentation:
 [IoT.Client.enable_topic_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.enable_topic_rule)
@@ -3294,7 +3263,7 @@ Keyword-only arguments:
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("iot").generate_presigned_url`
+Type annotations for `session.create_client("iot").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -3319,8 +3288,7 @@ Returns a `Coroutine` for `str`.
 Returns a Device Defender's ML Detect Security Profile training model's status.
 
 Type annotations for
-`aiobotocore.create_client("iot").get_behavior_model_training_summaries`
-method.
+`session.create_client("iot").get_behavior_model_training_summaries` method.
 
 Boto3 documentation:
 [IoT.Client.get_behavior_model_training_summaries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.get_behavior_model_training_summaries)
@@ -3346,7 +3314,7 @@ Returns a `Coroutine` for
 
 Aggregates on indexed data with search queries pertaining to particular fields.
 
-Type annotations for `aiobotocore.create_client("iot").get_buckets_aggregation`
+Type annotations for `session.create_client("iot").get_buckets_aggregation`
 method.
 
 Boto3 documentation:
@@ -3377,7 +3345,7 @@ Returns a `Coroutine` for
 
 Returns the approximate count of unique values that match the query.
 
-Type annotations for `aiobotocore.create_client("iot").get_cardinality` method.
+Type annotations for `session.create_client("iot").get_cardinality` method.
 
 Boto3 documentation:
 [IoT.Client.get_cardinality](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.get_cardinality)
@@ -3404,7 +3372,7 @@ Returns a `Coroutine` for
 Gets a list of the policies that have an effect on the authorization behavior
 of the specified device when it connects to the IoT device gateway.
 
-Type annotations for `aiobotocore.create_client("iot").get_effective_policies`
+Type annotations for `session.create_client("iot").get_effective_policies`
 method.
 
 Boto3 documentation:
@@ -3431,8 +3399,8 @@ Returns a `Coroutine` for
 
 Gets the indexing configuration.
 
-Type annotations for
-`aiobotocore.create_client("iot").get_indexing_configuration` method.
+Type annotations for `session.create_client("iot").get_indexing_configuration`
+method.
 
 Boto3 documentation:
 [IoT.Client.get_indexing_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.get_indexing_configuration)
@@ -3449,8 +3417,7 @@ Returns a `Coroutine` for
 
 Gets a job document.
 
-Type annotations for `aiobotocore.create_client("iot").get_job_document`
-method.
+Type annotations for `session.create_client("iot").get_job_document` method.
 
 Boto3 documentation:
 [IoT.Client.get_job_document](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.get_job_document)
@@ -3473,8 +3440,7 @@ Returns a `Coroutine` for
 
 Gets the logging options.
 
-Type annotations for `aiobotocore.create_client("iot").get_logging_options`
-method.
+Type annotations for `session.create_client("iot").get_logging_options` method.
 
 Boto3 documentation:
 [IoT.Client.get_logging_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.get_logging_options)
@@ -3491,7 +3457,7 @@ Returns a `Coroutine` for
 
 Gets an OTA update.
 
-Type annotations for `aiobotocore.create_client("iot").get_ota_update` method.
+Type annotations for `session.create_client("iot").get_ota_update` method.
 
 Boto3 documentation:
 [IoT.Client.get_ota_update](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.get_ota_update)
@@ -3514,7 +3480,7 @@ Returns a `Coroutine` for
 
 Groups the aggregated values that match the query into percentile groupings.
 
-Type annotations for `aiobotocore.create_client("iot").get_percentiles` method.
+Type annotations for `session.create_client("iot").get_percentiles` method.
 
 Boto3 documentation:
 [IoT.Client.get_percentiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.get_percentiles)
@@ -3542,7 +3508,7 @@ Returns a `Coroutine` for
 Gets information about the specified policy with the policy document of the
 default version.
 
-Type annotations for `aiobotocore.create_client("iot").get_policy` method.
+Type annotations for `session.create_client("iot").get_policy` method.
 
 Boto3 documentation:
 [IoT.Client.get_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.get_policy)
@@ -3565,8 +3531,7 @@ Returns a `Coroutine` for
 
 Gets information about the specified policy version.
 
-Type annotations for `aiobotocore.create_client("iot").get_policy_version`
-method.
+Type annotations for `session.create_client("iot").get_policy_version` method.
 
 Boto3 documentation:
 [IoT.Client.get_policy_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.get_policy_version)
@@ -3591,7 +3556,7 @@ Returns a `Coroutine` for
 
 Gets a registration code used to register a CA certificate with IoT.
 
-Type annotations for `aiobotocore.create_client("iot").get_registration_code`
+Type annotations for `session.create_client("iot").get_registration_code`
 method.
 
 Boto3 documentation:
@@ -3610,7 +3575,7 @@ Returns a `Coroutine` for
 Returns the count, average, sum, minimum, maximum, sum of squares, variance,
 and standard deviation for the specified aggregated field.
 
-Type annotations for `aiobotocore.create_client("iot").get_statistics` method.
+Type annotations for `session.create_client("iot").get_statistics` method.
 
 Boto3 documentation:
 [IoT.Client.get_statistics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.get_statistics)
@@ -3636,7 +3601,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("iot").get_topic_rule` method.
+Type annotations for `session.create_client("iot").get_topic_rule` method.
 
 Boto3 documentation:
 [IoT.Client.get_topic_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.get_topic_rule)
@@ -3659,8 +3624,8 @@ Returns a `Coroutine` for
 
 Gets information about a topic rule destination.
 
-Type annotations for
-`aiobotocore.create_client("iot").get_topic_rule_destination` method.
+Type annotations for `session.create_client("iot").get_topic_rule_destination`
+method.
 
 Boto3 documentation:
 [IoT.Client.get_topic_rule_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.get_topic_rule_destination)
@@ -3684,7 +3649,7 @@ Returns a `Coroutine` for
 
 Gets the fine grained logging options.
 
-Type annotations for `aiobotocore.create_client("iot").get_v2_logging_options`
+Type annotations for `session.create_client("iot").get_v2_logging_options`
 method.
 
 Boto3 documentation:
@@ -3702,7 +3667,7 @@ Returns a `Coroutine` for
 
 Lists the active violations for a given Device Defender security profile.
 
-Type annotations for `aiobotocore.create_client("iot").list_active_violations`
+Type annotations for `session.create_client("iot").list_active_violations`
 method.
 
 Boto3 documentation:
@@ -3735,7 +3700,7 @@ Returns a `Coroutine` for
 
 Lists the policies attached to the specified thing group.
 
-Type annotations for `aiobotocore.create_client("iot").list_attached_policies`
+Type annotations for `session.create_client("iot").list_attached_policies`
 method.
 
 Boto3 documentation:
@@ -3764,8 +3729,7 @@ Returns a `Coroutine` for
 Lists the findings (results) of a Device Defender audit or of the audits
 performed during a specified time period.
 
-Type annotations for `aiobotocore.create_client("iot").list_audit_findings`
-method.
+Type annotations for `session.create_client("iot").list_audit_findings` method.
 
 Boto3 documentation:
 [IoT.Client.list_audit_findings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_audit_findings)
@@ -3798,8 +3762,7 @@ Returns a `Coroutine` for
 Gets the status of audit mitigation action tasks that were executed.
 
 Type annotations for
-`aiobotocore.create_client("iot").list_audit_mitigation_actions_executions`
-method.
+`session.create_client("iot").list_audit_mitigation_actions_executions` method.
 
 Boto3 documentation:
 [IoT.Client.list_audit_mitigation_actions_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_audit_mitigation_actions_executions)
@@ -3829,7 +3792,7 @@ Returns a `Coroutine` for
 Gets a list of audit mitigation action tasks that match the specified filters.
 
 Type annotations for
-`aiobotocore.create_client("iot").list_audit_mitigation_actions_tasks` method.
+`session.create_client("iot").list_audit_mitigation_actions_tasks` method.
 
 Boto3 documentation:
 [IoT.Client.list_audit_mitigation_actions_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_audit_mitigation_actions_tasks)
@@ -3860,7 +3823,7 @@ Returns a `Coroutine` for
 
 Lists your Device Defender audit listings.
 
-Type annotations for `aiobotocore.create_client("iot").list_audit_suppressions`
+Type annotations for `session.create_client("iot").list_audit_suppressions`
 method.
 
 Boto3 documentation:
@@ -3891,8 +3854,7 @@ Returns a `Coroutine` for
 Lists the Device Defender audits that have been performed during a given time
 period.
 
-Type annotations for `aiobotocore.create_client("iot").list_audit_tasks`
-method.
+Type annotations for `session.create_client("iot").list_audit_tasks` method.
 
 Boto3 documentation:
 [IoT.Client.list_audit_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_audit_tasks)
@@ -3920,8 +3882,7 @@ Returns a `Coroutine` for
 
 Lists the authorizers registered in your account.
 
-Type annotations for `aiobotocore.create_client("iot").list_authorizers`
-method.
+Type annotations for `session.create_client("iot").list_authorizers` method.
 
 Boto3 documentation:
 [IoT.Client.list_authorizers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_authorizers)
@@ -3947,8 +3908,7 @@ Returns a `Coroutine` for
 
 Lists the billing groups you have created.
 
-Type annotations for `aiobotocore.create_client("iot").list_billing_groups`
-method.
+Type annotations for `session.create_client("iot").list_billing_groups` method.
 
 Boto3 documentation:
 [IoT.Client.list_billing_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_billing_groups)
@@ -3974,7 +3934,7 @@ Returns a `Coroutine` for
 
 Lists the CA certificates registered for your Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("iot").list_ca_certificates`
+Type annotations for `session.create_client("iot").list_ca_certificates`
 method.
 
 Boto3 documentation:
@@ -4001,8 +3961,7 @@ Returns a `Coroutine` for
 
 Lists the certificates registered in your Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("iot").list_certificates`
-method.
+Type annotations for `session.create_client("iot").list_certificates` method.
 
 Boto3 documentation:
 [IoT.Client.list_certificates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_certificates)
@@ -4027,7 +3986,7 @@ Returns a `Coroutine` for
 
 List the device certificates signed by the specified CA certificate.
 
-Type annotations for `aiobotocore.create_client("iot").list_certificates_by_ca`
+Type annotations for `session.create_client("iot").list_certificates_by_ca`
 method.
 
 Boto3 documentation:
@@ -4055,8 +4014,7 @@ Returns a `Coroutine` for
 
 Lists your Device Defender detect custom metrics.
 
-Type annotations for `aiobotocore.create_client("iot").list_custom_metrics`
-method.
+Type annotations for `session.create_client("iot").list_custom_metrics` method.
 
 Boto3 documentation:
 [IoT.Client.list_custom_metrics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_custom_metrics)
@@ -4083,7 +4041,7 @@ Lists mitigation actions executions for a Device Defender ML Detect Security
 Profile.
 
 Type annotations for
-`aiobotocore.create_client("iot").list_detect_mitigation_actions_executions`
+`session.create_client("iot").list_detect_mitigation_actions_executions`
 method.
 
 Boto3 documentation:
@@ -4115,7 +4073,7 @@ Returns a `Coroutine` for
 List of Device Defender ML Detect mitigation actions tasks.
 
 Type annotations for
-`aiobotocore.create_client("iot").list_detect_mitigation_actions_tasks` method.
+`session.create_client("iot").list_detect_mitigation_actions_tasks` method.
 
 Boto3 documentation:
 [IoT.Client.list_detect_mitigation_actions_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_detect_mitigation_actions_tasks)
@@ -4143,7 +4101,7 @@ Returns a `Coroutine` for
 List the set of dimensions that are defined for your Amazon Web Services
 accounts.
 
-Type annotations for `aiobotocore.create_client("iot").list_dimensions` method.
+Type annotations for `session.create_client("iot").list_dimensions` method.
 
 Boto3 documentation:
 [IoT.Client.list_dimensions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_dimensions)
@@ -4167,8 +4125,8 @@ Returns a `Coroutine` for
 
 Gets a list of domain configurations for the user.
 
-Type annotations for
-`aiobotocore.create_client("iot").list_domain_configurations` method.
+Type annotations for `session.create_client("iot").list_domain_configurations`
+method.
 
 Boto3 documentation:
 [IoT.Client.list_domain_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_domain_configurations)
@@ -4194,8 +4152,7 @@ Returns a `Coroutine` for
 
 Lists all your fleet metrics.
 
-Type annotations for `aiobotocore.create_client("iot").list_fleet_metrics`
-method.
+Type annotations for `session.create_client("iot").list_fleet_metrics` method.
 
 Boto3 documentation:
 [IoT.Client.list_fleet_metrics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_fleet_metrics)
@@ -4220,7 +4177,7 @@ Returns a `Coroutine` for
 
 Lists the search indices.
 
-Type annotations for `aiobotocore.create_client("iot").list_indices` method.
+Type annotations for `session.create_client("iot").list_indices` method.
 
 Boto3 documentation:
 [IoT.Client.list_indices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_indices)
@@ -4244,8 +4201,8 @@ Returns a `Coroutine` for
 
 Lists the job executions for a job.
 
-Type annotations for
-`aiobotocore.create_client("iot").list_job_executions_for_job` method.
+Type annotations for `session.create_client("iot").list_job_executions_for_job`
+method.
 
 Boto3 documentation:
 [IoT.Client.list_job_executions_for_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_job_executions_for_job)
@@ -4273,7 +4230,7 @@ Returns a `Coroutine` for
 Lists the job executions for the specified thing.
 
 Type annotations for
-`aiobotocore.create_client("iot").list_job_executions_for_thing` method.
+`session.create_client("iot").list_job_executions_for_thing` method.
 
 Boto3 documentation:
 [IoT.Client.list_job_executions_for_thing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_job_executions_for_thing)
@@ -4301,8 +4258,7 @@ Returns a `Coroutine` for
 
 Returns a list of job templates.
 
-Type annotations for `aiobotocore.create_client("iot").list_job_templates`
-method.
+Type annotations for `session.create_client("iot").list_job_templates` method.
 
 Boto3 documentation:
 [IoT.Client.list_job_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_job_templates)
@@ -4327,7 +4283,7 @@ Returns a `Coroutine` for
 
 Lists jobs.
 
-Type annotations for `aiobotocore.create_client("iot").list_jobs` method.
+Type annotations for `session.create_client("iot").list_jobs` method.
 
 Boto3 documentation:
 [IoT.Client.list_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_jobs)
@@ -4356,8 +4312,8 @@ Returns a `Coroutine` for
 
 Returns a list of managed job templates.
 
-Type annotations for
-`aiobotocore.create_client("iot").list_managed_job_templates` method.
+Type annotations for `session.create_client("iot").list_managed_job_templates`
+method.
 
 Boto3 documentation:
 [IoT.Client.list_managed_job_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_managed_job_templates)
@@ -4383,7 +4339,7 @@ Returns a `Coroutine` for
 
 Gets a list of all mitigation actions that match the specified filter criteria.
 
-Type annotations for `aiobotocore.create_client("iot").list_mitigation_actions`
+Type annotations for `session.create_client("iot").list_mitigation_actions`
 method.
 
 Boto3 documentation:
@@ -4411,8 +4367,7 @@ Returns a `Coroutine` for
 
 Lists OTA updates.
 
-Type annotations for `aiobotocore.create_client("iot").list_ota_updates`
-method.
+Type annotations for `session.create_client("iot").list_ota_updates` method.
 
 Boto3 documentation:
 [IoT.Client.list_ota_updates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_ota_updates)
@@ -4437,8 +4392,8 @@ Returns a `Coroutine` for
 
 Lists certificates that are being transferred but not yet accepted.
 
-Type annotations for
-`aiobotocore.create_client("iot").list_outgoing_certificates` method.
+Type annotations for `session.create_client("iot").list_outgoing_certificates`
+method.
 
 Boto3 documentation:
 [IoT.Client.list_outgoing_certificates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_outgoing_certificates)
@@ -4464,7 +4419,7 @@ Returns a `Coroutine` for
 
 Lists your policies.
 
-Type annotations for `aiobotocore.create_client("iot").list_policies` method.
+Type annotations for `session.create_client("iot").list_policies` method.
 
 Boto3 documentation:
 [IoT.Client.list_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_policies)
@@ -4489,7 +4444,7 @@ Returns a `Coroutine` for
 
 Lists the principals associated with the specified policy.
 
-Type annotations for `aiobotocore.create_client("iot").list_policy_principals`
+Type annotations for `session.create_client("iot").list_policy_principals`
 method.
 
 Boto3 documentation:
@@ -4517,7 +4472,7 @@ Returns a `Coroutine` for
 
 Lists the versions of the specified policy and identifies the default version.
 
-Type annotations for `aiobotocore.create_client("iot").list_policy_versions`
+Type annotations for `session.create_client("iot").list_policy_versions`
 method.
 
 Boto3 documentation:
@@ -4542,7 +4497,7 @@ Returns a `Coroutine` for
 
 Lists the policies attached to the specified principal.
 
-Type annotations for `aiobotocore.create_client("iot").list_principal_policies`
+Type annotations for `session.create_client("iot").list_principal_policies`
 method.
 
 Boto3 documentation:
@@ -4570,7 +4525,7 @@ Returns a `Coroutine` for
 
 Lists the things associated with the specified principal.
 
-Type annotations for `aiobotocore.create_client("iot").list_principal_things`
+Type annotations for `session.create_client("iot").list_principal_things`
 method.
 
 Boto3 documentation:
@@ -4598,7 +4553,7 @@ Returns a `Coroutine` for
 A list of fleet provisioning template versions.
 
 Type annotations for
-`aiobotocore.create_client("iot").list_provisioning_template_versions` method.
+`session.create_client("iot").list_provisioning_template_versions` method.
 
 Boto3 documentation:
 [IoT.Client.list_provisioning_template_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_provisioning_template_versions)
@@ -4624,8 +4579,8 @@ Returns a `Coroutine` for
 
 Lists the fleet provisioning templates in your Amazon Web Services account.
 
-Type annotations for
-`aiobotocore.create_client("iot").list_provisioning_templates` method.
+Type annotations for `session.create_client("iot").list_provisioning_templates`
+method.
 
 Boto3 documentation:
 [IoT.Client.list_provisioning_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_provisioning_templates)
@@ -4650,8 +4605,7 @@ Returns a `Coroutine` for
 
 Lists the role aliases registered in your account.
 
-Type annotations for `aiobotocore.create_client("iot").list_role_aliases`
-method.
+Type annotations for `session.create_client("iot").list_role_aliases` method.
 
 Boto3 documentation:
 [IoT.Client.list_role_aliases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_role_aliases)
@@ -4676,7 +4630,7 @@ Returns a `Coroutine` for
 
 Lists all of your scheduled audits.
 
-Type annotations for `aiobotocore.create_client("iot").list_scheduled_audits`
+Type annotations for `session.create_client("iot").list_scheduled_audits`
 method.
 
 Boto3 documentation:
@@ -4702,7 +4656,7 @@ Returns a `Coroutine` for
 
 Lists the Device Defender security profiles you've created.
 
-Type annotations for `aiobotocore.create_client("iot").list_security_profiles`
+Type annotations for `session.create_client("iot").list_security_profiles`
 method.
 
 Boto3 documentation:
@@ -4731,7 +4685,7 @@ Returns a `Coroutine` for
 Lists the Device Defender security profiles attached to a target (thing group).
 
 Type annotations for
-`aiobotocore.create_client("iot").list_security_profiles_for_target` method.
+`session.create_client("iot").list_security_profiles_for_target` method.
 
 Boto3 documentation:
 [IoT.Client.list_security_profiles_for_target](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_security_profiles_for_target)
@@ -4758,7 +4712,7 @@ Returns a `Coroutine` for
 
 Lists all of the streams in your Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("iot").list_streams` method.
+Type annotations for `session.create_client("iot").list_streams` method.
 
 Boto3 documentation:
 [IoT.Client.list_streams](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_streams)
@@ -4783,7 +4737,7 @@ Returns a `Coroutine` for
 
 Lists the tags (metadata) you have assigned to the resource.
 
-Type annotations for `aiobotocore.create_client("iot").list_tags_for_resource`
+Type annotations for `session.create_client("iot").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -4809,7 +4763,7 @@ Returns a `Coroutine` for
 
 List targets for the specified policy.
 
-Type annotations for `aiobotocore.create_client("iot").list_targets_for_policy`
+Type annotations for `session.create_client("iot").list_targets_for_policy`
 method.
 
 Boto3 documentation:
@@ -4838,7 +4792,7 @@ Lists the targets (thing groups) associated with a given Device Defender
 security profile.
 
 Type annotations for
-`aiobotocore.create_client("iot").list_targets_for_security_profile` method.
+`session.create_client("iot").list_targets_for_security_profile` method.
 
 Boto3 documentation:
 [IoT.Client.list_targets_for_security_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_targets_for_security_profile)
@@ -4864,8 +4818,7 @@ Returns a `Coroutine` for
 
 List the thing groups in your account.
 
-Type annotations for `aiobotocore.create_client("iot").list_thing_groups`
-method.
+Type annotations for `session.create_client("iot").list_thing_groups` method.
 
 Boto3 documentation:
 [IoT.Client.list_thing_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_thing_groups)
@@ -4892,8 +4845,8 @@ Returns a `Coroutine` for
 
 List the thing groups to which the specified thing belongs.
 
-Type annotations for
-`aiobotocore.create_client("iot").list_thing_groups_for_thing` method.
+Type annotations for `session.create_client("iot").list_thing_groups_for_thing`
+method.
 
 Boto3 documentation:
 [IoT.Client.list_thing_groups_for_thing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_thing_groups_for_thing)
@@ -4919,7 +4872,7 @@ Returns a `Coroutine` for
 
 Lists the principals associated with the specified thing.
 
-Type annotations for `aiobotocore.create_client("iot").list_thing_principals`
+Type annotations for `session.create_client("iot").list_thing_principals`
 method.
 
 Boto3 documentation:
@@ -4947,7 +4900,7 @@ Returns a `Coroutine` for
 Information about the thing registration tasks.
 
 Type annotations for
-`aiobotocore.create_client("iot").list_thing_registration_task_reports` method.
+`session.create_client("iot").list_thing_registration_task_reports` method.
 
 Boto3 documentation:
 [IoT.Client.list_thing_registration_task_reports](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_thing_registration_task_reports)
@@ -4975,7 +4928,7 @@ Returns a `Coroutine` for
 List bulk thing provisioning tasks.
 
 Type annotations for
-`aiobotocore.create_client("iot").list_thing_registration_tasks` method.
+`session.create_client("iot").list_thing_registration_tasks` method.
 
 Boto3 documentation:
 [IoT.Client.list_thing_registration_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_thing_registration_tasks)
@@ -5001,8 +4954,7 @@ Returns a `Coroutine` for
 
 Lists the existing thing types.
 
-Type annotations for `aiobotocore.create_client("iot").list_thing_types`
-method.
+Type annotations for `session.create_client("iot").list_thing_types` method.
 
 Boto3 documentation:
 [IoT.Client.list_thing_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_thing_types)
@@ -5027,7 +4979,7 @@ Returns a `Coroutine` for
 
 Lists your things.
 
-Type annotations for `aiobotocore.create_client("iot").list_things` method.
+Type annotations for `session.create_client("iot").list_things` method.
 
 Boto3 documentation:
 [IoT.Client.list_things](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_things)
@@ -5056,7 +5008,7 @@ Returns a `Coroutine` for
 Lists the things you have added to the given billing group.
 
 Type annotations for
-`aiobotocore.create_client("iot").list_things_in_billing_group` method.
+`session.create_client("iot").list_things_in_billing_group` method.
 
 Boto3 documentation:
 [IoT.Client.list_things_in_billing_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_things_in_billing_group)
@@ -5082,8 +5034,8 @@ Returns a `Coroutine` for
 
 Lists the things in the specified group.
 
-Type annotations for
-`aiobotocore.create_client("iot").list_things_in_thing_group` method.
+Type annotations for `session.create_client("iot").list_things_in_thing_group`
+method.
 
 Boto3 documentation:
 [IoT.Client.list_things_in_thing_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_things_in_thing_group)
@@ -5111,7 +5063,7 @@ Returns a `Coroutine` for
 Lists all the topic rule destinations in your Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("iot").list_topic_rule_destinations` method.
+`session.create_client("iot").list_topic_rule_destinations` method.
 
 Boto3 documentation:
 [IoT.Client.list_topic_rule_destinations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_topic_rule_destinations)
@@ -5136,8 +5088,7 @@ Returns a `Coroutine` for
 
 Lists the rules for the specific topic.
 
-Type annotations for `aiobotocore.create_client("iot").list_topic_rules`
-method.
+Type annotations for `session.create_client("iot").list_topic_rules` method.
 
 Boto3 documentation:
 [IoT.Client.list_topic_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.list_topic_rules)
@@ -5163,7 +5114,7 @@ Returns a `Coroutine` for
 
 Lists logging levels.
 
-Type annotations for `aiobotocore.create_client("iot").list_v2_logging_levels`
+Type annotations for `session.create_client("iot").list_v2_logging_levels`
 method.
 
 Boto3 documentation:
@@ -5191,7 +5142,7 @@ Returns a `Coroutine` for
 Lists the Device Defender security profile violations discovered during the
 given time period.
 
-Type annotations for `aiobotocore.create_client("iot").list_violation_events`
+Type annotations for `session.create_client("iot").list_violation_events`
 method.
 
 Boto3 documentation:
@@ -5228,7 +5179,7 @@ Set a verification state and provide a description of that verification state
 on a violation (detect alarm).
 
 Type annotations for
-`aiobotocore.create_client("iot").put_verification_state_on_violation` method.
+`session.create_client("iot").put_verification_state_on_violation` method.
 
 Boto3 documentation:
 [IoT.Client.put_verification_state_on_violation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.put_verification_state_on_violation)
@@ -5254,7 +5205,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Registers a CA certificate with IoT.
 
-Type annotations for `aiobotocore.create_client("iot").register_ca_certificate`
+Type annotations for `session.create_client("iot").register_ca_certificate`
 method.
 
 Boto3 documentation:
@@ -5285,7 +5236,7 @@ Returns a `Coroutine` for
 
 Registers a device certificate with IoT.
 
-Type annotations for `aiobotocore.create_client("iot").register_certificate`
+Type annotations for `session.create_client("iot").register_certificate`
 method.
 
 Boto3 documentation:
@@ -5314,7 +5265,7 @@ Returns a `Coroutine` for
 Register a certificate that does not have a certificate authority (CA).
 
 Type annotations for
-`aiobotocore.create_client("iot").register_certificate_without_ca` method.
+`session.create_client("iot").register_certificate_without_ca` method.
 
 Boto3 documentation:
 [IoT.Client.register_certificate_without_ca](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.register_certificate_without_ca)
@@ -5339,7 +5290,7 @@ Returns a `Coroutine` for
 
 Provisions a thing in the device registry.
 
-Type annotations for `aiobotocore.create_client("iot").register_thing` method.
+Type annotations for `session.create_client("iot").register_thing` method.
 
 Boto3 documentation:
 [IoT.Client.register_thing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.register_thing)
@@ -5363,8 +5314,8 @@ Returns a `Coroutine` for
 
 Rejects a pending certificate transfer.
 
-Type annotations for
-`aiobotocore.create_client("iot").reject_certificate_transfer` method.
+Type annotations for `session.create_client("iot").reject_certificate_transfer`
+method.
 
 Boto3 documentation:
 [IoT.Client.reject_certificate_transfer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.reject_certificate_transfer)
@@ -5387,7 +5338,7 @@ Keyword-only arguments:
 Removes the given thing from the billing group.
 
 Type annotations for
-`aiobotocore.create_client("iot").remove_thing_from_billing_group` method.
+`session.create_client("iot").remove_thing_from_billing_group` method.
 
 Boto3 documentation:
 [IoT.Client.remove_thing_from_billing_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.remove_thing_from_billing_group)
@@ -5414,7 +5365,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Remove the specified thing from the specified group.
 
 Type annotations for
-`aiobotocore.create_client("iot").remove_thing_from_thing_group` method.
+`session.create_client("iot").remove_thing_from_thing_group` method.
 
 Boto3 documentation:
 [IoT.Client.remove_thing_from_thing_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.remove_thing_from_thing_group)
@@ -5440,8 +5391,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 .
 
-Type annotations for `aiobotocore.create_client("iot").replace_topic_rule`
-method.
+Type annotations for `session.create_client("iot").replace_topic_rule` method.
 
 Boto3 documentation:
 [IoT.Client.replace_topic_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.replace_topic_rule)
@@ -5465,7 +5415,7 @@ Keyword-only arguments:
 
 The query search index.
 
-Type annotations for `aiobotocore.create_client("iot").search_index` method.
+Type annotations for `session.create_client("iot").search_index` method.
 
 Boto3 documentation:
 [IoT.Client.search_index](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.search_index)
@@ -5492,7 +5442,7 @@ Returns a `Coroutine` for
 
 Sets the default authorizer.
 
-Type annotations for `aiobotocore.create_client("iot").set_default_authorizer`
+Type annotations for `session.create_client("iot").set_default_authorizer`
 method.
 
 Boto3 documentation:
@@ -5518,8 +5468,8 @@ Returns a `Coroutine` for
 Sets the specified version of the specified policy as the policy's default
 (operative) version.
 
-Type annotations for
-`aiobotocore.create_client("iot").set_default_policy_version` method.
+Type annotations for `session.create_client("iot").set_default_policy_version`
+method.
 
 Boto3 documentation:
 [IoT.Client.set_default_policy_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.set_default_policy_version)
@@ -5541,8 +5491,7 @@ Keyword-only arguments:
 
 Sets the logging options.
 
-Type annotations for `aiobotocore.create_client("iot").set_logging_options`
-method.
+Type annotations for `session.create_client("iot").set_logging_options` method.
 
 Boto3 documentation:
 [IoT.Client.set_logging_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.set_logging_options)
@@ -5565,7 +5514,7 @@ Keyword-only arguments:
 
 Sets the logging level.
 
-Type annotations for `aiobotocore.create_client("iot").set_v2_logging_level`
+Type annotations for `session.create_client("iot").set_v2_logging_level`
 method.
 
 Boto3 documentation:
@@ -5588,7 +5537,7 @@ Keyword-only arguments:
 
 Sets the logging options for the V2 logging service.
 
-Type annotations for `aiobotocore.create_client("iot").set_v2_logging_options`
+Type annotations for `session.create_client("iot").set_v2_logging_options`
 method.
 
 Boto3 documentation:
@@ -5613,7 +5562,7 @@ Keyword-only arguments:
 Starts a task that applies a set of mitigation actions to the specified target.
 
 Type annotations for
-`aiobotocore.create_client("iot").start_audit_mitigation_actions_task` method.
+`session.create_client("iot").start_audit_mitigation_actions_task` method.
 
 Boto3 documentation:
 [IoT.Client.start_audit_mitigation_actions_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.start_audit_mitigation_actions_task)
@@ -5644,7 +5593,7 @@ Returns a `Coroutine` for
 Starts a Device Defender ML Detect mitigation actions task.
 
 Type annotations for
-`aiobotocore.create_client("iot").start_detect_mitigation_actions_task` method.
+`session.create_client("iot").start_detect_mitigation_actions_task` method.
 
 Boto3 documentation:
 [IoT.Client.start_detect_mitigation_actions_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.start_detect_mitigation_actions_task)
@@ -5677,8 +5626,8 @@ Returns a `Coroutine` for
 
 Starts an on-demand Device Defender audit.
 
-Type annotations for
-`aiobotocore.create_client("iot").start_on_demand_audit_task` method.
+Type annotations for `session.create_client("iot").start_on_demand_audit_task`
+method.
 
 Boto3 documentation:
 [IoT.Client.start_on_demand_audit_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.start_on_demand_audit_task)
@@ -5703,7 +5652,7 @@ Returns a `Coroutine` for
 Creates a bulk thing provisioning task.
 
 Type annotations for
-`aiobotocore.create_client("iot").start_thing_registration_task` method.
+`session.create_client("iot").start_thing_registration_task` method.
 
 Boto3 documentation:
 [IoT.Client.start_thing_registration_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.start_thing_registration_task)
@@ -5731,7 +5680,7 @@ Returns a `Coroutine` for
 Cancels a bulk thing provisioning task.
 
 Type annotations for
-`aiobotocore.create_client("iot").stop_thing_registration_task` method.
+`session.create_client("iot").stop_thing_registration_task` method.
 
 Boto3 documentation:
 [IoT.Client.stop_thing_registration_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.stop_thing_registration_task)
@@ -5754,7 +5703,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds to or modifies the tags of the given resource.
 
-Type annotations for `aiobotocore.create_client("iot").tag_resource` method.
+Type annotations for `session.create_client("iot").tag_resource` method.
 
 Boto3 documentation:
 [IoT.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.tag_resource)
@@ -5778,8 +5727,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Tests if a specified principal is authorized to perform an IoT action on a
 specified resource.
 
-Type annotations for `aiobotocore.create_client("iot").test_authorization`
-method.
+Type annotations for `session.create_client("iot").test_authorization` method.
 
 Boto3 documentation:
 [IoT.Client.test_authorization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.test_authorization)
@@ -5810,7 +5758,7 @@ Returns a `Coroutine` for
 Tests a custom authorization behavior by invoking a specified custom
 authorizer.
 
-Type annotations for `aiobotocore.create_client("iot").test_invoke_authorizer`
+Type annotations for `session.create_client("iot").test_invoke_authorizer`
 method.
 
 Boto3 documentation:
@@ -5841,7 +5789,7 @@ Returns a `Coroutine` for
 Transfers the specified certificate to the specified Amazon Web Services
 account.
 
-Type annotations for `aiobotocore.create_client("iot").transfer_certificate`
+Type annotations for `session.create_client("iot").transfer_certificate`
 method.
 
 Boto3 documentation:
@@ -5868,7 +5816,7 @@ Returns a `Coroutine` for
 
 Removes the given tags (metadata) from the resource.
 
-Type annotations for `aiobotocore.create_client("iot").untag_resource` method.
+Type annotations for `session.create_client("iot").untag_resource` method.
 
 Boto3 documentation:
 [IoT.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.untag_resource)
@@ -5892,7 +5840,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Configures or reconfigures the Device Defender audit settings for this account.
 
 Type annotations for
-`aiobotocore.create_client("iot").update_account_audit_configuration` method.
+`session.create_client("iot").update_account_audit_configuration` method.
 
 Boto3 documentation:
 [IoT.Client.update_account_audit_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_account_audit_configuration)
@@ -5920,8 +5868,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a Device Defender audit suppression.
 
-Type annotations for
-`aiobotocore.create_client("iot").update_audit_suppression` method.
+Type annotations for `session.create_client("iot").update_audit_suppression`
+method.
 
 Boto3 documentation:
 [IoT.Client.update_audit_suppression](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_audit_suppression)
@@ -5950,8 +5898,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an authorizer.
 
-Type annotations for `aiobotocore.create_client("iot").update_authorizer`
-method.
+Type annotations for `session.create_client("iot").update_authorizer` method.
 
 Boto3 documentation:
 [IoT.Client.update_authorizer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_authorizer)
@@ -5979,7 +5926,7 @@ Returns a `Coroutine` for
 
 Updates information about the billing group.
 
-Type annotations for `aiobotocore.create_client("iot").update_billing_group`
+Type annotations for `session.create_client("iot").update_billing_group`
 method.
 
 Boto3 documentation:
@@ -6008,7 +5955,7 @@ Returns a `Coroutine` for
 
 Updates a registered CA certificate.
 
-Type annotations for `aiobotocore.create_client("iot").update_ca_certificate`
+Type annotations for `session.create_client("iot").update_ca_certificate`
 method.
 
 Boto3 documentation:
@@ -6036,8 +5983,7 @@ Keyword-only arguments:
 
 Updates the status of the specified certificate.
 
-Type annotations for `aiobotocore.create_client("iot").update_certificate`
-method.
+Type annotations for `session.create_client("iot").update_certificate` method.
 
 Boto3 documentation:
 [IoT.Client.update_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_certificate)
@@ -6060,7 +6006,7 @@ Keyword-only arguments:
 
 Updates a Device Defender detect custom metric.
 
-Type annotations for `aiobotocore.create_client("iot").update_custom_metric`
+Type annotations for `session.create_client("iot").update_custom_metric`
 method.
 
 Boto3 documentation:
@@ -6086,8 +6032,7 @@ Returns a `Coroutine` for
 
 Updates the definition for a dimension.
 
-Type annotations for `aiobotocore.create_client("iot").update_dimension`
-method.
+Type annotations for `session.create_client("iot").update_dimension` method.
 
 Boto3 documentation:
 [IoT.Client.update_dimension](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_dimension)
@@ -6111,8 +6056,8 @@ Returns a `Coroutine` for
 
 Updates values stored in the domain configuration.
 
-Type annotations for
-`aiobotocore.create_client("iot").update_domain_configuration` method.
+Type annotations for `session.create_client("iot").update_domain_configuration`
+method.
 
 Boto3 documentation:
 [IoT.Client.update_domain_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_domain_configuration)
@@ -6141,8 +6086,8 @@ Returns a `Coroutine` for
 
 Updates a dynamic thing group.
 
-Type annotations for
-`aiobotocore.create_client("iot").update_dynamic_thing_group` method.
+Type annotations for `session.create_client("iot").update_dynamic_thing_group`
+method.
 
 Boto3 documentation:
 [IoT.Client.update_dynamic_thing_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_dynamic_thing_group)
@@ -6173,8 +6118,8 @@ Returns a `Coroutine` for
 
 Updates the event configurations.
 
-Type annotations for
-`aiobotocore.create_client("iot").update_event_configurations` method.
+Type annotations for `session.create_client("iot").update_event_configurations`
+method.
 
 Boto3 documentation:
 [IoT.Client.update_event_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_event_configurations)
@@ -6199,8 +6144,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the data for a fleet metric.
 
-Type annotations for `aiobotocore.create_client("iot").update_fleet_metric`
-method.
+Type annotations for `session.create_client("iot").update_fleet_metric` method.
 
 Boto3 documentation:
 [IoT.Client.update_fleet_metric](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_fleet_metric)
@@ -6232,7 +6176,7 @@ Keyword-only arguments:
 Updates the search configuration.
 
 Type annotations for
-`aiobotocore.create_client("iot").update_indexing_configuration` method.
+`session.create_client("iot").update_indexing_configuration` method.
 
 Boto3 documentation:
 [IoT.Client.update_indexing_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_indexing_configuration)
@@ -6258,7 +6202,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates supported fields of the specified job.
 
-Type annotations for `aiobotocore.create_client("iot").update_job` method.
+Type annotations for `session.create_client("iot").update_job` method.
 
 Boto3 documentation:
 [IoT.Client.update_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_job)
@@ -6286,8 +6230,8 @@ Keyword-only arguments:
 
 Updates the definition for the specified mitigation action.
 
-Type annotations for
-`aiobotocore.create_client("iot").update_mitigation_action` method.
+Type annotations for `session.create_client("iot").update_mitigation_action`
+method.
 
 Boto3 documentation:
 [IoT.Client.update_mitigation_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_mitigation_action)
@@ -6315,7 +6259,7 @@ Returns a `Coroutine` for
 Updates a fleet provisioning template.
 
 Type annotations for
-`aiobotocore.create_client("iot").update_provisioning_template` method.
+`session.create_client("iot").update_provisioning_template` method.
 
 Boto3 documentation:
 [IoT.Client.update_provisioning_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_provisioning_template)
@@ -6345,8 +6289,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a role alias.
 
-Type annotations for `aiobotocore.create_client("iot").update_role_alias`
-method.
+Type annotations for `session.create_client("iot").update_role_alias` method.
 
 Boto3 documentation:
 [IoT.Client.update_role_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_role_alias)
@@ -6372,7 +6315,7 @@ Returns a `Coroutine` for
 Updates a scheduled audit, including which checks are performed and how often
 the audit takes place.
 
-Type annotations for `aiobotocore.create_client("iot").update_scheduled_audit`
+Type annotations for `session.create_client("iot").update_scheduled_audit`
 method.
 
 Boto3 documentation:
@@ -6401,7 +6344,7 @@ Returns a `Coroutine` for
 
 Updates a Device Defender security profile.
 
-Type annotations for `aiobotocore.create_client("iot").update_security_profile`
+Type annotations for `session.create_client("iot").update_security_profile`
 method.
 
 Boto3 documentation:
@@ -6438,7 +6381,7 @@ Returns a `Coroutine` for
 
 Updates an existing stream.
 
-Type annotations for `aiobotocore.create_client("iot").update_stream` method.
+Type annotations for `session.create_client("iot").update_stream` method.
 
 Boto3 documentation:
 [IoT.Client.update_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_stream)
@@ -6464,7 +6407,7 @@ Returns a `Coroutine` for
 
 Updates the data for a thing.
 
-Type annotations for `aiobotocore.create_client("iot").update_thing` method.
+Type annotations for `session.create_client("iot").update_thing` method.
 
 Boto3 documentation:
 [IoT.Client.update_thing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_thing)
@@ -6491,8 +6434,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Update a thing group.
 
-Type annotations for `aiobotocore.create_client("iot").update_thing_group`
-method.
+Type annotations for `session.create_client("iot").update_thing_group` method.
 
 Boto3 documentation:
 [IoT.Client.update_thing_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_thing_group)
@@ -6521,7 +6463,7 @@ Returns a `Coroutine` for
 Updates the groups to which the thing belongs.
 
 Type annotations for
-`aiobotocore.create_client("iot").update_thing_groups_for_thing` method.
+`session.create_client("iot").update_thing_groups_for_thing` method.
 
 Boto3 documentation:
 [IoT.Client.update_thing_groups_for_thing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_thing_groups_for_thing)
@@ -6548,7 +6490,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a topic rule destination.
 
 Type annotations for
-`aiobotocore.create_client("iot").update_topic_rule_destination` method.
+`session.create_client("iot").update_topic_rule_destination` method.
 
 Boto3 documentation:
 [IoT.Client.update_topic_rule_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.update_topic_rule_destination)
@@ -6575,7 +6517,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Validates a Device Defender security profile behaviors specification.
 
 Type annotations for
-`aiobotocore.create_client("iot").validate_security_profile_behaviors` method.
+`session.create_client("iot").validate_security_profile_behaviors` method.
 
 Boto3 documentation:
 [IoT.Client.validate_security_profile_behaviors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.validate_security_profile_behaviors)
@@ -6594,12 +6536,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [ValidateSecurityProfileBehaviorsResponseTypeDef](./type_defs.md#validatesecurityprofilebehaviorsresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("iot").__aenter__` method.
+
+Boto3 documentation:
+[IoT.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [IoTClient](#iotclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("iot").__aexit__` method.
+
+Boto3 documentation:
+[IoT.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot.html#IoT.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("iot").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("iot").get_paginator` method with
+overloads.
 
 - `client.get_paginator("get_behavior_model_training_summaries")` ->
   [GetBehaviorModelTrainingSummariesPaginator](./paginators.md#getbehaviormodeltrainingsummariespaginator)

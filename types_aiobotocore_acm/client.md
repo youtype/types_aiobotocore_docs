@@ -31,6 +31,8 @@ type annotations stubs module
     - [request_certificate](#request_certificate)
     - [resend_validation_email](#resend_validation_email)
     - [update_certificate_options](#update_certificate_options)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -38,16 +40,17 @@ type annotations stubs module
 
 ## ACMClient
 
-Type annotations for `aiobotocore.create_client("acm")`
+Type annotations for `session.create_client("acm")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_acm.client import ACMClient
 
-def get_acm_client() -> ACMClient:
-    return Session().client("acm")
+session = get_session()
+async with session.create_client("acm") as client:
+    client: ACMClient
 ```
 
 Boto3 documentation:
@@ -97,7 +100,7 @@ Exceptions:
 
 ACMClient exceptions.
 
-Type annotations for `aiobotocore.create_client("acm").exceptions` method.
+Type annotations for `session.create_client("acm").exceptions` method.
 
 Boto3 documentation:
 [ACM.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm.html#ACM.Client.exceptions)
@@ -110,7 +113,7 @@ Returns [Exceptions](#exceptions).
 
 Adds one or more tags to an ACM certificate.
 
-Type annotations for `aiobotocore.create_client("acm").add_tags_to_certificate`
+Type annotations for `session.create_client("acm").add_tags_to_certificate`
 method.
 
 Boto3 documentation:
@@ -133,18 +136,16 @@ Keyword-only arguments:
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("acm").can_paginate` method.
+Type annotations for `session.create_client("acm").can_paginate` method.
 
 Boto3 documentation:
 [ACM.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm.html#ACM.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="delete_certificate"></a>
 
@@ -152,8 +153,7 @@ Returns a `Coroutine` for `bool`.
 
 Deletes a certificate and its associated private key.
 
-Type annotations for `aiobotocore.create_client("acm").delete_certificate`
-method.
+Type annotations for `session.create_client("acm").delete_certificate` method.
 
 Boto3 documentation:
 [ACM.Client.delete_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm.html#ACM.Client.delete_certificate)
@@ -174,7 +174,7 @@ Keyword-only arguments:
 
 Returns detailed metadata about the specified ACM certificate.
 
-Type annotations for `aiobotocore.create_client("acm").describe_certificate`
+Type annotations for `session.create_client("acm").describe_certificate`
 method.
 
 Boto3 documentation:
@@ -200,8 +200,7 @@ Returns a `Coroutine` for
 Exports a private certificate issued by a private certificate authority (CA)
 for use anywhere.
 
-Type annotations for `aiobotocore.create_client("acm").export_certificate`
-method.
+Type annotations for `session.create_client("acm").export_certificate` method.
 
 Boto3 documentation:
 [ACM.Client.export_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm.html#ACM.Client.export_certificate)
@@ -227,7 +226,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("acm").generate_presigned_url`
+Type annotations for `session.create_client("acm").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -252,8 +251,8 @@ Returns a `Coroutine` for `str`.
 Returns the account configuration options associated with an Amazon Web
 Services account.
 
-Type annotations for
-`aiobotocore.create_client("acm").get_account_configuration` method.
+Type annotations for `session.create_client("acm").get_account_configuration`
+method.
 
 Boto3 documentation:
 [ACM.Client.get_account_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm.html#ACM.Client.get_account_configuration)
@@ -270,7 +269,7 @@ Returns a `Coroutine` for
 
 Retrieves an Amazon-issued certificate and its certificate chain.
 
-Type annotations for `aiobotocore.create_client("acm").get_certificate` method.
+Type annotations for `session.create_client("acm").get_certificate` method.
 
 Boto3 documentation:
 [ACM.Client.get_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm.html#ACM.Client.get_certificate)
@@ -294,8 +293,7 @@ Returns a `Coroutine` for
 Imports a certificate into Amazon Web Services Certificate Manager (ACM) to use
 with services that are integrated with ACM.
 
-Type annotations for `aiobotocore.create_client("acm").import_certificate`
-method.
+Type annotations for `session.create_client("acm").import_certificate` method.
 
 Boto3 documentation:
 [ACM.Client.import_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm.html#ACM.Client.import_certificate)
@@ -325,8 +323,7 @@ Returns a `Coroutine` for
 
 Retrieves a list of certificate ARNs and domain names.
 
-Type annotations for `aiobotocore.create_client("acm").list_certificates`
-method.
+Type annotations for `session.create_client("acm").list_certificates` method.
 
 Boto3 documentation:
 [ACM.Client.list_certificates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm.html#ACM.Client.list_certificates)
@@ -353,8 +350,8 @@ Returns a `Coroutine` for
 
 Lists the tags that have been applied to the ACM certificate.
 
-Type annotations for
-`aiobotocore.create_client("acm").list_tags_for_certificate` method.
+Type annotations for `session.create_client("acm").list_tags_for_certificate`
+method.
 
 Boto3 documentation:
 [ACM.Client.list_tags_for_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm.html#ACM.Client.list_tags_for_certificate)
@@ -378,8 +375,8 @@ Returns a `Coroutine` for
 
 Adds or modifies account-level configurations in ACM.
 
-Type annotations for
-`aiobotocore.create_client("acm").put_account_configuration` method.
+Type annotations for `session.create_client("acm").put_account_configuration`
+method.
 
 Boto3 documentation:
 [ACM.Client.put_account_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm.html#ACM.Client.put_account_configuration)
@@ -403,7 +400,7 @@ Keyword-only arguments:
 Remove one or more tags from an ACM certificate.
 
 Type annotations for
-`aiobotocore.create_client("acm").remove_tags_from_certificate` method.
+`session.create_client("acm").remove_tags_from_certificate` method.
 
 Boto3 documentation:
 [ACM.Client.remove_tags_from_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm.html#ACM.Client.remove_tags_from_certificate)
@@ -425,8 +422,7 @@ Keyword-only arguments:
 
 Renews an eligible ACM certificate.
 
-Type annotations for `aiobotocore.create_client("acm").renew_certificate`
-method.
+Type annotations for `session.create_client("acm").renew_certificate` method.
 
 Boto3 documentation:
 [ACM.Client.renew_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm.html#ACM.Client.renew_certificate)
@@ -446,8 +442,7 @@ Keyword-only arguments:
 
 Requests an ACM certificate for use with other Amazon Web Services services.
 
-Type annotations for `aiobotocore.create_client("acm").request_certificate`
-method.
+Type annotations for `session.create_client("acm").request_certificate` method.
 
 Boto3 documentation:
 [ACM.Client.request_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm.html#ACM.Client.request_certificate)
@@ -481,7 +476,7 @@ Returns a `Coroutine` for
 
 Resends the email that requests domain ownership validation.
 
-Type annotations for `aiobotocore.create_client("acm").resend_validation_email`
+Type annotations for `session.create_client("acm").resend_validation_email`
 method.
 
 Boto3 documentation:
@@ -505,8 +500,8 @@ Keyword-only arguments:
 
 Updates a certificate.
 
-Type annotations for
-`aiobotocore.create_client("acm").update_certificate_options` method.
+Type annotations for `session.create_client("acm").update_certificate_options`
+method.
 
 Boto3 documentation:
 [ACM.Client.update_certificate_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm.html#ACM.Client.update_certificate_options)
@@ -524,12 +519,44 @@ Keyword-only arguments:
   [CertificateOptionsTypeDef](./type_defs.md#certificateoptionstypedef)
   *(required)*
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("acm").__aenter__` method.
+
+Boto3 documentation:
+[ACM.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm.html#ACM.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ACMClient](#acmclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("acm").__aexit__` method.
+
+Boto3 documentation:
+[ACM.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm.html#ACM.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("acm").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("acm").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_certificates")` ->
   [ListCertificatesPaginator](./paginators.md#listcertificatespaginator)
@@ -538,7 +565,7 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("acm").get_waiter` method with
+Type annotations for `session.create_client("acm").get_waiter` method with
 overloads.
 
 - `client.get_waiter("certificate_validated")` ->

@@ -22,17 +22,19 @@ type annotations stubs module
 ## DescribeAgentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("discovery").get_paginator("describe_agents")`.
+`session.create_client("discovery").get_paginator("describe_agents")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_discovery.paginator import DescribeAgentsPaginator
 
-def get_describe_agents_paginator() -> DescribeAgentsPaginator:
-    return Session().create_client("discovery").get_paginator("describe_agents")
+session = get_session()
+async with session.create_client("discovery") as client:
+    client: ApplicationDiscoveryServiceClient
+    paginator: DescribeAgentsPaginator = client.get_paginator("describe_agents")
 ```
 
 Boto3 documentation:
@@ -53,17 +55,19 @@ Arguments for `DescribeAgentsPaginator.paginate` method:
 ## DescribeContinuousExportsPaginator
 
 Type annotations for
-`aiobotocore.create_client("discovery").get_paginator("describe_continuous_exports")`.
+`session.create_client("discovery").get_paginator("describe_continuous_exports")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_discovery.paginator import DescribeContinuousExportsPaginator
 
-def get_describe_continuous_exports_paginator() -> DescribeContinuousExportsPaginator:
-    return Session().create_client("discovery").get_paginator("describe_continuous_exports")
+session = get_session()
+async with session.create_client("discovery") as client:
+    client: ApplicationDiscoveryServiceClient
+    paginator: DescribeContinuousExportsPaginator = client.get_paginator("describe_continuous_exports")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `DescribeContinuousExportsPaginator.paginate` method:
 ## DescribeExportConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("discovery").get_paginator("describe_export_configurations")`.
+`session.create_client("discovery").get_paginator("describe_export_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_discovery.paginator import DescribeExportConfigurationsPaginator
 
-def get_describe_export_configurations_paginator() -> DescribeExportConfigurationsPaginator:
-    return Session().create_client("discovery").get_paginator("describe_export_configurations")
+session = get_session()
+async with session.create_client("discovery") as client:
+    client: ApplicationDiscoveryServiceClient
+    paginator: DescribeExportConfigurationsPaginator = client.get_paginator("describe_export_configurations")
 ```
 
 Boto3 documentation:
@@ -113,17 +119,19 @@ Arguments for `DescribeExportConfigurationsPaginator.paginate` method:
 ## DescribeExportTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("discovery").get_paginator("describe_export_tasks")`.
+`session.create_client("discovery").get_paginator("describe_export_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_discovery.paginator import DescribeExportTasksPaginator
 
-def get_describe_export_tasks_paginator() -> DescribeExportTasksPaginator:
-    return Session().create_client("discovery").get_paginator("describe_export_tasks")
+session = get_session()
+async with session.create_client("discovery") as client:
+    client: ApplicationDiscoveryServiceClient
+    paginator: DescribeExportTasksPaginator = client.get_paginator("describe_export_tasks")
 ```
 
 Boto3 documentation:
@@ -145,17 +153,19 @@ Arguments for `DescribeExportTasksPaginator.paginate` method:
 ## DescribeTagsPaginator
 
 Type annotations for
-`aiobotocore.create_client("discovery").get_paginator("describe_tags")`.
+`session.create_client("discovery").get_paginator("describe_tags")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_discovery.paginator import DescribeTagsPaginator
 
-def get_describe_tags_paginator() -> DescribeTagsPaginator:
-    return Session().create_client("discovery").get_paginator("describe_tags")
+session = get_session()
+async with session.create_client("discovery") as client:
+    client: ApplicationDiscoveryServiceClient
+    paginator: DescribeTagsPaginator = client.get_paginator("describe_tags")
 ```
 
 Boto3 documentation:
@@ -175,17 +185,19 @@ Arguments for `DescribeTagsPaginator.paginate` method:
 ## ListConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("discovery").get_paginator("list_configurations")`.
+`session.create_client("discovery").get_paginator("list_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_discovery.paginator import ListConfigurationsPaginator
 
-def get_list_configurations_paginator() -> ListConfigurationsPaginator:
-    return Session().create_client("discovery").get_paginator("list_configurations")
+session = get_session()
+async with session.create_client("discovery") as client:
+    client: ApplicationDiscoveryServiceClient
+    paginator: ListConfigurationsPaginator = client.get_paginator("list_configurations")
 ```
 
 Boto3 documentation:

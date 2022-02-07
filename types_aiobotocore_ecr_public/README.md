@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[ecr-public]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[ecr-public]'
+
+# standalone installation
 pip install types-aiobotocore-ecr-public
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-ecr-public
 
 ## ECRPublicClient
 
-Type annotations for `aiobotocore.create_client("ecr-public")` as
+Type annotations for `session.create_client("ecr-public")` as
 [ECRPublicClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_ecr_public.client import ECRPublicClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_check_layer_availability](./client.md#batch_check_layer_availability)
 - [batch_delete_image](./client.md#batch_delete_image)
 - [can_paginate](./client.md#can_paginate)
@@ -111,7 +117,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_ecr_public.paginators import DescribeImageTagsPaginator, ...
+from types_aiobotocore_ecr_public.paginator import DescribeImageTagsPaginator, ...
 ```
 
 - [DescribeImageTagsPaginator](./paginators.md#describeimagetagspaginator)

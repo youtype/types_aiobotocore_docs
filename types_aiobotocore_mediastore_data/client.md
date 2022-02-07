@@ -21,22 +21,25 @@ type annotations stubs module
     - [get_object](#get_object)
     - [list_items](#list_items)
     - [put_object](#put_object)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="mediastoredataclient"></a>
 
 ## MediaStoreDataClient
 
-Type annotations for `aiobotocore.create_client("mediastore-data")`
+Type annotations for `session.create_client("mediastore-data")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_mediastore_data.client import MediaStoreDataClient
 
-def get_mediastore-data_client() -> MediaStoreDataClient:
-    return Session().client("mediastore-data")
+session = get_session()
+async with session.create_client("mediastore-data") as client:
+    client: MediaStoreDataClient
 ```
 
 Boto3 documentation:
@@ -74,7 +77,7 @@ Exceptions:
 
 MediaStoreDataClient exceptions.
 
-Type annotations for `aiobotocore.create_client("mediastore-data").exceptions`
+Type annotations for `session.create_client("mediastore-data").exceptions`
 method.
 
 Boto3 documentation:
@@ -88,19 +91,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("mediastore-data").can_paginate` method.
+Type annotations for `session.create_client("mediastore-data").can_paginate`
+method.
 
 Boto3 documentation:
 [MediaStoreData.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore-data.html#MediaStoreData.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="delete_object"></a>
 
@@ -108,8 +109,8 @@ Returns a `Coroutine` for `bool`.
 
 Deletes an object at the specified path.
 
-Type annotations for
-`aiobotocore.create_client("mediastore-data").delete_object` method.
+Type annotations for `session.create_client("mediastore-data").delete_object`
+method.
 
 Boto3 documentation:
 [MediaStoreData.Client.delete_object](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore-data.html#MediaStoreData.Client.delete_object)
@@ -131,8 +132,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Gets the headers for an object at the specified path.
 
-Type annotations for
-`aiobotocore.create_client("mediastore-data").describe_object` method.
+Type annotations for `session.create_client("mediastore-data").describe_object`
+method.
 
 Boto3 documentation:
 [MediaStoreData.Client.describe_object](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore-data.html#MediaStoreData.Client.describe_object)
@@ -156,7 +157,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("mediastore-data").generate_presigned_url` method.
+`session.create_client("mediastore-data").generate_presigned_url` method.
 
 Boto3 documentation:
 [MediaStoreData.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore-data.html#MediaStoreData.Client.generate_presigned_url)
@@ -179,7 +180,7 @@ Returns a `Coroutine` for `str`.
 
 Downloads the object at the specified path.
 
-Type annotations for `aiobotocore.create_client("mediastore-data").get_object`
+Type annotations for `session.create_client("mediastore-data").get_object`
 method.
 
 Boto3 documentation:
@@ -205,7 +206,7 @@ Returns a `Coroutine` for
 Provides a list of metadata entries about folders and objects in the specified
 folder.
 
-Type annotations for `aiobotocore.create_client("mediastore-data").list_items`
+Type annotations for `session.create_client("mediastore-data").list_items`
 method.
 
 Boto3 documentation:
@@ -231,7 +232,7 @@ Returns a `Coroutine` for
 
 Uploads an object to the specified path.
 
-Type annotations for `aiobotocore.create_client("mediastore-data").put_object`
+Type annotations for `session.create_client("mediastore-data").put_object`
 method.
 
 Boto3 documentation:
@@ -256,13 +257,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [PutObjectResponseTypeDef](./type_defs.md#putobjectresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("mediastore-data").__aenter__`
+method.
+
+Boto3 documentation:
+[MediaStoreData.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore-data.html#MediaStoreData.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [MediaStoreDataClient](#mediastoredataclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("mediastore-data").__aexit__`
+method.
+
+Boto3 documentation:
+[MediaStoreData.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore-data.html#MediaStoreData.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("mediastore-data").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("mediastore-data").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_items")` ->
   [ListItemsPaginator](./paginators.md#listitemspaginator)

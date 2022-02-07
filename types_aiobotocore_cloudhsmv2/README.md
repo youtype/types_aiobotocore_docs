@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[cloudhsmv2]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[cloudhsmv2]'
+
+# standalone installation
 pip install types-aiobotocore-cloudhsmv2
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-cloudhsmv2
 
 ## CloudHSMV2Client
 
-Type annotations for `aiobotocore.create_client("cloudhsmv2")` as
+Type annotations for `session.create_client("cloudhsmv2")` as
 [CloudHSMV2Client](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_cloudhsmv2.client import CloudHSMV2Client
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [copy_backup_to_region](./client.md#copy_backup_to_region)
 - [create_cluster](./client.md#create_cluster)
@@ -86,7 +92,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_cloudhsmv2.paginators import DescribeBackupsPaginator, ...
+from types_aiobotocore_cloudhsmv2.paginator import DescribeBackupsPaginator, ...
 ```
 
 - [DescribeBackupsPaginator](./paginators.md#describebackupspaginator)

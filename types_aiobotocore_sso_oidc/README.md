@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[sso-oidc]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[sso-oidc]'
+
+# standalone installation
 pip install types-aiobotocore-sso-oidc
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-sso-oidc
 
 ## SSOOIDCClient
 
-Type annotations for `aiobotocore.create_client("sso-oidc")` as
+Type annotations for `session.create_client("sso-oidc")` as
 [SSOOIDCClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_sso_oidc.client import SSOOIDCClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_token](./client.md#create_token)
 - [exceptions](./client.md#exceptions)

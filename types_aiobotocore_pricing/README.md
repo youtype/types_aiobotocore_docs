@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[pricing]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[pricing]'
+
+# standalone installation
 pip install types-aiobotocore-pricing
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-pricing
 
 ## PricingClient
 
-Type annotations for `aiobotocore.create_client("pricing")` as
+Type annotations for `session.create_client("pricing")` as
 [PricingClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_pricing.client import PricingClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [describe_services](./client.md#describe_services)
 - [exceptions](./client.md#exceptions)
@@ -73,7 +79,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_pricing.paginators import DescribeServicesPaginator, ...
+from types_aiobotocore_pricing.paginator import DescribeServicesPaginator, ...
 ```
 
 - [DescribeServicesPaginator](./paginators.md#describeservicespaginator)

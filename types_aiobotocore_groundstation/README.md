@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[groundstation]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[groundstation]'
+
+# standalone installation
 pip install types-aiobotocore-groundstation
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-groundstation
 
 ## GroundStationClient
 
-Type annotations for `aiobotocore.create_client("groundstation")` as
+Type annotations for `session.create_client("groundstation")` as
 [GroundStationClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_groundstation.client import GroundStationClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_contact](./client.md#cancel_contact)
 - [create_config](./client.md#create_config)
@@ -94,7 +100,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_groundstation.paginators import ListConfigsPaginator, ...
+from types_aiobotocore_groundstation.paginator import ListConfigsPaginator, ...
 ```
 
 - [ListConfigsPaginator](./paginators.md#listconfigspaginator)

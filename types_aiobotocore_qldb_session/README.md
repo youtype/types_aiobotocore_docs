@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[qldb-session]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[qldb-session]'
+
+# standalone installation
 pip install types-aiobotocore-qldb-session
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-qldb-session
 
 ## QLDBSessionClient
 
-Type annotations for `aiobotocore.create_client("qldb-session")` as
+Type annotations for `session.create_client("qldb-session")` as
 [QLDBSessionClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_qldb_session.client import QLDBSessionClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [exceptions](./client.md#exceptions)
 - [generate_presigned_url](./client.md#generate_presigned_url)

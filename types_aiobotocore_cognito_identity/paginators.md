@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListIdentityPoolsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").get_paginator("list_identity_pools")`.
+`session.create_client("cognito-identity").get_paginator("list_identity_pools")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cognito_identity.paginator import ListIdentityPoolsPaginator
 
-def get_list_identity_pools_paginator() -> ListIdentityPoolsPaginator:
-    return Session().create_client("cognito-identity").get_paginator("list_identity_pools")
+session = get_session()
+async with session.create_client("cognito-identity") as client:
+    client: CognitoIdentityClient
+    paginator: ListIdentityPoolsPaginator = client.get_paginator("list_identity_pools")
 ```
 
 Boto3 documentation:

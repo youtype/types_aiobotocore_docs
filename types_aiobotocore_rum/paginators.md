@@ -18,17 +18,19 @@ type annotations stubs module
 ## GetAppMonitorDataPaginator
 
 Type annotations for
-`aiobotocore.create_client("rum").get_paginator("get_app_monitor_data")`.
+`session.create_client("rum").get_paginator("get_app_monitor_data")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rum.paginator import GetAppMonitorDataPaginator
 
-def get_get_app_monitor_data_paginator() -> GetAppMonitorDataPaginator:
-    return Session().create_client("rum").get_paginator("get_app_monitor_data")
+session = get_session()
+async with session.create_client("rum") as client:
+    client: CloudWatchRUMClient
+    paginator: GetAppMonitorDataPaginator = client.get_paginator("get_app_monitor_data")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `GetAppMonitorDataPaginator.paginate` method:
 ## ListAppMonitorsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rum").get_paginator("list_app_monitors")`.
+`session.create_client("rum").get_paginator("list_app_monitors")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rum.paginator import ListAppMonitorsPaginator
 
-def get_list_app_monitors_paginator() -> ListAppMonitorsPaginator:
-    return Session().create_client("rum").get_paginator("list_app_monitors")
+session = get_session()
+async with session.create_client("rum") as client:
+    client: CloudWatchRUMClient
+    paginator: ListAppMonitorsPaginator = client.get_paginator("list_app_monitors")
 ```
 
 Boto3 documentation:

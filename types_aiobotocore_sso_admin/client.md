@@ -47,22 +47,25 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_instance_access_control_attribute_configuration](#update_instance_access_control_attribute_configuration)
     - [update_permission_set](#update_permission_set)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="ssoadminclient"></a>
 
 ## SSOAdminClient
 
-Type annotations for `aiobotocore.create_client("sso-admin")`
+Type annotations for `session.create_client("sso-admin")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_sso_admin.client import SSOAdminClient
 
-def get_sso-admin_client() -> SSOAdminClient:
-    return Session().client("sso-admin")
+session = get_session()
+async with session.create_client("sso-admin") as client:
+    client: SSOAdminClient
 ```
 
 Boto3 documentation:
@@ -103,8 +106,7 @@ Exceptions:
 
 SSOAdminClient exceptions.
 
-Type annotations for `aiobotocore.create_client("sso-admin").exceptions`
-method.
+Type annotations for `session.create_client("sso-admin").exceptions` method.
 
 Boto3 documentation:
 [SSOAdmin.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.exceptions)
@@ -118,7 +120,7 @@ Returns [Exceptions](#exceptions).
 Attaches an IAM managed policy ARN to a permission set.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").attach_managed_policy_to_permission_set`
+`session.create_client("sso-admin").attach_managed_policy_to_permission_set`
 method.
 
 Boto3 documentation:
@@ -144,19 +146,16 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("sso-admin").can_paginate`
-method.
+Type annotations for `session.create_client("sso-admin").can_paginate` method.
 
 Boto3 documentation:
 [SSOAdmin.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_account_assignment"></a>
 
@@ -166,7 +165,7 @@ Assigns access to a principal for a specified Amazon Web Services account using
 a specified permission set.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").create_account_assignment` method.
+`session.create_client("sso-admin").create_account_assignment` method.
 
 Boto3 documentation:
 [SSOAdmin.Client.create_account_assignment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.create_account_assignment)
@@ -199,7 +198,7 @@ Enables the attributes-based access control (ABAC) feature for the specified
 Amazon Web Services SSO instance.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").create_instance_access_control_attribute_configuration`
+`session.create_client("sso-admin").create_instance_access_control_attribute_configuration`
 method.
 
 Boto3 documentation:
@@ -227,8 +226,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a permission set within a specified SSO instance.
 
-Type annotations for
-`aiobotocore.create_client("sso-admin").create_permission_set` method.
+Type annotations for `session.create_client("sso-admin").create_permission_set`
+method.
 
 Boto3 documentation:
 [SSOAdmin.Client.create_permission_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.create_permission_set)
@@ -259,7 +258,7 @@ Deletes a principal's access from a specified Amazon Web Services account using
 a specified permission set.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").delete_account_assignment` method.
+`session.create_client("sso-admin").delete_account_assignment` method.
 
 Boto3 documentation:
 [SSOAdmin.Client.delete_account_assignment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.delete_account_assignment)
@@ -291,7 +290,7 @@ Returns a `Coroutine` for
 Deletes the inline policy from a specified permission set.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").delete_inline_policy_from_permission_set`
+`session.create_client("sso-admin").delete_inline_policy_from_permission_set`
 method.
 
 Boto3 documentation:
@@ -319,7 +318,7 @@ Amazon Web Services SSO instance and deletes all of the attribute mappings that
 have been configured.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").delete_instance_access_control_attribute_configuration`
+`session.create_client("sso-admin").delete_instance_access_control_attribute_configuration`
 method.
 
 Boto3 documentation:
@@ -344,8 +343,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified permission set.
 
-Type annotations for
-`aiobotocore.create_client("sso-admin").delete_permission_set` method.
+Type annotations for `session.create_client("sso-admin").delete_permission_set`
+method.
 
 Boto3 documentation:
 [SSOAdmin.Client.delete_permission_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.delete_permission_set)
@@ -370,7 +369,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Describes the status of the assignment creation request.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").describe_account_assignment_creation_status`
+`session.create_client("sso-admin").describe_account_assignment_creation_status`
 method.
 
 Boto3 documentation:
@@ -398,7 +397,7 @@ Returns a `Coroutine` for
 Describes the status of the assignment deletion request.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").describe_account_assignment_deletion_status`
+`session.create_client("sso-admin").describe_account_assignment_deletion_status`
 method.
 
 Boto3 documentation:
@@ -428,7 +427,7 @@ been configured to work with attributes-based access control (ABAC) for the
 specified Amazon Web Services SSO instance.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").describe_instance_access_control_attribute_configuration`
+`session.create_client("sso-admin").describe_instance_access_control_attribute_configuration`
 method.
 
 Boto3 documentation:
@@ -455,7 +454,7 @@ Returns a `Coroutine` for
 Gets the details of the permission set.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").describe_permission_set` method.
+`session.create_client("sso-admin").describe_permission_set` method.
 
 Boto3 documentation:
 [SSOAdmin.Client.describe_permission_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.describe_permission_set)
@@ -481,7 +480,7 @@ Returns a `Coroutine` for
 Describes the status for the given permission set provisioning request.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").describe_permission_set_provisioning_status`
+`session.create_client("sso-admin").describe_permission_set_provisioning_status`
 method.
 
 Boto3 documentation:
@@ -509,7 +508,7 @@ Returns a `Coroutine` for
 Detaches the attached IAM managed policy ARN from the specified permission set.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").detach_managed_policy_from_permission_set`
+`session.create_client("sso-admin").detach_managed_policy_from_permission_set`
 method.
 
 Boto3 documentation:
@@ -536,7 +535,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").generate_presigned_url` method.
+`session.create_client("sso-admin").generate_presigned_url` method.
 
 Boto3 documentation:
 [SSOAdmin.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.generate_presigned_url)
@@ -560,7 +559,7 @@ Returns a `Coroutine` for `str`.
 Obtains the inline policy assigned to the permission set.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").get_inline_policy_for_permission_set`
+`session.create_client("sso-admin").get_inline_policy_for_permission_set`
 method.
 
 Boto3 documentation:
@@ -588,7 +587,7 @@ Lists the status of the Amazon Web Services account assignment creation
 requests for a specified SSO instance.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").list_account_assignment_creation_status`
+`session.create_client("sso-admin").list_account_assignment_creation_status`
 method.
 
 Boto3 documentation:
@@ -619,7 +618,7 @@ Lists the status of the Amazon Web Services account assignment deletion
 requests for a specified SSO instance.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").list_account_assignment_deletion_status`
+`session.create_client("sso-admin").list_account_assignment_deletion_status`
 method.
 
 Boto3 documentation:
@@ -650,7 +649,7 @@ Lists the assignee of the specified Amazon Web Services account with the
 specified permission set.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").list_account_assignments` method.
+`session.create_client("sso-admin").list_account_assignments` method.
 
 Boto3 documentation:
 [SSOAdmin.Client.list_account_assignments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.list_account_assignments)
@@ -680,7 +679,7 @@ Lists all the Amazon Web Services accounts where the specified permission set
 is provisioned.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").list_accounts_for_provisioned_permission_set`
+`session.create_client("sso-admin").list_accounts_for_provisioned_permission_set`
 method.
 
 Boto3 documentation:
@@ -711,7 +710,7 @@ Returns a `Coroutine` for
 
 Lists the SSO instances that the caller has access to.
 
-Type annotations for `aiobotocore.create_client("sso-admin").list_instances`
+Type annotations for `session.create_client("sso-admin").list_instances`
 method.
 
 Boto3 documentation:
@@ -737,7 +736,7 @@ Returns a `Coroutine` for
 Lists the IAM managed policy that is attached to a specified permission set.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").list_managed_policies_in_permission_set`
+`session.create_client("sso-admin").list_managed_policies_in_permission_set`
 method.
 
 Boto3 documentation:
@@ -767,7 +766,7 @@ Lists the status of the permission set provisioning requests for a specified
 SSO instance.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").list_permission_set_provisioning_status`
+`session.create_client("sso-admin").list_permission_set_provisioning_status`
 method.
 
 Boto3 documentation:
@@ -796,8 +795,8 @@ Returns a `Coroutine` for
 
 Lists the PermissionSet s in an SSO instance.
 
-Type annotations for
-`aiobotocore.create_client("sso-admin").list_permission_sets` method.
+Type annotations for `session.create_client("sso-admin").list_permission_sets`
+method.
 
 Boto3 documentation:
 [SSOAdmin.Client.list_permission_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.list_permission_sets)
@@ -825,7 +824,7 @@ Lists all the permission sets that are provisioned to a specified Amazon Web
 Services account.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").list_permission_sets_provisioned_to_account`
+`session.create_client("sso-admin").list_permission_sets_provisioned_to_account`
 method.
 
 Boto3 documentation:
@@ -857,7 +856,7 @@ Returns a `Coroutine` for
 Lists the tags that are attached to a specified resource.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").list_tags_for_resource` method.
+`session.create_client("sso-admin").list_tags_for_resource` method.
 
 Boto3 documentation:
 [SSOAdmin.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.list_tags_for_resource)
@@ -885,7 +884,7 @@ The process by which a specified permission set is provisioned to the specified
 target.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").provision_permission_set` method.
+`session.create_client("sso-admin").provision_permission_set` method.
 
 Boto3 documentation:
 [SSOAdmin.Client.provision_permission_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.provision_permission_set)
@@ -914,7 +913,7 @@ Returns a `Coroutine` for
 Attaches an IAM inline policy to a permission set.
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").put_inline_policy_to_permission_set`
+`session.create_client("sso-admin").put_inline_policy_to_permission_set`
 method.
 
 Boto3 documentation:
@@ -940,8 +939,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Associates a set of tags with a specified resource.
 
-Type annotations for `aiobotocore.create_client("sso-admin").tag_resource`
-method.
+Type annotations for `session.create_client("sso-admin").tag_resource` method.
 
 Boto3 documentation:
 [SSOAdmin.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.tag_resource)
@@ -965,7 +963,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Disassociates a set of tags from a specified resource.
 
-Type annotations for `aiobotocore.create_client("sso-admin").untag_resource`
+Type annotations for `session.create_client("sso-admin").untag_resource`
 method.
 
 Boto3 documentation:
@@ -993,7 +991,7 @@ with the Amazon Web Services SSO instance for attributes-based access control
 (ABAC).
 
 Type annotations for
-`aiobotocore.create_client("sso-admin").update_instance_access_control_attribute_configuration`
+`session.create_client("sso-admin").update_instance_access_control_attribute_configuration`
 method.
 
 Boto3 documentation:
@@ -1021,8 +1019,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an existing permission set.
 
-Type annotations for
-`aiobotocore.create_client("sso-admin").update_permission_set` method.
+Type annotations for `session.create_client("sso-admin").update_permission_set`
+method.
 
 Boto3 documentation:
 [SSOAdmin.Client.update_permission_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.update_permission_set)
@@ -1043,12 +1041,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("sso-admin").__aenter__` method.
+
+Boto3 documentation:
+[SSOAdmin.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SSOAdminClient](#ssoadminclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("sso-admin").__aexit__` method.
+
+Boto3 documentation:
+[SSOAdmin.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-admin.html#SSOAdmin.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("sso-admin").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("sso-admin").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_account_assignment_creation_status")` ->
   [ListAccountAssignmentCreationStatusPaginator](./paginators.md#listaccountassignmentcreationstatuspaginator)

@@ -32,22 +32,25 @@ type annotations stubs module
     - [untag](#untag)
     - [update_group](#update_group)
     - [update_group_query](#update_group_query)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="resourcegroupsclient"></a>
 
 ## ResourceGroupsClient
 
-Type annotations for `aiobotocore.create_client("resource-groups")`
+Type annotations for `session.create_client("resource-groups")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_resource_groups.client import ResourceGroupsClient
 
-def get_resource-groups_client() -> ResourceGroupsClient:
-    return Session().client("resource-groups")
+session = get_session()
+async with session.create_client("resource-groups") as client:
+    client: ResourceGroupsClient
 ```
 
 Boto3 documentation:
@@ -88,7 +91,7 @@ Exceptions:
 
 ResourceGroupsClient exceptions.
 
-Type annotations for `aiobotocore.create_client("resource-groups").exceptions`
+Type annotations for `session.create_client("resource-groups").exceptions`
 method.
 
 Boto3 documentation:
@@ -102,19 +105,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("resource-groups").can_paginate` method.
+Type annotations for `session.create_client("resource-groups").can_paginate`
+method.
 
 Boto3 documentation:
 [ResourceGroups.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_group"></a>
 
@@ -122,8 +123,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates a resource group with the specified name and description.
 
-Type annotations for
-`aiobotocore.create_client("resource-groups").create_group` method.
+Type annotations for `session.create_client("resource-groups").create_group`
+method.
 
 Boto3 documentation:
 [ResourceGroups.Client.create_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.create_group)
@@ -151,8 +152,8 @@ Returns a `Coroutine` for
 
 Deletes the specified resource group.
 
-Type annotations for
-`aiobotocore.create_client("resource-groups").delete_group` method.
+Type annotations for `session.create_client("resource-groups").delete_group`
+method.
 
 Boto3 documentation:
 [ResourceGroups.Client.delete_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.delete_group)
@@ -177,7 +178,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("resource-groups").generate_presigned_url` method.
+`session.create_client("resource-groups").generate_presigned_url` method.
 
 Boto3 documentation:
 [ResourceGroups.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.generate_presigned_url)
@@ -200,7 +201,7 @@ Returns a `Coroutine` for `str`.
 
 Returns information about a specified resource group.
 
-Type annotations for `aiobotocore.create_client("resource-groups").get_group`
+Type annotations for `session.create_client("resource-groups").get_group`
 method.
 
 Boto3 documentation:
@@ -226,7 +227,7 @@ Returns a `Coroutine` for
 Returns the service configuration associated with the specified resource group.
 
 Type annotations for
-`aiobotocore.create_client("resource-groups").get_group_configuration` method.
+`session.create_client("resource-groups").get_group_configuration` method.
 
 Boto3 documentation:
 [ResourceGroups.Client.get_group_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.get_group_configuration)
@@ -250,8 +251,8 @@ Returns a `Coroutine` for
 
 Retrieves the resource query associated with the specified resource group.
 
-Type annotations for
-`aiobotocore.create_client("resource-groups").get_group_query` method.
+Type annotations for `session.create_client("resource-groups").get_group_query`
+method.
 
 Boto3 documentation:
 [ResourceGroups.Client.get_group_query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.get_group_query)
@@ -276,7 +277,7 @@ Returns a `Coroutine` for
 Returns a list of tags that are associated with a resource group, specified by
 an ARN.
 
-Type annotations for `aiobotocore.create_client("resource-groups").get_tags`
+Type annotations for `session.create_client("resource-groups").get_tags`
 method.
 
 Boto3 documentation:
@@ -300,8 +301,8 @@ Returns a `Coroutine` for
 
 Adds the specified resources to the specified group.
 
-Type annotations for
-`aiobotocore.create_client("resource-groups").group_resources` method.
+Type annotations for `session.create_client("resource-groups").group_resources`
+method.
 
 Boto3 documentation:
 [ResourceGroups.Client.group_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.group_resources)
@@ -327,7 +328,7 @@ Returns a list of ARNs of the resources that are members of a specified
 resource group.
 
 Type annotations for
-`aiobotocore.create_client("resource-groups").list_group_resources` method.
+`session.create_client("resource-groups").list_group_resources` method.
 
 Boto3 documentation:
 [ResourceGroups.Client.list_group_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.list_group_resources)
@@ -356,7 +357,7 @@ Returns a `Coroutine` for
 
 Returns a list of existing resource groups in your account.
 
-Type annotations for `aiobotocore.create_client("resource-groups").list_groups`
+Type annotations for `session.create_client("resource-groups").list_groups`
 method.
 
 Boto3 documentation:
@@ -384,7 +385,7 @@ Returns a `Coroutine` for
 Attaches a service configuration to the specified group.
 
 Type annotations for
-`aiobotocore.create_client("resource-groups").put_group_configuration` method.
+`session.create_client("resource-groups").put_group_configuration` method.
 
 Boto3 documentation:
 [ResourceGroups.Client.put_group_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.put_group_configuration)
@@ -410,7 +411,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Returns a list of AWS resource identifiers that matches the specified query.
 
 Type annotations for
-`aiobotocore.create_client("resource-groups").search_resources` method.
+`session.create_client("resource-groups").search_resources` method.
 
 Boto3 documentation:
 [ResourceGroups.Client.search_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.search_resources)
@@ -436,7 +437,7 @@ Returns a `Coroutine` for
 
 Adds tags to a resource group with the specified ARN.
 
-Type annotations for `aiobotocore.create_client("resource-groups").tag` method.
+Type annotations for `session.create_client("resource-groups").tag` method.
 
 Boto3 documentation:
 [ResourceGroups.Client.tag](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.tag)
@@ -460,7 +461,7 @@ Returns a `Coroutine` for [TagOutputTypeDef](./type_defs.md#tagoutputtypedef).
 Removes the specified resources from the specified group.
 
 Type annotations for
-`aiobotocore.create_client("resource-groups").ungroup_resources` method.
+`session.create_client("resource-groups").ungroup_resources` method.
 
 Boto3 documentation:
 [ResourceGroups.Client.ungroup_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.ungroup_resources)
@@ -484,8 +485,7 @@ Returns a `Coroutine` for
 
 Deletes tags from a specified resource group.
 
-Type annotations for `aiobotocore.create_client("resource-groups").untag`
-method.
+Type annotations for `session.create_client("resource-groups").untag` method.
 
 Boto3 documentation:
 [ResourceGroups.Client.untag](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.untag)
@@ -509,8 +509,8 @@ Returns a `Coroutine` for
 
 Updates the description for an existing group.
 
-Type annotations for
-`aiobotocore.create_client("resource-groups").update_group` method.
+Type annotations for `session.create_client("resource-groups").update_group`
+method.
 
 Boto3 documentation:
 [ResourceGroups.Client.update_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.update_group)
@@ -536,7 +536,7 @@ Returns a `Coroutine` for
 Updates the resource query of a group.
 
 Type annotations for
-`aiobotocore.create_client("resource-groups").update_group_query` method.
+`session.create_client("resource-groups").update_group_query` method.
 
 Boto3 documentation:
 [ResourceGroups.Client.update_group_query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.update_group_query)
@@ -557,13 +557,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateGroupQueryOutputTypeDef](./type_defs.md#updategroupqueryoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("resource-groups").__aenter__`
+method.
+
+Boto3 documentation:
+[ResourceGroups.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ResourceGroupsClient](#resourcegroupsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("resource-groups").__aexit__`
+method.
+
+Boto3 documentation:
+[ResourceGroups.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resource-groups.html#ResourceGroups.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("resource-groups").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("resource-groups").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_group_resources")` ->
   [ListGroupResourcesPaginator](./paginators.md#listgroupresourcespaginator)

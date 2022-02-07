@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[apigatewayv2]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[apigatewayv2]'
+
+# standalone installation
 pip install types-aiobotocore-apigatewayv2
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-apigatewayv2
 
 ## ApiGatewayV2Client
 
-Type annotations for `aiobotocore.create_client("apigatewayv2")` as
+Type annotations for `session.create_client("apigatewayv2")` as
 [ApiGatewayV2Client](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_apigatewayv2.client import ApiGatewayV2Client
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_api](./client.md#create_api)
 - [create_api_mapping](./client.md#create_api_mapping)
@@ -142,7 +148,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_apigatewayv2.paginators import GetApisPaginator, ...
+from types_aiobotocore_apigatewayv2.paginator import GetApisPaginator, ...
 ```
 
 - [GetApisPaginator](./paginators.md#getapispaginator)

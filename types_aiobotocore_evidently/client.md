@@ -48,22 +48,25 @@ type annotations stubs module
     - [update_launch](#update_launch)
     - [update_project](#update_project)
     - [update_project_data_delivery](#update_project_data_delivery)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="cloudwatchevidentlyclient"></a>
 
 ## CloudWatchEvidentlyClient
 
-Type annotations for `aiobotocore.create_client("evidently")`
+Type annotations for `session.create_client("evidently")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_evidently.client import CloudWatchEvidentlyClient
 
-def get_evidently_client() -> CloudWatchEvidentlyClient:
-    return Session().client("evidently")
+session = get_session()
+async with session.create_client("evidently") as client:
+    client: CloudWatchEvidentlyClient
 ```
 
 Boto3 documentation:
@@ -105,8 +108,7 @@ Exceptions:
 
 CloudWatchEvidentlyClient exceptions.
 
-Type annotations for `aiobotocore.create_client("evidently").exceptions`
-method.
+Type annotations for `session.create_client("evidently").exceptions` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.exceptions)
@@ -120,7 +122,7 @@ Returns [Exceptions](#exceptions).
 This operation assigns feature variation to user sessions.
 
 Type annotations for
-`aiobotocore.create_client("evidently").batch_evaluate_feature` method.
+`session.create_client("evidently").batch_evaluate_feature` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.batch_evaluate_feature](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.batch_evaluate_feature)
@@ -147,19 +149,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("evidently").can_paginate`
-method.
+Type annotations for `session.create_client("evidently").can_paginate` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_experiment"></a>
 
@@ -167,7 +166,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates an Evidently *experiment*.
 
-Type annotations for `aiobotocore.create_client("evidently").create_experiment`
+Type annotations for `session.create_client("evidently").create_experiment`
 method.
 
 Boto3 documentation:
@@ -204,7 +203,7 @@ Returns a `Coroutine` for
 
 Creates an Evidently *feature* that you want to launch or test.
 
-Type annotations for `aiobotocore.create_client("evidently").create_feature`
+Type annotations for `session.create_client("evidently").create_feature`
 method.
 
 Boto3 documentation:
@@ -238,8 +237,7 @@ Returns a `Coroutine` for
 
 Creates a *launch* of a given feature.
 
-Type annotations for `aiobotocore.create_client("evidently").create_launch`
-method.
+Type annotations for `session.create_client("evidently").create_launch` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.create_launch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.create_launch)
@@ -274,7 +272,7 @@ Returns a `Coroutine` for
 Creates a project, which is the logical object in Evidently that can contain
 features, launches, and experiments.
 
-Type annotations for `aiobotocore.create_client("evidently").create_project`
+Type annotations for `session.create_client("evidently").create_project`
 method.
 
 Boto3 documentation:
@@ -302,7 +300,7 @@ Returns a `Coroutine` for
 
 Deletes an Evidently experiment.
 
-Type annotations for `aiobotocore.create_client("evidently").delete_experiment`
+Type annotations for `session.create_client("evidently").delete_experiment`
 method.
 
 Boto3 documentation:
@@ -326,7 +324,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an Evidently feature.
 
-Type annotations for `aiobotocore.create_client("evidently").delete_feature`
+Type annotations for `session.create_client("evidently").delete_feature`
 method.
 
 Boto3 documentation:
@@ -350,8 +348,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an Evidently launch.
 
-Type annotations for `aiobotocore.create_client("evidently").delete_launch`
-method.
+Type annotations for `session.create_client("evidently").delete_launch` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.delete_launch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.delete_launch)
@@ -374,7 +371,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an Evidently project.
 
-Type annotations for `aiobotocore.create_client("evidently").delete_project`
+Type annotations for `session.create_client("evidently").delete_project`
 method.
 
 Boto3 documentation:
@@ -397,7 +394,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 This operation assigns a feature variation to one given user session.
 
-Type annotations for `aiobotocore.create_client("evidently").evaluate_feature`
+Type annotations for `session.create_client("evidently").evaluate_feature`
 method.
 
 Boto3 documentation:
@@ -425,7 +422,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("evidently").generate_presigned_url` method.
+`session.create_client("evidently").generate_presigned_url` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.generate_presigned_url)
@@ -448,7 +445,7 @@ Returns a `Coroutine` for `str`.
 
 Returns the details about one experiment.
 
-Type annotations for `aiobotocore.create_client("evidently").get_experiment`
+Type annotations for `session.create_client("evidently").get_experiment`
 method.
 
 Boto3 documentation:
@@ -474,7 +471,7 @@ Returns a `Coroutine` for
 Retrieves the results of a running or completed experiment.
 
 Type annotations for
-`aiobotocore.create_client("evidently").get_experiment_results` method.
+`session.create_client("evidently").get_experiment_results` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.get_experiment_results](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.get_experiment_results)
@@ -510,8 +507,7 @@ Returns a `Coroutine` for
 
 Returns the details about one feature.
 
-Type annotations for `aiobotocore.create_client("evidently").get_feature`
-method.
+Type annotations for `session.create_client("evidently").get_feature` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.get_feature](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.get_feature)
@@ -535,8 +531,7 @@ Returns a `Coroutine` for
 
 Returns the details about one launch.
 
-Type annotations for `aiobotocore.create_client("evidently").get_launch`
-method.
+Type annotations for `session.create_client("evidently").get_launch` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.get_launch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.get_launch)
@@ -560,8 +555,7 @@ Returns a `Coroutine` for
 
 Returns the details about one launch.
 
-Type annotations for `aiobotocore.create_client("evidently").get_project`
-method.
+Type annotations for `session.create_client("evidently").get_project` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.get_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.get_project)
@@ -585,7 +579,7 @@ Returns a `Coroutine` for
 Returns configuration details about all the experiments in the specified
 project.
 
-Type annotations for `aiobotocore.create_client("evidently").list_experiments`
+Type annotations for `session.create_client("evidently").list_experiments`
 method.
 
 Boto3 documentation:
@@ -611,8 +605,7 @@ Returns a `Coroutine` for
 
 Returns configuration details about all the features in the specified project.
 
-Type annotations for `aiobotocore.create_client("evidently").list_features`
-method.
+Type annotations for `session.create_client("evidently").list_features` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.list_features](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.list_features)
@@ -637,8 +630,7 @@ Returns a `Coroutine` for
 
 Returns configuration details about all the launches in the specified project.
 
-Type annotations for `aiobotocore.create_client("evidently").list_launches`
-method.
+Type annotations for `session.create_client("evidently").list_launches` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.list_launches](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.list_launches)
@@ -664,8 +656,7 @@ Returns a `Coroutine` for
 Returns configuration details about all the projects in the current Region in
 your account.
 
-Type annotations for `aiobotocore.create_client("evidently").list_projects`
-method.
+Type annotations for `session.create_client("evidently").list_projects` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.list_projects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.list_projects)
@@ -690,7 +681,7 @@ Returns a `Coroutine` for
 Displays the tags associated with an Evidently resource.
 
 Type annotations for
-`aiobotocore.create_client("evidently").list_tags_for_resource` method.
+`session.create_client("evidently").list_tags_for_resource` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.list_tags_for_resource)
@@ -714,8 +705,8 @@ Returns a `Coroutine` for
 
 Sends performance events to Evidently.
 
-Type annotations for
-`aiobotocore.create_client("evidently").put_project_events` method.
+Type annotations for `session.create_client("evidently").put_project_events`
+method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.put_project_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.put_project_events)
@@ -741,7 +732,7 @@ Returns a `Coroutine` for
 
 Starts an existing experiment.
 
-Type annotations for `aiobotocore.create_client("evidently").start_experiment`
+Type annotations for `session.create_client("evidently").start_experiment`
 method.
 
 Boto3 documentation:
@@ -767,8 +758,7 @@ Returns a `Coroutine` for
 
 Starts an existing launch.
 
-Type annotations for `aiobotocore.create_client("evidently").start_launch`
-method.
+Type annotations for `session.create_client("evidently").start_launch` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.start_launch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.start_launch)
@@ -792,7 +782,7 @@ Returns a `Coroutine` for
 
 Stops an experiment that is currently running.
 
-Type annotations for `aiobotocore.create_client("evidently").stop_experiment`
+Type annotations for `session.create_client("evidently").stop_experiment`
 method.
 
 Boto3 documentation:
@@ -820,8 +810,7 @@ Returns a `Coroutine` for
 
 Stops a launch that is currently running.
 
-Type annotations for `aiobotocore.create_client("evidently").stop_launch`
-method.
+Type annotations for `session.create_client("evidently").stop_launch` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.stop_launch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.stop_launch)
@@ -849,8 +838,7 @@ Returns a `Coroutine` for
 Assigns one or more tags (key-value pairs) to the specified CloudWatch
 Evidently resource.
 
-Type annotations for `aiobotocore.create_client("evidently").tag_resource`
-method.
+Type annotations for `session.create_client("evidently").tag_resource` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.tag_resource)
@@ -873,7 +861,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from the specified resource.
 
-Type annotations for `aiobotocore.create_client("evidently").untag_resource`
+Type annotations for `session.create_client("evidently").untag_resource`
 method.
 
 Boto3 documentation:
@@ -897,7 +885,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an Evidently experiment.
 
-Type annotations for `aiobotocore.create_client("evidently").update_experiment`
+Type annotations for `session.create_client("evidently").update_experiment`
 method.
 
 Boto3 documentation:
@@ -931,7 +919,7 @@ Returns a `Coroutine` for
 
 Updates an existing feature.
 
-Type annotations for `aiobotocore.create_client("evidently").update_feature`
+Type annotations for `session.create_client("evidently").update_feature`
 method.
 
 Boto3 documentation:
@@ -964,8 +952,7 @@ Returns a `Coroutine` for
 
 Updates a launch of a given feature.
 
-Type annotations for `aiobotocore.create_client("evidently").update_launch`
-method.
+Type annotations for `session.create_client("evidently").update_launch` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.update_launch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.update_launch)
@@ -997,7 +984,7 @@ Returns a `Coroutine` for
 
 Updates the description of an existing project.
 
-Type annotations for `aiobotocore.create_client("evidently").update_project`
+Type annotations for `session.create_client("evidently").update_project`
 method.
 
 Boto3 documentation:
@@ -1023,7 +1010,7 @@ Returns a `Coroutine` for
 Updates the data storage options for this project.
 
 Type annotations for
-`aiobotocore.create_client("evidently").update_project_data_delivery` method.
+`session.create_client("evidently").update_project_data_delivery` method.
 
 Boto3 documentation:
 [CloudWatchEvidently.Client.update_project_data_delivery](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.update_project_data_delivery)
@@ -1045,12 +1032,45 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateProjectDataDeliveryResponseTypeDef](./type_defs.md#updateprojectdatadeliveryresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("evidently").__aenter__` method.
+
+Boto3 documentation:
+[CloudWatchEvidently.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[CloudWatchEvidentlyClient](#cloudwatchevidentlyclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("evidently").__aexit__` method.
+
+Boto3 documentation:
+[CloudWatchEvidently.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/evidently.html#CloudWatchEvidently.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("evidently").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("evidently").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_experiments")` ->
   [ListExperimentsPaginator](./paginators.md#listexperimentspaginator)

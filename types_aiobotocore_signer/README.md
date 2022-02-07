@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[signer]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[signer]'
+
+# standalone installation
 pip install types-aiobotocore-signer
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-signer
 
 ## signerClient
 
-Type annotations for `aiobotocore.create_client("signer")` as
+Type annotations for `session.create_client("signer")` as
 [signerClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_signer.client import signerClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_profile_permission](./client.md#add_profile_permission)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_signing_profile](./client.md#cancel_signing_profile)
@@ -94,7 +100,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_signer.paginators import ListSigningJobsPaginator, ...
+from types_aiobotocore_signer.paginator import ListSigningJobsPaginator, ...
 ```
 
 - [ListSigningJobsPaginator](./paginators.md#listsigningjobspaginator)
@@ -111,7 +117,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_signer.waiters import SuccessfulSigningJobWaiter, ...
+from types_aiobotocore_signer.waiter import SuccessfulSigningJobWaiter, ...
 ```
 
 - [SuccessfulSigningJobWaiter](./waiters.md#successfulsigningjobwaiter)

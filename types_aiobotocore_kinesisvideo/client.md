@@ -35,22 +35,25 @@ type annotations stubs module
     - [update_data_retention](#update_data_retention)
     - [update_signaling_channel](#update_signaling_channel)
     - [update_stream](#update_stream)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="kinesisvideoclient"></a>
 
 ## KinesisVideoClient
 
-Type annotations for `aiobotocore.create_client("kinesisvideo")`
+Type annotations for `session.create_client("kinesisvideo")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_kinesisvideo.client import KinesisVideoClient
 
-def get_kinesisvideo_client() -> KinesisVideoClient:
-    return Session().client("kinesisvideo")
+session = get_session()
+async with session.create_client("kinesisvideo") as client:
+    client: KinesisVideoClient
 ```
 
 Boto3 documentation:
@@ -97,8 +100,7 @@ Exceptions:
 
 KinesisVideoClient exceptions.
 
-Type annotations for `aiobotocore.create_client("kinesisvideo").exceptions`
-method.
+Type annotations for `session.create_client("kinesisvideo").exceptions` method.
 
 Boto3 documentation:
 [KinesisVideo.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.exceptions)
@@ -111,19 +113,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("kinesisvideo").can_paginate`
+Type annotations for `session.create_client("kinesisvideo").can_paginate`
 method.
 
 Boto3 documentation:
 [KinesisVideo.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_signaling_channel"></a>
 
@@ -132,7 +132,7 @@ Returns a `Coroutine` for `bool`.
 Creates a signaling channel.
 
 Type annotations for
-`aiobotocore.create_client("kinesisvideo").create_signaling_channel` method.
+`session.create_client("kinesisvideo").create_signaling_channel` method.
 
 Boto3 documentation:
 [KinesisVideo.Client.create_signaling_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.create_signaling_channel)
@@ -161,7 +161,7 @@ Returns a `Coroutine` for
 
 Creates a new Kinesis video stream.
 
-Type annotations for `aiobotocore.create_client("kinesisvideo").create_stream`
+Type annotations for `session.create_client("kinesisvideo").create_stream`
 method.
 
 Boto3 documentation:
@@ -191,7 +191,7 @@ Returns a `Coroutine` for
 Deletes a specified signaling channel.
 
 Type annotations for
-`aiobotocore.create_client("kinesisvideo").delete_signaling_channel` method.
+`session.create_client("kinesisvideo").delete_signaling_channel` method.
 
 Boto3 documentation:
 [KinesisVideo.Client.delete_signaling_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.delete_signaling_channel)
@@ -215,7 +215,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a Kinesis video stream and the data contained in the stream.
 
-Type annotations for `aiobotocore.create_client("kinesisvideo").delete_stream`
+Type annotations for `session.create_client("kinesisvideo").delete_stream`
 method.
 
 Boto3 documentation:
@@ -240,7 +240,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Returns the most current information about the signaling channel.
 
 Type annotations for
-`aiobotocore.create_client("kinesisvideo").describe_signaling_channel` method.
+`session.create_client("kinesisvideo").describe_signaling_channel` method.
 
 Boto3 documentation:
 [KinesisVideo.Client.describe_signaling_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.describe_signaling_channel)
@@ -265,8 +265,8 @@ Returns a `Coroutine` for
 
 Returns the most current information about the specified stream.
 
-Type annotations for
-`aiobotocore.create_client("kinesisvideo").describe_stream` method.
+Type annotations for `session.create_client("kinesisvideo").describe_stream`
+method.
 
 Boto3 documentation:
 [KinesisVideo.Client.describe_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.describe_stream)
@@ -291,7 +291,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("kinesisvideo").generate_presigned_url` method.
+`session.create_client("kinesisvideo").generate_presigned_url` method.
 
 Boto3 documentation:
 [KinesisVideo.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.generate_presigned_url)
@@ -314,8 +314,8 @@ Returns a `Coroutine` for `str`.
 
 Gets an endpoint for a specified stream for either reading or writing.
 
-Type annotations for
-`aiobotocore.create_client("kinesisvideo").get_data_endpoint` method.
+Type annotations for `session.create_client("kinesisvideo").get_data_endpoint`
+method.
 
 Boto3 documentation:
 [KinesisVideo.Client.get_data_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.get_data_endpoint)
@@ -342,8 +342,7 @@ Provides an endpoint for the specified signaling channel to send and receive
 messages.
 
 Type annotations for
-`aiobotocore.create_client("kinesisvideo").get_signaling_channel_endpoint`
-method.
+`session.create_client("kinesisvideo").get_signaling_channel_endpoint` method.
 
 Boto3 documentation:
 [KinesisVideo.Client.get_signaling_channel_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.get_signaling_channel_endpoint)
@@ -370,7 +369,7 @@ Returns a `Coroutine` for
 Returns an array of `ChannelInfo` objects.
 
 Type annotations for
-`aiobotocore.create_client("kinesisvideo").list_signaling_channels` method.
+`session.create_client("kinesisvideo").list_signaling_channels` method.
 
 Boto3 documentation:
 [KinesisVideo.Client.list_signaling_channels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.list_signaling_channels)
@@ -397,7 +396,7 @@ Returns a `Coroutine` for
 
 Returns an array of `StreamInfo` objects.
 
-Type annotations for `aiobotocore.create_client("kinesisvideo").list_streams`
+Type annotations for `session.create_client("kinesisvideo").list_streams`
 method.
 
 Boto3 documentation:
@@ -425,7 +424,7 @@ Returns a `Coroutine` for
 Returns a list of tags associated with the specified signaling channel.
 
 Type annotations for
-`aiobotocore.create_client("kinesisvideo").list_tags_for_resource` method.
+`session.create_client("kinesisvideo").list_tags_for_resource` method.
 
 Boto3 documentation:
 [KinesisVideo.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.list_tags_for_resource)
@@ -451,7 +450,7 @@ Returns a `Coroutine` for
 Returns a list of tags associated with the specified stream.
 
 Type annotations for
-`aiobotocore.create_client("kinesisvideo").list_tags_for_stream` method.
+`session.create_client("kinesisvideo").list_tags_for_stream` method.
 
 Boto3 documentation:
 [KinesisVideo.Client.list_tags_for_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.list_tags_for_stream)
@@ -477,7 +476,7 @@ Returns a `Coroutine` for
 
 Adds one or more tags to a signaling channel.
 
-Type annotations for `aiobotocore.create_client("kinesisvideo").tag_resource`
+Type annotations for `session.create_client("kinesisvideo").tag_resource`
 method.
 
 Boto3 documentation:
@@ -501,8 +500,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds one or more tags to a stream.
 
-Type annotations for `aiobotocore.create_client("kinesisvideo").tag_stream`
-method.
+Type annotations for `session.create_client("kinesisvideo").tag_stream` method.
 
 Boto3 documentation:
 [KinesisVideo.Client.tag_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.tag_stream)
@@ -526,7 +524,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from a signaling channel.
 
-Type annotations for `aiobotocore.create_client("kinesisvideo").untag_resource`
+Type annotations for `session.create_client("kinesisvideo").untag_resource`
 method.
 
 Boto3 documentation:
@@ -550,7 +548,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from a stream.
 
-Type annotations for `aiobotocore.create_client("kinesisvideo").untag_stream`
+Type annotations for `session.create_client("kinesisvideo").untag_stream`
 method.
 
 Boto3 documentation:
@@ -577,7 +575,7 @@ Increases or decreases the stream's data retention period by the value that you
 specify.
 
 Type annotations for
-`aiobotocore.create_client("kinesisvideo").update_data_retention` method.
+`session.create_client("kinesisvideo").update_data_retention` method.
 
 Boto3 documentation:
 [KinesisVideo.Client.update_data_retention](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.update_data_retention)
@@ -607,7 +605,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the existing signaling channel.
 
 Type annotations for
-`aiobotocore.create_client("kinesisvideo").update_signaling_channel` method.
+`session.create_client("kinesisvideo").update_signaling_channel` method.
 
 Boto3 documentation:
 [KinesisVideo.Client.update_signaling_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.update_signaling_channel)
@@ -633,7 +631,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates stream metadata, such as the device name and media type.
 
-Type annotations for `aiobotocore.create_client("kinesisvideo").update_stream`
+Type annotations for `session.create_client("kinesisvideo").update_stream`
 method.
 
 Boto3 documentation:
@@ -654,11 +652,43 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("kinesisvideo").__aenter__` method.
+
+Boto3 documentation:
+[KinesisVideo.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [KinesisVideoClient](#kinesisvideoclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("kinesisvideo").__aexit__` method.
+
+Boto3 documentation:
+[KinesisVideo.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html#KinesisVideo.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("kinesisvideo").get_paginator`
+Type annotations for `session.create_client("kinesisvideo").get_paginator`
 method with overloads.
 
 - `client.get_paginator("list_signaling_channels")` ->

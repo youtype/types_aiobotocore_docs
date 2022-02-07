@@ -22,17 +22,19 @@ type annotations stubs module
 ## DescribeTablePaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift-data").get_paginator("describe_table")`.
+`session.create_client("redshift-data").get_paginator("describe_table")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift_data.paginator import DescribeTablePaginator
 
-def get_describe_table_paginator() -> DescribeTablePaginator:
-    return Session().create_client("redshift-data").get_paginator("describe_table")
+session = get_session()
+async with session.create_client("redshift-data") as client:
+    client: RedshiftDataAPIServiceClient
+    paginator: DescribeTablePaginator = client.get_paginator("describe_table")
 ```
 
 Boto3 documentation:
@@ -58,17 +60,19 @@ Arguments for `DescribeTablePaginator.paginate` method:
 ## GetStatementResultPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift-data").get_paginator("get_statement_result")`.
+`session.create_client("redshift-data").get_paginator("get_statement_result")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift_data.paginator import GetStatementResultPaginator
 
-def get_get_statement_result_paginator() -> GetStatementResultPaginator:
-    return Session().create_client("redshift-data").get_paginator("get_statement_result")
+session = get_session()
+async with session.create_client("redshift-data") as client:
+    client: RedshiftDataAPIServiceClient
+    paginator: GetStatementResultPaginator = client.get_paginator("get_statement_result")
 ```
 
 Boto3 documentation:
@@ -88,17 +92,19 @@ Arguments for `GetStatementResultPaginator.paginate` method:
 ## ListDatabasesPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift-data").get_paginator("list_databases")`.
+`session.create_client("redshift-data").get_paginator("list_databases")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift_data.paginator import ListDatabasesPaginator
 
-def get_list_databases_paginator() -> ListDatabasesPaginator:
-    return Session().create_client("redshift-data").get_paginator("list_databases")
+session = get_session()
+async with session.create_client("redshift-data") as client:
+    client: RedshiftDataAPIServiceClient
+    paginator: ListDatabasesPaginator = client.get_paginator("list_databases")
 ```
 
 Boto3 documentation:
@@ -121,17 +127,19 @@ Arguments for `ListDatabasesPaginator.paginate` method:
 ## ListSchemasPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift-data").get_paginator("list_schemas")`.
+`session.create_client("redshift-data").get_paginator("list_schemas")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift_data.paginator import ListSchemasPaginator
 
-def get_list_schemas_paginator() -> ListSchemasPaginator:
-    return Session().create_client("redshift-data").get_paginator("list_schemas")
+session = get_session()
+async with session.create_client("redshift-data") as client:
+    client: RedshiftDataAPIServiceClient
+    paginator: ListSchemasPaginator = client.get_paginator("list_schemas")
 ```
 
 Boto3 documentation:
@@ -156,17 +164,19 @@ Arguments for `ListSchemasPaginator.paginate` method:
 ## ListStatementsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift-data").get_paginator("list_statements")`.
+`session.create_client("redshift-data").get_paginator("list_statements")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift_data.paginator import ListStatementsPaginator
 
-def get_list_statements_paginator() -> ListStatementsPaginator:
-    return Session().create_client("redshift-data").get_paginator("list_statements")
+session = get_session()
+async with session.create_client("redshift-data") as client:
+    client: RedshiftDataAPIServiceClient
+    paginator: ListStatementsPaginator = client.get_paginator("list_statements")
 ```
 
 Boto3 documentation:
@@ -188,17 +198,19 @@ Arguments for `ListStatementsPaginator.paginate` method:
 ## ListTablesPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift-data").get_paginator("list_tables")`.
+`session.create_client("redshift-data").get_paginator("list_tables")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift_data.paginator import ListTablesPaginator
 
-def get_list_tables_paginator() -> ListTablesPaginator:
-    return Session().create_client("redshift-data").get_paginator("list_tables")
+session = get_session()
+async with session.create_client("redshift-data") as client:
+    client: RedshiftDataAPIServiceClient
+    paginator: ListTablesPaginator = client.get_paginator("list_tables")
 ```
 
 Boto3 documentation:

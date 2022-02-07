@@ -18,17 +18,19 @@ type annotations stubs module
 ## ListAccountsPaginator
 
 Type annotations for
-`aiobotocore.create_client("chime").get_paginator("list_accounts")`.
+`session.create_client("chime").get_paginator("list_accounts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_chime.paginator import ListAccountsPaginator
 
-def get_list_accounts_paginator() -> ListAccountsPaginator:
-    return Session().create_client("chime").get_paginator("list_accounts")
+session = get_session()
+async with session.create_client("chime") as client:
+    client: ChimeClient
+    paginator: ListAccountsPaginator = client.get_paginator("list_accounts")
 ```
 
 Boto3 documentation:
@@ -49,17 +51,19 @@ Arguments for `ListAccountsPaginator.paginate` method:
 ## ListUsersPaginator
 
 Type annotations for
-`aiobotocore.create_client("chime").get_paginator("list_users")`.
+`session.create_client("chime").get_paginator("list_users")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_chime.paginator import ListUsersPaginator
 
-def get_list_users_paginator() -> ListUsersPaginator:
-    return Session().create_client("chime").get_paginator("list_users")
+session = get_session()
+async with session.create_client("chime") as client:
+    client: ChimeClient
+    paginator: ListUsersPaginator = client.get_paginator("list_users")
 ```
 
 Boto3 documentation:

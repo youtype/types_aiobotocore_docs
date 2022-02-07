@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[emr-containers]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[emr-containers]'
+
+# standalone installation
 pip install types-aiobotocore-emr-containers
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-emr-containers
 
 ## EMRContainersClient
 
-Type annotations for `aiobotocore.create_client("emr-containers")` as
+Type annotations for `session.create_client("emr-containers")` as
 [EMRContainersClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_emr_containers.client import EMRContainersClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_job_run](./client.md#cancel_job_run)
 - [create_managed_endpoint](./client.md#create_managed_endpoint)
@@ -83,7 +89,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_emr_containers.paginators import ListJobRunsPaginator, ...
+from types_aiobotocore_emr_containers.paginator import ListJobRunsPaginator, ...
 ```
 
 - [ListJobRunsPaginator](./paginators.md#listjobrunspaginator)

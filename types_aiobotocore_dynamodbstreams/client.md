@@ -20,21 +20,24 @@ type annotations stubs module
     - [get_records](#get_records)
     - [get_shard_iterator](#get_shard_iterator)
     - [list_streams](#list_streams)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="dynamodbstreamsclient"></a>
 
 ## DynamoDBStreamsClient
 
-Type annotations for `aiobotocore.create_client("dynamodbstreams")`
+Type annotations for `session.create_client("dynamodbstreams")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_dynamodbstreams.client import DynamoDBStreamsClient
 
-def get_dynamodbstreams_client() -> DynamoDBStreamsClient:
-    return Session().client("dynamodbstreams")
+session = get_session()
+async with session.create_client("dynamodbstreams") as client:
+    client: DynamoDBStreamsClient
 ```
 
 Boto3 documentation:
@@ -73,7 +76,7 @@ Exceptions:
 
 DynamoDBStreamsClient exceptions.
 
-Type annotations for `aiobotocore.create_client("dynamodbstreams").exceptions`
+Type annotations for `session.create_client("dynamodbstreams").exceptions`
 method.
 
 Boto3 documentation:
@@ -87,19 +90,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("dynamodbstreams").can_paginate` method.
+Type annotations for `session.create_client("dynamodbstreams").can_paginate`
+method.
 
 Boto3 documentation:
 [DynamoDBStreams.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodbstreams.html#DynamoDBStreams.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="describe_stream"></a>
 
@@ -109,8 +110,8 @@ Returns information about a stream, including the current status of the stream,
 its Amazon Resource Name (ARN), the composition of its shards, and its
 corresponding DynamoDB table.
 
-Type annotations for
-`aiobotocore.create_client("dynamodbstreams").describe_stream` method.
+Type annotations for `session.create_client("dynamodbstreams").describe_stream`
+method.
 
 Boto3 documentation:
 [DynamoDBStreams.Client.describe_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodbstreams.html#DynamoDBStreams.Client.describe_stream)
@@ -136,7 +137,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("dynamodbstreams").generate_presigned_url` method.
+`session.create_client("dynamodbstreams").generate_presigned_url` method.
 
 Boto3 documentation:
 [DynamoDBStreams.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodbstreams.html#DynamoDBStreams.Client.generate_presigned_url)
@@ -159,7 +160,7 @@ Returns a `Coroutine` for `str`.
 
 Retrieves the stream records from a given shard.
 
-Type annotations for `aiobotocore.create_client("dynamodbstreams").get_records`
+Type annotations for `session.create_client("dynamodbstreams").get_records`
 method.
 
 Boto3 documentation:
@@ -185,7 +186,7 @@ Returns a `Coroutine` for
 Returns a shard iterator.
 
 Type annotations for
-`aiobotocore.create_client("dynamodbstreams").get_shard_iterator` method.
+`session.create_client("dynamodbstreams").get_shard_iterator` method.
 
 Boto3 documentation:
 [DynamoDBStreams.Client.get_shard_iterator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodbstreams.html#DynamoDBStreams.Client.get_shard_iterator)
@@ -214,8 +215,8 @@ Returns a `Coroutine` for
 Returns an array of stream ARNs associated with the current account and
 endpoint.
 
-Type annotations for
-`aiobotocore.create_client("dynamodbstreams").list_streams` method.
+Type annotations for `session.create_client("dynamodbstreams").list_streams`
+method.
 
 Boto3 documentation:
 [DynamoDBStreams.Client.list_streams](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodbstreams.html#DynamoDBStreams.Client.list_streams)
@@ -233,3 +234,37 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [ListStreamsOutputTypeDef](./type_defs.md#liststreamsoutputtypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("dynamodbstreams").__aenter__`
+method.
+
+Boto3 documentation:
+[DynamoDBStreams.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodbstreams.html#DynamoDBStreams.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [DynamoDBStreamsClient](#dynamodbstreamsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("dynamodbstreams").__aexit__`
+method.
+
+Boto3 documentation:
+[DynamoDBStreams.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodbstreams.html#DynamoDBStreams.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

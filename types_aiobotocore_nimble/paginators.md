@@ -25,17 +25,19 @@ type annotations stubs module
 ## ListEulaAcceptancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_paginator("list_eula_acceptances")`.
+`session.create_client("nimble").get_paginator("list_eula_acceptances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_nimble.paginator import ListEulaAcceptancesPaginator
 
-def get_list_eula_acceptances_paginator() -> ListEulaAcceptancesPaginator:
-    return Session().create_client("nimble").get_paginator("list_eula_acceptances")
+session = get_session()
+async with session.create_client("nimble") as client:
+    client: NimbleStudioClient
+    paginator: ListEulaAcceptancesPaginator = client.get_paginator("list_eula_acceptances")
 ```
 
 Boto3 documentation:
@@ -56,17 +58,19 @@ Arguments for `ListEulaAcceptancesPaginator.paginate` method:
 ## ListEulasPaginator
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_paginator("list_eulas")`.
+`session.create_client("nimble").get_paginator("list_eulas")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_nimble.paginator import ListEulasPaginator
 
-def get_list_eulas_paginator() -> ListEulasPaginator:
-    return Session().create_client("nimble").get_paginator("list_eulas")
+session = get_session()
+async with session.create_client("nimble") as client:
+    client: NimbleStudioClient
+    paginator: ListEulasPaginator = client.get_paginator("list_eulas")
 ```
 
 Boto3 documentation:
@@ -86,17 +90,19 @@ Arguments for `ListEulasPaginator.paginate` method:
 ## ListLaunchProfileMembersPaginator
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_paginator("list_launch_profile_members")`.
+`session.create_client("nimble").get_paginator("list_launch_profile_members")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_nimble.paginator import ListLaunchProfileMembersPaginator
 
-def get_list_launch_profile_members_paginator() -> ListLaunchProfileMembersPaginator:
-    return Session().create_client("nimble").get_paginator("list_launch_profile_members")
+session = get_session()
+async with session.create_client("nimble") as client:
+    client: NimbleStudioClient
+    paginator: ListLaunchProfileMembersPaginator = client.get_paginator("list_launch_profile_members")
 ```
 
 Boto3 documentation:
@@ -117,17 +123,19 @@ Arguments for `ListLaunchProfileMembersPaginator.paginate` method:
 ## ListLaunchProfilesPaginator
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_paginator("list_launch_profiles")`.
+`session.create_client("nimble").get_paginator("list_launch_profiles")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_nimble.paginator import ListLaunchProfilesPaginator
 
-def get_list_launch_profiles_paginator() -> ListLaunchProfilesPaginator:
-    return Session().create_client("nimble").get_paginator("list_launch_profiles")
+session = get_session()
+async with session.create_client("nimble") as client:
+    client: NimbleStudioClient
+    paginator: ListLaunchProfilesPaginator = client.get_paginator("list_launch_profiles")
 ```
 
 Boto3 documentation:
@@ -149,17 +157,19 @@ Arguments for `ListLaunchProfilesPaginator.paginate` method:
 ## ListStreamingImagesPaginator
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_paginator("list_streaming_images")`.
+`session.create_client("nimble").get_paginator("list_streaming_images")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_nimble.paginator import ListStreamingImagesPaginator
 
-def get_list_streaming_images_paginator() -> ListStreamingImagesPaginator:
-    return Session().create_client("nimble").get_paginator("list_streaming_images")
+session = get_session()
+async with session.create_client("nimble") as client:
+    client: NimbleStudioClient
+    paginator: ListStreamingImagesPaginator = client.get_paginator("list_streaming_images")
 ```
 
 Boto3 documentation:
@@ -180,17 +190,19 @@ Arguments for `ListStreamingImagesPaginator.paginate` method:
 ## ListStreamingSessionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_paginator("list_streaming_sessions")`.
+`session.create_client("nimble").get_paginator("list_streaming_sessions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_nimble.paginator import ListStreamingSessionsPaginator
 
-def get_list_streaming_sessions_paginator() -> ListStreamingSessionsPaginator:
-    return Session().create_client("nimble").get_paginator("list_streaming_sessions")
+session = get_session()
+async with session.create_client("nimble") as client:
+    client: NimbleStudioClient
+    paginator: ListStreamingSessionsPaginator = client.get_paginator("list_streaming_sessions")
 ```
 
 Boto3 documentation:
@@ -213,17 +225,19 @@ Arguments for `ListStreamingSessionsPaginator.paginate` method:
 ## ListStudioComponentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_paginator("list_studio_components")`.
+`session.create_client("nimble").get_paginator("list_studio_components")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_nimble.paginator import ListStudioComponentsPaginator
 
-def get_list_studio_components_paginator() -> ListStudioComponentsPaginator:
-    return Session().create_client("nimble").get_paginator("list_studio_components")
+session = get_session()
+async with session.create_client("nimble") as client:
+    client: NimbleStudioClient
+    paginator: ListStudioComponentsPaginator = client.get_paginator("list_studio_components")
 ```
 
 Boto3 documentation:
@@ -245,17 +259,19 @@ Arguments for `ListStudioComponentsPaginator.paginate` method:
 ## ListStudioMembersPaginator
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_paginator("list_studio_members")`.
+`session.create_client("nimble").get_paginator("list_studio_members")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_nimble.paginator import ListStudioMembersPaginator
 
-def get_list_studio_members_paginator() -> ListStudioMembersPaginator:
-    return Session().create_client("nimble").get_paginator("list_studio_members")
+session = get_session()
+async with session.create_client("nimble") as client:
+    client: NimbleStudioClient
+    paginator: ListStudioMembersPaginator = client.get_paginator("list_studio_members")
 ```
 
 Boto3 documentation:
@@ -275,17 +291,19 @@ Arguments for `ListStudioMembersPaginator.paginate` method:
 ## ListStudiosPaginator
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_paginator("list_studios")`.
+`session.create_client("nimble").get_paginator("list_studios")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_nimble.paginator import ListStudiosPaginator
 
-def get_list_studios_paginator() -> ListStudiosPaginator:
-    return Session().create_client("nimble").get_paginator("list_studios")
+session = get_session()
+async with session.create_client("nimble") as client:
+    client: NimbleStudioClient
+    paginator: ListStudiosPaginator = client.get_paginator("list_studios")
 ```
 
 Boto3 documentation:

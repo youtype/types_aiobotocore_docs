@@ -47,22 +47,25 @@ type annotations stubs module
     - [update_backend_config](#update_backend_config)
     - [update_backend_job](#update_backend_job)
     - [update_backend_storage](#update_backend_storage)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="amplifybackendclient"></a>
 
 ## AmplifyBackendClient
 
-Type annotations for `aiobotocore.create_client("amplifybackend")`
+Type annotations for `session.create_client("amplifybackend")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_amplifybackend.client import AmplifyBackendClient
 
-def get_amplifybackend_client() -> AmplifyBackendClient:
-    return Session().client("amplifybackend")
+session = get_session()
+async with session.create_client("amplifybackend") as client:
+    client: AmplifyBackendClient
 ```
 
 Boto3 documentation:
@@ -100,7 +103,7 @@ Exceptions:
 
 AmplifyBackendClient exceptions.
 
-Type annotations for `aiobotocore.create_client("amplifybackend").exceptions`
+Type annotations for `session.create_client("amplifybackend").exceptions`
 method.
 
 Boto3 documentation:
@@ -114,19 +117,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("amplifybackend").can_paginate`
+Type annotations for `session.create_client("amplifybackend").can_paginate`
 method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="clone_backend"></a>
 
@@ -134,8 +135,8 @@ Returns a `Coroutine` for `bool`.
 
 This operation clones an existing backend.
 
-Type annotations for
-`aiobotocore.create_client("amplifybackend").clone_backend` method.
+Type annotations for `session.create_client("amplifybackend").clone_backend`
+method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.clone_backend](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.clone_backend)
@@ -160,8 +161,8 @@ Returns a `Coroutine` for
 
 This operation creates a backend for an Amplify app.
 
-Type annotations for
-`aiobotocore.create_client("amplifybackend").create_backend` method.
+Type annotations for `session.create_client("amplifybackend").create_backend`
+method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.create_backend](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.create_backend)
@@ -189,7 +190,7 @@ Returns a `Coroutine` for
 Creates a new backend API resource.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").create_backend_api` method.
+`session.create_client("amplifybackend").create_backend_api` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.create_backend_api](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.create_backend_api)
@@ -219,7 +220,7 @@ Returns a `Coroutine` for
 Creates a new backend authentication resource.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").create_backend_auth` method.
+`session.create_client("amplifybackend").create_backend_auth` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.create_backend_auth](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.create_backend_auth)
@@ -249,7 +250,7 @@ Returns a `Coroutine` for
 Creates a config object for a backend.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").create_backend_config` method.
+`session.create_client("amplifybackend").create_backend_config` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.create_backend_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.create_backend_config)
@@ -275,7 +276,7 @@ Returns a `Coroutine` for
 Creates a backend storage resource.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").create_backend_storage` method.
+`session.create_client("amplifybackend").create_backend_storage` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.create_backend_storage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.create_backend_storage)
@@ -305,7 +306,7 @@ Returns a `Coroutine` for
 Generates a one-time challenge code to authenticate a user into your Amplify
 Admin UI.
 
-Type annotations for `aiobotocore.create_client("amplifybackend").create_token`
+Type annotations for `session.create_client("amplifybackend").create_token`
 method.
 
 Boto3 documentation:
@@ -329,8 +330,8 @@ Returns a `Coroutine` for
 
 Removes an existing environment from your Amplify project.
 
-Type annotations for
-`aiobotocore.create_client("amplifybackend").delete_backend` method.
+Type annotations for `session.create_client("amplifybackend").delete_backend`
+method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.delete_backend](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.delete_backend)
@@ -355,7 +356,7 @@ Returns a `Coroutine` for
 Deletes an existing backend API resource.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").delete_backend_api` method.
+`session.create_client("amplifybackend").delete_backend_api` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.delete_backend_api](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.delete_backend_api)
@@ -384,7 +385,7 @@ Returns a `Coroutine` for
 Deletes an existing backend authentication resource.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").delete_backend_auth` method.
+`session.create_client("amplifybackend").delete_backend_auth` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.delete_backend_auth](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.delete_backend_auth)
@@ -411,7 +412,7 @@ Returns a `Coroutine` for
 Removes the specified backend storage resource.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").delete_backend_storage` method.
+`session.create_client("amplifybackend").delete_backend_storage` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.delete_backend_storage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.delete_backend_storage)
@@ -439,7 +440,7 @@ Returns a `Coroutine` for
 
 Deletes the challenge token based on the given appId and sessionId.
 
-Type annotations for `aiobotocore.create_client("amplifybackend").delete_token`
+Type annotations for `session.create_client("amplifybackend").delete_token`
 method.
 
 Boto3 documentation:
@@ -465,8 +466,7 @@ Returns a `Coroutine` for
 Generates a model schema for an existing backend API resource.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").generate_backend_api_models`
-method.
+`session.create_client("amplifybackend").generate_backend_api_models` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.generate_backend_api_models](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.generate_backend_api_models)
@@ -493,7 +493,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").generate_presigned_url` method.
+`session.create_client("amplifybackend").generate_presigned_url` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.generate_presigned_url)
@@ -516,7 +516,7 @@ Returns a `Coroutine` for `str`.
 
 Provides project-level details for your Amplify UI project.
 
-Type annotations for `aiobotocore.create_client("amplifybackend").get_backend`
+Type annotations for `session.create_client("amplifybackend").get_backend`
 method.
 
 Boto3 documentation:
@@ -541,8 +541,8 @@ Returns a `Coroutine` for
 
 Gets the details for a backend API.
 
-Type annotations for
-`aiobotocore.create_client("amplifybackend").get_backend_api` method.
+Type annotations for `session.create_client("amplifybackend").get_backend_api`
+method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.get_backend_api](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.get_backend_api)
@@ -570,7 +570,7 @@ Returns a `Coroutine` for
 Generates a model schema for existing backend API resource.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").get_backend_api_models` method.
+`session.create_client("amplifybackend").get_backend_api_models` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.get_backend_api_models](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.get_backend_api_models)
@@ -596,8 +596,8 @@ Returns a `Coroutine` for
 
 Gets a backend auth details.
 
-Type annotations for
-`aiobotocore.create_client("amplifybackend").get_backend_auth` method.
+Type annotations for `session.create_client("amplifybackend").get_backend_auth`
+method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.get_backend_auth](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.get_backend_auth)
@@ -622,8 +622,8 @@ Returns a `Coroutine` for
 
 Returns information about a specific job.
 
-Type annotations for
-`aiobotocore.create_client("amplifybackend").get_backend_job` method.
+Type annotations for `session.create_client("amplifybackend").get_backend_job`
+method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.get_backend_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.get_backend_job)
@@ -649,7 +649,7 @@ Returns a `Coroutine` for
 Gets details for a backend storage resource.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").get_backend_storage` method.
+`session.create_client("amplifybackend").get_backend_storage` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.get_backend_storage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.get_backend_storage)
@@ -675,7 +675,7 @@ Returns a `Coroutine` for
 
 Gets the challenge token based on the given appId and sessionId.
 
-Type annotations for `aiobotocore.create_client("amplifybackend").get_token`
+Type annotations for `session.create_client("amplifybackend").get_token`
 method.
 
 Boto3 documentation:
@@ -701,7 +701,7 @@ Returns a `Coroutine` for
 Imports an existing backend authentication resource.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").import_backend_auth` method.
+`session.create_client("amplifybackend").import_backend_auth` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.import_backend_auth](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.import_backend_auth)
@@ -731,7 +731,7 @@ Returns a `Coroutine` for
 Imports an existing backend storage resource.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").import_backend_storage` method.
+`session.create_client("amplifybackend").import_backend_storage` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.import_backend_storage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.import_backend_storage)
@@ -760,7 +760,7 @@ Returns a `Coroutine` for
 Lists the jobs for the backend of an Amplify app.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").list_backend_jobs` method.
+`session.create_client("amplifybackend").list_backend_jobs` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.list_backend_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.list_backend_jobs)
@@ -789,8 +789,8 @@ Returns a `Coroutine` for
 
 The list of S3 buckets in your account.
 
-Type annotations for
-`aiobotocore.create_client("amplifybackend").list_s3_buckets` method.
+Type annotations for `session.create_client("amplifybackend").list_s3_buckets`
+method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.list_s3_buckets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.list_s3_buckets)
@@ -814,7 +814,7 @@ Returns a `Coroutine` for
 Removes all backend environments from your Amplify project.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").remove_all_backends` method.
+`session.create_client("amplifybackend").remove_all_backends` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.remove_all_backends](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.remove_all_backends)
@@ -840,7 +840,7 @@ Returns a `Coroutine` for
 Removes the AWS resources required to access the Amplify Admin UI.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").remove_backend_config` method.
+`session.create_client("amplifybackend").remove_backend_config` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.remove_backend_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.remove_backend_config)
@@ -865,7 +865,7 @@ Returns a `Coroutine` for
 Updates an existing backend API resource.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").update_backend_api` method.
+`session.create_client("amplifybackend").update_backend_api` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.update_backend_api](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.update_backend_api)
@@ -894,7 +894,7 @@ Returns a `Coroutine` for
 Updates an existing backend authentication resource.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").update_backend_auth` method.
+`session.create_client("amplifybackend").update_backend_auth` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.update_backend_auth](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.update_backend_auth)
@@ -924,7 +924,7 @@ Returns a `Coroutine` for
 Updates the AWS resources required to access the Amplify Admin UI.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").update_backend_config` method.
+`session.create_client("amplifybackend").update_backend_config` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.update_backend_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.update_backend_config)
@@ -951,7 +951,7 @@ Returns a `Coroutine` for
 Updates a specific job.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").update_backend_job` method.
+`session.create_client("amplifybackend").update_backend_job` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.update_backend_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.update_backend_job)
@@ -980,7 +980,7 @@ Returns a `Coroutine` for
 Updates an existing backend storage resource.
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").update_backend_storage` method.
+`session.create_client("amplifybackend").update_backend_storage` method.
 
 Boto3 documentation:
 [AmplifyBackend.Client.update_backend_storage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.update_backend_storage)
@@ -1003,13 +1003,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateBackendStorageResponseTypeDef](./type_defs.md#updatebackendstorageresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("amplifybackend").__aenter__`
+method.
+
+Boto3 documentation:
+[AmplifyBackend.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [AmplifyBackendClient](#amplifybackendclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("amplifybackend").__aexit__`
+method.
+
+Boto3 documentation:
+[AmplifyBackend.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifybackend.html#AmplifyBackend.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("amplifybackend").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("amplifybackend").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_backend_jobs")` ->
   [ListBackendJobsPaginator](./paginators.md#listbackendjobspaginator)

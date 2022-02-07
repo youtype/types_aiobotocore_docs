@@ -40,23 +40,25 @@ type annotations stubs module
     - [update_control_panel](#update_control_panel)
     - [update_routing_control](#update_routing_control)
     - [update_safety_rule](#update_safety_rule)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_waiter](#get_waiter)
 
 <a id="route53recoverycontrolconfigclient"></a>
 
 ## Route53RecoveryControlConfigClient
 
-Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config")`
+Type annotations for `session.create_client("route53-recovery-control-config")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_route53_recovery_control_config.client import Route53RecoveryControlConfigClient
 
-def get_route53-recovery-control-config_client() -> Route53RecoveryControlConfigClient:
-    return Session().client("route53-recovery-control-config")
+session = get_session()
+async with session.create_client("route53-recovery-control-config") as client:
+    client: Route53RecoveryControlConfigClient
 ```
 
 Boto3 documentation:
@@ -98,8 +100,7 @@ Exceptions:
 Route53RecoveryControlConfigClient exceptions.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").exceptions`
-method.
+`session.create_client("route53-recovery-control-config").exceptions` method.
 
 Boto3 documentation:
 [Route53RecoveryControlConfig.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-control-config.html#Route53RecoveryControlConfig.Client.exceptions)
@@ -113,19 +114,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").can_paginate`
-method.
+`session.create_client("route53-recovery-control-config").can_paginate` method.
 
 Boto3 documentation:
 [Route53RecoveryControlConfig.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-control-config.html#Route53RecoveryControlConfig.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_cluster"></a>
 
@@ -134,7 +132,7 @@ Returns a `Coroutine` for `bool`.
 Create a new cluster.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").create_cluster`
+`session.create_client("route53-recovery-control-config").create_cluster`
 method.
 
 Boto3 documentation:
@@ -161,7 +159,7 @@ Returns a `Coroutine` for
 Creates a new control panel.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").create_control_panel`
+`session.create_client("route53-recovery-control-config").create_control_panel`
 method.
 
 Boto3 documentation:
@@ -190,7 +188,7 @@ Returns a `Coroutine` for
 Creates a new routing control.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").create_routing_control`
+`session.create_client("route53-recovery-control-config").create_routing_control`
 method.
 
 Boto3 documentation:
@@ -219,7 +217,7 @@ Returns a `Coroutine` for
 Creates a safety rule in a control panel.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").create_safety_rule`
+`session.create_client("route53-recovery-control-config").create_safety_rule`
 method.
 
 Boto3 documentation:
@@ -249,7 +247,7 @@ Returns a `Coroutine` for
 Delete a cluster.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").delete_cluster`
+`session.create_client("route53-recovery-control-config").delete_cluster`
 method.
 
 Boto3 documentation:
@@ -273,7 +271,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a control panel.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").delete_control_panel`
+`session.create_client("route53-recovery-control-config").delete_control_panel`
 method.
 
 Boto3 documentation:
@@ -298,7 +296,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a routing control.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").delete_routing_control`
+`session.create_client("route53-recovery-control-config").delete_routing_control`
 method.
 
 Boto3 documentation:
@@ -323,7 +321,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a safety rule.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").delete_safety_rule`
+`session.create_client("route53-recovery-control-config").delete_safety_rule`
 method.
 
 Boto3 documentation:
@@ -348,7 +346,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Display the details about a cluster.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").describe_cluster`
+`session.create_client("route53-recovery-control-config").describe_cluster`
 method.
 
 Boto3 documentation:
@@ -373,7 +371,7 @@ Returns a `Coroutine` for
 Displays details about a control panel.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").describe_control_panel`
+`session.create_client("route53-recovery-control-config").describe_control_panel`
 method.
 
 Boto3 documentation:
@@ -399,7 +397,7 @@ Returns a `Coroutine` for
 Displays details about a routing control.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").describe_routing_control`
+`session.create_client("route53-recovery-control-config").describe_routing_control`
 method.
 
 Boto3 documentation:
@@ -425,7 +423,7 @@ Returns a `Coroutine` for
 Returns information about a safety rule.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").describe_safety_rule`
+`session.create_client("route53-recovery-control-config").describe_safety_rule`
 method.
 
 Boto3 documentation:
@@ -451,7 +449,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").generate_presigned_url`
+`session.create_client("route53-recovery-control-config").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -477,7 +475,7 @@ Returns an array of all Amazon Route 53 health checks associated with a
 specific routing control.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").list_associated_route53_health_checks`
+`session.create_client("route53-recovery-control-config").list_associated_route53_health_checks`
 method.
 
 Boto3 documentation:
@@ -505,7 +503,7 @@ Returns a `Coroutine` for
 Returns an array of all the clusters in an account.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").list_clusters`
+`session.create_client("route53-recovery-control-config").list_clusters`
 method.
 
 Boto3 documentation:
@@ -531,7 +529,7 @@ Returns a `Coroutine` for
 Returns an array of control panels in an account or in a cluster.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").list_control_panels`
+`session.create_client("route53-recovery-control-config").list_control_panels`
 method.
 
 Boto3 documentation:
@@ -559,7 +557,7 @@ Returns a `Coroutine` for
 Returns an array of routing controls for a control panel.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").list_routing_controls`
+`session.create_client("route53-recovery-control-config").list_routing_controls`
 method.
 
 Boto3 documentation:
@@ -588,7 +586,7 @@ List the safety rules (the assertion rules and gating rules) that you've
 defined for the routing controls in a control panel.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").list_safety_rules`
+`session.create_client("route53-recovery-control-config").list_safety_rules`
 method.
 
 Boto3 documentation:
@@ -615,7 +613,7 @@ Returns a `Coroutine` for
 Lists the tags for a resource.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").list_tags_for_resource`
+`session.create_client("route53-recovery-control-config").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -641,8 +639,7 @@ Returns a `Coroutine` for
 Adds a tag to a resource.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").tag_resource`
-method.
+`session.create_client("route53-recovery-control-config").tag_resource` method.
 
 Boto3 documentation:
 [Route53RecoveryControlConfig.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-control-config.html#Route53RecoveryControlConfig.Client.tag_resource)
@@ -666,7 +663,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes a tag from a resource.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").untag_resource`
+`session.create_client("route53-recovery-control-config").untag_resource`
 method.
 
 Boto3 documentation:
@@ -691,7 +688,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a control panel.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").update_control_panel`
+`session.create_client("route53-recovery-control-config").update_control_panel`
 method.
 
 Boto3 documentation:
@@ -718,7 +715,7 @@ Returns a `Coroutine` for
 Updates a routing control.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").update_routing_control`
+`session.create_client("route53-recovery-control-config").update_routing_control`
 method.
 
 Boto3 documentation:
@@ -745,7 +742,7 @@ Returns a `Coroutine` for
 Update a safety rule (an assertion rule or gating rule).
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").update_safety_rule`
+`session.create_client("route53-recovery-control-config").update_safety_rule`
 method.
 
 Boto3 documentation:
@@ -767,13 +764,48 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateSafetyRuleResponseTypeDef](./type_defs.md#updatesafetyruleresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for
+`session.create_client("route53-recovery-control-config").__aenter__` method.
+
+Boto3 documentation:
+[Route53RecoveryControlConfig.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-control-config.html#Route53RecoveryControlConfig.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[Route53RecoveryControlConfigClient](#route53recoverycontrolconfigclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for
+`session.create_client("route53-recovery-control-config").__aexit__` method.
+
+Boto3 documentation:
+[Route53RecoveryControlConfig.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-control-config.html#Route53RecoveryControlConfig.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_waiter"></a>
 
 ### get_waiter
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").get_waiter`
-method with overloads.
+`session.create_client("route53-recovery-control-config").get_waiter` method
+with overloads.
 
 - `client.get_waiter("cluster_created")` ->
   [ClusterCreatedWaiter](./waiters.md#clustercreatedwaiter)

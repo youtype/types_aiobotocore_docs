@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[batch]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[batch]'
+
+# standalone installation
 pip install types-aiobotocore-batch
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-batch
 
 ## BatchClient
 
-Type annotations for `aiobotocore.create_client("batch")` as
+Type annotations for `session.create_client("batch")` as
 [BatchClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_batch.client import BatchClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_job](./client.md#cancel_job)
 - [create_compute_environment](./client.md#create_compute_environment)
@@ -91,7 +97,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_batch.paginators import DescribeComputeEnvironmentsPaginator, ...
+from types_aiobotocore_batch.paginator import DescribeComputeEnvironmentsPaginator, ...
 ```
 
 - [DescribeComputeEnvironmentsPaginator](./paginators.md#describecomputeenvironmentspaginator)

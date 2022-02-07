@@ -33,17 +33,19 @@ type annotations stubs module
 ## ListEnvironmentAccountConnectionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_environment_account_connections")`.
+`session.create_client("proton").get_paginator("list_environment_account_connections")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListEnvironmentAccountConnectionsPaginator
 
-def get_list_environment_account_connections_paginator() -> ListEnvironmentAccountConnectionsPaginator:
-    return Session().create_client("proton").get_paginator("list_environment_account_connections")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListEnvironmentAccountConnectionsPaginator = client.get_paginator("list_environment_account_connections")
 ```
 
 Boto3 documentation:
@@ -68,17 +70,19 @@ Arguments for `ListEnvironmentAccountConnectionsPaginator.paginate` method:
 ## ListEnvironmentOutputsPaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_environment_outputs")`.
+`session.create_client("proton").get_paginator("list_environment_outputs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListEnvironmentOutputsPaginator
 
-def get_list_environment_outputs_paginator() -> ListEnvironmentOutputsPaginator:
-    return Session().create_client("proton").get_paginator("list_environment_outputs")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListEnvironmentOutputsPaginator = client.get_paginator("list_environment_outputs")
 ```
 
 Boto3 documentation:
@@ -98,17 +102,19 @@ Arguments for `ListEnvironmentOutputsPaginator.paginate` method:
 ## ListEnvironmentProvisionedResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_environment_provisioned_resources")`.
+`session.create_client("proton").get_paginator("list_environment_provisioned_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListEnvironmentProvisionedResourcesPaginator
 
-def get_list_environment_provisioned_resources_paginator() -> ListEnvironmentProvisionedResourcesPaginator:
-    return Session().create_client("proton").get_paginator("list_environment_provisioned_resources")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListEnvironmentProvisionedResourcesPaginator = client.get_paginator("list_environment_provisioned_resources")
 ```
 
 Boto3 documentation:
@@ -128,17 +134,19 @@ Arguments for `ListEnvironmentProvisionedResourcesPaginator.paginate` method:
 ## ListEnvironmentTemplateVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_environment_template_versions")`.
+`session.create_client("proton").get_paginator("list_environment_template_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListEnvironmentTemplateVersionsPaginator
 
-def get_list_environment_template_versions_paginator() -> ListEnvironmentTemplateVersionsPaginator:
-    return Session().create_client("proton").get_paginator("list_environment_template_versions")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListEnvironmentTemplateVersionsPaginator = client.get_paginator("list_environment_template_versions")
 ```
 
 Boto3 documentation:
@@ -159,17 +167,19 @@ Arguments for `ListEnvironmentTemplateVersionsPaginator.paginate` method:
 ## ListEnvironmentTemplatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_environment_templates")`.
+`session.create_client("proton").get_paginator("list_environment_templates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListEnvironmentTemplatesPaginator
 
-def get_list_environment_templates_paginator() -> ListEnvironmentTemplatesPaginator:
-    return Session().create_client("proton").get_paginator("list_environment_templates")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListEnvironmentTemplatesPaginator = client.get_paginator("list_environment_templates")
 ```
 
 Boto3 documentation:
@@ -188,17 +198,19 @@ Arguments for `ListEnvironmentTemplatesPaginator.paginate` method:
 ## ListEnvironmentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_environments")`.
+`session.create_client("proton").get_paginator("list_environments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListEnvironmentsPaginator
 
-def get_list_environments_paginator() -> ListEnvironmentsPaginator:
-    return Session().create_client("proton").get_paginator("list_environments")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListEnvironmentsPaginator = client.get_paginator("list_environments")
 ```
 
 Boto3 documentation:
@@ -219,17 +231,19 @@ Arguments for `ListEnvironmentsPaginator.paginate` method:
 ## ListRepositoriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_repositories")`.
+`session.create_client("proton").get_paginator("list_repositories")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListRepositoriesPaginator
 
-def get_list_repositories_paginator() -> ListRepositoriesPaginator:
-    return Session().create_client("proton").get_paginator("list_repositories")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListRepositoriesPaginator = client.get_paginator("list_repositories")
 ```
 
 Boto3 documentation:
@@ -248,17 +262,19 @@ Arguments for `ListRepositoriesPaginator.paginate` method:
 ## ListRepositorySyncDefinitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_repository_sync_definitions")`.
+`session.create_client("proton").get_paginator("list_repository_sync_definitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListRepositorySyncDefinitionsPaginator
 
-def get_list_repository_sync_definitions_paginator() -> ListRepositorySyncDefinitionsPaginator:
-    return Session().create_client("proton").get_paginator("list_repository_sync_definitions")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListRepositorySyncDefinitionsPaginator = client.get_paginator("list_repository_sync_definitions")
 ```
 
 Boto3 documentation:
@@ -282,17 +298,19 @@ Arguments for `ListRepositorySyncDefinitionsPaginator.paginate` method:
 ## ListServiceInstanceOutputsPaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_service_instance_outputs")`.
+`session.create_client("proton").get_paginator("list_service_instance_outputs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListServiceInstanceOutputsPaginator
 
-def get_list_service_instance_outputs_paginator() -> ListServiceInstanceOutputsPaginator:
-    return Session().create_client("proton").get_paginator("list_service_instance_outputs")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListServiceInstanceOutputsPaginator = client.get_paginator("list_service_instance_outputs")
 ```
 
 Boto3 documentation:
@@ -313,17 +331,19 @@ Arguments for `ListServiceInstanceOutputsPaginator.paginate` method:
 ## ListServiceInstanceProvisionedResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_service_instance_provisioned_resources")`.
+`session.create_client("proton").get_paginator("list_service_instance_provisioned_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListServiceInstanceProvisionedResourcesPaginator
 
-def get_list_service_instance_provisioned_resources_paginator() -> ListServiceInstanceProvisionedResourcesPaginator:
-    return Session().create_client("proton").get_paginator("list_service_instance_provisioned_resources")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListServiceInstanceProvisionedResourcesPaginator = client.get_paginator("list_service_instance_provisioned_resources")
 ```
 
 Boto3 documentation:
@@ -345,17 +365,19 @@ method:
 ## ListServiceInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_service_instances")`.
+`session.create_client("proton").get_paginator("list_service_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListServiceInstancesPaginator
 
-def get_list_service_instances_paginator() -> ListServiceInstancesPaginator:
-    return Session().create_client("proton").get_paginator("list_service_instances")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListServiceInstancesPaginator = client.get_paginator("list_service_instances")
 ```
 
 Boto3 documentation:
@@ -375,17 +397,19 @@ Arguments for `ListServiceInstancesPaginator.paginate` method:
 ## ListServicePipelineOutputsPaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_service_pipeline_outputs")`.
+`session.create_client("proton").get_paginator("list_service_pipeline_outputs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListServicePipelineOutputsPaginator
 
-def get_list_service_pipeline_outputs_paginator() -> ListServicePipelineOutputsPaginator:
-    return Session().create_client("proton").get_paginator("list_service_pipeline_outputs")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListServicePipelineOutputsPaginator = client.get_paginator("list_service_pipeline_outputs")
 ```
 
 Boto3 documentation:
@@ -405,17 +429,19 @@ Arguments for `ListServicePipelineOutputsPaginator.paginate` method:
 ## ListServicePipelineProvisionedResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_service_pipeline_provisioned_resources")`.
+`session.create_client("proton").get_paginator("list_service_pipeline_provisioned_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListServicePipelineProvisionedResourcesPaginator
 
-def get_list_service_pipeline_provisioned_resources_paginator() -> ListServicePipelineProvisionedResourcesPaginator:
-    return Session().create_client("proton").get_paginator("list_service_pipeline_provisioned_resources")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListServicePipelineProvisionedResourcesPaginator = client.get_paginator("list_service_pipeline_provisioned_resources")
 ```
 
 Boto3 documentation:
@@ -436,17 +462,19 @@ method:
 ## ListServiceTemplateVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_service_template_versions")`.
+`session.create_client("proton").get_paginator("list_service_template_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListServiceTemplateVersionsPaginator
 
-def get_list_service_template_versions_paginator() -> ListServiceTemplateVersionsPaginator:
-    return Session().create_client("proton").get_paginator("list_service_template_versions")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListServiceTemplateVersionsPaginator = client.get_paginator("list_service_template_versions")
 ```
 
 Boto3 documentation:
@@ -467,17 +495,19 @@ Arguments for `ListServiceTemplateVersionsPaginator.paginate` method:
 ## ListServiceTemplatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_service_templates")`.
+`session.create_client("proton").get_paginator("list_service_templates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListServiceTemplatesPaginator
 
-def get_list_service_templates_paginator() -> ListServiceTemplatesPaginator:
-    return Session().create_client("proton").get_paginator("list_service_templates")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListServiceTemplatesPaginator = client.get_paginator("list_service_templates")
 ```
 
 Boto3 documentation:
@@ -496,17 +526,19 @@ Arguments for `ListServiceTemplatesPaginator.paginate` method:
 ## ListServicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_services")`.
+`session.create_client("proton").get_paginator("list_services")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListServicesPaginator
 
-def get_list_services_paginator() -> ListServicesPaginator:
-    return Session().create_client("proton").get_paginator("list_services")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListServicesPaginator = client.get_paginator("list_services")
 ```
 
 Boto3 documentation:
@@ -525,17 +557,19 @@ Arguments for `ListServicesPaginator.paginate` method:
 ## ListTagsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("proton").get_paginator("list_tags_for_resource")`.
+`session.create_client("proton").get_paginator("list_tags_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_proton.paginator import ListTagsForResourcePaginator
 
-def get_list_tags_for_resource_paginator() -> ListTagsForResourcePaginator:
-    return Session().create_client("proton").get_paginator("list_tags_for_resource")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
 ```
 
 Boto3 documentation:

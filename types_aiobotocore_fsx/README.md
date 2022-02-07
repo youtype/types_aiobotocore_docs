@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[fsx]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[fsx]'
+
+# standalone installation
 pip install types-aiobotocore-fsx
 ```
 
@@ -29,8 +33,7 @@ pip install types-aiobotocore-fsx
 
 ## FSxClient
 
-Type annotations for `aiobotocore.create_client("fsx")` as
-[FSxClient](./client.md)
+Type annotations for `session.create_client("fsx")` as [FSxClient](./client.md)
 
 Can be used directly:
 
@@ -42,6 +45,8 @@ from types_aiobotocore_fsx.client import FSxClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_file_system_aliases](./client.md#associate_file_system_aliases)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_data_repository_task](./client.md#cancel_data_repository_task)
@@ -135,7 +140,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_fsx.paginators import DescribeBackupsPaginator, ...
+from types_aiobotocore_fsx.paginator import DescribeBackupsPaginator, ...
 ```
 
 - [DescribeBackupsPaginator](./paginators.md#describebackupspaginator)

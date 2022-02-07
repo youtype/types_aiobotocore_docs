@@ -28,21 +28,24 @@ type annotations stubs module
     - [tag_delivery_stream](#tag_delivery_stream)
     - [untag_delivery_stream](#untag_delivery_stream)
     - [update_destination](#update_destination)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="firehoseclient"></a>
 
 ## FirehoseClient
 
-Type annotations for `aiobotocore.create_client("firehose")`
+Type annotations for `session.create_client("firehose")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_firehose.client import FirehoseClient
 
-def get_firehose_client() -> FirehoseClient:
-    return Session().client("firehose")
+session = get_session()
+async with session.create_client("firehose") as client:
+    client: FirehoseClient
 ```
 
 Boto3 documentation:
@@ -83,7 +86,7 @@ Exceptions:
 
 FirehoseClient exceptions.
 
-Type annotations for `aiobotocore.create_client("firehose").exceptions` method.
+Type annotations for `session.create_client("firehose").exceptions` method.
 
 Boto3 documentation:
 [Firehose.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/firehose.html#Firehose.Client.exceptions)
@@ -96,19 +99,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("firehose").can_paginate`
-method.
+Type annotations for `session.create_client("firehose").can_paginate` method.
 
 Boto3 documentation:
 [Firehose.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/firehose.html#Firehose.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_delivery_stream"></a>
 
@@ -116,8 +116,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates a Kinesis Data Firehose delivery stream.
 
-Type annotations for
-`aiobotocore.create_client("firehose").create_delivery_stream` method.
+Type annotations for `session.create_client("firehose").create_delivery_stream`
+method.
 
 Boto3 documentation:
 [Firehose.Client.create_delivery_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/firehose.html#Firehose.Client.create_delivery_stream)
@@ -162,8 +162,8 @@ Returns a `Coroutine` for
 
 Deletes a delivery stream and its data.
 
-Type annotations for
-`aiobotocore.create_client("firehose").delete_delivery_stream` method.
+Type annotations for `session.create_client("firehose").delete_delivery_stream`
+method.
 
 Boto3 documentation:
 [Firehose.Client.delete_delivery_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/firehose.html#Firehose.Client.delete_delivery_stream)
@@ -188,7 +188,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Describes the specified delivery stream and its status.
 
 Type annotations for
-`aiobotocore.create_client("firehose").describe_delivery_stream` method.
+`session.create_client("firehose").describe_delivery_stream` method.
 
 Boto3 documentation:
 [Firehose.Client.describe_delivery_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/firehose.html#Firehose.Client.describe_delivery_stream)
@@ -214,8 +214,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("firehose").generate_presigned_url` method.
+Type annotations for `session.create_client("firehose").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Firehose.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/firehose.html#Firehose.Client.generate_presigned_url)
@@ -238,8 +238,8 @@ Returns a `Coroutine` for `str`.
 
 Lists your delivery streams in alphabetical order of their names.
 
-Type annotations for
-`aiobotocore.create_client("firehose").list_delivery_streams` method.
+Type annotations for `session.create_client("firehose").list_delivery_streams`
+method.
 
 Boto3 documentation:
 [Firehose.Client.list_delivery_streams](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/firehose.html#Firehose.Client.list_delivery_streams)
@@ -267,7 +267,7 @@ Returns a `Coroutine` for
 Lists the tags for the specified delivery stream.
 
 Type annotations for
-`aiobotocore.create_client("firehose").list_tags_for_delivery_stream` method.
+`session.create_client("firehose").list_tags_for_delivery_stream` method.
 
 Boto3 documentation:
 [Firehose.Client.list_tags_for_delivery_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/firehose.html#Firehose.Client.list_tags_for_delivery_stream)
@@ -294,7 +294,7 @@ Returns a `Coroutine` for
 Writes a single data record into an Amazon Kinesis Data Firehose delivery
 stream.
 
-Type annotations for `aiobotocore.create_client("firehose").put_record` method.
+Type annotations for `session.create_client("firehose").put_record` method.
 
 Boto3 documentation:
 [Firehose.Client.put_record](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/firehose.html#Firehose.Client.put_record)
@@ -319,7 +319,7 @@ Returns a `Coroutine` for
 Writes multiple data records into a delivery stream in a single call, which can
 achieve higher throughput per producer than when writing single records.
 
-Type annotations for `aiobotocore.create_client("firehose").put_record_batch`
+Type annotations for `session.create_client("firehose").put_record_batch`
 method.
 
 Boto3 documentation:
@@ -346,8 +346,7 @@ Returns a `Coroutine` for
 Enables server-side encryption (SSE) for the delivery stream.
 
 Type annotations for
-`aiobotocore.create_client("firehose").start_delivery_stream_encryption`
-method.
+`session.create_client("firehose").start_delivery_stream_encryption` method.
 
 Boto3 documentation:
 [Firehose.Client.start_delivery_stream_encryption](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/firehose.html#Firehose.Client.start_delivery_stream_encryption)
@@ -373,7 +372,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disables server-side encryption (SSE) for the delivery stream.
 
 Type annotations for
-`aiobotocore.create_client("firehose").stop_delivery_stream_encryption` method.
+`session.create_client("firehose").stop_delivery_stream_encryption` method.
 
 Boto3 documentation:
 [Firehose.Client.stop_delivery_stream_encryption](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/firehose.html#Firehose.Client.stop_delivery_stream_encryption)
@@ -396,8 +395,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds or updates tags for the specified delivery stream.
 
-Type annotations for
-`aiobotocore.create_client("firehose").tag_delivery_stream` method.
+Type annotations for `session.create_client("firehose").tag_delivery_stream`
+method.
 
 Boto3 documentation:
 [Firehose.Client.tag_delivery_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/firehose.html#Firehose.Client.tag_delivery_stream)
@@ -421,8 +420,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from the specified delivery stream.
 
-Type annotations for
-`aiobotocore.create_client("firehose").untag_delivery_stream` method.
+Type annotations for `session.create_client("firehose").untag_delivery_stream`
+method.
 
 Boto3 documentation:
 [Firehose.Client.untag_delivery_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/firehose.html#Firehose.Client.untag_delivery_stream)
@@ -446,7 +445,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the specified destination of the specified delivery stream.
 
-Type annotations for `aiobotocore.create_client("firehose").update_destination`
+Type annotations for `session.create_client("firehose").update_destination`
 method.
 
 Boto3 documentation:
@@ -479,3 +478,35 @@ Keyword-only arguments:
   [HttpEndpointDestinationUpdateTypeDef](./type_defs.md#httpendpointdestinationupdatetypedef)
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("firehose").__aenter__` method.
+
+Boto3 documentation:
+[Firehose.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/firehose.html#Firehose.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [FirehoseClient](#firehoseclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("firehose").__aexit__` method.
+
+Boto3 documentation:
+[Firehose.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/firehose.html#Firehose.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

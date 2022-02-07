@@ -18,17 +18,19 @@ type annotations stubs module
 ## ListDeviceEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iot1click-devices").get_paginator("list_device_events")`.
+`session.create_client("iot1click-devices").get_paginator("list_device_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iot1click_devices.paginator import ListDeviceEventsPaginator
 
-def get_list_device_events_paginator() -> ListDeviceEventsPaginator:
-    return Session().create_client("iot1click-devices").get_paginator("list_device_events")
+session = get_session()
+async with session.create_client("iot1click-devices") as client:
+    client: IoT1ClickDevicesServiceClient
+    paginator: ListDeviceEventsPaginator = client.get_paginator("list_device_events")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `ListDeviceEventsPaginator.paginate` method:
 ## ListDevicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iot1click-devices").get_paginator("list_devices")`.
+`session.create_client("iot1click-devices").get_paginator("list_devices")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iot1click_devices.paginator import ListDevicesPaginator
 
-def get_list_devices_paginator() -> ListDevicesPaginator:
-    return Session().create_client("iot1click-devices").get_paginator("list_devices")
+session = get_session()
+async with session.create_client("iot1click-devices") as client:
+    client: IoT1ClickDevicesServiceClient
+    paginator: ListDevicesPaginator = client.get_paginator("list_devices")
 ```
 
 Boto3 documentation:

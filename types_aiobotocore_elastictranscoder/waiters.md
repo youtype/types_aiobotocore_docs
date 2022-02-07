@@ -17,7 +17,7 @@ type annotations stubs module
 ## JobCompleteWaiter
 
 Type annotations for
-`aiobotocore.create_client("elastictranscoder").get_waiter("job_complete")`.
+`session.create_client("elastictranscoder").get_waiter("job_complete")`.
 
 Can be used directly:
 
@@ -27,7 +27,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_elastictranscoder.waiter import JobCompleteWaiter
 
 def get_job_complete_waiter() -> JobCompleteWaiter:
-    return Session().create_client("elastictranscoder").get_waiter("job_complete")
+    return Session().client("elastictranscoder").get_waiter("job_complete")
 ```
 
 Boto3 documentation:

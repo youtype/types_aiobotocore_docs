@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[resource-groups]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[resource-groups]'
+
+# standalone installation
 pip install types-aiobotocore-resource-groups
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-resource-groups
 
 ## ResourceGroupsClient
 
-Type annotations for `aiobotocore.create_client("resource-groups")` as
+Type annotations for `session.create_client("resource-groups")` as
 [ResourceGroupsClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_resource_groups.client import ResourceGroupsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_group](./client.md#create_group)
 - [delete_group](./client.md#delete_group)
@@ -88,7 +94,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_resource_groups.paginators import ListGroupResourcesPaginator, ...
+from types_aiobotocore_resource_groups.paginator import ListGroupResourcesPaginator, ...
 ```
 
 - [ListGroupResourcesPaginator](./paginators.md#listgroupresourcespaginator)

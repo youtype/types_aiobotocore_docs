@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[logs]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[logs]'
+
+# standalone installation
 pip install types-aiobotocore-logs
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-logs
 
 ## CloudWatchLogsClient
 
-Type annotations for `aiobotocore.create_client("logs")` as
+Type annotations for `session.create_client("logs")` as
 [CloudWatchLogsClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_logs.client import CloudWatchLogsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_kms_key](./client.md#associate_kms_key)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_export_task](./client.md#cancel_export_task)
@@ -118,7 +124,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_logs.paginators import DescribeDestinationsPaginator, ...
+from types_aiobotocore_logs.paginator import DescribeDestinationsPaginator, ...
 ```
 
 - [DescribeDestinationsPaginator](./paginators.md#describedestinationspaginator)

@@ -79,22 +79,25 @@ type annotations stubs module
     - [update_resolver_dnssec_config](#update_resolver_dnssec_config)
     - [update_resolver_endpoint](#update_resolver_endpoint)
     - [update_resolver_rule](#update_resolver_rule)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="route53resolverclient"></a>
 
 ## Route53ResolverClient
 
-Type annotations for `aiobotocore.create_client("route53resolver")`
+Type annotations for `session.create_client("route53resolver")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_route53resolver.client import Route53ResolverClient
 
-def get_route53resolver_client() -> Route53ResolverClient:
-    return Session().client("route53resolver")
+session = get_session()
+async with session.create_client("route53resolver") as client:
+    client: Route53ResolverClient
 ```
 
 Boto3 documentation:
@@ -144,7 +147,7 @@ Exceptions:
 
 Route53ResolverClient exceptions.
 
-Type annotations for `aiobotocore.create_client("route53resolver").exceptions`
+Type annotations for `session.create_client("route53resolver").exceptions`
 method.
 
 Boto3 documentation:
@@ -160,7 +163,7 @@ Associates a FirewallRuleGroup with a VPC, to provide DNS filtering for the
 VPC.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").associate_firewall_rule_group`
+`session.create_client("route53resolver").associate_firewall_rule_group`
 method.
 
 Boto3 documentation:
@@ -193,7 +196,7 @@ Returns a `Coroutine` for
 Adds IP addresses to an inbound or an outbound Resolver endpoint.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").associate_resolver_endpoint_ip_address`
+`session.create_client("route53resolver").associate_resolver_endpoint_ip_address`
 method.
 
 Boto3 documentation:
@@ -221,7 +224,7 @@ Returns a `Coroutine` for
 Associates an Amazon VPC with a specified query logging configuration.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").associate_resolver_query_log_config`
+`session.create_client("route53resolver").associate_resolver_query_log_config`
 method.
 
 Boto3 documentation:
@@ -248,7 +251,7 @@ Returns a `Coroutine` for
 Associates a Resolver rule with a VPC.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").associate_resolver_rule` method.
+`session.create_client("route53resolver").associate_resolver_rule` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.associate_resolver_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.associate_resolver_rule)
@@ -274,19 +277,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("route53resolver").can_paginate` method.
+Type annotations for `session.create_client("route53resolver").can_paginate`
+method.
 
 Boto3 documentation:
 [Route53Resolver.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_firewall_domain_list"></a>
 
@@ -295,8 +296,7 @@ Returns a `Coroutine` for `bool`.
 Creates an empty firewall domain list for use in DNS Firewall rules.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").create_firewall_domain_list`
-method.
+`session.create_client("route53resolver").create_firewall_domain_list` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.create_firewall_domain_list](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.create_firewall_domain_list)
@@ -324,7 +324,7 @@ Creates a single DNS Firewall rule in the specified rule group, using the
 specified domain list.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").create_firewall_rule` method.
+`session.create_client("route53resolver").create_firewall_rule` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.create_firewall_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.create_firewall_rule)
@@ -360,8 +360,7 @@ Creates an empty DNS Firewall rule group for filtering DNS network traffic in a
 VPC.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").create_firewall_rule_group`
-method.
+`session.create_client("route53resolver").create_firewall_rule_group` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.create_firewall_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.create_firewall_rule_group)
@@ -388,7 +387,7 @@ Returns a `Coroutine` for
 Creates a Resolver endpoint.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").create_resolver_endpoint` method.
+`session.create_client("route53resolver").create_resolver_endpoint` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.create_resolver_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.create_resolver_endpoint)
@@ -423,7 +422,7 @@ Creates a Resolver query logging configuration, which defines where you want
 Resolver to save DNS query logs that originate in your VPCs.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").create_resolver_query_log_config`
+`session.create_client("route53resolver").create_resolver_query_log_config`
 method.
 
 Boto3 documentation:
@@ -454,7 +453,7 @@ the queries pass through, one domain name that you want to forward to your
 network, and the IP addresses of the DNS resolvers in your network.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").create_resolver_rule` method.
+`session.create_client("route53resolver").create_resolver_rule` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.create_resolver_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.create_resolver_rule)
@@ -487,8 +486,7 @@ Returns a `Coroutine` for
 Deletes the specified domain list.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").delete_firewall_domain_list`
-method.
+`session.create_client("route53resolver").delete_firewall_domain_list` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.delete_firewall_domain_list](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.delete_firewall_domain_list)
@@ -513,7 +511,7 @@ Returns a `Coroutine` for
 Deletes the specified firewall rule.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").delete_firewall_rule` method.
+`session.create_client("route53resolver").delete_firewall_rule` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.delete_firewall_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.delete_firewall_rule)
@@ -539,8 +537,7 @@ Returns a `Coroutine` for
 Deletes the specified firewall rule group.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").delete_firewall_rule_group`
-method.
+`session.create_client("route53resolver").delete_firewall_rule_group` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.delete_firewall_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.delete_firewall_rule_group)
@@ -565,7 +562,7 @@ Returns a `Coroutine` for
 Deletes a Resolver endpoint.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").delete_resolver_endpoint` method.
+`session.create_client("route53resolver").delete_resolver_endpoint` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.delete_resolver_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.delete_resolver_endpoint)
@@ -590,7 +587,7 @@ Returns a `Coroutine` for
 Deletes a query logging configuration.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").delete_resolver_query_log_config`
+`session.create_client("route53resolver").delete_resolver_query_log_config`
 method.
 
 Boto3 documentation:
@@ -616,7 +613,7 @@ Returns a `Coroutine` for
 Deletes a Resolver rule.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").delete_resolver_rule` method.
+`session.create_client("route53resolver").delete_resolver_rule` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.delete_resolver_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.delete_resolver_rule)
@@ -642,7 +639,7 @@ Disassociates a FirewallRuleGroup from a VPC, to remove DNS filtering from the
 VPC.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").disassociate_firewall_rule_group`
+`session.create_client("route53resolver").disassociate_firewall_rule_group`
 method.
 
 Boto3 documentation:
@@ -668,7 +665,7 @@ Returns a `Coroutine` for
 Removes IP addresses from an inbound or an outbound Resolver endpoint.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").disassociate_resolver_endpoint_ip_address`
+`session.create_client("route53resolver").disassociate_resolver_endpoint_ip_address`
 method.
 
 Boto3 documentation:
@@ -696,7 +693,7 @@ Returns a `Coroutine` for
 Disassociates a VPC from a query logging configuration.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").disassociate_resolver_query_log_config`
+`session.create_client("route53resolver").disassociate_resolver_query_log_config`
 method.
 
 Boto3 documentation:
@@ -723,8 +720,7 @@ Returns a `Coroutine` for
 Removes the association between a specified Resolver rule and a specified VPC.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").disassociate_resolver_rule`
-method.
+`session.create_client("route53resolver").disassociate_resolver_rule` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.disassociate_resolver_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.disassociate_resolver_rule)
@@ -750,7 +746,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").generate_presigned_url` method.
+`session.create_client("route53resolver").generate_presigned_url` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.generate_presigned_url)
@@ -775,7 +771,7 @@ Retrieves the configuration of the firewall behavior provided by DNS Firewall
 for a single VPC from Amazon Virtual Private Cloud (Amazon VPC).
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_firewall_config` method.
+`session.create_client("route53resolver").get_firewall_config` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.get_firewall_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.get_firewall_config)
@@ -800,7 +796,7 @@ Returns a `Coroutine` for
 Retrieves the specified firewall domain list.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_firewall_domain_list` method.
+`session.create_client("route53resolver").get_firewall_domain_list` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.get_firewall_domain_list](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.get_firewall_domain_list)
@@ -825,7 +821,7 @@ Returns a `Coroutine` for
 Retrieves the specified firewall rule group.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_firewall_rule_group` method.
+`session.create_client("route53resolver").get_firewall_rule_group` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.get_firewall_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.get_firewall_rule_group)
@@ -851,7 +847,7 @@ Retrieves a firewall rule group association, which enables DNS filtering for a
 VPC with one rule group.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_firewall_rule_group_association`
+`session.create_client("route53resolver").get_firewall_rule_group_association`
 method.
 
 Boto3 documentation:
@@ -878,7 +874,7 @@ Returns the Identity and Access Management (Amazon Web Services IAM) policy for
 sharing the specified rule group.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_firewall_rule_group_policy`
+`session.create_client("route53resolver").get_firewall_rule_group_policy`
 method.
 
 Boto3 documentation:
@@ -905,7 +901,7 @@ Retrieves the behavior configuration of Route 53 Resolver behavior for a single
 VPC from Amazon Virtual Private Cloud.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_resolver_config` method.
+`session.create_client("route53resolver").get_resolver_config` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.get_resolver_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.get_resolver_config)
@@ -930,8 +926,7 @@ Returns a `Coroutine` for
 Gets DNSSEC validation information for a specified resource.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_resolver_dnssec_config`
-method.
+`session.create_client("route53resolver").get_resolver_dnssec_config` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.get_resolver_dnssec_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.get_resolver_dnssec_config)
@@ -958,7 +953,7 @@ inbound or an outbound Resolver endpoint, and the current status of the
 endpoint.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_resolver_endpoint` method.
+`session.create_client("route53resolver").get_resolver_endpoint` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.get_resolver_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.get_resolver_endpoint)
@@ -985,7 +980,7 @@ as the number of VPCs that the configuration is logging queries for and the
 location that logs are sent to.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_resolver_query_log_config`
+`session.create_client("route53resolver").get_resolver_query_log_config`
 method.
 
 Boto3 documentation:
@@ -1012,7 +1007,7 @@ Gets information about a specified association between a Resolver query logging
 configuration and an Amazon VPC.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_resolver_query_log_config_association`
+`session.create_client("route53resolver").get_resolver_query_log_config_association`
 method.
 
 Boto3 documentation:
@@ -1038,7 +1033,7 @@ Returns a `Coroutine` for
 Gets information about a query logging policy.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_resolver_query_log_config_policy`
+`session.create_client("route53resolver").get_resolver_query_log_config_policy`
 method.
 
 Boto3 documentation:
@@ -1066,7 +1061,7 @@ the rule forwards DNS queries for and the ID of the outbound Resolver endpoint
 that the rule is associated with.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_resolver_rule` method.
+`session.create_client("route53resolver").get_resolver_rule` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.get_resolver_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.get_resolver_rule)
@@ -1091,7 +1086,7 @@ Gets information about an association between a specified Resolver rule and a
 VPC.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_resolver_rule_association`
+`session.create_client("route53resolver").get_resolver_rule_association`
 method.
 
 Boto3 documentation:
@@ -1117,7 +1112,7 @@ Returns a `Coroutine` for
 Gets information about the Resolver rule policy for a specified rule.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_resolver_rule_policy` method.
+`session.create_client("route53resolver").get_resolver_rule_policy` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.get_resolver_rule_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.get_resolver_rule_policy)
@@ -1143,7 +1138,7 @@ Imports domain names from a file into a domain list, for use in a DNS firewall
 rule group.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").import_firewall_domains` method.
+`session.create_client("route53resolver").import_firewall_domains` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.import_firewall_domains](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.import_firewall_domains)
@@ -1172,7 +1167,7 @@ Returns a `Coroutine` for
 Retrieves the firewall configurations that you have defined.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").list_firewall_configs` method.
+`session.create_client("route53resolver").list_firewall_configs` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.list_firewall_configs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.list_firewall_configs)
@@ -1198,8 +1193,7 @@ Returns a `Coroutine` for
 Retrieves the firewall domain lists that you have defined.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").list_firewall_domain_lists`
-method.
+`session.create_client("route53resolver").list_firewall_domain_lists` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.list_firewall_domain_lists](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.list_firewall_domain_lists)
@@ -1226,7 +1220,7 @@ Retrieves the domains that you have defined for the specified firewall domain
 list.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").list_firewall_domains` method.
+`session.create_client("route53resolver").list_firewall_domains` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.list_firewall_domains](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.list_firewall_domains)
@@ -1253,7 +1247,7 @@ Returns a `Coroutine` for
 Retrieves the firewall rule group associations that you have defined.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").list_firewall_rule_group_associations`
+`session.create_client("route53resolver").list_firewall_rule_group_associations`
 method.
 
 Boto3 documentation:
@@ -1286,8 +1280,7 @@ Retrieves the minimal high-level information for the rule groups that you have
 defined.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").list_firewall_rule_groups`
-method.
+`session.create_client("route53resolver").list_firewall_rule_groups` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.list_firewall_rule_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.list_firewall_rule_groups)
@@ -1314,7 +1307,7 @@ Retrieves the firewall rules that you have defined for the specified firewall
 rule group.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").list_firewall_rules` method.
+`session.create_client("route53resolver").list_firewall_rules` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.list_firewall_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.list_firewall_rules)
@@ -1343,7 +1336,7 @@ Returns a `Coroutine` for
 Retrieves the Resolver configurations that you have defined.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").list_resolver_configs` method.
+`session.create_client("route53resolver").list_resolver_configs` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.list_resolver_configs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.list_resolver_configs)
@@ -1370,8 +1363,7 @@ Lists the configurations for DNSSEC validation that are associated with the
 current Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").list_resolver_dnssec_configs`
-method.
+`session.create_client("route53resolver").list_resolver_dnssec_configs` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.list_resolver_dnssec_configs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.list_resolver_dnssec_configs)
@@ -1398,7 +1390,7 @@ Returns a `Coroutine` for
 Gets the IP addresses for a specified Resolver endpoint.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").list_resolver_endpoint_ip_addresses`
+`session.create_client("route53resolver").list_resolver_endpoint_ip_addresses`
 method.
 
 Boto3 documentation:
@@ -1427,7 +1419,7 @@ Lists all the Resolver endpoints that were created using the current Amazon Web
 Services account.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").list_resolver_endpoints` method.
+`session.create_client("route53resolver").list_resolver_endpoints` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.list_resolver_endpoints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.list_resolver_endpoints)
@@ -1455,7 +1447,7 @@ Lists information about associations between Amazon VPCs and query logging
 configurations.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").list_resolver_query_log_config_associations`
+`session.create_client("route53resolver").list_resolver_query_log_config_associations`
 method.
 
 Boto3 documentation:
@@ -1486,7 +1478,7 @@ Returns a `Coroutine` for
 Lists information about the specified query logging configurations.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").list_resolver_query_log_configs`
+`session.create_client("route53resolver").list_resolver_query_log_configs`
 method.
 
 Boto3 documentation:
@@ -1517,7 +1509,7 @@ Lists the associations that were created between Resolver rules and VPCs using
 the current Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").list_resolver_rule_associations`
+`session.create_client("route53resolver").list_resolver_rule_associations`
 method.
 
 Boto3 documentation:
@@ -1546,7 +1538,7 @@ Lists the Resolver rules that were created using the current Amazon Web
 Services account.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").list_resolver_rules` method.
+`session.create_client("route53resolver").list_resolver_rules` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.list_resolver_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.list_resolver_rules)
@@ -1573,7 +1565,7 @@ Returns a `Coroutine` for
 Lists the tags that you associated with the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").list_tags_for_resource` method.
+`session.create_client("route53resolver").list_tags_for_resource` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.list_tags_for_resource)
@@ -1601,7 +1593,7 @@ Attaches an Identity and Access Management (Amazon Web Services IAM) policy for
 sharing the rule group.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").put_firewall_rule_group_policy`
+`session.create_client("route53resolver").put_firewall_rule_group_policy`
 method.
 
 Boto3 documentation:
@@ -1631,7 +1623,7 @@ the operations that you want the account to be able to perform on the
 configuration.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").put_resolver_query_log_config_policy`
+`session.create_client("route53resolver").put_resolver_query_log_config_policy`
 method.
 
 Boto3 documentation:
@@ -1660,7 +1652,7 @@ account, the account that you want to share the rule with, and the operations
 that you want the account to be able to perform on the rule.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").put_resolver_rule_policy` method.
+`session.create_client("route53resolver").put_resolver_rule_policy` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.put_resolver_rule_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.put_resolver_rule_policy)
@@ -1685,8 +1677,8 @@ Returns a `Coroutine` for
 
 Adds one or more tags to a specified resource.
 
-Type annotations for
-`aiobotocore.create_client("route53resolver").tag_resource` method.
+Type annotations for `session.create_client("route53resolver").tag_resource`
+method.
 
 Boto3 documentation:
 [Route53Resolver.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.tag_resource)
@@ -1709,8 +1701,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from a specified resource.
 
-Type annotations for
-`aiobotocore.create_client("route53resolver").untag_resource` method.
+Type annotations for `session.create_client("route53resolver").untag_resource`
+method.
 
 Boto3 documentation:
 [Route53Resolver.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.untag_resource)
@@ -1735,7 +1727,7 @@ Updates the configuration of the firewall behavior provided by DNS Firewall for
 a single VPC from Amazon Virtual Private Cloud (Amazon VPC).
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").update_firewall_config` method.
+`session.create_client("route53resolver").update_firewall_config` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.update_firewall_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.update_firewall_config)
@@ -1763,7 +1755,7 @@ Returns a `Coroutine` for
 Updates the firewall domain list from an array of domain specifications.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").update_firewall_domains` method.
+`session.create_client("route53resolver").update_firewall_domains` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.update_firewall_domains](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.update_firewall_domains)
@@ -1792,7 +1784,7 @@ Returns a `Coroutine` for
 Updates the specified firewall rule.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").update_firewall_rule` method.
+`session.create_client("route53resolver").update_firewall_rule` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.update_firewall_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.update_firewall_rule)
@@ -1826,7 +1818,7 @@ Returns a `Coroutine` for
 Changes the association of a FirewallRuleGroup with a VPC.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").update_firewall_rule_group_association`
+`session.create_client("route53resolver").update_firewall_rule_group_association`
 method.
 
 Boto3 documentation:
@@ -1857,7 +1849,7 @@ Updates the behavior configuration of Route 53 Resolver behavior for a single
 VPC from Amazon Virtual Private Cloud.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").update_resolver_config` method.
+`session.create_client("route53resolver").update_resolver_config` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.update_resolver_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.update_resolver_config)
@@ -1885,7 +1877,7 @@ Returns a `Coroutine` for
 Updates an existing DNSSEC validation configuration.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").update_resolver_dnssec_config`
+`session.create_client("route53resolver").update_resolver_dnssec_config`
 method.
 
 Boto3 documentation:
@@ -1912,7 +1904,7 @@ Returns a `Coroutine` for
 Updates the name of an inbound or an outbound Resolver endpoint.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").update_resolver_endpoint` method.
+`session.create_client("route53resolver").update_resolver_endpoint` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.update_resolver_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.update_resolver_endpoint)
@@ -1938,7 +1930,7 @@ Returns a `Coroutine` for
 Updates settings for a specified Resolver rule.
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").update_resolver_rule` method.
+`session.create_client("route53resolver").update_resolver_rule` method.
 
 Boto3 documentation:
 [Route53Resolver.Client.update_resolver_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.update_resolver_rule)
@@ -1959,13 +1951,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateResolverRuleResponseTypeDef](./type_defs.md#updateresolverruleresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("route53resolver").__aenter__`
+method.
+
+Boto3 documentation:
+[Route53Resolver.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [Route53ResolverClient](#route53resolverclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("route53resolver").__aexit__`
+method.
+
+Boto3 documentation:
+[Route53Resolver.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53resolver.html#Route53Resolver.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("route53resolver").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("route53resolver").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_firewall_configs")` ->
   [ListFirewallConfigsPaginator](./paginators.md#listfirewallconfigspaginator)

@@ -19,7 +19,7 @@ type annotations stubs module
 ## DistributionDeployedWaiter
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_waiter("distribution_deployed")`.
+`session.create_client("cloudfront").get_waiter("distribution_deployed")`.
 
 Can be used directly:
 
@@ -29,7 +29,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_cloudfront.waiter import DistributionDeployedWaiter
 
 def get_distribution_deployed_waiter() -> DistributionDeployedWaiter:
-    return Session().create_client("cloudfront").get_waiter("distribution_deployed")
+    return Session().client("cloudfront").get_waiter("distribution_deployed")
 ```
 
 Boto3 documentation:
@@ -45,7 +45,7 @@ Arguments for `DistributionDeployedWaiter.wait` method:
 ## InvalidationCompletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_waiter("invalidation_completed")`.
+`session.create_client("cloudfront").get_waiter("invalidation_completed")`.
 
 Can be used directly:
 
@@ -55,7 +55,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_cloudfront.waiter import InvalidationCompletedWaiter
 
 def get_invalidation_completed_waiter() -> InvalidationCompletedWaiter:
-    return Session().create_client("cloudfront").get_waiter("invalidation_completed")
+    return Session().client("cloudfront").get_waiter("invalidation_completed")
 ```
 
 Boto3 documentation:
@@ -72,7 +72,7 @@ Arguments for `InvalidationCompletedWaiter.wait` method:
 ## StreamingDistributionDeployedWaiter
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_waiter("streaming_distribution_deployed")`.
+`session.create_client("cloudfront").get_waiter("streaming_distribution_deployed")`.
 
 Can be used directly:
 
@@ -82,7 +82,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_cloudfront.waiter import StreamingDistributionDeployedWaiter
 
 def get_streaming_distribution_deployed_waiter() -> StreamingDistributionDeployedWaiter:
-    return Session().create_client("cloudfront").get_waiter("streaming_distribution_deployed")
+    return Session().client("cloudfront").get_waiter("streaming_distribution_deployed")
 ```
 
 Boto3 documentation:

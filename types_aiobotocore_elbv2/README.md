@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[elbv2]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[elbv2]'
+
+# standalone installation
 pip install types-aiobotocore-elbv2
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-elbv2
 
 ## ElasticLoadBalancingv2Client
 
-Type annotations for `aiobotocore.create_client("elbv2")` as
+Type annotations for `session.create_client("elbv2")` as
 [ElasticLoadBalancingv2Client](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_elbv2.client import ElasticLoadBalancingv2Client
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_listener_certificates](./client.md#add_listener_certificates)
 - [add_tags](./client.md#add_tags)
 - [can_paginate](./client.md#can_paginate)
@@ -138,7 +144,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_elbv2.paginators import DescribeAccountLimitsPaginator, ...
+from types_aiobotocore_elbv2.paginator import DescribeAccountLimitsPaginator, ...
 ```
 
 - [DescribeAccountLimitsPaginator](./paginators.md#describeaccountlimitspaginator)
@@ -159,7 +165,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_elbv2.waiters import LoadBalancerAvailableWaiter, ...
+from types_aiobotocore_elbv2.waiter import LoadBalancerAvailableWaiter, ...
 ```
 
 - [LoadBalancerAvailableWaiter](./waiters.md#loadbalanceravailablewaiter)

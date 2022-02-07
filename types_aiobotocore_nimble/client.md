@@ -63,6 +63,8 @@ type annotations stubs module
     - [update_streaming_image](#update_streaming_image)
     - [update_studio](#update_studio)
     - [update_studio_component](#update_studio_component)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -70,16 +72,17 @@ type annotations stubs module
 
 ## NimbleStudioClient
 
-Type annotations for `aiobotocore.create_client("nimble")`
+Type annotations for `session.create_client("nimble")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_nimble.client import NimbleStudioClient
 
-def get_nimble_client() -> NimbleStudioClient:
-    return Session().client("nimble")
+session = get_session()
+async with session.create_client("nimble") as client:
+    client: NimbleStudioClient
 ```
 
 Boto3 documentation:
@@ -120,7 +123,7 @@ Exceptions:
 
 NimbleStudioClient exceptions.
 
-Type annotations for `aiobotocore.create_client("nimble").exceptions` method.
+Type annotations for `session.create_client("nimble").exceptions` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.exceptions)
@@ -133,7 +136,7 @@ Returns [Exceptions](#exceptions).
 
 Accept EULAs.
 
-Type annotations for `aiobotocore.create_client("nimble").accept_eulas` method.
+Type annotations for `session.create_client("nimble").accept_eulas` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.accept_eulas](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.accept_eulas)
@@ -158,18 +161,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("nimble").can_paginate` method.
+Type annotations for `session.create_client("nimble").can_paginate` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_launch_profile"></a>
 
@@ -177,8 +178,8 @@ Returns a `Coroutine` for `bool`.
 
 Create a launch profile.
 
-Type annotations for
-`aiobotocore.create_client("nimble").create_launch_profile` method.
+Type annotations for `session.create_client("nimble").create_launch_profile`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.create_launch_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.create_launch_profile)
@@ -212,8 +213,8 @@ Returns a `Coroutine` for
 
 Creates a streaming image resource in a studio.
 
-Type annotations for
-`aiobotocore.create_client("nimble").create_streaming_image` method.
+Type annotations for `session.create_client("nimble").create_streaming_image`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.create_streaming_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.create_streaming_image)
@@ -242,8 +243,8 @@ Returns a `Coroutine` for
 
 Creates a streaming session in a studio.
 
-Type annotations for
-`aiobotocore.create_client("nimble").create_streaming_session` method.
+Type annotations for `session.create_client("nimble").create_streaming_session`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.create_streaming_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.create_streaming_session)
@@ -275,7 +276,7 @@ Returns a `Coroutine` for
 Creates a streaming session stream for a streaming session.
 
 Type annotations for
-`aiobotocore.create_client("nimble").create_streaming_session_stream` method.
+`session.create_client("nimble").create_streaming_session_stream` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.create_streaming_session_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.create_streaming_session_stream)
@@ -302,8 +303,7 @@ Returns a `Coroutine` for
 
 Create a new Studio.
 
-Type annotations for `aiobotocore.create_client("nimble").create_studio`
-method.
+Type annotations for `session.create_client("nimble").create_studio` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.create_studio](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.create_studio)
@@ -333,8 +333,8 @@ Returns a `Coroutine` for
 
 Creates a studio component resource.
 
-Type annotations for
-`aiobotocore.create_client("nimble").create_studio_component` method.
+Type annotations for `session.create_client("nimble").create_studio_component`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.create_studio_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.create_studio_component)
@@ -373,8 +373,8 @@ Returns a `Coroutine` for
 
 Permanently delete a launch profile.
 
-Type annotations for
-`aiobotocore.create_client("nimble").delete_launch_profile` method.
+Type annotations for `session.create_client("nimble").delete_launch_profile`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.delete_launch_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.delete_launch_profile)
@@ -401,7 +401,7 @@ Returns a `Coroutine` for
 Delete a user from launch profile membership.
 
 Type annotations for
-`aiobotocore.create_client("nimble").delete_launch_profile_member` method.
+`session.create_client("nimble").delete_launch_profile_member` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.delete_launch_profile_member](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.delete_launch_profile_member)
@@ -427,8 +427,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Delete streaming image.
 
-Type annotations for
-`aiobotocore.create_client("nimble").delete_streaming_image` method.
+Type annotations for `session.create_client("nimble").delete_streaming_image`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.delete_streaming_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.delete_streaming_image)
@@ -454,8 +454,8 @@ Returns a `Coroutine` for
 
 Deletes streaming session resource.
 
-Type annotations for
-`aiobotocore.create_client("nimble").delete_streaming_session` method.
+Type annotations for `session.create_client("nimble").delete_streaming_session`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.delete_streaming_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.delete_streaming_session)
@@ -481,8 +481,7 @@ Returns a `Coroutine` for
 
 Delete a studio resource.
 
-Type annotations for `aiobotocore.create_client("nimble").delete_studio`
-method.
+Type annotations for `session.create_client("nimble").delete_studio` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.delete_studio](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.delete_studio)
@@ -506,8 +505,8 @@ Returns a `Coroutine` for
 
 Deletes a studio component resource.
 
-Type annotations for
-`aiobotocore.create_client("nimble").delete_studio_component` method.
+Type annotations for `session.create_client("nimble").delete_studio_component`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.delete_studio_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.delete_studio_component)
@@ -533,7 +532,7 @@ Returns a `Coroutine` for
 
 Delete a user from studio membership.
 
-Type annotations for `aiobotocore.create_client("nimble").delete_studio_member`
+Type annotations for `session.create_client("nimble").delete_studio_member`
 method.
 
 Boto3 documentation:
@@ -559,8 +558,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("nimble").generate_presigned_url` method.
+Type annotations for `session.create_client("nimble").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.generate_presigned_url)
@@ -583,7 +582,7 @@ Returns a `Coroutine` for `str`.
 
 Get Eula.
 
-Type annotations for `aiobotocore.create_client("nimble").get_eula` method.
+Type annotations for `session.create_client("nimble").get_eula` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.get_eula](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.get_eula)
@@ -606,7 +605,7 @@ Returns a `Coroutine` for
 
 Get a launch profile.
 
-Type annotations for `aiobotocore.create_client("nimble").get_launch_profile`
+Type annotations for `session.create_client("nimble").get_launch_profile`
 method.
 
 Boto3 documentation:
@@ -634,7 +633,7 @@ Launch profile details include the launch profile resource and summary
 information of resources that are used by, or available to, the launch profile.
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_launch_profile_details` method.
+`session.create_client("nimble").get_launch_profile_details` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.get_launch_profile_details](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.get_launch_profile_details)
@@ -660,7 +659,7 @@ Returns a `Coroutine` for
 Get a launch profile initialization.
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_launch_profile_initialization` method.
+`session.create_client("nimble").get_launch_profile_initialization` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.get_launch_profile_initialization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.get_launch_profile_initialization)
@@ -689,7 +688,7 @@ Returns a `Coroutine` for
 Get a user persona in launch profile membership.
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_launch_profile_member` method.
+`session.create_client("nimble").get_launch_profile_member` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.get_launch_profile_member](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.get_launch_profile_member)
@@ -715,7 +714,7 @@ Returns a `Coroutine` for
 
 Get streaming image.
 
-Type annotations for `aiobotocore.create_client("nimble").get_streaming_image`
+Type annotations for `session.create_client("nimble").get_streaming_image`
 method.
 
 Boto3 documentation:
@@ -741,8 +740,8 @@ Returns a `Coroutine` for
 
 Gets StreamingSession resource.
 
-Type annotations for
-`aiobotocore.create_client("nimble").get_streaming_session` method.
+Type annotations for `session.create_client("nimble").get_streaming_session`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.get_streaming_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.get_streaming_session)
@@ -768,7 +767,7 @@ Returns a `Coroutine` for
 Gets a StreamingSessionStream for a streaming session.
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_streaming_session_stream` method.
+`session.create_client("nimble").get_streaming_session_stream` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.get_streaming_session_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.get_streaming_session_stream)
@@ -794,7 +793,7 @@ Returns a `Coroutine` for
 
 Get a Studio resource.
 
-Type annotations for `aiobotocore.create_client("nimble").get_studio` method.
+Type annotations for `session.create_client("nimble").get_studio` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.get_studio](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.get_studio)
@@ -817,7 +816,7 @@ Returns a `Coroutine` for
 
 Gets a studio component resource.
 
-Type annotations for `aiobotocore.create_client("nimble").get_studio_component`
+Type annotations for `session.create_client("nimble").get_studio_component`
 method.
 
 Boto3 documentation:
@@ -843,7 +842,7 @@ Returns a `Coroutine` for
 
 Get a user's membership in a studio.
 
-Type annotations for `aiobotocore.create_client("nimble").get_studio_member`
+Type annotations for `session.create_client("nimble").get_studio_member`
 method.
 
 Boto3 documentation:
@@ -868,8 +867,8 @@ Returns a `Coroutine` for
 
 List Eula Acceptances.
 
-Type annotations for
-`aiobotocore.create_client("nimble").list_eula_acceptances` method.
+Type annotations for `session.create_client("nimble").list_eula_acceptances`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.list_eula_acceptances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.list_eula_acceptances)
@@ -895,7 +894,7 @@ Returns a `Coroutine` for
 
 List Eulas.
 
-Type annotations for `aiobotocore.create_client("nimble").list_eulas` method.
+Type annotations for `session.create_client("nimble").list_eulas` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.list_eulas](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.list_eulas)
@@ -920,7 +919,7 @@ Returns a `Coroutine` for
 Get all users in a given launch profile membership.
 
 Type annotations for
-`aiobotocore.create_client("nimble").list_launch_profile_members` method.
+`session.create_client("nimble").list_launch_profile_members` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.list_launch_profile_members](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.list_launch_profile_members)
@@ -947,7 +946,7 @@ Returns a `Coroutine` for
 
 List all the launch profiles a studio.
 
-Type annotations for `aiobotocore.create_client("nimble").list_launch_profiles`
+Type annotations for `session.create_client("nimble").list_launch_profiles`
 method.
 
 Boto3 documentation:
@@ -976,8 +975,8 @@ Returns a `Coroutine` for
 
 List the streaming image resources available to this studio.
 
-Type annotations for
-`aiobotocore.create_client("nimble").list_streaming_images` method.
+Type annotations for `session.create_client("nimble").list_streaming_images`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.list_streaming_images](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.list_streaming_images)
@@ -1003,8 +1002,8 @@ Returns a `Coroutine` for
 
 Lists the streaming image resources in a studio.
 
-Type annotations for
-`aiobotocore.create_client("nimble").list_streaming_sessions` method.
+Type annotations for `session.create_client("nimble").list_streaming_sessions`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.list_streaming_sessions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.list_streaming_sessions)
@@ -1032,8 +1031,8 @@ Returns a `Coroutine` for
 
 Lists the StudioComponents in a studio.
 
-Type annotations for
-`aiobotocore.create_client("nimble").list_studio_components` method.
+Type annotations for `session.create_client("nimble").list_studio_components`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.list_studio_components](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.list_studio_components)
@@ -1061,7 +1060,7 @@ Returns a `Coroutine` for
 
 Get all users in a given studio membership.
 
-Type annotations for `aiobotocore.create_client("nimble").list_studio_members`
+Type annotations for `session.create_client("nimble").list_studio_members`
 method.
 
 Boto3 documentation:
@@ -1089,7 +1088,7 @@ Returns a `Coroutine` for
 List studios in your Amazon Web Services account in the requested Amazon Web
 Services Region.
 
-Type annotations for `aiobotocore.create_client("nimble").list_studios` method.
+Type annotations for `session.create_client("nimble").list_studios` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.list_studios](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.list_studios)
@@ -1112,8 +1111,8 @@ Returns a `Coroutine` for
 
 Gets the tags for a resource, given its Amazon Resource Names (ARN).
 
-Type annotations for
-`aiobotocore.create_client("nimble").list_tags_for_resource` method.
+Type annotations for `session.create_client("nimble").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.list_tags_for_resource)
@@ -1138,7 +1137,7 @@ Returns a `Coroutine` for
 Add/update users with given persona to launch profile membership.
 
 Type annotations for
-`aiobotocore.create_client("nimble").put_launch_profile_members` method.
+`session.create_client("nimble").put_launch_profile_members` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.put_launch_profile_members](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.put_launch_profile_members)
@@ -1167,7 +1166,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Add/update users with given persona to studio membership.
 
-Type annotations for `aiobotocore.create_client("nimble").put_studio_members`
+Type annotations for `session.create_client("nimble").put_studio_members`
 method.
 
 Boto3 documentation:
@@ -1196,8 +1195,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Transitions sessions from the STOPPED state into the READY state.
 
-Type annotations for
-`aiobotocore.create_client("nimble").start_streaming_session` method.
+Type annotations for `session.create_client("nimble").start_streaming_session`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.start_streaming_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.start_streaming_session)
@@ -1224,8 +1223,7 @@ Returns a `Coroutine` for
 Repairs the Amazon Web Services SSO configuration for a given studio.
 
 Type annotations for
-`aiobotocore.create_client("nimble").start_studio_sso_configuration_repair`
-method.
+`session.create_client("nimble").start_studio_sso_configuration_repair` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.start_studio_sso_configuration_repair](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.start_studio_sso_configuration_repair)
@@ -1250,8 +1248,8 @@ Returns a `Coroutine` for
 
 Transitions sessions from the READY state into the STOPPED state.
 
-Type annotations for
-`aiobotocore.create_client("nimble").stop_streaming_session` method.
+Type annotations for `session.create_client("nimble").stop_streaming_session`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.stop_streaming_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.stop_streaming_session)
@@ -1277,7 +1275,7 @@ Returns a `Coroutine` for
 
 Creates tags for a resource, given its ARN.
 
-Type annotations for `aiobotocore.create_client("nimble").tag_resource` method.
+Type annotations for `session.create_client("nimble").tag_resource` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.tag_resource)
@@ -1300,8 +1298,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the tags for a resource.
 
-Type annotations for `aiobotocore.create_client("nimble").untag_resource`
-method.
+Type annotations for `session.create_client("nimble").untag_resource` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.untag_resource)
@@ -1324,8 +1321,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Update a launch profile.
 
-Type annotations for
-`aiobotocore.create_client("nimble").update_launch_profile` method.
+Type annotations for `session.create_client("nimble").update_launch_profile`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.update_launch_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.update_launch_profile)
@@ -1358,7 +1355,7 @@ Returns a `Coroutine` for
 Update a user persona in launch profile membership.
 
 Type annotations for
-`aiobotocore.create_client("nimble").update_launch_profile_member` method.
+`session.create_client("nimble").update_launch_profile_member` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.update_launch_profile_member](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.update_launch_profile_member)
@@ -1388,8 +1385,8 @@ Returns a `Coroutine` for
 
 Update streaming image.
 
-Type annotations for
-`aiobotocore.create_client("nimble").update_streaming_image` method.
+Type annotations for `session.create_client("nimble").update_streaming_image`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.update_streaming_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.update_streaming_image)
@@ -1417,8 +1414,7 @@ Returns a `Coroutine` for
 
 Update a Studio resource.
 
-Type annotations for `aiobotocore.create_client("nimble").update_studio`
-method.
+Type annotations for `session.create_client("nimble").update_studio` method.
 
 Boto3 documentation:
 [NimbleStudio.Client.update_studio](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.update_studio)
@@ -1445,8 +1441,8 @@ Returns a `Coroutine` for
 
 Updates a studio component resource.
 
-Type annotations for
-`aiobotocore.create_client("nimble").update_studio_component` method.
+Type annotations for `session.create_client("nimble").update_studio_component`
+method.
 
 Boto3 documentation:
 [NimbleStudio.Client.update_studio_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.update_studio_component)
@@ -1478,11 +1474,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateStudioComponentResponseTypeDef](./type_defs.md#updatestudiocomponentresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("nimble").__aenter__` method.
+
+Boto3 documentation:
+[NimbleStudio.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [NimbleStudioClient](#nimblestudioclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("nimble").__aexit__` method.
+
+Boto3 documentation:
+[NimbleStudio.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/nimble.html#NimbleStudio.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("nimble").get_paginator` method
+Type annotations for `session.create_client("nimble").get_paginator` method
 with overloads.
 
 - `client.get_paginator("list_eula_acceptances")` ->
@@ -1508,8 +1536,8 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("nimble").get_waiter` method
-with overloads.
+Type annotations for `session.create_client("nimble").get_waiter` method with
+overloads.
 
 - `client.get_waiter("launch_profile_deleted")` ->
   [LaunchProfileDeletedWaiter](./waiters.md#launchprofiledeletedwaiter)

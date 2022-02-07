@@ -30,21 +30,24 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_suite_definition](#update_suite_definition)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="iotdeviceadvisorclient"></a>
 
 ## IoTDeviceAdvisorClient
 
-Type annotations for `aiobotocore.create_client("iotdeviceadvisor")`
+Type annotations for `session.create_client("iotdeviceadvisor")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_iotdeviceadvisor.client import IoTDeviceAdvisorClient
 
-def get_iotdeviceadvisor_client() -> IoTDeviceAdvisorClient:
-    return Session().client("iotdeviceadvisor")
+session = get_session()
+async with session.create_client("iotdeviceadvisor") as client:
+    client: IoTDeviceAdvisorClient
 ```
 
 Boto3 documentation:
@@ -82,7 +85,7 @@ Exceptions:
 
 IoTDeviceAdvisorClient exceptions.
 
-Type annotations for `aiobotocore.create_client("iotdeviceadvisor").exceptions`
+Type annotations for `session.create_client("iotdeviceadvisor").exceptions`
 method.
 
 Boto3 documentation:
@@ -96,19 +99,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("iotdeviceadvisor").can_paginate` method.
+Type annotations for `session.create_client("iotdeviceadvisor").can_paginate`
+method.
 
 Boto3 documentation:
 [IoTDeviceAdvisor.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_suite_definition"></a>
 
@@ -117,7 +118,7 @@ Returns a `Coroutine` for `bool`.
 Creates a Device Advisor test suite.
 
 Type annotations for
-`aiobotocore.create_client("iotdeviceadvisor").create_suite_definition` method.
+`session.create_client("iotdeviceadvisor").create_suite_definition` method.
 
 Boto3 documentation:
 [IoTDeviceAdvisor.Client.create_suite_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.create_suite_definition)
@@ -144,7 +145,7 @@ Returns a `Coroutine` for
 Deletes a Device Advisor test suite.
 
 Type annotations for
-`aiobotocore.create_client("iotdeviceadvisor").delete_suite_definition` method.
+`session.create_client("iotdeviceadvisor").delete_suite_definition` method.
 
 Boto3 documentation:
 [IoTDeviceAdvisor.Client.delete_suite_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.delete_suite_definition)
@@ -168,7 +169,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("iotdeviceadvisor").generate_presigned_url` method.
+`session.create_client("iotdeviceadvisor").generate_presigned_url` method.
 
 Boto3 documentation:
 [IoTDeviceAdvisor.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.generate_presigned_url)
@@ -191,8 +192,8 @@ Returns a `Coroutine` for `str`.
 
 Gets information about an Device Advisor endpoint.
 
-Type annotations for
-`aiobotocore.create_client("iotdeviceadvisor").get_endpoint` method.
+Type annotations for `session.create_client("iotdeviceadvisor").get_endpoint`
+method.
 
 Boto3 documentation:
 [IoTDeviceAdvisor.Client.get_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.get_endpoint)
@@ -217,7 +218,7 @@ Returns a `Coroutine` for
 Gets information about a Device Advisor test suite.
 
 Type annotations for
-`aiobotocore.create_client("iotdeviceadvisor").get_suite_definition` method.
+`session.create_client("iotdeviceadvisor").get_suite_definition` method.
 
 Boto3 documentation:
 [IoTDeviceAdvisor.Client.get_suite_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.get_suite_definition)
@@ -242,8 +243,8 @@ Returns a `Coroutine` for
 
 Gets information about a Device Advisor test suite run.
 
-Type annotations for
-`aiobotocore.create_client("iotdeviceadvisor").get_suite_run` method.
+Type annotations for `session.create_client("iotdeviceadvisor").get_suite_run`
+method.
 
 Boto3 documentation:
 [IoTDeviceAdvisor.Client.get_suite_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.get_suite_run)
@@ -269,7 +270,7 @@ Gets a report download link for a successful Device Advisor qualifying test
 suite run.
 
 Type annotations for
-`aiobotocore.create_client("iotdeviceadvisor").get_suite_run_report` method.
+`session.create_client("iotdeviceadvisor").get_suite_run_report` method.
 
 Boto3 documentation:
 [IoTDeviceAdvisor.Client.get_suite_run_report](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.get_suite_run_report)
@@ -295,7 +296,7 @@ Returns a `Coroutine` for
 Lists the Device Advisor test suites you have created.
 
 Type annotations for
-`aiobotocore.create_client("iotdeviceadvisor").list_suite_definitions` method.
+`session.create_client("iotdeviceadvisor").list_suite_definitions` method.
 
 Boto3 documentation:
 [IoTDeviceAdvisor.Client.list_suite_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.list_suite_definitions)
@@ -321,7 +322,7 @@ Returns a `Coroutine` for
 Lists runs of the specified Device Advisor test suite.
 
 Type annotations for
-`aiobotocore.create_client("iotdeviceadvisor").list_suite_runs` method.
+`session.create_client("iotdeviceadvisor").list_suite_runs` method.
 
 Boto3 documentation:
 [IoTDeviceAdvisor.Client.list_suite_runs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.list_suite_runs)
@@ -348,7 +349,7 @@ Returns a `Coroutine` for
 Lists the tags attached to an IoT Device Advisor resource.
 
 Type annotations for
-`aiobotocore.create_client("iotdeviceadvisor").list_tags_for_resource` method.
+`session.create_client("iotdeviceadvisor").list_tags_for_resource` method.
 
 Boto3 documentation:
 [IoTDeviceAdvisor.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.list_tags_for_resource)
@@ -373,7 +374,7 @@ Returns a `Coroutine` for
 Starts a Device Advisor test suite run.
 
 Type annotations for
-`aiobotocore.create_client("iotdeviceadvisor").start_suite_run` method.
+`session.create_client("iotdeviceadvisor").start_suite_run` method.
 
 Boto3 documentation:
 [IoTDeviceAdvisor.Client.start_suite_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.start_suite_run)
@@ -400,8 +401,8 @@ Returns a `Coroutine` for
 
 Stops a Device Advisor test suite run that is currently running.
 
-Type annotations for
-`aiobotocore.create_client("iotdeviceadvisor").stop_suite_run` method.
+Type annotations for `session.create_client("iotdeviceadvisor").stop_suite_run`
+method.
 
 Boto3 documentation:
 [IoTDeviceAdvisor.Client.stop_suite_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.stop_suite_run)
@@ -424,8 +425,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds to and modifies existing tags of an IoT Device Advisor resource.
 
-Type annotations for
-`aiobotocore.create_client("iotdeviceadvisor").tag_resource` method.
+Type annotations for `session.create_client("iotdeviceadvisor").tag_resource`
+method.
 
 Boto3 documentation:
 [IoTDeviceAdvisor.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.tag_resource)
@@ -448,8 +449,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from an IoT Device Advisor resource.
 
-Type annotations for
-`aiobotocore.create_client("iotdeviceadvisor").untag_resource` method.
+Type annotations for `session.create_client("iotdeviceadvisor").untag_resource`
+method.
 
 Boto3 documentation:
 [IoTDeviceAdvisor.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.untag_resource)
@@ -473,7 +474,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a Device Advisor test suite.
 
 Type annotations for
-`aiobotocore.create_client("iotdeviceadvisor").update_suite_definition` method.
+`session.create_client("iotdeviceadvisor").update_suite_definition` method.
 
 Boto3 documentation:
 [IoTDeviceAdvisor.Client.update_suite_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.update_suite_definition)
@@ -492,3 +493,37 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateSuiteDefinitionResponseTypeDef](./type_defs.md#updatesuitedefinitionresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("iotdeviceadvisor").__aenter__`
+method.
+
+Boto3 documentation:
+[IoTDeviceAdvisor.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [IoTDeviceAdvisorClient](#iotdeviceadvisorclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("iotdeviceadvisor").__aexit__`
+method.
+
+Boto3 documentation:
+[IoTDeviceAdvisor.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotdeviceadvisor.html#IoTDeviceAdvisor.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

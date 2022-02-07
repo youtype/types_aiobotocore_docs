@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[dax]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[dax]'
+
+# standalone installation
 pip install types-aiobotocore-dax
 ```
 
@@ -29,8 +33,7 @@ pip install types-aiobotocore-dax
 
 ## DAXClient
 
-Type annotations for `aiobotocore.create_client("dax")` as
-[DAXClient](./client.md)
+Type annotations for `session.create_client("dax")` as [DAXClient](./client.md)
 
 Can be used directly:
 
@@ -42,6 +45,8 @@ from types_aiobotocore_dax.client import DAXClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_cluster](./client.md#create_cluster)
 - [create_parameter_group](./client.md#create_parameter_group)
@@ -113,7 +118,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_dax.paginators import DescribeClustersPaginator, ...
+from types_aiobotocore_dax.paginator import DescribeClustersPaginator, ...
 ```
 
 - [DescribeClustersPaginator](./paginators.md#describeclusterspaginator)

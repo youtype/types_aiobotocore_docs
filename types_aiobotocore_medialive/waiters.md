@@ -27,7 +27,7 @@ type annotations stubs module
 ## ChannelCreatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_waiter("channel_created")`.
+`session.create_client("medialive").get_waiter("channel_created")`.
 
 Can be used directly:
 
@@ -37,7 +37,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_medialive.waiter import ChannelCreatedWaiter
 
 def get_channel_created_waiter() -> ChannelCreatedWaiter:
-    return Session().create_client("medialive").get_waiter("channel_created")
+    return Session().client("medialive").get_waiter("channel_created")
 ```
 
 Boto3 documentation:
@@ -53,7 +53,7 @@ Arguments for `ChannelCreatedWaiter.wait` method:
 ## ChannelDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_waiter("channel_deleted")`.
+`session.create_client("medialive").get_waiter("channel_deleted")`.
 
 Can be used directly:
 
@@ -63,7 +63,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_medialive.waiter import ChannelDeletedWaiter
 
 def get_channel_deleted_waiter() -> ChannelDeletedWaiter:
-    return Session().create_client("medialive").get_waiter("channel_deleted")
+    return Session().client("medialive").get_waiter("channel_deleted")
 ```
 
 Boto3 documentation:
@@ -79,7 +79,7 @@ Arguments for `ChannelDeletedWaiter.wait` method:
 ## ChannelRunningWaiter
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_waiter("channel_running")`.
+`session.create_client("medialive").get_waiter("channel_running")`.
 
 Can be used directly:
 
@@ -89,7 +89,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_medialive.waiter import ChannelRunningWaiter
 
 def get_channel_running_waiter() -> ChannelRunningWaiter:
-    return Session().create_client("medialive").get_waiter("channel_running")
+    return Session().client("medialive").get_waiter("channel_running")
 ```
 
 Boto3 documentation:
@@ -105,7 +105,7 @@ Arguments for `ChannelRunningWaiter.wait` method:
 ## ChannelStoppedWaiter
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_waiter("channel_stopped")`.
+`session.create_client("medialive").get_waiter("channel_stopped")`.
 
 Can be used directly:
 
@@ -115,7 +115,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_medialive.waiter import ChannelStoppedWaiter
 
 def get_channel_stopped_waiter() -> ChannelStoppedWaiter:
-    return Session().create_client("medialive").get_waiter("channel_stopped")
+    return Session().client("medialive").get_waiter("channel_stopped")
 ```
 
 Boto3 documentation:
@@ -131,7 +131,7 @@ Arguments for `ChannelStoppedWaiter.wait` method:
 ## InputAttachedWaiter
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_waiter("input_attached")`.
+`session.create_client("medialive").get_waiter("input_attached")`.
 
 Can be used directly:
 
@@ -141,7 +141,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_medialive.waiter import InputAttachedWaiter
 
 def get_input_attached_waiter() -> InputAttachedWaiter:
-    return Session().create_client("medialive").get_waiter("input_attached")
+    return Session().client("medialive").get_waiter("input_attached")
 ```
 
 Boto3 documentation:
@@ -157,7 +157,7 @@ Arguments for `InputAttachedWaiter.wait` method:
 ## InputDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_waiter("input_deleted")`.
+`session.create_client("medialive").get_waiter("input_deleted")`.
 
 Can be used directly:
 
@@ -167,7 +167,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_medialive.waiter import InputDeletedWaiter
 
 def get_input_deleted_waiter() -> InputDeletedWaiter:
-    return Session().create_client("medialive").get_waiter("input_deleted")
+    return Session().client("medialive").get_waiter("input_deleted")
 ```
 
 Boto3 documentation:
@@ -183,7 +183,7 @@ Arguments for `InputDeletedWaiter.wait` method:
 ## InputDetachedWaiter
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_waiter("input_detached")`.
+`session.create_client("medialive").get_waiter("input_detached")`.
 
 Can be used directly:
 
@@ -193,7 +193,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_medialive.waiter import InputDetachedWaiter
 
 def get_input_detached_waiter() -> InputDetachedWaiter:
-    return Session().create_client("medialive").get_waiter("input_detached")
+    return Session().client("medialive").get_waiter("input_detached")
 ```
 
 Boto3 documentation:
@@ -209,7 +209,7 @@ Arguments for `InputDetachedWaiter.wait` method:
 ## MultiplexCreatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_waiter("multiplex_created")`.
+`session.create_client("medialive").get_waiter("multiplex_created")`.
 
 Can be used directly:
 
@@ -219,7 +219,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_medialive.waiter import MultiplexCreatedWaiter
 
 def get_multiplex_created_waiter() -> MultiplexCreatedWaiter:
-    return Session().create_client("medialive").get_waiter("multiplex_created")
+    return Session().client("medialive").get_waiter("multiplex_created")
 ```
 
 Boto3 documentation:
@@ -235,7 +235,7 @@ Arguments for `MultiplexCreatedWaiter.wait` method:
 ## MultiplexDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_waiter("multiplex_deleted")`.
+`session.create_client("medialive").get_waiter("multiplex_deleted")`.
 
 Can be used directly:
 
@@ -245,7 +245,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_medialive.waiter import MultiplexDeletedWaiter
 
 def get_multiplex_deleted_waiter() -> MultiplexDeletedWaiter:
-    return Session().create_client("medialive").get_waiter("multiplex_deleted")
+    return Session().client("medialive").get_waiter("multiplex_deleted")
 ```
 
 Boto3 documentation:
@@ -261,7 +261,7 @@ Arguments for `MultiplexDeletedWaiter.wait` method:
 ## MultiplexRunningWaiter
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_waiter("multiplex_running")`.
+`session.create_client("medialive").get_waiter("multiplex_running")`.
 
 Can be used directly:
 
@@ -271,7 +271,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_medialive.waiter import MultiplexRunningWaiter
 
 def get_multiplex_running_waiter() -> MultiplexRunningWaiter:
-    return Session().create_client("medialive").get_waiter("multiplex_running")
+    return Session().client("medialive").get_waiter("multiplex_running")
 ```
 
 Boto3 documentation:
@@ -287,7 +287,7 @@ Arguments for `MultiplexRunningWaiter.wait` method:
 ## MultiplexStoppedWaiter
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_waiter("multiplex_stopped")`.
+`session.create_client("medialive").get_waiter("multiplex_stopped")`.
 
 Can be used directly:
 
@@ -297,7 +297,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_medialive.waiter import MultiplexStoppedWaiter
 
 def get_multiplex_stopped_waiter() -> MultiplexStoppedWaiter:
-    return Session().create_client("medialive").get_waiter("multiplex_stopped")
+    return Session().client("medialive").get_waiter("multiplex_stopped")
 ```
 
 Boto3 documentation:

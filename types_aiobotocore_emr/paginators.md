@@ -26,17 +26,19 @@ type annotations stubs module
 ## ListBootstrapActionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("emr").get_paginator("list_bootstrap_actions")`.
+`session.create_client("emr").get_paginator("list_bootstrap_actions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_emr.paginator import ListBootstrapActionsPaginator
 
-def get_list_bootstrap_actions_paginator() -> ListBootstrapActionsPaginator:
-    return Session().create_client("emr").get_paginator("list_bootstrap_actions")
+session = get_session()
+async with session.create_client("emr") as client:
+    client: EMRClient
+    paginator: ListBootstrapActionsPaginator = client.get_paginator("list_bootstrap_actions")
 ```
 
 Boto3 documentation:
@@ -56,17 +58,19 @@ Arguments for `ListBootstrapActionsPaginator.paginate` method:
 ## ListClustersPaginator
 
 Type annotations for
-`aiobotocore.create_client("emr").get_paginator("list_clusters")`.
+`session.create_client("emr").get_paginator("list_clusters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_emr.paginator import ListClustersPaginator
 
-def get_list_clusters_paginator() -> ListClustersPaginator:
-    return Session().create_client("emr").get_paginator("list_clusters")
+session = get_session()
+async with session.create_client("emr") as client:
+    client: EMRClient
+    paginator: ListClustersPaginator = client.get_paginator("list_clusters")
 ```
 
 Boto3 documentation:
@@ -89,17 +93,19 @@ Arguments for `ListClustersPaginator.paginate` method:
 ## ListInstanceFleetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("emr").get_paginator("list_instance_fleets")`.
+`session.create_client("emr").get_paginator("list_instance_fleets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_emr.paginator import ListInstanceFleetsPaginator
 
-def get_list_instance_fleets_paginator() -> ListInstanceFleetsPaginator:
-    return Session().create_client("emr").get_paginator("list_instance_fleets")
+session = get_session()
+async with session.create_client("emr") as client:
+    client: EMRClient
+    paginator: ListInstanceFleetsPaginator = client.get_paginator("list_instance_fleets")
 ```
 
 Boto3 documentation:
@@ -119,17 +125,19 @@ Arguments for `ListInstanceFleetsPaginator.paginate` method:
 ## ListInstanceGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("emr").get_paginator("list_instance_groups")`.
+`session.create_client("emr").get_paginator("list_instance_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_emr.paginator import ListInstanceGroupsPaginator
 
-def get_list_instance_groups_paginator() -> ListInstanceGroupsPaginator:
-    return Session().create_client("emr").get_paginator("list_instance_groups")
+session = get_session()
+async with session.create_client("emr") as client:
+    client: EMRClient
+    paginator: ListInstanceGroupsPaginator = client.get_paginator("list_instance_groups")
 ```
 
 Boto3 documentation:
@@ -149,17 +157,19 @@ Arguments for `ListInstanceGroupsPaginator.paginate` method:
 ## ListInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("emr").get_paginator("list_instances")`.
+`session.create_client("emr").get_paginator("list_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_emr.paginator import ListInstancesPaginator
 
-def get_list_instances_paginator() -> ListInstancesPaginator:
-    return Session().create_client("emr").get_paginator("list_instances")
+session = get_session()
+async with session.create_client("emr") as client:
+    client: EMRClient
+    paginator: ListInstancesPaginator = client.get_paginator("list_instances")
 ```
 
 Boto3 documentation:
@@ -187,17 +197,19 @@ Arguments for `ListInstancesPaginator.paginate` method:
 ## ListNotebookExecutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("emr").get_paginator("list_notebook_executions")`.
+`session.create_client("emr").get_paginator("list_notebook_executions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_emr.paginator import ListNotebookExecutionsPaginator
 
-def get_list_notebook_executions_paginator() -> ListNotebookExecutionsPaginator:
-    return Session().create_client("emr").get_paginator("list_notebook_executions")
+session = get_session()
+async with session.create_client("emr") as client:
+    client: EMRClient
+    paginator: ListNotebookExecutionsPaginator = client.get_paginator("list_notebook_executions")
 ```
 
 Boto3 documentation:
@@ -221,17 +233,19 @@ Arguments for `ListNotebookExecutionsPaginator.paginate` method:
 ## ListSecurityConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("emr").get_paginator("list_security_configurations")`.
+`session.create_client("emr").get_paginator("list_security_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_emr.paginator import ListSecurityConfigurationsPaginator
 
-def get_list_security_configurations_paginator() -> ListSecurityConfigurationsPaginator:
-    return Session().create_client("emr").get_paginator("list_security_configurations")
+session = get_session()
+async with session.create_client("emr") as client:
+    client: EMRClient
+    paginator: ListSecurityConfigurationsPaginator = client.get_paginator("list_security_configurations")
 ```
 
 Boto3 documentation:
@@ -250,17 +264,19 @@ Arguments for `ListSecurityConfigurationsPaginator.paginate` method:
 ## ListStepsPaginator
 
 Type annotations for
-`aiobotocore.create_client("emr").get_paginator("list_steps")`.
+`session.create_client("emr").get_paginator("list_steps")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_emr.paginator import ListStepsPaginator
 
-def get_list_steps_paginator() -> ListStepsPaginator:
-    return Session().create_client("emr").get_paginator("list_steps")
+session = get_session()
+async with session.create_client("emr") as client:
+    client: EMRClient
+    paginator: ListStepsPaginator = client.get_paginator("list_steps")
 ```
 
 Boto3 documentation:
@@ -282,17 +298,19 @@ Arguments for `ListStepsPaginator.paginate` method:
 ## ListStudioSessionMappingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("emr").get_paginator("list_studio_session_mappings")`.
+`session.create_client("emr").get_paginator("list_studio_session_mappings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_emr.paginator import ListStudioSessionMappingsPaginator
 
-def get_list_studio_session_mappings_paginator() -> ListStudioSessionMappingsPaginator:
-    return Session().create_client("emr").get_paginator("list_studio_session_mappings")
+session = get_session()
+async with session.create_client("emr") as client:
+    client: EMRClient
+    paginator: ListStudioSessionMappingsPaginator = client.get_paginator("list_studio_session_mappings")
 ```
 
 Boto3 documentation:
@@ -313,17 +331,19 @@ Arguments for `ListStudioSessionMappingsPaginator.paginate` method:
 ## ListStudiosPaginator
 
 Type annotations for
-`aiobotocore.create_client("emr").get_paginator("list_studios")`.
+`session.create_client("emr").get_paginator("list_studios")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_emr.paginator import ListStudiosPaginator
 
-def get_list_studios_paginator() -> ListStudiosPaginator:
-    return Session().create_client("emr").get_paginator("list_studios")
+session = get_session()
+async with session.create_client("emr") as client:
+    client: EMRClient
+    paginator: ListStudiosPaginator = client.get_paginator("list_studios")
 ```
 
 Boto3 documentation:

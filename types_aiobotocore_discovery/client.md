@@ -42,22 +42,25 @@ type annotations stubs module
     - [stop_continuous_export](#stop_continuous_export)
     - [stop_data_collection_by_agent_ids](#stop_data_collection_by_agent_ids)
     - [update_application](#update_application)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="applicationdiscoveryserviceclient"></a>
 
 ## ApplicationDiscoveryServiceClient
 
-Type annotations for `aiobotocore.create_client("discovery")`
+Type annotations for `session.create_client("discovery")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_discovery.client import ApplicationDiscoveryServiceClient
 
-def get_discovery_client() -> ApplicationDiscoveryServiceClient:
-    return Session().client("discovery")
+session = get_session()
+async with session.create_client("discovery") as client:
+    client: ApplicationDiscoveryServiceClient
 ```
 
 Boto3 documentation:
@@ -100,8 +103,7 @@ Exceptions:
 
 ApplicationDiscoveryServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("discovery").exceptions`
-method.
+Type annotations for `session.create_client("discovery").exceptions` method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.exceptions)
@@ -115,7 +117,7 @@ Returns [Exceptions](#exceptions).
 Associates one or more configuration items with an application.
 
 Type annotations for
-`aiobotocore.create_client("discovery").associate_configuration_items_to_application`
+`session.create_client("discovery").associate_configuration_items_to_application`
 method.
 
 Boto3 documentation:
@@ -142,7 +144,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes one or more import tasks, each identified by their import ID.
 
 Type annotations for
-`aiobotocore.create_client("discovery").batch_delete_import_data` method.
+`session.create_client("discovery").batch_delete_import_data` method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.batch_delete_import_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.batch_delete_import_data)
@@ -166,19 +168,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("discovery").can_paginate`
-method.
+Type annotations for `session.create_client("discovery").can_paginate` method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_application"></a>
 
@@ -186,8 +185,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates an application with the given name and description.
 
-Type annotations for
-`aiobotocore.create_client("discovery").create_application` method.
+Type annotations for `session.create_client("discovery").create_application`
+method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.create_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.create_application)
@@ -212,8 +211,7 @@ Returns a `Coroutine` for
 
 Creates one or more tags for configuration items.
 
-Type annotations for `aiobotocore.create_client("discovery").create_tags`
-method.
+Type annotations for `session.create_client("discovery").create_tags` method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.create_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.create_tags)
@@ -236,8 +234,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a list of applications and their associations with configuration items.
 
-Type annotations for
-`aiobotocore.create_client("discovery").delete_applications` method.
+Type annotations for `session.create_client("discovery").delete_applications`
+method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.delete_applications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.delete_applications)
@@ -260,8 +258,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the association between configuration items and one or more tags.
 
-Type annotations for `aiobotocore.create_client("discovery").delete_tags`
-method.
+Type annotations for `session.create_client("discovery").delete_tags` method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.delete_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.delete_tags)
@@ -284,7 +281,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Lists agents or connectors as specified by ID or other filters.
 
-Type annotations for `aiobotocore.create_client("discovery").describe_agents`
+Type annotations for `session.create_client("discovery").describe_agents`
 method.
 
 Boto3 documentation:
@@ -312,7 +309,7 @@ Returns a `Coroutine` for
 Retrieves attributes for a list of configuration item IDs.
 
 Type annotations for
-`aiobotocore.create_client("discovery").describe_configurations` method.
+`session.create_client("discovery").describe_configurations` method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.describe_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.describe_configurations)
@@ -337,7 +334,7 @@ Returns a `Coroutine` for
 Lists exports as specified by ID.
 
 Type annotations for
-`aiobotocore.create_client("discovery").describe_continuous_exports` method.
+`session.create_client("discovery").describe_continuous_exports` method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.describe_continuous_exports](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.describe_continuous_exports)
@@ -364,7 +361,7 @@ Returns a `Coroutine` for
 `DescribeExportConfigurations` is deprecated.
 
 Type annotations for
-`aiobotocore.create_client("discovery").describe_export_configurations` method.
+`session.create_client("discovery").describe_export_configurations` method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.describe_export_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.describe_export_configurations)
@@ -390,8 +387,8 @@ Returns a `Coroutine` for
 
 Retrieve status of one or more export tasks.
 
-Type annotations for
-`aiobotocore.create_client("discovery").describe_export_tasks` method.
+Type annotations for `session.create_client("discovery").describe_export_tasks`
+method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.describe_export_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.describe_export_tasks)
@@ -421,8 +418,8 @@ Returns an array of import tasks for your account, including status
 information, times, IDs, the Amazon S3 Object URL for the import file, and
 more.
 
-Type annotations for
-`aiobotocore.create_client("discovery").describe_import_tasks` method.
+Type annotations for `session.create_client("discovery").describe_import_tasks`
+method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.describe_import_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.describe_import_tasks)
@@ -450,8 +447,7 @@ Returns a `Coroutine` for
 Retrieves a list of configuration items that have tags as specified by the key-
 value pairs, name and value, passed to the optional parameter `filters` .
 
-Type annotations for `aiobotocore.create_client("discovery").describe_tags`
-method.
+Type annotations for `session.create_client("discovery").describe_tags` method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.describe_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.describe_tags)
@@ -477,7 +473,7 @@ Returns a `Coroutine` for
 Disassociates one or more configuration items from an application.
 
 Type annotations for
-`aiobotocore.create_client("discovery").disassociate_configuration_items_from_application`
+`session.create_client("discovery").disassociate_configuration_items_from_application`
 method.
 
 Boto3 documentation:
@@ -503,8 +499,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deprecated.
 
-Type annotations for
-`aiobotocore.create_client("discovery").export_configurations` method.
+Type annotations for `session.create_client("discovery").export_configurations`
+method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.export_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.export_configurations)
@@ -522,7 +518,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("discovery").generate_presigned_url` method.
+`session.create_client("discovery").generate_presigned_url` method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.generate_presigned_url)
@@ -545,8 +541,8 @@ Returns a `Coroutine` for `str`.
 
 Retrieves a short summary of discovered assets.
 
-Type annotations for
-`aiobotocore.create_client("discovery").get_discovery_summary` method.
+Type annotations for `session.create_client("discovery").get_discovery_summary`
+method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.get_discovery_summary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.get_discovery_summary)
@@ -564,8 +560,8 @@ Returns a `Coroutine` for
 Retrieves a list of configuration items as specified by the value passed to the
 required parameter `configurationType`.
 
-Type annotations for
-`aiobotocore.create_client("discovery").list_configurations` method.
+Type annotations for `session.create_client("discovery").list_configurations`
+method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.list_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.list_configurations)
@@ -597,8 +593,8 @@ Returns a `Coroutine` for
 Retrieves a list of servers that are one network hop away from a specified
 server.
 
-Type annotations for
-`aiobotocore.create_client("discovery").list_server_neighbors` method.
+Type annotations for `session.create_client("discovery").list_server_neighbors`
+method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.list_server_neighbors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.list_server_neighbors)
@@ -627,7 +623,7 @@ Returns a `Coroutine` for
 Start the continuous flow of agent's discovered data into Amazon Athena.
 
 Type annotations for
-`aiobotocore.create_client("discovery").start_continuous_export` method.
+`session.create_client("discovery").start_continuous_export` method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.start_continuous_export](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.start_continuous_export)
@@ -645,8 +641,7 @@ Returns a `Coroutine` for
 Instructs the specified agents or connectors to start collecting data.
 
 Type annotations for
-`aiobotocore.create_client("discovery").start_data_collection_by_agent_ids`
-method.
+`session.create_client("discovery").start_data_collection_by_agent_ids` method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.start_data_collection_by_agent_ids](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.start_data_collection_by_agent_ids)
@@ -670,7 +665,7 @@ Returns a `Coroutine` for
 
 Begins the export of discovered data to an S3 bucket.
 
-Type annotations for `aiobotocore.create_client("discovery").start_export_task`
+Type annotations for `session.create_client("discovery").start_export_task`
 method.
 
 Boto3 documentation:
@@ -702,7 +697,7 @@ environment directly into AWS Migration Hub without having to use the
 Application Discovery Service (ADS) tools such as the Discovery Connector or
 Discovery Agent.
 
-Type annotations for `aiobotocore.create_client("discovery").start_import_task`
+Type annotations for `session.create_client("discovery").start_import_task`
 method.
 
 Boto3 documentation:
@@ -729,7 +724,7 @@ Returns a `Coroutine` for
 Stop the continuous flow of agent's discovered data into Amazon Athena.
 
 Type annotations for
-`aiobotocore.create_client("discovery").stop_continuous_export` method.
+`session.create_client("discovery").stop_continuous_export` method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.stop_continuous_export](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.stop_continuous_export)
@@ -754,8 +749,7 @@ Returns a `Coroutine` for
 Instructs the specified agents or connectors to stop collecting data.
 
 Type annotations for
-`aiobotocore.create_client("discovery").stop_data_collection_by_agent_ids`
-method.
+`session.create_client("discovery").stop_data_collection_by_agent_ids` method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.stop_data_collection_by_agent_ids](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.stop_data_collection_by_agent_ids)
@@ -779,8 +773,8 @@ Returns a `Coroutine` for
 
 Updates metadata about an application.
 
-Type annotations for
-`aiobotocore.create_client("discovery").update_application` method.
+Type annotations for `session.create_client("discovery").update_application`
+method.
 
 Boto3 documentation:
 [ApplicationDiscoveryService.Client.update_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.update_application)
@@ -799,12 +793,45 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("discovery").__aenter__` method.
+
+Boto3 documentation:
+[ApplicationDiscoveryService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[ApplicationDiscoveryServiceClient](#applicationdiscoveryserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("discovery").__aexit__` method.
+
+Boto3 documentation:
+[ApplicationDiscoveryService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/discovery.html#ApplicationDiscoveryService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("discovery").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("discovery").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_agents")` ->
   [DescribeAgentsPaginator](./paginators.md#describeagentspaginator)

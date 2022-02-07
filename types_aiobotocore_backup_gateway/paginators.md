@@ -19,17 +19,19 @@ type annotations stubs module
 ## ListGatewaysPaginator
 
 Type annotations for
-`aiobotocore.create_client("backup-gateway").get_paginator("list_gateways")`.
+`session.create_client("backup-gateway").get_paginator("list_gateways")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_backup_gateway.paginator import ListGatewaysPaginator
 
-def get_list_gateways_paginator() -> ListGatewaysPaginator:
-    return Session().create_client("backup-gateway").get_paginator("list_gateways")
+session = get_session()
+async with session.create_client("backup-gateway") as client:
+    client: BackupGatewayClient
+    paginator: ListGatewaysPaginator = client.get_paginator("list_gateways")
 ```
 
 Boto3 documentation:
@@ -48,17 +50,19 @@ Arguments for `ListGatewaysPaginator.paginate` method:
 ## ListHypervisorsPaginator
 
 Type annotations for
-`aiobotocore.create_client("backup-gateway").get_paginator("list_hypervisors")`.
+`session.create_client("backup-gateway").get_paginator("list_hypervisors")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_backup_gateway.paginator import ListHypervisorsPaginator
 
-def get_list_hypervisors_paginator() -> ListHypervisorsPaginator:
-    return Session().create_client("backup-gateway").get_paginator("list_hypervisors")
+session = get_session()
+async with session.create_client("backup-gateway") as client:
+    client: BackupGatewayClient
+    paginator: ListHypervisorsPaginator = client.get_paginator("list_hypervisors")
 ```
 
 Boto3 documentation:
@@ -77,17 +81,19 @@ Arguments for `ListHypervisorsPaginator.paginate` method:
 ## ListVirtualMachinesPaginator
 
 Type annotations for
-`aiobotocore.create_client("backup-gateway").get_paginator("list_virtual_machines")`.
+`session.create_client("backup-gateway").get_paginator("list_virtual_machines")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_backup_gateway.paginator import ListVirtualMachinesPaginator
 
-def get_list_virtual_machines_paginator() -> ListVirtualMachinesPaginator:
-    return Session().create_client("backup-gateway").get_paginator("list_virtual_machines")
+session = get_session()
+async with session.create_client("backup-gateway") as client:
+    client: BackupGatewayClient
+    paginator: ListVirtualMachinesPaginator = client.get_paginator("list_virtual_machines")
 ```
 
 Boto3 documentation:

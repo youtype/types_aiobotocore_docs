@@ -54,22 +54,25 @@ type annotations stubs module
     - [update_location_smb](#update_location_smb)
     - [update_task](#update_task)
     - [update_task_execution](#update_task_execution)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="datasyncclient"></a>
 
 ## DataSyncClient
 
-Type annotations for `aiobotocore.create_client("datasync")`
+Type annotations for `session.create_client("datasync")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_datasync.client import DataSyncClient
 
-def get_datasync_client() -> DataSyncClient:
-    return Session().client("datasync")
+session = get_session()
+async with session.create_client("datasync") as client:
+    client: DataSyncClient
 ```
 
 Boto3 documentation:
@@ -105,7 +108,7 @@ Exceptions:
 
 DataSyncClient exceptions.
 
-Type annotations for `aiobotocore.create_client("datasync").exceptions` method.
+Type annotations for `session.create_client("datasync").exceptions` method.
 
 Boto3 documentation:
 [DataSync.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.exceptions)
@@ -118,19 +121,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("datasync").can_paginate`
-method.
+Type annotations for `session.create_client("datasync").can_paginate` method.
 
 Boto3 documentation:
 [DataSync.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_task_execution"></a>
 
@@ -138,8 +138,8 @@ Returns a `Coroutine` for `bool`.
 
 Cancels execution of a task.
 
-Type annotations for
-`aiobotocore.create_client("datasync").cancel_task_execution` method.
+Type annotations for `session.create_client("datasync").cancel_task_execution`
+method.
 
 Boto3 documentation:
 [DataSync.Client.cancel_task_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.cancel_task_execution)
@@ -162,8 +162,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Activates an DataSync agent that you have deployed on your host.
 
-Type annotations for `aiobotocore.create_client("datasync").create_agent`
-method.
+Type annotations for `session.create_client("datasync").create_agent` method.
 
 Boto3 documentation:
 [DataSync.Client.create_agent](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.create_agent)
@@ -192,8 +191,8 @@ Returns a `Coroutine` for
 
 Creates an endpoint for an Amazon EFS file system.
 
-Type annotations for
-`aiobotocore.create_client("datasync").create_location_efs` method.
+Type annotations for `session.create_client("datasync").create_location_efs`
+method.
 
 Boto3 documentation:
 [DataSync.Client.create_location_efs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.create_location_efs)
@@ -222,7 +221,7 @@ Returns a `Coroutine` for
 Creates an endpoint for an Amazon FSx for Windows File Server file system.
 
 Type annotations for
-`aiobotocore.create_client("datasync").create_location_fsx_windows` method.
+`session.create_client("datasync").create_location_fsx_windows` method.
 
 Boto3 documentation:
 [DataSync.Client.create_location_fsx_windows](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.create_location_fsx_windows)
@@ -253,8 +252,8 @@ Returns a `Coroutine` for
 
 Creates an endpoint for a Hadoop Distributed File System (HDFS).
 
-Type annotations for
-`aiobotocore.create_client("datasync").create_location_hdfs` method.
+Type annotations for `session.create_client("datasync").create_location_hdfs`
+method.
 
 Boto3 documentation:
 [DataSync.Client.create_location_hdfs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.create_location_hdfs)
@@ -297,8 +296,8 @@ Returns a `Coroutine` for
 Defines a file system on a Network File System (NFS) server that can be read
 from or written to.
 
-Type annotations for
-`aiobotocore.create_client("datasync").create_location_nfs` method.
+Type annotations for `session.create_client("datasync").create_location_nfs`
+method.
 
 Boto3 documentation:
 [DataSync.Client.create_location_nfs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.create_location_nfs)
@@ -330,7 +329,7 @@ Returns a `Coroutine` for
 Creates an endpoint for a self-managed object storage bucket.
 
 Type annotations for
-`aiobotocore.create_client("datasync").create_location_object_storage` method.
+`session.create_client("datasync").create_location_object_storage` method.
 
 Boto3 documentation:
 [DataSync.Client.create_location_object_storage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.create_location_object_storage)
@@ -364,7 +363,7 @@ Returns a `Coroutine` for
 
 Creates an endpoint for an Amazon S3 bucket.
 
-Type annotations for `aiobotocore.create_client("datasync").create_location_s3`
+Type annotations for `session.create_client("datasync").create_location_s3`
 method.
 
 Boto3 documentation:
@@ -396,8 +395,8 @@ Returns a `Coroutine` for
 Defines a file system on a Server Message Block (SMB) server that can be read
 from or written to.
 
-Type annotations for
-`aiobotocore.create_client("datasync").create_location_smb` method.
+Type annotations for `session.create_client("datasync").create_location_smb`
+method.
 
 Boto3 documentation:
 [DataSync.Client.create_location_smb](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.create_location_smb)
@@ -430,8 +429,7 @@ Returns a `Coroutine` for
 
 Creates a task.
 
-Type annotations for `aiobotocore.create_client("datasync").create_task`
-method.
+Type annotations for `session.create_client("datasync").create_task` method.
 
 Boto3 documentation:
 [DataSync.Client.create_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.create_task)
@@ -465,8 +463,7 @@ Returns a `Coroutine` for
 
 Deletes an agent.
 
-Type annotations for `aiobotocore.create_client("datasync").delete_agent`
-method.
+Type annotations for `session.create_client("datasync").delete_agent` method.
 
 Boto3 documentation:
 [DataSync.Client.delete_agent](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.delete_agent)
@@ -488,7 +485,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the configuration of a location used by DataSync.
 
-Type annotations for `aiobotocore.create_client("datasync").delete_location`
+Type annotations for `session.create_client("datasync").delete_location`
 method.
 
 Boto3 documentation:
@@ -511,8 +508,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a task.
 
-Type annotations for `aiobotocore.create_client("datasync").delete_task`
-method.
+Type annotations for `session.create_client("datasync").delete_task` method.
 
 Boto3 documentation:
 [DataSync.Client.delete_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.delete_task)
@@ -535,8 +531,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Returns metadata such as the name, the network interfaces, and the status (that
 is, whether the agent is running or not) for an agent.
 
-Type annotations for `aiobotocore.create_client("datasync").describe_agent`
-method.
+Type annotations for `session.create_client("datasync").describe_agent` method.
 
 Boto3 documentation:
 [DataSync.Client.describe_agent](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.describe_agent)
@@ -559,8 +554,8 @@ Returns a `Coroutine` for
 
 Returns metadata, such as the path information about an Amazon EFS location.
 
-Type annotations for
-`aiobotocore.create_client("datasync").describe_location_efs` method.
+Type annotations for `session.create_client("datasync").describe_location_efs`
+method.
 
 Boto3 documentation:
 [DataSync.Client.describe_location_efs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.describe_location_efs)
@@ -586,7 +581,7 @@ Returns metadata, such as the path information about an Amazon FSx for Windows
 File Server location.
 
 Type annotations for
-`aiobotocore.create_client("datasync").describe_location_fsx_windows` method.
+`session.create_client("datasync").describe_location_fsx_windows` method.
 
 Boto3 documentation:
 [DataSync.Client.describe_location_fsx_windows](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.describe_location_fsx_windows)
@@ -611,8 +606,8 @@ Returns a `Coroutine` for
 Returns metadata, such as the authentication information about the Hadoop
 Distributed File System (HDFS) location.
 
-Type annotations for
-`aiobotocore.create_client("datasync").describe_location_hdfs` method.
+Type annotations for `session.create_client("datasync").describe_location_hdfs`
+method.
 
 Boto3 documentation:
 [DataSync.Client.describe_location_hdfs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.describe_location_hdfs)
@@ -636,8 +631,8 @@ Returns a `Coroutine` for
 
 Returns metadata, such as the path information, about an NFS location.
 
-Type annotations for
-`aiobotocore.create_client("datasync").describe_location_nfs` method.
+Type annotations for `session.create_client("datasync").describe_location_nfs`
+method.
 
 Boto3 documentation:
 [DataSync.Client.describe_location_nfs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.describe_location_nfs)
@@ -662,8 +657,7 @@ Returns a `Coroutine` for
 Returns metadata about a self-managed object storage server location.
 
 Type annotations for
-`aiobotocore.create_client("datasync").describe_location_object_storage`
-method.
+`session.create_client("datasync").describe_location_object_storage` method.
 
 Boto3 documentation:
 [DataSync.Client.describe_location_object_storage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.describe_location_object_storage)
@@ -687,8 +681,8 @@ Returns a `Coroutine` for
 
 Returns metadata, such as bucket name, about an Amazon S3 bucket location.
 
-Type annotations for
-`aiobotocore.create_client("datasync").describe_location_s3` method.
+Type annotations for `session.create_client("datasync").describe_location_s3`
+method.
 
 Boto3 documentation:
 [DataSync.Client.describe_location_s3](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.describe_location_s3)
@@ -712,8 +706,8 @@ Returns a `Coroutine` for
 
 Returns metadata, such as the path and user information about an SMB location.
 
-Type annotations for
-`aiobotocore.create_client("datasync").describe_location_smb` method.
+Type annotations for `session.create_client("datasync").describe_location_smb`
+method.
 
 Boto3 documentation:
 [DataSync.Client.describe_location_smb](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.describe_location_smb)
@@ -737,8 +731,7 @@ Returns a `Coroutine` for
 
 Returns metadata about a task.
 
-Type annotations for `aiobotocore.create_client("datasync").describe_task`
-method.
+Type annotations for `session.create_client("datasync").describe_task` method.
 
 Boto3 documentation:
 [DataSync.Client.describe_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.describe_task)
@@ -762,7 +755,7 @@ Returns a `Coroutine` for
 Returns detailed metadata about a task that is being executed.
 
 Type annotations for
-`aiobotocore.create_client("datasync").describe_task_execution` method.
+`session.create_client("datasync").describe_task_execution` method.
 
 Boto3 documentation:
 [DataSync.Client.describe_task_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.describe_task_execution)
@@ -786,8 +779,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("datasync").generate_presigned_url` method.
+Type annotations for `session.create_client("datasync").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [DataSync.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.generate_presigned_url)
@@ -811,8 +804,7 @@ Returns a `Coroutine` for `str`.
 Returns a list of agents owned by an Amazon Web Services account in the Amazon
 Web Services Region specified in the request.
 
-Type annotations for `aiobotocore.create_client("datasync").list_agents`
-method.
+Type annotations for `session.create_client("datasync").list_agents` method.
 
 Boto3 documentation:
 [DataSync.Client.list_agents](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.list_agents)
@@ -836,8 +828,7 @@ Returns a `Coroutine` for
 
 Returns a list of source and destination locations.
 
-Type annotations for `aiobotocore.create_client("datasync").list_locations`
-method.
+Type annotations for `session.create_client("datasync").list_locations` method.
 
 Boto3 documentation:
 [DataSync.Client.list_locations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.list_locations)
@@ -863,8 +854,8 @@ Returns a `Coroutine` for
 
 Returns all the tags associated with a specified resource.
 
-Type annotations for
-`aiobotocore.create_client("datasync").list_tags_for_resource` method.
+Type annotations for `session.create_client("datasync").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [DataSync.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.list_tags_for_resource)
@@ -890,8 +881,8 @@ Returns a `Coroutine` for
 
 Returns a list of executed tasks.
 
-Type annotations for
-`aiobotocore.create_client("datasync").list_task_executions` method.
+Type annotations for `session.create_client("datasync").list_task_executions`
+method.
 
 Boto3 documentation:
 [DataSync.Client.list_task_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.list_task_executions)
@@ -917,7 +908,7 @@ Returns a `Coroutine` for
 
 Returns a list of all the tasks.
 
-Type annotations for `aiobotocore.create_client("datasync").list_tasks` method.
+Type annotations for `session.create_client("datasync").list_tasks` method.
 
 Boto3 documentation:
 [DataSync.Client.list_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.list_tasks)
@@ -943,8 +934,8 @@ Returns a `Coroutine` for
 
 Starts a specific invocation of a task.
 
-Type annotations for
-`aiobotocore.create_client("datasync").start_task_execution` method.
+Type annotations for `session.create_client("datasync").start_task_execution`
+method.
 
 Boto3 documentation:
 [DataSync.Client.start_task_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.start_task_execution)
@@ -973,8 +964,7 @@ Returns a `Coroutine` for
 
 Applies a key-value pair to an Amazon Web Services resource.
 
-Type annotations for `aiobotocore.create_client("datasync").tag_resource`
-method.
+Type annotations for `session.create_client("datasync").tag_resource` method.
 
 Boto3 documentation:
 [DataSync.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.tag_resource)
@@ -999,8 +989,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes a tag from an Amazon Web Services resource.
 
-Type annotations for `aiobotocore.create_client("datasync").untag_resource`
-method.
+Type annotations for `session.create_client("datasync").untag_resource` method.
 
 Boto3 documentation:
 [DataSync.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.untag_resource)
@@ -1023,8 +1012,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the name of an agent.
 
-Type annotations for `aiobotocore.create_client("datasync").update_agent`
-method.
+Type annotations for `session.create_client("datasync").update_agent` method.
 
 Boto3 documentation:
 [DataSync.Client.update_agent](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.update_agent)
@@ -1048,8 +1036,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates some parameters of a previously created location for a Hadoop
 Distributed File System cluster.
 
-Type annotations for
-`aiobotocore.create_client("datasync").update_location_hdfs` method.
+Type annotations for `session.create_client("datasync").update_location_hdfs`
+method.
 
 Boto3 documentation:
 [DataSync.Client.update_location_hdfs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.update_location_hdfs)
@@ -1088,8 +1076,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates some of the parameters of a previously created location for Network
 File System (NFS) access.
 
-Type annotations for
-`aiobotocore.create_client("datasync").update_location_nfs` method.
+Type annotations for `session.create_client("datasync").update_location_nfs`
+method.
 
 Boto3 documentation:
 [DataSync.Client.update_location_nfs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.update_location_nfs)
@@ -1118,7 +1106,7 @@ Updates some of the parameters of a previously created location for
 self-managed object storage server access.
 
 Type annotations for
-`aiobotocore.create_client("datasync").update_location_object_storage` method.
+`session.create_client("datasync").update_location_object_storage` method.
 
 Boto3 documentation:
 [DataSync.Client.update_location_object_storage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.update_location_object_storage)
@@ -1149,8 +1137,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates some of the parameters of a previously created location for Server
 Message Block (SMB) file system access.
 
-Type annotations for
-`aiobotocore.create_client("datasync").update_location_smb` method.
+Type annotations for `session.create_client("datasync").update_location_smb`
+method.
 
 Boto3 documentation:
 [DataSync.Client.update_location_smb](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.update_location_smb)
@@ -1180,8 +1168,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the metadata associated with a task.
 
-Type annotations for `aiobotocore.create_client("datasync").update_task`
-method.
+Type annotations for `session.create_client("datasync").update_task` method.
 
 Boto3 documentation:
 [DataSync.Client.update_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.update_task)
@@ -1211,8 +1198,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates execution of a task.
 
-Type annotations for
-`aiobotocore.create_client("datasync").update_task_execution` method.
+Type annotations for `session.create_client("datasync").update_task_execution`
+method.
 
 Boto3 documentation:
 [DataSync.Client.update_task_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.update_task_execution)
@@ -1230,12 +1217,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("datasync").__aenter__` method.
+
+Boto3 documentation:
+[DataSync.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [DataSyncClient](#datasyncclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("datasync").__aexit__` method.
+
+Boto3 documentation:
+[DataSync.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html#DataSync.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("datasync").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("datasync").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_agents")` ->
   [ListAgentsPaginator](./paginators.md#listagentspaginator)

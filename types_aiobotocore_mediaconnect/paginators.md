@@ -20,17 +20,19 @@ type annotations stubs module
 ## ListEntitlementsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").get_paginator("list_entitlements")`.
+`session.create_client("mediaconnect").get_paginator("list_entitlements")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediaconnect.paginator import ListEntitlementsPaginator
 
-def get_list_entitlements_paginator() -> ListEntitlementsPaginator:
-    return Session().create_client("mediaconnect").get_paginator("list_entitlements")
+session = get_session()
+async with session.create_client("mediaconnect") as client:
+    client: MediaConnectClient
+    paginator: ListEntitlementsPaginator = client.get_paginator("list_entitlements")
 ```
 
 Boto3 documentation:
@@ -49,17 +51,19 @@ Arguments for `ListEntitlementsPaginator.paginate` method:
 ## ListFlowsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").get_paginator("list_flows")`.
+`session.create_client("mediaconnect").get_paginator("list_flows")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediaconnect.paginator import ListFlowsPaginator
 
-def get_list_flows_paginator() -> ListFlowsPaginator:
-    return Session().create_client("mediaconnect").get_paginator("list_flows")
+session = get_session()
+async with session.create_client("mediaconnect") as client:
+    client: MediaConnectClient
+    paginator: ListFlowsPaginator = client.get_paginator("list_flows")
 ```
 
 Boto3 documentation:
@@ -78,17 +82,19 @@ Arguments for `ListFlowsPaginator.paginate` method:
 ## ListOfferingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").get_paginator("list_offerings")`.
+`session.create_client("mediaconnect").get_paginator("list_offerings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediaconnect.paginator import ListOfferingsPaginator
 
-def get_list_offerings_paginator() -> ListOfferingsPaginator:
-    return Session().create_client("mediaconnect").get_paginator("list_offerings")
+session = get_session()
+async with session.create_client("mediaconnect") as client:
+    client: MediaConnectClient
+    paginator: ListOfferingsPaginator = client.get_paginator("list_offerings")
 ```
 
 Boto3 documentation:
@@ -107,17 +113,19 @@ Arguments for `ListOfferingsPaginator.paginate` method:
 ## ListReservationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").get_paginator("list_reservations")`.
+`session.create_client("mediaconnect").get_paginator("list_reservations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediaconnect.paginator import ListReservationsPaginator
 
-def get_list_reservations_paginator() -> ListReservationsPaginator:
-    return Session().create_client("mediaconnect").get_paginator("list_reservations")
+session = get_session()
+async with session.create_client("mediaconnect") as client:
+    client: MediaConnectClient
+    paginator: ListReservationsPaginator = client.get_paginator("list_reservations")
 ```
 
 Boto3 documentation:

@@ -17,7 +17,7 @@ type annotations stubs module
 ## ResourceRequestSuccessWaiter
 
 Type annotations for
-`aiobotocore.create_client("cloudcontrol").get_waiter("resource_request_success")`.
+`session.create_client("cloudcontrol").get_waiter("resource_request_success")`.
 
 Can be used directly:
 
@@ -27,7 +27,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_cloudcontrol.waiter import ResourceRequestSuccessWaiter
 
 def get_resource_request_success_waiter() -> ResourceRequestSuccessWaiter:
-    return Session().create_client("cloudcontrol").get_waiter("resource_request_success")
+    return Session().client("cloudcontrol").get_waiter("resource_request_success")
 ```
 
 Boto3 documentation:

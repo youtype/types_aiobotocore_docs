@@ -45,6 +45,8 @@ type annotations stubs module
     - [update_replication_set](#update_replication_set)
     - [update_response_plan](#update_response_plan)
     - [update_timeline_event](#update_timeline_event)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -52,16 +54,17 @@ type annotations stubs module
 
 ## SSMIncidentsClient
 
-Type annotations for `aiobotocore.create_client("ssm-incidents")`
+Type annotations for `session.create_client("ssm-incidents")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_ssm_incidents.client import SSMIncidentsClient
 
-def get_ssm-incidents_client() -> SSMIncidentsClient:
-    return Session().client("ssm-incidents")
+session = get_session()
+async with session.create_client("ssm-incidents") as client:
+    client: SSMIncidentsClient
 ```
 
 Boto3 documentation:
@@ -102,7 +105,7 @@ Exceptions:
 
 SSMIncidentsClient exceptions.
 
-Type annotations for `aiobotocore.create_client("ssm-incidents").exceptions`
+Type annotations for `session.create_client("ssm-incidents").exceptions`
 method.
 
 Boto3 documentation:
@@ -116,19 +119,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("ssm-incidents").can_paginate`
+Type annotations for `session.create_client("ssm-incidents").can_paginate`
 method.
 
 Boto3 documentation:
 [SSMIncidents.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_replication_set"></a>
 
@@ -138,7 +139,7 @@ A replication set replicates and encrypts your data to the provided Regions
 with the provided KMS key.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").create_replication_set` method.
+`session.create_client("ssm-incidents").create_replication_set` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.create_replication_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.create_replication_set)
@@ -166,7 +167,7 @@ Returns a `Coroutine` for
 Creates a response plan that automates the initial response to incidents.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").create_response_plan` method.
+`session.create_client("ssm-incidents").create_response_plan` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.create_response_plan](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.create_response_plan)
@@ -201,7 +202,7 @@ Creates a custom timeline event on the incident details page of an incident
 record.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").create_timeline_event` method.
+`session.create_client("ssm-incidents").create_timeline_event` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.create_timeline_event](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.create_timeline_event)
@@ -230,7 +231,7 @@ Returns a `Coroutine` for
 Delete an incident record from Incident Manager.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").delete_incident_record` method.
+`session.create_client("ssm-incidents").delete_incident_record` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.delete_incident_record](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.delete_incident_record)
@@ -254,7 +255,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes all Regions in your replication set.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").delete_replication_set` method.
+`session.create_client("ssm-incidents").delete_replication_set` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.delete_replication_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.delete_replication_set)
@@ -279,7 +280,7 @@ Deletes the resource policy that Resource Access Manager uses to share your
 Incident Manager resource.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").delete_resource_policy` method.
+`session.create_client("ssm-incidents").delete_resource_policy` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.delete_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.delete_resource_policy)
@@ -304,7 +305,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified response plan.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").delete_response_plan` method.
+`session.create_client("ssm-incidents").delete_response_plan` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.delete_response_plan](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.delete_response_plan)
@@ -328,7 +329,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a timeline event from an incident.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").delete_timeline_event` method.
+`session.create_client("ssm-incidents").delete_timeline_event` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.delete_timeline_event](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.delete_timeline_event)
@@ -353,7 +354,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").generate_presigned_url` method.
+`session.create_client("ssm-incidents").generate_presigned_url` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.generate_presigned_url)
@@ -377,7 +378,7 @@ Returns a `Coroutine` for `str`.
 Returns the details for the specified incident record.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").get_incident_record` method.
+`session.create_client("ssm-incidents").get_incident_record` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.get_incident_record](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.get_incident_record)
@@ -402,7 +403,7 @@ Returns a `Coroutine` for
 Retrieve your Incident Manager replication set.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").get_replication_set` method.
+`session.create_client("ssm-incidents").get_replication_set` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.get_replication_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.get_replication_set)
@@ -427,7 +428,7 @@ Returns a `Coroutine` for
 Retrieves the resource policies attached to the specified response plan.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").get_resource_policies` method.
+`session.create_client("ssm-incidents").get_resource_policies` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.get_resource_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.get_resource_policies)
@@ -453,8 +454,8 @@ Returns a `Coroutine` for
 
 Retrieves the details of the specified response plan.
 
-Type annotations for
-`aiobotocore.create_client("ssm-incidents").get_response_plan` method.
+Type annotations for `session.create_client("ssm-incidents").get_response_plan`
+method.
 
 Boto3 documentation:
 [SSMIncidents.Client.get_response_plan](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.get_response_plan)
@@ -478,7 +479,7 @@ Returns a `Coroutine` for
 Retrieves a timeline event based on its ID and incident record.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").get_timeline_event` method.
+`session.create_client("ssm-incidents").get_timeline_event` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.get_timeline_event](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.get_timeline_event)
@@ -504,7 +505,7 @@ Returns a `Coroutine` for
 Lists all incident records in your account.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").list_incident_records` method.
+`session.create_client("ssm-incidents").list_incident_records` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.list_incident_records](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.list_incident_records)
@@ -531,7 +532,7 @@ Returns a `Coroutine` for
 List all related items for an incident record.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").list_related_items` method.
+`session.create_client("ssm-incidents").list_related_items` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.list_related_items](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.list_related_items)
@@ -558,7 +559,7 @@ Returns a `Coroutine` for
 Lists details about the replication set configured in your account.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").list_replication_sets` method.
+`session.create_client("ssm-incidents").list_replication_sets` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.list_replication_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.list_replication_sets)
@@ -584,7 +585,7 @@ Returns a `Coroutine` for
 Lists all response plans in your account.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").list_response_plans` method.
+`session.create_client("ssm-incidents").list_response_plans` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.list_response_plans](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.list_response_plans)
@@ -610,7 +611,7 @@ Returns a `Coroutine` for
 Lists the tags that are attached to the specified response plan.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").list_tags_for_resource` method.
+`session.create_client("ssm-incidents").list_tags_for_resource` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.list_tags_for_resource)
@@ -635,7 +636,7 @@ Returns a `Coroutine` for
 Lists timeline events for the specified incident record.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").list_timeline_events` method.
+`session.create_client("ssm-incidents").list_timeline_events` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.list_timeline_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.list_timeline_events)
@@ -666,7 +667,7 @@ Returns a `Coroutine` for
 Adds a resource policy to the specified response plan.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").put_resource_policy` method.
+`session.create_client("ssm-incidents").put_resource_policy` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.put_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.put_resource_policy)
@@ -692,8 +693,8 @@ Returns a `Coroutine` for
 Used to start an incident from CloudWatch alarms, EventBridge events, or
 manually.
 
-Type annotations for
-`aiobotocore.create_client("ssm-incidents").start_incident` method.
+Type annotations for `session.create_client("ssm-incidents").start_incident`
+method.
 
 Boto3 documentation:
 [SSMIncidents.Client.start_incident](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.start_incident)
@@ -723,7 +724,7 @@ Returns a `Coroutine` for
 
 Adds a tag to a response plan.
 
-Type annotations for `aiobotocore.create_client("ssm-incidents").tag_resource`
+Type annotations for `session.create_client("ssm-incidents").tag_resource`
 method.
 
 Boto3 documentation:
@@ -747,8 +748,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes a tag from a resource.
 
-Type annotations for
-`aiobotocore.create_client("ssm-incidents").untag_resource` method.
+Type annotations for `session.create_client("ssm-incidents").untag_resource`
+method.
 
 Boto3 documentation:
 [SSMIncidents.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.untag_resource)
@@ -773,7 +774,7 @@ Update deletion protection to either allow or deny deletion of the final Region
 in a replication set.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").update_deletion_protection` method.
+`session.create_client("ssm-incidents").update_deletion_protection` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.update_deletion_protection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.update_deletion_protection)
@@ -799,7 +800,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Update the details of an incident record.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").update_incident_record` method.
+`session.create_client("ssm-incidents").update_incident_record` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.update_incident_record](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.update_incident_record)
@@ -831,7 +832,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Add or remove related items from the related items tab of an incident record.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").update_related_items` method.
+`session.create_client("ssm-incidents").update_related_items` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.update_related_items](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.update_related_items)
@@ -859,7 +860,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Add or delete Regions from your replication set.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").update_replication_set` method.
+`session.create_client("ssm-incidents").update_replication_set` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.update_replication_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.update_replication_set)
@@ -887,7 +888,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the specified response plan.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").update_response_plan` method.
+`session.create_client("ssm-incidents").update_response_plan` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.update_response_plan](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.update_response_plan)
@@ -922,7 +923,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a timeline event.
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").update_timeline_event` method.
+`session.create_client("ssm-incidents").update_timeline_event` method.
 
 Boto3 documentation:
 [SSMIncidents.Client.update_timeline_event](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.update_timeline_event)
@@ -944,11 +945,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("ssm-incidents").__aenter__`
+method.
+
+Boto3 documentation:
+[SSMIncidents.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SSMIncidentsClient](#ssmincidentsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("ssm-incidents").__aexit__` method.
+
+Boto3 documentation:
+[SSMIncidents.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-incidents.html#SSMIncidents.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("ssm-incidents").get_paginator`
+Type annotations for `session.create_client("ssm-incidents").get_paginator`
 method with overloads.
 
 - `client.get_paginator("get_resource_policies")` ->
@@ -968,8 +1002,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("ssm-incidents").get_waiter`
-method with overloads.
+Type annotations for `session.create_client("ssm-incidents").get_waiter` method
+with overloads.
 
 - `client.get_waiter("wait_for_replication_set_active")` ->
   [WaitForReplicationSetActiveWaiter](./waiters.md#waitforreplicationsetactivewaiter)

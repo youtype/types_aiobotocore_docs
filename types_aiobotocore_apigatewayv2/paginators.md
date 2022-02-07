@@ -26,17 +26,19 @@ type annotations stubs module
 ## GetApisPaginator
 
 Type annotations for
-`aiobotocore.create_client("apigatewayv2").get_paginator("get_apis")`.
+`session.create_client("apigatewayv2").get_paginator("get_apis")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_apigatewayv2.paginator import GetApisPaginator
 
-def get_get_apis_paginator() -> GetApisPaginator:
-    return Session().create_client("apigatewayv2").get_paginator("get_apis")
+session = get_session()
+async with session.create_client("apigatewayv2") as client:
+    client: ApiGatewayV2Client
+    paginator: GetApisPaginator = client.get_paginator("get_apis")
 ```
 
 Boto3 documentation:
@@ -55,17 +57,19 @@ Arguments for `GetApisPaginator.paginate` method:
 ## GetAuthorizersPaginator
 
 Type annotations for
-`aiobotocore.create_client("apigatewayv2").get_paginator("get_authorizers")`.
+`session.create_client("apigatewayv2").get_paginator("get_authorizers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_apigatewayv2.paginator import GetAuthorizersPaginator
 
-def get_get_authorizers_paginator() -> GetAuthorizersPaginator:
-    return Session().create_client("apigatewayv2").get_paginator("get_authorizers")
+session = get_session()
+async with session.create_client("apigatewayv2") as client:
+    client: ApiGatewayV2Client
+    paginator: GetAuthorizersPaginator = client.get_paginator("get_authorizers")
 ```
 
 Boto3 documentation:
@@ -85,17 +89,19 @@ Arguments for `GetAuthorizersPaginator.paginate` method:
 ## GetDeploymentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("apigatewayv2").get_paginator("get_deployments")`.
+`session.create_client("apigatewayv2").get_paginator("get_deployments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_apigatewayv2.paginator import GetDeploymentsPaginator
 
-def get_get_deployments_paginator() -> GetDeploymentsPaginator:
-    return Session().create_client("apigatewayv2").get_paginator("get_deployments")
+session = get_session()
+async with session.create_client("apigatewayv2") as client:
+    client: ApiGatewayV2Client
+    paginator: GetDeploymentsPaginator = client.get_paginator("get_deployments")
 ```
 
 Boto3 documentation:
@@ -115,17 +121,19 @@ Arguments for `GetDeploymentsPaginator.paginate` method:
 ## GetDomainNamesPaginator
 
 Type annotations for
-`aiobotocore.create_client("apigatewayv2").get_paginator("get_domain_names")`.
+`session.create_client("apigatewayv2").get_paginator("get_domain_names")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_apigatewayv2.paginator import GetDomainNamesPaginator
 
-def get_get_domain_names_paginator() -> GetDomainNamesPaginator:
-    return Session().create_client("apigatewayv2").get_paginator("get_domain_names")
+session = get_session()
+async with session.create_client("apigatewayv2") as client:
+    client: ApiGatewayV2Client
+    paginator: GetDomainNamesPaginator = client.get_paginator("get_domain_names")
 ```
 
 Boto3 documentation:
@@ -144,17 +152,19 @@ Arguments for `GetDomainNamesPaginator.paginate` method:
 ## GetIntegrationResponsesPaginator
 
 Type annotations for
-`aiobotocore.create_client("apigatewayv2").get_paginator("get_integration_responses")`.
+`session.create_client("apigatewayv2").get_paginator("get_integration_responses")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_apigatewayv2.paginator import GetIntegrationResponsesPaginator
 
-def get_get_integration_responses_paginator() -> GetIntegrationResponsesPaginator:
-    return Session().create_client("apigatewayv2").get_paginator("get_integration_responses")
+session = get_session()
+async with session.create_client("apigatewayv2") as client:
+    client: ApiGatewayV2Client
+    paginator: GetIntegrationResponsesPaginator = client.get_paginator("get_integration_responses")
 ```
 
 Boto3 documentation:
@@ -175,17 +185,19 @@ Arguments for `GetIntegrationResponsesPaginator.paginate` method:
 ## GetIntegrationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("apigatewayv2").get_paginator("get_integrations")`.
+`session.create_client("apigatewayv2").get_paginator("get_integrations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_apigatewayv2.paginator import GetIntegrationsPaginator
 
-def get_get_integrations_paginator() -> GetIntegrationsPaginator:
-    return Session().create_client("apigatewayv2").get_paginator("get_integrations")
+session = get_session()
+async with session.create_client("apigatewayv2") as client:
+    client: ApiGatewayV2Client
+    paginator: GetIntegrationsPaginator = client.get_paginator("get_integrations")
 ```
 
 Boto3 documentation:
@@ -205,17 +217,19 @@ Arguments for `GetIntegrationsPaginator.paginate` method:
 ## GetModelsPaginator
 
 Type annotations for
-`aiobotocore.create_client("apigatewayv2").get_paginator("get_models")`.
+`session.create_client("apigatewayv2").get_paginator("get_models")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_apigatewayv2.paginator import GetModelsPaginator
 
-def get_get_models_paginator() -> GetModelsPaginator:
-    return Session().create_client("apigatewayv2").get_paginator("get_models")
+session = get_session()
+async with session.create_client("apigatewayv2") as client:
+    client: ApiGatewayV2Client
+    paginator: GetModelsPaginator = client.get_paginator("get_models")
 ```
 
 Boto3 documentation:
@@ -235,17 +249,19 @@ Arguments for `GetModelsPaginator.paginate` method:
 ## GetRouteResponsesPaginator
 
 Type annotations for
-`aiobotocore.create_client("apigatewayv2").get_paginator("get_route_responses")`.
+`session.create_client("apigatewayv2").get_paginator("get_route_responses")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_apigatewayv2.paginator import GetRouteResponsesPaginator
 
-def get_get_route_responses_paginator() -> GetRouteResponsesPaginator:
-    return Session().create_client("apigatewayv2").get_paginator("get_route_responses")
+session = get_session()
+async with session.create_client("apigatewayv2") as client:
+    client: ApiGatewayV2Client
+    paginator: GetRouteResponsesPaginator = client.get_paginator("get_route_responses")
 ```
 
 Boto3 documentation:
@@ -266,17 +282,19 @@ Arguments for `GetRouteResponsesPaginator.paginate` method:
 ## GetRoutesPaginator
 
 Type annotations for
-`aiobotocore.create_client("apigatewayv2").get_paginator("get_routes")`.
+`session.create_client("apigatewayv2").get_paginator("get_routes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_apigatewayv2.paginator import GetRoutesPaginator
 
-def get_get_routes_paginator() -> GetRoutesPaginator:
-    return Session().create_client("apigatewayv2").get_paginator("get_routes")
+session = get_session()
+async with session.create_client("apigatewayv2") as client:
+    client: ApiGatewayV2Client
+    paginator: GetRoutesPaginator = client.get_paginator("get_routes")
 ```
 
 Boto3 documentation:
@@ -296,17 +314,19 @@ Arguments for `GetRoutesPaginator.paginate` method:
 ## GetStagesPaginator
 
 Type annotations for
-`aiobotocore.create_client("apigatewayv2").get_paginator("get_stages")`.
+`session.create_client("apigatewayv2").get_paginator("get_stages")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_apigatewayv2.paginator import GetStagesPaginator
 
-def get_get_stages_paginator() -> GetStagesPaginator:
-    return Session().create_client("apigatewayv2").get_paginator("get_stages")
+session = get_session()
+async with session.create_client("apigatewayv2") as client:
+    client: ApiGatewayV2Client
+    paginator: GetStagesPaginator = client.get_paginator("get_stages")
 ```
 
 Boto3 documentation:

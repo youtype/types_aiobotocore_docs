@@ -57,6 +57,8 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [upload_layer_part](#upload_layer_part)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -64,16 +66,17 @@ type annotations stubs module
 
 ## ECRClient
 
-Type annotations for `aiobotocore.create_client("ecr")`
+Type annotations for `session.create_client("ecr")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_ecr.client import ECRClient
 
-def get_ecr_client() -> ECRClient:
-    return Session().client("ecr")
+session = get_session()
+async with session.create_client("ecr") as client:
+    client: ECRClient
 ```
 
 Boto3 documentation:
@@ -140,7 +143,7 @@ Exceptions:
 
 ECRClient exceptions.
 
-Type annotations for `aiobotocore.create_client("ecr").exceptions` method.
+Type annotations for `session.create_client("ecr").exceptions` method.
 
 Boto3 documentation:
 [ECR.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.exceptions)
@@ -154,7 +157,7 @@ Returns [Exceptions](#exceptions).
 Checks the availability of one or more image layers in a repository.
 
 Type annotations for
-`aiobotocore.create_client("ecr").batch_check_layer_availability` method.
+`session.create_client("ecr").batch_check_layer_availability` method.
 
 Boto3 documentation:
 [ECR.Client.batch_check_layer_availability](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.batch_check_layer_availability)
@@ -180,8 +183,7 @@ Returns a `Coroutine` for
 
 Deletes a list of specified images within a repository.
 
-Type annotations for `aiobotocore.create_client("ecr").batch_delete_image`
-method.
+Type annotations for `session.create_client("ecr").batch_delete_image` method.
 
 Boto3 documentation:
 [ECR.Client.batch_delete_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.batch_delete_image)
@@ -209,7 +211,7 @@ Returns a `Coroutine` for
 
 Gets detailed information for an image.
 
-Type annotations for `aiobotocore.create_client("ecr").batch_get_image` method.
+Type annotations for `session.create_client("ecr").batch_get_image` method.
 
 Boto3 documentation:
 [ECR.Client.batch_get_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.batch_get_image)
@@ -238,7 +240,7 @@ Returns a `Coroutine` for
 Gets the scanning configuration for one or more repositories.
 
 Type annotations for
-`aiobotocore.create_client("ecr").batch_get_repository_scanning_configuration`
+`session.create_client("ecr").batch_get_repository_scanning_configuration`
 method.
 
 Boto3 documentation:
@@ -264,18 +266,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("ecr").can_paginate` method.
+Type annotations for `session.create_client("ecr").can_paginate` method.
 
 Boto3 documentation:
 [ECR.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="complete_layer_upload"></a>
 
@@ -284,7 +284,7 @@ Returns a `Coroutine` for `bool`.
 Informs Amazon ECR that the image layer upload has completed for a specified
 registry, repository name, and upload ID.
 
-Type annotations for `aiobotocore.create_client("ecr").complete_layer_upload`
+Type annotations for `session.create_client("ecr").complete_layer_upload`
 method.
 
 Boto3 documentation:
@@ -313,7 +313,7 @@ Returns a `Coroutine` for
 Creates a pull through cache rule.
 
 Type annotations for
-`aiobotocore.create_client("ecr").create_pull_through_cache_rule` method.
+`session.create_client("ecr").create_pull_through_cache_rule` method.
 
 Boto3 documentation:
 [ECR.Client.create_pull_through_cache_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.create_pull_through_cache_rule)
@@ -339,8 +339,7 @@ Returns a `Coroutine` for
 
 Creates a repository.
 
-Type annotations for `aiobotocore.create_client("ecr").create_repository`
-method.
+Type annotations for `session.create_client("ecr").create_repository` method.
 
 Boto3 documentation:
 [ECR.Client.create_repository](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.create_repository)
@@ -371,7 +370,7 @@ Returns a `Coroutine` for
 
 Deletes the lifecycle policy associated with the specified repository.
 
-Type annotations for `aiobotocore.create_client("ecr").delete_lifecycle_policy`
+Type annotations for `session.create_client("ecr").delete_lifecycle_policy`
 method.
 
 Boto3 documentation:
@@ -398,7 +397,7 @@ Returns a `Coroutine` for
 Deletes a pull through cache rule.
 
 Type annotations for
-`aiobotocore.create_client("ecr").delete_pull_through_cache_rule` method.
+`session.create_client("ecr").delete_pull_through_cache_rule` method.
 
 Boto3 documentation:
 [ECR.Client.delete_pull_through_cache_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.delete_pull_through_cache_rule)
@@ -423,7 +422,7 @@ Returns a `Coroutine` for
 
 Deletes the registry permissions policy.
 
-Type annotations for `aiobotocore.create_client("ecr").delete_registry_policy`
+Type annotations for `session.create_client("ecr").delete_registry_policy`
 method.
 
 Boto3 documentation:
@@ -441,8 +440,7 @@ Returns a `Coroutine` for
 
 Deletes a repository.
 
-Type annotations for `aiobotocore.create_client("ecr").delete_repository`
-method.
+Type annotations for `session.create_client("ecr").delete_repository` method.
 
 Boto3 documentation:
 [ECR.Client.delete_repository](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.delete_repository)
@@ -467,8 +465,8 @@ Returns a `Coroutine` for
 
 Deletes the repository policy associated with the specified repository.
 
-Type annotations for
-`aiobotocore.create_client("ecr").delete_repository_policy` method.
+Type annotations for `session.create_client("ecr").delete_repository_policy`
+method.
 
 Boto3 documentation:
 [ECR.Client.delete_repository_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.delete_repository_policy)
@@ -494,7 +492,7 @@ Returns a `Coroutine` for
 Returns the replication status for a specified image.
 
 Type annotations for
-`aiobotocore.create_client("ecr").describe_image_replication_status` method.
+`session.create_client("ecr").describe_image_replication_status` method.
 
 Boto3 documentation:
 [ECR.Client.describe_image_replication_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.describe_image_replication_status)
@@ -522,7 +520,7 @@ Returns a `Coroutine` for
 Returns the scan findings for the specified image.
 
 Type annotations for
-`aiobotocore.create_client("ecr").describe_image_scan_findings` method.
+`session.create_client("ecr").describe_image_scan_findings` method.
 
 Boto3 documentation:
 [ECR.Client.describe_image_scan_findings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.describe_image_scan_findings)
@@ -551,7 +549,7 @@ Returns a `Coroutine` for
 
 Returns metadata about the images in a repository.
 
-Type annotations for `aiobotocore.create_client("ecr").describe_images` method.
+Type annotations for `session.create_client("ecr").describe_images` method.
 
 Boto3 documentation:
 [ECR.Client.describe_images](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.describe_images)
@@ -582,7 +580,7 @@ Returns a `Coroutine` for
 Returns the pull through cache rules for a registry.
 
 Type annotations for
-`aiobotocore.create_client("ecr").describe_pull_through_cache_rules` method.
+`session.create_client("ecr").describe_pull_through_cache_rules` method.
 
 Boto3 documentation:
 [ECR.Client.describe_pull_through_cache_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.describe_pull_through_cache_rules)
@@ -609,8 +607,7 @@ Returns a `Coroutine` for
 
 Describes the settings for a registry.
 
-Type annotations for `aiobotocore.create_client("ecr").describe_registry`
-method.
+Type annotations for `session.create_client("ecr").describe_registry` method.
 
 Boto3 documentation:
 [ECR.Client.describe_registry](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.describe_registry)
@@ -626,7 +623,7 @@ Returns a `Coroutine` for
 
 Describes image repositories in a registry.
 
-Type annotations for `aiobotocore.create_client("ecr").describe_repositories`
+Type annotations for `session.create_client("ecr").describe_repositories`
 method.
 
 Boto3 documentation:
@@ -654,7 +651,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("ecr").generate_presigned_url`
+Type annotations for `session.create_client("ecr").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -678,7 +675,7 @@ Returns a `Coroutine` for `str`.
 
 Retrieves an authorization token.
 
-Type annotations for `aiobotocore.create_client("ecr").get_authorization_token`
+Type annotations for `session.create_client("ecr").get_authorization_token`
 method.
 
 Boto3 documentation:
@@ -704,8 +701,8 @@ Returns a `Coroutine` for
 Retrieves the pre-signed Amazon S3 download URL corresponding to an image
 layer.
 
-Type annotations for
-`aiobotocore.create_client("ecr").get_download_url_for_layer` method.
+Type annotations for `session.create_client("ecr").get_download_url_for_layer`
+method.
 
 Boto3 documentation:
 [ECR.Client.get_download_url_for_layer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.get_download_url_for_layer)
@@ -731,7 +728,7 @@ Returns a `Coroutine` for
 
 Retrieves the lifecycle policy for the specified repository.
 
-Type annotations for `aiobotocore.create_client("ecr").get_lifecycle_policy`
+Type annotations for `session.create_client("ecr").get_lifecycle_policy`
 method.
 
 Boto3 documentation:
@@ -759,7 +756,7 @@ Retrieves the results of the lifecycle policy preview request for the specified
 repository.
 
 Type annotations for
-`aiobotocore.create_client("ecr").get_lifecycle_policy_preview` method.
+`session.create_client("ecr").get_lifecycle_policy_preview` method.
 
 Boto3 documentation:
 [ECR.Client.get_lifecycle_policy_preview](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.get_lifecycle_policy_preview)
@@ -790,8 +787,7 @@ Returns a `Coroutine` for
 
 Retrieves the permissions policy for a registry.
 
-Type annotations for `aiobotocore.create_client("ecr").get_registry_policy`
-method.
+Type annotations for `session.create_client("ecr").get_registry_policy` method.
 
 Boto3 documentation:
 [ECR.Client.get_registry_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.get_registry_policy)
@@ -809,7 +805,7 @@ Returns a `Coroutine` for
 Retrieves the scanning configuration for a registry.
 
 Type annotations for
-`aiobotocore.create_client("ecr").get_registry_scanning_configuration` method.
+`session.create_client("ecr").get_registry_scanning_configuration` method.
 
 Boto3 documentation:
 [ECR.Client.get_registry_scanning_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.get_registry_scanning_configuration)
@@ -826,7 +822,7 @@ Returns a `Coroutine` for
 
 Retrieves the repository policy for the specified repository.
 
-Type annotations for `aiobotocore.create_client("ecr").get_repository_policy`
+Type annotations for `session.create_client("ecr").get_repository_policy`
 method.
 
 Boto3 documentation:
@@ -852,7 +848,7 @@ Returns a `Coroutine` for
 
 Notifies Amazon ECR that you intend to upload an image layer.
 
-Type annotations for `aiobotocore.create_client("ecr").initiate_layer_upload`
+Type annotations for `session.create_client("ecr").initiate_layer_upload`
 method.
 
 Boto3 documentation:
@@ -878,7 +874,7 @@ Returns a `Coroutine` for
 
 Lists all the image IDs for the specified repository.
 
-Type annotations for `aiobotocore.create_client("ecr").list_images` method.
+Type annotations for `session.create_client("ecr").list_images` method.
 
 Boto3 documentation:
 [ECR.Client.list_images](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.list_images)
@@ -905,7 +901,7 @@ Returns a `Coroutine` for
 
 List the tags for an Amazon ECR resource.
 
-Type annotations for `aiobotocore.create_client("ecr").list_tags_for_resource`
+Type annotations for `session.create_client("ecr").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -930,7 +926,7 @@ Returns a `Coroutine` for
 
 Creates or updates the image manifest and tags associated with an image.
 
-Type annotations for `aiobotocore.create_client("ecr").put_image` method.
+Type annotations for `session.create_client("ecr").put_image` method.
 
 Boto3 documentation:
 [ECR.Client.put_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.put_image)
@@ -959,7 +955,7 @@ Returns a `Coroutine` for
 Updates the image scanning configuration for the specified repository.
 
 Type annotations for
-`aiobotocore.create_client("ecr").put_image_scanning_configuration` method.
+`session.create_client("ecr").put_image_scanning_configuration` method.
 
 Boto3 documentation:
 [ECR.Client.put_image_scanning_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.put_image_scanning_configuration)
@@ -987,8 +983,8 @@ Returns a `Coroutine` for
 
 Updates the image tag mutability settings for the specified repository.
 
-Type annotations for
-`aiobotocore.create_client("ecr").put_image_tag_mutability` method.
+Type annotations for `session.create_client("ecr").put_image_tag_mutability`
+method.
 
 Boto3 documentation:
 [ECR.Client.put_image_tag_mutability](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.put_image_tag_mutability)
@@ -1015,7 +1011,7 @@ Returns a `Coroutine` for
 
 Creates or updates the lifecycle policy for the specified repository.
 
-Type annotations for `aiobotocore.create_client("ecr").put_lifecycle_policy`
+Type annotations for `session.create_client("ecr").put_lifecycle_policy`
 method.
 
 Boto3 documentation:
@@ -1042,8 +1038,7 @@ Returns a `Coroutine` for
 
 Creates or updates the permissions policy for your registry.
 
-Type annotations for `aiobotocore.create_client("ecr").put_registry_policy`
-method.
+Type annotations for `session.create_client("ecr").put_registry_policy` method.
 
 Boto3 documentation:
 [ECR.Client.put_registry_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.put_registry_policy)
@@ -1068,7 +1063,7 @@ Returns a `Coroutine` for
 Creates or updates the scanning configuration for your private registry.
 
 Type annotations for
-`aiobotocore.create_client("ecr").put_registry_scanning_configuration` method.
+`session.create_client("ecr").put_registry_scanning_configuration` method.
 
 Boto3 documentation:
 [ECR.Client.put_registry_scanning_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.put_registry_scanning_configuration)
@@ -1095,7 +1090,7 @@ Returns a `Coroutine` for
 Creates or updates the replication configuration for a registry.
 
 Type annotations for
-`aiobotocore.create_client("ecr").put_replication_configuration` method.
+`session.create_client("ecr").put_replication_configuration` method.
 
 Boto3 documentation:
 [ECR.Client.put_replication_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.put_replication_configuration)
@@ -1122,7 +1117,7 @@ Returns a `Coroutine` for
 Applies a repository policy to the specified repository to control access
 permissions.
 
-Type annotations for `aiobotocore.create_client("ecr").set_repository_policy`
+Type annotations for `session.create_client("ecr").set_repository_policy`
 method.
 
 Boto3 documentation:
@@ -1150,8 +1145,7 @@ Returns a `Coroutine` for
 
 Starts an image vulnerability scan.
 
-Type annotations for `aiobotocore.create_client("ecr").start_image_scan`
-method.
+Type annotations for `session.create_client("ecr").start_image_scan` method.
 
 Boto3 documentation:
 [ECR.Client.start_image_scan](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.start_image_scan)
@@ -1178,7 +1172,7 @@ Returns a `Coroutine` for
 Starts a preview of a lifecycle policy for the specified repository.
 
 Type annotations for
-`aiobotocore.create_client("ecr").start_lifecycle_policy_preview` method.
+`session.create_client("ecr").start_lifecycle_policy_preview` method.
 
 Boto3 documentation:
 [ECR.Client.start_lifecycle_policy_preview](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.start_lifecycle_policy_preview)
@@ -1204,7 +1198,7 @@ Returns a `Coroutine` for
 
 Adds specified tags to a resource with the specified ARN.
 
-Type annotations for `aiobotocore.create_client("ecr").tag_resource` method.
+Type annotations for `session.create_client("ecr").tag_resource` method.
 
 Boto3 documentation:
 [ECR.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.tag_resource)
@@ -1227,7 +1221,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes specified tags from a resource.
 
-Type annotations for `aiobotocore.create_client("ecr").untag_resource` method.
+Type annotations for `session.create_client("ecr").untag_resource` method.
 
 Boto3 documentation:
 [ECR.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.untag_resource)
@@ -1250,8 +1244,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Uploads an image layer part to Amazon ECR.
 
-Type annotations for `aiobotocore.create_client("ecr").upload_layer_part`
-method.
+Type annotations for `session.create_client("ecr").upload_layer_part` method.
 
 Boto3 documentation:
 [ECR.Client.upload_layer_part](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.upload_layer_part)
@@ -1274,12 +1267,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UploadLayerPartResponseTypeDef](./type_defs.md#uploadlayerpartresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("ecr").__aenter__` method.
+
+Boto3 documentation:
+[ECR.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ECRClient](#ecrclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("ecr").__aexit__` method.
+
+Boto3 documentation:
+[ECR.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html#ECR.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("ecr").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("ecr").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_image_scan_findings")` ->
   [DescribeImageScanFindingsPaginator](./paginators.md#describeimagescanfindingspaginator)
@@ -1298,7 +1323,7 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("ecr").get_waiter` method with
+Type annotations for `session.create_client("ecr").get_waiter` method with
 overloads.
 
 - `client.get_waiter("image_scan_complete")` ->

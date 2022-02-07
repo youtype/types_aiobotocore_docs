@@ -65,21 +65,24 @@ type annotations stubs module
     - [update_distribution_configuration](#update_distribution_configuration)
     - [update_image_pipeline](#update_image_pipeline)
     - [update_infrastructure_configuration](#update_infrastructure_configuration)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="imagebuilderclient"></a>
 
 ## imagebuilderClient
 
-Type annotations for `aiobotocore.create_client("imagebuilder")`
+Type annotations for `session.create_client("imagebuilder")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_imagebuilder.client import imagebuilderClient
 
-def get_imagebuilder_client() -> imagebuilderClient:
-    return Session().client("imagebuilder")
+session = get_session()
+async with session.create_client("imagebuilder") as client:
+    client: imagebuilderClient
 ```
 
 Boto3 documentation:
@@ -130,8 +133,7 @@ Exceptions:
 
 imagebuilderClient exceptions.
 
-Type annotations for `aiobotocore.create_client("imagebuilder").exceptions`
-method.
+Type annotations for `session.create_client("imagebuilder").exceptions` method.
 
 Boto3 documentation:
 [imagebuilder.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.exceptions)
@@ -144,19 +146,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("imagebuilder").can_paginate`
+Type annotations for `session.create_client("imagebuilder").can_paginate`
 method.
 
 Boto3 documentation:
 [imagebuilder.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_image_creation"></a>
 
@@ -165,7 +165,7 @@ Returns a `Coroutine` for `bool`.
 CancelImageCreation cancels the creation of Image.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").cancel_image_creation` method.
+`session.create_client("imagebuilder").cancel_image_creation` method.
 
 Boto3 documentation:
 [imagebuilder.Client.cancel_image_creation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.cancel_image_creation)
@@ -191,8 +191,8 @@ Returns a `Coroutine` for
 Creates a new component that can be used to build, validate, test, and assess
 your image.
 
-Type annotations for
-`aiobotocore.create_client("imagebuilder").create_component` method.
+Type annotations for `session.create_client("imagebuilder").create_component`
+method.
 
 Boto3 documentation:
 [imagebuilder.Client.create_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.create_component)
@@ -226,7 +226,7 @@ Returns a `Coroutine` for
 Creates a new container recipe.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").create_container_recipe` method.
+`session.create_client("imagebuilder").create_container_recipe` method.
 
 Boto3 documentation:
 [imagebuilder.Client.create_container_recipe](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.create_container_recipe)
@@ -272,7 +272,7 @@ Returns a `Coroutine` for
 Creates a new distribution configuration.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").create_distribution_configuration`
+`session.create_client("imagebuilder").create_distribution_configuration`
 method.
 
 Boto3 documentation:
@@ -303,7 +303,7 @@ Returns a `Coroutine` for
 
 Creates a new image.
 
-Type annotations for `aiobotocore.create_client("imagebuilder").create_image`
+Type annotations for `session.create_client("imagebuilder").create_image`
 method.
 
 Boto3 documentation:
@@ -336,7 +336,7 @@ Returns a `Coroutine` for
 Creates a new image pipeline.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").create_image_pipeline` method.
+`session.create_client("imagebuilder").create_image_pipeline` method.
 
 Boto3 documentation:
 [imagebuilder.Client.create_image_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.create_image_pipeline)
@@ -373,7 +373,7 @@ Returns a `Coroutine` for
 Creates a new image recipe.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").create_image_recipe` method.
+`session.create_client("imagebuilder").create_image_recipe` method.
 
 Boto3 documentation:
 [imagebuilder.Client.create_image_recipe](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.create_image_recipe)
@@ -411,7 +411,7 @@ Returns a `Coroutine` for
 Creates a new infrastructure configuration.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").create_infrastructure_configuration`
+`session.create_client("imagebuilder").create_infrastructure_configuration`
 method.
 
 Boto3 documentation:
@@ -450,8 +450,8 @@ Returns a `Coroutine` for
 
 Deletes a component build version.
 
-Type annotations for
-`aiobotocore.create_client("imagebuilder").delete_component` method.
+Type annotations for `session.create_client("imagebuilder").delete_component`
+method.
 
 Boto3 documentation:
 [imagebuilder.Client.delete_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.delete_component)
@@ -475,7 +475,7 @@ Returns a `Coroutine` for
 Deletes a container recipe.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").delete_container_recipe` method.
+`session.create_client("imagebuilder").delete_container_recipe` method.
 
 Boto3 documentation:
 [imagebuilder.Client.delete_container_recipe](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.delete_container_recipe)
@@ -500,7 +500,7 @@ Returns a `Coroutine` for
 Deletes a distribution configuration.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").delete_distribution_configuration`
+`session.create_client("imagebuilder").delete_distribution_configuration`
 method.
 
 Boto3 documentation:
@@ -525,7 +525,7 @@ Returns a `Coroutine` for
 
 Deletes an Image Builder image resource.
 
-Type annotations for `aiobotocore.create_client("imagebuilder").delete_image`
+Type annotations for `session.create_client("imagebuilder").delete_image`
 method.
 
 Boto3 documentation:
@@ -550,7 +550,7 @@ Returns a `Coroutine` for
 Deletes an image pipeline.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").delete_image_pipeline` method.
+`session.create_client("imagebuilder").delete_image_pipeline` method.
 
 Boto3 documentation:
 [imagebuilder.Client.delete_image_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.delete_image_pipeline)
@@ -575,7 +575,7 @@ Returns a `Coroutine` for
 Deletes an image recipe.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").delete_image_recipe` method.
+`session.create_client("imagebuilder").delete_image_recipe` method.
 
 Boto3 documentation:
 [imagebuilder.Client.delete_image_recipe](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.delete_image_recipe)
@@ -600,7 +600,7 @@ Returns a `Coroutine` for
 Deletes an infrastructure configuration.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").delete_infrastructure_configuration`
+`session.create_client("imagebuilder").delete_infrastructure_configuration`
 method.
 
 Boto3 documentation:
@@ -626,7 +626,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").generate_presigned_url` method.
+`session.create_client("imagebuilder").generate_presigned_url` method.
 
 Boto3 documentation:
 [imagebuilder.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.generate_presigned_url)
@@ -649,7 +649,7 @@ Returns a `Coroutine` for `str`.
 
 Gets a component object.
 
-Type annotations for `aiobotocore.create_client("imagebuilder").get_component`
+Type annotations for `session.create_client("imagebuilder").get_component`
 method.
 
 Boto3 documentation:
@@ -674,7 +674,7 @@ Returns a `Coroutine` for
 Gets a component policy.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").get_component_policy` method.
+`session.create_client("imagebuilder").get_component_policy` method.
 
 Boto3 documentation:
 [imagebuilder.Client.get_component_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.get_component_policy)
@@ -699,7 +699,7 @@ Returns a `Coroutine` for
 Retrieves a container recipe.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").get_container_recipe` method.
+`session.create_client("imagebuilder").get_container_recipe` method.
 
 Boto3 documentation:
 [imagebuilder.Client.get_container_recipe](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.get_container_recipe)
@@ -724,7 +724,7 @@ Returns a `Coroutine` for
 Retrieves the policy for a container recipe.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").get_container_recipe_policy` method.
+`session.create_client("imagebuilder").get_container_recipe_policy` method.
 
 Boto3 documentation:
 [imagebuilder.Client.get_container_recipe_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.get_container_recipe_policy)
@@ -749,8 +749,7 @@ Returns a `Coroutine` for
 Gets a distribution configuration.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").get_distribution_configuration`
-method.
+`session.create_client("imagebuilder").get_distribution_configuration` method.
 
 Boto3 documentation:
 [imagebuilder.Client.get_distribution_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.get_distribution_configuration)
@@ -774,8 +773,7 @@ Returns a `Coroutine` for
 
 Gets an image.
 
-Type annotations for `aiobotocore.create_client("imagebuilder").get_image`
-method.
+Type annotations for `session.create_client("imagebuilder").get_image` method.
 
 Boto3 documentation:
 [imagebuilder.Client.get_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.get_image)
@@ -798,8 +796,8 @@ Returns a `Coroutine` for
 
 Gets an image pipeline.
 
-Type annotations for
-`aiobotocore.create_client("imagebuilder").get_image_pipeline` method.
+Type annotations for `session.create_client("imagebuilder").get_image_pipeline`
+method.
 
 Boto3 documentation:
 [imagebuilder.Client.get_image_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.get_image_pipeline)
@@ -823,8 +821,8 @@ Returns a `Coroutine` for
 
 Gets an image policy.
 
-Type annotations for
-`aiobotocore.create_client("imagebuilder").get_image_policy` method.
+Type annotations for `session.create_client("imagebuilder").get_image_policy`
+method.
 
 Boto3 documentation:
 [imagebuilder.Client.get_image_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.get_image_policy)
@@ -847,8 +845,8 @@ Returns a `Coroutine` for
 
 Gets an image recipe.
 
-Type annotations for
-`aiobotocore.create_client("imagebuilder").get_image_recipe` method.
+Type annotations for `session.create_client("imagebuilder").get_image_recipe`
+method.
 
 Boto3 documentation:
 [imagebuilder.Client.get_image_recipe](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.get_image_recipe)
@@ -872,7 +870,7 @@ Returns a `Coroutine` for
 Gets an image recipe policy.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").get_image_recipe_policy` method.
+`session.create_client("imagebuilder").get_image_recipe_policy` method.
 
 Boto3 documentation:
 [imagebuilder.Client.get_image_recipe_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.get_image_recipe_policy)
@@ -897,7 +895,7 @@ Returns a `Coroutine` for
 Gets an infrastructure configuration.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").get_infrastructure_configuration`
+`session.create_client("imagebuilder").get_infrastructure_configuration`
 method.
 
 Boto3 documentation:
@@ -922,8 +920,8 @@ Returns a `Coroutine` for
 
 Imports a component and transforms its data into a component document.
 
-Type annotations for
-`aiobotocore.create_client("imagebuilder").import_component` method.
+Type annotations for `session.create_client("imagebuilder").import_component`
+method.
 
 Boto3 documentation:
 [imagebuilder.Client.import_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.import_component)
@@ -960,8 +958,7 @@ Returns the list of component build versions for the specified semantic
 version.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").list_component_build_versions`
-method.
+`session.create_client("imagebuilder").list_component_build_versions` method.
 
 Boto3 documentation:
 [imagebuilder.Client.list_component_build_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.list_component_build_versions)
@@ -988,8 +985,8 @@ Returns a `Coroutine` for
 Returns the list of component build versions for the specified semantic
 version.
 
-Type annotations for
-`aiobotocore.create_client("imagebuilder").list_components` method.
+Type annotations for `session.create_client("imagebuilder").list_components`
+method.
 
 Boto3 documentation:
 [imagebuilder.Client.list_components](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.list_components)
@@ -1017,7 +1014,7 @@ Returns a `Coroutine` for
 Returns a list of container recipes.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").list_container_recipes` method.
+`session.create_client("imagebuilder").list_container_recipes` method.
 
 Boto3 documentation:
 [imagebuilder.Client.list_container_recipes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.list_container_recipes)
@@ -1045,7 +1042,7 @@ Returns a `Coroutine` for
 Returns a list of distribution configurations.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").list_distribution_configurations`
+`session.create_client("imagebuilder").list_distribution_configurations`
 method.
 
 Boto3 documentation:
@@ -1073,7 +1070,7 @@ Returns a `Coroutine` for
 Returns a list of image build versions.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").list_image_build_versions` method.
+`session.create_client("imagebuilder").list_image_build_versions` method.
 
 Boto3 documentation:
 [imagebuilder.Client.list_image_build_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.list_image_build_versions)
@@ -1102,7 +1099,7 @@ List the Packages that are associated with an Image Build Version, as
 determined by Amazon Web Services Systems Manager Inventory at build time.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").list_image_packages` method.
+`session.create_client("imagebuilder").list_image_packages` method.
 
 Boto3 documentation:
 [imagebuilder.Client.list_image_packages](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.list_image_packages)
@@ -1129,7 +1126,7 @@ Returns a `Coroutine` for
 Returns a list of images created by the specified pipeline.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").list_image_pipeline_images` method.
+`session.create_client("imagebuilder").list_image_pipeline_images` method.
 
 Boto3 documentation:
 [imagebuilder.Client.list_image_pipeline_images](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.list_image_pipeline_images)
@@ -1157,7 +1154,7 @@ Returns a `Coroutine` for
 Returns a list of image pipelines.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").list_image_pipelines` method.
+`session.create_client("imagebuilder").list_image_pipelines` method.
 
 Boto3 documentation:
 [imagebuilder.Client.list_image_pipelines](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.list_image_pipelines)
@@ -1183,8 +1180,8 @@ Returns a `Coroutine` for
 
 Returns a list of image recipes.
 
-Type annotations for
-`aiobotocore.create_client("imagebuilder").list_image_recipes` method.
+Type annotations for `session.create_client("imagebuilder").list_image_recipes`
+method.
 
 Boto3 documentation:
 [imagebuilder.Client.list_image_recipes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.list_image_recipes)
@@ -1211,7 +1208,7 @@ Returns a `Coroutine` for
 
 Returns the list of images that you have access to.
 
-Type annotations for `aiobotocore.create_client("imagebuilder").list_images`
+Type annotations for `session.create_client("imagebuilder").list_images`
 method.
 
 Boto3 documentation:
@@ -1241,7 +1238,7 @@ Returns a `Coroutine` for
 Returns a list of infrastructure configurations.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").list_infrastructure_configurations`
+`session.create_client("imagebuilder").list_infrastructure_configurations`
 method.
 
 Boto3 documentation:
@@ -1269,7 +1266,7 @@ Returns a `Coroutine` for
 Returns the list of tags for the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").list_tags_for_resource` method.
+`session.create_client("imagebuilder").list_tags_for_resource` method.
 
 Boto3 documentation:
 [imagebuilder.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.list_tags_for_resource)
@@ -1294,7 +1291,7 @@ Returns a `Coroutine` for
 Applies a policy to a component.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").put_component_policy` method.
+`session.create_client("imagebuilder").put_component_policy` method.
 
 Boto3 documentation:
 [imagebuilder.Client.put_component_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.put_component_policy)
@@ -1320,7 +1317,7 @@ Returns a `Coroutine` for
 Applies a policy to a container image.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").put_container_recipe_policy` method.
+`session.create_client("imagebuilder").put_container_recipe_policy` method.
 
 Boto3 documentation:
 [imagebuilder.Client.put_container_recipe_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.put_container_recipe_policy)
@@ -1345,8 +1342,8 @@ Returns a `Coroutine` for
 
 Applies a policy to an image.
 
-Type annotations for
-`aiobotocore.create_client("imagebuilder").put_image_policy` method.
+Type annotations for `session.create_client("imagebuilder").put_image_policy`
+method.
 
 Boto3 documentation:
 [imagebuilder.Client.put_image_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.put_image_policy)
@@ -1371,7 +1368,7 @@ Returns a `Coroutine` for
 Applies a policy to an image recipe.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").put_image_recipe_policy` method.
+`session.create_client("imagebuilder").put_image_recipe_policy` method.
 
 Boto3 documentation:
 [imagebuilder.Client.put_image_recipe_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.put_image_recipe_policy)
@@ -1397,8 +1394,7 @@ Returns a `Coroutine` for
 Manually triggers a pipeline to create an image.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").start_image_pipeline_execution`
-method.
+`session.create_client("imagebuilder").start_image_pipeline_execution` method.
 
 Boto3 documentation:
 [imagebuilder.Client.start_image_pipeline_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.start_image_pipeline_execution)
@@ -1423,7 +1419,7 @@ Returns a `Coroutine` for
 
 Adds a tag to a resource.
 
-Type annotations for `aiobotocore.create_client("imagebuilder").tag_resource`
+Type annotations for `session.create_client("imagebuilder").tag_resource`
 method.
 
 Boto3 documentation:
@@ -1447,7 +1443,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes a tag from a resource.
 
-Type annotations for `aiobotocore.create_client("imagebuilder").untag_resource`
+Type annotations for `session.create_client("imagebuilder").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1472,7 +1468,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a new distribution configuration.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").update_distribution_configuration`
+`session.create_client("imagebuilder").update_distribution_configuration`
 method.
 
 Boto3 documentation:
@@ -1503,7 +1499,7 @@ Returns a `Coroutine` for
 Updates an image pipeline.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").update_image_pipeline` method.
+`session.create_client("imagebuilder").update_image_pipeline` method.
 
 Boto3 documentation:
 [imagebuilder.Client.update_image_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.update_image_pipeline)
@@ -1539,7 +1535,7 @@ Returns a `Coroutine` for
 Updates a new infrastructure configuration.
 
 Type annotations for
-`aiobotocore.create_client("imagebuilder").update_infrastructure_configuration`
+`session.create_client("imagebuilder").update_infrastructure_configuration`
 method.
 
 Boto3 documentation:
@@ -1570,3 +1566,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateInfrastructureConfigurationResponseTypeDef](./type_defs.md#updateinfrastructureconfigurationresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("imagebuilder").__aenter__` method.
+
+Boto3 documentation:
+[imagebuilder.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [imagebuilderClient](#imagebuilderclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("imagebuilder").__aexit__` method.
+
+Boto3 documentation:
+[imagebuilder.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/imagebuilder.html#imagebuilder.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

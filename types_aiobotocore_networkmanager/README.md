@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[networkmanager]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[networkmanager]'
+
+# standalone installation
 pip install types-aiobotocore-networkmanager
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-networkmanager
 
 ## NetworkManagerClient
 
-Type annotations for `aiobotocore.create_client("networkmanager")` as
+Type annotations for `session.create_client("networkmanager")` as
 [NetworkManagerClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_networkmanager.client import NetworkManagerClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_attachment](./client.md#accept_attachment)
 - [associate_connect_peer](./client.md#associate_connect_peer)
 - [associate_customer_gateway](./client.md#associate_customer_gateway)
@@ -149,7 +155,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_networkmanager.paginators import DescribeGlobalNetworksPaginator, ...
+from types_aiobotocore_networkmanager.paginator import DescribeGlobalNetworksPaginator, ...
 ```
 
 - [DescribeGlobalNetworksPaginator](./paginators.md#describeglobalnetworkspaginator)

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[timestream-query]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[timestream-query]'
+
+# standalone installation
 pip install types-aiobotocore-timestream-query
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-timestream-query
 
 ## TimestreamQueryClient
 
-Type annotations for `aiobotocore.create_client("timestream-query")` as
+Type annotations for `session.create_client("timestream-query")` as
 [TimestreamQueryClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_timestream_query.client import TimestreamQueryClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_query](./client.md#cancel_query)
 - [create_scheduled_query](./client.md#create_scheduled_query)
@@ -87,7 +93,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_timestream_query.paginators import ListScheduledQueriesPaginator, ...
+from types_aiobotocore_timestream_query.paginator import ListScheduledQueriesPaginator, ...
 ```
 
 - [ListScheduledQueriesPaginator](./paginators.md#listscheduledqueriespaginator)

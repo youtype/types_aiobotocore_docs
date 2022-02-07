@@ -20,17 +20,19 @@ type annotations stubs module
 ## ListCloudFrontOriginAccessIdentitiesPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_paginator("list_cloud_front_origin_access_identities")`.
+`session.create_client("cloudfront").get_paginator("list_cloud_front_origin_access_identities")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudfront.paginator import ListCloudFrontOriginAccessIdentitiesPaginator
 
-def get_list_cloud_front_origin_access_identities_paginator() -> ListCloudFrontOriginAccessIdentitiesPaginator:
-    return Session().create_client("cloudfront").get_paginator("list_cloud_front_origin_access_identities")
+session = get_session()
+async with session.create_client("cloudfront") as client:
+    client: CloudFrontClient
+    paginator: ListCloudFrontOriginAccessIdentitiesPaginator = client.get_paginator("list_cloud_front_origin_access_identities")
 ```
 
 Boto3 documentation:
@@ -49,17 +51,19 @@ Arguments for `ListCloudFrontOriginAccessIdentitiesPaginator.paginate` method:
 ## ListDistributionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_paginator("list_distributions")`.
+`session.create_client("cloudfront").get_paginator("list_distributions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudfront.paginator import ListDistributionsPaginator
 
-def get_list_distributions_paginator() -> ListDistributionsPaginator:
-    return Session().create_client("cloudfront").get_paginator("list_distributions")
+session = get_session()
+async with session.create_client("cloudfront") as client:
+    client: CloudFrontClient
+    paginator: ListDistributionsPaginator = client.get_paginator("list_distributions")
 ```
 
 Boto3 documentation:
@@ -78,17 +82,19 @@ Arguments for `ListDistributionsPaginator.paginate` method:
 ## ListInvalidationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_paginator("list_invalidations")`.
+`session.create_client("cloudfront").get_paginator("list_invalidations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudfront.paginator import ListInvalidationsPaginator
 
-def get_list_invalidations_paginator() -> ListInvalidationsPaginator:
-    return Session().create_client("cloudfront").get_paginator("list_invalidations")
+session = get_session()
+async with session.create_client("cloudfront") as client:
+    client: CloudFrontClient
+    paginator: ListInvalidationsPaginator = client.get_paginator("list_invalidations")
 ```
 
 Boto3 documentation:
@@ -108,17 +114,19 @@ Arguments for `ListInvalidationsPaginator.paginate` method:
 ## ListStreamingDistributionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudfront").get_paginator("list_streaming_distributions")`.
+`session.create_client("cloudfront").get_paginator("list_streaming_distributions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudfront.paginator import ListStreamingDistributionsPaginator
 
-def get_list_streaming_distributions_paginator() -> ListStreamingDistributionsPaginator:
-    return Session().create_client("cloudfront").get_paginator("list_streaming_distributions")
+session = get_session()
+async with session.create_client("cloudfront") as client:
+    client: CloudFrontClient
+    paginator: ListStreamingDistributionsPaginator = client.get_paginator("list_streaming_distributions")
 ```
 
 Boto3 documentation:

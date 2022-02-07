@@ -21,17 +21,19 @@ type annotations stubs module
 ## ListApplicationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").get_paginator("list_applications")`.
+`session.create_client("migration-hub-refactor-spaces").get_paginator("list_applications")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_migration_hub_refactor_spaces.paginator import ListApplicationsPaginator
 
-def get_list_applications_paginator() -> ListApplicationsPaginator:
-    return Session().create_client("migration-hub-refactor-spaces").get_paginator("list_applications")
+session = get_session()
+async with session.create_client("migration-hub-refactor-spaces") as client:
+    client: MigrationHubRefactorSpacesClient
+    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `ListApplicationsPaginator.paginate` method:
 ## ListEnvironmentVpcsPaginator
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").get_paginator("list_environment_vpcs")`.
+`session.create_client("migration-hub-refactor-spaces").get_paginator("list_environment_vpcs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_migration_hub_refactor_spaces.paginator import ListEnvironmentVpcsPaginator
 
-def get_list_environment_vpcs_paginator() -> ListEnvironmentVpcsPaginator:
-    return Session().create_client("migration-hub-refactor-spaces").get_paginator("list_environment_vpcs")
+session = get_session()
+async with session.create_client("migration-hub-refactor-spaces") as client:
+    client: MigrationHubRefactorSpacesClient
+    paginator: ListEnvironmentVpcsPaginator = client.get_paginator("list_environment_vpcs")
 ```
 
 Boto3 documentation:
@@ -81,17 +85,19 @@ Arguments for `ListEnvironmentVpcsPaginator.paginate` method:
 ## ListEnvironmentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").get_paginator("list_environments")`.
+`session.create_client("migration-hub-refactor-spaces").get_paginator("list_environments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_migration_hub_refactor_spaces.paginator import ListEnvironmentsPaginator
 
-def get_list_environments_paginator() -> ListEnvironmentsPaginator:
-    return Session().create_client("migration-hub-refactor-spaces").get_paginator("list_environments")
+session = get_session()
+async with session.create_client("migration-hub-refactor-spaces") as client:
+    client: MigrationHubRefactorSpacesClient
+    paginator: ListEnvironmentsPaginator = client.get_paginator("list_environments")
 ```
 
 Boto3 documentation:
@@ -110,17 +116,19 @@ Arguments for `ListEnvironmentsPaginator.paginate` method:
 ## ListRoutesPaginator
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").get_paginator("list_routes")`.
+`session.create_client("migration-hub-refactor-spaces").get_paginator("list_routes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_migration_hub_refactor_spaces.paginator import ListRoutesPaginator
 
-def get_list_routes_paginator() -> ListRoutesPaginator:
-    return Session().create_client("migration-hub-refactor-spaces").get_paginator("list_routes")
+session = get_session()
+async with session.create_client("migration-hub-refactor-spaces") as client:
+    client: MigrationHubRefactorSpacesClient
+    paginator: ListRoutesPaginator = client.get_paginator("list_routes")
 ```
 
 Boto3 documentation:
@@ -141,17 +149,19 @@ Arguments for `ListRoutesPaginator.paginate` method:
 ## ListServicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").get_paginator("list_services")`.
+`session.create_client("migration-hub-refactor-spaces").get_paginator("list_services")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_migration_hub_refactor_spaces.paginator import ListServicesPaginator
 
-def get_list_services_paginator() -> ListServicesPaginator:
-    return Session().create_client("migration-hub-refactor-spaces").get_paginator("list_services")
+session = get_session()
+async with session.create_client("migration-hub-refactor-spaces") as client:
+    client: MigrationHubRefactorSpacesClient
+    paginator: ListServicesPaginator = client.get_paginator("list_services")
 ```
 
 Boto3 documentation:

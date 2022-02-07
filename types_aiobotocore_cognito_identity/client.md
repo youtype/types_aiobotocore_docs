@@ -39,22 +39,25 @@ type annotations stubs module
     - [unlink_identity](#unlink_identity)
     - [untag_resource](#untag_resource)
     - [update_identity_pool](#update_identity_pool)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="cognitoidentityclient"></a>
 
 ## CognitoIdentityClient
 
-Type annotations for `aiobotocore.create_client("cognito-identity")`
+Type annotations for `session.create_client("cognito-identity")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_cognito_identity.client import CognitoIdentityClient
 
-def get_cognito-identity_client() -> CognitoIdentityClient:
-    return Session().client("cognito-identity")
+session = get_session()
+async with session.create_client("cognito-identity") as client:
+    client: CognitoIdentityClient
 ```
 
 Boto3 documentation:
@@ -99,7 +102,7 @@ Exceptions:
 
 CognitoIdentityClient exceptions.
 
-Type annotations for `aiobotocore.create_client("cognito-identity").exceptions`
+Type annotations for `session.create_client("cognito-identity").exceptions`
 method.
 
 Boto3 documentation:
@@ -113,19 +116,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("cognito-identity").can_paginate` method.
+Type annotations for `session.create_client("cognito-identity").can_paginate`
+method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_identity_pool"></a>
 
@@ -134,7 +135,7 @@ Returns a `Coroutine` for `bool`.
 Creates a new identity pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").create_identity_pool` method.
+`session.create_client("cognito-identity").create_identity_pool` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.create_identity_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.create_identity_pool)
@@ -168,7 +169,7 @@ Returns a `Coroutine` for
 Deletes identities from an identity pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").delete_identities` method.
+`session.create_client("cognito-identity").delete_identities` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.delete_identities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.delete_identities)
@@ -192,7 +193,7 @@ Returns a `Coroutine` for
 Deletes an identity pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").delete_identity_pool` method.
+`session.create_client("cognito-identity").delete_identity_pool` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.delete_identity_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.delete_identity_pool)
@@ -215,7 +216,7 @@ Returns metadata related to the given identity, including when the identity was
 created and any associated linked logins.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").describe_identity` method.
+`session.create_client("cognito-identity").describe_identity` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.describe_identity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.describe_identity)
@@ -240,7 +241,7 @@ Gets details about a particular identity pool, including the pool name, ID
 description, creation date, and current number of users.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").describe_identity_pool` method.
+`session.create_client("cognito-identity").describe_identity_pool` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.describe_identity_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.describe_identity_pool)
@@ -265,7 +266,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").generate_presigned_url` method.
+`session.create_client("cognito-identity").generate_presigned_url` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.generate_presigned_url)
@@ -289,7 +290,7 @@ Returns a `Coroutine` for `str`.
 Returns credentials for the provided identity ID.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").get_credentials_for_identity`
+`session.create_client("cognito-identity").get_credentials_for_identity`
 method.
 
 Boto3 documentation:
@@ -316,8 +317,7 @@ Returns a `Coroutine` for
 
 Generates (or retrieves) a Cognito ID.
 
-Type annotations for `aiobotocore.create_client("cognito-identity").get_id`
-method.
+Type annotations for `session.create_client("cognito-identity").get_id` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.get_id](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.get_id)
@@ -343,7 +343,7 @@ Returns a `Coroutine` for
 Gets the roles for an identity pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").get_identity_pool_roles` method.
+`session.create_client("cognito-identity").get_identity_pool_roles` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.get_identity_pool_roles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.get_identity_pool_roles)
@@ -368,7 +368,7 @@ Returns a `Coroutine` for
 Gets an OpenID token, using a known Cognito ID.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").get_open_id_token` method.
+`session.create_client("cognito-identity").get_open_id_token` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.get_open_id_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.get_open_id_token)
@@ -394,7 +394,7 @@ Registers (or retrieves) a Cognito `IdentityId` and an OpenID Connect token for
 a user authenticated by your backend authentication process.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").get_open_id_token_for_developer_identity`
+`session.create_client("cognito-identity").get_open_id_token_for_developer_identity`
 method.
 
 Boto3 documentation:
@@ -425,7 +425,7 @@ Use `GetPrincipalTagAttributeMap` to list all mappings between `PrincipalTags`
 and user attributes.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").get_principal_tag_attribute_map`
+`session.create_client("cognito-identity").get_principal_tag_attribute_map`
 method.
 
 Boto3 documentation:
@@ -452,7 +452,7 @@ Returns a `Coroutine` for
 Lists the identities in an identity pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").list_identities` method.
+`session.create_client("cognito-identity").list_identities` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.list_identities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.list_identities)
@@ -479,7 +479,7 @@ Returns a `Coroutine` for
 Lists all of the Cognito identity pools registered for your account.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").list_identity_pools` method.
+`session.create_client("cognito-identity").list_identity_pools` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.list_identity_pools](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.list_identity_pools)
@@ -505,7 +505,7 @@ Returns a `Coroutine` for
 Lists the tags that are assigned to an Amazon Cognito identity pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").list_tags_for_resource` method.
+`session.create_client("cognito-identity").list_tags_for_resource` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.list_tags_for_resource)
@@ -532,8 +532,7 @@ list of `DeveloperUserIdentifier` values associated with an `IdentityId` for an
 existing identity.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").lookup_developer_identity`
-method.
+`session.create_client("cognito-identity").lookup_developer_identity` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.lookup_developer_identity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.lookup_developer_identity)
@@ -563,8 +562,7 @@ Merges two users having different `IdentityId` s, existing in the same identity
 pool, and identified by the same developer provider.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").merge_developer_identities`
-method.
+`session.create_client("cognito-identity").merge_developer_identities` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.merge_developer_identities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.merge_developer_identities)
@@ -592,7 +590,7 @@ Returns a `Coroutine` for
 Sets the roles for an identity pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").set_identity_pool_roles` method.
+`session.create_client("cognito-identity").set_identity_pool_roles` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.set_identity_pool_roles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.set_identity_pool_roles)
@@ -618,7 +616,7 @@ You can use this operation to use default (username and clientID) attribute or
 custom attribute mappings.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").set_principal_tag_attribute_map`
+`session.create_client("cognito-identity").set_principal_tag_attribute_map`
 method.
 
 Boto3 documentation:
@@ -646,8 +644,8 @@ Returns a `Coroutine` for
 
 Assigns a set of tags to the specified Amazon Cognito identity pool.
 
-Type annotations for
-`aiobotocore.create_client("cognito-identity").tag_resource` method.
+Type annotations for `session.create_client("cognito-identity").tag_resource`
+method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.tag_resource)
@@ -671,8 +669,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Unlinks a `DeveloperUserIdentifier` from an existing identity.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").unlink_developer_identity`
-method.
+`session.create_client("cognito-identity").unlink_developer_identity` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.unlink_developer_identity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.unlink_developer_identity)
@@ -697,7 +694,7 @@ Keyword-only arguments:
 Unlinks a federated identity from an existing account.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").unlink_identity` method.
+`session.create_client("cognito-identity").unlink_identity` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.unlink_identity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.unlink_identity)
@@ -719,8 +716,8 @@ Keyword-only arguments:
 
 Removes the specified tags from the specified Amazon Cognito identity pool.
 
-Type annotations for
-`aiobotocore.create_client("cognito-identity").untag_resource` method.
+Type annotations for `session.create_client("cognito-identity").untag_resource`
+method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.untag_resource)
@@ -744,7 +741,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates an identity pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-identity").update_identity_pool` method.
+`session.create_client("cognito-identity").update_identity_pool` method.
 
 Boto3 documentation:
 [CognitoIdentity.Client.update_identity_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.update_identity_pool)
@@ -772,13 +769,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [IdentityPoolTypeDef](./type_defs.md#identitypooltypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("cognito-identity").__aenter__`
+method.
+
+Boto3 documentation:
+[CognitoIdentity.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CognitoIdentityClient](#cognitoidentityclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("cognito-identity").__aexit__`
+method.
+
+Boto3 documentation:
+[CognitoIdentity.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-identity.html#CognitoIdentity.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("cognito-identity").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("cognito-identity").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_identity_pools")` ->
   [ListIdentityPoolsPaginator](./paginators.md#listidentitypoolspaginator)

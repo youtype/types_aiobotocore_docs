@@ -101,21 +101,24 @@ type annotations stubs module
     - [update_resource_event_configuration](#update_resource_event_configuration)
     - [update_wireless_device](#update_wireless_device)
     - [update_wireless_gateway](#update_wireless_gateway)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="iotwirelessclient"></a>
 
 ## IoTWirelessClient
 
-Type annotations for `aiobotocore.create_client("iotwireless")`
+Type annotations for `session.create_client("iotwireless")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_iotwireless.client import IoTWirelessClient
 
-def get_iotwireless_client() -> IoTWirelessClient:
-    return Session().client("iotwireless")
+session = get_session()
+async with session.create_client("iotwireless") as client:
+    client: IoTWirelessClient
 ```
 
 Boto3 documentation:
@@ -156,8 +159,7 @@ Exceptions:
 
 IoTWirelessClient exceptions.
 
-Type annotations for `aiobotocore.create_client("iotwireless").exceptions`
-method.
+Type annotations for `session.create_client("iotwireless").exceptions` method.
 
 Boto3 documentation:
 [IoTWireless.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.exceptions)
@@ -171,7 +173,7 @@ Returns [Exceptions](#exceptions).
 Associates a partner account with your AWS account.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").associate_aws_account_with_partner_account`
+`session.create_client("iotwireless").associate_aws_account_with_partner_account`
 method.
 
 Boto3 documentation:
@@ -201,7 +203,7 @@ Returns a `Coroutine` for
 Associate a multicast group with a FUOTA task.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").associate_multicast_group_with_fuota_task`
+`session.create_client("iotwireless").associate_multicast_group_with_fuota_task`
 method.
 
 Boto3 documentation:
@@ -227,7 +229,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associate a wireless device with a FUOTA task.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").associate_wireless_device_with_fuota_task`
+`session.create_client("iotwireless").associate_wireless_device_with_fuota_task`
 method.
 
 Boto3 documentation:
@@ -253,7 +255,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates a wireless device with a multicast group.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").associate_wireless_device_with_multicast_group`
+`session.create_client("iotwireless").associate_wireless_device_with_multicast_group`
 method.
 
 Boto3 documentation:
@@ -280,7 +282,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates a wireless device with a thing.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").associate_wireless_device_with_thing`
+`session.create_client("iotwireless").associate_wireless_device_with_thing`
 method.
 
 Boto3 documentation:
@@ -306,7 +308,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates a wireless gateway with a certificate.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").associate_wireless_gateway_with_certificate`
+`session.create_client("iotwireless").associate_wireless_gateway_with_certificate`
 method.
 
 Boto3 documentation:
@@ -334,7 +336,7 @@ Returns a `Coroutine` for
 Associates a wireless gateway with a thing.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").associate_wireless_gateway_with_thing`
+`session.create_client("iotwireless").associate_wireless_gateway_with_thing`
 method.
 
 Boto3 documentation:
@@ -359,19 +361,17 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("iotwireless").can_paginate`
+Type annotations for `session.create_client("iotwireless").can_paginate`
 method.
 
 Boto3 documentation:
 [IoTWireless.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_multicast_group_session"></a>
 
@@ -380,8 +380,7 @@ Returns a `Coroutine` for `bool`.
 Cancels an existing multicast group session.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").cancel_multicast_group_session`
-method.
+`session.create_client("iotwireless").cancel_multicast_group_session` method.
 
 Boto3 documentation:
 [IoTWireless.Client.cancel_multicast_group_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.cancel_multicast_group_session)
@@ -404,8 +403,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a new destination that maps a device message to an AWS IoT rule.
 
-Type annotations for
-`aiobotocore.create_client("iotwireless").create_destination` method.
+Type annotations for `session.create_client("iotwireless").create_destination`
+method.
 
 Boto3 documentation:
 [IoTWireless.Client.create_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.create_destination)
@@ -437,7 +436,7 @@ Returns a `Coroutine` for
 Creates a new device profile.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").create_device_profile` method.
+`session.create_client("iotwireless").create_device_profile` method.
 
 Boto3 documentation:
 [IoTWireless.Client.create_device_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.create_device_profile)
@@ -465,8 +464,8 @@ Returns a `Coroutine` for
 
 Creates a FUOTA task.
 
-Type annotations for
-`aiobotocore.create_client("iotwireless").create_fuota_task` method.
+Type annotations for `session.create_client("iotwireless").create_fuota_task`
+method.
 
 Boto3 documentation:
 [IoTWireless.Client.create_fuota_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.create_fuota_task)
@@ -496,7 +495,7 @@ Returns a `Coroutine` for
 Creates a multicast group.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").create_multicast_group` method.
+`session.create_client("iotwireless").create_multicast_group` method.
 
 Boto3 documentation:
 [IoTWireless.Client.create_multicast_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.create_multicast_group)
@@ -526,7 +525,7 @@ Returns a `Coroutine` for
 Creates a new service profile.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").create_service_profile` method.
+`session.create_client("iotwireless").create_service_profile` method.
 
 Boto3 documentation:
 [IoTWireless.Client.create_service_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.create_service_profile)
@@ -555,7 +554,7 @@ Returns a `Coroutine` for
 Provisions a wireless device.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").create_wireless_device` method.
+`session.create_client("iotwireless").create_wireless_device` method.
 
 Boto3 documentation:
 [IoTWireless.Client.create_wireless_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.create_wireless_device)
@@ -587,7 +586,7 @@ Returns a `Coroutine` for
 Provisions a wireless gateway.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").create_wireless_gateway` method.
+`session.create_client("iotwireless").create_wireless_gateway` method.
 
 Boto3 documentation:
 [IoTWireless.Client.create_wireless_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.create_wireless_gateway)
@@ -617,7 +616,7 @@ Returns a `Coroutine` for
 Creates a task for a wireless gateway.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").create_wireless_gateway_task` method.
+`session.create_client("iotwireless").create_wireless_gateway_task` method.
 
 Boto3 documentation:
 [IoTWireless.Client.create_wireless_gateway_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.create_wireless_gateway_task)
@@ -643,7 +642,7 @@ Returns a `Coroutine` for
 Creates a gateway task definition.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").create_wireless_gateway_task_definition`
+`session.create_client("iotwireless").create_wireless_gateway_task_definition`
 method.
 
 Boto3 documentation:
@@ -673,8 +672,8 @@ Returns a `Coroutine` for
 
 Deletes a destination.
 
-Type annotations for
-`aiobotocore.create_client("iotwireless").delete_destination` method.
+Type annotations for `session.create_client("iotwireless").delete_destination`
+method.
 
 Boto3 documentation:
 [IoTWireless.Client.delete_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.delete_destination)
@@ -698,7 +697,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a device profile.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").delete_device_profile` method.
+`session.create_client("iotwireless").delete_device_profile` method.
 
 Boto3 documentation:
 [IoTWireless.Client.delete_device_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.delete_device_profile)
@@ -721,8 +720,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a FUOTA task.
 
-Type annotations for
-`aiobotocore.create_client("iotwireless").delete_fuota_task` method.
+Type annotations for `session.create_client("iotwireless").delete_fuota_task`
+method.
 
 Boto3 documentation:
 [IoTWireless.Client.delete_fuota_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.delete_fuota_task)
@@ -745,7 +744,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a multicast group if it is not in use by a fuota task.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").delete_multicast_group` method.
+`session.create_client("iotwireless").delete_multicast_group` method.
 
 Boto3 documentation:
 [IoTWireless.Client.delete_multicast_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.delete_multicast_group)
@@ -769,7 +768,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a service profile.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").delete_service_profile` method.
+`session.create_client("iotwireless").delete_service_profile` method.
 
 Boto3 documentation:
 [IoTWireless.Client.delete_service_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.delete_service_profile)
@@ -793,7 +792,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a wireless device.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").delete_wireless_device` method.
+`session.create_client("iotwireless").delete_wireless_device` method.
 
 Boto3 documentation:
 [IoTWireless.Client.delete_wireless_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.delete_wireless_device)
@@ -817,7 +816,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a wireless gateway.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").delete_wireless_gateway` method.
+`session.create_client("iotwireless").delete_wireless_gateway` method.
 
 Boto3 documentation:
 [IoTWireless.Client.delete_wireless_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.delete_wireless_gateway)
@@ -841,7 +840,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a wireless gateway task.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").delete_wireless_gateway_task` method.
+`session.create_client("iotwireless").delete_wireless_gateway_task` method.
 
 Boto3 documentation:
 [IoTWireless.Client.delete_wireless_gateway_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.delete_wireless_gateway_task)
@@ -865,7 +864,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a wireless gateway task definition.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").delete_wireless_gateway_task_definition`
+`session.create_client("iotwireless").delete_wireless_gateway_task_definition`
 method.
 
 Boto3 documentation:
@@ -890,7 +889,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates your AWS account from a partner account.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").disassociate_aws_account_from_partner_account`
+`session.create_client("iotwireless").disassociate_aws_account_from_partner_account`
 method.
 
 Boto3 documentation:
@@ -918,7 +917,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates a multicast group from a fuota task.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").disassociate_multicast_group_from_fuota_task`
+`session.create_client("iotwireless").disassociate_multicast_group_from_fuota_task`
 method.
 
 Boto3 documentation:
@@ -945,7 +944,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates a wireless device from a FUOTA task.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").disassociate_wireless_device_from_fuota_task`
+`session.create_client("iotwireless").disassociate_wireless_device_from_fuota_task`
 method.
 
 Boto3 documentation:
@@ -972,7 +971,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates a wireless device from a multicast group.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").disassociate_wireless_device_from_multicast_group`
+`session.create_client("iotwireless").disassociate_wireless_device_from_multicast_group`
 method.
 
 Boto3 documentation:
@@ -999,7 +998,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates a wireless device from its currently associated thing.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").disassociate_wireless_device_from_thing`
+`session.create_client("iotwireless").disassociate_wireless_device_from_thing`
 method.
 
 Boto3 documentation:
@@ -1024,7 +1023,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates a wireless gateway from its currently associated certificate.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").disassociate_wireless_gateway_from_certificate`
+`session.create_client("iotwireless").disassociate_wireless_gateway_from_certificate`
 method.
 
 Boto3 documentation:
@@ -1050,7 +1049,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates a wireless gateway from its currently associated thing.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").disassociate_wireless_gateway_from_thing`
+`session.create_client("iotwireless").disassociate_wireless_gateway_from_thing`
 method.
 
 Boto3 documentation:
@@ -1075,7 +1074,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").generate_presigned_url` method.
+`session.create_client("iotwireless").generate_presigned_url` method.
 
 Boto3 documentation:
 [IoTWireless.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.generate_presigned_url)
@@ -1098,7 +1097,7 @@ Returns a `Coroutine` for `str`.
 
 Gets information about a destination.
 
-Type annotations for `aiobotocore.create_client("iotwireless").get_destination`
+Type annotations for `session.create_client("iotwireless").get_destination`
 method.
 
 Boto3 documentation:
@@ -1122,8 +1121,8 @@ Returns a `Coroutine` for
 
 Gets information about a device profile.
 
-Type annotations for
-`aiobotocore.create_client("iotwireless").get_device_profile` method.
+Type annotations for `session.create_client("iotwireless").get_device_profile`
+method.
 
 Boto3 documentation:
 [IoTWireless.Client.get_device_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_device_profile)
@@ -1147,7 +1146,7 @@ Returns a `Coroutine` for
 
 Gets information about a FUOTA task.
 
-Type annotations for `aiobotocore.create_client("iotwireless").get_fuota_task`
+Type annotations for `session.create_client("iotwireless").get_fuota_task`
 method.
 
 Boto3 documentation:
@@ -1172,8 +1171,7 @@ Returns a `Coroutine` for
 Returns current default log levels or log levels by resource types.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").get_log_levels_by_resource_types`
-method.
+`session.create_client("iotwireless").get_log_levels_by_resource_types` method.
 
 Boto3 documentation:
 [IoTWireless.Client.get_log_levels_by_resource_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_log_levels_by_resource_types)
@@ -1190,8 +1188,8 @@ Returns a `Coroutine` for
 
 Gets information about a multicast group.
 
-Type annotations for
-`aiobotocore.create_client("iotwireless").get_multicast_group` method.
+Type annotations for `session.create_client("iotwireless").get_multicast_group`
+method.
 
 Boto3 documentation:
 [IoTWireless.Client.get_multicast_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_multicast_group)
@@ -1216,7 +1214,7 @@ Returns a `Coroutine` for
 Gets information about a multicast group session.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").get_multicast_group_session` method.
+`session.create_client("iotwireless").get_multicast_group_session` method.
 
 Boto3 documentation:
 [IoTWireless.Client.get_multicast_group_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_multicast_group_session)
@@ -1241,7 +1239,7 @@ Returns a `Coroutine` for
 Get NetworkAnalyzer configuration.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").get_network_analyzer_configuration`
+`session.create_client("iotwireless").get_network_analyzer_configuration`
 method.
 
 Boto3 documentation:
@@ -1266,8 +1264,8 @@ Returns a `Coroutine` for
 
 Gets information about a partner account.
 
-Type annotations for
-`aiobotocore.create_client("iotwireless").get_partner_account` method.
+Type annotations for `session.create_client("iotwireless").get_partner_account`
+method.
 
 Boto3 documentation:
 [IoTWireless.Client.get_partner_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_partner_account)
@@ -1294,8 +1292,7 @@ Returns a `Coroutine` for
 Get the event configuration for a particular resource identifier.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").get_resource_event_configuration`
-method.
+`session.create_client("iotwireless").get_resource_event_configuration` method.
 
 Boto3 documentation:
 [IoTWireless.Client.get_resource_event_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_resource_event_configuration)
@@ -1325,7 +1322,7 @@ Fetches the log-level override, if any, for a given resource-ID and resource-
 type.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").get_resource_log_level` method.
+`session.create_client("iotwireless").get_resource_log_level` method.
 
 Boto3 documentation:
 [IoTWireless.Client.get_resource_log_level](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_resource_log_level)
@@ -1352,7 +1349,7 @@ Gets the account-specific endpoint for Configuration and Update Server (CUPS)
 protocol or LoRaWAN Network Server (LNS) connections.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").get_service_endpoint` method.
+`session.create_client("iotwireless").get_service_endpoint` method.
 
 Boto3 documentation:
 [IoTWireless.Client.get_service_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_service_endpoint)
@@ -1377,8 +1374,8 @@ Returns a `Coroutine` for
 
 Gets information about a service profile.
 
-Type annotations for
-`aiobotocore.create_client("iotwireless").get_service_profile` method.
+Type annotations for `session.create_client("iotwireless").get_service_profile`
+method.
 
 Boto3 documentation:
 [IoTWireless.Client.get_service_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_service_profile)
@@ -1402,8 +1399,8 @@ Returns a `Coroutine` for
 
 Gets information about a wireless device.
 
-Type annotations for
-`aiobotocore.create_client("iotwireless").get_wireless_device` method.
+Type annotations for `session.create_client("iotwireless").get_wireless_device`
+method.
 
 Boto3 documentation:
 [IoTWireless.Client.get_wireless_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_wireless_device)
@@ -1431,8 +1428,7 @@ Returns a `Coroutine` for
 Gets operating information about a wireless device.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").get_wireless_device_statistics`
-method.
+`session.create_client("iotwireless").get_wireless_device_statistics` method.
 
 Boto3 documentation:
 [IoTWireless.Client.get_wireless_device_statistics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_wireless_device_statistics)
@@ -1457,7 +1453,7 @@ Returns a `Coroutine` for
 Gets information about a wireless gateway.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").get_wireless_gateway` method.
+`session.create_client("iotwireless").get_wireless_gateway` method.
 
 Boto3 documentation:
 [IoTWireless.Client.get_wireless_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_wireless_gateway)
@@ -1486,8 +1482,7 @@ Gets the ID of the certificate that is currently associated with a wireless
 gateway.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").get_wireless_gateway_certificate`
-method.
+`session.create_client("iotwireless").get_wireless_gateway_certificate` method.
 
 Boto3 documentation:
 [IoTWireless.Client.get_wireless_gateway_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_wireless_gateway_certificate)
@@ -1512,7 +1507,7 @@ Returns a `Coroutine` for
 Gets the firmware version and other information about a wireless gateway.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").get_wireless_gateway_firmware_information`
+`session.create_client("iotwireless").get_wireless_gateway_firmware_information`
 method.
 
 Boto3 documentation:
@@ -1538,8 +1533,7 @@ Returns a `Coroutine` for
 Gets operating information about a wireless gateway.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").get_wireless_gateway_statistics`
-method.
+`session.create_client("iotwireless").get_wireless_gateway_statistics` method.
 
 Boto3 documentation:
 [IoTWireless.Client.get_wireless_gateway_statistics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_wireless_gateway_statistics)
@@ -1564,7 +1558,7 @@ Returns a `Coroutine` for
 Gets information about a wireless gateway task.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").get_wireless_gateway_task` method.
+`session.create_client("iotwireless").get_wireless_gateway_task` method.
 
 Boto3 documentation:
 [IoTWireless.Client.get_wireless_gateway_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.get_wireless_gateway_task)
@@ -1589,7 +1583,7 @@ Returns a `Coroutine` for
 Gets information about a wireless gateway task definition.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").get_wireless_gateway_task_definition`
+`session.create_client("iotwireless").get_wireless_gateway_task_definition`
 method.
 
 Boto3 documentation:
@@ -1614,8 +1608,8 @@ Returns a `Coroutine` for
 
 Lists the destinations registered to your AWS account.
 
-Type annotations for
-`aiobotocore.create_client("iotwireless").list_destinations` method.
+Type annotations for `session.create_client("iotwireless").list_destinations`
+method.
 
 Boto3 documentation:
 [IoTWireless.Client.list_destinations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.list_destinations)
@@ -1640,7 +1634,7 @@ Returns a `Coroutine` for
 Lists the device profiles registered to your AWS account.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").list_device_profiles` method.
+`session.create_client("iotwireless").list_device_profiles` method.
 
 Boto3 documentation:
 [IoTWireless.Client.list_device_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.list_device_profiles)
@@ -1665,8 +1659,8 @@ Returns a `Coroutine` for
 
 Lists the FUOTA tasks registered to your AWS account.
 
-Type annotations for
-`aiobotocore.create_client("iotwireless").list_fuota_tasks` method.
+Type annotations for `session.create_client("iotwireless").list_fuota_tasks`
+method.
 
 Boto3 documentation:
 [IoTWireless.Client.list_fuota_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.list_fuota_tasks)
@@ -1691,7 +1685,7 @@ Returns a `Coroutine` for
 Lists the multicast groups registered to your AWS account.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").list_multicast_groups` method.
+`session.create_client("iotwireless").list_multicast_groups` method.
 
 Boto3 documentation:
 [IoTWireless.Client.list_multicast_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.list_multicast_groups)
@@ -1717,7 +1711,7 @@ Returns a `Coroutine` for
 List all multicast groups associated with a fuota task.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").list_multicast_groups_by_fuota_task`
+`session.create_client("iotwireless").list_multicast_groups_by_fuota_task`
 method.
 
 Boto3 documentation:
@@ -1745,7 +1739,7 @@ Returns a `Coroutine` for
 Lists the partner accounts associated with your AWS account.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").list_partner_accounts` method.
+`session.create_client("iotwireless").list_partner_accounts` method.
 
 Boto3 documentation:
 [IoTWireless.Client.list_partner_accounts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.list_partner_accounts)
@@ -1771,7 +1765,7 @@ Returns a `Coroutine` for
 Lists the service profiles registered to your AWS account.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").list_service_profiles` method.
+`session.create_client("iotwireless").list_service_profiles` method.
 
 Boto3 documentation:
 [IoTWireless.Client.list_service_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.list_service_profiles)
@@ -1797,7 +1791,7 @@ Returns a `Coroutine` for
 Lists the tags (metadata) you have assigned to the resource.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").list_tags_for_resource` method.
+`session.create_client("iotwireless").list_tags_for_resource` method.
 
 Boto3 documentation:
 [IoTWireless.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.list_tags_for_resource)
@@ -1822,7 +1816,7 @@ Returns a `Coroutine` for
 Lists the wireless devices registered to your AWS account.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").list_wireless_devices` method.
+`session.create_client("iotwireless").list_wireless_devices` method.
 
 Boto3 documentation:
 [IoTWireless.Client.list_wireless_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.list_wireless_devices)
@@ -1855,7 +1849,7 @@ Returns a `Coroutine` for
 List the wireless gateway tasks definitions registered to your AWS account.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").list_wireless_gateway_task_definitions`
+`session.create_client("iotwireless").list_wireless_gateway_task_definitions`
 method.
 
 Boto3 documentation:
@@ -1884,7 +1878,7 @@ Returns a `Coroutine` for
 Lists the wireless gateways registered to your AWS account.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").list_wireless_gateways` method.
+`session.create_client("iotwireless").list_wireless_gateways` method.
 
 Boto3 documentation:
 [IoTWireless.Client.list_wireless_gateways](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.list_wireless_gateways)
@@ -1910,7 +1904,7 @@ Returns a `Coroutine` for
 Sets the log-level override for a resource-ID and resource-type.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").put_resource_log_level` method.
+`session.create_client("iotwireless").put_resource_log_level` method.
 
 Boto3 documentation:
 [IoTWireless.Client.put_resource_log_level](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.put_resource_log_level)
@@ -1937,8 +1931,7 @@ Removes the log-level overrides for all resources; both wireless devices and
 wireless gateways.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").reset_all_resource_log_levels`
-method.
+`session.create_client("iotwireless").reset_all_resource_log_levels` method.
 
 Boto3 documentation:
 [IoTWireless.Client.reset_all_resource_log_levels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.reset_all_resource_log_levels)
@@ -1956,7 +1949,7 @@ Removes the log-level override, if any, for a specific resource-ID and
 resource- type.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").reset_resource_log_level` method.
+`session.create_client("iotwireless").reset_resource_log_level` method.
 
 Boto3 documentation:
 [IoTWireless.Client.reset_resource_log_level](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.reset_resource_log_level)
@@ -1981,7 +1974,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Sends the specified data to a multicast group.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").send_data_to_multicast_group` method.
+`session.create_client("iotwireless").send_data_to_multicast_group` method.
 
 Boto3 documentation:
 [IoTWireless.Client.send_data_to_multicast_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.send_data_to_multicast_group)
@@ -2010,7 +2003,7 @@ Returns a `Coroutine` for
 Sends a decrypted application data frame to a device.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").send_data_to_wireless_device` method.
+`session.create_client("iotwireless").send_data_to_wireless_device` method.
 
 Boto3 documentation:
 [IoTWireless.Client.send_data_to_wireless_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.send_data_to_wireless_device)
@@ -2040,7 +2033,7 @@ Starts a bulk association of all qualifying wireless devices with a multicast
 group.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").start_bulk_associate_wireless_device_with_multicast_group`
+`session.create_client("iotwireless").start_bulk_associate_wireless_device_with_multicast_group`
 method.
 
 Boto3 documentation:
@@ -2069,7 +2062,7 @@ Starts a bulk disassociatin of all qualifying wireless devices from a multicast
 group.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").start_bulk_disassociate_wireless_device_from_multicast_group`
+`session.create_client("iotwireless").start_bulk_disassociate_wireless_device_from_multicast_group`
 method.
 
 Boto3 documentation:
@@ -2096,8 +2089,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Starts a FUOTA task.
 
-Type annotations for
-`aiobotocore.create_client("iotwireless").start_fuota_task` method.
+Type annotations for `session.create_client("iotwireless").start_fuota_task`
+method.
 
 Boto3 documentation:
 [IoTWireless.Client.start_fuota_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.start_fuota_task)
@@ -2122,8 +2115,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Starts a multicast group session.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").start_multicast_group_session`
-method.
+`session.create_client("iotwireless").start_multicast_group_session` method.
 
 Boto3 documentation:
 [IoTWireless.Client.start_multicast_group_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.start_multicast_group_session)
@@ -2149,7 +2141,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds a tag to a resource.
 
-Type annotations for `aiobotocore.create_client("iotwireless").tag_resource`
+Type annotations for `session.create_client("iotwireless").tag_resource`
 method.
 
 Boto3 documentation:
@@ -2174,7 +2166,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Simulates a provisioned device by sending an uplink data payload of `Hello` .
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").test_wireless_device` method.
+`session.create_client("iotwireless").test_wireless_device` method.
 
 Boto3 documentation:
 [IoTWireless.Client.test_wireless_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.test_wireless_device)
@@ -2198,7 +2190,7 @@ Returns a `Coroutine` for
 
 Removes one or more tags from a resource.
 
-Type annotations for `aiobotocore.create_client("iotwireless").untag_resource`
+Type annotations for `session.create_client("iotwireless").untag_resource`
 method.
 
 Boto3 documentation:
@@ -2222,8 +2214,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates properties of a destination.
 
-Type annotations for
-`aiobotocore.create_client("iotwireless").update_destination` method.
+Type annotations for `session.create_client("iotwireless").update_destination`
+method.
 
 Boto3 documentation:
 [IoTWireless.Client.update_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.update_destination)
@@ -2250,8 +2242,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates properties of a FUOTA task.
 
-Type annotations for
-`aiobotocore.create_client("iotwireless").update_fuota_task` method.
+Type annotations for `session.create_client("iotwireless").update_fuota_task`
+method.
 
 Boto3 documentation:
 [IoTWireless.Client.update_fuota_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.update_fuota_task)
@@ -2279,7 +2271,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Set default log level, or log levels by resource types.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").update_log_levels_by_resource_types`
+`session.create_client("iotwireless").update_log_levels_by_resource_types`
 method.
 
 Boto3 documentation:
@@ -2308,7 +2300,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates properties of a multicast group session.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").update_multicast_group` method.
+`session.create_client("iotwireless").update_multicast_group` method.
 
 Boto3 documentation:
 [IoTWireless.Client.update_multicast_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.update_multicast_group)
@@ -2335,7 +2327,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Update NetworkAnalyzer configuration.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").update_network_analyzer_configuration`
+`session.create_client("iotwireless").update_network_analyzer_configuration`
 method.
 
 Boto3 documentation:
@@ -2365,7 +2357,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates properties of a partner account.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").update_partner_account` method.
+`session.create_client("iotwireless").update_partner_account` method.
 
 Boto3 documentation:
 [IoTWireless.Client.update_partner_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.update_partner_account)
@@ -2394,7 +2386,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Update the event configuration for a particular resource identifier.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").update_resource_event_configuration`
+`session.create_client("iotwireless").update_resource_event_configuration`
 method.
 
 Boto3 documentation:
@@ -2427,7 +2419,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates properties of a wireless device.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").update_wireless_device` method.
+`session.create_client("iotwireless").update_wireless_device` method.
 
 Boto3 documentation:
 [IoTWireless.Client.update_wireless_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.update_wireless_device)
@@ -2456,7 +2448,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates properties of a wireless gateway.
 
 Type annotations for
-`aiobotocore.create_client("iotwireless").update_wireless_gateway` method.
+`session.create_client("iotwireless").update_wireless_gateway` method.
 
 Boto3 documentation:
 [IoTWireless.Client.update_wireless_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.update_wireless_gateway)
@@ -2476,3 +2468,35 @@ Keyword-only arguments:
 - `NetIdFilters`: `Sequence`\[`str`\]
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("iotwireless").__aenter__` method.
+
+Boto3 documentation:
+[IoTWireless.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [IoTWirelessClient](#iotwirelessclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("iotwireless").__aexit__` method.
+
+Boto3 documentation:
+[IoTWireless.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotwireless.html#IoTWireless.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

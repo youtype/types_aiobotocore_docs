@@ -19,21 +19,24 @@ type annotations stubs module
     - [put_events](#put_events)
     - [put_items](#put_items)
     - [put_users](#put_users)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="personalizeeventsclient"></a>
 
 ## PersonalizeEventsClient
 
-Type annotations for `aiobotocore.create_client("personalize-events")`
+Type annotations for `session.create_client("personalize-events")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_personalize_events.client import PersonalizeEventsClient
 
-def get_personalize-events_client() -> PersonalizeEventsClient:
-    return Session().client("personalize-events")
+session = get_session()
+async with session.create_client("personalize-events") as client:
+    client: PersonalizeEventsClient
 ```
 
 Boto3 documentation:
@@ -70,8 +73,8 @@ Exceptions:
 
 PersonalizeEventsClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("personalize-events").exceptions` method.
+Type annotations for `session.create_client("personalize-events").exceptions`
+method.
 
 Boto3 documentation:
 [PersonalizeEvents.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize-events.html#PersonalizeEvents.Client.exceptions)
@@ -84,19 +87,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("personalize-events").can_paginate` method.
+Type annotations for `session.create_client("personalize-events").can_paginate`
+method.
 
 Boto3 documentation:
 [PersonalizeEvents.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize-events.html#PersonalizeEvents.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -105,8 +106,7 @@ Returns a `Coroutine` for `bool`.
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("personalize-events").generate_presigned_url`
-method.
+`session.create_client("personalize-events").generate_presigned_url` method.
 
 Boto3 documentation:
 [PersonalizeEvents.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize-events.html#PersonalizeEvents.Client.generate_presigned_url)
@@ -129,8 +129,8 @@ Returns a `Coroutine` for `str`.
 
 Records user interaction event data.
 
-Type annotations for
-`aiobotocore.create_client("personalize-events").put_events` method.
+Type annotations for `session.create_client("personalize-events").put_events`
+method.
 
 Boto3 documentation:
 [PersonalizeEvents.Client.put_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize-events.html#PersonalizeEvents.Client.put_events)
@@ -154,8 +154,8 @@ Keyword-only arguments:
 
 Adds one or more items to an Items dataset.
 
-Type annotations for
-`aiobotocore.create_client("personalize-events").put_items` method.
+Type annotations for `session.create_client("personalize-events").put_items`
+method.
 
 Boto3 documentation:
 [PersonalizeEvents.Client.put_items](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize-events.html#PersonalizeEvents.Client.put_items)
@@ -176,8 +176,8 @@ Keyword-only arguments:
 
 Adds one or more users to a Users dataset.
 
-Type annotations for
-`aiobotocore.create_client("personalize-events").put_users` method.
+Type annotations for `session.create_client("personalize-events").put_users`
+method.
 
 Boto3 documentation:
 [PersonalizeEvents.Client.put_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize-events.html#PersonalizeEvents.Client.put_users)
@@ -191,3 +191,37 @@ Keyword-only arguments:
 
 - `datasetArn`: `str` *(required)*
 - `users`: `Sequence`\[[UserTypeDef](./type_defs.md#usertypedef)\] *(required)*
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("personalize-events").__aenter__`
+method.
+
+Boto3 documentation:
+[PersonalizeEvents.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize-events.html#PersonalizeEvents.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [PersonalizeEventsClient](#personalizeeventsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("personalize-events").__aexit__`
+method.
+
+Boto3 documentation:
+[PersonalizeEvents.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize-events.html#PersonalizeEvents.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

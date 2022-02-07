@@ -20,17 +20,19 @@ type annotations stubs module
 ## ListAliasesPaginator
 
 Type annotations for
-`aiobotocore.create_client("kms").get_paginator("list_aliases")`.
+`session.create_client("kms").get_paginator("list_aliases")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kms.paginator import ListAliasesPaginator
 
-def get_list_aliases_paginator() -> ListAliasesPaginator:
-    return Session().create_client("kms").get_paginator("list_aliases")
+session = get_session()
+async with session.create_client("kms") as client:
+    client: KMSClient
+    paginator: ListAliasesPaginator = client.get_paginator("list_aliases")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `ListAliasesPaginator.paginate` method:
 ## ListGrantsPaginator
 
 Type annotations for
-`aiobotocore.create_client("kms").get_paginator("list_grants")`.
+`session.create_client("kms").get_paginator("list_grants")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kms.paginator import ListGrantsPaginator
 
-def get_list_grants_paginator() -> ListGrantsPaginator:
-    return Session().create_client("kms").get_paginator("list_grants")
+session = get_session()
+async with session.create_client("kms") as client:
+    client: KMSClient
+    paginator: ListGrantsPaginator = client.get_paginator("list_grants")
 ```
 
 Boto3 documentation:
@@ -82,17 +86,19 @@ Arguments for `ListGrantsPaginator.paginate` method:
 ## ListKeyPoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("kms").get_paginator("list_key_policies")`.
+`session.create_client("kms").get_paginator("list_key_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kms.paginator import ListKeyPoliciesPaginator
 
-def get_list_key_policies_paginator() -> ListKeyPoliciesPaginator:
-    return Session().create_client("kms").get_paginator("list_key_policies")
+session = get_session()
+async with session.create_client("kms") as client:
+    client: KMSClient
+    paginator: ListKeyPoliciesPaginator = client.get_paginator("list_key_policies")
 ```
 
 Boto3 documentation:
@@ -111,18 +117,19 @@ Arguments for `ListKeyPoliciesPaginator.paginate` method:
 
 ## ListKeysPaginator
 
-Type annotations for
-`aiobotocore.create_client("kms").get_paginator("list_keys")`.
+Type annotations for `session.create_client("kms").get_paginator("list_keys")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kms.paginator import ListKeysPaginator
 
-def get_list_keys_paginator() -> ListKeysPaginator:
-    return Session().create_client("kms").get_paginator("list_keys")
+session = get_session()
+async with session.create_client("kms") as client:
+    client: KMSClient
+    paginator: ListKeysPaginator = client.get_paginator("list_keys")
 ```
 
 Boto3 documentation:

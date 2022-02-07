@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[amp]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[amp]'
+
+# standalone installation
 pip install types-aiobotocore-amp
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-amp
 
 ## PrometheusServiceClient
 
-Type annotations for `aiobotocore.create_client("amp")` as
+Type annotations for `session.create_client("amp")` as
 [PrometheusServiceClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_amp.client import PrometheusServiceClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_alert_manager_definition](./client.md#create_alert_manager_definition)
 - [create_rule_groups_namespace](./client.md#create_rule_groups_namespace)
@@ -91,7 +97,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_amp.paginators import ListRuleGroupsNamespacesPaginator, ...
+from types_aiobotocore_amp.paginator import ListRuleGroupsNamespacesPaginator, ...
 ```
 
 - [ListRuleGroupsNamespacesPaginator](./paginators.md#listrulegroupsnamespacespaginator)
@@ -107,7 +113,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_amp.waiters import WorkspaceActiveWaiter, ...
+from types_aiobotocore_amp.waiter import WorkspaceActiveWaiter, ...
 ```
 
 - [WorkspaceActiveWaiter](./waiters.md#workspaceactivewaiter)

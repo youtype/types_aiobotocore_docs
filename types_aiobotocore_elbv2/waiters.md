@@ -21,7 +21,7 @@ type annotations stubs module
 ## LoadBalancerAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("elbv2").get_waiter("load_balancer_available")`.
+`session.create_client("elbv2").get_waiter("load_balancer_available")`.
 
 Can be used directly:
 
@@ -31,7 +31,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_elbv2.waiter import LoadBalancerAvailableWaiter
 
 def get_load_balancer_available_waiter() -> LoadBalancerAvailableWaiter:
-    return Session().create_client("elbv2").get_waiter("load_balancer_available")
+    return Session().client("elbv2").get_waiter("load_balancer_available")
 ```
 
 Boto3 documentation:
@@ -50,7 +50,7 @@ Arguments for `LoadBalancerAvailableWaiter.wait` method:
 ## LoadBalancerExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("elbv2").get_waiter("load_balancer_exists")`.
+`session.create_client("elbv2").get_waiter("load_balancer_exists")`.
 
 Can be used directly:
 
@@ -60,7 +60,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_elbv2.waiter import LoadBalancerExistsWaiter
 
 def get_load_balancer_exists_waiter() -> LoadBalancerExistsWaiter:
-    return Session().create_client("elbv2").get_waiter("load_balancer_exists")
+    return Session().client("elbv2").get_waiter("load_balancer_exists")
 ```
 
 Boto3 documentation:
@@ -79,7 +79,7 @@ Arguments for `LoadBalancerExistsWaiter.wait` method:
 ## LoadBalancersDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("elbv2").get_waiter("load_balancers_deleted")`.
+`session.create_client("elbv2").get_waiter("load_balancers_deleted")`.
 
 Can be used directly:
 
@@ -89,7 +89,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_elbv2.waiter import LoadBalancersDeletedWaiter
 
 def get_load_balancers_deleted_waiter() -> LoadBalancersDeletedWaiter:
-    return Session().create_client("elbv2").get_waiter("load_balancers_deleted")
+    return Session().client("elbv2").get_waiter("load_balancers_deleted")
 ```
 
 Boto3 documentation:
@@ -108,7 +108,7 @@ Arguments for `LoadBalancersDeletedWaiter.wait` method:
 ## TargetDeregisteredWaiter
 
 Type annotations for
-`aiobotocore.create_client("elbv2").get_waiter("target_deregistered")`.
+`session.create_client("elbv2").get_waiter("target_deregistered")`.
 
 Can be used directly:
 
@@ -118,7 +118,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_elbv2.waiter import TargetDeregisteredWaiter
 
 def get_target_deregistered_waiter() -> TargetDeregisteredWaiter:
-    return Session().create_client("elbv2").get_waiter("target_deregistered")
+    return Session().client("elbv2").get_waiter("target_deregistered")
 ```
 
 Boto3 documentation:
@@ -136,7 +136,7 @@ Arguments for `TargetDeregisteredWaiter.wait` method:
 ## TargetInServiceWaiter
 
 Type annotations for
-`aiobotocore.create_client("elbv2").get_waiter("target_in_service")`.
+`session.create_client("elbv2").get_waiter("target_in_service")`.
 
 Can be used directly:
 
@@ -146,7 +146,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_elbv2.waiter import TargetInServiceWaiter
 
 def get_target_in_service_waiter() -> TargetInServiceWaiter:
-    return Session().create_client("elbv2").get_waiter("target_in_service")
+    return Session().client("elbv2").get_waiter("target_in_service")
 ```
 
 Boto3 documentation:

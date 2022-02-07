@@ -23,22 +23,25 @@ type annotations stubs module
     - [list_member_accounts](#list_member_accounts)
     - [list_s3_resources](#list_s3_resources)
     - [update_s3_resources](#update_s3_resources)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="macieclient"></a>
 
 ## MacieClient
 
-Type annotations for `aiobotocore.create_client("macie")`
+Type annotations for `session.create_client("macie")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_macie.client import MacieClient
 
-def get_macie_client() -> MacieClient:
-    return Session().client("macie")
+session = get_session()
+async with session.create_client("macie") as client:
+    client: MacieClient
 ```
 
 Boto3 documentation:
@@ -76,7 +79,7 @@ Exceptions:
 
 MacieClient exceptions.
 
-Type annotations for `aiobotocore.create_client("macie").exceptions` method.
+Type annotations for `session.create_client("macie").exceptions` method.
 
 Boto3 documentation:
 [Macie.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie.html#Macie.Client.exceptions)
@@ -90,8 +93,8 @@ Returns [Exceptions](#exceptions).
 Associates a specified AWS account with Amazon Macie Classic as a member
 account.
 
-Type annotations for
-`aiobotocore.create_client("macie").associate_member_account` method.
+Type annotations for `session.create_client("macie").associate_member_account`
+method.
 
 Boto3 documentation:
 [Macie.Client.associate_member_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie.html#Macie.Client.associate_member_account)
@@ -113,8 +116,8 @@ Keyword-only arguments:
 Associates specified S3 resources with Amazon Macie Classic for monitoring and
 data classification.
 
-Type annotations for
-`aiobotocore.create_client("macie").associate_s3_resources` method.
+Type annotations for `session.create_client("macie").associate_s3_resources`
+method.
 
 Boto3 documentation:
 [Macie.Client.associate_s3_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie.html#Macie.Client.associate_s3_resources)
@@ -141,18 +144,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("macie").can_paginate` method.
+Type annotations for `session.create_client("macie").can_paginate` method.
 
 Boto3 documentation:
 [Macie.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie.html#Macie.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="disassociate_member_account"></a>
 
@@ -161,7 +162,7 @@ Returns a `Coroutine` for `bool`.
 Removes the specified member account from Amazon Macie Classic.
 
 Type annotations for
-`aiobotocore.create_client("macie").disassociate_member_account` method.
+`session.create_client("macie").disassociate_member_account` method.
 
 Boto3 documentation:
 [Macie.Client.disassociate_member_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie.html#Macie.Client.disassociate_member_account)
@@ -182,8 +183,8 @@ Keyword-only arguments:
 
 Removes specified S3 resources from being monitored by Amazon Macie Classic.
 
-Type annotations for
-`aiobotocore.create_client("macie").disassociate_s3_resources` method.
+Type annotations for `session.create_client("macie").disassociate_s3_resources`
+method.
 
 Boto3 documentation:
 [Macie.Client.disassociate_s3_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie.html#Macie.Client.disassociate_s3_resources)
@@ -210,8 +211,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("macie").generate_presigned_url` method.
+Type annotations for `session.create_client("macie").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Macie.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie.html#Macie.Client.generate_presigned_url)
@@ -235,7 +236,7 @@ Returns a `Coroutine` for `str`.
 Lists all Amazon Macie Classic member accounts for the current Macie Classic
 administrator account.
 
-Type annotations for `aiobotocore.create_client("macie").list_member_accounts`
+Type annotations for `session.create_client("macie").list_member_accounts`
 method.
 
 Boto3 documentation:
@@ -261,8 +262,7 @@ Returns a `Coroutine` for
 
 Lists all the S3 resources associated with Amazon Macie Classic.
 
-Type annotations for `aiobotocore.create_client("macie").list_s3_resources`
-method.
+Type annotations for `session.create_client("macie").list_s3_resources` method.
 
 Boto3 documentation:
 [Macie.Client.list_s3_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie.html#Macie.Client.list_s3_resources)
@@ -287,7 +287,7 @@ Returns a `Coroutine` for
 
 Updates the classification types for the specified S3 resources.
 
-Type annotations for `aiobotocore.create_client("macie").update_s3_resources`
+Type annotations for `session.create_client("macie").update_s3_resources`
 method.
 
 Boto3 documentation:
@@ -309,12 +309,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateS3ResourcesResultTypeDef](./type_defs.md#updates3resourcesresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("macie").__aenter__` method.
+
+Boto3 documentation:
+[Macie.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie.html#Macie.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [MacieClient](#macieclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("macie").__aexit__` method.
+
+Boto3 documentation:
+[Macie.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie.html#Macie.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("macie").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("macie").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_member_accounts")` ->
   [ListMemberAccountsPaginator](./paginators.md#listmemberaccountspaginator)

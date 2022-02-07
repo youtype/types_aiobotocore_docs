@@ -48,17 +48,19 @@ type annotations stubs module
 ## DescribeClusterDbRevisionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_cluster_db_revisions")`.
+`session.create_client("redshift").get_paginator("describe_cluster_db_revisions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeClusterDbRevisionsPaginator
 
-def get_describe_cluster_db_revisions_paginator() -> DescribeClusterDbRevisionsPaginator:
-    return Session().create_client("redshift").get_paginator("describe_cluster_db_revisions")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeClusterDbRevisionsPaginator = client.get_paginator("describe_cluster_db_revisions")
 ```
 
 Boto3 documentation:
@@ -78,17 +80,19 @@ Arguments for `DescribeClusterDbRevisionsPaginator.paginate` method:
 ## DescribeClusterParameterGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_cluster_parameter_groups")`.
+`session.create_client("redshift").get_paginator("describe_cluster_parameter_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeClusterParameterGroupsPaginator
 
-def get_describe_cluster_parameter_groups_paginator() -> DescribeClusterParameterGroupsPaginator:
-    return Session().create_client("redshift").get_paginator("describe_cluster_parameter_groups")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeClusterParameterGroupsPaginator = client.get_paginator("describe_cluster_parameter_groups")
 ```
 
 Boto3 documentation:
@@ -110,17 +114,19 @@ Arguments for `DescribeClusterParameterGroupsPaginator.paginate` method:
 ## DescribeClusterParametersPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_cluster_parameters")`.
+`session.create_client("redshift").get_paginator("describe_cluster_parameters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeClusterParametersPaginator
 
-def get_describe_cluster_parameters_paginator() -> DescribeClusterParametersPaginator:
-    return Session().create_client("redshift").get_paginator("describe_cluster_parameters")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeClusterParametersPaginator = client.get_paginator("describe_cluster_parameters")
 ```
 
 Boto3 documentation:
@@ -141,17 +147,19 @@ Arguments for `DescribeClusterParametersPaginator.paginate` method:
 ## DescribeClusterSecurityGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_cluster_security_groups")`.
+`session.create_client("redshift").get_paginator("describe_cluster_security_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeClusterSecurityGroupsPaginator
 
-def get_describe_cluster_security_groups_paginator() -> DescribeClusterSecurityGroupsPaginator:
-    return Session().create_client("redshift").get_paginator("describe_cluster_security_groups")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeClusterSecurityGroupsPaginator = client.get_paginator("describe_cluster_security_groups")
 ```
 
 Boto3 documentation:
@@ -173,17 +181,19 @@ Arguments for `DescribeClusterSecurityGroupsPaginator.paginate` method:
 ## DescribeClusterSnapshotsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_cluster_snapshots")`.
+`session.create_client("redshift").get_paginator("describe_cluster_snapshots")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeClusterSnapshotsPaginator
 
-def get_describe_cluster_snapshots_paginator() -> DescribeClusterSnapshotsPaginator:
-    return Session().create_client("redshift").get_paginator("describe_cluster_snapshots")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeClusterSnapshotsPaginator = client.get_paginator("describe_cluster_snapshots")
 ```
 
 Boto3 documentation:
@@ -213,17 +223,19 @@ Arguments for `DescribeClusterSnapshotsPaginator.paginate` method:
 ## DescribeClusterSubnetGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_cluster_subnet_groups")`.
+`session.create_client("redshift").get_paginator("describe_cluster_subnet_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeClusterSubnetGroupsPaginator
 
-def get_describe_cluster_subnet_groups_paginator() -> DescribeClusterSubnetGroupsPaginator:
-    return Session().create_client("redshift").get_paginator("describe_cluster_subnet_groups")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeClusterSubnetGroupsPaginator = client.get_paginator("describe_cluster_subnet_groups")
 ```
 
 Boto3 documentation:
@@ -245,17 +257,19 @@ Arguments for `DescribeClusterSubnetGroupsPaginator.paginate` method:
 ## DescribeClusterTracksPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_cluster_tracks")`.
+`session.create_client("redshift").get_paginator("describe_cluster_tracks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeClusterTracksPaginator
 
-def get_describe_cluster_tracks_paginator() -> DescribeClusterTracksPaginator:
-    return Session().create_client("redshift").get_paginator("describe_cluster_tracks")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeClusterTracksPaginator = client.get_paginator("describe_cluster_tracks")
 ```
 
 Boto3 documentation:
@@ -275,17 +289,19 @@ Arguments for `DescribeClusterTracksPaginator.paginate` method:
 ## DescribeClusterVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_cluster_versions")`.
+`session.create_client("redshift").get_paginator("describe_cluster_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeClusterVersionsPaginator
 
-def get_describe_cluster_versions_paginator() -> DescribeClusterVersionsPaginator:
-    return Session().create_client("redshift").get_paginator("describe_cluster_versions")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeClusterVersionsPaginator = client.get_paginator("describe_cluster_versions")
 ```
 
 Boto3 documentation:
@@ -306,17 +322,19 @@ Arguments for `DescribeClusterVersionsPaginator.paginate` method:
 ## DescribeClustersPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_clusters")`.
+`session.create_client("redshift").get_paginator("describe_clusters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeClustersPaginator
 
-def get_describe_clusters_paginator() -> DescribeClustersPaginator:
-    return Session().create_client("redshift").get_paginator("describe_clusters")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeClustersPaginator = client.get_paginator("describe_clusters")
 ```
 
 Boto3 documentation:
@@ -338,17 +356,19 @@ Arguments for `DescribeClustersPaginator.paginate` method:
 ## DescribeDataSharesPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_data_shares")`.
+`session.create_client("redshift").get_paginator("describe_data_shares")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeDataSharesPaginator
 
-def get_describe_data_shares_paginator() -> DescribeDataSharesPaginator:
-    return Session().create_client("redshift").get_paginator("describe_data_shares")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeDataSharesPaginator = client.get_paginator("describe_data_shares")
 ```
 
 Boto3 documentation:
@@ -368,17 +388,19 @@ Arguments for `DescribeDataSharesPaginator.paginate` method:
 ## DescribeDataSharesForConsumerPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_data_shares_for_consumer")`.
+`session.create_client("redshift").get_paginator("describe_data_shares_for_consumer")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeDataSharesForConsumerPaginator
 
-def get_describe_data_shares_for_consumer_paginator() -> DescribeDataSharesForConsumerPaginator:
-    return Session().create_client("redshift").get_paginator("describe_data_shares_for_consumer")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeDataSharesForConsumerPaginator = client.get_paginator("describe_data_shares_for_consumer")
 ```
 
 Boto3 documentation:
@@ -400,17 +422,19 @@ Arguments for `DescribeDataSharesForConsumerPaginator.paginate` method:
 ## DescribeDataSharesForProducerPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_data_shares_for_producer")`.
+`session.create_client("redshift").get_paginator("describe_data_shares_for_producer")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeDataSharesForProducerPaginator
 
-def get_describe_data_shares_for_producer_paginator() -> DescribeDataSharesForProducerPaginator:
-    return Session().create_client("redshift").get_paginator("describe_data_shares_for_producer")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeDataSharesForProducerPaginator = client.get_paginator("describe_data_shares_for_producer")
 ```
 
 Boto3 documentation:
@@ -432,17 +456,19 @@ Arguments for `DescribeDataSharesForProducerPaginator.paginate` method:
 ## DescribeDefaultClusterParametersPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_default_cluster_parameters")`.
+`session.create_client("redshift").get_paginator("describe_default_cluster_parameters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeDefaultClusterParametersPaginator
 
-def get_describe_default_cluster_parameters_paginator() -> DescribeDefaultClusterParametersPaginator:
-    return Session().create_client("redshift").get_paginator("describe_default_cluster_parameters")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeDefaultClusterParametersPaginator = client.get_paginator("describe_default_cluster_parameters")
 ```
 
 Boto3 documentation:
@@ -462,17 +488,19 @@ Arguments for `DescribeDefaultClusterParametersPaginator.paginate` method:
 ## DescribeEndpointAccessPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_endpoint_access")`.
+`session.create_client("redshift").get_paginator("describe_endpoint_access")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeEndpointAccessPaginator
 
-def get_describe_endpoint_access_paginator() -> DescribeEndpointAccessPaginator:
-    return Session().create_client("redshift").get_paginator("describe_endpoint_access")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeEndpointAccessPaginator = client.get_paginator("describe_endpoint_access")
 ```
 
 Boto3 documentation:
@@ -495,17 +523,19 @@ Arguments for `DescribeEndpointAccessPaginator.paginate` method:
 ## DescribeEndpointAuthorizationPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_endpoint_authorization")`.
+`session.create_client("redshift").get_paginator("describe_endpoint_authorization")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeEndpointAuthorizationPaginator
 
-def get_describe_endpoint_authorization_paginator() -> DescribeEndpointAuthorizationPaginator:
-    return Session().create_client("redshift").get_paginator("describe_endpoint_authorization")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeEndpointAuthorizationPaginator = client.get_paginator("describe_endpoint_authorization")
 ```
 
 Boto3 documentation:
@@ -527,17 +557,19 @@ Arguments for `DescribeEndpointAuthorizationPaginator.paginate` method:
 ## DescribeEventSubscriptionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_event_subscriptions")`.
+`session.create_client("redshift").get_paginator("describe_event_subscriptions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeEventSubscriptionsPaginator
 
-def get_describe_event_subscriptions_paginator() -> DescribeEventSubscriptionsPaginator:
-    return Session().create_client("redshift").get_paginator("describe_event_subscriptions")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeEventSubscriptionsPaginator = client.get_paginator("describe_event_subscriptions")
 ```
 
 Boto3 documentation:
@@ -559,17 +591,19 @@ Arguments for `DescribeEventSubscriptionsPaginator.paginate` method:
 ## DescribeEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_events")`.
+`session.create_client("redshift").get_paginator("describe_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeEventsPaginator
 
-def get_describe_events_paginator() -> DescribeEventsPaginator:
-    return Session().create_client("redshift").get_paginator("describe_events")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")
 ```
 
 Boto3 documentation:
@@ -593,17 +627,19 @@ Arguments for `DescribeEventsPaginator.paginate` method:
 ## DescribeHsmClientCertificatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_hsm_client_certificates")`.
+`session.create_client("redshift").get_paginator("describe_hsm_client_certificates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeHsmClientCertificatesPaginator
 
-def get_describe_hsm_client_certificates_paginator() -> DescribeHsmClientCertificatesPaginator:
-    return Session().create_client("redshift").get_paginator("describe_hsm_client_certificates")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeHsmClientCertificatesPaginator = client.get_paginator("describe_hsm_client_certificates")
 ```
 
 Boto3 documentation:
@@ -625,17 +661,19 @@ Arguments for `DescribeHsmClientCertificatesPaginator.paginate` method:
 ## DescribeHsmConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_hsm_configurations")`.
+`session.create_client("redshift").get_paginator("describe_hsm_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeHsmConfigurationsPaginator
 
-def get_describe_hsm_configurations_paginator() -> DescribeHsmConfigurationsPaginator:
-    return Session().create_client("redshift").get_paginator("describe_hsm_configurations")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeHsmConfigurationsPaginator = client.get_paginator("describe_hsm_configurations")
 ```
 
 Boto3 documentation:
@@ -657,17 +695,19 @@ Arguments for `DescribeHsmConfigurationsPaginator.paginate` method:
 ## DescribeNodeConfigurationOptionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_node_configuration_options")`.
+`session.create_client("redshift").get_paginator("describe_node_configuration_options")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeNodeConfigurationOptionsPaginator
 
-def get_describe_node_configuration_options_paginator() -> DescribeNodeConfigurationOptionsPaginator:
-    return Session().create_client("redshift").get_paginator("describe_node_configuration_options")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeNodeConfigurationOptionsPaginator = client.get_paginator("describe_node_configuration_options")
 ```
 
 Boto3 documentation:
@@ -692,17 +732,19 @@ Arguments for `DescribeNodeConfigurationOptionsPaginator.paginate` method:
 ## DescribeOrderableClusterOptionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_orderable_cluster_options")`.
+`session.create_client("redshift").get_paginator("describe_orderable_cluster_options")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeOrderableClusterOptionsPaginator
 
-def get_describe_orderable_cluster_options_paginator() -> DescribeOrderableClusterOptionsPaginator:
-    return Session().create_client("redshift").get_paginator("describe_orderable_cluster_options")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeOrderableClusterOptionsPaginator = client.get_paginator("describe_orderable_cluster_options")
 ```
 
 Boto3 documentation:
@@ -723,17 +765,19 @@ Arguments for `DescribeOrderableClusterOptionsPaginator.paginate` method:
 ## DescribeReservedNodeExchangeStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_reserved_node_exchange_status")`.
+`session.create_client("redshift").get_paginator("describe_reserved_node_exchange_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeReservedNodeExchangeStatusPaginator
 
-def get_describe_reserved_node_exchange_status_paginator() -> DescribeReservedNodeExchangeStatusPaginator:
-    return Session().create_client("redshift").get_paginator("describe_reserved_node_exchange_status")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeReservedNodeExchangeStatusPaginator = client.get_paginator("describe_reserved_node_exchange_status")
 ```
 
 Boto3 documentation:
@@ -754,17 +798,19 @@ Arguments for `DescribeReservedNodeExchangeStatusPaginator.paginate` method:
 ## DescribeReservedNodeOfferingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_reserved_node_offerings")`.
+`session.create_client("redshift").get_paginator("describe_reserved_node_offerings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeReservedNodeOfferingsPaginator
 
-def get_describe_reserved_node_offerings_paginator() -> DescribeReservedNodeOfferingsPaginator:
-    return Session().create_client("redshift").get_paginator("describe_reserved_node_offerings")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeReservedNodeOfferingsPaginator = client.get_paginator("describe_reserved_node_offerings")
 ```
 
 Boto3 documentation:
@@ -784,17 +830,19 @@ Arguments for `DescribeReservedNodeOfferingsPaginator.paginate` method:
 ## DescribeReservedNodesPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_reserved_nodes")`.
+`session.create_client("redshift").get_paginator("describe_reserved_nodes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeReservedNodesPaginator
 
-def get_describe_reserved_nodes_paginator() -> DescribeReservedNodesPaginator:
-    return Session().create_client("redshift").get_paginator("describe_reserved_nodes")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeReservedNodesPaginator = client.get_paginator("describe_reserved_nodes")
 ```
 
 Boto3 documentation:
@@ -814,17 +862,19 @@ Arguments for `DescribeReservedNodesPaginator.paginate` method:
 ## DescribeScheduledActionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_scheduled_actions")`.
+`session.create_client("redshift").get_paginator("describe_scheduled_actions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeScheduledActionsPaginator
 
-def get_describe_scheduled_actions_paginator() -> DescribeScheduledActionsPaginator:
-    return Session().create_client("redshift").get_paginator("describe_scheduled_actions")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeScheduledActionsPaginator = client.get_paginator("describe_scheduled_actions")
 ```
 
 Boto3 documentation:
@@ -851,17 +901,19 @@ Arguments for `DescribeScheduledActionsPaginator.paginate` method:
 ## DescribeSnapshotCopyGrantsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_snapshot_copy_grants")`.
+`session.create_client("redshift").get_paginator("describe_snapshot_copy_grants")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeSnapshotCopyGrantsPaginator
 
-def get_describe_snapshot_copy_grants_paginator() -> DescribeSnapshotCopyGrantsPaginator:
-    return Session().create_client("redshift").get_paginator("describe_snapshot_copy_grants")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeSnapshotCopyGrantsPaginator = client.get_paginator("describe_snapshot_copy_grants")
 ```
 
 Boto3 documentation:
@@ -883,17 +935,19 @@ Arguments for `DescribeSnapshotCopyGrantsPaginator.paginate` method:
 ## DescribeSnapshotSchedulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_snapshot_schedules")`.
+`session.create_client("redshift").get_paginator("describe_snapshot_schedules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeSnapshotSchedulesPaginator
 
-def get_describe_snapshot_schedules_paginator() -> DescribeSnapshotSchedulesPaginator:
-    return Session().create_client("redshift").get_paginator("describe_snapshot_schedules")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeSnapshotSchedulesPaginator = client.get_paginator("describe_snapshot_schedules")
 ```
 
 Boto3 documentation:
@@ -916,17 +970,19 @@ Arguments for `DescribeSnapshotSchedulesPaginator.paginate` method:
 ## DescribeTableRestoreStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_table_restore_status")`.
+`session.create_client("redshift").get_paginator("describe_table_restore_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeTableRestoreStatusPaginator
 
-def get_describe_table_restore_status_paginator() -> DescribeTableRestoreStatusPaginator:
-    return Session().create_client("redshift").get_paginator("describe_table_restore_status")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeTableRestoreStatusPaginator = client.get_paginator("describe_table_restore_status")
 ```
 
 Boto3 documentation:
@@ -947,17 +1003,19 @@ Arguments for `DescribeTableRestoreStatusPaginator.paginate` method:
 ## DescribeTagsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_tags")`.
+`session.create_client("redshift").get_paginator("describe_tags")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeTagsPaginator
 
-def get_describe_tags_paginator() -> DescribeTagsPaginator:
-    return Session().create_client("redshift").get_paginator("describe_tags")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeTagsPaginator = client.get_paginator("describe_tags")
 ```
 
 Boto3 documentation:
@@ -980,17 +1038,19 @@ Arguments for `DescribeTagsPaginator.paginate` method:
 ## DescribeUsageLimitsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("describe_usage_limits")`.
+`session.create_client("redshift").get_paginator("describe_usage_limits")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import DescribeUsageLimitsPaginator
 
-def get_describe_usage_limits_paginator() -> DescribeUsageLimitsPaginator:
-    return Session().create_client("redshift").get_paginator("describe_usage_limits")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: DescribeUsageLimitsPaginator = client.get_paginator("describe_usage_limits")
 ```
 
 Boto3 documentation:
@@ -1015,17 +1075,19 @@ Arguments for `DescribeUsageLimitsPaginator.paginate` method:
 ## GetReservedNodeExchangeConfigurationOptionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("get_reserved_node_exchange_configuration_options")`.
+`session.create_client("redshift").get_paginator("get_reserved_node_exchange_configuration_options")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import GetReservedNodeExchangeConfigurationOptionsPaginator
 
-def get_get_reserved_node_exchange_configuration_options_paginator() -> GetReservedNodeExchangeConfigurationOptionsPaginator:
-    return Session().create_client("redshift").get_paginator("get_reserved_node_exchange_configuration_options")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: GetReservedNodeExchangeConfigurationOptionsPaginator = client.get_paginator("get_reserved_node_exchange_configuration_options")
 ```
 
 Boto3 documentation:
@@ -1050,17 +1112,19 @@ method:
 ## GetReservedNodeExchangeOfferingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_paginator("get_reserved_node_exchange_offerings")`.
+`session.create_client("redshift").get_paginator("get_reserved_node_exchange_offerings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_redshift.paginator import GetReservedNodeExchangeOfferingsPaginator
 
-def get_get_reserved_node_exchange_offerings_paginator() -> GetReservedNodeExchangeOfferingsPaginator:
-    return Session().create_client("redshift").get_paginator("get_reserved_node_exchange_offerings")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
+    paginator: GetReservedNodeExchangeOfferingsPaginator = client.get_paginator("get_reserved_node_exchange_offerings")
 ```
 
 Boto3 documentation:

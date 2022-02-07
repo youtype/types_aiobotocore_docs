@@ -46,22 +46,25 @@ type annotations stubs module
     - [update_logging_configuration](#update_logging_configuration)
     - [update_rule_group](#update_rule_group)
     - [update_subnet_change_protection](#update_subnet_change_protection)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="networkfirewallclient"></a>
 
 ## NetworkFirewallClient
 
-Type annotations for `aiobotocore.create_client("network-firewall")`
+Type annotations for `session.create_client("network-firewall")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_network_firewall.client import NetworkFirewallClient
 
-def get_network-firewall_client() -> NetworkFirewallClient:
-    return Session().client("network-firewall")
+session = get_session()
+async with session.create_client("network-firewall") as client:
+    client: NetworkFirewallClient
 ```
 
 Boto3 documentation:
@@ -107,7 +110,7 @@ Exceptions:
 
 NetworkFirewallClient exceptions.
 
-Type annotations for `aiobotocore.create_client("network-firewall").exceptions`
+Type annotations for `session.create_client("network-firewall").exceptions`
 method.
 
 Boto3 documentation:
@@ -122,8 +125,7 @@ Returns [Exceptions](#exceptions).
 Associates a FirewallPolicy to a Firewall .
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").associate_firewall_policy`
-method.
+`session.create_client("network-firewall").associate_firewall_policy` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.associate_firewall_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.associate_firewall_policy)
@@ -151,7 +153,7 @@ Returns a `Coroutine` for
 Associates the specified subnets in the Amazon VPC to the firewall.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").associate_subnets` method.
+`session.create_client("network-firewall").associate_subnets` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.associate_subnets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.associate_subnets)
@@ -179,19 +181,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("network-firewall").can_paginate` method.
+Type annotations for `session.create_client("network-firewall").can_paginate`
+method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_firewall"></a>
 
@@ -201,7 +201,7 @@ Creates an AWS Network Firewall Firewall and accompanying FirewallStatus for a
 VPC.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").create_firewall` method.
+`session.create_client("network-firewall").create_firewall` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.create_firewall](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.create_firewall)
@@ -235,7 +235,7 @@ Returns a `Coroutine` for
 Creates the firewall policy for the firewall according to the specifications.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").create_firewall_policy` method.
+`session.create_client("network-firewall").create_firewall_policy` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.create_firewall_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.create_firewall_policy)
@@ -266,7 +266,7 @@ Creates the specified stateless or stateful rule group, which includes the
 rules for network traffic inspection, a capacity setting, and tags.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").create_rule_group` method.
+`session.create_client("network-firewall").create_rule_group` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.create_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.create_rule_group)
@@ -297,7 +297,7 @@ Returns a `Coroutine` for
 Deletes the specified Firewall and its FirewallStatus.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").delete_firewall` method.
+`session.create_client("network-firewall").delete_firewall` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.delete_firewall](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.delete_firewall)
@@ -322,7 +322,7 @@ Returns a `Coroutine` for
 Deletes the specified FirewallPolicy .
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").delete_firewall_policy` method.
+`session.create_client("network-firewall").delete_firewall_policy` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.delete_firewall_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.delete_firewall_policy)
@@ -348,7 +348,7 @@ Returns a `Coroutine` for
 Deletes a resource policy that you created in a PutResourcePolicy request.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").delete_resource_policy` method.
+`session.create_client("network-firewall").delete_resource_policy` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.delete_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.delete_resource_policy)
@@ -372,7 +372,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified RuleGroup .
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").delete_rule_group` method.
+`session.create_client("network-firewall").delete_rule_group` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.delete_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.delete_rule_group)
@@ -398,7 +398,7 @@ Returns a `Coroutine` for
 Returns the data objects for the specified firewall.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").describe_firewall` method.
+`session.create_client("network-firewall").describe_firewall` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.describe_firewall](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.describe_firewall)
@@ -423,8 +423,7 @@ Returns a `Coroutine` for
 Returns the data objects for the specified firewall policy.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").describe_firewall_policy`
-method.
+`session.create_client("network-firewall").describe_firewall_policy` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.describe_firewall_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.describe_firewall_policy)
@@ -450,7 +449,7 @@ Returns a `Coroutine` for
 Returns the logging configuration for the specified firewall.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").describe_logging_configuration`
+`session.create_client("network-firewall").describe_logging_configuration`
 method.
 
 Boto3 documentation:
@@ -477,8 +476,7 @@ Returns a `Coroutine` for
 Retrieves a resource policy that you created in a PutResourcePolicy request.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").describe_resource_policy`
-method.
+`session.create_client("network-firewall").describe_resource_policy` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.describe_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.describe_resource_policy)
@@ -503,7 +501,7 @@ Returns a `Coroutine` for
 Returns the data objects for the specified rule group.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").describe_rule_group` method.
+`session.create_client("network-firewall").describe_rule_group` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.describe_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.describe_rule_group)
@@ -531,7 +529,7 @@ High-level information about a rule group, returned by operations like create
 and describe.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").describe_rule_group_metadata`
+`session.create_client("network-firewall").describe_rule_group_metadata`
 method.
 
 Boto3 documentation:
@@ -559,7 +557,7 @@ Returns a `Coroutine` for
 Removes the specified subnet associations from the firewall.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").disassociate_subnets` method.
+`session.create_client("network-firewall").disassociate_subnets` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.disassociate_subnets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.disassociate_subnets)
@@ -587,7 +585,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").generate_presigned_url` method.
+`session.create_client("network-firewall").generate_presigned_url` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.generate_presigned_url)
@@ -611,7 +609,7 @@ Returns a `Coroutine` for `str`.
 Retrieves the metadata for the firewall policies that you have defined.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").list_firewall_policies` method.
+`session.create_client("network-firewall").list_firewall_policies` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.list_firewall_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.list_firewall_policies)
@@ -636,8 +634,8 @@ Returns a `Coroutine` for
 
 Retrieves the metadata for the firewalls that you have defined.
 
-Type annotations for
-`aiobotocore.create_client("network-firewall").list_firewalls` method.
+Type annotations for `session.create_client("network-firewall").list_firewalls`
+method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.list_firewalls](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.list_firewalls)
@@ -663,7 +661,7 @@ Returns a `Coroutine` for
 Retrieves the metadata for the rule groups that you have defined.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").list_rule_groups` method.
+`session.create_client("network-firewall").list_rule_groups` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.list_rule_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.list_rule_groups)
@@ -689,7 +687,7 @@ Returns a `Coroutine` for
 Retrieves the tags associated with the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").list_tags_for_resource` method.
+`session.create_client("network-firewall").list_tags_for_resource` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.list_tags_for_resource)
@@ -717,7 +715,7 @@ Creates or updates an AWS Identity and Access Management policy for your rule
 group or firewall policy.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").put_resource_policy` method.
+`session.create_client("network-firewall").put_resource_policy` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.put_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.put_resource_policy)
@@ -741,8 +739,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds the specified tags to the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("network-firewall").tag_resource` method.
+Type annotations for `session.create_client("network-firewall").tag_resource`
+method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.tag_resource)
@@ -765,8 +763,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the tags with the specified keys from the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("network-firewall").untag_resource` method.
+Type annotations for `session.create_client("network-firewall").untag_resource`
+method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.untag_resource)
@@ -791,7 +789,7 @@ Modifies the flag, `DeleteProtection` , which indicates whether it is possible
 to delete the firewall.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").update_firewall_delete_protection`
+`session.create_client("network-firewall").update_firewall_delete_protection`
 method.
 
 Boto3 documentation:
@@ -820,8 +818,7 @@ Returns a `Coroutine` for
 Modifies the description for the specified firewall.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").update_firewall_description`
-method.
+`session.create_client("network-firewall").update_firewall_description` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.update_firewall_description](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.update_firewall_description)
@@ -849,7 +846,7 @@ Returns a `Coroutine` for
 Updates the properties of the specified firewall policy.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").update_firewall_policy` method.
+`session.create_client("network-firewall").update_firewall_policy` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.update_firewall_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.update_firewall_policy)
@@ -881,7 +878,7 @@ Modifies the flag, `ChangeProtection` , which indicates whether it is possible
 to change the firewall.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").update_firewall_policy_change_protection`
+`session.create_client("network-firewall").update_firewall_policy_change_protection`
 method.
 
 Boto3 documentation:
@@ -910,7 +907,7 @@ Returns a `Coroutine` for
 Sets the logging configuration for the specified firewall.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").update_logging_configuration`
+`session.create_client("network-firewall").update_logging_configuration`
 method.
 
 Boto3 documentation:
@@ -939,7 +936,7 @@ Returns a `Coroutine` for
 Updates the rule settings for the specified rule group.
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").update_rule_group` method.
+`session.create_client("network-firewall").update_rule_group` method.
 
 Boto3 documentation:
 [NetworkFirewall.Client.update_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.update_rule_group)
@@ -972,7 +969,7 @@ Documentation\](https://docs.aws.amazon.com/goto/WebAPI/network-
 firewall-2020-11-12/UpdateSubnetChangeProtection).
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").update_subnet_change_protection`
+`session.create_client("network-firewall").update_subnet_change_protection`
 method.
 
 Boto3 documentation:
@@ -994,13 +991,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateSubnetChangeProtectionResponseTypeDef](./type_defs.md#updatesubnetchangeprotectionresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("network-firewall").__aenter__`
+method.
+
+Boto3 documentation:
+[NetworkFirewall.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [NetworkFirewallClient](#networkfirewallclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("network-firewall").__aexit__`
+method.
+
+Boto3 documentation:
+[NetworkFirewall.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/network-firewall.html#NetworkFirewall.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("network-firewall").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("network-firewall").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_firewall_policies")` ->
   [ListFirewallPoliciesPaginator](./paginators.md#listfirewallpoliciespaginator)

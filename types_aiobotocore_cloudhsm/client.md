@@ -36,22 +36,25 @@ type annotations stubs module
     - [modify_hsm](#modify_hsm)
     - [modify_luna_client](#modify_luna_client)
     - [remove_tags_from_resource](#remove_tags_from_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="cloudhsmclient"></a>
 
 ## CloudHSMClient
 
-Type annotations for `aiobotocore.create_client("cloudhsm")`
+Type annotations for `session.create_client("cloudhsm")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_cloudhsm.client import CloudHSMClient
 
-def get_cloudhsm_client() -> CloudHSMClient:
-    return Session().client("cloudhsm")
+session = get_session()
+async with session.create_client("cloudhsm") as client:
+    client: CloudHSMClient
 ```
 
 Boto3 documentation:
@@ -88,7 +91,7 @@ Exceptions:
 
 CloudHSMClient exceptions.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").exceptions` method.
+Type annotations for `session.create_client("cloudhsm").exceptions` method.
 
 Boto3 documentation:
 [CloudHSM.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.exceptions)
@@ -101,8 +104,8 @@ Returns [Exceptions](#exceptions).
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for
-`aiobotocore.create_client("cloudhsm").add_tags_to_resource` method.
+Type annotations for `session.create_client("cloudhsm").add_tags_to_resource`
+method.
 
 Boto3 documentation:
 [CloudHSM.Client.add_tags_to_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.add_tags_to_resource)
@@ -127,19 +130,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").can_paginate`
-method.
+Type annotations for `session.create_client("cloudhsm").can_paginate` method.
 
 Boto3 documentation:
 [CloudHSM.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_hapg"></a>
 
@@ -147,8 +147,7 @@ Returns a `Coroutine` for `bool`.
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").create_hapg`
-method.
+Type annotations for `session.create_client("cloudhsm").create_hapg` method.
 
 Boto3 documentation:
 [CloudHSM.Client.create_hapg](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.create_hapg)
@@ -171,7 +170,7 @@ Returns a `Coroutine` for
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").create_hsm` method.
+Type annotations for `session.create_client("cloudhsm").create_hsm` method.
 
 Boto3 documentation:
 [CloudHSM.Client.create_hsm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.create_hsm)
@@ -202,7 +201,7 @@ Returns a `Coroutine` for
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").create_luna_client`
+Type annotations for `session.create_client("cloudhsm").create_luna_client`
 method.
 
 Boto3 documentation:
@@ -228,8 +227,7 @@ Returns a `Coroutine` for
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").delete_hapg`
-method.
+Type annotations for `session.create_client("cloudhsm").delete_hapg` method.
 
 Boto3 documentation:
 [CloudHSM.Client.delete_hapg](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.delete_hapg)
@@ -252,7 +250,7 @@ Returns a `Coroutine` for
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").delete_hsm` method.
+Type annotations for `session.create_client("cloudhsm").delete_hsm` method.
 
 Boto3 documentation:
 [CloudHSM.Client.delete_hsm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.delete_hsm)
@@ -275,7 +273,7 @@ Returns a `Coroutine` for
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").delete_luna_client`
+Type annotations for `session.create_client("cloudhsm").delete_luna_client`
 method.
 
 Boto3 documentation:
@@ -300,8 +298,7 @@ Returns a `Coroutine` for
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").describe_hapg`
-method.
+Type annotations for `session.create_client("cloudhsm").describe_hapg` method.
 
 Boto3 documentation:
 [CloudHSM.Client.describe_hapg](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.describe_hapg)
@@ -324,8 +321,7 @@ Returns a `Coroutine` for
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").describe_hsm`
-method.
+Type annotations for `session.create_client("cloudhsm").describe_hsm` method.
 
 Boto3 documentation:
 [CloudHSM.Client.describe_hsm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.describe_hsm)
@@ -349,8 +345,8 @@ Returns a `Coroutine` for
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for
-`aiobotocore.create_client("cloudhsm").describe_luna_client` method.
+Type annotations for `session.create_client("cloudhsm").describe_luna_client`
+method.
 
 Boto3 documentation:
 [CloudHSM.Client.describe_luna_client](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.describe_luna_client)
@@ -375,8 +371,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("cloudhsm").generate_presigned_url` method.
+Type annotations for `session.create_client("cloudhsm").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [CloudHSM.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.generate_presigned_url)
@@ -399,7 +395,7 @@ Returns a `Coroutine` for `str`.
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").get_config` method.
+Type annotations for `session.create_client("cloudhsm").get_config` method.
 
 Boto3 documentation:
 [CloudHSM.Client.get_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.get_config)
@@ -425,8 +421,8 @@ Returns a `Coroutine` for
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for
-`aiobotocore.create_client("cloudhsm").list_available_zones` method.
+Type annotations for `session.create_client("cloudhsm").list_available_zones`
+method.
 
 Boto3 documentation:
 [CloudHSM.Client.list_available_zones](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.list_available_zones)
@@ -443,7 +439,7 @@ Returns a `Coroutine` for
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").list_hapgs` method.
+Type annotations for `session.create_client("cloudhsm").list_hapgs` method.
 
 Boto3 documentation:
 [CloudHSM.Client.list_hapgs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.list_hapgs)
@@ -466,7 +462,7 @@ Returns a `Coroutine` for
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").list_hsms` method.
+Type annotations for `session.create_client("cloudhsm").list_hsms` method.
 
 Boto3 documentation:
 [CloudHSM.Client.list_hsms](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.list_hsms)
@@ -489,7 +485,7 @@ Returns a `Coroutine` for
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").list_luna_clients`
+Type annotations for `session.create_client("cloudhsm").list_luna_clients`
 method.
 
 Boto3 documentation:
@@ -513,8 +509,8 @@ Returns a `Coroutine` for
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for
-`aiobotocore.create_client("cloudhsm").list_tags_for_resource` method.
+Type annotations for `session.create_client("cloudhsm").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [CloudHSM.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.list_tags_for_resource)
@@ -538,8 +534,7 @@ Returns a `Coroutine` for
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").modify_hapg`
-method.
+Type annotations for `session.create_client("cloudhsm").modify_hapg` method.
 
 Boto3 documentation:
 [CloudHSM.Client.modify_hapg](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.modify_hapg)
@@ -564,7 +559,7 @@ Returns a `Coroutine` for
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").modify_hsm` method.
+Type annotations for `session.create_client("cloudhsm").modify_hsm` method.
 
 Boto3 documentation:
 [CloudHSM.Client.modify_hsm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.modify_hsm)
@@ -592,7 +587,7 @@ Returns a `Coroutine` for
 
 This is documentation for **AWS CloudHSM Classic**.
 
-Type annotations for `aiobotocore.create_client("cloudhsm").modify_luna_client`
+Type annotations for `session.create_client("cloudhsm").modify_luna_client`
 method.
 
 Boto3 documentation:
@@ -619,7 +614,7 @@ Returns a `Coroutine` for
 This is documentation for **AWS CloudHSM Classic**.
 
 Type annotations for
-`aiobotocore.create_client("cloudhsm").remove_tags_from_resource` method.
+`session.create_client("cloudhsm").remove_tags_from_resource` method.
 
 Boto3 documentation:
 [CloudHSM.Client.remove_tags_from_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.remove_tags_from_resource)
@@ -638,12 +633,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [RemoveTagsFromResourceResponseTypeDef](./type_defs.md#removetagsfromresourceresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("cloudhsm").__aenter__` method.
+
+Boto3 documentation:
+[CloudHSM.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CloudHSMClient](#cloudhsmclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("cloudhsm").__aexit__` method.
+
+Boto3 documentation:
+[CloudHSM.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudhsm.html#CloudHSM.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("cloudhsm").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("cloudhsm").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_hapgs")` ->
   [ListHapgsPaginator](./paginators.md#listhapgspaginator)

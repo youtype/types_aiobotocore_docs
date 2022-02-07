@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[auditmanager]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[auditmanager]'
+
+# standalone installation
 pip install types-aiobotocore-auditmanager
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-auditmanager
 
 ## AuditManagerClient
 
-Type annotations for `aiobotocore.create_client("auditmanager")` as
+Type annotations for `session.create_client("auditmanager")` as
 [AuditManagerClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_auditmanager.client import AuditManagerClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_assessment_report_evidence_folder](./client.md#associate_assessment_report_evidence_folder)
 - [batch_associate_assessment_report_evidence](./client.md#batch_associate_assessment_report_evidence)
 - [batch_create_delegation_by_assessment](./client.md#batch_create_delegation_by_assessment)

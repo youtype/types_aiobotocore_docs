@@ -20,17 +20,19 @@ type annotations stubs module
 ## ListInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").get_paginator("list_instances")`.
+`session.create_client("servicediscovery").get_paginator("list_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicediscovery.paginator import ListInstancesPaginator
 
-def get_list_instances_paginator() -> ListInstancesPaginator:
-    return Session().create_client("servicediscovery").get_paginator("list_instances")
+session = get_session()
+async with session.create_client("servicediscovery") as client:
+    client: ServiceDiscoveryClient
+    paginator: ListInstancesPaginator = client.get_paginator("list_instances")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `ListInstancesPaginator.paginate` method:
 ## ListNamespacesPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").get_paginator("list_namespaces")`.
+`session.create_client("servicediscovery").get_paginator("list_namespaces")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicediscovery.paginator import ListNamespacesPaginator
 
-def get_list_namespaces_paginator() -> ListNamespacesPaginator:
-    return Session().create_client("servicediscovery").get_paginator("list_namespaces")
+session = get_session()
+async with session.create_client("servicediscovery") as client:
+    client: ServiceDiscoveryClient
+    paginator: ListNamespacesPaginator = client.get_paginator("list_namespaces")
 ```
 
 Boto3 documentation:
@@ -81,17 +85,19 @@ Arguments for `ListNamespacesPaginator.paginate` method:
 ## ListOperationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").get_paginator("list_operations")`.
+`session.create_client("servicediscovery").get_paginator("list_operations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicediscovery.paginator import ListOperationsPaginator
 
-def get_list_operations_paginator() -> ListOperationsPaginator:
-    return Session().create_client("servicediscovery").get_paginator("list_operations")
+session = get_session()
+async with session.create_client("servicediscovery") as client:
+    client: ServiceDiscoveryClient
+    paginator: ListOperationsPaginator = client.get_paginator("list_operations")
 ```
 
 Boto3 documentation:
@@ -112,17 +118,19 @@ Arguments for `ListOperationsPaginator.paginate` method:
 ## ListServicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").get_paginator("list_services")`.
+`session.create_client("servicediscovery").get_paginator("list_services")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicediscovery.paginator import ListServicesPaginator
 
-def get_list_services_paginator() -> ListServicesPaginator:
-    return Session().create_client("servicediscovery").get_paginator("list_services")
+session = get_session()
+async with session.create_client("servicediscovery") as client:
+    client: ServiceDiscoveryClient
+    paginator: ListServicesPaginator = client.get_paginator("list_services")
 ```
 
 Boto3 documentation:

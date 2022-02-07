@@ -74,6 +74,8 @@ type annotations stubs module
     - [update_function_code](#update_function_code)
     - [update_function_configuration](#update_function_configuration)
     - [update_function_event_invoke_config](#update_function_event_invoke_config)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -81,16 +83,17 @@ type annotations stubs module
 
 ## LambdaClient
 
-Type annotations for `aiobotocore.create_client("lambda")`
+Type annotations for `session.create_client("lambda")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_lambda.client import LambdaClient
 
-def get_lambda_client() -> LambdaClient:
-    return Session().client("lambda")
+session = get_session()
+async with session.create_client("lambda") as client:
+    client: LambdaClient
 ```
 
 Boto3 documentation:
@@ -158,7 +161,7 @@ Exceptions:
 
 LambdaClient exceptions.
 
-Type annotations for `aiobotocore.create_client("lambda").exceptions` method.
+Type annotations for `session.create_client("lambda").exceptions` method.
 
 Boto3 documentation:
 [Lambda.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.exceptions)
@@ -173,7 +176,7 @@ Adds permissions to the resource-based policy of a version of an
 [Lambda layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)\_.
 
 Type annotations for
-`aiobotocore.create_client("lambda").add_layer_version_permission` method.
+`session.create_client("lambda").add_layer_version_permission` method.
 
 Boto3 documentation:
 [Lambda.Client.add_layer_version_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.add_layer_version_permission)
@@ -204,8 +207,7 @@ Returns a `Coroutine` for
 Grants an Amazon Web Services service or another account permission to use a
 function.
 
-Type annotations for `aiobotocore.create_client("lambda").add_permission`
-method.
+Type annotations for `session.create_client("lambda").add_permission` method.
 
 Boto3 documentation:
 [Lambda.Client.add_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.add_permission)
@@ -236,18 +238,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("lambda").can_paginate` method.
+Type annotations for `session.create_client("lambda").can_paginate` method.
 
 Boto3 documentation:
 [Lambda.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_alias"></a>
 
@@ -256,7 +256,7 @@ Returns a `Coroutine` for `bool`.
 Creates an \[alias\](https://docs.aws.amazon.com/lambda/latest/dg/versioning-
 aliases.html)\_ for a Lambda function version.
 
-Type annotations for `aiobotocore.create_client("lambda").create_alias` method.
+Type annotations for `session.create_client("lambda").create_alias` method.
 
 Boto3 documentation:
 [Lambda.Client.create_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.create_alias)
@@ -285,7 +285,7 @@ Returns a `Coroutine` for
 Creates a code signing configuration.
 
 Type annotations for
-`aiobotocore.create_client("lambda").create_code_signing_config` method.
+`session.create_client("lambda").create_code_signing_config` method.
 
 Boto3 documentation:
 [Lambda.Client.create_code_signing_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.create_code_signing_config)
@@ -315,7 +315,7 @@ Returns a `Coroutine` for
 Creates a mapping between an event source and an Lambda function.
 
 Type annotations for
-`aiobotocore.create_client("lambda").create_event_source_mapping` method.
+`session.create_client("lambda").create_event_source_mapping` method.
 
 Boto3 documentation:
 [Lambda.Client.create_event_source_mapping](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.create_event_source_mapping)
@@ -363,8 +363,7 @@ Returns a `Coroutine` for
 
 Creates a Lambda function.
 
-Type annotations for `aiobotocore.create_client("lambda").create_function`
-method.
+Type annotations for `session.create_client("lambda").create_function` method.
 
 Boto3 documentation:
 [Lambda.Client.create_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.create_function)
@@ -413,7 +412,7 @@ Deletes a Lambda function
 [alias](https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html)\_
 .
 
-Type annotations for `aiobotocore.create_client("lambda").delete_alias` method.
+Type annotations for `session.create_client("lambda").delete_alias` method.
 
 Boto3 documentation:
 [Lambda.Client.delete_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.delete_alias)
@@ -435,7 +434,7 @@ Keyword-only arguments:
 Deletes the code signing configuration.
 
 Type annotations for
-`aiobotocore.create_client("lambda").delete_code_signing_config` method.
+`session.create_client("lambda").delete_code_signing_config` method.
 
 Boto3 documentation:
 [Lambda.Client.delete_code_signing_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.delete_code_signing_config)
@@ -461,7 +460,7 @@ mapping\](https://docs.aws.amazon.com/lambda/latest/dg/intro-invocation-
 modes.html)\_.
 
 Type annotations for
-`aiobotocore.create_client("lambda").delete_event_source_mapping` method.
+`session.create_client("lambda").delete_event_source_mapping` method.
 
 Boto3 documentation:
 [Lambda.Client.delete_event_source_mapping](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.delete_event_source_mapping)
@@ -485,8 +484,7 @@ Returns a `Coroutine` for
 
 Deletes a Lambda function.
 
-Type annotations for `aiobotocore.create_client("lambda").delete_function`
-method.
+Type annotations for `session.create_client("lambda").delete_function` method.
 
 Boto3 documentation:
 [Lambda.Client.delete_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.delete_function)
@@ -508,8 +506,7 @@ Keyword-only arguments:
 Removes the code signing configuration from the function.
 
 Type annotations for
-`aiobotocore.create_client("lambda").delete_function_code_signing_config`
-method.
+`session.create_client("lambda").delete_function_code_signing_config` method.
 
 Boto3 documentation:
 [Lambda.Client.delete_function_code_signing_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.delete_function_code_signing_config)
@@ -531,7 +528,7 @@ Keyword-only arguments:
 Removes a concurrent execution limit from a function.
 
 Type annotations for
-`aiobotocore.create_client("lambda").delete_function_concurrency` method.
+`session.create_client("lambda").delete_function_concurrency` method.
 
 Boto3 documentation:
 [Lambda.Client.delete_function_concurrency](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.delete_function_concurrency)
@@ -554,8 +551,7 @@ Deletes the configuration for asynchronous invocation for a function, version,
 or alias.
 
 Type annotations for
-`aiobotocore.create_client("lambda").delete_function_event_invoke_config`
-method.
+`session.create_client("lambda").delete_function_event_invoke_config` method.
 
 Boto3 documentation:
 [Lambda.Client.delete_function_event_invoke_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.delete_function_event_invoke_config)
@@ -578,7 +574,7 @@ Keyword-only arguments:
 Deletes a version of an
 [Lambda layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)\_.
 
-Type annotations for `aiobotocore.create_client("lambda").delete_layer_version`
+Type annotations for `session.create_client("lambda").delete_layer_version`
 method.
 
 Boto3 documentation:
@@ -602,8 +598,7 @@ Keyword-only arguments:
 Deletes the provisioned concurrency configuration for a function.
 
 Type annotations for
-`aiobotocore.create_client("lambda").delete_provisioned_concurrency_config`
-method.
+`session.create_client("lambda").delete_provisioned_concurrency_config` method.
 
 Boto3 documentation:
 [Lambda.Client.delete_provisioned_concurrency_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.delete_provisioned_concurrency_config)
@@ -625,8 +620,8 @@ Keyword-only arguments:
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("lambda").generate_presigned_url` method.
+Type annotations for `session.create_client("lambda").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Lambda.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.generate_presigned_url)
@@ -651,7 +646,7 @@ Retrieves details about your account's
 [limits](https://docs.aws.amazon.com/lambda/latest/dg/limits.html)\_ and usage
 in an Amazon Web Services Region.
 
-Type annotations for `aiobotocore.create_client("lambda").get_account_settings`
+Type annotations for `session.create_client("lambda").get_account_settings`
 method.
 
 Boto3 documentation:
@@ -671,7 +666,7 @@ Returns details about a Lambda function
 [alias](https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html)\_
 .
 
-Type annotations for `aiobotocore.create_client("lambda").get_alias` method.
+Type annotations for `session.create_client("lambda").get_alias` method.
 
 Boto3 documentation:
 [Lambda.Client.get_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.get_alias)
@@ -695,8 +690,8 @@ Returns a `Coroutine` for
 
 Returns information about the specified code signing configuration.
 
-Type annotations for
-`aiobotocore.create_client("lambda").get_code_signing_config` method.
+Type annotations for `session.create_client("lambda").get_code_signing_config`
+method.
 
 Boto3 documentation:
 [Lambda.Client.get_code_signing_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.get_code_signing_config)
@@ -720,8 +715,8 @@ Returns a `Coroutine` for
 
 Returns details about an event source mapping.
 
-Type annotations for
-`aiobotocore.create_client("lambda").get_event_source_mapping` method.
+Type annotations for `session.create_client("lambda").get_event_source_mapping`
+method.
 
 Boto3 documentation:
 [Lambda.Client.get_event_source_mapping](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.get_event_source_mapping)
@@ -746,7 +741,7 @@ Returns a `Coroutine` for
 Returns information about the function or function version, with a link to
 download the deployment package that's valid for 10 minutes.
 
-Type annotations for `aiobotocore.create_client("lambda").get_function` method.
+Type annotations for `session.create_client("lambda").get_function` method.
 
 Boto3 documentation:
 [Lambda.Client.get_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.get_function)
@@ -771,7 +766,7 @@ Returns a `Coroutine` for
 Returns the code signing configuration for the specified function.
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_function_code_signing_config` method.
+`session.create_client("lambda").get_function_code_signing_config` method.
 
 Boto3 documentation:
 [Lambda.Client.get_function_code_signing_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.get_function_code_signing_config)
@@ -795,8 +790,8 @@ Returns a `Coroutine` for
 
 Returns details about the reserved concurrency configuration for a function.
 
-Type annotations for
-`aiobotocore.create_client("lambda").get_function_concurrency` method.
+Type annotations for `session.create_client("lambda").get_function_concurrency`
+method.
 
 Boto3 documentation:
 [Lambda.Client.get_function_concurrency](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.get_function_concurrency)
@@ -821,7 +816,7 @@ Returns a `Coroutine` for
 Returns the version-specific settings of a Lambda function or version.
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_function_configuration` method.
+`session.create_client("lambda").get_function_configuration` method.
 
 Boto3 documentation:
 [Lambda.Client.get_function_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.get_function_configuration)
@@ -848,7 +843,7 @@ Retrieves the configuration for asynchronous invocation for a function,
 version, or alias.
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_function_event_invoke_config` method.
+`session.create_client("lambda").get_function_event_invoke_config` method.
 
 Boto3 documentation:
 [Lambda.Client.get_function_event_invoke_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.get_function_event_invoke_config)
@@ -875,7 +870,7 @@ Returns information about a version of an
 [Lambda layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)\_
 , with a link to download the layer archive that's valid for 10 minutes.
 
-Type annotations for `aiobotocore.create_client("lambda").get_layer_version`
+Type annotations for `session.create_client("lambda").get_layer_version`
 method.
 
 Boto3 documentation:
@@ -902,8 +897,8 @@ Returns information about a version of an
 [Lambda layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)\_
 , with a link to download the layer archive that's valid for 10 minutes.
 
-Type annotations for
-`aiobotocore.create_client("lambda").get_layer_version_by_arn` method.
+Type annotations for `session.create_client("lambda").get_layer_version_by_arn`
+method.
 
 Boto3 documentation:
 [Lambda.Client.get_layer_version_by_arn](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.get_layer_version_by_arn)
@@ -928,8 +923,8 @@ Returns a `Coroutine` for
 Returns the permission policy for a version of an
 [Lambda layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)\_.
 
-Type annotations for
-`aiobotocore.create_client("lambda").get_layer_version_policy` method.
+Type annotations for `session.create_client("lambda").get_layer_version_policy`
+method.
 
 Boto3 documentation:
 [Lambda.Client.get_layer_version_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.get_layer_version_policy)
@@ -956,7 +951,7 @@ Returns the \[resource-based IAM
 policy\](https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-
 based.html)\_ for a function, version, or alias.
 
-Type annotations for `aiobotocore.create_client("lambda").get_policy` method.
+Type annotations for `session.create_client("lambda").get_policy` method.
 
 Boto3 documentation:
 [Lambda.Client.get_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.get_policy)
@@ -982,8 +977,7 @@ Retrieves the provisioned concurrency configuration for a function's alias or
 version.
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_provisioned_concurrency_config`
-method.
+`session.create_client("lambda").get_provisioned_concurrency_config` method.
 
 Boto3 documentation:
 [Lambda.Client.get_provisioned_concurrency_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.get_provisioned_concurrency_config)
@@ -1008,7 +1002,7 @@ Returns a `Coroutine` for
 
 Invokes a Lambda function.
 
-Type annotations for `aiobotocore.create_client("lambda").invoke` method.
+Type annotations for `session.create_client("lambda").invoke` method.
 
 Boto3 documentation:
 [Lambda.Client.invoke](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.invoke)
@@ -1036,7 +1030,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("lambda").invoke_async` method.
+Type annotations for `session.create_client("lambda").invoke_async` method.
 
 Boto3 documentation:
 [Lambda.Client.invoke_async](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.invoke_async)
@@ -1063,7 +1057,7 @@ Returns a list of
 [aliases](https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html)\_
 for a Lambda function.
 
-Type annotations for `aiobotocore.create_client("lambda").list_aliases` method.
+Type annotations for `session.create_client("lambda").list_aliases` method.
 
 Boto3 documentation:
 [Lambda.Client.list_aliases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.list_aliases)
@@ -1092,7 +1086,7 @@ configurations\](https://docs.aws.amazon.com/lambda/latest/dg/configuring-
 codesigning.html)\_.
 
 Type annotations for
-`aiobotocore.create_client("lambda").list_code_signing_configs` method.
+`session.create_client("lambda").list_code_signing_configs` method.
 
 Boto3 documentation:
 [Lambda.Client.list_code_signing_configs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.list_code_signing_configs)
@@ -1118,7 +1112,7 @@ Returns a `Coroutine` for
 Lists event source mappings.
 
 Type annotations for
-`aiobotocore.create_client("lambda").list_event_source_mappings` method.
+`session.create_client("lambda").list_event_source_mappings` method.
 
 Boto3 documentation:
 [Lambda.Client.list_event_source_mappings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.list_event_source_mappings)
@@ -1146,8 +1140,7 @@ Returns a `Coroutine` for
 Retrieves a list of configurations for asynchronous invocation for a function.
 
 Type annotations for
-`aiobotocore.create_client("lambda").list_function_event_invoke_configs`
-method.
+`session.create_client("lambda").list_function_event_invoke_configs` method.
 
 Boto3 documentation:
 [Lambda.Client.list_function_event_invoke_configs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.list_function_event_invoke_configs)
@@ -1174,8 +1167,7 @@ Returns a `Coroutine` for
 Returns a list of Lambda functions, with the version-specific configuration of
 each.
 
-Type annotations for `aiobotocore.create_client("lambda").list_functions`
-method.
+Type annotations for `session.create_client("lambda").list_functions` method.
 
 Boto3 documentation:
 [Lambda.Client.list_functions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.list_functions)
@@ -1203,8 +1195,7 @@ Returns a `Coroutine` for
 List the functions that use the specified code signing configuration.
 
 Type annotations for
-`aiobotocore.create_client("lambda").list_functions_by_code_signing_config`
-method.
+`session.create_client("lambda").list_functions_by_code_signing_config` method.
 
 Boto3 documentation:
 [Lambda.Client.list_functions_by_code_signing_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.list_functions_by_code_signing_config)
@@ -1231,7 +1222,7 @@ Returns a `Coroutine` for
 Lists the versions of an
 [Lambda layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)\_.
 
-Type annotations for `aiobotocore.create_client("lambda").list_layer_versions`
+Type annotations for `session.create_client("lambda").list_layer_versions`
 method.
 
 Boto3 documentation:
@@ -1262,7 +1253,7 @@ Lists \[Lambda
 layers\](https://docs.aws.amazon.com/lambda/latest/dg/invocation-
 layers.html)\_ and shows information about the latest version of each.
 
-Type annotations for `aiobotocore.create_client("lambda").list_layers` method.
+Type annotations for `session.create_client("lambda").list_layers` method.
 
 Boto3 documentation:
 [Lambda.Client.list_layers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.list_layers)
@@ -1289,8 +1280,7 @@ Returns a `Coroutine` for
 Retrieves a list of provisioned concurrency configurations for a function.
 
 Type annotations for
-`aiobotocore.create_client("lambda").list_provisioned_concurrency_configs`
-method.
+`session.create_client("lambda").list_provisioned_concurrency_configs` method.
 
 Boto3 documentation:
 [Lambda.Client.list_provisioned_concurrency_configs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.list_provisioned_concurrency_configs)
@@ -1317,7 +1307,7 @@ Returns a `Coroutine` for
 Returns a function's
 [tags](https://docs.aws.amazon.com/lambda/latest/dg/tagging.html)\_.
 
-Type annotations for `aiobotocore.create_client("lambda").list_tags` method.
+Type annotations for `session.create_client("lambda").list_tags` method.
 
 Boto3 documentation:
 [Lambda.Client.list_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.list_tags)
@@ -1343,7 +1333,7 @@ Returns a list of
 aliases.html)\_ , with the version-specific configuration of each.
 
 Type annotations for
-`aiobotocore.create_client("lambda").list_versions_by_function` method.
+`session.create_client("lambda").list_versions_by_function` method.
 
 Boto3 documentation:
 [Lambda.Client.list_versions_by_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.list_versions_by_function)
@@ -1371,8 +1361,8 @@ Creates an
 [Lambda layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)\_
 from a ZIP archive.
 
-Type annotations for
-`aiobotocore.create_client("lambda").publish_layer_version` method.
+Type annotations for `session.create_client("lambda").publish_layer_version`
+method.
 
 Boto3 documentation:
 [Lambda.Client.publish_layer_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.publish_layer_version)
@@ -1405,8 +1395,7 @@ Returns a `Coroutine` for
 Creates a \[version\](https://docs.aws.amazon.com/lambda/latest/dg/versioning-
 aliases.html)\_ from the current code and configuration of a function.
 
-Type annotations for `aiobotocore.create_client("lambda").publish_version`
-method.
+Type annotations for `session.create_client("lambda").publish_version` method.
 
 Boto3 documentation:
 [Lambda.Client.publish_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.publish_version)
@@ -1433,7 +1422,7 @@ Returns a `Coroutine` for
 Update the code signing configuration for the function.
 
 Type annotations for
-`aiobotocore.create_client("lambda").put_function_code_signing_config` method.
+`session.create_client("lambda").put_function_code_signing_config` method.
 
 Boto3 documentation:
 [Lambda.Client.put_function_code_signing_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.put_function_code_signing_config)
@@ -1459,8 +1448,8 @@ Returns a `Coroutine` for
 Sets the maximum number of simultaneous executions for a function, and reserves
 capacity for that concurrency level.
 
-Type annotations for
-`aiobotocore.create_client("lambda").put_function_concurrency` method.
+Type annotations for `session.create_client("lambda").put_function_concurrency`
+method.
 
 Boto3 documentation:
 [Lambda.Client.put_function_concurrency](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.put_function_concurrency)
@@ -1488,7 +1477,7 @@ Configures options for
 on a function, version, or alias.
 
 Type annotations for
-`aiobotocore.create_client("lambda").put_function_event_invoke_config` method.
+`session.create_client("lambda").put_function_event_invoke_config` method.
 
 Boto3 documentation:
 [Lambda.Client.put_function_event_invoke_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.put_function_event_invoke_config)
@@ -1518,8 +1507,7 @@ Returns a `Coroutine` for
 Adds a provisioned concurrency configuration to a function's alias or version.
 
 Type annotations for
-`aiobotocore.create_client("lambda").put_provisioned_concurrency_config`
-method.
+`session.create_client("lambda").put_provisioned_concurrency_config` method.
 
 Boto3 documentation:
 [Lambda.Client.put_provisioned_concurrency_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.put_provisioned_concurrency_config)
@@ -1547,7 +1535,7 @@ Removes a statement from the permissions policy for a version of an
 [Lambda layer](https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html)\_.
 
 Type annotations for
-`aiobotocore.create_client("lambda").remove_layer_version_permission` method.
+`session.create_client("lambda").remove_layer_version_permission` method.
 
 Boto3 documentation:
 [Lambda.Client.remove_layer_version_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.remove_layer_version_permission)
@@ -1572,7 +1560,7 @@ Keyword-only arguments:
 Revokes function-use permission from an Amazon Web Services service or another
 account.
 
-Type annotations for `aiobotocore.create_client("lambda").remove_permission`
+Type annotations for `session.create_client("lambda").remove_permission`
 method.
 
 Boto3 documentation:
@@ -1597,7 +1585,7 @@ Keyword-only arguments:
 Adds [tags](https://docs.aws.amazon.com/lambda/latest/dg/tagging.html)\_ to a
 function.
 
-Type annotations for `aiobotocore.create_client("lambda").tag_resource` method.
+Type annotations for `session.create_client("lambda").tag_resource` method.
 
 Boto3 documentation:
 [Lambda.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.tag_resource)
@@ -1619,8 +1607,7 @@ Keyword-only arguments:
 Removes [tags](https://docs.aws.amazon.com/lambda/latest/dg/tagging.html)\_
 from a function.
 
-Type annotations for `aiobotocore.create_client("lambda").untag_resource`
-method.
+Type annotations for `session.create_client("lambda").untag_resource` method.
 
 Boto3 documentation:
 [Lambda.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.untag_resource)
@@ -1643,7 +1630,7 @@ Updates the configuration of a Lambda function
 [alias](https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html)\_
 .
 
-Type annotations for `aiobotocore.create_client("lambda").update_alias` method.
+Type annotations for `session.create_client("lambda").update_alias` method.
 
 Boto3 documentation:
 [Lambda.Client.update_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.update_alias)
@@ -1673,7 +1660,7 @@ Returns a `Coroutine` for
 Update the code signing configuration.
 
 Type annotations for
-`aiobotocore.create_client("lambda").update_code_signing_config` method.
+`session.create_client("lambda").update_code_signing_config` method.
 
 Boto3 documentation:
 [Lambda.Client.update_code_signing_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.update_code_signing_config)
@@ -1703,7 +1690,7 @@ Returns a `Coroutine` for
 Updates an event source mapping.
 
 Type annotations for
-`aiobotocore.create_client("lambda").update_event_source_mapping` method.
+`session.create_client("lambda").update_event_source_mapping` method.
 
 Boto3 documentation:
 [Lambda.Client.update_event_source_mapping](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.update_event_source_mapping)
@@ -1744,7 +1731,7 @@ Returns a `Coroutine` for
 
 Updates a Lambda function's code.
 
-Type annotations for `aiobotocore.create_client("lambda").update_function_code`
+Type annotations for `session.create_client("lambda").update_function_code`
 method.
 
 Boto3 documentation:
@@ -1780,7 +1767,7 @@ Returns a `Coroutine` for
 Modify the version-specific settings of a Lambda function.
 
 Type annotations for
-`aiobotocore.create_client("lambda").update_function_configuration` method.
+`session.create_client("lambda").update_function_configuration` method.
 
 Boto3 documentation:
 [Lambda.Client.update_function_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.update_function_configuration)
@@ -1823,8 +1810,7 @@ Updates the configuration for asynchronous invocation for a function, version,
 or alias.
 
 Type annotations for
-`aiobotocore.create_client("lambda").update_function_event_invoke_config`
-method.
+`session.create_client("lambda").update_function_event_invoke_config` method.
 
 Boto3 documentation:
 [Lambda.Client.update_function_event_invoke_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.update_function_event_invoke_config)
@@ -1847,11 +1833,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [FunctionEventInvokeConfigResponseMetadataTypeDef](./type_defs.md#functioneventinvokeconfigresponsemetadatatypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("lambda").__aenter__` method.
+
+Boto3 documentation:
+[Lambda.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [LambdaClient](#lambdaclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("lambda").__aexit__` method.
+
+Boto3 documentation:
+[Lambda.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("lambda").get_paginator` method
+Type annotations for `session.create_client("lambda").get_paginator` method
 with overloads.
 
 - `client.get_paginator("list_aliases")` ->
@@ -1879,8 +1897,8 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("lambda").get_waiter` method
-with overloads.
+Type annotations for `session.create_client("lambda").get_waiter` method with
+overloads.
 
 - `client.get_waiter("function_active")` ->
   [FunctionActiveWaiter](./waiters.md#functionactivewaiter)

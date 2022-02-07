@@ -51,22 +51,25 @@ type annotations stubs module
     - [update_flow_template](#update_flow_template)
     - [update_system_template](#update_system_template)
     - [upload_entity_definitions](#upload_entity_definitions)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="iotthingsgraphclient"></a>
 
 ## IoTThingsGraphClient
 
-Type annotations for `aiobotocore.create_client("iotthingsgraph")`
+Type annotations for `session.create_client("iotthingsgraph")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_iotthingsgraph.client import IoTThingsGraphClient
 
-def get_iotthingsgraph_client() -> IoTThingsGraphClient:
-    return Session().client("iotthingsgraph")
+session = get_session()
+async with session.create_client("iotthingsgraph") as client:
+    client: IoTThingsGraphClient
 ```
 
 Boto3 documentation:
@@ -107,7 +110,7 @@ Exceptions:
 
 IoTThingsGraphClient exceptions.
 
-Type annotations for `aiobotocore.create_client("iotthingsgraph").exceptions`
+Type annotations for `session.create_client("iotthingsgraph").exceptions`
 method.
 
 Boto3 documentation:
@@ -122,7 +125,7 @@ Returns [Exceptions](#exceptions).
 Associates a device with a concrete thing that is in the user's registry.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").associate_entity_to_thing` method.
+`session.create_client("iotthingsgraph").associate_entity_to_thing` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.associate_entity_to_thing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.associate_entity_to_thing)
@@ -147,19 +150,17 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("iotthingsgraph").can_paginate`
+Type annotations for `session.create_client("iotthingsgraph").can_paginate`
 method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_flow_template"></a>
 
@@ -168,7 +169,7 @@ Returns a `Coroutine` for `bool`.
 Creates a workflow template.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").create_flow_template` method.
+`session.create_client("iotthingsgraph").create_flow_template` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.create_flow_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.create_flow_template)
@@ -196,7 +197,7 @@ Returns a `Coroutine` for
 Creates a system instance.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").create_system_instance` method.
+`session.create_client("iotthingsgraph").create_system_instance` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.create_system_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.create_system_instance)
@@ -231,7 +232,7 @@ Returns a `Coroutine` for
 Creates a system.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").create_system_template` method.
+`session.create_client("iotthingsgraph").create_system_template` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.create_system_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.create_system_template)
@@ -259,7 +260,7 @@ Returns a `Coroutine` for
 Deletes a workflow.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").delete_flow_template` method.
+`session.create_client("iotthingsgraph").delete_flow_template` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.delete_flow_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.delete_flow_template)
@@ -282,8 +283,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified namespace.
 
-Type annotations for
-`aiobotocore.create_client("iotthingsgraph").delete_namespace` method.
+Type annotations for `session.create_client("iotthingsgraph").delete_namespace`
+method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.delete_namespace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.delete_namespace)
@@ -300,7 +301,7 @@ Returns a `Coroutine` for
 Deletes a system instance.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").delete_system_instance` method.
+`session.create_client("iotthingsgraph").delete_system_instance` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.delete_system_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.delete_system_instance)
@@ -324,7 +325,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a system.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").delete_system_template` method.
+`session.create_client("iotthingsgraph").delete_system_template` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.delete_system_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.delete_system_template)
@@ -349,7 +350,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 specified in `CreateSystemInstance` .
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").deploy_system_instance` method.
+`session.create_client("iotthingsgraph").deploy_system_instance` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.deploy_system_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.deploy_system_instance)
@@ -374,7 +375,7 @@ Returns a `Coroutine` for
 Deprecates the specified workflow.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").deprecate_flow_template` method.
+`session.create_client("iotthingsgraph").deprecate_flow_template` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.deprecate_flow_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.deprecate_flow_template)
@@ -398,7 +399,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deprecates the specified system.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").deprecate_system_template` method.
+`session.create_client("iotthingsgraph").deprecate_system_template` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.deprecate_system_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.deprecate_system_template)
@@ -423,7 +424,7 @@ Gets the latest version of the user's namespace and the public version that it
 is tracking.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").describe_namespace` method.
+`session.create_client("iotthingsgraph").describe_namespace` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.describe_namespace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.describe_namespace)
@@ -448,8 +449,7 @@ Returns a `Coroutine` for
 Dissociates a device entity from a concrete thing.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").dissociate_entity_from_thing`
-method.
+`session.create_client("iotthingsgraph").dissociate_entity_from_thing` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.dissociate_entity_from_thing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.dissociate_entity_from_thing)
@@ -474,7 +474,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").generate_presigned_url` method.
+`session.create_client("iotthingsgraph").generate_presigned_url` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.generate_presigned_url)
@@ -497,7 +497,7 @@ Returns a `Coroutine` for `str`.
 
 Gets definitions of the specified entities.
 
-Type annotations for `aiobotocore.create_client("iotthingsgraph").get_entities`
+Type annotations for `session.create_client("iotthingsgraph").get_entities`
 method.
 
 Boto3 documentation:
@@ -524,7 +524,7 @@ Gets the latest version of the `DefinitionDocument` and `FlowTemplateSummary`
 for the specified workflow.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_flow_template` method.
+`session.create_client("iotthingsgraph").get_flow_template` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.get_flow_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.get_flow_template)
@@ -549,8 +549,7 @@ Returns a `Coroutine` for
 Gets revisions of the specified workflow.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_flow_template_revisions`
-method.
+`session.create_client("iotthingsgraph").get_flow_template_revisions` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.get_flow_template_revisions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.get_flow_template_revisions)
@@ -577,8 +576,7 @@ Returns a `Coroutine` for
 Gets the status of a namespace deletion task.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_namespace_deletion_status`
-method.
+`session.create_client("iotthingsgraph").get_namespace_deletion_status` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.get_namespace_deletion_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.get_namespace_deletion_status)
@@ -596,7 +594,7 @@ Returns a `Coroutine` for
 Gets a system instance.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_system_instance` method.
+`session.create_client("iotthingsgraph").get_system_instance` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.get_system_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.get_system_instance)
@@ -621,7 +619,7 @@ Returns a `Coroutine` for
 Gets a system.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_system_template` method.
+`session.create_client("iotthingsgraph").get_system_template` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.get_system_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.get_system_template)
@@ -647,8 +645,7 @@ Returns a `Coroutine` for
 Gets revisions made to the specified system template.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_system_template_revisions`
-method.
+`session.create_client("iotthingsgraph").get_system_template_revisions` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.get_system_template_revisions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.get_system_template_revisions)
@@ -675,7 +672,7 @@ Returns a `Coroutine` for
 Gets the status of the specified upload.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_upload_status` method.
+`session.create_client("iotthingsgraph").get_upload_status` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.get_upload_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.get_upload_status)
@@ -700,8 +697,7 @@ Returns a list of objects that contain information about events in a flow
 execution.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").list_flow_execution_messages`
-method.
+`session.create_client("iotthingsgraph").list_flow_execution_messages` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.list_flow_execution_messages](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.list_flow_execution_messages)
@@ -728,7 +724,7 @@ Returns a `Coroutine` for
 Lists all tags on an AWS IoT Things Graph resource.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").list_tags_for_resource` method.
+`session.create_client("iotthingsgraph").list_tags_for_resource` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.list_tags_for_resource)
@@ -754,8 +750,8 @@ Returns a `Coroutine` for
 
 Searches for entities of the specified type.
 
-Type annotations for
-`aiobotocore.create_client("iotthingsgraph").search_entities` method.
+Type annotations for `session.create_client("iotthingsgraph").search_entities`
+method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.search_entities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.search_entities)
@@ -785,7 +781,7 @@ Returns a `Coroutine` for
 Searches for AWS IoT Things Graph workflow execution instances.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").search_flow_executions` method.
+`session.create_client("iotthingsgraph").search_flow_executions` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.search_flow_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.search_flow_executions)
@@ -815,7 +811,7 @@ Returns a `Coroutine` for
 Searches for summary information about workflows.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").search_flow_templates` method.
+`session.create_client("iotthingsgraph").search_flow_templates` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.search_flow_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.search_flow_templates)
@@ -843,7 +839,7 @@ Returns a `Coroutine` for
 Searches for system instances in the user's account.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").search_system_instances` method.
+`session.create_client("iotthingsgraph").search_system_instances` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.search_system_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.search_system_instances)
@@ -871,7 +867,7 @@ Returns a `Coroutine` for
 Searches for summary information about systems in the user's account.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").search_system_templates` method.
+`session.create_client("iotthingsgraph").search_system_templates` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.search_system_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.search_system_templates)
@@ -898,8 +894,8 @@ Returns a `Coroutine` for
 
 Searches for things associated with the specified entity.
 
-Type annotations for
-`aiobotocore.create_client("iotthingsgraph").search_things` method.
+Type annotations for `session.create_client("iotthingsgraph").search_things`
+method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.search_things](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.search_things)
@@ -925,7 +921,7 @@ Returns a `Coroutine` for
 
 Creates a tag for the specified resource.
 
-Type annotations for `aiobotocore.create_client("iotthingsgraph").tag_resource`
+Type annotations for `session.create_client("iotthingsgraph").tag_resource`
 method.
 
 Boto3 documentation:
@@ -950,7 +946,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes a system instance from its target (Cloud or Greengrass).
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").undeploy_system_instance` method.
+`session.create_client("iotthingsgraph").undeploy_system_instance` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.undeploy_system_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.undeploy_system_instance)
@@ -974,8 +970,8 @@ Returns a `Coroutine` for
 
 Removes a tag from the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("iotthingsgraph").untag_resource` method.
+Type annotations for `session.create_client("iotthingsgraph").untag_resource`
+method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.untag_resource)
@@ -999,7 +995,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the specified workflow.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").update_flow_template` method.
+`session.create_client("iotthingsgraph").update_flow_template` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.update_flow_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.update_flow_template)
@@ -1028,7 +1024,7 @@ Returns a `Coroutine` for
 Updates the specified system.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").update_system_template` method.
+`session.create_client("iotthingsgraph").update_system_template` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.update_system_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.update_system_template)
@@ -1057,7 +1053,7 @@ Returns a `Coroutine` for
 Asynchronously uploads one or more entity definitions to the user's namespace.
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").upload_entity_definitions` method.
+`session.create_client("iotthingsgraph").upload_entity_definitions` method.
 
 Boto3 documentation:
 [IoTThingsGraph.Client.upload_entity_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.upload_entity_definitions)
@@ -1078,13 +1074,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UploadEntityDefinitionsResponseTypeDef](./type_defs.md#uploadentitydefinitionsresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("iotthingsgraph").__aenter__`
+method.
+
+Boto3 documentation:
+[IoTThingsGraph.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [IoTThingsGraphClient](#iotthingsgraphclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("iotthingsgraph").__aexit__`
+method.
+
+Boto3 documentation:
+[IoTThingsGraph.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotthingsgraph.html#IoTThingsGraph.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("iotthingsgraph").get_paginator`
+method with overloads.
 
 - `client.get_paginator("get_flow_template_revisions")` ->
   [GetFlowTemplateRevisionsPaginator](./paginators.md#getflowtemplaterevisionspaginator)

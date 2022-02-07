@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[quicksight]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[quicksight]'
+
+# standalone installation
 pip install types-aiobotocore-quicksight
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-quicksight
 
 ## QuickSightClient
 
-Type annotations for `aiobotocore.create_client("quicksight")` as
+Type annotations for `session.create_client("quicksight")` as
 [QuickSightClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_quicksight.client import QuickSightClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_ingestion](./client.md#cancel_ingestion)
 - [create_account_customization](./client.md#create_account_customization)
@@ -198,7 +204,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_quicksight.paginators import ListAnalysesPaginator, ...
+from types_aiobotocore_quicksight.paginator import ListAnalysesPaginator, ...
 ```
 
 - [ListAnalysesPaginator](./paginators.md#listanalysespaginator)

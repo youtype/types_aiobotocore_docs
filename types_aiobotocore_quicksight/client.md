@@ -131,22 +131,25 @@ type annotations stubs module
     - [update_theme_alias](#update_theme_alias)
     - [update_theme_permissions](#update_theme_permissions)
     - [update_user](#update_user)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="quicksightclient"></a>
 
 ## QuickSightClient
 
-Type annotations for `aiobotocore.create_client("quicksight")`
+Type annotations for `session.create_client("quicksight")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_quicksight.client import QuickSightClient
 
-def get_quicksight_client() -> QuickSightClient:
-    return Session().client("quicksight")
+session = get_session()
+async with session.create_client("quicksight") as client:
+    client: QuickSightClient
 ```
 
 Boto3 documentation:
@@ -198,8 +201,7 @@ Exceptions:
 
 QuickSightClient exceptions.
 
-Type annotations for `aiobotocore.create_client("quicksight").exceptions`
-method.
+Type annotations for `session.create_client("quicksight").exceptions` method.
 
 Boto3 documentation:
 [QuickSight.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.exceptions)
@@ -212,19 +214,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("quicksight").can_paginate`
-method.
+Type annotations for `session.create_client("quicksight").can_paginate` method.
 
 Boto3 documentation:
 [QuickSight.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_ingestion"></a>
 
@@ -232,7 +231,7 @@ Returns a `Coroutine` for `bool`.
 
 Cancels an ongoing ingestion of data into SPICE.
 
-Type annotations for `aiobotocore.create_client("quicksight").cancel_ingestion`
+Type annotations for `session.create_client("quicksight").cancel_ingestion`
 method.
 
 Boto3 documentation:
@@ -260,7 +259,7 @@ Creates Amazon QuickSight customizations the current Amazon Web Services
 Region.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").create_account_customization` method.
+`session.create_client("quicksight").create_account_customization` method.
 
 Boto3 documentation:
 [QuickSight.Client.create_account_customization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.create_account_customization)
@@ -289,7 +288,7 @@ Returns a `Coroutine` for
 
 Creates an analysis in Amazon QuickSight.
 
-Type annotations for `aiobotocore.create_client("quicksight").create_analysis`
+Type annotations for `session.create_client("quicksight").create_analysis`
 method.
 
 Boto3 documentation:
@@ -323,7 +322,7 @@ Returns a `Coroutine` for
 
 Creates a dashboard from a template.
 
-Type annotations for `aiobotocore.create_client("quicksight").create_dashboard`
+Type annotations for `session.create_client("quicksight").create_dashboard`
 method.
 
 Boto3 documentation:
@@ -360,7 +359,7 @@ Returns a `Coroutine` for
 
 Creates a dataset.
 
-Type annotations for `aiobotocore.create_client("quicksight").create_data_set`
+Type annotations for `session.create_client("quicksight").create_data_set`
 method.
 
 Boto3 documentation:
@@ -407,8 +406,8 @@ Returns a `Coroutine` for
 
 Creates a data source.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").create_data_source` method.
+Type annotations for `session.create_client("quicksight").create_data_source`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.create_data_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.create_data_source)
@@ -445,7 +444,7 @@ Returns a `Coroutine` for
 
 Creates an empty shared folder.
 
-Type annotations for `aiobotocore.create_client("quicksight").create_folder`
+Type annotations for `session.create_client("quicksight").create_folder`
 method.
 
 Boto3 documentation:
@@ -478,7 +477,7 @@ Returns a `Coroutine` for
 Adds an asset, such as a dashboard, analysis, or dataset into a folder.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").create_folder_membership` method.
+`session.create_client("quicksight").create_folder_membership` method.
 
 Boto3 documentation:
 [QuickSight.Client.create_folder_membership](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.create_folder_membership)
@@ -505,8 +504,7 @@ Returns a `Coroutine` for
 
 Creates an Amazon QuickSight group.
 
-Type annotations for `aiobotocore.create_client("quicksight").create_group`
-method.
+Type annotations for `session.create_client("quicksight").create_group` method.
 
 Boto3 documentation:
 [QuickSight.Client.create_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.create_group)
@@ -533,7 +531,7 @@ Returns a `Coroutine` for
 Adds an Amazon QuickSight user to an Amazon QuickSight group.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").create_group_membership` method.
+`session.create_client("quicksight").create_group_membership` method.
 
 Boto3 documentation:
 [QuickSight.Client.create_group_membership](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.create_group_membership)
@@ -562,7 +560,7 @@ Creates an assignment with one specified IAM policy, identified by its Amazon
 Resource Name (ARN).
 
 Type annotations for
-`aiobotocore.create_client("quicksight").create_iam_policy_assignment` method.
+`session.create_client("quicksight").create_iam_policy_assignment` method.
 
 Boto3 documentation:
 [QuickSight.Client.create_iam_policy_assignment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.create_iam_policy_assignment)
@@ -594,7 +592,7 @@ Creates and starts a new SPICE ingestion on a dataset Any ingestions operating
 on tagged datasets inherit the same tags automatically for use in access
 control.
 
-Type annotations for `aiobotocore.create_client("quicksight").create_ingestion`
+Type annotations for `session.create_client("quicksight").create_ingestion`
 method.
 
 Boto3 documentation:
@@ -622,7 +620,7 @@ Returns a `Coroutine` for
 (Enterprise edition only) Creates a new namespace for you to use with Amazon
 QuickSight.
 
-Type annotations for `aiobotocore.create_client("quicksight").create_namespace`
+Type annotations for `session.create_client("quicksight").create_namespace`
 method.
 
 Boto3 documentation:
@@ -650,7 +648,7 @@ Returns a `Coroutine` for
 
 Creates a template from an existing Amazon QuickSight analysis or template.
 
-Type annotations for `aiobotocore.create_client("quicksight").create_template`
+Type annotations for `session.create_client("quicksight").create_template`
 method.
 
 Boto3 documentation:
@@ -684,7 +682,7 @@ Returns a `Coroutine` for
 Creates a template alias for a template.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").create_template_alias` method.
+`session.create_client("quicksight").create_template_alias` method.
 
 Boto3 documentation:
 [QuickSight.Client.create_template_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.create_template_alias)
@@ -711,8 +709,7 @@ Returns a `Coroutine` for
 
 Creates a theme.
 
-Type annotations for `aiobotocore.create_client("quicksight").create_theme`
-method.
+Type annotations for `session.create_client("quicksight").create_theme` method.
 
 Boto3 documentation:
 [QuickSight.Client.create_theme](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.create_theme)
@@ -745,8 +742,8 @@ Returns a `Coroutine` for
 
 Creates a theme alias for a theme.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").create_theme_alias` method.
+Type annotations for `session.create_client("quicksight").create_theme_alias`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.create_theme_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.create_theme_alias)
@@ -775,7 +772,7 @@ Deletes all Amazon QuickSight customizations in this Amazon Web Services Region
 for the specified Amazon Web Services account and Amazon QuickSight namespace.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").delete_account_customization` method.
+`session.create_client("quicksight").delete_account_customization` method.
 
 Boto3 documentation:
 [QuickSight.Client.delete_account_customization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.delete_account_customization)
@@ -800,7 +797,7 @@ Returns a `Coroutine` for
 
 Deletes an analysis from Amazon QuickSight.
 
-Type annotations for `aiobotocore.create_client("quicksight").delete_analysis`
+Type annotations for `session.create_client("quicksight").delete_analysis`
 method.
 
 Boto3 documentation:
@@ -827,7 +824,7 @@ Returns a `Coroutine` for
 
 Deletes a dashboard.
 
-Type annotations for `aiobotocore.create_client("quicksight").delete_dashboard`
+Type annotations for `session.create_client("quicksight").delete_dashboard`
 method.
 
 Boto3 documentation:
@@ -853,7 +850,7 @@ Returns a `Coroutine` for
 
 Deletes a dataset.
 
-Type annotations for `aiobotocore.create_client("quicksight").delete_data_set`
+Type annotations for `session.create_client("quicksight").delete_data_set`
 method.
 
 Boto3 documentation:
@@ -878,8 +875,8 @@ Returns a `Coroutine` for
 
 Deletes the data source permanently.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").delete_data_source` method.
+Type annotations for `session.create_client("quicksight").delete_data_source`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.delete_data_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.delete_data_source)
@@ -904,7 +901,7 @@ Returns a `Coroutine` for
 
 Deletes an empty folder.
 
-Type annotations for `aiobotocore.create_client("quicksight").delete_folder`
+Type annotations for `session.create_client("quicksight").delete_folder`
 method.
 
 Boto3 documentation:
@@ -930,7 +927,7 @@ Returns a `Coroutine` for
 Removes an asset, such as a dashboard, analysis, or dataset, from a folder.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").delete_folder_membership` method.
+`session.create_client("quicksight").delete_folder_membership` method.
 
 Boto3 documentation:
 [QuickSight.Client.delete_folder_membership](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.delete_folder_membership)
@@ -957,8 +954,7 @@ Returns a `Coroutine` for
 
 Removes a user group from Amazon QuickSight.
 
-Type annotations for `aiobotocore.create_client("quicksight").delete_group`
-method.
+Type annotations for `session.create_client("quicksight").delete_group` method.
 
 Boto3 documentation:
 [QuickSight.Client.delete_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.delete_group)
@@ -985,7 +981,7 @@ Removes a user from a group so that the user is no longer a member of the
 group.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").delete_group_membership` method.
+`session.create_client("quicksight").delete_group_membership` method.
 
 Boto3 documentation:
 [QuickSight.Client.delete_group_membership](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.delete_group_membership)
@@ -1013,7 +1009,7 @@ Returns a `Coroutine` for
 Deletes an existing IAM policy assignment.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").delete_iam_policy_assignment` method.
+`session.create_client("quicksight").delete_iam_policy_assignment` method.
 
 Boto3 documentation:
 [QuickSight.Client.delete_iam_policy_assignment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.delete_iam_policy_assignment)
@@ -1040,7 +1036,7 @@ Returns a `Coroutine` for
 Deletes a namespace and the users and groups that are associated with the
 namespace.
 
-Type annotations for `aiobotocore.create_client("quicksight").delete_namespace`
+Type annotations for `session.create_client("quicksight").delete_namespace`
 method.
 
 Boto3 documentation:
@@ -1065,7 +1061,7 @@ Returns a `Coroutine` for
 
 Deletes a template.
 
-Type annotations for `aiobotocore.create_client("quicksight").delete_template`
+Type annotations for `session.create_client("quicksight").delete_template`
 method.
 
 Boto3 documentation:
@@ -1092,7 +1088,7 @@ Returns a `Coroutine` for
 Deletes the item that the specified template alias points to.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").delete_template_alias` method.
+`session.create_client("quicksight").delete_template_alias` method.
 
 Boto3 documentation:
 [QuickSight.Client.delete_template_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.delete_template_alias)
@@ -1118,8 +1114,7 @@ Returns a `Coroutine` for
 
 Deletes a theme.
 
-Type annotations for `aiobotocore.create_client("quicksight").delete_theme`
-method.
+Type annotations for `session.create_client("quicksight").delete_theme` method.
 
 Boto3 documentation:
 [QuickSight.Client.delete_theme](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.delete_theme)
@@ -1144,8 +1139,8 @@ Returns a `Coroutine` for
 
 Deletes the version of the theme that the specified theme alias points to.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").delete_theme_alias` method.
+Type annotations for `session.create_client("quicksight").delete_theme_alias`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.delete_theme_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.delete_theme_alias)
@@ -1172,8 +1167,7 @@ Returns a `Coroutine` for
 Deletes the Amazon QuickSight user that is associated with the identity of the
 Identity and Access Management (IAM) user or role that's making the call.
 
-Type annotations for `aiobotocore.create_client("quicksight").delete_user`
-method.
+Type annotations for `session.create_client("quicksight").delete_user` method.
 
 Boto3 documentation:
 [QuickSight.Client.delete_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.delete_user)
@@ -1199,7 +1193,7 @@ Returns a `Coroutine` for
 Deletes a user identified by its principal ID.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").delete_user_by_principal_id` method.
+`session.create_client("quicksight").delete_user_by_principal_id` method.
 
 Boto3 documentation:
 [QuickSight.Client.delete_user_by_principal_id](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.delete_user_by_principal_id)
@@ -1228,8 +1222,7 @@ account and Amazon Amazon QuickSight namespace in an Amazon Web Services
 Region.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").describe_account_customization`
-method.
+`session.create_client("quicksight").describe_account_customization` method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_account_customization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_account_customization)
@@ -1257,7 +1250,7 @@ Describes the settings that were used when your Amazon QuickSight subscription
 was first created in this Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").describe_account_settings` method.
+`session.create_client("quicksight").describe_account_settings` method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_account_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_account_settings)
@@ -1281,8 +1274,8 @@ Returns a `Coroutine` for
 
 Provides a summary of the metadata for an analysis.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").describe_analysis` method.
+Type annotations for `session.create_client("quicksight").describe_analysis`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_analysis](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_analysis)
@@ -1307,7 +1300,7 @@ Returns a `Coroutine` for
 Provides the read and write permissions for an analysis.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").describe_analysis_permissions` method.
+`session.create_client("quicksight").describe_analysis_permissions` method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_analysis_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_analysis_permissions)
@@ -1332,8 +1325,8 @@ Returns a `Coroutine` for
 
 Provides a summary for a dashboard.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").describe_dashboard` method.
+Type annotations for `session.create_client("quicksight").describe_dashboard`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_dashboard](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_dashboard)
@@ -1361,8 +1354,7 @@ Returns a `Coroutine` for
 Describes read and write permissions for a dashboard.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").describe_dashboard_permissions`
-method.
+`session.create_client("quicksight").describe_dashboard_permissions` method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_dashboard_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_dashboard_permissions)
@@ -1387,8 +1379,8 @@ Returns a `Coroutine` for
 
 Describes a dataset.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").describe_data_set` method.
+Type annotations for `session.create_client("quicksight").describe_data_set`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_data_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_data_set)
@@ -1413,7 +1405,7 @@ Returns a `Coroutine` for
 Describes the permissions on a dataset.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").describe_data_set_permissions` method.
+`session.create_client("quicksight").describe_data_set_permissions` method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_data_set_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_data_set_permissions)
@@ -1438,8 +1430,8 @@ Returns a `Coroutine` for
 
 Describes a data source.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").describe_data_source` method.
+Type annotations for `session.create_client("quicksight").describe_data_source`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_data_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_data_source)
@@ -1465,8 +1457,7 @@ Returns a `Coroutine` for
 Describes the resource permissions for a data source.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").describe_data_source_permissions`
-method.
+`session.create_client("quicksight").describe_data_source_permissions` method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_data_source_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_data_source_permissions)
@@ -1491,7 +1482,7 @@ Returns a `Coroutine` for
 
 Describes a folder.
 
-Type annotations for `aiobotocore.create_client("quicksight").describe_folder`
+Type annotations for `session.create_client("quicksight").describe_folder`
 method.
 
 Boto3 documentation:
@@ -1517,7 +1508,7 @@ Returns a `Coroutine` for
 Describes permissions for a folder.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").describe_folder_permissions` method.
+`session.create_client("quicksight").describe_folder_permissions` method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_folder_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_folder_permissions)
@@ -1543,7 +1534,7 @@ Returns a `Coroutine` for
 Describes the folder resolved permissions.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").describe_folder_resolved_permissions`
+`session.create_client("quicksight").describe_folder_resolved_permissions`
 method.
 
 Boto3 documentation:
@@ -1570,7 +1561,7 @@ Returns a `Coroutine` for
 Returns an Amazon QuickSight group's description and Amazon Resource Name
 (ARN).
 
-Type annotations for `aiobotocore.create_client("quicksight").describe_group`
+Type annotations for `session.create_client("quicksight").describe_group`
 method.
 
 Boto3 documentation:
@@ -1598,8 +1589,7 @@ Describes an existing IAM policy assignment, as specified by the assignment
 name.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").describe_iam_policy_assignment`
-method.
+`session.create_client("quicksight").describe_iam_policy_assignment` method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_iam_policy_assignment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_iam_policy_assignment)
@@ -1625,8 +1615,8 @@ Returns a `Coroutine` for
 
 Describes a SPICE ingestion.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").describe_ingestion` method.
+Type annotations for `session.create_client("quicksight").describe_ingestion`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_ingestion](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_ingestion)
@@ -1653,7 +1643,7 @@ Returns a `Coroutine` for
 Provides a summary and status of IP rules.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").describe_ip_restriction` method.
+`session.create_client("quicksight").describe_ip_restriction` method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_ip_restriction](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_ip_restriction)
@@ -1677,8 +1667,8 @@ Returns a `Coroutine` for
 
 Describes the current namespace.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").describe_namespace` method.
+Type annotations for `session.create_client("quicksight").describe_namespace`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_namespace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_namespace)
@@ -1703,8 +1693,8 @@ Returns a `Coroutine` for
 
 Describes a template's metadata.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").describe_template` method.
+Type annotations for `session.create_client("quicksight").describe_template`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_template)
@@ -1731,7 +1721,7 @@ Returns a `Coroutine` for
 Describes the template alias for a template.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").describe_template_alias` method.
+`session.create_client("quicksight").describe_template_alias` method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_template_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_template_alias)
@@ -1758,7 +1748,7 @@ Returns a `Coroutine` for
 Describes read and write permissions on a template.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").describe_template_permissions` method.
+`session.create_client("quicksight").describe_template_permissions` method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_template_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_template_permissions)
@@ -1783,7 +1773,7 @@ Returns a `Coroutine` for
 
 Describes a theme.
 
-Type annotations for `aiobotocore.create_client("quicksight").describe_theme`
+Type annotations for `session.create_client("quicksight").describe_theme`
 method.
 
 Boto3 documentation:
@@ -1810,8 +1800,8 @@ Returns a `Coroutine` for
 
 Describes the alias for a theme.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").describe_theme_alias` method.
+Type annotations for `session.create_client("quicksight").describe_theme_alias`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_theme_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_theme_alias)
@@ -1838,7 +1828,7 @@ Returns a `Coroutine` for
 Describes the read and write permissions for a theme.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").describe_theme_permissions` method.
+`session.create_client("quicksight").describe_theme_permissions` method.
 
 Boto3 documentation:
 [QuickSight.Client.describe_theme_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.describe_theme_permissions)
@@ -1863,7 +1853,7 @@ Returns a `Coroutine` for
 
 Returns information about a user, given the user name.
 
-Type annotations for `aiobotocore.create_client("quicksight").describe_user`
+Type annotations for `session.create_client("quicksight").describe_user`
 method.
 
 Boto3 documentation:
@@ -1891,7 +1881,7 @@ Generates an embed URL that you can use to embed an Amazon QuickSight dashboard
 in your website, without having to register any reader users.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").generate_embed_url_for_anonymous_user`
+`session.create_client("quicksight").generate_embed_url_for_anonymous_user`
 method.
 
 Boto3 documentation:
@@ -1926,7 +1916,7 @@ Generates an embed URL that you can use to embed an Amazon QuickSight
 experience in your website.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").generate_embed_url_for_registered_user`
+`session.create_client("quicksight").generate_embed_url_for_registered_user`
 method.
 
 Boto3 documentation:
@@ -1957,7 +1947,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").generate_presigned_url` method.
+`session.create_client("quicksight").generate_presigned_url` method.
 
 Boto3 documentation:
 [QuickSight.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.generate_presigned_url)
@@ -1982,7 +1972,7 @@ Generates a session URL and authorization code that you can use to embed an
 Amazon Amazon QuickSight read-only dashboard in your web server code.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").get_dashboard_embed_url` method.
+`session.create_client("quicksight").get_dashboard_embed_url` method.
 
 Boto3 documentation:
 [QuickSight.Client.get_dashboard_embed_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.get_dashboard_embed_url)
@@ -2019,7 +2009,7 @@ Generates a session URL and authorization code that you can use to embed the
 Amazon Amazon QuickSight console in your web server code.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").get_session_embed_url` method.
+`session.create_client("quicksight").get_session_embed_url` method.
 
 Boto3 documentation:
 [QuickSight.Client.get_session_embed_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.get_session_embed_url)
@@ -2047,7 +2037,7 @@ Returns a `Coroutine` for
 Lists Amazon QuickSight analyses that exist in the specified Amazon Web
 Services account.
 
-Type annotations for `aiobotocore.create_client("quicksight").list_analyses`
+Type annotations for `session.create_client("quicksight").list_analyses`
 method.
 
 Boto3 documentation:
@@ -2074,7 +2064,7 @@ Returns a `Coroutine` for
 Lists all the versions of the dashboards in the Amazon QuickSight subscription.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").list_dashboard_versions` method.
+`session.create_client("quicksight").list_dashboard_versions` method.
 
 Boto3 documentation:
 [QuickSight.Client.list_dashboard_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.list_dashboard_versions)
@@ -2101,7 +2091,7 @@ Returns a `Coroutine` for
 
 Lists dashboards in an Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("quicksight").list_dashboards`
+Type annotations for `session.create_client("quicksight").list_dashboards`
 method.
 
 Boto3 documentation:
@@ -2128,7 +2118,7 @@ Returns a `Coroutine` for
 Lists all of the datasets belonging to the current Amazon Web Services account
 in an Amazon Web Services Region.
 
-Type annotations for `aiobotocore.create_client("quicksight").list_data_sets`
+Type annotations for `session.create_client("quicksight").list_data_sets`
 method.
 
 Boto3 documentation:
@@ -2155,8 +2145,8 @@ Returns a `Coroutine` for
 Lists data sources in current Amazon Web Services Region that belong to this
 Amazon Web Services account.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").list_data_sources` method.
+Type annotations for `session.create_client("quicksight").list_data_sources`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.list_data_sources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.list_data_sources)
@@ -2181,8 +2171,8 @@ Returns a `Coroutine` for
 
 List all assets (`DASHBOARD` , `ANALYSIS` , and `DATASET` ) in a folder.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").list_folder_members` method.
+Type annotations for `session.create_client("quicksight").list_folder_members`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.list_folder_members](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.list_folder_members)
@@ -2209,8 +2199,7 @@ Returns a `Coroutine` for
 
 Lists all folders in an account.
 
-Type annotations for `aiobotocore.create_client("quicksight").list_folders`
-method.
+Type annotations for `session.create_client("quicksight").list_folders` method.
 
 Boto3 documentation:
 [QuickSight.Client.list_folders](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.list_folders)
@@ -2236,7 +2225,7 @@ Returns a `Coroutine` for
 Lists member users in a group.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").list_group_memberships` method.
+`session.create_client("quicksight").list_group_memberships` method.
 
 Boto3 documentation:
 [QuickSight.Client.list_group_memberships](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.list_group_memberships)
@@ -2264,8 +2253,7 @@ Returns a `Coroutine` for
 
 Lists all user groups in Amazon QuickSight.
 
-Type annotations for `aiobotocore.create_client("quicksight").list_groups`
-method.
+Type annotations for `session.create_client("quicksight").list_groups` method.
 
 Boto3 documentation:
 [QuickSight.Client.list_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.list_groups)
@@ -2292,7 +2280,7 @@ Returns a `Coroutine` for
 Lists IAM policy assignments in the current Amazon QuickSight account.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").list_iam_policy_assignments` method.
+`session.create_client("quicksight").list_iam_policy_assignments` method.
 
 Boto3 documentation:
 [QuickSight.Client.list_iam_policy_assignments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.list_iam_policy_assignments)
@@ -2324,7 +2312,7 @@ Lists all the IAM policy assignments, including the Amazon Resource Names
 that the user belongs to.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").list_iam_policy_assignments_for_user`
+`session.create_client("quicksight").list_iam_policy_assignments_for_user`
 method.
 
 Boto3 documentation:
@@ -2353,7 +2341,7 @@ Returns a `Coroutine` for
 
 Lists the history of SPICE ingestions for a dataset.
 
-Type annotations for `aiobotocore.create_client("quicksight").list_ingestions`
+Type annotations for `session.create_client("quicksight").list_ingestions`
 method.
 
 Boto3 documentation:
@@ -2380,7 +2368,7 @@ Returns a `Coroutine` for
 
 Lists the namespaces for the specified Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("quicksight").list_namespaces`
+Type annotations for `session.create_client("quicksight").list_namespaces`
 method.
 
 Boto3 documentation:
@@ -2407,7 +2395,7 @@ Returns a `Coroutine` for
 Lists the tags assigned to a resource.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").list_tags_for_resource` method.
+`session.create_client("quicksight").list_tags_for_resource` method.
 
 Boto3 documentation:
 [QuickSight.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.list_tags_for_resource)
@@ -2432,7 +2420,7 @@ Returns a `Coroutine` for
 Lists all the aliases of a template.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").list_template_aliases` method.
+`session.create_client("quicksight").list_template_aliases` method.
 
 Boto3 documentation:
 [QuickSight.Client.list_template_aliases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.list_template_aliases)
@@ -2461,7 +2449,7 @@ Lists all the versions of the templates in the current Amazon QuickSight
 account.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").list_template_versions` method.
+`session.create_client("quicksight").list_template_versions` method.
 
 Boto3 documentation:
 [QuickSight.Client.list_template_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.list_template_versions)
@@ -2488,7 +2476,7 @@ Returns a `Coroutine` for
 
 Lists all the templates in the current Amazon QuickSight account.
 
-Type annotations for `aiobotocore.create_client("quicksight").list_templates`
+Type annotations for `session.create_client("quicksight").list_templates`
 method.
 
 Boto3 documentation:
@@ -2514,8 +2502,8 @@ Returns a `Coroutine` for
 
 Lists all the aliases of a theme.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").list_theme_aliases` method.
+Type annotations for `session.create_client("quicksight").list_theme_aliases`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.list_theme_aliases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.list_theme_aliases)
@@ -2543,8 +2531,8 @@ Returns a `Coroutine` for
 Lists all the versions of the themes in the current Amazon Web Services
 account.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").list_theme_versions` method.
+Type annotations for `session.create_client("quicksight").list_theme_versions`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.list_theme_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.list_theme_versions)
@@ -2571,8 +2559,7 @@ Returns a `Coroutine` for
 
 Lists all the themes in the current Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("quicksight").list_themes`
-method.
+Type annotations for `session.create_client("quicksight").list_themes` method.
 
 Boto3 documentation:
 [QuickSight.Client.list_themes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.list_themes)
@@ -2599,7 +2586,7 @@ Returns a `Coroutine` for
 Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member
 of.
 
-Type annotations for `aiobotocore.create_client("quicksight").list_user_groups`
+Type annotations for `session.create_client("quicksight").list_user_groups`
 method.
 
 Boto3 documentation:
@@ -2627,8 +2614,7 @@ Returns a `Coroutine` for
 
 Returns a list of all of the Amazon QuickSight users belonging to this account.
 
-Type annotations for `aiobotocore.create_client("quicksight").list_users`
-method.
+Type annotations for `session.create_client("quicksight").list_users` method.
 
 Boto3 documentation:
 [QuickSight.Client.list_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.list_users)
@@ -2654,7 +2640,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("quicksight").register_user`
+Type annotations for `session.create_client("quicksight").register_user`
 method.
 
 Boto3 documentation:
@@ -2690,7 +2676,7 @@ Returns a `Coroutine` for
 
 Restores an analysis.
 
-Type annotations for `aiobotocore.create_client("quicksight").restore_analysis`
+Type annotations for `session.create_client("quicksight").restore_analysis`
 method.
 
 Boto3 documentation:
@@ -2715,7 +2701,7 @@ Returns a `Coroutine` for
 
 Searches for analyses that belong to the user specified in the filter.
 
-Type annotations for `aiobotocore.create_client("quicksight").search_analyses`
+Type annotations for `session.create_client("quicksight").search_analyses`
 method.
 
 Boto3 documentation:
@@ -2744,8 +2730,8 @@ Returns a `Coroutine` for
 
 Searches for dashboards that belong to a user.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").search_dashboards` method.
+Type annotations for `session.create_client("quicksight").search_dashboards`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.search_dashboards](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.search_dashboards)
@@ -2773,7 +2759,7 @@ Returns a `Coroutine` for
 
 Searches the subfolders in a folder.
 
-Type annotations for `aiobotocore.create_client("quicksight").search_folders`
+Type annotations for `session.create_client("quicksight").search_folders`
 method.
 
 Boto3 documentation:
@@ -2803,8 +2789,7 @@ Returns a `Coroutine` for
 Assigns one or more tags (key-value pairs) to the specified Amazon QuickSight
 resource.
 
-Type annotations for `aiobotocore.create_client("quicksight").tag_resource`
-method.
+Type annotations for `session.create_client("quicksight").tag_resource` method.
 
 Boto3 documentation:
 [QuickSight.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.tag_resource)
@@ -2828,7 +2813,7 @@ Returns a `Coroutine` for
 
 Removes a tag or tags from a resource.
 
-Type annotations for `aiobotocore.create_client("quicksight").untag_resource`
+Type annotations for `session.create_client("quicksight").untag_resource`
 method.
 
 Boto3 documentation:
@@ -2855,7 +2840,7 @@ Updates Amazon QuickSight customizations the current Amazon Web Services
 Region.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").update_account_customization` method.
+`session.create_client("quicksight").update_account_customization` method.
 
 Boto3 documentation:
 [QuickSight.Client.update_account_customization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_account_customization)
@@ -2884,7 +2869,7 @@ Returns a `Coroutine` for
 Updates the Amazon QuickSight settings in your Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").update_account_settings` method.
+`session.create_client("quicksight").update_account_settings` method.
 
 Boto3 documentation:
 [QuickSight.Client.update_account_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_account_settings)
@@ -2911,7 +2896,7 @@ Returns a `Coroutine` for
 Updates an analysis in Amazon QuickSight See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysis).
 
-Type annotations for `aiobotocore.create_client("quicksight").update_analysis`
+Type annotations for `session.create_client("quicksight").update_analysis`
 method.
 
 Boto3 documentation:
@@ -2943,7 +2928,7 @@ Returns a `Coroutine` for
 Updates the read and write permissions for an analysis.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").update_analysis_permissions` method.
+`session.create_client("quicksight").update_analysis_permissions` method.
 
 Boto3 documentation:
 [QuickSight.Client.update_analysis_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_analysis_permissions)
@@ -2972,7 +2957,7 @@ Returns a `Coroutine` for
 
 Updates a dashboard in an Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("quicksight").update_dashboard`
+Type annotations for `session.create_client("quicksight").update_dashboard`
 method.
 
 Boto3 documentation:
@@ -3007,7 +2992,7 @@ Returns a `Coroutine` for
 Updates read and write permissions on a dashboard.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").update_dashboard_permissions` method.
+`session.create_client("quicksight").update_dashboard_permissions` method.
 
 Boto3 documentation:
 [QuickSight.Client.update_dashboard_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_dashboard_permissions)
@@ -3041,7 +3026,7 @@ Returns a `Coroutine` for
 Updates the published version of a dashboard.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").update_dashboard_published_version`
+`session.create_client("quicksight").update_dashboard_published_version`
 method.
 
 Boto3 documentation:
@@ -3068,7 +3053,7 @@ Returns a `Coroutine` for
 
 Updates a dataset.
 
-Type annotations for `aiobotocore.create_client("quicksight").update_data_set`
+Type annotations for `session.create_client("quicksight").update_data_set`
 method.
 
 Boto3 documentation:
@@ -3113,7 +3098,7 @@ Returns a `Coroutine` for
 Updates the permissions on a dataset.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").update_data_set_permissions` method.
+`session.create_client("quicksight").update_data_set_permissions` method.
 
 Boto3 documentation:
 [QuickSight.Client.update_data_set_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_data_set_permissions)
@@ -3142,8 +3127,8 @@ Returns a `Coroutine` for
 
 Updates a data source.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").update_data_source` method.
+Type annotations for `session.create_client("quicksight").update_data_source`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.update_data_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_data_source)
@@ -3177,8 +3162,7 @@ Returns a `Coroutine` for
 Updates the permissions to a data source.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").update_data_source_permissions`
-method.
+`session.create_client("quicksight").update_data_source_permissions` method.
 
 Boto3 documentation:
 [QuickSight.Client.update_data_source_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_data_source_permissions)
@@ -3207,7 +3191,7 @@ Returns a `Coroutine` for
 
 Updates the name of a folder.
 
-Type annotations for `aiobotocore.create_client("quicksight").update_folder`
+Type annotations for `session.create_client("quicksight").update_folder`
 method.
 
 Boto3 documentation:
@@ -3234,7 +3218,7 @@ Returns a `Coroutine` for
 Updates permissions of a folder.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").update_folder_permissions` method.
+`session.create_client("quicksight").update_folder_permissions` method.
 
 Boto3 documentation:
 [QuickSight.Client.update_folder_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_folder_permissions)
@@ -3263,8 +3247,7 @@ Returns a `Coroutine` for
 
 Changes a group description.
 
-Type annotations for `aiobotocore.create_client("quicksight").update_group`
-method.
+Type annotations for `session.create_client("quicksight").update_group` method.
 
 Boto3 documentation:
 [QuickSight.Client.update_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_group)
@@ -3291,7 +3274,7 @@ Returns a `Coroutine` for
 Updates an existing IAM policy assignment.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").update_iam_policy_assignment` method.
+`session.create_client("quicksight").update_iam_policy_assignment` method.
 
 Boto3 documentation:
 [QuickSight.Client.update_iam_policy_assignment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_iam_policy_assignment)
@@ -3322,7 +3305,7 @@ Returns a `Coroutine` for
 Updates the content and status of IP rules.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").update_ip_restriction` method.
+`session.create_client("quicksight").update_ip_restriction` method.
 
 Boto3 documentation:
 [QuickSight.Client.update_ip_restriction](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_ip_restriction)
@@ -3349,7 +3332,7 @@ Returns a `Coroutine` for
 Updates a template from an existing Amazon QuickSight analysis or another
 template.
 
-Type annotations for `aiobotocore.create_client("quicksight").update_template`
+Type annotations for `session.create_client("quicksight").update_template`
 method.
 
 Boto3 documentation:
@@ -3380,7 +3363,7 @@ Returns a `Coroutine` for
 Updates the template alias of a template.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").update_template_alias` method.
+`session.create_client("quicksight").update_template_alias` method.
 
 Boto3 documentation:
 [QuickSight.Client.update_template_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_template_alias)
@@ -3408,7 +3391,7 @@ Returns a `Coroutine` for
 Updates the resource permissions for a template.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").update_template_permissions` method.
+`session.create_client("quicksight").update_template_permissions` method.
 
 Boto3 documentation:
 [QuickSight.Client.update_template_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_template_permissions)
@@ -3437,8 +3420,7 @@ Returns a `Coroutine` for
 
 Updates a theme.
 
-Type annotations for `aiobotocore.create_client("quicksight").update_theme`
-method.
+Type annotations for `session.create_client("quicksight").update_theme` method.
 
 Boto3 documentation:
 [QuickSight.Client.update_theme](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_theme)
@@ -3467,8 +3449,8 @@ Returns a `Coroutine` for
 
 Updates an alias of a theme.
 
-Type annotations for
-`aiobotocore.create_client("quicksight").update_theme_alias` method.
+Type annotations for `session.create_client("quicksight").update_theme_alias`
+method.
 
 Boto3 documentation:
 [QuickSight.Client.update_theme_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_theme_alias)
@@ -3496,7 +3478,7 @@ Returns a `Coroutine` for
 Updates the resource permissions for a theme.
 
 Type annotations for
-`aiobotocore.create_client("quicksight").update_theme_permissions` method.
+`session.create_client("quicksight").update_theme_permissions` method.
 
 Boto3 documentation:
 [QuickSight.Client.update_theme_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_theme_permissions)
@@ -3525,8 +3507,7 @@ Returns a `Coroutine` for
 
 Updates an Amazon QuickSight user.
 
-Type annotations for `aiobotocore.create_client("quicksight").update_user`
-method.
+Type annotations for `session.create_client("quicksight").update_user` method.
 
 Boto3 documentation:
 [QuickSight.Client.update_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.update_user)
@@ -3552,12 +3533,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateUserResponseTypeDef](./type_defs.md#updateuserresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("quicksight").__aenter__` method.
+
+Boto3 documentation:
+[QuickSight.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [QuickSightClient](#quicksightclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("quicksight").__aexit__` method.
+
+Boto3 documentation:
+[QuickSight.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html#QuickSight.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("quicksight").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("quicksight").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_analyses")` ->
   [ListAnalysesPaginator](./paginators.md#listanalysespaginator)

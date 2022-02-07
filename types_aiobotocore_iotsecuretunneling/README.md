@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[iotsecuretunneling]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[iotsecuretunneling]'
+
+# standalone installation
 pip install types-aiobotocore-iotsecuretunneling
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-iotsecuretunneling
 
 ## IoTSecureTunnelingClient
 
-Type annotations for `aiobotocore.create_client("iotsecuretunneling")` as
+Type annotations for `session.create_client("iotsecuretunneling")` as
 [IoTSecureTunnelingClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_iotsecuretunneling.client import IoTSecureTunnelingClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [close_tunnel](./client.md#close_tunnel)
 - [describe_tunnel](./client.md#describe_tunnel)

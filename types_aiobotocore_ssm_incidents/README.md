@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[ssm-incidents]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[ssm-incidents]'
+
+# standalone installation
 pip install types-aiobotocore-ssm-incidents
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-ssm-incidents
 
 ## SSMIncidentsClient
 
-Type annotations for `aiobotocore.create_client("ssm-incidents")` as
+Type annotations for `session.create_client("ssm-incidents")` as
 [SSMIncidentsClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_ssm_incidents.client import SSMIncidentsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_replication_set](./client.md#create_replication_set)
 - [create_response_plan](./client.md#create_response_plan)
@@ -103,7 +109,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_ssm_incidents.paginators import GetResourcePoliciesPaginator, ...
+from types_aiobotocore_ssm_incidents.paginator import GetResourcePoliciesPaginator, ...
 ```
 
 - [GetResourcePoliciesPaginator](./paginators.md#getresourcepoliciespaginator)
@@ -123,7 +129,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_ssm_incidents.waiters import WaitForReplicationSetActiveWaiter, ...
+from types_aiobotocore_ssm_incidents.waiter import WaitForReplicationSetActiveWaiter, ...
 ```
 
 - [WaitForReplicationSetActiveWaiter](./waiters.md#waitforreplicationsetactivewaiter)

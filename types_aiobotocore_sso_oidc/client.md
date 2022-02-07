@@ -19,21 +19,24 @@ type annotations stubs module
     - [generate_presigned_url](#generate_presigned_url)
     - [register_client](#register_client)
     - [start_device_authorization](#start_device_authorization)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="ssooidcclient"></a>
 
 ## SSOOIDCClient
 
-Type annotations for `aiobotocore.create_client("sso-oidc")`
+Type annotations for `session.create_client("sso-oidc")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_sso_oidc.client import SSOOIDCClient
 
-def get_sso-oidc_client() -> SSOOIDCClient:
-    return Session().client("sso-oidc")
+session = get_session()
+async with session.create_client("sso-oidc") as client:
+    client: SSOOIDCClient
 ```
 
 Boto3 documentation:
@@ -79,7 +82,7 @@ Exceptions:
 
 SSOOIDCClient exceptions.
 
-Type annotations for `aiobotocore.create_client("sso-oidc").exceptions` method.
+Type annotations for `session.create_client("sso-oidc").exceptions` method.
 
 Boto3 documentation:
 [SSOOIDC.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-oidc.html#SSOOIDC.Client.exceptions)
@@ -92,19 +95,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("sso-oidc").can_paginate`
-method.
+Type annotations for `session.create_client("sso-oidc").can_paginate` method.
 
 Boto3 documentation:
 [SSOOIDC.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-oidc.html#SSOOIDC.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_token"></a>
 
@@ -112,8 +112,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates and returns an access token for the authorized client.
 
-Type annotations for `aiobotocore.create_client("sso-oidc").create_token`
-method.
+Type annotations for `session.create_client("sso-oidc").create_token` method.
 
 Boto3 documentation:
 [SSOOIDC.Client.create_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-oidc.html#SSOOIDC.Client.create_token)
@@ -143,8 +142,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("sso-oidc").generate_presigned_url` method.
+Type annotations for `session.create_client("sso-oidc").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [SSOOIDC.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-oidc.html#SSOOIDC.Client.generate_presigned_url)
@@ -167,7 +166,7 @@ Returns a `Coroutine` for `str`.
 
 Registers a client with AWS SSO.
 
-Type annotations for `aiobotocore.create_client("sso-oidc").register_client`
+Type annotations for `session.create_client("sso-oidc").register_client`
 method.
 
 Boto3 documentation:
@@ -195,7 +194,7 @@ Initiates device authorization by requesting a pair of verification codes from
 the authorization service.
 
 Type annotations for
-`aiobotocore.create_client("sso-oidc").start_device_authorization` method.
+`session.create_client("sso-oidc").start_device_authorization` method.
 
 Boto3 documentation:
 [SSOOIDC.Client.start_device_authorization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-oidc.html#SSOOIDC.Client.start_device_authorization)
@@ -214,3 +213,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [StartDeviceAuthorizationResponseTypeDef](./type_defs.md#startdeviceauthorizationresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("sso-oidc").__aenter__` method.
+
+Boto3 documentation:
+[SSOOIDC.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-oidc.html#SSOOIDC.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SSOOIDCClient](#ssooidcclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("sso-oidc").__aexit__` method.
+
+Boto3 documentation:
+[SSOOIDC.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso-oidc.html#SSOOIDC.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

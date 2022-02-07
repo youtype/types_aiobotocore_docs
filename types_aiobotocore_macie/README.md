@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[macie]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[macie]'
+
+# standalone installation
 pip install types-aiobotocore-macie
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-macie
 
 ## MacieClient
 
-Type annotations for `aiobotocore.create_client("macie")` as
+Type annotations for `session.create_client("macie")` as
 [MacieClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_macie.client import MacieClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_member_account](./client.md#associate_member_account)
 - [associate_s3_resources](./client.md#associate_s3_resources)
 - [can_paginate](./client.md#can_paginate)
@@ -76,7 +82,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_macie.paginators import ListMemberAccountsPaginator, ...
+from types_aiobotocore_macie.paginator import ListMemberAccountsPaginator, ...
 ```
 
 - [ListMemberAccountsPaginator](./paginators.md#listmemberaccountspaginator)

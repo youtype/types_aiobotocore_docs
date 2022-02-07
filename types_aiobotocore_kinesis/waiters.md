@@ -18,7 +18,7 @@ type annotations stubs module
 ## StreamExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("kinesis").get_waiter("stream_exists")`.
+`session.create_client("kinesis").get_waiter("stream_exists")`.
 
 Can be used directly:
 
@@ -28,7 +28,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_kinesis.waiter import StreamExistsWaiter
 
 def get_stream_exists_waiter() -> StreamExistsWaiter:
-    return Session().create_client("kinesis").get_waiter("stream_exists")
+    return Session().client("kinesis").get_waiter("stream_exists")
 ```
 
 Boto3 documentation:
@@ -46,7 +46,7 @@ Arguments for `StreamExistsWaiter.wait` method:
 ## StreamNotExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("kinesis").get_waiter("stream_not_exists")`.
+`session.create_client("kinesis").get_waiter("stream_not_exists")`.
 
 Can be used directly:
 
@@ -56,7 +56,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_kinesis.waiter import StreamNotExistsWaiter
 
 def get_stream_not_exists_waiter() -> StreamNotExistsWaiter:
-    return Session().create_client("kinesis").get_waiter("stream_not_exists")
+    return Session().client("kinesis").get_waiter("stream_not_exists")
 ```
 
 Boto3 documentation:

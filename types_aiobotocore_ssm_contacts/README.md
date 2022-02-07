@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[ssm-contacts]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[ssm-contacts]'
+
+# standalone installation
 pip install types-aiobotocore-ssm-contacts
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-ssm-contacts
 
 ## SSMContactsClient
 
-Type annotations for `aiobotocore.create_client("ssm-contacts")` as
+Type annotations for `session.create_client("ssm-contacts")` as
 [SSMContactsClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_ssm_contacts.client import SSMContactsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_page](./client.md#accept_page)
 - [activate_contact_channel](./client.md#activate_contact_channel)
 - [can_paginate](./client.md#can_paginate)
@@ -100,7 +106,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_ssm_contacts.paginators import ListContactChannelsPaginator, ...
+from types_aiobotocore_ssm_contacts.paginator import ListContactChannelsPaginator, ...
 ```
 
 - [ListContactChannelsPaginator](./paginators.md#listcontactchannelspaginator)

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[cognito-sync]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[cognito-sync]'
+
+# standalone installation
 pip install types-aiobotocore-cognito-sync
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-cognito-sync
 
 ## CognitoSyncClient
 
-Type annotations for `aiobotocore.create_client("cognito-sync")` as
+Type annotations for `session.create_client("cognito-sync")` as
 [CognitoSyncClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_cognito_sync.client import CognitoSyncClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [bulk_publish](./client.md#bulk_publish)
 - [can_paginate](./client.md#can_paginate)
 - [delete_dataset](./client.md#delete_dataset)

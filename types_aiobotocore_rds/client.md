@@ -158,6 +158,8 @@ type annotations stubs module
     - [stop_db_cluster](#stop_db_cluster)
     - [stop_db_instance](#stop_db_instance)
     - [stop_db_instance_automated_backups_replication](#stop_db_instance_automated_backups_replication)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -165,16 +167,17 @@ type annotations stubs module
 
 ## RDSClient
 
-Type annotations for `aiobotocore.create_client("rds")`
+Type annotations for `session.create_client("rds")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_rds.client import RDSClient
 
-def get_rds_client() -> RDSClient:
-    return Session().client("rds")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
 ```
 
 Boto3 documentation:
@@ -329,7 +332,7 @@ Exceptions:
 
 RDSClient exceptions.
 
-Type annotations for `aiobotocore.create_client("rds").exceptions` method.
+Type annotations for `session.create_client("rds").exceptions` method.
 
 Boto3 documentation:
 [RDS.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.exceptions)
@@ -342,7 +345,7 @@ Returns [Exceptions](#exceptions).
 
 Associates an Identity and Access Management (IAM) role with a DB cluster.
 
-Type annotations for `aiobotocore.create_client("rds").add_role_to_db_cluster`
+Type annotations for `session.create_client("rds").add_role_to_db_cluster`
 method.
 
 Boto3 documentation:
@@ -367,7 +370,7 @@ Keyword-only arguments:
 Associates an Amazon Web Services Identity and Access Management (IAM) role
 with a DB instance.
 
-Type annotations for `aiobotocore.create_client("rds").add_role_to_db_instance`
+Type annotations for `session.create_client("rds").add_role_to_db_instance`
 method.
 
 Boto3 documentation:
@@ -392,8 +395,7 @@ Keyword-only arguments:
 Adds a source identifier to an existing RDS event notification subscription.
 
 Type annotations for
-`aiobotocore.create_client("rds").add_source_identifier_to_subscription`
-method.
+`session.create_client("rds").add_source_identifier_to_subscription` method.
 
 Boto3 documentation:
 [RDS.Client.add_source_identifier_to_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.add_source_identifier_to_subscription)
@@ -418,7 +420,7 @@ Returns a `Coroutine` for
 
 Adds metadata tags to an Amazon RDS resource.
 
-Type annotations for `aiobotocore.create_client("rds").add_tags_to_resource`
+Type annotations for `session.create_client("rds").add_tags_to_resource`
 method.
 
 Boto3 documentation:
@@ -443,7 +445,7 @@ Applies a pending maintenance action to a resource (for example, to a DB
 instance).
 
 Type annotations for
-`aiobotocore.create_client("rds").apply_pending_maintenance_action` method.
+`session.create_client("rds").apply_pending_maintenance_action` method.
 
 Boto3 documentation:
 [RDS.Client.apply_pending_maintenance_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.apply_pending_maintenance_action)
@@ -470,7 +472,7 @@ Returns a `Coroutine` for
 Enables ingress to a DBSecurityGroup using one of two forms of authorization.
 
 Type annotations for
-`aiobotocore.create_client("rds").authorize_db_security_group_ingress` method.
+`session.create_client("rds").authorize_db_security_group_ingress` method.
 
 Boto3 documentation:
 [RDS.Client.authorize_db_security_group_ingress](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.authorize_db_security_group_ingress)
@@ -498,7 +500,7 @@ Returns a `Coroutine` for
 
 Backtracks a DB cluster to a specific time, without creating a new DB cluster.
 
-Type annotations for `aiobotocore.create_client("rds").backtrack_db_cluster`
+Type annotations for `session.create_client("rds").backtrack_db_cluster`
 method.
 
 Boto3 documentation:
@@ -526,18 +528,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("rds").can_paginate` method.
+Type annotations for `session.create_client("rds").can_paginate` method.
 
 Boto3 documentation:
 [RDS.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_export_task"></a>
 
@@ -545,8 +545,7 @@ Returns a `Coroutine` for `bool`.
 
 Cancels an export task in progress that is exporting a snapshot to Amazon S3.
 
-Type annotations for `aiobotocore.create_client("rds").cancel_export_task`
-method.
+Type annotations for `session.create_client("rds").cancel_export_task` method.
 
 Boto3 documentation:
 [RDS.Client.cancel_export_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.cancel_export_task)
@@ -571,7 +570,7 @@ Returns a `Coroutine` for
 Copies the specified DB cluster parameter group.
 
 Type annotations for
-`aiobotocore.create_client("rds").copy_db_cluster_parameter_group` method.
+`session.create_client("rds").copy_db_cluster_parameter_group` method.
 
 Boto3 documentation:
 [RDS.Client.copy_db_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.copy_db_cluster_parameter_group)
@@ -598,8 +597,8 @@ Returns a `Coroutine` for
 
 Copies a snapshot of a DB cluster.
 
-Type annotations for
-`aiobotocore.create_client("rds").copy_db_cluster_snapshot` method.
+Type annotations for `session.create_client("rds").copy_db_cluster_snapshot`
+method.
 
 Boto3 documentation:
 [RDS.Client.copy_db_cluster_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.copy_db_cluster_snapshot)
@@ -629,7 +628,7 @@ Returns a `Coroutine` for
 
 Copies the specified DB parameter group.
 
-Type annotations for `aiobotocore.create_client("rds").copy_db_parameter_group`
+Type annotations for `session.create_client("rds").copy_db_parameter_group`
 method.
 
 Boto3 documentation:
@@ -657,8 +656,7 @@ Returns a `Coroutine` for
 
 Copies the specified DB snapshot.
 
-Type annotations for `aiobotocore.create_client("rds").copy_db_snapshot`
-method.
+Type annotations for `session.create_client("rds").copy_db_snapshot` method.
 
 Boto3 documentation:
 [RDS.Client.copy_db_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.copy_db_snapshot)
@@ -689,8 +687,7 @@ Returns a `Coroutine` for
 
 Copies the specified option group.
 
-Type annotations for `aiobotocore.create_client("rds").copy_option_group`
-method.
+Type annotations for `session.create_client("rds").copy_option_group` method.
 
 Boto3 documentation:
 [RDS.Client.copy_option_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.copy_option_group)
@@ -717,7 +714,7 @@ Returns a `Coroutine` for
 Creates a custom Availability Zone (AZ).
 
 Type annotations for
-`aiobotocore.create_client("rds").create_custom_availability_zone` method.
+`session.create_client("rds").create_custom_availability_zone` method.
 
 Boto3 documentation:
 [RDS.Client.create_custom_availability_zone](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.create_custom_availability_zone)
@@ -745,7 +742,7 @@ Returns a `Coroutine` for
 Creates a custom DB engine version (CEV).
 
 Type annotations for
-`aiobotocore.create_client("rds").create_custom_db_engine_version` method.
+`session.create_client("rds").create_custom_db_engine_version` method.
 
 Boto3 documentation:
 [RDS.Client.create_custom_db_engine_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.create_custom_db_engine_version)
@@ -776,8 +773,7 @@ Returns a `Coroutine` for
 
 Creates a new Amazon Aurora DB cluster or Multi-AZ DB cluster.
 
-Type annotations for `aiobotocore.create_client("rds").create_db_cluster`
-method.
+Type annotations for `session.create_client("rds").create_db_cluster` method.
 
 Boto3 documentation:
 [RDS.Client.create_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.create_db_cluster)
@@ -846,8 +842,8 @@ Returns a `Coroutine` for
 Creates a new custom endpoint and associates it with an Amazon Aurora DB
 cluster.
 
-Type annotations for
-`aiobotocore.create_client("rds").create_db_cluster_endpoint` method.
+Type annotations for `session.create_client("rds").create_db_cluster_endpoint`
+method.
 
 Boto3 documentation:
 [RDS.Client.create_db_cluster_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.create_db_cluster_endpoint)
@@ -877,7 +873,7 @@ Returns a `Coroutine` for
 Creates a new DB cluster parameter group.
 
 Type annotations for
-`aiobotocore.create_client("rds").create_db_cluster_parameter_group` method.
+`session.create_client("rds").create_db_cluster_parameter_group` method.
 
 Boto3 documentation:
 [RDS.Client.create_db_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.create_db_cluster_parameter_group)
@@ -904,8 +900,8 @@ Returns a `Coroutine` for
 
 Creates a snapshot of a DB cluster.
 
-Type annotations for
-`aiobotocore.create_client("rds").create_db_cluster_snapshot` method.
+Type annotations for `session.create_client("rds").create_db_cluster_snapshot`
+method.
 
 Boto3 documentation:
 [RDS.Client.create_db_cluster_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.create_db_cluster_snapshot)
@@ -931,8 +927,7 @@ Returns a `Coroutine` for
 
 Creates a new DB instance.
 
-Type annotations for `aiobotocore.create_client("rds").create_db_instance`
-method.
+Type annotations for `session.create_client("rds").create_db_instance` method.
 
 Boto3 documentation:
 [RDS.Client.create_db_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.create_db_instance)
@@ -1008,7 +1003,7 @@ Creates a new DB instance that acts as a read replica for an existing source DB
 instance.
 
 Type annotations for
-`aiobotocore.create_client("rds").create_db_instance_read_replica` method.
+`session.create_client("rds").create_db_instance_read_replica` method.
 
 Boto3 documentation:
 [RDS.Client.create_db_instance_read_replica](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.create_db_instance_read_replica)
@@ -1066,8 +1061,8 @@ Returns a `Coroutine` for
 
 Creates a new DB parameter group.
 
-Type annotations for
-`aiobotocore.create_client("rds").create_db_parameter_group` method.
+Type annotations for `session.create_client("rds").create_db_parameter_group`
+method.
 
 Boto3 documentation:
 [RDS.Client.create_db_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.create_db_parameter_group)
@@ -1094,7 +1089,7 @@ Returns a `Coroutine` for
 
 Creates a new DB proxy.
 
-Type annotations for `aiobotocore.create_client("rds").create_db_proxy` method.
+Type annotations for `session.create_client("rds").create_db_proxy` method.
 
 Boto3 documentation:
 [RDS.Client.create_db_proxy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.create_db_proxy)
@@ -1129,8 +1124,8 @@ Returns a `Coroutine` for
 
 Creates a `DBProxyEndpoint`.
 
-Type annotations for
-`aiobotocore.create_client("rds").create_db_proxy_endpoint` method.
+Type annotations for `session.create_client("rds").create_db_proxy_endpoint`
+method.
 
 Boto3 documentation:
 [RDS.Client.create_db_proxy_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.create_db_proxy_endpoint)
@@ -1160,8 +1155,8 @@ Returns a `Coroutine` for
 
 Creates a new DB security group.
 
-Type annotations for
-`aiobotocore.create_client("rds").create_db_security_group` method.
+Type annotations for `session.create_client("rds").create_db_security_group`
+method.
 
 Boto3 documentation:
 [RDS.Client.create_db_security_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.create_db_security_group)
@@ -1187,8 +1182,7 @@ Returns a `Coroutine` for
 
 Creates a snapshot of a DB instance.
 
-Type annotations for `aiobotocore.create_client("rds").create_db_snapshot`
-method.
+Type annotations for `session.create_client("rds").create_db_snapshot` method.
 
 Boto3 documentation:
 [RDS.Client.create_db_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.create_db_snapshot)
@@ -1214,7 +1208,7 @@ Returns a `Coroutine` for
 
 Creates a new DB subnet group.
 
-Type annotations for `aiobotocore.create_client("rds").create_db_subnet_group`
+Type annotations for `session.create_client("rds").create_db_subnet_group`
 method.
 
 Boto3 documentation:
@@ -1242,8 +1236,8 @@ Returns a `Coroutine` for
 
 Creates an RDS event notification subscription.
 
-Type annotations for
-`aiobotocore.create_client("rds").create_event_subscription` method.
+Type annotations for `session.create_client("rds").create_event_subscription`
+method.
 
 Boto3 documentation:
 [RDS.Client.create_event_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.create_event_subscription)
@@ -1274,7 +1268,7 @@ Returns a `Coroutine` for
 Creates an Aurora global database spread across multiple Amazon Web Services
 Regions.
 
-Type annotations for `aiobotocore.create_client("rds").create_global_cluster`
+Type annotations for `session.create_client("rds").create_global_cluster`
 method.
 
 Boto3 documentation:
@@ -1305,8 +1299,7 @@ Returns a `Coroutine` for
 
 Creates a new option group.
 
-Type annotations for `aiobotocore.create_client("rds").create_option_group`
-method.
+Type annotations for `session.create_client("rds").create_option_group` method.
 
 Boto3 documentation:
 [RDS.Client.create_option_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.create_option_group)
@@ -1335,7 +1328,7 @@ Returns a `Coroutine` for
 Deletes a custom Availability Zone (AZ).
 
 Type annotations for
-`aiobotocore.create_client("rds").delete_custom_availability_zone` method.
+`session.create_client("rds").delete_custom_availability_zone` method.
 
 Boto3 documentation:
 [RDS.Client.delete_custom_availability_zone](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_custom_availability_zone)
@@ -1360,7 +1353,7 @@ Returns a `Coroutine` for
 Deletes a custom engine version.
 
 Type annotations for
-`aiobotocore.create_client("rds").delete_custom_db_engine_version` method.
+`session.create_client("rds").delete_custom_db_engine_version` method.
 
 Boto3 documentation:
 [RDS.Client.delete_custom_db_engine_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_custom_db_engine_version)
@@ -1385,8 +1378,7 @@ Returns a `Coroutine` for
 
 The DeleteDBCluster action deletes a previously provisioned DB cluster.
 
-Type annotations for `aiobotocore.create_client("rds").delete_db_cluster`
-method.
+Type annotations for `session.create_client("rds").delete_db_cluster` method.
 
 Boto3 documentation:
 [RDS.Client.delete_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_db_cluster)
@@ -1411,8 +1403,8 @@ Returns a `Coroutine` for
 
 Deletes a custom endpoint and removes it from an Amazon Aurora DB cluster.
 
-Type annotations for
-`aiobotocore.create_client("rds").delete_db_cluster_endpoint` method.
+Type annotations for `session.create_client("rds").delete_db_cluster_endpoint`
+method.
 
 Boto3 documentation:
 [RDS.Client.delete_db_cluster_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_db_cluster_endpoint)
@@ -1437,7 +1429,7 @@ Returns a `Coroutine` for
 Deletes a specified DB cluster parameter group.
 
 Type annotations for
-`aiobotocore.create_client("rds").delete_db_cluster_parameter_group` method.
+`session.create_client("rds").delete_db_cluster_parameter_group` method.
 
 Boto3 documentation:
 [RDS.Client.delete_db_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_db_cluster_parameter_group)
@@ -1458,8 +1450,8 @@ Keyword-only arguments:
 
 Deletes a DB cluster snapshot.
 
-Type annotations for
-`aiobotocore.create_client("rds").delete_db_cluster_snapshot` method.
+Type annotations for `session.create_client("rds").delete_db_cluster_snapshot`
+method.
 
 Boto3 documentation:
 [RDS.Client.delete_db_cluster_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_db_cluster_snapshot)
@@ -1483,8 +1475,7 @@ Returns a `Coroutine` for
 
 The DeleteDBInstance action deletes a previously provisioned DB instance.
 
-Type annotations for `aiobotocore.create_client("rds").delete_db_instance`
-method.
+Type annotations for `session.create_client("rds").delete_db_instance` method.
 
 Boto3 documentation:
 [RDS.Client.delete_db_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_db_instance)
@@ -1513,7 +1504,7 @@ Deletes automated backups using the `DbiResourceId` value of the source DB
 instance or the Amazon Resource Name (ARN) of the automated backups.
 
 Type annotations for
-`aiobotocore.create_client("rds").delete_db_instance_automated_backup` method.
+`session.create_client("rds").delete_db_instance_automated_backup` method.
 
 Boto3 documentation:
 [RDS.Client.delete_db_instance_automated_backup](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_db_instance_automated_backup)
@@ -1538,8 +1529,8 @@ Returns a `Coroutine` for
 
 Deletes a specified DB parameter group.
 
-Type annotations for
-`aiobotocore.create_client("rds").delete_db_parameter_group` method.
+Type annotations for `session.create_client("rds").delete_db_parameter_group`
+method.
 
 Boto3 documentation:
 [RDS.Client.delete_db_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_db_parameter_group)
@@ -1560,7 +1551,7 @@ Keyword-only arguments:
 
 Deletes an existing DB proxy.
 
-Type annotations for `aiobotocore.create_client("rds").delete_db_proxy` method.
+Type annotations for `session.create_client("rds").delete_db_proxy` method.
 
 Boto3 documentation:
 [RDS.Client.delete_db_proxy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_db_proxy)
@@ -1583,8 +1574,8 @@ Returns a `Coroutine` for
 
 Deletes a `DBProxyEndpoint`.
 
-Type annotations for
-`aiobotocore.create_client("rds").delete_db_proxy_endpoint` method.
+Type annotations for `session.create_client("rds").delete_db_proxy_endpoint`
+method.
 
 Boto3 documentation:
 [RDS.Client.delete_db_proxy_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_db_proxy_endpoint)
@@ -1608,8 +1599,8 @@ Returns a `Coroutine` for
 
 Deletes a DB security group.
 
-Type annotations for
-`aiobotocore.create_client("rds").delete_db_security_group` method.
+Type annotations for `session.create_client("rds").delete_db_security_group`
+method.
 
 Boto3 documentation:
 [RDS.Client.delete_db_security_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_db_security_group)
@@ -1630,8 +1621,7 @@ Keyword-only arguments:
 
 Deletes a DB snapshot.
 
-Type annotations for `aiobotocore.create_client("rds").delete_db_snapshot`
-method.
+Type annotations for `session.create_client("rds").delete_db_snapshot` method.
 
 Boto3 documentation:
 [RDS.Client.delete_db_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_db_snapshot)
@@ -1655,7 +1645,7 @@ Returns a `Coroutine` for
 
 Deletes a DB subnet group.
 
-Type annotations for `aiobotocore.create_client("rds").delete_db_subnet_group`
+Type annotations for `session.create_client("rds").delete_db_subnet_group`
 method.
 
 Boto3 documentation:
@@ -1677,8 +1667,8 @@ Keyword-only arguments:
 
 Deletes an RDS event notification subscription.
 
-Type annotations for
-`aiobotocore.create_client("rds").delete_event_subscription` method.
+Type annotations for `session.create_client("rds").delete_event_subscription`
+method.
 
 Boto3 documentation:
 [RDS.Client.delete_event_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_event_subscription)
@@ -1702,7 +1692,7 @@ Returns a `Coroutine` for
 
 Deletes a global database cluster.
 
-Type annotations for `aiobotocore.create_client("rds").delete_global_cluster`
+Type annotations for `session.create_client("rds").delete_global_cluster`
 method.
 
 Boto3 documentation:
@@ -1728,8 +1718,8 @@ Returns a `Coroutine` for
 Deletes the installation medium for a DB engine that requires an on-premises
 customer provided license, such as Microsoft SQL Server.
 
-Type annotations for
-`aiobotocore.create_client("rds").delete_installation_media` method.
+Type annotations for `session.create_client("rds").delete_installation_media`
+method.
 
 Boto3 documentation:
 [RDS.Client.delete_installation_media](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_installation_media)
@@ -1753,8 +1743,7 @@ Returns a `Coroutine` for
 
 Deletes an existing option group.
 
-Type annotations for `aiobotocore.create_client("rds").delete_option_group`
-method.
+Type annotations for `session.create_client("rds").delete_option_group` method.
 
 Boto3 documentation:
 [RDS.Client.delete_option_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_option_group)
@@ -1776,8 +1765,8 @@ Keyword-only arguments:
 Remove the association between one or more `DBProxyTarget` data structures and
 a `DBProxyTargetGroup` .
 
-Type annotations for
-`aiobotocore.create_client("rds").deregister_db_proxy_targets` method.
+Type annotations for `session.create_client("rds").deregister_db_proxy_targets`
+method.
 
 Boto3 documentation:
 [RDS.Client.deregister_db_proxy_targets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.deregister_db_proxy_targets)
@@ -1803,8 +1792,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Lists all of the attributes for a customer account.
 
-Type annotations for
-`aiobotocore.create_client("rds").describe_account_attributes` method.
+Type annotations for `session.create_client("rds").describe_account_attributes`
+method.
 
 Boto3 documentation:
 [RDS.Client.describe_account_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_account_attributes)
@@ -1822,7 +1811,7 @@ Returns a `Coroutine` for
 Lists the set of CA certificates provided by Amazon RDS for this Amazon Web
 Services account.
 
-Type annotations for `aiobotocore.create_client("rds").describe_certificates`
+Type annotations for `session.create_client("rds").describe_certificates`
 method.
 
 Boto3 documentation:
@@ -1851,7 +1840,7 @@ Returns a `Coroutine` for
 Returns information about custom Availability Zones (AZs).
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_custom_availability_zones` method.
+`session.create_client("rds").describe_custom_availability_zones` method.
 
 Boto3 documentation:
 [RDS.Client.describe_custom_availability_zones](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_custom_availability_zones)
@@ -1879,7 +1868,7 @@ Returns a `Coroutine` for
 Returns information about backtracks for a DB cluster.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_db_cluster_backtracks` method.
+`session.create_client("rds").describe_db_cluster_backtracks` method.
 
 Boto3 documentation:
 [RDS.Client.describe_db_cluster_backtracks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_cluster_backtracks)
@@ -1908,7 +1897,7 @@ Returns a `Coroutine` for
 Returns information about endpoints for an Amazon Aurora DB cluster.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_db_cluster_endpoints` method.
+`session.create_client("rds").describe_db_cluster_endpoints` method.
 
 Boto3 documentation:
 [RDS.Client.describe_db_cluster_endpoints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_cluster_endpoints)
@@ -1937,7 +1926,7 @@ Returns a `Coroutine` for
 Returns a list of `DBClusterParameterGroup` descriptions.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_db_cluster_parameter_groups` method.
+`session.create_client("rds").describe_db_cluster_parameter_groups` method.
 
 Boto3 documentation:
 [RDS.Client.describe_db_cluster_parameter_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_cluster_parameter_groups)
@@ -1966,7 +1955,7 @@ Returns the detailed parameter list for a particular DB cluster parameter
 group.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_db_cluster_parameters` method.
+`session.create_client("rds").describe_db_cluster_parameters` method.
 
 Boto3 documentation:
 [RDS.Client.describe_db_cluster_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_cluster_parameters)
@@ -1996,8 +1985,7 @@ Returns a list of DB cluster snapshot attribute names and values for a manual
 DB cluster snapshot.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_db_cluster_snapshot_attributes`
-method.
+`session.create_client("rds").describe_db_cluster_snapshot_attributes` method.
 
 Boto3 documentation:
 [RDS.Client.describe_db_cluster_snapshot_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_cluster_snapshot_attributes)
@@ -2022,7 +2010,7 @@ Returns a `Coroutine` for
 Returns information about DB cluster snapshots.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_db_cluster_snapshots` method.
+`session.create_client("rds").describe_db_cluster_snapshots` method.
 
 Boto3 documentation:
 [RDS.Client.describe_db_cluster_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_cluster_snapshots)
@@ -2053,7 +2041,7 @@ Returns a `Coroutine` for
 
 Returns information about Amazon Aurora DB clusters and Multi-AZ DB clusters.
 
-Type annotations for `aiobotocore.create_client("rds").describe_db_clusters`
+Type annotations for `session.create_client("rds").describe_db_clusters`
 method.
 
 Boto3 documentation:
@@ -2082,8 +2070,8 @@ Returns a `Coroutine` for
 
 Returns a list of the available DB engines.
 
-Type annotations for
-`aiobotocore.create_client("rds").describe_db_engine_versions` method.
+Type annotations for `session.create_client("rds").describe_db_engine_versions`
+method.
 
 Boto3 documentation:
 [RDS.Client.describe_db_engine_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_engine_versions)
@@ -2117,8 +2105,7 @@ Returns a `Coroutine` for
 Displays backups for both current and deleted instances.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_db_instance_automated_backups`
-method.
+`session.create_client("rds").describe_db_instance_automated_backups` method.
 
 Boto3 documentation:
 [RDS.Client.describe_db_instance_automated_backups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_instance_automated_backups)
@@ -2147,7 +2134,7 @@ Returns a `Coroutine` for
 
 Returns information about provisioned RDS instances.
 
-Type annotations for `aiobotocore.create_client("rds").describe_db_instances`
+Type annotations for `session.create_client("rds").describe_db_instances`
 method.
 
 Boto3 documentation:
@@ -2175,7 +2162,7 @@ Returns a `Coroutine` for
 
 Returns a list of DB log files for the DB instance.
 
-Type annotations for `aiobotocore.create_client("rds").describe_db_log_files`
+Type annotations for `session.create_client("rds").describe_db_log_files`
 method.
 
 Boto3 documentation:
@@ -2207,7 +2194,7 @@ Returns a `Coroutine` for
 Returns a list of `DBParameterGroup` descriptions.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_db_parameter_groups` method.
+`session.create_client("rds").describe_db_parameter_groups` method.
 
 Boto3 documentation:
 [RDS.Client.describe_db_parameter_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_parameter_groups)
@@ -2234,7 +2221,7 @@ Returns a `Coroutine` for
 
 Returns the detailed parameter list for a particular DB parameter group.
 
-Type annotations for `aiobotocore.create_client("rds").describe_db_parameters`
+Type annotations for `session.create_client("rds").describe_db_parameters`
 method.
 
 Boto3 documentation:
@@ -2263,8 +2250,7 @@ Returns a `Coroutine` for
 
 Returns information about DB proxies.
 
-Type annotations for `aiobotocore.create_client("rds").describe_db_proxies`
-method.
+Type annotations for `session.create_client("rds").describe_db_proxies` method.
 
 Boto3 documentation:
 [RDS.Client.describe_db_proxies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_proxies)
@@ -2291,8 +2277,8 @@ Returns a `Coroutine` for
 
 Returns information about DB proxy endpoints.
 
-Type annotations for
-`aiobotocore.create_client("rds").describe_db_proxy_endpoints` method.
+Type annotations for `session.create_client("rds").describe_db_proxy_endpoints`
+method.
 
 Boto3 documentation:
 [RDS.Client.describe_db_proxy_endpoints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_proxy_endpoints)
@@ -2322,7 +2308,7 @@ Returns information about DB proxy target groups, represented by
 `DBProxyTargetGroup` data structures.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_db_proxy_target_groups` method.
+`session.create_client("rds").describe_db_proxy_target_groups` method.
 
 Boto3 documentation:
 [RDS.Client.describe_db_proxy_target_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_proxy_target_groups)
@@ -2350,8 +2336,8 @@ Returns a `Coroutine` for
 
 Returns information about `DBProxyTarget` objects.
 
-Type annotations for
-`aiobotocore.create_client("rds").describe_db_proxy_targets` method.
+Type annotations for `session.create_client("rds").describe_db_proxy_targets`
+method.
 
 Boto3 documentation:
 [RDS.Client.describe_db_proxy_targets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_proxy_targets)
@@ -2379,8 +2365,8 @@ Returns a `Coroutine` for
 
 Returns a list of `DBSecurityGroup` descriptions.
 
-Type annotations for
-`aiobotocore.create_client("rds").describe_db_security_groups` method.
+Type annotations for `session.create_client("rds").describe_db_security_groups`
+method.
 
 Boto3 documentation:
 [RDS.Client.describe_db_security_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_security_groups)
@@ -2409,7 +2395,7 @@ Returns a list of DB snapshot attribute names and values for a manual DB
 snapshot.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_db_snapshot_attributes` method.
+`session.create_client("rds").describe_db_snapshot_attributes` method.
 
 Boto3 documentation:
 [RDS.Client.describe_db_snapshot_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_snapshot_attributes)
@@ -2433,7 +2419,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("rds").describe_db_snapshots`
+Type annotations for `session.create_client("rds").describe_db_snapshots`
 method.
 
 Boto3 documentation:
@@ -2466,8 +2452,8 @@ Returns a `Coroutine` for
 
 Returns a list of DBSubnetGroup descriptions.
 
-Type annotations for
-`aiobotocore.create_client("rds").describe_db_subnet_groups` method.
+Type annotations for `session.create_client("rds").describe_db_subnet_groups`
+method.
 
 Boto3 documentation:
 [RDS.Client.describe_db_subnet_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_db_subnet_groups)
@@ -2496,7 +2482,7 @@ Returns the default engine and system parameter information for the cluster
 database engine.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_engine_default_cluster_parameters`
+`session.create_client("rds").describe_engine_default_cluster_parameters`
 method.
 
 Boto3 documentation:
@@ -2526,7 +2512,7 @@ Returns the default engine and system parameter information for the specified
 database engine.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_engine_default_parameters` method.
+`session.create_client("rds").describe_engine_default_parameters` method.
 
 Boto3 documentation:
 [RDS.Client.describe_engine_default_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_engine_default_parameters)
@@ -2554,8 +2540,8 @@ Returns a `Coroutine` for
 Displays a list of categories for all event source types, or, if specified, for
 a specified source type.
 
-Type annotations for
-`aiobotocore.create_client("rds").describe_event_categories` method.
+Type annotations for `session.create_client("rds").describe_event_categories`
+method.
 
 Boto3 documentation:
 [RDS.Client.describe_event_categories](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_event_categories)
@@ -2581,7 +2567,7 @@ Returns a `Coroutine` for
 Lists all the subscription descriptions for a customer account.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_event_subscriptions` method.
+`session.create_client("rds").describe_event_subscriptions` method.
 
 Boto3 documentation:
 [RDS.Client.describe_event_subscriptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_event_subscriptions)
@@ -2609,7 +2595,7 @@ Returns a `Coroutine` for
 Returns events related to DB instances, DB clusters, DB parameter groups, DB
 security groups, DB snapshots, and DB cluster snapshots for the past 14 days.
 
-Type annotations for `aiobotocore.create_client("rds").describe_events` method.
+Type annotations for `session.create_client("rds").describe_events` method.
 
 Boto3 documentation:
 [RDS.Client.describe_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_events)
@@ -2640,7 +2626,7 @@ Returns a `Coroutine` for
 
 Returns information about a snapshot export to Amazon S3.
 
-Type annotations for `aiobotocore.create_client("rds").describe_export_tasks`
+Type annotations for `session.create_client("rds").describe_export_tasks`
 method.
 
 Boto3 documentation:
@@ -2669,8 +2655,8 @@ Returns a `Coroutine` for
 
 Returns information about Aurora global database clusters.
 
-Type annotations for
-`aiobotocore.create_client("rds").describe_global_clusters` method.
+Type annotations for `session.create_client("rds").describe_global_clusters`
+method.
 
 Boto3 documentation:
 [RDS.Client.describe_global_clusters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_global_clusters)
@@ -2698,8 +2684,8 @@ Returns a `Coroutine` for
 Describes the available installation media for a DB engine that requires an on-
 premises customer provided license, such as Microsoft SQL Server.
 
-Type annotations for
-`aiobotocore.create_client("rds").describe_installation_media` method.
+Type annotations for `session.create_client("rds").describe_installation_media`
+method.
 
 Boto3 documentation:
 [RDS.Client.describe_installation_media](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_installation_media)
@@ -2727,7 +2713,7 @@ Returns a `Coroutine` for
 Describes all available options.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_option_group_options` method.
+`session.create_client("rds").describe_option_group_options` method.
 
 Boto3 documentation:
 [RDS.Client.describe_option_group_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_option_group_options)
@@ -2755,7 +2741,7 @@ Returns a `Coroutine` for
 
 Describes the available option groups.
 
-Type annotations for `aiobotocore.create_client("rds").describe_option_groups`
+Type annotations for `session.create_client("rds").describe_option_groups`
 method.
 
 Boto3 documentation:
@@ -2787,8 +2773,7 @@ Returns a list of orderable DB instance options for the specified DB engine, DB
 engine version, and DB instance class.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_orderable_db_instance_options`
-method.
+`session.create_client("rds").describe_orderable_db_instance_options` method.
 
 Boto3 documentation:
 [RDS.Client.describe_orderable_db_instance_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_orderable_db_instance_options)
@@ -2822,7 +2807,7 @@ Returns a list of resources (for example, DB instances) that have at least one
 pending maintenance action.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_pending_maintenance_actions` method.
+`session.create_client("rds").describe_pending_maintenance_actions` method.
 
 Boto3 documentation:
 [RDS.Client.describe_pending_maintenance_actions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_pending_maintenance_actions)
@@ -2851,7 +2836,7 @@ Returns information about reserved DB instances for this account, or about a
 specified reserved DB instance.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_reserved_db_instances` method.
+`session.create_client("rds").describe_reserved_db_instances` method.
 
 Boto3 documentation:
 [RDS.Client.describe_reserved_db_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_reserved_db_instances)
@@ -2886,8 +2871,7 @@ Returns a `Coroutine` for
 Lists available reserved DB instance offerings.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_reserved_db_instances_offerings`
-method.
+`session.create_client("rds").describe_reserved_db_instances_offerings` method.
 
 Boto3 documentation:
 [RDS.Client.describe_reserved_db_instances_offerings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_reserved_db_instances_offerings)
@@ -2921,7 +2905,7 @@ Returns a list of the source Amazon Web Services Regions where the current
 Amazon Web Services Region can create a read replica, copy a DB snapshot from,
 or replicate automated backups from.
 
-Type annotations for `aiobotocore.create_client("rds").describe_source_regions`
+Type annotations for `session.create_client("rds").describe_source_regions`
 method.
 
 Boto3 documentation:
@@ -2951,8 +2935,7 @@ You can call `DescribeValidDBInstanceModifications` to learn what modifications
 you can make to your DB instance.
 
 Type annotations for
-`aiobotocore.create_client("rds").describe_valid_db_instance_modifications`
-method.
+`session.create_client("rds").describe_valid_db_instance_modifications` method.
 
 Boto3 documentation:
 [RDS.Client.describe_valid_db_instance_modifications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_valid_db_instance_modifications)
@@ -2977,7 +2960,7 @@ Returns a `Coroutine` for
 Downloads all or a portion of the specified log file, up to 1 MB in size.
 
 Type annotations for
-`aiobotocore.create_client("rds").download_db_log_file_portion` method.
+`session.create_client("rds").download_db_log_file_portion` method.
 
 Boto3 documentation:
 [RDS.Client.download_db_log_file_portion](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.download_db_log_file_portion)
@@ -3004,8 +2987,7 @@ Returns a `Coroutine` for
 
 Forces a failover for a DB cluster.
 
-Type annotations for `aiobotocore.create_client("rds").failover_db_cluster`
-method.
+Type annotations for `session.create_client("rds").failover_db_cluster` method.
 
 Boto3 documentation:
 [RDS.Client.failover_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.failover_db_cluster)
@@ -3030,7 +3012,7 @@ Returns a `Coroutine` for
 
 Initiates the failover process for an Aurora global database ( GlobalCluster ).
 
-Type annotations for `aiobotocore.create_client("rds").failover_global_cluster`
+Type annotations for `session.create_client("rds").failover_global_cluster`
 method.
 
 Boto3 documentation:
@@ -3056,7 +3038,7 @@ Returns a `Coroutine` for
 
 Generates an auth token used to connect to a db with IAM credentials.
 
-Type annotations for `aiobotocore.create_client("rds").generate_db_auth_token`
+Type annotations for `session.create_client("rds").generate_db_auth_token`
 method.
 
 Boto3 documentation:
@@ -3083,7 +3065,7 @@ Returns a `Coroutine` for `str`.
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("rds").generate_presigned_url`
+Type annotations for `session.create_client("rds").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -3108,8 +3090,8 @@ Returns a `Coroutine` for `str`.
 Imports the installation media for a DB engine that requires an on-premises
 customer provided license, such as SQL Server.
 
-Type annotations for
-`aiobotocore.create_client("rds").import_installation_media` method.
+Type annotations for `session.create_client("rds").import_installation_media`
+method.
 
 Boto3 documentation:
 [RDS.Client.import_installation_media](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.import_installation_media)
@@ -3137,7 +3119,7 @@ Returns a `Coroutine` for
 
 Lists all tags on an Amazon RDS resource.
 
-Type annotations for `aiobotocore.create_client("rds").list_tags_for_resource`
+Type annotations for `session.create_client("rds").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -3165,8 +3147,7 @@ Override the system-default Secure Sockets Layer/Transport Layer Security
 (SSL/TLS) certificate for Amazon RDS for new DB instances temporarily, or
 remove the override.
 
-Type annotations for `aiobotocore.create_client("rds").modify_certificates`
-method.
+Type annotations for `session.create_client("rds").modify_certificates` method.
 
 Boto3 documentation:
 [RDS.Client.modify_certificates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_certificates)
@@ -3192,7 +3173,7 @@ Returns a `Coroutine` for
 Set the capacity of an Aurora Serverless DB cluster to a specific value.
 
 Type annotations for
-`aiobotocore.create_client("rds").modify_current_db_cluster_capacity` method.
+`session.create_client("rds").modify_current_db_cluster_capacity` method.
 
 Boto3 documentation:
 [RDS.Client.modify_current_db_cluster_capacity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_current_db_cluster_capacity)
@@ -3220,7 +3201,7 @@ Returns a `Coroutine` for
 Modifies the status of a custom engine version (CEV).
 
 Type annotations for
-`aiobotocore.create_client("rds").modify_custom_db_engine_version` method.
+`session.create_client("rds").modify_custom_db_engine_version` method.
 
 Boto3 documentation:
 [RDS.Client.modify_custom_db_engine_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_custom_db_engine_version)
@@ -3248,8 +3229,7 @@ Returns a `Coroutine` for
 
 Modify the settings for an Amazon Aurora DB cluster or a Multi-AZ DB cluster.
 
-Type annotations for `aiobotocore.create_client("rds").modify_db_cluster`
-method.
+Type annotations for `session.create_client("rds").modify_db_cluster` method.
 
 Boto3 documentation:
 [RDS.Client.modify_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_db_cluster)
@@ -3307,8 +3287,8 @@ Returns a `Coroutine` for
 
 Modifies the properties of an endpoint in an Amazon Aurora DB cluster.
 
-Type annotations for
-`aiobotocore.create_client("rds").modify_db_cluster_endpoint` method.
+Type annotations for `session.create_client("rds").modify_db_cluster_endpoint`
+method.
 
 Boto3 documentation:
 [RDS.Client.modify_db_cluster_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_db_cluster_endpoint)
@@ -3336,7 +3316,7 @@ Returns a `Coroutine` for
 Modifies the parameters of a DB cluster parameter group.
 
 Type annotations for
-`aiobotocore.create_client("rds").modify_db_cluster_parameter_group` method.
+`session.create_client("rds").modify_db_cluster_parameter_group` method.
 
 Boto3 documentation:
 [RDS.Client.modify_db_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_db_cluster_parameter_group)
@@ -3365,7 +3345,7 @@ Adds an attribute and values to, or removes an attribute and values from, a
 manual DB cluster snapshot.
 
 Type annotations for
-`aiobotocore.create_client("rds").modify_db_cluster_snapshot_attribute` method.
+`session.create_client("rds").modify_db_cluster_snapshot_attribute` method.
 
 Boto3 documentation:
 [RDS.Client.modify_db_cluster_snapshot_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_db_cluster_snapshot_attribute)
@@ -3392,8 +3372,7 @@ Returns a `Coroutine` for
 
 Modifies settings for a DB instance.
 
-Type annotations for `aiobotocore.create_client("rds").modify_db_instance`
-method.
+Type annotations for `session.create_client("rds").modify_db_instance` method.
 
 Boto3 documentation:
 [RDS.Client.modify_db_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_db_instance)
@@ -3465,8 +3444,8 @@ Returns a `Coroutine` for
 
 Modifies the parameters of a DB parameter group.
 
-Type annotations for
-`aiobotocore.create_client("rds").modify_db_parameter_group` method.
+Type annotations for `session.create_client("rds").modify_db_parameter_group`
+method.
 
 Boto3 documentation:
 [RDS.Client.modify_db_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_db_parameter_group)
@@ -3493,7 +3472,7 @@ Returns a `Coroutine` for
 
 Changes the settings for an existing DB proxy.
 
-Type annotations for `aiobotocore.create_client("rds").modify_db_proxy` method.
+Type annotations for `session.create_client("rds").modify_db_proxy` method.
 
 Boto3 documentation:
 [RDS.Client.modify_db_proxy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_db_proxy)
@@ -3524,8 +3503,8 @@ Returns a `Coroutine` for
 
 Changes the settings for an existing DB proxy endpoint.
 
-Type annotations for
-`aiobotocore.create_client("rds").modify_db_proxy_endpoint` method.
+Type annotations for `session.create_client("rds").modify_db_proxy_endpoint`
+method.
 
 Boto3 documentation:
 [RDS.Client.modify_db_proxy_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_db_proxy_endpoint)
@@ -3552,7 +3531,7 @@ Returns a `Coroutine` for
 Modifies the properties of a `DBProxyTargetGroup` .
 
 Type annotations for
-`aiobotocore.create_client("rds").modify_db_proxy_target_group` method.
+`session.create_client("rds").modify_db_proxy_target_group` method.
 
 Boto3 documentation:
 [RDS.Client.modify_db_proxy_target_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_db_proxy_target_group)
@@ -3580,8 +3559,7 @@ Returns a `Coroutine` for
 
 Updates a manual DB snapshot with a new engine version.
 
-Type annotations for `aiobotocore.create_client("rds").modify_db_snapshot`
-method.
+Type annotations for `session.create_client("rds").modify_db_snapshot` method.
 
 Boto3 documentation:
 [RDS.Client.modify_db_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_db_snapshot)
@@ -3609,7 +3587,7 @@ Adds an attribute and values to, or removes an attribute and values from, a
 manual DB snapshot.
 
 Type annotations for
-`aiobotocore.create_client("rds").modify_db_snapshot_attribute` method.
+`session.create_client("rds").modify_db_snapshot_attribute` method.
 
 Boto3 documentation:
 [RDS.Client.modify_db_snapshot_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_db_snapshot_attribute)
@@ -3636,7 +3614,7 @@ Returns a `Coroutine` for
 
 Modifies an existing DB subnet group.
 
-Type annotations for `aiobotocore.create_client("rds").modify_db_subnet_group`
+Type annotations for `session.create_client("rds").modify_db_subnet_group`
 method.
 
 Boto3 documentation:
@@ -3663,8 +3641,8 @@ Returns a `Coroutine` for
 
 Modifies an existing RDS event notification subscription.
 
-Type annotations for
-`aiobotocore.create_client("rds").modify_event_subscription` method.
+Type annotations for `session.create_client("rds").modify_event_subscription`
+method.
 
 Boto3 documentation:
 [RDS.Client.modify_event_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_event_subscription)
@@ -3692,7 +3670,7 @@ Returns a `Coroutine` for
 
 Modify a setting for an Amazon Aurora global cluster.
 
-Type annotations for `aiobotocore.create_client("rds").modify_global_cluster`
+Type annotations for `session.create_client("rds").modify_global_cluster`
 method.
 
 Boto3 documentation:
@@ -3721,8 +3699,7 @@ Returns a `Coroutine` for
 
 Modifies an existing option group.
 
-Type annotations for `aiobotocore.create_client("rds").modify_option_group`
-method.
+Type annotations for `session.create_client("rds").modify_option_group` method.
 
 Boto3 documentation:
 [RDS.Client.modify_option_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_option_group)
@@ -3750,7 +3727,7 @@ Returns a `Coroutine` for
 
 Promotes a read replica DB instance to a standalone DB instance.
 
-Type annotations for `aiobotocore.create_client("rds").promote_read_replica`
+Type annotations for `session.create_client("rds").promote_read_replica`
 method.
 
 Boto3 documentation:
@@ -3778,7 +3755,7 @@ Returns a `Coroutine` for
 Promotes a read replica DB cluster to a standalone DB cluster.
 
 Type annotations for
-`aiobotocore.create_client("rds").promote_read_replica_db_cluster` method.
+`session.create_client("rds").promote_read_replica_db_cluster` method.
 
 Boto3 documentation:
 [RDS.Client.promote_read_replica_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.promote_read_replica_db_cluster)
@@ -3803,8 +3780,7 @@ Returns a `Coroutine` for
 Purchases a reserved DB instance offering.
 
 Type annotations for
-`aiobotocore.create_client("rds").purchase_reserved_db_instances_offering`
-method.
+`session.create_client("rds").purchase_reserved_db_instances_offering` method.
 
 Boto3 documentation:
 [RDS.Client.purchase_reserved_db_instances_offering](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.purchase_reserved_db_instances_offering)
@@ -3831,8 +3807,7 @@ Returns a `Coroutine` for
 
 You might need to reboot your DB cluster, usually for maintenance reasons.
 
-Type annotations for `aiobotocore.create_client("rds").reboot_db_cluster`
-method.
+Type annotations for `session.create_client("rds").reboot_db_cluster` method.
 
 Boto3 documentation:
 [RDS.Client.reboot_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.reboot_db_cluster)
@@ -3855,8 +3830,7 @@ Returns a `Coroutine` for
 
 You might need to reboot your DB instance, usually for maintenance reasons.
 
-Type annotations for `aiobotocore.create_client("rds").reboot_db_instance`
-method.
+Type annotations for `session.create_client("rds").reboot_db_instance` method.
 
 Boto3 documentation:
 [RDS.Client.reboot_db_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.reboot_db_instance)
@@ -3882,8 +3856,8 @@ Returns a `Coroutine` for
 Associate one or more `DBProxyTarget` data structures with a
 `DBProxyTargetGroup` .
 
-Type annotations for
-`aiobotocore.create_client("rds").register_db_proxy_targets` method.
+Type annotations for `session.create_client("rds").register_db_proxy_targets`
+method.
 
 Boto3 documentation:
 [RDS.Client.register_db_proxy_targets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.register_db_proxy_targets)
@@ -3910,8 +3884,8 @@ Returns a `Coroutine` for
 
 Detaches an Aurora secondary cluster from an Aurora global database cluster.
 
-Type annotations for
-`aiobotocore.create_client("rds").remove_from_global_cluster` method.
+Type annotations for `session.create_client("rds").remove_from_global_cluster`
+method.
 
 Boto3 documentation:
 [RDS.Client.remove_from_global_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.remove_from_global_cluster)
@@ -3937,8 +3911,8 @@ Returns a `Coroutine` for
 Removes the asssociation of an Amazon Web Services Identity and Access
 Management (IAM) role from a DB cluster.
 
-Type annotations for
-`aiobotocore.create_client("rds").remove_role_from_db_cluster` method.
+Type annotations for `session.create_client("rds").remove_role_from_db_cluster`
+method.
 
 Boto3 documentation:
 [RDS.Client.remove_role_from_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.remove_role_from_db_cluster)
@@ -3963,7 +3937,7 @@ Disassociates an Amazon Web Services Identity and Access Management (IAM) role
 from a DB instance.
 
 Type annotations for
-`aiobotocore.create_client("rds").remove_role_from_db_instance` method.
+`session.create_client("rds").remove_role_from_db_instance` method.
 
 Boto3 documentation:
 [RDS.Client.remove_role_from_db_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.remove_role_from_db_instance)
@@ -3988,7 +3962,7 @@ Removes a source identifier from an existing RDS event notification
 subscription.
 
 Type annotations for
-`aiobotocore.create_client("rds").remove_source_identifier_from_subscription`
+`session.create_client("rds").remove_source_identifier_from_subscription`
 method.
 
 Boto3 documentation:
@@ -4014,8 +3988,8 @@ Returns a `Coroutine` for
 
 Removes metadata tags from an Amazon RDS resource.
 
-Type annotations for
-`aiobotocore.create_client("rds").remove_tags_from_resource` method.
+Type annotations for `session.create_client("rds").remove_tags_from_resource`
+method.
 
 Boto3 documentation:
 [RDS.Client.remove_tags_from_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.remove_tags_from_resource)
@@ -4038,7 +4012,7 @@ Keyword-only arguments:
 Modifies the parameters of a DB cluster parameter group to the default value.
 
 Type annotations for
-`aiobotocore.create_client("rds").reset_db_cluster_parameter_group` method.
+`session.create_client("rds").reset_db_cluster_parameter_group` method.
 
 Boto3 documentation:
 [RDS.Client.reset_db_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.reset_db_cluster_parameter_group)
@@ -4066,8 +4040,8 @@ Returns a `Coroutine` for
 Modifies the parameters of a DB parameter group to the engine/system default
 value.
 
-Type annotations for
-`aiobotocore.create_client("rds").reset_db_parameter_group` method.
+Type annotations for `session.create_client("rds").reset_db_parameter_group`
+method.
 
 Boto3 documentation:
 [RDS.Client.reset_db_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.reset_db_parameter_group)
@@ -4095,8 +4069,8 @@ Returns a `Coroutine` for
 Creates an Amazon Aurora DB cluster from MySQL data stored in an Amazon S3
 bucket.
 
-Type annotations for
-`aiobotocore.create_client("rds").restore_db_cluster_from_s3` method.
+Type annotations for `session.create_client("rds").restore_db_cluster_from_s3`
+method.
 
 Boto3 documentation:
 [RDS.Client.restore_db_cluster_from_s3](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.restore_db_cluster_from_s3)
@@ -4151,7 +4125,7 @@ Returns a `Coroutine` for
 Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
 
 Type annotations for
-`aiobotocore.create_client("rds").restore_db_cluster_from_snapshot` method.
+`session.create_client("rds").restore_db_cluster_from_snapshot` method.
 
 Boto3 documentation:
 [RDS.Client.restore_db_cluster_from_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.restore_db_cluster_from_snapshot)
@@ -4202,7 +4176,7 @@ Returns a `Coroutine` for
 Restores a DB cluster to an arbitrary point in time.
 
 Type annotations for
-`aiobotocore.create_client("rds").restore_db_cluster_to_point_in_time` method.
+`session.create_client("rds").restore_db_cluster_to_point_in_time` method.
 
 Boto3 documentation:
 [RDS.Client.restore_db_cluster_to_point_in_time](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.restore_db_cluster_to_point_in_time)
@@ -4252,7 +4226,7 @@ Returns a `Coroutine` for
 Creates a new DB instance from a DB snapshot.
 
 Type annotations for
-`aiobotocore.create_client("rds").restore_db_instance_from_db_snapshot` method.
+`session.create_client("rds").restore_db_instance_from_db_snapshot` method.
 
 Boto3 documentation:
 [RDS.Client.restore_db_instance_from_db_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.restore_db_instance_from_db_snapshot)
@@ -4308,8 +4282,8 @@ Returns a `Coroutine` for
 Amazon Relational Database Service (Amazon RDS) supports importing MySQL
 databases by using backup files.
 
-Type annotations for
-`aiobotocore.create_client("rds").restore_db_instance_from_s3` method.
+Type annotations for `session.create_client("rds").restore_db_instance_from_s3`
+method.
 
 Boto3 documentation:
 [RDS.Client.restore_db_instance_from_s3](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.restore_db_instance_from_s3)
@@ -4378,7 +4352,7 @@ Returns a `Coroutine` for
 Restores a DB instance to an arbitrary point in time.
 
 Type annotations for
-`aiobotocore.create_client("rds").restore_db_instance_to_point_in_time` method.
+`session.create_client("rds").restore_db_instance_to_point_in_time` method.
 
 Boto3 documentation:
 [RDS.Client.restore_db_instance_to_point_in_time](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.restore_db_instance_to_point_in_time)
@@ -4440,7 +4414,7 @@ Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or
 EC2 or VPC security groups.
 
 Type annotations for
-`aiobotocore.create_client("rds").revoke_db_security_group_ingress` method.
+`session.create_client("rds").revoke_db_security_group_ingress` method.
 
 Boto3 documentation:
 [RDS.Client.revoke_db_security_group_ingress](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.revoke_db_security_group_ingress)
@@ -4468,7 +4442,7 @@ Returns a `Coroutine` for
 
 Starts a database activity stream to monitor activity on the database.
 
-Type annotations for `aiobotocore.create_client("rds").start_activity_stream`
+Type annotations for `session.create_client("rds").start_activity_stream`
 method.
 
 Boto3 documentation:
@@ -4499,8 +4473,7 @@ Returns a `Coroutine` for
 Starts an Amazon Aurora DB cluster that was stopped using the Amazon Web
 Services console, the stop-db-cluster CLI command, or the StopDBCluster action.
 
-Type annotations for `aiobotocore.create_client("rds").start_db_cluster`
-method.
+Type annotations for `session.create_client("rds").start_db_cluster` method.
 
 Boto3 documentation:
 [RDS.Client.start_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.start_db_cluster)
@@ -4524,8 +4497,7 @@ Returns a `Coroutine` for
 Starts an Amazon RDS DB instance that was stopped using the Amazon Web Services
 console, the stop-db-instance CLI command, or the StopDBInstance action.
 
-Type annotations for `aiobotocore.create_client("rds").start_db_instance`
-method.
+Type annotations for `session.create_client("rds").start_db_instance` method.
 
 Boto3 documentation:
 [RDS.Client.start_db_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.start_db_instance)
@@ -4550,7 +4522,7 @@ Enables replication of automated backups to a different Amazon Web Services
 Region.
 
 Type annotations for
-`aiobotocore.create_client("rds").start_db_instance_automated_backups_replication`
+`session.create_client("rds").start_db_instance_automated_backups_replication`
 method.
 
 Boto3 documentation:
@@ -4580,8 +4552,7 @@ Returns a `Coroutine` for
 
 Starts an export of a snapshot to Amazon S3.
 
-Type annotations for `aiobotocore.create_client("rds").start_export_task`
-method.
+Type annotations for `session.create_client("rds").start_export_task` method.
 
 Boto3 documentation:
 [RDS.Client.start_export_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.start_export_task)
@@ -4612,7 +4583,7 @@ Stops a database activity stream that was started using the Amazon Web Services
 console, the `start-activity-stream` CLI command, or the `StartActivityStream`
 action.
 
-Type annotations for `aiobotocore.create_client("rds").stop_activity_stream`
+Type annotations for `session.create_client("rds").stop_activity_stream`
 method.
 
 Boto3 documentation:
@@ -4638,7 +4609,7 @@ Returns a `Coroutine` for
 
 Stops an Amazon Aurora DB cluster.
 
-Type annotations for `aiobotocore.create_client("rds").stop_db_cluster` method.
+Type annotations for `session.create_client("rds").stop_db_cluster` method.
 
 Boto3 documentation:
 [RDS.Client.stop_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.stop_db_cluster)
@@ -4661,8 +4632,7 @@ Returns a `Coroutine` for
 
 Stops an Amazon RDS DB instance.
 
-Type annotations for `aiobotocore.create_client("rds").stop_db_instance`
-method.
+Type annotations for `session.create_client("rds").stop_db_instance` method.
 
 Boto3 documentation:
 [RDS.Client.stop_db_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.stop_db_instance)
@@ -4687,7 +4657,7 @@ Returns a `Coroutine` for
 Stops automated backup replication for a DB instance.
 
 Type annotations for
-`aiobotocore.create_client("rds").stop_db_instance_automated_backups_replication`
+`session.create_client("rds").stop_db_instance_automated_backups_replication`
 method.
 
 Boto3 documentation:
@@ -4707,12 +4677,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [StopDBInstanceAutomatedBackupsReplicationResultTypeDef](./type_defs.md#stopdbinstanceautomatedbackupsreplicationresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("rds").__aenter__` method.
+
+Boto3 documentation:
+[RDS.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [RDSClient](#rdsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("rds").__aexit__` method.
+
+Boto3 documentation:
+[RDS.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("rds").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("rds").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_certificates")` ->
   [DescribeCertificatesPaginator](./paginators.md#describecertificatespaginator)
@@ -4791,7 +4793,7 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("rds").get_waiter` method with
+Type annotations for `session.create_client("rds").get_waiter` method with
 overloads.
 
 - `client.get_waiter("db_cluster_snapshot_available")` ->

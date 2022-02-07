@@ -267,6 +267,8 @@ type annotations stubs module
     - [update_user_profile](#update_user_profile)
     - [update_workforce](#update_workforce)
     - [update_workteam](#update_workteam)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -274,16 +276,17 @@ type annotations stubs module
 
 ## SageMakerClient
 
-Type annotations for `aiobotocore.create_client("sagemaker")`
+Type annotations for `session.create_client("sagemaker")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker.client import SageMakerClient
 
-def get_sagemaker_client() -> SageMakerClient:
-    return Session().client("sagemaker")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
 ```
 
 Boto3 documentation:
@@ -321,8 +324,7 @@ Exceptions:
 
 SageMakerClient exceptions.
 
-Type annotations for `aiobotocore.create_client("sagemaker").exceptions`
-method.
+Type annotations for `session.create_client("sagemaker").exceptions` method.
 
 Boto3 documentation:
 [SageMaker.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.exceptions)
@@ -335,7 +337,7 @@ Returns [Exceptions](#exceptions).
 
 Creates an *association* between the source and the destination.
 
-Type annotations for `aiobotocore.create_client("sagemaker").add_association`
+Type annotations for `session.create_client("sagemaker").add_association`
 method.
 
 Boto3 documentation:
@@ -363,7 +365,7 @@ Returns a `Coroutine` for
 Adds or overwrites one or more tags for the specified Amazon SageMaker
 resource.
 
-Type annotations for `aiobotocore.create_client("sagemaker").add_tags` method.
+Type annotations for `session.create_client("sagemaker").add_tags` method.
 
 Boto3 documentation:
 [SageMaker.Client.add_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.add_tags)
@@ -388,7 +390,7 @@ Returns a `Coroutine` for
 Associates a trial component with a trial.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").associate_trial_component` method.
+`session.create_client("sagemaker").associate_trial_component` method.
 
 Boto3 documentation:
 [SageMaker.Client.associate_trial_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.associate_trial_component)
@@ -415,7 +417,7 @@ This action batch describes a list of versioned model packages See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/BatchDescribeModelPackage).
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").batch_describe_model_package` method.
+`session.create_client("sagemaker").batch_describe_model_package` method.
 
 Boto3 documentation:
 [SageMaker.Client.batch_describe_model_package](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.batch_describe_model_package)
@@ -439,19 +441,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("sagemaker").can_paginate`
-method.
+Type annotations for `session.create_client("sagemaker").can_paginate` method.
 
 Boto3 documentation:
 [SageMaker.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_action"></a>
 
@@ -459,8 +458,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates an *action*.
 
-Type annotations for `aiobotocore.create_client("sagemaker").create_action`
-method.
+Type annotations for `session.create_client("sagemaker").create_action` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_action)
@@ -493,7 +491,7 @@ Returns a `Coroutine` for
 Create a machine learning algorithm that you can use in Amazon SageMaker and
 list in the Amazon Web Services Marketplace.
 
-Type annotations for `aiobotocore.create_client("sagemaker").create_algorithm`
+Type annotations for `session.create_client("sagemaker").create_algorithm`
 method.
 
 Boto3 documentation:
@@ -527,8 +525,7 @@ Returns a `Coroutine` for
 
 Creates a running app for the specified UserProfile.
 
-Type annotations for `aiobotocore.create_client("sagemaker").create_app`
-method.
+Type annotations for `session.create_client("sagemaker").create_app` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_app)
@@ -557,7 +554,7 @@ Returns a `Coroutine` for
 Creates a configuration for running a SageMaker image as a KernelGateway app.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_app_image_config` method.
+`session.create_client("sagemaker").create_app_image_config` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_app_image_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_app_image_config)
@@ -584,7 +581,7 @@ Returns a `Coroutine` for
 
 Creates an *artifact*.
 
-Type annotations for `aiobotocore.create_client("sagemaker").create_artifact`
+Type annotations for `session.create_client("sagemaker").create_artifact`
 method.
 
 Boto3 documentation:
@@ -615,8 +612,8 @@ Returns a `Coroutine` for
 
 Creates an Autopilot job.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").create_auto_ml_job` method.
+Type annotations for `session.create_client("sagemaker").create_auto_ml_job`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.create_auto_ml_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_auto_ml_job)
@@ -657,7 +654,7 @@ Returns a `Coroutine` for
 Creates a Git repository as a resource in your Amazon SageMaker account.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_code_repository` method.
+`session.create_client("sagemaker").create_code_repository` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_code_repository](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_code_repository)
@@ -684,7 +681,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_compilation_job` method.
+`session.create_client("sagemaker").create_compilation_job` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_compilation_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_compilation_job)
@@ -718,7 +715,7 @@ Returns a `Coroutine` for
 
 Creates a *context*.
 
-Type annotations for `aiobotocore.create_client("sagemaker").create_context`
+Type annotations for `session.create_client("sagemaker").create_context`
 method.
 
 Boto3 documentation:
@@ -749,8 +746,7 @@ Returns a `Coroutine` for
 Creates a definition for a job that monitors data quality and drift.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_data_quality_job_definition`
-method.
+`session.create_client("sagemaker").create_data_quality_job_definition` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_data_quality_job_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_data_quality_job_definition)
@@ -794,8 +790,8 @@ Returns a `Coroutine` for
 
 Creates a device fleet.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").create_device_fleet` method.
+Type annotations for `session.create_client("sagemaker").create_device_fleet`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.create_device_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_device_fleet)
@@ -823,8 +819,7 @@ Keyword-only arguments:
 
 Creates a `Domain` used by Amazon SageMaker Studio.
 
-Type annotations for `aiobotocore.create_client("sagemaker").create_domain`
-method.
+Type annotations for `session.create_client("sagemaker").create_domain` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_domain)
@@ -862,7 +857,7 @@ Returns a `Coroutine` for
 Starts a SageMaker Edge Manager model packaging job.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_edge_packaging_job` method.
+`session.create_client("sagemaker").create_edge_packaging_job` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_edge_packaging_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_edge_packaging_job)
@@ -892,7 +887,7 @@ Keyword-only arguments:
 
 .
 
-Type annotations for `aiobotocore.create_client("sagemaker").create_endpoint`
+Type annotations for `session.create_client("sagemaker").create_endpoint`
 method.
 
 Boto3 documentation:
@@ -921,7 +916,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_endpoint_config` method.
+`session.create_client("sagemaker").create_endpoint_config` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_endpoint_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_endpoint_config)
@@ -954,7 +949,7 @@ Returns a `Coroutine` for
 
 Creates an SageMaker *experiment*.
 
-Type annotations for `aiobotocore.create_client("sagemaker").create_experiment`
+Type annotations for `session.create_client("sagemaker").create_experiment`
 method.
 
 Boto3 documentation:
@@ -981,8 +976,8 @@ Returns a `Coroutine` for
 
 Create a new `FeatureGroup`.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").create_feature_group` method.
+Type annotations for `session.create_client("sagemaker").create_feature_group`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.create_feature_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_feature_group)
@@ -1019,7 +1014,7 @@ Returns a `Coroutine` for
 Creates a flow definition.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_flow_definition` method.
+`session.create_client("sagemaker").create_flow_definition` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_flow_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_flow_definition)
@@ -1054,8 +1049,8 @@ Returns a `Coroutine` for
 
 Defines the settings you will use for the human review workflow user interface.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").create_human_task_ui` method.
+Type annotations for `session.create_client("sagemaker").create_human_task_ui`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.create_human_task_ui](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_human_task_ui)
@@ -1083,8 +1078,7 @@ Returns a `Coroutine` for
 Starts a hyperparameter tuning job.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_hyper_parameter_tuning_job`
-method.
+`session.create_client("sagemaker").create_hyper_parameter_tuning_job` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_hyper_parameter_tuning_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_hyper_parameter_tuning_job)
@@ -1118,8 +1112,7 @@ Returns a `Coroutine` for
 
 Creates a custom SageMaker image.
 
-Type annotations for `aiobotocore.create_client("sagemaker").create_image`
-method.
+Type annotations for `session.create_client("sagemaker").create_image` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_image)
@@ -1146,8 +1139,8 @@ Returns a `Coroutine` for
 
 Creates a version of the SageMaker image specified by `ImageName`.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").create_image_version` method.
+Type annotations for `session.create_client("sagemaker").create_image_version`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.create_image_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_image_version)
@@ -1174,7 +1167,7 @@ Returns a `Coroutine` for
 Starts a recommendation job.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_inference_recommendations_job`
+`session.create_client("sagemaker").create_inference_recommendations_job`
 method.
 
 Boto3 documentation:
@@ -1210,8 +1203,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").create_labeling_job` method.
+Type annotations for `session.create_client("sagemaker").create_labeling_job`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.create_labeling_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_labeling_job)
@@ -1251,8 +1244,7 @@ Returns a `Coroutine` for
 
 Creates a model in Amazon SageMaker.
 
-Type annotations for `aiobotocore.create_client("sagemaker").create_model`
-method.
+Type annotations for `session.create_client("sagemaker").create_model` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_model)
@@ -1286,8 +1278,7 @@ Returns a `Coroutine` for
 Creates the definition for a model bias job.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_model_bias_job_definition`
-method.
+`session.create_client("sagemaker").create_model_bias_job_definition` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_model_bias_job_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_model_bias_job_definition)
@@ -1332,7 +1323,7 @@ Returns a `Coroutine` for
 Creates the definition for a model explainability job.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_model_explainability_job_definition`
+`session.create_client("sagemaker").create_model_explainability_job_definition`
 method.
 
 Boto3 documentation:
@@ -1379,8 +1370,8 @@ Creates a model package that you can use to create Amazon SageMaker models or
 list on Amazon Web Services Marketplace, or a versioned model that is part of a
 model group.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").create_model_package` method.
+Type annotations for `session.create_client("sagemaker").create_model_package`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.create_model_package](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_model_package)
@@ -1429,7 +1420,7 @@ Returns a `Coroutine` for
 Creates a model group.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_model_package_group` method.
+`session.create_client("sagemaker").create_model_package_group` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_model_package_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_model_package_group)
@@ -1456,7 +1447,7 @@ Returns a `Coroutine` for
 Creates a definition for a job that monitors model quality and drift.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_model_quality_job_definition`
+`session.create_client("sagemaker").create_model_quality_job_definition`
 method.
 
 Boto3 documentation:
@@ -1503,7 +1494,7 @@ Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to
 monitor the data captured for an Amazon SageMaker Endoint.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_monitoring_schedule` method.
+`session.create_client("sagemaker").create_monitoring_schedule` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_monitoring_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_monitoring_schedule)
@@ -1532,7 +1523,7 @@ Returns a `Coroutine` for
 Creates an Amazon SageMaker notebook instance.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_notebook_instance` method.
+`session.create_client("sagemaker").create_notebook_instance` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_notebook_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_notebook_instance)
@@ -1575,7 +1566,7 @@ Creates a lifecycle configuration that you can associate with a notebook
 instance.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_notebook_instance_lifecycle_config`
+`session.create_client("sagemaker").create_notebook_instance_lifecycle_config`
 method.
 
 Boto3 documentation:
@@ -1604,7 +1595,7 @@ Returns a `Coroutine` for
 
 Creates a pipeline using a JSON pipeline definition.
 
-Type annotations for `aiobotocore.create_client("sagemaker").create_pipeline`
+Type annotations for `session.create_client("sagemaker").create_pipeline`
 method.
 
 Boto3 documentation:
@@ -1635,7 +1626,7 @@ Returns a `Coroutine` for
 Creates a URL for a specified UserProfile in a Domain.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_presigned_domain_url` method.
+`session.create_client("sagemaker").create_presigned_domain_url` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_presigned_domain_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_presigned_domain_url)
@@ -1664,7 +1655,7 @@ Returns a URL that you can use to connect to the Jupyter server from a notebook
 instance.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_presigned_notebook_instance_url`
+`session.create_client("sagemaker").create_presigned_notebook_instance_url`
 method.
 
 Boto3 documentation:
@@ -1690,8 +1681,8 @@ Returns a `Coroutine` for
 
 Creates a processing job.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").create_processing_job` method.
+Type annotations for `session.create_client("sagemaker").create_processing_job`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.create_processing_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_processing_job)
@@ -1734,7 +1725,7 @@ Returns a `Coroutine` for
 Creates a machine learning (ML) project that can contain one or more templates
 that set up an ML pipeline from training to deploying an approved model.
 
-Type annotations for `aiobotocore.create_client("sagemaker").create_project`
+Type annotations for `session.create_client("sagemaker").create_project`
 method.
 
 Boto3 documentation:
@@ -1764,7 +1755,7 @@ Returns a `Coroutine` for
 Creates a new Studio Lifecycle Configuration.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_studio_lifecycle_config` method.
+`session.create_client("sagemaker").create_studio_lifecycle_config` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_studio_lifecycle_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_studio_lifecycle_config)
@@ -1793,8 +1784,8 @@ Returns a `Coroutine` for
 
 Starts a model training job.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").create_training_job` method.
+Type annotations for `session.create_client("sagemaker").create_training_job`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.create_training_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_training_job)
@@ -1854,8 +1845,8 @@ Returns a `Coroutine` for
 
 Starts a transform job.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").create_transform_job` method.
+Type annotations for `session.create_client("sagemaker").create_transform_job`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.create_transform_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_transform_job)
@@ -1898,8 +1889,7 @@ Returns a `Coroutine` for
 
 Creates an SageMaker *trial*.
 
-Type annotations for `aiobotocore.create_client("sagemaker").create_trial`
-method.
+Type annotations for `session.create_client("sagemaker").create_trial` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_trial](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_trial)
@@ -1928,7 +1918,7 @@ Returns a `Coroutine` for
 Creates a *trial component* , which is a stage of a machine learning *trial*.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").create_trial_component` method.
+`session.create_client("sagemaker").create_trial_component` method.
 
 Boto3 documentation:
 [SageMaker.Client.create_trial_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_trial_component)
@@ -1966,8 +1956,8 @@ Returns a `Coroutine` for
 
 Creates a user profile.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").create_user_profile` method.
+Type annotations for `session.create_client("sagemaker").create_user_profile`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.create_user_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_user_profile)
@@ -1996,7 +1986,7 @@ Returns a `Coroutine` for
 
 Use this operation to create a workforce.
 
-Type annotations for `aiobotocore.create_client("sagemaker").create_workforce`
+Type annotations for `session.create_client("sagemaker").create_workforce`
 method.
 
 Boto3 documentation:
@@ -2025,7 +2015,7 @@ Returns a `Coroutine` for
 
 Creates a new work team for labeling your data.
 
-Type annotations for `aiobotocore.create_client("sagemaker").create_workteam`
+Type annotations for `session.create_client("sagemaker").create_workteam`
 method.
 
 Boto3 documentation:
@@ -2057,8 +2047,7 @@ Returns a `Coroutine` for
 
 Deletes an action.
 
-Type annotations for `aiobotocore.create_client("sagemaker").delete_action`
-method.
+Type annotations for `session.create_client("sagemaker").delete_action` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_action)
@@ -2081,7 +2070,7 @@ Returns a `Coroutine` for
 
 Removes the specified algorithm from your account.
 
-Type annotations for `aiobotocore.create_client("sagemaker").delete_algorithm`
+Type annotations for `session.create_client("sagemaker").delete_algorithm`
 method.
 
 Boto3 documentation:
@@ -2102,8 +2091,7 @@ Keyword-only arguments:
 
 Used to stop and delete an app.
 
-Type annotations for `aiobotocore.create_client("sagemaker").delete_app`
-method.
+Type annotations for `session.create_client("sagemaker").delete_app` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_app)
@@ -2127,7 +2115,7 @@ Keyword-only arguments:
 Deletes an AppImageConfig.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").delete_app_image_config` method.
+`session.create_client("sagemaker").delete_app_image_config` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_app_image_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_app_image_config)
@@ -2148,7 +2136,7 @@ Keyword-only arguments:
 
 Deletes an artifact.
 
-Type annotations for `aiobotocore.create_client("sagemaker").delete_artifact`
+Type annotations for `session.create_client("sagemaker").delete_artifact`
 method.
 
 Boto3 documentation:
@@ -2173,8 +2161,8 @@ Returns a `Coroutine` for
 
 Deletes an association.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").delete_association` method.
+Type annotations for `session.create_client("sagemaker").delete_association`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_association)
@@ -2200,7 +2188,7 @@ Returns a `Coroutine` for
 Deletes the specified Git repository from your account.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").delete_code_repository` method.
+`session.create_client("sagemaker").delete_code_repository` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_code_repository](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_code_repository)
@@ -2221,7 +2209,7 @@ Keyword-only arguments:
 
 Deletes an context.
 
-Type annotations for `aiobotocore.create_client("sagemaker").delete_context`
+Type annotations for `session.create_client("sagemaker").delete_context`
 method.
 
 Boto3 documentation:
@@ -2246,8 +2234,7 @@ Returns a `Coroutine` for
 Deletes a data quality monitoring job definition.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").delete_data_quality_job_definition`
-method.
+`session.create_client("sagemaker").delete_data_quality_job_definition` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_data_quality_job_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_data_quality_job_definition)
@@ -2268,8 +2255,8 @@ Keyword-only arguments:
 
 Deletes a fleet.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").delete_device_fleet` method.
+Type annotations for `session.create_client("sagemaker").delete_device_fleet`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_device_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_device_fleet)
@@ -2290,8 +2277,7 @@ Keyword-only arguments:
 
 Used to delete a domain.
 
-Type annotations for `aiobotocore.create_client("sagemaker").delete_domain`
-method.
+Type annotations for `session.create_client("sagemaker").delete_domain` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_domain)
@@ -2313,7 +2299,7 @@ Keyword-only arguments:
 
 Deletes an endpoint.
 
-Type annotations for `aiobotocore.create_client("sagemaker").delete_endpoint`
+Type annotations for `session.create_client("sagemaker").delete_endpoint`
 method.
 
 Boto3 documentation:
@@ -2335,7 +2321,7 @@ Keyword-only arguments:
 Deletes an endpoint configuration.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").delete_endpoint_config` method.
+`session.create_client("sagemaker").delete_endpoint_config` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_endpoint_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_endpoint_config)
@@ -2356,7 +2342,7 @@ Keyword-only arguments:
 
 Deletes an SageMaker experiment.
 
-Type annotations for `aiobotocore.create_client("sagemaker").delete_experiment`
+Type annotations for `session.create_client("sagemaker").delete_experiment`
 method.
 
 Boto3 documentation:
@@ -2381,8 +2367,8 @@ Returns a `Coroutine` for
 Delete the `FeatureGroup` and any data that was written to the `OnlineStore` of
 the `FeatureGroup`.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").delete_feature_group` method.
+Type annotations for `session.create_client("sagemaker").delete_feature_group`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_feature_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_feature_group)
@@ -2404,7 +2390,7 @@ Keyword-only arguments:
 Deletes the specified flow definition.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").delete_flow_definition` method.
+`session.create_client("sagemaker").delete_flow_definition` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_flow_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_flow_definition)
@@ -2428,8 +2414,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Use this operation to delete a human task user interface (worker task
 template).
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").delete_human_task_ui` method.
+Type annotations for `session.create_client("sagemaker").delete_human_task_ui`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_human_task_ui](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_human_task_ui)
@@ -2452,8 +2438,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a SageMaker image and all versions of the image.
 
-Type annotations for `aiobotocore.create_client("sagemaker").delete_image`
-method.
+Type annotations for `session.create_client("sagemaker").delete_image` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_image)
@@ -2475,8 +2460,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a version of a SageMaker image.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").delete_image_version` method.
+Type annotations for `session.create_client("sagemaker").delete_image_version`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_image_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_image_version)
@@ -2500,8 +2485,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a model.
 
-Type annotations for `aiobotocore.create_client("sagemaker").delete_model`
-method.
+Type annotations for `session.create_client("sagemaker").delete_model` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_model)
@@ -2522,8 +2506,7 @@ Keyword-only arguments:
 Deletes an Amazon SageMaker model bias job definition.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").delete_model_bias_job_definition`
-method.
+`session.create_client("sagemaker").delete_model_bias_job_definition` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_model_bias_job_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_model_bias_job_definition)
@@ -2545,7 +2528,7 @@ Keyword-only arguments:
 Deletes an Amazon SageMaker model explainability job definition.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").delete_model_explainability_job_definition`
+`session.create_client("sagemaker").delete_model_explainability_job_definition`
 method.
 
 Boto3 documentation:
@@ -2567,8 +2550,8 @@ Keyword-only arguments:
 
 Deletes a model package.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").delete_model_package` method.
+Type annotations for `session.create_client("sagemaker").delete_model_package`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_model_package](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_model_package)
@@ -2590,7 +2573,7 @@ Keyword-only arguments:
 Deletes the specified model group.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").delete_model_package_group` method.
+`session.create_client("sagemaker").delete_model_package_group` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_model_package_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_model_package_group)
@@ -2612,8 +2595,7 @@ Keyword-only arguments:
 Deletes a model group resource policy.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").delete_model_package_group_policy`
-method.
+`session.create_client("sagemaker").delete_model_package_group_policy` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_model_package_group_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_model_package_group_policy)
@@ -2635,7 +2617,7 @@ Keyword-only arguments:
 Deletes the secified model quality monitoring job definition.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").delete_model_quality_job_definition`
+`session.create_client("sagemaker").delete_model_quality_job_definition`
 method.
 
 Boto3 documentation:
@@ -2658,7 +2640,7 @@ Keyword-only arguments:
 Deletes a monitoring schedule.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").delete_monitoring_schedule` method.
+`session.create_client("sagemaker").delete_monitoring_schedule` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_monitoring_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_monitoring_schedule)
@@ -2680,7 +2662,7 @@ Keyword-only arguments:
 Deletes an Amazon SageMaker notebook instance.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").delete_notebook_instance` method.
+`session.create_client("sagemaker").delete_notebook_instance` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_notebook_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_notebook_instance)
@@ -2702,7 +2684,7 @@ Keyword-only arguments:
 Deletes a notebook instance lifecycle configuration.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").delete_notebook_instance_lifecycle_config`
+`session.create_client("sagemaker").delete_notebook_instance_lifecycle_config`
 method.
 
 Boto3 documentation:
@@ -2724,7 +2706,7 @@ Keyword-only arguments:
 
 Deletes a pipeline if there are no running instances of the pipeline.
 
-Type annotations for `aiobotocore.create_client("sagemaker").delete_pipeline`
+Type annotations for `session.create_client("sagemaker").delete_pipeline`
 method.
 
 Boto3 documentation:
@@ -2749,7 +2731,7 @@ Returns a `Coroutine` for
 
 Delete the specified project.
 
-Type annotations for `aiobotocore.create_client("sagemaker").delete_project`
+Type annotations for `session.create_client("sagemaker").delete_project`
 method.
 
 Boto3 documentation:
@@ -2771,7 +2753,7 @@ Keyword-only arguments:
 Deletes the Studio Lifecycle Configuration.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").delete_studio_lifecycle_config` method.
+`session.create_client("sagemaker").delete_studio_lifecycle_config` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_studio_lifecycle_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_studio_lifecycle_config)
@@ -2792,8 +2774,7 @@ Keyword-only arguments:
 
 Deletes the specified tags from an Amazon SageMaker resource.
 
-Type annotations for `aiobotocore.create_client("sagemaker").delete_tags`
-method.
+Type annotations for `session.create_client("sagemaker").delete_tags` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_tags)
@@ -2816,8 +2797,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified trial.
 
-Type annotations for `aiobotocore.create_client("sagemaker").delete_trial`
-method.
+Type annotations for `session.create_client("sagemaker").delete_trial` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_trial](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_trial)
@@ -2841,7 +2821,7 @@ Returns a `Coroutine` for
 Deletes the specified trial component.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").delete_trial_component` method.
+`session.create_client("sagemaker").delete_trial_component` method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_trial_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_trial_component)
@@ -2865,8 +2845,8 @@ Returns a `Coroutine` for
 
 Deletes a user profile.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").delete_user_profile` method.
+Type annotations for `session.create_client("sagemaker").delete_user_profile`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.delete_user_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.delete_user_profile)
@@ -2888,7 +2868,7 @@ Keyword-only arguments:
 
 Use this operation to delete a workforce.
 
-Type annotations for `aiobotocore.create_client("sagemaker").delete_workforce`
+Type annotations for `session.create_client("sagemaker").delete_workforce`
 method.
 
 Boto3 documentation:
@@ -2911,7 +2891,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an existing work team.
 
-Type annotations for `aiobotocore.create_client("sagemaker").delete_workteam`
+Type annotations for `session.create_client("sagemaker").delete_workteam`
 method.
 
 Boto3 documentation:
@@ -2935,8 +2915,8 @@ Returns a `Coroutine` for
 
 Deregisters the specified devices.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").deregister_devices` method.
+Type annotations for `session.create_client("sagemaker").deregister_devices`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.deregister_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.deregister_devices)
@@ -2958,7 +2938,7 @@ Keyword-only arguments:
 
 Describes an action.
 
-Type annotations for `aiobotocore.create_client("sagemaker").describe_action`
+Type annotations for `session.create_client("sagemaker").describe_action`
 method.
 
 Boto3 documentation:
@@ -2982,8 +2962,8 @@ Returns a `Coroutine` for
 
 Returns a description of the specified algorithm that is in your account.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").describe_algorithm` method.
+Type annotations for `session.create_client("sagemaker").describe_algorithm`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_algorithm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_algorithm)
@@ -3007,8 +2987,7 @@ Returns a `Coroutine` for
 
 Describes the app.
 
-Type annotations for `aiobotocore.create_client("sagemaker").describe_app`
-method.
+Type annotations for `session.create_client("sagemaker").describe_app` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_app)
@@ -3035,7 +3014,7 @@ Returns a `Coroutine` for
 Describes an AppImageConfig.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_app_image_config` method.
+`session.create_client("sagemaker").describe_app_image_config` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_app_image_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_app_image_config)
@@ -3059,7 +3038,7 @@ Returns a `Coroutine` for
 
 Describes an artifact.
 
-Type annotations for `aiobotocore.create_client("sagemaker").describe_artifact`
+Type annotations for `session.create_client("sagemaker").describe_artifact`
 method.
 
 Boto3 documentation:
@@ -3083,8 +3062,8 @@ Returns a `Coroutine` for
 
 Returns information about an Amazon SageMaker AutoML job.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").describe_auto_ml_job` method.
+Type annotations for `session.create_client("sagemaker").describe_auto_ml_job`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_auto_ml_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_auto_ml_job)
@@ -3109,7 +3088,7 @@ Returns a `Coroutine` for
 Gets details about the specified Git repository.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_code_repository` method.
+`session.create_client("sagemaker").describe_code_repository` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_code_repository](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_code_repository)
@@ -3134,7 +3113,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_compilation_job` method.
+`session.create_client("sagemaker").describe_compilation_job` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_compilation_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_compilation_job)
@@ -3158,7 +3137,7 @@ Returns a `Coroutine` for
 
 Describes a context.
 
-Type annotations for `aiobotocore.create_client("sagemaker").describe_context`
+Type annotations for `session.create_client("sagemaker").describe_context`
 method.
 
 Boto3 documentation:
@@ -3183,7 +3162,7 @@ Returns a `Coroutine` for
 Gets the details of a data quality monitoring job definition.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_data_quality_job_definition`
+`session.create_client("sagemaker").describe_data_quality_job_definition`
 method.
 
 Boto3 documentation:
@@ -3208,7 +3187,7 @@ Returns a `Coroutine` for
 
 Describes the device.
 
-Type annotations for `aiobotocore.create_client("sagemaker").describe_device`
+Type annotations for `session.create_client("sagemaker").describe_device`
 method.
 
 Boto3 documentation:
@@ -3234,8 +3213,8 @@ Returns a `Coroutine` for
 
 A description of the fleet the device belongs to.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").describe_device_fleet` method.
+Type annotations for `session.create_client("sagemaker").describe_device_fleet`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_device_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_device_fleet)
@@ -3259,7 +3238,7 @@ Returns a `Coroutine` for
 
 The description of the domain.
 
-Type annotations for `aiobotocore.create_client("sagemaker").describe_domain`
+Type annotations for `session.create_client("sagemaker").describe_domain`
 method.
 
 Boto3 documentation:
@@ -3284,7 +3263,7 @@ Returns a `Coroutine` for
 A description of edge packaging jobs.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_edge_packaging_job` method.
+`session.create_client("sagemaker").describe_edge_packaging_job` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_edge_packaging_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_edge_packaging_job)
@@ -3308,7 +3287,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("sagemaker").describe_endpoint`
+Type annotations for `session.create_client("sagemaker").describe_endpoint`
 method.
 
 Boto3 documentation:
@@ -3333,7 +3312,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_endpoint_config` method.
+`session.create_client("sagemaker").describe_endpoint_config` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_endpoint_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_endpoint_config)
@@ -3357,8 +3336,8 @@ Returns a `Coroutine` for
 
 Provides a list of an experiment's properties.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").describe_experiment` method.
+Type annotations for `session.create_client("sagemaker").describe_experiment`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_experiment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_experiment)
@@ -3383,7 +3362,7 @@ Returns a `Coroutine` for
 Use this operation to describe a `FeatureGroup`.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_feature_group` method.
+`session.create_client("sagemaker").describe_feature_group` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_feature_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_feature_group)
@@ -3409,7 +3388,7 @@ Returns a `Coroutine` for
 Returns information about the specified flow definition.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_flow_definition` method.
+`session.create_client("sagemaker").describe_flow_definition` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_flow_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_flow_definition)
@@ -3435,7 +3414,7 @@ Returns information about the requested human task user interface (worker task
 template).
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_human_task_ui` method.
+`session.create_client("sagemaker").describe_human_task_ui` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_human_task_ui](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_human_task_ui)
@@ -3460,7 +3439,7 @@ Returns a `Coroutine` for
 Gets a description of a hyperparameter tuning job.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_hyper_parameter_tuning_job`
+`session.create_client("sagemaker").describe_hyper_parameter_tuning_job`
 method.
 
 Boto3 documentation:
@@ -3485,7 +3464,7 @@ Returns a `Coroutine` for
 
 Describes a SageMaker image.
 
-Type annotations for `aiobotocore.create_client("sagemaker").describe_image`
+Type annotations for `session.create_client("sagemaker").describe_image`
 method.
 
 Boto3 documentation:
@@ -3510,7 +3489,7 @@ Returns a `Coroutine` for
 Describes a version of a SageMaker image.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_image_version` method.
+`session.create_client("sagemaker").describe_image_version` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_image_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_image_version)
@@ -3536,7 +3515,7 @@ Returns a `Coroutine` for
 Provides the results of the Inference Recommender job.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_inference_recommendations_job`
+`session.create_client("sagemaker").describe_inference_recommendations_job`
 method.
 
 Boto3 documentation:
@@ -3561,8 +3540,8 @@ Returns a `Coroutine` for
 
 Gets information about a labeling job.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").describe_labeling_job` method.
+Type annotations for `session.create_client("sagemaker").describe_labeling_job`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_labeling_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_labeling_job)
@@ -3587,7 +3566,7 @@ Returns a `Coroutine` for
 Provides a list of properties for the requested lineage group.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_lineage_group` method.
+`session.create_client("sagemaker").describe_lineage_group` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_lineage_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_lineage_group)
@@ -3611,7 +3590,7 @@ Returns a `Coroutine` for
 
 Describes a model that you created using the `CreateModel` API.
 
-Type annotations for `aiobotocore.create_client("sagemaker").describe_model`
+Type annotations for `session.create_client("sagemaker").describe_model`
 method.
 
 Boto3 documentation:
@@ -3636,8 +3615,7 @@ Returns a `Coroutine` for
 Returns a description of a model bias job definition.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_model_bias_job_definition`
-method.
+`session.create_client("sagemaker").describe_model_bias_job_definition` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_model_bias_job_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_model_bias_job_definition)
@@ -3662,7 +3640,7 @@ Returns a `Coroutine` for
 Returns a description of a model explainability job definition.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_model_explainability_job_definition`
+`session.create_client("sagemaker").describe_model_explainability_job_definition`
 method.
 
 Boto3 documentation:
@@ -3690,7 +3668,7 @@ Returns a description of the specified model package, which is used to create
 SageMaker models or list them on Amazon Web Services Marketplace.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_model_package` method.
+`session.create_client("sagemaker").describe_model_package` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_model_package](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_model_package)
@@ -3715,7 +3693,7 @@ Returns a `Coroutine` for
 Gets a description for the specified model group.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_model_package_group` method.
+`session.create_client("sagemaker").describe_model_package_group` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_model_package_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_model_package_group)
@@ -3740,7 +3718,7 @@ Returns a `Coroutine` for
 Returns a description of a model quality job definition.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_model_quality_job_definition`
+`session.create_client("sagemaker").describe_model_quality_job_definition`
 method.
 
 Boto3 documentation:
@@ -3766,7 +3744,7 @@ Returns a `Coroutine` for
 Describes the schedule for a monitoring job.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_monitoring_schedule` method.
+`session.create_client("sagemaker").describe_monitoring_schedule` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_monitoring_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_monitoring_schedule)
@@ -3791,7 +3769,7 @@ Returns a `Coroutine` for
 Returns information about a notebook instance.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_notebook_instance` method.
+`session.create_client("sagemaker").describe_notebook_instance` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_notebook_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_notebook_instance)
@@ -3816,7 +3794,7 @@ Returns a `Coroutine` for
 Returns a description of a notebook instance lifecycle configuration.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_notebook_instance_lifecycle_config`
+`session.create_client("sagemaker").describe_notebook_instance_lifecycle_config`
 method.
 
 Boto3 documentation:
@@ -3842,7 +3820,7 @@ Returns a `Coroutine` for
 
 Describes the details of a pipeline.
 
-Type annotations for `aiobotocore.create_client("sagemaker").describe_pipeline`
+Type annotations for `session.create_client("sagemaker").describe_pipeline`
 method.
 
 Boto3 documentation:
@@ -3867,7 +3845,7 @@ Returns a `Coroutine` for
 Describes the details of an execution's pipeline definition.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_pipeline_definition_for_execution`
+`session.create_client("sagemaker").describe_pipeline_definition_for_execution`
 method.
 
 Boto3 documentation:
@@ -3893,7 +3871,7 @@ Returns a `Coroutine` for
 Describes the details of a pipeline execution.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_pipeline_execution` method.
+`session.create_client("sagemaker").describe_pipeline_execution` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_pipeline_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_pipeline_execution)
@@ -3918,7 +3896,7 @@ Returns a `Coroutine` for
 Returns a description of a processing job.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_processing_job` method.
+`session.create_client("sagemaker").describe_processing_job` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_processing_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_processing_job)
@@ -3942,7 +3920,7 @@ Returns a `Coroutine` for
 
 Describes the details of a project.
 
-Type annotations for `aiobotocore.create_client("sagemaker").describe_project`
+Type annotations for `session.create_client("sagemaker").describe_project`
 method.
 
 Boto3 documentation:
@@ -3967,8 +3945,7 @@ Returns a `Coroutine` for
 Describes the Studio Lifecycle Configuration.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_studio_lifecycle_config`
-method.
+`session.create_client("sagemaker").describe_studio_lifecycle_config` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_studio_lifecycle_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_studio_lifecycle_config)
@@ -3993,7 +3970,7 @@ Returns a `Coroutine` for
 Gets information about a work team provided by a vendor.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_subscribed_workteam` method.
+`session.create_client("sagemaker").describe_subscribed_workteam` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_subscribed_workteam](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_subscribed_workteam)
@@ -4017,8 +3994,8 @@ Returns a `Coroutine` for
 
 Returns information about a training job.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").describe_training_job` method.
+Type annotations for `session.create_client("sagemaker").describe_training_job`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_training_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_training_job)
@@ -4043,7 +4020,7 @@ Returns a `Coroutine` for
 Returns information about a transform job.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_transform_job` method.
+`session.create_client("sagemaker").describe_transform_job` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_transform_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_transform_job)
@@ -4067,7 +4044,7 @@ Returns a `Coroutine` for
 
 Provides a list of a trial's properties.
 
-Type annotations for `aiobotocore.create_client("sagemaker").describe_trial`
+Type annotations for `session.create_client("sagemaker").describe_trial`
 method.
 
 Boto3 documentation:
@@ -4092,7 +4069,7 @@ Returns a `Coroutine` for
 Provides a list of a trials component's properties.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").describe_trial_component` method.
+`session.create_client("sagemaker").describe_trial_component` method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_trial_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_trial_component)
@@ -4116,8 +4093,8 @@ Returns a `Coroutine` for
 
 Describes a user profile.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").describe_user_profile` method.
+Type annotations for `session.create_client("sagemaker").describe_user_profile`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_user_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_user_profile)
@@ -4145,8 +4122,8 @@ Name (ARN), and, if applicable, allowed IP address ranges
 ([CIDRs](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)\_
 ).
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").describe_workforce` method.
+Type annotations for `session.create_client("sagemaker").describe_workforce`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.describe_workforce](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_workforce)
@@ -4170,7 +4147,7 @@ Returns a `Coroutine` for
 
 Gets information about a specific work team.
 
-Type annotations for `aiobotocore.create_client("sagemaker").describe_workteam`
+Type annotations for `session.create_client("sagemaker").describe_workteam`
 method.
 
 Boto3 documentation:
@@ -4195,7 +4172,7 @@ Returns a `Coroutine` for
 Disables using Service Catalog in SageMaker.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").disable_sagemaker_servicecatalog_portfolio`
+`session.create_client("sagemaker").disable_sagemaker_servicecatalog_portfolio`
 method.
 
 Boto3 documentation:
@@ -4213,7 +4190,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates a trial component from a trial.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").disassociate_trial_component` method.
+`session.create_client("sagemaker").disassociate_trial_component` method.
 
 Boto3 documentation:
 [SageMaker.Client.disassociate_trial_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.disassociate_trial_component)
@@ -4239,7 +4216,7 @@ Returns a `Coroutine` for
 Enables using Service Catalog in SageMaker.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").enable_sagemaker_servicecatalog_portfolio`
+`session.create_client("sagemaker").enable_sagemaker_servicecatalog_portfolio`
 method.
 
 Boto3 documentation:
@@ -4257,7 +4234,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").generate_presigned_url` method.
+`session.create_client("sagemaker").generate_presigned_url` method.
 
 Boto3 documentation:
 [SageMaker.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.generate_presigned_url)
@@ -4281,7 +4258,7 @@ Returns a `Coroutine` for `str`.
 Describes a fleet.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_device_fleet_report` method.
+`session.create_client("sagemaker").get_device_fleet_report` method.
 
 Boto3 documentation:
 [SageMaker.Client.get_device_fleet_report](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.get_device_fleet_report)
@@ -4306,7 +4283,7 @@ Returns a `Coroutine` for
 The resource policy for the lineage group.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_lineage_group_policy` method.
+`session.create_client("sagemaker").get_lineage_group_policy` method.
 
 Boto3 documentation:
 [SageMaker.Client.get_lineage_group_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.get_lineage_group_policy)
@@ -4331,7 +4308,7 @@ Returns a `Coroutine` for
 Gets a resource policy that manages access for a model group.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_model_package_group_policy` method.
+`session.create_client("sagemaker").get_model_package_group_policy` method.
 
 Boto3 documentation:
 [SageMaker.Client.get_model_package_group_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.get_model_package_group_policy)
@@ -4356,7 +4333,7 @@ Returns a `Coroutine` for
 Gets the status of Service Catalog in SageMaker.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_sagemaker_servicecatalog_portfolio_status`
+`session.create_client("sagemaker").get_sagemaker_servicecatalog_portfolio_status`
 method.
 
 Boto3 documentation:
@@ -4377,7 +4354,7 @@ An auto-complete API for the search functionality in the Amazon SageMaker
 console.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_search_suggestions` method.
+`session.create_client("sagemaker").get_search_suggestions` method.
 
 Boto3 documentation:
 [SageMaker.Client.get_search_suggestions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.get_search_suggestions)
@@ -4403,8 +4380,7 @@ Returns a `Coroutine` for
 
 Lists the actions in your account and their properties.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_actions`
-method.
+Type annotations for `session.create_client("sagemaker").list_actions` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_actions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_actions)
@@ -4434,7 +4410,7 @@ Returns a `Coroutine` for
 
 Lists the machine learning algorithms that have been created.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_algorithms`
+Type annotations for `session.create_client("sagemaker").list_algorithms`
 method.
 
 Boto3 documentation:
@@ -4465,7 +4441,7 @@ Returns a `Coroutine` for
 Lists the AppImageConfigs in your account and their properties.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_app_image_configs` method.
+`session.create_client("sagemaker").list_app_image_configs` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_app_image_configs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_app_image_configs)
@@ -4498,7 +4474,7 @@ Returns a `Coroutine` for
 
 Lists apps.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_apps` method.
+Type annotations for `session.create_client("sagemaker").list_apps` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_apps](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_apps)
@@ -4527,7 +4503,7 @@ Returns a `Coroutine` for
 
 Lists the artifacts in your account and their properties.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_artifacts`
+Type annotations for `session.create_client("sagemaker").list_artifacts`
 method.
 
 Boto3 documentation:
@@ -4559,7 +4535,7 @@ Returns a `Coroutine` for
 
 Lists the associations in your account and their properties.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_associations`
+Type annotations for `session.create_client("sagemaker").list_associations`
 method.
 
 Boto3 documentation:
@@ -4594,7 +4570,7 @@ Returns a `Coroutine` for
 
 Request a list of jobs.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_auto_ml_jobs`
+Type annotations for `session.create_client("sagemaker").list_auto_ml_jobs`
 method.
 
 Boto3 documentation:
@@ -4628,8 +4604,7 @@ Returns a `Coroutine` for
 List the candidates created for the job.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_candidates_for_auto_ml_job`
-method.
+`session.create_client("sagemaker").list_candidates_for_auto_ml_job` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_candidates_for_auto_ml_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_candidates_for_auto_ml_job)
@@ -4660,7 +4635,7 @@ Returns a `Coroutine` for
 Gets a list of the Git repositories in your account.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_code_repositories` method.
+`session.create_client("sagemaker").list_code_repositories` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_code_repositories](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_code_repositories)
@@ -4693,8 +4668,8 @@ Returns a `Coroutine` for
 
 Lists model compilation jobs that satisfy various filters.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").list_compilation_jobs` method.
+Type annotations for `session.create_client("sagemaker").list_compilation_jobs`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.list_compilation_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_compilation_jobs)
@@ -4729,8 +4704,7 @@ Returns a `Coroutine` for
 
 Lists the contexts in your account and their properties.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_contexts`
-method.
+Type annotations for `session.create_client("sagemaker").list_contexts` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_contexts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_contexts)
@@ -4761,8 +4735,7 @@ Returns a `Coroutine` for
 Lists the data quality job definitions in your account.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_data_quality_job_definitions`
-method.
+`session.create_client("sagemaker").list_data_quality_job_definitions` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_data_quality_job_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_data_quality_job_definitions)
@@ -4794,8 +4767,8 @@ Returns a `Coroutine` for
 
 Returns a list of devices in the fleet.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").list_device_fleets` method.
+Type annotations for `session.create_client("sagemaker").list_device_fleets`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.list_device_fleets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_device_fleets)
@@ -4828,8 +4801,7 @@ Returns a `Coroutine` for
 
 A list of devices.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_devices`
-method.
+Type annotations for `session.create_client("sagemaker").list_devices` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_devices)
@@ -4856,8 +4828,7 @@ Returns a `Coroutine` for
 
 Lists the domains.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_domains`
-method.
+Type annotations for `session.create_client("sagemaker").list_domains` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_domains](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_domains)
@@ -4882,7 +4853,7 @@ Returns a `Coroutine` for
 Returns a list of edge packaging jobs.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_edge_packaging_jobs` method.
+`session.create_client("sagemaker").list_edge_packaging_jobs` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_edge_packaging_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_edge_packaging_jobs)
@@ -4918,8 +4889,8 @@ Returns a `Coroutine` for
 
 Lists endpoint configurations.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").list_endpoint_configs` method.
+Type annotations for `session.create_client("sagemaker").list_endpoint_configs`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.list_endpoint_configs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_endpoint_configs)
@@ -4950,7 +4921,7 @@ Returns a `Coroutine` for
 
 Lists endpoints.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_endpoints`
+Type annotations for `session.create_client("sagemaker").list_endpoints`
 method.
 
 Boto3 documentation:
@@ -4983,7 +4954,7 @@ Returns a `Coroutine` for
 
 Lists all the experiments in your account.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_experiments`
+Type annotations for `session.create_client("sagemaker").list_experiments`
 method.
 
 Boto3 documentation:
@@ -5012,8 +4983,8 @@ Returns a `Coroutine` for
 
 List `FeatureGroup` s based on given filter and order.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").list_feature_groups` method.
+Type annotations for `session.create_client("sagemaker").list_feature_groups`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.list_feature_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_feature_groups)
@@ -5048,8 +5019,8 @@ Returns a `Coroutine` for
 
 Returns information about the flow definitions in your account.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").list_flow_definitions` method.
+Type annotations for `session.create_client("sagemaker").list_flow_definitions`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.list_flow_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_flow_definitions)
@@ -5077,8 +5048,8 @@ Returns a `Coroutine` for
 
 Returns information about the human task user interfaces in your account.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").list_human_task_uis` method.
+Type annotations for `session.create_client("sagemaker").list_human_task_uis`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.list_human_task_uis](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_human_task_uis)
@@ -5108,8 +5079,7 @@ Gets a list of HyperParameterTuningJobSummary objects that describe the
 hyperparameter tuning jobs launched in your account.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_hyper_parameter_tuning_jobs`
-method.
+`session.create_client("sagemaker").list_hyper_parameter_tuning_jobs` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_hyper_parameter_tuning_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_hyper_parameter_tuning_jobs)
@@ -5144,8 +5114,8 @@ Returns a `Coroutine` for
 
 Lists the versions of a specified image and their properties.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").list_image_versions` method.
+Type annotations for `session.create_client("sagemaker").list_image_versions`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.list_image_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_image_versions)
@@ -5178,8 +5148,7 @@ Returns a `Coroutine` for
 
 Lists the images in your account and their properties.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_images`
-method.
+Type annotations for `session.create_client("sagemaker").list_images` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_images](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_images)
@@ -5211,7 +5180,7 @@ Returns a `Coroutine` for
 Lists recommendation jobs that satisfy various filters.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_inference_recommendations_jobs`
+`session.create_client("sagemaker").list_inference_recommendations_jobs`
 method.
 
 Boto3 documentation:
@@ -5247,8 +5216,8 @@ Returns a `Coroutine` for
 
 Gets a list of labeling jobs.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").list_labeling_jobs` method.
+Type annotations for `session.create_client("sagemaker").list_labeling_jobs`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.list_labeling_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_labeling_jobs)
@@ -5282,8 +5251,7 @@ Returns a `Coroutine` for
 Gets a list of labeling jobs assigned to a specified work team.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_labeling_jobs_for_workteam`
-method.
+`session.create_client("sagemaker").list_labeling_jobs_for_workteam` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_labeling_jobs_for_workteam](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_labeling_jobs_for_workteam)
@@ -5315,8 +5283,8 @@ Returns a `Coroutine` for
 
 A list of lineage groups shared with your Amazon Web Services account.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").list_lineage_groups` method.
+Type annotations for `session.create_client("sagemaker").list_lineage_groups`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.list_lineage_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_lineage_groups)
@@ -5346,8 +5314,7 @@ Returns a `Coroutine` for
 Lists model bias jobs definitions that satisfy various filters.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_model_bias_job_definitions`
-method.
+`session.create_client("sagemaker").list_model_bias_job_definitions` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_model_bias_job_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_model_bias_job_definitions)
@@ -5380,7 +5347,7 @@ Returns a `Coroutine` for
 Lists model explainability job definitions that satisfy various filters.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_model_explainability_job_definitions`
+`session.create_client("sagemaker").list_model_explainability_job_definitions`
 method.
 
 Boto3 documentation:
@@ -5414,8 +5381,8 @@ Returns a `Coroutine` for
 Lists the domain, framework, task, and model name of standard machine learning
 models found in common model zoos.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").list_model_metadata` method.
+Type annotations for `session.create_client("sagemaker").list_model_metadata`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.list_model_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_model_metadata)
@@ -5443,7 +5410,7 @@ Returns a `Coroutine` for
 Gets a list of the model groups in your Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_model_package_groups` method.
+`session.create_client("sagemaker").list_model_package_groups` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_model_package_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_model_package_groups)
@@ -5474,8 +5441,8 @@ Returns a `Coroutine` for
 
 Lists the model packages that have been created.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").list_model_packages` method.
+Type annotations for `session.create_client("sagemaker").list_model_packages`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.list_model_packages](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_model_packages)
@@ -5511,8 +5478,7 @@ Returns a `Coroutine` for
 Gets a list of model quality monitoring job definitions in your account.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_model_quality_job_definitions`
-method.
+`session.create_client("sagemaker").list_model_quality_job_definitions` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_model_quality_job_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_model_quality_job_definitions)
@@ -5544,8 +5510,7 @@ Returns a `Coroutine` for
 
 Lists models created with the `CreateModel` API.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_models`
-method.
+Type annotations for `session.create_client("sagemaker").list_models` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_models](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_models)
@@ -5575,7 +5540,7 @@ Returns a `Coroutine` for
 Returns list of all monitoring job executions.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_monitoring_executions` method.
+`session.create_client("sagemaker").list_monitoring_executions` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_monitoring_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_monitoring_executions)
@@ -5616,7 +5581,7 @@ Returns a `Coroutine` for
 Returns list of all monitoring schedules.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_monitoring_schedules` method.
+`session.create_client("sagemaker").list_monitoring_schedules` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_monitoring_schedules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_monitoring_schedules)
@@ -5656,7 +5621,7 @@ Lists notebook instance lifestyle configurations created with the
 CreateNotebookInstanceLifecycleConfig API.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_notebook_instance_lifecycle_configs`
+`session.create_client("sagemaker").list_notebook_instance_lifecycle_configs`
 method.
 
 Boto3 documentation:
@@ -5693,7 +5658,7 @@ Returns a list of the Amazon SageMaker notebook instances in the requester's
 account in an Amazon Web Services Region.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_notebook_instances` method.
+`session.create_client("sagemaker").list_notebook_instances` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_notebook_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_notebook_instances)
@@ -5733,7 +5698,7 @@ Returns a `Coroutine` for
 Gets a list of `PipeLineExecutionStep` objects.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_pipeline_execution_steps` method.
+`session.create_client("sagemaker").list_pipeline_execution_steps` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_pipeline_execution_steps](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_pipeline_execution_steps)
@@ -5761,7 +5726,7 @@ Returns a `Coroutine` for
 Gets a list of the pipeline executions.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_pipeline_executions` method.
+`session.create_client("sagemaker").list_pipeline_executions` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_pipeline_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_pipeline_executions)
@@ -5793,7 +5758,7 @@ Returns a `Coroutine` for
 Gets a list of parameters for a pipeline execution.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_pipeline_parameters_for_execution`
+`session.create_client("sagemaker").list_pipeline_parameters_for_execution`
 method.
 
 Boto3 documentation:
@@ -5820,7 +5785,7 @@ Returns a `Coroutine` for
 
 Gets a list of pipelines.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_pipelines`
+Type annotations for `session.create_client("sagemaker").list_pipelines`
 method.
 
 Boto3 documentation:
@@ -5850,8 +5815,8 @@ Returns a `Coroutine` for
 
 Lists processing jobs that satisfy various filters.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").list_processing_jobs` method.
+Type annotations for `session.create_client("sagemaker").list_processing_jobs`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.list_processing_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_processing_jobs)
@@ -5885,8 +5850,7 @@ Returns a `Coroutine` for
 
 Gets a list of the projects in an Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_projects`
-method.
+Type annotations for `session.create_client("sagemaker").list_projects` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_projects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_projects)
@@ -5916,7 +5880,7 @@ Returns a `Coroutine` for
 Lists the Studio Lifecycle Configurations in your Amazon Web Services Account.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_studio_lifecycle_configs` method.
+`session.create_client("sagemaker").list_studio_lifecycle_configs` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_studio_lifecycle_configs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_studio_lifecycle_configs)
@@ -5953,7 +5917,7 @@ Gets a list of the work teams that you are subscribed to in the Amazon Web
 Services Marketplace.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_subscribed_workteams` method.
+`session.create_client("sagemaker").list_subscribed_workteams` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_subscribed_workteams](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_subscribed_workteams)
@@ -5979,7 +5943,7 @@ Returns a `Coroutine` for
 
 Returns the tags for the specified Amazon SageMaker resource.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_tags` method.
+Type annotations for `session.create_client("sagemaker").list_tags` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_tags)
@@ -6004,8 +5968,8 @@ Returns a `Coroutine` for
 
 Lists training jobs.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").list_training_jobs` method.
+Type annotations for `session.create_client("sagemaker").list_training_jobs`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.list_training_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_training_jobs)
@@ -6040,7 +6004,7 @@ Gets a list of TrainingJobSummary objects that describe the training jobs that
 a hyperparameter tuning job launched.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").list_training_jobs_for_hyper_parameter_tuning_job`
+`session.create_client("sagemaker").list_training_jobs_for_hyper_parameter_tuning_job`
 method.
 
 Boto3 documentation:
@@ -6072,8 +6036,8 @@ Returns a `Coroutine` for
 
 Lists transform jobs.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").list_transform_jobs` method.
+Type annotations for `session.create_client("sagemaker").list_transform_jobs`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.list_transform_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_transform_jobs)
@@ -6107,8 +6071,8 @@ Returns a `Coroutine` for
 
 Lists the trial components in your account.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").list_trial_components` method.
+Type annotations for `session.create_client("sagemaker").list_trial_components`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.list_trial_components](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_trial_components)
@@ -6141,8 +6105,7 @@ Returns a `Coroutine` for
 
 Lists the trials in your account.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_trials`
-method.
+Type annotations for `session.create_client("sagemaker").list_trials` method.
 
 Boto3 documentation:
 [SageMaker.Client.list_trials](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_trials)
@@ -6172,8 +6135,8 @@ Returns a `Coroutine` for
 
 Lists user profiles.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").list_user_profiles` method.
+Type annotations for `session.create_client("sagemaker").list_user_profiles`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.list_user_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_user_profiles)
@@ -6203,7 +6166,7 @@ Returns a `Coroutine` for
 Use this operation to list all private and vendor workforces in an Amazon Web
 Services Region.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_workforces`
+Type annotations for `session.create_client("sagemaker").list_workforces`
 method.
 
 Boto3 documentation:
@@ -6232,7 +6195,7 @@ Returns a `Coroutine` for
 
 Gets a list of private work teams that you have defined in a region.
 
-Type annotations for `aiobotocore.create_client("sagemaker").list_workteams`
+Type annotations for `session.create_client("sagemaker").list_workteams`
 method.
 
 Boto3 documentation:
@@ -6262,7 +6225,7 @@ Returns a `Coroutine` for
 Adds a resouce policy to control access to a model group.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").put_model_package_group_policy` method.
+`session.create_client("sagemaker").put_model_package_group_policy` method.
 
 Boto3 documentation:
 [SageMaker.Client.put_model_package_group_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.put_model_package_group_policy)
@@ -6288,8 +6251,7 @@ Returns a `Coroutine` for
 Use this action to inspect your lineage and discover relationships between
 entities.
 
-Type annotations for `aiobotocore.create_client("sagemaker").query_lineage`
-method.
+Type annotations for `session.create_client("sagemaker").query_lineage` method.
 
 Boto3 documentation:
 [SageMaker.Client.query_lineage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.query_lineage)
@@ -6318,7 +6280,7 @@ Returns a `Coroutine` for
 
 Register devices.
 
-Type annotations for `aiobotocore.create_client("sagemaker").register_devices`
+Type annotations for `session.create_client("sagemaker").register_devices`
 method.
 
 Boto3 documentation:
@@ -6342,8 +6304,8 @@ Keyword-only arguments:
 
 Renders the UI template so that you can preview the worker's experience.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").render_ui_template` method.
+Type annotations for `session.create_client("sagemaker").render_ui_template`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.render_ui_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.render_ui_template)
@@ -6372,7 +6334,7 @@ Returns a `Coroutine` for
 Retry the execution of the pipeline.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").retry_pipeline_execution` method.
+`session.create_client("sagemaker").retry_pipeline_execution` method.
 
 Boto3 documentation:
 [SageMaker.Client.retry_pipeline_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.retry_pipeline_execution)
@@ -6397,7 +6359,7 @@ Returns a `Coroutine` for
 
 Finds Amazon SageMaker resources that match a search query.
 
-Type annotations for `aiobotocore.create_client("sagemaker").search` method.
+Type annotations for `session.create_client("sagemaker").search` method.
 
 Boto3 documentation:
 [SageMaker.Client.search](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.search)
@@ -6428,7 +6390,7 @@ Notifies the pipeline that the execution of a callback step failed, along with
 a message describing why.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").send_pipeline_execution_step_failure`
+`session.create_client("sagemaker").send_pipeline_execution_step_failure`
 method.
 
 Boto3 documentation:
@@ -6457,7 +6419,7 @@ Notifies the pipeline that the execution of a callback step succeeded and
 provides a list of the step's output parameters.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").send_pipeline_execution_step_success`
+`session.create_client("sagemaker").send_pipeline_execution_step_success`
 method.
 
 Boto3 documentation:
@@ -6486,7 +6448,7 @@ Returns a `Coroutine` for
 Starts a previously stopped monitoring schedule.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").start_monitoring_schedule` method.
+`session.create_client("sagemaker").start_monitoring_schedule` method.
 
 Boto3 documentation:
 [SageMaker.Client.start_monitoring_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.start_monitoring_schedule)
@@ -6509,7 +6471,7 @@ Launches an ML compute instance with the latest version of the libraries and
 attaches your ML storage volume.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").start_notebook_instance` method.
+`session.create_client("sagemaker").start_notebook_instance` method.
 
 Boto3 documentation:
 [SageMaker.Client.start_notebook_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.start_notebook_instance)
@@ -6531,7 +6493,7 @@ Keyword-only arguments:
 Starts a pipeline execution.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").start_pipeline_execution` method.
+`session.create_client("sagemaker").start_pipeline_execution` method.
 
 Boto3 documentation:
 [SageMaker.Client.start_pipeline_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.start_pipeline_execution)
@@ -6560,7 +6522,7 @@ Returns a `Coroutine` for
 
 A method for forcing the termination of a running job.
 
-Type annotations for `aiobotocore.create_client("sagemaker").stop_auto_ml_job`
+Type annotations for `session.create_client("sagemaker").stop_auto_ml_job`
 method.
 
 Boto3 documentation:
@@ -6581,8 +6543,8 @@ Keyword-only arguments:
 
 Stops a model compilation job.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").stop_compilation_job` method.
+Type annotations for `session.create_client("sagemaker").stop_compilation_job`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.stop_compilation_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.stop_compilation_job)
@@ -6604,7 +6566,7 @@ Keyword-only arguments:
 Request to stop an edge packaging job.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").stop_edge_packaging_job` method.
+`session.create_client("sagemaker").stop_edge_packaging_job` method.
 
 Boto3 documentation:
 [SageMaker.Client.stop_edge_packaging_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.stop_edge_packaging_job)
@@ -6627,8 +6589,7 @@ Stops a running hyperparameter tuning job and all running training jobs that
 the tuning job launched.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").stop_hyper_parameter_tuning_job`
-method.
+`session.create_client("sagemaker").stop_hyper_parameter_tuning_job` method.
 
 Boto3 documentation:
 [SageMaker.Client.stop_hyper_parameter_tuning_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.stop_hyper_parameter_tuning_job)
@@ -6650,8 +6611,7 @@ Keyword-only arguments:
 Stops an Inference Recommender job.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").stop_inference_recommendations_job`
-method.
+`session.create_client("sagemaker").stop_inference_recommendations_job` method.
 
 Boto3 documentation:
 [SageMaker.Client.stop_inference_recommendations_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.stop_inference_recommendations_job)
@@ -6672,7 +6632,7 @@ Keyword-only arguments:
 
 Stops a running labeling job.
 
-Type annotations for `aiobotocore.create_client("sagemaker").stop_labeling_job`
+Type annotations for `session.create_client("sagemaker").stop_labeling_job`
 method.
 
 Boto3 documentation:
@@ -6694,7 +6654,7 @@ Keyword-only arguments:
 Stops a previously started monitoring schedule.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").stop_monitoring_schedule` method.
+`session.create_client("sagemaker").stop_monitoring_schedule` method.
 
 Boto3 documentation:
 [SageMaker.Client.stop_monitoring_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.stop_monitoring_schedule)
@@ -6716,7 +6676,7 @@ Keyword-only arguments:
 Terminates the ML compute instance.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").stop_notebook_instance` method.
+`session.create_client("sagemaker").stop_notebook_instance` method.
 
 Boto3 documentation:
 [SageMaker.Client.stop_notebook_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.stop_notebook_instance)
@@ -6738,7 +6698,7 @@ Keyword-only arguments:
 Stops a pipeline execution.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").stop_pipeline_execution` method.
+`session.create_client("sagemaker").stop_pipeline_execution` method.
 
 Boto3 documentation:
 [SageMaker.Client.stop_pipeline_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.stop_pipeline_execution)
@@ -6763,8 +6723,8 @@ Returns a `Coroutine` for
 
 Stops a processing job.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").stop_processing_job` method.
+Type annotations for `session.create_client("sagemaker").stop_processing_job`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.stop_processing_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.stop_processing_job)
@@ -6785,7 +6745,7 @@ Keyword-only arguments:
 
 Stops a training job.
 
-Type annotations for `aiobotocore.create_client("sagemaker").stop_training_job`
+Type annotations for `session.create_client("sagemaker").stop_training_job`
 method.
 
 Boto3 documentation:
@@ -6806,8 +6766,8 @@ Keyword-only arguments:
 
 Stops a transform job.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").stop_transform_job` method.
+Type annotations for `session.create_client("sagemaker").stop_transform_job`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.stop_transform_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.stop_transform_job)
@@ -6828,8 +6788,7 @@ Keyword-only arguments:
 
 Updates an action.
 
-Type annotations for `aiobotocore.create_client("sagemaker").update_action`
-method.
+Type annotations for `session.create_client("sagemaker").update_action` method.
 
 Boto3 documentation:
 [SageMaker.Client.update_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.update_action)
@@ -6857,7 +6816,7 @@ Returns a `Coroutine` for
 Updates the properties of an AppImageConfig.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").update_app_image_config` method.
+`session.create_client("sagemaker").update_app_image_config` method.
 
 Boto3 documentation:
 [SageMaker.Client.update_app_image_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.update_app_image_config)
@@ -6883,7 +6842,7 @@ Returns a `Coroutine` for
 
 Updates an artifact.
 
-Type annotations for `aiobotocore.create_client("sagemaker").update_artifact`
+Type annotations for `session.create_client("sagemaker").update_artifact`
 method.
 
 Boto3 documentation:
@@ -6911,7 +6870,7 @@ Returns a `Coroutine` for
 Updates the specified Git repository with the specified values.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").update_code_repository` method.
+`session.create_client("sagemaker").update_code_repository` method.
 
 Boto3 documentation:
 [SageMaker.Client.update_code_repository](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.update_code_repository)
@@ -6937,7 +6896,7 @@ Returns a `Coroutine` for
 
 Updates a context.
 
-Type annotations for `aiobotocore.create_client("sagemaker").update_context`
+Type annotations for `session.create_client("sagemaker").update_context`
 method.
 
 Boto3 documentation:
@@ -6964,8 +6923,8 @@ Returns a `Coroutine` for
 
 Updates a fleet of devices.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").update_device_fleet` method.
+Type annotations for `session.create_client("sagemaker").update_device_fleet`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.update_device_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.update_device_fleet)
@@ -6992,7 +6951,7 @@ Keyword-only arguments:
 
 Updates one or more devices in a fleet.
 
-Type annotations for `aiobotocore.create_client("sagemaker").update_devices`
+Type annotations for `session.create_client("sagemaker").update_devices`
 method.
 
 Boto3 documentation:
@@ -7015,8 +6974,7 @@ Keyword-only arguments:
 
 Updates the default settings for new user profiles in the domain.
 
-Type annotations for `aiobotocore.create_client("sagemaker").update_domain`
-method.
+Type annotations for `session.create_client("sagemaker").update_domain` method.
 
 Boto3 documentation:
 [SageMaker.Client.update_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.update_domain)
@@ -7045,7 +7003,7 @@ Deploys the new `EndpointConfig` specified in the request, switches to using
 newly created endpoint, and then deletes resources provisioned for the endpoint
 using the previous `EndpointConfig` (there is no availability loss).
 
-Type annotations for `aiobotocore.create_client("sagemaker").update_endpoint`
+Type annotations for `session.create_client("sagemaker").update_endpoint`
 method.
 
 Boto3 documentation:
@@ -7078,7 +7036,7 @@ Updates variant weight of one or more variants associated with an existing
 endpoint, or capacity of one variant associated with an existing endpoint.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").update_endpoint_weights_and_capacities`
+`session.create_client("sagemaker").update_endpoint_weights_and_capacities`
 method.
 
 Boto3 documentation:
@@ -7106,7 +7064,7 @@ Returns a `Coroutine` for
 
 Adds, updates, or removes the description of an experiment.
 
-Type annotations for `aiobotocore.create_client("sagemaker").update_experiment`
+Type annotations for `session.create_client("sagemaker").update_experiment`
 method.
 
 Boto3 documentation:
@@ -7132,8 +7090,7 @@ Returns a `Coroutine` for
 
 Updates the properties of a SageMaker image.
 
-Type annotations for `aiobotocore.create_client("sagemaker").update_image`
-method.
+Type annotations for `session.create_client("sagemaker").update_image` method.
 
 Boto3 documentation:
 [SageMaker.Client.update_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.update_image)
@@ -7160,8 +7117,8 @@ Returns a `Coroutine` for
 
 Updates a versioned model.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").update_model_package` method.
+Type annotations for `session.create_client("sagemaker").update_model_package`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.update_model_package](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.update_model_package)
@@ -7193,7 +7150,7 @@ Returns a `Coroutine` for
 Updates a previously created schedule.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").update_monitoring_schedule` method.
+`session.create_client("sagemaker").update_monitoring_schedule` method.
 
 Boto3 documentation:
 [SageMaker.Client.update_monitoring_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.update_monitoring_schedule)
@@ -7221,7 +7178,7 @@ Returns a `Coroutine` for
 Updates a notebook instance.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").update_notebook_instance` method.
+`session.create_client("sagemaker").update_notebook_instance` method.
 
 Boto3 documentation:
 [SageMaker.Client.update_notebook_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.update_notebook_instance)
@@ -7259,7 +7216,7 @@ Updates a notebook instance lifecycle configuration created with the
 CreateNotebookInstanceLifecycleConfig API.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").update_notebook_instance_lifecycle_config`
+`session.create_client("sagemaker").update_notebook_instance_lifecycle_config`
 method.
 
 Boto3 documentation:
@@ -7287,7 +7244,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a pipeline.
 
-Type annotations for `aiobotocore.create_client("sagemaker").update_pipeline`
+Type annotations for `session.create_client("sagemaker").update_pipeline`
 method.
 
 Boto3 documentation:
@@ -7316,7 +7273,7 @@ Returns a `Coroutine` for
 Updates a pipeline execution.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").update_pipeline_execution` method.
+`session.create_client("sagemaker").update_pipeline_execution` method.
 
 Boto3 documentation:
 [SageMaker.Client.update_pipeline_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.update_pipeline_execution)
@@ -7343,7 +7300,7 @@ Returns a `Coroutine` for
 Updates a machine learning (ML) project that is created from a template that
 sets up an ML pipeline from training to deploying an approved model.
 
-Type annotations for `aiobotocore.create_client("sagemaker").update_project`
+Type annotations for `session.create_client("sagemaker").update_project`
 method.
 
 Boto3 documentation:
@@ -7371,8 +7328,8 @@ Returns a `Coroutine` for
 
 Update a model training job to request a new Debugger profiling configuration.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").update_training_job` method.
+Type annotations for `session.create_client("sagemaker").update_training_job`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.update_training_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.update_training_job)
@@ -7400,8 +7357,7 @@ Returns a `Coroutine` for
 
 Updates the display name of a trial.
 
-Type annotations for `aiobotocore.create_client("sagemaker").update_trial`
-method.
+Type annotations for `session.create_client("sagemaker").update_trial` method.
 
 Boto3 documentation:
 [SageMaker.Client.update_trial](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.update_trial)
@@ -7426,7 +7382,7 @@ Returns a `Coroutine` for
 Updates one or more properties of a trial component.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").update_trial_component` method.
+`session.create_client("sagemaker").update_trial_component` method.
 
 Boto3 documentation:
 [SageMaker.Client.update_trial_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.update_trial_component)
@@ -7464,8 +7420,8 @@ Returns a `Coroutine` for
 
 Updates a user profile.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker").update_user_profile` method.
+Type annotations for `session.create_client("sagemaker").update_user_profile`
+method.
 
 Boto3 documentation:
 [SageMaker.Client.update_user_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.update_user_profile)
@@ -7491,7 +7447,7 @@ Returns a `Coroutine` for
 
 Use this operation to update your workforce.
 
-Type annotations for `aiobotocore.create_client("sagemaker").update_workforce`
+Type annotations for `session.create_client("sagemaker").update_workforce`
 method.
 
 Boto3 documentation:
@@ -7518,7 +7474,7 @@ Returns a `Coroutine` for
 
 Updates an existing work team with new member definitions or description.
 
-Type annotations for `aiobotocore.create_client("sagemaker").update_workteam`
+Type annotations for `session.create_client("sagemaker").update_workteam`
 method.
 
 Boto3 documentation:
@@ -7541,12 +7497,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateWorkteamResponseTypeDef](./type_defs.md#updateworkteamresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("sagemaker").__aenter__` method.
+
+Boto3 documentation:
+[SageMaker.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SageMakerClient](#sagemakerclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("sagemaker").__aexit__` method.
+
+Boto3 documentation:
+[SageMaker.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("sagemaker").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("sagemaker").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_actions")` ->
   [ListActionsPaginator](./paginators.md#listactionspaginator)
@@ -7668,7 +7656,7 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("sagemaker").get_waiter` method
+Type annotations for `session.create_client("sagemaker").get_waiter` method
 with overloads.
 
 - `client.get_waiter("endpoint_deleted")` ->

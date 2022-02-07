@@ -29,7 +29,7 @@ type annotations stubs module
 ## EndpointDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_waiter("endpoint_deleted")`.
+`session.create_client("sagemaker").get_waiter("endpoint_deleted")`.
 
 Can be used directly:
 
@@ -39,7 +39,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_sagemaker.waiter import EndpointDeletedWaiter
 
 def get_endpoint_deleted_waiter() -> EndpointDeletedWaiter:
-    return Session().create_client("sagemaker").get_waiter("endpoint_deleted")
+    return Session().client("sagemaker").get_waiter("endpoint_deleted")
 ```
 
 Boto3 documentation:
@@ -55,7 +55,7 @@ Arguments for `EndpointDeletedWaiter.wait` method:
 ## EndpointInServiceWaiter
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_waiter("endpoint_in_service")`.
+`session.create_client("sagemaker").get_waiter("endpoint_in_service")`.
 
 Can be used directly:
 
@@ -65,7 +65,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_sagemaker.waiter import EndpointInServiceWaiter
 
 def get_endpoint_in_service_waiter() -> EndpointInServiceWaiter:
-    return Session().create_client("sagemaker").get_waiter("endpoint_in_service")
+    return Session().client("sagemaker").get_waiter("endpoint_in_service")
 ```
 
 Boto3 documentation:
@@ -81,7 +81,7 @@ Arguments for `EndpointInServiceWaiter.wait` method:
 ## ImageCreatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_waiter("image_created")`.
+`session.create_client("sagemaker").get_waiter("image_created")`.
 
 Can be used directly:
 
@@ -91,7 +91,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_sagemaker.waiter import ImageCreatedWaiter
 
 def get_image_created_waiter() -> ImageCreatedWaiter:
-    return Session().create_client("sagemaker").get_waiter("image_created")
+    return Session().client("sagemaker").get_waiter("image_created")
 ```
 
 Boto3 documentation:
@@ -107,7 +107,7 @@ Arguments for `ImageCreatedWaiter.wait` method:
 ## ImageDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_waiter("image_deleted")`.
+`session.create_client("sagemaker").get_waiter("image_deleted")`.
 
 Can be used directly:
 
@@ -117,7 +117,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_sagemaker.waiter import ImageDeletedWaiter
 
 def get_image_deleted_waiter() -> ImageDeletedWaiter:
-    return Session().create_client("sagemaker").get_waiter("image_deleted")
+    return Session().client("sagemaker").get_waiter("image_deleted")
 ```
 
 Boto3 documentation:
@@ -133,7 +133,7 @@ Arguments for `ImageDeletedWaiter.wait` method:
 ## ImageUpdatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_waiter("image_updated")`.
+`session.create_client("sagemaker").get_waiter("image_updated")`.
 
 Can be used directly:
 
@@ -143,7 +143,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_sagemaker.waiter import ImageUpdatedWaiter
 
 def get_image_updated_waiter() -> ImageUpdatedWaiter:
-    return Session().create_client("sagemaker").get_waiter("image_updated")
+    return Session().client("sagemaker").get_waiter("image_updated")
 ```
 
 Boto3 documentation:
@@ -159,7 +159,7 @@ Arguments for `ImageUpdatedWaiter.wait` method:
 ## ImageVersionCreatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_waiter("image_version_created")`.
+`session.create_client("sagemaker").get_waiter("image_version_created")`.
 
 Can be used directly:
 
@@ -169,7 +169,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_sagemaker.waiter import ImageVersionCreatedWaiter
 
 def get_image_version_created_waiter() -> ImageVersionCreatedWaiter:
-    return Session().create_client("sagemaker").get_waiter("image_version_created")
+    return Session().client("sagemaker").get_waiter("image_version_created")
 ```
 
 Boto3 documentation:
@@ -186,7 +186,7 @@ Arguments for `ImageVersionCreatedWaiter.wait` method:
 ## ImageVersionDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_waiter("image_version_deleted")`.
+`session.create_client("sagemaker").get_waiter("image_version_deleted")`.
 
 Can be used directly:
 
@@ -196,7 +196,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_sagemaker.waiter import ImageVersionDeletedWaiter
 
 def get_image_version_deleted_waiter() -> ImageVersionDeletedWaiter:
-    return Session().create_client("sagemaker").get_waiter("image_version_deleted")
+    return Session().client("sagemaker").get_waiter("image_version_deleted")
 ```
 
 Boto3 documentation:
@@ -213,7 +213,7 @@ Arguments for `ImageVersionDeletedWaiter.wait` method:
 ## NotebookInstanceDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_waiter("notebook_instance_deleted")`.
+`session.create_client("sagemaker").get_waiter("notebook_instance_deleted")`.
 
 Can be used directly:
 
@@ -223,7 +223,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_sagemaker.waiter import NotebookInstanceDeletedWaiter
 
 def get_notebook_instance_deleted_waiter() -> NotebookInstanceDeletedWaiter:
-    return Session().create_client("sagemaker").get_waiter("notebook_instance_deleted")
+    return Session().client("sagemaker").get_waiter("notebook_instance_deleted")
 ```
 
 Boto3 documentation:
@@ -239,7 +239,7 @@ Arguments for `NotebookInstanceDeletedWaiter.wait` method:
 ## NotebookInstanceInServiceWaiter
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_waiter("notebook_instance_in_service")`.
+`session.create_client("sagemaker").get_waiter("notebook_instance_in_service")`.
 
 Can be used directly:
 
@@ -249,7 +249,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_sagemaker.waiter import NotebookInstanceInServiceWaiter
 
 def get_notebook_instance_in_service_waiter() -> NotebookInstanceInServiceWaiter:
-    return Session().create_client("sagemaker").get_waiter("notebook_instance_in_service")
+    return Session().client("sagemaker").get_waiter("notebook_instance_in_service")
 ```
 
 Boto3 documentation:
@@ -265,7 +265,7 @@ Arguments for `NotebookInstanceInServiceWaiter.wait` method:
 ## NotebookInstanceStoppedWaiter
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_waiter("notebook_instance_stopped")`.
+`session.create_client("sagemaker").get_waiter("notebook_instance_stopped")`.
 
 Can be used directly:
 
@@ -275,7 +275,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_sagemaker.waiter import NotebookInstanceStoppedWaiter
 
 def get_notebook_instance_stopped_waiter() -> NotebookInstanceStoppedWaiter:
-    return Session().create_client("sagemaker").get_waiter("notebook_instance_stopped")
+    return Session().client("sagemaker").get_waiter("notebook_instance_stopped")
 ```
 
 Boto3 documentation:
@@ -291,7 +291,7 @@ Arguments for `NotebookInstanceStoppedWaiter.wait` method:
 ## ProcessingJobCompletedOrStoppedWaiter
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_waiter("processing_job_completed_or_stopped")`.
+`session.create_client("sagemaker").get_waiter("processing_job_completed_or_stopped")`.
 
 Can be used directly:
 
@@ -301,7 +301,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_sagemaker.waiter import ProcessingJobCompletedOrStoppedWaiter
 
 def get_processing_job_completed_or_stopped_waiter() -> ProcessingJobCompletedOrStoppedWaiter:
-    return Session().create_client("sagemaker").get_waiter("processing_job_completed_or_stopped")
+    return Session().client("sagemaker").get_waiter("processing_job_completed_or_stopped")
 ```
 
 Boto3 documentation:
@@ -317,7 +317,7 @@ Arguments for `ProcessingJobCompletedOrStoppedWaiter.wait` method:
 ## TrainingJobCompletedOrStoppedWaiter
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_waiter("training_job_completed_or_stopped")`.
+`session.create_client("sagemaker").get_waiter("training_job_completed_or_stopped")`.
 
 Can be used directly:
 
@@ -327,7 +327,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_sagemaker.waiter import TrainingJobCompletedOrStoppedWaiter
 
 def get_training_job_completed_or_stopped_waiter() -> TrainingJobCompletedOrStoppedWaiter:
-    return Session().create_client("sagemaker").get_waiter("training_job_completed_or_stopped")
+    return Session().client("sagemaker").get_waiter("training_job_completed_or_stopped")
 ```
 
 Boto3 documentation:
@@ -343,7 +343,7 @@ Arguments for `TrainingJobCompletedOrStoppedWaiter.wait` method:
 ## TransformJobCompletedOrStoppedWaiter
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_waiter("transform_job_completed_or_stopped")`.
+`session.create_client("sagemaker").get_waiter("transform_job_completed_or_stopped")`.
 
 Can be used directly:
 
@@ -353,7 +353,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_sagemaker.waiter import TransformJobCompletedOrStoppedWaiter
 
 def get_transform_job_completed_or_stopped_waiter() -> TransformJobCompletedOrStoppedWaiter:
-    return Session().create_client("sagemaker").get_waiter("transform_job_completed_or_stopped")
+    return Session().client("sagemaker").get_waiter("transform_job_completed_or_stopped")
 ```
 
 Boto3 documentation:

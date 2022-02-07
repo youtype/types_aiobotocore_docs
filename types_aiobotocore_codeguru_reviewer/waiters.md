@@ -18,7 +18,7 @@ type annotations stubs module
 ## CodeReviewCompletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").get_waiter("code_review_completed")`.
+`session.create_client("codeguru-reviewer").get_waiter("code_review_completed")`.
 
 Can be used directly:
 
@@ -28,7 +28,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_codeguru_reviewer.waiter import CodeReviewCompletedWaiter
 
 def get_code_review_completed_waiter() -> CodeReviewCompletedWaiter:
-    return Session().create_client("codeguru-reviewer").get_waiter("code_review_completed")
+    return Session().client("codeguru-reviewer").get_waiter("code_review_completed")
 ```
 
 Boto3 documentation:
@@ -44,7 +44,7 @@ Arguments for `CodeReviewCompletedWaiter.wait` method:
 ## RepositoryAssociationSucceededWaiter
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").get_waiter("repository_association_succeeded")`.
+`session.create_client("codeguru-reviewer").get_waiter("repository_association_succeeded")`.
 
 Can be used directly:
 
@@ -54,7 +54,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_codeguru_reviewer.waiter import RepositoryAssociationSucceededWaiter
 
 def get_repository_association_succeeded_waiter() -> RepositoryAssociationSucceededWaiter:
-    return Session().create_client("codeguru-reviewer").get_waiter("repository_association_succeeded")
+    return Session().client("codeguru-reviewer").get_waiter("repository_association_succeeded")
 ```
 
 Boto3 documentation:

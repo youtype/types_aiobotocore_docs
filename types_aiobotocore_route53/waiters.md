@@ -17,7 +17,7 @@ type annotations stubs module
 ## ResourceRecordSetsChangedWaiter
 
 Type annotations for
-`aiobotocore.create_client("route53").get_waiter("resource_record_sets_changed")`.
+`session.create_client("route53").get_waiter("resource_record_sets_changed")`.
 
 Can be used directly:
 
@@ -27,7 +27,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_route53.waiter import ResourceRecordSetsChangedWaiter
 
 def get_resource_record_sets_changed_waiter() -> ResourceRecordSetsChangedWaiter:
-    return Session().create_client("route53").get_waiter("resource_record_sets_changed")
+    return Session().client("route53").get_waiter("resource_record_sets_changed")
 ```
 
 Boto3 documentation:

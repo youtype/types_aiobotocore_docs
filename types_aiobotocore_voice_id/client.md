@@ -37,21 +37,24 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_domain](#update_domain)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="voiceidclient"></a>
 
 ## VoiceIDClient
 
-Type annotations for `aiobotocore.create_client("voice-id")`
+Type annotations for `session.create_client("voice-id")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_voice_id.client import VoiceIDClient
 
-def get_voice-id_client() -> VoiceIDClient:
-    return Session().client("voice-id")
+session = get_session()
+async with session.create_client("voice-id") as client:
+    client: VoiceIDClient
 ```
 
 Boto3 documentation:
@@ -92,7 +95,7 @@ Exceptions:
 
 VoiceIDClient exceptions.
 
-Type annotations for `aiobotocore.create_client("voice-id").exceptions` method.
+Type annotations for `session.create_client("voice-id").exceptions` method.
 
 Boto3 documentation:
 [VoiceID.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.exceptions)
@@ -105,19 +108,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("voice-id").can_paginate`
-method.
+Type annotations for `session.create_client("voice-id").can_paginate` method.
 
 Boto3 documentation:
 [VoiceID.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_domain"></a>
 
@@ -126,8 +126,7 @@ Returns a `Coroutine` for `bool`.
 Creates a domain that contains all Amazon Connect Voice ID data, such as
 speakers, fraudsters, customer audio, and voiceprints.
 
-Type annotations for `aiobotocore.create_client("voice-id").create_domain`
-method.
+Type annotations for `session.create_client("voice-id").create_domain` method.
 
 Boto3 documentation:
 [VoiceID.Client.create_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.create_domain)
@@ -156,8 +155,7 @@ Returns a `Coroutine` for
 
 Deletes the specified domain from the Amazon Connect Voice ID system.
 
-Type annotations for `aiobotocore.create_client("voice-id").delete_domain`
-method.
+Type annotations for `session.create_client("voice-id").delete_domain` method.
 
 Boto3 documentation:
 [VoiceID.Client.delete_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.delete_domain)
@@ -177,7 +175,7 @@ Keyword-only arguments:
 
 Deletes the specified fraudster from the Amazon Connect Voice ID system.
 
-Type annotations for `aiobotocore.create_client("voice-id").delete_fraudster`
+Type annotations for `session.create_client("voice-id").delete_fraudster`
 method.
 
 Boto3 documentation:
@@ -199,8 +197,7 @@ Keyword-only arguments:
 
 Deletes the specified speaker from the Amazon Connect Voice ID system.
 
-Type annotations for `aiobotocore.create_client("voice-id").delete_speaker`
-method.
+Type annotations for `session.create_client("voice-id").delete_speaker` method.
 
 Boto3 documentation:
 [VoiceID.Client.delete_speaker](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.delete_speaker)
@@ -221,7 +218,7 @@ Keyword-only arguments:
 
 Describes the specified domain.
 
-Type annotations for `aiobotocore.create_client("voice-id").describe_domain`
+Type annotations for `session.create_client("voice-id").describe_domain`
 method.
 
 Boto3 documentation:
@@ -245,7 +242,7 @@ Returns a `Coroutine` for
 
 Describes the specified fraudster.
 
-Type annotations for `aiobotocore.create_client("voice-id").describe_fraudster`
+Type annotations for `session.create_client("voice-id").describe_fraudster`
 method.
 
 Boto3 documentation:
@@ -272,8 +269,7 @@ Returns a `Coroutine` for
 Describes the specified fraudster registration job.
 
 Type annotations for
-`aiobotocore.create_client("voice-id").describe_fraudster_registration_job`
-method.
+`session.create_client("voice-id").describe_fraudster_registration_job` method.
 
 Boto3 documentation:
 [VoiceID.Client.describe_fraudster_registration_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.describe_fraudster_registration_job)
@@ -298,7 +294,7 @@ Returns a `Coroutine` for
 
 Describes the specified speaker.
 
-Type annotations for `aiobotocore.create_client("voice-id").describe_speaker`
+Type annotations for `session.create_client("voice-id").describe_speaker`
 method.
 
 Boto3 documentation:
@@ -324,7 +320,7 @@ Returns a `Coroutine` for
 Describes the specified speaker enrollment job.
 
 Type annotations for
-`aiobotocore.create_client("voice-id").describe_speaker_enrollment_job` method.
+`session.create_client("voice-id").describe_speaker_enrollment_job` method.
 
 Boto3 documentation:
 [VoiceID.Client.describe_speaker_enrollment_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.describe_speaker_enrollment_job)
@@ -350,7 +346,7 @@ Returns a `Coroutine` for
 Evaluates a specified session based on audio data accumulated during a
 streaming Amazon Connect Voice ID call.
 
-Type annotations for `aiobotocore.create_client("voice-id").evaluate_session`
+Type annotations for `session.create_client("voice-id").evaluate_session`
 method.
 
 Boto3 documentation:
@@ -375,8 +371,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("voice-id").generate_presigned_url` method.
+Type annotations for `session.create_client("voice-id").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [VoiceID.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.generate_presigned_url)
@@ -399,8 +395,7 @@ Returns a `Coroutine` for `str`.
 
 Lists all the domains in the Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("voice-id").list_domains`
-method.
+Type annotations for `session.create_client("voice-id").list_domains` method.
 
 Boto3 documentation:
 [VoiceID.Client.list_domains](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.list_domains)
@@ -426,8 +421,7 @@ Lists all the fraudster registration jobs in the domain with the given
 `JobStatus`.
 
 Type annotations for
-`aiobotocore.create_client("voice-id").list_fraudster_registration_jobs`
-method.
+`session.create_client("voice-id").list_fraudster_registration_jobs` method.
 
 Boto3 documentation:
 [VoiceID.Client.list_fraudster_registration_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.list_fraudster_registration_jobs)
@@ -457,7 +451,7 @@ Lists all the speaker enrollment jobs in the domain with the specified
 `JobStatus`.
 
 Type annotations for
-`aiobotocore.create_client("voice-id").list_speaker_enrollment_jobs` method.
+`session.create_client("voice-id").list_speaker_enrollment_jobs` method.
 
 Boto3 documentation:
 [VoiceID.Client.list_speaker_enrollment_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.list_speaker_enrollment_jobs)
@@ -485,8 +479,7 @@ Returns a `Coroutine` for
 
 Lists all speakers in a specified domain.
 
-Type annotations for `aiobotocore.create_client("voice-id").list_speakers`
-method.
+Type annotations for `session.create_client("voice-id").list_speakers` method.
 
 Boto3 documentation:
 [VoiceID.Client.list_speakers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.list_speakers)
@@ -511,8 +504,8 @@ Returns a `Coroutine` for
 
 Lists all tags associated with a specified Voice ID resource.
 
-Type annotations for
-`aiobotocore.create_client("voice-id").list_tags_for_resource` method.
+Type annotations for `session.create_client("voice-id").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [VoiceID.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.list_tags_for_resource)
@@ -536,7 +529,7 @@ Returns a `Coroutine` for
 
 Opts out a speaker from Voice ID system.
 
-Type annotations for `aiobotocore.create_client("voice-id").opt_out_speaker`
+Type annotations for `session.create_client("voice-id").opt_out_speaker`
 method.
 
 Boto3 documentation:
@@ -562,8 +555,7 @@ Returns a `Coroutine` for
 Starts a new batch fraudster registration job using provided details.
 
 Type annotations for
-`aiobotocore.create_client("voice-id").start_fraudster_registration_job`
-method.
+`session.create_client("voice-id").start_fraudster_registration_job` method.
 
 Boto3 documentation:
 [VoiceID.Client.start_fraudster_registration_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.start_fraudster_registration_job)
@@ -598,7 +590,7 @@ Returns a `Coroutine` for
 Starts a new batch speaker enrollment job using specified details.
 
 Type annotations for
-`aiobotocore.create_client("voice-id").start_speaker_enrollment_job` method.
+`session.create_client("voice-id").start_speaker_enrollment_job` method.
 
 Boto3 documentation:
 [VoiceID.Client.start_speaker_enrollment_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.start_speaker_enrollment_job)
@@ -632,8 +624,7 @@ Returns a `Coroutine` for
 
 Tags an Amazon Connect Voice ID resource with the provided list of tags.
 
-Type annotations for `aiobotocore.create_client("voice-id").tag_resource`
-method.
+Type annotations for `session.create_client("voice-id").tag_resource` method.
 
 Boto3 documentation:
 [VoiceID.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.tag_resource)
@@ -656,8 +647,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes specified tags from a specified Amazon Connect Voice ID resource.
 
-Type annotations for `aiobotocore.create_client("voice-id").untag_resource`
-method.
+Type annotations for `session.create_client("voice-id").untag_resource` method.
 
 Boto3 documentation:
 [VoiceID.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.untag_resource)
@@ -680,8 +670,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the specified domain.
 
-Type annotations for `aiobotocore.create_client("voice-id").update_domain`
-method.
+Type annotations for `session.create_client("voice-id").update_domain` method.
 
 Boto3 documentation:
 [VoiceID.Client.update_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.update_domain)
@@ -702,3 +691,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateDomainResponseTypeDef](./type_defs.md#updatedomainresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("voice-id").__aenter__` method.
+
+Boto3 documentation:
+[VoiceID.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [VoiceIDClient](#voiceidclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("voice-id").__aexit__` method.
+
+Boto3 documentation:
+[VoiceID.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/voice-id.html#VoiceID.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

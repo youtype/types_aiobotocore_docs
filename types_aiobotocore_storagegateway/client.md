@@ -106,22 +106,25 @@ type annotations stubs module
     - [update_smb_security_strategy](#update_smb_security_strategy)
     - [update_snapshot_schedule](#update_snapshot_schedule)
     - [update_vtl_device_type](#update_vtl_device_type)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="storagegatewayclient"></a>
 
 ## StorageGatewayClient
 
-Type annotations for `aiobotocore.create_client("storagegateway")`
+Type annotations for `session.create_client("storagegateway")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_storagegateway.client import StorageGatewayClient
 
-def get_storagegateway_client() -> StorageGatewayClient:
-    return Session().client("storagegateway")
+session = get_session()
+async with session.create_client("storagegateway") as client:
+    client: StorageGatewayClient
 ```
 
 Boto3 documentation:
@@ -158,7 +161,7 @@ Exceptions:
 
 StorageGatewayClient exceptions.
 
-Type annotations for `aiobotocore.create_client("storagegateway").exceptions`
+Type annotations for `session.create_client("storagegateway").exceptions`
 method.
 
 Boto3 documentation:
@@ -172,8 +175,8 @@ Returns [Exceptions](#exceptions).
 
 Activates the gateway you previously deployed on your host.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").activate_gateway` method.
+Type annotations for `session.create_client("storagegateway").activate_gateway`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.activate_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.activate_gateway)
@@ -203,7 +206,7 @@ Returns a `Coroutine` for
 
 Configures one or more gateway local disks as cache for a gateway.
 
-Type annotations for `aiobotocore.create_client("storagegateway").add_cache`
+Type annotations for `session.create_client("storagegateway").add_cache`
 method.
 
 Boto3 documentation:
@@ -229,7 +232,7 @@ Returns a `Coroutine` for
 Adds one or more tags to the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").add_tags_to_resource` method.
+`session.create_client("storagegateway").add_tags_to_resource` method.
 
 Boto3 documentation:
 [StorageGateway.Client.add_tags_to_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.add_tags_to_resource)
@@ -256,7 +259,7 @@ Configures one or more gateway local disks as upload buffer for a specified
 gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").add_upload_buffer` method.
+`session.create_client("storagegateway").add_upload_buffer` method.
 
 Boto3 documentation:
 [StorageGateway.Client.add_upload_buffer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.add_upload_buffer)
@@ -281,7 +284,7 @@ Returns a `Coroutine` for
 Configures one or more gateway local disks as working storage for a gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").add_working_storage` method.
+`session.create_client("storagegateway").add_working_storage` method.
 
 Boto3 documentation:
 [StorageGateway.Client.add_working_storage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.add_working_storage)
@@ -306,8 +309,8 @@ Returns a `Coroutine` for
 
 Assigns a tape to a tape pool for archiving.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").assign_tape_pool` method.
+Type annotations for `session.create_client("storagegateway").assign_tape_pool`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.assign_tape_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.assign_tape_pool)
@@ -333,7 +336,7 @@ Returns a `Coroutine` for
 Associate an Amazon FSx file system with the FSx File Gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").associate_file_system` method.
+`session.create_client("storagegateway").associate_file_system` method.
 
 Boto3 documentation:
 [StorageGateway.Client.associate_file_system](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.associate_file_system)
@@ -368,8 +371,8 @@ Returns a `Coroutine` for
 Connects a volume to an iSCSI connection and then attaches the volume to the
 specified gateway.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").attach_volume` method.
+Type annotations for `session.create_client("storagegateway").attach_volume`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.attach_volume](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.attach_volume)
@@ -396,19 +399,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("storagegateway").can_paginate`
+Type annotations for `session.create_client("storagegateway").can_paginate`
 method.
 
 Boto3 documentation:
 [StorageGateway.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_archival"></a>
 
@@ -417,8 +418,8 @@ Returns a `Coroutine` for `bool`.
 Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the
 archiving process is initiated.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").cancel_archival` method.
+Type annotations for `session.create_client("storagegateway").cancel_archival`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.cancel_archival](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.cancel_archival)
@@ -443,8 +444,8 @@ Returns a `Coroutine` for
 Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a
 gateway after the retrieval process is initiated.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").cancel_retrieval` method.
+Type annotations for `session.create_client("storagegateway").cancel_retrieval`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.cancel_retrieval](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.cancel_retrieval)
@@ -469,8 +470,7 @@ Returns a `Coroutine` for
 Creates a cached volume on a specified cached volume gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").create_cached_iscsi_volume`
-method.
+`session.create_client("storagegateway").create_cached_iscsi_volume` method.
 
 Boto3 documentation:
 [StorageGateway.Client.create_cached_iscsi_volume](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.create_cached_iscsi_volume)
@@ -504,7 +504,7 @@ Returns a `Coroutine` for
 Creates a Network File System (NFS) file share on an existing S3 File Gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").create_nfs_file_share` method.
+`session.create_client("storagegateway").create_nfs_file_share` method.
 
 Boto3 documentation:
 [StorageGateway.Client.create_nfs_file_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.create_nfs_file_share)
@@ -551,7 +551,7 @@ Returns a `Coroutine` for
 Creates a Server Message Block (SMB) file share on an existing S3 File Gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").create_smb_file_share` method.
+`session.create_client("storagegateway").create_smb_file_share` method.
 
 Boto3 documentation:
 [StorageGateway.Client.create_smb_file_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.create_smb_file_share)
@@ -601,8 +601,8 @@ Returns a `Coroutine` for
 
 Initiates a snapshot of a volume.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").create_snapshot` method.
+Type annotations for `session.create_client("storagegateway").create_snapshot`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.create_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.create_snapshot)
@@ -628,7 +628,7 @@ Returns a `Coroutine` for
 Initiates a snapshot of a gateway from a volume recovery point.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").create_snapshot_from_volume_recovery_point`
+`session.create_client("storagegateway").create_snapshot_from_volume_recovery_point`
 method.
 
 Boto3 documentation:
@@ -656,8 +656,7 @@ Returns a `Coroutine` for
 Creates a volume on a specified gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").create_stored_iscsi_volume`
-method.
+`session.create_client("storagegateway").create_stored_iscsi_volume` method.
 
 Boto3 documentation:
 [StorageGateway.Client.create_stored_iscsi_volume](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.create_stored_iscsi_volume)
@@ -689,8 +688,8 @@ Returns a `Coroutine` for
 
 Creates a new custom tape pool.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").create_tape_pool` method.
+Type annotations for `session.create_client("storagegateway").create_tape_pool`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.create_tape_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.create_tape_pool)
@@ -720,7 +719,7 @@ Returns a `Coroutine` for
 Creates a virtual tape by using your own barcode.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").create_tape_with_barcode` method.
+`session.create_client("storagegateway").create_tape_with_barcode` method.
 
 Boto3 documentation:
 [StorageGateway.Client.create_tape_with_barcode](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.create_tape_with_barcode)
@@ -751,7 +750,7 @@ Returns a `Coroutine` for
 
 Creates one or more virtual tapes.
 
-Type annotations for `aiobotocore.create_client("storagegateway").create_tapes`
+Type annotations for `session.create_client("storagegateway").create_tapes`
 method.
 
 Boto3 documentation:
@@ -785,7 +784,7 @@ Returns a `Coroutine` for
 Deletes the automatic tape creation policy of a gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").delete_automatic_tape_creation_policy`
+`session.create_client("storagegateway").delete_automatic_tape_creation_policy`
 method.
 
 Boto3 documentation:
@@ -811,8 +810,7 @@ Returns a `Coroutine` for
 Deletes the bandwidth rate limits of a gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").delete_bandwidth_rate_limit`
-method.
+`session.create_client("storagegateway").delete_bandwidth_rate_limit` method.
 
 Boto3 documentation:
 [StorageGateway.Client.delete_bandwidth_rate_limit](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.delete_bandwidth_rate_limit)
@@ -839,7 +837,7 @@ Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a
 specified iSCSI target and initiator pair.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").delete_chap_credentials` method.
+`session.create_client("storagegateway").delete_chap_credentials` method.
 
 Boto3 documentation:
 [StorageGateway.Client.delete_chap_credentials](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.delete_chap_credentials)
@@ -865,7 +863,7 @@ Returns a `Coroutine` for
 Deletes a file share from an S3 File Gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").delete_file_share` method.
+`session.create_client("storagegateway").delete_file_share` method.
 
 Boto3 documentation:
 [StorageGateway.Client.delete_file_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.delete_file_share)
@@ -889,8 +887,8 @@ Returns a `Coroutine` for
 
 Deletes a gateway.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").delete_gateway` method.
+Type annotations for `session.create_client("storagegateway").delete_gateway`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.delete_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.delete_gateway)
@@ -914,7 +912,7 @@ Returns a `Coroutine` for
 Deletes a snapshot of a volume.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").delete_snapshot_schedule` method.
+`session.create_client("storagegateway").delete_snapshot_schedule` method.
 
 Boto3 documentation:
 [StorageGateway.Client.delete_snapshot_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.delete_snapshot_schedule)
@@ -938,7 +936,7 @@ Returns a `Coroutine` for
 
 Deletes the specified virtual tape.
 
-Type annotations for `aiobotocore.create_client("storagegateway").delete_tape`
+Type annotations for `session.create_client("storagegateway").delete_tape`
 method.
 
 Boto3 documentation:
@@ -965,7 +963,7 @@ Returns a `Coroutine` for
 Deletes the specified virtual tape from the virtual tape shelf (VTS).
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").delete_tape_archive` method.
+`session.create_client("storagegateway").delete_tape_archive` method.
 
 Boto3 documentation:
 [StorageGateway.Client.delete_tape_archive](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.delete_tape_archive)
@@ -990,8 +988,8 @@ Returns a `Coroutine` for
 
 Delete a custom tape pool.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").delete_tape_pool` method.
+Type annotations for `session.create_client("storagegateway").delete_tape_pool`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.delete_tape_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.delete_tape_pool)
@@ -1015,8 +1013,8 @@ Returns a `Coroutine` for
 Deletes the specified storage volume that you previously created using the
 CreateCachediSCSIVolume or CreateStorediSCSIVolume API.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").delete_volume` method.
+Type annotations for `session.create_client("storagegateway").delete_volume`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.delete_volume](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.delete_volume)
@@ -1041,7 +1039,7 @@ Returns information about the most recent high availability monitoring test
 that was performed on the host in a cluster.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_availability_monitor_test`
+`session.create_client("storagegateway").describe_availability_monitor_test`
 method.
 
 Boto3 documentation:
@@ -1067,8 +1065,7 @@ Returns a `Coroutine` for
 Returns the bandwidth rate limits of a gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_bandwidth_rate_limit`
-method.
+`session.create_client("storagegateway").describe_bandwidth_rate_limit` method.
 
 Boto3 documentation:
 [StorageGateway.Client.describe_bandwidth_rate_limit](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.describe_bandwidth_rate_limit)
@@ -1093,7 +1090,7 @@ Returns a `Coroutine` for
 Returns information about the bandwidth rate limit schedule of a gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_bandwidth_rate_limit_schedule`
+`session.create_client("storagegateway").describe_bandwidth_rate_limit_schedule`
 method.
 
 Boto3 documentation:
@@ -1118,8 +1115,8 @@ Returns a `Coroutine` for
 
 Returns information about the cache of a gateway.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").describe_cache` method.
+Type annotations for `session.create_client("storagegateway").describe_cache`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.describe_cache](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.describe_cache)
@@ -1143,8 +1140,7 @@ Returns a `Coroutine` for
 Returns a description of the gateway volumes specified in the request.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_cached_iscsi_volumes`
-method.
+`session.create_client("storagegateway").describe_cached_iscsi_volumes` method.
 
 Boto3 documentation:
 [StorageGateway.Client.describe_cached_iscsi_volumes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.describe_cached_iscsi_volumes)
@@ -1171,7 +1167,7 @@ credentials information for a specified iSCSI target, one for each target-
 initiator pair.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_chap_credentials` method.
+`session.create_client("storagegateway").describe_chap_credentials` method.
 
 Boto3 documentation:
 [StorageGateway.Client.describe_chap_credentials](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.describe_chap_credentials)
@@ -1196,7 +1192,7 @@ Returns a `Coroutine` for
 Gets the file system association information.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_file_system_associations`
+`session.create_client("storagegateway").describe_file_system_associations`
 method.
 
 Boto3 documentation:
@@ -1223,8 +1219,7 @@ Returns metadata about a gateway such as its name, network interfaces,
 configured time zone, and the state (whether the gateway is running or not).
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_gateway_information`
-method.
+`session.create_client("storagegateway").describe_gateway_information` method.
 
 Boto3 documentation:
 [StorageGateway.Client.describe_gateway_information](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.describe_gateway_information)
@@ -1250,7 +1245,7 @@ Returns your gateway's weekly maintenance start time including the day and time
 of the week.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_maintenance_start_time`
+`session.create_client("storagegateway").describe_maintenance_start_time`
 method.
 
 Boto3 documentation:
@@ -1277,7 +1272,7 @@ Gets a description for one or more Network File System (NFS) file shares from
 an S3 File Gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_nfs_file_shares` method.
+`session.create_client("storagegateway").describe_nfs_file_shares` method.
 
 Boto3 documentation:
 [StorageGateway.Client.describe_nfs_file_shares](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.describe_nfs_file_shares)
@@ -1303,7 +1298,7 @@ Gets a description for one or more Server Message Block (SMB) file shares from
 a S3 File Gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_smb_file_shares` method.
+`session.create_client("storagegateway").describe_smb_file_shares` method.
 
 Boto3 documentation:
 [StorageGateway.Client.describe_smb_file_shares](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.describe_smb_file_shares)
@@ -1329,7 +1324,7 @@ Gets a description of a Server Message Block (SMB) file share settings from a
 file gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_smb_settings` method.
+`session.create_client("storagegateway").describe_smb_settings` method.
 
 Boto3 documentation:
 [StorageGateway.Client.describe_smb_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.describe_smb_settings)
@@ -1354,8 +1349,7 @@ Returns a `Coroutine` for
 Describes the snapshot schedule for the specified gateway volume.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_snapshot_schedule`
-method.
+`session.create_client("storagegateway").describe_snapshot_schedule` method.
 
 Boto3 documentation:
 [StorageGateway.Client.describe_snapshot_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.describe_snapshot_schedule)
@@ -1380,8 +1374,7 @@ Returns a `Coroutine` for
 Returns the description of the gateway volumes specified in the request.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_stored_iscsi_volumes`
-method.
+`session.create_client("storagegateway").describe_stored_iscsi_volumes` method.
 
 Boto3 documentation:
 [StorageGateway.Client.describe_stored_iscsi_volumes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.describe_stored_iscsi_volumes)
@@ -1407,7 +1400,7 @@ Returns a description of specified virtual tapes in the virtual tape shelf
 (VTS).
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_tape_archives` method.
+`session.create_client("storagegateway").describe_tape_archives` method.
 
 Boto3 documentation:
 [StorageGateway.Client.describe_tape_archives](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.describe_tape_archives)
@@ -1435,8 +1428,7 @@ Returns a list of virtual tape recovery points that are available for the
 specified tape gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_tape_recovery_points`
-method.
+`session.create_client("storagegateway").describe_tape_recovery_points` method.
 
 Boto3 documentation:
 [StorageGateway.Client.describe_tape_recovery_points](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.describe_tape_recovery_points)
@@ -1463,8 +1455,8 @@ Returns a `Coroutine` for
 Returns a description of the specified Amazon Resource Name (ARN) of virtual
 tapes.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").describe_tapes` method.
+Type annotations for `session.create_client("storagegateway").describe_tapes`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.describe_tapes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.describe_tapes)
@@ -1491,7 +1483,7 @@ Returns a `Coroutine` for
 Returns information about the upload buffer of a gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_upload_buffer` method.
+`session.create_client("storagegateway").describe_upload_buffer` method.
 
 Boto3 documentation:
 [StorageGateway.Client.describe_upload_buffer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.describe_upload_buffer)
@@ -1517,7 +1509,7 @@ Returns a description of virtual tape library (VTL) devices for the specified
 tape gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_vtl_devices` method.
+`session.create_client("storagegateway").describe_vtl_devices` method.
 
 Boto3 documentation:
 [StorageGateway.Client.describe_vtl_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.describe_vtl_devices)
@@ -1545,7 +1537,7 @@ Returns a `Coroutine` for
 Returns information about the working storage of a gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").describe_working_storage` method.
+`session.create_client("storagegateway").describe_working_storage` method.
 
 Boto3 documentation:
 [StorageGateway.Client.describe_working_storage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.describe_working_storage)
@@ -1570,8 +1562,8 @@ Returns a `Coroutine` for
 Disconnects a volume from an iSCSI connection and then detaches the volume from
 the specified gateway.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").detach_volume` method.
+Type annotations for `session.create_client("storagegateway").detach_volume`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.detach_volume](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.detach_volume)
@@ -1595,8 +1587,8 @@ Returns a `Coroutine` for
 
 Disables a tape gateway when the gateway is no longer functioning.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").disable_gateway` method.
+Type annotations for `session.create_client("storagegateway").disable_gateway`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.disable_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.disable_gateway)
@@ -1620,7 +1612,7 @@ Returns a `Coroutine` for
 Disassociates an Amazon FSx file system from the specified gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").disassociate_file_system` method.
+`session.create_client("storagegateway").disassociate_file_system` method.
 
 Boto3 documentation:
 [StorageGateway.Client.disassociate_file_system](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.disassociate_file_system)
@@ -1646,7 +1638,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").generate_presigned_url` method.
+`session.create_client("storagegateway").generate_presigned_url` method.
 
 Boto3 documentation:
 [StorageGateway.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.generate_presigned_url)
@@ -1669,7 +1661,7 @@ Returns a `Coroutine` for `str`.
 
 Adds a file gateway to an Active Directory domain.
 
-Type annotations for `aiobotocore.create_client("storagegateway").join_domain`
+Type annotations for `session.create_client("storagegateway").join_domain`
 method.
 
 Boto3 documentation:
@@ -1700,7 +1692,7 @@ Returns a `Coroutine` for
 Lists the automatic tape creation policies for a gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").list_automatic_tape_creation_policies`
+`session.create_client("storagegateway").list_automatic_tape_creation_policies`
 method.
 
 Boto3 documentation:
@@ -1726,8 +1718,8 @@ Returns a `Coroutine` for
 Gets a list of the file shares for a specific S3 File Gateway, or the list of
 file shares that belong to the calling user account.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").list_file_shares` method.
+Type annotations for `session.create_client("storagegateway").list_file_shares`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.list_file_shares](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.list_file_shares)
@@ -1753,8 +1745,7 @@ Returns a `Coroutine` for
 Gets a list of `FileSystemAssociationSummary` objects.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").list_file_system_associations`
-method.
+`session.create_client("storagegateway").list_file_system_associations` method.
 
 Boto3 documentation:
 [StorageGateway.Client.list_file_system_associations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.list_file_system_associations)
@@ -1781,8 +1772,8 @@ Returns a `Coroutine` for
 Lists gateways owned by an Amazon Web Services account in an Amazon Web
 Services Region specified in the request.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").list_gateways` method.
+Type annotations for `session.create_client("storagegateway").list_gateways`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.list_gateways](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.list_gateways)
@@ -1806,8 +1797,8 @@ Returns a `Coroutine` for
 
 Returns a list of the gateway's local disks.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").list_local_disks` method.
+Type annotations for `session.create_client("storagegateway").list_local_disks`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.list_local_disks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.list_local_disks)
@@ -1831,7 +1822,7 @@ Returns a `Coroutine` for
 Lists the tags that have been added to the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").list_tags_for_resource` method.
+`session.create_client("storagegateway").list_tags_for_resource` method.
 
 Boto3 documentation:
 [StorageGateway.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.list_tags_for_resource)
@@ -1857,8 +1848,8 @@ Returns a `Coroutine` for
 
 Lists custom tape pools.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").list_tape_pools` method.
+Type annotations for `session.create_client("storagegateway").list_tape_pools`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.list_tape_pools](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.list_tape_pools)
@@ -1884,7 +1875,7 @@ Returns a `Coroutine` for
 Lists virtual tapes in your virtual tape library (VTL) and your virtual tape
 shelf (VTS).
 
-Type annotations for `aiobotocore.create_client("storagegateway").list_tapes`
+Type annotations for `session.create_client("storagegateway").list_tapes`
 method.
 
 Boto3 documentation:
@@ -1911,7 +1902,7 @@ Returns a `Coroutine` for
 Lists iSCSI initiators that are connected to a volume.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").list_volume_initiators` method.
+`session.create_client("storagegateway").list_volume_initiators` method.
 
 Boto3 documentation:
 [StorageGateway.Client.list_volume_initiators](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.list_volume_initiators)
@@ -1936,8 +1927,7 @@ Returns a `Coroutine` for
 Lists the recovery points for a specified gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").list_volume_recovery_points`
-method.
+`session.create_client("storagegateway").list_volume_recovery_points` method.
 
 Boto3 documentation:
 [StorageGateway.Client.list_volume_recovery_points](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.list_volume_recovery_points)
@@ -1961,7 +1951,7 @@ Returns a `Coroutine` for
 
 Lists the iSCSI stored volumes of a gateway.
 
-Type annotations for `aiobotocore.create_client("storagegateway").list_volumes`
+Type annotations for `session.create_client("storagegateway").list_volumes`
 method.
 
 Boto3 documentation:
@@ -1989,7 +1979,7 @@ Sends you notification through CloudWatch Events when all files written to your
 file share have been uploaded to Amazon S3.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").notify_when_uploaded` method.
+`session.create_client("storagegateway").notify_when_uploaded` method.
 
 Boto3 documentation:
 [StorageGateway.Client.notify_when_uploaded](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.notify_when_uploaded)
@@ -2013,8 +2003,8 @@ Returns a `Coroutine` for
 
 Refreshes the cached inventory of objects for the specified file share.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").refresh_cache` method.
+Type annotations for `session.create_client("storagegateway").refresh_cache`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.refresh_cache](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.refresh_cache)
@@ -2040,7 +2030,7 @@ Returns a `Coroutine` for
 Removes one or more tags from the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").remove_tags_from_resource` method.
+`session.create_client("storagegateway").remove_tags_from_resource` method.
 
 Boto3 documentation:
 [StorageGateway.Client.remove_tags_from_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.remove_tags_from_resource)
@@ -2066,7 +2056,7 @@ Returns a `Coroutine` for
 Resets all cache disks that have encountered an error and makes the disks
 available for reconfiguration as cache storage.
 
-Type annotations for `aiobotocore.create_client("storagegateway").reset_cache`
+Type annotations for `session.create_client("storagegateway").reset_cache`
 method.
 
 Boto3 documentation:
@@ -2092,7 +2082,7 @@ Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a tape
 gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").retrieve_tape_archive` method.
+`session.create_client("storagegateway").retrieve_tape_archive` method.
 
 Boto3 documentation:
 [StorageGateway.Client.retrieve_tape_archive](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.retrieve_tape_archive)
@@ -2118,8 +2108,7 @@ Returns a `Coroutine` for
 Retrieves the recovery point for the specified virtual tape.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").retrieve_tape_recovery_point`
-method.
+`session.create_client("storagegateway").retrieve_tape_recovery_point` method.
 
 Boto3 documentation:
 [StorageGateway.Client.retrieve_tape_recovery_point](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.retrieve_tape_recovery_point)
@@ -2145,8 +2134,7 @@ Returns a `Coroutine` for
 Sets the password for your VM local console.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").set_local_console_password`
-method.
+`session.create_client("storagegateway").set_local_console_password` method.
 
 Boto3 documentation:
 [StorageGateway.Client.set_local_console_password](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.set_local_console_password)
@@ -2172,7 +2160,7 @@ Returns a `Coroutine` for
 Sets the password for the guest user `smbguest`.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").set_smb_guest_password` method.
+`session.create_client("storagegateway").set_smb_guest_password` method.
 
 Boto3 documentation:
 [StorageGateway.Client.set_smb_guest_password](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.set_smb_guest_password)
@@ -2197,8 +2185,8 @@ Returns a `Coroutine` for
 
 Shuts down a gateway.
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").shutdown_gateway` method.
+Type annotations for `session.create_client("storagegateway").shutdown_gateway`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.shutdown_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.shutdown_gateway)
@@ -2223,7 +2211,7 @@ Start a test that verifies that the specified gateway is configured for High
 Availability monitoring in your host environment.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").start_availability_monitor_test`
+`session.create_client("storagegateway").start_availability_monitor_test`
 method.
 
 Boto3 documentation:
@@ -2248,8 +2236,8 @@ Returns a `Coroutine` for
 
 Starts a gateway that you previously shut down (see ShutdownGateway ).
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").start_gateway` method.
+Type annotations for `session.create_client("storagegateway").start_gateway`
+method.
 
 Boto3 documentation:
 [StorageGateway.Client.start_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.start_gateway)
@@ -2273,7 +2261,7 @@ Returns a `Coroutine` for
 Updates the automatic tape creation policy of a gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").update_automatic_tape_creation_policy`
+`session.create_client("storagegateway").update_automatic_tape_creation_policy`
 method.
 
 Boto3 documentation:
@@ -2302,8 +2290,7 @@ Returns a `Coroutine` for
 Updates the bandwidth rate limits of a gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").update_bandwidth_rate_limit`
-method.
+`session.create_client("storagegateway").update_bandwidth_rate_limit` method.
 
 Boto3 documentation:
 [StorageGateway.Client.update_bandwidth_rate_limit](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.update_bandwidth_rate_limit)
@@ -2330,7 +2317,7 @@ Returns a `Coroutine` for
 Updates the bandwidth rate limit schedule for a specified gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").update_bandwidth_rate_limit_schedule`
+`session.create_client("storagegateway").update_bandwidth_rate_limit_schedule`
 method.
 
 Boto3 documentation:
@@ -2360,7 +2347,7 @@ Updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for
 a specified iSCSI target.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").update_chap_credentials` method.
+`session.create_client("storagegateway").update_chap_credentials` method.
 
 Boto3 documentation:
 [StorageGateway.Client.update_chap_credentials](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.update_chap_credentials)
@@ -2388,7 +2375,7 @@ Returns a `Coroutine` for
 Updates a file system association.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").update_file_system_association`
+`session.create_client("storagegateway").update_file_system_association`
 method.
 
 Boto3 documentation:
@@ -2419,8 +2406,7 @@ Returns a `Coroutine` for
 Updates a gateway's metadata, which includes the gateway's name and time zone.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").update_gateway_information`
-method.
+`session.create_client("storagegateway").update_gateway_information` method.
 
 Boto3 documentation:
 [StorageGateway.Client.update_gateway_information](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.update_gateway_information)
@@ -2449,8 +2435,7 @@ Returns a `Coroutine` for
 Updates the gateway virtual machine (VM) software.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").update_gateway_software_now`
-method.
+`session.create_client("storagegateway").update_gateway_software_now` method.
 
 Boto3 documentation:
 [StorageGateway.Client.update_gateway_software_now](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.update_gateway_software_now)
@@ -2476,8 +2461,7 @@ Updates a gateway's weekly maintenance start time information, including day
 and time of the week.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").update_maintenance_start_time`
-method.
+`session.create_client("storagegateway").update_maintenance_start_time` method.
 
 Boto3 documentation:
 [StorageGateway.Client.update_maintenance_start_time](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.update_maintenance_start_time)
@@ -2506,7 +2490,7 @@ Returns a `Coroutine` for
 Updates a Network File System (NFS) file share.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").update_nfs_file_share` method.
+`session.create_client("storagegateway").update_nfs_file_share` method.
 
 Boto3 documentation:
 [StorageGateway.Client.update_nfs_file_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.update_nfs_file_share)
@@ -2547,7 +2531,7 @@ Returns a `Coroutine` for
 Updates a Server Message Block (SMB) file share.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").update_smb_file_share` method.
+`session.create_client("storagegateway").update_smb_file_share` method.
 
 Boto3 documentation:
 [StorageGateway.Client.update_smb_file_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.update_smb_file_share)
@@ -2592,7 +2576,7 @@ Controls whether the shares on an S3 File Gateway are visible in a net view or
 browse list.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").update_smb_file_share_visibility`
+`session.create_client("storagegateway").update_smb_file_share_visibility`
 method.
 
 Boto3 documentation:
@@ -2620,7 +2604,7 @@ Updates the list of Active Directory users and groups that have special
 permissions for SMB file shares on the gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").update_smb_local_groups` method.
+`session.create_client("storagegateway").update_smb_local_groups` method.
 
 Boto3 documentation:
 [StorageGateway.Client.update_smb_local_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.update_smb_local_groups)
@@ -2647,8 +2631,7 @@ Returns a `Coroutine` for
 Updates the SMB security strategy on a file gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").update_smb_security_strategy`
-method.
+`session.create_client("storagegateway").update_smb_security_strategy` method.
 
 Boto3 documentation:
 [StorageGateway.Client.update_smb_security_strategy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.update_smb_security_strategy)
@@ -2675,7 +2658,7 @@ Returns a `Coroutine` for
 Updates a snapshot schedule configured for a gateway volume.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").update_snapshot_schedule` method.
+`session.create_client("storagegateway").update_snapshot_schedule` method.
 
 Boto3 documentation:
 [StorageGateway.Client.update_snapshot_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.update_snapshot_schedule)
@@ -2704,7 +2687,7 @@ Returns a `Coroutine` for
 Updates the type of medium changer in a tape gateway.
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").update_vtl_device_type` method.
+`session.create_client("storagegateway").update_vtl_device_type` method.
 
 Boto3 documentation:
 [StorageGateway.Client.update_vtl_device_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.update_vtl_device_type)
@@ -2723,13 +2706,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateVTLDeviceTypeOutputTypeDef](./type_defs.md#updatevtldevicetypeoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("storagegateway").__aenter__`
+method.
+
+Boto3 documentation:
+[StorageGateway.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [StorageGatewayClient](#storagegatewayclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("storagegateway").__aexit__`
+method.
+
+Boto3 documentation:
+[StorageGateway.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html#StorageGateway.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("storagegateway").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("storagegateway").get_paginator`
+method with overloads.
 
 - `client.get_paginator("describe_tape_archives")` ->
   [DescribeTapeArchivesPaginator](./paginators.md#describetapearchivespaginator)

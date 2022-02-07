@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[chime-sdk-identity]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[chime-sdk-identity]'
+
+# standalone installation
 pip install types-aiobotocore-chime-sdk-identity
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-chime-sdk-identity
 
 ## ChimeSDKIdentityClient
 
-Type annotations for `aiobotocore.create_client("chime-sdk-identity")` as
+Type annotations for `session.create_client("chime-sdk-identity")` as
 [ChimeSDKIdentityClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_chime_sdk_identity.client import ChimeSDKIdentityClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_app_instance](./client.md#create_app_instance)
 - [create_app_instance_admin](./client.md#create_app_instance_admin)

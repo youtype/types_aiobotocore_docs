@@ -53,22 +53,25 @@ type annotations stubs module
     - [undeprecate_domain](#undeprecate_domain)
     - [undeprecate_workflow_type](#undeprecate_workflow_type)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="swfclient"></a>
 
 ## SWFClient
 
-Type annotations for `aiobotocore.create_client("swf")`
+Type annotations for `session.create_client("swf")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_swf.client import SWFClient
 
-def get_swf_client() -> SWFClient:
-    return Session().client("swf")
+session = get_session()
+async with session.create_client("swf") as client:
+    client: SWFClient
 ```
 
 Boto3 documentation:
@@ -112,7 +115,7 @@ Exceptions:
 
 SWFClient exceptions.
 
-Type annotations for `aiobotocore.create_client("swf").exceptions` method.
+Type annotations for `session.create_client("swf").exceptions` method.
 
 Boto3 documentation:
 [SWF.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.exceptions)
@@ -125,18 +128,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("swf").can_paginate` method.
+Type annotations for `session.create_client("swf").can_paginate` method.
 
 Boto3 documentation:
 [SWF.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="count_closed_workflow_executions"></a>
 
@@ -146,7 +147,7 @@ Returns the number of closed workflow executions within the given domain that
 meet the specified filtering criteria.
 
 Type annotations for
-`aiobotocore.create_client("swf").count_closed_workflow_executions` method.
+`session.create_client("swf").count_closed_workflow_executions` method.
 
 Boto3 documentation:
 [SWF.Client.count_closed_workflow_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.count_closed_workflow_executions)
@@ -183,7 +184,7 @@ Returns the number of open workflow executions within the given domain that
 meet the specified filtering criteria.
 
 Type annotations for
-`aiobotocore.create_client("swf").count_open_workflow_executions` method.
+`session.create_client("swf").count_open_workflow_executions` method.
 
 Boto3 documentation:
 [SWF.Client.count_open_workflow_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.count_open_workflow_executions)
@@ -216,7 +217,7 @@ Returns a `Coroutine` for
 Returns the estimated number of activity tasks in the specified task list.
 
 Type annotations for
-`aiobotocore.create_client("swf").count_pending_activity_tasks` method.
+`session.create_client("swf").count_pending_activity_tasks` method.
 
 Boto3 documentation:
 [SWF.Client.count_pending_activity_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.count_pending_activity_tasks)
@@ -242,7 +243,7 @@ Returns a `Coroutine` for
 Returns the estimated number of decision tasks in the specified task list.
 
 Type annotations for
-`aiobotocore.create_client("swf").count_pending_decision_tasks` method.
+`session.create_client("swf").count_pending_decision_tasks` method.
 
 Boto3 documentation:
 [SWF.Client.count_pending_decision_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.count_pending_decision_tasks)
@@ -267,7 +268,7 @@ Returns a `Coroutine` for
 
 Deprecates the specified *activity type*.
 
-Type annotations for `aiobotocore.create_client("swf").deprecate_activity_type`
+Type annotations for `session.create_client("swf").deprecate_activity_type`
 method.
 
 Boto3 documentation:
@@ -291,8 +292,7 @@ Keyword-only arguments:
 
 Deprecates the specified domain.
 
-Type annotations for `aiobotocore.create_client("swf").deprecate_domain`
-method.
+Type annotations for `session.create_client("swf").deprecate_domain` method.
 
 Boto3 documentation:
 [SWF.Client.deprecate_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.deprecate_domain)
@@ -312,7 +312,7 @@ Keyword-only arguments:
 
 Deprecates the specified *workflow type*.
 
-Type annotations for `aiobotocore.create_client("swf").deprecate_workflow_type`
+Type annotations for `session.create_client("swf").deprecate_workflow_type`
 method.
 
 Boto3 documentation:
@@ -336,7 +336,7 @@ Keyword-only arguments:
 
 Returns information about the specified activity type.
 
-Type annotations for `aiobotocore.create_client("swf").describe_activity_type`
+Type annotations for `session.create_client("swf").describe_activity_type`
 method.
 
 Boto3 documentation:
@@ -364,7 +364,7 @@ Returns a `Coroutine` for
 Returns information about the specified domain, including description and
 status.
 
-Type annotations for `aiobotocore.create_client("swf").describe_domain` method.
+Type annotations for `session.create_client("swf").describe_domain` method.
 
 Boto3 documentation:
 [SWF.Client.describe_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.describe_domain)
@@ -388,8 +388,8 @@ Returns a `Coroutine` for
 Returns information about the specified workflow execution including its type
 and some statistics.
 
-Type annotations for
-`aiobotocore.create_client("swf").describe_workflow_execution` method.
+Type annotations for `session.create_client("swf").describe_workflow_execution`
+method.
 
 Boto3 documentation:
 [SWF.Client.describe_workflow_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.describe_workflow_execution)
@@ -416,7 +416,7 @@ Returns a `Coroutine` for
 
 Returns information about the specified *workflow type*.
 
-Type annotations for `aiobotocore.create_client("swf").describe_workflow_type`
+Type annotations for `session.create_client("swf").describe_workflow_type`
 method.
 
 Boto3 documentation:
@@ -443,7 +443,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("swf").generate_presigned_url`
+Type annotations for `session.create_client("swf").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -468,7 +468,7 @@ Returns a `Coroutine` for `str`.
 Returns the history of the specified workflow execution.
 
 Type annotations for
-`aiobotocore.create_client("swf").get_workflow_execution_history` method.
+`session.create_client("swf").get_workflow_execution_history` method.
 
 Boto3 documentation:
 [SWF.Client.get_workflow_execution_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.get_workflow_execution_history)
@@ -498,8 +498,7 @@ Returns a `Coroutine` for [HistoryTypeDef](./type_defs.md#historytypedef).
 Returns information about all activities registered in the specified domain
 that match the specified name and registration status.
 
-Type annotations for `aiobotocore.create_client("swf").list_activity_types`
-method.
+Type annotations for `session.create_client("swf").list_activity_types` method.
 
 Boto3 documentation:
 [SWF.Client.list_activity_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.list_activity_types)
@@ -531,7 +530,7 @@ Returns a list of closed workflow executions in the specified domain that meet
 the filtering criteria.
 
 Type annotations for
-`aiobotocore.create_client("swf").list_closed_workflow_executions` method.
+`session.create_client("swf").list_closed_workflow_executions` method.
 
 Boto3 documentation:
 [SWF.Client.list_closed_workflow_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.list_closed_workflow_executions)
@@ -569,7 +568,7 @@ Returns a `Coroutine` for
 
 Returns the list of domains registered in the account.
 
-Type annotations for `aiobotocore.create_client("swf").list_domains` method.
+Type annotations for `session.create_client("swf").list_domains` method.
 
 Boto3 documentation:
 [SWF.Client.list_domains](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.list_domains)
@@ -598,7 +597,7 @@ Returns a list of open workflow executions in the specified domain that meet
 the filtering criteria.
 
 Type annotations for
-`aiobotocore.create_client("swf").list_open_workflow_executions` method.
+`session.create_client("swf").list_open_workflow_executions` method.
 
 Boto3 documentation:
 [SWF.Client.list_open_workflow_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.list_open_workflow_executions)
@@ -633,7 +632,7 @@ Returns a `Coroutine` for
 
 List tags for a given domain.
 
-Type annotations for `aiobotocore.create_client("swf").list_tags_for_resource`
+Type annotations for `session.create_client("swf").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -658,8 +657,7 @@ Returns a `Coroutine` for
 
 Returns information about workflow types in the specified domain.
 
-Type annotations for `aiobotocore.create_client("swf").list_workflow_types`
-method.
+Type annotations for `session.create_client("swf").list_workflow_types` method.
 
 Boto3 documentation:
 [SWF.Client.list_workflow_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.list_workflow_types)
@@ -689,7 +687,7 @@ Returns a `Coroutine` for
 
 Used by workers to get an ActivityTask from the specified activity `taskList`.
 
-Type annotations for `aiobotocore.create_client("swf").poll_for_activity_task`
+Type annotations for `session.create_client("swf").poll_for_activity_task`
 method.
 
 Boto3 documentation:
@@ -716,7 +714,7 @@ Returns a `Coroutine` for
 
 Used by deciders to get a DecisionTask from the specified decision `taskList`.
 
-Type annotations for `aiobotocore.create_client("swf").poll_for_decision_task`
+Type annotations for `session.create_client("swf").poll_for_decision_task`
 method.
 
 Boto3 documentation:
@@ -748,7 +746,7 @@ Used by activity workers to report to the service that the ActivityTask
 represented by the specified `taskToken` is still making progress.
 
 Type annotations for
-`aiobotocore.create_client("swf").record_activity_task_heartbeat` method.
+`session.create_client("swf").record_activity_task_heartbeat` method.
 
 Boto3 documentation:
 [SWF.Client.record_activity_task_heartbeat](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.record_activity_task_heartbeat)
@@ -774,7 +772,7 @@ Returns a `Coroutine` for
 Registers a new *activity type* along with its configuration settings in the
 specified domain.
 
-Type annotations for `aiobotocore.create_client("swf").register_activity_type`
+Type annotations for `session.create_client("swf").register_activity_type`
 method.
 
 Boto3 documentation:
@@ -805,7 +803,7 @@ Keyword-only arguments:
 
 Registers a new domain.
 
-Type annotations for `aiobotocore.create_client("swf").register_domain` method.
+Type annotations for `session.create_client("swf").register_domain` method.
 
 Boto3 documentation:
 [SWF.Client.register_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.register_domain)
@@ -829,7 +827,7 @@ Keyword-only arguments:
 Registers a new *workflow type* and its configuration settings in the specified
 domain.
 
-Type annotations for `aiobotocore.create_client("swf").register_workflow_type`
+Type annotations for `session.create_client("swf").register_workflow_type`
 method.
 
 Boto3 documentation:
@@ -862,7 +860,7 @@ Records a `WorkflowExecutionCancelRequested` event in the currently running
 workflow execution identified by the given domain, workflowId, and runId.
 
 Type annotations for
-`aiobotocore.create_client("swf").request_cancel_workflow_execution` method.
+`session.create_client("swf").request_cancel_workflow_execution` method.
 
 Boto3 documentation:
 [SWF.Client.request_cancel_workflow_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.request_cancel_workflow_execution)
@@ -887,7 +885,7 @@ Used by workers to tell the service that the ActivityTask identified by the
 `taskToken` was successfully canceled.
 
 Type annotations for
-`aiobotocore.create_client("swf").respond_activity_task_canceled` method.
+`session.create_client("swf").respond_activity_task_canceled` method.
 
 Boto3 documentation:
 [SWF.Client.respond_activity_task_canceled](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.respond_activity_task_canceled)
@@ -911,7 +909,7 @@ Used by workers to tell the service that the ActivityTask identified by the
 `taskToken` completed successfully with a `result` (if provided).
 
 Type annotations for
-`aiobotocore.create_client("swf").respond_activity_task_completed` method.
+`session.create_client("swf").respond_activity_task_completed` method.
 
 Boto3 documentation:
 [SWF.Client.respond_activity_task_completed](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.respond_activity_task_completed)
@@ -935,7 +933,7 @@ Used by workers to tell the service that the ActivityTask identified by the
 `taskToken` has failed with `reason` (if specified).
 
 Type annotations for
-`aiobotocore.create_client("swf").respond_activity_task_failed` method.
+`session.create_client("swf").respond_activity_task_failed` method.
 
 Boto3 documentation:
 [SWF.Client.respond_activity_task_failed](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.respond_activity_task_failed)
@@ -960,7 +958,7 @@ Used by deciders to tell the service that the DecisionTask identified by the
 `taskToken` has successfully completed.
 
 Type annotations for
-`aiobotocore.create_client("swf").respond_decision_task_completed` method.
+`session.create_client("swf").respond_decision_task_completed` method.
 
 Boto3 documentation:
 [SWF.Client.respond_decision_task_completed](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.respond_decision_task_completed)
@@ -985,8 +983,8 @@ Records a `WorkflowExecutionSignaled` event in the workflow execution history
 and creates a decision task for the workflow execution identified by the given
 domain, workflowId and runId.
 
-Type annotations for
-`aiobotocore.create_client("swf").signal_workflow_execution` method.
+Type annotations for `session.create_client("swf").signal_workflow_execution`
+method.
 
 Boto3 documentation:
 [SWF.Client.signal_workflow_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.signal_workflow_execution)
@@ -1012,8 +1010,8 @@ Keyword-only arguments:
 Starts an execution of the workflow type in the specified domain using the
 provided `workflowId` and input data.
 
-Type annotations for
-`aiobotocore.create_client("swf").start_workflow_execution` method.
+Type annotations for `session.create_client("swf").start_workflow_execution`
+method.
 
 Boto3 documentation:
 [SWF.Client.start_workflow_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.start_workflow_execution)
@@ -1047,7 +1045,7 @@ Returns a `Coroutine` for [RunTypeDef](./type_defs.md#runtypedef).
 
 Add a tag to a Amazon SWF domain.
 
-Type annotations for `aiobotocore.create_client("swf").tag_resource` method.
+Type annotations for `session.create_client("swf").tag_resource` method.
 
 Boto3 documentation:
 [SWF.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.tag_resource)
@@ -1071,7 +1069,7 @@ Records a `WorkflowExecutionTerminated` event and forces closure of the
 workflow execution identified by the given domain, runId, and workflowId.
 
 Type annotations for
-`aiobotocore.create_client("swf").terminate_workflow_execution` method.
+`session.create_client("swf").terminate_workflow_execution` method.
 
 Boto3 documentation:
 [SWF.Client.terminate_workflow_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.terminate_workflow_execution)
@@ -1097,8 +1095,8 @@ Keyword-only arguments:
 
 Undeprecates a previously deprecated *activity type*.
 
-Type annotations for
-`aiobotocore.create_client("swf").undeprecate_activity_type` method.
+Type annotations for `session.create_client("swf").undeprecate_activity_type`
+method.
 
 Boto3 documentation:
 [SWF.Client.undeprecate_activity_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.undeprecate_activity_type)
@@ -1121,8 +1119,7 @@ Keyword-only arguments:
 
 Undeprecates a previously deprecated domain.
 
-Type annotations for `aiobotocore.create_client("swf").undeprecate_domain`
-method.
+Type annotations for `session.create_client("swf").undeprecate_domain` method.
 
 Boto3 documentation:
 [SWF.Client.undeprecate_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.undeprecate_domain)
@@ -1143,8 +1140,8 @@ Keyword-only arguments:
 
 Undeprecates a previously deprecated *workflow type*.
 
-Type annotations for
-`aiobotocore.create_client("swf").undeprecate_workflow_type` method.
+Type annotations for `session.create_client("swf").undeprecate_workflow_type`
+method.
 
 Boto3 documentation:
 [SWF.Client.undeprecate_workflow_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.undeprecate_workflow_type)
@@ -1167,7 +1164,7 @@ Keyword-only arguments:
 
 Remove a tag from a Amazon SWF domain.
 
-Type annotations for `aiobotocore.create_client("swf").untag_resource` method.
+Type annotations for `session.create_client("swf").untag_resource` method.
 
 Boto3 documentation:
 [SWF.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.untag_resource)
@@ -1182,12 +1179,44 @@ Keyword-only arguments:
 - `resourceArn`: `str` *(required)*
 - `tagKeys`: `Sequence`\[`str`\] *(required)*
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("swf").__aenter__` method.
+
+Boto3 documentation:
+[SWF.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SWFClient](#swfclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("swf").__aexit__` method.
+
+Boto3 documentation:
+[SWF.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/swf.html#SWF.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("swf").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("swf").get_paginator` method with
+overloads.
 
 - `client.get_paginator("get_workflow_execution_history")` ->
   [GetWorkflowExecutionHistoryPaginator](./paginators.md#getworkflowexecutionhistorypaginator)

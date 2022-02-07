@@ -46,22 +46,25 @@ type annotations stubs module
     - [update_domain_nameservers](#update_domain_nameservers)
     - [update_tags_for_domain](#update_tags_for_domain)
     - [view_billing](#view_billing)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="route53domainsclient"></a>
 
 ## Route53DomainsClient
 
-Type annotations for `aiobotocore.create_client("route53domains")`
+Type annotations for `session.create_client("route53domains")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_route53domains.client import Route53DomainsClient
 
-def get_route53domains_client() -> Route53DomainsClient:
-    return Session().client("route53domains")
+session = get_session()
+async with session.create_client("route53domains") as client:
+    client: Route53DomainsClient
 ```
 
 Boto3 documentation:
@@ -101,7 +104,7 @@ Exceptions:
 
 Route53DomainsClient exceptions.
 
-Type annotations for `aiobotocore.create_client("route53domains").exceptions`
+Type annotations for `session.create_client("route53domains").exceptions`
 method.
 
 Boto3 documentation:
@@ -117,7 +120,7 @@ Accepts the transfer of a domain from another Amazon Web Services account to
 the currentAmazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").accept_domain_transfer_from_another_aws_account`
+`session.create_client("route53domains").accept_domain_transfer_from_another_aws_account`
 method.
 
 Boto3 documentation:
@@ -144,19 +147,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("route53domains").can_paginate`
+Type annotations for `session.create_client("route53domains").can_paginate`
 method.
 
 Boto3 documentation:
 [Route53Domains.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_domain_transfer_to_another_aws_account"></a>
 
@@ -166,7 +167,7 @@ Cancels the transfer of a domain from the current Amazon Web Services account
 to another Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").cancel_domain_transfer_to_another_aws_account`
+`session.create_client("route53domains").cancel_domain_transfer_to_another_aws_account`
 method.
 
 Boto3 documentation:
@@ -193,7 +194,7 @@ Returns a `Coroutine` for
 This operation checks the availability of one domain name.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").check_domain_availability` method.
+`session.create_client("route53domains").check_domain_availability` method.
 
 Boto3 documentation:
 [Route53Domains.Client.check_domain_availability](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.check_domain_availability)
@@ -219,8 +220,7 @@ Returns a `Coroutine` for
 Checks whether a domain name can be transferred to Amazon Route 53.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").check_domain_transferability`
-method.
+`session.create_client("route53domains").check_domain_transferability` method.
 
 Boto3 documentation:
 [Route53Domains.Client.check_domain_transferability](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.check_domain_transferability)
@@ -245,8 +245,8 @@ Returns a `Coroutine` for
 
 This operation deletes the specified domain.
 
-Type annotations for
-`aiobotocore.create_client("route53domains").delete_domain` method.
+Type annotations for `session.create_client("route53domains").delete_domain`
+method.
 
 Boto3 documentation:
 [Route53Domains.Client.delete_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.delete_domain)
@@ -270,7 +270,7 @@ Returns a `Coroutine` for
 This operation deletes the specified tags for a domain.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").delete_tags_for_domain` method.
+`session.create_client("route53domains").delete_tags_for_domain` method.
 
 Boto3 documentation:
 [Route53Domains.Client.delete_tags_for_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.delete_tags_for_domain)
@@ -296,7 +296,7 @@ This operation disables automatic renewal of domain registration for the
 specified domain.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").disable_domain_auto_renew` method.
+`session.create_client("route53domains").disable_domain_auto_renew` method.
 
 Boto3 documentation:
 [Route53Domains.Client.disable_domain_auto_renew](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.disable_domain_auto_renew)
@@ -321,8 +321,7 @@ This operation removes the transfer lock on the domain (specifically the
 `clientTransferProhibited` status) to allow domain transfers.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").disable_domain_transfer_lock`
-method.
+`session.create_client("route53domains").disable_domain_transfer_lock` method.
 
 Boto3 documentation:
 [Route53Domains.Client.disable_domain_transfer_lock](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.disable_domain_transfer_lock)
@@ -348,7 +347,7 @@ This operation configures Amazon Route 53 to automatically renew the specified
 domain before the domain registration expires.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").enable_domain_auto_renew` method.
+`session.create_client("route53domains").enable_domain_auto_renew` method.
 
 Boto3 documentation:
 [Route53Domains.Client.enable_domain_auto_renew](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.enable_domain_auto_renew)
@@ -373,8 +372,7 @@ This operation sets the transfer lock on the domain (specifically the
 `clientTransferProhibited` status) to prevent domain transfers.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").enable_domain_transfer_lock`
-method.
+`session.create_client("route53domains").enable_domain_transfer_lock` method.
 
 Boto3 documentation:
 [Route53Domains.Client.enable_domain_transfer_lock](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.enable_domain_transfer_lock)
@@ -399,7 +397,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").generate_presigned_url` method.
+`session.create_client("route53domains").generate_presigned_url` method.
 
 Boto3 documentation:
 [Route53Domains.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.generate_presigned_url)
@@ -425,7 +423,7 @@ registrant contact is valid, such as registering a new domain, this operation
 returns information about whether the registrant contact has responded.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").get_contact_reachability_status`
+`session.create_client("route53domains").get_contact_reachability_status`
 method.
 
 Boto3 documentation:
@@ -452,7 +450,7 @@ This operation returns detailed information about a specified domain that is
 associated with the current Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").get_domain_detail` method.
+`session.create_client("route53domains").get_domain_detail` method.
 
 Boto3 documentation:
 [Route53Domains.Client.get_domain_detail](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.get_domain_detail)
@@ -476,7 +474,7 @@ Returns a `Coroutine` for
 The GetDomainSuggestions operation returns a list of suggested domain names.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").get_domain_suggestions` method.
+`session.create_client("route53domains").get_domain_suggestions` method.
 
 Boto3 documentation:
 [Route53Domains.Client.get_domain_suggestions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.get_domain_suggestions)
@@ -504,7 +502,7 @@ This operation returns the current status of an operation that is not
 completed.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").get_operation_detail` method.
+`session.create_client("route53domains").get_operation_detail` method.
 
 Boto3 documentation:
 [Route53Domains.Client.get_operation_detail](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.get_operation_detail)
@@ -529,7 +527,7 @@ Returns a `Coroutine` for
 This operation returns all the domain names registered with Amazon Route 53 for
 the current Amazon Web Services account if no filtering conditions are used.
 
-Type annotations for `aiobotocore.create_client("route53domains").list_domains`
+Type annotations for `session.create_client("route53domains").list_domains`
 method.
 
 Boto3 documentation:
@@ -559,8 +557,8 @@ Returns information about all of the operations that return an operation ID and
 that have ever been performed on domains that were registered by the current
 account.
 
-Type annotations for
-`aiobotocore.create_client("route53domains").list_operations` method.
+Type annotations for `session.create_client("route53domains").list_operations`
+method.
 
 Boto3 documentation:
 [Route53Domains.Client.list_operations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.list_operations)
@@ -588,7 +586,7 @@ the specified TLD * Registration * Transfer * Owner change * Domain renewal \*
 Domain restoration See also:
 `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-1...`.
 
-Type annotations for `aiobotocore.create_client("route53domains").list_prices`
+Type annotations for `session.create_client("route53domains").list_prices`
 method.
 
 Boto3 documentation:
@@ -616,7 +614,7 @@ This operation returns all of the tags that are associated with the specified
 domain.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").list_tags_for_domain` method.
+`session.create_client("route53domains").list_tags_for_domain` method.
 
 Boto3 documentation:
 [Route53Domains.Client.list_tags_for_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.list_tags_for_domain)
@@ -640,8 +638,8 @@ Returns a `Coroutine` for
 
 This operation registers a domain.
 
-Type annotations for
-`aiobotocore.create_client("route53domains").register_domain` method.
+Type annotations for `session.create_client("route53domains").register_domain`
+method.
 
 Boto3 documentation:
 [Route53Domains.Client.register_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.register_domain)
@@ -678,7 +676,7 @@ Rejects the transfer of a domain from another Amazon Web Services account to
 the current Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").reject_domain_transfer_from_another_aws_account`
+`session.create_client("route53domains").reject_domain_transfer_from_another_aws_account`
 method.
 
 Boto3 documentation:
@@ -704,7 +702,7 @@ Returns a `Coroutine` for
 
 This operation renews a domain for the specified number of years.
 
-Type annotations for `aiobotocore.create_client("route53domains").renew_domain`
+Type annotations for `session.create_client("route53domains").renew_domain`
 method.
 
 Boto3 documentation:
@@ -734,7 +732,7 @@ resends the confirmation email to the current email address for the registrant
 contact.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").resend_contact_reachability_email`
+`session.create_client("route53domains").resend_contact_reachability_email`
 method.
 
 Boto3 documentation:
@@ -760,7 +758,7 @@ Returns a `Coroutine` for
 This operation returns the AuthCode for the domain.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").retrieve_domain_auth_code` method.
+`session.create_client("route53domains").retrieve_domain_auth_code` method.
 
 Boto3 documentation:
 [Route53Domains.Client.retrieve_domain_auth_code](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.retrieve_domain_auth_code)
@@ -784,8 +782,8 @@ Returns a `Coroutine` for
 
 Transfers a domain from another registrar to Amazon Route 53.
 
-Type annotations for
-`aiobotocore.create_client("route53domains").transfer_domain` method.
+Type annotations for `session.create_client("route53domains").transfer_domain`
+method.
 
 Boto3 documentation:
 [Route53Domains.Client.transfer_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.transfer_domain)
@@ -825,7 +823,7 @@ Transfers a domain from the current Amazon Web Services account to another
 Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").transfer_domain_to_another_aws_account`
+`session.create_client("route53domains").transfer_domain_to_another_aws_account`
 method.
 
 Boto3 documentation:
@@ -852,7 +850,7 @@ Returns a `Coroutine` for
 This operation updates the contact information for a particular domain.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").update_domain_contact` method.
+`session.create_client("route53domains").update_domain_contact` method.
 
 Boto3 documentation:
 [Route53Domains.Client.update_domain_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.update_domain_contact)
@@ -881,8 +879,7 @@ Returns a `Coroutine` for
 This operation updates the specified domain contact's privacy setting.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").update_domain_contact_privacy`
-method.
+`session.create_client("route53domains").update_domain_contact_privacy` method.
 
 Boto3 documentation:
 [Route53Domains.Client.update_domain_contact_privacy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.update_domain_contact_privacy)
@@ -911,7 +908,7 @@ This operation replaces the current set of name servers for the domain with the
 specified set of name servers.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").update_domain_nameservers` method.
+`session.create_client("route53domains").update_domain_nameservers` method.
 
 Boto3 documentation:
 [Route53Domains.Client.update_domain_nameservers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.update_domain_nameservers)
@@ -940,7 +937,7 @@ Returns a `Coroutine` for
 This operation adds or updates tags for a specified domain.
 
 Type annotations for
-`aiobotocore.create_client("route53domains").update_tags_for_domain` method.
+`session.create_client("route53domains").update_tags_for_domain` method.
 
 Boto3 documentation:
 [Route53Domains.Client.update_tags_for_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.update_tags_for_domain)
@@ -966,7 +963,7 @@ Returns all the domain-related billing records for the current Amazon Web
 Services account for a specified period See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ViewBilling).
 
-Type annotations for `aiobotocore.create_client("route53domains").view_billing`
+Type annotations for `session.create_client("route53domains").view_billing`
 method.
 
 Boto3 documentation:
@@ -987,13 +984,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [ViewBillingResponseTypeDef](./type_defs.md#viewbillingresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("route53domains").__aenter__`
+method.
+
+Boto3 documentation:
+[Route53Domains.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [Route53DomainsClient](#route53domainsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("route53domains").__aexit__`
+method.
+
+Boto3 documentation:
+[Route53Domains.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53domains.html#Route53Domains.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("route53domains").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("route53domains").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_domains")` ->
   [ListDomainsPaginator](./paginators.md#listdomainspaginator)

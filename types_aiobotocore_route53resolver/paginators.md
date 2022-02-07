@@ -31,17 +31,19 @@ type annotations stubs module
 ## ListFirewallConfigsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_paginator("list_firewall_configs")`.
+`session.create_client("route53resolver").get_paginator("list_firewall_configs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53resolver.paginator import ListFirewallConfigsPaginator
 
-def get_list_firewall_configs_paginator() -> ListFirewallConfigsPaginator:
-    return Session().create_client("route53resolver").get_paginator("list_firewall_configs")
+session = get_session()
+async with session.create_client("route53resolver") as client:
+    client: Route53ResolverClient
+    paginator: ListFirewallConfigsPaginator = client.get_paginator("list_firewall_configs")
 ```
 
 Boto3 documentation:
@@ -60,17 +62,19 @@ Arguments for `ListFirewallConfigsPaginator.paginate` method:
 ## ListFirewallDomainListsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_paginator("list_firewall_domain_lists")`.
+`session.create_client("route53resolver").get_paginator("list_firewall_domain_lists")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53resolver.paginator import ListFirewallDomainListsPaginator
 
-def get_list_firewall_domain_lists_paginator() -> ListFirewallDomainListsPaginator:
-    return Session().create_client("route53resolver").get_paginator("list_firewall_domain_lists")
+session = get_session()
+async with session.create_client("route53resolver") as client:
+    client: Route53ResolverClient
+    paginator: ListFirewallDomainListsPaginator = client.get_paginator("list_firewall_domain_lists")
 ```
 
 Boto3 documentation:
@@ -89,17 +93,19 @@ Arguments for `ListFirewallDomainListsPaginator.paginate` method:
 ## ListFirewallDomainsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_paginator("list_firewall_domains")`.
+`session.create_client("route53resolver").get_paginator("list_firewall_domains")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53resolver.paginator import ListFirewallDomainsPaginator
 
-def get_list_firewall_domains_paginator() -> ListFirewallDomainsPaginator:
-    return Session().create_client("route53resolver").get_paginator("list_firewall_domains")
+session = get_session()
+async with session.create_client("route53resolver") as client:
+    client: Route53ResolverClient
+    paginator: ListFirewallDomainsPaginator = client.get_paginator("list_firewall_domains")
 ```
 
 Boto3 documentation:
@@ -119,17 +125,19 @@ Arguments for `ListFirewallDomainsPaginator.paginate` method:
 ## ListFirewallRuleGroupAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_paginator("list_firewall_rule_group_associations")`.
+`session.create_client("route53resolver").get_paginator("list_firewall_rule_group_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53resolver.paginator import ListFirewallRuleGroupAssociationsPaginator
 
-def get_list_firewall_rule_group_associations_paginator() -> ListFirewallRuleGroupAssociationsPaginator:
-    return Session().create_client("route53resolver").get_paginator("list_firewall_rule_group_associations")
+session = get_session()
+async with session.create_client("route53resolver") as client:
+    client: Route53ResolverClient
+    paginator: ListFirewallRuleGroupAssociationsPaginator = client.get_paginator("list_firewall_rule_group_associations")
 ```
 
 Boto3 documentation:
@@ -153,17 +161,19 @@ Arguments for `ListFirewallRuleGroupAssociationsPaginator.paginate` method:
 ## ListFirewallRuleGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_paginator("list_firewall_rule_groups")`.
+`session.create_client("route53resolver").get_paginator("list_firewall_rule_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53resolver.paginator import ListFirewallRuleGroupsPaginator
 
-def get_list_firewall_rule_groups_paginator() -> ListFirewallRuleGroupsPaginator:
-    return Session().create_client("route53resolver").get_paginator("list_firewall_rule_groups")
+session = get_session()
+async with session.create_client("route53resolver") as client:
+    client: Route53ResolverClient
+    paginator: ListFirewallRuleGroupsPaginator = client.get_paginator("list_firewall_rule_groups")
 ```
 
 Boto3 documentation:
@@ -182,17 +192,19 @@ Arguments for `ListFirewallRuleGroupsPaginator.paginate` method:
 ## ListFirewallRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_paginator("list_firewall_rules")`.
+`session.create_client("route53resolver").get_paginator("list_firewall_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53resolver.paginator import ListFirewallRulesPaginator
 
-def get_list_firewall_rules_paginator() -> ListFirewallRulesPaginator:
-    return Session().create_client("route53resolver").get_paginator("list_firewall_rules")
+session = get_session()
+async with session.create_client("route53resolver") as client:
+    client: Route53ResolverClient
+    paginator: ListFirewallRulesPaginator = client.get_paginator("list_firewall_rules")
 ```
 
 Boto3 documentation:
@@ -214,17 +226,19 @@ Arguments for `ListFirewallRulesPaginator.paginate` method:
 ## ListResolverConfigsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_paginator("list_resolver_configs")`.
+`session.create_client("route53resolver").get_paginator("list_resolver_configs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53resolver.paginator import ListResolverConfigsPaginator
 
-def get_list_resolver_configs_paginator() -> ListResolverConfigsPaginator:
-    return Session().create_client("route53resolver").get_paginator("list_resolver_configs")
+session = get_session()
+async with session.create_client("route53resolver") as client:
+    client: Route53ResolverClient
+    paginator: ListResolverConfigsPaginator = client.get_paginator("list_resolver_configs")
 ```
 
 Boto3 documentation:
@@ -243,17 +257,19 @@ Arguments for `ListResolverConfigsPaginator.paginate` method:
 ## ListResolverDnssecConfigsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_paginator("list_resolver_dnssec_configs")`.
+`session.create_client("route53resolver").get_paginator("list_resolver_dnssec_configs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53resolver.paginator import ListResolverDnssecConfigsPaginator
 
-def get_list_resolver_dnssec_configs_paginator() -> ListResolverDnssecConfigsPaginator:
-    return Session().create_client("route53resolver").get_paginator("list_resolver_dnssec_configs")
+session = get_session()
+async with session.create_client("route53resolver") as client:
+    client: Route53ResolverClient
+    paginator: ListResolverDnssecConfigsPaginator = client.get_paginator("list_resolver_dnssec_configs")
 ```
 
 Boto3 documentation:
@@ -273,17 +289,19 @@ Arguments for `ListResolverDnssecConfigsPaginator.paginate` method:
 ## ListResolverEndpointIpAddressesPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_paginator("list_resolver_endpoint_ip_addresses")`.
+`session.create_client("route53resolver").get_paginator("list_resolver_endpoint_ip_addresses")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53resolver.paginator import ListResolverEndpointIpAddressesPaginator
 
-def get_list_resolver_endpoint_ip_addresses_paginator() -> ListResolverEndpointIpAddressesPaginator:
-    return Session().create_client("route53resolver").get_paginator("list_resolver_endpoint_ip_addresses")
+session = get_session()
+async with session.create_client("route53resolver") as client:
+    client: Route53ResolverClient
+    paginator: ListResolverEndpointIpAddressesPaginator = client.get_paginator("list_resolver_endpoint_ip_addresses")
 ```
 
 Boto3 documentation:
@@ -303,17 +321,19 @@ Arguments for `ListResolverEndpointIpAddressesPaginator.paginate` method:
 ## ListResolverEndpointsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_paginator("list_resolver_endpoints")`.
+`session.create_client("route53resolver").get_paginator("list_resolver_endpoints")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53resolver.paginator import ListResolverEndpointsPaginator
 
-def get_list_resolver_endpoints_paginator() -> ListResolverEndpointsPaginator:
-    return Session().create_client("route53resolver").get_paginator("list_resolver_endpoints")
+session = get_session()
+async with session.create_client("route53resolver") as client:
+    client: Route53ResolverClient
+    paginator: ListResolverEndpointsPaginator = client.get_paginator("list_resolver_endpoints")
 ```
 
 Boto3 documentation:
@@ -333,17 +353,19 @@ Arguments for `ListResolverEndpointsPaginator.paginate` method:
 ## ListResolverQueryLogConfigAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_paginator("list_resolver_query_log_config_associations")`.
+`session.create_client("route53resolver").get_paginator("list_resolver_query_log_config_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53resolver.paginator import ListResolverQueryLogConfigAssociationsPaginator
 
-def get_list_resolver_query_log_config_associations_paginator() -> ListResolverQueryLogConfigAssociationsPaginator:
-    return Session().create_client("route53resolver").get_paginator("list_resolver_query_log_config_associations")
+session = get_session()
+async with session.create_client("route53resolver") as client:
+    client: Route53ResolverClient
+    paginator: ListResolverQueryLogConfigAssociationsPaginator = client.get_paginator("list_resolver_query_log_config_associations")
 ```
 
 Boto3 documentation:
@@ -366,17 +388,19 @@ method:
 ## ListResolverQueryLogConfigsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_paginator("list_resolver_query_log_configs")`.
+`session.create_client("route53resolver").get_paginator("list_resolver_query_log_configs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53resolver.paginator import ListResolverQueryLogConfigsPaginator
 
-def get_list_resolver_query_log_configs_paginator() -> ListResolverQueryLogConfigsPaginator:
-    return Session().create_client("route53resolver").get_paginator("list_resolver_query_log_configs")
+session = get_session()
+async with session.create_client("route53resolver") as client:
+    client: Route53ResolverClient
+    paginator: ListResolverQueryLogConfigsPaginator = client.get_paginator("list_resolver_query_log_configs")
 ```
 
 Boto3 documentation:
@@ -398,17 +422,19 @@ Arguments for `ListResolverQueryLogConfigsPaginator.paginate` method:
 ## ListResolverRuleAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_paginator("list_resolver_rule_associations")`.
+`session.create_client("route53resolver").get_paginator("list_resolver_rule_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53resolver.paginator import ListResolverRuleAssociationsPaginator
 
-def get_list_resolver_rule_associations_paginator() -> ListResolverRuleAssociationsPaginator:
-    return Session().create_client("route53resolver").get_paginator("list_resolver_rule_associations")
+session = get_session()
+async with session.create_client("route53resolver") as client:
+    client: Route53ResolverClient
+    paginator: ListResolverRuleAssociationsPaginator = client.get_paginator("list_resolver_rule_associations")
 ```
 
 Boto3 documentation:
@@ -428,17 +454,19 @@ Arguments for `ListResolverRuleAssociationsPaginator.paginate` method:
 ## ListResolverRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_paginator("list_resolver_rules")`.
+`session.create_client("route53resolver").get_paginator("list_resolver_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53resolver.paginator import ListResolverRulesPaginator
 
-def get_list_resolver_rules_paginator() -> ListResolverRulesPaginator:
-    return Session().create_client("route53resolver").get_paginator("list_resolver_rules")
+session = get_session()
+async with session.create_client("route53resolver") as client:
+    client: Route53ResolverClient
+    paginator: ListResolverRulesPaginator = client.get_paginator("list_resolver_rules")
 ```
 
 Boto3 documentation:
@@ -458,17 +486,19 @@ Arguments for `ListResolverRulesPaginator.paginate` method:
 ## ListTagsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("route53resolver").get_paginator("list_tags_for_resource")`.
+`session.create_client("route53resolver").get_paginator("list_tags_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53resolver.paginator import ListTagsForResourcePaginator
 
-def get_list_tags_for_resource_paginator() -> ListTagsForResourcePaginator:
-    return Session().create_client("route53resolver").get_paginator("list_tags_for_resource")
+session = get_session()
+async with session.create_client("route53resolver") as client:
+    client: Route53ResolverClient
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
 ```
 
 Boto3 documentation:

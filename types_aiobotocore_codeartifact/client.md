@@ -50,22 +50,25 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_package_versions_status](#update_package_versions_status)
     - [update_repository](#update_repository)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="codeartifactclient"></a>
 
 ## CodeArtifactClient
 
-Type annotations for `aiobotocore.create_client("codeartifact")`
+Type annotations for `session.create_client("codeartifact")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_codeartifact.client import CodeArtifactClient
 
-def get_codeartifact_client() -> CodeArtifactClient:
-    return Session().client("codeartifact")
+session = get_session()
+async with session.create_client("codeartifact") as client:
+    client: CodeArtifactClient
 ```
 
 Boto3 documentation:
@@ -106,8 +109,7 @@ Exceptions:
 
 CodeArtifactClient exceptions.
 
-Type annotations for `aiobotocore.create_client("codeartifact").exceptions`
-method.
+Type annotations for `session.create_client("codeartifact").exceptions` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.exceptions)
@@ -121,8 +123,7 @@ Returns [Exceptions](#exceptions).
 Adds an existing external connection to a repository.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").associate_external_connection`
-method.
+`session.create_client("codeartifact").associate_external_connection` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.associate_external_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.associate_external_connection)
@@ -149,19 +150,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("codeartifact").can_paginate`
+Type annotations for `session.create_client("codeartifact").can_paginate`
 method.
 
 Boto3 documentation:
 [CodeArtifact.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="copy_package_versions"></a>
 
@@ -171,7 +170,7 @@ Copies package versions from one repository to another repository in the same
 domain.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").copy_package_versions` method.
+`session.create_client("codeartifact").copy_package_versions` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.copy_package_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.copy_package_versions)
@@ -205,7 +204,7 @@ Returns a `Coroutine` for
 
 Creates a domain.
 
-Type annotations for `aiobotocore.create_client("codeartifact").create_domain`
+Type annotations for `session.create_client("codeartifact").create_domain`
 method.
 
 Boto3 documentation:
@@ -231,8 +230,8 @@ Returns a `Coroutine` for
 
 Creates a repository.
 
-Type annotations for
-`aiobotocore.create_client("codeartifact").create_repository` method.
+Type annotations for `session.create_client("codeartifact").create_repository`
+method.
 
 Boto3 documentation:
 [CodeArtifact.Client.create_repository](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.create_repository)
@@ -261,7 +260,7 @@ Returns a `Coroutine` for
 
 Deletes a domain.
 
-Type annotations for `aiobotocore.create_client("codeartifact").delete_domain`
+Type annotations for `session.create_client("codeartifact").delete_domain`
 method.
 
 Boto3 documentation:
@@ -287,7 +286,7 @@ Returns a `Coroutine` for
 Deletes the resource policy set on a domain.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").delete_domain_permissions_policy`
+`session.create_client("codeartifact").delete_domain_permissions_policy`
 method.
 
 Boto3 documentation:
@@ -315,7 +314,7 @@ Returns a `Coroutine` for
 Deletes one or more versions of a package.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").delete_package_versions` method.
+`session.create_client("codeartifact").delete_package_versions` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.delete_package_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.delete_package_versions)
@@ -347,8 +346,8 @@ Returns a `Coroutine` for
 
 Deletes a repository.
 
-Type annotations for
-`aiobotocore.create_client("codeartifact").delete_repository` method.
+Type annotations for `session.create_client("codeartifact").delete_repository`
+method.
 
 Boto3 documentation:
 [CodeArtifact.Client.delete_repository](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.delete_repository)
@@ -374,7 +373,7 @@ Returns a `Coroutine` for
 Deletes the resource policy that is set on a repository.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").delete_repository_permissions_policy`
+`session.create_client("codeartifact").delete_repository_permissions_policy`
 method.
 
 Boto3 documentation:
@@ -404,8 +403,8 @@ Returns a
 [DomainDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html)\_
 object that contains information about the requested domain.
 
-Type annotations for
-`aiobotocore.create_client("codeartifact").describe_domain` method.
+Type annotations for `session.create_client("codeartifact").describe_domain`
+method.
 
 Boto3 documentation:
 [CodeArtifact.Client.describe_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.describe_domain)
@@ -432,7 +431,7 @@ Returns a
 object that contains information about the requested package version.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").describe_package_version` method.
+`session.create_client("codeartifact").describe_package_version` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.describe_package_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.describe_package_version)
@@ -464,7 +463,7 @@ Returns a `RepositoryDescription` object that contains detailed information
 about the requested repository.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").describe_repository` method.
+`session.create_client("codeartifact").describe_repository` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.describe_repository](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.describe_repository)
@@ -491,7 +490,7 @@ Returns a `Coroutine` for
 Removes an existing external connection from a repository.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").disassociate_external_connection`
+`session.create_client("codeartifact").disassociate_external_connection`
 method.
 
 Boto3 documentation:
@@ -521,7 +520,7 @@ Deletes the assets in package versions and sets the package versions' status to
 `Disposed`.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").dispose_package_versions` method.
+`session.create_client("codeartifact").dispose_package_versions` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.dispose_package_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.dispose_package_versions)
@@ -555,7 +554,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").generate_presigned_url` method.
+`session.create_client("codeartifact").generate_presigned_url` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.generate_presigned_url)
@@ -580,7 +579,7 @@ Generates a temporary authorization token for accessing repositories in the
 domain.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").get_authorization_token` method.
+`session.create_client("codeartifact").get_authorization_token` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.get_authorization_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.get_authorization_token)
@@ -607,8 +606,7 @@ Returns a `Coroutine` for
 Returns the resource policy attached to the specified domain.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").get_domain_permissions_policy`
-method.
+`session.create_client("codeartifact").get_domain_permissions_policy` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.get_domain_permissions_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.get_domain_permissions_policy)
@@ -634,7 +632,7 @@ Returns a `Coroutine` for
 Returns an asset (or file) that is in a package.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").get_package_version_asset` method.
+`session.create_client("codeartifact").get_package_version_asset` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.get_package_version_asset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.get_package_version_asset)
@@ -667,7 +665,7 @@ Returns a `Coroutine` for
 Gets the readme file or descriptive text for a package version.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").get_package_version_readme` method.
+`session.create_client("codeartifact").get_package_version_readme` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.get_package_version_readme](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.get_package_version_readme)
@@ -698,7 +696,7 @@ Returns a `Coroutine` for
 Returns the endpoint of a repository for a specific package format.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").get_repository_endpoint` method.
+`session.create_client("codeartifact").get_repository_endpoint` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.get_repository_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.get_repository_endpoint)
@@ -726,7 +724,7 @@ Returns a `Coroutine` for
 Returns the resource policy that is set on a repository.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").get_repository_permissions_policy`
+`session.create_client("codeartifact").get_repository_permissions_policy`
 method.
 
 Boto3 documentation:
@@ -755,7 +753,7 @@ Returns a list of
 [DomainSummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html)\_
 objects for all domains owned by the AWS account that makes this call.
 
-Type annotations for `aiobotocore.create_client("codeartifact").list_domains`
+Type annotations for `session.create_client("codeartifact").list_domains`
 method.
 
 Boto3 documentation:
@@ -783,7 +781,7 @@ Returns a list of
 objects for assets in a package version.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").list_package_version_assets` method.
+`session.create_client("codeartifact").list_package_version_assets` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.list_package_version_assets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.list_package_version_assets)
@@ -816,7 +814,7 @@ Returns a `Coroutine` for
 Returns the direct dependencies for a package version.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").list_package_version_dependencies`
+`session.create_client("codeartifact").list_package_version_dependencies`
 method.
 
 Boto3 documentation:
@@ -851,7 +849,7 @@ Returns a list of
 objects for package versions in a repository that match the request parameters.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").list_package_versions` method.
+`session.create_client("codeartifact").list_package_versions` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.list_package_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.list_package_versions)
@@ -887,7 +885,7 @@ Returns a list of
 [PackageSummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html)\_
 objects for packages in a repository that match the request parameters.
 
-Type annotations for `aiobotocore.create_client("codeartifact").list_packages`
+Type annotations for `session.create_client("codeartifact").list_packages`
 method.
 
 Boto3 documentation:
@@ -920,8 +918,8 @@ Returns a list of
 [RepositorySummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html)\_
 objects.
 
-Type annotations for
-`aiobotocore.create_client("codeartifact").list_repositories` method.
+Type annotations for `session.create_client("codeartifact").list_repositories`
+method.
 
 Boto3 documentation:
 [CodeArtifact.Client.list_repositories](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.list_repositories)
@@ -949,7 +947,7 @@ Returns a list of
 objects.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").list_repositories_in_domain` method.
+`session.create_client("codeartifact").list_repositories_in_domain` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.list_repositories_in_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.list_repositories_in_domain)
@@ -980,7 +978,7 @@ Gets information about AWS tags for a specified Amazon Resource Name (ARN) in
 AWS CodeArtifact.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").list_tags_for_resource` method.
+`session.create_client("codeartifact").list_tags_for_resource` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.list_tags_for_resource)
@@ -1005,8 +1003,7 @@ Returns a `Coroutine` for
 Sets a resource policy on a domain that specifies permissions to access it.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").put_domain_permissions_policy`
-method.
+`session.create_client("codeartifact").put_domain_permissions_policy` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.put_domain_permissions_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.put_domain_permissions_policy)
@@ -1035,7 +1032,7 @@ Sets the resource policy on a repository that specifies permissions to access
 it.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").put_repository_permissions_policy`
+`session.create_client("codeartifact").put_repository_permissions_policy`
 method.
 
 Boto3 documentation:
@@ -1064,7 +1061,7 @@ Returns a `Coroutine` for
 
 Adds or updates tags for a resource in AWS CodeArtifact.
 
-Type annotations for `aiobotocore.create_client("codeartifact").tag_resource`
+Type annotations for `session.create_client("codeartifact").tag_resource`
 method.
 
 Boto3 documentation:
@@ -1088,7 +1085,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from a resource in AWS CodeArtifact.
 
-Type annotations for `aiobotocore.create_client("codeartifact").untag_resource`
+Type annotations for `session.create_client("codeartifact").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1113,8 +1110,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the status of one or more versions of a package.
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").update_package_versions_status`
-method.
+`session.create_client("codeartifact").update_package_versions_status` method.
 
 Boto3 documentation:
 [CodeArtifact.Client.update_package_versions_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.update_package_versions_status)
@@ -1150,8 +1146,8 @@ Returns a `Coroutine` for
 
 Update the properties of a repository.
 
-Type annotations for
-`aiobotocore.create_client("codeartifact").update_repository` method.
+Type annotations for `session.create_client("codeartifact").update_repository`
+method.
 
 Boto3 documentation:
 [CodeArtifact.Client.update_repository](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.update_repository)
@@ -1173,11 +1169,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateRepositoryResultTypeDef](./type_defs.md#updaterepositoryresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("codeartifact").__aenter__` method.
+
+Boto3 documentation:
+[CodeArtifact.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CodeArtifactClient](#codeartifactclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("codeartifact").__aexit__` method.
+
+Boto3 documentation:
+[CodeArtifact.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html#CodeArtifact.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("codeartifact").get_paginator`
+Type annotations for `session.create_client("codeartifact").get_paginator`
 method with overloads.
 
 - `client.get_paginator("list_domains")` ->

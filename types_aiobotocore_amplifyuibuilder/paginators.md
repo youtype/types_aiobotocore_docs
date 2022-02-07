@@ -18,17 +18,19 @@ type annotations stubs module
 ## ListComponentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").get_paginator("list_components")`.
+`session.create_client("amplifyuibuilder").get_paginator("list_components")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_amplifyuibuilder.paginator import ListComponentsPaginator
 
-def get_list_components_paginator() -> ListComponentsPaginator:
-    return Session().create_client("amplifyuibuilder").get_paginator("list_components")
+session = get_session()
+async with session.create_client("amplifyuibuilder") as client:
+    client: AmplifyUIBuilderClient
+    paginator: ListComponentsPaginator = client.get_paginator("list_components")
 ```
 
 Boto3 documentation:
@@ -49,17 +51,19 @@ Arguments for `ListComponentsPaginator.paginate` method:
 ## ListThemesPaginator
 
 Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").get_paginator("list_themes")`.
+`session.create_client("amplifyuibuilder").get_paginator("list_themes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_amplifyuibuilder.paginator import ListThemesPaginator
 
-def get_list_themes_paginator() -> ListThemesPaginator:
-    return Session().create_client("amplifyuibuilder").get_paginator("list_themes")
+session = get_session()
+async with session.create_client("amplifyuibuilder") as client:
+    client: AmplifyUIBuilderClient
+    paginator: ListThemesPaginator = client.get_paginator("list_themes")
 ```
 
 Boto3 documentation:

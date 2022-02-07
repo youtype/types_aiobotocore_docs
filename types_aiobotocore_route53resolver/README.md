@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[route53resolver]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[route53resolver]'
+
+# standalone installation
 pip install types-aiobotocore-route53resolver
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-route53resolver
 
 ## Route53ResolverClient
 
-Type annotations for `aiobotocore.create_client("route53resolver")` as
+Type annotations for `session.create_client("route53resolver")` as
 [Route53ResolverClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_route53resolver.client import Route53ResolverClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_firewall_rule_group](./client.md#associate_firewall_rule_group)
 - [associate_resolver_endpoint_ip_address](./client.md#associate_resolver_endpoint_ip_address)
 - [associate_resolver_query_log_config](./client.md#associate_resolver_query_log_config)
@@ -144,7 +150,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_route53resolver.paginators import ListFirewallConfigsPaginator, ...
+from types_aiobotocore_route53resolver.paginator import ListFirewallConfigsPaginator, ...
 ```
 
 - [ListFirewallConfigsPaginator](./paginators.md#listfirewallconfigspaginator)

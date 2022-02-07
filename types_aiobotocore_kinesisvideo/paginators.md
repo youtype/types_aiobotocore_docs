@@ -18,17 +18,19 @@ type annotations stubs module
 ## ListSignalingChannelsPaginator
 
 Type annotations for
-`aiobotocore.create_client("kinesisvideo").get_paginator("list_signaling_channels")`.
+`session.create_client("kinesisvideo").get_paginator("list_signaling_channels")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kinesisvideo.paginator import ListSignalingChannelsPaginator
 
-def get_list_signaling_channels_paginator() -> ListSignalingChannelsPaginator:
-    return Session().create_client("kinesisvideo").get_paginator("list_signaling_channels")
+session = get_session()
+async with session.create_client("kinesisvideo") as client:
+    client: KinesisVideoClient
+    paginator: ListSignalingChannelsPaginator = client.get_paginator("list_signaling_channels")
 ```
 
 Boto3 documentation:
@@ -49,17 +51,19 @@ Arguments for `ListSignalingChannelsPaginator.paginate` method:
 ## ListStreamsPaginator
 
 Type annotations for
-`aiobotocore.create_client("kinesisvideo").get_paginator("list_streams")`.
+`session.create_client("kinesisvideo").get_paginator("list_streams")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kinesisvideo.paginator import ListStreamsPaginator
 
-def get_list_streams_paginator() -> ListStreamsPaginator:
-    return Session().create_client("kinesisvideo").get_paginator("list_streams")
+session = get_session()
+async with session.create_client("kinesisvideo") as client:
+    client: KinesisVideoClient
+    paginator: ListStreamsPaginator = client.get_paginator("list_streams")
 ```
 
 Boto3 documentation:

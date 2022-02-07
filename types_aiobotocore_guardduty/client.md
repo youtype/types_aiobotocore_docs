@@ -74,22 +74,25 @@ type annotations stubs module
     - [update_organization_configuration](#update_organization_configuration)
     - [update_publishing_destination](#update_publishing_destination)
     - [update_threat_intel_set](#update_threat_intel_set)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="guarddutyclient"></a>
 
 ## GuardDutyClient
 
-Type annotations for `aiobotocore.create_client("guardduty")`
+Type annotations for `session.create_client("guardduty")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_guardduty.client import GuardDutyClient
 
-def get_guardduty_client() -> GuardDutyClient:
-    return Session().client("guardduty")
+session = get_session()
+async with session.create_client("guardduty") as client:
+    client: GuardDutyClient
 ```
 
 Boto3 documentation:
@@ -125,8 +128,7 @@ Exceptions:
 
 GuardDutyClient exceptions.
 
-Type annotations for `aiobotocore.create_client("guardduty").exceptions`
-method.
+Type annotations for `session.create_client("guardduty").exceptions` method.
 
 Boto3 documentation:
 [GuardDuty.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.exceptions)
@@ -139,7 +141,7 @@ Returns [Exceptions](#exceptions).
 
 Accepts the invitation to be monitored by a GuardDuty administrator account.
 
-Type annotations for `aiobotocore.create_client("guardduty").accept_invitation`
+Type annotations for `session.create_client("guardduty").accept_invitation`
 method.
 
 Boto3 documentation:
@@ -164,7 +166,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Archives GuardDuty findings that are specified by the list of finding IDs.
 
-Type annotations for `aiobotocore.create_client("guardduty").archive_findings`
+Type annotations for `session.create_client("guardduty").archive_findings`
 method.
 
 Boto3 documentation:
@@ -188,19 +190,16 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("guardduty").can_paginate`
-method.
+Type annotations for `session.create_client("guardduty").can_paginate` method.
 
 Boto3 documentation:
 [GuardDuty.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_detector"></a>
 
@@ -208,7 +207,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a single Amazon GuardDuty detector.
 
-Type annotations for `aiobotocore.create_client("guardduty").create_detector`
+Type annotations for `session.create_client("guardduty").create_detector`
 method.
 
 Boto3 documentation:
@@ -238,8 +237,7 @@ Returns a `Coroutine` for
 
 Creates a filter using the specified finding criteria.
 
-Type annotations for `aiobotocore.create_client("guardduty").create_filter`
-method.
+Type annotations for `session.create_client("guardduty").create_filter` method.
 
 Boto3 documentation:
 [GuardDuty.Client.create_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.create_filter)
@@ -271,8 +269,7 @@ Returns a `Coroutine` for
 Creates a new IPSet, which is called a trusted IP list in the console user
 interface.
 
-Type annotations for `aiobotocore.create_client("guardduty").create_ip_set`
-method.
+Type annotations for `session.create_client("guardduty").create_ip_set` method.
 
 Boto3 documentation:
 [GuardDuty.Client.create_ip_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.create_ip_set)
@@ -301,7 +298,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("guardduty").create_members`
+Type annotations for `session.create_client("guardduty").create_members`
 method.
 
 Boto3 documentation:
@@ -329,7 +326,7 @@ Returns a `Coroutine` for
 Creates a publishing destination to export findings to.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").create_publishing_destination` method.
+`session.create_client("guardduty").create_publishing_destination` method.
 
 Boto3 documentation:
 [GuardDuty.Client.create_publishing_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.create_publishing_destination)
@@ -360,7 +357,7 @@ Returns a `Coroutine` for
 Generates example findings of types specified by the list of finding types.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").create_sample_findings` method.
+`session.create_client("guardduty").create_sample_findings` method.
 
 Boto3 documentation:
 [GuardDuty.Client.create_sample_findings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.create_sample_findings)
@@ -385,7 +382,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates a new ThreatIntelSet.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").create_threat_intel_set` method.
+`session.create_client("guardduty").create_threat_intel_set` method.
 
 Boto3 documentation:
 [GuardDuty.Client.create_threat_intel_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.create_threat_intel_set)
@@ -417,8 +414,8 @@ Returns a `Coroutine` for
 Declines invitations sent to the current member account by AWS accounts
 specified by their account IDs.
 
-Type annotations for
-`aiobotocore.create_client("guardduty").decline_invitations` method.
+Type annotations for `session.create_client("guardduty").decline_invitations`
+method.
 
 Boto3 documentation:
 [GuardDuty.Client.decline_invitations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.decline_invitations)
@@ -442,7 +439,7 @@ Returns a `Coroutine` for
 
 Deletes an Amazon GuardDuty detector that is specified by the detector ID.
 
-Type annotations for `aiobotocore.create_client("guardduty").delete_detector`
+Type annotations for `session.create_client("guardduty").delete_detector`
 method.
 
 Boto3 documentation:
@@ -465,8 +462,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the filter specified by the filter name.
 
-Type annotations for `aiobotocore.create_client("guardduty").delete_filter`
-method.
+Type annotations for `session.create_client("guardduty").delete_filter` method.
 
 Boto3 documentation:
 [GuardDuty.Client.delete_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.delete_filter)
@@ -490,8 +486,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes invitations sent to the current member account by AWS accounts
 specified by their account IDs.
 
-Type annotations for
-`aiobotocore.create_client("guardduty").delete_invitations` method.
+Type annotations for `session.create_client("guardduty").delete_invitations`
+method.
 
 Boto3 documentation:
 [GuardDuty.Client.delete_invitations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.delete_invitations)
@@ -515,8 +511,7 @@ Returns a `Coroutine` for
 
 Deletes the IPSet specified by the `ipSetId`.
 
-Type annotations for `aiobotocore.create_client("guardduty").delete_ip_set`
-method.
+Type annotations for `session.create_client("guardduty").delete_ip_set` method.
 
 Boto3 documentation:
 [GuardDuty.Client.delete_ip_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.delete_ip_set)
@@ -540,7 +535,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes GuardDuty member accounts (to the current GuardDuty administrator
 account) specified by the account IDs.
 
-Type annotations for `aiobotocore.create_client("guardduty").delete_members`
+Type annotations for `session.create_client("guardduty").delete_members`
 method.
 
 Boto3 documentation:
@@ -566,7 +561,7 @@ Returns a `Coroutine` for
 Deletes the publishing definition with the specified `destinationId` .
 
 Type annotations for
-`aiobotocore.create_client("guardduty").delete_publishing_destination` method.
+`session.create_client("guardduty").delete_publishing_destination` method.
 
 Boto3 documentation:
 [GuardDuty.Client.delete_publishing_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.delete_publishing_destination)
@@ -591,7 +586,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the ThreatIntelSet specified by the ThreatIntelSet ID.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").delete_threat_intel_set` method.
+`session.create_client("guardduty").delete_threat_intel_set` method.
 
 Boto3 documentation:
 [GuardDuty.Client.delete_threat_intel_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.delete_threat_intel_set)
@@ -617,7 +612,7 @@ Returns information about the account selected as the delegated administrator
 for GuardDuty.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").describe_organization_configuration`
+`session.create_client("guardduty").describe_organization_configuration`
 method.
 
 Boto3 documentation:
@@ -644,8 +639,7 @@ Returns information about the publishing destination specified by the provided
 `destinationId` .
 
 Type annotations for
-`aiobotocore.create_client("guardduty").describe_publishing_destination`
-method.
+`session.create_client("guardduty").describe_publishing_destination` method.
 
 Boto3 documentation:
 [GuardDuty.Client.describe_publishing_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.describe_publishing_destination)
@@ -672,8 +666,7 @@ Disables an AWS account within the Organization as the GuardDuty delegated
 administrator.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").disable_organization_admin_account`
-method.
+`session.create_client("guardduty").disable_organization_admin_account` method.
 
 Boto3 documentation:
 [GuardDuty.Client.disable_organization_admin_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.disable_organization_admin_account)
@@ -698,8 +691,7 @@ Disassociates the current GuardDuty member account from its administrator
 account.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").disassociate_from_master_account`
-method.
+`session.create_client("guardduty").disassociate_from_master_account` method.
 
 Boto3 documentation:
 [GuardDuty.Client.disassociate_from_master_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.disassociate_from_master_account)
@@ -723,8 +715,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates GuardDuty member accounts (to the current GuardDuty administrator
 account) specified by the account IDs.
 
-Type annotations for
-`aiobotocore.create_client("guardduty").disassociate_members` method.
+Type annotations for `session.create_client("guardduty").disassociate_members`
+method.
 
 Boto3 documentation:
 [GuardDuty.Client.disassociate_members](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.disassociate_members)
@@ -751,8 +743,7 @@ Enables an AWS account within the organization as the GuardDuty delegated
 administrator.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").enable_organization_admin_account`
-method.
+`session.create_client("guardduty").enable_organization_admin_account` method.
 
 Boto3 documentation:
 [GuardDuty.Client.enable_organization_admin_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.enable_organization_admin_account)
@@ -776,7 +767,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").generate_presigned_url` method.
+`session.create_client("guardduty").generate_presigned_url` method.
 
 Boto3 documentation:
 [GuardDuty.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.generate_presigned_url)
@@ -799,8 +790,7 @@ Returns a `Coroutine` for `str`.
 
 Retrieves an Amazon GuardDuty detector specified by the detectorId.
 
-Type annotations for `aiobotocore.create_client("guardduty").get_detector`
-method.
+Type annotations for `session.create_client("guardduty").get_detector` method.
 
 Boto3 documentation:
 [GuardDuty.Client.get_detector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.get_detector)
@@ -823,8 +813,7 @@ Returns a `Coroutine` for
 
 Returns the details of the filter specified by the filter name.
 
-Type annotations for `aiobotocore.create_client("guardduty").get_filter`
-method.
+Type annotations for `session.create_client("guardduty").get_filter` method.
 
 Boto3 documentation:
 [GuardDuty.Client.get_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.get_filter)
@@ -848,8 +837,7 @@ Returns a `Coroutine` for
 
 Describes Amazon GuardDuty findings specified by finding IDs.
 
-Type annotations for `aiobotocore.create_client("guardduty").get_findings`
-method.
+Type annotations for `session.create_client("guardduty").get_findings` method.
 
 Boto3 documentation:
 [GuardDuty.Client.get_findings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.get_findings)
@@ -875,7 +863,7 @@ Returns a `Coroutine` for
 Lists Amazon GuardDuty findings statistics for the specified detector ID.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").get_findings_statistics` method.
+`session.create_client("guardduty").get_findings_statistics` method.
 
 Boto3 documentation:
 [GuardDuty.Client.get_findings_statistics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.get_findings_statistics)
@@ -905,8 +893,8 @@ Returns a `Coroutine` for
 Returns the count of all GuardDuty membership invitations that were sent to the
 current member account except the currently accepted invitation.
 
-Type annotations for
-`aiobotocore.create_client("guardduty").get_invitations_count` method.
+Type annotations for `session.create_client("guardduty").get_invitations_count`
+method.
 
 Boto3 documentation:
 [GuardDuty.Client.get_invitations_count](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.get_invitations_count)
@@ -923,8 +911,7 @@ Returns a `Coroutine` for
 
 Retrieves the IPSet specified by the `ipSetId` .
 
-Type annotations for `aiobotocore.create_client("guardduty").get_ip_set`
-method.
+Type annotations for `session.create_client("guardduty").get_ip_set` method.
 
 Boto3 documentation:
 [GuardDuty.Client.get_ip_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.get_ip_set)
@@ -949,8 +936,8 @@ Returns a `Coroutine` for
 Provides the details for the GuardDuty administrator account associated with
 the current GuardDuty member account.
 
-Type annotations for
-`aiobotocore.create_client("guardduty").get_master_account` method.
+Type annotations for `session.create_client("guardduty").get_master_account`
+method.
 
 Boto3 documentation:
 [GuardDuty.Client.get_master_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.get_master_account)
@@ -974,8 +961,8 @@ Returns a `Coroutine` for
 
 Describes which data sources are enabled for the member account's detector.
 
-Type annotations for
-`aiobotocore.create_client("guardduty").get_member_detectors` method.
+Type annotations for `session.create_client("guardduty").get_member_detectors`
+method.
 
 Boto3 documentation:
 [GuardDuty.Client.get_member_detectors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.get_member_detectors)
@@ -1001,8 +988,7 @@ Returns a `Coroutine` for
 Retrieves GuardDuty member accounts (of the current GuardDuty administrator
 account) specified by the account IDs.
 
-Type annotations for `aiobotocore.create_client("guardduty").get_members`
-method.
+Type annotations for `session.create_client("guardduty").get_members` method.
 
 Boto3 documentation:
 [GuardDuty.Client.get_members](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.get_members)
@@ -1026,8 +1012,8 @@ Returns a `Coroutine` for
 
 Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet ID.
 
-Type annotations for
-`aiobotocore.create_client("guardduty").get_threat_intel_set` method.
+Type annotations for `session.create_client("guardduty").get_threat_intel_set`
+method.
 
 Boto3 documentation:
 [GuardDuty.Client.get_threat_intel_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.get_threat_intel_set)
@@ -1053,8 +1039,8 @@ Returns a `Coroutine` for
 Lists Amazon GuardDuty usage statistics over the last 30 days for the specified
 detector ID.
 
-Type annotations for
-`aiobotocore.create_client("guardduty").get_usage_statistics` method.
+Type annotations for `session.create_client("guardduty").get_usage_statistics`
+method.
 
 Boto3 documentation:
 [GuardDuty.Client.get_usage_statistics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.get_usage_statistics)
@@ -1088,7 +1074,7 @@ CreateMembers) to enable GuardDuty, and allow the current AWS account to view
 and manage these accounts' findings on their behalf as the GuardDuty
 administrator account.
 
-Type annotations for `aiobotocore.create_client("guardduty").invite_members`
+Type annotations for `session.create_client("guardduty").invite_members`
 method.
 
 Boto3 documentation:
@@ -1115,7 +1101,7 @@ Returns a `Coroutine` for
 
 Lists detectorIds of all the existing Amazon GuardDuty detector resources.
 
-Type annotations for `aiobotocore.create_client("guardduty").list_detectors`
+Type annotations for `session.create_client("guardduty").list_detectors`
 method.
 
 Boto3 documentation:
@@ -1140,8 +1126,7 @@ Returns a `Coroutine` for
 
 Returns a paginated list of the current filters.
 
-Type annotations for `aiobotocore.create_client("guardduty").list_filters`
-method.
+Type annotations for `session.create_client("guardduty").list_filters` method.
 
 Boto3 documentation:
 [GuardDuty.Client.list_filters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.list_filters)
@@ -1166,8 +1151,7 @@ Returns a `Coroutine` for
 
 Lists Amazon GuardDuty findings for the specified detector ID.
 
-Type annotations for `aiobotocore.create_client("guardduty").list_findings`
-method.
+Type annotations for `session.create_client("guardduty").list_findings` method.
 
 Boto3 documentation:
 [GuardDuty.Client.list_findings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.list_findings)
@@ -1196,7 +1180,7 @@ Returns a `Coroutine` for
 Lists all GuardDuty membership invitations that were sent to the current AWS
 account.
 
-Type annotations for `aiobotocore.create_client("guardduty").list_invitations`
+Type annotations for `session.create_client("guardduty").list_invitations`
 method.
 
 Boto3 documentation:
@@ -1221,8 +1205,7 @@ Returns a `Coroutine` for
 
 Lists the IPSets of the GuardDuty service specified by the detector ID.
 
-Type annotations for `aiobotocore.create_client("guardduty").list_ip_sets`
-method.
+Type annotations for `session.create_client("guardduty").list_ip_sets` method.
 
 Boto3 documentation:
 [GuardDuty.Client.list_ip_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.list_ip_sets)
@@ -1248,8 +1231,7 @@ Returns a `Coroutine` for
 Lists details about all member accounts for the current GuardDuty administrator
 account.
 
-Type annotations for `aiobotocore.create_client("guardduty").list_members`
-method.
+Type annotations for `session.create_client("guardduty").list_members` method.
 
 Boto3 documentation:
 [GuardDuty.Client.list_members](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.list_members)
@@ -1276,8 +1258,7 @@ Returns a `Coroutine` for
 Lists the accounts configured as GuardDuty delegated administrators.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").list_organization_admin_accounts`
-method.
+`session.create_client("guardduty").list_organization_admin_accounts` method.
 
 Boto3 documentation:
 [GuardDuty.Client.list_organization_admin_accounts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.list_organization_admin_accounts)
@@ -1304,7 +1285,7 @@ Returns a list of publishing destinations associated with the specified
 `dectectorId` .
 
 Type annotations for
-`aiobotocore.create_client("guardduty").list_publishing_destinations` method.
+`session.create_client("guardduty").list_publishing_destinations` method.
 
 Boto3 documentation:
 [GuardDuty.Client.list_publishing_destinations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.list_publishing_destinations)
@@ -1331,7 +1312,7 @@ Returns a `Coroutine` for
 Lists tags for a resource.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").list_tags_for_resource` method.
+`session.create_client("guardduty").list_tags_for_resource` method.
 
 Boto3 documentation:
 [GuardDuty.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.list_tags_for_resource)
@@ -1357,7 +1338,7 @@ Lists the ThreatIntelSets of the GuardDuty service specified by the detector
 ID.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").list_threat_intel_sets` method.
+`session.create_client("guardduty").list_threat_intel_sets` method.
 
 Boto3 documentation:
 [GuardDuty.Client.list_threat_intel_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.list_threat_intel_sets)
@@ -1384,7 +1365,7 @@ Returns a `Coroutine` for
 Turns on GuardDuty monitoring of the specified member accounts.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").start_monitoring_members` method.
+`session.create_client("guardduty").start_monitoring_members` method.
 
 Boto3 documentation:
 [GuardDuty.Client.start_monitoring_members](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.start_monitoring_members)
@@ -1410,7 +1391,7 @@ Returns a `Coroutine` for
 Stops GuardDuty monitoring for the specified member accounts.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").stop_monitoring_members` method.
+`session.create_client("guardduty").stop_monitoring_members` method.
 
 Boto3 documentation:
 [GuardDuty.Client.stop_monitoring_members](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.stop_monitoring_members)
@@ -1435,8 +1416,7 @@ Returns a `Coroutine` for
 
 Adds tags to a resource.
 
-Type annotations for `aiobotocore.create_client("guardduty").tag_resource`
-method.
+Type annotations for `session.create_client("guardduty").tag_resource` method.
 
 Boto3 documentation:
 [GuardDuty.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.tag_resource)
@@ -1459,8 +1439,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Unarchives GuardDuty findings specified by the `findingIds` .
 
-Type annotations for
-`aiobotocore.create_client("guardduty").unarchive_findings` method.
+Type annotations for `session.create_client("guardduty").unarchive_findings`
+method.
 
 Boto3 documentation:
 [GuardDuty.Client.unarchive_findings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.unarchive_findings)
@@ -1484,7 +1464,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from a resource.
 
-Type annotations for `aiobotocore.create_client("guardduty").untag_resource`
+Type annotations for `session.create_client("guardduty").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1508,7 +1488,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the Amazon GuardDuty detector specified by the detectorId.
 
-Type annotations for `aiobotocore.create_client("guardduty").update_detector`
+Type annotations for `session.create_client("guardduty").update_detector`
 method.
 
 Boto3 documentation:
@@ -1536,8 +1516,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the filter specified by the filter name.
 
-Type annotations for `aiobotocore.create_client("guardduty").update_filter`
-method.
+Type annotations for `session.create_client("guardduty").update_filter` method.
 
 Boto3 documentation:
 [GuardDuty.Client.update_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.update_filter)
@@ -1567,7 +1546,7 @@ Returns a `Coroutine` for
 Marks the specified GuardDuty findings as useful or not useful.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").update_findings_feedback` method.
+`session.create_client("guardduty").update_findings_feedback` method.
 
 Boto3 documentation:
 [GuardDuty.Client.update_findings_feedback](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.update_findings_feedback)
@@ -1593,8 +1572,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the IPSet specified by the IPSet ID.
 
-Type annotations for `aiobotocore.create_client("guardduty").update_ip_set`
-method.
+Type annotations for `session.create_client("guardduty").update_ip_set` method.
 
 Boto3 documentation:
 [GuardDuty.Client.update_ip_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.update_ip_set)
@@ -1621,7 +1599,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Contains information on member accounts to be updated.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").update_member_detectors` method.
+`session.create_client("guardduty").update_member_detectors` method.
 
 Boto3 documentation:
 [GuardDuty.Client.update_member_detectors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.update_member_detectors)
@@ -1649,8 +1627,7 @@ Returns a `Coroutine` for
 Updates the delegated administrator account with the values provided.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").update_organization_configuration`
-method.
+`session.create_client("guardduty").update_organization_configuration` method.
 
 Boto3 documentation:
 [GuardDuty.Client.update_organization_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.update_organization_configuration)
@@ -1678,7 +1655,7 @@ Updates information about the publishing destination specified by the
 `destinationId` .
 
 Type annotations for
-`aiobotocore.create_client("guardduty").update_publishing_destination` method.
+`session.create_client("guardduty").update_publishing_destination` method.
 
 Boto3 documentation:
 [GuardDuty.Client.update_publishing_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.update_publishing_destination)
@@ -1705,7 +1682,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the ThreatIntelSet specified by the ThreatIntelSet ID.
 
 Type annotations for
-`aiobotocore.create_client("guardduty").update_threat_intel_set` method.
+`session.create_client("guardduty").update_threat_intel_set` method.
 
 Boto3 documentation:
 [GuardDuty.Client.update_threat_intel_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.update_threat_intel_set)
@@ -1726,12 +1703,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("guardduty").__aenter__` method.
+
+Boto3 documentation:
+[GuardDuty.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [GuardDutyClient](#guarddutyclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("guardduty").__aexit__` method.
+
+Boto3 documentation:
+[GuardDuty.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/guardduty.html#GuardDuty.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("guardduty").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("guardduty").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_detectors")` ->
   [ListDetectorsPaginator](./paginators.md#listdetectorspaginator)

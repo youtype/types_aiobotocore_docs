@@ -44,22 +44,25 @@ type annotations stubs module
     - [update_job_template](#update_job_template)
     - [update_preset](#update_preset)
     - [update_queue](#update_queue)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="mediaconvertclient"></a>
 
 ## MediaConvertClient
 
-Type annotations for `aiobotocore.create_client("mediaconvert")`
+Type annotations for `session.create_client("mediaconvert")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_mediaconvert.client import MediaConvertClient
 
-def get_mediaconvert_client() -> MediaConvertClient:
-    return Session().client("mediaconvert")
+session = get_session()
+async with session.create_client("mediaconvert") as client:
+    client: MediaConvertClient
 ```
 
 Boto3 documentation:
@@ -99,8 +102,7 @@ Exceptions:
 
 MediaConvertClient exceptions.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").exceptions`
-method.
+Type annotations for `session.create_client("mediaconvert").exceptions` method.
 
 Boto3 documentation:
 [MediaConvert.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.exceptions)
@@ -115,7 +117,7 @@ Associates an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS
 Elemental MediaConvert.
 
 Type annotations for
-`aiobotocore.create_client("mediaconvert").associate_certificate` method.
+`session.create_client("mediaconvert").associate_certificate` method.
 
 Boto3 documentation:
 [MediaConvert.Client.associate_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.associate_certificate)
@@ -138,19 +140,17 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").can_paginate`
+Type annotations for `session.create_client("mediaconvert").can_paginate`
 method.
 
 Boto3 documentation:
 [MediaConvert.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_job"></a>
 
@@ -158,8 +158,7 @@ Returns a `Coroutine` for `bool`.
 
 Permanently cancel a job.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").cancel_job`
-method.
+Type annotations for `session.create_client("mediaconvert").cancel_job` method.
 
 Boto3 documentation:
 [MediaConvert.Client.cancel_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.cancel_job)
@@ -181,8 +180,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Create a new transcoding job.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").create_job`
-method.
+Type annotations for `session.create_client("mediaconvert").create_job` method.
 
 Boto3 documentation:
 [MediaConvert.Client.create_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.create_job)
@@ -224,7 +222,7 @@ Returns a `Coroutine` for
 Create a new job template.
 
 Type annotations for
-`aiobotocore.create_client("mediaconvert").create_job_template` method.
+`session.create_client("mediaconvert").create_job_template` method.
 
 Boto3 documentation:
 [MediaConvert.Client.create_job_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.create_job_template)
@@ -262,7 +260,7 @@ Returns a `Coroutine` for
 
 Create a new preset.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").create_preset`
+Type annotations for `session.create_client("mediaconvert").create_preset`
 method.
 
 Boto3 documentation:
@@ -291,7 +289,7 @@ Returns a `Coroutine` for
 
 Create a new transcoding queue.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").create_queue`
+Type annotations for `session.create_client("mediaconvert").create_queue`
 method.
 
 Boto3 documentation:
@@ -322,7 +320,7 @@ Returns a `Coroutine` for
 Permanently delete a job template you have created.
 
 Type annotations for
-`aiobotocore.create_client("mediaconvert").delete_job_template` method.
+`session.create_client("mediaconvert").delete_job_template` method.
 
 Boto3 documentation:
 [MediaConvert.Client.delete_job_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.delete_job_template)
@@ -345,7 +343,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Permanently delete a policy that you created.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").delete_policy`
+Type annotations for `session.create_client("mediaconvert").delete_policy`
 method.
 
 Boto3 documentation:
@@ -361,7 +359,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Permanently delete a preset you have created.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").delete_preset`
+Type annotations for `session.create_client("mediaconvert").delete_preset`
 method.
 
 Boto3 documentation:
@@ -384,7 +382,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Permanently delete a queue you have created.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").delete_queue`
+Type annotations for `session.create_client("mediaconvert").delete_queue`
 method.
 
 Boto3 documentation:
@@ -408,8 +406,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Send an request with an empty body to the regional API endpoint to get your
 account API endpoint.
 
-Type annotations for
-`aiobotocore.create_client("mediaconvert").describe_endpoints` method.
+Type annotations for `session.create_client("mediaconvert").describe_endpoints`
+method.
 
 Boto3 documentation:
 [MediaConvert.Client.describe_endpoints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.describe_endpoints)
@@ -438,7 +436,7 @@ Certificate Manager (ACM) certificate and an AWS Elemental MediaConvert
 resource.
 
 Type annotations for
-`aiobotocore.create_client("mediaconvert").disassociate_certificate` method.
+`session.create_client("mediaconvert").disassociate_certificate` method.
 
 Boto3 documentation:
 [MediaConvert.Client.disassociate_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.disassociate_certificate)
@@ -462,7 +460,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("mediaconvert").generate_presigned_url` method.
+`session.create_client("mediaconvert").generate_presigned_url` method.
 
 Boto3 documentation:
 [MediaConvert.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.generate_presigned_url)
@@ -485,8 +483,7 @@ Returns a `Coroutine` for `str`.
 
 Retrieve the JSON for a specific completed transcoding job.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").get_job`
-method.
+Type annotations for `session.create_client("mediaconvert").get_job` method.
 
 Boto3 documentation:
 [MediaConvert.Client.get_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.get_job)
@@ -509,8 +506,8 @@ Returns a `Coroutine` for
 
 Retrieve the JSON for a specific job template.
 
-Type annotations for
-`aiobotocore.create_client("mediaconvert").get_job_template` method.
+Type annotations for `session.create_client("mediaconvert").get_job_template`
+method.
 
 Boto3 documentation:
 [MediaConvert.Client.get_job_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.get_job_template)
@@ -533,8 +530,7 @@ Returns a `Coroutine` for
 
 Retrieve the JSON for your policy.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").get_policy`
-method.
+Type annotations for `session.create_client("mediaconvert").get_policy` method.
 
 Boto3 documentation:
 [MediaConvert.Client.get_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.get_policy)
@@ -550,8 +546,7 @@ Returns a `Coroutine` for
 
 Retrieve the JSON for a specific preset.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").get_preset`
-method.
+Type annotations for `session.create_client("mediaconvert").get_preset` method.
 
 Boto3 documentation:
 [MediaConvert.Client.get_preset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.get_preset)
@@ -574,8 +569,7 @@ Returns a `Coroutine` for
 
 Retrieve the JSON for a specific queue.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").get_queue`
-method.
+Type annotations for `session.create_client("mediaconvert").get_queue` method.
 
 Boto3 documentation:
 [MediaConvert.Client.get_queue](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.get_queue)
@@ -598,8 +592,8 @@ Returns a `Coroutine` for
 
 Retrieve a JSON array of up to twenty of your job templates.
 
-Type annotations for
-`aiobotocore.create_client("mediaconvert").list_job_templates` method.
+Type annotations for `session.create_client("mediaconvert").list_job_templates`
+method.
 
 Boto3 documentation:
 [MediaConvert.Client.list_job_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.list_job_templates)
@@ -627,8 +621,7 @@ Returns a `Coroutine` for
 
 Retrieve a JSON array of up to twenty of your most recently created jobs.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").list_jobs`
-method.
+Type annotations for `session.create_client("mediaconvert").list_jobs` method.
 
 Boto3 documentation:
 [MediaConvert.Client.list_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.list_jobs)
@@ -655,7 +648,7 @@ Returns a `Coroutine` for
 
 Retrieve a JSON array of up to twenty of your presets.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").list_presets`
+Type annotations for `session.create_client("mediaconvert").list_presets`
 method.
 
 Boto3 documentation:
@@ -683,7 +676,7 @@ Returns a `Coroutine` for
 
 Retrieve a JSON array of up to twenty of your queues.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").list_queues`
+Type annotations for `session.create_client("mediaconvert").list_queues`
 method.
 
 Boto3 documentation:
@@ -711,7 +704,7 @@ Returns a `Coroutine` for
 Retrieve the tags for a MediaConvert resource.
 
 Type annotations for
-`aiobotocore.create_client("mediaconvert").list_tags_for_resource` method.
+`session.create_client("mediaconvert").list_tags_for_resource` method.
 
 Boto3 documentation:
 [MediaConvert.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.list_tags_for_resource)
@@ -735,8 +728,7 @@ Returns a `Coroutine` for
 
 Create or change your policy.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").put_policy`
-method.
+Type annotations for `session.create_client("mediaconvert").put_policy` method.
 
 Boto3 documentation:
 [MediaConvert.Client.put_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.put_policy)
@@ -759,7 +751,7 @@ Returns a `Coroutine` for
 
 Add tags to a MediaConvert queue, preset, or job template.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").tag_resource`
+Type annotations for `session.create_client("mediaconvert").tag_resource`
 method.
 
 Boto3 documentation:
@@ -783,7 +775,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Remove tags from a MediaConvert queue, preset, or job template.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").untag_resource`
+Type annotations for `session.create_client("mediaconvert").untag_resource`
 method.
 
 Boto3 documentation:
@@ -808,7 +800,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Modify one of your existing job templates.
 
 Type annotations for
-`aiobotocore.create_client("mediaconvert").update_job_template` method.
+`session.create_client("mediaconvert").update_job_template` method.
 
 Boto3 documentation:
 [MediaConvert.Client.update_job_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.update_job_template)
@@ -844,7 +836,7 @@ Returns a `Coroutine` for
 
 Modify one of your existing presets.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").update_preset`
+Type annotations for `session.create_client("mediaconvert").update_preset`
 method.
 
 Boto3 documentation:
@@ -871,7 +863,7 @@ Returns a `Coroutine` for
 
 Modify one of your existing queues.
 
-Type annotations for `aiobotocore.create_client("mediaconvert").update_queue`
+Type annotations for `session.create_client("mediaconvert").update_queue`
 method.
 
 Boto3 documentation:
@@ -893,11 +885,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateQueueResponseTypeDef](./type_defs.md#updatequeueresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("mediaconvert").__aenter__` method.
+
+Boto3 documentation:
+[MediaConvert.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [MediaConvertClient](#mediaconvertclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("mediaconvert").__aexit__` method.
+
+Boto3 documentation:
+[MediaConvert.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconvert.html#MediaConvert.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("mediaconvert").get_paginator`
+Type annotations for `session.create_client("mediaconvert").get_paginator`
 method with overloads.
 
 - `client.get_paginator("describe_endpoints")` ->

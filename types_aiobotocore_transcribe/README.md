@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[transcribe]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[transcribe]'
+
+# standalone installation
 pip install types-aiobotocore-transcribe
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-transcribe
 
 ## TranscribeServiceClient
 
-Type annotations for `aiobotocore.create_client("transcribe")` as
+Type annotations for `session.create_client("transcribe")` as
 [TranscribeServiceClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_transcribe.client import TranscribeServiceClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_call_analytics_category](./client.md#create_call_analytics_category)
 - [create_language_model](./client.md#create_language_model)

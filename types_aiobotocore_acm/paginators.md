@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListCertificatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("acm").get_paginator("list_certificates")`.
+`session.create_client("acm").get_paginator("list_certificates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_acm.paginator import ListCertificatesPaginator
 
-def get_list_certificates_paginator() -> ListCertificatesPaginator:
-    return Session().create_client("acm").get_paginator("list_certificates")
+session = get_session()
+async with session.create_client("acm") as client:
+    client: ACMClient
+    paginator: ListCertificatesPaginator = client.get_paginator("list_certificates")
 ```
 
 Boto3 documentation:

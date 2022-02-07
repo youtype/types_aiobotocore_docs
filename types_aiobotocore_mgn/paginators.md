@@ -21,17 +21,19 @@ type annotations stubs module
 ## DescribeJobLogItemsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mgn").get_paginator("describe_job_log_items")`.
+`session.create_client("mgn").get_paginator("describe_job_log_items")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mgn.paginator import DescribeJobLogItemsPaginator
 
-def get_describe_job_log_items_paginator() -> DescribeJobLogItemsPaginator:
-    return Session().create_client("mgn").get_paginator("describe_job_log_items")
+session = get_session()
+async with session.create_client("mgn") as client:
+    client: mgnClient
+    paginator: DescribeJobLogItemsPaginator = client.get_paginator("describe_job_log_items")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `DescribeJobLogItemsPaginator.paginate` method:
 ## DescribeJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mgn").get_paginator("describe_jobs")`.
+`session.create_client("mgn").get_paginator("describe_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mgn.paginator import DescribeJobsPaginator
 
-def get_describe_jobs_paginator() -> DescribeJobsPaginator:
-    return Session().create_client("mgn").get_paginator("describe_jobs")
+session = get_session()
+async with session.create_client("mgn") as client:
+    client: mgnClient
+    paginator: DescribeJobsPaginator = client.get_paginator("describe_jobs")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `DescribeJobsPaginator.paginate` method:
 ## DescribeReplicationConfigurationTemplatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("mgn").get_paginator("describe_replication_configuration_templates")`.
+`session.create_client("mgn").get_paginator("describe_replication_configuration_templates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mgn.paginator import DescribeReplicationConfigurationTemplatesPaginator
 
-def get_describe_replication_configuration_templates_paginator() -> DescribeReplicationConfigurationTemplatesPaginator:
-    return Session().create_client("mgn").get_paginator("describe_replication_configuration_templates")
+session = get_session()
+async with session.create_client("mgn") as client:
+    client: mgnClient
+    paginator: DescribeReplicationConfigurationTemplatesPaginator = client.get_paginator("describe_replication_configuration_templates")
 ```
 
 Boto3 documentation:
@@ -114,17 +120,19 @@ method:
 ## DescribeSourceServersPaginator
 
 Type annotations for
-`aiobotocore.create_client("mgn").get_paginator("describe_source_servers")`.
+`session.create_client("mgn").get_paginator("describe_source_servers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mgn.paginator import DescribeSourceServersPaginator
 
-def get_describe_source_servers_paginator() -> DescribeSourceServersPaginator:
-    return Session().create_client("mgn").get_paginator("describe_source_servers")
+session = get_session()
+async with session.create_client("mgn") as client:
+    client: mgnClient
+    paginator: DescribeSourceServersPaginator = client.get_paginator("describe_source_servers")
 ```
 
 Boto3 documentation:
@@ -146,17 +154,19 @@ Arguments for `DescribeSourceServersPaginator.paginate` method:
 ## DescribeVcenterClientsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mgn").get_paginator("describe_vcenter_clients")`.
+`session.create_client("mgn").get_paginator("describe_vcenter_clients")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mgn.paginator import DescribeVcenterClientsPaginator
 
-def get_describe_vcenter_clients_paginator() -> DescribeVcenterClientsPaginator:
-    return Session().create_client("mgn").get_paginator("describe_vcenter_clients")
+session = get_session()
+async with session.create_client("mgn") as client:
+    client: mgnClient
+    paginator: DescribeVcenterClientsPaginator = client.get_paginator("describe_vcenter_clients")
 ```
 
 Boto3 documentation:

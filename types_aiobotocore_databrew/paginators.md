@@ -24,17 +24,19 @@ type annotations stubs module
 ## ListDatasetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("databrew").get_paginator("list_datasets")`.
+`session.create_client("databrew").get_paginator("list_datasets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_databrew.paginator import ListDatasetsPaginator
 
-def get_list_datasets_paginator() -> ListDatasetsPaginator:
-    return Session().create_client("databrew").get_paginator("list_datasets")
+session = get_session()
+async with session.create_client("databrew") as client:
+    client: GlueDataBrewClient
+    paginator: ListDatasetsPaginator = client.get_paginator("list_datasets")
 ```
 
 Boto3 documentation:
@@ -53,17 +55,19 @@ Arguments for `ListDatasetsPaginator.paginate` method:
 ## ListJobRunsPaginator
 
 Type annotations for
-`aiobotocore.create_client("databrew").get_paginator("list_job_runs")`.
+`session.create_client("databrew").get_paginator("list_job_runs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_databrew.paginator import ListJobRunsPaginator
 
-def get_list_job_runs_paginator() -> ListJobRunsPaginator:
-    return Session().create_client("databrew").get_paginator("list_job_runs")
+session = get_session()
+async with session.create_client("databrew") as client:
+    client: GlueDataBrewClient
+    paginator: ListJobRunsPaginator = client.get_paginator("list_job_runs")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `ListJobRunsPaginator.paginate` method:
 ## ListJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("databrew").get_paginator("list_jobs")`.
+`session.create_client("databrew").get_paginator("list_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_databrew.paginator import ListJobsPaginator
 
-def get_list_jobs_paginator() -> ListJobsPaginator:
-    return Session().create_client("databrew").get_paginator("list_jobs")
+session = get_session()
+async with session.create_client("databrew") as client:
+    client: GlueDataBrewClient
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
 ```
 
 Boto3 documentation:
@@ -114,17 +120,19 @@ Arguments for `ListJobsPaginator.paginate` method:
 ## ListProjectsPaginator
 
 Type annotations for
-`aiobotocore.create_client("databrew").get_paginator("list_projects")`.
+`session.create_client("databrew").get_paginator("list_projects")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_databrew.paginator import ListProjectsPaginator
 
-def get_list_projects_paginator() -> ListProjectsPaginator:
-    return Session().create_client("databrew").get_paginator("list_projects")
+session = get_session()
+async with session.create_client("databrew") as client:
+    client: GlueDataBrewClient
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
 ```
 
 Boto3 documentation:
@@ -143,17 +151,19 @@ Arguments for `ListProjectsPaginator.paginate` method:
 ## ListRecipeVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("databrew").get_paginator("list_recipe_versions")`.
+`session.create_client("databrew").get_paginator("list_recipe_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_databrew.paginator import ListRecipeVersionsPaginator
 
-def get_list_recipe_versions_paginator() -> ListRecipeVersionsPaginator:
-    return Session().create_client("databrew").get_paginator("list_recipe_versions")
+session = get_session()
+async with session.create_client("databrew") as client:
+    client: GlueDataBrewClient
+    paginator: ListRecipeVersionsPaginator = client.get_paginator("list_recipe_versions")
 ```
 
 Boto3 documentation:
@@ -173,17 +183,19 @@ Arguments for `ListRecipeVersionsPaginator.paginate` method:
 ## ListRecipesPaginator
 
 Type annotations for
-`aiobotocore.create_client("databrew").get_paginator("list_recipes")`.
+`session.create_client("databrew").get_paginator("list_recipes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_databrew.paginator import ListRecipesPaginator
 
-def get_list_recipes_paginator() -> ListRecipesPaginator:
-    return Session().create_client("databrew").get_paginator("list_recipes")
+session = get_session()
+async with session.create_client("databrew") as client:
+    client: GlueDataBrewClient
+    paginator: ListRecipesPaginator = client.get_paginator("list_recipes")
 ```
 
 Boto3 documentation:
@@ -203,17 +215,19 @@ Arguments for `ListRecipesPaginator.paginate` method:
 ## ListRulesetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("databrew").get_paginator("list_rulesets")`.
+`session.create_client("databrew").get_paginator("list_rulesets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_databrew.paginator import ListRulesetsPaginator
 
-def get_list_rulesets_paginator() -> ListRulesetsPaginator:
-    return Session().create_client("databrew").get_paginator("list_rulesets")
+session = get_session()
+async with session.create_client("databrew") as client:
+    client: GlueDataBrewClient
+    paginator: ListRulesetsPaginator = client.get_paginator("list_rulesets")
 ```
 
 Boto3 documentation:
@@ -233,17 +247,19 @@ Arguments for `ListRulesetsPaginator.paginate` method:
 ## ListSchedulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("databrew").get_paginator("list_schedules")`.
+`session.create_client("databrew").get_paginator("list_schedules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_databrew.paginator import ListSchedulesPaginator
 
-def get_list_schedules_paginator() -> ListSchedulesPaginator:
-    return Session().create_client("databrew").get_paginator("list_schedules")
+session = get_session()
+async with session.create_client("databrew") as client:
+    client: GlueDataBrewClient
+    paginator: ListSchedulesPaginator = client.get_paginator("list_schedules")
 ```
 
 Boto3 documentation:

@@ -39,22 +39,25 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_state_machine](#update_state_machine)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="sfnclient"></a>
 
 ## SFNClient
 
-Type annotations for `aiobotocore.create_client("stepfunctions")`
+Type annotations for `session.create_client("stepfunctions")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_stepfunctions.client import SFNClient
 
-def get_stepfunctions_client() -> SFNClient:
-    return Session().client("stepfunctions")
+session = get_session()
+async with session.create_client("stepfunctions") as client:
+    client: SFNClient
 ```
 
 Boto3 documentation:
@@ -112,7 +115,7 @@ Exceptions:
 
 SFNClient exceptions.
 
-Type annotations for `aiobotocore.create_client("stepfunctions").exceptions`
+Type annotations for `session.create_client("stepfunctions").exceptions`
 method.
 
 Boto3 documentation:
@@ -126,19 +129,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("stepfunctions").can_paginate`
+Type annotations for `session.create_client("stepfunctions").can_paginate`
 method.
 
 Boto3 documentation:
 [SFN.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_activity"></a>
 
@@ -146,8 +147,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates an activity.
 
-Type annotations for
-`aiobotocore.create_client("stepfunctions").create_activity` method.
+Type annotations for `session.create_client("stepfunctions").create_activity`
+method.
 
 Boto3 documentation:
 [SFN.Client.create_activity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.create_activity)
@@ -172,7 +173,7 @@ Returns a `Coroutine` for
 Creates a state machine.
 
 Type annotations for
-`aiobotocore.create_client("stepfunctions").create_state_machine` method.
+`session.create_client("stepfunctions").create_state_machine` method.
 
 Boto3 documentation:
 [SFN.Client.create_state_machine](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.create_state_machine)
@@ -204,8 +205,8 @@ Returns a `Coroutine` for
 
 Deletes an activity.
 
-Type annotations for
-`aiobotocore.create_client("stepfunctions").delete_activity` method.
+Type annotations for `session.create_client("stepfunctions").delete_activity`
+method.
 
 Boto3 documentation:
 [SFN.Client.delete_activity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.delete_activity)
@@ -228,7 +229,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a state machine.
 
 Type annotations for
-`aiobotocore.create_client("stepfunctions").delete_state_machine` method.
+`session.create_client("stepfunctions").delete_state_machine` method.
 
 Boto3 documentation:
 [SFN.Client.delete_state_machine](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.delete_state_machine)
@@ -251,8 +252,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Describes an activity.
 
-Type annotations for
-`aiobotocore.create_client("stepfunctions").describe_activity` method.
+Type annotations for `session.create_client("stepfunctions").describe_activity`
+method.
 
 Boto3 documentation:
 [SFN.Client.describe_activity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.describe_activity)
@@ -276,7 +277,7 @@ Returns a `Coroutine` for
 Describes an execution.
 
 Type annotations for
-`aiobotocore.create_client("stepfunctions").describe_execution` method.
+`session.create_client("stepfunctions").describe_execution` method.
 
 Boto3 documentation:
 [SFN.Client.describe_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.describe_execution)
@@ -301,7 +302,7 @@ Returns a `Coroutine` for
 Describes a state machine.
 
 Type annotations for
-`aiobotocore.create_client("stepfunctions").describe_state_machine` method.
+`session.create_client("stepfunctions").describe_state_machine` method.
 
 Boto3 documentation:
 [SFN.Client.describe_state_machine](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.describe_state_machine)
@@ -326,7 +327,7 @@ Returns a `Coroutine` for
 Describes the state machine associated with a specific execution.
 
 Type annotations for
-`aiobotocore.create_client("stepfunctions").describe_state_machine_for_execution`
+`session.create_client("stepfunctions").describe_state_machine_for_execution`
 method.
 
 Boto3 documentation:
@@ -352,7 +353,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("stepfunctions").generate_presigned_url` method.
+`session.create_client("stepfunctions").generate_presigned_url` method.
 
 Boto3 documentation:
 [SFN.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.generate_presigned_url)
@@ -376,8 +377,8 @@ Returns a `Coroutine` for `str`.
 Used by workers to retrieve a task (with the specified activity ARN) which has
 been scheduled for execution by a running state machine.
 
-Type annotations for
-`aiobotocore.create_client("stepfunctions").get_activity_task` method.
+Type annotations for `session.create_client("stepfunctions").get_activity_task`
+method.
 
 Boto3 documentation:
 [SFN.Client.get_activity_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.get_activity_task)
@@ -402,7 +403,7 @@ Returns a `Coroutine` for
 Returns the history of the specified execution as a list of events.
 
 Type annotations for
-`aiobotocore.create_client("stepfunctions").get_execution_history` method.
+`session.create_client("stepfunctions").get_execution_history` method.
 
 Boto3 documentation:
 [SFN.Client.get_execution_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.get_execution_history)
@@ -430,8 +431,8 @@ Returns a `Coroutine` for
 
 Lists the existing activities.
 
-Type annotations for
-`aiobotocore.create_client("stepfunctions").list_activities` method.
+Type annotations for `session.create_client("stepfunctions").list_activities`
+method.
 
 Boto3 documentation:
 [SFN.Client.list_activities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.list_activities)
@@ -455,8 +456,8 @@ Returns a `Coroutine` for
 
 Lists the executions of a state machine that meet the filtering criteria.
 
-Type annotations for
-`aiobotocore.create_client("stepfunctions").list_executions` method.
+Type annotations for `session.create_client("stepfunctions").list_executions`
+method.
 
 Boto3 documentation:
 [SFN.Client.list_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.list_executions)
@@ -483,7 +484,7 @@ Returns a `Coroutine` for
 Lists the existing state machines.
 
 Type annotations for
-`aiobotocore.create_client("stepfunctions").list_state_machines` method.
+`session.create_client("stepfunctions").list_state_machines` method.
 
 Boto3 documentation:
 [SFN.Client.list_state_machines](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.list_state_machines)
@@ -509,7 +510,7 @@ Returns a `Coroutine` for
 List tags for a given resource.
 
 Type annotations for
-`aiobotocore.create_client("stepfunctions").list_tags_for_resource` method.
+`session.create_client("stepfunctions").list_tags_for_resource` method.
 
 Boto3 documentation:
 [SFN.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.list_tags_for_resource)
@@ -536,8 +537,8 @@ Used by activity workers and task states using the
 resource.html#connect-wait-token)\_ pattern to report that the task identified
 by the `taskToken` failed.
 
-Type annotations for
-`aiobotocore.create_client("stepfunctions").send_task_failure` method.
+Type annotations for `session.create_client("stepfunctions").send_task_failure`
+method.
 
 Boto3 documentation:
 [SFN.Client.send_task_failure](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.send_task_failure)
@@ -565,7 +566,7 @@ resource.html#connect-wait-token)\_ pattern to report to Step Functions that
 the task represented by the specified `taskToken` is still making progress.
 
 Type annotations for
-`aiobotocore.create_client("stepfunctions").send_task_heartbeat` method.
+`session.create_client("stepfunctions").send_task_heartbeat` method.
 
 Boto3 documentation:
 [SFN.Client.send_task_heartbeat](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.send_task_heartbeat)
@@ -591,8 +592,8 @@ Used by activity workers and task states using the
 resource.html#connect-wait-token)\_ pattern to report that the task identified
 by the `taskToken` completed successfully.
 
-Type annotations for
-`aiobotocore.create_client("stepfunctions").send_task_success` method.
+Type annotations for `session.create_client("stepfunctions").send_task_success`
+method.
 
 Boto3 documentation:
 [SFN.Client.send_task_success](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.send_task_success)
@@ -615,8 +616,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Starts a state machine execution.
 
-Type annotations for
-`aiobotocore.create_client("stepfunctions").start_execution` method.
+Type annotations for `session.create_client("stepfunctions").start_execution`
+method.
 
 Boto3 documentation:
 [SFN.Client.start_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.start_execution)
@@ -643,7 +644,7 @@ Returns a `Coroutine` for
 Starts a Synchronous Express state machine execution.
 
 Type annotations for
-`aiobotocore.create_client("stepfunctions").start_sync_execution` method.
+`session.create_client("stepfunctions").start_sync_execution` method.
 
 Boto3 documentation:
 [SFN.Client.start_sync_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.start_sync_execution)
@@ -670,8 +671,8 @@ Returns a `Coroutine` for
 
 Stops an execution.
 
-Type annotations for
-`aiobotocore.create_client("stepfunctions").stop_execution` method.
+Type annotations for `session.create_client("stepfunctions").stop_execution`
+method.
 
 Boto3 documentation:
 [SFN.Client.stop_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.stop_execution)
@@ -696,7 +697,7 @@ Returns a `Coroutine` for
 
 Add a tag to a Step Functions resource.
 
-Type annotations for `aiobotocore.create_client("stepfunctions").tag_resource`
+Type annotations for `session.create_client("stepfunctions").tag_resource`
 method.
 
 Boto3 documentation:
@@ -721,8 +722,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Remove a tag from a Step Functions resource See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UntagResource).
 
-Type annotations for
-`aiobotocore.create_client("stepfunctions").untag_resource` method.
+Type annotations for `session.create_client("stepfunctions").untag_resource`
+method.
 
 Boto3 documentation:
 [SFN.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.untag_resource)
@@ -747,7 +748,7 @@ Updates an existing state machine by modifying its `definition` , `roleArn` ,
 or `loggingConfiguration`.
 
 Type annotations for
-`aiobotocore.create_client("stepfunctions").update_state_machine` method.
+`session.create_client("stepfunctions").update_state_machine` method.
 
 Boto3 documentation:
 [SFN.Client.update_state_machine](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.update_state_machine)
@@ -771,11 +772,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateStateMachineOutputTypeDef](./type_defs.md#updatestatemachineoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("stepfunctions").__aenter__`
+method.
+
+Boto3 documentation:
+[SFN.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SFNClient](#sfnclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("stepfunctions").__aexit__` method.
+
+Boto3 documentation:
+[SFN.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html#SFN.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("stepfunctions").get_paginator`
+Type annotations for `session.create_client("stepfunctions").get_paginator`
 method with overloads.
 
 - `client.get_paginator("get_execution_history")` ->

@@ -19,17 +19,19 @@ type annotations stubs module
 ## DescribeBackupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("fsx").get_paginator("describe_backups")`.
+`session.create_client("fsx").get_paginator("describe_backups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_fsx.paginator import DescribeBackupsPaginator
 
-def get_describe_backups_paginator() -> DescribeBackupsPaginator:
-    return Session().create_client("fsx").get_paginator("describe_backups")
+session = get_session()
+async with session.create_client("fsx") as client:
+    client: FSxClient
+    paginator: DescribeBackupsPaginator = client.get_paginator("describe_backups")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `DescribeBackupsPaginator.paginate` method:
 ## DescribeFileSystemsPaginator
 
 Type annotations for
-`aiobotocore.create_client("fsx").get_paginator("describe_file_systems")`.
+`session.create_client("fsx").get_paginator("describe_file_systems")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_fsx.paginator import DescribeFileSystemsPaginator
 
-def get_describe_file_systems_paginator() -> DescribeFileSystemsPaginator:
-    return Session().create_client("fsx").get_paginator("describe_file_systems")
+session = get_session()
+async with session.create_client("fsx") as client:
+    client: FSxClient
+    paginator: DescribeFileSystemsPaginator = client.get_paginator("describe_file_systems")
 ```
 
 Boto3 documentation:
@@ -80,17 +84,19 @@ Arguments for `DescribeFileSystemsPaginator.paginate` method:
 ## ListTagsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("fsx").get_paginator("list_tags_for_resource")`.
+`session.create_client("fsx").get_paginator("list_tags_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_fsx.paginator import ListTagsForResourcePaginator
 
-def get_list_tags_for_resource_paginator() -> ListTagsForResourcePaginator:
-    return Session().create_client("fsx").get_paginator("list_tags_for_resource")
+session = get_session()
+async with session.create_client("fsx") as client:
+    client: FSxClient
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
 ```
 
 Boto3 documentation:

@@ -182,22 +182,25 @@ type annotations stubs module
     - [update_trigger](#update_trigger)
     - [update_user_defined_function](#update_user_defined_function)
     - [update_workflow](#update_workflow)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="glueclient"></a>
 
 ## GlueClient
 
-Type annotations for `aiobotocore.create_client("glue")`
+Type annotations for `session.create_client("glue")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_glue.client import GlueClient
 
-def get_glue_client() -> GlueClient:
-    return Session().client("glue")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
 ```
 
 Boto3 documentation:
@@ -258,7 +261,7 @@ Exceptions:
 
 GlueClient exceptions.
 
-Type annotations for `aiobotocore.create_client("glue").exceptions` method.
+Type annotations for `session.create_client("glue").exceptions` method.
 
 Boto3 documentation:
 [Glue.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.exceptions)
@@ -271,7 +274,7 @@ Returns [Exceptions](#exceptions).
 
 Creates one or more partitions in a batch operation.
 
-Type annotations for `aiobotocore.create_client("glue").batch_create_partition`
+Type annotations for `session.create_client("glue").batch_create_partition`
 method.
 
 Boto3 documentation:
@@ -301,8 +304,8 @@ Returns a `Coroutine` for
 
 Deletes a list of connection definitions from the Data Catalog.
 
-Type annotations for
-`aiobotocore.create_client("glue").batch_delete_connection` method.
+Type annotations for `session.create_client("glue").batch_delete_connection`
+method.
 
 Boto3 documentation:
 [Glue.Client.batch_delete_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.batch_delete_connection)
@@ -327,7 +330,7 @@ Returns a `Coroutine` for
 
 Deletes one or more partitions in a batch operation.
 
-Type annotations for `aiobotocore.create_client("glue").batch_delete_partition`
+Type annotations for `session.create_client("glue").batch_delete_partition`
 method.
 
 Boto3 documentation:
@@ -357,8 +360,7 @@ Returns a `Coroutine` for
 
 Deletes multiple tables at once.
 
-Type annotations for `aiobotocore.create_client("glue").batch_delete_table`
-method.
+Type annotations for `session.create_client("glue").batch_delete_table` method.
 
 Boto3 documentation:
 [Glue.Client.batch_delete_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.batch_delete_table)
@@ -385,8 +387,8 @@ Returns a `Coroutine` for
 
 Deletes a specified batch of versions of a table.
 
-Type annotations for
-`aiobotocore.create_client("glue").batch_delete_table_version` method.
+Type annotations for `session.create_client("glue").batch_delete_table_version`
+method.
 
 Boto3 documentation:
 [Glue.Client.batch_delete_table_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.batch_delete_table_version)
@@ -413,7 +415,7 @@ Returns a `Coroutine` for
 
 Retrieves information about a list of blueprints.
 
-Type annotations for `aiobotocore.create_client("glue").batch_get_blueprints`
+Type annotations for `session.create_client("glue").batch_get_blueprints`
 method.
 
 Boto3 documentation:
@@ -440,8 +442,7 @@ Returns a `Coroutine` for
 
 Returns a list of resource metadata for a given list of crawler names.
 
-Type annotations for `aiobotocore.create_client("glue").batch_get_crawlers`
-method.
+Type annotations for `session.create_client("glue").batch_get_crawlers` method.
 
 Boto3 documentation:
 [Glue.Client.batch_get_crawlers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.batch_get_crawlers)
@@ -466,8 +467,8 @@ Returns a `Coroutine` for
 Returns a list of resource metadata for a given list of development endpoint
 names.
 
-Type annotations for
-`aiobotocore.create_client("glue").batch_get_dev_endpoints` method.
+Type annotations for `session.create_client("glue").batch_get_dev_endpoints`
+method.
 
 Boto3 documentation:
 [Glue.Client.batch_get_dev_endpoints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.batch_get_dev_endpoints)
@@ -491,7 +492,7 @@ Returns a `Coroutine` for
 
 Returns a list of resource metadata for a given list of job names.
 
-Type annotations for `aiobotocore.create_client("glue").batch_get_jobs` method.
+Type annotations for `session.create_client("glue").batch_get_jobs` method.
 
 Boto3 documentation:
 [Glue.Client.batch_get_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.batch_get_jobs)
@@ -514,7 +515,7 @@ Returns a `Coroutine` for
 
 Retrieves partitions in a batch request.
 
-Type annotations for `aiobotocore.create_client("glue").batch_get_partition`
+Type annotations for `session.create_client("glue").batch_get_partition`
 method.
 
 Boto3 documentation:
@@ -544,8 +545,7 @@ Returns a `Coroutine` for
 
 Returns a list of resource metadata for a given list of trigger names.
 
-Type annotations for `aiobotocore.create_client("glue").batch_get_triggers`
-method.
+Type annotations for `session.create_client("glue").batch_get_triggers` method.
 
 Boto3 documentation:
 [Glue.Client.batch_get_triggers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.batch_get_triggers)
@@ -569,7 +569,7 @@ Returns a `Coroutine` for
 
 Returns a list of resource metadata for a given list of workflow names.
 
-Type annotations for `aiobotocore.create_client("glue").batch_get_workflows`
+Type annotations for `session.create_client("glue").batch_get_workflows`
 method.
 
 Boto3 documentation:
@@ -595,8 +595,7 @@ Returns a `Coroutine` for
 
 Stops one or more job runs for a specified job definition.
 
-Type annotations for `aiobotocore.create_client("glue").batch_stop_job_run`
-method.
+Type annotations for `session.create_client("glue").batch_stop_job_run` method.
 
 Boto3 documentation:
 [Glue.Client.batch_stop_job_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.batch_stop_job_run)
@@ -621,7 +620,7 @@ Returns a `Coroutine` for
 
 Updates one or more partitions in a batch operation.
 
-Type annotations for `aiobotocore.create_client("glue").batch_update_partition`
+Type annotations for `session.create_client("glue").batch_update_partition`
 method.
 
 Boto3 documentation:
@@ -651,18 +650,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("glue").can_paginate` method.
+Type annotations for `session.create_client("glue").can_paginate` method.
 
 Boto3 documentation:
 [Glue.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_ml_task_run"></a>
 
@@ -670,8 +667,7 @@ Returns a `Coroutine` for `bool`.
 
 Cancels (stops) a task run.
 
-Type annotations for `aiobotocore.create_client("glue").cancel_ml_task_run`
-method.
+Type annotations for `session.create_client("glue").cancel_ml_task_run` method.
 
 Boto3 documentation:
 [Glue.Client.cancel_ml_task_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.cancel_ml_task_run)
@@ -697,7 +693,7 @@ Returns a `Coroutine` for
 Validates the supplied schema.
 
 Type annotations for
-`aiobotocore.create_client("glue").check_schema_version_validity` method.
+`session.create_client("glue").check_schema_version_validity` method.
 
 Boto3 documentation:
 [Glue.Client.check_schema_version_validity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.check_schema_version_validity)
@@ -722,8 +718,7 @@ Returns a `Coroutine` for
 
 Registers a blueprint with Glue.
 
-Type annotations for `aiobotocore.create_client("glue").create_blueprint`
-method.
+Type annotations for `session.create_client("glue").create_blueprint` method.
 
 Boto3 documentation:
 [Glue.Client.create_blueprint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_blueprint)
@@ -749,8 +744,7 @@ Returns a `Coroutine` for
 
 Creates a classifier in the user's account.
 
-Type annotations for `aiobotocore.create_client("glue").create_classifier`
-method.
+Type annotations for `session.create_client("glue").create_classifier` method.
 
 Boto3 documentation:
 [Glue.Client.create_classifier](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_classifier)
@@ -779,8 +773,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a connection definition in the Data Catalog.
 
-Type annotations for `aiobotocore.create_client("glue").create_connection`
-method.
+Type annotations for `session.create_client("glue").create_connection` method.
 
 Boto3 documentation:
 [Glue.Client.create_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_connection)
@@ -806,7 +799,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates a new crawler with specified targets, role, configuration, and optional
 schedule.
 
-Type annotations for `aiobotocore.create_client("glue").create_crawler` method.
+Type annotations for `session.create_client("glue").create_crawler` method.
 
 Boto3 documentation:
 [Glue.Client.create_crawler](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_crawler)
@@ -844,8 +837,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a new database in a Data Catalog.
 
-Type annotations for `aiobotocore.create_client("glue").create_database`
-method.
+Type annotations for `session.create_client("glue").create_database` method.
 
 Boto3 documentation:
 [Glue.Client.create_database](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_database)
@@ -869,7 +861,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a new development endpoint.
 
-Type annotations for `aiobotocore.create_client("glue").create_dev_endpoint`
+Type annotations for `session.create_client("glue").create_dev_endpoint`
 method.
 
 Boto3 documentation:
@@ -908,7 +900,7 @@ Returns a `Coroutine` for
 
 Creates a new job definition.
 
-Type annotations for `aiobotocore.create_client("glue").create_job` method.
+Type annotations for `session.create_client("glue").create_job` method.
 
 Boto3 documentation:
 [Glue.Client.create_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_job)
@@ -952,7 +944,7 @@ Returns a `Coroutine` for
 
 Creates an Glue machine learning transform.
 
-Type annotations for `aiobotocore.create_client("glue").create_ml_transform`
+Type annotations for `session.create_client("glue").create_ml_transform`
 method.
 
 Boto3 documentation:
@@ -994,8 +986,7 @@ Returns a `Coroutine` for
 
 Creates a new partition.
 
-Type annotations for `aiobotocore.create_client("glue").create_partition`
-method.
+Type annotations for `session.create_client("glue").create_partition` method.
 
 Boto3 documentation:
 [Glue.Client.create_partition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_partition)
@@ -1021,7 +1012,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a specified partition index in an existing table.
 
-Type annotations for `aiobotocore.create_client("glue").create_partition_index`
+Type annotations for `session.create_client("glue").create_partition_index`
 method.
 
 Boto3 documentation:
@@ -1049,8 +1040,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a new registry which may be used to hold a collection of schemas.
 
-Type annotations for `aiobotocore.create_client("glue").create_registry`
-method.
+Type annotations for `session.create_client("glue").create_registry` method.
 
 Boto3 documentation:
 [Glue.Client.create_registry](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_registry)
@@ -1075,7 +1065,7 @@ Returns a `Coroutine` for
 
 Creates a new schema set and registers the schema definition.
 
-Type annotations for `aiobotocore.create_client("glue").create_schema` method.
+Type annotations for `session.create_client("glue").create_schema` method.
 
 Boto3 documentation:
 [Glue.Client.create_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_schema)
@@ -1104,7 +1094,7 @@ Returns a `Coroutine` for
 
 Transforms a directed acyclic graph (DAG) into code.
 
-Type annotations for `aiobotocore.create_client("glue").create_script` method.
+Type annotations for `session.create_client("glue").create_script` method.
 
 Boto3 documentation:
 [Glue.Client.create_script](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_script)
@@ -1132,7 +1122,7 @@ Returns a `Coroutine` for
 Creates a new security configuration.
 
 Type annotations for
-`aiobotocore.create_client("glue").create_security_configuration` method.
+`session.create_client("glue").create_security_configuration` method.
 
 Boto3 documentation:
 [Glue.Client.create_security_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_security_configuration)
@@ -1159,7 +1149,7 @@ Returns a `Coroutine` for
 
 Creates a new table definition in the Data Catalog.
 
-Type annotations for `aiobotocore.create_client("glue").create_table` method.
+Type annotations for `session.create_client("glue").create_table` method.
 
 Boto3 documentation:
 [Glue.Client.create_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_table)
@@ -1187,7 +1177,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a new trigger.
 
-Type annotations for `aiobotocore.create_client("glue").create_trigger` method.
+Type annotations for `session.create_client("glue").create_trigger` method.
 
 Boto3 documentation:
 [Glue.Client.create_trigger](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_trigger)
@@ -1222,7 +1212,7 @@ Returns a `Coroutine` for
 Creates a new function definition in the Data Catalog.
 
 Type annotations for
-`aiobotocore.create_client("glue").create_user_defined_function` method.
+`session.create_client("glue").create_user_defined_function` method.
 
 Boto3 documentation:
 [Glue.Client.create_user_defined_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_user_defined_function)
@@ -1249,8 +1239,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a new workflow.
 
-Type annotations for `aiobotocore.create_client("glue").create_workflow`
-method.
+Type annotations for `session.create_client("glue").create_workflow` method.
 
 Boto3 documentation:
 [Glue.Client.create_workflow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.create_workflow)
@@ -1277,8 +1266,7 @@ Returns a `Coroutine` for
 
 Deletes an existing blueprint.
 
-Type annotations for `aiobotocore.create_client("glue").delete_blueprint`
-method.
+Type annotations for `session.create_client("glue").delete_blueprint` method.
 
 Boto3 documentation:
 [Glue.Client.delete_blueprint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_blueprint)
@@ -1301,8 +1289,7 @@ Returns a `Coroutine` for
 
 Removes a classifier from the Data Catalog.
 
-Type annotations for `aiobotocore.create_client("glue").delete_classifier`
-method.
+Type annotations for `session.create_client("glue").delete_classifier` method.
 
 Boto3 documentation:
 [Glue.Client.delete_classifier](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_classifier)
@@ -1325,8 +1312,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Delete the partition column statistics of a column.
 
 Type annotations for
-`aiobotocore.create_client("glue").delete_column_statistics_for_partition`
-method.
+`session.create_client("glue").delete_column_statistics_for_partition` method.
 
 Boto3 documentation:
 [Glue.Client.delete_column_statistics_for_partition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_column_statistics_for_partition)
@@ -1354,7 +1340,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Retrieves table statistics of columns.
 
 Type annotations for
-`aiobotocore.create_client("glue").delete_column_statistics_for_table` method.
+`session.create_client("glue").delete_column_statistics_for_table` method.
 
 Boto3 documentation:
 [Glue.Client.delete_column_statistics_for_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_column_statistics_for_table)
@@ -1380,8 +1366,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a connection from the Data Catalog.
 
-Type annotations for `aiobotocore.create_client("glue").delete_connection`
-method.
+Type annotations for `session.create_client("glue").delete_connection` method.
 
 Boto3 documentation:
 [Glue.Client.delete_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_connection)
@@ -1405,7 +1390,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes a specified crawler from the Glue Data Catalog, unless the crawler
 state is `RUNNING` .
 
-Type annotations for `aiobotocore.create_client("glue").delete_crawler` method.
+Type annotations for `session.create_client("glue").delete_crawler` method.
 
 Boto3 documentation:
 [Glue.Client.delete_crawler](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_crawler)
@@ -1427,8 +1412,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes a specified database from a Data Catalog.
 
-Type annotations for `aiobotocore.create_client("glue").delete_database`
-method.
+Type annotations for `session.create_client("glue").delete_database` method.
 
 Boto3 documentation:
 [Glue.Client.delete_database](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_database)
@@ -1451,7 +1435,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a specified development endpoint.
 
-Type annotations for `aiobotocore.create_client("glue").delete_dev_endpoint`
+Type annotations for `session.create_client("glue").delete_dev_endpoint`
 method.
 
 Boto3 documentation:
@@ -1475,7 +1459,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a specified job definition.
 
-Type annotations for `aiobotocore.create_client("glue").delete_job` method.
+Type annotations for `session.create_client("glue").delete_job` method.
 
 Boto3 documentation:
 [Glue.Client.delete_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_job)
@@ -1498,7 +1482,7 @@ Returns a `Coroutine` for
 
 Deletes an Glue machine learning transform.
 
-Type annotations for `aiobotocore.create_client("glue").delete_ml_transform`
+Type annotations for `session.create_client("glue").delete_ml_transform`
 method.
 
 Boto3 documentation:
@@ -1523,8 +1507,7 @@ Returns a `Coroutine` for
 
 Deletes a specified partition.
 
-Type annotations for `aiobotocore.create_client("glue").delete_partition`
-method.
+Type annotations for `session.create_client("glue").delete_partition` method.
 
 Boto3 documentation:
 [Glue.Client.delete_partition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_partition)
@@ -1549,7 +1532,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a specified partition index from an existing table.
 
-Type annotations for `aiobotocore.create_client("glue").delete_partition_index`
+Type annotations for `session.create_client("glue").delete_partition_index`
 method.
 
 Boto3 documentation:
@@ -1576,8 +1559,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Delete the entire registry including schema and all of its versions.
 
-Type annotations for `aiobotocore.create_client("glue").delete_registry`
-method.
+Type annotations for `session.create_client("glue").delete_registry` method.
 
 Boto3 documentation:
 [Glue.Client.delete_registry](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_registry)
@@ -1601,7 +1583,7 @@ Returns a `Coroutine` for
 
 Deletes a specified policy.
 
-Type annotations for `aiobotocore.create_client("glue").delete_resource_policy`
+Type annotations for `session.create_client("glue").delete_resource_policy`
 method.
 
 Boto3 documentation:
@@ -1627,7 +1609,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the entire schema set, including the schema set and all of its
 versions.
 
-Type annotations for `aiobotocore.create_client("glue").delete_schema` method.
+Type annotations for `session.create_client("glue").delete_schema` method.
 
 Boto3 documentation:
 [Glue.Client.delete_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_schema)
@@ -1650,7 +1632,7 @@ Returns a `Coroutine` for
 
 Remove versions from the specified schema.
 
-Type annotations for `aiobotocore.create_client("glue").delete_schema_versions`
+Type annotations for `session.create_client("glue").delete_schema_versions`
 method.
 
 Boto3 documentation:
@@ -1677,7 +1659,7 @@ Returns a `Coroutine` for
 Deletes a specified security configuration.
 
 Type annotations for
-`aiobotocore.create_client("glue").delete_security_configuration` method.
+`session.create_client("glue").delete_security_configuration` method.
 
 Boto3 documentation:
 [Glue.Client.delete_security_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_security_configuration)
@@ -1700,7 +1682,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes a table definition from the Data Catalog.
 
-Type annotations for `aiobotocore.create_client("glue").delete_table` method.
+Type annotations for `session.create_client("glue").delete_table` method.
 
 Boto3 documentation:
 [Glue.Client.delete_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_table)
@@ -1725,7 +1707,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a specified version of a table.
 
-Type annotations for `aiobotocore.create_client("glue").delete_table_version`
+Type annotations for `session.create_client("glue").delete_table_version`
 method.
 
 Boto3 documentation:
@@ -1752,7 +1734,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a specified trigger.
 
-Type annotations for `aiobotocore.create_client("glue").delete_trigger` method.
+Type annotations for `session.create_client("glue").delete_trigger` method.
 
 Boto3 documentation:
 [Glue.Client.delete_trigger](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_trigger)
@@ -1776,7 +1758,7 @@ Returns a `Coroutine` for
 Deletes an existing function definition from the Data Catalog.
 
 Type annotations for
-`aiobotocore.create_client("glue").delete_user_defined_function` method.
+`session.create_client("glue").delete_user_defined_function` method.
 
 Boto3 documentation:
 [Glue.Client.delete_user_defined_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_user_defined_function)
@@ -1801,8 +1783,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a workflow.
 
-Type annotations for `aiobotocore.create_client("glue").delete_workflow`
-method.
+Type annotations for `session.create_client("glue").delete_workflow` method.
 
 Boto3 documentation:
 [Glue.Client.delete_workflow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.delete_workflow)
@@ -1825,7 +1806,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("glue").generate_presigned_url`
+Type annotations for `session.create_client("glue").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -1849,7 +1830,7 @@ Returns a `Coroutine` for `str`.
 
 Retrieves the details of a blueprint.
 
-Type annotations for `aiobotocore.create_client("glue").get_blueprint` method.
+Type annotations for `session.create_client("glue").get_blueprint` method.
 
 Boto3 documentation:
 [Glue.Client.get_blueprint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_blueprint)
@@ -1874,8 +1855,7 @@ Returns a `Coroutine` for
 
 Retrieves the details of a blueprint run.
 
-Type annotations for `aiobotocore.create_client("glue").get_blueprint_run`
-method.
+Type annotations for `session.create_client("glue").get_blueprint_run` method.
 
 Boto3 documentation:
 [Glue.Client.get_blueprint_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_blueprint_run)
@@ -1899,8 +1879,7 @@ Returns a `Coroutine` for
 
 Retrieves the details of blueprint runs for a specified blueprint.
 
-Type annotations for `aiobotocore.create_client("glue").get_blueprint_runs`
-method.
+Type annotations for `session.create_client("glue").get_blueprint_runs` method.
 
 Boto3 documentation:
 [Glue.Client.get_blueprint_runs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_blueprint_runs)
@@ -1926,8 +1905,8 @@ Returns a `Coroutine` for
 
 Retrieves the status of a migration operation.
 
-Type annotations for
-`aiobotocore.create_client("glue").get_catalog_import_status` method.
+Type annotations for `session.create_client("glue").get_catalog_import_status`
+method.
 
 Boto3 documentation:
 [Glue.Client.get_catalog_import_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_catalog_import_status)
@@ -1951,7 +1930,7 @@ Returns a `Coroutine` for
 
 Retrieve a classifier by name.
 
-Type annotations for `aiobotocore.create_client("glue").get_classifier` method.
+Type annotations for `session.create_client("glue").get_classifier` method.
 
 Boto3 documentation:
 [Glue.Client.get_classifier](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_classifier)
@@ -1974,8 +1953,7 @@ Returns a `Coroutine` for
 
 Lists all classifier objects in the Data Catalog.
 
-Type annotations for `aiobotocore.create_client("glue").get_classifiers`
-method.
+Type annotations for `session.create_client("glue").get_classifiers` method.
 
 Boto3 documentation:
 [Glue.Client.get_classifiers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_classifiers)
@@ -2000,7 +1978,7 @@ Returns a `Coroutine` for
 Retrieves partition statistics of columns.
 
 Type annotations for
-`aiobotocore.create_client("glue").get_column_statistics_for_partition` method.
+`session.create_client("glue").get_column_statistics_for_partition` method.
 
 Boto3 documentation:
 [Glue.Client.get_column_statistics_for_partition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_column_statistics_for_partition)
@@ -2029,7 +2007,7 @@ Returns a `Coroutine` for
 Retrieves table statistics of columns.
 
 Type annotations for
-`aiobotocore.create_client("glue").get_column_statistics_for_table` method.
+`session.create_client("glue").get_column_statistics_for_table` method.
 
 Boto3 documentation:
 [Glue.Client.get_column_statistics_for_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_column_statistics_for_table)
@@ -2056,7 +2034,7 @@ Returns a `Coroutine` for
 
 Retrieves a connection definition from the Data Catalog.
 
-Type annotations for `aiobotocore.create_client("glue").get_connection` method.
+Type annotations for `session.create_client("glue").get_connection` method.
 
 Boto3 documentation:
 [Glue.Client.get_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_connection)
@@ -2081,8 +2059,7 @@ Returns a `Coroutine` for
 
 Retrieves a list of connection definitions from the Data Catalog.
 
-Type annotations for `aiobotocore.create_client("glue").get_connections`
-method.
+Type annotations for `session.create_client("glue").get_connections` method.
 
 Boto3 documentation:
 [Glue.Client.get_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_connections)
@@ -2110,7 +2087,7 @@ Returns a `Coroutine` for
 
 Retrieves metadata for a specified crawler.
 
-Type annotations for `aiobotocore.create_client("glue").get_crawler` method.
+Type annotations for `session.create_client("glue").get_crawler` method.
 
 Boto3 documentation:
 [Glue.Client.get_crawler](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_crawler)
@@ -2133,7 +2110,7 @@ Returns a `Coroutine` for
 
 Retrieves metrics about specified crawlers.
 
-Type annotations for `aiobotocore.create_client("glue").get_crawler_metrics`
+Type annotations for `session.create_client("glue").get_crawler_metrics`
 method.
 
 Boto3 documentation:
@@ -2160,7 +2137,7 @@ Returns a `Coroutine` for
 
 Retrieves metadata for all crawlers defined in the customer account.
 
-Type annotations for `aiobotocore.create_client("glue").get_crawlers` method.
+Type annotations for `session.create_client("glue").get_crawlers` method.
 
 Boto3 documentation:
 [Glue.Client.get_crawlers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_crawlers)
@@ -2185,8 +2162,7 @@ Returns a `Coroutine` for
 Retrieves the security configuration for a specified catalog.
 
 Type annotations for
-`aiobotocore.create_client("glue").get_data_catalog_encryption_settings`
-method.
+`session.create_client("glue").get_data_catalog_encryption_settings` method.
 
 Boto3 documentation:
 [Glue.Client.get_data_catalog_encryption_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_data_catalog_encryption_settings)
@@ -2210,7 +2186,7 @@ Returns a `Coroutine` for
 
 Retrieves the definition of a specified database.
 
-Type annotations for `aiobotocore.create_client("glue").get_database` method.
+Type annotations for `session.create_client("glue").get_database` method.
 
 Boto3 documentation:
 [Glue.Client.get_database](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_database)
@@ -2234,7 +2210,7 @@ Returns a `Coroutine` for
 
 Retrieves all databases defined in a given Data Catalog.
 
-Type annotations for `aiobotocore.create_client("glue").get_databases` method.
+Type annotations for `session.create_client("glue").get_databases` method.
 
 Boto3 documentation:
 [Glue.Client.get_databases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_databases)
@@ -2261,8 +2237,7 @@ Returns a `Coroutine` for
 
 Transforms a Python script into a directed acyclic graph (DAG).
 
-Type annotations for `aiobotocore.create_client("glue").get_dataflow_graph`
-method.
+Type annotations for `session.create_client("glue").get_dataflow_graph` method.
 
 Boto3 documentation:
 [Glue.Client.get_dataflow_graph](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_dataflow_graph)
@@ -2286,8 +2261,7 @@ Returns a `Coroutine` for
 
 Retrieves information about a specified development endpoint.
 
-Type annotations for `aiobotocore.create_client("glue").get_dev_endpoint`
-method.
+Type annotations for `session.create_client("glue").get_dev_endpoint` method.
 
 Boto3 documentation:
 [Glue.Client.get_dev_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_dev_endpoint)
@@ -2310,8 +2284,7 @@ Returns a `Coroutine` for
 
 Retrieves all the development endpoints in this AWS account.
 
-Type annotations for `aiobotocore.create_client("glue").get_dev_endpoints`
-method.
+Type annotations for `session.create_client("glue").get_dev_endpoints` method.
 
 Boto3 documentation:
 [Glue.Client.get_dev_endpoints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_dev_endpoints)
@@ -2335,7 +2308,7 @@ Returns a `Coroutine` for
 
 Retrieves an existing job definition.
 
-Type annotations for `aiobotocore.create_client("glue").get_job` method.
+Type annotations for `session.create_client("glue").get_job` method.
 
 Boto3 documentation:
 [Glue.Client.get_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_job)
@@ -2358,8 +2331,7 @@ Returns a `Coroutine` for
 
 Returns information on a job bookmark entry.
 
-Type annotations for `aiobotocore.create_client("glue").get_job_bookmark`
-method.
+Type annotations for `session.create_client("glue").get_job_bookmark` method.
 
 Boto3 documentation:
 [Glue.Client.get_job_bookmark](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_job_bookmark)
@@ -2383,7 +2355,7 @@ Returns a `Coroutine` for
 
 Retrieves the metadata for a given job run.
 
-Type annotations for `aiobotocore.create_client("glue").get_job_run` method.
+Type annotations for `session.create_client("glue").get_job_run` method.
 
 Boto3 documentation:
 [Glue.Client.get_job_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_job_run)
@@ -2408,7 +2380,7 @@ Returns a `Coroutine` for
 
 Retrieves metadata for all runs of a given job definition.
 
-Type annotations for `aiobotocore.create_client("glue").get_job_runs` method.
+Type annotations for `session.create_client("glue").get_job_runs` method.
 
 Boto3 documentation:
 [Glue.Client.get_job_runs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_job_runs)
@@ -2433,7 +2405,7 @@ Returns a `Coroutine` for
 
 Retrieves all current job definitions.
 
-Type annotations for `aiobotocore.create_client("glue").get_jobs` method.
+Type annotations for `session.create_client("glue").get_jobs` method.
 
 Boto3 documentation:
 [Glue.Client.get_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_jobs)
@@ -2457,7 +2429,7 @@ Returns a `Coroutine` for
 
 Creates mappings.
 
-Type annotations for `aiobotocore.create_client("glue").get_mapping` method.
+Type annotations for `session.create_client("glue").get_mapping` method.
 
 Boto3 documentation:
 [Glue.Client.get_mapping](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_mapping)
@@ -2484,8 +2456,7 @@ Returns a `Coroutine` for
 
 Gets details for a specific task run on a machine learning transform.
 
-Type annotations for `aiobotocore.create_client("glue").get_ml_task_run`
-method.
+Type annotations for `session.create_client("glue").get_ml_task_run` method.
 
 Boto3 documentation:
 [Glue.Client.get_ml_task_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_ml_task_run)
@@ -2509,8 +2480,7 @@ Returns a `Coroutine` for
 
 Gets a list of runs for a machine learning transform.
 
-Type annotations for `aiobotocore.create_client("glue").get_ml_task_runs`
-method.
+Type annotations for `session.create_client("glue").get_ml_task_runs` method.
 
 Boto3 documentation:
 [Glue.Client.get_ml_task_runs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_ml_task_runs)
@@ -2540,8 +2510,7 @@ Returns a `Coroutine` for
 Gets an Glue machine learning transform artifact and all its corresponding
 metadata.
 
-Type annotations for `aiobotocore.create_client("glue").get_ml_transform`
-method.
+Type annotations for `session.create_client("glue").get_ml_transform` method.
 
 Boto3 documentation:
 [Glue.Client.get_ml_transform](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_ml_transform)
@@ -2564,8 +2533,7 @@ Returns a `Coroutine` for
 
 Gets a sortable, filterable list of existing Glue machine learning transforms.
 
-Type annotations for `aiobotocore.create_client("glue").get_ml_transforms`
-method.
+Type annotations for `session.create_client("glue").get_ml_transforms` method.
 
 Boto3 documentation:
 [Glue.Client.get_ml_transforms](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_ml_transforms)
@@ -2593,7 +2561,7 @@ Returns a `Coroutine` for
 
 Retrieves information about a specified partition.
 
-Type annotations for `aiobotocore.create_client("glue").get_partition` method.
+Type annotations for `session.create_client("glue").get_partition` method.
 
 Boto3 documentation:
 [Glue.Client.get_partition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_partition)
@@ -2619,7 +2587,7 @@ Returns a `Coroutine` for
 
 Retrieves the partition indexes associated with a table.
 
-Type annotations for `aiobotocore.create_client("glue").get_partition_indexes`
+Type annotations for `session.create_client("glue").get_partition_indexes`
 method.
 
 Boto3 documentation:
@@ -2647,7 +2615,7 @@ Returns a `Coroutine` for
 
 Retrieves information about the partitions in a table.
 
-Type annotations for `aiobotocore.create_client("glue").get_partitions` method.
+Type annotations for `session.create_client("glue").get_partitions` method.
 
 Boto3 documentation:
 [Glue.Client.get_partitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_partitions)
@@ -2679,7 +2647,7 @@ Returns a `Coroutine` for
 
 Gets code to perform a specified mapping.
 
-Type annotations for `aiobotocore.create_client("glue").get_plan` method.
+Type annotations for `session.create_client("glue").get_plan` method.
 
 Boto3 documentation:
 [Glue.Client.get_plan](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_plan)
@@ -2711,7 +2679,7 @@ Returns a `Coroutine` for
 
 Describes the specified registry in detail.
 
-Type annotations for `aiobotocore.create_client("glue").get_registry` method.
+Type annotations for `session.create_client("glue").get_registry` method.
 
 Boto3 documentation:
 [Glue.Client.get_registry](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_registry)
@@ -2736,7 +2704,7 @@ Returns a `Coroutine` for
 Retrieves the resource policies set on individual resources by Resource Access
 Manager during cross-account permission grants.
 
-Type annotations for `aiobotocore.create_client("glue").get_resource_policies`
+Type annotations for `session.create_client("glue").get_resource_policies`
 method.
 
 Boto3 documentation:
@@ -2762,7 +2730,7 @@ Returns a `Coroutine` for
 
 Retrieves a specified resource policy.
 
-Type annotations for `aiobotocore.create_client("glue").get_resource_policy`
+Type annotations for `session.create_client("glue").get_resource_policy`
 method.
 
 Boto3 documentation:
@@ -2787,7 +2755,7 @@ Returns a `Coroutine` for
 
 Describes the specified schema in detail.
 
-Type annotations for `aiobotocore.create_client("glue").get_schema` method.
+Type annotations for `session.create_client("glue").get_schema` method.
 
 Boto3 documentation:
 [Glue.Client.get_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_schema)
@@ -2810,8 +2778,8 @@ Returns a `Coroutine` for
 
 Retrieves a schema by the `SchemaDefinition`.
 
-Type annotations for
-`aiobotocore.create_client("glue").get_schema_by_definition` method.
+Type annotations for `session.create_client("glue").get_schema_by_definition`
+method.
 
 Boto3 documentation:
 [Glue.Client.get_schema_by_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_schema_by_definition)
@@ -2837,8 +2805,7 @@ Returns a `Coroutine` for
 Get the specified schema by its unique ID assigned when a version of the schema
 is created or registered.
 
-Type annotations for `aiobotocore.create_client("glue").get_schema_version`
-method.
+Type annotations for `session.create_client("glue").get_schema_version` method.
 
 Boto3 documentation:
 [Glue.Client.get_schema_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_schema_version)
@@ -2866,8 +2833,8 @@ Returns a `Coroutine` for
 Fetches the schema version difference in the specified difference type between
 two stored schema versions in the Schema Registry.
 
-Type annotations for
-`aiobotocore.create_client("glue").get_schema_versions_diff` method.
+Type annotations for `session.create_client("glue").get_schema_versions_diff`
+method.
 
 Boto3 documentation:
 [Glue.Client.get_schema_versions_diff](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_schema_versions_diff)
@@ -2899,8 +2866,8 @@ Returns a `Coroutine` for
 
 Retrieves a specified security configuration.
 
-Type annotations for
-`aiobotocore.create_client("glue").get_security_configuration` method.
+Type annotations for `session.create_client("glue").get_security_configuration`
+method.
 
 Boto3 documentation:
 [Glue.Client.get_security_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_security_configuration)
@@ -2925,7 +2892,7 @@ Returns a `Coroutine` for
 Retrieves a list of all security configurations.
 
 Type annotations for
-`aiobotocore.create_client("glue").get_security_configurations` method.
+`session.create_client("glue").get_security_configurations` method.
 
 Boto3 documentation:
 [Glue.Client.get_security_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_security_configurations)
@@ -2950,7 +2917,7 @@ Returns a `Coroutine` for
 
 Retrieves the `Table` definition in a Data Catalog for a specified table.
 
-Type annotations for `aiobotocore.create_client("glue").get_table` method.
+Type annotations for `session.create_client("glue").get_table` method.
 
 Boto3 documentation:
 [Glue.Client.get_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_table)
@@ -2977,8 +2944,7 @@ Returns a `Coroutine` for
 
 Retrieves a specified version of a table.
 
-Type annotations for `aiobotocore.create_client("glue").get_table_version`
-method.
+Type annotations for `session.create_client("glue").get_table_version` method.
 
 Boto3 documentation:
 [Glue.Client.get_table_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_table_version)
@@ -3005,8 +2971,7 @@ Returns a `Coroutine` for
 Retrieves a list of strings that identify available versions of a specified
 table.
 
-Type annotations for `aiobotocore.create_client("glue").get_table_versions`
-method.
+Type annotations for `session.create_client("glue").get_table_versions` method.
 
 Boto3 documentation:
 [Glue.Client.get_table_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_table_versions)
@@ -3034,7 +2999,7 @@ Returns a `Coroutine` for
 
 Retrieves the definitions of some or all of the tables in a given `Database` .
 
-Type annotations for `aiobotocore.create_client("glue").get_tables` method.
+Type annotations for `session.create_client("glue").get_tables` method.
 
 Boto3 documentation:
 [Glue.Client.get_tables](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_tables)
@@ -3063,7 +3028,7 @@ Returns a `Coroutine` for
 
 Retrieves a list of tags associated with a resource.
 
-Type annotations for `aiobotocore.create_client("glue").get_tags` method.
+Type annotations for `session.create_client("glue").get_tags` method.
 
 Boto3 documentation:
 [Glue.Client.get_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_tags)
@@ -3086,7 +3051,7 @@ Returns a `Coroutine` for
 
 Retrieves the definition of a trigger.
 
-Type annotations for `aiobotocore.create_client("glue").get_trigger` method.
+Type annotations for `session.create_client("glue").get_trigger` method.
 
 Boto3 documentation:
 [Glue.Client.get_trigger](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_trigger)
@@ -3109,7 +3074,7 @@ Returns a `Coroutine` for
 
 Gets all the triggers associated with a job.
 
-Type annotations for `aiobotocore.create_client("glue").get_triggers` method.
+Type annotations for `session.create_client("glue").get_triggers` method.
 
 Boto3 documentation:
 [Glue.Client.get_triggers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_triggers)
@@ -3134,8 +3099,8 @@ Returns a `Coroutine` for
 
 Retrieves a specified function definition from the Data Catalog.
 
-Type annotations for
-`aiobotocore.create_client("glue").get_user_defined_function` method.
+Type annotations for `session.create_client("glue").get_user_defined_function`
+method.
 
 Boto3 documentation:
 [Glue.Client.get_user_defined_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_user_defined_function)
@@ -3161,8 +3126,8 @@ Returns a `Coroutine` for
 
 Retrieves multiple function definitions from the Data Catalog.
 
-Type annotations for
-`aiobotocore.create_client("glue").get_user_defined_functions` method.
+Type annotations for `session.create_client("glue").get_user_defined_functions`
+method.
 
 Boto3 documentation:
 [Glue.Client.get_user_defined_functions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_user_defined_functions)
@@ -3190,7 +3155,7 @@ Returns a `Coroutine` for
 
 Retrieves resource metadata for a workflow.
 
-Type annotations for `aiobotocore.create_client("glue").get_workflow` method.
+Type annotations for `session.create_client("glue").get_workflow` method.
 
 Boto3 documentation:
 [Glue.Client.get_workflow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_workflow)
@@ -3214,8 +3179,7 @@ Returns a `Coroutine` for
 
 Retrieves the metadata for a given workflow run.
 
-Type annotations for `aiobotocore.create_client("glue").get_workflow_run`
-method.
+Type annotations for `session.create_client("glue").get_workflow_run` method.
 
 Boto3 documentation:
 [Glue.Client.get_workflow_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_workflow_run)
@@ -3241,7 +3205,7 @@ Returns a `Coroutine` for
 Retrieves the workflow run properties which were set during the run.
 
 Type annotations for
-`aiobotocore.create_client("glue").get_workflow_run_properties` method.
+`session.create_client("glue").get_workflow_run_properties` method.
 
 Boto3 documentation:
 [Glue.Client.get_workflow_run_properties](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_workflow_run_properties)
@@ -3266,8 +3230,7 @@ Returns a `Coroutine` for
 
 Retrieves metadata for all runs of a given workflow.
 
-Type annotations for `aiobotocore.create_client("glue").get_workflow_runs`
-method.
+Type annotations for `session.create_client("glue").get_workflow_runs` method.
 
 Boto3 documentation:
 [Glue.Client.get_workflow_runs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.get_workflow_runs)
@@ -3293,7 +3256,7 @@ Returns a `Coroutine` for
 
 Imports an existing Amazon Athena Data Catalog to Glue.
 
-Type annotations for `aiobotocore.create_client("glue").import_catalog_to_glue`
+Type annotations for `session.create_client("glue").import_catalog_to_glue`
 method.
 
 Boto3 documentation:
@@ -3317,8 +3280,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Lists all the blueprint names in an account.
 
-Type annotations for `aiobotocore.create_client("glue").list_blueprints`
-method.
+Type annotations for `session.create_client("glue").list_blueprints` method.
 
 Boto3 documentation:
 [Glue.Client.list_blueprints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.list_blueprints)
@@ -3344,7 +3306,7 @@ Returns a `Coroutine` for
 Retrieves the names of all crawler resources in this Amazon Web Services
 account, or the resources with the specified tag.
 
-Type annotations for `aiobotocore.create_client("glue").list_crawlers` method.
+Type annotations for `session.create_client("glue").list_crawlers` method.
 
 Boto3 documentation:
 [Glue.Client.list_crawlers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.list_crawlers)
@@ -3370,8 +3332,7 @@ Returns a `Coroutine` for
 Retrieves the names of all `DevEndpoint` resources in this Amazon Web Services
 account, or the resources with the specified tag.
 
-Type annotations for `aiobotocore.create_client("glue").list_dev_endpoints`
-method.
+Type annotations for `session.create_client("glue").list_dev_endpoints` method.
 
 Boto3 documentation:
 [Glue.Client.list_dev_endpoints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.list_dev_endpoints)
@@ -3398,7 +3359,7 @@ Returns a `Coroutine` for
 Retrieves the names of all job resources in this Amazon Web Services account,
 or the resources with the specified tag.
 
-Type annotations for `aiobotocore.create_client("glue").list_jobs` method.
+Type annotations for `session.create_client("glue").list_jobs` method.
 
 Boto3 documentation:
 [Glue.Client.list_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.list_jobs)
@@ -3425,8 +3386,7 @@ Retrieves a sortable, filterable list of existing Glue machine learning
 transforms in this Amazon Web Services account, or the resources with the
 specified tag.
 
-Type annotations for `aiobotocore.create_client("glue").list_ml_transforms`
-method.
+Type annotations for `session.create_client("glue").list_ml_transforms` method.
 
 Boto3 documentation:
 [Glue.Client.list_ml_transforms](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.list_ml_transforms)
@@ -3457,8 +3417,7 @@ Returns a `Coroutine` for
 Returns a list of registries that you have created, with minimal registry
 information.
 
-Type annotations for `aiobotocore.create_client("glue").list_registries`
-method.
+Type annotations for `session.create_client("glue").list_registries` method.
 
 Boto3 documentation:
 [Glue.Client.list_registries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.list_registries)
@@ -3483,7 +3442,7 @@ Returns a `Coroutine` for
 Returns a list of schema versions that you have created, with minimal
 information.
 
-Type annotations for `aiobotocore.create_client("glue").list_schema_versions`
+Type annotations for `session.create_client("glue").list_schema_versions`
 method.
 
 Boto3 documentation:
@@ -3510,7 +3469,7 @@ Returns a `Coroutine` for
 
 Returns a list of schemas with minimal details.
 
-Type annotations for `aiobotocore.create_client("glue").list_schemas` method.
+Type annotations for `session.create_client("glue").list_schemas` method.
 
 Boto3 documentation:
 [Glue.Client.list_schemas](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.list_schemas)
@@ -3536,7 +3495,7 @@ Returns a `Coroutine` for
 Retrieves the names of all trigger resources in this Amazon Web Services
 account, or the resources with the specified tag.
 
-Type annotations for `aiobotocore.create_client("glue").list_triggers` method.
+Type annotations for `session.create_client("glue").list_triggers` method.
 
 Boto3 documentation:
 [Glue.Client.list_triggers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.list_triggers)
@@ -3562,7 +3521,7 @@ Returns a `Coroutine` for
 
 Lists names of workflows created in the account.
 
-Type annotations for `aiobotocore.create_client("glue").list_workflows` method.
+Type annotations for `session.create_client("glue").list_workflows` method.
 
 Boto3 documentation:
 [Glue.Client.list_workflows](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.list_workflows)
@@ -3587,8 +3546,7 @@ Returns a `Coroutine` for
 Sets the security configuration for a specified catalog.
 
 Type annotations for
-`aiobotocore.create_client("glue").put_data_catalog_encryption_settings`
-method.
+`session.create_client("glue").put_data_catalog_encryption_settings` method.
 
 Boto3 documentation:
 [Glue.Client.put_data_catalog_encryption_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.put_data_catalog_encryption_settings)
@@ -3614,7 +3572,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Sets the Data Catalog resource policy for access control.
 
-Type annotations for `aiobotocore.create_client("glue").put_resource_policy`
+Type annotations for `session.create_client("glue").put_resource_policy`
 method.
 
 Boto3 documentation:
@@ -3646,7 +3604,7 @@ Returns a `Coroutine` for
 Puts the metadata key value pair for a specified schema version ID.
 
 Type annotations for
-`aiobotocore.create_client("glue").put_schema_version_metadata` method.
+`session.create_client("glue").put_schema_version_metadata` method.
 
 Boto3 documentation:
 [Glue.Client.put_schema_version_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.put_schema_version_metadata)
@@ -3677,7 +3635,7 @@ Returns a `Coroutine` for
 Puts the specified workflow run properties for the given workflow run.
 
 Type annotations for
-`aiobotocore.create_client("glue").put_workflow_run_properties` method.
+`session.create_client("glue").put_workflow_run_properties` method.
 
 Boto3 documentation:
 [Glue.Client.put_workflow_run_properties](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.put_workflow_run_properties)
@@ -3703,7 +3661,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Queries for the schema version metadata information.
 
 Type annotations for
-`aiobotocore.create_client("glue").query_schema_version_metadata` method.
+`session.create_client("glue").query_schema_version_metadata` method.
 
 Boto3 documentation:
 [Glue.Client.query_schema_version_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.query_schema_version_metadata)
@@ -3734,8 +3692,8 @@ Returns a `Coroutine` for
 
 Adds a new version to the existing schema.
 
-Type annotations for
-`aiobotocore.create_client("glue").register_schema_version` method.
+Type annotations for `session.create_client("glue").register_schema_version`
+method.
 
 Boto3 documentation:
 [Glue.Client.register_schema_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.register_schema_version)
@@ -3762,7 +3720,7 @@ Removes a key value pair from the schema version metadata for the specified
 schema version ID.
 
 Type annotations for
-`aiobotocore.create_client("glue").remove_schema_version_metadata` method.
+`session.create_client("glue").remove_schema_version_metadata` method.
 
 Boto3 documentation:
 [Glue.Client.remove_schema_version_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.remove_schema_version_metadata)
@@ -3792,8 +3750,7 @@ Returns a `Coroutine` for
 
 Resets a bookmark entry.
 
-Type annotations for `aiobotocore.create_client("glue").reset_job_bookmark`
-method.
+Type annotations for `session.create_client("glue").reset_job_bookmark` method.
 
 Boto3 documentation:
 [Glue.Client.reset_job_bookmark](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.reset_job_bookmark)
@@ -3819,7 +3776,7 @@ Returns a `Coroutine` for
 Restarts selected nodes of a previous partially completed workflow run and
 resumes the workflow run.
 
-Type annotations for `aiobotocore.create_client("glue").resume_workflow_run`
+Type annotations for `session.create_client("glue").resume_workflow_run`
 method.
 
 Boto3 documentation:
@@ -3847,7 +3804,7 @@ Returns a `Coroutine` for
 Searches a set of tables based on properties in the table metadata as well as
 on the parent database.
 
-Type annotations for `aiobotocore.create_client("glue").search_tables` method.
+Type annotations for `session.create_client("glue").search_tables` method.
 
 Boto3 documentation:
 [Glue.Client.search_tables](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.search_tables)
@@ -3879,7 +3836,7 @@ Returns a `Coroutine` for
 
 Starts a new run of the specified blueprint.
 
-Type annotations for `aiobotocore.create_client("glue").start_blueprint_run`
+Type annotations for `session.create_client("glue").start_blueprint_run`
 method.
 
 Boto3 documentation:
@@ -3906,7 +3863,7 @@ Returns a `Coroutine` for
 
 Starts a crawl using the specified crawler, regardless of what is scheduled.
 
-Type annotations for `aiobotocore.create_client("glue").start_crawler` method.
+Type annotations for `session.create_client("glue").start_crawler` method.
 
 Boto3 documentation:
 [Glue.Client.start_crawler](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.start_crawler)
@@ -3929,7 +3886,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Changes the schedule state of the specified crawler to `SCHEDULED` , unless the
 crawler is already running or the schedule state is already `SCHEDULED` .
 
-Type annotations for `aiobotocore.create_client("glue").start_crawler_schedule`
+Type annotations for `session.create_client("glue").start_crawler_schedule`
 method.
 
 Boto3 documentation:
@@ -3955,7 +3912,7 @@ Begins an asynchronous task to export all labeled data for a particular
 transform.
 
 Type annotations for
-`aiobotocore.create_client("glue").start_export_labels_task_run` method.
+`session.create_client("glue").start_export_labels_task_run` method.
 
 Boto3 documentation:
 [Glue.Client.start_export_labels_task_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.start_export_labels_task_run)
@@ -3982,7 +3939,7 @@ Enables you to provide additional labels (examples of truth) to be used to
 teach the machine learning transform and improve its quality.
 
 Type annotations for
-`aiobotocore.create_client("glue").start_import_labels_task_run` method.
+`session.create_client("glue").start_import_labels_task_run` method.
 
 Boto3 documentation:
 [Glue.Client.start_import_labels_task_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.start_import_labels_task_run)
@@ -4008,7 +3965,7 @@ Returns a `Coroutine` for
 
 Starts a job run using a job definition.
 
-Type annotations for `aiobotocore.create_client("glue").start_job_run` method.
+Type annotations for `session.create_client("glue").start_job_run` method.
 
 Boto3 documentation:
 [Glue.Client.start_job_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.start_job_run)
@@ -4042,7 +3999,7 @@ Returns a `Coroutine` for
 Starts a task to estimate the quality of the transform.
 
 Type annotations for
-`aiobotocore.create_client("glue").start_ml_evaluation_task_run` method.
+`session.create_client("glue").start_ml_evaluation_task_run` method.
 
 Boto3 documentation:
 [Glue.Client.start_ml_evaluation_task_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.start_ml_evaluation_task_run)
@@ -4068,7 +4025,7 @@ Starts the active learning workflow for your machine learning transform to
 improve the transform's quality by generating label sets and adding labels.
 
 Type annotations for
-`aiobotocore.create_client("glue").start_ml_labeling_set_generation_task_run`
+`session.create_client("glue").start_ml_labeling_set_generation_task_run`
 method.
 
 Boto3 documentation:
@@ -4094,7 +4051,7 @@ Returns a `Coroutine` for
 
 Starts an existing trigger.
 
-Type annotations for `aiobotocore.create_client("glue").start_trigger` method.
+Type annotations for `session.create_client("glue").start_trigger` method.
 
 Boto3 documentation:
 [Glue.Client.start_trigger](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.start_trigger)
@@ -4117,8 +4074,7 @@ Returns a `Coroutine` for
 
 Starts a new run of the specified workflow.
 
-Type annotations for `aiobotocore.create_client("glue").start_workflow_run`
-method.
+Type annotations for `session.create_client("glue").start_workflow_run` method.
 
 Boto3 documentation:
 [Glue.Client.start_workflow_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.start_workflow_run)
@@ -4142,7 +4098,7 @@ Returns a `Coroutine` for
 
 If the specified crawler is running, stops the crawl.
 
-Type annotations for `aiobotocore.create_client("glue").stop_crawler` method.
+Type annotations for `session.create_client("glue").stop_crawler` method.
 
 Boto3 documentation:
 [Glue.Client.stop_crawler](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.stop_crawler)
@@ -4165,7 +4121,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Sets the schedule state of the specified crawler to `NOT_SCHEDULED` , but does
 not stop the crawler if it is already running.
 
-Type annotations for `aiobotocore.create_client("glue").stop_crawler_schedule`
+Type annotations for `session.create_client("glue").stop_crawler_schedule`
 method.
 
 Boto3 documentation:
@@ -4189,7 +4145,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Stops a specified trigger.
 
-Type annotations for `aiobotocore.create_client("glue").stop_trigger` method.
+Type annotations for `session.create_client("glue").stop_trigger` method.
 
 Boto3 documentation:
 [Glue.Client.stop_trigger](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.stop_trigger)
@@ -4212,8 +4168,7 @@ Returns a `Coroutine` for
 
 Stops the execution of the specified workflow run.
 
-Type annotations for `aiobotocore.create_client("glue").stop_workflow_run`
-method.
+Type annotations for `session.create_client("glue").stop_workflow_run` method.
 
 Boto3 documentation:
 [Glue.Client.stop_workflow_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.stop_workflow_run)
@@ -4236,7 +4191,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds tags to a resource.
 
-Type annotations for `aiobotocore.create_client("glue").tag_resource` method.
+Type annotations for `session.create_client("glue").tag_resource` method.
 
 Boto3 documentation:
 [Glue.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.tag_resource)
@@ -4259,7 +4214,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from a resource.
 
-Type annotations for `aiobotocore.create_client("glue").untag_resource` method.
+Type annotations for `session.create_client("glue").untag_resource` method.
 
 Boto3 documentation:
 [Glue.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.untag_resource)
@@ -4282,8 +4237,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a registered blueprint.
 
-Type annotations for `aiobotocore.create_client("glue").update_blueprint`
-method.
+Type annotations for `session.create_client("glue").update_blueprint` method.
 
 Boto3 documentation:
 [Glue.Client.update_blueprint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.update_blueprint)
@@ -4309,8 +4263,7 @@ Returns a `Coroutine` for
 Modifies an existing classifier (a `GrokClassifier` , an `XMLClassifier` , a
 `JsonClassifier` , or a `CsvClassifier` , depending on which field is present).
 
-Type annotations for `aiobotocore.create_client("glue").update_classifier`
-method.
+Type annotations for `session.create_client("glue").update_classifier` method.
 
 Boto3 documentation:
 [Glue.Client.update_classifier](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.update_classifier)
@@ -4340,8 +4293,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates or updates partition statistics of columns.
 
 Type annotations for
-`aiobotocore.create_client("glue").update_column_statistics_for_partition`
-method.
+`session.create_client("glue").update_column_statistics_for_partition` method.
 
 Boto3 documentation:
 [Glue.Client.update_column_statistics_for_partition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.update_column_statistics_for_partition)
@@ -4372,7 +4324,7 @@ Returns a `Coroutine` for
 Creates or updates table statistics of columns.
 
 Type annotations for
-`aiobotocore.create_client("glue").update_column_statistics_for_table` method.
+`session.create_client("glue").update_column_statistics_for_table` method.
 
 Boto3 documentation:
 [Glue.Client.update_column_statistics_for_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.update_column_statistics_for_table)
@@ -4401,8 +4353,7 @@ Returns a `Coroutine` for
 
 Updates a connection definition in the Data Catalog.
 
-Type annotations for `aiobotocore.create_client("glue").update_connection`
-method.
+Type annotations for `session.create_client("glue").update_connection` method.
 
 Boto3 documentation:
 [Glue.Client.update_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.update_connection)
@@ -4427,7 +4378,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a crawler.
 
-Type annotations for `aiobotocore.create_client("glue").update_crawler` method.
+Type annotations for `session.create_client("glue").update_crawler` method.
 
 Boto3 documentation:
 [Glue.Client.update_crawler](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.update_crawler)
@@ -4463,8 +4414,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the schedule of a crawler using a `cron` expression.
 
-Type annotations for
-`aiobotocore.create_client("glue").update_crawler_schedule` method.
+Type annotations for `session.create_client("glue").update_crawler_schedule`
+method.
 
 Boto3 documentation:
 [Glue.Client.update_crawler_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.update_crawler_schedule)
@@ -4488,8 +4439,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an existing database definition in a Data Catalog.
 
-Type annotations for `aiobotocore.create_client("glue").update_database`
-method.
+Type annotations for `session.create_client("glue").update_database` method.
 
 Boto3 documentation:
 [Glue.Client.update_database](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.update_database)
@@ -4514,7 +4464,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a specified development endpoint.
 
-Type annotations for `aiobotocore.create_client("glue").update_dev_endpoint`
+Type annotations for `session.create_client("glue").update_dev_endpoint`
 method.
 
 Boto3 documentation:
@@ -4546,7 +4496,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an existing job definition.
 
-Type annotations for `aiobotocore.create_client("glue").update_job` method.
+Type annotations for `session.create_client("glue").update_job` method.
 
 Boto3 documentation:
 [Glue.Client.update_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.update_job)
@@ -4570,7 +4520,7 @@ Returns a `Coroutine` for
 
 Updates an existing machine learning transform.
 
-Type annotations for `aiobotocore.create_client("glue").update_ml_transform`
+Type annotations for `session.create_client("glue").update_ml_transform`
 method.
 
 Boto3 documentation:
@@ -4606,8 +4556,7 @@ Returns a `Coroutine` for
 
 Updates a partition.
 
-Type annotations for `aiobotocore.create_client("glue").update_partition`
-method.
+Type annotations for `session.create_client("glue").update_partition` method.
 
 Boto3 documentation:
 [Glue.Client.update_partition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.update_partition)
@@ -4634,8 +4583,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an existing registry which is used to hold a collection of schemas.
 
-Type annotations for `aiobotocore.create_client("glue").update_registry`
-method.
+Type annotations for `session.create_client("glue").update_registry` method.
 
 Boto3 documentation:
 [Glue.Client.update_registry](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.update_registry)
@@ -4661,7 +4609,7 @@ Returns a `Coroutine` for
 Updates the description, compatibility setting, or version checkpoint for a
 schema set.
 
-Type annotations for `aiobotocore.create_client("glue").update_schema` method.
+Type annotations for `session.create_client("glue").update_schema` method.
 
 Boto3 documentation:
 [Glue.Client.update_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.update_schema)
@@ -4688,7 +4636,7 @@ Returns a `Coroutine` for
 
 Updates a metadata table in the Data Catalog.
 
-Type annotations for `aiobotocore.create_client("glue").update_table` method.
+Type annotations for `session.create_client("glue").update_table` method.
 
 Boto3 documentation:
 [Glue.Client.update_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.update_table)
@@ -4715,7 +4663,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a trigger definition.
 
-Type annotations for `aiobotocore.create_client("glue").update_trigger` method.
+Type annotations for `session.create_client("glue").update_trigger` method.
 
 Boto3 documentation:
 [Glue.Client.update_trigger](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.update_trigger)
@@ -4741,7 +4689,7 @@ Returns a `Coroutine` for
 Updates an existing function definition in the Data Catalog.
 
 Type annotations for
-`aiobotocore.create_client("glue").update_user_defined_function` method.
+`session.create_client("glue").update_user_defined_function` method.
 
 Boto3 documentation:
 [Glue.Client.update_user_defined_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.update_user_defined_function)
@@ -4769,8 +4717,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an existing workflow.
 
-Type annotations for `aiobotocore.create_client("glue").update_workflow`
-method.
+Type annotations for `session.create_client("glue").update_workflow` method.
 
 Boto3 documentation:
 [Glue.Client.update_workflow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.update_workflow)
@@ -4790,12 +4737,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateWorkflowResponseTypeDef](./type_defs.md#updateworkflowresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("glue").__aenter__` method.
+
+Boto3 documentation:
+[Glue.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [GlueClient](#glueclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("glue").__aexit__` method.
+
+Boto3 documentation:
+[Glue.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html#Glue.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("glue").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("glue").get_paginator` method with
+overloads.
 
 - `client.get_paginator("get_classifiers")` ->
   [GetClassifiersPaginator](./paginators.md#getclassifierspaginator)

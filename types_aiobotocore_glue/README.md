@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[glue]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[glue]'
+
+# standalone installation
 pip install types-aiobotocore-glue
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-glue
 
 ## GlueClient
 
-Type annotations for `aiobotocore.create_client("glue")` as
+Type annotations for `session.create_client("glue")` as
 [GlueClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_glue.client import GlueClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_create_partition](./client.md#batch_create_partition)
 - [batch_delete_connection](./client.md#batch_delete_connection)
 - [batch_delete_partition](./client.md#batch_delete_partition)
@@ -258,7 +264,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_glue.paginators import GetClassifiersPaginator, ...
+from types_aiobotocore_glue.paginator import GetClassifiersPaginator, ...
 ```
 
 - [GetClassifiersPaginator](./paginators.md#getclassifierspaginator)

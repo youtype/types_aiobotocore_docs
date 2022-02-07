@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[cloudwatch]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[cloudwatch]'
+
+# standalone installation
 pip install types-aiobotocore-cloudwatch
 ```
 
@@ -33,7 +37,7 @@ pip install types-aiobotocore-cloudwatch
 
 ## CloudWatchClient
 
-Type annotations for `aiobotocore.create_client("cloudwatch")` as
+Type annotations for `session.create_client("cloudwatch")` as
 [CloudWatchClient](./client.md)
 
 Can be used directly:
@@ -46,6 +50,8 @@ from types_aiobotocore_cloudwatch.client import CloudWatchClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [delete_alarms](./client.md#delete_alarms)
 - [delete_anomaly_detector](./client.md#delete_anomaly_detector)
@@ -113,7 +119,7 @@ CloudWatchClient [exceptions](./client.md#exceptions)
 
 ## CloudWatchServiceResource
 
-Type annotations for `aiobotocore.resource("cloudwatch")` as
+Type annotations for `session.resource("cloudwatch")` as
 [CloudWatchServiceResource](./service_resource.md#cloudwatchserviceresource)
 
 Can be used directly:
@@ -142,7 +148,7 @@ from types_aiobotocore_cloudwatch.service_resource import ServiceResourceAlarmsC
 ### Resources
 
 Type annotations for additional resources from
-`aiobotocore.resource("cloudwatch").*`.
+`session.resource("cloudwatch").*`.
 
 Can be used directly:
 
@@ -163,7 +169,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_cloudwatch.paginators import DescribeAlarmHistoryPaginator, ...
+from types_aiobotocore_cloudwatch.paginator import DescribeAlarmHistoryPaginator, ...
 ```
 
 - [DescribeAlarmHistoryPaginator](./paginators.md#describealarmhistorypaginator)
@@ -182,7 +188,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_cloudwatch.waiters import AlarmExistsWaiter, ...
+from types_aiobotocore_cloudwatch.waiter import AlarmExistsWaiter, ...
 ```
 
 - [AlarmExistsWaiter](./waiters.md#alarmexistswaiter)

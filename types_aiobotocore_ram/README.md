@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[ram]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[ram]'
+
+# standalone installation
 pip install types-aiobotocore-ram
 ```
 
@@ -29,8 +33,7 @@ pip install types-aiobotocore-ram
 
 ## RAMClient
 
-Type annotations for `aiobotocore.create_client("ram")` as
-[RAMClient](./client.md)
+Type annotations for `session.create_client("ram")` as [RAMClient](./client.md)
 
 Can be used directly:
 
@@ -42,6 +45,8 @@ from types_aiobotocore_ram.client import RAMClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_resource_share_invitation](./client.md#accept_resource_share_invitation)
 - [associate_resource_share](./client.md#associate_resource_share)
 - [associate_resource_share_permission](./client.md#associate_resource_share_permission)
@@ -111,7 +116,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_ram.paginators import GetResourcePoliciesPaginator, ...
+from types_aiobotocore_ram.paginator import GetResourcePoliciesPaginator, ...
 ```
 
 - [GetResourcePoliciesPaginator](./paginators.md#getresourcepoliciespaginator)

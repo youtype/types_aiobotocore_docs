@@ -61,22 +61,25 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_dataset_group](#update_dataset_group)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="forecastserviceclient"></a>
 
 ## ForecastServiceClient
 
-Type annotations for `aiobotocore.create_client("forecast")`
+Type annotations for `session.create_client("forecast")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_forecast.client import ForecastServiceClient
 
-def get_forecast_client() -> ForecastServiceClient:
-    return Session().client("forecast")
+session = get_session()
+async with session.create_client("forecast") as client:
+    client: ForecastServiceClient
 ```
 
 Boto3 documentation:
@@ -116,7 +119,7 @@ Exceptions:
 
 ForecastServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("forecast").exceptions` method.
+Type annotations for `session.create_client("forecast").exceptions` method.
 
 Boto3 documentation:
 [ForecastService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.exceptions)
@@ -129,19 +132,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("forecast").can_paginate`
-method.
+Type annotations for `session.create_client("forecast").can_paginate` method.
 
 Boto3 documentation:
 [ForecastService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_auto_predictor"></a>
 
@@ -149,8 +149,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates an Amazon Forecast predictor.
 
-Type annotations for
-`aiobotocore.create_client("forecast").create_auto_predictor` method.
+Type annotations for `session.create_client("forecast").create_auto_predictor`
+method.
 
 Boto3 documentation:
 [ForecastService.Client.create_auto_predictor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.create_auto_predictor)
@@ -186,8 +186,7 @@ Returns a `Coroutine` for
 
 Creates an Amazon Forecast dataset.
 
-Type annotations for `aiobotocore.create_client("forecast").create_dataset`
-method.
+Type annotations for `session.create_client("forecast").create_dataset` method.
 
 Boto3 documentation:
 [ForecastService.Client.create_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.create_dataset)
@@ -217,8 +216,8 @@ Returns a `Coroutine` for
 
 Creates a dataset group, which holds a collection of related datasets.
 
-Type annotations for
-`aiobotocore.create_client("forecast").create_dataset_group` method.
+Type annotations for `session.create_client("forecast").create_dataset_group`
+method.
 
 Boto3 documentation:
 [ForecastService.Client.create_dataset_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.create_dataset_group)
@@ -246,7 +245,7 @@ Returns a `Coroutine` for
 Imports your training data to an Amazon Forecast dataset.
 
 Type annotations for
-`aiobotocore.create_client("forecast").create_dataset_import_job` method.
+`session.create_client("forecast").create_dataset_import_job` method.
 
 Boto3 documentation:
 [ForecastService.Client.create_dataset_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.create_dataset_import_job)
@@ -278,8 +277,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("forecast").create_explainability` method.
+Type annotations for `session.create_client("forecast").create_explainability`
+method.
 
 Boto3 documentation:
 [ForecastService.Client.create_explainability](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.create_explainability)
@@ -315,7 +314,7 @@ Exports an Explainability resource created by the CreateExplainability
 operation.
 
 Type annotations for
-`aiobotocore.create_client("forecast").create_explainability_export` method.
+`session.create_client("forecast").create_explainability_export` method.
 
 Boto3 documentation:
 [ForecastService.Client.create_explainability_export](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.create_explainability_export)
@@ -344,7 +343,7 @@ Returns a `Coroutine` for
 Creates a forecast for each item in the `TARGET_TIME_SERIES` dataset that was
 used to train the predictor.
 
-Type annotations for `aiobotocore.create_client("forecast").create_forecast`
+Type annotations for `session.create_client("forecast").create_forecast`
 method.
 
 Boto3 documentation:
@@ -373,7 +372,7 @@ Exports a forecast created by the CreateForecast operation to your Amazon
 Simple Storage Service (Amazon S3) bucket.
 
 Type annotations for
-`aiobotocore.create_client("forecast").create_forecast_export_job` method.
+`session.create_client("forecast").create_forecast_export_job` method.
 
 Boto3 documentation:
 [ForecastService.Client.create_forecast_export_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.create_forecast_export_job)
@@ -401,7 +400,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("forecast").create_predictor`
+Type annotations for `session.create_client("forecast").create_predictor`
 method.
 
 Boto3 documentation:
@@ -449,7 +448,7 @@ Exports backtest forecasts and accuracy metrics generated by the
 CreatePredictor operation.
 
 Type annotations for
-`aiobotocore.create_client("forecast").create_predictor_backtest_export_job`
+`session.create_client("forecast").create_predictor_backtest_export_job`
 method.
 
 Boto3 documentation:
@@ -479,8 +478,7 @@ Returns a `Coroutine` for
 Deletes an Amazon Forecast dataset that was created using the CreateDataset
 operation.
 
-Type annotations for `aiobotocore.create_client("forecast").delete_dataset`
-method.
+Type annotations for `session.create_client("forecast").delete_dataset` method.
 
 Boto3 documentation:
 [ForecastService.Client.delete_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.delete_dataset)
@@ -500,8 +498,8 @@ Keyword-only arguments:
 
 Deletes a dataset group created using the CreateDatasetGroup operation.
 
-Type annotations for
-`aiobotocore.create_client("forecast").delete_dataset_group` method.
+Type annotations for `session.create_client("forecast").delete_dataset_group`
+method.
 
 Boto3 documentation:
 [ForecastService.Client.delete_dataset_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.delete_dataset_group)
@@ -524,7 +522,7 @@ Deletes a dataset import job created using the CreateDatasetImportJob
 operation.
 
 Type annotations for
-`aiobotocore.create_client("forecast").delete_dataset_import_job` method.
+`session.create_client("forecast").delete_dataset_import_job` method.
 
 Boto3 documentation:
 [ForecastService.Client.delete_dataset_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.delete_dataset_import_job)
@@ -545,8 +543,8 @@ Keyword-only arguments:
 
 Deletes an Explainability resource.
 
-Type annotations for
-`aiobotocore.create_client("forecast").delete_explainability` method.
+Type annotations for `session.create_client("forecast").delete_explainability`
+method.
 
 Boto3 documentation:
 [ForecastService.Client.delete_explainability](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.delete_explainability)
@@ -568,7 +566,7 @@ Keyword-only arguments:
 Deletes an Explainability export job.
 
 Type annotations for
-`aiobotocore.create_client("forecast").delete_explainability_export` method.
+`session.create_client("forecast").delete_explainability_export` method.
 
 Boto3 documentation:
 [ForecastService.Client.delete_explainability_export](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.delete_explainability_export)
@@ -589,7 +587,7 @@ Keyword-only arguments:
 
 Deletes a forecast created using the CreateForecast operation.
 
-Type annotations for `aiobotocore.create_client("forecast").delete_forecast`
+Type annotations for `session.create_client("forecast").delete_forecast`
 method.
 
 Boto3 documentation:
@@ -612,7 +610,7 @@ Deletes a forecast export job created using the CreateForecastExportJob
 operation.
 
 Type annotations for
-`aiobotocore.create_client("forecast").delete_forecast_export_job` method.
+`session.create_client("forecast").delete_forecast_export_job` method.
 
 Boto3 documentation:
 [ForecastService.Client.delete_forecast_export_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.delete_forecast_export_job)
@@ -633,7 +631,7 @@ Keyword-only arguments:
 
 Deletes a predictor created using the CreatePredictor operation.
 
-Type annotations for `aiobotocore.create_client("forecast").delete_predictor`
+Type annotations for `session.create_client("forecast").delete_predictor`
 method.
 
 Boto3 documentation:
@@ -655,7 +653,7 @@ Keyword-only arguments:
 Deletes a predictor backtest export job.
 
 Type annotations for
-`aiobotocore.create_client("forecast").delete_predictor_backtest_export_job`
+`session.create_client("forecast").delete_predictor_backtest_export_job`
 method.
 
 Boto3 documentation:
@@ -677,8 +675,8 @@ Keyword-only arguments:
 
 Deletes an entire resource tree.
 
-Type annotations for
-`aiobotocore.create_client("forecast").delete_resource_tree` method.
+Type annotations for `session.create_client("forecast").delete_resource_tree`
+method.
 
 Boto3 documentation:
 [ForecastService.Client.delete_resource_tree](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.delete_resource_tree)
@@ -700,7 +698,7 @@ Keyword-only arguments:
 Describes a predictor created using the CreateAutoPredictor operation.
 
 Type annotations for
-`aiobotocore.create_client("forecast").describe_auto_predictor` method.
+`session.create_client("forecast").describe_auto_predictor` method.
 
 Boto3 documentation:
 [ForecastService.Client.describe_auto_predictor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.describe_auto_predictor)
@@ -724,7 +722,7 @@ Returns a `Coroutine` for
 
 Describes an Amazon Forecast dataset created using the CreateDataset operation.
 
-Type annotations for `aiobotocore.create_client("forecast").describe_dataset`
+Type annotations for `session.create_client("forecast").describe_dataset`
 method.
 
 Boto3 documentation:
@@ -748,8 +746,8 @@ Returns a `Coroutine` for
 
 Describes a dataset group created using the CreateDatasetGroup operation.
 
-Type annotations for
-`aiobotocore.create_client("forecast").describe_dataset_group` method.
+Type annotations for `session.create_client("forecast").describe_dataset_group`
+method.
 
 Boto3 documentation:
 [ForecastService.Client.describe_dataset_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.describe_dataset_group)
@@ -775,7 +773,7 @@ Describes a dataset import job created using the CreateDatasetImportJob
 operation.
 
 Type annotations for
-`aiobotocore.create_client("forecast").describe_dataset_import_job` method.
+`session.create_client("forecast").describe_dataset_import_job` method.
 
 Boto3 documentation:
 [ForecastService.Client.describe_dataset_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.describe_dataset_import_job)
@@ -801,7 +799,7 @@ Describes an Explainability resource created using the CreateExplainability
 operation.
 
 Type annotations for
-`aiobotocore.create_client("forecast").describe_explainability` method.
+`session.create_client("forecast").describe_explainability` method.
 
 Boto3 documentation:
 [ForecastService.Client.describe_explainability](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.describe_explainability)
@@ -827,7 +825,7 @@ Describes an Explainability export created using the CreateExplainabilityExport
 operation.
 
 Type annotations for
-`aiobotocore.create_client("forecast").describe_explainability_export` method.
+`session.create_client("forecast").describe_explainability_export` method.
 
 Boto3 documentation:
 [ForecastService.Client.describe_explainability_export](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.describe_explainability_export)
@@ -851,7 +849,7 @@ Returns a `Coroutine` for
 
 Describes a forecast created using the CreateForecast operation.
 
-Type annotations for `aiobotocore.create_client("forecast").describe_forecast`
+Type annotations for `session.create_client("forecast").describe_forecast`
 method.
 
 Boto3 documentation:
@@ -877,7 +875,7 @@ Describes a forecast export job created using the CreateForecastExportJob
 operation.
 
 Type annotations for
-`aiobotocore.create_client("forecast").describe_forecast_export_job` method.
+`session.create_client("forecast").describe_forecast_export_job` method.
 
 Boto3 documentation:
 [ForecastService.Client.describe_forecast_export_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.describe_forecast_export_job)
@@ -901,7 +899,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("forecast").describe_predictor`
+Type annotations for `session.create_client("forecast").describe_predictor`
 method.
 
 Boto3 documentation:
@@ -928,7 +926,7 @@ Describes a predictor backtest export job created using the
 CreatePredictorBacktestExportJob operation.
 
 Type annotations for
-`aiobotocore.create_client("forecast").describe_predictor_backtest_export_job`
+`session.create_client("forecast").describe_predictor_backtest_export_job`
 method.
 
 Boto3 documentation:
@@ -953,8 +951,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("forecast").generate_presigned_url` method.
+Type annotations for `session.create_client("forecast").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [ForecastService.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.generate_presigned_url)
@@ -978,8 +976,8 @@ Returns a `Coroutine` for `str`.
 Provides metrics on the accuracy of the models that were trained by the
 CreatePredictor operation.
 
-Type annotations for
-`aiobotocore.create_client("forecast").get_accuracy_metrics` method.
+Type annotations for `session.create_client("forecast").get_accuracy_metrics`
+method.
 
 Boto3 documentation:
 [ForecastService.Client.get_accuracy_metrics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.get_accuracy_metrics)
@@ -1004,8 +1002,8 @@ Returns a `Coroutine` for
 Returns a list of dataset groups created using the CreateDatasetGroup
 operation.
 
-Type annotations for
-`aiobotocore.create_client("forecast").list_dataset_groups` method.
+Type annotations for `session.create_client("forecast").list_dataset_groups`
+method.
 
 Boto3 documentation:
 [ForecastService.Client.list_dataset_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.list_dataset_groups)
@@ -1032,7 +1030,7 @@ Returns a list of dataset import jobs created using the CreateDatasetImportJob
 operation.
 
 Type annotations for
-`aiobotocore.create_client("forecast").list_dataset_import_jobs` method.
+`session.create_client("forecast").list_dataset_import_jobs` method.
 
 Boto3 documentation:
 [ForecastService.Client.list_dataset_import_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.list_dataset_import_jobs)
@@ -1058,8 +1056,7 @@ Returns a `Coroutine` for
 
 Returns a list of datasets created using the CreateDataset operation.
 
-Type annotations for `aiobotocore.create_client("forecast").list_datasets`
-method.
+Type annotations for `session.create_client("forecast").list_datasets` method.
 
 Boto3 documentation:
 [ForecastService.Client.list_datasets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.list_datasets)
@@ -1084,8 +1081,8 @@ Returns a `Coroutine` for
 Returns a list of Explainability resources created using the
 CreateExplainability operation.
 
-Type annotations for
-`aiobotocore.create_client("forecast").list_explainabilities` method.
+Type annotations for `session.create_client("forecast").list_explainabilities`
+method.
 
 Boto3 documentation:
 [ForecastService.Client.list_explainabilities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.list_explainabilities)
@@ -1113,7 +1110,7 @@ Returns a list of Explainability exports created using the
 CreateExplainabilityExport operation.
 
 Type annotations for
-`aiobotocore.create_client("forecast").list_explainability_exports` method.
+`session.create_client("forecast").list_explainability_exports` method.
 
 Boto3 documentation:
 [ForecastService.Client.list_explainability_exports](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.list_explainability_exports)
@@ -1141,7 +1138,7 @@ Returns a list of forecast export jobs created using the
 CreateForecastExportJob operation.
 
 Type annotations for
-`aiobotocore.create_client("forecast").list_forecast_export_jobs` method.
+`session.create_client("forecast").list_forecast_export_jobs` method.
 
 Boto3 documentation:
 [ForecastService.Client.list_forecast_export_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.list_forecast_export_jobs)
@@ -1167,8 +1164,7 @@ Returns a `Coroutine` for
 
 Returns a list of forecasts created using the CreateForecast operation.
 
-Type annotations for `aiobotocore.create_client("forecast").list_forecasts`
-method.
+Type annotations for `session.create_client("forecast").list_forecasts` method.
 
 Boto3 documentation:
 [ForecastService.Client.list_forecasts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.list_forecasts)
@@ -1195,8 +1191,7 @@ Returns a list of predictor backtest export jobs created using the
 CreatePredictorBacktestExportJob operation.
 
 Type annotations for
-`aiobotocore.create_client("forecast").list_predictor_backtest_export_jobs`
-method.
+`session.create_client("forecast").list_predictor_backtest_export_jobs` method.
 
 Boto3 documentation:
 [ForecastService.Client.list_predictor_backtest_export_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.list_predictor_backtest_export_jobs)
@@ -1222,7 +1217,7 @@ Returns a `Coroutine` for
 
 Returns a list of predictors created using the CreatePredictor operation.
 
-Type annotations for `aiobotocore.create_client("forecast").list_predictors`
+Type annotations for `session.create_client("forecast").list_predictors`
 method.
 
 Boto3 documentation:
@@ -1248,8 +1243,8 @@ Returns a `Coroutine` for
 
 Lists the tags for an Amazon Forecast resource.
 
-Type annotations for
-`aiobotocore.create_client("forecast").list_tags_for_resource` method.
+Type annotations for `session.create_client("forecast").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [ForecastService.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.list_tags_for_resource)
@@ -1273,8 +1268,7 @@ Returns a `Coroutine` for
 
 Stops a resource.
 
-Type annotations for `aiobotocore.create_client("forecast").stop_resource`
-method.
+Type annotations for `session.create_client("forecast").stop_resource` method.
 
 Boto3 documentation:
 [ForecastService.Client.stop_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.stop_resource)
@@ -1294,8 +1288,7 @@ Keyword-only arguments:
 
 Associates the specified tags to a resource with the specified `resourceArn`.
 
-Type annotations for `aiobotocore.create_client("forecast").tag_resource`
-method.
+Type annotations for `session.create_client("forecast").tag_resource` method.
 
 Boto3 documentation:
 [ForecastService.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.tag_resource)
@@ -1318,8 +1311,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified tags from a resource.
 
-Type annotations for `aiobotocore.create_client("forecast").untag_resource`
-method.
+Type annotations for `session.create_client("forecast").untag_resource` method.
 
 Boto3 documentation:
 [ForecastService.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.untag_resource)
@@ -1342,8 +1334,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Replaces the datasets in a dataset group with the specified datasets.
 
-Type annotations for
-`aiobotocore.create_client("forecast").update_dataset_group` method.
+Type annotations for `session.create_client("forecast").update_dataset_group`
+method.
 
 Boto3 documentation:
 [ForecastService.Client.update_dataset_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.update_dataset_group)
@@ -1361,12 +1353,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("forecast").__aenter__` method.
+
+Boto3 documentation:
+[ForecastService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ForecastServiceClient](#forecastserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("forecast").__aexit__` method.
+
+Boto3 documentation:
+[ForecastService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("forecast").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("forecast").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_dataset_groups")` ->
   [ListDatasetGroupsPaginator](./paginators.md#listdatasetgroupspaginator)

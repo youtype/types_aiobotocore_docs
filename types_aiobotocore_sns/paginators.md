@@ -24,17 +24,19 @@ type annotations stubs module
 ## ListEndpointsByPlatformApplicationPaginator
 
 Type annotations for
-`aiobotocore.create_client("sns").get_paginator("list_endpoints_by_platform_application")`.
+`session.create_client("sns").get_paginator("list_endpoints_by_platform_application")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sns.paginator import ListEndpointsByPlatformApplicationPaginator
 
-def get_list_endpoints_by_platform_application_paginator() -> ListEndpointsByPlatformApplicationPaginator:
-    return Session().create_client("sns").get_paginator("list_endpoints_by_platform_application")
+session = get_session()
+async with session.create_client("sns") as client:
+    client: SNSClient
+    paginator: ListEndpointsByPlatformApplicationPaginator = client.get_paginator("list_endpoints_by_platform_application")
 ```
 
 Boto3 documentation:
@@ -54,17 +56,19 @@ Arguments for `ListEndpointsByPlatformApplicationPaginator.paginate` method:
 ## ListOriginationNumbersPaginator
 
 Type annotations for
-`aiobotocore.create_client("sns").get_paginator("list_origination_numbers")`.
+`session.create_client("sns").get_paginator("list_origination_numbers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sns.paginator import ListOriginationNumbersPaginator
 
-def get_list_origination_numbers_paginator() -> ListOriginationNumbersPaginator:
-    return Session().create_client("sns").get_paginator("list_origination_numbers")
+session = get_session()
+async with session.create_client("sns") as client:
+    client: SNSClient
+    paginator: ListOriginationNumbersPaginator = client.get_paginator("list_origination_numbers")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `ListOriginationNumbersPaginator.paginate` method:
 ## ListPhoneNumbersOptedOutPaginator
 
 Type annotations for
-`aiobotocore.create_client("sns").get_paginator("list_phone_numbers_opted_out")`.
+`session.create_client("sns").get_paginator("list_phone_numbers_opted_out")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sns.paginator import ListPhoneNumbersOptedOutPaginator
 
-def get_list_phone_numbers_opted_out_paginator() -> ListPhoneNumbersOptedOutPaginator:
-    return Session().create_client("sns").get_paginator("list_phone_numbers_opted_out")
+session = get_session()
+async with session.create_client("sns") as client:
+    client: SNSClient
+    paginator: ListPhoneNumbersOptedOutPaginator = client.get_paginator("list_phone_numbers_opted_out")
 ```
 
 Boto3 documentation:
@@ -112,17 +118,19 @@ Arguments for `ListPhoneNumbersOptedOutPaginator.paginate` method:
 ## ListPlatformApplicationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sns").get_paginator("list_platform_applications")`.
+`session.create_client("sns").get_paginator("list_platform_applications")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sns.paginator import ListPlatformApplicationsPaginator
 
-def get_list_platform_applications_paginator() -> ListPlatformApplicationsPaginator:
-    return Session().create_client("sns").get_paginator("list_platform_applications")
+session = get_session()
+async with session.create_client("sns") as client:
+    client: SNSClient
+    paginator: ListPlatformApplicationsPaginator = client.get_paginator("list_platform_applications")
 ```
 
 Boto3 documentation:
@@ -141,17 +149,19 @@ Arguments for `ListPlatformApplicationsPaginator.paginate` method:
 ## ListSMSSandboxPhoneNumbersPaginator
 
 Type annotations for
-`aiobotocore.create_client("sns").get_paginator("list_sms_sandbox_phone_numbers")`.
+`session.create_client("sns").get_paginator("list_sms_sandbox_phone_numbers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sns.paginator import ListSMSSandboxPhoneNumbersPaginator
 
-def get_list_sms_sandbox_phone_numbers_paginator() -> ListSMSSandboxPhoneNumbersPaginator:
-    return Session().create_client("sns").get_paginator("list_sms_sandbox_phone_numbers")
+session = get_session()
+async with session.create_client("sns") as client:
+    client: SNSClient
+    paginator: ListSMSSandboxPhoneNumbersPaginator = client.get_paginator("list_sms_sandbox_phone_numbers")
 ```
 
 Boto3 documentation:
@@ -170,17 +180,19 @@ Arguments for `ListSMSSandboxPhoneNumbersPaginator.paginate` method:
 ## ListSubscriptionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sns").get_paginator("list_subscriptions")`.
+`session.create_client("sns").get_paginator("list_subscriptions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sns.paginator import ListSubscriptionsPaginator
 
-def get_list_subscriptions_paginator() -> ListSubscriptionsPaginator:
-    return Session().create_client("sns").get_paginator("list_subscriptions")
+session = get_session()
+async with session.create_client("sns") as client:
+    client: SNSClient
+    paginator: ListSubscriptionsPaginator = client.get_paginator("list_subscriptions")
 ```
 
 Boto3 documentation:
@@ -199,17 +211,19 @@ Arguments for `ListSubscriptionsPaginator.paginate` method:
 ## ListSubscriptionsByTopicPaginator
 
 Type annotations for
-`aiobotocore.create_client("sns").get_paginator("list_subscriptions_by_topic")`.
+`session.create_client("sns").get_paginator("list_subscriptions_by_topic")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sns.paginator import ListSubscriptionsByTopicPaginator
 
-def get_list_subscriptions_by_topic_paginator() -> ListSubscriptionsByTopicPaginator:
-    return Session().create_client("sns").get_paginator("list_subscriptions_by_topic")
+session = get_session()
+async with session.create_client("sns") as client:
+    client: SNSClient
+    paginator: ListSubscriptionsByTopicPaginator = client.get_paginator("list_subscriptions_by_topic")
 ```
 
 Boto3 documentation:
@@ -229,17 +243,19 @@ Arguments for `ListSubscriptionsByTopicPaginator.paginate` method:
 ## ListTopicsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sns").get_paginator("list_topics")`.
+`session.create_client("sns").get_paginator("list_topics")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sns.paginator import ListTopicsPaginator
 
-def get_list_topics_paginator() -> ListTopicsPaginator:
-    return Session().create_client("sns").get_paginator("list_topics")
+session = get_session()
+async with session.create_client("sns") as client:
+    client: SNSClient
+    paginator: ListTopicsPaginator = client.get_paginator("list_topics")
 ```
 
 Boto3 documentation:

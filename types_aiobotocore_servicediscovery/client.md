@@ -42,22 +42,25 @@ type annotations stubs module
     - [update_private_dns_namespace](#update_private_dns_namespace)
     - [update_public_dns_namespace](#update_public_dns_namespace)
     - [update_service](#update_service)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="servicediscoveryclient"></a>
 
 ## ServiceDiscoveryClient
 
-Type annotations for `aiobotocore.create_client("servicediscovery")`
+Type annotations for `session.create_client("servicediscovery")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_servicediscovery.client import ServiceDiscoveryClient
 
-def get_servicediscovery_client() -> ServiceDiscoveryClient:
-    return Session().client("servicediscovery")
+session = get_session()
+async with session.create_client("servicediscovery") as client:
+    client: ServiceDiscoveryClient
 ```
 
 Boto3 documentation:
@@ -105,7 +108,7 @@ Exceptions:
 
 ServiceDiscoveryClient exceptions.
 
-Type annotations for `aiobotocore.create_client("servicediscovery").exceptions`
+Type annotations for `session.create_client("servicediscovery").exceptions`
 method.
 
 Boto3 documentation:
@@ -119,19 +122,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("servicediscovery").can_paginate` method.
+Type annotations for `session.create_client("servicediscovery").can_paginate`
+method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_http_namespace"></a>
 
@@ -140,7 +141,7 @@ Returns a `Coroutine` for `bool`.
 Creates an HTTP namespace.
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").create_http_namespace` method.
+`session.create_client("servicediscovery").create_http_namespace` method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.create_http_namespace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.create_http_namespace)
@@ -169,7 +170,7 @@ Creates a private namespace based on DNS, which is visible only inside a
 specified Amazon VPC.
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").create_private_dns_namespace`
+`session.create_client("servicediscovery").create_private_dns_namespace`
 method.
 
 Boto3 documentation:
@@ -201,8 +202,7 @@ Returns a `Coroutine` for
 Creates a public namespace based on DNS, which is visible on the internet.
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").create_public_dns_namespace`
-method.
+`session.create_client("servicediscovery").create_public_dns_namespace` method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.create_public_dns_namespace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.create_public_dns_namespace)
@@ -231,8 +231,8 @@ Returns a `Coroutine` for
 
 Creates a service.
 
-Type annotations for
-`aiobotocore.create_client("servicediscovery").create_service` method.
+Type annotations for `session.create_client("servicediscovery").create_service`
+method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.create_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.create_service)
@@ -267,7 +267,7 @@ Returns a `Coroutine` for
 Deletes a namespace from the current account.
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").delete_namespace` method.
+`session.create_client("servicediscovery").delete_namespace` method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.delete_namespace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.delete_namespace)
@@ -290,8 +290,8 @@ Returns a `Coroutine` for
 
 Deletes a specified service.
 
-Type annotations for
-`aiobotocore.create_client("servicediscovery").delete_service` method.
+Type annotations for `session.create_client("servicediscovery").delete_service`
+method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.delete_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.delete_service)
@@ -315,7 +315,7 @@ Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud
 Map created for the specified instance.
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").deregister_instance` method.
+`session.create_client("servicediscovery").deregister_instance` method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.deregister_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.deregister_instance)
@@ -341,7 +341,7 @@ Returns a `Coroutine` for
 Discovers registered instances for a specified namespace and service.
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").discover_instances` method.
+`session.create_client("servicediscovery").discover_instances` method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.discover_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.discover_instances)
@@ -372,7 +372,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").generate_presigned_url` method.
+`session.create_client("servicediscovery").generate_presigned_url` method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.generate_presigned_url)
@@ -395,8 +395,8 @@ Returns a `Coroutine` for `str`.
 
 Gets information about a specified instance.
 
-Type annotations for
-`aiobotocore.create_client("servicediscovery").get_instance` method.
+Type annotations for `session.create_client("servicediscovery").get_instance`
+method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.get_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.get_instance)
@@ -422,8 +422,7 @@ Gets the current health status (`Healthy` , `Unhealthy` , or `Unknown` ) of one
 or more instances that are associated with a specified service.
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").get_instances_health_status`
-method.
+`session.create_client("servicediscovery").get_instances_health_status` method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.get_instances_health_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.get_instances_health_status)
@@ -450,8 +449,8 @@ Returns a `Coroutine` for
 
 Gets information about a namespace.
 
-Type annotations for
-`aiobotocore.create_client("servicediscovery").get_namespace` method.
+Type annotations for `session.create_client("servicediscovery").get_namespace`
+method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.get_namespace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.get_namespace)
@@ -475,8 +474,8 @@ Returns a `Coroutine` for
 Gets information about any operation that returns an operation ID in the
 response, such as a `CreateService` request.
 
-Type annotations for
-`aiobotocore.create_client("servicediscovery").get_operation` method.
+Type annotations for `session.create_client("servicediscovery").get_operation`
+method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.get_operation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.get_operation)
@@ -499,8 +498,8 @@ Returns a `Coroutine` for
 
 Gets the settings for a specified service.
 
-Type annotations for
-`aiobotocore.create_client("servicediscovery").get_service` method.
+Type annotations for `session.create_client("servicediscovery").get_service`
+method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.get_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.get_service)
@@ -524,8 +523,8 @@ Returns a `Coroutine` for
 Lists summary information about the instances that you registered by using a
 specified service.
 
-Type annotations for
-`aiobotocore.create_client("servicediscovery").list_instances` method.
+Type annotations for `session.create_client("servicediscovery").list_instances`
+method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.list_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.list_instances)
@@ -552,7 +551,7 @@ Lists summary information about the namespaces that were created by the current
 account.
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").list_namespaces` method.
+`session.create_client("servicediscovery").list_namespaces` method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.list_namespaces](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.list_namespaces)
@@ -579,7 +578,7 @@ Returns a `Coroutine` for
 Lists operations that match the criteria that you specify.
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").list_operations` method.
+`session.create_client("servicediscovery").list_operations` method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.list_operations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.list_operations)
@@ -606,8 +605,8 @@ Returns a `Coroutine` for
 Lists summary information for all the services that are associated with one or
 more specified namespaces.
 
-Type annotations for
-`aiobotocore.create_client("servicediscovery").list_services` method.
+Type annotations for `session.create_client("servicediscovery").list_services`
+method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.list_services](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.list_services)
@@ -634,7 +633,7 @@ Returns a `Coroutine` for
 Lists tags for the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").list_tags_for_resource` method.
+`session.create_client("servicediscovery").list_tags_for_resource` method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.list_tags_for_resource)
@@ -660,7 +659,7 @@ Creates or updates one or more records and, optionally, creates a health check
 based on the settings in a specified service.
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").register_instance` method.
+`session.create_client("servicediscovery").register_instance` method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.register_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.register_instance)
@@ -686,8 +685,8 @@ Returns a `Coroutine` for
 
 Adds one or more tags to the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("servicediscovery").tag_resource` method.
+Type annotations for `session.create_client("servicediscovery").tag_resource`
+method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.tag_resource)
@@ -710,8 +709,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("servicediscovery").untag_resource` method.
+Type annotations for `session.create_client("servicediscovery").untag_resource`
+method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.untag_resource)
@@ -735,7 +734,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates an HTTP namespace.
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").update_http_namespace` method.
+`session.create_client("servicediscovery").update_http_namespace` method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.update_http_namespace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.update_http_namespace)
@@ -765,7 +764,7 @@ Submits a request to change the health status of a custom health check to
 healthy or unhealthy.
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").update_instance_custom_health_status`
+`session.create_client("servicediscovery").update_instance_custom_health_status`
 method.
 
 Boto3 documentation:
@@ -791,7 +790,7 @@ Keyword-only arguments:
 Updates a private DNS namespace.
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").update_private_dns_namespace`
+`session.create_client("servicediscovery").update_private_dns_namespace`
 method.
 
 Boto3 documentation:
@@ -821,8 +820,7 @@ Returns a `Coroutine` for
 Updates a public DNS namespace.
 
 Type annotations for
-`aiobotocore.create_client("servicediscovery").update_public_dns_namespace`
-method.
+`session.create_client("servicediscovery").update_public_dns_namespace` method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.update_public_dns_namespace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.update_public_dns_namespace)
@@ -852,8 +850,8 @@ Submits a request to perform the following operations * Update the TTL setting
 for existing `DnsRecords` configurations * Add, update, or delete
 `HealthCheckConfig` for a specified service .
 
-Type annotations for
-`aiobotocore.create_client("servicediscovery").update_service` method.
+Type annotations for `session.create_client("servicediscovery").update_service`
+method.
 
 Boto3 documentation:
 [ServiceDiscovery.Client.update_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.update_service)
@@ -872,13 +870,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateServiceResponseTypeDef](./type_defs.md#updateserviceresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("servicediscovery").__aenter__`
+method.
+
+Boto3 documentation:
+[ServiceDiscovery.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ServiceDiscoveryClient](#servicediscoveryclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("servicediscovery").__aexit__`
+method.
+
+Boto3 documentation:
+[ServiceDiscovery.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicediscovery.html#ServiceDiscovery.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("servicediscovery").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("servicediscovery").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_instances")` ->
   [ListInstancesPaginator](./paginators.md#listinstancespaginator)

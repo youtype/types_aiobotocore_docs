@@ -20,17 +20,19 @@ type annotations stubs module
 ## ListDatasetEntriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("lookoutvision").get_paginator("list_dataset_entries")`.
+`session.create_client("lookoutvision").get_paginator("list_dataset_entries")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lookoutvision.paginator import ListDatasetEntriesPaginator
 
-def get_list_dataset_entries_paginator() -> ListDatasetEntriesPaginator:
-    return Session().create_client("lookoutvision").get_paginator("list_dataset_entries")
+session = get_session()
+async with session.create_client("lookoutvision") as client:
+    client: LookoutforVisionClient
+    paginator: ListDatasetEntriesPaginator = client.get_paginator("list_dataset_entries")
 ```
 
 Boto3 documentation:
@@ -56,17 +58,19 @@ Arguments for `ListDatasetEntriesPaginator.paginate` method:
 ## ListModelPackagingJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lookoutvision").get_paginator("list_model_packaging_jobs")`.
+`session.create_client("lookoutvision").get_paginator("list_model_packaging_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lookoutvision.paginator import ListModelPackagingJobsPaginator
 
-def get_list_model_packaging_jobs_paginator() -> ListModelPackagingJobsPaginator:
-    return Session().create_client("lookoutvision").get_paginator("list_model_packaging_jobs")
+session = get_session()
+async with session.create_client("lookoutvision") as client:
+    client: LookoutforVisionClient
+    paginator: ListModelPackagingJobsPaginator = client.get_paginator("list_model_packaging_jobs")
 ```
 
 Boto3 documentation:
@@ -86,17 +90,19 @@ Arguments for `ListModelPackagingJobsPaginator.paginate` method:
 ## ListModelsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lookoutvision").get_paginator("list_models")`.
+`session.create_client("lookoutvision").get_paginator("list_models")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lookoutvision.paginator import ListModelsPaginator
 
-def get_list_models_paginator() -> ListModelsPaginator:
-    return Session().create_client("lookoutvision").get_paginator("list_models")
+session = get_session()
+async with session.create_client("lookoutvision") as client:
+    client: LookoutforVisionClient
+    paginator: ListModelsPaginator = client.get_paginator("list_models")
 ```
 
 Boto3 documentation:
@@ -116,17 +122,19 @@ Arguments for `ListModelsPaginator.paginate` method:
 ## ListProjectsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lookoutvision").get_paginator("list_projects")`.
+`session.create_client("lookoutvision").get_paginator("list_projects")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lookoutvision.paginator import ListProjectsPaginator
 
-def get_list_projects_paginator() -> ListProjectsPaginator:
-    return Session().create_client("lookoutvision").get_paginator("list_projects")
+session = get_session()
+async with session.create_client("lookoutvision") as client:
+    client: LookoutforVisionClient
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
 ```
 
 Boto3 documentation:

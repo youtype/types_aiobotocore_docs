@@ -21,17 +21,19 @@ type annotations stubs module
 ## GetConnectorsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sms").get_paginator("get_connectors")`.
+`session.create_client("sms").get_paginator("get_connectors")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sms.paginator import GetConnectorsPaginator
 
-def get_get_connectors_paginator() -> GetConnectorsPaginator:
-    return Session().create_client("sms").get_paginator("get_connectors")
+session = get_session()
+async with session.create_client("sms") as client:
+    client: SMSClient
+    paginator: GetConnectorsPaginator = client.get_paginator("get_connectors")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `GetConnectorsPaginator.paginate` method:
 ## GetReplicationJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sms").get_paginator("get_replication_jobs")`.
+`session.create_client("sms").get_paginator("get_replication_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sms.paginator import GetReplicationJobsPaginator
 
-def get_get_replication_jobs_paginator() -> GetReplicationJobsPaginator:
-    return Session().create_client("sms").get_paginator("get_replication_jobs")
+session = get_session()
+async with session.create_client("sms") as client:
+    client: SMSClient
+    paginator: GetReplicationJobsPaginator = client.get_paginator("get_replication_jobs")
 ```
 
 Boto3 documentation:
@@ -80,17 +84,19 @@ Arguments for `GetReplicationJobsPaginator.paginate` method:
 ## GetReplicationRunsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sms").get_paginator("get_replication_runs")`.
+`session.create_client("sms").get_paginator("get_replication_runs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sms.paginator import GetReplicationRunsPaginator
 
-def get_get_replication_runs_paginator() -> GetReplicationRunsPaginator:
-    return Session().create_client("sms").get_paginator("get_replication_runs")
+session = get_session()
+async with session.create_client("sms") as client:
+    client: SMSClient
+    paginator: GetReplicationRunsPaginator = client.get_paginator("get_replication_runs")
 ```
 
 Boto3 documentation:
@@ -110,17 +116,19 @@ Arguments for `GetReplicationRunsPaginator.paginate` method:
 ## GetServersPaginator
 
 Type annotations for
-`aiobotocore.create_client("sms").get_paginator("get_servers")`.
+`session.create_client("sms").get_paginator("get_servers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sms.paginator import GetServersPaginator
 
-def get_get_servers_paginator() -> GetServersPaginator:
-    return Session().create_client("sms").get_paginator("get_servers")
+session = get_session()
+async with session.create_client("sms") as client:
+    client: SMSClient
+    paginator: GetServersPaginator = client.get_paginator("get_servers")
 ```
 
 Boto3 documentation:
@@ -140,18 +148,19 @@ Arguments for `GetServersPaginator.paginate` method:
 
 ## ListAppsPaginator
 
-Type annotations for
-`aiobotocore.create_client("sms").get_paginator("list_apps")`.
+Type annotations for `session.create_client("sms").get_paginator("list_apps")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sms.paginator import ListAppsPaginator
 
-def get_list_apps_paginator() -> ListAppsPaginator:
-    return Session().create_client("sms").get_paginator("list_apps")
+session = get_session()
+async with session.create_client("sms") as client:
+    client: SMSClient
+    paginator: ListAppsPaginator = client.get_paginator("list_apps")
 ```
 
 Boto3 documentation:

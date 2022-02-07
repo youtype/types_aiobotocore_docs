@@ -21,17 +21,19 @@ type annotations stubs module
 ## DescribeAlarmHistoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").get_paginator("describe_alarm_history")`.
+`session.create_client("cloudwatch").get_paginator("describe_alarm_history")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudwatch.paginator import DescribeAlarmHistoryPaginator
 
-def get_describe_alarm_history_paginator() -> DescribeAlarmHistoryPaginator:
-    return Session().create_client("cloudwatch").get_paginator("describe_alarm_history")
+session = get_session()
+async with session.create_client("cloudwatch") as client:
+    client: CloudWatchClient
+    paginator: DescribeAlarmHistoryPaginator = client.get_paginator("describe_alarm_history")
 ```
 
 Boto3 documentation:
@@ -56,17 +58,19 @@ Arguments for `DescribeAlarmHistoryPaginator.paginate` method:
 ## DescribeAlarmsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").get_paginator("describe_alarms")`.
+`session.create_client("cloudwatch").get_paginator("describe_alarms")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudwatch.paginator import DescribeAlarmsPaginator
 
-def get_describe_alarms_paginator() -> DescribeAlarmsPaginator:
-    return Session().create_client("cloudwatch").get_paginator("describe_alarms")
+session = get_session()
+async with session.create_client("cloudwatch") as client:
+    client: CloudWatchClient
+    paginator: DescribeAlarmsPaginator = client.get_paginator("describe_alarms")
 ```
 
 Boto3 documentation:
@@ -92,17 +96,19 @@ Arguments for `DescribeAlarmsPaginator.paginate` method:
 ## GetMetricDataPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").get_paginator("get_metric_data")`.
+`session.create_client("cloudwatch").get_paginator("get_metric_data")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudwatch.paginator import GetMetricDataPaginator
 
-def get_get_metric_data_paginator() -> GetMetricDataPaginator:
-    return Session().create_client("cloudwatch").get_paginator("get_metric_data")
+session = get_session()
+async with session.create_client("cloudwatch") as client:
+    client: CloudWatchClient
+    paginator: GetMetricDataPaginator = client.get_paginator("get_metric_data")
 ```
 
 Boto3 documentation:
@@ -128,17 +134,19 @@ Arguments for `GetMetricDataPaginator.paginate` method:
 ## ListDashboardsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").get_paginator("list_dashboards")`.
+`session.create_client("cloudwatch").get_paginator("list_dashboards")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudwatch.paginator import ListDashboardsPaginator
 
-def get_list_dashboards_paginator() -> ListDashboardsPaginator:
-    return Session().create_client("cloudwatch").get_paginator("list_dashboards")
+session = get_session()
+async with session.create_client("cloudwatch") as client:
+    client: CloudWatchClient
+    paginator: ListDashboardsPaginator = client.get_paginator("list_dashboards")
 ```
 
 Boto3 documentation:
@@ -158,17 +166,19 @@ Arguments for `ListDashboardsPaginator.paginate` method:
 ## ListMetricsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").get_paginator("list_metrics")`.
+`session.create_client("cloudwatch").get_paginator("list_metrics")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudwatch.paginator import ListMetricsPaginator
 
-def get_list_metrics_paginator() -> ListMetricsPaginator:
-    return Session().create_client("cloudwatch").get_paginator("list_metrics")
+session = get_session()
+async with session.create_client("cloudwatch") as client:
+    client: CloudWatchClient
+    paginator: ListMetricsPaginator = client.get_paginator("list_metrics")
 ```
 
 Boto3 documentation:

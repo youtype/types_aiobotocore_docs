@@ -32,22 +32,25 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_placement](#update_placement)
     - [update_project](#update_project)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="iot1clickprojectsclient"></a>
 
 ## IoT1ClickProjectsClient
 
-Type annotations for `aiobotocore.create_client("iot1click-projects")`
+Type annotations for `session.create_client("iot1click-projects")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_iot1click_projects.client import IoT1ClickProjectsClient
 
-def get_iot1click-projects_client() -> IoT1ClickProjectsClient:
-    return Session().client("iot1click-projects")
+session = get_session()
+async with session.create_client("iot1click-projects") as client:
+    client: IoT1ClickProjectsClient
 ```
 
 Boto3 documentation:
@@ -86,8 +89,8 @@ Exceptions:
 
 IoT1ClickProjectsClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("iot1click-projects").exceptions` method.
+Type annotations for `session.create_client("iot1click-projects").exceptions`
+method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.exceptions)
@@ -101,7 +104,7 @@ Returns [Exceptions](#exceptions).
 Associates a physical device with a placement.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").associate_device_with_placement`
+`session.create_client("iot1click-projects").associate_device_with_placement`
 method.
 
 Boto3 documentation:
@@ -128,19 +131,17 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("iot1click-projects").can_paginate` method.
+Type annotations for `session.create_client("iot1click-projects").can_paginate`
+method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_placement"></a>
 
@@ -149,7 +150,7 @@ Returns a `Coroutine` for `bool`.
 Creates an empty placement.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").create_placement` method.
+`session.create_client("iot1click-projects").create_placement` method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.create_placement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.create_placement)
@@ -174,7 +175,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates an empty project with a placement template.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").create_project` method.
+`session.create_client("iot1click-projects").create_project` method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.create_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.create_project)
@@ -201,7 +202,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a placement.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").delete_placement` method.
+`session.create_client("iot1click-projects").delete_placement` method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.delete_placement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.delete_placement)
@@ -225,7 +226,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a project.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").delete_project` method.
+`session.create_client("iot1click-projects").delete_project` method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.delete_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.delete_project)
@@ -248,7 +249,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Describes a placement in a project.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").describe_placement` method.
+`session.create_client("iot1click-projects").describe_placement` method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.describe_placement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.describe_placement)
@@ -274,7 +275,7 @@ Returns a `Coroutine` for
 Returns an object describing a project.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").describe_project` method.
+`session.create_client("iot1click-projects").describe_project` method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.describe_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.describe_project)
@@ -298,7 +299,7 @@ Returns a `Coroutine` for
 Removes a physical device from a placement.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").disassociate_device_from_placement`
+`session.create_client("iot1click-projects").disassociate_device_from_placement`
 method.
 
 Boto3 documentation:
@@ -325,8 +326,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").generate_presigned_url`
-method.
+`session.create_client("iot1click-projects").generate_presigned_url` method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.generate_presigned_url)
@@ -350,8 +350,7 @@ Returns a `Coroutine` for `str`.
 Returns an object enumerating the devices in a placement.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").get_devices_in_placement`
-method.
+`session.create_client("iot1click-projects").get_devices_in_placement` method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.get_devices_in_placement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.get_devices_in_placement)
@@ -377,7 +376,7 @@ Returns a `Coroutine` for
 Lists the placement(s) of a project.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").list_placements` method.
+`session.create_client("iot1click-projects").list_placements` method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.list_placements](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.list_placements)
@@ -404,7 +403,7 @@ Lists the AWS IoT 1-Click project(s) associated with your AWS account and
 region.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").list_projects` method.
+`session.create_client("iot1click-projects").list_projects` method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.list_projects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.list_projects)
@@ -430,8 +429,7 @@ Lists the tags (metadata key/value pairs) which you have assigned to the
 resource.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").list_tags_for_resource`
-method.
+`session.create_client("iot1click-projects").list_tags_for_resource` method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.list_tags_for_resource)
@@ -455,8 +453,8 @@ Returns a `Coroutine` for
 
 Creates or modifies tags for a resource.
 
-Type annotations for
-`aiobotocore.create_client("iot1click-projects").tag_resource` method.
+Type annotations for `session.create_client("iot1click-projects").tag_resource`
+method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.tag_resource)
@@ -480,7 +478,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes one or more tags (metadata key/value pairs) from a resource.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").untag_resource` method.
+`session.create_client("iot1click-projects").untag_resource` method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.untag_resource)
@@ -504,7 +502,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a placement with the given attributes.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").update_placement` method.
+`session.create_client("iot1click-projects").update_placement` method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.update_placement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.update_placement)
@@ -529,7 +527,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a project associated with your AWS account and region.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").update_project` method.
+`session.create_client("iot1click-projects").update_project` method.
 
 Boto3 documentation:
 [IoT1ClickProjects.Client.update_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.update_project)
@@ -548,12 +546,46 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("iot1click-projects").__aenter__`
+method.
+
+Boto3 documentation:
+[IoT1ClickProjects.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [IoT1ClickProjectsClient](#iot1clickprojectsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("iot1click-projects").__aexit__`
+method.
+
+Boto3 documentation:
+[IoT1ClickProjects.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-projects.html#IoT1ClickProjects.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").get_paginator` method with
+`session.create_client("iot1click-projects").get_paginator` method with
 overloads.
 
 - `client.get_paginator("list_placements")` ->

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[lightsail]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[lightsail]'
+
+# standalone installation
 pip install types-aiobotocore-lightsail
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-lightsail
 
 ## LightsailClient
 
-Type annotations for `aiobotocore.create_client("lightsail")` as
+Type annotations for `session.create_client("lightsail")` as
 [LightsailClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_lightsail.client import LightsailClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [allocate_static_ip](./client.md#allocate_static_ip)
 - [attach_certificate_to_distribution](./client.md#attach_certificate_to_distribution)
 - [attach_disk](./client.md#attach_disk)
@@ -225,7 +231,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_lightsail.paginators import GetActiveNamesPaginator, ...
+from types_aiobotocore_lightsail.paginator import GetActiveNamesPaginator, ...
 ```
 
 - [GetActiveNamesPaginator](./paginators.md#getactivenamespaginator)

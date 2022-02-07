@@ -24,17 +24,19 @@ type annotations stubs module
 ## ListGatewayRoutesPaginator
 
 Type annotations for
-`aiobotocore.create_client("appmesh").get_paginator("list_gateway_routes")`.
+`session.create_client("appmesh").get_paginator("list_gateway_routes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appmesh.paginator import ListGatewayRoutesPaginator
 
-def get_list_gateway_routes_paginator() -> ListGatewayRoutesPaginator:
-    return Session().create_client("appmesh").get_paginator("list_gateway_routes")
+session = get_session()
+async with session.create_client("appmesh") as client:
+    client: AppMeshClient
+    paginator: ListGatewayRoutesPaginator = client.get_paginator("list_gateway_routes")
 ```
 
 Boto3 documentation:
@@ -56,17 +58,19 @@ Arguments for `ListGatewayRoutesPaginator.paginate` method:
 ## ListMeshesPaginator
 
 Type annotations for
-`aiobotocore.create_client("appmesh").get_paginator("list_meshes")`.
+`session.create_client("appmesh").get_paginator("list_meshes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appmesh.paginator import ListMeshesPaginator
 
-def get_list_meshes_paginator() -> ListMeshesPaginator:
-    return Session().create_client("appmesh").get_paginator("list_meshes")
+session = get_session()
+async with session.create_client("appmesh") as client:
+    client: AppMeshClient
+    paginator: ListMeshesPaginator = client.get_paginator("list_meshes")
 ```
 
 Boto3 documentation:
@@ -85,17 +89,19 @@ Arguments for `ListMeshesPaginator.paginate` method:
 ## ListRoutesPaginator
 
 Type annotations for
-`aiobotocore.create_client("appmesh").get_paginator("list_routes")`.
+`session.create_client("appmesh").get_paginator("list_routes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appmesh.paginator import ListRoutesPaginator
 
-def get_list_routes_paginator() -> ListRoutesPaginator:
-    return Session().create_client("appmesh").get_paginator("list_routes")
+session = get_session()
+async with session.create_client("appmesh") as client:
+    client: AppMeshClient
+    paginator: ListRoutesPaginator = client.get_paginator("list_routes")
 ```
 
 Boto3 documentation:
@@ -117,17 +123,19 @@ Arguments for `ListRoutesPaginator.paginate` method:
 ## ListTagsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("appmesh").get_paginator("list_tags_for_resource")`.
+`session.create_client("appmesh").get_paginator("list_tags_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appmesh.paginator import ListTagsForResourcePaginator
 
-def get_list_tags_for_resource_paginator() -> ListTagsForResourcePaginator:
-    return Session().create_client("appmesh").get_paginator("list_tags_for_resource")
+session = get_session()
+async with session.create_client("appmesh") as client:
+    client: AppMeshClient
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
 ```
 
 Boto3 documentation:
@@ -147,17 +155,19 @@ Arguments for `ListTagsForResourcePaginator.paginate` method:
 ## ListVirtualGatewaysPaginator
 
 Type annotations for
-`aiobotocore.create_client("appmesh").get_paginator("list_virtual_gateways")`.
+`session.create_client("appmesh").get_paginator("list_virtual_gateways")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appmesh.paginator import ListVirtualGatewaysPaginator
 
-def get_list_virtual_gateways_paginator() -> ListVirtualGatewaysPaginator:
-    return Session().create_client("appmesh").get_paginator("list_virtual_gateways")
+session = get_session()
+async with session.create_client("appmesh") as client:
+    client: AppMeshClient
+    paginator: ListVirtualGatewaysPaginator = client.get_paginator("list_virtual_gateways")
 ```
 
 Boto3 documentation:
@@ -178,17 +188,19 @@ Arguments for `ListVirtualGatewaysPaginator.paginate` method:
 ## ListVirtualNodesPaginator
 
 Type annotations for
-`aiobotocore.create_client("appmesh").get_paginator("list_virtual_nodes")`.
+`session.create_client("appmesh").get_paginator("list_virtual_nodes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appmesh.paginator import ListVirtualNodesPaginator
 
-def get_list_virtual_nodes_paginator() -> ListVirtualNodesPaginator:
-    return Session().create_client("appmesh").get_paginator("list_virtual_nodes")
+session = get_session()
+async with session.create_client("appmesh") as client:
+    client: AppMeshClient
+    paginator: ListVirtualNodesPaginator = client.get_paginator("list_virtual_nodes")
 ```
 
 Boto3 documentation:
@@ -209,17 +221,19 @@ Arguments for `ListVirtualNodesPaginator.paginate` method:
 ## ListVirtualRoutersPaginator
 
 Type annotations for
-`aiobotocore.create_client("appmesh").get_paginator("list_virtual_routers")`.
+`session.create_client("appmesh").get_paginator("list_virtual_routers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appmesh.paginator import ListVirtualRoutersPaginator
 
-def get_list_virtual_routers_paginator() -> ListVirtualRoutersPaginator:
-    return Session().create_client("appmesh").get_paginator("list_virtual_routers")
+session = get_session()
+async with session.create_client("appmesh") as client:
+    client: AppMeshClient
+    paginator: ListVirtualRoutersPaginator = client.get_paginator("list_virtual_routers")
 ```
 
 Boto3 documentation:
@@ -240,17 +254,19 @@ Arguments for `ListVirtualRoutersPaginator.paginate` method:
 ## ListVirtualServicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("appmesh").get_paginator("list_virtual_services")`.
+`session.create_client("appmesh").get_paginator("list_virtual_services")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_appmesh.paginator import ListVirtualServicesPaginator
 
-def get_list_virtual_services_paginator() -> ListVirtualServicesPaginator:
-    return Session().create_client("appmesh").get_paginator("list_virtual_services")
+session = get_session()
+async with session.create_client("appmesh") as client:
+    client: AppMeshClient
+    paginator: ListVirtualServicesPaginator = client.get_paginator("list_virtual_services")
 ```
 
 Boto3 documentation:

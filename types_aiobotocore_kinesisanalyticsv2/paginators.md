@@ -18,17 +18,19 @@ type annotations stubs module
 ## ListApplicationSnapshotsPaginator
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").get_paginator("list_application_snapshots")`.
+`session.create_client("kinesisanalyticsv2").get_paginator("list_application_snapshots")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kinesisanalyticsv2.paginator import ListApplicationSnapshotsPaginator
 
-def get_list_application_snapshots_paginator() -> ListApplicationSnapshotsPaginator:
-    return Session().create_client("kinesisanalyticsv2").get_paginator("list_application_snapshots")
+session = get_session()
+async with session.create_client("kinesisanalyticsv2") as client:
+    client: KinesisAnalyticsV2Client
+    paginator: ListApplicationSnapshotsPaginator = client.get_paginator("list_application_snapshots")
 ```
 
 Boto3 documentation:
@@ -48,17 +50,19 @@ Arguments for `ListApplicationSnapshotsPaginator.paginate` method:
 ## ListApplicationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").get_paginator("list_applications")`.
+`session.create_client("kinesisanalyticsv2").get_paginator("list_applications")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kinesisanalyticsv2.paginator import ListApplicationsPaginator
 
-def get_list_applications_paginator() -> ListApplicationsPaginator:
-    return Session().create_client("kinesisanalyticsv2").get_paginator("list_applications")
+session = get_session()
+async with session.create_client("kinesisanalyticsv2") as client:
+    client: KinesisAnalyticsV2Client
+    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")
 ```
 
 Boto3 documentation:

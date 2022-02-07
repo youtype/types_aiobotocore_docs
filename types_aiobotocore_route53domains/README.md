@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[route53domains]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[route53domains]'
+
+# standalone installation
 pip install types-aiobotocore-route53domains
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-route53domains
 
 ## Route53DomainsClient
 
-Type annotations for `aiobotocore.create_client("route53domains")` as
+Type annotations for `session.create_client("route53domains")` as
 [Route53DomainsClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_route53domains.client import Route53DomainsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_domain_transfer_from_another_aws_account](./client.md#accept_domain_transfer_from_another_aws_account)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_domain_transfer_to_another_aws_account](./client.md#cancel_domain_transfer_to_another_aws_account)
@@ -101,7 +107,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_route53domains.paginators import ListDomainsPaginator, ...
+from types_aiobotocore_route53domains.paginator import ListDomainsPaginator, ...
 ```
 
 - [ListDomainsPaginator](./paginators.md#listdomainspaginator)

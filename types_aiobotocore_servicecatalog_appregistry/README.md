@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[servicecatalog-appregistry]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[servicecatalog-appregistry]'
+
+# standalone installation
 pip install types-aiobotocore-servicecatalog-appregistry
 ```
 
@@ -29,8 +33,8 @@ pip install types-aiobotocore-servicecatalog-appregistry
 
 ## AppRegistryClient
 
-Type annotations for `aiobotocore.create_client("servicecatalog-appregistry")`
-as [AppRegistryClient](./client.md)
+Type annotations for `session.create_client("servicecatalog-appregistry")` as
+[AppRegistryClient](./client.md)
 
 Can be used directly:
 
@@ -42,6 +46,8 @@ from types_aiobotocore_servicecatalog_appregistry.client import AppRegistryClien
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_attribute_group](./client.md#associate_attribute_group)
 - [associate_resource](./client.md#associate_resource)
 - [can_paginate](./client.md#can_paginate)
@@ -91,7 +97,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_servicecatalog_appregistry.paginators import ListApplicationsPaginator, ...
+from types_aiobotocore_servicecatalog_appregistry.paginator import ListApplicationsPaginator, ...
 ```
 
 - [ListApplicationsPaginator](./paginators.md#listapplicationspaginator)

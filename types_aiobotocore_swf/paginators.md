@@ -23,17 +23,19 @@ type annotations stubs module
 ## GetWorkflowExecutionHistoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("swf").get_paginator("get_workflow_execution_history")`.
+`session.create_client("swf").get_paginator("get_workflow_execution_history")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_swf.paginator import GetWorkflowExecutionHistoryPaginator
 
-def get_get_workflow_execution_history_paginator() -> GetWorkflowExecutionHistoryPaginator:
-    return Session().create_client("swf").get_paginator("get_workflow_execution_history")
+session = get_session()
+async with session.create_client("swf") as client:
+    client: SWFClient
+    paginator: GetWorkflowExecutionHistoryPaginator = client.get_paginator("get_workflow_execution_history")
 ```
 
 Boto3 documentation:
@@ -57,17 +59,19 @@ Arguments for `GetWorkflowExecutionHistoryPaginator.paginate` method:
 ## ListActivityTypesPaginator
 
 Type annotations for
-`aiobotocore.create_client("swf").get_paginator("list_activity_types")`.
+`session.create_client("swf").get_paginator("list_activity_types")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_swf.paginator import ListActivityTypesPaginator
 
-def get_list_activity_types_paginator() -> ListActivityTypesPaginator:
-    return Session().create_client("swf").get_paginator("list_activity_types")
+session = get_session()
+async with session.create_client("swf") as client:
+    client: SWFClient
+    paginator: ListActivityTypesPaginator = client.get_paginator("list_activity_types")
 ```
 
 Boto3 documentation:
@@ -91,17 +95,19 @@ Arguments for `ListActivityTypesPaginator.paginate` method:
 ## ListClosedWorkflowExecutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("swf").get_paginator("list_closed_workflow_executions")`.
+`session.create_client("swf").get_paginator("list_closed_workflow_executions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_swf.paginator import ListClosedWorkflowExecutionsPaginator
 
-def get_list_closed_workflow_executions_paginator() -> ListClosedWorkflowExecutionsPaginator:
-    return Session().create_client("swf").get_paginator("list_closed_workflow_executions")
+session = get_session()
+async with session.create_client("swf") as client:
+    client: SWFClient
+    paginator: ListClosedWorkflowExecutionsPaginator = client.get_paginator("list_closed_workflow_executions")
 ```
 
 Boto3 documentation:
@@ -133,17 +139,19 @@ Arguments for `ListClosedWorkflowExecutionsPaginator.paginate` method:
 ## ListDomainsPaginator
 
 Type annotations for
-`aiobotocore.create_client("swf").get_paginator("list_domains")`.
+`session.create_client("swf").get_paginator("list_domains")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_swf.paginator import ListDomainsPaginator
 
-def get_list_domains_paginator() -> ListDomainsPaginator:
-    return Session().create_client("swf").get_paginator("list_domains")
+session = get_session()
+async with session.create_client("swf") as client:
+    client: SWFClient
+    paginator: ListDomainsPaginator = client.get_paginator("list_domains")
 ```
 
 Boto3 documentation:
@@ -165,17 +173,19 @@ Arguments for `ListDomainsPaginator.paginate` method:
 ## ListOpenWorkflowExecutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("swf").get_paginator("list_open_workflow_executions")`.
+`session.create_client("swf").get_paginator("list_open_workflow_executions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_swf.paginator import ListOpenWorkflowExecutionsPaginator
 
-def get_list_open_workflow_executions_paginator() -> ListOpenWorkflowExecutionsPaginator:
-    return Session().create_client("swf").get_paginator("list_open_workflow_executions")
+session = get_session()
+async with session.create_client("swf") as client:
+    client: SWFClient
+    paginator: ListOpenWorkflowExecutionsPaginator = client.get_paginator("list_open_workflow_executions")
 ```
 
 Boto3 documentation:
@@ -204,17 +214,19 @@ Arguments for `ListOpenWorkflowExecutionsPaginator.paginate` method:
 ## ListWorkflowTypesPaginator
 
 Type annotations for
-`aiobotocore.create_client("swf").get_paginator("list_workflow_types")`.
+`session.create_client("swf").get_paginator("list_workflow_types")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_swf.paginator import ListWorkflowTypesPaginator
 
-def get_list_workflow_types_paginator() -> ListWorkflowTypesPaginator:
-    return Session().create_client("swf").get_paginator("list_workflow_types")
+session = get_session()
+async with session.create_client("swf") as client:
+    client: SWFClient
+    paginator: ListWorkflowTypesPaginator = client.get_paginator("list_workflow_types")
 ```
 
 Boto3 documentation:
@@ -238,17 +250,19 @@ Arguments for `ListWorkflowTypesPaginator.paginate` method:
 ## PollForDecisionTaskPaginator
 
 Type annotations for
-`aiobotocore.create_client("swf").get_paginator("poll_for_decision_task")`.
+`session.create_client("swf").get_paginator("poll_for_decision_task")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_swf.paginator import PollForDecisionTaskPaginator
 
-def get_poll_for_decision_task_paginator() -> PollForDecisionTaskPaginator:
-    return Session().create_client("swf").get_paginator("poll_for_decision_task")
+session = get_session()
+async with session.create_client("swf") as client:
+    client: SWFClient
+    paginator: PollForDecisionTaskPaginator = client.get_paginator("poll_for_decision_task")
 ```
 
 Boto3 documentation:

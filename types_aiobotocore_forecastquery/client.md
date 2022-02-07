@@ -17,21 +17,24 @@ type annotations stubs module
     - [can_paginate](#can_paginate)
     - [generate_presigned_url](#generate_presigned_url)
     - [query_forecast](#query_forecast)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="forecastqueryserviceclient"></a>
 
 ## ForecastQueryServiceClient
 
-Type annotations for `aiobotocore.create_client("forecastquery")`
+Type annotations for `session.create_client("forecastquery")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_forecastquery.client import ForecastQueryServiceClient
 
-def get_forecastquery_client() -> ForecastQueryServiceClient:
-    return Session().client("forecastquery")
+session = get_session()
+async with session.create_client("forecastquery") as client:
+    client: ForecastQueryServiceClient
 ```
 
 Boto3 documentation:
@@ -70,7 +73,7 @@ Exceptions:
 
 ForecastQueryServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("forecastquery").exceptions`
+Type annotations for `session.create_client("forecastquery").exceptions`
 method.
 
 Boto3 documentation:
@@ -84,19 +87,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("forecastquery").can_paginate`
+Type annotations for `session.create_client("forecastquery").can_paginate`
 method.
 
 Boto3 documentation:
 [ForecastQueryService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecastquery.html#ForecastQueryService.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -105,7 +106,7 @@ Returns a `Coroutine` for `bool`.
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("forecastquery").generate_presigned_url` method.
+`session.create_client("forecastquery").generate_presigned_url` method.
 
 Boto3 documentation:
 [ForecastQueryService.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecastquery.html#ForecastQueryService.Client.generate_presigned_url)
@@ -128,8 +129,8 @@ Returns a `Coroutine` for `str`.
 
 Retrieves a forecast for a single item, filtered by the supplied criteria.
 
-Type annotations for
-`aiobotocore.create_client("forecastquery").query_forecast` method.
+Type annotations for `session.create_client("forecastquery").query_forecast`
+method.
 
 Boto3 documentation:
 [ForecastQueryService.Client.query_forecast](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecastquery.html#ForecastQueryService.Client.query_forecast)
@@ -149,3 +150,37 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [QueryForecastResponseTypeDef](./type_defs.md#queryforecastresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("forecastquery").__aenter__`
+method.
+
+Boto3 documentation:
+[ForecastQueryService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecastquery.html#ForecastQueryService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[ForecastQueryServiceClient](#forecastqueryserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("forecastquery").__aexit__` method.
+
+Boto3 documentation:
+[ForecastQueryService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecastquery.html#ForecastQueryService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

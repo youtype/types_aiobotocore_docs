@@ -37,22 +37,25 @@ type annotations stubs module
     - [update_cluster](#update_cluster)
     - [update_parameter_group](#update_parameter_group)
     - [update_subnet_group](#update_subnet_group)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="daxclient"></a>
 
 ## DAXClient
 
-Type annotations for `aiobotocore.create_client("dax")`
+Type annotations for `session.create_client("dax")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_dax.client import DAXClient
 
-def get_dax_client() -> DAXClient:
-    return Session().client("dax")
+session = get_session()
+async with session.create_client("dax") as client:
+    client: DAXClient
 ```
 
 Boto3 documentation:
@@ -113,7 +116,7 @@ Exceptions:
 
 DAXClient exceptions.
 
-Type annotations for `aiobotocore.create_client("dax").exceptions` method.
+Type annotations for `session.create_client("dax").exceptions` method.
 
 Boto3 documentation:
 [DAX.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.exceptions)
@@ -126,18 +129,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("dax").can_paginate` method.
+Type annotations for `session.create_client("dax").can_paginate` method.
 
 Boto3 documentation:
 [DAX.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_cluster"></a>
 
@@ -145,7 +146,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a DAX cluster.
 
-Type annotations for `aiobotocore.create_client("dax").create_cluster` method.
+Type annotations for `session.create_client("dax").create_cluster` method.
 
 Boto3 documentation:
 [DAX.Client.create_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.create_cluster)
@@ -183,7 +184,7 @@ Returns a `Coroutine` for
 
 Creates a new parameter group.
 
-Type annotations for `aiobotocore.create_client("dax").create_parameter_group`
+Type annotations for `session.create_client("dax").create_parameter_group`
 method.
 
 Boto3 documentation:
@@ -209,8 +210,7 @@ Returns a `Coroutine` for
 
 Creates a new subnet group.
 
-Type annotations for `aiobotocore.create_client("dax").create_subnet_group`
-method.
+Type annotations for `session.create_client("dax").create_subnet_group` method.
 
 Boto3 documentation:
 [DAX.Client.create_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.create_subnet_group)
@@ -236,8 +236,8 @@ Returns a `Coroutine` for
 
 Removes one or more nodes from a DAX cluster.
 
-Type annotations for
-`aiobotocore.create_client("dax").decrease_replication_factor` method.
+Type annotations for `session.create_client("dax").decrease_replication_factor`
+method.
 
 Boto3 documentation:
 [DAX.Client.decrease_replication_factor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.decrease_replication_factor)
@@ -264,7 +264,7 @@ Returns a `Coroutine` for
 
 Deletes a previously provisioned DAX cluster.
 
-Type annotations for `aiobotocore.create_client("dax").delete_cluster` method.
+Type annotations for `session.create_client("dax").delete_cluster` method.
 
 Boto3 documentation:
 [DAX.Client.delete_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.delete_cluster)
@@ -287,7 +287,7 @@ Returns a `Coroutine` for
 
 Deletes the specified parameter group.
 
-Type annotations for `aiobotocore.create_client("dax").delete_parameter_group`
+Type annotations for `session.create_client("dax").delete_parameter_group`
 method.
 
 Boto3 documentation:
@@ -312,8 +312,7 @@ Returns a `Coroutine` for
 
 Deletes a subnet group.
 
-Type annotations for `aiobotocore.create_client("dax").delete_subnet_group`
-method.
+Type annotations for `session.create_client("dax").delete_subnet_group` method.
 
 Boto3 documentation:
 [DAX.Client.delete_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.delete_subnet_group)
@@ -339,8 +338,7 @@ Returns information about all provisioned DAX clusters if no cluster identifier
 is specified, or about a specific DAX cluster if a cluster identifier is
 supplied.
 
-Type annotations for `aiobotocore.create_client("dax").describe_clusters`
-method.
+Type annotations for `session.create_client("dax").describe_clusters` method.
 
 Boto3 documentation:
 [DAX.Client.describe_clusters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.describe_clusters)
@@ -365,8 +363,8 @@ Returns a `Coroutine` for
 
 Returns the default system parameter information for the DAX caching software.
 
-Type annotations for
-`aiobotocore.create_client("dax").describe_default_parameters` method.
+Type annotations for `session.create_client("dax").describe_default_parameters`
+method.
 
 Boto3 documentation:
 [DAX.Client.describe_default_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.describe_default_parameters)
@@ -391,7 +389,7 @@ Returns a `Coroutine` for
 
 Returns events related to DAX clusters and parameter groups.
 
-Type annotations for `aiobotocore.create_client("dax").describe_events` method.
+Type annotations for `session.create_client("dax").describe_events` method.
 
 Boto3 documentation:
 [DAX.Client.describe_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.describe_events)
@@ -420,8 +418,8 @@ Returns a `Coroutine` for
 
 Returns a list of parameter group descriptions.
 
-Type annotations for
-`aiobotocore.create_client("dax").describe_parameter_groups` method.
+Type annotations for `session.create_client("dax").describe_parameter_groups`
+method.
 
 Boto3 documentation:
 [DAX.Client.describe_parameter_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.describe_parameter_groups)
@@ -447,8 +445,7 @@ Returns a `Coroutine` for
 
 Returns the detailed parameter list for a particular parameter group.
 
-Type annotations for `aiobotocore.create_client("dax").describe_parameters`
-method.
+Type annotations for `session.create_client("dax").describe_parameters` method.
 
 Boto3 documentation:
 [DAX.Client.describe_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.describe_parameters)
@@ -475,7 +472,7 @@ Returns a `Coroutine` for
 
 Returns a list of subnet group descriptions.
 
-Type annotations for `aiobotocore.create_client("dax").describe_subnet_groups`
+Type annotations for `session.create_client("dax").describe_subnet_groups`
 method.
 
 Boto3 documentation:
@@ -502,7 +499,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("dax").generate_presigned_url`
+Type annotations for `session.create_client("dax").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -526,8 +523,8 @@ Returns a `Coroutine` for `str`.
 
 Adds one or more nodes to a DAX cluster.
 
-Type annotations for
-`aiobotocore.create_client("dax").increase_replication_factor` method.
+Type annotations for `session.create_client("dax").increase_replication_factor`
+method.
 
 Boto3 documentation:
 [DAX.Client.increase_replication_factor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.increase_replication_factor)
@@ -553,7 +550,7 @@ Returns a `Coroutine` for
 
 List all of the tags for a DAX cluster.
 
-Type annotations for `aiobotocore.create_client("dax").list_tags` method.
+Type annotations for `session.create_client("dax").list_tags` method.
 
 Boto3 documentation:
 [DAX.Client.list_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.list_tags)
@@ -577,7 +574,7 @@ Returns a `Coroutine` for
 
 Reboots a single node of a DAX cluster.
 
-Type annotations for `aiobotocore.create_client("dax").reboot_node` method.
+Type annotations for `session.create_client("dax").reboot_node` method.
 
 Boto3 documentation:
 [DAX.Client.reboot_node](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.reboot_node)
@@ -601,7 +598,7 @@ Returns a `Coroutine` for
 
 Associates a set of tags with a DAX resource.
 
-Type annotations for `aiobotocore.create_client("dax").tag_resource` method.
+Type annotations for `session.create_client("dax").tag_resource` method.
 
 Boto3 documentation:
 [DAX.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.tag_resource)
@@ -625,7 +622,7 @@ Returns a `Coroutine` for
 
 Removes the association of tags from a DAX resource.
 
-Type annotations for `aiobotocore.create_client("dax").untag_resource` method.
+Type annotations for `session.create_client("dax").untag_resource` method.
 
 Boto3 documentation:
 [DAX.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.untag_resource)
@@ -649,7 +646,7 @@ Returns a `Coroutine` for
 
 Modifies the settings for a DAX cluster.
 
-Type annotations for `aiobotocore.create_client("dax").update_cluster` method.
+Type annotations for `session.create_client("dax").update_cluster` method.
 
 Boto3 documentation:
 [DAX.Client.update_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.update_cluster)
@@ -678,7 +675,7 @@ Returns a `Coroutine` for
 
 Modifies the parameters of a parameter group.
 
-Type annotations for `aiobotocore.create_client("dax").update_parameter_group`
+Type annotations for `session.create_client("dax").update_parameter_group`
 method.
 
 Boto3 documentation:
@@ -706,8 +703,7 @@ Returns a `Coroutine` for
 
 Modifies an existing subnet group.
 
-Type annotations for `aiobotocore.create_client("dax").update_subnet_group`
-method.
+Type annotations for `session.create_client("dax").update_subnet_group` method.
 
 Boto3 documentation:
 [DAX.Client.update_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.update_subnet_group)
@@ -727,12 +723,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateSubnetGroupResponseTypeDef](./type_defs.md#updatesubnetgroupresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("dax").__aenter__` method.
+
+Boto3 documentation:
+[DAX.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [DAXClient](#daxclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("dax").__aexit__` method.
+
+Boto3 documentation:
+[DAX.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dax.html#DAX.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("dax").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("dax").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_clusters")` ->
   [DescribeClustersPaginator](./paginators.md#describeclusterspaginator)

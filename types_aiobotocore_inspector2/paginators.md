@@ -25,17 +25,19 @@ type annotations stubs module
 ## ListAccountPermissionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("inspector2").get_paginator("list_account_permissions")`.
+`session.create_client("inspector2").get_paginator("list_account_permissions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_inspector2.paginator import ListAccountPermissionsPaginator
 
-def get_list_account_permissions_paginator() -> ListAccountPermissionsPaginator:
-    return Session().create_client("inspector2").get_paginator("list_account_permissions")
+session = get_session()
+async with session.create_client("inspector2") as client:
+    client: Inspector2Client
+    paginator: ListAccountPermissionsPaginator = client.get_paginator("list_account_permissions")
 ```
 
 Boto3 documentation:
@@ -55,17 +57,19 @@ Arguments for `ListAccountPermissionsPaginator.paginate` method:
 ## ListCoveragePaginator
 
 Type annotations for
-`aiobotocore.create_client("inspector2").get_paginator("list_coverage")`.
+`session.create_client("inspector2").get_paginator("list_coverage")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_inspector2.paginator import ListCoveragePaginator
 
-def get_list_coverage_paginator() -> ListCoveragePaginator:
-    return Session().create_client("inspector2").get_paginator("list_coverage")
+session = get_session()
+async with session.create_client("inspector2") as client:
+    client: Inspector2Client
+    paginator: ListCoveragePaginator = client.get_paginator("list_coverage")
 ```
 
 Boto3 documentation:
@@ -86,17 +90,19 @@ Arguments for `ListCoveragePaginator.paginate` method:
 ## ListCoverageStatisticsPaginator
 
 Type annotations for
-`aiobotocore.create_client("inspector2").get_paginator("list_coverage_statistics")`.
+`session.create_client("inspector2").get_paginator("list_coverage_statistics")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_inspector2.paginator import ListCoverageStatisticsPaginator
 
-def get_list_coverage_statistics_paginator() -> ListCoverageStatisticsPaginator:
-    return Session().create_client("inspector2").get_paginator("list_coverage_statistics")
+session = get_session()
+async with session.create_client("inspector2") as client:
+    client: Inspector2Client
+    paginator: ListCoverageStatisticsPaginator = client.get_paginator("list_coverage_statistics")
 ```
 
 Boto3 documentation:
@@ -118,17 +124,19 @@ Arguments for `ListCoverageStatisticsPaginator.paginate` method:
 ## ListDelegatedAdminAccountsPaginator
 
 Type annotations for
-`aiobotocore.create_client("inspector2").get_paginator("list_delegated_admin_accounts")`.
+`session.create_client("inspector2").get_paginator("list_delegated_admin_accounts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_inspector2.paginator import ListDelegatedAdminAccountsPaginator
 
-def get_list_delegated_admin_accounts_paginator() -> ListDelegatedAdminAccountsPaginator:
-    return Session().create_client("inspector2").get_paginator("list_delegated_admin_accounts")
+session = get_session()
+async with session.create_client("inspector2") as client:
+    client: Inspector2Client
+    paginator: ListDelegatedAdminAccountsPaginator = client.get_paginator("list_delegated_admin_accounts")
 ```
 
 Boto3 documentation:
@@ -147,17 +155,19 @@ Arguments for `ListDelegatedAdminAccountsPaginator.paginate` method:
 ## ListFiltersPaginator
 
 Type annotations for
-`aiobotocore.create_client("inspector2").get_paginator("list_filters")`.
+`session.create_client("inspector2").get_paginator("list_filters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_inspector2.paginator import ListFiltersPaginator
 
-def get_list_filters_paginator() -> ListFiltersPaginator:
-    return Session().create_client("inspector2").get_paginator("list_filters")
+session = get_session()
+async with session.create_client("inspector2") as client:
+    client: Inspector2Client
+    paginator: ListFiltersPaginator = client.get_paginator("list_filters")
 ```
 
 Boto3 documentation:
@@ -178,17 +188,19 @@ Arguments for `ListFiltersPaginator.paginate` method:
 ## ListFindingAggregationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("inspector2").get_paginator("list_finding_aggregations")`.
+`session.create_client("inspector2").get_paginator("list_finding_aggregations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_inspector2.paginator import ListFindingAggregationsPaginator
 
-def get_list_finding_aggregations_paginator() -> ListFindingAggregationsPaginator:
-    return Session().create_client("inspector2").get_paginator("list_finding_aggregations")
+session = get_session()
+async with session.create_client("inspector2") as client:
+    client: Inspector2Client
+    paginator: ListFindingAggregationsPaginator = client.get_paginator("list_finding_aggregations")
 ```
 
 Boto3 documentation:
@@ -213,17 +225,19 @@ Arguments for `ListFindingAggregationsPaginator.paginate` method:
 ## ListFindingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("inspector2").get_paginator("list_findings")`.
+`session.create_client("inspector2").get_paginator("list_findings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_inspector2.paginator import ListFindingsPaginator
 
-def get_list_findings_paginator() -> ListFindingsPaginator:
-    return Session().create_client("inspector2").get_paginator("list_findings")
+session = get_session()
+async with session.create_client("inspector2") as client:
+    client: Inspector2Client
+    paginator: ListFindingsPaginator = client.get_paginator("list_findings")
 ```
 
 Boto3 documentation:
@@ -245,17 +259,19 @@ Arguments for `ListFindingsPaginator.paginate` method:
 ## ListMembersPaginator
 
 Type annotations for
-`aiobotocore.create_client("inspector2").get_paginator("list_members")`.
+`session.create_client("inspector2").get_paginator("list_members")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_inspector2.paginator import ListMembersPaginator
 
-def get_list_members_paginator() -> ListMembersPaginator:
-    return Session().create_client("inspector2").get_paginator("list_members")
+session = get_session()
+async with session.create_client("inspector2") as client:
+    client: Inspector2Client
+    paginator: ListMembersPaginator = client.get_paginator("list_members")
 ```
 
 Boto3 documentation:
@@ -275,17 +291,19 @@ Arguments for `ListMembersPaginator.paginate` method:
 ## ListUsageTotalsPaginator
 
 Type annotations for
-`aiobotocore.create_client("inspector2").get_paginator("list_usage_totals")`.
+`session.create_client("inspector2").get_paginator("list_usage_totals")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_inspector2.paginator import ListUsageTotalsPaginator
 
-def get_list_usage_totals_paginator() -> ListUsageTotalsPaginator:
-    return Session().create_client("inspector2").get_paginator("list_usage_totals")
+session = get_session()
+async with session.create_client("inspector2") as client:
+    client: Inspector2Client
+    paginator: ListUsageTotalsPaginator = client.get_paginator("list_usage_totals")
 ```
 
 Boto3 documentation:

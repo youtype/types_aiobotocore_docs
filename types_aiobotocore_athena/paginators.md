@@ -23,17 +23,19 @@ type annotations stubs module
 ## GetQueryResultsPaginator
 
 Type annotations for
-`aiobotocore.create_client("athena").get_paginator("get_query_results")`.
+`session.create_client("athena").get_paginator("get_query_results")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_athena.paginator import GetQueryResultsPaginator
 
-def get_get_query_results_paginator() -> GetQueryResultsPaginator:
-    return Session().create_client("athena").get_paginator("get_query_results")
+session = get_session()
+async with session.create_client("athena") as client:
+    client: AthenaClient
+    paginator: GetQueryResultsPaginator = client.get_paginator("get_query_results")
 ```
 
 Boto3 documentation:
@@ -53,17 +55,19 @@ Arguments for `GetQueryResultsPaginator.paginate` method:
 ## ListDataCatalogsPaginator
 
 Type annotations for
-`aiobotocore.create_client("athena").get_paginator("list_data_catalogs")`.
+`session.create_client("athena").get_paginator("list_data_catalogs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_athena.paginator import ListDataCatalogsPaginator
 
-def get_list_data_catalogs_paginator() -> ListDataCatalogsPaginator:
-    return Session().create_client("athena").get_paginator("list_data_catalogs")
+session = get_session()
+async with session.create_client("athena") as client:
+    client: AthenaClient
+    paginator: ListDataCatalogsPaginator = client.get_paginator("list_data_catalogs")
 ```
 
 Boto3 documentation:
@@ -82,17 +86,19 @@ Arguments for `ListDataCatalogsPaginator.paginate` method:
 ## ListDatabasesPaginator
 
 Type annotations for
-`aiobotocore.create_client("athena").get_paginator("list_databases")`.
+`session.create_client("athena").get_paginator("list_databases")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_athena.paginator import ListDatabasesPaginator
 
-def get_list_databases_paginator() -> ListDatabasesPaginator:
-    return Session().create_client("athena").get_paginator("list_databases")
+session = get_session()
+async with session.create_client("athena") as client:
+    client: AthenaClient
+    paginator: ListDatabasesPaginator = client.get_paginator("list_databases")
 ```
 
 Boto3 documentation:
@@ -112,17 +118,19 @@ Arguments for `ListDatabasesPaginator.paginate` method:
 ## ListNamedQueriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("athena").get_paginator("list_named_queries")`.
+`session.create_client("athena").get_paginator("list_named_queries")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_athena.paginator import ListNamedQueriesPaginator
 
-def get_list_named_queries_paginator() -> ListNamedQueriesPaginator:
-    return Session().create_client("athena").get_paginator("list_named_queries")
+session = get_session()
+async with session.create_client("athena") as client:
+    client: AthenaClient
+    paginator: ListNamedQueriesPaginator = client.get_paginator("list_named_queries")
 ```
 
 Boto3 documentation:
@@ -142,17 +150,19 @@ Arguments for `ListNamedQueriesPaginator.paginate` method:
 ## ListQueryExecutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("athena").get_paginator("list_query_executions")`.
+`session.create_client("athena").get_paginator("list_query_executions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_athena.paginator import ListQueryExecutionsPaginator
 
-def get_list_query_executions_paginator() -> ListQueryExecutionsPaginator:
-    return Session().create_client("athena").get_paginator("list_query_executions")
+session = get_session()
+async with session.create_client("athena") as client:
+    client: AthenaClient
+    paginator: ListQueryExecutionsPaginator = client.get_paginator("list_query_executions")
 ```
 
 Boto3 documentation:
@@ -172,17 +182,19 @@ Arguments for `ListQueryExecutionsPaginator.paginate` method:
 ## ListTableMetadataPaginator
 
 Type annotations for
-`aiobotocore.create_client("athena").get_paginator("list_table_metadata")`.
+`session.create_client("athena").get_paginator("list_table_metadata")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_athena.paginator import ListTableMetadataPaginator
 
-def get_list_table_metadata_paginator() -> ListTableMetadataPaginator:
-    return Session().create_client("athena").get_paginator("list_table_metadata")
+session = get_session()
+async with session.create_client("athena") as client:
+    client: AthenaClient
+    paginator: ListTableMetadataPaginator = client.get_paginator("list_table_metadata")
 ```
 
 Boto3 documentation:
@@ -204,17 +216,19 @@ Arguments for `ListTableMetadataPaginator.paginate` method:
 ## ListTagsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("athena").get_paginator("list_tags_for_resource")`.
+`session.create_client("athena").get_paginator("list_tags_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_athena.paginator import ListTagsForResourcePaginator
 
-def get_list_tags_for_resource_paginator() -> ListTagsForResourcePaginator:
-    return Session().create_client("athena").get_paginator("list_tags_for_resource")
+session = get_session()
+async with session.create_client("athena") as client:
+    client: AthenaClient
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
 ```
 
 Boto3 documentation:

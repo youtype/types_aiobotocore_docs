@@ -71,6 +71,8 @@ type annotations stubs module
     - [start_replication_task_assessment_run](#start_replication_task_assessment_run)
     - [stop_replication_task](#stop_replication_task)
     - [test_connection](#test_connection)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -78,16 +80,17 @@ type annotations stubs module
 
 ## DatabaseMigrationServiceClient
 
-Type annotations for `aiobotocore.create_client("dms")`
+Type annotations for `session.create_client("dms")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_dms.client import DatabaseMigrationServiceClient
 
-def get_dms_client() -> DatabaseMigrationServiceClient:
-    return Session().client("dms")
+session = get_session()
+async with session.create_client("dms") as client:
+    client: DatabaseMigrationServiceClient
 ```
 
 Boto3 documentation:
@@ -144,7 +147,7 @@ Exceptions:
 
 DatabaseMigrationServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("dms").exceptions` method.
+Type annotations for `session.create_client("dms").exceptions` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.exceptions)
@@ -157,7 +160,7 @@ Returns [Exceptions](#exceptions).
 
 .
 
-Type annotations for `aiobotocore.create_client("dms").add_tags_to_resource`
+Type annotations for `session.create_client("dms").add_tags_to_resource`
 method.
 
 Boto3 documentation:
@@ -184,7 +187,7 @@ Applies a pending maintenance action to a resource (for example, to a
 replication instance).
 
 Type annotations for
-`aiobotocore.create_client("dms").apply_pending_maintenance_action` method.
+`session.create_client("dms").apply_pending_maintenance_action` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.apply_pending_maintenance_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.apply_pending_maintenance_action)
@@ -210,18 +213,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("dms").can_paginate` method.
+Type annotations for `session.create_client("dms").can_paginate` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_replication_task_assessment_run"></a>
 
@@ -230,8 +231,7 @@ Returns a `Coroutine` for `bool`.
 Cancels a single premigration assessment run.
 
 Type annotations for
-`aiobotocore.create_client("dms").cancel_replication_task_assessment_run`
-method.
+`session.create_client("dms").cancel_replication_task_assessment_run` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.cancel_replication_task_assessment_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.cancel_replication_task_assessment_run)
@@ -255,7 +255,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("dms").create_endpoint` method.
+Type annotations for `session.create_client("dms").create_endpoint` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.create_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.create_endpoint)
@@ -326,8 +326,8 @@ Returns a `Coroutine` for
 
 Creates an DMS event notification subscription.
 
-Type annotations for
-`aiobotocore.create_client("dms").create_event_subscription` method.
+Type annotations for `session.create_client("dms").create_event_subscription`
+method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.create_event_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.create_event_subscription)
@@ -357,8 +357,8 @@ Returns a `Coroutine` for
 
 Creates the replication instance using the specified parameters.
 
-Type annotations for
-`aiobotocore.create_client("dms").create_replication_instance` method.
+Type annotations for `session.create_client("dms").create_replication_instance`
+method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.create_replication_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.create_replication_instance)
@@ -397,7 +397,7 @@ Returns a `Coroutine` for
 Creates a replication subnet group given a list of the subnet IDs in a VPC.
 
 Type annotations for
-`aiobotocore.create_client("dms").create_replication_subnet_group` method.
+`session.create_client("dms").create_replication_subnet_group` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.create_replication_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.create_replication_subnet_group)
@@ -424,7 +424,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("dms").create_replication_task`
+Type annotations for `session.create_client("dms").create_replication_task`
 method.
 
 Boto3 documentation:
@@ -462,8 +462,7 @@ Returns a `Coroutine` for
 
 Deletes the specified certificate.
 
-Type annotations for `aiobotocore.create_client("dms").delete_certificate`
-method.
+Type annotations for `session.create_client("dms").delete_certificate` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.delete_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.delete_certificate)
@@ -487,8 +486,7 @@ Returns a `Coroutine` for
 
 Deletes the connection between a replication instance and an endpoint.
 
-Type annotations for `aiobotocore.create_client("dms").delete_connection`
-method.
+Type annotations for `session.create_client("dms").delete_connection` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.delete_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.delete_connection)
@@ -512,7 +510,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("dms").delete_endpoint` method.
+Type annotations for `session.create_client("dms").delete_endpoint` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.delete_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.delete_endpoint)
@@ -535,8 +533,8 @@ Returns a `Coroutine` for
 
 Deletes an DMS event subscription.
 
-Type annotations for
-`aiobotocore.create_client("dms").delete_event_subscription` method.
+Type annotations for `session.create_client("dms").delete_event_subscription`
+method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.delete_event_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.delete_event_subscription)
@@ -560,8 +558,8 @@ Returns a `Coroutine` for
 
 Deletes the specified replication instance.
 
-Type annotations for
-`aiobotocore.create_client("dms").delete_replication_instance` method.
+Type annotations for `session.create_client("dms").delete_replication_instance`
+method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.delete_replication_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.delete_replication_instance)
@@ -586,7 +584,7 @@ Returns a `Coroutine` for
 Deletes a subnet group.
 
 Type annotations for
-`aiobotocore.create_client("dms").delete_replication_subnet_group` method.
+`session.create_client("dms").delete_replication_subnet_group` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.delete_replication_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.delete_replication_subnet_group)
@@ -609,7 +607,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 .
 
-Type annotations for `aiobotocore.create_client("dms").delete_replication_task`
+Type annotations for `session.create_client("dms").delete_replication_task`
 method.
 
 Boto3 documentation:
@@ -635,8 +633,7 @@ Returns a `Coroutine` for
 Deletes the record of a single premigration assessment run.
 
 Type annotations for
-`aiobotocore.create_client("dms").delete_replication_task_assessment_run`
-method.
+`session.create_client("dms").delete_replication_task_assessment_run` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.delete_replication_task_assessment_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.delete_replication_task_assessment_run)
@@ -660,8 +657,8 @@ Returns a `Coroutine` for
 
 Lists all of the DMS attributes for a customer account.
 
-Type annotations for
-`aiobotocore.create_client("dms").describe_account_attributes` method.
+Type annotations for `session.create_client("dms").describe_account_attributes`
+method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.describe_account_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_account_attributes)
@@ -680,7 +677,7 @@ Provides a list of individual assessments that you can specify for a new
 premigration assessment run, given one or more parameters.
 
 Type annotations for
-`aiobotocore.create_client("dms").describe_applicable_individual_assessments`
+`session.create_client("dms").describe_applicable_individual_assessments`
 method.
 
 Boto3 documentation:
@@ -712,7 +709,7 @@ Returns a `Coroutine` for
 
 Provides a description of the certificate.
 
-Type annotations for `aiobotocore.create_client("dms").describe_certificates`
+Type annotations for `session.create_client("dms").describe_certificates`
 method.
 
 Boto3 documentation:
@@ -740,7 +737,7 @@ Returns a `Coroutine` for
 Describes the status of the connections that have been made between the
 replication instance and an endpoint.
 
-Type annotations for `aiobotocore.create_client("dms").describe_connections`
+Type annotations for `session.create_client("dms").describe_connections`
 method.
 
 Boto3 documentation:
@@ -768,8 +765,8 @@ Returns a `Coroutine` for
 Returns information about the possible endpoint settings available when you
 create an endpoint for a specific database engine.
 
-Type annotations for
-`aiobotocore.create_client("dms").describe_endpoint_settings` method.
+Type annotations for `session.create_client("dms").describe_endpoint_settings`
+method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.describe_endpoint_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_endpoint_settings)
@@ -795,7 +792,7 @@ Returns a `Coroutine` for
 
 Returns information about the type of endpoints available.
 
-Type annotations for `aiobotocore.create_client("dms").describe_endpoint_types`
+Type annotations for `session.create_client("dms").describe_endpoint_types`
 method.
 
 Boto3 documentation:
@@ -822,8 +819,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("dms").describe_endpoints`
-method.
+Type annotations for `session.create_client("dms").describe_endpoints` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.describe_endpoints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_endpoints)
@@ -849,8 +845,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("dms").describe_event_categories` method.
+Type annotations for `session.create_client("dms").describe_event_categories`
+method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.describe_event_categories](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_event_categories)
@@ -876,7 +872,7 @@ Returns a `Coroutine` for
 Lists all the event subscriptions for a customer account.
 
 Type annotations for
-`aiobotocore.create_client("dms").describe_event_subscriptions` method.
+`session.create_client("dms").describe_event_subscriptions` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.describe_event_subscriptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_event_subscriptions)
@@ -903,7 +899,7 @@ Returns a `Coroutine` for
 
 Lists events for a given source identifier and source type.
 
-Type annotations for `aiobotocore.create_client("dms").describe_events` method.
+Type annotations for `session.create_client("dms").describe_events` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.describe_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_events)
@@ -937,8 +933,7 @@ Returns information about the replication instance types that can be created in
 the specified region.
 
 Type annotations for
-`aiobotocore.create_client("dms").describe_orderable_replication_instances`
-method.
+`session.create_client("dms").describe_orderable_replication_instances` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.describe_orderable_replication_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_orderable_replication_instances)
@@ -965,7 +960,7 @@ For internal use only See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribePendingMaintenanceActions).
 
 Type annotations for
-`aiobotocore.create_client("dms").describe_pending_maintenance_actions` method.
+`session.create_client("dms").describe_pending_maintenance_actions` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.describe_pending_maintenance_actions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_pending_maintenance_actions)
@@ -993,7 +988,7 @@ Returns a `Coroutine` for
 Returns the status of the RefreshSchemas operation.
 
 Type annotations for
-`aiobotocore.create_client("dms").describe_refresh_schemas_status` method.
+`session.create_client("dms").describe_refresh_schemas_status` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.describe_refresh_schemas_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_refresh_schemas_status)
@@ -1018,8 +1013,7 @@ Returns a `Coroutine` for
 Returns information about the task logs for the specified task.
 
 Type annotations for
-`aiobotocore.create_client("dms").describe_replication_instance_task_logs`
-method.
+`session.create_client("dms").describe_replication_instance_task_logs` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.describe_replication_instance_task_logs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_replication_instance_task_logs)
@@ -1047,7 +1041,7 @@ Returns information about replication instances for your account in the current
 region.
 
 Type annotations for
-`aiobotocore.create_client("dms").describe_replication_instances` method.
+`session.create_client("dms").describe_replication_instances` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.describe_replication_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_replication_instances)
@@ -1074,7 +1068,7 @@ Returns a `Coroutine` for
 Returns information about the replication subnet groups.
 
 Type annotations for
-`aiobotocore.create_client("dms").describe_replication_subnet_groups` method.
+`session.create_client("dms").describe_replication_subnet_groups` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.describe_replication_subnet_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_replication_subnet_groups)
@@ -1102,7 +1096,7 @@ Returns the task assessment results from the Amazon S3 bucket that DMS creates
 in your Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("dms").describe_replication_task_assessment_results`
+`session.create_client("dms").describe_replication_task_assessment_results`
 method.
 
 Boto3 documentation:
@@ -1132,7 +1126,7 @@ Returns a paginated list of premigration assessment runs based on filter
 settings.
 
 Type annotations for
-`aiobotocore.create_client("dms").describe_replication_task_assessment_runs`
+`session.create_client("dms").describe_replication_task_assessment_runs`
 method.
 
 Boto3 documentation:
@@ -1160,7 +1154,7 @@ Returns a `Coroutine` for
 Returns a paginated list of individual assessments based on filter settings.
 
 Type annotations for
-`aiobotocore.create_client("dms").describe_replication_task_individual_assessments`
+`session.create_client("dms").describe_replication_task_individual_assessments`
 method.
 
 Boto3 documentation:
@@ -1188,8 +1182,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("dms").describe_replication_tasks` method.
+Type annotations for `session.create_client("dms").describe_replication_tasks`
+method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.describe_replication_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_replication_tasks)
@@ -1216,8 +1210,7 @@ Returns a `Coroutine` for
 
 Returns information about the schema for the specified endpoint.
 
-Type annotations for `aiobotocore.create_client("dms").describe_schemas`
-method.
+Type annotations for `session.create_client("dms").describe_schemas` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.describe_schemas](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_schemas)
@@ -1243,8 +1236,8 @@ Returns a `Coroutine` for
 Returns table statistics on the database migration task, including table name,
 rows inserted, rows updated, and rows deleted.
 
-Type annotations for
-`aiobotocore.create_client("dms").describe_table_statistics` method.
+Type annotations for `session.create_client("dms").describe_table_statistics`
+method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.describe_table_statistics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.describe_table_statistics)
@@ -1271,7 +1264,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("dms").generate_presigned_url`
+Type annotations for `session.create_client("dms").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -1295,8 +1288,7 @@ Returns a `Coroutine` for `str`.
 
 Uploads the specified certificate.
 
-Type annotations for `aiobotocore.create_client("dms").import_certificate`
-method.
+Type annotations for `session.create_client("dms").import_certificate` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.import_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.import_certificate)
@@ -1323,7 +1315,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("dms").list_tags_for_resource`
+Type annotations for `session.create_client("dms").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -1349,7 +1341,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("dms").modify_endpoint` method.
+Type annotations for `session.create_client("dms").modify_endpoint` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.modify_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.modify_endpoint)
@@ -1418,8 +1410,8 @@ Returns a `Coroutine` for
 
 Modifies an existing DMS event notification subscription.
 
-Type annotations for
-`aiobotocore.create_client("dms").modify_event_subscription` method.
+Type annotations for `session.create_client("dms").modify_event_subscription`
+method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.modify_event_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.modify_event_subscription)
@@ -1447,8 +1439,8 @@ Returns a `Coroutine` for
 
 Modifies the replication instance to apply new settings.
 
-Type annotations for
-`aiobotocore.create_client("dms").modify_replication_instance` method.
+Type annotations for `session.create_client("dms").modify_replication_instance`
+method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.modify_replication_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.modify_replication_instance)
@@ -1483,7 +1475,7 @@ Returns a `Coroutine` for
 Modifies the settings for the specified replication subnet group.
 
 Type annotations for
-`aiobotocore.create_client("dms").modify_replication_subnet_group` method.
+`session.create_client("dms").modify_replication_subnet_group` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.modify_replication_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.modify_replication_subnet_group)
@@ -1509,7 +1501,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("dms").modify_replication_task`
+Type annotations for `session.create_client("dms").modify_replication_task`
 method.
 
 Boto3 documentation:
@@ -1543,7 +1535,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("dms").move_replication_task`
+Type annotations for `session.create_client("dms").move_replication_task`
 method.
 
 Boto3 documentation:
@@ -1569,8 +1561,8 @@ Returns a `Coroutine` for
 
 Reboots a replication instance.
 
-Type annotations for
-`aiobotocore.create_client("dms").reboot_replication_instance` method.
+Type annotations for `session.create_client("dms").reboot_replication_instance`
+method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.reboot_replication_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.reboot_replication_instance)
@@ -1596,7 +1588,7 @@ Returns a `Coroutine` for
 
 Populates the schema for the specified endpoint.
 
-Type annotations for `aiobotocore.create_client("dms").refresh_schemas` method.
+Type annotations for `session.create_client("dms").refresh_schemas` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.refresh_schemas](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.refresh_schemas)
@@ -1620,7 +1612,7 @@ Returns a `Coroutine` for
 
 Reloads the target database table with the source data.
 
-Type annotations for `aiobotocore.create_client("dms").reload_tables` method.
+Type annotations for `session.create_client("dms").reload_tables` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.reload_tables](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.reload_tables)
@@ -1647,8 +1639,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("dms").remove_tags_from_resource` method.
+Type annotations for `session.create_client("dms").remove_tags_from_resource`
+method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.remove_tags_from_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.remove_tags_from_resource)
@@ -1672,7 +1664,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 .
 
-Type annotations for `aiobotocore.create_client("dms").start_replication_task`
+Type annotations for `session.create_client("dms").start_replication_task`
 method.
 
 Boto3 documentation:
@@ -1704,7 +1696,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("dms").start_replication_task_assessment` method.
+`session.create_client("dms").start_replication_task_assessment` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.start_replication_task_assessment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.start_replication_task_assessment)
@@ -1730,8 +1722,7 @@ Starts a new premigration assessment run for one or more individual assessments
 of a migration task.
 
 Type annotations for
-`aiobotocore.create_client("dms").start_replication_task_assessment_run`
-method.
+`session.create_client("dms").start_replication_task_assessment_run` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.start_replication_task_assessment_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.start_replication_task_assessment_run)
@@ -1763,7 +1754,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("dms").stop_replication_task`
+Type annotations for `session.create_client("dms").stop_replication_task`
 method.
 
 Boto3 documentation:
@@ -1788,7 +1779,7 @@ Returns a `Coroutine` for
 
 Tests the connection between the replication instance and the endpoint.
 
-Type annotations for `aiobotocore.create_client("dms").test_connection` method.
+Type annotations for `session.create_client("dms").test_connection` method.
 
 Boto3 documentation:
 [DatabaseMigrationService.Client.test_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.test_connection)
@@ -1806,12 +1797,45 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [TestConnectionResponseTypeDef](./type_defs.md#testconnectionresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("dms").__aenter__` method.
+
+Boto3 documentation:
+[DatabaseMigrationService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[DatabaseMigrationServiceClient](#databasemigrationserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("dms").__aexit__` method.
+
+Boto3 documentation:
+[DatabaseMigrationService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dms.html#DatabaseMigrationService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("dms").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("dms").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_certificates")` ->
   [DescribeCertificatesPaginator](./paginators.md#describecertificatespaginator)
@@ -1844,7 +1868,7 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("dms").get_waiter` method with
+Type annotations for `session.create_client("dms").get_waiter` method with
 overloads.
 
 - `client.get_waiter("endpoint_deleted")` ->

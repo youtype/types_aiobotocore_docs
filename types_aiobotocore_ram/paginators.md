@@ -22,17 +22,19 @@ type annotations stubs module
 ## GetResourcePoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ram").get_paginator("get_resource_policies")`.
+`session.create_client("ram").get_paginator("get_resource_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ram.paginator import GetResourcePoliciesPaginator
 
-def get_get_resource_policies_paginator() -> GetResourcePoliciesPaginator:
-    return Session().create_client("ram").get_paginator("get_resource_policies")
+session = get_session()
+async with session.create_client("ram") as client:
+    client: RAMClient
+    paginator: GetResourcePoliciesPaginator = client.get_paginator("get_resource_policies")
 ```
 
 Boto3 documentation:
@@ -53,17 +55,19 @@ Arguments for `GetResourcePoliciesPaginator.paginate` method:
 ## GetResourceShareAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ram").get_paginator("get_resource_share_associations")`.
+`session.create_client("ram").get_paginator("get_resource_share_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ram.paginator import GetResourceShareAssociationsPaginator
 
-def get_get_resource_share_associations_paginator() -> GetResourceShareAssociationsPaginator:
-    return Session().create_client("ram").get_paginator("get_resource_share_associations")
+session = get_session()
+async with session.create_client("ram") as client:
+    client: RAMClient
+    paginator: GetResourceShareAssociationsPaginator = client.get_paginator("get_resource_share_associations")
 ```
 
 Boto3 documentation:
@@ -90,17 +94,19 @@ Arguments for `GetResourceShareAssociationsPaginator.paginate` method:
 ## GetResourceShareInvitationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ram").get_paginator("get_resource_share_invitations")`.
+`session.create_client("ram").get_paginator("get_resource_share_invitations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ram.paginator import GetResourceShareInvitationsPaginator
 
-def get_get_resource_share_invitations_paginator() -> GetResourceShareInvitationsPaginator:
-    return Session().create_client("ram").get_paginator("get_resource_share_invitations")
+session = get_session()
+async with session.create_client("ram") as client:
+    client: RAMClient
+    paginator: GetResourceShareInvitationsPaginator = client.get_paginator("get_resource_share_invitations")
 ```
 
 Boto3 documentation:
@@ -121,17 +127,19 @@ Arguments for `GetResourceShareInvitationsPaginator.paginate` method:
 ## GetResourceSharesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ram").get_paginator("get_resource_shares")`.
+`session.create_client("ram").get_paginator("get_resource_shares")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ram.paginator import GetResourceSharesPaginator
 
-def get_get_resource_shares_paginator() -> GetResourceSharesPaginator:
-    return Session().create_client("ram").get_paginator("get_resource_shares")
+session = get_session()
+async with session.create_client("ram") as client:
+    client: RAMClient
+    paginator: GetResourceSharesPaginator = client.get_paginator("get_resource_shares")
 ```
 
 Boto3 documentation:
@@ -159,17 +167,19 @@ Arguments for `GetResourceSharesPaginator.paginate` method:
 ## ListPrincipalsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ram").get_paginator("list_principals")`.
+`session.create_client("ram").get_paginator("list_principals")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ram.paginator import ListPrincipalsPaginator
 
-def get_list_principals_paginator() -> ListPrincipalsPaginator:
-    return Session().create_client("ram").get_paginator("list_principals")
+session = get_session()
+async with session.create_client("ram") as client:
+    client: RAMClient
+    paginator: ListPrincipalsPaginator = client.get_paginator("list_principals")
 ```
 
 Boto3 documentation:
@@ -194,17 +204,19 @@ Arguments for `ListPrincipalsPaginator.paginate` method:
 ## ListResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ram").get_paginator("list_resources")`.
+`session.create_client("ram").get_paginator("list_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ram.paginator import ListResourcesPaginator
 
-def get_list_resources_paginator() -> ListResourcesPaginator:
-    return Session().create_client("ram").get_paginator("list_resources")
+session = get_session()
+async with session.create_client("ram") as client:
+    client: RAMClient
+    paginator: ListResourcesPaginator = client.get_paginator("list_resources")
 ```
 
 Boto3 documentation:

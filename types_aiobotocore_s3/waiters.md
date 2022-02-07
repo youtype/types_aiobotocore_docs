@@ -19,8 +19,7 @@ type annotations stubs module
 
 ## BucketExistsWaiter
 
-Type annotations for
-`aiobotocore.create_client("s3").get_waiter("bucket_exists")`.
+Type annotations for `session.create_client("s3").get_waiter("bucket_exists")`.
 
 Can be used directly:
 
@@ -30,7 +29,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_s3.waiter import BucketExistsWaiter
 
 def get_bucket_exists_waiter() -> BucketExistsWaiter:
-    return Session().create_client("s3").get_waiter("bucket_exists")
+    return Session().client("s3").get_waiter("bucket_exists")
 ```
 
 Boto3 documentation:
@@ -47,7 +46,7 @@ Arguments for `BucketExistsWaiter.wait` method:
 ## BucketNotExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("s3").get_waiter("bucket_not_exists")`.
+`session.create_client("s3").get_waiter("bucket_not_exists")`.
 
 Can be used directly:
 
@@ -57,7 +56,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_s3.waiter import BucketNotExistsWaiter
 
 def get_bucket_not_exists_waiter() -> BucketNotExistsWaiter:
-    return Session().create_client("s3").get_waiter("bucket_not_exists")
+    return Session().client("s3").get_waiter("bucket_not_exists")
 ```
 
 Boto3 documentation:
@@ -73,8 +72,7 @@ Arguments for `BucketNotExistsWaiter.wait` method:
 
 ## ObjectExistsWaiter
 
-Type annotations for
-`aiobotocore.create_client("s3").get_waiter("object_exists")`.
+Type annotations for `session.create_client("s3").get_waiter("object_exists")`.
 
 Can be used directly:
 
@@ -84,7 +82,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_s3.waiter import ObjectExistsWaiter
 
 def get_object_exists_waiter() -> ObjectExistsWaiter:
-    return Session().create_client("s3").get_waiter("object_exists")
+    return Session().client("s3").get_waiter("object_exists")
 ```
 
 Boto3 documentation:
@@ -114,7 +112,7 @@ Arguments for `ObjectExistsWaiter.wait` method:
 ## ObjectNotExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("s3").get_waiter("object_not_exists")`.
+`session.create_client("s3").get_waiter("object_not_exists")`.
 
 Can be used directly:
 
@@ -124,7 +122,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_s3.waiter import ObjectNotExistsWaiter
 
 def get_object_not_exists_waiter() -> ObjectNotExistsWaiter:
-    return Session().create_client("s3").get_waiter("object_not_exists")
+    return Session().client("s3").get_waiter("object_not_exists")
 ```
 
 Boto3 documentation:

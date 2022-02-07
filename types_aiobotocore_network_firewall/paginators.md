@@ -20,17 +20,19 @@ type annotations stubs module
 ## ListFirewallPoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").get_paginator("list_firewall_policies")`.
+`session.create_client("network-firewall").get_paginator("list_firewall_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_network_firewall.paginator import ListFirewallPoliciesPaginator
 
-def get_list_firewall_policies_paginator() -> ListFirewallPoliciesPaginator:
-    return Session().create_client("network-firewall").get_paginator("list_firewall_policies")
+session = get_session()
+async with session.create_client("network-firewall") as client:
+    client: NetworkFirewallClient
+    paginator: ListFirewallPoliciesPaginator = client.get_paginator("list_firewall_policies")
 ```
 
 Boto3 documentation:
@@ -49,17 +51,19 @@ Arguments for `ListFirewallPoliciesPaginator.paginate` method:
 ## ListFirewallsPaginator
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").get_paginator("list_firewalls")`.
+`session.create_client("network-firewall").get_paginator("list_firewalls")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_network_firewall.paginator import ListFirewallsPaginator
 
-def get_list_firewalls_paginator() -> ListFirewallsPaginator:
-    return Session().create_client("network-firewall").get_paginator("list_firewalls")
+session = get_session()
+async with session.create_client("network-firewall") as client:
+    client: NetworkFirewallClient
+    paginator: ListFirewallsPaginator = client.get_paginator("list_firewalls")
 ```
 
 Boto3 documentation:
@@ -79,17 +83,19 @@ Arguments for `ListFirewallsPaginator.paginate` method:
 ## ListRuleGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").get_paginator("list_rule_groups")`.
+`session.create_client("network-firewall").get_paginator("list_rule_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_network_firewall.paginator import ListRuleGroupsPaginator
 
-def get_list_rule_groups_paginator() -> ListRuleGroupsPaginator:
-    return Session().create_client("network-firewall").get_paginator("list_rule_groups")
+session = get_session()
+async with session.create_client("network-firewall") as client:
+    client: NetworkFirewallClient
+    paginator: ListRuleGroupsPaginator = client.get_paginator("list_rule_groups")
 ```
 
 Boto3 documentation:
@@ -109,17 +115,19 @@ Arguments for `ListRuleGroupsPaginator.paginate` method:
 ## ListTagsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("network-firewall").get_paginator("list_tags_for_resource")`.
+`session.create_client("network-firewall").get_paginator("list_tags_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_network_firewall.paginator import ListTagsForResourcePaginator
 
-def get_list_tags_for_resource_paginator() -> ListTagsForResourcePaginator:
-    return Session().create_client("network-firewall").get_paginator("list_tags_for_resource")
+session = get_session()
+async with session.create_client("network-firewall") as client:
+    client: NetworkFirewallClient
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
 ```
 
 Boto3 documentation:

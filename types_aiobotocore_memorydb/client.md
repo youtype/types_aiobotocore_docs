@@ -51,21 +51,24 @@ type annotations stubs module
     - [update_parameter_group](#update_parameter_group)
     - [update_subnet_group](#update_subnet_group)
     - [update_user](#update_user)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="memorydbclient"></a>
 
 ## MemoryDBClient
 
-Type annotations for `aiobotocore.create_client("memorydb")`
+Type annotations for `session.create_client("memorydb")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_memorydb.client import MemoryDBClient
 
-def get_memorydb_client() -> MemoryDBClient:
-    return Session().client("memorydb")
+session = get_session()
+async with session.create_client("memorydb") as client:
+    client: MemoryDBClient
 ```
 
 Boto3 documentation:
@@ -148,7 +151,7 @@ Exceptions:
 
 MemoryDBClient exceptions.
 
-Type annotations for `aiobotocore.create_client("memorydb").exceptions` method.
+Type annotations for `session.create_client("memorydb").exceptions` method.
 
 Boto3 documentation:
 [MemoryDB.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.exceptions)
@@ -161,8 +164,8 @@ Returns [Exceptions](#exceptions).
 
 Apply the service update to a list of clusters supplied.
 
-Type annotations for
-`aiobotocore.create_client("memorydb").batch_update_cluster` method.
+Type annotations for `session.create_client("memorydb").batch_update_cluster`
+method.
 
 Boto3 documentation:
 [MemoryDB.Client.batch_update_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.batch_update_cluster)
@@ -188,19 +191,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("memorydb").can_paginate`
-method.
+Type annotations for `session.create_client("memorydb").can_paginate` method.
 
 Boto3 documentation:
 [MemoryDB.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="copy_snapshot"></a>
 
@@ -208,8 +208,7 @@ Returns a `Coroutine` for `bool`.
 
 Makes a copy of an existing snapshot.
 
-Type annotations for `aiobotocore.create_client("memorydb").copy_snapshot`
-method.
+Type annotations for `session.create_client("memorydb").copy_snapshot` method.
 
 Boto3 documentation:
 [MemoryDB.Client.copy_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.copy_snapshot)
@@ -236,7 +235,7 @@ Returns a `Coroutine` for
 
 Creates an Access Control List.
 
-Type annotations for `aiobotocore.create_client("memorydb").create_acl` method.
+Type annotations for `session.create_client("memorydb").create_acl` method.
 
 Boto3 documentation:
 [MemoryDB.Client.create_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.create_acl)
@@ -261,8 +260,7 @@ Returns a `Coroutine` for
 
 Creates a cluster.
 
-Type annotations for `aiobotocore.create_client("memorydb").create_cluster`
-method.
+Type annotations for `session.create_client("memorydb").create_cluster` method.
 
 Boto3 documentation:
 [MemoryDB.Client.create_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.create_cluster)
@@ -305,8 +303,8 @@ Returns a `Coroutine` for
 
 Creates a new MemoryDB parameter group.
 
-Type annotations for
-`aiobotocore.create_client("memorydb").create_parameter_group` method.
+Type annotations for `session.create_client("memorydb").create_parameter_group`
+method.
 
 Boto3 documentation:
 [MemoryDB.Client.create_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.create_parameter_group)
@@ -333,7 +331,7 @@ Returns a `Coroutine` for
 
 Creates a copy of an entire cluster at a specific moment in time.
 
-Type annotations for `aiobotocore.create_client("memorydb").create_snapshot`
+Type annotations for `session.create_client("memorydb").create_snapshot`
 method.
 
 Boto3 documentation:
@@ -360,8 +358,8 @@ Returns a `Coroutine` for
 
 Creates a subnet group.
 
-Type annotations for
-`aiobotocore.create_client("memorydb").create_subnet_group` method.
+Type annotations for `session.create_client("memorydb").create_subnet_group`
+method.
 
 Boto3 documentation:
 [MemoryDB.Client.create_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.create_subnet_group)
@@ -388,8 +386,7 @@ Returns a `Coroutine` for
 
 Creates a MemoryDB user.
 
-Type annotations for `aiobotocore.create_client("memorydb").create_user`
-method.
+Type annotations for `session.create_client("memorydb").create_user` method.
 
 Boto3 documentation:
 [MemoryDB.Client.create_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.create_user)
@@ -417,7 +414,7 @@ Returns a `Coroutine` for
 
 Deletes an Access Control List.
 
-Type annotations for `aiobotocore.create_client("memorydb").delete_acl` method.
+Type annotations for `session.create_client("memorydb").delete_acl` method.
 
 Boto3 documentation:
 [MemoryDB.Client.delete_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.delete_acl)
@@ -440,8 +437,7 @@ Returns a `Coroutine` for
 
 Deletes a cluster.
 
-Type annotations for `aiobotocore.create_client("memorydb").delete_cluster`
-method.
+Type annotations for `session.create_client("memorydb").delete_cluster` method.
 
 Boto3 documentation:
 [MemoryDB.Client.delete_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.delete_cluster)
@@ -465,8 +461,8 @@ Returns a `Coroutine` for
 
 Deletes the specified parameter group.
 
-Type annotations for
-`aiobotocore.create_client("memorydb").delete_parameter_group` method.
+Type annotations for `session.create_client("memorydb").delete_parameter_group`
+method.
 
 Boto3 documentation:
 [MemoryDB.Client.delete_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.delete_parameter_group)
@@ -490,7 +486,7 @@ Returns a `Coroutine` for
 
 Deletes an existing snapshot.
 
-Type annotations for `aiobotocore.create_client("memorydb").delete_snapshot`
+Type annotations for `session.create_client("memorydb").delete_snapshot`
 method.
 
 Boto3 documentation:
@@ -514,8 +510,8 @@ Returns a `Coroutine` for
 
 Deletes a subnet group.
 
-Type annotations for
-`aiobotocore.create_client("memorydb").delete_subnet_group` method.
+Type annotations for `session.create_client("memorydb").delete_subnet_group`
+method.
 
 Boto3 documentation:
 [MemoryDB.Client.delete_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.delete_subnet_group)
@@ -539,8 +535,7 @@ Returns a `Coroutine` for
 
 Deletes a user.
 
-Type annotations for `aiobotocore.create_client("memorydb").delete_user`
-method.
+Type annotations for `session.create_client("memorydb").delete_user` method.
 
 Boto3 documentation:
 [MemoryDB.Client.delete_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.delete_user)
@@ -564,8 +559,7 @@ Returns a `Coroutine` for
 Returns a list of ACLs See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeACLs).
 
-Type annotations for `aiobotocore.create_client("memorydb").describe_acls`
-method.
+Type annotations for `session.create_client("memorydb").describe_acls` method.
 
 Boto3 documentation:
 [MemoryDB.Client.describe_acls](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.describe_acls)
@@ -591,7 +585,7 @@ Returns a `Coroutine` for
 Returns information about all provisioned clusters if no cluster identifier is
 specified, or about a specific cluster if a cluster name is supplied.
 
-Type annotations for `aiobotocore.create_client("memorydb").describe_clusters`
+Type annotations for `session.create_client("memorydb").describe_clusters`
 method.
 
 Boto3 documentation:
@@ -619,7 +613,7 @@ Returns a `Coroutine` for
 Returns a list of the available Redis engine versions.
 
 Type annotations for
-`aiobotocore.create_client("memorydb").describe_engine_versions` method.
+`session.create_client("memorydb").describe_engine_versions` method.
 
 Boto3 documentation:
 [MemoryDB.Client.describe_engine_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.describe_engine_versions)
@@ -647,7 +641,7 @@ Returns a `Coroutine` for
 
 Returns events related to clusters, security groups, and parameter groups.
 
-Type annotations for `aiobotocore.create_client("memorydb").describe_events`
+Type annotations for `session.create_client("memorydb").describe_events`
 method.
 
 Boto3 documentation:
@@ -678,7 +672,7 @@ Returns a `Coroutine` for
 Returns a list of parameter group descriptions.
 
 Type annotations for
-`aiobotocore.create_client("memorydb").describe_parameter_groups` method.
+`session.create_client("memorydb").describe_parameter_groups` method.
 
 Boto3 documentation:
 [MemoryDB.Client.describe_parameter_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.describe_parameter_groups)
@@ -704,8 +698,8 @@ Returns a `Coroutine` for
 
 Returns the detailed parameter list for a particular parameter group.
 
-Type annotations for
-`aiobotocore.create_client("memorydb").describe_parameters` method.
+Type annotations for `session.create_client("memorydb").describe_parameters`
+method.
 
 Boto3 documentation:
 [MemoryDB.Client.describe_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.describe_parameters)
@@ -733,7 +727,7 @@ Returns details of the service updates See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeServiceUpdates).
 
 Type annotations for
-`aiobotocore.create_client("memorydb").describe_service_updates` method.
+`session.create_client("memorydb").describe_service_updates` method.
 
 Boto3 documentation:
 [MemoryDB.Client.describe_service_updates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.describe_service_updates)
@@ -762,7 +756,7 @@ Returns a `Coroutine` for
 
 Returns information about cluster snapshots.
 
-Type annotations for `aiobotocore.create_client("memorydb").describe_snapshots`
+Type annotations for `session.create_client("memorydb").describe_snapshots`
 method.
 
 Boto3 documentation:
@@ -792,8 +786,8 @@ Returns a `Coroutine` for
 
 Returns a list of subnet group descriptions.
 
-Type annotations for
-`aiobotocore.create_client("memorydb").describe_subnet_groups` method.
+Type annotations for `session.create_client("memorydb").describe_subnet_groups`
+method.
 
 Boto3 documentation:
 [MemoryDB.Client.describe_subnet_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.describe_subnet_groups)
@@ -819,8 +813,7 @@ Returns a `Coroutine` for
 
 Returns a list of users.
 
-Type annotations for `aiobotocore.create_client("memorydb").describe_users`
-method.
+Type annotations for `session.create_client("memorydb").describe_users` method.
 
 Boto3 documentation:
 [MemoryDB.Client.describe_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.describe_users)
@@ -847,8 +840,7 @@ Returns a `Coroutine` for
 Used to failover a shard See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/FailoverShard).
 
-Type annotations for `aiobotocore.create_client("memorydb").failover_shard`
-method.
+Type annotations for `session.create_client("memorydb").failover_shard` method.
 
 Boto3 documentation:
 [MemoryDB.Client.failover_shard](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.failover_shard)
@@ -872,8 +864,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("memorydb").generate_presigned_url` method.
+Type annotations for `session.create_client("memorydb").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [MemoryDB.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.generate_presigned_url)
@@ -898,7 +890,7 @@ Lists all available node types that you can scale to from your cluster's
 current node type.
 
 Type annotations for
-`aiobotocore.create_client("memorydb").list_allowed_node_type_updates` method.
+`session.create_client("memorydb").list_allowed_node_type_updates` method.
 
 Boto3 documentation:
 [MemoryDB.Client.list_allowed_node_type_updates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.list_allowed_node_type_updates)
@@ -922,7 +914,7 @@ Returns a `Coroutine` for
 
 Lists all tags currently on a named resource.
 
-Type annotations for `aiobotocore.create_client("memorydb").list_tags` method.
+Type annotations for `session.create_client("memorydb").list_tags` method.
 
 Boto3 documentation:
 [MemoryDB.Client.list_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.list_tags)
@@ -946,8 +938,8 @@ Returns a `Coroutine` for
 Modifies the parameters of a parameter group to the engine or system default
 value.
 
-Type annotations for
-`aiobotocore.create_client("memorydb").reset_parameter_group` method.
+Type annotations for `session.create_client("memorydb").reset_parameter_group`
+method.
 
 Boto3 documentation:
 [MemoryDB.Client.reset_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.reset_parameter_group)
@@ -973,8 +965,7 @@ Returns a `Coroutine` for
 
 A tag is a key-value pair where the key and value are case-sensitive.
 
-Type annotations for `aiobotocore.create_client("memorydb").tag_resource`
-method.
+Type annotations for `session.create_client("memorydb").tag_resource` method.
 
 Boto3 documentation:
 [MemoryDB.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.tag_resource)
@@ -999,8 +990,7 @@ Returns a `Coroutine` for
 Use this operation to remove tags on a resource See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/UntagResource).
 
-Type annotations for `aiobotocore.create_client("memorydb").untag_resource`
-method.
+Type annotations for `session.create_client("memorydb").untag_resource` method.
 
 Boto3 documentation:
 [MemoryDB.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.untag_resource)
@@ -1024,7 +1014,7 @@ Returns a `Coroutine` for
 
 Changes the list of users that belong to the Access Control List.
 
-Type annotations for `aiobotocore.create_client("memorydb").update_acl` method.
+Type annotations for `session.create_client("memorydb").update_acl` method.
 
 Boto3 documentation:
 [MemoryDB.Client.update_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.update_acl)
@@ -1049,8 +1039,7 @@ Returns a `Coroutine` for
 
 Modifies the settings for a cluster.
 
-Type annotations for `aiobotocore.create_client("memorydb").update_cluster`
-method.
+Type annotations for `session.create_client("memorydb").update_cluster` method.
 
 Boto3 documentation:
 [MemoryDB.Client.update_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.update_cluster)
@@ -1088,8 +1077,8 @@ Returns a `Coroutine` for
 
 Updates the parameters of a parameter group.
 
-Type annotations for
-`aiobotocore.create_client("memorydb").update_parameter_group` method.
+Type annotations for `session.create_client("memorydb").update_parameter_group`
+method.
 
 Boto3 documentation:
 [MemoryDB.Client.update_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.update_parameter_group)
@@ -1116,8 +1105,8 @@ Returns a `Coroutine` for
 
 Updates a subnet group.
 
-Type annotations for
-`aiobotocore.create_client("memorydb").update_subnet_group` method.
+Type annotations for `session.create_client("memorydb").update_subnet_group`
+method.
 
 Boto3 documentation:
 [MemoryDB.Client.update_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.update_subnet_group)
@@ -1143,8 +1132,7 @@ Returns a `Coroutine` for
 
 Changes user password(s) and/or access string.
 
-Type annotations for `aiobotocore.create_client("memorydb").update_user`
-method.
+Type annotations for `session.create_client("memorydb").update_user` method.
 
 Boto3 documentation:
 [MemoryDB.Client.update_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.update_user)
@@ -1163,3 +1151,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateUserResponseTypeDef](./type_defs.md#updateuserresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("memorydb").__aenter__` method.
+
+Boto3 documentation:
+[MemoryDB.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [MemoryDBClient](#memorydbclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("memorydb").__aexit__` method.
+
+Boto3 documentation:
+[MemoryDB.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/memorydb.html#MemoryDB.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

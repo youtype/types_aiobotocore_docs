@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[gamelift]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[gamelift]'
+
+# standalone installation
 pip install types-aiobotocore-gamelift
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-gamelift
 
 ## GameLiftClient
 
-Type annotations for `aiobotocore.create_client("gamelift")` as
+Type annotations for `session.create_client("gamelift")` as
 [GameLiftClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_gamelift.client import GameLiftClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_match](./client.md#accept_match)
 - [can_paginate](./client.md#can_paginate)
 - [claim_game_server](./client.md#claim_game_server)
@@ -175,7 +181,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_gamelift.paginators import DescribeFleetAttributesPaginator, ...
+from types_aiobotocore_gamelift.paginator import DescribeFleetAttributesPaginator, ...
 ```
 
 - [DescribeFleetAttributesPaginator](./paginators.md#describefleetattributespaginator)

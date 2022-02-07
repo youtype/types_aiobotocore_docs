@@ -29,22 +29,25 @@ type annotations stubs module
     - [disable_health_service_access_for_organization](#disable_health_service_access_for_organization)
     - [enable_health_service_access_for_organization](#enable_health_service_access_for_organization)
     - [generate_presigned_url](#generate_presigned_url)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="healthclient"></a>
 
 ## HealthClient
 
-Type annotations for `aiobotocore.create_client("health")`
+Type annotations for `session.create_client("health")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_health.client import HealthClient
 
-def get_health_client() -> HealthClient:
-    return Session().client("health")
+session = get_session()
+async with session.create_client("health") as client:
+    client: HealthClient
 ```
 
 Boto3 documentation:
@@ -81,7 +84,7 @@ Exceptions:
 
 HealthClient exceptions.
 
-Type annotations for `aiobotocore.create_client("health").exceptions` method.
+Type annotations for `session.create_client("health").exceptions` method.
 
 Boto3 documentation:
 [Health.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/health.html#Health.Client.exceptions)
@@ -94,18 +97,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("health").can_paginate` method.
+Type annotations for `session.create_client("health").can_paginate` method.
 
 Boto3 documentation:
 [Health.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/health.html#Health.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="describe_affected_accounts_for_organization"></a>
 
@@ -115,7 +116,7 @@ Returns a list of accounts in the organization from Organizations that are
 affected by the provided event.
 
 Type annotations for
-`aiobotocore.create_client("health").describe_affected_accounts_for_organization`
+`session.create_client("health").describe_affected_accounts_for_organization`
 method.
 
 Boto3 documentation:
@@ -145,7 +146,7 @@ Returns a list of entities that have been affected by the specified events,
 based on the specified filter criteria.
 
 Type annotations for
-`aiobotocore.create_client("health").describe_affected_entities` method.
+`session.create_client("health").describe_affected_entities` method.
 
 Boto3 documentation:
 [Health.Client.describe_affected_entities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/health.html#Health.Client.describe_affected_entities)
@@ -176,7 +177,7 @@ one or more accounts in your organization in Organizations, based on the filter
 criteria.
 
 Type annotations for
-`aiobotocore.create_client("health").describe_affected_entities_for_organization`
+`session.create_client("health").describe_affected_entities_for_organization`
 method.
 
 Boto3 documentation:
@@ -209,7 +210,7 @@ Returns the number of entities that are affected by each of the specified
 events.
 
 Type annotations for
-`aiobotocore.create_client("health").describe_entity_aggregates` method.
+`session.create_client("health").describe_entity_aggregates` method.
 
 Boto3 documentation:
 [Health.Client.describe_entity_aggregates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/health.html#Health.Client.describe_entity_aggregates)
@@ -235,7 +236,7 @@ Returns the number of events of each event type (issue, scheduled change, and
 account notification).
 
 Type annotations for
-`aiobotocore.create_client("health").describe_event_aggregates` method.
+`session.create_client("health").describe_event_aggregates` method.
 
 Boto3 documentation:
 [Health.Client.describe_event_aggregates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/health.html#Health.Client.describe_event_aggregates)
@@ -264,8 +265,8 @@ Returns a `Coroutine` for
 
 Returns detailed information about one or more specified events.
 
-Type annotations for
-`aiobotocore.create_client("health").describe_event_details` method.
+Type annotations for `session.create_client("health").describe_event_details`
+method.
 
 Boto3 documentation:
 [Health.Client.describe_event_details](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/health.html#Health.Client.describe_event_details)
@@ -292,7 +293,7 @@ Returns detailed information about one or more specified events for one or more
 Amazon Web Services accounts in your organization.
 
 Type annotations for
-`aiobotocore.create_client("health").describe_event_details_for_organization`
+`session.create_client("health").describe_event_details_for_organization`
 method.
 
 Boto3 documentation:
@@ -320,7 +321,7 @@ Returns a `Coroutine` for
 
 Returns the event types that meet the specified filter criteria.
 
-Type annotations for `aiobotocore.create_client("health").describe_event_types`
+Type annotations for `session.create_client("health").describe_event_types`
 method.
 
 Boto3 documentation:
@@ -348,8 +349,7 @@ Returns a `Coroutine` for
 
 Returns information about events that meet the specified filter criteria.
 
-Type annotations for `aiobotocore.create_client("health").describe_events`
-method.
+Type annotations for `session.create_client("health").describe_events` method.
 
 Boto3 documentation:
 [Health.Client.describe_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/health.html#Health.Client.describe_events)
@@ -376,7 +376,7 @@ Returns a `Coroutine` for
 Returns information about events across your organization in Organizations.
 
 Type annotations for
-`aiobotocore.create_client("health").describe_events_for_organization` method.
+`session.create_client("health").describe_events_for_organization` method.
 
 Boto3 documentation:
 [Health.Client.describe_events_for_organization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/health.html#Health.Client.describe_events_for_organization)
@@ -406,7 +406,7 @@ This operation provides status information on enabling or disabling Health to
 work with your organization.
 
 Type annotations for
-`aiobotocore.create_client("health").describe_health_service_status_for_organization`
+`session.create_client("health").describe_health_service_status_for_organization`
 method.
 
 Boto3 documentation:
@@ -426,7 +426,7 @@ Returns a `Coroutine` for
 Disables Health from working with Organizations.
 
 Type annotations for
-`aiobotocore.create_client("health").disable_health_service_access_for_organization`
+`session.create_client("health").disable_health_service_access_for_organization`
 method.
 
 Boto3 documentation:
@@ -443,7 +443,7 @@ call.
 Enables Health to work with Organizations.
 
 Type annotations for
-`aiobotocore.create_client("health").enable_health_service_access_for_organization`
+`session.create_client("health").enable_health_service_access_for_organization`
 method.
 
 Boto3 documentation:
@@ -459,8 +459,8 @@ call.
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("health").generate_presigned_url` method.
+Type annotations for `session.create_client("health").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Health.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/health.html#Health.Client.generate_presigned_url)
@@ -477,11 +477,43 @@ Arguments:
 
 Returns a `Coroutine` for `str`.
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("health").__aenter__` method.
+
+Boto3 documentation:
+[Health.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/health.html#Health.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [HealthClient](#healthclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("health").__aexit__` method.
+
+Boto3 documentation:
+[Health.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/health.html#Health.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("health").get_paginator` method
+Type annotations for `session.create_client("health").get_paginator` method
 with overloads.
 
 - `client.get_paginator("describe_affected_accounts_for_organization")` ->

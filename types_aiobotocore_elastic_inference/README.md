@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[elastic-inference]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[elastic-inference]'
+
+# standalone installation
 pip install types-aiobotocore-elastic-inference
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-elastic-inference
 
 ## ElasticInferenceClient
 
-Type annotations for `aiobotocore.create_client("elastic-inference")` as
+Type annotations for `session.create_client("elastic-inference")` as
 [ElasticInferenceClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_elastic_inference.client import ElasticInferenceClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [describe_accelerator_offerings](./client.md#describe_accelerator_offerings)
 - [describe_accelerator_types](./client.md#describe_accelerator_types)
@@ -74,7 +80,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_elastic_inference.paginators import DescribeAcceleratorsPaginator, ...
+from types_aiobotocore_elastic_inference.paginator import DescribeAcceleratorsPaginator, ...
 ```
 
 - [DescribeAcceleratorsPaginator](./paginators.md#describeacceleratorspaginator)

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[budgets]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[budgets]'
+
+# standalone installation
 pip install types-aiobotocore-budgets
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-budgets
 
 ## BudgetsClient
 
-Type annotations for `aiobotocore.create_client("budgets")` as
+Type annotations for `session.create_client("budgets")` as
 [BudgetsClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_budgets.client import BudgetsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_budget](./client.md#create_budget)
 - [create_budget_action](./client.md#create_budget_action)
@@ -96,7 +102,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_budgets.paginators import DescribeBudgetActionHistoriesPaginator, ...
+from types_aiobotocore_budgets.paginator import DescribeBudgetActionHistoriesPaginator, ...
 ```
 
 - [DescribeBudgetActionHistoriesPaginator](./paginators.md#describebudgetactionhistoriespaginator)

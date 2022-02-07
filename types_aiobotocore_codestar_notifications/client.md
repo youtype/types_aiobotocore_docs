@@ -29,22 +29,25 @@ type annotations stubs module
     - [unsubscribe](#unsubscribe)
     - [untag_resource](#untag_resource)
     - [update_notification_rule](#update_notification_rule)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="codestarnotificationsclient"></a>
 
 ## CodeStarNotificationsClient
 
-Type annotations for `aiobotocore.create_client("codestar-notifications")`
+Type annotations for `session.create_client("codestar-notifications")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_codestar_notifications.client import CodeStarNotificationsClient
 
-def get_codestar-notifications_client() -> CodeStarNotificationsClient:
-    return Session().client("codestar-notifications")
+session = get_session()
+async with session.create_client("codestar-notifications") as client:
+    client: CodeStarNotificationsClient
 ```
 
 Boto3 documentation:
@@ -87,7 +90,7 @@ Exceptions:
 CodeStarNotificationsClient exceptions.
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").exceptions` method.
+`session.create_client("codestar-notifications").exceptions` method.
 
 Boto3 documentation:
 [CodeStarNotifications.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-notifications.html#CodeStarNotifications.Client.exceptions)
@@ -101,18 +104,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").can_paginate` method.
+`session.create_client("codestar-notifications").can_paginate` method.
 
 Boto3 documentation:
 [CodeStarNotifications.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-notifications.html#CodeStarNotifications.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_notification_rule"></a>
 
@@ -121,7 +122,7 @@ Returns a `Coroutine` for `bool`.
 Creates a notification rule for a resource.
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").create_notification_rule`
+`session.create_client("codestar-notifications").create_notification_rule`
 method.
 
 Boto3 documentation:
@@ -156,7 +157,7 @@ Returns a `Coroutine` for
 Deletes a notification rule for a resource.
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").delete_notification_rule`
+`session.create_client("codestar-notifications").delete_notification_rule`
 method.
 
 Boto3 documentation:
@@ -182,7 +183,7 @@ Returns a `Coroutine` for
 Deletes a specified target for notifications.
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").delete_target` method.
+`session.create_client("codestar-notifications").delete_target` method.
 
 Boto3 documentation:
 [CodeStarNotifications.Client.delete_target](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-notifications.html#CodeStarNotifications.Client.delete_target)
@@ -206,7 +207,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Returns information about a specified notification rule.
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").describe_notification_rule`
+`session.create_client("codestar-notifications").describe_notification_rule`
 method.
 
 Boto3 documentation:
@@ -232,7 +233,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").generate_presigned_url`
+`session.create_client("codestar-notifications").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -258,7 +259,7 @@ Returns information about the event types available for configuring
 notifications.
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").list_event_types` method.
+`session.create_client("codestar-notifications").list_event_types` method.
 
 Boto3 documentation:
 [CodeStarNotifications.Client.list_event_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-notifications.html#CodeStarNotifications.Client.list_event_types)
@@ -285,7 +286,7 @@ Returns a `Coroutine` for
 Returns a list of the notification rules for an AWS account.
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").list_notification_rules`
+`session.create_client("codestar-notifications").list_notification_rules`
 method.
 
 Boto3 documentation:
@@ -314,7 +315,7 @@ Returns a `Coroutine` for
 Returns a list of the tags associated with a notification rule.
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").list_tags_for_resource`
+`session.create_client("codestar-notifications").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -340,7 +341,7 @@ Returns a `Coroutine` for
 Returns a list of the notification rule targets for an AWS account.
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").list_targets` method.
+`session.create_client("codestar-notifications").list_targets` method.
 
 Boto3 documentation:
 [CodeStarNotifications.Client.list_targets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-notifications.html#CodeStarNotifications.Client.list_targets)
@@ -369,7 +370,7 @@ associated target can receive notifications when the events described in the
 rule are triggered.
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").subscribe` method.
+`session.create_client("codestar-notifications").subscribe` method.
 
 Boto3 documentation:
 [CodeStarNotifications.Client.subscribe](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-notifications.html#CodeStarNotifications.Client.subscribe)
@@ -395,7 +396,7 @@ Returns a `Coroutine` for
 Associates a set of provided tags with a notification rule.
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").tag_resource` method.
+`session.create_client("codestar-notifications").tag_resource` method.
 
 Boto3 documentation:
 [CodeStarNotifications.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-notifications.html#CodeStarNotifications.Client.tag_resource)
@@ -422,7 +423,7 @@ that subscribers to that topic stop receiving notifications when the events
 described in the rule are triggered.
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").unsubscribe` method.
+`session.create_client("codestar-notifications").unsubscribe` method.
 
 Boto3 documentation:
 [CodeStarNotifications.Client.unsubscribe](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-notifications.html#CodeStarNotifications.Client.unsubscribe)
@@ -448,7 +449,7 @@ Removes the association between one or more provided tags and a notification
 rule.
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").untag_resource` method.
+`session.create_client("codestar-notifications").untag_resource` method.
 
 Boto3 documentation:
 [CodeStarNotifications.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-notifications.html#CodeStarNotifications.Client.untag_resource)
@@ -472,7 +473,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a notification rule for a resource.
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").update_notification_rule`
+`session.create_client("codestar-notifications").update_notification_rule`
 method.
 
 Boto3 documentation:
@@ -496,12 +497,47 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for
+`session.create_client("codestar-notifications").__aenter__` method.
+
+Boto3 documentation:
+[CodeStarNotifications.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-notifications.html#CodeStarNotifications.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[CodeStarNotificationsClient](#codestarnotificationsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for
+`session.create_client("codestar-notifications").__aexit__` method.
+
+Boto3 documentation:
+[CodeStarNotifications.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-notifications.html#CodeStarNotifications.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").get_paginator` method with
+`session.create_client("codestar-notifications").get_paginator` method with
 overloads.
 
 - `client.get_paginator("list_event_types")` ->

@@ -62,17 +62,19 @@ type annotations stubs module
 ## DescribeActivationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_activations")`.
+`session.create_client("ssm").get_paginator("describe_activations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeActivationsPaginator
 
-def get_describe_activations_paginator() -> DescribeActivationsPaginator:
-    return Session().create_client("ssm").get_paginator("describe_activations")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeActivationsPaginator = client.get_paginator("describe_activations")
 ```
 
 Boto3 documentation:
@@ -93,17 +95,19 @@ Arguments for `DescribeActivationsPaginator.paginate` method:
 ## DescribeAssociationExecutionTargetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_association_execution_targets")`.
+`session.create_client("ssm").get_paginator("describe_association_execution_targets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeAssociationExecutionTargetsPaginator
 
-def get_describe_association_execution_targets_paginator() -> DescribeAssociationExecutionTargetsPaginator:
-    return Session().create_client("ssm").get_paginator("describe_association_execution_targets")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeAssociationExecutionTargetsPaginator = client.get_paginator("describe_association_execution_targets")
 ```
 
 Boto3 documentation:
@@ -126,17 +130,19 @@ Arguments for `DescribeAssociationExecutionTargetsPaginator.paginate` method:
 ## DescribeAssociationExecutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_association_executions")`.
+`session.create_client("ssm").get_paginator("describe_association_executions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeAssociationExecutionsPaginator
 
-def get_describe_association_executions_paginator() -> DescribeAssociationExecutionsPaginator:
-    return Session().create_client("ssm").get_paginator("describe_association_executions")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeAssociationExecutionsPaginator = client.get_paginator("describe_association_executions")
 ```
 
 Boto3 documentation:
@@ -158,17 +164,19 @@ Arguments for `DescribeAssociationExecutionsPaginator.paginate` method:
 ## DescribeAutomationExecutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_automation_executions")`.
+`session.create_client("ssm").get_paginator("describe_automation_executions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeAutomationExecutionsPaginator
 
-def get_describe_automation_executions_paginator() -> DescribeAutomationExecutionsPaginator:
-    return Session().create_client("ssm").get_paginator("describe_automation_executions")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeAutomationExecutionsPaginator = client.get_paginator("describe_automation_executions")
 ```
 
 Boto3 documentation:
@@ -189,17 +197,19 @@ Arguments for `DescribeAutomationExecutionsPaginator.paginate` method:
 ## DescribeAutomationStepExecutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_automation_step_executions")`.
+`session.create_client("ssm").get_paginator("describe_automation_step_executions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeAutomationStepExecutionsPaginator
 
-def get_describe_automation_step_executions_paginator() -> DescribeAutomationStepExecutionsPaginator:
-    return Session().create_client("ssm").get_paginator("describe_automation_step_executions")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeAutomationStepExecutionsPaginator = client.get_paginator("describe_automation_step_executions")
 ```
 
 Boto3 documentation:
@@ -222,17 +232,19 @@ Arguments for `DescribeAutomationStepExecutionsPaginator.paginate` method:
 ## DescribeAvailablePatchesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_available_patches")`.
+`session.create_client("ssm").get_paginator("describe_available_patches")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeAvailablePatchesPaginator
 
-def get_describe_available_patches_paginator() -> DescribeAvailablePatchesPaginator:
-    return Session().create_client("ssm").get_paginator("describe_available_patches")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeAvailablePatchesPaginator = client.get_paginator("describe_available_patches")
 ```
 
 Boto3 documentation:
@@ -253,17 +265,19 @@ Arguments for `DescribeAvailablePatchesPaginator.paginate` method:
 ## DescribeEffectiveInstanceAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_effective_instance_associations")`.
+`session.create_client("ssm").get_paginator("describe_effective_instance_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeEffectiveInstanceAssociationsPaginator
 
-def get_describe_effective_instance_associations_paginator() -> DescribeEffectiveInstanceAssociationsPaginator:
-    return Session().create_client("ssm").get_paginator("describe_effective_instance_associations")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeEffectiveInstanceAssociationsPaginator = client.get_paginator("describe_effective_instance_associations")
 ```
 
 Boto3 documentation:
@@ -283,17 +297,19 @@ Arguments for `DescribeEffectiveInstanceAssociationsPaginator.paginate` method:
 ## DescribeEffectivePatchesForPatchBaselinePaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_effective_patches_for_patch_baseline")`.
+`session.create_client("ssm").get_paginator("describe_effective_patches_for_patch_baseline")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeEffectivePatchesForPatchBaselinePaginator
 
-def get_describe_effective_patches_for_patch_baseline_paginator() -> DescribeEffectivePatchesForPatchBaselinePaginator:
-    return Session().create_client("ssm").get_paginator("describe_effective_patches_for_patch_baseline")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeEffectivePatchesForPatchBaselinePaginator = client.get_paginator("describe_effective_patches_for_patch_baseline")
 ```
 
 Boto3 documentation:
@@ -314,17 +330,19 @@ method:
 ## DescribeInstanceAssociationsStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_instance_associations_status")`.
+`session.create_client("ssm").get_paginator("describe_instance_associations_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeInstanceAssociationsStatusPaginator
 
-def get_describe_instance_associations_status_paginator() -> DescribeInstanceAssociationsStatusPaginator:
-    return Session().create_client("ssm").get_paginator("describe_instance_associations_status")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeInstanceAssociationsStatusPaginator = client.get_paginator("describe_instance_associations_status")
 ```
 
 Boto3 documentation:
@@ -344,17 +362,19 @@ Arguments for `DescribeInstanceAssociationsStatusPaginator.paginate` method:
 ## DescribeInstanceInformationPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_instance_information")`.
+`session.create_client("ssm").get_paginator("describe_instance_information")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeInstanceInformationPaginator
 
-def get_describe_instance_information_paginator() -> DescribeInstanceInformationPaginator:
-    return Session().create_client("ssm").get_paginator("describe_instance_information")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeInstanceInformationPaginator = client.get_paginator("describe_instance_information")
 ```
 
 Boto3 documentation:
@@ -377,17 +397,19 @@ Arguments for `DescribeInstanceInformationPaginator.paginate` method:
 ## DescribeInstancePatchStatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_instance_patch_states")`.
+`session.create_client("ssm").get_paginator("describe_instance_patch_states")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeInstancePatchStatesPaginator
 
-def get_describe_instance_patch_states_paginator() -> DescribeInstancePatchStatesPaginator:
-    return Session().create_client("ssm").get_paginator("describe_instance_patch_states")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeInstancePatchStatesPaginator = client.get_paginator("describe_instance_patch_states")
 ```
 
 Boto3 documentation:
@@ -407,17 +429,19 @@ Arguments for `DescribeInstancePatchStatesPaginator.paginate` method:
 ## DescribeInstancePatchStatesForPatchGroupPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_instance_patch_states_for_patch_group")`.
+`session.create_client("ssm").get_paginator("describe_instance_patch_states_for_patch_group")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeInstancePatchStatesForPatchGroupPaginator
 
-def get_describe_instance_patch_states_for_patch_group_paginator() -> DescribeInstancePatchStatesForPatchGroupPaginator:
-    return Session().create_client("ssm").get_paginator("describe_instance_patch_states_for_patch_group")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeInstancePatchStatesForPatchGroupPaginator = client.get_paginator("describe_instance_patch_states_for_patch_group")
 ```
 
 Boto3 documentation:
@@ -440,17 +464,19 @@ method:
 ## DescribeInstancePatchesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_instance_patches")`.
+`session.create_client("ssm").get_paginator("describe_instance_patches")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeInstancePatchesPaginator
 
-def get_describe_instance_patches_paginator() -> DescribeInstancePatchesPaginator:
-    return Session().create_client("ssm").get_paginator("describe_instance_patches")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeInstancePatchesPaginator = client.get_paginator("describe_instance_patches")
 ```
 
 Boto3 documentation:
@@ -472,17 +498,19 @@ Arguments for `DescribeInstancePatchesPaginator.paginate` method:
 ## DescribeInventoryDeletionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_inventory_deletions")`.
+`session.create_client("ssm").get_paginator("describe_inventory_deletions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeInventoryDeletionsPaginator
 
-def get_describe_inventory_deletions_paginator() -> DescribeInventoryDeletionsPaginator:
-    return Session().create_client("ssm").get_paginator("describe_inventory_deletions")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeInventoryDeletionsPaginator = client.get_paginator("describe_inventory_deletions")
 ```
 
 Boto3 documentation:
@@ -502,17 +530,19 @@ Arguments for `DescribeInventoryDeletionsPaginator.paginate` method:
 ## DescribeMaintenanceWindowExecutionTaskInvocationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_maintenance_window_execution_task_invocations")`.
+`session.create_client("ssm").get_paginator("describe_maintenance_window_execution_task_invocations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeMaintenanceWindowExecutionTaskInvocationsPaginator
 
-def get_describe_maintenance_window_execution_task_invocations_paginator() -> DescribeMaintenanceWindowExecutionTaskInvocationsPaginator:
-    return Session().create_client("ssm").get_paginator("describe_maintenance_window_execution_task_invocations")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeMaintenanceWindowExecutionTaskInvocationsPaginator = client.get_paginator("describe_maintenance_window_execution_task_invocations")
 ```
 
 Boto3 documentation:
@@ -536,17 +566,19 @@ Arguments for
 ## DescribeMaintenanceWindowExecutionTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_maintenance_window_execution_tasks")`.
+`session.create_client("ssm").get_paginator("describe_maintenance_window_execution_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeMaintenanceWindowExecutionTasksPaginator
 
-def get_describe_maintenance_window_execution_tasks_paginator() -> DescribeMaintenanceWindowExecutionTasksPaginator:
-    return Session().create_client("ssm").get_paginator("describe_maintenance_window_execution_tasks")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeMaintenanceWindowExecutionTasksPaginator = client.get_paginator("describe_maintenance_window_execution_tasks")
 ```
 
 Boto3 documentation:
@@ -569,17 +601,19 @@ method:
 ## DescribeMaintenanceWindowExecutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_maintenance_window_executions")`.
+`session.create_client("ssm").get_paginator("describe_maintenance_window_executions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeMaintenanceWindowExecutionsPaginator
 
-def get_describe_maintenance_window_executions_paginator() -> DescribeMaintenanceWindowExecutionsPaginator:
-    return Session().create_client("ssm").get_paginator("describe_maintenance_window_executions")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeMaintenanceWindowExecutionsPaginator = client.get_paginator("describe_maintenance_window_executions")
 ```
 
 Boto3 documentation:
@@ -601,17 +635,19 @@ Arguments for `DescribeMaintenanceWindowExecutionsPaginator.paginate` method:
 ## DescribeMaintenanceWindowSchedulePaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_maintenance_window_schedule")`.
+`session.create_client("ssm").get_paginator("describe_maintenance_window_schedule")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeMaintenanceWindowSchedulePaginator
 
-def get_describe_maintenance_window_schedule_paginator() -> DescribeMaintenanceWindowSchedulePaginator:
-    return Session().create_client("ssm").get_paginator("describe_maintenance_window_schedule")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeMaintenanceWindowSchedulePaginator = client.get_paginator("describe_maintenance_window_schedule")
 ```
 
 Boto3 documentation:
@@ -636,17 +672,19 @@ Arguments for `DescribeMaintenanceWindowSchedulePaginator.paginate` method:
 ## DescribeMaintenanceWindowTargetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_maintenance_window_targets")`.
+`session.create_client("ssm").get_paginator("describe_maintenance_window_targets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeMaintenanceWindowTargetsPaginator
 
-def get_describe_maintenance_window_targets_paginator() -> DescribeMaintenanceWindowTargetsPaginator:
-    return Session().create_client("ssm").get_paginator("describe_maintenance_window_targets")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeMaintenanceWindowTargetsPaginator = client.get_paginator("describe_maintenance_window_targets")
 ```
 
 Boto3 documentation:
@@ -668,17 +706,19 @@ Arguments for `DescribeMaintenanceWindowTargetsPaginator.paginate` method:
 ## DescribeMaintenanceWindowTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_maintenance_window_tasks")`.
+`session.create_client("ssm").get_paginator("describe_maintenance_window_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeMaintenanceWindowTasksPaginator
 
-def get_describe_maintenance_window_tasks_paginator() -> DescribeMaintenanceWindowTasksPaginator:
-    return Session().create_client("ssm").get_paginator("describe_maintenance_window_tasks")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeMaintenanceWindowTasksPaginator = client.get_paginator("describe_maintenance_window_tasks")
 ```
 
 Boto3 documentation:
@@ -700,17 +740,19 @@ Arguments for `DescribeMaintenanceWindowTasksPaginator.paginate` method:
 ## DescribeMaintenanceWindowsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_maintenance_windows")`.
+`session.create_client("ssm").get_paginator("describe_maintenance_windows")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeMaintenanceWindowsPaginator
 
-def get_describe_maintenance_windows_paginator() -> DescribeMaintenanceWindowsPaginator:
-    return Session().create_client("ssm").get_paginator("describe_maintenance_windows")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeMaintenanceWindowsPaginator = client.get_paginator("describe_maintenance_windows")
 ```
 
 Boto3 documentation:
@@ -731,17 +773,19 @@ Arguments for `DescribeMaintenanceWindowsPaginator.paginate` method:
 ## DescribeMaintenanceWindowsForTargetPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_maintenance_windows_for_target")`.
+`session.create_client("ssm").get_paginator("describe_maintenance_windows_for_target")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeMaintenanceWindowsForTargetPaginator
 
-def get_describe_maintenance_windows_for_target_paginator() -> DescribeMaintenanceWindowsForTargetPaginator:
-    return Session().create_client("ssm").get_paginator("describe_maintenance_windows_for_target")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeMaintenanceWindowsForTargetPaginator = client.get_paginator("describe_maintenance_windows_for_target")
 ```
 
 Boto3 documentation:
@@ -765,17 +809,19 @@ Arguments for `DescribeMaintenanceWindowsForTargetPaginator.paginate` method:
 ## DescribeOpsItemsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_ops_items")`.
+`session.create_client("ssm").get_paginator("describe_ops_items")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeOpsItemsPaginator
 
-def get_describe_ops_items_paginator() -> DescribeOpsItemsPaginator:
-    return Session().create_client("ssm").get_paginator("describe_ops_items")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeOpsItemsPaginator = client.get_paginator("describe_ops_items")
 ```
 
 Boto3 documentation:
@@ -796,17 +842,19 @@ Arguments for `DescribeOpsItemsPaginator.paginate` method:
 ## DescribeParametersPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_parameters")`.
+`session.create_client("ssm").get_paginator("describe_parameters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeParametersPaginator
 
-def get_describe_parameters_paginator() -> DescribeParametersPaginator:
-    return Session().create_client("ssm").get_paginator("describe_parameters")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeParametersPaginator = client.get_paginator("describe_parameters")
 ```
 
 Boto3 documentation:
@@ -829,17 +877,19 @@ Arguments for `DescribeParametersPaginator.paginate` method:
 ## DescribePatchBaselinesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_patch_baselines")`.
+`session.create_client("ssm").get_paginator("describe_patch_baselines")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribePatchBaselinesPaginator
 
-def get_describe_patch_baselines_paginator() -> DescribePatchBaselinesPaginator:
-    return Session().create_client("ssm").get_paginator("describe_patch_baselines")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribePatchBaselinesPaginator = client.get_paginator("describe_patch_baselines")
 ```
 
 Boto3 documentation:
@@ -860,17 +910,19 @@ Arguments for `DescribePatchBaselinesPaginator.paginate` method:
 ## DescribePatchGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_patch_groups")`.
+`session.create_client("ssm").get_paginator("describe_patch_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribePatchGroupsPaginator
 
-def get_describe_patch_groups_paginator() -> DescribePatchGroupsPaginator:
-    return Session().create_client("ssm").get_paginator("describe_patch_groups")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribePatchGroupsPaginator = client.get_paginator("describe_patch_groups")
 ```
 
 Boto3 documentation:
@@ -891,17 +943,19 @@ Arguments for `DescribePatchGroupsPaginator.paginate` method:
 ## DescribePatchPropertiesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_patch_properties")`.
+`session.create_client("ssm").get_paginator("describe_patch_properties")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribePatchPropertiesPaginator
 
-def get_describe_patch_properties_paginator() -> DescribePatchPropertiesPaginator:
-    return Session().create_client("ssm").get_paginator("describe_patch_properties")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribePatchPropertiesPaginator = client.get_paginator("describe_patch_properties")
 ```
 
 Boto3 documentation:
@@ -924,17 +978,19 @@ Arguments for `DescribePatchPropertiesPaginator.paginate` method:
 ## DescribeSessionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("describe_sessions")`.
+`session.create_client("ssm").get_paginator("describe_sessions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import DescribeSessionsPaginator
 
-def get_describe_sessions_paginator() -> DescribeSessionsPaginator:
-    return Session().create_client("ssm").get_paginator("describe_sessions")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: DescribeSessionsPaginator = client.get_paginator("describe_sessions")
 ```
 
 Boto3 documentation:
@@ -956,17 +1012,19 @@ Arguments for `DescribeSessionsPaginator.paginate` method:
 ## GetInventoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("get_inventory")`.
+`session.create_client("ssm").get_paginator("get_inventory")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import GetInventoryPaginator
 
-def get_get_inventory_paginator() -> GetInventoryPaginator:
-    return Session().create_client("ssm").get_paginator("get_inventory")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: GetInventoryPaginator = client.get_paginator("get_inventory")
 ```
 
 Boto3 documentation:
@@ -991,17 +1049,19 @@ Arguments for `GetInventoryPaginator.paginate` method:
 ## GetInventorySchemaPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("get_inventory_schema")`.
+`session.create_client("ssm").get_paginator("get_inventory_schema")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import GetInventorySchemaPaginator
 
-def get_get_inventory_schema_paginator() -> GetInventorySchemaPaginator:
-    return Session().create_client("ssm").get_paginator("get_inventory_schema")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: GetInventorySchemaPaginator = client.get_paginator("get_inventory_schema")
 ```
 
 Boto3 documentation:
@@ -1023,17 +1083,19 @@ Arguments for `GetInventorySchemaPaginator.paginate` method:
 ## GetOpsSummaryPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("get_ops_summary")`.
+`session.create_client("ssm").get_paginator("get_ops_summary")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import GetOpsSummaryPaginator
 
-def get_get_ops_summary_paginator() -> GetOpsSummaryPaginator:
-    return Session().create_client("ssm").get_paginator("get_ops_summary")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: GetOpsSummaryPaginator = client.get_paginator("get_ops_summary")
 ```
 
 Boto3 documentation:
@@ -1058,17 +1120,19 @@ Arguments for `GetOpsSummaryPaginator.paginate` method:
 ## GetParameterHistoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("get_parameter_history")`.
+`session.create_client("ssm").get_paginator("get_parameter_history")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import GetParameterHistoryPaginator
 
-def get_get_parameter_history_paginator() -> GetParameterHistoryPaginator:
-    return Session().create_client("ssm").get_paginator("get_parameter_history")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: GetParameterHistoryPaginator = client.get_paginator("get_parameter_history")
 ```
 
 Boto3 documentation:
@@ -1089,17 +1153,19 @@ Arguments for `GetParameterHistoryPaginator.paginate` method:
 ## GetParametersByPathPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("get_parameters_by_path")`.
+`session.create_client("ssm").get_paginator("get_parameters_by_path")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import GetParametersByPathPaginator
 
-def get_get_parameters_by_path_paginator() -> GetParametersByPathPaginator:
-    return Session().create_client("ssm").get_paginator("get_parameters_by_path")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: GetParametersByPathPaginator = client.get_paginator("get_parameters_by_path")
 ```
 
 Boto3 documentation:
@@ -1123,17 +1189,19 @@ Arguments for `GetParametersByPathPaginator.paginate` method:
 ## ListAssociationVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("list_association_versions")`.
+`session.create_client("ssm").get_paginator("list_association_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import ListAssociationVersionsPaginator
 
-def get_list_association_versions_paginator() -> ListAssociationVersionsPaginator:
-    return Session().create_client("ssm").get_paginator("list_association_versions")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: ListAssociationVersionsPaginator = client.get_paginator("list_association_versions")
 ```
 
 Boto3 documentation:
@@ -1153,17 +1221,19 @@ Arguments for `ListAssociationVersionsPaginator.paginate` method:
 ## ListAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("list_associations")`.
+`session.create_client("ssm").get_paginator("list_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import ListAssociationsPaginator
 
-def get_list_associations_paginator() -> ListAssociationsPaginator:
-    return Session().create_client("ssm").get_paginator("list_associations")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: ListAssociationsPaginator = client.get_paginator("list_associations")
 ```
 
 Boto3 documentation:
@@ -1184,17 +1254,19 @@ Arguments for `ListAssociationsPaginator.paginate` method:
 ## ListCommandInvocationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("list_command_invocations")`.
+`session.create_client("ssm").get_paginator("list_command_invocations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import ListCommandInvocationsPaginator
 
-def get_list_command_invocations_paginator() -> ListCommandInvocationsPaginator:
-    return Session().create_client("ssm").get_paginator("list_command_invocations")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: ListCommandInvocationsPaginator = client.get_paginator("list_command_invocations")
 ```
 
 Boto3 documentation:
@@ -1218,17 +1290,19 @@ Arguments for `ListCommandInvocationsPaginator.paginate` method:
 ## ListCommandsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("list_commands")`.
+`session.create_client("ssm").get_paginator("list_commands")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import ListCommandsPaginator
 
-def get_list_commands_paginator() -> ListCommandsPaginator:
-    return Session().create_client("ssm").get_paginator("list_commands")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: ListCommandsPaginator = client.get_paginator("list_commands")
 ```
 
 Boto3 documentation:
@@ -1251,17 +1325,19 @@ Arguments for `ListCommandsPaginator.paginate` method:
 ## ListComplianceItemsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("list_compliance_items")`.
+`session.create_client("ssm").get_paginator("list_compliance_items")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import ListComplianceItemsPaginator
 
-def get_list_compliance_items_paginator() -> ListComplianceItemsPaginator:
-    return Session().create_client("ssm").get_paginator("list_compliance_items")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: ListComplianceItemsPaginator = client.get_paginator("list_compliance_items")
 ```
 
 Boto3 documentation:
@@ -1284,17 +1360,19 @@ Arguments for `ListComplianceItemsPaginator.paginate` method:
 ## ListComplianceSummariesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("list_compliance_summaries")`.
+`session.create_client("ssm").get_paginator("list_compliance_summaries")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import ListComplianceSummariesPaginator
 
-def get_list_compliance_summaries_paginator() -> ListComplianceSummariesPaginator:
-    return Session().create_client("ssm").get_paginator("list_compliance_summaries")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: ListComplianceSummariesPaginator = client.get_paginator("list_compliance_summaries")
 ```
 
 Boto3 documentation:
@@ -1315,17 +1393,19 @@ Arguments for `ListComplianceSummariesPaginator.paginate` method:
 ## ListDocumentVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("list_document_versions")`.
+`session.create_client("ssm").get_paginator("list_document_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import ListDocumentVersionsPaginator
 
-def get_list_document_versions_paginator() -> ListDocumentVersionsPaginator:
-    return Session().create_client("ssm").get_paginator("list_document_versions")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: ListDocumentVersionsPaginator = client.get_paginator("list_document_versions")
 ```
 
 Boto3 documentation:
@@ -1345,17 +1425,19 @@ Arguments for `ListDocumentVersionsPaginator.paginate` method:
 ## ListDocumentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("list_documents")`.
+`session.create_client("ssm").get_paginator("list_documents")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import ListDocumentsPaginator
 
-def get_list_documents_paginator() -> ListDocumentsPaginator:
-    return Session().create_client("ssm").get_paginator("list_documents")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: ListDocumentsPaginator = client.get_paginator("list_documents")
 ```
 
 Boto3 documentation:
@@ -1378,17 +1460,19 @@ Arguments for `ListDocumentsPaginator.paginate` method:
 ## ListOpsItemEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("list_ops_item_events")`.
+`session.create_client("ssm").get_paginator("list_ops_item_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import ListOpsItemEventsPaginator
 
-def get_list_ops_item_events_paginator() -> ListOpsItemEventsPaginator:
-    return Session().create_client("ssm").get_paginator("list_ops_item_events")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: ListOpsItemEventsPaginator = client.get_paginator("list_ops_item_events")
 ```
 
 Boto3 documentation:
@@ -1409,17 +1493,19 @@ Arguments for `ListOpsItemEventsPaginator.paginate` method:
 ## ListOpsItemRelatedItemsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("list_ops_item_related_items")`.
+`session.create_client("ssm").get_paginator("list_ops_item_related_items")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import ListOpsItemRelatedItemsPaginator
 
-def get_list_ops_item_related_items_paginator() -> ListOpsItemRelatedItemsPaginator:
-    return Session().create_client("ssm").get_paginator("list_ops_item_related_items")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: ListOpsItemRelatedItemsPaginator = client.get_paginator("list_ops_item_related_items")
 ```
 
 Boto3 documentation:
@@ -1441,17 +1527,19 @@ Arguments for `ListOpsItemRelatedItemsPaginator.paginate` method:
 ## ListOpsMetadataPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("list_ops_metadata")`.
+`session.create_client("ssm").get_paginator("list_ops_metadata")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import ListOpsMetadataPaginator
 
-def get_list_ops_metadata_paginator() -> ListOpsMetadataPaginator:
-    return Session().create_client("ssm").get_paginator("list_ops_metadata")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: ListOpsMetadataPaginator = client.get_paginator("list_ops_metadata")
 ```
 
 Boto3 documentation:
@@ -1472,17 +1560,19 @@ Arguments for `ListOpsMetadataPaginator.paginate` method:
 ## ListResourceComplianceSummariesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("list_resource_compliance_summaries")`.
+`session.create_client("ssm").get_paginator("list_resource_compliance_summaries")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import ListResourceComplianceSummariesPaginator
 
-def get_list_resource_compliance_summaries_paginator() -> ListResourceComplianceSummariesPaginator:
-    return Session().create_client("ssm").get_paginator("list_resource_compliance_summaries")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: ListResourceComplianceSummariesPaginator = client.get_paginator("list_resource_compliance_summaries")
 ```
 
 Boto3 documentation:
@@ -1503,17 +1593,19 @@ Arguments for `ListResourceComplianceSummariesPaginator.paginate` method:
 ## ListResourceDataSyncPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_paginator("list_resource_data_sync")`.
+`session.create_client("ssm").get_paginator("list_resource_data_sync")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm.paginator import ListResourceDataSyncPaginator
 
-def get_list_resource_data_sync_paginator() -> ListResourceDataSyncPaginator:
-    return Session().create_client("ssm").get_paginator("list_resource_data_sync")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
+    paginator: ListResourceDataSyncPaginator = client.get_paginator("list_resource_data_sync")
 ```
 
 Boto3 documentation:

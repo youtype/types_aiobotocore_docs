@@ -23,22 +23,25 @@ type annotations stubs module
     - [list_retained_messages](#list_retained_messages)
     - [publish](#publish)
     - [update_thing_shadow](#update_thing_shadow)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="iotdataplaneclient"></a>
 
 ## IoTDataPlaneClient
 
-Type annotations for `aiobotocore.create_client("iot-data")`
+Type annotations for `session.create_client("iot-data")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_iot_data.client import IoTDataPlaneClient
 
-def get_iot-data_client() -> IoTDataPlaneClient:
-    return Session().client("iot-data")
+session = get_session()
+async with session.create_client("iot-data") as client:
+    client: IoTDataPlaneClient
 ```
 
 Boto3 documentation:
@@ -82,7 +85,7 @@ Exceptions:
 
 IoTDataPlaneClient exceptions.
 
-Type annotations for `aiobotocore.create_client("iot-data").exceptions` method.
+Type annotations for `session.create_client("iot-data").exceptions` method.
 
 Boto3 documentation:
 [IoTDataPlane.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-data.html#IoTDataPlane.Client.exceptions)
@@ -95,19 +98,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("iot-data").can_paginate`
-method.
+Type annotations for `session.create_client("iot-data").can_paginate` method.
 
 Boto3 documentation:
 [IoTDataPlane.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-data.html#IoTDataPlane.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="delete_thing_shadow"></a>
 
@@ -115,8 +115,8 @@ Returns a `Coroutine` for `bool`.
 
 Deletes the shadow for the specified thing.
 
-Type annotations for
-`aiobotocore.create_client("iot-data").delete_thing_shadow` method.
+Type annotations for `session.create_client("iot-data").delete_thing_shadow`
+method.
 
 Boto3 documentation:
 [IoTDataPlane.Client.delete_thing_shadow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-data.html#IoTDataPlane.Client.delete_thing_shadow)
@@ -141,8 +141,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("iot-data").generate_presigned_url` method.
+Type annotations for `session.create_client("iot-data").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [IoTDataPlane.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-data.html#IoTDataPlane.Client.generate_presigned_url)
@@ -165,8 +165,8 @@ Returns a `Coroutine` for `str`.
 
 Gets the details of a single retained message for the specified topic.
 
-Type annotations for
-`aiobotocore.create_client("iot-data").get_retained_message` method.
+Type annotations for `session.create_client("iot-data").get_retained_message`
+method.
 
 Boto3 documentation:
 [IoTDataPlane.Client.get_retained_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-data.html#IoTDataPlane.Client.get_retained_message)
@@ -190,7 +190,7 @@ Returns a `Coroutine` for
 
 Gets the shadow for the specified thing.
 
-Type annotations for `aiobotocore.create_client("iot-data").get_thing_shadow`
+Type annotations for `session.create_client("iot-data").get_thing_shadow`
 method.
 
 Boto3 documentation:
@@ -216,7 +216,7 @@ Returns a `Coroutine` for
 Lists the shadows for the specified thing.
 
 Type annotations for
-`aiobotocore.create_client("iot-data").list_named_shadows_for_thing` method.
+`session.create_client("iot-data").list_named_shadows_for_thing` method.
 
 Boto3 documentation:
 [IoTDataPlane.Client.list_named_shadows_for_thing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-data.html#IoTDataPlane.Client.list_named_shadows_for_thing)
@@ -242,8 +242,8 @@ Returns a `Coroutine` for
 
 Lists summary information about the retained messages stored for the account.
 
-Type annotations for
-`aiobotocore.create_client("iot-data").list_retained_messages` method.
+Type annotations for `session.create_client("iot-data").list_retained_messages`
+method.
 
 Boto3 documentation:
 [IoTDataPlane.Client.list_retained_messages](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-data.html#IoTDataPlane.Client.list_retained_messages)
@@ -268,7 +268,7 @@ Returns a `Coroutine` for
 
 Publishes an MQTT message.
 
-Type annotations for `aiobotocore.create_client("iot-data").publish` method.
+Type annotations for `session.create_client("iot-data").publish` method.
 
 Boto3 documentation:
 [IoTDataPlane.Client.publish](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-data.html#IoTDataPlane.Client.publish)
@@ -291,8 +291,8 @@ Keyword-only arguments:
 
 Updates the shadow for the specified thing.
 
-Type annotations for
-`aiobotocore.create_client("iot-data").update_thing_shadow` method.
+Type annotations for `session.create_client("iot-data").update_thing_shadow`
+method.
 
 Boto3 documentation:
 [IoTDataPlane.Client.update_thing_shadow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-data.html#IoTDataPlane.Client.update_thing_shadow)
@@ -312,12 +312,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateThingShadowResponseTypeDef](./type_defs.md#updatethingshadowresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("iot-data").__aenter__` method.
+
+Boto3 documentation:
+[IoTDataPlane.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-data.html#IoTDataPlane.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [IoTDataPlaneClient](#iotdataplaneclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("iot-data").__aexit__` method.
+
+Boto3 documentation:
+[IoTDataPlane.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-data.html#IoTDataPlane.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("iot-data").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("iot-data").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_retained_messages")` ->
   [ListRetainedMessagesPaginator](./paginators.md#listretainedmessagespaginator)

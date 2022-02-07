@@ -23,17 +23,19 @@ type annotations stubs module
 ## DescribePullRequestEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codecommit").get_paginator("describe_pull_request_events")`.
+`session.create_client("codecommit").get_paginator("describe_pull_request_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codecommit.paginator import DescribePullRequestEventsPaginator
 
-def get_describe_pull_request_events_paginator() -> DescribePullRequestEventsPaginator:
-    return Session().create_client("codecommit").get_paginator("describe_pull_request_events")
+session = get_session()
+async with session.create_client("codecommit") as client:
+    client: CodeCommitClient
+    paginator: DescribePullRequestEventsPaginator = client.get_paginator("describe_pull_request_events")
 ```
 
 Boto3 documentation:
@@ -56,17 +58,19 @@ Arguments for `DescribePullRequestEventsPaginator.paginate` method:
 ## GetCommentsForComparedCommitPaginator
 
 Type annotations for
-`aiobotocore.create_client("codecommit").get_paginator("get_comments_for_compared_commit")`.
+`session.create_client("codecommit").get_paginator("get_comments_for_compared_commit")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codecommit.paginator import GetCommentsForComparedCommitPaginator
 
-def get_get_comments_for_compared_commit_paginator() -> GetCommentsForComparedCommitPaginator:
-    return Session().create_client("codecommit").get_paginator("get_comments_for_compared_commit")
+session = get_session()
+async with session.create_client("codecommit") as client:
+    client: CodeCommitClient
+    paginator: GetCommentsForComparedCommitPaginator = client.get_paginator("get_comments_for_compared_commit")
 ```
 
 Boto3 documentation:
@@ -88,17 +92,19 @@ Arguments for `GetCommentsForComparedCommitPaginator.paginate` method:
 ## GetCommentsForPullRequestPaginator
 
 Type annotations for
-`aiobotocore.create_client("codecommit").get_paginator("get_comments_for_pull_request")`.
+`session.create_client("codecommit").get_paginator("get_comments_for_pull_request")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codecommit.paginator import GetCommentsForPullRequestPaginator
 
-def get_get_comments_for_pull_request_paginator() -> GetCommentsForPullRequestPaginator:
-    return Session().create_client("codecommit").get_paginator("get_comments_for_pull_request")
+session = get_session()
+async with session.create_client("codecommit") as client:
+    client: CodeCommitClient
+    paginator: GetCommentsForPullRequestPaginator = client.get_paginator("get_comments_for_pull_request")
 ```
 
 Boto3 documentation:
@@ -121,17 +127,19 @@ Arguments for `GetCommentsForPullRequestPaginator.paginate` method:
 ## GetDifferencesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codecommit").get_paginator("get_differences")`.
+`session.create_client("codecommit").get_paginator("get_differences")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codecommit.paginator import GetDifferencesPaginator
 
-def get_get_differences_paginator() -> GetDifferencesPaginator:
-    return Session().create_client("codecommit").get_paginator("get_differences")
+session = get_session()
+async with session.create_client("codecommit") as client:
+    client: CodeCommitClient
+    paginator: GetDifferencesPaginator = client.get_paginator("get_differences")
 ```
 
 Boto3 documentation:
@@ -155,17 +163,19 @@ Arguments for `GetDifferencesPaginator.paginate` method:
 ## ListBranchesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codecommit").get_paginator("list_branches")`.
+`session.create_client("codecommit").get_paginator("list_branches")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codecommit.paginator import ListBranchesPaginator
 
-def get_list_branches_paginator() -> ListBranchesPaginator:
-    return Session().create_client("codecommit").get_paginator("list_branches")
+session = get_session()
+async with session.create_client("codecommit") as client:
+    client: CodeCommitClient
+    paginator: ListBranchesPaginator = client.get_paginator("list_branches")
 ```
 
 Boto3 documentation:
@@ -185,17 +195,19 @@ Arguments for `ListBranchesPaginator.paginate` method:
 ## ListPullRequestsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codecommit").get_paginator("list_pull_requests")`.
+`session.create_client("codecommit").get_paginator("list_pull_requests")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codecommit.paginator import ListPullRequestsPaginator
 
-def get_list_pull_requests_paginator() -> ListPullRequestsPaginator:
-    return Session().create_client("codecommit").get_paginator("list_pull_requests")
+session = get_session()
+async with session.create_client("codecommit") as client:
+    client: CodeCommitClient
+    paginator: ListPullRequestsPaginator = client.get_paginator("list_pull_requests")
 ```
 
 Boto3 documentation:
@@ -218,17 +230,19 @@ Arguments for `ListPullRequestsPaginator.paginate` method:
 ## ListRepositoriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codecommit").get_paginator("list_repositories")`.
+`session.create_client("codecommit").get_paginator("list_repositories")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codecommit.paginator import ListRepositoriesPaginator
 
-def get_list_repositories_paginator() -> ListRepositoriesPaginator:
-    return Session().create_client("codecommit").get_paginator("list_repositories")
+session = get_session()
+async with session.create_client("codecommit") as client:
+    client: CodeCommitClient
+    paginator: ListRepositoriesPaginator = client.get_paginator("list_repositories")
 ```
 
 Boto3 documentation:

@@ -77,22 +77,25 @@ type annotations stubs module
     - [suspend_processes](#suspend_processes)
     - [terminate_instance_in_auto_scaling_group](#terminate_instance_in_auto_scaling_group)
     - [update_auto_scaling_group](#update_auto_scaling_group)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="autoscalingclient"></a>
 
 ## AutoScalingClient
 
-Type annotations for `aiobotocore.create_client("autoscaling")`
+Type annotations for `session.create_client("autoscaling")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_autoscaling.client import AutoScalingClient
 
-def get_autoscaling_client() -> AutoScalingClient:
-    return Session().client("autoscaling")
+session = get_session()
+async with session.create_client("autoscaling") as client:
+    client: AutoScalingClient
 ```
 
 Boto3 documentation:
@@ -135,8 +138,7 @@ Exceptions:
 
 AutoScalingClient exceptions.
 
-Type annotations for `aiobotocore.create_client("autoscaling").exceptions`
-method.
+Type annotations for `session.create_client("autoscaling").exceptions` method.
 
 Boto3 documentation:
 [AutoScaling.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.exceptions)
@@ -149,8 +151,8 @@ Returns [Exceptions](#exceptions).
 
 Attaches one or more EC2 instances to the specified Auto Scaling group.
 
-Type annotations for
-`aiobotocore.create_client("autoscaling").attach_instances` method.
+Type annotations for `session.create_client("autoscaling").attach_instances`
+method.
 
 Boto3 documentation:
 [AutoScaling.Client.attach_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.attach_instances)
@@ -172,7 +174,7 @@ Keyword-only arguments:
 Attaches one or more target groups to the specified Auto Scaling group.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").attach_load_balancer_target_groups`
+`session.create_client("autoscaling").attach_load_balancer_target_groups`
 method.
 
 Boto3 documentation:
@@ -198,7 +200,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").attach_load_balancers` method.
+`session.create_client("autoscaling").attach_load_balancers` method.
 
 Boto3 documentation:
 [AutoScaling.Client.attach_load_balancers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.attach_load_balancers)
@@ -223,8 +225,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes one or more scheduled actions for the specified Auto Scaling group.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").batch_delete_scheduled_action`
-method.
+`session.create_client("autoscaling").batch_delete_scheduled_action` method.
 
 Boto3 documentation:
 [AutoScaling.Client.batch_delete_scheduled_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.batch_delete_scheduled_action)
@@ -251,7 +252,7 @@ Creates or updates one or more scheduled scaling actions for an Auto Scaling
 group.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").batch_put_scheduled_update_group_action`
+`session.create_client("autoscaling").batch_put_scheduled_update_group_action`
 method.
 
 Boto3 documentation:
@@ -279,19 +280,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("autoscaling").can_paginate`
+Type annotations for `session.create_client("autoscaling").can_paginate`
 method.
 
 Boto3 documentation:
 [AutoScaling.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_instance_refresh"></a>
 
@@ -300,7 +299,7 @@ Returns a `Coroutine` for `bool`.
 Cancels an instance refresh operation in progress.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").cancel_instance_refresh` method.
+`session.create_client("autoscaling").cancel_instance_refresh` method.
 
 Boto3 documentation:
 [AutoScaling.Client.cancel_instance_refresh](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.cancel_instance_refresh)
@@ -326,7 +325,7 @@ Completes the lifecycle action for the specified token or instance with the
 specified result.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").complete_lifecycle_action` method.
+`session.create_client("autoscaling").complete_lifecycle_action` method.
 
 Boto3 documentation:
 [AutoScaling.Client.complete_lifecycle_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.complete_lifecycle_action)
@@ -356,7 +355,7 @@ ensure full functionality for Amazon EC2 Auto Scaling and Amazon EC2.** Creates
 an Auto Scaling group with the specified name and attributes.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").create_auto_scaling_group` method.
+`session.create_client("autoscaling").create_auto_scaling_group` method.
 
 Boto3 documentation:
 [AutoScaling.Client.create_auto_scaling_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.create_auto_scaling_group)
@@ -405,7 +404,7 @@ Keyword-only arguments:
 Creates a launch configuration.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").create_launch_configuration` method.
+`session.create_client("autoscaling").create_launch_configuration` method.
 
 Boto3 documentation:
 [AutoScaling.Client.create_launch_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.create_launch_configuration)
@@ -448,7 +447,7 @@ Keyword-only arguments:
 Creates or updates tags for the specified Auto Scaling group.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").create_or_update_tags` method.
+`session.create_client("autoscaling").create_or_update_tags` method.
 
 Boto3 documentation:
 [AutoScaling.Client.create_or_update_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.create_or_update_tags)
@@ -470,7 +469,7 @@ Keyword-only arguments:
 Deletes the specified Auto Scaling group.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").delete_auto_scaling_group` method.
+`session.create_client("autoscaling").delete_auto_scaling_group` method.
 
 Boto3 documentation:
 [AutoScaling.Client.delete_auto_scaling_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.delete_auto_scaling_group)
@@ -493,7 +492,7 @@ Keyword-only arguments:
 Deletes the specified launch configuration.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").delete_launch_configuration` method.
+`session.create_client("autoscaling").delete_launch_configuration` method.
 
 Boto3 documentation:
 [AutoScaling.Client.delete_launch_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.delete_launch_configuration)
@@ -515,7 +514,7 @@ Keyword-only arguments:
 Deletes the specified lifecycle hook.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").delete_lifecycle_hook` method.
+`session.create_client("autoscaling").delete_lifecycle_hook` method.
 
 Boto3 documentation:
 [AutoScaling.Client.delete_lifecycle_hook](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.delete_lifecycle_hook)
@@ -540,7 +539,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified notification.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").delete_notification_configuration`
+`session.create_client("autoscaling").delete_notification_configuration`
 method.
 
 Boto3 documentation:
@@ -563,7 +562,7 @@ Keyword-only arguments:
 
 Deletes the specified scaling policy.
 
-Type annotations for `aiobotocore.create_client("autoscaling").delete_policy`
+Type annotations for `session.create_client("autoscaling").delete_policy`
 method.
 
 Boto3 documentation:
@@ -586,7 +585,7 @@ Keyword-only arguments:
 Deletes the specified scheduled action.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").delete_scheduled_action` method.
+`session.create_client("autoscaling").delete_scheduled_action` method.
 
 Boto3 documentation:
 [AutoScaling.Client.delete_scheduled_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.delete_scheduled_action)
@@ -608,8 +607,7 @@ Keyword-only arguments:
 
 Deletes the specified tags.
 
-Type annotations for `aiobotocore.create_client("autoscaling").delete_tags`
-method.
+Type annotations for `session.create_client("autoscaling").delete_tags` method.
 
 Boto3 documentation:
 [AutoScaling.Client.delete_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.delete_tags)
@@ -629,8 +627,8 @@ Keyword-only arguments:
 
 Deletes the warm pool for the specified Auto Scaling group.
 
-Type annotations for
-`aiobotocore.create_client("autoscaling").delete_warm_pool` method.
+Type annotations for `session.create_client("autoscaling").delete_warm_pool`
+method.
 
 Boto3 documentation:
 [AutoScaling.Client.delete_warm_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.delete_warm_pool)
@@ -654,7 +652,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Describes the current Amazon EC2 Auto Scaling resource quotas for your account.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_account_limits` method.
+`session.create_client("autoscaling").describe_account_limits` method.
 
 Boto3 documentation:
 [AutoScaling.Client.describe_account_limits](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.describe_account_limits)
@@ -673,7 +671,7 @@ Describes the available adjustment types for step scaling and simple scaling
 policies.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_adjustment_types` method.
+`session.create_client("autoscaling").describe_adjustment_types` method.
 
 Boto3 documentation:
 [AutoScaling.Client.describe_adjustment_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.describe_adjustment_types)
@@ -691,7 +689,7 @@ Returns a `Coroutine` for
 Gets information about the Auto Scaling groups in the account and Region.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_auto_scaling_groups` method.
+`session.create_client("autoscaling").describe_auto_scaling_groups` method.
 
 Boto3 documentation:
 [AutoScaling.Client.describe_auto_scaling_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.describe_auto_scaling_groups)
@@ -719,8 +717,7 @@ Returns a `Coroutine` for
 Gets information about the Auto Scaling instances in the account and Region.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_auto_scaling_instances`
-method.
+`session.create_client("autoscaling").describe_auto_scaling_instances` method.
 
 Boto3 documentation:
 [AutoScaling.Client.describe_auto_scaling_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.describe_auto_scaling_instances)
@@ -747,7 +744,7 @@ Returns a `Coroutine` for
 Describes the notification types that are supported by Amazon EC2 Auto Scaling.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_auto_scaling_notification_types`
+`session.create_client("autoscaling").describe_auto_scaling_notification_types`
 method.
 
 Boto3 documentation:
@@ -767,7 +764,7 @@ Gets information about the instance refreshes for the specified Auto Scaling
 group.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_instance_refreshes` method.
+`session.create_client("autoscaling").describe_instance_refreshes` method.
 
 Boto3 documentation:
 [AutoScaling.Client.describe_instance_refreshes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.describe_instance_refreshes)
@@ -795,8 +792,7 @@ Returns a `Coroutine` for
 Gets information about the launch configurations in the account and Region.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_launch_configurations`
-method.
+`session.create_client("autoscaling").describe_launch_configurations` method.
 
 Boto3 documentation:
 [AutoScaling.Client.describe_launch_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.describe_launch_configurations)
@@ -823,8 +819,7 @@ Returns a `Coroutine` for
 Describes the available types of lifecycle hooks.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_lifecycle_hook_types`
-method.
+`session.create_client("autoscaling").describe_lifecycle_hook_types` method.
 
 Boto3 documentation:
 [AutoScaling.Client.describe_lifecycle_hook_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.describe_lifecycle_hook_types)
@@ -843,7 +838,7 @@ Gets information about the lifecycle hooks for the specified Auto Scaling
 group.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_lifecycle_hooks` method.
+`session.create_client("autoscaling").describe_lifecycle_hooks` method.
 
 Boto3 documentation:
 [AutoScaling.Client.describe_lifecycle_hooks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.describe_lifecycle_hooks)
@@ -870,7 +865,7 @@ Gets information about the load balancer target groups for the specified Auto
 Scaling group.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_load_balancer_target_groups`
+`session.create_client("autoscaling").describe_load_balancer_target_groups`
 method.
 
 Boto3 documentation:
@@ -898,7 +893,7 @@ Returns a `Coroutine` for
 Gets information about the load balancers for the specified Auto Scaling group.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_load_balancers` method.
+`session.create_client("autoscaling").describe_load_balancers` method.
 
 Boto3 documentation:
 [AutoScaling.Client.describe_load_balancers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.describe_load_balancers)
@@ -925,8 +920,7 @@ Returns a `Coroutine` for
 Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_metric_collection_types`
-method.
+`session.create_client("autoscaling").describe_metric_collection_types` method.
 
 Boto3 documentation:
 [AutoScaling.Client.describe_metric_collection_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.describe_metric_collection_types)
@@ -945,7 +939,7 @@ Gets information about the Amazon SNS notifications that are configured for one
 or more Auto Scaling groups.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_notification_configurations`
+`session.create_client("autoscaling").describe_notification_configurations`
 method.
 
 Boto3 documentation:
@@ -972,8 +966,8 @@ Returns a `Coroutine` for
 
 Gets information about the scaling policies in the account and Region.
 
-Type annotations for
-`aiobotocore.create_client("autoscaling").describe_policies` method.
+Type annotations for `session.create_client("autoscaling").describe_policies`
+method.
 
 Boto3 documentation:
 [AutoScaling.Client.describe_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.describe_policies)
@@ -1001,7 +995,7 @@ Returns a `Coroutine` for
 Gets information about the scaling activities in the account and Region.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_scaling_activities` method.
+`session.create_client("autoscaling").describe_scaling_activities` method.
 
 Boto3 documentation:
 [AutoScaling.Client.describe_scaling_activities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.describe_scaling_activities)
@@ -1031,8 +1025,7 @@ Describes the scaling process types for use with the ResumeProcesses and
 SuspendProcesses APIs.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_scaling_process_types`
-method.
+`session.create_client("autoscaling").describe_scaling_process_types` method.
 
 Boto3 documentation:
 [AutoScaling.Client.describe_scaling_process_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.describe_scaling_process_types)
@@ -1051,7 +1044,7 @@ Gets information about the scheduled actions that haven't run or that have not
 reached their end time.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_scheduled_actions` method.
+`session.create_client("autoscaling").describe_scheduled_actions` method.
 
 Boto3 documentation:
 [AutoScaling.Client.describe_scheduled_actions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.describe_scheduled_actions)
@@ -1080,7 +1073,7 @@ Returns a `Coroutine` for
 
 Describes the specified tags.
 
-Type annotations for `aiobotocore.create_client("autoscaling").describe_tags`
+Type annotations for `session.create_client("autoscaling").describe_tags`
 method.
 
 Boto3 documentation:
@@ -1106,7 +1099,7 @@ Returns a `Coroutine` for [TagsTypeTypeDef](./type_defs.md#tagstypetypedef).
 Describes the termination policies supported by Amazon EC2 Auto Scaling.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").describe_termination_policy_types`
+`session.create_client("autoscaling").describe_termination_policy_types`
 method.
 
 Boto3 documentation:
@@ -1124,8 +1117,8 @@ Returns a `Coroutine` for
 
 Gets information about a warm pool and its instances.
 
-Type annotations for
-`aiobotocore.create_client("autoscaling").describe_warm_pool` method.
+Type annotations for `session.create_client("autoscaling").describe_warm_pool`
+method.
 
 Boto3 documentation:
 [AutoScaling.Client.describe_warm_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.describe_warm_pool)
@@ -1151,8 +1144,8 @@ Returns a `Coroutine` for
 
 Removes one or more instances from the specified Auto Scaling group.
 
-Type annotations for
-`aiobotocore.create_client("autoscaling").detach_instances` method.
+Type annotations for `session.create_client("autoscaling").detach_instances`
+method.
 
 Boto3 documentation:
 [AutoScaling.Client.detach_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.detach_instances)
@@ -1178,7 +1171,7 @@ Returns a `Coroutine` for
 Detaches one or more target groups from the specified Auto Scaling group.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").detach_load_balancer_target_groups`
+`session.create_client("autoscaling").detach_load_balancer_target_groups`
 method.
 
 Boto3 documentation:
@@ -1205,7 +1198,7 @@ Detaches one or more Classic Load Balancers from the specified Auto Scaling
 group.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").detach_load_balancers` method.
+`session.create_client("autoscaling").detach_load_balancers` method.
 
 Boto3 documentation:
 [AutoScaling.Client.detach_load_balancers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.detach_load_balancers)
@@ -1230,7 +1223,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disables group metrics for the specified Auto Scaling group.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").disable_metrics_collection` method.
+`session.create_client("autoscaling").disable_metrics_collection` method.
 
 Boto3 documentation:
 [AutoScaling.Client.disable_metrics_collection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.disable_metrics_collection)
@@ -1253,7 +1246,7 @@ Keyword-only arguments:
 Enables group metrics for the specified Auto Scaling group.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").enable_metrics_collection` method.
+`session.create_client("autoscaling").enable_metrics_collection` method.
 
 Boto3 documentation:
 [AutoScaling.Client.enable_metrics_collection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.enable_metrics_collection)
@@ -1276,7 +1269,7 @@ Keyword-only arguments:
 
 Moves the specified instances into the standby state.
 
-Type annotations for `aiobotocore.create_client("autoscaling").enter_standby`
+Type annotations for `session.create_client("autoscaling").enter_standby`
 method.
 
 Boto3 documentation:
@@ -1302,7 +1295,7 @@ Returns a `Coroutine` for
 
 Executes the specified policy.
 
-Type annotations for `aiobotocore.create_client("autoscaling").execute_policy`
+Type annotations for `session.create_client("autoscaling").execute_policy`
 method.
 
 Boto3 documentation:
@@ -1327,7 +1320,7 @@ Keyword-only arguments:
 
 Moves the specified instances out of the standby state.
 
-Type annotations for `aiobotocore.create_client("autoscaling").exit_standby`
+Type annotations for `session.create_client("autoscaling").exit_standby`
 method.
 
 Boto3 documentation:
@@ -1353,7 +1346,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").generate_presigned_url` method.
+`session.create_client("autoscaling").generate_presigned_url` method.
 
 Boto3 documentation:
 [AutoScaling.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.generate_presigned_url)
@@ -1377,8 +1370,7 @@ Returns a `Coroutine` for `str`.
 Retrieves the forecast data for a predictive scaling policy.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").get_predictive_scaling_forecast`
-method.
+`session.create_client("autoscaling").get_predictive_scaling_forecast` method.
 
 Boto3 documentation:
 [AutoScaling.Client.get_predictive_scaling_forecast](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.get_predictive_scaling_forecast)
@@ -1405,8 +1397,8 @@ Returns a `Coroutine` for
 
 Creates or updates a lifecycle hook for the specified Auto Scaling group.
 
-Type annotations for
-`aiobotocore.create_client("autoscaling").put_lifecycle_hook` method.
+Type annotations for `session.create_client("autoscaling").put_lifecycle_hook`
+method.
 
 Boto3 documentation:
 [AutoScaling.Client.put_lifecycle_hook](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.put_lifecycle_hook)
@@ -1438,8 +1430,7 @@ Configures an Auto Scaling group to send notifications when specified events
 take place.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").put_notification_configuration`
-method.
+`session.create_client("autoscaling").put_notification_configuration` method.
 
 Boto3 documentation:
 [AutoScaling.Client.put_notification_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.put_notification_configuration)
@@ -1462,8 +1453,8 @@ Keyword-only arguments:
 
 Creates or updates a scaling policy for an Auto Scaling group.
 
-Type annotations for
-`aiobotocore.create_client("autoscaling").put_scaling_policy` method.
+Type annotations for `session.create_client("autoscaling").put_scaling_policy`
+method.
 
 Boto3 documentation:
 [AutoScaling.Client.put_scaling_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.put_scaling_policy)
@@ -1504,7 +1495,7 @@ Returns a `Coroutine` for
 Creates or updates a scheduled scaling action for an Auto Scaling group.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").put_scheduled_update_group_action`
+`session.create_client("autoscaling").put_scheduled_update_group_action`
 method.
 
 Boto3 documentation:
@@ -1535,7 +1526,7 @@ Keyword-only arguments:
 
 Creates or updates a warm pool for the specified Auto Scaling group.
 
-Type annotations for `aiobotocore.create_client("autoscaling").put_warm_pool`
+Type annotations for `session.create_client("autoscaling").put_warm_pool`
 method.
 
 Boto3 documentation:
@@ -1563,7 +1554,7 @@ Records a heartbeat for the lifecycle action associated with the specified
 token or instance.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").record_lifecycle_action_heartbeat`
+`session.create_client("autoscaling").record_lifecycle_action_heartbeat`
 method.
 
 Boto3 documentation:
@@ -1591,8 +1582,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Resumes the specified suspended auto scaling processes, or all suspended
 process, for the specified Auto Scaling group.
 
-Type annotations for
-`aiobotocore.create_client("autoscaling").resume_processes` method.
+Type annotations for `session.create_client("autoscaling").resume_processes`
+method.
 
 Boto3 documentation:
 [AutoScaling.Client.resume_processes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.resume_processes)
@@ -1614,7 +1605,7 @@ Keyword-only arguments:
 Sets the size of the specified Auto Scaling group.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").set_desired_capacity` method.
+`session.create_client("autoscaling").set_desired_capacity` method.
 
 Boto3 documentation:
 [AutoScaling.Client.set_desired_capacity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.set_desired_capacity)
@@ -1637,8 +1628,8 @@ Keyword-only arguments:
 
 Sets the health status of the specified instance.
 
-Type annotations for
-`aiobotocore.create_client("autoscaling").set_instance_health` method.
+Type annotations for `session.create_client("autoscaling").set_instance_health`
+method.
 
 Boto3 documentation:
 [AutoScaling.Client.set_instance_health](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.set_instance_health)
@@ -1662,7 +1653,7 @@ Keyword-only arguments:
 Updates the instance protection settings of the specified instances.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").set_instance_protection` method.
+`session.create_client("autoscaling").set_instance_protection` method.
 
 Boto3 documentation:
 [AutoScaling.Client.set_instance_protection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.set_instance_protection)
@@ -1688,7 +1679,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Starts a new instance refresh operation.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").start_instance_refresh` method.
+`session.create_client("autoscaling").start_instance_refresh` method.
 
 Boto3 documentation:
 [AutoScaling.Client.start_instance_refresh](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.start_instance_refresh)
@@ -1719,8 +1710,8 @@ Returns a `Coroutine` for
 Suspends the specified auto scaling processes, or all processes, for the
 specified Auto Scaling group.
 
-Type annotations for
-`aiobotocore.create_client("autoscaling").suspend_processes` method.
+Type annotations for `session.create_client("autoscaling").suspend_processes`
+method.
 
 Boto3 documentation:
 [AutoScaling.Client.suspend_processes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.suspend_processes)
@@ -1743,7 +1734,7 @@ Terminates the specified instance and optionally adjusts the desired group
 size.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").terminate_instance_in_auto_scaling_group`
+`session.create_client("autoscaling").terminate_instance_in_auto_scaling_group`
 method.
 
 Boto3 documentation:
@@ -1772,7 +1763,7 @@ ensure full functionality for Amazon EC2 Auto Scaling and Amazon EC2.** Updates
 the configuration for the specified Auto Scaling group.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").update_auto_scaling_group` method.
+`session.create_client("autoscaling").update_auto_scaling_group` method.
 
 Boto3 documentation:
 [AutoScaling.Client.update_auto_scaling_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.update_auto_scaling_group)
@@ -1808,11 +1799,43 @@ Keyword-only arguments:
 - `Context`: `str`
 - `DesiredCapacityType`: `str`
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("autoscaling").__aenter__` method.
+
+Boto3 documentation:
+[AutoScaling.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [AutoScalingClient](#autoscalingclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("autoscaling").__aexit__` method.
+
+Boto3 documentation:
+[AutoScaling.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html#AutoScaling.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("autoscaling").get_paginator`
+Type annotations for `session.create_client("autoscaling").get_paginator`
 method with overloads.
 
 - `client.get_paginator("describe_auto_scaling_groups")` ->

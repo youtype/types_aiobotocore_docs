@@ -24,17 +24,19 @@ type annotations stubs module
 ## DescribeAccountModificationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("workspaces").get_paginator("describe_account_modifications")`.
+`session.create_client("workspaces").get_paginator("describe_account_modifications")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workspaces.paginator import DescribeAccountModificationsPaginator
 
-def get_describe_account_modifications_paginator() -> DescribeAccountModificationsPaginator:
-    return Session().create_client("workspaces").get_paginator("describe_account_modifications")
+session = get_session()
+async with session.create_client("workspaces") as client:
+    client: WorkSpacesClient
+    paginator: DescribeAccountModificationsPaginator = client.get_paginator("describe_account_modifications")
 ```
 
 Boto3 documentation:
@@ -53,17 +55,19 @@ Arguments for `DescribeAccountModificationsPaginator.paginate` method:
 ## DescribeIpGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("workspaces").get_paginator("describe_ip_groups")`.
+`session.create_client("workspaces").get_paginator("describe_ip_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workspaces.paginator import DescribeIpGroupsPaginator
 
-def get_describe_ip_groups_paginator() -> DescribeIpGroupsPaginator:
-    return Session().create_client("workspaces").get_paginator("describe_ip_groups")
+session = get_session()
+async with session.create_client("workspaces") as client:
+    client: WorkSpacesClient
+    paginator: DescribeIpGroupsPaginator = client.get_paginator("describe_ip_groups")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `DescribeIpGroupsPaginator.paginate` method:
 ## DescribeWorkspaceBundlesPaginator
 
 Type annotations for
-`aiobotocore.create_client("workspaces").get_paginator("describe_workspace_bundles")`.
+`session.create_client("workspaces").get_paginator("describe_workspace_bundles")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workspaces.paginator import DescribeWorkspaceBundlesPaginator
 
-def get_describe_workspace_bundles_paginator() -> DescribeWorkspaceBundlesPaginator:
-    return Session().create_client("workspaces").get_paginator("describe_workspace_bundles")
+session = get_session()
+async with session.create_client("workspaces") as client:
+    client: WorkSpacesClient
+    paginator: DescribeWorkspaceBundlesPaginator = client.get_paginator("describe_workspace_bundles")
 ```
 
 Boto3 documentation:
@@ -114,17 +120,19 @@ Arguments for `DescribeWorkspaceBundlesPaginator.paginate` method:
 ## DescribeWorkspaceDirectoriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("workspaces").get_paginator("describe_workspace_directories")`.
+`session.create_client("workspaces").get_paginator("describe_workspace_directories")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workspaces.paginator import DescribeWorkspaceDirectoriesPaginator
 
-def get_describe_workspace_directories_paginator() -> DescribeWorkspaceDirectoriesPaginator:
-    return Session().create_client("workspaces").get_paginator("describe_workspace_directories")
+session = get_session()
+async with session.create_client("workspaces") as client:
+    client: WorkSpacesClient
+    paginator: DescribeWorkspaceDirectoriesPaginator = client.get_paginator("describe_workspace_directories")
 ```
 
 Boto3 documentation:
@@ -145,17 +153,19 @@ Arguments for `DescribeWorkspaceDirectoriesPaginator.paginate` method:
 ## DescribeWorkspaceImagesPaginator
 
 Type annotations for
-`aiobotocore.create_client("workspaces").get_paginator("describe_workspace_images")`.
+`session.create_client("workspaces").get_paginator("describe_workspace_images")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workspaces.paginator import DescribeWorkspaceImagesPaginator
 
-def get_describe_workspace_images_paginator() -> DescribeWorkspaceImagesPaginator:
-    return Session().create_client("workspaces").get_paginator("describe_workspace_images")
+session = get_session()
+async with session.create_client("workspaces") as client:
+    client: WorkSpacesClient
+    paginator: DescribeWorkspaceImagesPaginator = client.get_paginator("describe_workspace_images")
 ```
 
 Boto3 documentation:
@@ -176,17 +186,19 @@ Arguments for `DescribeWorkspaceImagesPaginator.paginate` method:
 ## DescribeWorkspacesPaginator
 
 Type annotations for
-`aiobotocore.create_client("workspaces").get_paginator("describe_workspaces")`.
+`session.create_client("workspaces").get_paginator("describe_workspaces")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workspaces.paginator import DescribeWorkspacesPaginator
 
-def get_describe_workspaces_paginator() -> DescribeWorkspacesPaginator:
-    return Session().create_client("workspaces").get_paginator("describe_workspaces")
+session = get_session()
+async with session.create_client("workspaces") as client:
+    client: WorkSpacesClient
+    paginator: DescribeWorkspacesPaginator = client.get_paginator("describe_workspaces")
 ```
 
 Boto3 documentation:
@@ -209,17 +221,19 @@ Arguments for `DescribeWorkspacesPaginator.paginate` method:
 ## DescribeWorkspacesConnectionStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("workspaces").get_paginator("describe_workspaces_connection_status")`.
+`session.create_client("workspaces").get_paginator("describe_workspaces_connection_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workspaces.paginator import DescribeWorkspacesConnectionStatusPaginator
 
-def get_describe_workspaces_connection_status_paginator() -> DescribeWorkspacesConnectionStatusPaginator:
-    return Session().create_client("workspaces").get_paginator("describe_workspaces_connection_status")
+session = get_session()
+async with session.create_client("workspaces") as client:
+    client: WorkSpacesClient
+    paginator: DescribeWorkspacesConnectionStatusPaginator = client.get_paginator("describe_workspaces_connection_status")
 ```
 
 Boto3 documentation:
@@ -239,17 +253,19 @@ Arguments for `DescribeWorkspacesConnectionStatusPaginator.paginate` method:
 ## ListAvailableManagementCidrRangesPaginator
 
 Type annotations for
-`aiobotocore.create_client("workspaces").get_paginator("list_available_management_cidr_ranges")`.
+`session.create_client("workspaces").get_paginator("list_available_management_cidr_ranges")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workspaces.paginator import ListAvailableManagementCidrRangesPaginator
 
-def get_list_available_management_cidr_ranges_paginator() -> ListAvailableManagementCidrRangesPaginator:
-    return Session().create_client("workspaces").get_paginator("list_available_management_cidr_ranges")
+session = get_session()
+async with session.create_client("workspaces") as client:
+    client: WorkSpacesClient
+    paginator: ListAvailableManagementCidrRangesPaginator = client.get_paginator("list_available_management_cidr_ranges")
 ```
 
 Boto3 documentation:

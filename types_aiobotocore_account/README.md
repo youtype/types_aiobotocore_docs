@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[account]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[account]'
+
+# standalone installation
 pip install types-aiobotocore-account
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-account
 
 ## AccountClient
 
-Type annotations for `aiobotocore.create_client("account")` as
+Type annotations for `session.create_client("account")` as
 [AccountClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_account.client import AccountClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [delete_alternate_contact](./client.md#delete_alternate_contact)
 - [exceptions](./client.md#exceptions)

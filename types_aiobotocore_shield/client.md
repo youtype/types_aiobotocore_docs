@@ -52,22 +52,25 @@ type annotations stubs module
     - [update_emergency_contact_settings](#update_emergency_contact_settings)
     - [update_protection_group](#update_protection_group)
     - [update_subscription](#update_subscription)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="shieldclient"></a>
 
 ## ShieldClient
 
-Type annotations for `aiobotocore.create_client("shield")`
+Type annotations for `session.create_client("shield")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_shield.client import ShieldClient
 
-def get_shield_client() -> ShieldClient:
-    return Session().client("shield")
+session = get_session()
+async with session.create_client("shield") as client:
+    client: ShieldClient
 ```
 
 Boto3 documentation:
@@ -114,7 +117,7 @@ Exceptions:
 
 ShieldClient exceptions.
 
-Type annotations for `aiobotocore.create_client("shield").exceptions` method.
+Type annotations for `session.create_client("shield").exceptions` method.
 
 Boto3 documentation:
 [Shield.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.exceptions)
@@ -129,8 +132,8 @@ Authorizes the Shield Response Team (SRT) to access the specified Amazon S3
 bucket containing log data such as Application Load Balancer access logs,
 CloudFront logs, or logs from third party sources.
 
-Type annotations for
-`aiobotocore.create_client("shield").associate_drt_log_bucket` method.
+Type annotations for `session.create_client("shield").associate_drt_log_bucket`
+method.
 
 Boto3 documentation:
 [Shield.Client.associate_drt_log_bucket](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.associate_drt_log_bucket)
@@ -155,7 +158,7 @@ Authorizes the Shield Response Team (SRT) using the specified role, to access
 your Amazon Web Services account to assist with DDoS attack mitigation during
 potential attacks.
 
-Type annotations for `aiobotocore.create_client("shield").associate_drt_role`
+Type annotations for `session.create_client("shield").associate_drt_role`
 method.
 
 Boto3 documentation:
@@ -179,8 +182,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds health-based detection to the Shield Advanced protection for a resource.
 
-Type annotations for
-`aiobotocore.create_client("shield").associate_health_check` method.
+Type annotations for `session.create_client("shield").associate_health_check`
+method.
 
 Boto3 documentation:
 [Shield.Client.associate_health_check](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.associate_health_check)
@@ -206,7 +209,7 @@ Initializes proactive engagement and sets the list of contacts for the Shield
 Response Team (SRT) to use.
 
 Type annotations for
-`aiobotocore.create_client("shield").associate_proactive_engagement_details`
+`session.create_client("shield").associate_proactive_engagement_details`
 method.
 
 Boto3 documentation:
@@ -232,18 +235,16 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("shield").can_paginate` method.
+Type annotations for `session.create_client("shield").can_paginate` method.
 
 Boto3 documentation:
 [Shield.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_protection"></a>
 
@@ -251,7 +252,7 @@ Returns a `Coroutine` for `bool`.
 
 Enables Shield Advanced for a specific Amazon Web Services resource.
 
-Type annotations for `aiobotocore.create_client("shield").create_protection`
+Type annotations for `session.create_client("shield").create_protection`
 method.
 
 Boto3 documentation:
@@ -278,8 +279,8 @@ Returns a `Coroutine` for
 Creates a grouping of protected resources so they can be handled as a
 collective.
 
-Type annotations for
-`aiobotocore.create_client("shield").create_protection_group` method.
+Type annotations for `session.create_client("shield").create_protection_group`
+method.
 
 Boto3 documentation:
 [Shield.Client.create_protection_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.create_protection_group)
@@ -312,7 +313,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Activates Shield Advanced for an account.
 
-Type annotations for `aiobotocore.create_client("shield").create_subscription`
+Type annotations for `session.create_client("shield").create_subscription`
 method.
 
 Boto3 documentation:
@@ -329,7 +330,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an Shield Advanced Protection .
 
-Type annotations for `aiobotocore.create_client("shield").delete_protection`
+Type annotations for `session.create_client("shield").delete_protection`
 method.
 
 Boto3 documentation:
@@ -352,8 +353,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the specified protection group.
 
-Type annotations for
-`aiobotocore.create_client("shield").delete_protection_group` method.
+Type annotations for `session.create_client("shield").delete_protection_group`
+method.
 
 Boto3 documentation:
 [Shield.Client.delete_protection_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.delete_protection_group)
@@ -376,7 +377,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes Shield Advanced from an account.
 
-Type annotations for `aiobotocore.create_client("shield").delete_subscription`
+Type annotations for `session.create_client("shield").delete_subscription`
 method.
 
 Boto3 documentation:
@@ -393,8 +394,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Describes the details of a DDoS attack.
 
-Type annotations for `aiobotocore.create_client("shield").describe_attack`
-method.
+Type annotations for `session.create_client("shield").describe_attack` method.
 
 Boto3 documentation:
 [Shield.Client.describe_attack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.describe_attack)
@@ -420,7 +420,7 @@ in the last year for all resources that belong to your account, regardless of
 whether you've defined Shield protections for them.
 
 Type annotations for
-`aiobotocore.create_client("shield").describe_attack_statistics` method.
+`session.create_client("shield").describe_attack_statistics` method.
 
 Boto3 documentation:
 [Shield.Client.describe_attack_statistics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.describe_attack_statistics)
@@ -439,7 +439,7 @@ Returns the current role and list of Amazon S3 log buckets used by the Shield
 Response Team (SRT) to access your Amazon Web Services account while assisting
 with attack mitigation.
 
-Type annotations for `aiobotocore.create_client("shield").describe_drt_access`
+Type annotations for `session.create_client("shield").describe_drt_access`
 method.
 
 Boto3 documentation:
@@ -460,8 +460,7 @@ can use to contact you if you have proactive engagement enabled, for
 escalations to the SRT and to initiate proactive customer support.
 
 Type annotations for
-`aiobotocore.create_client("shield").describe_emergency_contact_settings`
-method.
+`session.create_client("shield").describe_emergency_contact_settings` method.
 
 Boto3 documentation:
 [Shield.Client.describe_emergency_contact_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.describe_emergency_contact_settings)
@@ -478,7 +477,7 @@ Returns a `Coroutine` for
 
 Lists the details of a Protection object.
 
-Type annotations for `aiobotocore.create_client("shield").describe_protection`
+Type annotations for `session.create_client("shield").describe_protection`
 method.
 
 Boto3 documentation:
@@ -505,7 +504,7 @@ Returns a `Coroutine` for
 Returns the specification for the specified protection group.
 
 Type annotations for
-`aiobotocore.create_client("shield").describe_protection_group` method.
+`session.create_client("shield").describe_protection_group` method.
 
 Boto3 documentation:
 [Shield.Client.describe_protection_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.describe_protection_group)
@@ -529,8 +528,8 @@ Returns a `Coroutine` for
 
 Provides details about the Shield Advanced subscription for an account.
 
-Type annotations for
-`aiobotocore.create_client("shield").describe_subscription` method.
+Type annotations for `session.create_client("shield").describe_subscription`
+method.
 
 Boto3 documentation:
 [Shield.Client.describe_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.describe_subscription)
@@ -549,7 +548,7 @@ Disable the Shield Advanced automatic application layer DDoS mitigation feature
 for the resource.
 
 Type annotations for
-`aiobotocore.create_client("shield").disable_application_layer_automatic_response`
+`session.create_client("shield").disable_application_layer_automatic_response`
 method.
 
 Boto3 documentation:
@@ -576,7 +575,7 @@ Removes authorization from the Shield Response Team (SRT) to notify contacts
 about escalations to the SRT and to initiate proactive customer support.
 
 Type annotations for
-`aiobotocore.create_client("shield").disable_proactive_engagement` method.
+`session.create_client("shield").disable_proactive_engagement` method.
 
 Boto3 documentation:
 [Shield.Client.disable_proactive_engagement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.disable_proactive_engagement)
@@ -594,7 +593,7 @@ Removes the Shield Response Team's (SRT) access to the specified Amazon S3
 bucket containing the logs that you shared previously.
 
 Type annotations for
-`aiobotocore.create_client("shield").disassociate_drt_log_bucket` method.
+`session.create_client("shield").disassociate_drt_log_bucket` method.
 
 Boto3 documentation:
 [Shield.Client.disassociate_drt_log_bucket](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.disassociate_drt_log_bucket)
@@ -618,8 +617,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes the Shield Response Team's (SRT) access to your Amazon Web Services
 account.
 
-Type annotations for
-`aiobotocore.create_client("shield").disassociate_drt_role` method.
+Type annotations for `session.create_client("shield").disassociate_drt_role`
+method.
 
 Boto3 documentation:
 [Shield.Client.disassociate_drt_role](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.disassociate_drt_role)
@@ -637,7 +636,7 @@ Removes health-based detection from the Shield Advanced protection for a
 resource.
 
 Type annotations for
-`aiobotocore.create_client("shield").disassociate_health_check` method.
+`session.create_client("shield").disassociate_health_check` method.
 
 Boto3 documentation:
 [Shield.Client.disassociate_health_check](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.disassociate_health_check)
@@ -663,7 +662,7 @@ Enable the Shield Advanced automatic application layer DDoS mitigation for the
 resource.
 
 Type annotations for
-`aiobotocore.create_client("shield").enable_application_layer_automatic_response`
+`session.create_client("shield").enable_application_layer_automatic_response`
 method.
 
 Boto3 documentation:
@@ -693,7 +692,7 @@ contacts about escalations to the SRT and to initiate proactive customer
 support.
 
 Type annotations for
-`aiobotocore.create_client("shield").enable_proactive_engagement` method.
+`session.create_client("shield").enable_proactive_engagement` method.
 
 Boto3 documentation:
 [Shield.Client.enable_proactive_engagement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.enable_proactive_engagement)
@@ -709,8 +708,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("shield").generate_presigned_url` method.
+Type annotations for `session.create_client("shield").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Shield.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.generate_presigned_url)
@@ -733,8 +732,8 @@ Returns a `Coroutine` for `str`.
 
 Returns the `SubscriptionState` , either `Active` or `Inactive` .
 
-Type annotations for
-`aiobotocore.create_client("shield").get_subscription_state` method.
+Type annotations for `session.create_client("shield").get_subscription_state`
+method.
 
 Boto3 documentation:
 [Shield.Client.get_subscription_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.get_subscription_state)
@@ -752,7 +751,7 @@ Returns a `Coroutine` for
 Returns all ongoing DDoS attacks or all DDoS attacks during a specified time
 period.
 
-Type annotations for `aiobotocore.create_client("shield").list_attacks` method.
+Type annotations for `session.create_client("shield").list_attacks` method.
 
 Boto3 documentation:
 [Shield.Client.list_attacks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.list_attacks)
@@ -779,8 +778,8 @@ Returns a `Coroutine` for
 
 Retrieves the ProtectionGroup objects for the account.
 
-Type annotations for
-`aiobotocore.create_client("shield").list_protection_groups` method.
+Type annotations for `session.create_client("shield").list_protection_groups`
+method.
 
 Boto3 documentation:
 [Shield.Client.list_protection_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.list_protection_groups)
@@ -805,8 +804,7 @@ Returns a `Coroutine` for
 
 Lists all Protection objects for the account.
 
-Type annotations for `aiobotocore.create_client("shield").list_protections`
-method.
+Type annotations for `session.create_client("shield").list_protections` method.
 
 Boto3 documentation:
 [Shield.Client.list_protections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.list_protections)
@@ -831,8 +829,7 @@ Returns a `Coroutine` for
 Retrieves the resources that are included in the protection group.
 
 Type annotations for
-`aiobotocore.create_client("shield").list_resources_in_protection_group`
-method.
+`session.create_client("shield").list_resources_in_protection_group` method.
 
 Boto3 documentation:
 [Shield.Client.list_resources_in_protection_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.list_resources_in_protection_group)
@@ -859,8 +856,8 @@ Returns a `Coroutine` for
 Gets information about Amazon Web Services tags for a specified Amazon Resource
 Name (ARN) in Shield.
 
-Type annotations for
-`aiobotocore.create_client("shield").list_tags_for_resource` method.
+Type annotations for `session.create_client("shield").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Shield.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.list_tags_for_resource)
@@ -884,7 +881,7 @@ Returns a `Coroutine` for
 
 Adds or updates tags for a resource in Shield.
 
-Type annotations for `aiobotocore.create_client("shield").tag_resource` method.
+Type annotations for `session.create_client("shield").tag_resource` method.
 
 Boto3 documentation:
 [Shield.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.tag_resource)
@@ -907,8 +904,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from a resource in Shield.
 
-Type annotations for `aiobotocore.create_client("shield").untag_resource`
-method.
+Type annotations for `session.create_client("shield").untag_resource` method.
 
 Boto3 documentation:
 [Shield.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.untag_resource)
@@ -933,7 +929,7 @@ Updates an existing Shield Advanced automatic application layer DDoS mitigation
 configuration for the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("shield").update_application_layer_automatic_response`
+`session.create_client("shield").update_application_layer_automatic_response`
 method.
 
 Boto3 documentation:
@@ -964,7 +960,7 @@ engagement enabled, for escalations to the SRT and to initiate proactive
 customer support.
 
 Type annotations for
-`aiobotocore.create_client("shield").update_emergency_contact_settings` method.
+`session.create_client("shield").update_emergency_contact_settings` method.
 
 Boto3 documentation:
 [Shield.Client.update_emergency_contact_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.update_emergency_contact_settings)
@@ -988,8 +984,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an existing protection group.
 
-Type annotations for
-`aiobotocore.create_client("shield").update_protection_group` method.
+Type annotations for `session.create_client("shield").update_protection_group`
+method.
 
 Boto3 documentation:
 [Shield.Client.update_protection_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.update_protection_group)
@@ -1021,7 +1017,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the details of an existing subscription.
 
-Type annotations for `aiobotocore.create_client("shield").update_subscription`
+Type annotations for `session.create_client("shield").update_subscription`
 method.
 
 Boto3 documentation:
@@ -1039,11 +1035,43 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("shield").__aenter__` method.
+
+Boto3 documentation:
+[Shield.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ShieldClient](#shieldclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("shield").__aexit__` method.
+
+Boto3 documentation:
+[Shield.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/shield.html#Shield.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("shield").get_paginator` method
+Type annotations for `session.create_client("shield").get_paginator` method
 with overloads.
 
 - `client.get_paginator("list_attacks")` ->

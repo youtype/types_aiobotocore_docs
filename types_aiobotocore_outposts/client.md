@@ -39,21 +39,24 @@ type annotations stubs module
     - [update_site](#update_site)
     - [update_site_address](#update_site_address)
     - [update_site_rack_physical_properties](#update_site_rack_physical_properties)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="outpostsclient"></a>
 
 ## OutpostsClient
 
-Type annotations for `aiobotocore.create_client("outposts")`
+Type annotations for `session.create_client("outposts")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_outposts.client import OutpostsClient
 
-def get_outposts_client() -> OutpostsClient:
-    return Session().client("outposts")
+session = get_session()
+async with session.create_client("outposts") as client:
+    client: OutpostsClient
 ```
 
 Boto3 documentation:
@@ -93,7 +96,7 @@ Exceptions:
 
 OutpostsClient exceptions.
 
-Type annotations for `aiobotocore.create_client("outposts").exceptions` method.
+Type annotations for `session.create_client("outposts").exceptions` method.
 
 Boto3 documentation:
 [Outposts.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.exceptions)
@@ -106,19 +109,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("outposts").can_paginate`
-method.
+Type annotations for `session.create_client("outposts").can_paginate` method.
 
 Boto3 documentation:
 [Outposts.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_order"></a>
 
@@ -126,8 +126,7 @@ Returns a `Coroutine` for `bool`.
 
 Cancels an order for an Outpost.
 
-Type annotations for `aiobotocore.create_client("outposts").cancel_order`
-method.
+Type annotations for `session.create_client("outposts").cancel_order` method.
 
 Boto3 documentation:
 [Outposts.Client.cancel_order](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.cancel_order)
@@ -149,8 +148,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates an order for an Outpost.
 
-Type annotations for `aiobotocore.create_client("outposts").create_order`
-method.
+Type annotations for `session.create_client("outposts").create_order` method.
 
 Boto3 documentation:
 [Outposts.Client.create_order](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.create_order)
@@ -180,8 +178,7 @@ Returns a `Coroutine` for
 
 Creates an Outpost.
 
-Type annotations for `aiobotocore.create_client("outposts").create_outpost`
-method.
+Type annotations for `session.create_client("outposts").create_outpost` method.
 
 Boto3 documentation:
 [Outposts.Client.create_outpost](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.create_outpost)
@@ -211,8 +208,7 @@ Returns a `Coroutine` for
 
 Creates a site for an Outpost.
 
-Type annotations for `aiobotocore.create_client("outposts").create_site`
-method.
+Type annotations for `session.create_client("outposts").create_site` method.
 
 Boto3 documentation:
 [Outposts.Client.create_site](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.create_site)
@@ -242,8 +238,7 @@ Returns a `Coroutine` for
 
 Deletes the Outpost.
 
-Type annotations for `aiobotocore.create_client("outposts").delete_outpost`
-method.
+Type annotations for `session.create_client("outposts").delete_outpost` method.
 
 Boto3 documentation:
 [Outposts.Client.delete_outpost](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.delete_outpost)
@@ -265,8 +260,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the site.
 
-Type annotations for `aiobotocore.create_client("outposts").delete_site`
-method.
+Type annotations for `session.create_client("outposts").delete_site` method.
 
 Boto3 documentation:
 [Outposts.Client.delete_site](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.delete_site)
@@ -288,8 +282,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("outposts").generate_presigned_url` method.
+Type annotations for `session.create_client("outposts").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Outposts.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.generate_presigned_url)
@@ -312,7 +306,7 @@ Returns a `Coroutine` for `str`.
 
 Gets information about a catalog item.
 
-Type annotations for `aiobotocore.create_client("outposts").get_catalog_item`
+Type annotations for `session.create_client("outposts").get_catalog_item`
 method.
 
 Boto3 documentation:
@@ -336,7 +330,7 @@ Returns a `Coroutine` for
 
 Gets an order.
 
-Type annotations for `aiobotocore.create_client("outposts").get_order` method.
+Type annotations for `session.create_client("outposts").get_order` method.
 
 Boto3 documentation:
 [Outposts.Client.get_order](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.get_order)
@@ -359,8 +353,7 @@ Returns a `Coroutine` for
 
 Gets information about the specified Outpost.
 
-Type annotations for `aiobotocore.create_client("outposts").get_outpost`
-method.
+Type annotations for `session.create_client("outposts").get_outpost` method.
 
 Boto3 documentation:
 [Outposts.Client.get_outpost](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.get_outpost)
@@ -384,7 +377,7 @@ Returns a `Coroutine` for
 Lists the instance types for the specified Outpost.
 
 Type annotations for
-`aiobotocore.create_client("outposts").get_outpost_instance_types` method.
+`session.create_client("outposts").get_outpost_instance_types` method.
 
 Boto3 documentation:
 [Outposts.Client.get_outpost_instance_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.get_outpost_instance_types)
@@ -410,7 +403,7 @@ Returns a `Coroutine` for
 
 Gets information about the specified Outpost site.
 
-Type annotations for `aiobotocore.create_client("outposts").get_site` method.
+Type annotations for `session.create_client("outposts").get_site` method.
 
 Boto3 documentation:
 [Outposts.Client.get_site](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.get_site)
@@ -433,7 +426,7 @@ Returns a `Coroutine` for
 
 Gets the site address.
 
-Type annotations for `aiobotocore.create_client("outposts").get_site_address`
+Type annotations for `session.create_client("outposts").get_site_address`
 method.
 
 Boto3 documentation:
@@ -458,7 +451,7 @@ Returns a `Coroutine` for
 
 Use to create a list of every item in the catalog.
 
-Type annotations for `aiobotocore.create_client("outposts").list_catalog_items`
+Type annotations for `session.create_client("outposts").list_catalog_items`
 method.
 
 Boto3 documentation:
@@ -489,8 +482,7 @@ Returns a `Coroutine` for
 
 Create a list of the Outpost orders for your Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("outposts").list_orders`
-method.
+Type annotations for `session.create_client("outposts").list_orders` method.
 
 Boto3 documentation:
 [Outposts.Client.list_orders](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.list_orders)
@@ -515,8 +507,7 @@ Returns a `Coroutine` for
 
 Create a list of the Outposts for your Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("outposts").list_outposts`
-method.
+Type annotations for `session.create_client("outposts").list_outposts` method.
 
 Boto3 documentation:
 [Outposts.Client.list_outposts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.list_outposts)
@@ -543,7 +534,7 @@ Returns a `Coroutine` for
 
 Lists the sites for your Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("outposts").list_sites` method.
+Type annotations for `session.create_client("outposts").list_sites` method.
 
 Boto3 documentation:
 [Outposts.Client.list_sites](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.list_sites)
@@ -567,8 +558,8 @@ Returns a `Coroutine` for
 
 Lists the tags for the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("outposts").list_tags_for_resource` method.
+Type annotations for `session.create_client("outposts").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Outposts.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.list_tags_for_resource)
@@ -592,8 +583,7 @@ Returns a `Coroutine` for
 
 Adds tags to the specified resource.
 
-Type annotations for `aiobotocore.create_client("outposts").tag_resource`
-method.
+Type annotations for `session.create_client("outposts").tag_resource` method.
 
 Boto3 documentation:
 [Outposts.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.tag_resource)
@@ -616,8 +606,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from the specified resource.
 
-Type annotations for `aiobotocore.create_client("outposts").untag_resource`
-method.
+Type annotations for `session.create_client("outposts").untag_resource` method.
 
 Boto3 documentation:
 [Outposts.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.untag_resource)
@@ -640,8 +629,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an Outpost.
 
-Type annotations for `aiobotocore.create_client("outposts").update_outpost`
-method.
+Type annotations for `session.create_client("outposts").update_outpost` method.
 
 Boto3 documentation:
 [Outposts.Client.update_outpost](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.update_outpost)
@@ -668,8 +656,7 @@ Returns a `Coroutine` for
 
 Updates the site.
 
-Type annotations for `aiobotocore.create_client("outposts").update_site`
-method.
+Type annotations for `session.create_client("outposts").update_site` method.
 
 Boto3 documentation:
 [Outposts.Client.update_site](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.update_site)
@@ -695,8 +682,8 @@ Returns a `Coroutine` for
 
 Updates the site address.
 
-Type annotations for
-`aiobotocore.create_client("outposts").update_site_address` method.
+Type annotations for `session.create_client("outposts").update_site_address`
+method.
 
 Boto3 documentation:
 [Outposts.Client.update_site_address](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.update_site_address)
@@ -723,7 +710,7 @@ Returns a `Coroutine` for
 Update the physical and logistical details for a rack at a site.
 
 Type annotations for
-`aiobotocore.create_client("outposts").update_site_rack_physical_properties`
+`session.create_client("outposts").update_site_rack_physical_properties`
 method.
 
 Boto3 documentation:
@@ -752,3 +739,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateSiteRackPhysicalPropertiesOutputTypeDef](./type_defs.md#updatesiterackphysicalpropertiesoutputtypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("outposts").__aenter__` method.
+
+Boto3 documentation:
+[Outposts.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [OutpostsClient](#outpostsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("outposts").__aexit__` method.
+
+Boto3 documentation:
+[Outposts.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[health]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[health]'
+
+# standalone installation
 pip install types-aiobotocore-health
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-health
 
 ## HealthClient
 
-Type annotations for `aiobotocore.create_client("health")` as
+Type annotations for `session.create_client("health")` as
 [HealthClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_health.client import HealthClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [describe_affected_accounts_for_organization](./client.md#describe_affected_accounts_for_organization)
 - [describe_affected_entities](./client.md#describe_affected_entities)
@@ -81,7 +87,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_health.paginators import DescribeAffectedAccountsForOrganizationPaginator, ...
+from types_aiobotocore_health.paginator import DescribeAffectedAccountsForOrganizationPaginator, ...
 ```
 
 - [DescribeAffectedAccountsForOrganizationPaginator](./paginators.md#describeaffectedaccountsfororganizationpaginator)

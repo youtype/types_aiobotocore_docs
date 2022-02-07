@@ -31,21 +31,24 @@ type annotations stubs module
     - [start_monitoring_member](#start_monitoring_member)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="detectiveclient"></a>
 
 ## DetectiveClient
 
-Type annotations for `aiobotocore.create_client("detective")`
+Type annotations for `session.create_client("detective")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_detective.client import DetectiveClient
 
-def get_detective_client() -> DetectiveClient:
-    return Session().client("detective")
+session = get_session()
+async with session.create_client("detective") as client:
+    client: DetectiveClient
 ```
 
 Boto3 documentation:
@@ -84,8 +87,7 @@ Exceptions:
 
 DetectiveClient exceptions.
 
-Type annotations for `aiobotocore.create_client("detective").exceptions`
-method.
+Type annotations for `session.create_client("detective").exceptions` method.
 
 Boto3 documentation:
 [Detective.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/detective.html#Detective.Client.exceptions)
@@ -99,7 +101,7 @@ Returns [Exceptions](#exceptions).
 Accepts an invitation for the member account to contribute data to a behavior
 graph.
 
-Type annotations for `aiobotocore.create_client("detective").accept_invitation`
+Type annotations for `session.create_client("detective").accept_invitation`
 method.
 
 Boto3 documentation:
@@ -120,19 +122,16 @@ Keyword-only arguments:
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("detective").can_paginate`
-method.
+Type annotations for `session.create_client("detective").can_paginate` method.
 
 Boto3 documentation:
 [Detective.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/detective.html#Detective.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_graph"></a>
 
@@ -141,8 +140,7 @@ Returns a `Coroutine` for `bool`.
 Creates a new behavior graph for the calling account, and sets that account as
 the administrator account.
 
-Type annotations for `aiobotocore.create_client("detective").create_graph`
-method.
+Type annotations for `session.create_client("detective").create_graph` method.
 
 Boto3 documentation:
 [Detective.Client.create_graph](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/detective.html#Detective.Client.create_graph)
@@ -166,7 +164,7 @@ Returns a `Coroutine` for
 Sends a request to invite the specified AWS accounts to be member accounts in
 the behavior graph.
 
-Type annotations for `aiobotocore.create_client("detective").create_members`
+Type annotations for `session.create_client("detective").create_members`
 method.
 
 Boto3 documentation:
@@ -194,8 +192,7 @@ Returns a `Coroutine` for
 
 Disables the specified behavior graph and queues it to be deleted.
 
-Type annotations for `aiobotocore.create_client("detective").delete_graph`
-method.
+Type annotations for `session.create_client("detective").delete_graph` method.
 
 Boto3 documentation:
 [Detective.Client.delete_graph](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/detective.html#Detective.Client.delete_graph)
@@ -216,7 +213,7 @@ Keyword-only arguments:
 Deletes one or more member accounts from the administrator account's behavior
 graph.
 
-Type annotations for `aiobotocore.create_client("detective").delete_members`
+Type annotations for `session.create_client("detective").delete_members`
 method.
 
 Boto3 documentation:
@@ -242,7 +239,7 @@ Returns a `Coroutine` for
 Removes the member account from the specified behavior graph.
 
 Type annotations for
-`aiobotocore.create_client("detective").disassociate_membership` method.
+`session.create_client("detective").disassociate_membership` method.
 
 Boto3 documentation:
 [Detective.Client.disassociate_membership](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/detective.html#Detective.Client.disassociate_membership)
@@ -264,7 +261,7 @@ Keyword-only arguments:
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("detective").generate_presigned_url` method.
+`session.create_client("detective").generate_presigned_url` method.
 
 Boto3 documentation:
 [Detective.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/detective.html#Detective.Client.generate_presigned_url)
@@ -288,8 +285,7 @@ Returns a `Coroutine` for `str`.
 Returns the membership details for specified member accounts for a behavior
 graph.
 
-Type annotations for `aiobotocore.create_client("detective").get_members`
-method.
+Type annotations for `session.create_client("detective").get_members` method.
 
 Boto3 documentation:
 [Detective.Client.get_members](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/detective.html#Detective.Client.get_members)
@@ -314,8 +310,7 @@ Returns a `Coroutine` for
 Returns the list of behavior graphs that the calling account is an
 administrator account of.
 
-Type annotations for `aiobotocore.create_client("detective").list_graphs`
-method.
+Type annotations for `session.create_client("detective").list_graphs` method.
 
 Boto3 documentation:
 [Detective.Client.list_graphs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/detective.html#Detective.Client.list_graphs)
@@ -340,7 +335,7 @@ Returns a `Coroutine` for
 Retrieves the list of open and accepted behavior graph invitations for the
 member account.
 
-Type annotations for `aiobotocore.create_client("detective").list_invitations`
+Type annotations for `session.create_client("detective").list_invitations`
 method.
 
 Boto3 documentation:
@@ -365,8 +360,7 @@ Returns a `Coroutine` for
 
 Retrieves the list of member accounts for a behavior graph.
 
-Type annotations for `aiobotocore.create_client("detective").list_members`
-method.
+Type annotations for `session.create_client("detective").list_members` method.
 
 Boto3 documentation:
 [Detective.Client.list_members](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/detective.html#Detective.Client.list_members)
@@ -392,7 +386,7 @@ Returns a `Coroutine` for
 Returns the tag values that are assigned to a behavior graph.
 
 Type annotations for
-`aiobotocore.create_client("detective").list_tags_for_resource` method.
+`session.create_client("detective").list_tags_for_resource` method.
 
 Boto3 documentation:
 [Detective.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/detective.html#Detective.Client.list_tags_for_resource)
@@ -416,7 +410,7 @@ Returns a `Coroutine` for
 
 Rejects an invitation to contribute the account data to a behavior graph.
 
-Type annotations for `aiobotocore.create_client("detective").reject_invitation`
+Type annotations for `session.create_client("detective").reject_invitation`
 method.
 
 Boto3 documentation:
@@ -439,7 +433,7 @@ Sends a request to enable data ingest for a member account that has a status of
 `ACCEPTED_BUT_DISABLED` .
 
 Type annotations for
-`aiobotocore.create_client("detective").start_monitoring_member` method.
+`session.create_client("detective").start_monitoring_member` method.
 
 Boto3 documentation:
 [Detective.Client.start_monitoring_member](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/detective.html#Detective.Client.start_monitoring_member)
@@ -461,8 +455,7 @@ Keyword-only arguments:
 
 Applies tag values to a behavior graph.
 
-Type annotations for `aiobotocore.create_client("detective").tag_resource`
-method.
+Type annotations for `session.create_client("detective").tag_resource` method.
 
 Boto3 documentation:
 [Detective.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/detective.html#Detective.Client.tag_resource)
@@ -485,7 +478,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from a behavior graph.
 
-Type annotations for `aiobotocore.create_client("detective").untag_resource`
+Type annotations for `session.create_client("detective").untag_resource`
 method.
 
 Boto3 documentation:
@@ -502,3 +495,35 @@ Keyword-only arguments:
 - `TagKeys`: `Sequence`\[`str`\] *(required)*
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("detective").__aenter__` method.
+
+Boto3 documentation:
+[Detective.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/detective.html#Detective.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [DetectiveClient](#detectiveclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("detective").__aexit__` method.
+
+Boto3 documentation:
+[Detective.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/detective.html#Detective.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

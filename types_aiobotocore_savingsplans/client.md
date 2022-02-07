@@ -25,21 +25,24 @@ type annotations stubs module
     - [list_tags_for_resource](#list_tags_for_resource)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="savingsplansclient"></a>
 
 ## SavingsPlansClient
 
-Type annotations for `aiobotocore.create_client("savingsplans")`
+Type annotations for `session.create_client("savingsplans")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_savingsplans.client import SavingsPlansClient
 
-def get_savingsplans_client() -> SavingsPlansClient:
-    return Session().client("savingsplans")
+session = get_session()
+async with session.create_client("savingsplans") as client:
+    client: SavingsPlansClient
 ```
 
 Boto3 documentation:
@@ -77,8 +80,7 @@ Exceptions:
 
 SavingsPlansClient exceptions.
 
-Type annotations for `aiobotocore.create_client("savingsplans").exceptions`
-method.
+Type annotations for `session.create_client("savingsplans").exceptions` method.
 
 Boto3 documentation:
 [SavingsPlans.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/savingsplans.html#SavingsPlans.Client.exceptions)
@@ -91,19 +93,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("savingsplans").can_paginate`
+Type annotations for `session.create_client("savingsplans").can_paginate`
 method.
 
 Boto3 documentation:
 [SavingsPlans.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/savingsplans.html#SavingsPlans.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_savings_plan"></a>
 
@@ -112,7 +112,7 @@ Returns a `Coroutine` for `bool`.
 Creates a Savings Plan.
 
 Type annotations for
-`aiobotocore.create_client("savingsplans").create_savings_plan` method.
+`session.create_client("savingsplans").create_savings_plan` method.
 
 Boto3 documentation:
 [SavingsPlans.Client.create_savings_plan](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/savingsplans.html#SavingsPlans.Client.create_savings_plan)
@@ -142,7 +142,7 @@ Returns a `Coroutine` for
 Deletes the queued purchase for the specified Savings Plan.
 
 Type annotations for
-`aiobotocore.create_client("savingsplans").delete_queued_savings_plan` method.
+`session.create_client("savingsplans").delete_queued_savings_plan` method.
 
 Boto3 documentation:
 [SavingsPlans.Client.delete_queued_savings_plan](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/savingsplans.html#SavingsPlans.Client.delete_queued_savings_plan)
@@ -166,7 +166,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Describes the specified Savings Plans rates.
 
 Type annotations for
-`aiobotocore.create_client("savingsplans").describe_savings_plan_rates` method.
+`session.create_client("savingsplans").describe_savings_plan_rates` method.
 
 Boto3 documentation:
 [SavingsPlans.Client.describe_savings_plan_rates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/savingsplans.html#SavingsPlans.Client.describe_savings_plan_rates)
@@ -195,7 +195,7 @@ Returns a `Coroutine` for
 Describes the specified Savings Plans.
 
 Type annotations for
-`aiobotocore.create_client("savingsplans").describe_savings_plans` method.
+`session.create_client("savingsplans").describe_savings_plans` method.
 
 Boto3 documentation:
 [SavingsPlans.Client.describe_savings_plans](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/savingsplans.html#SavingsPlans.Client.describe_savings_plans)
@@ -227,7 +227,7 @@ Returns a `Coroutine` for
 Describes the specified Savings Plans offering rates.
 
 Type annotations for
-`aiobotocore.create_client("savingsplans").describe_savings_plans_offering_rates`
+`session.create_client("savingsplans").describe_savings_plans_offering_rates`
 method.
 
 Boto3 documentation:
@@ -267,7 +267,7 @@ Returns a `Coroutine` for
 Describes the specified Savings Plans offerings.
 
 Type annotations for
-`aiobotocore.create_client("savingsplans").describe_savings_plans_offerings`
+`session.create_client("savingsplans").describe_savings_plans_offerings`
 method.
 
 Boto3 documentation:
@@ -310,7 +310,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("savingsplans").generate_presigned_url` method.
+`session.create_client("savingsplans").generate_presigned_url` method.
 
 Boto3 documentation:
 [SavingsPlans.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/savingsplans.html#SavingsPlans.Client.generate_presigned_url)
@@ -334,7 +334,7 @@ Returns a `Coroutine` for `str`.
 Lists the tags for the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("savingsplans").list_tags_for_resource` method.
+`session.create_client("savingsplans").list_tags_for_resource` method.
 
 Boto3 documentation:
 [SavingsPlans.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/savingsplans.html#SavingsPlans.Client.list_tags_for_resource)
@@ -358,7 +358,7 @@ Returns a `Coroutine` for
 
 Adds the specified tags to the specified resource.
 
-Type annotations for `aiobotocore.create_client("savingsplans").tag_resource`
+Type annotations for `session.create_client("savingsplans").tag_resource`
 method.
 
 Boto3 documentation:
@@ -382,7 +382,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the specified tags from the specified resource.
 
-Type annotations for `aiobotocore.create_client("savingsplans").untag_resource`
+Type annotations for `session.create_client("savingsplans").untag_resource`
 method.
 
 Boto3 documentation:
@@ -399,3 +399,35 @@ Keyword-only arguments:
 - `tagKeys`: `Sequence`\[`str`\] *(required)*
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("savingsplans").__aenter__` method.
+
+Boto3 documentation:
+[SavingsPlans.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/savingsplans.html#SavingsPlans.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SavingsPlansClient](#savingsplansclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("savingsplans").__aexit__` method.
+
+Boto3 documentation:
+[SavingsPlans.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/savingsplans.html#SavingsPlans.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

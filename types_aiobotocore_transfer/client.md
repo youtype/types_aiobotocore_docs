@@ -48,22 +48,25 @@ type annotations stubs module
     - [update_access](#update_access)
     - [update_server](#update_server)
     - [update_user](#update_user)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="transferclient"></a>
 
 ## TransferClient
 
-Type annotations for `aiobotocore.create_client("transfer")`
+Type annotations for `session.create_client("transfer")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_transfer.client import TransferClient
 
-def get_transfer_client() -> TransferClient:
-    return Session().client("transfer")
+session = get_session()
+async with session.create_client("transfer") as client:
+    client: TransferClient
 ```
 
 Boto3 documentation:
@@ -106,7 +109,7 @@ Exceptions:
 
 TransferClient exceptions.
 
-Type annotations for `aiobotocore.create_client("transfer").exceptions` method.
+Type annotations for `session.create_client("transfer").exceptions` method.
 
 Boto3 documentation:
 [Transfer.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.exceptions)
@@ -119,19 +122,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("transfer").can_paginate`
-method.
+Type annotations for `session.create_client("transfer").can_paginate` method.
 
 Boto3 documentation:
 [Transfer.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_access"></a>
 
@@ -141,8 +141,7 @@ Used by administrators to choose which groups in the directory should have
 access to upload and download files over the enabled protocols using Amazon Web
 Services Transfer Family.
 
-Type annotations for `aiobotocore.create_client("transfer").create_access`
-method.
+Type annotations for `session.create_client("transfer").create_access` method.
 
 Boto3 documentation:
 [Transfer.Client.create_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.create_access)
@@ -175,8 +174,7 @@ Returns a `Coroutine` for
 Instantiates an auto-scaling virtual server based on the selected file transfer
 protocol in Amazon Web Services.
 
-Type annotations for `aiobotocore.create_client("transfer").create_server`
-method.
+Type annotations for `session.create_client("transfer").create_server` method.
 
 Boto3 documentation:
 [Transfer.Client.create_server](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.create_server)
@@ -215,8 +213,7 @@ Returns a `Coroutine` for
 Creates a user and associates them with an existing file transfer protocol-
 enabled server.
 
-Type annotations for `aiobotocore.create_client("transfer").create_user`
-method.
+Type annotations for `session.create_client("transfer").create_user` method.
 
 Boto3 documentation:
 [Transfer.Client.create_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.create_user)
@@ -251,7 +248,7 @@ Returns a `Coroutine` for
 Allows you to create a workflow with specified steps and step details the
 workflow invokes after file transfer completes.
 
-Type annotations for `aiobotocore.create_client("transfer").create_workflow`
+Type annotations for `session.create_client("transfer").create_workflow`
 method.
 
 Boto3 documentation:
@@ -282,8 +279,7 @@ Returns a `Coroutine` for
 Allows you to delete the access specified in the `ServerID` and `ExternalID`
 parameters.
 
-Type annotations for `aiobotocore.create_client("transfer").delete_access`
-method.
+Type annotations for `session.create_client("transfer").delete_access` method.
 
 Boto3 documentation:
 [Transfer.Client.delete_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.delete_access)
@@ -304,8 +300,7 @@ Keyword-only arguments:
 
 Deletes the file transfer protocol-enabled server that you specify.
 
-Type annotations for `aiobotocore.create_client("transfer").delete_server`
-method.
+Type annotations for `session.create_client("transfer").delete_server` method.
 
 Boto3 documentation:
 [Transfer.Client.delete_server](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.delete_server)
@@ -325,8 +320,8 @@ Keyword-only arguments:
 
 Deletes a user's Secure Shell (SSH) public key.
 
-Type annotations for
-`aiobotocore.create_client("transfer").delete_ssh_public_key` method.
+Type annotations for `session.create_client("transfer").delete_ssh_public_key`
+method.
 
 Boto3 documentation:
 [Transfer.Client.delete_ssh_public_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.delete_ssh_public_key)
@@ -350,8 +345,7 @@ Keyword-only arguments:
 Deletes the user belonging to a file transfer protocol-enabled server you
 specify.
 
-Type annotations for `aiobotocore.create_client("transfer").delete_user`
-method.
+Type annotations for `session.create_client("transfer").delete_user` method.
 
 Boto3 documentation:
 [Transfer.Client.delete_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.delete_user)
@@ -372,7 +366,7 @@ Keyword-only arguments:
 
 Deletes the specified workflow.
 
-Type annotations for `aiobotocore.create_client("transfer").delete_workflow`
+Type annotations for `session.create_client("transfer").delete_workflow`
 method.
 
 Boto3 documentation:
@@ -394,7 +388,7 @@ Keyword-only arguments:
 Describes the access that is assigned to the specific file transfer protocol-
 enabled server, as identified by its `ServerId` property and its `ExternalID` .
 
-Type annotations for `aiobotocore.create_client("transfer").describe_access`
+Type annotations for `session.create_client("transfer").describe_access`
 method.
 
 Boto3 documentation:
@@ -420,7 +414,7 @@ Returns a `Coroutine` for
 You can use `DescribeExecution` to check the details of the execution of the
 specified workflow.
 
-Type annotations for `aiobotocore.create_client("transfer").describe_execution`
+Type annotations for `session.create_client("transfer").describe_execution`
 method.
 
 Boto3 documentation:
@@ -448,7 +442,7 @@ Describes the security policy that is attached to your file transfer protocol-
 enabled server.
 
 Type annotations for
-`aiobotocore.create_client("transfer").describe_security_policy` method.
+`session.create_client("transfer").describe_security_policy` method.
 
 Boto3 documentation:
 [Transfer.Client.describe_security_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.describe_security_policy)
@@ -473,7 +467,7 @@ Returns a `Coroutine` for
 Describes a file transfer protocol-enabled server that you specify by passing
 the `ServerId` parameter.
 
-Type annotations for `aiobotocore.create_client("transfer").describe_server`
+Type annotations for `session.create_client("transfer").describe_server`
 method.
 
 Boto3 documentation:
@@ -498,8 +492,7 @@ Returns a `Coroutine` for
 Describes the user assigned to the specific file transfer protocol-enabled
 server, as identified by its `ServerId` property.
 
-Type annotations for `aiobotocore.create_client("transfer").describe_user`
-method.
+Type annotations for `session.create_client("transfer").describe_user` method.
 
 Boto3 documentation:
 [Transfer.Client.describe_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.describe_user)
@@ -523,7 +516,7 @@ Returns a `Coroutine` for
 
 Describes the specified workflow.
 
-Type annotations for `aiobotocore.create_client("transfer").describe_workflow`
+Type annotations for `session.create_client("transfer").describe_workflow`
 method.
 
 Boto3 documentation:
@@ -547,8 +540,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("transfer").generate_presigned_url` method.
+Type annotations for `session.create_client("transfer").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Transfer.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.generate_presigned_url)
@@ -573,8 +566,8 @@ Adds a Secure Shell (SSH) public key to a user account identified by a
 `UserName` value assigned to the specific file transfer protocol-enabled
 server, identified by `ServerId` .
 
-Type annotations for
-`aiobotocore.create_client("transfer").import_ssh_public_key` method.
+Type annotations for `session.create_client("transfer").import_ssh_public_key`
+method.
 
 Boto3 documentation:
 [Transfer.Client.import_ssh_public_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.import_ssh_public_key)
@@ -600,8 +593,7 @@ Returns a `Coroutine` for
 
 Lists the details for all the accesses you have on your server.
 
-Type annotations for `aiobotocore.create_client("transfer").list_accesses`
-method.
+Type annotations for `session.create_client("transfer").list_accesses` method.
 
 Boto3 documentation:
 [Transfer.Client.list_accesses](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.list_accesses)
@@ -626,7 +618,7 @@ Returns a `Coroutine` for
 
 Lists all executions for the specified workflow.
 
-Type annotations for `aiobotocore.create_client("transfer").list_executions`
+Type annotations for `session.create_client("transfer").list_executions`
 method.
 
 Boto3 documentation:
@@ -653,8 +645,8 @@ Returns a `Coroutine` for
 Lists the security policies that are attached to your file transfer protocol-
 enabled servers.
 
-Type annotations for
-`aiobotocore.create_client("transfer").list_security_policies` method.
+Type annotations for `session.create_client("transfer").list_security_policies`
+method.
 
 Boto3 documentation:
 [Transfer.Client.list_security_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.list_security_policies)
@@ -680,8 +672,7 @@ Returns a `Coroutine` for
 Lists the file transfer protocol-enabled servers that are associated with your
 Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("transfer").list_servers`
-method.
+Type annotations for `session.create_client("transfer").list_servers` method.
 
 Boto3 documentation:
 [Transfer.Client.list_servers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.list_servers)
@@ -706,8 +697,8 @@ Returns a `Coroutine` for
 Lists all of the tags associated with the Amazon Resource Name (ARN) that you
 specify.
 
-Type annotations for
-`aiobotocore.create_client("transfer").list_tags_for_resource` method.
+Type annotations for `session.create_client("transfer").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Transfer.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.list_tags_for_resource)
@@ -734,7 +725,7 @@ Returns a `Coroutine` for
 Lists the users for a file transfer protocol-enabled server that you specify by
 passing the `ServerId` parameter.
 
-Type annotations for `aiobotocore.create_client("transfer").list_users` method.
+Type annotations for `session.create_client("transfer").list_users` method.
 
 Boto3 documentation:
 [Transfer.Client.list_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.list_users)
@@ -759,8 +750,7 @@ Returns a `Coroutine` for
 
 Lists all of your workflows.
 
-Type annotations for `aiobotocore.create_client("transfer").list_workflows`
-method.
+Type annotations for `session.create_client("transfer").list_workflows` method.
 
 Boto3 documentation:
 [Transfer.Client.list_workflows](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.list_workflows)
@@ -785,7 +775,7 @@ Returns a `Coroutine` for
 Sends a callback for asynchronous custom steps.
 
 Type annotations for
-`aiobotocore.create_client("transfer").send_workflow_step_state` method.
+`session.create_client("transfer").send_workflow_step_state` method.
 
 Boto3 documentation:
 [Transfer.Client.send_workflow_step_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.send_workflow_step_state)
@@ -813,8 +803,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Changes the state of a file transfer protocol-enabled server from `OFFLINE` to
 `ONLINE`.
 
-Type annotations for `aiobotocore.create_client("transfer").start_server`
-method.
+Type annotations for `session.create_client("transfer").start_server` method.
 
 Boto3 documentation:
 [Transfer.Client.start_server](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.start_server)
@@ -835,8 +824,7 @@ Keyword-only arguments:
 Changes the state of a file transfer protocol-enabled server from `ONLINE` to
 `OFFLINE`.
 
-Type annotations for `aiobotocore.create_client("transfer").stop_server`
-method.
+Type annotations for `session.create_client("transfer").stop_server` method.
 
 Boto3 documentation:
 [Transfer.Client.stop_server](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.stop_server)
@@ -857,8 +845,7 @@ Keyword-only arguments:
 Attaches a key-value pair to a resource, as identified by its Amazon Resource
 Name (ARN).
 
-Type annotations for `aiobotocore.create_client("transfer").tag_resource`
-method.
+Type annotations for `session.create_client("transfer").tag_resource` method.
 
 Boto3 documentation:
 [Transfer.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.tag_resource)
@@ -881,8 +868,8 @@ If the `IdentityProviderType` of a file transfer protocol-enabled server is
 `AWS_DIRECTORY_SERVICE` or `API_Gateway` , tests whether your identity provider
 is set up successfully.
 
-Type annotations for
-`aiobotocore.create_client("transfer").test_identity_provider` method.
+Type annotations for `session.create_client("transfer").test_identity_provider`
+method.
 
 Boto3 documentation:
 [Transfer.Client.test_identity_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.test_identity_provider)
@@ -911,8 +898,7 @@ Returns a `Coroutine` for
 Detaches a key-value pair from a resource, as identified by its Amazon Resource
 Name (ARN).
 
-Type annotations for `aiobotocore.create_client("transfer").untag_resource`
-method.
+Type annotations for `session.create_client("transfer").untag_resource` method.
 
 Boto3 documentation:
 [Transfer.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.untag_resource)
@@ -934,8 +920,7 @@ Keyword-only arguments:
 Allows you to update parameters for the access specified in the `ServerID` and
 `ExternalID` parameters.
 
-Type annotations for `aiobotocore.create_client("transfer").update_access`
-method.
+Type annotations for `session.create_client("transfer").update_access` method.
 
 Boto3 documentation:
 [Transfer.Client.update_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.update_access)
@@ -968,8 +953,7 @@ Returns a `Coroutine` for
 Updates the file transfer protocol-enabled server's properties after that
 server has been created.
 
-Type annotations for `aiobotocore.create_client("transfer").update_server`
-method.
+Type annotations for `session.create_client("transfer").update_server` method.
 
 Boto3 documentation:
 [Transfer.Client.update_server](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.update_server)
@@ -1006,8 +990,7 @@ Returns a `Coroutine` for
 
 Assigns new properties to a user.
 
-Type annotations for `aiobotocore.create_client("transfer").update_user`
-method.
+Type annotations for `session.create_client("transfer").update_user` method.
 
 Boto3 documentation:
 [Transfer.Client.update_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.update_user)
@@ -1033,12 +1016,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateUserResponseTypeDef](./type_defs.md#updateuserresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("transfer").__aenter__` method.
+
+Boto3 documentation:
+[Transfer.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [TransferClient](#transferclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("transfer").__aexit__` method.
+
+Boto3 documentation:
+[Transfer.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transfer.html#Transfer.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("transfer").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("transfer").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_servers")` ->
   [ListServersPaginator](./paginators.md#listserverspaginator)

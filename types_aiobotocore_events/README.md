@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[events]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[events]'
+
+# standalone installation
 pip install types-aiobotocore-events
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-events
 
 ## EventBridgeClient
 
-Type annotations for `aiobotocore.create_client("events")` as
+Type annotations for `session.create_client("events")` as
 [EventBridgeClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_events.client import EventBridgeClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [activate_event_source](./client.md#activate_event_source)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_replay](./client.md#cancel_replay)
@@ -127,7 +133,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_events.paginators import ListRuleNamesByTargetPaginator, ...
+from types_aiobotocore_events.paginator import ListRuleNamesByTargetPaginator, ...
 ```
 
 - [ListRuleNamesByTargetPaginator](./paginators.md#listrulenamesbytargetpaginator)

@@ -46,17 +46,19 @@ type annotations stubs module
 ## DescribeAggregateComplianceByConfigRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_aggregate_compliance_by_config_rules")`.
+`session.create_client("config").get_paginator("describe_aggregate_compliance_by_config_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeAggregateComplianceByConfigRulesPaginator
 
-def get_describe_aggregate_compliance_by_config_rules_paginator() -> DescribeAggregateComplianceByConfigRulesPaginator:
-    return Session().create_client("config").get_paginator("describe_aggregate_compliance_by_config_rules")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeAggregateComplianceByConfigRulesPaginator = client.get_paginator("describe_aggregate_compliance_by_config_rules")
 ```
 
 Boto3 documentation:
@@ -79,17 +81,19 @@ method:
 ## DescribeAggregateComplianceByConformancePacksPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_aggregate_compliance_by_conformance_packs")`.
+`session.create_client("config").get_paginator("describe_aggregate_compliance_by_conformance_packs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeAggregateComplianceByConformancePacksPaginator
 
-def get_describe_aggregate_compliance_by_conformance_packs_paginator() -> DescribeAggregateComplianceByConformancePacksPaginator:
-    return Session().create_client("config").get_paginator("describe_aggregate_compliance_by_conformance_packs")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeAggregateComplianceByConformancePacksPaginator = client.get_paginator("describe_aggregate_compliance_by_conformance_packs")
 ```
 
 Boto3 documentation:
@@ -112,17 +116,19 @@ method:
 ## DescribeAggregationAuthorizationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_aggregation_authorizations")`.
+`session.create_client("config").get_paginator("describe_aggregation_authorizations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeAggregationAuthorizationsPaginator
 
-def get_describe_aggregation_authorizations_paginator() -> DescribeAggregationAuthorizationsPaginator:
-    return Session().create_client("config").get_paginator("describe_aggregation_authorizations")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeAggregationAuthorizationsPaginator = client.get_paginator("describe_aggregation_authorizations")
 ```
 
 Boto3 documentation:
@@ -141,17 +147,19 @@ Arguments for `DescribeAggregationAuthorizationsPaginator.paginate` method:
 ## DescribeComplianceByConfigRulePaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_compliance_by_config_rule")`.
+`session.create_client("config").get_paginator("describe_compliance_by_config_rule")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeComplianceByConfigRulePaginator
 
-def get_describe_compliance_by_config_rule_paginator() -> DescribeComplianceByConfigRulePaginator:
-    return Session().create_client("config").get_paginator("describe_compliance_by_config_rule")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeComplianceByConfigRulePaginator = client.get_paginator("describe_compliance_by_config_rule")
 ```
 
 Boto3 documentation:
@@ -173,17 +181,19 @@ Arguments for `DescribeComplianceByConfigRulePaginator.paginate` method:
 ## DescribeComplianceByResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_compliance_by_resource")`.
+`session.create_client("config").get_paginator("describe_compliance_by_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeComplianceByResourcePaginator
 
-def get_describe_compliance_by_resource_paginator() -> DescribeComplianceByResourcePaginator:
-    return Session().create_client("config").get_paginator("describe_compliance_by_resource")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeComplianceByResourcePaginator = client.get_paginator("describe_compliance_by_resource")
 ```
 
 Boto3 documentation:
@@ -206,17 +216,19 @@ Arguments for `DescribeComplianceByResourcePaginator.paginate` method:
 ## DescribeConfigRuleEvaluationStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_config_rule_evaluation_status")`.
+`session.create_client("config").get_paginator("describe_config_rule_evaluation_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeConfigRuleEvaluationStatusPaginator
 
-def get_describe_config_rule_evaluation_status_paginator() -> DescribeConfigRuleEvaluationStatusPaginator:
-    return Session().create_client("config").get_paginator("describe_config_rule_evaluation_status")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeConfigRuleEvaluationStatusPaginator = client.get_paginator("describe_config_rule_evaluation_status")
 ```
 
 Boto3 documentation:
@@ -236,17 +248,19 @@ Arguments for `DescribeConfigRuleEvaluationStatusPaginator.paginate` method:
 ## DescribeConfigRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_config_rules")`.
+`session.create_client("config").get_paginator("describe_config_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeConfigRulesPaginator
 
-def get_describe_config_rules_paginator() -> DescribeConfigRulesPaginator:
-    return Session().create_client("config").get_paginator("describe_config_rules")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeConfigRulesPaginator = client.get_paginator("describe_config_rules")
 ```
 
 Boto3 documentation:
@@ -266,17 +280,19 @@ Arguments for `DescribeConfigRulesPaginator.paginate` method:
 ## DescribeConfigurationAggregatorSourcesStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_configuration_aggregator_sources_status")`.
+`session.create_client("config").get_paginator("describe_configuration_aggregator_sources_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeConfigurationAggregatorSourcesStatusPaginator
 
-def get_describe_configuration_aggregator_sources_status_paginator() -> DescribeConfigurationAggregatorSourcesStatusPaginator:
-    return Session().create_client("config").get_paginator("describe_configuration_aggregator_sources_status")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeConfigurationAggregatorSourcesStatusPaginator = client.get_paginator("describe_configuration_aggregator_sources_status")
 ```
 
 Boto3 documentation:
@@ -299,17 +315,19 @@ method:
 ## DescribeConfigurationAggregatorsPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_configuration_aggregators")`.
+`session.create_client("config").get_paginator("describe_configuration_aggregators")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeConfigurationAggregatorsPaginator
 
-def get_describe_configuration_aggregators_paginator() -> DescribeConfigurationAggregatorsPaginator:
-    return Session().create_client("config").get_paginator("describe_configuration_aggregators")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeConfigurationAggregatorsPaginator = client.get_paginator("describe_configuration_aggregators")
 ```
 
 Boto3 documentation:
@@ -329,17 +347,19 @@ Arguments for `DescribeConfigurationAggregatorsPaginator.paginate` method:
 ## DescribeConformancePackStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_conformance_pack_status")`.
+`session.create_client("config").get_paginator("describe_conformance_pack_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeConformancePackStatusPaginator
 
-def get_describe_conformance_pack_status_paginator() -> DescribeConformancePackStatusPaginator:
-    return Session().create_client("config").get_paginator("describe_conformance_pack_status")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeConformancePackStatusPaginator = client.get_paginator("describe_conformance_pack_status")
 ```
 
 Boto3 documentation:
@@ -359,17 +379,19 @@ Arguments for `DescribeConformancePackStatusPaginator.paginate` method:
 ## DescribeConformancePacksPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_conformance_packs")`.
+`session.create_client("config").get_paginator("describe_conformance_packs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeConformancePacksPaginator
 
-def get_describe_conformance_packs_paginator() -> DescribeConformancePacksPaginator:
-    return Session().create_client("config").get_paginator("describe_conformance_packs")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeConformancePacksPaginator = client.get_paginator("describe_conformance_packs")
 ```
 
 Boto3 documentation:
@@ -389,17 +411,19 @@ Arguments for `DescribeConformancePacksPaginator.paginate` method:
 ## DescribeOrganizationConfigRuleStatusesPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_organization_config_rule_statuses")`.
+`session.create_client("config").get_paginator("describe_organization_config_rule_statuses")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeOrganizationConfigRuleStatusesPaginator
 
-def get_describe_organization_config_rule_statuses_paginator() -> DescribeOrganizationConfigRuleStatusesPaginator:
-    return Session().create_client("config").get_paginator("describe_organization_config_rule_statuses")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeOrganizationConfigRuleStatusesPaginator = client.get_paginator("describe_organization_config_rule_statuses")
 ```
 
 Boto3 documentation:
@@ -420,17 +444,19 @@ method:
 ## DescribeOrganizationConfigRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_organization_config_rules")`.
+`session.create_client("config").get_paginator("describe_organization_config_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeOrganizationConfigRulesPaginator
 
-def get_describe_organization_config_rules_paginator() -> DescribeOrganizationConfigRulesPaginator:
-    return Session().create_client("config").get_paginator("describe_organization_config_rules")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeOrganizationConfigRulesPaginator = client.get_paginator("describe_organization_config_rules")
 ```
 
 Boto3 documentation:
@@ -450,17 +476,19 @@ Arguments for `DescribeOrganizationConfigRulesPaginator.paginate` method:
 ## DescribeOrganizationConformancePackStatusesPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_organization_conformance_pack_statuses")`.
+`session.create_client("config").get_paginator("describe_organization_conformance_pack_statuses")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeOrganizationConformancePackStatusesPaginator
 
-def get_describe_organization_conformance_pack_statuses_paginator() -> DescribeOrganizationConformancePackStatusesPaginator:
-    return Session().create_client("config").get_paginator("describe_organization_conformance_pack_statuses")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeOrganizationConformancePackStatusesPaginator = client.get_paginator("describe_organization_conformance_pack_statuses")
 ```
 
 Boto3 documentation:
@@ -481,17 +509,19 @@ method:
 ## DescribeOrganizationConformancePacksPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_organization_conformance_packs")`.
+`session.create_client("config").get_paginator("describe_organization_conformance_packs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeOrganizationConformancePacksPaginator
 
-def get_describe_organization_conformance_packs_paginator() -> DescribeOrganizationConformancePacksPaginator:
-    return Session().create_client("config").get_paginator("describe_organization_conformance_packs")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeOrganizationConformancePacksPaginator = client.get_paginator("describe_organization_conformance_packs")
 ```
 
 Boto3 documentation:
@@ -511,17 +541,19 @@ Arguments for `DescribeOrganizationConformancePacksPaginator.paginate` method:
 ## DescribePendingAggregationRequestsPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_pending_aggregation_requests")`.
+`session.create_client("config").get_paginator("describe_pending_aggregation_requests")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribePendingAggregationRequestsPaginator
 
-def get_describe_pending_aggregation_requests_paginator() -> DescribePendingAggregationRequestsPaginator:
-    return Session().create_client("config").get_paginator("describe_pending_aggregation_requests")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribePendingAggregationRequestsPaginator = client.get_paginator("describe_pending_aggregation_requests")
 ```
 
 Boto3 documentation:
@@ -540,17 +572,19 @@ Arguments for `DescribePendingAggregationRequestsPaginator.paginate` method:
 ## DescribeRemediationExecutionStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_remediation_execution_status")`.
+`session.create_client("config").get_paginator("describe_remediation_execution_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeRemediationExecutionStatusPaginator
 
-def get_describe_remediation_execution_status_paginator() -> DescribeRemediationExecutionStatusPaginator:
-    return Session().create_client("config").get_paginator("describe_remediation_execution_status")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeRemediationExecutionStatusPaginator = client.get_paginator("describe_remediation_execution_status")
 ```
 
 Boto3 documentation:
@@ -572,17 +606,19 @@ Arguments for `DescribeRemediationExecutionStatusPaginator.paginate` method:
 ## DescribeRetentionConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("describe_retention_configurations")`.
+`session.create_client("config").get_paginator("describe_retention_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import DescribeRetentionConfigurationsPaginator
 
-def get_describe_retention_configurations_paginator() -> DescribeRetentionConfigurationsPaginator:
-    return Session().create_client("config").get_paginator("describe_retention_configurations")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: DescribeRetentionConfigurationsPaginator = client.get_paginator("describe_retention_configurations")
 ```
 
 Boto3 documentation:
@@ -602,17 +638,19 @@ Arguments for `DescribeRetentionConfigurationsPaginator.paginate` method:
 ## GetAggregateComplianceDetailsByConfigRulePaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("get_aggregate_compliance_details_by_config_rule")`.
+`session.create_client("config").get_paginator("get_aggregate_compliance_details_by_config_rule")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import GetAggregateComplianceDetailsByConfigRulePaginator
 
-def get_get_aggregate_compliance_details_by_config_rule_paginator() -> GetAggregateComplianceDetailsByConfigRulePaginator:
-    return Session().create_client("config").get_paginator("get_aggregate_compliance_details_by_config_rule")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: GetAggregateComplianceDetailsByConfigRulePaginator = client.get_paginator("get_aggregate_compliance_details_by_config_rule")
 ```
 
 Boto3 documentation:
@@ -637,17 +675,19 @@ method:
 ## GetComplianceDetailsByConfigRulePaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("get_compliance_details_by_config_rule")`.
+`session.create_client("config").get_paginator("get_compliance_details_by_config_rule")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import GetComplianceDetailsByConfigRulePaginator
 
-def get_get_compliance_details_by_config_rule_paginator() -> GetComplianceDetailsByConfigRulePaginator:
-    return Session().create_client("config").get_paginator("get_compliance_details_by_config_rule")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: GetComplianceDetailsByConfigRulePaginator = client.get_paginator("get_compliance_details_by_config_rule")
 ```
 
 Boto3 documentation:
@@ -669,17 +709,19 @@ Arguments for `GetComplianceDetailsByConfigRulePaginator.paginate` method:
 ## GetComplianceDetailsByResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("get_compliance_details_by_resource")`.
+`session.create_client("config").get_paginator("get_compliance_details_by_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import GetComplianceDetailsByResourcePaginator
 
-def get_get_compliance_details_by_resource_paginator() -> GetComplianceDetailsByResourcePaginator:
-    return Session().create_client("config").get_paginator("get_compliance_details_by_resource")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: GetComplianceDetailsByResourcePaginator = client.get_paginator("get_compliance_details_by_resource")
 ```
 
 Boto3 documentation:
@@ -702,17 +744,19 @@ Arguments for `GetComplianceDetailsByResourcePaginator.paginate` method:
 ## GetConformancePackComplianceSummaryPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("get_conformance_pack_compliance_summary")`.
+`session.create_client("config").get_paginator("get_conformance_pack_compliance_summary")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import GetConformancePackComplianceSummaryPaginator
 
-def get_get_conformance_pack_compliance_summary_paginator() -> GetConformancePackComplianceSummaryPaginator:
-    return Session().create_client("config").get_paginator("get_conformance_pack_compliance_summary")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: GetConformancePackComplianceSummaryPaginator = client.get_paginator("get_conformance_pack_compliance_summary")
 ```
 
 Boto3 documentation:
@@ -732,17 +776,19 @@ Arguments for `GetConformancePackComplianceSummaryPaginator.paginate` method:
 ## GetOrganizationConfigRuleDetailedStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("get_organization_config_rule_detailed_status")`.
+`session.create_client("config").get_paginator("get_organization_config_rule_detailed_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import GetOrganizationConfigRuleDetailedStatusPaginator
 
-def get_get_organization_config_rule_detailed_status_paginator() -> GetOrganizationConfigRuleDetailedStatusPaginator:
-    return Session().create_client("config").get_paginator("get_organization_config_rule_detailed_status")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: GetOrganizationConfigRuleDetailedStatusPaginator = client.get_paginator("get_organization_config_rule_detailed_status")
 ```
 
 Boto3 documentation:
@@ -765,17 +811,19 @@ method:
 ## GetOrganizationConformancePackDetailedStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("get_organization_conformance_pack_detailed_status")`.
+`session.create_client("config").get_paginator("get_organization_conformance_pack_detailed_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import GetOrganizationConformancePackDetailedStatusPaginator
 
-def get_get_organization_conformance_pack_detailed_status_paginator() -> GetOrganizationConformancePackDetailedStatusPaginator:
-    return Session().create_client("config").get_paginator("get_organization_conformance_pack_detailed_status")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: GetOrganizationConformancePackDetailedStatusPaginator = client.get_paginator("get_organization_conformance_pack_detailed_status")
 ```
 
 Boto3 documentation:
@@ -798,17 +846,19 @@ method:
 ## GetResourceConfigHistoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("get_resource_config_history")`.
+`session.create_client("config").get_paginator("get_resource_config_history")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import GetResourceConfigHistoryPaginator
 
-def get_get_resource_config_history_paginator() -> GetResourceConfigHistoryPaginator:
-    return Session().create_client("config").get_paginator("get_resource_config_history")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: GetResourceConfigHistoryPaginator = client.get_paginator("get_resource_config_history")
 ```
 
 Boto3 documentation:
@@ -834,17 +884,19 @@ Arguments for `GetResourceConfigHistoryPaginator.paginate` method:
 ## ListAggregateDiscoveredResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("list_aggregate_discovered_resources")`.
+`session.create_client("config").get_paginator("list_aggregate_discovered_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import ListAggregateDiscoveredResourcesPaginator
 
-def get_list_aggregate_discovered_resources_paginator() -> ListAggregateDiscoveredResourcesPaginator:
-    return Session().create_client("config").get_paginator("list_aggregate_discovered_resources")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: ListAggregateDiscoveredResourcesPaginator = client.get_paginator("list_aggregate_discovered_resources")
 ```
 
 Boto3 documentation:
@@ -867,17 +919,19 @@ Arguments for `ListAggregateDiscoveredResourcesPaginator.paginate` method:
 ## ListDiscoveredResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("list_discovered_resources")`.
+`session.create_client("config").get_paginator("list_discovered_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import ListDiscoveredResourcesPaginator
 
-def get_list_discovered_resources_paginator() -> ListDiscoveredResourcesPaginator:
-    return Session().create_client("config").get_paginator("list_discovered_resources")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: ListDiscoveredResourcesPaginator = client.get_paginator("list_discovered_resources")
 ```
 
 Boto3 documentation:
@@ -901,17 +955,19 @@ Arguments for `ListDiscoveredResourcesPaginator.paginate` method:
 ## ListTagsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("list_tags_for_resource")`.
+`session.create_client("config").get_paginator("list_tags_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import ListTagsForResourcePaginator
 
-def get_list_tags_for_resource_paginator() -> ListTagsForResourcePaginator:
-    return Session().create_client("config").get_paginator("list_tags_for_resource")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
 ```
 
 Boto3 documentation:
@@ -931,17 +987,19 @@ Arguments for `ListTagsForResourcePaginator.paginate` method:
 ## SelectAggregateResourceConfigPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("select_aggregate_resource_config")`.
+`session.create_client("config").get_paginator("select_aggregate_resource_config")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import SelectAggregateResourceConfigPaginator
 
-def get_select_aggregate_resource_config_paginator() -> SelectAggregateResourceConfigPaginator:
-    return Session().create_client("config").get_paginator("select_aggregate_resource_config")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: SelectAggregateResourceConfigPaginator = client.get_paginator("select_aggregate_resource_config")
 ```
 
 Boto3 documentation:
@@ -963,17 +1021,19 @@ Arguments for `SelectAggregateResourceConfigPaginator.paginate` method:
 ## SelectResourceConfigPaginator
 
 Type annotations for
-`aiobotocore.create_client("config").get_paginator("select_resource_config")`.
+`session.create_client("config").get_paginator("select_resource_config")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_config.paginator import SelectResourceConfigPaginator
 
-def get_select_resource_config_paginator() -> SelectResourceConfigPaginator:
-    return Session().create_client("config").get_paginator("select_resource_config")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
+    paginator: SelectResourceConfigPaginator = client.get_paginator("select_resource_config")
 ```
 
 Boto3 documentation:

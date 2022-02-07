@@ -108,22 +108,25 @@ type annotations stubs module
     - [update_resource_definition](#update_resource_definition)
     - [update_subscription_definition](#update_subscription_definition)
     - [update_thing_runtime_configuration](#update_thing_runtime_configuration)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="greengrassclient"></a>
 
 ## GreengrassClient
 
-Type annotations for `aiobotocore.create_client("greengrass")`
+Type annotations for `session.create_client("greengrass")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_greengrass.client import GreengrassClient
 
-def get_greengrass_client() -> GreengrassClient:
-    return Session().client("greengrass")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
 ```
 
 Boto3 documentation:
@@ -159,8 +162,7 @@ Exceptions:
 
 GreengrassClient exceptions.
 
-Type annotations for `aiobotocore.create_client("greengrass").exceptions`
-method.
+Type annotations for `session.create_client("greengrass").exceptions` method.
 
 Boto3 documentation:
 [Greengrass.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.exceptions)
@@ -174,7 +176,7 @@ Returns [Exceptions](#exceptions).
 Associates a role with a group.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").associate_role_to_group` method.
+`session.create_client("greengrass").associate_role_to_group` method.
 
 Boto3 documentation:
 [Greengrass.Client.associate_role_to_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.associate_role_to_group)
@@ -200,8 +202,7 @@ Returns a `Coroutine` for
 Associates a role with your account.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").associate_service_role_to_account`
-method.
+`session.create_client("greengrass").associate_service_role_to_account` method.
 
 Boto3 documentation:
 [Greengrass.Client.associate_service_role_to_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.associate_service_role_to_account)
@@ -225,19 +226,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("greengrass").can_paginate`
-method.
+Type annotations for `session.create_client("greengrass").can_paginate` method.
 
 Boto3 documentation:
 [Greengrass.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_connector_definition"></a>
 
@@ -246,7 +244,7 @@ Returns a `Coroutine` for `bool`.
 Creates a connector definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").create_connector_definition` method.
+`session.create_client("greengrass").create_connector_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.create_connector_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.create_connector_definition)
@@ -275,7 +273,7 @@ Returns a `Coroutine` for
 Creates a version of a connector definition which has already been defined.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").create_connector_definition_version`
+`session.create_client("greengrass").create_connector_definition_version`
 method.
 
 Boto3 documentation:
@@ -304,7 +302,7 @@ Returns a `Coroutine` for
 Creates a core definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").create_core_definition` method.
+`session.create_client("greengrass").create_core_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.create_core_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.create_core_definition)
@@ -333,8 +331,7 @@ Returns a `Coroutine` for
 Creates a version of a core definition that has already been defined.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").create_core_definition_version`
-method.
+`session.create_client("greengrass").create_core_definition_version` method.
 
 Boto3 documentation:
 [Greengrass.Client.create_core_definition_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.create_core_definition_version)
@@ -360,8 +357,8 @@ Returns a `Coroutine` for
 
 Creates a deployment.
 
-Type annotations for
-`aiobotocore.create_client("greengrass").create_deployment` method.
+Type annotations for `session.create_client("greengrass").create_deployment`
+method.
 
 Boto3 documentation:
 [Greengrass.Client.create_deployment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.create_deployment)
@@ -390,7 +387,7 @@ Returns a `Coroutine` for
 Creates a device definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").create_device_definition` method.
+`session.create_client("greengrass").create_device_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.create_device_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.create_device_definition)
@@ -419,8 +416,7 @@ Returns a `Coroutine` for
 Creates a version of a device definition that has already been defined.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").create_device_definition_version`
-method.
+`session.create_client("greengrass").create_device_definition_version` method.
 
 Boto3 documentation:
 [Greengrass.Client.create_device_definition_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.create_device_definition_version)
@@ -448,7 +444,7 @@ Creates a Lambda function definition which contains a list of Lambda functions
 and their configurations to be used in a group.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").create_function_definition` method.
+`session.create_client("greengrass").create_function_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.create_function_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.create_function_definition)
@@ -478,7 +474,7 @@ Creates a version of a Lambda function definition that has already been
 defined.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").create_function_definition_version`
+`session.create_client("greengrass").create_function_definition_version`
 method.
 
 Boto3 documentation:
@@ -507,8 +503,7 @@ Returns a `Coroutine` for
 
 Creates a group.
 
-Type annotations for `aiobotocore.create_client("greengrass").create_group`
-method.
+Type annotations for `session.create_client("greengrass").create_group` method.
 
 Boto3 documentation:
 [Greengrass.Client.create_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.create_group)
@@ -535,7 +530,7 @@ Returns a `Coroutine` for
 Creates a CA for the group.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").create_group_certificate_authority`
+`session.create_client("greengrass").create_group_certificate_authority`
 method.
 
 Boto3 documentation:
@@ -561,8 +556,8 @@ Returns a `Coroutine` for
 
 Creates a version of a group which has already been defined.
 
-Type annotations for
-`aiobotocore.create_client("greengrass").create_group_version` method.
+Type annotations for `session.create_client("greengrass").create_group_version`
+method.
 
 Boto3 documentation:
 [Greengrass.Client.create_group_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.create_group_version)
@@ -595,7 +590,7 @@ Returns a `Coroutine` for
 Creates a logger definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").create_logger_definition` method.
+`session.create_client("greengrass").create_logger_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.create_logger_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.create_logger_definition)
@@ -624,8 +619,7 @@ Returns a `Coroutine` for
 Creates a version of a logger definition that has already been defined.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").create_logger_definition_version`
-method.
+`session.create_client("greengrass").create_logger_definition_version` method.
 
 Boto3 documentation:
 [Greengrass.Client.create_logger_definition_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.create_logger_definition_version)
@@ -653,7 +647,7 @@ Creates a resource definition which contains a list of resources to be used in
 a group.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").create_resource_definition` method.
+`session.create_client("greengrass").create_resource_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.create_resource_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.create_resource_definition)
@@ -682,7 +676,7 @@ Returns a `Coroutine` for
 Creates a version of a resource definition that has already been defined.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").create_resource_definition_version`
+`session.create_client("greengrass").create_resource_definition_version`
 method.
 
 Boto3 documentation:
@@ -712,7 +706,7 @@ thing group.) Use this to update the OTA Agent as well as the Greengrass core
 software.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").create_software_update_job` method.
+`session.create_client("greengrass").create_software_update_job` method.
 
 Boto3 documentation:
 [Greengrass.Client.create_software_update_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.create_software_update_job)
@@ -749,8 +743,7 @@ Returns a `Coroutine` for
 Creates a subscription definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").create_subscription_definition`
-method.
+`session.create_client("greengrass").create_subscription_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.create_subscription_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.create_subscription_definition)
@@ -779,7 +772,7 @@ Returns a `Coroutine` for
 Creates a version of a subscription definition which has already been defined.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").create_subscription_definition_version`
+`session.create_client("greengrass").create_subscription_definition_version`
 method.
 
 Boto3 documentation:
@@ -808,7 +801,7 @@ Returns a `Coroutine` for
 Deletes a connector definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").delete_connector_definition` method.
+`session.create_client("greengrass").delete_connector_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.delete_connector_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.delete_connector_definition)
@@ -832,7 +825,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a core definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").delete_core_definition` method.
+`session.create_client("greengrass").delete_core_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.delete_core_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.delete_core_definition)
@@ -856,7 +849,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a device definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").delete_device_definition` method.
+`session.create_client("greengrass").delete_device_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.delete_device_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.delete_device_definition)
@@ -880,7 +873,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a Lambda function definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").delete_function_definition` method.
+`session.create_client("greengrass").delete_function_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.delete_function_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.delete_function_definition)
@@ -903,8 +896,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a group.
 
-Type annotations for `aiobotocore.create_client("greengrass").delete_group`
-method.
+Type annotations for `session.create_client("greengrass").delete_group` method.
 
 Boto3 documentation:
 [Greengrass.Client.delete_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.delete_group)
@@ -927,7 +919,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a logger definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").delete_logger_definition` method.
+`session.create_client("greengrass").delete_logger_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.delete_logger_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.delete_logger_definition)
@@ -951,7 +943,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a resource definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").delete_resource_definition` method.
+`session.create_client("greengrass").delete_resource_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.delete_resource_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.delete_resource_definition)
@@ -975,8 +967,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a subscription definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").delete_subscription_definition`
-method.
+`session.create_client("greengrass").delete_subscription_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.delete_subscription_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.delete_subscription_definition)
@@ -1000,7 +991,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates the role from a group.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").disassociate_role_from_group` method.
+`session.create_client("greengrass").disassociate_role_from_group` method.
 
 Boto3 documentation:
 [Greengrass.Client.disassociate_role_from_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.disassociate_role_from_group)
@@ -1025,7 +1016,7 @@ Returns a `Coroutine` for
 Disassociates the service role from your account.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").disassociate_service_role_from_account`
+`session.create_client("greengrass").disassociate_service_role_from_account`
 method.
 
 Boto3 documentation:
@@ -1044,7 +1035,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").generate_presigned_url` method.
+`session.create_client("greengrass").generate_presigned_url` method.
 
 Boto3 documentation:
 [Greengrass.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.generate_presigned_url)
@@ -1067,8 +1058,8 @@ Returns a `Coroutine` for `str`.
 
 Retrieves the role associated with a particular group.
 
-Type annotations for
-`aiobotocore.create_client("greengrass").get_associated_role` method.
+Type annotations for `session.create_client("greengrass").get_associated_role`
+method.
 
 Boto3 documentation:
 [Greengrass.Client.get_associated_role](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_associated_role)
@@ -1093,7 +1084,7 @@ Returns a `Coroutine` for
 Returns the status of a bulk deployment.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_bulk_deployment_status` method.
+`session.create_client("greengrass").get_bulk_deployment_status` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_bulk_deployment_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_bulk_deployment_status)
@@ -1118,7 +1109,7 @@ Returns a `Coroutine` for
 Retrieves the connectivity information for a core.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_connectivity_info` method.
+`session.create_client("greengrass").get_connectivity_info` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_connectivity_info](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_connectivity_info)
@@ -1143,7 +1134,7 @@ Returns a `Coroutine` for
 Retrieves information about a connector definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_connector_definition` method.
+`session.create_client("greengrass").get_connector_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_connector_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_connector_definition)
@@ -1169,8 +1160,7 @@ Retrieves information about a connector definition version, including the
 connectors that the version contains.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_connector_definition_version`
-method.
+`session.create_client("greengrass").get_connector_definition_version` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_connector_definition_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_connector_definition_version)
@@ -1196,8 +1186,8 @@ Returns a `Coroutine` for
 
 Retrieves information about a core definition version.
 
-Type annotations for
-`aiobotocore.create_client("greengrass").get_core_definition` method.
+Type annotations for `session.create_client("greengrass").get_core_definition`
+method.
 
 Boto3 documentation:
 [Greengrass.Client.get_core_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_core_definition)
@@ -1222,7 +1212,7 @@ Returns a `Coroutine` for
 Retrieves information about a core definition version.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_core_definition_version` method.
+`session.create_client("greengrass").get_core_definition_version` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_core_definition_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_core_definition_version)
@@ -1248,7 +1238,7 @@ Returns a `Coroutine` for
 Returns the status of a deployment.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_deployment_status` method.
+`session.create_client("greengrass").get_deployment_status` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_deployment_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_deployment_status)
@@ -1274,7 +1264,7 @@ Returns a `Coroutine` for
 Retrieves information about a device definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_device_definition` method.
+`session.create_client("greengrass").get_device_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_device_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_device_definition)
@@ -1299,7 +1289,7 @@ Returns a `Coroutine` for
 Retrieves information about a device definition version.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_device_definition_version` method.
+`session.create_client("greengrass").get_device_definition_version` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_device_definition_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_device_definition_version)
@@ -1327,7 +1317,7 @@ Retrieves information about a Lambda function definition, including its
 creation time and latest version.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_function_definition` method.
+`session.create_client("greengrass").get_function_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_function_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_function_definition)
@@ -1353,8 +1343,7 @@ Retrieves information about a Lambda function definition version, including
 which Lambda functions are included in the version and their configurations.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_function_definition_version`
-method.
+`session.create_client("greengrass").get_function_definition_version` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_function_definition_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_function_definition_version)
@@ -1380,8 +1369,7 @@ Returns a `Coroutine` for
 
 Retrieves information about a group.
 
-Type annotations for `aiobotocore.create_client("greengrass").get_group`
-method.
+Type annotations for `session.create_client("greengrass").get_group` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_group)
@@ -1405,8 +1393,7 @@ Returns a `Coroutine` for
 Retreives the CA associated with a group.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_group_certificate_authority`
-method.
+`session.create_client("greengrass").get_group_certificate_authority` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_group_certificate_authority](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_group_certificate_authority)
@@ -1432,7 +1419,7 @@ Returns a `Coroutine` for
 Retrieves the current configuration for the CA used by the group.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_group_certificate_configuration`
+`session.create_client("greengrass").get_group_certificate_configuration`
 method.
 
 Boto3 documentation:
@@ -1457,8 +1444,8 @@ Returns a `Coroutine` for
 
 Retrieves information about a group version.
 
-Type annotations for
-`aiobotocore.create_client("greengrass").get_group_version` method.
+Type annotations for `session.create_client("greengrass").get_group_version`
+method.
 
 Boto3 documentation:
 [Greengrass.Client.get_group_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_group_version)
@@ -1483,7 +1470,7 @@ Returns a `Coroutine` for
 Retrieves information about a logger definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_logger_definition` method.
+`session.create_client("greengrass").get_logger_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_logger_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_logger_definition)
@@ -1508,7 +1495,7 @@ Returns a `Coroutine` for
 Retrieves information about a logger definition version.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_logger_definition_version` method.
+`session.create_client("greengrass").get_logger_definition_version` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_logger_definition_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_logger_definition_version)
@@ -1536,7 +1523,7 @@ Retrieves information about a resource definition, including its creation time
 and latest version.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_resource_definition` method.
+`session.create_client("greengrass").get_resource_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_resource_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_resource_definition)
@@ -1562,8 +1549,7 @@ Retrieves information about a resource definition version, including which
 resources are included in the version.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_resource_definition_version`
-method.
+`session.create_client("greengrass").get_resource_definition_version` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_resource_definition_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_resource_definition_version)
@@ -1589,7 +1575,7 @@ Returns a `Coroutine` for
 Retrieves the service role that is attached to your account.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_service_role_for_account` method.
+`session.create_client("greengrass").get_service_role_for_account` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_service_role_for_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_service_role_for_account)
@@ -1607,7 +1593,7 @@ Returns a `Coroutine` for
 Retrieves information about a subscription definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_subscription_definition` method.
+`session.create_client("greengrass").get_subscription_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_subscription_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_subscription_definition)
@@ -1632,7 +1618,7 @@ Returns a `Coroutine` for
 Retrieves information about a subscription definition version.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_subscription_definition_version`
+`session.create_client("greengrass").get_subscription_definition_version`
 method.
 
 Boto3 documentation:
@@ -1660,8 +1646,7 @@ Returns a `Coroutine` for
 Get the runtime configuration of a thing.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_thing_runtime_configuration`
-method.
+`session.create_client("greengrass").get_thing_runtime_configuration` method.
 
 Boto3 documentation:
 [Greengrass.Client.get_thing_runtime_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.get_thing_runtime_configuration)
@@ -1687,7 +1672,7 @@ Gets a paginated list of the deployments that have been started in a bulk
 deployment operation, and their current deployment status.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_bulk_deployment_detailed_reports`
+`session.create_client("greengrass").list_bulk_deployment_detailed_reports`
 method.
 
 Boto3 documentation:
@@ -1715,7 +1700,7 @@ Returns a `Coroutine` for
 Returns a list of bulk deployments.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_bulk_deployments` method.
+`session.create_client("greengrass").list_bulk_deployments` method.
 
 Boto3 documentation:
 [Greengrass.Client.list_bulk_deployments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.list_bulk_deployments)
@@ -1742,7 +1727,7 @@ Lists the versions of a connector definition, which are containers for
 connectors.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_connector_definition_versions`
+`session.create_client("greengrass").list_connector_definition_versions`
 method.
 
 Boto3 documentation:
@@ -1770,7 +1755,7 @@ Returns a `Coroutine` for
 Retrieves a list of connector definitions.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_connector_definitions` method.
+`session.create_client("greengrass").list_connector_definitions` method.
 
 Boto3 documentation:
 [Greengrass.Client.list_connector_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.list_connector_definitions)
@@ -1796,7 +1781,7 @@ Returns a `Coroutine` for
 Lists the versions of a core definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_core_definition_versions` method.
+`session.create_client("greengrass").list_core_definition_versions` method.
 
 Boto3 documentation:
 [Greengrass.Client.list_core_definition_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.list_core_definition_versions)
@@ -1823,7 +1808,7 @@ Returns a `Coroutine` for
 Retrieves a list of core definitions.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_core_definitions` method.
+`session.create_client("greengrass").list_core_definitions` method.
 
 Boto3 documentation:
 [Greengrass.Client.list_core_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.list_core_definitions)
@@ -1848,7 +1833,7 @@ Returns a `Coroutine` for
 
 Returns a history of deployments for the group.
 
-Type annotations for `aiobotocore.create_client("greengrass").list_deployments`
+Type annotations for `session.create_client("greengrass").list_deployments`
 method.
 
 Boto3 documentation:
@@ -1875,8 +1860,7 @@ Returns a `Coroutine` for
 Lists the versions of a device definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_device_definition_versions`
-method.
+`session.create_client("greengrass").list_device_definition_versions` method.
 
 Boto3 documentation:
 [Greengrass.Client.list_device_definition_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.list_device_definition_versions)
@@ -1903,7 +1887,7 @@ Returns a `Coroutine` for
 Retrieves a list of device definitions.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_device_definitions` method.
+`session.create_client("greengrass").list_device_definitions` method.
 
 Boto3 documentation:
 [Greengrass.Client.list_device_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.list_device_definitions)
@@ -1929,8 +1913,7 @@ Returns a `Coroutine` for
 Lists the versions of a Lambda function definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_function_definition_versions`
-method.
+`session.create_client("greengrass").list_function_definition_versions` method.
 
 Boto3 documentation:
 [Greengrass.Client.list_function_definition_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.list_function_definition_versions)
@@ -1957,7 +1940,7 @@ Returns a `Coroutine` for
 Retrieves a list of Lambda function definitions.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_function_definitions` method.
+`session.create_client("greengrass").list_function_definitions` method.
 
 Boto3 documentation:
 [Greengrass.Client.list_function_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.list_function_definitions)
@@ -1983,7 +1966,7 @@ Returns a `Coroutine` for
 Retrieves the current CAs for a group.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_group_certificate_authorities`
+`session.create_client("greengrass").list_group_certificate_authorities`
 method.
 
 Boto3 documentation:
@@ -2008,8 +1991,8 @@ Returns a `Coroutine` for
 
 Lists the versions of a group.
 
-Type annotations for
-`aiobotocore.create_client("greengrass").list_group_versions` method.
+Type annotations for `session.create_client("greengrass").list_group_versions`
+method.
 
 Boto3 documentation:
 [Greengrass.Client.list_group_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.list_group_versions)
@@ -2035,8 +2018,7 @@ Returns a `Coroutine` for
 
 Retrieves a list of groups.
 
-Type annotations for `aiobotocore.create_client("greengrass").list_groups`
-method.
+Type annotations for `session.create_client("greengrass").list_groups` method.
 
 Boto3 documentation:
 [Greengrass.Client.list_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.list_groups)
@@ -2061,8 +2043,7 @@ Returns a `Coroutine` for
 Lists the versions of a logger definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_logger_definition_versions`
-method.
+`session.create_client("greengrass").list_logger_definition_versions` method.
 
 Boto3 documentation:
 [Greengrass.Client.list_logger_definition_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.list_logger_definition_versions)
@@ -2089,7 +2070,7 @@ Returns a `Coroutine` for
 Retrieves a list of logger definitions.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_logger_definitions` method.
+`session.create_client("greengrass").list_logger_definitions` method.
 
 Boto3 documentation:
 [Greengrass.Client.list_logger_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.list_logger_definitions)
@@ -2115,8 +2096,7 @@ Returns a `Coroutine` for
 Lists the versions of a resource definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_resource_definition_versions`
-method.
+`session.create_client("greengrass").list_resource_definition_versions` method.
 
 Boto3 documentation:
 [Greengrass.Client.list_resource_definition_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.list_resource_definition_versions)
@@ -2143,7 +2123,7 @@ Returns a `Coroutine` for
 Retrieves a list of resource definitions.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_resource_definitions` method.
+`session.create_client("greengrass").list_resource_definitions` method.
 
 Boto3 documentation:
 [Greengrass.Client.list_resource_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.list_resource_definitions)
@@ -2169,7 +2149,7 @@ Returns a `Coroutine` for
 Lists the versions of a subscription definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_subscription_definition_versions`
+`session.create_client("greengrass").list_subscription_definition_versions`
 method.
 
 Boto3 documentation:
@@ -2197,7 +2177,7 @@ Returns a `Coroutine` for
 Retrieves a list of subscription definitions.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_subscription_definitions` method.
+`session.create_client("greengrass").list_subscription_definitions` method.
 
 Boto3 documentation:
 [Greengrass.Client.list_subscription_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.list_subscription_definitions)
@@ -2223,7 +2203,7 @@ Returns a `Coroutine` for
 Retrieves a list of resource tags for a resource arn.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").list_tags_for_resource` method.
+`session.create_client("greengrass").list_tags_for_resource` method.
 
 Boto3 documentation:
 [Greengrass.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.list_tags_for_resource)
@@ -2247,8 +2227,8 @@ Returns a `Coroutine` for
 
 Resets a group's deployments.
 
-Type annotations for
-`aiobotocore.create_client("greengrass").reset_deployments` method.
+Type annotations for `session.create_client("greengrass").reset_deployments`
+method.
 
 Boto3 documentation:
 [Greengrass.Client.reset_deployments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.reset_deployments)
@@ -2274,7 +2254,7 @@ Returns a `Coroutine` for
 Deploys multiple groups in one operation.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").start_bulk_deployment` method.
+`session.create_client("greengrass").start_bulk_deployment` method.
 
 Boto3 documentation:
 [Greengrass.Client.start_bulk_deployment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.start_bulk_deployment)
@@ -2301,8 +2281,8 @@ Returns a `Coroutine` for
 
 Stops the execution of a bulk deployment.
 
-Type annotations for
-`aiobotocore.create_client("greengrass").stop_bulk_deployment` method.
+Type annotations for `session.create_client("greengrass").stop_bulk_deployment`
+method.
 
 Boto3 documentation:
 [Greengrass.Client.stop_bulk_deployment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.stop_bulk_deployment)
@@ -2325,8 +2305,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds tags to a Greengrass resource.
 
-Type annotations for `aiobotocore.create_client("greengrass").tag_resource`
-method.
+Type annotations for `session.create_client("greengrass").tag_resource` method.
 
 Boto3 documentation:
 [Greengrass.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.tag_resource)
@@ -2347,7 +2326,7 @@ Keyword-only arguments:
 
 Remove resource tags from a Greengrass Resource.
 
-Type annotations for `aiobotocore.create_client("greengrass").untag_resource`
+Type annotations for `session.create_client("greengrass").untag_resource`
 method.
 
 Boto3 documentation:
@@ -2370,7 +2349,7 @@ Keyword-only arguments:
 Updates the connectivity information for the core.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").update_connectivity_info` method.
+`session.create_client("greengrass").update_connectivity_info` method.
 
 Boto3 documentation:
 [Greengrass.Client.update_connectivity_info](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.update_connectivity_info)
@@ -2397,7 +2376,7 @@ Returns a `Coroutine` for
 Updates a connector definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").update_connector_definition` method.
+`session.create_client("greengrass").update_connector_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.update_connector_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.update_connector_definition)
@@ -2422,7 +2401,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a core definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").update_core_definition` method.
+`session.create_client("greengrass").update_core_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.update_core_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.update_core_definition)
@@ -2447,7 +2426,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a device definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").update_device_definition` method.
+`session.create_client("greengrass").update_device_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.update_device_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.update_device_definition)
@@ -2472,7 +2451,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a Lambda function definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").update_function_definition` method.
+`session.create_client("greengrass").update_function_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.update_function_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.update_function_definition)
@@ -2496,8 +2475,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a group.
 
-Type annotations for `aiobotocore.create_client("greengrass").update_group`
-method.
+Type annotations for `session.create_client("greengrass").update_group` method.
 
 Boto3 documentation:
 [Greengrass.Client.update_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.update_group)
@@ -2521,7 +2499,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the Certificate expiry time for a group.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").update_group_certificate_configuration`
+`session.create_client("greengrass").update_group_certificate_configuration`
 method.
 
 Boto3 documentation:
@@ -2548,7 +2526,7 @@ Returns a `Coroutine` for
 Updates a logger definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").update_logger_definition` method.
+`session.create_client("greengrass").update_logger_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.update_logger_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.update_logger_definition)
@@ -2573,7 +2551,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a resource definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").update_resource_definition` method.
+`session.create_client("greengrass").update_resource_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.update_resource_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.update_resource_definition)
@@ -2598,8 +2576,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a subscription definition.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").update_subscription_definition`
-method.
+`session.create_client("greengrass").update_subscription_definition` method.
 
 Boto3 documentation:
 [Greengrass.Client.update_subscription_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.update_subscription_definition)
@@ -2624,7 +2601,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the runtime configuration of a thing.
 
 Type annotations for
-`aiobotocore.create_client("greengrass").update_thing_runtime_configuration`
+`session.create_client("greengrass").update_thing_runtime_configuration`
 method.
 
 Boto3 documentation:
@@ -2644,12 +2621,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("greengrass").__aenter__` method.
+
+Boto3 documentation:
+[Greengrass.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [GreengrassClient](#greengrassclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("greengrass").__aexit__` method.
+
+Boto3 documentation:
+[Greengrass.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrass.html#Greengrass.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("greengrass").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("greengrass").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_bulk_deployment_detailed_reports")` ->
   [ListBulkDeploymentDetailedReportsPaginator](./paginators.md#listbulkdeploymentdetailedreportspaginator)

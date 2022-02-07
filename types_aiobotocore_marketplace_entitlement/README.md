@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[marketplace-entitlement]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[marketplace-entitlement]'
+
+# standalone installation
 pip install types-aiobotocore-marketplace-entitlement
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-marketplace-entitlement
 
 ## MarketplaceEntitlementServiceClient
 
-Type annotations for `aiobotocore.create_client("marketplace-entitlement")` as
+Type annotations for `session.create_client("marketplace-entitlement")` as
 [MarketplaceEntitlementServiceClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_marketplace_entitlement.client import MarketplaceEntitlem
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [exceptions](./client.md#exceptions)
 - [generate_presigned_url](./client.md#generate_presigned_url)
@@ -69,7 +75,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_marketplace_entitlement.paginators import GetEntitlementsPaginator, ...
+from types_aiobotocore_marketplace_entitlement.paginator import GetEntitlementsPaginator, ...
 ```
 
 - [GetEntitlementsPaginator](./paginators.md#getentitlementspaginator)

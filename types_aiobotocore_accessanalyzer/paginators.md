@@ -24,17 +24,19 @@ type annotations stubs module
 ## ListAccessPreviewFindingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("accessanalyzer").get_paginator("list_access_preview_findings")`.
+`session.create_client("accessanalyzer").get_paginator("list_access_preview_findings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_accessanalyzer.paginator import ListAccessPreviewFindingsPaginator
 
-def get_list_access_preview_findings_paginator() -> ListAccessPreviewFindingsPaginator:
-    return Session().create_client("accessanalyzer").get_paginator("list_access_preview_findings")
+session = get_session()
+async with session.create_client("accessanalyzer") as client:
+    client: AccessAnalyzerClient
+    paginator: ListAccessPreviewFindingsPaginator = client.get_paginator("list_access_preview_findings")
 ```
 
 Boto3 documentation:
@@ -57,17 +59,19 @@ Arguments for `ListAccessPreviewFindingsPaginator.paginate` method:
 ## ListAccessPreviewsPaginator
 
 Type annotations for
-`aiobotocore.create_client("accessanalyzer").get_paginator("list_access_previews")`.
+`session.create_client("accessanalyzer").get_paginator("list_access_previews")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_accessanalyzer.paginator import ListAccessPreviewsPaginator
 
-def get_list_access_previews_paginator() -> ListAccessPreviewsPaginator:
-    return Session().create_client("accessanalyzer").get_paginator("list_access_previews")
+session = get_session()
+async with session.create_client("accessanalyzer") as client:
+    client: AccessAnalyzerClient
+    paginator: ListAccessPreviewsPaginator = client.get_paginator("list_access_previews")
 ```
 
 Boto3 documentation:
@@ -87,17 +91,19 @@ Arguments for `ListAccessPreviewsPaginator.paginate` method:
 ## ListAnalyzedResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("accessanalyzer").get_paginator("list_analyzed_resources")`.
+`session.create_client("accessanalyzer").get_paginator("list_analyzed_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_accessanalyzer.paginator import ListAnalyzedResourcesPaginator
 
-def get_list_analyzed_resources_paginator() -> ListAnalyzedResourcesPaginator:
-    return Session().create_client("accessanalyzer").get_paginator("list_analyzed_resources")
+session = get_session()
+async with session.create_client("accessanalyzer") as client:
+    client: AccessAnalyzerClient
+    paginator: ListAnalyzedResourcesPaginator = client.get_paginator("list_analyzed_resources")
 ```
 
 Boto3 documentation:
@@ -118,17 +124,19 @@ Arguments for `ListAnalyzedResourcesPaginator.paginate` method:
 ## ListAnalyzersPaginator
 
 Type annotations for
-`aiobotocore.create_client("accessanalyzer").get_paginator("list_analyzers")`.
+`session.create_client("accessanalyzer").get_paginator("list_analyzers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_accessanalyzer.paginator import ListAnalyzersPaginator
 
-def get_list_analyzers_paginator() -> ListAnalyzersPaginator:
-    return Session().create_client("accessanalyzer").get_paginator("list_analyzers")
+session = get_session()
+async with session.create_client("accessanalyzer") as client:
+    client: AccessAnalyzerClient
+    paginator: ListAnalyzersPaginator = client.get_paginator("list_analyzers")
 ```
 
 Boto3 documentation:
@@ -148,17 +156,19 @@ Arguments for `ListAnalyzersPaginator.paginate` method:
 ## ListArchiveRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("accessanalyzer").get_paginator("list_archive_rules")`.
+`session.create_client("accessanalyzer").get_paginator("list_archive_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_accessanalyzer.paginator import ListArchiveRulesPaginator
 
-def get_list_archive_rules_paginator() -> ListArchiveRulesPaginator:
-    return Session().create_client("accessanalyzer").get_paginator("list_archive_rules")
+session = get_session()
+async with session.create_client("accessanalyzer") as client:
+    client: AccessAnalyzerClient
+    paginator: ListArchiveRulesPaginator = client.get_paginator("list_archive_rules")
 ```
 
 Boto3 documentation:
@@ -178,17 +188,19 @@ Arguments for `ListArchiveRulesPaginator.paginate` method:
 ## ListFindingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("accessanalyzer").get_paginator("list_findings")`.
+`session.create_client("accessanalyzer").get_paginator("list_findings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_accessanalyzer.paginator import ListFindingsPaginator
 
-def get_list_findings_paginator() -> ListFindingsPaginator:
-    return Session().create_client("accessanalyzer").get_paginator("list_findings")
+session = get_session()
+async with session.create_client("accessanalyzer") as client:
+    client: AccessAnalyzerClient
+    paginator: ListFindingsPaginator = client.get_paginator("list_findings")
 ```
 
 Boto3 documentation:
@@ -211,17 +223,19 @@ Arguments for `ListFindingsPaginator.paginate` method:
 ## ListPolicyGenerationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("accessanalyzer").get_paginator("list_policy_generations")`.
+`session.create_client("accessanalyzer").get_paginator("list_policy_generations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_accessanalyzer.paginator import ListPolicyGenerationsPaginator
 
-def get_list_policy_generations_paginator() -> ListPolicyGenerationsPaginator:
-    return Session().create_client("accessanalyzer").get_paginator("list_policy_generations")
+session = get_session()
+async with session.create_client("accessanalyzer") as client:
+    client: AccessAnalyzerClient
+    paginator: ListPolicyGenerationsPaginator = client.get_paginator("list_policy_generations")
 ```
 
 Boto3 documentation:
@@ -241,17 +255,19 @@ Arguments for `ListPolicyGenerationsPaginator.paginate` method:
 ## ValidatePolicyPaginator
 
 Type annotations for
-`aiobotocore.create_client("accessanalyzer").get_paginator("validate_policy")`.
+`session.create_client("accessanalyzer").get_paginator("validate_policy")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_accessanalyzer.paginator import ValidatePolicyPaginator
 
-def get_validate_policy_paginator() -> ValidatePolicyPaginator:
-    return Session().create_client("accessanalyzer").get_paginator("validate_policy")
+session = get_session()
+async with session.create_client("accessanalyzer") as client:
+    client: AccessAnalyzerClient
+    paginator: ValidatePolicyPaginator = client.get_paginator("validate_policy")
 ```
 
 Boto3 documentation:

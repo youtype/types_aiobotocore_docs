@@ -50,22 +50,25 @@ type annotations stubs module
     - [update_dataset](#update_dataset)
     - [update_datastore](#update_datastore)
     - [update_pipeline](#update_pipeline)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="iotanalyticsclient"></a>
 
 ## IoTAnalyticsClient
 
-Type annotations for `aiobotocore.create_client("iotanalytics")`
+Type annotations for `session.create_client("iotanalytics")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_iotanalytics.client import IoTAnalyticsClient
 
-def get_iotanalytics_client() -> IoTAnalyticsClient:
-    return Session().client("iotanalytics")
+session = get_session()
+async with session.create_client("iotanalytics") as client:
+    client: IoTAnalyticsClient
 ```
 
 Boto3 documentation:
@@ -106,8 +109,7 @@ Exceptions:
 
 IoTAnalyticsClient exceptions.
 
-Type annotations for `aiobotocore.create_client("iotanalytics").exceptions`
-method.
+Type annotations for `session.create_client("iotanalytics").exceptions` method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.exceptions)
@@ -120,8 +122,8 @@ Returns [Exceptions](#exceptions).
 
 Sends messages to a channel.
 
-Type annotations for
-`aiobotocore.create_client("iotanalytics").batch_put_message` method.
+Type annotations for `session.create_client("iotanalytics").batch_put_message`
+method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.batch_put_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.batch_put_message)
@@ -146,19 +148,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("iotanalytics").can_paginate`
+Type annotations for `session.create_client("iotanalytics").can_paginate`
 method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_pipeline_reprocessing"></a>
 
@@ -167,8 +167,7 @@ Returns a `Coroutine` for `bool`.
 Cancels the reprocessing of data through the pipeline.
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").cancel_pipeline_reprocessing`
-method.
+`session.create_client("iotanalytics").cancel_pipeline_reprocessing` method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.cancel_pipeline_reprocessing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.cancel_pipeline_reprocessing)
@@ -192,7 +191,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Used to create a channel.
 
-Type annotations for `aiobotocore.create_client("iotanalytics").create_channel`
+Type annotations for `session.create_client("iotanalytics").create_channel`
 method.
 
 Boto3 documentation:
@@ -221,7 +220,7 @@ Returns a `Coroutine` for
 
 Used to create a dataset.
 
-Type annotations for `aiobotocore.create_client("iotanalytics").create_dataset`
+Type annotations for `session.create_client("iotanalytics").create_dataset`
 method.
 
 Boto3 documentation:
@@ -261,7 +260,7 @@ Creates the content of a dataset by applying a `queryAction` (a SQL query) or a
 `containerAction` (executing a containerized application).
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").create_dataset_content` method.
+`session.create_client("iotanalytics").create_dataset_content` method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.create_dataset_content](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.create_dataset_content)
@@ -286,8 +285,8 @@ Returns a `Coroutine` for
 
 Creates a data store, which is a repository for messages.
 
-Type annotations for
-`aiobotocore.create_client("iotanalytics").create_datastore` method.
+Type annotations for `session.create_client("iotanalytics").create_datastore`
+method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.create_datastore](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.create_datastore)
@@ -319,8 +318,8 @@ Returns a `Coroutine` for
 
 Creates a pipeline.
 
-Type annotations for
-`aiobotocore.create_client("iotanalytics").create_pipeline` method.
+Type annotations for `session.create_client("iotanalytics").create_pipeline`
+method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.create_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.create_pipeline)
@@ -347,7 +346,7 @@ Returns a `Coroutine` for
 
 Deletes the specified channel.
 
-Type annotations for `aiobotocore.create_client("iotanalytics").delete_channel`
+Type annotations for `session.create_client("iotanalytics").delete_channel`
 method.
 
 Boto3 documentation:
@@ -368,7 +367,7 @@ Keyword-only arguments:
 
 Deletes the specified dataset.
 
-Type annotations for `aiobotocore.create_client("iotanalytics").delete_dataset`
+Type annotations for `session.create_client("iotanalytics").delete_dataset`
 method.
 
 Boto3 documentation:
@@ -390,7 +389,7 @@ Keyword-only arguments:
 Deletes the content of the specified dataset.
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").delete_dataset_content` method.
+`session.create_client("iotanalytics").delete_dataset_content` method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.delete_dataset_content](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.delete_dataset_content)
@@ -412,8 +411,8 @@ Keyword-only arguments:
 
 Deletes the specified data store.
 
-Type annotations for
-`aiobotocore.create_client("iotanalytics").delete_datastore` method.
+Type annotations for `session.create_client("iotanalytics").delete_datastore`
+method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.delete_datastore](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.delete_datastore)
@@ -433,8 +432,8 @@ Keyword-only arguments:
 
 Deletes the specified pipeline.
 
-Type annotations for
-`aiobotocore.create_client("iotanalytics").delete_pipeline` method.
+Type annotations for `session.create_client("iotanalytics").delete_pipeline`
+method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.delete_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.delete_pipeline)
@@ -454,8 +453,8 @@ Keyword-only arguments:
 
 Retrieves information about a channel.
 
-Type annotations for
-`aiobotocore.create_client("iotanalytics").describe_channel` method.
+Type annotations for `session.create_client("iotanalytics").describe_channel`
+method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.describe_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.describe_channel)
@@ -479,8 +478,8 @@ Returns a `Coroutine` for
 
 Retrieves information about a dataset.
 
-Type annotations for
-`aiobotocore.create_client("iotanalytics").describe_dataset` method.
+Type annotations for `session.create_client("iotanalytics").describe_dataset`
+method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.describe_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.describe_dataset)
@@ -503,8 +502,8 @@ Returns a `Coroutine` for
 
 Retrieves information about a data store.
 
-Type annotations for
-`aiobotocore.create_client("iotanalytics").describe_datastore` method.
+Type annotations for `session.create_client("iotanalytics").describe_datastore`
+method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.describe_datastore](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.describe_datastore)
@@ -530,7 +529,7 @@ Returns a `Coroutine` for
 Retrieves the current settings of the IoT Analytics logging options.
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").describe_logging_options` method.
+`session.create_client("iotanalytics").describe_logging_options` method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.describe_logging_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.describe_logging_options)
@@ -547,8 +546,8 @@ Returns a `Coroutine` for
 
 Retrieves information about a pipeline.
 
-Type annotations for
-`aiobotocore.create_client("iotanalytics").describe_pipeline` method.
+Type annotations for `session.create_client("iotanalytics").describe_pipeline`
+method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.describe_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.describe_pipeline)
@@ -572,7 +571,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").generate_presigned_url` method.
+`session.create_client("iotanalytics").generate_presigned_url` method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.generate_presigned_url)
@@ -596,7 +595,7 @@ Returns a `Coroutine` for `str`.
 Retrieves the contents of a dataset as presigned URIs.
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").get_dataset_content` method.
+`session.create_client("iotanalytics").get_dataset_content` method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.get_dataset_content](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.get_dataset_content)
@@ -621,7 +620,7 @@ Returns a `Coroutine` for
 
 Retrieves a list of channels.
 
-Type annotations for `aiobotocore.create_client("iotanalytics").list_channels`
+Type annotations for `session.create_client("iotanalytics").list_channels`
 method.
 
 Boto3 documentation:
@@ -647,7 +646,7 @@ Returns a `Coroutine` for
 Lists information about dataset contents that have been created.
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").list_dataset_contents` method.
+`session.create_client("iotanalytics").list_dataset_contents` method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.list_dataset_contents](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.list_dataset_contents)
@@ -675,7 +674,7 @@ Returns a `Coroutine` for
 
 Retrieves information about datasets.
 
-Type annotations for `aiobotocore.create_client("iotanalytics").list_datasets`
+Type annotations for `session.create_client("iotanalytics").list_datasets`
 method.
 
 Boto3 documentation:
@@ -700,8 +699,8 @@ Returns a `Coroutine` for
 
 Retrieves a list of data stores.
 
-Type annotations for
-`aiobotocore.create_client("iotanalytics").list_datastores` method.
+Type annotations for `session.create_client("iotanalytics").list_datastores`
+method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.list_datastores](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.list_datastores)
@@ -725,7 +724,7 @@ Returns a `Coroutine` for
 
 Retrieves a list of pipelines.
 
-Type annotations for `aiobotocore.create_client("iotanalytics").list_pipelines`
+Type annotations for `session.create_client("iotanalytics").list_pipelines`
 method.
 
 Boto3 documentation:
@@ -751,7 +750,7 @@ Returns a `Coroutine` for
 Lists the tags (metadata) that you have assigned to the resource.
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").list_tags_for_resource` method.
+`session.create_client("iotanalytics").list_tags_for_resource` method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.list_tags_for_resource)
@@ -776,7 +775,7 @@ Returns a `Coroutine` for
 Sets or updates the IoT Analytics logging options.
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").put_logging_options` method.
+`session.create_client("iotanalytics").put_logging_options` method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.put_logging_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.put_logging_options)
@@ -799,7 +798,7 @@ Keyword-only arguments:
 Simulates the results of running a pipeline activity on a message payload.
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").run_pipeline_activity` method.
+`session.create_client("iotanalytics").run_pipeline_activity` method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.run_pipeline_activity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.run_pipeline_activity)
@@ -829,7 +828,7 @@ Retrieves a sample of messages from the specified channel ingested during the
 specified timeframe.
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").sample_channel_data` method.
+`session.create_client("iotanalytics").sample_channel_data` method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.sample_channel_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.sample_channel_data)
@@ -857,7 +856,7 @@ Returns a `Coroutine` for
 Starts the reprocessing of raw message data through the pipeline.
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").start_pipeline_reprocessing` method.
+`session.create_client("iotanalytics").start_pipeline_reprocessing` method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.start_pipeline_reprocessing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.start_pipeline_reprocessing)
@@ -885,7 +884,7 @@ Returns a `Coroutine` for
 
 Adds to or modifies the tags of the given resource.
 
-Type annotations for `aiobotocore.create_client("iotanalytics").tag_resource`
+Type annotations for `session.create_client("iotanalytics").tag_resource`
 method.
 
 Boto3 documentation:
@@ -909,7 +908,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the given tags (metadata) from the resource.
 
-Type annotations for `aiobotocore.create_client("iotanalytics").untag_resource`
+Type annotations for `session.create_client("iotanalytics").untag_resource`
 method.
 
 Boto3 documentation:
@@ -933,7 +932,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Used to update the settings of a channel.
 
-Type annotations for `aiobotocore.create_client("iotanalytics").update_channel`
+Type annotations for `session.create_client("iotanalytics").update_channel`
 method.
 
 Boto3 documentation:
@@ -958,7 +957,7 @@ Keyword-only arguments:
 
 Updates the settings of a dataset.
 
-Type annotations for `aiobotocore.create_client("iotanalytics").update_dataset`
+Type annotations for `session.create_client("iotanalytics").update_dataset`
 method.
 
 Boto3 documentation:
@@ -992,8 +991,8 @@ Keyword-only arguments:
 
 Used to update the settings of a data store.
 
-Type annotations for
-`aiobotocore.create_client("iotanalytics").update_datastore` method.
+Type annotations for `session.create_client("iotanalytics").update_datastore`
+method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.update_datastore](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.update_datastore)
@@ -1019,8 +1018,8 @@ Keyword-only arguments:
 
 Updates the settings of a pipeline.
 
-Type annotations for
-`aiobotocore.create_client("iotanalytics").update_pipeline` method.
+Type annotations for `session.create_client("iotanalytics").update_pipeline`
+method.
 
 Boto3 documentation:
 [IoTAnalytics.Client.update_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.update_pipeline)
@@ -1037,11 +1036,43 @@ Keyword-only arguments:
   `Sequence`\[[PipelineActivityTypeDef](./type_defs.md#pipelineactivitytypedef)\]
   *(required)*
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("iotanalytics").__aenter__` method.
+
+Boto3 documentation:
+[IoTAnalytics.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [IoTAnalyticsClient](#iotanalyticsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("iotanalytics").__aexit__` method.
+
+Boto3 documentation:
+[IoTAnalytics.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotanalytics.html#IoTAnalytics.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("iotanalytics").get_paginator`
+Type annotations for `session.create_client("iotanalytics").get_paginator`
 method with overloads.
 
 - `client.get_paginator("list_channels")` ->

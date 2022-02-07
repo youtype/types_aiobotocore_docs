@@ -33,6 +33,8 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_workspace_alias](#update_workspace_alias)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -40,16 +42,17 @@ type annotations stubs module
 
 ## PrometheusServiceClient
 
-Type annotations for `aiobotocore.create_client("amp")`
+Type annotations for `session.create_client("amp")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_amp.client import PrometheusServiceClient
 
-def get_amp_client() -> PrometheusServiceClient:
-    return Session().client("amp")
+session = get_session()
+async with session.create_client("amp") as client:
+    client: PrometheusServiceClient
 ```
 
 Boto3 documentation:
@@ -90,7 +93,7 @@ Exceptions:
 
 PrometheusServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("amp").exceptions` method.
+Type annotations for `session.create_client("amp").exceptions` method.
 
 Boto3 documentation:
 [PrometheusService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.exceptions)
@@ -103,18 +106,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("amp").can_paginate` method.
+Type annotations for `session.create_client("amp").can_paginate` method.
 
 Boto3 documentation:
 [PrometheusService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_alert_manager_definition"></a>
 
@@ -123,7 +124,7 @@ Returns a `Coroutine` for `bool`.
 Create an alert manager definition.
 
 Type annotations for
-`aiobotocore.create_client("amp").create_alert_manager_definition` method.
+`session.create_client("amp").create_alert_manager_definition` method.
 
 Boto3 documentation:
 [PrometheusService.Client.create_alert_manager_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.create_alert_manager_definition)
@@ -150,7 +151,7 @@ Returns a `Coroutine` for
 Create a rule group namespace.
 
 Type annotations for
-`aiobotocore.create_client("amp").create_rule_groups_namespace` method.
+`session.create_client("amp").create_rule_groups_namespace` method.
 
 Boto3 documentation:
 [PrometheusService.Client.create_rule_groups_namespace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.create_rule_groups_namespace)
@@ -178,8 +179,7 @@ Returns a `Coroutine` for
 
 Creates a new AMP workspace.
 
-Type annotations for `aiobotocore.create_client("amp").create_workspace`
-method.
+Type annotations for `session.create_client("amp").create_workspace` method.
 
 Boto3 documentation:
 [PrometheusService.Client.create_workspace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.create_workspace)
@@ -205,7 +205,7 @@ Returns a `Coroutine` for
 Deletes an alert manager definition.
 
 Type annotations for
-`aiobotocore.create_client("amp").delete_alert_manager_definition` method.
+`session.create_client("amp").delete_alert_manager_definition` method.
 
 Boto3 documentation:
 [PrometheusService.Client.delete_alert_manager_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.delete_alert_manager_definition)
@@ -228,7 +228,7 @@ Keyword-only arguments:
 Delete a rule groups namespace.
 
 Type annotations for
-`aiobotocore.create_client("amp").delete_rule_groups_namespace` method.
+`session.create_client("amp").delete_rule_groups_namespace` method.
 
 Boto3 documentation:
 [PrometheusService.Client.delete_rule_groups_namespace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.delete_rule_groups_namespace)
@@ -251,8 +251,7 @@ Keyword-only arguments:
 
 Deletes an AMP workspace.
 
-Type annotations for `aiobotocore.create_client("amp").delete_workspace`
-method.
+Type annotations for `session.create_client("amp").delete_workspace` method.
 
 Boto3 documentation:
 [PrometheusService.Client.delete_workspace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.delete_workspace)
@@ -274,7 +273,7 @@ Keyword-only arguments:
 Describes an alert manager definition.
 
 Type annotations for
-`aiobotocore.create_client("amp").describe_alert_manager_definition` method.
+`session.create_client("amp").describe_alert_manager_definition` method.
 
 Boto3 documentation:
 [PrometheusService.Client.describe_alert_manager_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.describe_alert_manager_definition)
@@ -299,7 +298,7 @@ Returns a `Coroutine` for
 Describe a rule groups namespace.
 
 Type annotations for
-`aiobotocore.create_client("amp").describe_rule_groups_namespace` method.
+`session.create_client("amp").describe_rule_groups_namespace` method.
 
 Boto3 documentation:
 [PrometheusService.Client.describe_rule_groups_namespace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.describe_rule_groups_namespace)
@@ -324,8 +323,7 @@ Returns a `Coroutine` for
 
 Describes an existing AMP workspace.
 
-Type annotations for `aiobotocore.create_client("amp").describe_workspace`
-method.
+Type annotations for `session.create_client("amp").describe_workspace` method.
 
 Boto3 documentation:
 [PrometheusService.Client.describe_workspace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.describe_workspace)
@@ -349,7 +347,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("amp").generate_presigned_url`
+Type annotations for `session.create_client("amp").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -373,8 +371,8 @@ Returns a `Coroutine` for `str`.
 
 Lists rule groups namespaces.
 
-Type annotations for
-`aiobotocore.create_client("amp").list_rule_groups_namespaces` method.
+Type annotations for `session.create_client("amp").list_rule_groups_namespaces`
+method.
 
 Boto3 documentation:
 [PrometheusService.Client.list_rule_groups_namespaces](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.list_rule_groups_namespaces)
@@ -401,7 +399,7 @@ Returns a `Coroutine` for
 
 Lists the tags you have assigned to the resource.
 
-Type annotations for `aiobotocore.create_client("amp").list_tags_for_resource`
+Type annotations for `session.create_client("amp").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -426,7 +424,7 @@ Returns a `Coroutine` for
 
 Lists all AMP workspaces, including workspaces being created or deleted.
 
-Type annotations for `aiobotocore.create_client("amp").list_workspaces` method.
+Type annotations for `session.create_client("amp").list_workspaces` method.
 
 Boto3 documentation:
 [PrometheusService.Client.list_workspaces](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.list_workspaces)
@@ -452,7 +450,7 @@ Returns a `Coroutine` for
 Update an alert manager definition.
 
 Type annotations for
-`aiobotocore.create_client("amp").put_alert_manager_definition` method.
+`session.create_client("amp").put_alert_manager_definition` method.
 
 Boto3 documentation:
 [PrometheusService.Client.put_alert_manager_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.put_alert_manager_definition)
@@ -478,8 +476,8 @@ Returns a `Coroutine` for
 
 Update a rule groups namespace.
 
-Type annotations for
-`aiobotocore.create_client("amp").put_rule_groups_namespace` method.
+Type annotations for `session.create_client("amp").put_rule_groups_namespace`
+method.
 
 Boto3 documentation:
 [PrometheusService.Client.put_rule_groups_namespace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.put_rule_groups_namespace)
@@ -506,7 +504,7 @@ Returns a `Coroutine` for
 
 Creates tags for the specified resource.
 
-Type annotations for `aiobotocore.create_client("amp").tag_resource` method.
+Type annotations for `session.create_client("amp").tag_resource` method.
 
 Boto3 documentation:
 [PrometheusService.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.tag_resource)
@@ -529,7 +527,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes tags from the specified resource.
 
-Type annotations for `aiobotocore.create_client("amp").untag_resource` method.
+Type annotations for `session.create_client("amp").untag_resource` method.
 
 Boto3 documentation:
 [PrometheusService.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.untag_resource)
@@ -552,7 +550,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an AMP workspace alias.
 
-Type annotations for `aiobotocore.create_client("amp").update_workspace_alias`
+Type annotations for `session.create_client("amp").update_workspace_alias`
 method.
 
 Boto3 documentation:
@@ -570,12 +568,44 @@ Keyword-only arguments:
 - `alias`: `str`
 - `clientToken`: `str`
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("amp").__aenter__` method.
+
+Boto3 documentation:
+[PrometheusService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [PrometheusServiceClient](#prometheusserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("amp").__aexit__` method.
+
+Boto3 documentation:
+[PrometheusService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amp.html#PrometheusService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("amp").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("amp").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_rule_groups_namespaces")` ->
   [ListRuleGroupsNamespacesPaginator](./paginators.md#listrulegroupsnamespacespaginator)
@@ -586,7 +616,7 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("amp").get_waiter` method with
+Type annotations for `session.create_client("amp").get_waiter` method with
 overloads.
 
 - `client.get_waiter("workspace_active")` ->

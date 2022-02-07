@@ -73,6 +73,8 @@ type annotations stubs module
     - [update_multiplex](#update_multiplex)
     - [update_multiplex_program](#update_multiplex_program)
     - [update_reservation](#update_reservation)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -80,16 +82,17 @@ type annotations stubs module
 
 ## MediaLiveClient
 
-Type annotations for `aiobotocore.create_client("medialive")`
+Type annotations for `session.create_client("medialive")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_medialive.client import MediaLiveClient
 
-def get_medialive_client() -> MediaLiveClient:
-    return Session().client("medialive")
+session = get_session()
+async with session.create_client("medialive") as client:
+    client: MediaLiveClient
 ```
 
 Boto3 documentation:
@@ -132,8 +135,7 @@ Exceptions:
 
 MediaLiveClient exceptions.
 
-Type annotations for `aiobotocore.create_client("medialive").exceptions`
-method.
+Type annotations for `session.create_client("medialive").exceptions` method.
 
 Boto3 documentation:
 [MediaLive.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.exceptions)
@@ -147,7 +149,7 @@ Returns [Exceptions](#exceptions).
 Accept an incoming input device transfer.
 
 Type annotations for
-`aiobotocore.create_client("medialive").accept_input_device_transfer` method.
+`session.create_client("medialive").accept_input_device_transfer` method.
 
 Boto3 documentation:
 [MediaLive.Client.accept_input_device_transfer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.accept_input_device_transfer)
@@ -170,8 +172,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Starts delete of resources.
 
-Type annotations for `aiobotocore.create_client("medialive").batch_delete`
-method.
+Type annotations for `session.create_client("medialive").batch_delete` method.
 
 Boto3 documentation:
 [MediaLive.Client.batch_delete](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.batch_delete)
@@ -198,8 +199,7 @@ Returns a `Coroutine` for
 Starts existing resources See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStart).
 
-Type annotations for `aiobotocore.create_client("medialive").batch_start`
-method.
+Type annotations for `session.create_client("medialive").batch_start` method.
 
 Boto3 documentation:
 [MediaLive.Client.batch_start](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.batch_start)
@@ -224,8 +224,7 @@ Returns a `Coroutine` for
 Stops running resources See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStop).
 
-Type annotations for `aiobotocore.create_client("medialive").batch_stop`
-method.
+Type annotations for `session.create_client("medialive").batch_stop` method.
 
 Boto3 documentation:
 [MediaLive.Client.batch_stop](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.batch_stop)
@@ -250,8 +249,8 @@ Returns a `Coroutine` for
 Update a channel schedule See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule).
 
-Type annotations for
-`aiobotocore.create_client("medialive").batch_update_schedule` method.
+Type annotations for `session.create_client("medialive").batch_update_schedule`
+method.
 
 Boto3 documentation:
 [MediaLive.Client.batch_update_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.batch_update_schedule)
@@ -279,19 +278,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("medialive").can_paginate`
-method.
+Type annotations for `session.create_client("medialive").can_paginate` method.
 
 Boto3 documentation:
 [MediaLive.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_input_device_transfer"></a>
 
@@ -300,7 +296,7 @@ Returns a `Coroutine` for `bool`.
 Cancel an input device transfer that you have requested.
 
 Type annotations for
-`aiobotocore.create_client("medialive").cancel_input_device_transfer` method.
+`session.create_client("medialive").cancel_input_device_transfer` method.
 
 Boto3 documentation:
 [MediaLive.Client.cancel_input_device_transfer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.cancel_input_device_transfer)
@@ -324,8 +320,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Send a request to claim an AWS Elemental device that you have purchased from a
 third-party vendor.
 
-Type annotations for `aiobotocore.create_client("medialive").claim_device`
-method.
+Type annotations for `session.create_client("medialive").claim_device` method.
 
 Boto3 documentation:
 [MediaLive.Client.claim_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.claim_device)
@@ -348,7 +343,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates a new channel See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateChannel).
 
-Type annotations for `aiobotocore.create_client("medialive").create_channel`
+Type annotations for `session.create_client("medialive").create_channel`
 method.
 
 Boto3 documentation:
@@ -390,8 +385,7 @@ Returns a `Coroutine` for
 Create an input See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateInput).
 
-Type annotations for `aiobotocore.create_client("medialive").create_input`
-method.
+Type annotations for `session.create_client("medialive").create_input` method.
 
 Boto3 documentation:
 [MediaLive.Client.create_input](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.create_input)
@@ -430,7 +424,7 @@ Creates a Input Security Group See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateInputSecurityGroup).
 
 Type annotations for
-`aiobotocore.create_client("medialive").create_input_security_group` method.
+`session.create_client("medialive").create_input_security_group` method.
 
 Boto3 documentation:
 [MediaLive.Client.create_input_security_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.create_input_security_group)
@@ -456,7 +450,7 @@ Returns a `Coroutine` for
 
 Create a new multiplex.
 
-Type annotations for `aiobotocore.create_client("medialive").create_multiplex`
+Type annotations for `session.create_client("medialive").create_multiplex`
 method.
 
 Boto3 documentation:
@@ -487,7 +481,7 @@ Returns a `Coroutine` for
 Create a new program in the multiplex.
 
 Type annotations for
-`aiobotocore.create_client("medialive").create_multiplex_program` method.
+`session.create_client("medialive").create_multiplex_program` method.
 
 Boto3 documentation:
 [MediaLive.Client.create_multiplex_program](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.create_multiplex_program)
@@ -517,8 +511,8 @@ Returns a `Coroutine` for
 Create a partner input See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput).
 
-Type annotations for
-`aiobotocore.create_client("medialive").create_partner_input` method.
+Type annotations for `session.create_client("medialive").create_partner_input`
+method.
 
 Boto3 documentation:
 [MediaLive.Client.create_partner_input](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.create_partner_input)
@@ -545,8 +539,7 @@ Returns a `Coroutine` for
 Create tags for a resource See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateTags).
 
-Type annotations for `aiobotocore.create_client("medialive").create_tags`
-method.
+Type annotations for `session.create_client("medialive").create_tags` method.
 
 Boto3 documentation:
 [MediaLive.Client.create_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.create_tags)
@@ -567,7 +560,7 @@ Keyword-only arguments:
 
 Starts deletion of channel.
 
-Type annotations for `aiobotocore.create_client("medialive").delete_channel`
+Type annotations for `session.create_client("medialive").delete_channel`
 method.
 
 Boto3 documentation:
@@ -592,8 +585,7 @@ Returns a `Coroutine` for
 Deletes the input end point See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteInput).
 
-Type annotations for `aiobotocore.create_client("medialive").delete_input`
-method.
+Type annotations for `session.create_client("medialive").delete_input` method.
 
 Boto3 documentation:
 [MediaLive.Client.delete_input](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.delete_input)
@@ -617,7 +609,7 @@ Deletes an Input Security Group See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteInputSecurityGroup).
 
 Type annotations for
-`aiobotocore.create_client("medialive").delete_input_security_group` method.
+`session.create_client("medialive").delete_input_security_group` method.
 
 Boto3 documentation:
 [MediaLive.Client.delete_input_security_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.delete_input_security_group)
@@ -640,7 +632,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Delete a multiplex.
 
-Type annotations for `aiobotocore.create_client("medialive").delete_multiplex`
+Type annotations for `session.create_client("medialive").delete_multiplex`
 method.
 
 Boto3 documentation:
@@ -665,7 +657,7 @@ Returns a `Coroutine` for
 Delete a program from a multiplex.
 
 Type annotations for
-`aiobotocore.create_client("medialive").delete_multiplex_program` method.
+`session.create_client("medialive").delete_multiplex_program` method.
 
 Boto3 documentation:
 [MediaLive.Client.delete_multiplex_program](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.delete_multiplex_program)
@@ -690,8 +682,8 @@ Returns a `Coroutine` for
 
 Delete an expired reservation.
 
-Type annotations for
-`aiobotocore.create_client("medialive").delete_reservation` method.
+Type annotations for `session.create_client("medialive").delete_reservation`
+method.
 
 Boto3 documentation:
 [MediaLive.Client.delete_reservation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.delete_reservation)
@@ -715,7 +707,7 @@ Returns a `Coroutine` for
 
 Delete all schedule actions on a channel.
 
-Type annotations for `aiobotocore.create_client("medialive").delete_schedule`
+Type annotations for `session.create_client("medialive").delete_schedule`
 method.
 
 Boto3 documentation:
@@ -739,8 +731,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes tags for a resource See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteTags).
 
-Type annotations for `aiobotocore.create_client("medialive").delete_tags`
-method.
+Type annotations for `session.create_client("medialive").delete_tags` method.
 
 Boto3 documentation:
 [MediaLive.Client.delete_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.delete_tags)
@@ -762,7 +753,7 @@ Keyword-only arguments:
 Gets details about a channel See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeChannel).
 
-Type annotations for `aiobotocore.create_client("medialive").describe_channel`
+Type annotations for `session.create_client("medialive").describe_channel`
 method.
 
 Boto3 documentation:
@@ -787,7 +778,7 @@ Returns a `Coroutine` for
 Produces details about an input See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInput).
 
-Type annotations for `aiobotocore.create_client("medialive").describe_input`
+Type annotations for `session.create_client("medialive").describe_input`
 method.
 
 Boto3 documentation:
@@ -812,8 +803,8 @@ Returns a `Coroutine` for
 Gets the details for the input device See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputDevice).
 
-Type annotations for
-`aiobotocore.create_client("medialive").describe_input_device` method.
+Type annotations for `session.create_client("medialive").describe_input_device`
+method.
 
 Boto3 documentation:
 [MediaLive.Client.describe_input_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.describe_input_device)
@@ -838,8 +829,7 @@ Returns a `Coroutine` for
 Get the latest thumbnail data for the input device.
 
 Type annotations for
-`aiobotocore.create_client("medialive").describe_input_device_thumbnail`
-method.
+`session.create_client("medialive").describe_input_device_thumbnail` method.
 
 Boto3 documentation:
 [MediaLive.Client.describe_input_device_thumbnail](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.describe_input_device_thumbnail)
@@ -867,7 +857,7 @@ Produces a summary of an Input Security Group See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputSecurityGroup).
 
 Type annotations for
-`aiobotocore.create_client("medialive").describe_input_security_group` method.
+`session.create_client("medialive").describe_input_security_group` method.
 
 Boto3 documentation:
 [MediaLive.Client.describe_input_security_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.describe_input_security_group)
@@ -891,8 +881,8 @@ Returns a `Coroutine` for
 
 Gets details about a multiplex.
 
-Type annotations for
-`aiobotocore.create_client("medialive").describe_multiplex` method.
+Type annotations for `session.create_client("medialive").describe_multiplex`
+method.
 
 Boto3 documentation:
 [MediaLive.Client.describe_multiplex](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.describe_multiplex)
@@ -917,7 +907,7 @@ Returns a `Coroutine` for
 Get the details for a program in a multiplex.
 
 Type annotations for
-`aiobotocore.create_client("medialive").describe_multiplex_program` method.
+`session.create_client("medialive").describe_multiplex_program` method.
 
 Boto3 documentation:
 [MediaLive.Client.describe_multiplex_program](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.describe_multiplex_program)
@@ -942,7 +932,7 @@ Returns a `Coroutine` for
 
 Get details for an offering.
 
-Type annotations for `aiobotocore.create_client("medialive").describe_offering`
+Type annotations for `session.create_client("medialive").describe_offering`
 method.
 
 Boto3 documentation:
@@ -966,8 +956,8 @@ Returns a `Coroutine` for
 
 Get details for a reservation.
 
-Type annotations for
-`aiobotocore.create_client("medialive").describe_reservation` method.
+Type annotations for `session.create_client("medialive").describe_reservation`
+method.
 
 Boto3 documentation:
 [MediaLive.Client.describe_reservation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.describe_reservation)
@@ -992,7 +982,7 @@ Returns a `Coroutine` for
 Get a channel schedule See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeSchedule).
 
-Type annotations for `aiobotocore.create_client("medialive").describe_schedule`
+Type annotations for `session.create_client("medialive").describe_schedule`
 method.
 
 Boto3 documentation:
@@ -1019,7 +1009,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("medialive").generate_presigned_url` method.
+`session.create_client("medialive").generate_presigned_url` method.
 
 Boto3 documentation:
 [MediaLive.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.generate_presigned_url)
@@ -1043,8 +1033,7 @@ Returns a `Coroutine` for `str`.
 Produces list of channels that have been created See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListChannels).
 
-Type annotations for `aiobotocore.create_client("medialive").list_channels`
-method.
+Type annotations for `session.create_client("medialive").list_channels` method.
 
 Boto3 documentation:
 [MediaLive.Client.list_channels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.list_channels)
@@ -1069,7 +1058,7 @@ Returns a `Coroutine` for
 List input devices that are currently being transferred.
 
 Type annotations for
-`aiobotocore.create_client("medialive").list_input_device_transfers` method.
+`session.create_client("medialive").list_input_device_transfers` method.
 
 Boto3 documentation:
 [MediaLive.Client.list_input_device_transfers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.list_input_device_transfers)
@@ -1096,8 +1085,8 @@ Returns a `Coroutine` for
 List input devices See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDevices).
 
-Type annotations for
-`aiobotocore.create_client("medialive").list_input_devices` method.
+Type annotations for `session.create_client("medialive").list_input_devices`
+method.
 
 Boto3 documentation:
 [MediaLive.Client.list_input_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.list_input_devices)
@@ -1124,7 +1113,7 @@ Produces a list of Input Security Groups for an account See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputSecurityGroups).
 
 Type annotations for
-`aiobotocore.create_client("medialive").list_input_security_groups` method.
+`session.create_client("medialive").list_input_security_groups` method.
 
 Boto3 documentation:
 [MediaLive.Client.list_input_security_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.list_input_security_groups)
@@ -1150,8 +1139,7 @@ Returns a `Coroutine` for
 Produces list of inputs that have been created See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputs).
 
-Type annotations for `aiobotocore.create_client("medialive").list_inputs`
-method.
+Type annotations for `session.create_client("medialive").list_inputs` method.
 
 Boto3 documentation:
 [MediaLive.Client.list_inputs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.list_inputs)
@@ -1176,7 +1164,7 @@ Returns a `Coroutine` for
 List the programs that currently exist for a specific multiplex.
 
 Type annotations for
-`aiobotocore.create_client("medialive").list_multiplex_programs` method.
+`session.create_client("medialive").list_multiplex_programs` method.
 
 Boto3 documentation:
 [MediaLive.Client.list_multiplex_programs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.list_multiplex_programs)
@@ -1202,7 +1190,7 @@ Returns a `Coroutine` for
 
 Retrieve a list of the existing multiplexes.
 
-Type annotations for `aiobotocore.create_client("medialive").list_multiplexes`
+Type annotations for `session.create_client("medialive").list_multiplexes`
 method.
 
 Boto3 documentation:
@@ -1227,7 +1215,7 @@ Returns a `Coroutine` for
 
 List offerings available for purchase.
 
-Type annotations for `aiobotocore.create_client("medialive").list_offerings`
+Type annotations for `session.create_client("medialive").list_offerings`
 method.
 
 Boto3 documentation:
@@ -1262,7 +1250,7 @@ Returns a `Coroutine` for
 
 List purchased reservations.
 
-Type annotations for `aiobotocore.create_client("medialive").list_reservations`
+Type annotations for `session.create_client("medialive").list_reservations`
 method.
 
 Boto3 documentation:
@@ -1297,7 +1285,7 @@ Produces list of tags that have been created for a resource See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListTagsForResource).
 
 Type annotations for
-`aiobotocore.create_client("medialive").list_tags_for_resource` method.
+`session.create_client("medialive").list_tags_for_resource` method.
 
 Boto3 documentation:
 [MediaLive.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.list_tags_for_resource)
@@ -1321,7 +1309,7 @@ Returns a `Coroutine` for
 
 Purchase an offering and create a reservation.
 
-Type annotations for `aiobotocore.create_client("medialive").purchase_offering`
+Type annotations for `session.create_client("medialive").purchase_offering`
 method.
 
 Boto3 documentation:
@@ -1351,7 +1339,7 @@ Returns a `Coroutine` for
 Reject the transfer of the specified input device to your AWS account.
 
 Type annotations for
-`aiobotocore.create_client("medialive").reject_input_device_transfer` method.
+`session.create_client("medialive").reject_input_device_transfer` method.
 
 Boto3 documentation:
 [MediaLive.Client.reject_input_device_transfer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.reject_input_device_transfer)
@@ -1375,8 +1363,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Starts an existing channel See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartChannel).
 
-Type annotations for `aiobotocore.create_client("medialive").start_channel`
-method.
+Type annotations for `session.create_client("medialive").start_channel` method.
 
 Boto3 documentation:
 [MediaLive.Client.start_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.start_channel)
@@ -1399,7 +1386,7 @@ Returns a `Coroutine` for
 
 Start (run) the multiplex.
 
-Type annotations for `aiobotocore.create_client("medialive").start_multiplex`
+Type annotations for `session.create_client("medialive").start_multiplex`
 method.
 
 Boto3 documentation:
@@ -1424,8 +1411,7 @@ Returns a `Coroutine` for
 Stops a running channel See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopChannel).
 
-Type annotations for `aiobotocore.create_client("medialive").stop_channel`
-method.
+Type annotations for `session.create_client("medialive").stop_channel` method.
 
 Boto3 documentation:
 [MediaLive.Client.stop_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.stop_channel)
@@ -1448,7 +1434,7 @@ Returns a `Coroutine` for
 
 Stops a running multiplex.
 
-Type annotations for `aiobotocore.create_client("medialive").stop_multiplex`
+Type annotations for `session.create_client("medialive").stop_multiplex`
 method.
 
 Boto3 documentation:
@@ -1472,8 +1458,8 @@ Returns a `Coroutine` for
 
 Start an input device transfer to another AWS account.
 
-Type annotations for
-`aiobotocore.create_client("medialive").transfer_input_device` method.
+Type annotations for `session.create_client("medialive").transfer_input_device`
+method.
 
 Boto3 documentation:
 [MediaLive.Client.transfer_input_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.transfer_input_device)
@@ -1499,7 +1485,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a channel.
 
-Type annotations for `aiobotocore.create_client("medialive").update_channel`
+Type annotations for `session.create_client("medialive").update_channel`
 method.
 
 Boto3 documentation:
@@ -1536,8 +1522,8 @@ Returns a `Coroutine` for
 
 Changes the class of the channel.
 
-Type annotations for
-`aiobotocore.create_client("medialive").update_channel_class` method.
+Type annotations for `session.create_client("medialive").update_channel_class`
+method.
 
 Boto3 documentation:
 [MediaLive.Client.update_channel_class](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.update_channel_class)
@@ -1565,8 +1551,7 @@ Returns a `Coroutine` for
 
 Updates an input.
 
-Type annotations for `aiobotocore.create_client("medialive").update_input`
-method.
+Type annotations for `session.create_client("medialive").update_input` method.
 
 Boto3 documentation:
 [MediaLive.Client.update_input](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.update_input)
@@ -1600,8 +1585,8 @@ Returns a `Coroutine` for
 
 Updates the parameters for the input device.
 
-Type annotations for
-`aiobotocore.create_client("medialive").update_input_device` method.
+Type annotations for `session.create_client("medialive").update_input_device`
+method.
 
 Boto3 documentation:
 [MediaLive.Client.update_input_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.update_input_device)
@@ -1631,7 +1616,7 @@ Returns a `Coroutine` for
 Update an Input Security Group's Whilelists.
 
 Type annotations for
-`aiobotocore.create_client("medialive").update_input_security_group` method.
+`session.create_client("medialive").update_input_security_group` method.
 
 Boto3 documentation:
 [MediaLive.Client.update_input_security_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.update_input_security_group)
@@ -1658,7 +1643,7 @@ Returns a `Coroutine` for
 
 Updates a multiplex.
 
-Type annotations for `aiobotocore.create_client("medialive").update_multiplex`
+Type annotations for `session.create_client("medialive").update_multiplex`
 method.
 
 Boto3 documentation:
@@ -1686,7 +1671,7 @@ Returns a `Coroutine` for
 Update a program in a multiplex.
 
 Type annotations for
-`aiobotocore.create_client("medialive").update_multiplex_program` method.
+`session.create_client("medialive").update_multiplex_program` method.
 
 Boto3 documentation:
 [MediaLive.Client.update_multiplex_program](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.update_multiplex_program)
@@ -1713,8 +1698,8 @@ Returns a `Coroutine` for
 
 Update reservation.
 
-Type annotations for
-`aiobotocore.create_client("medialive").update_reservation` method.
+Type annotations for `session.create_client("medialive").update_reservation`
+method.
 
 Boto3 documentation:
 [MediaLive.Client.update_reservation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.update_reservation)
@@ -1733,12 +1718,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateReservationResponseTypeDef](./type_defs.md#updatereservationresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("medialive").__aenter__` method.
+
+Boto3 documentation:
+[MediaLive.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [MediaLiveClient](#medialiveclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("medialive").__aexit__` method.
+
+Boto3 documentation:
+[MediaLive.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/medialive.html#MediaLive.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("medialive").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("medialive").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_schedule")` ->
   [DescribeSchedulePaginator](./paginators.md#describeschedulepaginator)
@@ -1765,7 +1782,7 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("medialive").get_waiter` method
+Type annotations for `session.create_client("medialive").get_waiter` method
 with overloads.
 
 - `client.get_waiter("channel_created")` ->

@@ -29,22 +29,25 @@ type annotations stubs module
     - [search_quantum_tasks](#search_quantum_tasks)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="braketclient"></a>
 
 ## BraketClient
 
-Type annotations for `aiobotocore.create_client("braket")`
+Type annotations for `session.create_client("braket")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_braket.client import BraketClient
 
-def get_braket_client() -> BraketClient:
-    return Session().client("braket")
+session = get_session()
+async with session.create_client("braket") as client:
+    client: BraketClient
 ```
 
 Boto3 documentation:
@@ -87,7 +90,7 @@ Exceptions:
 
 BraketClient exceptions.
 
-Type annotations for `aiobotocore.create_client("braket").exceptions` method.
+Type annotations for `session.create_client("braket").exceptions` method.
 
 Boto3 documentation:
 [Braket.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html#Braket.Client.exceptions)
@@ -100,18 +103,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("braket").can_paginate` method.
+Type annotations for `session.create_client("braket").can_paginate` method.
 
 Boto3 documentation:
 [Braket.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html#Braket.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_job"></a>
 
@@ -119,7 +120,7 @@ Returns a `Coroutine` for `bool`.
 
 Cancels an Amazon Braket job.
 
-Type annotations for `aiobotocore.create_client("braket").cancel_job` method.
+Type annotations for `session.create_client("braket").cancel_job` method.
 
 Boto3 documentation:
 [Braket.Client.cancel_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html#Braket.Client.cancel_job)
@@ -142,7 +143,7 @@ Returns a `Coroutine` for
 
 Cancels the specified task.
 
-Type annotations for `aiobotocore.create_client("braket").cancel_quantum_task`
+Type annotations for `session.create_client("braket").cancel_quantum_task`
 method.
 
 Boto3 documentation:
@@ -168,7 +169,7 @@ Returns a `Coroutine` for
 
 Creates an Amazon Braket job.
 
-Type annotations for `aiobotocore.create_client("braket").create_job` method.
+Type annotations for `session.create_client("braket").create_job` method.
 
 Boto3 documentation:
 [Braket.Client.create_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html#Braket.Client.create_job)
@@ -211,7 +212,7 @@ Returns a `Coroutine` for
 
 Creates a quantum task.
 
-Type annotations for `aiobotocore.create_client("braket").create_quantum_task`
+Type annotations for `session.create_client("braket").create_quantum_task`
 method.
 
 Boto3 documentation:
@@ -244,8 +245,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("braket").generate_presigned_url` method.
+Type annotations for `session.create_client("braket").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Braket.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html#Braket.Client.generate_presigned_url)
@@ -268,7 +269,7 @@ Returns a `Coroutine` for `str`.
 
 Retrieves the devices available in Amazon Braket.
 
-Type annotations for `aiobotocore.create_client("braket").get_device` method.
+Type annotations for `session.create_client("braket").get_device` method.
 
 Boto3 documentation:
 [Braket.Client.get_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html#Braket.Client.get_device)
@@ -291,7 +292,7 @@ Returns a `Coroutine` for
 
 Retrieves the specified Amazon Braket job.
 
-Type annotations for `aiobotocore.create_client("braket").get_job` method.
+Type annotations for `session.create_client("braket").get_job` method.
 
 Boto3 documentation:
 [Braket.Client.get_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html#Braket.Client.get_job)
@@ -314,8 +315,7 @@ Returns a `Coroutine` for
 
 Retrieves the specified quantum task.
 
-Type annotations for `aiobotocore.create_client("braket").get_quantum_task`
-method.
+Type annotations for `session.create_client("braket").get_quantum_task` method.
 
 Boto3 documentation:
 [Braket.Client.get_quantum_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html#Braket.Client.get_quantum_task)
@@ -338,8 +338,8 @@ Returns a `Coroutine` for
 
 Shows the tags associated with this resource.
 
-Type annotations for
-`aiobotocore.create_client("braket").list_tags_for_resource` method.
+Type annotations for `session.create_client("braket").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Braket.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html#Braket.Client.list_tags_for_resource)
@@ -363,8 +363,7 @@ Returns a `Coroutine` for
 
 Searches for devices using the specified filters.
 
-Type annotations for `aiobotocore.create_client("braket").search_devices`
-method.
+Type annotations for `session.create_client("braket").search_devices` method.
 
 Boto3 documentation:
 [Braket.Client.search_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html#Braket.Client.search_devices)
@@ -391,7 +390,7 @@ Returns a `Coroutine` for
 
 Searches for Amazon Braket jobs that match the specified filter values.
 
-Type annotations for `aiobotocore.create_client("braket").search_jobs` method.
+Type annotations for `session.create_client("braket").search_jobs` method.
 
 Boto3 documentation:
 [Braket.Client.search_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html#Braket.Client.search_jobs)
@@ -418,7 +417,7 @@ Returns a `Coroutine` for
 
 Searches for tasks that match the specified filter values.
 
-Type annotations for `aiobotocore.create_client("braket").search_quantum_tasks`
+Type annotations for `session.create_client("braket").search_quantum_tasks`
 method.
 
 Boto3 documentation:
@@ -447,7 +446,7 @@ Returns a `Coroutine` for
 
 Add a tag to the specified resource.
 
-Type annotations for `aiobotocore.create_client("braket").tag_resource` method.
+Type annotations for `session.create_client("braket").tag_resource` method.
 
 Boto3 documentation:
 [Braket.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html#Braket.Client.tag_resource)
@@ -470,8 +469,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Remove tags from a resource.
 
-Type annotations for `aiobotocore.create_client("braket").untag_resource`
-method.
+Type annotations for `session.create_client("braket").untag_resource` method.
 
 Boto3 documentation:
 [Braket.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html#Braket.Client.untag_resource)
@@ -488,11 +486,43 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("braket").__aenter__` method.
+
+Boto3 documentation:
+[Braket.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html#Braket.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [BraketClient](#braketclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("braket").__aexit__` method.
+
+Boto3 documentation:
+[Braket.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html#Braket.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("braket").get_paginator` method
+Type annotations for `session.create_client("braket").get_paginator` method
 with overloads.
 
 - `client.get_paginator("search_devices")` ->

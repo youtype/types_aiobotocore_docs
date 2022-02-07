@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[rekognition]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[rekognition]'
+
+# standalone installation
 pip install types-aiobotocore-rekognition
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-rekognition
 
 ## RekognitionClient
 
-Type annotations for `aiobotocore.create_client("rekognition")` as
+Type annotations for `session.create_client("rekognition")` as
 [RekognitionClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_rekognition.client import RekognitionClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [compare_faces](./client.md#compare_faces)
 - [create_collection](./client.md#create_collection)
@@ -143,7 +149,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_rekognition.paginators import DescribeProjectVersionsPaginator, ...
+from types_aiobotocore_rekognition.paginator import DescribeProjectVersionsPaginator, ...
 ```
 
 - [DescribeProjectVersionsPaginator](./paginators.md#describeprojectversionspaginator)
@@ -164,7 +170,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_rekognition.waiters import ProjectVersionRunningWaiter, ...
+from types_aiobotocore_rekognition.waiter import ProjectVersionRunningWaiter, ...
 ```
 
 - [ProjectVersionRunningWaiter](./waiters.md#projectversionrunningwaiter)

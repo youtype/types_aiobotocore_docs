@@ -26,22 +26,25 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_app_monitor](#update_app_monitor)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="cloudwatchrumclient"></a>
 
 ## CloudWatchRUMClient
 
-Type annotations for `aiobotocore.create_client("rum")`
+Type annotations for `session.create_client("rum")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_rum.client import CloudWatchRUMClient
 
-def get_rum_client() -> CloudWatchRUMClient:
-    return Session().client("rum")
+session = get_session()
+async with session.create_client("rum") as client:
+    client: CloudWatchRUMClient
 ```
 
 Boto3 documentation:
@@ -82,7 +85,7 @@ Exceptions:
 
 CloudWatchRUMClient exceptions.
 
-Type annotations for `aiobotocore.create_client("rum").exceptions` method.
+Type annotations for `session.create_client("rum").exceptions` method.
 
 Boto3 documentation:
 [CloudWatchRUM.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rum.html#CloudWatchRUM.Client.exceptions)
@@ -95,18 +98,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("rum").can_paginate` method.
+Type annotations for `session.create_client("rum").can_paginate` method.
 
 Boto3 documentation:
 [CloudWatchRUM.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rum.html#CloudWatchRUM.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_app_monitor"></a>
 
@@ -115,8 +116,7 @@ Returns a `Coroutine` for `bool`.
 Creates a Amazon CloudWatch RUM app monitor, which collects telemetry data from
 your application and sends that data to RUM.
 
-Type annotations for `aiobotocore.create_client("rum").create_app_monitor`
-method.
+Type annotations for `session.create_client("rum").create_app_monitor` method.
 
 Boto3 documentation:
 [CloudWatchRUM.Client.create_app_monitor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rum.html#CloudWatchRUM.Client.create_app_monitor)
@@ -145,8 +145,7 @@ Returns a `Coroutine` for
 
 Deletes an existing app monitor.
 
-Type annotations for `aiobotocore.create_client("rum").delete_app_monitor`
-method.
+Type annotations for `session.create_client("rum").delete_app_monitor` method.
 
 Boto3 documentation:
 [CloudWatchRUM.Client.delete_app_monitor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rum.html#CloudWatchRUM.Client.delete_app_monitor)
@@ -169,7 +168,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("rum").generate_presigned_url`
+Type annotations for `session.create_client("rum").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -193,7 +192,7 @@ Returns a `Coroutine` for `str`.
 
 Retrieves the complete configuration information for one app monitor.
 
-Type annotations for `aiobotocore.create_client("rum").get_app_monitor` method.
+Type annotations for `session.create_client("rum").get_app_monitor` method.
 
 Boto3 documentation:
 [CloudWatchRUM.Client.get_app_monitor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rum.html#CloudWatchRUM.Client.get_app_monitor)
@@ -217,7 +216,7 @@ Returns a `Coroutine` for
 Retrieves the raw performance events that RUM has collected from your web
 application, so that you can do your own processing or analysis of this data.
 
-Type annotations for `aiobotocore.create_client("rum").get_app_monitor_data`
+Type annotations for `session.create_client("rum").get_app_monitor_data`
 method.
 
 Boto3 documentation:
@@ -247,8 +246,7 @@ Returns a `Coroutine` for
 
 Returns a list of the Amazon CloudWatch RUM app monitors in the account.
 
-Type annotations for `aiobotocore.create_client("rum").list_app_monitors`
-method.
+Type annotations for `session.create_client("rum").list_app_monitors` method.
 
 Boto3 documentation:
 [CloudWatchRUM.Client.list_app_monitors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rum.html#CloudWatchRUM.Client.list_app_monitors)
@@ -272,7 +270,7 @@ Returns a `Coroutine` for
 
 Displays the tags associated with a CloudWatch RUM resource.
 
-Type annotations for `aiobotocore.create_client("rum").list_tags_for_resource`
+Type annotations for `session.create_client("rum").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -298,7 +296,7 @@ Returns a `Coroutine` for
 Sends telemetry events about your application performance and user behavior to
 CloudWatch RUM.
 
-Type annotations for `aiobotocore.create_client("rum").put_rum_events` method.
+Type annotations for `session.create_client("rum").put_rum_events` method.
 
 Boto3 documentation:
 [CloudWatchRUM.Client.put_rum_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rum.html#CloudWatchRUM.Client.put_rum_events)
@@ -329,7 +327,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Assigns one or more tags (key-value pairs) to the specified CloudWatch RUM
 resource.
 
-Type annotations for `aiobotocore.create_client("rum").tag_resource` method.
+Type annotations for `session.create_client("rum").tag_resource` method.
 
 Boto3 documentation:
 [CloudWatchRUM.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rum.html#CloudWatchRUM.Client.tag_resource)
@@ -352,7 +350,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from the specified resource.
 
-Type annotations for `aiobotocore.create_client("rum").untag_resource` method.
+Type annotations for `session.create_client("rum").untag_resource` method.
 
 Boto3 documentation:
 [CloudWatchRUM.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rum.html#CloudWatchRUM.Client.untag_resource)
@@ -375,8 +373,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the configuration of an existing app monitor.
 
-Type annotations for `aiobotocore.create_client("rum").update_app_monitor`
-method.
+Type annotations for `session.create_client("rum").update_app_monitor` method.
 
 Boto3 documentation:
 [CloudWatchRUM.Client.update_app_monitor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rum.html#CloudWatchRUM.Client.update_app_monitor)
@@ -397,12 +394,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("rum").__aenter__` method.
+
+Boto3 documentation:
+[CloudWatchRUM.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rum.html#CloudWatchRUM.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CloudWatchRUMClient](#cloudwatchrumclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("rum").__aexit__` method.
+
+Boto3 documentation:
+[CloudWatchRUM.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rum.html#CloudWatchRUM.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("rum").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("rum").get_paginator` method with
+overloads.
 
 - `client.get_paginator("get_app_monitor_data")` ->
   [GetAppMonitorDataPaginator](./paginators.md#getappmonitordatapaginator)

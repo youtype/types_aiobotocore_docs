@@ -18,17 +18,19 @@ type annotations stubs module
 ## DescribeAccountLimitsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elb").get_paginator("describe_account_limits")`.
+`session.create_client("elb").get_paginator("describe_account_limits")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elb.paginator import DescribeAccountLimitsPaginator
 
-def get_describe_account_limits_paginator() -> DescribeAccountLimitsPaginator:
-    return Session().create_client("elb").get_paginator("describe_account_limits")
+session = get_session()
+async with session.create_client("elb") as client:
+    client: ElasticLoadBalancingClient
+    paginator: DescribeAccountLimitsPaginator = client.get_paginator("describe_account_limits")
 ```
 
 Boto3 documentation:
@@ -47,17 +49,19 @@ Arguments for `DescribeAccountLimitsPaginator.paginate` method:
 ## DescribeLoadBalancersPaginator
 
 Type annotations for
-`aiobotocore.create_client("elb").get_paginator("describe_load_balancers")`.
+`session.create_client("elb").get_paginator("describe_load_balancers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elb.paginator import DescribeLoadBalancersPaginator
 
-def get_describe_load_balancers_paginator() -> DescribeLoadBalancersPaginator:
-    return Session().create_client("elb").get_paginator("describe_load_balancers")
+session = get_session()
+async with session.create_client("elb") as client:
+    client: ElasticLoadBalancingClient
+    paginator: DescribeLoadBalancersPaginator = client.get_paginator("describe_load_balancers")
 ```
 
 Boto3 documentation:

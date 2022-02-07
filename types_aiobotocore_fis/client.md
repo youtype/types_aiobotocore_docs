@@ -30,21 +30,24 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_experiment_template](#update_experiment_template)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="fisclient"></a>
 
 ## FISClient
 
-Type annotations for `aiobotocore.create_client("fis")`
+Type annotations for `session.create_client("fis")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_fis.client import FISClient
 
-def get_fis_client() -> FISClient:
-    return Session().client("fis")
+session = get_session()
+async with session.create_client("fis") as client:
+    client: FISClient
 ```
 
 Boto3 documentation:
@@ -82,7 +85,7 @@ Exceptions:
 
 FISClient exceptions.
 
-Type annotations for `aiobotocore.create_client("fis").exceptions` method.
+Type annotations for `session.create_client("fis").exceptions` method.
 
 Boto3 documentation:
 [FIS.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fis.html#FIS.Client.exceptions)
@@ -95,18 +98,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("fis").can_paginate` method.
+Type annotations for `session.create_client("fis").can_paginate` method.
 
 Boto3 documentation:
 [FIS.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fis.html#FIS.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_experiment_template"></a>
 
@@ -114,8 +115,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates an experiment template.
 
-Type annotations for
-`aiobotocore.create_client("fis").create_experiment_template` method.
+Type annotations for `session.create_client("fis").create_experiment_template`
+method.
 
 Boto3 documentation:
 [FIS.Client.create_experiment_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fis.html#FIS.Client.create_experiment_template)
@@ -150,8 +151,8 @@ Returns a `Coroutine` for
 
 Deletes the specified experiment template.
 
-Type annotations for
-`aiobotocore.create_client("fis").delete_experiment_template` method.
+Type annotations for `session.create_client("fis").delete_experiment_template`
+method.
 
 Boto3 documentation:
 [FIS.Client.delete_experiment_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fis.html#FIS.Client.delete_experiment_template)
@@ -175,7 +176,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("fis").generate_presigned_url`
+Type annotations for `session.create_client("fis").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -199,7 +200,7 @@ Returns a `Coroutine` for `str`.
 
 Gets information about the specified AWS FIS action.
 
-Type annotations for `aiobotocore.create_client("fis").get_action` method.
+Type annotations for `session.create_client("fis").get_action` method.
 
 Boto3 documentation:
 [FIS.Client.get_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fis.html#FIS.Client.get_action)
@@ -222,7 +223,7 @@ Returns a `Coroutine` for
 
 Gets information about the specified experiment.
 
-Type annotations for `aiobotocore.create_client("fis").get_experiment` method.
+Type annotations for `session.create_client("fis").get_experiment` method.
 
 Boto3 documentation:
 [FIS.Client.get_experiment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fis.html#FIS.Client.get_experiment)
@@ -245,7 +246,7 @@ Returns a `Coroutine` for
 
 Gets information about the specified experiment template.
 
-Type annotations for `aiobotocore.create_client("fis").get_experiment_template`
+Type annotations for `session.create_client("fis").get_experiment_template`
 method.
 
 Boto3 documentation:
@@ -270,7 +271,7 @@ Returns a `Coroutine` for
 
 Lists the available AWS FIS actions.
 
-Type annotations for `aiobotocore.create_client("fis").list_actions` method.
+Type annotations for `session.create_client("fis").list_actions` method.
 
 Boto3 documentation:
 [FIS.Client.list_actions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fis.html#FIS.Client.list_actions)
@@ -294,8 +295,8 @@ Returns a `Coroutine` for
 
 Lists your experiment templates.
 
-Type annotations for
-`aiobotocore.create_client("fis").list_experiment_templates` method.
+Type annotations for `session.create_client("fis").list_experiment_templates`
+method.
 
 Boto3 documentation:
 [FIS.Client.list_experiment_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fis.html#FIS.Client.list_experiment_templates)
@@ -320,8 +321,7 @@ Returns a `Coroutine` for
 
 Lists your experiments.
 
-Type annotations for `aiobotocore.create_client("fis").list_experiments`
-method.
+Type annotations for `session.create_client("fis").list_experiments` method.
 
 Boto3 documentation:
 [FIS.Client.list_experiments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fis.html#FIS.Client.list_experiments)
@@ -345,7 +345,7 @@ Returns a `Coroutine` for
 
 Lists the tags for the specified resource.
 
-Type annotations for `aiobotocore.create_client("fis").list_tags_for_resource`
+Type annotations for `session.create_client("fis").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -370,8 +370,7 @@ Returns a `Coroutine` for
 
 Starts running an experiment from the specified experiment template.
 
-Type annotations for `aiobotocore.create_client("fis").start_experiment`
-method.
+Type annotations for `session.create_client("fis").start_experiment` method.
 
 Boto3 documentation:
 [FIS.Client.start_experiment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fis.html#FIS.Client.start_experiment)
@@ -396,7 +395,7 @@ Returns a `Coroutine` for
 
 Stops the specified experiment.
 
-Type annotations for `aiobotocore.create_client("fis").stop_experiment` method.
+Type annotations for `session.create_client("fis").stop_experiment` method.
 
 Boto3 documentation:
 [FIS.Client.stop_experiment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fis.html#FIS.Client.stop_experiment)
@@ -419,7 +418,7 @@ Returns a `Coroutine` for
 
 Applies the specified tags to the specified resource.
 
-Type annotations for `aiobotocore.create_client("fis").tag_resource` method.
+Type annotations for `session.create_client("fis").tag_resource` method.
 
 Boto3 documentation:
 [FIS.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fis.html#FIS.Client.tag_resource)
@@ -442,7 +441,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the specified tags from the specified resource.
 
-Type annotations for `aiobotocore.create_client("fis").untag_resource` method.
+Type annotations for `session.create_client("fis").untag_resource` method.
 
 Boto3 documentation:
 [FIS.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fis.html#FIS.Client.untag_resource)
@@ -465,8 +464,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the specified experiment template.
 
-Type annotations for
-`aiobotocore.create_client("fis").update_experiment_template` method.
+Type annotations for `session.create_client("fis").update_experiment_template`
+method.
 
 Boto3 documentation:
 [FIS.Client.update_experiment_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fis.html#FIS.Client.update_experiment_template)
@@ -491,3 +490,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateExperimentTemplateResponseTypeDef](./type_defs.md#updateexperimenttemplateresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("fis").__aenter__` method.
+
+Boto3 documentation:
+[FIS.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fis.html#FIS.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [FISClient](#fisclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("fis").__aexit__` method.
+
+Boto3 documentation:
+[FIS.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fis.html#FIS.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

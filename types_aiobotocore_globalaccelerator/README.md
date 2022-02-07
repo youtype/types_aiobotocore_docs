@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[globalaccelerator]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[globalaccelerator]'
+
+# standalone installation
 pip install types-aiobotocore-globalaccelerator
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-globalaccelerator
 
 ## GlobalAcceleratorClient
 
-Type annotations for `aiobotocore.create_client("globalaccelerator")` as
+Type annotations for `session.create_client("globalaccelerator")` as
 [GlobalAcceleratorClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_globalaccelerator.client import GlobalAcceleratorClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_custom_routing_endpoints](./client.md#add_custom_routing_endpoints)
 - [advertise_byoip_cidr](./client.md#advertise_byoip_cidr)
 - [allow_custom_routing_traffic](./client.md#allow_custom_routing_traffic)
@@ -130,7 +136,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_globalaccelerator.paginators import ListAcceleratorsPaginator, ...
+from types_aiobotocore_globalaccelerator.paginator import ListAcceleratorsPaginator, ...
 ```
 
 - [ListAcceleratorsPaginator](./paginators.md#listacceleratorspaginator)

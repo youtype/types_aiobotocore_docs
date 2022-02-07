@@ -26,22 +26,25 @@ type annotations stubs module
     - [list_domains](#list_domains)
     - [put_attributes](#put_attributes)
     - [select](#select)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="simpledbclient"></a>
 
 ## SimpleDBClient
 
-Type annotations for `aiobotocore.create_client("sdb")`
+Type annotations for `session.create_client("sdb")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_sdb.client import SimpleDBClient
 
-def get_sdb_client() -> SimpleDBClient:
-    return Session().client("sdb")
+session = get_session()
+async with session.create_client("sdb") as client:
+    client: SimpleDBClient
 ```
 
 Boto3 documentation:
@@ -92,7 +95,7 @@ Exceptions:
 
 SimpleDBClient exceptions.
 
-Type annotations for `aiobotocore.create_client("sdb").exceptions` method.
+Type annotations for `session.create_client("sdb").exceptions` method.
 
 Boto3 documentation:
 [SimpleDB.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sdb.html#SimpleDB.Client.exceptions)
@@ -106,7 +109,7 @@ Returns [Exceptions](#exceptions).
 Performs multiple DeleteAttributes operations in a single call, which reduces
 round trips and latencies.
 
-Type annotations for `aiobotocore.create_client("sdb").batch_delete_attributes`
+Type annotations for `session.create_client("sdb").batch_delete_attributes`
 method.
 
 Boto3 documentation:
@@ -132,7 +135,7 @@ Keyword-only arguments:
 The `BatchPutAttributes` operation creates or replaces attributes within one or
 more items.
 
-Type annotations for `aiobotocore.create_client("sdb").batch_put_attributes`
+Type annotations for `session.create_client("sdb").batch_put_attributes`
 method.
 
 Boto3 documentation:
@@ -157,18 +160,16 @@ Keyword-only arguments:
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("sdb").can_paginate` method.
+Type annotations for `session.create_client("sdb").can_paginate` method.
 
 Boto3 documentation:
 [SimpleDB.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sdb.html#SimpleDB.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_domain"></a>
 
@@ -176,7 +177,7 @@ Returns a `Coroutine` for `bool`.
 
 The `CreateDomain` operation creates a new domain.
 
-Type annotations for `aiobotocore.create_client("sdb").create_domain` method.
+Type annotations for `session.create_client("sdb").create_domain` method.
 
 Boto3 documentation:
 [SimpleDB.Client.create_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sdb.html#SimpleDB.Client.create_domain)
@@ -196,8 +197,7 @@ Keyword-only arguments:
 
 Deletes one or more attributes associated with an item.
 
-Type annotations for `aiobotocore.create_client("sdb").delete_attributes`
-method.
+Type annotations for `session.create_client("sdb").delete_attributes` method.
 
 Boto3 documentation:
 [SimpleDB.Client.delete_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sdb.html#SimpleDB.Client.delete_attributes)
@@ -221,7 +221,7 @@ Keyword-only arguments:
 
 The `DeleteDomain` operation deletes a domain.
 
-Type annotations for `aiobotocore.create_client("sdb").delete_domain` method.
+Type annotations for `session.create_client("sdb").delete_domain` method.
 
 Boto3 documentation:
 [SimpleDB.Client.delete_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sdb.html#SimpleDB.Client.delete_domain)
@@ -243,7 +243,7 @@ Returns information about the domain, including when the domain was created,
 the number of items and attributes in the domain, and the size of the attribute
 names and values.
 
-Type annotations for `aiobotocore.create_client("sdb").domain_metadata` method.
+Type annotations for `session.create_client("sdb").domain_metadata` method.
 
 Boto3 documentation:
 [SimpleDB.Client.domain_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sdb.html#SimpleDB.Client.domain_metadata)
@@ -266,7 +266,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("sdb").generate_presigned_url`
+Type annotations for `session.create_client("sdb").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -290,7 +290,7 @@ Returns a `Coroutine` for `str`.
 
 Returns all of the attributes associated with the specified item.
 
-Type annotations for `aiobotocore.create_client("sdb").get_attributes` method.
+Type annotations for `session.create_client("sdb").get_attributes` method.
 
 Boto3 documentation:
 [SimpleDB.Client.get_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sdb.html#SimpleDB.Client.get_attributes)
@@ -317,7 +317,7 @@ Returns a `Coroutine` for
 The `ListDomains` operation lists all domains associated with the Access Key
 ID.
 
-Type annotations for `aiobotocore.create_client("sdb").list_domains` method.
+Type annotations for `session.create_client("sdb").list_domains` method.
 
 Boto3 documentation:
 [SimpleDB.Client.list_domains](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sdb.html#SimpleDB.Client.list_domains)
@@ -341,7 +341,7 @@ Returns a `Coroutine` for
 
 The PutAttributes operation creates or replaces attributes in an item.
 
-Type annotations for `aiobotocore.create_client("sdb").put_attributes` method.
+Type annotations for `session.create_client("sdb").put_attributes` method.
 
 Boto3 documentation:
 [SimpleDB.Client.put_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sdb.html#SimpleDB.Client.put_attributes)
@@ -367,7 +367,7 @@ Keyword-only arguments:
 The `Select` operation returns a set of attributes for `ItemNames` that match
 the select expression.
 
-Type annotations for `aiobotocore.create_client("sdb").select` method.
+Type annotations for `session.create_client("sdb").select` method.
 
 Boto3 documentation:
 [SimpleDB.Client.select](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sdb.html#SimpleDB.Client.select)
@@ -386,12 +386,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [SelectResultTypeDef](./type_defs.md#selectresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("sdb").__aenter__` method.
+
+Boto3 documentation:
+[SimpleDB.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sdb.html#SimpleDB.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SimpleDBClient](#simpledbclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("sdb").__aexit__` method.
+
+Boto3 documentation:
+[SimpleDB.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sdb.html#SimpleDB.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("sdb").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("sdb").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_domains")` ->
   [ListDomainsPaginator](./paginators.md#listdomainspaginator)

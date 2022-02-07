@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[iot1click-devices]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[iot1click-devices]'
+
+# standalone installation
 pip install types-aiobotocore-iot1click-devices
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-iot1click-devices
 
 ## IoT1ClickDevicesServiceClient
 
-Type annotations for `aiobotocore.create_client("iot1click-devices")` as
+Type annotations for `session.create_client("iot1click-devices")` as
 [IoT1ClickDevicesServiceClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_iot1click_devices.client import IoT1ClickDevicesServiceCl
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [claim_devices_by_claim_code](./client.md#claim_devices_by_claim_code)
 - [describe_device](./client.md#describe_device)
@@ -85,7 +91,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_iot1click_devices.paginators import ListDeviceEventsPaginator, ...
+from types_aiobotocore_iot1click_devices.paginator import ListDeviceEventsPaginator, ...
 ```
 
 - [ListDeviceEventsPaginator](./paginators.md#listdeviceeventspaginator)

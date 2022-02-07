@@ -18,17 +18,19 @@ type annotations stubs module
 ## ListDeadLetterSourceQueuesPaginator
 
 Type annotations for
-`aiobotocore.create_client("sqs").get_paginator("list_dead_letter_source_queues")`.
+`session.create_client("sqs").get_paginator("list_dead_letter_source_queues")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sqs.paginator import ListDeadLetterSourceQueuesPaginator
 
-def get_list_dead_letter_source_queues_paginator() -> ListDeadLetterSourceQueuesPaginator:
-    return Session().create_client("sqs").get_paginator("list_dead_letter_source_queues")
+session = get_session()
+async with session.create_client("sqs") as client:
+    client: SQSClient
+    paginator: ListDeadLetterSourceQueuesPaginator = client.get_paginator("list_dead_letter_source_queues")
 ```
 
 Boto3 documentation:
@@ -48,17 +50,19 @@ Arguments for `ListDeadLetterSourceQueuesPaginator.paginate` method:
 ## ListQueuesPaginator
 
 Type annotations for
-`aiobotocore.create_client("sqs").get_paginator("list_queues")`.
+`session.create_client("sqs").get_paginator("list_queues")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sqs.paginator import ListQueuesPaginator
 
-def get_list_queues_paginator() -> ListQueuesPaginator:
-    return Session().create_client("sqs").get_paginator("list_queues")
+session = get_session()
+async with session.create_client("sqs") as client:
+    client: SQSClient
+    paginator: ListQueuesPaginator = client.get_paginator("list_queues")
 ```
 
 Boto3 documentation:

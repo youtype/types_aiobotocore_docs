@@ -42,22 +42,25 @@ type annotations stubs module
     - [start_cost_estimation](#start_cost_estimation)
     - [update_resource_collection](#update_resource_collection)
     - [update_service_integration](#update_service_integration)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="devopsguruclient"></a>
 
 ## DevOpsGuruClient
 
-Type annotations for `aiobotocore.create_client("devops-guru")`
+Type annotations for `session.create_client("devops-guru")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_devops_guru.client import DevOpsGuruClient
 
-def get_devops-guru_client() -> DevOpsGuruClient:
-    return Session().client("devops-guru")
+session = get_session()
+async with session.create_client("devops-guru") as client:
+    client: DevOpsGuruClient
 ```
 
 Boto3 documentation:
@@ -98,8 +101,7 @@ Exceptions:
 
 DevOpsGuruClient exceptions.
 
-Type annotations for `aiobotocore.create_client("devops-guru").exceptions`
-method.
+Type annotations for `session.create_client("devops-guru").exceptions` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.exceptions)
@@ -113,7 +115,7 @@ Returns [Exceptions](#exceptions).
 Adds a notification channel to DevOps Guru.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").add_notification_channel` method.
+`session.create_client("devops-guru").add_notification_channel` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.add_notification_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.add_notification_channel)
@@ -139,19 +141,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("devops-guru").can_paginate`
+Type annotations for `session.create_client("devops-guru").can_paginate`
 method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="describe_account_health"></a>
 
@@ -162,7 +162,7 @@ insights, and the number of metrics analyzed in your Amazon Web Services
 account.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").describe_account_health` method.
+`session.create_client("devops-guru").describe_account_health` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.describe_account_health](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.describe_account_health)
@@ -182,7 +182,7 @@ were created, the number of open proactive insights that were created, and the
 Mean Time to Recover (MTTR) for all closed reactive insights.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").describe_account_overview` method.
+`session.create_client("devops-guru").describe_account_overview` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.describe_account_overview](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.describe_account_overview)
@@ -207,8 +207,8 @@ Returns a `Coroutine` for
 
 Returns details about an anomaly that you specify using its ID.
 
-Type annotations for
-`aiobotocore.create_client("devops-guru").describe_anomaly` method.
+Type annotations for `session.create_client("devops-guru").describe_anomaly`
+method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.describe_anomaly](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.describe_anomaly)
@@ -233,8 +233,8 @@ Returns a `Coroutine` for
 Returns the most recent feedback submitted in the current Amazon Web Services
 account and Region.
 
-Type annotations for
-`aiobotocore.create_client("devops-guru").describe_feedback` method.
+Type annotations for `session.create_client("devops-guru").describe_feedback`
+method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.describe_feedback](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.describe_feedback)
@@ -257,8 +257,8 @@ Returns a `Coroutine` for
 
 Returns details about an insight that you specify using its ID.
 
-Type annotations for
-`aiobotocore.create_client("devops-guru").describe_insight` method.
+Type annotations for `session.create_client("devops-guru").describe_insight`
+method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.describe_insight](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.describe_insight)
@@ -284,7 +284,7 @@ Returns active insights, predictive insights, and resource hours analyzed in
 last hour.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").describe_organization_health` method.
+`session.create_client("devops-guru").describe_organization_health` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.describe_organization_health](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.describe_organization_health)
@@ -311,8 +311,7 @@ Returns an overview of your organization's history based on the specified time
 range.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").describe_organization_overview`
-method.
+`session.create_client("devops-guru").describe_organization_overview` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.describe_organization_overview](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.describe_organization_overview)
@@ -340,7 +339,7 @@ Returns a `Coroutine` for
 Provides an overview of your system's health.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").describe_organization_resource_collection_health`
+`session.create_client("devops-guru").describe_organization_resource_collection_health`
 method.
 
 Boto3 documentation:
@@ -375,7 +374,7 @@ Mean Time to Recover (MTTR) for all closed insights in resource collections in
 your account.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").describe_resource_collection_health`
+`session.create_client("devops-guru").describe_resource_collection_health`
 method.
 
 Boto3 documentation:
@@ -405,7 +404,7 @@ Returns the integration status of services that are integrated with DevOps
 Guru.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").describe_service_integration` method.
+`session.create_client("devops-guru").describe_service_integration` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.describe_service_integration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.describe_service_integration)
@@ -423,7 +422,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").generate_presigned_url` method.
+`session.create_client("devops-guru").generate_presigned_url` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.generate_presigned_url)
@@ -447,8 +446,8 @@ Returns a `Coroutine` for `str`.
 Returns an estimate of the monthly cost for DevOps Guru to analyze your Amazon
 Web Services resources.
 
-Type annotations for
-`aiobotocore.create_client("devops-guru").get_cost_estimation` method.
+Type annotations for `session.create_client("devops-guru").get_cost_estimation`
+method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.get_cost_estimation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.get_cost_estimation)
@@ -474,7 +473,7 @@ Returns lists Amazon Web Services resources that are of the specified resource
 collection type.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").get_resource_collection` method.
+`session.create_client("devops-guru").get_resource_collection` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.get_resource_collection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.get_resource_collection)
@@ -503,7 +502,7 @@ Returns a list of the anomalies that belong to an insight that you specify
 using its ID.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").list_anomalies_for_insight` method.
+`session.create_client("devops-guru").list_anomalies_for_insight` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.list_anomalies_for_insight](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.list_anomalies_for_insight)
@@ -533,8 +532,7 @@ Returns a `Coroutine` for
 Returns a list of the events emitted by the resources that are evaluated by
 DevOps Guru.
 
-Type annotations for `aiobotocore.create_client("devops-guru").list_events`
-method.
+Type annotations for `session.create_client("devops-guru").list_events` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.list_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.list_events)
@@ -562,7 +560,7 @@ Returns a `Coroutine` for
 
 Returns a list of insights in your Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("devops-guru").list_insights`
+Type annotations for `session.create_client("devops-guru").list_insights`
 method.
 
 Boto3 documentation:
@@ -591,7 +589,7 @@ Returns a `Coroutine` for
 Returns a list of notification channels configured for DevOps Guru.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").list_notification_channels` method.
+`session.create_client("devops-guru").list_notification_channels` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.list_notification_channels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.list_notification_channels)
@@ -616,7 +614,7 @@ Returns a `Coroutine` for
 Returns a list of insights associated with the account or OU Id.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").list_organization_insights` method.
+`session.create_client("devops-guru").list_organization_insights` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.list_organization_insights](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.list_organization_insights)
@@ -647,7 +645,7 @@ Returns a `Coroutine` for
 Returns a list of a specified insight's recommendations.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").list_recommendations` method.
+`session.create_client("devops-guru").list_recommendations` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.list_recommendations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.list_recommendations)
@@ -674,7 +672,7 @@ Returns a `Coroutine` for
 
 Collects customer feedback about the specified insight.
 
-Type annotations for `aiobotocore.create_client("devops-guru").put_feedback`
+Type annotations for `session.create_client("devops-guru").put_feedback`
 method.
 
 Boto3 documentation:
@@ -699,7 +697,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes a notification channel from DevOps Guru.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").remove_notification_channel` method.
+`session.create_client("devops-guru").remove_notification_channel` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.remove_notification_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.remove_notification_channel)
@@ -722,7 +720,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Returns a list of insights in your Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("devops-guru").search_insights`
+Type annotations for `session.create_client("devops-guru").search_insights`
 method.
 
 Boto3 documentation:
@@ -753,7 +751,7 @@ Returns a `Coroutine` for
 Returns a list of insights in your organization.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").search_organization_insights` method.
+`session.create_client("devops-guru").search_organization_insights` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.search_organization_insights](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.search_organization_insights)
@@ -786,7 +784,7 @@ Starts the creation of an estimate of the monthly cost to analyze your Amazon
 Web Services resources.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").start_cost_estimation` method.
+`session.create_client("devops-guru").start_cost_estimation` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.start_cost_estimation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.start_cost_estimation)
@@ -813,7 +811,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the collection of resources that DevOps Guru analyzes.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").update_resource_collection` method.
+`session.create_client("devops-guru").update_resource_collection` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.update_resource_collection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.update_resource_collection)
@@ -843,7 +841,7 @@ Enables or disables integration with a service that can be integrated with
 DevOps Guru.
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").update_service_integration` method.
+`session.create_client("devops-guru").update_service_integration` method.
 
 Boto3 documentation:
 [DevOpsGuru.Client.update_service_integration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.update_service_integration)
@@ -862,11 +860,43 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("devops-guru").__aenter__` method.
+
+Boto3 documentation:
+[DevOpsGuru.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [DevOpsGuruClient](#devopsguruclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("devops-guru").__aexit__` method.
+
+Boto3 documentation:
+[DevOpsGuru.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html#DevOpsGuru.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("devops-guru").get_paginator`
+Type annotations for `session.create_client("devops-guru").get_paginator`
 method with overloads.
 
 - `client.get_paginator("describe_organization_resource_collection_health")` ->

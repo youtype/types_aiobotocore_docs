@@ -97,21 +97,24 @@ type annotations stubs module
     - [update_sql_injection_match_set](#update_sql_injection_match_set)
     - [update_web_acl](#update_web_acl)
     - [update_xss_match_set](#update_xss_match_set)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="wafregionalclient"></a>
 
 ## WAFRegionalClient
 
-Type annotations for `aiobotocore.create_client("waf-regional")`
+Type annotations for `session.create_client("waf-regional")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_waf_regional.client import WAFRegionalClient
 
-def get_waf-regional_client() -> WAFRegionalClient:
-    return Session().client("waf-regional")
+session = get_session()
+async with session.create_client("waf-regional") as client:
+    client: WAFRegionalClient
 ```
 
 Boto3 documentation:
@@ -165,8 +168,7 @@ Exceptions:
 
 WAFRegionalClient exceptions.
 
-Type annotations for `aiobotocore.create_client("waf-regional").exceptions`
-method.
+Type annotations for `session.create_client("waf-regional").exceptions` method.
 
 Boto3 documentation:
 [WAFRegional.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.exceptions)
@@ -179,8 +181,8 @@ Returns [Exceptions](#exceptions).
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf-regional").associate_web_acl` method.
+Type annotations for `session.create_client("waf-regional").associate_web_acl`
+method.
 
 Boto3 documentation:
 [WAFRegional.Client.associate_web_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.associate_web_acl)
@@ -203,19 +205,17 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("waf-regional").can_paginate`
+Type annotations for `session.create_client("waf-regional").can_paginate`
 method.
 
 Boto3 documentation:
 [WAFRegional.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_byte_match_set"></a>
 
@@ -224,7 +224,7 @@ Returns a `Coroutine` for `bool`.
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").create_byte_match_set` method.
+`session.create_client("waf-regional").create_byte_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.create_byte_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.create_byte_match_set)
@@ -250,7 +250,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").create_geo_match_set` method.
+`session.create_client("waf-regional").create_geo_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.create_geo_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.create_geo_match_set)
@@ -275,7 +275,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").create_ip_set`
+Type annotations for `session.create_client("waf-regional").create_ip_set`
 method.
 
 Boto3 documentation:
@@ -301,7 +301,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").create_rate_based_rule` method.
+`session.create_client("waf-regional").create_rate_based_rule` method.
 
 Boto3 documentation:
 [WAFRegional.Client.create_rate_based_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.create_rate_based_rule)
@@ -332,7 +332,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").create_regex_match_set` method.
+`session.create_client("waf-regional").create_regex_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.create_regex_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.create_regex_match_set)
@@ -358,7 +358,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").create_regex_pattern_set` method.
+`session.create_client("waf-regional").create_regex_pattern_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.create_regex_pattern_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.create_regex_pattern_set)
@@ -383,7 +383,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").create_rule`
+Type annotations for `session.create_client("waf-regional").create_rule`
 method.
 
 Boto3 documentation:
@@ -410,8 +410,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf-regional").create_rule_group` method.
+Type annotations for `session.create_client("waf-regional").create_rule_group`
+method.
 
 Boto3 documentation:
 [WAFRegional.Client.create_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.create_rule_group)
@@ -438,7 +438,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").create_size_constraint_set` method.
+`session.create_client("waf-regional").create_size_constraint_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.create_size_constraint_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.create_size_constraint_set)
@@ -464,8 +464,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").create_sql_injection_match_set`
-method.
+`session.create_client("waf-regional").create_sql_injection_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.create_sql_injection_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.create_sql_injection_match_set)
@@ -490,7 +489,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").create_web_acl`
+Type annotations for `session.create_client("waf-regional").create_web_acl`
 method.
 
 Boto3 documentation:
@@ -521,8 +520,7 @@ Creates an AWS CloudFormation WAFV2 template for the specified web ACL in the
 specified Amazon S3 bucket.
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").create_web_acl_migration_stack`
-method.
+`session.create_client("waf-regional").create_web_acl_migration_stack` method.
 
 Boto3 documentation:
 [WAFRegional.Client.create_web_acl_migration_stack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.create_web_acl_migration_stack)
@@ -549,7 +547,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").create_xss_match_set` method.
+`session.create_client("waf-regional").create_xss_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.create_xss_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.create_xss_match_set)
@@ -575,7 +573,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").delete_byte_match_set` method.
+`session.create_client("waf-regional").delete_byte_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.delete_byte_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.delete_byte_match_set)
@@ -601,7 +599,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").delete_geo_match_set` method.
+`session.create_client("waf-regional").delete_geo_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.delete_geo_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.delete_geo_match_set)
@@ -626,7 +624,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").delete_ip_set`
+Type annotations for `session.create_client("waf-regional").delete_ip_set`
 method.
 
 Boto3 documentation:
@@ -652,8 +650,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").delete_logging_configuration`
-method.
+`session.create_client("waf-regional").delete_logging_configuration` method.
 
 Boto3 documentation:
 [WAFRegional.Client.delete_logging_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.delete_logging_configuration)
@@ -677,7 +674,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").delete_permission_policy` method.
+`session.create_client("waf-regional").delete_permission_policy` method.
 
 Boto3 documentation:
 [WAFRegional.Client.delete_permission_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.delete_permission_policy)
@@ -701,7 +698,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").delete_rate_based_rule` method.
+`session.create_client("waf-regional").delete_rate_based_rule` method.
 
 Boto3 documentation:
 [WAFRegional.Client.delete_rate_based_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.delete_rate_based_rule)
@@ -727,7 +724,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").delete_regex_match_set` method.
+`session.create_client("waf-regional").delete_regex_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.delete_regex_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.delete_regex_match_set)
@@ -753,7 +750,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").delete_regex_pattern_set` method.
+`session.create_client("waf-regional").delete_regex_pattern_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.delete_regex_pattern_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.delete_regex_pattern_set)
@@ -778,7 +775,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").delete_rule`
+Type annotations for `session.create_client("waf-regional").delete_rule`
 method.
 
 Boto3 documentation:
@@ -803,8 +800,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf-regional").delete_rule_group` method.
+Type annotations for `session.create_client("waf-regional").delete_rule_group`
+method.
 
 Boto3 documentation:
 [WAFRegional.Client.delete_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.delete_rule_group)
@@ -829,7 +826,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").delete_size_constraint_set` method.
+`session.create_client("waf-regional").delete_size_constraint_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.delete_size_constraint_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.delete_size_constraint_set)
@@ -855,8 +852,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").delete_sql_injection_match_set`
-method.
+`session.create_client("waf-regional").delete_sql_injection_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.delete_sql_injection_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.delete_sql_injection_match_set)
@@ -881,7 +877,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").delete_web_acl`
+Type annotations for `session.create_client("waf-regional").delete_web_acl`
 method.
 
 Boto3 documentation:
@@ -907,7 +903,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").delete_xss_match_set` method.
+`session.create_client("waf-regional").delete_xss_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.delete_xss_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.delete_xss_match_set)
@@ -933,7 +929,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").disassociate_web_acl` method.
+`session.create_client("waf-regional").disassociate_web_acl` method.
 
 Boto3 documentation:
 [WAFRegional.Client.disassociate_web_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.disassociate_web_acl)
@@ -957,7 +953,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").generate_presigned_url` method.
+`session.create_client("waf-regional").generate_presigned_url` method.
 
 Boto3 documentation:
 [WAFRegional.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.generate_presigned_url)
@@ -980,8 +976,8 @@ Returns a `Coroutine` for `str`.
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf-regional").get_byte_match_set` method.
+Type annotations for `session.create_client("waf-regional").get_byte_match_set`
+method.
 
 Boto3 documentation:
 [WAFRegional.Client.get_byte_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.get_byte_match_set)
@@ -1005,8 +1001,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf-regional").get_change_token` method.
+Type annotations for `session.create_client("waf-regional").get_change_token`
+method.
 
 Boto3 documentation:
 [WAFRegional.Client.get_change_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.get_change_token)
@@ -1023,7 +1019,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").get_change_token_status` method.
+`session.create_client("waf-regional").get_change_token_status` method.
 
 Boto3 documentation:
 [WAFRegional.Client.get_change_token_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.get_change_token_status)
@@ -1047,8 +1043,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf-regional").get_geo_match_set` method.
+Type annotations for `session.create_client("waf-regional").get_geo_match_set`
+method.
 
 Boto3 documentation:
 [WAFRegional.Client.get_geo_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.get_geo_match_set)
@@ -1071,8 +1067,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").get_ip_set`
-method.
+Type annotations for `session.create_client("waf-regional").get_ip_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.get_ip_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.get_ip_set)
@@ -1096,7 +1091,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").get_logging_configuration` method.
+`session.create_client("waf-regional").get_logging_configuration` method.
 
 Boto3 documentation:
 [WAFRegional.Client.get_logging_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.get_logging_configuration)
@@ -1121,7 +1116,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").get_permission_policy` method.
+`session.create_client("waf-regional").get_permission_policy` method.
 
 Boto3 documentation:
 [WAFRegional.Client.get_permission_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.get_permission_policy)
@@ -1146,7 +1141,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").get_rate_based_rule` method.
+`session.create_client("waf-regional").get_rate_based_rule` method.
 
 Boto3 documentation:
 [WAFRegional.Client.get_rate_based_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.get_rate_based_rule)
@@ -1171,7 +1166,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").get_rate_based_rule_managed_keys`
+`session.create_client("waf-regional").get_rate_based_rule_managed_keys`
 method.
 
 Boto3 documentation:
@@ -1198,7 +1193,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").get_regex_match_set` method.
+`session.create_client("waf-regional").get_regex_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.get_regex_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.get_regex_match_set)
@@ -1223,7 +1218,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").get_regex_pattern_set` method.
+`session.create_client("waf-regional").get_regex_pattern_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.get_regex_pattern_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.get_regex_pattern_set)
@@ -1247,8 +1242,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").get_rule`
-method.
+Type annotations for `session.create_client("waf-regional").get_rule` method.
 
 Boto3 documentation:
 [WAFRegional.Client.get_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.get_rule)
@@ -1271,7 +1265,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").get_rule_group`
+Type annotations for `session.create_client("waf-regional").get_rule_group`
 method.
 
 Boto3 documentation:
@@ -1296,7 +1290,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").get_sampled_requests` method.
+`session.create_client("waf-regional").get_sampled_requests` method.
 
 Boto3 documentation:
 [WAFRegional.Client.get_sampled_requests](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.get_sampled_requests)
@@ -1325,7 +1319,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").get_size_constraint_set` method.
+`session.create_client("waf-regional").get_size_constraint_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.get_size_constraint_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.get_size_constraint_set)
@@ -1350,7 +1344,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").get_sql_injection_match_set` method.
+`session.create_client("waf-regional").get_sql_injection_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.get_sql_injection_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.get_sql_injection_match_set)
@@ -1374,7 +1368,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").get_web_acl`
+Type annotations for `session.create_client("waf-regional").get_web_acl`
 method.
 
 Boto3 documentation:
@@ -1399,7 +1393,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").get_web_acl_for_resource` method.
+`session.create_client("waf-regional").get_web_acl_for_resource` method.
 
 Boto3 documentation:
 [WAFRegional.Client.get_web_acl_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.get_web_acl_for_resource)
@@ -1423,8 +1417,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf-regional").get_xss_match_set` method.
+Type annotations for `session.create_client("waf-regional").get_xss_match_set`
+method.
 
 Boto3 documentation:
 [WAFRegional.Client.get_xss_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.get_xss_match_set)
@@ -1448,7 +1442,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").list_activated_rules_in_rule_group`
+`session.create_client("waf-regional").list_activated_rules_in_rule_group`
 method.
 
 Boto3 documentation:
@@ -1476,7 +1470,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").list_byte_match_sets` method.
+`session.create_client("waf-regional").list_byte_match_sets` method.
 
 Boto3 documentation:
 [WAFRegional.Client.list_byte_match_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.list_byte_match_sets)
@@ -1502,7 +1496,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").list_geo_match_sets` method.
+`session.create_client("waf-regional").list_geo_match_sets` method.
 
 Boto3 documentation:
 [WAFRegional.Client.list_geo_match_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.list_geo_match_sets)
@@ -1527,7 +1521,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").list_ip_sets`
+Type annotations for `session.create_client("waf-regional").list_ip_sets`
 method.
 
 Boto3 documentation:
@@ -1553,7 +1547,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").list_logging_configurations` method.
+`session.create_client("waf-regional").list_logging_configurations` method.
 
 Boto3 documentation:
 [WAFRegional.Client.list_logging_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.list_logging_configurations)
@@ -1579,7 +1573,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").list_rate_based_rules` method.
+`session.create_client("waf-regional").list_rate_based_rules` method.
 
 Boto3 documentation:
 [WAFRegional.Client.list_rate_based_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.list_rate_based_rules)
@@ -1605,7 +1599,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").list_regex_match_sets` method.
+`session.create_client("waf-regional").list_regex_match_sets` method.
 
 Boto3 documentation:
 [WAFRegional.Client.list_regex_match_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.list_regex_match_sets)
@@ -1631,7 +1625,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").list_regex_pattern_sets` method.
+`session.create_client("waf-regional").list_regex_pattern_sets` method.
 
 Boto3 documentation:
 [WAFRegional.Client.list_regex_pattern_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.list_regex_pattern_sets)
@@ -1657,7 +1651,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").list_resources_for_web_acl` method.
+`session.create_client("waf-regional").list_resources_for_web_acl` method.
 
 Boto3 documentation:
 [WAFRegional.Client.list_resources_for_web_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.list_resources_for_web_acl)
@@ -1682,8 +1676,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf-regional").list_rule_groups` method.
+Type annotations for `session.create_client("waf-regional").list_rule_groups`
+method.
 
 Boto3 documentation:
 [WAFRegional.Client.list_rule_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.list_rule_groups)
@@ -1707,8 +1701,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").list_rules`
-method.
+Type annotations for `session.create_client("waf-regional").list_rules` method.
 
 Boto3 documentation:
 [WAFRegional.Client.list_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.list_rules)
@@ -1733,7 +1726,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").list_size_constraint_sets` method.
+`session.create_client("waf-regional").list_size_constraint_sets` method.
 
 Boto3 documentation:
 [WAFRegional.Client.list_size_constraint_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.list_size_constraint_sets)
@@ -1759,8 +1752,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").list_sql_injection_match_sets`
-method.
+`session.create_client("waf-regional").list_sql_injection_match_sets` method.
 
 Boto3 documentation:
 [WAFRegional.Client.list_sql_injection_match_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.list_sql_injection_match_sets)
@@ -1786,7 +1778,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").list_subscribed_rule_groups` method.
+`session.create_client("waf-regional").list_subscribed_rule_groups` method.
 
 Boto3 documentation:
 [WAFRegional.Client.list_subscribed_rule_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.list_subscribed_rule_groups)
@@ -1812,7 +1804,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").list_tags_for_resource` method.
+`session.create_client("waf-regional").list_tags_for_resource` method.
 
 Boto3 documentation:
 [WAFRegional.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.list_tags_for_resource)
@@ -1838,7 +1830,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").list_web_acls`
+Type annotations for `session.create_client("waf-regional").list_web_acls`
 method.
 
 Boto3 documentation:
@@ -1864,7 +1856,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").list_xss_match_sets` method.
+`session.create_client("waf-regional").list_xss_match_sets` method.
 
 Boto3 documentation:
 [WAFRegional.Client.list_xss_match_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.list_xss_match_sets)
@@ -1890,7 +1882,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").put_logging_configuration` method.
+`session.create_client("waf-regional").put_logging_configuration` method.
 
 Boto3 documentation:
 [WAFRegional.Client.put_logging_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.put_logging_configuration)
@@ -1917,7 +1909,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").put_permission_policy` method.
+`session.create_client("waf-regional").put_permission_policy` method.
 
 Boto3 documentation:
 [WAFRegional.Client.put_permission_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.put_permission_policy)
@@ -1941,7 +1933,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").tag_resource`
+Type annotations for `session.create_client("waf-regional").tag_resource`
 method.
 
 Boto3 documentation:
@@ -1965,7 +1957,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").untag_resource`
+Type annotations for `session.create_client("waf-regional").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1990,7 +1982,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").update_byte_match_set` method.
+`session.create_client("waf-regional").update_byte_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.update_byte_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.update_byte_match_set)
@@ -2019,7 +2011,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").update_geo_match_set` method.
+`session.create_client("waf-regional").update_geo_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.update_geo_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.update_geo_match_set)
@@ -2047,7 +2039,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").update_ip_set`
+Type annotations for `session.create_client("waf-regional").update_ip_set`
 method.
 
 Boto3 documentation:
@@ -2076,7 +2068,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").update_rate_based_rule` method.
+`session.create_client("waf-regional").update_rate_based_rule` method.
 
 Boto3 documentation:
 [WAFRegional.Client.update_rate_based_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.update_rate_based_rule)
@@ -2106,7 +2098,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").update_regex_match_set` method.
+`session.create_client("waf-regional").update_regex_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.update_regex_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.update_regex_match_set)
@@ -2135,7 +2127,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").update_regex_pattern_set` method.
+`session.create_client("waf-regional").update_regex_pattern_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.update_regex_pattern_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.update_regex_pattern_set)
@@ -2163,7 +2155,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").update_rule`
+Type annotations for `session.create_client("waf-regional").update_rule`
 method.
 
 Boto3 documentation:
@@ -2191,8 +2183,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf-regional").update_rule_group` method.
+Type annotations for `session.create_client("waf-regional").update_rule_group`
+method.
 
 Boto3 documentation:
 [WAFRegional.Client.update_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.update_rule_group)
@@ -2220,7 +2212,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").update_size_constraint_set` method.
+`session.create_client("waf-regional").update_size_constraint_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.update_size_constraint_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.update_size_constraint_set)
@@ -2249,8 +2241,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").update_sql_injection_match_set`
-method.
+`session.create_client("waf-regional").update_sql_injection_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.update_sql_injection_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.update_sql_injection_match_set)
@@ -2278,7 +2269,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf-regional").update_web_acl`
+Type annotations for `session.create_client("waf-regional").update_web_acl`
 method.
 
 Boto3 documentation:
@@ -2307,7 +2298,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf-regional").update_xss_match_set` method.
+`session.create_client("waf-regional").update_xss_match_set` method.
 
 Boto3 documentation:
 [WAFRegional.Client.update_xss_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.update_xss_match_set)
@@ -2328,3 +2319,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateXssMatchSetResponseTypeDef](./type_defs.md#updatexssmatchsetresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("waf-regional").__aenter__` method.
+
+Boto3 documentation:
+[WAFRegional.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [WAFRegionalClient](#wafregionalclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("waf-regional").__aexit__` method.
+
+Boto3 documentation:
+[WAFRegional.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf-regional.html#WAFRegional.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

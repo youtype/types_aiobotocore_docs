@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[connect]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[connect]'
+
+# standalone installation
 pip install types-aiobotocore-connect
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-connect
 
 ## ConnectClient
 
-Type annotations for `aiobotocore.create_client("connect")` as
+Type annotations for `session.create_client("connect")` as
 [ConnectClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_connect.client import ConnectClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_approved_origin](./client.md#associate_approved_origin)
 - [associate_bot](./client.md#associate_bot)
 - [associate_instance_storage_config](./client.md#associate_instance_storage_config)
@@ -212,7 +218,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_connect.paginators import GetMetricDataPaginator, ...
+from types_aiobotocore_connect.paginator import GetMetricDataPaginator, ...
 ```
 
 - [GetMetricDataPaginator](./paginators.md#getmetricdatapaginator)

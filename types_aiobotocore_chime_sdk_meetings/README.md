@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[chime-sdk-meetings]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[chime-sdk-meetings]'
+
+# standalone installation
 pip install types-aiobotocore-chime-sdk-meetings
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-chime-sdk-meetings
 
 ## ChimeSDKMeetingsClient
 
-Type annotations for `aiobotocore.create_client("chime-sdk-meetings")` as
+Type annotations for `session.create_client("chime-sdk-meetings")` as
 [ChimeSDKMeetingsClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_chime_sdk_meetings.client import ChimeSDKMeetingsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_create_attendee](./client.md#batch_create_attendee)
 - [can_paginate](./client.md#can_paginate)
 - [create_attendee](./client.md#create_attendee)

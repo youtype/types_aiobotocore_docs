@@ -26,17 +26,19 @@ type annotations stubs module
 ## DescribeAutoScalingGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").get_paginator("describe_auto_scaling_groups")`.
+`session.create_client("autoscaling").get_paginator("describe_auto_scaling_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_autoscaling.paginator import DescribeAutoScalingGroupsPaginator
 
-def get_describe_auto_scaling_groups_paginator() -> DescribeAutoScalingGroupsPaginator:
-    return Session().create_client("autoscaling").get_paginator("describe_auto_scaling_groups")
+session = get_session()
+async with session.create_client("autoscaling") as client:
+    client: AutoScalingClient
+    paginator: DescribeAutoScalingGroupsPaginator = client.get_paginator("describe_auto_scaling_groups")
 ```
 
 Boto3 documentation:
@@ -57,17 +59,19 @@ Arguments for `DescribeAutoScalingGroupsPaginator.paginate` method:
 ## DescribeAutoScalingInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").get_paginator("describe_auto_scaling_instances")`.
+`session.create_client("autoscaling").get_paginator("describe_auto_scaling_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_autoscaling.paginator import DescribeAutoScalingInstancesPaginator
 
-def get_describe_auto_scaling_instances_paginator() -> DescribeAutoScalingInstancesPaginator:
-    return Session().create_client("autoscaling").get_paginator("describe_auto_scaling_instances")
+session = get_session()
+async with session.create_client("autoscaling") as client:
+    client: AutoScalingClient
+    paginator: DescribeAutoScalingInstancesPaginator = client.get_paginator("describe_auto_scaling_instances")
 ```
 
 Boto3 documentation:
@@ -87,17 +91,19 @@ Arguments for `DescribeAutoScalingInstancesPaginator.paginate` method:
 ## DescribeLaunchConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").get_paginator("describe_launch_configurations")`.
+`session.create_client("autoscaling").get_paginator("describe_launch_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_autoscaling.paginator import DescribeLaunchConfigurationsPaginator
 
-def get_describe_launch_configurations_paginator() -> DescribeLaunchConfigurationsPaginator:
-    return Session().create_client("autoscaling").get_paginator("describe_launch_configurations")
+session = get_session()
+async with session.create_client("autoscaling") as client:
+    client: AutoScalingClient
+    paginator: DescribeLaunchConfigurationsPaginator = client.get_paginator("describe_launch_configurations")
 ```
 
 Boto3 documentation:
@@ -117,17 +123,19 @@ Arguments for `DescribeLaunchConfigurationsPaginator.paginate` method:
 ## DescribeLoadBalancerTargetGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").get_paginator("describe_load_balancer_target_groups")`.
+`session.create_client("autoscaling").get_paginator("describe_load_balancer_target_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_autoscaling.paginator import DescribeLoadBalancerTargetGroupsPaginator
 
-def get_describe_load_balancer_target_groups_paginator() -> DescribeLoadBalancerTargetGroupsPaginator:
-    return Session().create_client("autoscaling").get_paginator("describe_load_balancer_target_groups")
+session = get_session()
+async with session.create_client("autoscaling") as client:
+    client: AutoScalingClient
+    paginator: DescribeLoadBalancerTargetGroupsPaginator = client.get_paginator("describe_load_balancer_target_groups")
 ```
 
 Boto3 documentation:
@@ -147,17 +155,19 @@ Arguments for `DescribeLoadBalancerTargetGroupsPaginator.paginate` method:
 ## DescribeLoadBalancersPaginator
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").get_paginator("describe_load_balancers")`.
+`session.create_client("autoscaling").get_paginator("describe_load_balancers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_autoscaling.paginator import DescribeLoadBalancersPaginator
 
-def get_describe_load_balancers_paginator() -> DescribeLoadBalancersPaginator:
-    return Session().create_client("autoscaling").get_paginator("describe_load_balancers")
+session = get_session()
+async with session.create_client("autoscaling") as client:
+    client: AutoScalingClient
+    paginator: DescribeLoadBalancersPaginator = client.get_paginator("describe_load_balancers")
 ```
 
 Boto3 documentation:
@@ -177,17 +187,19 @@ Arguments for `DescribeLoadBalancersPaginator.paginate` method:
 ## DescribeNotificationConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").get_paginator("describe_notification_configurations")`.
+`session.create_client("autoscaling").get_paginator("describe_notification_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_autoscaling.paginator import DescribeNotificationConfigurationsPaginator
 
-def get_describe_notification_configurations_paginator() -> DescribeNotificationConfigurationsPaginator:
-    return Session().create_client("autoscaling").get_paginator("describe_notification_configurations")
+session = get_session()
+async with session.create_client("autoscaling") as client:
+    client: AutoScalingClient
+    paginator: DescribeNotificationConfigurationsPaginator = client.get_paginator("describe_notification_configurations")
 ```
 
 Boto3 documentation:
@@ -207,17 +219,19 @@ Arguments for `DescribeNotificationConfigurationsPaginator.paginate` method:
 ## DescribePoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").get_paginator("describe_policies")`.
+`session.create_client("autoscaling").get_paginator("describe_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_autoscaling.paginator import DescribePoliciesPaginator
 
-def get_describe_policies_paginator() -> DescribePoliciesPaginator:
-    return Session().create_client("autoscaling").get_paginator("describe_policies")
+session = get_session()
+async with session.create_client("autoscaling") as client:
+    client: AutoScalingClient
+    paginator: DescribePoliciesPaginator = client.get_paginator("describe_policies")
 ```
 
 Boto3 documentation:
@@ -239,17 +253,19 @@ Arguments for `DescribePoliciesPaginator.paginate` method:
 ## DescribeScalingActivitiesPaginator
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").get_paginator("describe_scaling_activities")`.
+`session.create_client("autoscaling").get_paginator("describe_scaling_activities")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_autoscaling.paginator import DescribeScalingActivitiesPaginator
 
-def get_describe_scaling_activities_paginator() -> DescribeScalingActivitiesPaginator:
-    return Session().create_client("autoscaling").get_paginator("describe_scaling_activities")
+session = get_session()
+async with session.create_client("autoscaling") as client:
+    client: AutoScalingClient
+    paginator: DescribeScalingActivitiesPaginator = client.get_paginator("describe_scaling_activities")
 ```
 
 Boto3 documentation:
@@ -271,17 +287,19 @@ Arguments for `DescribeScalingActivitiesPaginator.paginate` method:
 ## DescribeScheduledActionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").get_paginator("describe_scheduled_actions")`.
+`session.create_client("autoscaling").get_paginator("describe_scheduled_actions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_autoscaling.paginator import DescribeScheduledActionsPaginator
 
-def get_describe_scheduled_actions_paginator() -> DescribeScheduledActionsPaginator:
-    return Session().create_client("autoscaling").get_paginator("describe_scheduled_actions")
+session = get_session()
+async with session.create_client("autoscaling") as client:
+    client: AutoScalingClient
+    paginator: DescribeScheduledActionsPaginator = client.get_paginator("describe_scheduled_actions")
 ```
 
 Boto3 documentation:
@@ -304,17 +322,19 @@ Arguments for `DescribeScheduledActionsPaginator.paginate` method:
 ## DescribeTagsPaginator
 
 Type annotations for
-`aiobotocore.create_client("autoscaling").get_paginator("describe_tags")`.
+`session.create_client("autoscaling").get_paginator("describe_tags")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_autoscaling.paginator import DescribeTagsPaginator
 
-def get_describe_tags_paginator() -> DescribeTagsPaginator:
-    return Session().create_client("autoscaling").get_paginator("describe_tags")
+session = get_session()
+async with session.create_client("autoscaling") as client:
+    client: AutoScalingClient
+    paginator: DescribeTagsPaginator = client.get_paginator("describe_tags")
 ```
 
 Boto3 documentation:

@@ -19,17 +19,19 @@ type annotations stubs module
 ## SearchDevicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("braket").get_paginator("search_devices")`.
+`session.create_client("braket").get_paginator("search_devices")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_braket.paginator import SearchDevicesPaginator
 
-def get_search_devices_paginator() -> SearchDevicesPaginator:
-    return Session().create_client("braket").get_paginator("search_devices")
+session = get_session()
+async with session.create_client("braket") as client:
+    client: BraketClient
+    paginator: SearchDevicesPaginator = client.get_paginator("search_devices")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `SearchDevicesPaginator.paginate` method:
 ## SearchJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("braket").get_paginator("search_jobs")`.
+`session.create_client("braket").get_paginator("search_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_braket.paginator import SearchJobsPaginator
 
-def get_search_jobs_paginator() -> SearchJobsPaginator:
-    return Session().create_client("braket").get_paginator("search_jobs")
+session = get_session()
+async with session.create_client("braket") as client:
+    client: BraketClient
+    paginator: SearchJobsPaginator = client.get_paginator("search_jobs")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `SearchJobsPaginator.paginate` method:
 ## SearchQuantumTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("braket").get_paginator("search_quantum_tasks")`.
+`session.create_client("braket").get_paginator("search_quantum_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_braket.paginator import SearchQuantumTasksPaginator
 
-def get_search_quantum_tasks_paginator() -> SearchQuantumTasksPaginator:
-    return Session().create_client("braket").get_paginator("search_quantum_tasks")
+session = get_session()
+async with session.create_client("braket") as client:
+    client: BraketClient
+    paginator: SearchQuantumTasksPaginator = client.get_paginator("search_quantum_tasks")
 ```
 
 Boto3 documentation:

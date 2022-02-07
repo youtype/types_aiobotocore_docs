@@ -21,17 +21,19 @@ type annotations stubs module
 ## ListApplicationStatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("mgh").get_paginator("list_application_states")`.
+`session.create_client("mgh").get_paginator("list_application_states")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mgh.paginator import ListApplicationStatesPaginator
 
-def get_list_application_states_paginator() -> ListApplicationStatesPaginator:
-    return Session().create_client("mgh").get_paginator("list_application_states")
+session = get_session()
+async with session.create_client("mgh") as client:
+    client: MigrationHubClient
+    paginator: ListApplicationStatesPaginator = client.get_paginator("list_application_states")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `ListApplicationStatesPaginator.paginate` method:
 ## ListCreatedArtifactsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mgh").get_paginator("list_created_artifacts")`.
+`session.create_client("mgh").get_paginator("list_created_artifacts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mgh.paginator import ListCreatedArtifactsPaginator
 
-def get_list_created_artifacts_paginator() -> ListCreatedArtifactsPaginator:
-    return Session().create_client("mgh").get_paginator("list_created_artifacts")
+session = get_session()
+async with session.create_client("mgh") as client:
+    client: MigrationHubClient
+    paginator: ListCreatedArtifactsPaginator = client.get_paginator("list_created_artifacts")
 ```
 
 Boto3 documentation:
@@ -82,17 +86,19 @@ Arguments for `ListCreatedArtifactsPaginator.paginate` method:
 ## ListDiscoveredResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("mgh").get_paginator("list_discovered_resources")`.
+`session.create_client("mgh").get_paginator("list_discovered_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mgh.paginator import ListDiscoveredResourcesPaginator
 
-def get_list_discovered_resources_paginator() -> ListDiscoveredResourcesPaginator:
-    return Session().create_client("mgh").get_paginator("list_discovered_resources")
+session = get_session()
+async with session.create_client("mgh") as client:
+    client: MigrationHubClient
+    paginator: ListDiscoveredResourcesPaginator = client.get_paginator("list_discovered_resources")
 ```
 
 Boto3 documentation:
@@ -113,17 +119,19 @@ Arguments for `ListDiscoveredResourcesPaginator.paginate` method:
 ## ListMigrationTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("mgh").get_paginator("list_migration_tasks")`.
+`session.create_client("mgh").get_paginator("list_migration_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mgh.paginator import ListMigrationTasksPaginator
 
-def get_list_migration_tasks_paginator() -> ListMigrationTasksPaginator:
-    return Session().create_client("mgh").get_paginator("list_migration_tasks")
+session = get_session()
+async with session.create_client("mgh") as client:
+    client: MigrationHubClient
+    paginator: ListMigrationTasksPaginator = client.get_paginator("list_migration_tasks")
 ```
 
 Boto3 documentation:
@@ -143,17 +151,19 @@ Arguments for `ListMigrationTasksPaginator.paginate` method:
 ## ListProgressUpdateStreamsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mgh").get_paginator("list_progress_update_streams")`.
+`session.create_client("mgh").get_paginator("list_progress_update_streams")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mgh.paginator import ListProgressUpdateStreamsPaginator
 
-def get_list_progress_update_streams_paginator() -> ListProgressUpdateStreamsPaginator:
-    return Session().create_client("mgh").get_paginator("list_progress_update_streams")
+session = get_session()
+async with session.create_client("mgh") as client:
+    client: MigrationHubClient
+    paginator: ListProgressUpdateStreamsPaginator = client.get_paginator("list_progress_update_streams")
 ```
 
 Boto3 documentation:

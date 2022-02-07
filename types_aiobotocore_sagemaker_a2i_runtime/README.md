@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[sagemaker-a2i-runtime]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[sagemaker-a2i-runtime]'
+
+# standalone installation
 pip install types-aiobotocore-sagemaker-a2i-runtime
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-sagemaker-a2i-runtime
 
 ## AugmentedAIRuntimeClient
 
-Type annotations for `aiobotocore.create_client("sagemaker-a2i-runtime")` as
+Type annotations for `session.create_client("sagemaker-a2i-runtime")` as
 [AugmentedAIRuntimeClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_sagemaker_a2i_runtime.client import AugmentedAIRuntimeCli
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [delete_human_loop](./client.md#delete_human_loop)
 - [describe_human_loop](./client.md#describe_human_loop)
@@ -76,7 +82,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_sagemaker_a2i_runtime.paginators import ListHumanLoopsPaginator, ...
+from types_aiobotocore_sagemaker_a2i_runtime.paginator import ListHumanLoopsPaginator, ...
 ```
 
 - [ListHumanLoopsPaginator](./paginators.md#listhumanloopspaginator)

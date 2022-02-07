@@ -21,17 +21,19 @@ type annotations stubs module
 ## DescribeEndpointsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediaconvert").get_paginator("describe_endpoints")`.
+`session.create_client("mediaconvert").get_paginator("describe_endpoints")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediaconvert.paginator import DescribeEndpointsPaginator
 
-def get_describe_endpoints_paginator() -> DescribeEndpointsPaginator:
-    return Session().create_client("mediaconvert").get_paginator("describe_endpoints")
+session = get_session()
+async with session.create_client("mediaconvert") as client:
+    client: MediaConvertClient
+    paginator: DescribeEndpointsPaginator = client.get_paginator("describe_endpoints")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `DescribeEndpointsPaginator.paginate` method:
 ## ListJobTemplatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediaconvert").get_paginator("list_job_templates")`.
+`session.create_client("mediaconvert").get_paginator("list_job_templates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediaconvert.paginator import ListJobTemplatesPaginator
 
-def get_list_job_templates_paginator() -> ListJobTemplatesPaginator:
-    return Session().create_client("mediaconvert").get_paginator("list_job_templates")
+session = get_session()
+async with session.create_client("mediaconvert") as client:
+    client: MediaConvertClient
+    paginator: ListJobTemplatesPaginator = client.get_paginator("list_job_templates")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `ListJobTemplatesPaginator.paginate` method:
 ## ListJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediaconvert").get_paginator("list_jobs")`.
+`session.create_client("mediaconvert").get_paginator("list_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediaconvert.paginator import ListJobsPaginator
 
-def get_list_jobs_paginator() -> ListJobsPaginator:
-    return Session().create_client("mediaconvert").get_paginator("list_jobs")
+session = get_session()
+async with session.create_client("mediaconvert") as client:
+    client: MediaConvertClient
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
 ```
 
 Boto3 documentation:
@@ -115,17 +121,19 @@ Arguments for `ListJobsPaginator.paginate` method:
 ## ListPresetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediaconvert").get_paginator("list_presets")`.
+`session.create_client("mediaconvert").get_paginator("list_presets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediaconvert.paginator import ListPresetsPaginator
 
-def get_list_presets_paginator() -> ListPresetsPaginator:
-    return Session().create_client("mediaconvert").get_paginator("list_presets")
+session = get_session()
+async with session.create_client("mediaconvert") as client:
+    client: MediaConvertClient
+    paginator: ListPresetsPaginator = client.get_paginator("list_presets")
 ```
 
 Boto3 documentation:
@@ -147,17 +155,19 @@ Arguments for `ListPresetsPaginator.paginate` method:
 ## ListQueuesPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediaconvert").get_paginator("list_queues")`.
+`session.create_client("mediaconvert").get_paginator("list_queues")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediaconvert.paginator import ListQueuesPaginator
 
-def get_list_queues_paginator() -> ListQueuesPaginator:
-    return Session().create_client("mediaconvert").get_paginator("list_queues")
+session = get_session()
+async with session.create_client("mediaconvert") as client:
+    client: MediaConvertClient
+    paginator: ListQueuesPaginator = client.get_paginator("list_queues")
 ```
 
 Boto3 documentation:

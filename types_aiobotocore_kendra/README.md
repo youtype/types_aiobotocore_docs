@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[kendra]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[kendra]'
+
+# standalone installation
 pip install types-aiobotocore-kendra
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-kendra
 
 ## kendraClient
 
-Type annotations for `aiobotocore.create_client("kendra")` as
+Type annotations for `session.create_client("kendra")` as
 [kendraClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_kendra.client import kendraClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_entities_to_experience](./client.md#associate_entities_to_experience)
 - [associate_personas_to_entities](./client.md#associate_personas_to_entities)
 - [batch_delete_document](./client.md#batch_delete_document)

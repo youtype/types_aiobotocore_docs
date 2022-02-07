@@ -26,17 +26,19 @@ type annotations stubs module
 ## GetCellReadinessSummaryPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_paginator("get_cell_readiness_summary")`.
+`session.create_client("route53-recovery-readiness").get_paginator("get_cell_readiness_summary")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53_recovery_readiness.paginator import GetCellReadinessSummaryPaginator
 
-def get_get_cell_readiness_summary_paginator() -> GetCellReadinessSummaryPaginator:
-    return Session().create_client("route53-recovery-readiness").get_paginator("get_cell_readiness_summary")
+session = get_session()
+async with session.create_client("route53-recovery-readiness") as client:
+    client: Route53RecoveryReadinessClient
+    paginator: GetCellReadinessSummaryPaginator = client.get_paginator("get_cell_readiness_summary")
 ```
 
 Boto3 documentation:
@@ -56,17 +58,19 @@ Arguments for `GetCellReadinessSummaryPaginator.paginate` method:
 ## GetReadinessCheckResourceStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_paginator("get_readiness_check_resource_status")`.
+`session.create_client("route53-recovery-readiness").get_paginator("get_readiness_check_resource_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53_recovery_readiness.paginator import GetReadinessCheckResourceStatusPaginator
 
-def get_get_readiness_check_resource_status_paginator() -> GetReadinessCheckResourceStatusPaginator:
-    return Session().create_client("route53-recovery-readiness").get_paginator("get_readiness_check_resource_status")
+session = get_session()
+async with session.create_client("route53-recovery-readiness") as client:
+    client: Route53RecoveryReadinessClient
+    paginator: GetReadinessCheckResourceStatusPaginator = client.get_paginator("get_readiness_check_resource_status")
 ```
 
 Boto3 documentation:
@@ -87,17 +91,19 @@ Arguments for `GetReadinessCheckResourceStatusPaginator.paginate` method:
 ## GetReadinessCheckStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_paginator("get_readiness_check_status")`.
+`session.create_client("route53-recovery-readiness").get_paginator("get_readiness_check_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53_recovery_readiness.paginator import GetReadinessCheckStatusPaginator
 
-def get_get_readiness_check_status_paginator() -> GetReadinessCheckStatusPaginator:
-    return Session().create_client("route53-recovery-readiness").get_paginator("get_readiness_check_status")
+session = get_session()
+async with session.create_client("route53-recovery-readiness") as client:
+    client: Route53RecoveryReadinessClient
+    paginator: GetReadinessCheckStatusPaginator = client.get_paginator("get_readiness_check_status")
 ```
 
 Boto3 documentation:
@@ -117,17 +123,19 @@ Arguments for `GetReadinessCheckStatusPaginator.paginate` method:
 ## GetRecoveryGroupReadinessSummaryPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_paginator("get_recovery_group_readiness_summary")`.
+`session.create_client("route53-recovery-readiness").get_paginator("get_recovery_group_readiness_summary")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53_recovery_readiness.paginator import GetRecoveryGroupReadinessSummaryPaginator
 
-def get_get_recovery_group_readiness_summary_paginator() -> GetRecoveryGroupReadinessSummaryPaginator:
-    return Session().create_client("route53-recovery-readiness").get_paginator("get_recovery_group_readiness_summary")
+session = get_session()
+async with session.create_client("route53-recovery-readiness") as client:
+    client: Route53RecoveryReadinessClient
+    paginator: GetRecoveryGroupReadinessSummaryPaginator = client.get_paginator("get_recovery_group_readiness_summary")
 ```
 
 Boto3 documentation:
@@ -147,17 +155,19 @@ Arguments for `GetRecoveryGroupReadinessSummaryPaginator.paginate` method:
 ## ListCellsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_paginator("list_cells")`.
+`session.create_client("route53-recovery-readiness").get_paginator("list_cells")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53_recovery_readiness.paginator import ListCellsPaginator
 
-def get_list_cells_paginator() -> ListCellsPaginator:
-    return Session().create_client("route53-recovery-readiness").get_paginator("list_cells")
+session = get_session()
+async with session.create_client("route53-recovery-readiness") as client:
+    client: Route53RecoveryReadinessClient
+    paginator: ListCellsPaginator = client.get_paginator("list_cells")
 ```
 
 Boto3 documentation:
@@ -176,17 +186,19 @@ Arguments for `ListCellsPaginator.paginate` method:
 ## ListCrossAccountAuthorizationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_paginator("list_cross_account_authorizations")`.
+`session.create_client("route53-recovery-readiness").get_paginator("list_cross_account_authorizations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53_recovery_readiness.paginator import ListCrossAccountAuthorizationsPaginator
 
-def get_list_cross_account_authorizations_paginator() -> ListCrossAccountAuthorizationsPaginator:
-    return Session().create_client("route53-recovery-readiness").get_paginator("list_cross_account_authorizations")
+session = get_session()
+async with session.create_client("route53-recovery-readiness") as client:
+    client: Route53RecoveryReadinessClient
+    paginator: ListCrossAccountAuthorizationsPaginator = client.get_paginator("list_cross_account_authorizations")
 ```
 
 Boto3 documentation:
@@ -205,17 +217,19 @@ Arguments for `ListCrossAccountAuthorizationsPaginator.paginate` method:
 ## ListReadinessChecksPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_paginator("list_readiness_checks")`.
+`session.create_client("route53-recovery-readiness").get_paginator("list_readiness_checks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53_recovery_readiness.paginator import ListReadinessChecksPaginator
 
-def get_list_readiness_checks_paginator() -> ListReadinessChecksPaginator:
-    return Session().create_client("route53-recovery-readiness").get_paginator("list_readiness_checks")
+session = get_session()
+async with session.create_client("route53-recovery-readiness") as client:
+    client: Route53RecoveryReadinessClient
+    paginator: ListReadinessChecksPaginator = client.get_paginator("list_readiness_checks")
 ```
 
 Boto3 documentation:
@@ -234,17 +248,19 @@ Arguments for `ListReadinessChecksPaginator.paginate` method:
 ## ListRecoveryGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_paginator("list_recovery_groups")`.
+`session.create_client("route53-recovery-readiness").get_paginator("list_recovery_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53_recovery_readiness.paginator import ListRecoveryGroupsPaginator
 
-def get_list_recovery_groups_paginator() -> ListRecoveryGroupsPaginator:
-    return Session().create_client("route53-recovery-readiness").get_paginator("list_recovery_groups")
+session = get_session()
+async with session.create_client("route53-recovery-readiness") as client:
+    client: Route53RecoveryReadinessClient
+    paginator: ListRecoveryGroupsPaginator = client.get_paginator("list_recovery_groups")
 ```
 
 Boto3 documentation:
@@ -263,17 +279,19 @@ Arguments for `ListRecoveryGroupsPaginator.paginate` method:
 ## ListResourceSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_paginator("list_resource_sets")`.
+`session.create_client("route53-recovery-readiness").get_paginator("list_resource_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53_recovery_readiness.paginator import ListResourceSetsPaginator
 
-def get_list_resource_sets_paginator() -> ListResourceSetsPaginator:
-    return Session().create_client("route53-recovery-readiness").get_paginator("list_resource_sets")
+session = get_session()
+async with session.create_client("route53-recovery-readiness") as client:
+    client: Route53RecoveryReadinessClient
+    paginator: ListResourceSetsPaginator = client.get_paginator("list_resource_sets")
 ```
 
 Boto3 documentation:
@@ -292,17 +310,19 @@ Arguments for `ListResourceSetsPaginator.paginate` method:
 ## ListRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_paginator("list_rules")`.
+`session.create_client("route53-recovery-readiness").get_paginator("list_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53_recovery_readiness.paginator import ListRulesPaginator
 
-def get_list_rules_paginator() -> ListRulesPaginator:
-    return Session().create_client("route53-recovery-readiness").get_paginator("list_rules")
+session = get_session()
+async with session.create_client("route53-recovery-readiness") as client:
+    client: Route53RecoveryReadinessClient
+    paginator: ListRulesPaginator = client.get_paginator("list_rules")
 ```
 
 Boto3 documentation:

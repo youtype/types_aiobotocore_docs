@@ -21,17 +21,19 @@ type annotations stubs module
 ## ListChannelsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").get_paginator("list_channels")`.
+`session.create_client("iotanalytics").get_paginator("list_channels")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotanalytics.paginator import ListChannelsPaginator
 
-def get_list_channels_paginator() -> ListChannelsPaginator:
-    return Session().create_client("iotanalytics").get_paginator("list_channels")
+session = get_session()
+async with session.create_client("iotanalytics") as client:
+    client: IoTAnalyticsClient
+    paginator: ListChannelsPaginator = client.get_paginator("list_channels")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `ListChannelsPaginator.paginate` method:
 ## ListDatasetContentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").get_paginator("list_dataset_contents")`.
+`session.create_client("iotanalytics").get_paginator("list_dataset_contents")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotanalytics.paginator import ListDatasetContentsPaginator
 
-def get_list_dataset_contents_paginator() -> ListDatasetContentsPaginator:
-    return Session().create_client("iotanalytics").get_paginator("list_dataset_contents")
+session = get_session()
+async with session.create_client("iotanalytics") as client:
+    client: IoTAnalyticsClient
+    paginator: ListDatasetContentsPaginator = client.get_paginator("list_dataset_contents")
 ```
 
 Boto3 documentation:
@@ -82,17 +86,19 @@ Arguments for `ListDatasetContentsPaginator.paginate` method:
 ## ListDatasetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").get_paginator("list_datasets")`.
+`session.create_client("iotanalytics").get_paginator("list_datasets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotanalytics.paginator import ListDatasetsPaginator
 
-def get_list_datasets_paginator() -> ListDatasetsPaginator:
-    return Session().create_client("iotanalytics").get_paginator("list_datasets")
+session = get_session()
+async with session.create_client("iotanalytics") as client:
+    client: IoTAnalyticsClient
+    paginator: ListDatasetsPaginator = client.get_paginator("list_datasets")
 ```
 
 Boto3 documentation:
@@ -111,17 +117,19 @@ Arguments for `ListDatasetsPaginator.paginate` method:
 ## ListDatastoresPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").get_paginator("list_datastores")`.
+`session.create_client("iotanalytics").get_paginator("list_datastores")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotanalytics.paginator import ListDatastoresPaginator
 
-def get_list_datastores_paginator() -> ListDatastoresPaginator:
-    return Session().create_client("iotanalytics").get_paginator("list_datastores")
+session = get_session()
+async with session.create_client("iotanalytics") as client:
+    client: IoTAnalyticsClient
+    paginator: ListDatastoresPaginator = client.get_paginator("list_datastores")
 ```
 
 Boto3 documentation:
@@ -140,17 +148,19 @@ Arguments for `ListDatastoresPaginator.paginate` method:
 ## ListPipelinesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotanalytics").get_paginator("list_pipelines")`.
+`session.create_client("iotanalytics").get_paginator("list_pipelines")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotanalytics.paginator import ListPipelinesPaginator
 
-def get_list_pipelines_paginator() -> ListPipelinesPaginator:
-    return Session().create_client("iotanalytics").get_paginator("list_pipelines")
+session = get_session()
+async with session.create_client("iotanalytics") as client:
+    client: IoTAnalyticsClient
+    paginator: ListPipelinesPaginator = client.get_paginator("list_pipelines")
 ```
 
 Boto3 documentation:

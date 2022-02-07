@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[glacier]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[glacier]'
+
+# standalone installation
 pip install types-aiobotocore-glacier
 ```
 
@@ -33,7 +37,7 @@ pip install types-aiobotocore-glacier
 
 ## GlacierClient
 
-Type annotations for `aiobotocore.create_client("glacier")` as
+Type annotations for `session.create_client("glacier")` as
 [GlacierClient](./client.md)
 
 Can be used directly:
@@ -46,6 +50,8 @@ from types_aiobotocore_glacier.client import GlacierClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [abort_multipart_upload](./client.md#abort_multipart_upload)
 - [abort_vault_lock](./client.md#abort_vault_lock)
 - [add_tags_to_vault](./client.md#add_tags_to_vault)
@@ -105,7 +111,7 @@ GlacierClient [exceptions](./client.md#exceptions)
 
 ## GlacierServiceResource
 
-Type annotations for `aiobotocore.resource("glacier")` as
+Type annotations for `session.resource("glacier")` as
 [GlacierServiceResource](./service_resource.md#glacierserviceresource)
 
 Can be used directly:
@@ -132,8 +138,7 @@ from types_aiobotocore_glacier.service_resource import ServiceResourceVaultsColl
 
 ### Resources
 
-Type annotations for additional resources from
-`aiobotocore.resource("glacier").*`.
+Type annotations for additional resources from `session.resource("glacier").*`.
 
 Can be used directly:
 
@@ -158,7 +163,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_glacier.paginators import ListJobsPaginator, ...
+from types_aiobotocore_glacier.paginator import ListJobsPaginator, ...
 ```
 
 - [ListJobsPaginator](./paginators.md#listjobspaginator)
@@ -176,7 +181,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_glacier.waiters import VaultExistsWaiter, ...
+from types_aiobotocore_glacier.waiter import VaultExistsWaiter, ...
 ```
 
 - [VaultExistsWaiter](./waiters.md#vaultexistswaiter)

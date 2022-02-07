@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[dms]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[dms]'
+
+# standalone installation
 pip install types-aiobotocore-dms
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-dms
 
 ## DatabaseMigrationServiceClient
 
-Type annotations for `aiobotocore.create_client("dms")` as
+Type annotations for `session.create_client("dms")` as
 [DatabaseMigrationServiceClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_dms.client import DatabaseMigrationServiceClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_tags_to_resource](./client.md#add_tags_to_resource)
 - [apply_pending_maintenance_action](./client.md#apply_pending_maintenance_action)
 - [can_paginate](./client.md#can_paginate)
@@ -145,7 +151,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_dms.paginators import DescribeCertificatesPaginator, ...
+from types_aiobotocore_dms.paginator import DescribeCertificatesPaginator, ...
 ```
 
 - [DescribeCertificatesPaginator](./paginators.md#describecertificatespaginator)
@@ -172,7 +178,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_dms.waiters import EndpointDeletedWaiter, ...
+from types_aiobotocore_dms.waiter import EndpointDeletedWaiter, ...
 ```
 
 - [EndpointDeletedWaiter](./waiters.md#endpointdeletedwaiter)

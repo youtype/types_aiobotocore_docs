@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[iotevents]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[iotevents]'
+
+# standalone installation
 pip install types-aiobotocore-iotevents
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-iotevents
 
 ## IoTEventsClient
 
-Type annotations for `aiobotocore.create_client("iotevents")` as
+Type annotations for `session.create_client("iotevents")` as
 [IoTEventsClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_iotevents.client import IoTEventsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_alarm_model](./client.md#create_alarm_model)
 - [create_detector_model](./client.md#create_detector_model)

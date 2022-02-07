@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[cognito-idp]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[cognito-idp]'
+
+# standalone installation
 pip install types-aiobotocore-cognito-idp
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-cognito-idp
 
 ## CognitoIdentityProviderClient
 
-Type annotations for `aiobotocore.create_client("cognito-idp")` as
+Type annotations for `session.create_client("cognito-idp")` as
 [CognitoIdentityProviderClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_cognito_idp.client import CognitoIdentityProviderClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_custom_attributes](./client.md#add_custom_attributes)
 - [admin_add_user_to_group](./client.md#admin_add_user_to_group)
 - [admin_confirm_sign_up](./client.md#admin_confirm_sign_up)
@@ -206,7 +212,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_cognito_idp.paginators import AdminListGroupsForUserPaginator, ...
+from types_aiobotocore_cognito_idp.paginator import AdminListGroupsForUserPaginator, ...
 ```
 
 - [AdminListGroupsForUserPaginator](./paginators.md#adminlistgroupsforuserpaginator)

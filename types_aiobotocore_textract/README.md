@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[textract]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[textract]'
+
+# standalone installation
 pip install types-aiobotocore-textract
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-textract
 
 ## TextractClient
 
-Type annotations for `aiobotocore.create_client("textract")` as
+Type annotations for `session.create_client("textract")` as
 [TextractClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_textract.client import TextractClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [analyze_document](./client.md#analyze_document)
 - [analyze_expense](./client.md#analyze_expense)
 - [analyze_id](./client.md#analyze_id)

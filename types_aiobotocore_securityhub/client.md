@@ -72,22 +72,25 @@ type annotations stubs module
     - [update_organization_configuration](#update_organization_configuration)
     - [update_security_hub_configuration](#update_security_hub_configuration)
     - [update_standards_control](#update_standards_control)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="securityhubclient"></a>
 
 ## SecurityHubClient
 
-Type annotations for `aiobotocore.create_client("securityhub")`
+Type annotations for `session.create_client("securityhub")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_securityhub.client import SecurityHubClient
 
-def get_securityhub_client() -> SecurityHubClient:
-    return Session().client("securityhub")
+session = get_session()
+async with session.create_client("securityhub") as client:
+    client: SecurityHubClient
 ```
 
 Boto3 documentation:
@@ -128,8 +131,7 @@ Exceptions:
 
 SecurityHubClient exceptions.
 
-Type annotations for `aiobotocore.create_client("securityhub").exceptions`
-method.
+Type annotations for `session.create_client("securityhub").exceptions` method.
 
 Boto3 documentation:
 [SecurityHub.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.exceptions)
@@ -144,8 +146,7 @@ Accepts the invitation to be a member account and be monitored by the Security
 Hub administrator account that the invitation was sent from.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").accept_administrator_invitation`
-method.
+`session.create_client("securityhub").accept_administrator_invitation` method.
 
 Boto3 documentation:
 [SecurityHub.Client.accept_administrator_invitation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.accept_administrator_invitation)
@@ -169,8 +170,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 This method is deprecated.
 
-Type annotations for
-`aiobotocore.create_client("securityhub").accept_invitation` method.
+Type annotations for `session.create_client("securityhub").accept_invitation`
+method.
 
 Boto3 documentation:
 [SecurityHub.Client.accept_invitation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.accept_invitation)
@@ -194,7 +195,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disables the standards specified by the provided `StandardsSubscriptionArns` .
 
 Type annotations for
-`aiobotocore.create_client("securityhub").batch_disable_standards` method.
+`session.create_client("securityhub").batch_disable_standards` method.
 
 Boto3 documentation:
 [SecurityHub.Client.batch_disable_standards](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.batch_disable_standards)
@@ -219,7 +220,7 @@ Returns a `Coroutine` for
 Enables the standards specified by the provided `StandardsArn`.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").batch_enable_standards` method.
+`session.create_client("securityhub").batch_enable_standards` method.
 
 Boto3 documentation:
 [SecurityHub.Client.batch_enable_standards](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.batch_enable_standards)
@@ -247,7 +248,7 @@ Imports security findings generated from an integrated product into Security
 Hub.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").batch_import_findings` method.
+`session.create_client("securityhub").batch_import_findings` method.
 
 Boto3 documentation:
 [SecurityHub.Client.batch_import_findings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.batch_import_findings)
@@ -275,7 +276,7 @@ Used by Security Hub customers to update information about their investigation
 into a finding.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").batch_update_findings` method.
+`session.create_client("securityhub").batch_update_findings` method.
 
 Boto3 documentation:
 [SecurityHub.Client.batch_update_findings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.batch_update_findings)
@@ -312,19 +313,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("securityhub").can_paginate`
+Type annotations for `session.create_client("securityhub").can_paginate`
 method.
 
 Boto3 documentation:
 [SecurityHub.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_action_target"></a>
 
@@ -333,7 +332,7 @@ Returns a `Coroutine` for `bool`.
 Creates a custom action target in Security Hub.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").create_action_target` method.
+`session.create_client("securityhub").create_action_target` method.
 
 Boto3 documentation:
 [SecurityHub.Client.create_action_target](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.create_action_target)
@@ -360,7 +359,7 @@ Returns a `Coroutine` for
 Used to enable finding aggregation.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").create_finding_aggregator` method.
+`session.create_client("securityhub").create_finding_aggregator` method.
 
 Boto3 documentation:
 [SecurityHub.Client.create_finding_aggregator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.create_finding_aggregator)
@@ -385,7 +384,7 @@ Returns a `Coroutine` for
 
 Creates a custom insight in Security Hub.
 
-Type annotations for `aiobotocore.create_client("securityhub").create_insight`
+Type annotations for `session.create_client("securityhub").create_insight`
 method.
 
 Boto3 documentation:
@@ -414,7 +413,7 @@ Returns a `Coroutine` for
 Creates a member association in Security Hub between the specified accounts and
 the account used to make the request, which is the administrator account.
 
-Type annotations for `aiobotocore.create_client("securityhub").create_members`
+Type annotations for `session.create_client("securityhub").create_members`
 method.
 
 Boto3 documentation:
@@ -440,8 +439,8 @@ Returns a `Coroutine` for
 
 Declines invitations to become a member account.
 
-Type annotations for
-`aiobotocore.create_client("securityhub").decline_invitations` method.
+Type annotations for `session.create_client("securityhub").decline_invitations`
+method.
 
 Boto3 documentation:
 [SecurityHub.Client.decline_invitations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.decline_invitations)
@@ -466,7 +465,7 @@ Returns a `Coroutine` for
 Deletes a custom action target from Security Hub.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").delete_action_target` method.
+`session.create_client("securityhub").delete_action_target` method.
 
 Boto3 documentation:
 [SecurityHub.Client.delete_action_target](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.delete_action_target)
@@ -491,7 +490,7 @@ Returns a `Coroutine` for
 Deletes a finding aggregator.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").delete_finding_aggregator` method.
+`session.create_client("securityhub").delete_finding_aggregator` method.
 
 Boto3 documentation:
 [SecurityHub.Client.delete_finding_aggregator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.delete_finding_aggregator)
@@ -514,7 +513,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the insight specified by the `InsightArn` .
 
-Type annotations for `aiobotocore.create_client("securityhub").delete_insight`
+Type annotations for `session.create_client("securityhub").delete_insight`
 method.
 
 Boto3 documentation:
@@ -539,8 +538,8 @@ Returns a `Coroutine` for
 Deletes invitations received by the Amazon Web Services account to become a
 member account.
 
-Type annotations for
-`aiobotocore.create_client("securityhub").delete_invitations` method.
+Type annotations for `session.create_client("securityhub").delete_invitations`
+method.
 
 Boto3 documentation:
 [SecurityHub.Client.delete_invitations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.delete_invitations)
@@ -564,7 +563,7 @@ Returns a `Coroutine` for
 
 Deletes the specified member accounts from Security Hub.
 
-Type annotations for `aiobotocore.create_client("securityhub").delete_members`
+Type annotations for `session.create_client("securityhub").delete_members`
 method.
 
 Boto3 documentation:
@@ -589,7 +588,7 @@ Returns a `Coroutine` for
 Returns a list of the custom action targets in Security Hub in your account.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").describe_action_targets` method.
+`session.create_client("securityhub").describe_action_targets` method.
 
 Boto3 documentation:
 [SecurityHub.Client.describe_action_targets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.describe_action_targets)
@@ -616,7 +615,7 @@ Returns a `Coroutine` for
 Returns details about the Hub resource in your account, including the `HubArn`
 and the time when you enabled Security Hub.
 
-Type annotations for `aiobotocore.create_client("securityhub").describe_hub`
+Type annotations for `session.create_client("securityhub").describe_hub`
 method.
 
 Boto3 documentation:
@@ -641,7 +640,7 @@ Returns a `Coroutine` for
 Returns information about the Organizations configuration for Security Hub.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").describe_organization_configuration`
+`session.create_client("securityhub").describe_organization_configuration`
 method.
 
 Boto3 documentation:
@@ -659,8 +658,8 @@ Returns a `Coroutine` for
 
 Returns information about product integrations in Security Hub.
 
-Type annotations for
-`aiobotocore.create_client("securityhub").describe_products` method.
+Type annotations for `session.create_client("securityhub").describe_products`
+method.
 
 Boto3 documentation:
 [SecurityHub.Client.describe_products](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.describe_products)
@@ -685,8 +684,8 @@ Returns a `Coroutine` for
 
 Returns a list of the available standards in Security Hub.
 
-Type annotations for
-`aiobotocore.create_client("securityhub").describe_standards` method.
+Type annotations for `session.create_client("securityhub").describe_standards`
+method.
 
 Boto3 documentation:
 [SecurityHub.Client.describe_standards](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.describe_standards)
@@ -712,7 +711,7 @@ Returns a `Coroutine` for
 Returns a list of security standards controls.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").describe_standards_controls` method.
+`session.create_client("securityhub").describe_standards_controls` method.
 
 Boto3 documentation:
 [SecurityHub.Client.describe_standards_controls](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.describe_standards_controls)
@@ -739,7 +738,7 @@ Returns a `Coroutine` for
 Disables the integration of the specified product with Security Hub.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").disable_import_findings_for_product`
+`session.create_client("securityhub").disable_import_findings_for_product`
 method.
 
 Boto3 documentation:
@@ -764,7 +763,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disables a Security Hub administrator account.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").disable_organization_admin_account`
+`session.create_client("securityhub").disable_organization_admin_account`
 method.
 
 Boto3 documentation:
@@ -789,7 +788,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disables Security Hub in your account only in the current Region.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").disable_security_hub` method.
+`session.create_client("securityhub").disable_security_hub` method.
 
 Boto3 documentation:
 [SecurityHub.Client.disable_security_hub](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.disable_security_hub)
@@ -807,7 +806,7 @@ Disassociates the current Security Hub member account from the associated
 administrator account.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").disassociate_from_administrator_account`
+`session.create_client("securityhub").disassociate_from_administrator_account`
 method.
 
 Boto3 documentation:
@@ -825,8 +824,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 This method is deprecated.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").disassociate_from_master_account`
-method.
+`session.create_client("securityhub").disassociate_from_master_account` method.
 
 Boto3 documentation:
 [SecurityHub.Client.disassociate_from_master_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.disassociate_from_master_account)
@@ -844,7 +842,7 @@ Disassociates the specified member accounts from the associated administrator
 account.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").disassociate_members` method.
+`session.create_client("securityhub").disassociate_members` method.
 
 Boto3 documentation:
 [SecurityHub.Client.disassociate_members](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.disassociate_members)
@@ -868,7 +866,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Enables the integration of a partner product with Security Hub.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").enable_import_findings_for_product`
+`session.create_client("securityhub").enable_import_findings_for_product`
 method.
 
 Boto3 documentation:
@@ -894,7 +892,7 @@ Returns a `Coroutine` for
 Designates the Security Hub administrator account for an organization.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").enable_organization_admin_account`
+`session.create_client("securityhub").enable_organization_admin_account`
 method.
 
 Boto3 documentation:
@@ -919,8 +917,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Enables Security Hub for your account in the current Region or the Region you
 specify in the request.
 
-Type annotations for
-`aiobotocore.create_client("securityhub").enable_security_hub` method.
+Type annotations for `session.create_client("securityhub").enable_security_hub`
+method.
 
 Boto3 documentation:
 [SecurityHub.Client.enable_security_hub](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.enable_security_hub)
@@ -945,7 +943,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").generate_presigned_url` method.
+`session.create_client("securityhub").generate_presigned_url` method.
 
 Boto3 documentation:
 [SecurityHub.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.generate_presigned_url)
@@ -970,7 +968,7 @@ Provides the details for the Security Hub administrator account for the current
 member account.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").get_administrator_account` method.
+`session.create_client("securityhub").get_administrator_account` method.
 
 Boto3 documentation:
 [SecurityHub.Client.get_administrator_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.get_administrator_account)
@@ -988,7 +986,7 @@ Returns a `Coroutine` for
 Returns a list of the standards that are currently enabled.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").get_enabled_standards` method.
+`session.create_client("securityhub").get_enabled_standards` method.
 
 Boto3 documentation:
 [SecurityHub.Client.get_enabled_standards](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.get_enabled_standards)
@@ -1015,7 +1013,7 @@ Returns a `Coroutine` for
 Returns the current finding aggregation configuration.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").get_finding_aggregator` method.
+`session.create_client("securityhub").get_finding_aggregator` method.
 
 Boto3 documentation:
 [SecurityHub.Client.get_finding_aggregator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.get_finding_aggregator)
@@ -1039,7 +1037,7 @@ Returns a `Coroutine` for
 
 Returns a list of findings that match the specified criteria.
 
-Type annotations for `aiobotocore.create_client("securityhub").get_findings`
+Type annotations for `session.create_client("securityhub").get_findings`
 method.
 
 Boto3 documentation:
@@ -1068,8 +1066,8 @@ Returns a `Coroutine` for
 
 Lists the results of the Security Hub insight specified by the insight ARN.
 
-Type annotations for
-`aiobotocore.create_client("securityhub").get_insight_results` method.
+Type annotations for `session.create_client("securityhub").get_insight_results`
+method.
 
 Boto3 documentation:
 [SecurityHub.Client.get_insight_results](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.get_insight_results)
@@ -1093,7 +1091,7 @@ Returns a `Coroutine` for
 
 Lists and describes insights for the specified insight ARNs.
 
-Type annotations for `aiobotocore.create_client("securityhub").get_insights`
+Type annotations for `session.create_client("securityhub").get_insights`
 method.
 
 Boto3 documentation:
@@ -1121,7 +1119,7 @@ Returns the count of all Security Hub membership invitations that were sent to
 the current member account, not including the currently accepted invitation.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").get_invitations_count` method.
+`session.create_client("securityhub").get_invitations_count` method.
 
 Boto3 documentation:
 [SecurityHub.Client.get_invitations_count](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.get_invitations_count)
@@ -1138,8 +1136,8 @@ Returns a `Coroutine` for
 
 This method is deprecated.
 
-Type annotations for
-`aiobotocore.create_client("securityhub").get_master_account` method.
+Type annotations for `session.create_client("securityhub").get_master_account`
+method.
 
 Boto3 documentation:
 [SecurityHub.Client.get_master_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.get_master_account)
@@ -1157,8 +1155,7 @@ Returns a `Coroutine` for
 Returns the details for the Security Hub member accounts for the specified
 account IDs.
 
-Type annotations for `aiobotocore.create_client("securityhub").get_members`
-method.
+Type annotations for `session.create_client("securityhub").get_members` method.
 
 Boto3 documentation:
 [SecurityHub.Client.get_members](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.get_members)
@@ -1182,7 +1179,7 @@ Returns a `Coroutine` for
 Invites other Amazon Web Services accounts to become member accounts for the
 Security Hub administrator account that the invitation is sent from.
 
-Type annotations for `aiobotocore.create_client("securityhub").invite_members`
+Type annotations for `session.create_client("securityhub").invite_members`
 method.
 
 Boto3 documentation:
@@ -1208,8 +1205,7 @@ Lists all findings-generating solutions (products) that you are subscribed to
 receive findings from in Security Hub.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").list_enabled_products_for_import`
-method.
+`session.create_client("securityhub").list_enabled_products_for_import` method.
 
 Boto3 documentation:
 [SecurityHub.Client.list_enabled_products_for_import](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.list_enabled_products_for_import)
@@ -1236,7 +1232,7 @@ If finding aggregation is enabled, then `ListFindingAggregators` returns the
 ARN of the finding aggregator.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").list_finding_aggregators` method.
+`session.create_client("securityhub").list_finding_aggregators` method.
 
 Boto3 documentation:
 [SecurityHub.Client.list_finding_aggregators](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.list_finding_aggregators)
@@ -1262,8 +1258,8 @@ Returns a `Coroutine` for
 Lists all Security Hub membership invitations that were sent to the current
 Amazon Web Services account.
 
-Type annotations for
-`aiobotocore.create_client("securityhub").list_invitations` method.
+Type annotations for `session.create_client("securityhub").list_invitations`
+method.
 
 Boto3 documentation:
 [SecurityHub.Client.list_invitations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.list_invitations)
@@ -1288,7 +1284,7 @@ Returns a `Coroutine` for
 Lists details about all member accounts for the current Security Hub
 administrator account.
 
-Type annotations for `aiobotocore.create_client("securityhub").list_members`
+Type annotations for `session.create_client("securityhub").list_members`
 method.
 
 Boto3 documentation:
@@ -1315,8 +1311,7 @@ Returns a `Coroutine` for
 Lists the Security Hub administrator accounts.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").list_organization_admin_accounts`
-method.
+`session.create_client("securityhub").list_organization_admin_accounts` method.
 
 Boto3 documentation:
 [SecurityHub.Client.list_organization_admin_accounts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.list_organization_admin_accounts)
@@ -1342,7 +1337,7 @@ Returns a `Coroutine` for
 Returns a list of tags associated with a resource.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").list_tags_for_resource` method.
+`session.create_client("securityhub").list_tags_for_resource` method.
 
 Boto3 documentation:
 [SecurityHub.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.list_tags_for_resource)
@@ -1366,7 +1361,7 @@ Returns a `Coroutine` for
 
 Adds one or more tags to a resource.
 
-Type annotations for `aiobotocore.create_client("securityhub").tag_resource`
+Type annotations for `session.create_client("securityhub").tag_resource`
 method.
 
 Boto3 documentation:
@@ -1390,7 +1385,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from a resource.
 
-Type annotations for `aiobotocore.create_client("securityhub").untag_resource`
+Type annotations for `session.create_client("securityhub").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1415,7 +1410,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the name and description of a custom action target in Security Hub.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").update_action_target` method.
+`session.create_client("securityhub").update_action_target` method.
 
 Boto3 documentation:
 [SecurityHub.Client.update_action_target](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.update_action_target)
@@ -1441,7 +1436,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the finding aggregation configuration.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").update_finding_aggregator` method.
+`session.create_client("securityhub").update_finding_aggregator` method.
 
 Boto3 documentation:
 [SecurityHub.Client.update_finding_aggregator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.update_finding_aggregator)
@@ -1467,7 +1462,7 @@ Returns a `Coroutine` for
 
 `UpdateFindings` is deprecated.
 
-Type annotations for `aiobotocore.create_client("securityhub").update_findings`
+Type annotations for `session.create_client("securityhub").update_findings`
 method.
 
 Boto3 documentation:
@@ -1494,7 +1489,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the Security Hub insight identified by the specified insight ARN.
 
-Type annotations for `aiobotocore.create_client("securityhub").update_insight`
+Type annotations for `session.create_client("securityhub").update_insight`
 method.
 
 Boto3 documentation:
@@ -1522,7 +1517,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Used to update the configuration related to Organizations.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").update_organization_configuration`
+`session.create_client("securityhub").update_organization_configuration`
 method.
 
 Boto3 documentation:
@@ -1547,7 +1542,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates configuration options for Security Hub.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").update_security_hub_configuration`
+`session.create_client("securityhub").update_security_hub_configuration`
 method.
 
 Boto3 documentation:
@@ -1573,7 +1568,7 @@ Used to control whether an individual security standard control is enabled or
 disabled.
 
 Type annotations for
-`aiobotocore.create_client("securityhub").update_standards_control` method.
+`session.create_client("securityhub").update_standards_control` method.
 
 Boto3 documentation:
 [SecurityHub.Client.update_standards_control](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.update_standards_control)
@@ -1592,11 +1587,43 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("securityhub").__aenter__` method.
+
+Boto3 documentation:
+[SecurityHub.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SecurityHubClient](#securityhubclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("securityhub").__aexit__` method.
+
+Boto3 documentation:
+[SecurityHub.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/securityhub.html#SecurityHub.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("securityhub").get_paginator`
+Type annotations for `session.create_client("securityhub").get_paginator`
 method with overloads.
 
 - `client.get_paginator("describe_action_targets")` ->

@@ -23,17 +23,19 @@ type annotations stubs module
 ## DescribeAccountLimitsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elbv2").get_paginator("describe_account_limits")`.
+`session.create_client("elbv2").get_paginator("describe_account_limits")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elbv2.paginator import DescribeAccountLimitsPaginator
 
-def get_describe_account_limits_paginator() -> DescribeAccountLimitsPaginator:
-    return Session().create_client("elbv2").get_paginator("describe_account_limits")
+session = get_session()
+async with session.create_client("elbv2") as client:
+    client: ElasticLoadBalancingv2Client
+    paginator: DescribeAccountLimitsPaginator = client.get_paginator("describe_account_limits")
 ```
 
 Boto3 documentation:
@@ -52,17 +54,19 @@ Arguments for `DescribeAccountLimitsPaginator.paginate` method:
 ## DescribeListenerCertificatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("elbv2").get_paginator("describe_listener_certificates")`.
+`session.create_client("elbv2").get_paginator("describe_listener_certificates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elbv2.paginator import DescribeListenerCertificatesPaginator
 
-def get_describe_listener_certificates_paginator() -> DescribeListenerCertificatesPaginator:
-    return Session().create_client("elbv2").get_paginator("describe_listener_certificates")
+session = get_session()
+async with session.create_client("elbv2") as client:
+    client: ElasticLoadBalancingv2Client
+    paginator: DescribeListenerCertificatesPaginator = client.get_paginator("describe_listener_certificates")
 ```
 
 Boto3 documentation:
@@ -82,17 +86,19 @@ Arguments for `DescribeListenerCertificatesPaginator.paginate` method:
 ## DescribeListenersPaginator
 
 Type annotations for
-`aiobotocore.create_client("elbv2").get_paginator("describe_listeners")`.
+`session.create_client("elbv2").get_paginator("describe_listeners")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elbv2.paginator import DescribeListenersPaginator
 
-def get_describe_listeners_paginator() -> DescribeListenersPaginator:
-    return Session().create_client("elbv2").get_paginator("describe_listeners")
+session = get_session()
+async with session.create_client("elbv2") as client:
+    client: ElasticLoadBalancingv2Client
+    paginator: DescribeListenersPaginator = client.get_paginator("describe_listeners")
 ```
 
 Boto3 documentation:
@@ -113,17 +119,19 @@ Arguments for `DescribeListenersPaginator.paginate` method:
 ## DescribeLoadBalancersPaginator
 
 Type annotations for
-`aiobotocore.create_client("elbv2").get_paginator("describe_load_balancers")`.
+`session.create_client("elbv2").get_paginator("describe_load_balancers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elbv2.paginator import DescribeLoadBalancersPaginator
 
-def get_describe_load_balancers_paginator() -> DescribeLoadBalancersPaginator:
-    return Session().create_client("elbv2").get_paginator("describe_load_balancers")
+session = get_session()
+async with session.create_client("elbv2") as client:
+    client: ElasticLoadBalancingv2Client
+    paginator: DescribeLoadBalancersPaginator = client.get_paginator("describe_load_balancers")
 ```
 
 Boto3 documentation:
@@ -144,17 +152,19 @@ Arguments for `DescribeLoadBalancersPaginator.paginate` method:
 ## DescribeRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("elbv2").get_paginator("describe_rules")`.
+`session.create_client("elbv2").get_paginator("describe_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elbv2.paginator import DescribeRulesPaginator
 
-def get_describe_rules_paginator() -> DescribeRulesPaginator:
-    return Session().create_client("elbv2").get_paginator("describe_rules")
+session = get_session()
+async with session.create_client("elbv2") as client:
+    client: ElasticLoadBalancingv2Client
+    paginator: DescribeRulesPaginator = client.get_paginator("describe_rules")
 ```
 
 Boto3 documentation:
@@ -175,17 +185,19 @@ Arguments for `DescribeRulesPaginator.paginate` method:
 ## DescribeSSLPoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("elbv2").get_paginator("describe_ssl_policies")`.
+`session.create_client("elbv2").get_paginator("describe_ssl_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elbv2.paginator import DescribeSSLPoliciesPaginator
 
-def get_describe_ssl_policies_paginator() -> DescribeSSLPoliciesPaginator:
-    return Session().create_client("elbv2").get_paginator("describe_ssl_policies")
+session = get_session()
+async with session.create_client("elbv2") as client:
+    client: ElasticLoadBalancingv2Client
+    paginator: DescribeSSLPoliciesPaginator = client.get_paginator("describe_ssl_policies")
 ```
 
 Boto3 documentation:
@@ -207,17 +219,19 @@ Arguments for `DescribeSSLPoliciesPaginator.paginate` method:
 ## DescribeTargetGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elbv2").get_paginator("describe_target_groups")`.
+`session.create_client("elbv2").get_paginator("describe_target_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elbv2.paginator import DescribeTargetGroupsPaginator
 
-def get_describe_target_groups_paginator() -> DescribeTargetGroupsPaginator:
-    return Session().create_client("elbv2").get_paginator("describe_target_groups")
+session = get_session()
+async with session.create_client("elbv2") as client:
+    client: ElasticLoadBalancingv2Client
+    paginator: DescribeTargetGroupsPaginator = client.get_paginator("describe_target_groups")
 ```
 
 Boto3 documentation:

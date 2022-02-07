@@ -36,17 +36,19 @@ type annotations stubs module
 ## DescribeFleetAttributesPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("describe_fleet_attributes")`.
+`session.create_client("gamelift").get_paginator("describe_fleet_attributes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import DescribeFleetAttributesPaginator
 
-def get_describe_fleet_attributes_paginator() -> DescribeFleetAttributesPaginator:
-    return Session().create_client("gamelift").get_paginator("describe_fleet_attributes")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: DescribeFleetAttributesPaginator = client.get_paginator("describe_fleet_attributes")
 ```
 
 Boto3 documentation:
@@ -66,17 +68,19 @@ Arguments for `DescribeFleetAttributesPaginator.paginate` method:
 ## DescribeFleetCapacityPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("describe_fleet_capacity")`.
+`session.create_client("gamelift").get_paginator("describe_fleet_capacity")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import DescribeFleetCapacityPaginator
 
-def get_describe_fleet_capacity_paginator() -> DescribeFleetCapacityPaginator:
-    return Session().create_client("gamelift").get_paginator("describe_fleet_capacity")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: DescribeFleetCapacityPaginator = client.get_paginator("describe_fleet_capacity")
 ```
 
 Boto3 documentation:
@@ -96,17 +100,19 @@ Arguments for `DescribeFleetCapacityPaginator.paginate` method:
 ## DescribeFleetEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("describe_fleet_events")`.
+`session.create_client("gamelift").get_paginator("describe_fleet_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import DescribeFleetEventsPaginator
 
-def get_describe_fleet_events_paginator() -> DescribeFleetEventsPaginator:
-    return Session().create_client("gamelift").get_paginator("describe_fleet_events")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: DescribeFleetEventsPaginator = client.get_paginator("describe_fleet_events")
 ```
 
 Boto3 documentation:
@@ -128,17 +134,19 @@ Arguments for `DescribeFleetEventsPaginator.paginate` method:
 ## DescribeFleetUtilizationPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("describe_fleet_utilization")`.
+`session.create_client("gamelift").get_paginator("describe_fleet_utilization")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import DescribeFleetUtilizationPaginator
 
-def get_describe_fleet_utilization_paginator() -> DescribeFleetUtilizationPaginator:
-    return Session().create_client("gamelift").get_paginator("describe_fleet_utilization")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: DescribeFleetUtilizationPaginator = client.get_paginator("describe_fleet_utilization")
 ```
 
 Boto3 documentation:
@@ -158,17 +166,19 @@ Arguments for `DescribeFleetUtilizationPaginator.paginate` method:
 ## DescribeGameServerInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("describe_game_server_instances")`.
+`session.create_client("gamelift").get_paginator("describe_game_server_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import DescribeGameServerInstancesPaginator
 
-def get_describe_game_server_instances_paginator() -> DescribeGameServerInstancesPaginator:
-    return Session().create_client("gamelift").get_paginator("describe_game_server_instances")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: DescribeGameServerInstancesPaginator = client.get_paginator("describe_game_server_instances")
 ```
 
 Boto3 documentation:
@@ -189,17 +199,19 @@ Arguments for `DescribeGameServerInstancesPaginator.paginate` method:
 ## DescribeGameSessionDetailsPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("describe_game_session_details")`.
+`session.create_client("gamelift").get_paginator("describe_game_session_details")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import DescribeGameSessionDetailsPaginator
 
-def get_describe_game_session_details_paginator() -> DescribeGameSessionDetailsPaginator:
-    return Session().create_client("gamelift").get_paginator("describe_game_session_details")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: DescribeGameSessionDetailsPaginator = client.get_paginator("describe_game_session_details")
 ```
 
 Boto3 documentation:
@@ -223,17 +235,19 @@ Arguments for `DescribeGameSessionDetailsPaginator.paginate` method:
 ## DescribeGameSessionQueuesPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("describe_game_session_queues")`.
+`session.create_client("gamelift").get_paginator("describe_game_session_queues")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import DescribeGameSessionQueuesPaginator
 
-def get_describe_game_session_queues_paginator() -> DescribeGameSessionQueuesPaginator:
-    return Session().create_client("gamelift").get_paginator("describe_game_session_queues")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: DescribeGameSessionQueuesPaginator = client.get_paginator("describe_game_session_queues")
 ```
 
 Boto3 documentation:
@@ -253,17 +267,19 @@ Arguments for `DescribeGameSessionQueuesPaginator.paginate` method:
 ## DescribeGameSessionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("describe_game_sessions")`.
+`session.create_client("gamelift").get_paginator("describe_game_sessions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import DescribeGameSessionsPaginator
 
-def get_describe_game_sessions_paginator() -> DescribeGameSessionsPaginator:
-    return Session().create_client("gamelift").get_paginator("describe_game_sessions")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: DescribeGameSessionsPaginator = client.get_paginator("describe_game_sessions")
 ```
 
 Boto3 documentation:
@@ -287,17 +303,19 @@ Arguments for `DescribeGameSessionsPaginator.paginate` method:
 ## DescribeInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("describe_instances")`.
+`session.create_client("gamelift").get_paginator("describe_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import DescribeInstancesPaginator
 
-def get_describe_instances_paginator() -> DescribeInstancesPaginator:
-    return Session().create_client("gamelift").get_paginator("describe_instances")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: DescribeInstancesPaginator = client.get_paginator("describe_instances")
 ```
 
 Boto3 documentation:
@@ -319,17 +337,19 @@ Arguments for `DescribeInstancesPaginator.paginate` method:
 ## DescribeMatchmakingConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("describe_matchmaking_configurations")`.
+`session.create_client("gamelift").get_paginator("describe_matchmaking_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import DescribeMatchmakingConfigurationsPaginator
 
-def get_describe_matchmaking_configurations_paginator() -> DescribeMatchmakingConfigurationsPaginator:
-    return Session().create_client("gamelift").get_paginator("describe_matchmaking_configurations")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: DescribeMatchmakingConfigurationsPaginator = client.get_paginator("describe_matchmaking_configurations")
 ```
 
 Boto3 documentation:
@@ -350,17 +370,19 @@ Arguments for `DescribeMatchmakingConfigurationsPaginator.paginate` method:
 ## DescribeMatchmakingRuleSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("describe_matchmaking_rule_sets")`.
+`session.create_client("gamelift").get_paginator("describe_matchmaking_rule_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import DescribeMatchmakingRuleSetsPaginator
 
-def get_describe_matchmaking_rule_sets_paginator() -> DescribeMatchmakingRuleSetsPaginator:
-    return Session().create_client("gamelift").get_paginator("describe_matchmaking_rule_sets")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: DescribeMatchmakingRuleSetsPaginator = client.get_paginator("describe_matchmaking_rule_sets")
 ```
 
 Boto3 documentation:
@@ -380,17 +402,19 @@ Arguments for `DescribeMatchmakingRuleSetsPaginator.paginate` method:
 ## DescribePlayerSessionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("describe_player_sessions")`.
+`session.create_client("gamelift").get_paginator("describe_player_sessions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import DescribePlayerSessionsPaginator
 
-def get_describe_player_sessions_paginator() -> DescribePlayerSessionsPaginator:
-    return Session().create_client("gamelift").get_paginator("describe_player_sessions")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: DescribePlayerSessionsPaginator = client.get_paginator("describe_player_sessions")
 ```
 
 Boto3 documentation:
@@ -413,17 +437,19 @@ Arguments for `DescribePlayerSessionsPaginator.paginate` method:
 ## DescribeScalingPoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("describe_scaling_policies")`.
+`session.create_client("gamelift").get_paginator("describe_scaling_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import DescribeScalingPoliciesPaginator
 
-def get_describe_scaling_policies_paginator() -> DescribeScalingPoliciesPaginator:
-    return Session().create_client("gamelift").get_paginator("describe_scaling_policies")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: DescribeScalingPoliciesPaginator = client.get_paginator("describe_scaling_policies")
 ```
 
 Boto3 documentation:
@@ -445,17 +471,19 @@ Arguments for `DescribeScalingPoliciesPaginator.paginate` method:
 ## ListAliasesPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("list_aliases")`.
+`session.create_client("gamelift").get_paginator("list_aliases")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import ListAliasesPaginator
 
-def get_list_aliases_paginator() -> ListAliasesPaginator:
-    return Session().create_client("gamelift").get_paginator("list_aliases")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: ListAliasesPaginator = client.get_paginator("list_aliases")
 ```
 
 Boto3 documentation:
@@ -477,17 +505,19 @@ Arguments for `ListAliasesPaginator.paginate` method:
 ## ListBuildsPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("list_builds")`.
+`session.create_client("gamelift").get_paginator("list_builds")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import ListBuildsPaginator
 
-def get_list_builds_paginator() -> ListBuildsPaginator:
-    return Session().create_client("gamelift").get_paginator("list_builds")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: ListBuildsPaginator = client.get_paginator("list_builds")
 ```
 
 Boto3 documentation:
@@ -507,17 +537,19 @@ Arguments for `ListBuildsPaginator.paginate` method:
 ## ListFleetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("list_fleets")`.
+`session.create_client("gamelift").get_paginator("list_fleets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import ListFleetsPaginator
 
-def get_list_fleets_paginator() -> ListFleetsPaginator:
-    return Session().create_client("gamelift").get_paginator("list_fleets")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: ListFleetsPaginator = client.get_paginator("list_fleets")
 ```
 
 Boto3 documentation:
@@ -538,17 +570,19 @@ Arguments for `ListFleetsPaginator.paginate` method:
 ## ListGameServerGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("list_game_server_groups")`.
+`session.create_client("gamelift").get_paginator("list_game_server_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import ListGameServerGroupsPaginator
 
-def get_list_game_server_groups_paginator() -> ListGameServerGroupsPaginator:
-    return Session().create_client("gamelift").get_paginator("list_game_server_groups")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: ListGameServerGroupsPaginator = client.get_paginator("list_game_server_groups")
 ```
 
 Boto3 documentation:
@@ -567,17 +601,19 @@ Arguments for `ListGameServerGroupsPaginator.paginate` method:
 ## ListGameServersPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("list_game_servers")`.
+`session.create_client("gamelift").get_paginator("list_game_servers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import ListGameServersPaginator
 
-def get_list_game_servers_paginator() -> ListGameServersPaginator:
-    return Session().create_client("gamelift").get_paginator("list_game_servers")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: ListGameServersPaginator = client.get_paginator("list_game_servers")
 ```
 
 Boto3 documentation:
@@ -598,17 +634,19 @@ Arguments for `ListGameServersPaginator.paginate` method:
 ## ListScriptsPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("list_scripts")`.
+`session.create_client("gamelift").get_paginator("list_scripts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import ListScriptsPaginator
 
-def get_list_scripts_paginator() -> ListScriptsPaginator:
-    return Session().create_client("gamelift").get_paginator("list_scripts")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: ListScriptsPaginator = client.get_paginator("list_scripts")
 ```
 
 Boto3 documentation:
@@ -627,17 +665,19 @@ Arguments for `ListScriptsPaginator.paginate` method:
 ## SearchGameSessionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_paginator("search_game_sessions")`.
+`session.create_client("gamelift").get_paginator("search_game_sessions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_gamelift.paginator import SearchGameSessionsPaginator
 
-def get_search_game_sessions_paginator() -> SearchGameSessionsPaginator:
-    return Session().create_client("gamelift").get_paginator("search_game_sessions")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
+    paginator: SearchGameSessionsPaginator = client.get_paginator("search_game_sessions")
 ```
 
 Boto3 documentation:

@@ -20,17 +20,19 @@ type annotations stubs module
 ## DescribeScalableTargetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").get_paginator("describe_scalable_targets")`.
+`session.create_client("application-autoscaling").get_paginator("describe_scalable_targets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_application_autoscaling.paginator import DescribeScalableTargetsPaginator
 
-def get_describe_scalable_targets_paginator() -> DescribeScalableTargetsPaginator:
-    return Session().create_client("application-autoscaling").get_paginator("describe_scalable_targets")
+session = get_session()
+async with session.create_client("application-autoscaling") as client:
+    client: ApplicationAutoScalingClient
+    paginator: DescribeScalableTargetsPaginator = client.get_paginator("describe_scalable_targets")
 ```
 
 Boto3 documentation:
@@ -54,17 +56,19 @@ Arguments for `DescribeScalableTargetsPaginator.paginate` method:
 ## DescribeScalingActivitiesPaginator
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").get_paginator("describe_scaling_activities")`.
+`session.create_client("application-autoscaling").get_paginator("describe_scaling_activities")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_application_autoscaling.paginator import DescribeScalingActivitiesPaginator
 
-def get_describe_scaling_activities_paginator() -> DescribeScalingActivitiesPaginator:
-    return Session().create_client("application-autoscaling").get_paginator("describe_scaling_activities")
+session = get_session()
+async with session.create_client("application-autoscaling") as client:
+    client: ApplicationAutoScalingClient
+    paginator: DescribeScalingActivitiesPaginator = client.get_paginator("describe_scaling_activities")
 ```
 
 Boto3 documentation:
@@ -88,17 +92,19 @@ Arguments for `DescribeScalingActivitiesPaginator.paginate` method:
 ## DescribeScalingPoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").get_paginator("describe_scaling_policies")`.
+`session.create_client("application-autoscaling").get_paginator("describe_scaling_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_application_autoscaling.paginator import DescribeScalingPoliciesPaginator
 
-def get_describe_scaling_policies_paginator() -> DescribeScalingPoliciesPaginator:
-    return Session().create_client("application-autoscaling").get_paginator("describe_scaling_policies")
+session = get_session()
+async with session.create_client("application-autoscaling") as client:
+    client: ApplicationAutoScalingClient
+    paginator: DescribeScalingPoliciesPaginator = client.get_paginator("describe_scaling_policies")
 ```
 
 Boto3 documentation:
@@ -123,17 +129,19 @@ Arguments for `DescribeScalingPoliciesPaginator.paginate` method:
 ## DescribeScheduledActionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("application-autoscaling").get_paginator("describe_scheduled_actions")`.
+`session.create_client("application-autoscaling").get_paginator("describe_scheduled_actions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_application_autoscaling.paginator import DescribeScheduledActionsPaginator
 
-def get_describe_scheduled_actions_paginator() -> DescribeScheduledActionsPaginator:
-    return Session().create_client("application-autoscaling").get_paginator("describe_scheduled_actions")
+session = get_session()
+async with session.create_client("application-autoscaling") as client:
+    client: ApplicationAutoScalingClient
+    paginator: DescribeScheduledActionsPaginator = client.get_paginator("describe_scheduled_actions")
 ```
 
 Boto3 documentation:

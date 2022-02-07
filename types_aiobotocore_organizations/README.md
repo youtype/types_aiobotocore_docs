@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[organizations]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[organizations]'
+
+# standalone installation
 pip install types-aiobotocore-organizations
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-organizations
 
 ## OrganizationsClient
 
-Type annotations for `aiobotocore.create_client("organizations")` as
+Type annotations for `session.create_client("organizations")` as
 [OrganizationsClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_organizations.client import OrganizationsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_handshake](./client.md#accept_handshake)
 - [attach_policy](./client.md#attach_policy)
 - [can_paginate](./client.md#can_paginate)
@@ -160,7 +166,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_organizations.paginators import ListAWSServiceAccessForOrganizationPaginator, ...
+from types_aiobotocore_organizations.paginator import ListAWSServiceAccessForOrganizationPaginator, ...
 ```
 
 - [ListAWSServiceAccessForOrganizationPaginator](./paginators.md#listawsserviceaccessfororganizationpaginator)

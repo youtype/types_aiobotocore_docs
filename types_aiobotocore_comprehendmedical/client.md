@@ -42,21 +42,24 @@ type annotations stubs module
     - [stop_phi_detection_job](#stop_phi_detection_job)
     - [stop_rx_norm_inference_job](#stop_rx_norm_inference_job)
     - [stop_snomedct_inference_job](#stop_snomedct_inference_job)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="comprehendmedicalclient"></a>
 
 ## ComprehendMedicalClient
 
-Type annotations for `aiobotocore.create_client("comprehendmedical")`
+Type annotations for `session.create_client("comprehendmedical")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_comprehendmedical.client import ComprehendMedicalClient
 
-def get_comprehendmedical_client() -> ComprehendMedicalClient:
-    return Session().client("comprehendmedical")
+session = get_session()
+async with session.create_client("comprehendmedical") as client:
+    client: ComprehendMedicalClient
 ```
 
 Boto3 documentation:
@@ -98,8 +101,8 @@ Exceptions:
 
 ComprehendMedicalClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("comprehendmedical").exceptions` method.
+Type annotations for `session.create_client("comprehendmedical").exceptions`
+method.
 
 Boto3 documentation:
 [ComprehendMedical.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html#ComprehendMedical.Client.exceptions)
@@ -112,19 +115,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("comprehendmedical").can_paginate` method.
+Type annotations for `session.create_client("comprehendmedical").can_paginate`
+method.
 
 Boto3 documentation:
 [ComprehendMedical.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html#ComprehendMedical.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="describe_entities_detection_v2_job"></a>
 
@@ -133,7 +134,7 @@ Returns a `Coroutine` for `bool`.
 Gets the properties associated with a medical entities detection job.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").describe_entities_detection_v2_job`
+`session.create_client("comprehendmedical").describe_entities_detection_v2_job`
 method.
 
 Boto3 documentation:
@@ -159,7 +160,7 @@ Returns a `Coroutine` for
 Gets the properties associated with an InferICD10CM job.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").describe_icd10_cm_inference_job`
+`session.create_client("comprehendmedical").describe_icd10_cm_inference_job`
 method.
 
 Boto3 documentation:
@@ -186,8 +187,7 @@ Gets the properties associated with a protected health information (PHI)
 detection job.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").describe_phi_detection_job`
-method.
+`session.create_client("comprehendmedical").describe_phi_detection_job` method.
 
 Boto3 documentation:
 [ComprehendMedical.Client.describe_phi_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html#ComprehendMedical.Client.describe_phi_detection_job)
@@ -212,7 +212,7 @@ Returns a `Coroutine` for
 Gets the properties associated with an InferRxNorm job.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").describe_rx_norm_inference_job`
+`session.create_client("comprehendmedical").describe_rx_norm_inference_job`
 method.
 
 Boto3 documentation:
@@ -238,7 +238,7 @@ Returns a `Coroutine` for
 Gets the properties associated with an InferSNOMEDCT job.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").describe_snomedct_inference_job`
+`session.create_client("comprehendmedical").describe_snomedct_inference_job`
 method.
 
 Boto3 documentation:
@@ -264,7 +264,7 @@ Returns a `Coroutine` for
 The `DetectEntities` operation is deprecated.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").detect_entities` method.
+`session.create_client("comprehendmedical").detect_entities` method.
 
 Boto3 documentation:
 [ComprehendMedical.Client.detect_entities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html#ComprehendMedical.Client.detect_entities)
@@ -290,7 +290,7 @@ specific information about them such as entity category, location, and
 confidence score on that information.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").detect_entities_v2` method.
+`session.create_client("comprehendmedical").detect_entities_v2` method.
 
 Boto3 documentation:
 [ComprehendMedical.Client.detect_entities_v2](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html#ComprehendMedical.Client.detect_entities_v2)
@@ -315,8 +315,8 @@ Returns a `Coroutine` for
 Inspects the clinical text for protected health information (PHI) entities and
 returns the entity category, location, and confidence score for each entity.
 
-Type annotations for
-`aiobotocore.create_client("comprehendmedical").detect_phi` method.
+Type annotations for `session.create_client("comprehendmedical").detect_phi`
+method.
 
 Boto3 documentation:
 [ComprehendMedical.Client.detect_phi](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html#ComprehendMedical.Client.detect_phi)
@@ -340,7 +340,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").generate_presigned_url` method.
+`session.create_client("comprehendmedical").generate_presigned_url` method.
 
 Boto3 documentation:
 [ComprehendMedical.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html#ComprehendMedical.Client.generate_presigned_url)
@@ -366,7 +366,7 @@ and links those entities to normalized concept identifiers in the ICD-10-CM
 knowledge base from the Centers for Disease Control.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").infer_icd10_cm` method.
+`session.create_client("comprehendmedical").infer_icd10_cm` method.
 
 Boto3 documentation:
 [ComprehendMedical.Client.infer_icd10_cm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html#ComprehendMedical.Client.infer_icd10_cm)
@@ -391,8 +391,8 @@ InferRxNorm detects medications as entities listed in a patient record and
 links to the normalized concept identifiers in the RxNorm database from the
 National Library of Medicine.
 
-Type annotations for
-`aiobotocore.create_client("comprehendmedical").infer_rx_norm` method.
+Type annotations for `session.create_client("comprehendmedical").infer_rx_norm`
+method.
 
 Boto3 documentation:
 [ComprehendMedical.Client.infer_rx_norm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html#ComprehendMedical.Client.infer_rx_norm)
@@ -420,7 +420,7 @@ codes from the Systematized Nomenclature of Medicine, Clinical Terms
 \*\*Re...
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").infer_snomedct` method.
+`session.create_client("comprehendmedical").infer_snomedct` method.
 
 Boto3 documentation:
 [ComprehendMedical.Client.infer_snomedct](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html#ComprehendMedical.Client.infer_snomedct)
@@ -444,7 +444,7 @@ Returns a `Coroutine` for
 Gets a list of medical entity detection jobs that you have submitted.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").list_entities_detection_v2_jobs`
+`session.create_client("comprehendmedical").list_entities_detection_v2_jobs`
 method.
 
 Boto3 documentation:
@@ -473,7 +473,7 @@ Returns a `Coroutine` for
 Gets a list of InferICD10CM jobs that you have submitted.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").list_icd10_cm_inference_jobs`
+`session.create_client("comprehendmedical").list_icd10_cm_inference_jobs`
 method.
 
 Boto3 documentation:
@@ -503,8 +503,7 @@ Gets a list of protected health information (PHI) detection jobs that you have
 submitted.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").list_phi_detection_jobs`
-method.
+`session.create_client("comprehendmedical").list_phi_detection_jobs` method.
 
 Boto3 documentation:
 [ComprehendMedical.Client.list_phi_detection_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html#ComprehendMedical.Client.list_phi_detection_jobs)
@@ -532,7 +531,7 @@ Returns a `Coroutine` for
 Gets a list of InferRxNorm jobs that you have submitted.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").list_rx_norm_inference_jobs`
+`session.create_client("comprehendmedical").list_rx_norm_inference_jobs`
 method.
 
 Boto3 documentation:
@@ -561,7 +560,7 @@ Returns a `Coroutine` for
 Gets a list of InferSNOMEDCT jobs a user has submitted.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").list_snomedct_inference_jobs`
+`session.create_client("comprehendmedical").list_snomedct_inference_jobs`
 method.
 
 Boto3 documentation:
@@ -591,7 +590,7 @@ Starts an asynchronous medical entity detection job for a collection of
 documents.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").start_entities_detection_v2_job`
+`session.create_client("comprehendmedical").start_entities_detection_v2_job`
 method.
 
 Boto3 documentation:
@@ -628,7 +627,7 @@ Starts an asynchronous job to detect medical conditions and link them to the
 ICD-10-CM ontology.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").start_icd10_cm_inference_job`
+`session.create_client("comprehendmedical").start_icd10_cm_inference_job`
 method.
 
 Boto3 documentation:
@@ -664,8 +663,7 @@ Returns a `Coroutine` for
 Starts an asynchronous job to detect protected health information (PHI).
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").start_phi_detection_job`
-method.
+`session.create_client("comprehendmedical").start_phi_detection_job` method.
 
 Boto3 documentation:
 [ComprehendMedical.Client.start_phi_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html#ComprehendMedical.Client.start_phi_detection_job)
@@ -701,7 +699,7 @@ Starts an asynchronous job to detect medication entities and link them to the
 RxNorm ontology.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").start_rx_norm_inference_job`
+`session.create_client("comprehendmedical").start_rx_norm_inference_job`
 method.
 
 Boto3 documentation:
@@ -738,7 +736,7 @@ Starts an asynchronous job to detect medical concepts and link them to the
 SNOMED-CT ontology.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").start_snomedct_inference_job`
+`session.create_client("comprehendmedical").start_snomedct_inference_job`
 method.
 
 Boto3 documentation:
@@ -774,7 +772,7 @@ Returns a `Coroutine` for
 Stops a medical entities detection job in progress.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").stop_entities_detection_v2_job`
+`session.create_client("comprehendmedical").stop_entities_detection_v2_job`
 method.
 
 Boto3 documentation:
@@ -800,7 +798,7 @@ Returns a `Coroutine` for
 Stops an InferICD10CM inference job in progress.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").stop_icd10_cm_inference_job`
+`session.create_client("comprehendmedical").stop_icd10_cm_inference_job`
 method.
 
 Boto3 documentation:
@@ -826,7 +824,7 @@ Returns a `Coroutine` for
 Stops a protected health information (PHI) detection job in progress.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").stop_phi_detection_job` method.
+`session.create_client("comprehendmedical").stop_phi_detection_job` method.
 
 Boto3 documentation:
 [ComprehendMedical.Client.stop_phi_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html#ComprehendMedical.Client.stop_phi_detection_job)
@@ -851,8 +849,7 @@ Returns a `Coroutine` for
 Stops an InferRxNorm inference job in progress.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").stop_rx_norm_inference_job`
-method.
+`session.create_client("comprehendmedical").stop_rx_norm_inference_job` method.
 
 Boto3 documentation:
 [ComprehendMedical.Client.stop_rx_norm_inference_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html#ComprehendMedical.Client.stop_rx_norm_inference_job)
@@ -877,7 +874,7 @@ Returns a `Coroutine` for
 Stops an InferSNOMEDCT inference job in progress.
 
 Type annotations for
-`aiobotocore.create_client("comprehendmedical").stop_snomedct_inference_job`
+`session.create_client("comprehendmedical").stop_snomedct_inference_job`
 method.
 
 Boto3 documentation:
@@ -895,3 +892,37 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [StopSNOMEDCTInferenceJobResponseTypeDef](./type_defs.md#stopsnomedctinferencejobresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("comprehendmedical").__aenter__`
+method.
+
+Boto3 documentation:
+[ComprehendMedical.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html#ComprehendMedical.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ComprehendMedicalClient](#comprehendmedicalclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("comprehendmedical").__aexit__`
+method.
+
+Boto3 documentation:
+[ComprehendMedical.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html#ComprehendMedical.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

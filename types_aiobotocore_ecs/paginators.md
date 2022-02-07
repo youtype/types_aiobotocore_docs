@@ -24,17 +24,19 @@ type annotations stubs module
 ## ListAccountSettingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecs").get_paginator("list_account_settings")`.
+`session.create_client("ecs").get_paginator("list_account_settings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecs.paginator import ListAccountSettingsPaginator
 
-def get_list_account_settings_paginator() -> ListAccountSettingsPaginator:
-    return Session().create_client("ecs").get_paginator("list_account_settings")
+session = get_session()
+async with session.create_client("ecs") as client:
+    client: ECSClient
+    paginator: ListAccountSettingsPaginator = client.get_paginator("list_account_settings")
 ```
 
 Boto3 documentation:
@@ -57,17 +59,19 @@ Arguments for `ListAccountSettingsPaginator.paginate` method:
 ## ListAttributesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecs").get_paginator("list_attributes")`.
+`session.create_client("ecs").get_paginator("list_attributes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecs.paginator import ListAttributesPaginator
 
-def get_list_attributes_paginator() -> ListAttributesPaginator:
-    return Session().create_client("ecs").get_paginator("list_attributes")
+session = get_session()
+async with session.create_client("ecs") as client:
+    client: ECSClient
+    paginator: ListAttributesPaginator = client.get_paginator("list_attributes")
 ```
 
 Boto3 documentation:
@@ -91,17 +95,19 @@ Arguments for `ListAttributesPaginator.paginate` method:
 ## ListClustersPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecs").get_paginator("list_clusters")`.
+`session.create_client("ecs").get_paginator("list_clusters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecs.paginator import ListClustersPaginator
 
-def get_list_clusters_paginator() -> ListClustersPaginator:
-    return Session().create_client("ecs").get_paginator("list_clusters")
+session = get_session()
+async with session.create_client("ecs") as client:
+    client: ECSClient
+    paginator: ListClustersPaginator = client.get_paginator("list_clusters")
 ```
 
 Boto3 documentation:
@@ -120,17 +126,19 @@ Arguments for `ListClustersPaginator.paginate` method:
 ## ListContainerInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecs").get_paginator("list_container_instances")`.
+`session.create_client("ecs").get_paginator("list_container_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecs.paginator import ListContainerInstancesPaginator
 
-def get_list_container_instances_paginator() -> ListContainerInstancesPaginator:
-    return Session().create_client("ecs").get_paginator("list_container_instances")
+session = get_session()
+async with session.create_client("ecs") as client:
+    client: ECSClient
+    paginator: ListContainerInstancesPaginator = client.get_paginator("list_container_instances")
 ```
 
 Boto3 documentation:
@@ -153,17 +161,19 @@ Arguments for `ListContainerInstancesPaginator.paginate` method:
 ## ListServicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecs").get_paginator("list_services")`.
+`session.create_client("ecs").get_paginator("list_services")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecs.paginator import ListServicesPaginator
 
-def get_list_services_paginator() -> ListServicesPaginator:
-    return Session().create_client("ecs").get_paginator("list_services")
+session = get_session()
+async with session.create_client("ecs") as client:
+    client: ECSClient
+    paginator: ListServicesPaginator = client.get_paginator("list_services")
 ```
 
 Boto3 documentation:
@@ -186,17 +196,19 @@ Arguments for `ListServicesPaginator.paginate` method:
 ## ListTaskDefinitionFamiliesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecs").get_paginator("list_task_definition_families")`.
+`session.create_client("ecs").get_paginator("list_task_definition_families")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecs.paginator import ListTaskDefinitionFamiliesPaginator
 
-def get_list_task_definition_families_paginator() -> ListTaskDefinitionFamiliesPaginator:
-    return Session().create_client("ecs").get_paginator("list_task_definition_families")
+session = get_session()
+async with session.create_client("ecs") as client:
+    client: ECSClient
+    paginator: ListTaskDefinitionFamiliesPaginator = client.get_paginator("list_task_definition_families")
 ```
 
 Boto3 documentation:
@@ -218,17 +230,19 @@ Arguments for `ListTaskDefinitionFamiliesPaginator.paginate` method:
 ## ListTaskDefinitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecs").get_paginator("list_task_definitions")`.
+`session.create_client("ecs").get_paginator("list_task_definitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecs.paginator import ListTaskDefinitionsPaginator
 
-def get_list_task_definitions_paginator() -> ListTaskDefinitionsPaginator:
-    return Session().create_client("ecs").get_paginator("list_task_definitions")
+session = get_session()
+async with session.create_client("ecs") as client:
+    client: ECSClient
+    paginator: ListTaskDefinitionsPaginator = client.get_paginator("list_task_definitions")
 ```
 
 Boto3 documentation:
@@ -250,17 +264,19 @@ Arguments for `ListTaskDefinitionsPaginator.paginate` method:
 ## ListTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecs").get_paginator("list_tasks")`.
+`session.create_client("ecs").get_paginator("list_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecs.paginator import ListTasksPaginator
 
-def get_list_tasks_paginator() -> ListTasksPaginator:
-    return Session().create_client("ecs").get_paginator("list_tasks")
+session = get_session()
+async with session.create_client("ecs") as client:
+    client: ECSClient
+    paginator: ListTasksPaginator = client.get_paginator("list_tasks")
 ```
 
 Boto3 documentation:

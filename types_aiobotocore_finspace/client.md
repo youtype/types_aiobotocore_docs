@@ -24,21 +24,24 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_environment](#update_environment)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="finspaceclient"></a>
 
 ## finspaceClient
 
-Type annotations for `aiobotocore.create_client("finspace")`
+Type annotations for `session.create_client("finspace")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_finspace.client import finspaceClient
 
-def get_finspace_client() -> finspaceClient:
-    return Session().client("finspace")
+session = get_session()
+async with session.create_client("finspace") as client:
+    client: finspaceClient
 ```
 
 Boto3 documentation:
@@ -80,7 +83,7 @@ Exceptions:
 
 finspaceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("finspace").exceptions` method.
+Type annotations for `session.create_client("finspace").exceptions` method.
 
 Boto3 documentation:
 [finspace.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace.html#finspace.Client.exceptions)
@@ -93,19 +96,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("finspace").can_paginate`
-method.
+Type annotations for `session.create_client("finspace").can_paginate` method.
 
 Boto3 documentation:
 [finspace.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace.html#finspace.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_environment"></a>
 
@@ -113,7 +113,7 @@ Returns a `Coroutine` for `bool`.
 
 Create a new FinSpace environment.
 
-Type annotations for `aiobotocore.create_client("finspace").create_environment`
+Type annotations for `session.create_client("finspace").create_environment`
 method.
 
 Boto3 documentation:
@@ -147,7 +147,7 @@ Returns a `Coroutine` for
 
 Delete an FinSpace environment.
 
-Type annotations for `aiobotocore.create_client("finspace").delete_environment`
+Type annotations for `session.create_client("finspace").delete_environment`
 method.
 
 Boto3 documentation:
@@ -171,8 +171,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("finspace").generate_presigned_url` method.
+Type annotations for `session.create_client("finspace").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [finspace.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace.html#finspace.Client.generate_presigned_url)
@@ -195,7 +195,7 @@ Returns a `Coroutine` for `str`.
 
 Returns the FinSpace environment object.
 
-Type annotations for `aiobotocore.create_client("finspace").get_environment`
+Type annotations for `session.create_client("finspace").get_environment`
 method.
 
 Boto3 documentation:
@@ -219,7 +219,7 @@ Returns a `Coroutine` for
 
 A list of all of your FinSpace environments.
 
-Type annotations for `aiobotocore.create_client("finspace").list_environments`
+Type annotations for `session.create_client("finspace").list_environments`
 method.
 
 Boto3 documentation:
@@ -244,8 +244,8 @@ Returns a `Coroutine` for
 
 A list of all tags for a resource.
 
-Type annotations for
-`aiobotocore.create_client("finspace").list_tags_for_resource` method.
+Type annotations for `session.create_client("finspace").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [finspace.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace.html#finspace.Client.list_tags_for_resource)
@@ -269,8 +269,7 @@ Returns a `Coroutine` for
 
 Adds metadata tags to a FinSpace resource.
 
-Type annotations for `aiobotocore.create_client("finspace").tag_resource`
-method.
+Type annotations for `session.create_client("finspace").tag_resource` method.
 
 Boto3 documentation:
 [finspace.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace.html#finspace.Client.tag_resource)
@@ -293,8 +292,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes metadata tags from a FinSpace resource.
 
-Type annotations for `aiobotocore.create_client("finspace").untag_resource`
-method.
+Type annotations for `session.create_client("finspace").untag_resource` method.
 
 Boto3 documentation:
 [finspace.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace.html#finspace.Client.untag_resource)
@@ -317,7 +315,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Update your FinSpace environment.
 
-Type annotations for `aiobotocore.create_client("finspace").update_environment`
+Type annotations for `session.create_client("finspace").update_environment`
 method.
 
 Boto3 documentation:
@@ -340,3 +338,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateEnvironmentResponseTypeDef](./type_defs.md#updateenvironmentresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("finspace").__aenter__` method.
+
+Boto3 documentation:
+[finspace.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace.html#finspace.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [finspaceClient](#finspaceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("finspace").__aexit__` method.
+
+Boto3 documentation:
+[finspace.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace.html#finspace.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

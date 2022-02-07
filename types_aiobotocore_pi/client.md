@@ -19,21 +19,24 @@ type annotations stubs module
     - [generate_presigned_url](#generate_presigned_url)
     - [get_dimension_key_details](#get_dimension_key_details)
     - [get_resource_metrics](#get_resource_metrics)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="piclient"></a>
 
 ## PIClient
 
-Type annotations for `aiobotocore.create_client("pi")`
+Type annotations for `session.create_client("pi")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_pi.client import PIClient
 
-def get_pi_client() -> PIClient:
-    return Session().client("pi")
+session = get_session()
+async with session.create_client("pi") as client:
+    client: PIClient
 ```
 
 Boto3 documentation:
@@ -70,7 +73,7 @@ Exceptions:
 
 PIClient exceptions.
 
-Type annotations for `aiobotocore.create_client("pi").exceptions` method.
+Type annotations for `session.create_client("pi").exceptions` method.
 
 Boto3 documentation:
 [PI.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pi.html#PI.Client.exceptions)
@@ -83,18 +86,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("pi").can_paginate` method.
+Type annotations for `session.create_client("pi").can_paginate` method.
 
 Boto3 documentation:
 [PI.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pi.html#PI.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="describe_dimension_keys"></a>
 
@@ -102,7 +103,7 @@ Returns a `Coroutine` for `bool`.
 
 For a specific time period, retrieve the top `N` dimension keys for a metric.
 
-Type annotations for `aiobotocore.create_client("pi").describe_dimension_keys`
+Type annotations for `session.create_client("pi").describe_dimension_keys`
 method.
 
 Boto3 documentation:
@@ -139,7 +140,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("pi").generate_presigned_url`
+Type annotations for `session.create_client("pi").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -164,8 +165,8 @@ Returns a `Coroutine` for `str`.
 Get the attributes of the specified dimension group for a DB instance or data
 source.
 
-Type annotations for
-`aiobotocore.create_client("pi").get_dimension_key_details` method.
+Type annotations for `session.create_client("pi").get_dimension_key_details`
+method.
 
 Boto3 documentation:
 [PI.Client.get_dimension_key_details](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pi.html#PI.Client.get_dimension_key_details)
@@ -195,8 +196,7 @@ Returns a `Coroutine` for
 Retrieve Performance Insights metrics for a set of data sources, over a time
 period.
 
-Type annotations for `aiobotocore.create_client("pi").get_resource_metrics`
-method.
+Type annotations for `session.create_client("pi").get_resource_metrics` method.
 
 Boto3 documentation:
 [PI.Client.get_resource_metrics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pi.html#PI.Client.get_resource_metrics)
@@ -223,3 +223,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [GetResourceMetricsResponseTypeDef](./type_defs.md#getresourcemetricsresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("pi").__aenter__` method.
+
+Boto3 documentation:
+[PI.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pi.html#PI.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [PIClient](#piclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("pi").__aexit__` method.
+
+Boto3 documentation:
+[PI.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pi.html#PI.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

@@ -24,17 +24,19 @@ type annotations stubs module
 ## BatchGetTracesPaginator
 
 Type annotations for
-`aiobotocore.create_client("xray").get_paginator("batch_get_traces")`.
+`session.create_client("xray").get_paginator("batch_get_traces")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_xray.paginator import BatchGetTracesPaginator
 
-def get_batch_get_traces_paginator() -> BatchGetTracesPaginator:
-    return Session().create_client("xray").get_paginator("batch_get_traces")
+session = get_session()
+async with session.create_client("xray") as client:
+    client: XRayClient
+    paginator: BatchGetTracesPaginator = client.get_paginator("batch_get_traces")
 ```
 
 Boto3 documentation:
@@ -54,17 +56,19 @@ Arguments for `BatchGetTracesPaginator.paginate` method:
 ## GetGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("xray").get_paginator("get_groups")`.
+`session.create_client("xray").get_paginator("get_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_xray.paginator import GetGroupsPaginator
 
-def get_get_groups_paginator() -> GetGroupsPaginator:
-    return Session().create_client("xray").get_paginator("get_groups")
+session = get_session()
+async with session.create_client("xray") as client:
+    client: XRayClient
+    paginator: GetGroupsPaginator = client.get_paginator("get_groups")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `GetGroupsPaginator.paginate` method:
 ## GetSamplingRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("xray").get_paginator("get_sampling_rules")`.
+`session.create_client("xray").get_paginator("get_sampling_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_xray.paginator import GetSamplingRulesPaginator
 
-def get_get_sampling_rules_paginator() -> GetSamplingRulesPaginator:
-    return Session().create_client("xray").get_paginator("get_sampling_rules")
+session = get_session()
+async with session.create_client("xray") as client:
+    client: XRayClient
+    paginator: GetSamplingRulesPaginator = client.get_paginator("get_sampling_rules")
 ```
 
 Boto3 documentation:
@@ -112,17 +118,19 @@ Arguments for `GetSamplingRulesPaginator.paginate` method:
 ## GetSamplingStatisticSummariesPaginator
 
 Type annotations for
-`aiobotocore.create_client("xray").get_paginator("get_sampling_statistic_summaries")`.
+`session.create_client("xray").get_paginator("get_sampling_statistic_summaries")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_xray.paginator import GetSamplingStatisticSummariesPaginator
 
-def get_get_sampling_statistic_summaries_paginator() -> GetSamplingStatisticSummariesPaginator:
-    return Session().create_client("xray").get_paginator("get_sampling_statistic_summaries")
+session = get_session()
+async with session.create_client("xray") as client:
+    client: XRayClient
+    paginator: GetSamplingStatisticSummariesPaginator = client.get_paginator("get_sampling_statistic_summaries")
 ```
 
 Boto3 documentation:
@@ -141,17 +149,19 @@ Arguments for `GetSamplingStatisticSummariesPaginator.paginate` method:
 ## GetServiceGraphPaginator
 
 Type annotations for
-`aiobotocore.create_client("xray").get_paginator("get_service_graph")`.
+`session.create_client("xray").get_paginator("get_service_graph")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_xray.paginator import GetServiceGraphPaginator
 
-def get_get_service_graph_paginator() -> GetServiceGraphPaginator:
-    return Session().create_client("xray").get_paginator("get_service_graph")
+session = get_session()
+async with session.create_client("xray") as client:
+    client: XRayClient
+    paginator: GetServiceGraphPaginator = client.get_paginator("get_service_graph")
 ```
 
 Boto3 documentation:
@@ -174,17 +184,19 @@ Arguments for `GetServiceGraphPaginator.paginate` method:
 ## GetTimeSeriesServiceStatisticsPaginator
 
 Type annotations for
-`aiobotocore.create_client("xray").get_paginator("get_time_series_service_statistics")`.
+`session.create_client("xray").get_paginator("get_time_series_service_statistics")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_xray.paginator import GetTimeSeriesServiceStatisticsPaginator
 
-def get_get_time_series_service_statistics_paginator() -> GetTimeSeriesServiceStatisticsPaginator:
-    return Session().create_client("xray").get_paginator("get_time_series_service_statistics")
+session = get_session()
+async with session.create_client("xray") as client:
+    client: XRayClient
+    paginator: GetTimeSeriesServiceStatisticsPaginator = client.get_paginator("get_time_series_service_statistics")
 ```
 
 Boto3 documentation:
@@ -210,17 +222,19 @@ Arguments for `GetTimeSeriesServiceStatisticsPaginator.paginate` method:
 ## GetTraceGraphPaginator
 
 Type annotations for
-`aiobotocore.create_client("xray").get_paginator("get_trace_graph")`.
+`session.create_client("xray").get_paginator("get_trace_graph")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_xray.paginator import GetTraceGraphPaginator
 
-def get_get_trace_graph_paginator() -> GetTraceGraphPaginator:
-    return Session().create_client("xray").get_paginator("get_trace_graph")
+session = get_session()
+async with session.create_client("xray") as client:
+    client: XRayClient
+    paginator: GetTraceGraphPaginator = client.get_paginator("get_trace_graph")
 ```
 
 Boto3 documentation:
@@ -240,17 +254,19 @@ Arguments for `GetTraceGraphPaginator.paginate` method:
 ## GetTraceSummariesPaginator
 
 Type annotations for
-`aiobotocore.create_client("xray").get_paginator("get_trace_summaries")`.
+`session.create_client("xray").get_paginator("get_trace_summaries")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_xray.paginator import GetTraceSummariesPaginator
 
-def get_get_trace_summaries_paginator() -> GetTraceSummariesPaginator:
-    return Session().create_client("xray").get_paginator("get_trace_summaries")
+session = get_session()
+async with session.create_client("xray") as client:
+    client: XRayClient
+    paginator: GetTraceSummariesPaginator = client.get_paginator("get_trace_summaries")
 ```
 
 Boto3 documentation:

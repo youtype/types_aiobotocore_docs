@@ -18,17 +18,19 @@ type annotations stubs module
 ## DescribeScalingPlanResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("autoscaling-plans").get_paginator("describe_scaling_plan_resources")`.
+`session.create_client("autoscaling-plans").get_paginator("describe_scaling_plan_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_autoscaling_plans.paginator import DescribeScalingPlanResourcesPaginator
 
-def get_describe_scaling_plan_resources_paginator() -> DescribeScalingPlanResourcesPaginator:
-    return Session().create_client("autoscaling-plans").get_paginator("describe_scaling_plan_resources")
+session = get_session()
+async with session.create_client("autoscaling-plans") as client:
+    client: AutoScalingPlansClient
+    paginator: DescribeScalingPlanResourcesPaginator = client.get_paginator("describe_scaling_plan_resources")
 ```
 
 Boto3 documentation:
@@ -49,17 +51,19 @@ Arguments for `DescribeScalingPlanResourcesPaginator.paginate` method:
 ## DescribeScalingPlansPaginator
 
 Type annotations for
-`aiobotocore.create_client("autoscaling-plans").get_paginator("describe_scaling_plans")`.
+`session.create_client("autoscaling-plans").get_paginator("describe_scaling_plans")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_autoscaling_plans.paginator import DescribeScalingPlansPaginator
 
-def get_describe_scaling_plans_paginator() -> DescribeScalingPlansPaginator:
-    return Session().create_client("autoscaling-plans").get_paginator("describe_scaling_plans")
+session = get_session()
+async with session.create_client("autoscaling-plans") as client:
+    client: AutoScalingPlansClient
+    paginator: DescribeScalingPlansPaginator = client.get_paginator("describe_scaling_plans")
 ```
 
 Boto3 documentation:

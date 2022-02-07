@@ -18,22 +18,25 @@ type annotations stubs module
     - [can_paginate](#can_paginate)
     - [generate_presigned_url](#generate_presigned_url)
     - [get_entitlements](#get_entitlements)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="marketplaceentitlementserviceclient"></a>
 
 ## MarketplaceEntitlementServiceClient
 
-Type annotations for `aiobotocore.create_client("marketplace-entitlement")`
+Type annotations for `session.create_client("marketplace-entitlement")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_marketplace_entitlement.client import MarketplaceEntitlementServiceClient
 
-def get_marketplace-entitlement_client() -> MarketplaceEntitlementServiceClient:
-    return Session().client("marketplace-entitlement")
+session = get_session()
+async with session.create_client("marketplace-entitlement") as client:
+    client: MarketplaceEntitlementServiceClient
 ```
 
 Boto3 documentation:
@@ -71,7 +74,7 @@ Exceptions:
 MarketplaceEntitlementServiceClient exceptions.
 
 Type annotations for
-`aiobotocore.create_client("marketplace-entitlement").exceptions` method.
+`session.create_client("marketplace-entitlement").exceptions` method.
 
 Boto3 documentation:
 [MarketplaceEntitlementService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplace-entitlement.html#MarketplaceEntitlementService.Client.exceptions)
@@ -85,18 +88,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("marketplace-entitlement").can_paginate` method.
+`session.create_client("marketplace-entitlement").can_paginate` method.
 
 Boto3 documentation:
 [MarketplaceEntitlementService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplace-entitlement.html#MarketplaceEntitlementService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -105,7 +106,7 @@ Returns a `Coroutine` for `bool`.
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("marketplace-entitlement").generate_presigned_url`
+`session.create_client("marketplace-entitlement").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -130,7 +131,7 @@ Returns a `Coroutine` for `str`.
 GetEntitlements retrieves entitlement values for a given product.
 
 Type annotations for
-`aiobotocore.create_client("marketplace-entitlement").get_entitlements` method.
+`session.create_client("marketplace-entitlement").get_entitlements` method.
 
 Boto3 documentation:
 [MarketplaceEntitlementService.Client.get_entitlements](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplace-entitlement.html#MarketplaceEntitlementService.Client.get_entitlements)
@@ -152,13 +153,48 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [GetEntitlementsResultTypeDef](./type_defs.md#getentitlementsresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for
+`session.create_client("marketplace-entitlement").__aenter__` method.
+
+Boto3 documentation:
+[MarketplaceEntitlementService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplace-entitlement.html#MarketplaceEntitlementService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[MarketplaceEntitlementServiceClient](#marketplaceentitlementserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for
+`session.create_client("marketplace-entitlement").__aexit__` method.
+
+Boto3 documentation:
+[MarketplaceEntitlementService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplace-entitlement.html#MarketplaceEntitlementService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
 Type annotations for
-`aiobotocore.create_client("marketplace-entitlement").get_paginator` method
-with overloads.
+`session.create_client("marketplace-entitlement").get_paginator` method with
+overloads.
 
 - `client.get_paginator("get_entitlements")` ->
   [GetEntitlementsPaginator](./paginators.md#getentitlementspaginator)

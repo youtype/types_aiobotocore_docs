@@ -19,17 +19,19 @@ type annotations stubs module
 ## ListCertificateAuthoritiesPaginator
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").get_paginator("list_certificate_authorities")`.
+`session.create_client("acm-pca").get_paginator("list_certificate_authorities")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_acm_pca.paginator import ListCertificateAuthoritiesPaginator
 
-def get_list_certificate_authorities_paginator() -> ListCertificateAuthoritiesPaginator:
-    return Session().create_client("acm-pca").get_paginator("list_certificate_authorities")
+session = get_session()
+async with session.create_client("acm-pca") as client:
+    client: ACMPCAClient
+    paginator: ListCertificateAuthoritiesPaginator = client.get_paginator("list_certificate_authorities")
 ```
 
 Boto3 documentation:
@@ -49,17 +51,19 @@ Arguments for `ListCertificateAuthoritiesPaginator.paginate` method:
 ## ListPermissionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").get_paginator("list_permissions")`.
+`session.create_client("acm-pca").get_paginator("list_permissions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_acm_pca.paginator import ListPermissionsPaginator
 
-def get_list_permissions_paginator() -> ListPermissionsPaginator:
-    return Session().create_client("acm-pca").get_paginator("list_permissions")
+session = get_session()
+async with session.create_client("acm-pca") as client:
+    client: ACMPCAClient
+    paginator: ListPermissionsPaginator = client.get_paginator("list_permissions")
 ```
 
 Boto3 documentation:
@@ -79,17 +83,19 @@ Arguments for `ListPermissionsPaginator.paginate` method:
 ## ListTagsPaginator
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").get_paginator("list_tags")`.
+`session.create_client("acm-pca").get_paginator("list_tags")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_acm_pca.paginator import ListTagsPaginator
 
-def get_list_tags_paginator() -> ListTagsPaginator:
-    return Session().create_client("acm-pca").get_paginator("list_tags")
+session = get_session()
+async with session.create_client("acm-pca") as client:
+    client: ACMPCAClient
+    paginator: ListTagsPaginator = client.get_paginator("list_tags")
 ```
 
 Boto3 documentation:

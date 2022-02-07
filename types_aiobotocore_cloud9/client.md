@@ -29,22 +29,25 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_environment](#update_environment)
     - [update_environment_membership](#update_environment_membership)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="cloud9client"></a>
 
 ## Cloud9Client
 
-Type annotations for `aiobotocore.create_client("cloud9")`
+Type annotations for `session.create_client("cloud9")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_cloud9.client import Cloud9Client
 
-def get_cloud9_client() -> Cloud9Client:
-    return Session().client("cloud9")
+session = get_session()
+async with session.create_client("cloud9") as client:
+    client: Cloud9Client
 ```
 
 Boto3 documentation:
@@ -86,7 +89,7 @@ Exceptions:
 
 Cloud9Client exceptions.
 
-Type annotations for `aiobotocore.create_client("cloud9").exceptions` method.
+Type annotations for `session.create_client("cloud9").exceptions` method.
 
 Boto3 documentation:
 [Cloud9.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloud9.html#Cloud9.Client.exceptions)
@@ -99,18 +102,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("cloud9").can_paginate` method.
+Type annotations for `session.create_client("cloud9").can_paginate` method.
 
 Boto3 documentation:
 [Cloud9.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloud9.html#Cloud9.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_environment_ec2"></a>
 
@@ -120,8 +121,8 @@ Creates an Cloud9 development environment, launches an Amazon Elastic Compute
 Cloud (Amazon EC2) instance, and then connects from the instance to the
 environment.
 
-Type annotations for
-`aiobotocore.create_client("cloud9").create_environment_ec2` method.
+Type annotations for `session.create_client("cloud9").create_environment_ec2`
+method.
 
 Boto3 documentation:
 [Cloud9.Client.create_environment_ec2](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloud9.html#Cloud9.Client.create_environment_ec2)
@@ -156,7 +157,7 @@ Returns a `Coroutine` for
 Adds an environment member to an Cloud9 development environment.
 
 Type annotations for
-`aiobotocore.create_client("cloud9").create_environment_membership` method.
+`session.create_client("cloud9").create_environment_membership` method.
 
 Boto3 documentation:
 [Cloud9.Client.create_environment_membership](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloud9.html#Cloud9.Client.create_environment_membership)
@@ -183,7 +184,7 @@ Returns a `Coroutine` for
 
 Deletes an Cloud9 development environment.
 
-Type annotations for `aiobotocore.create_client("cloud9").delete_environment`
+Type annotations for `session.create_client("cloud9").delete_environment`
 method.
 
 Boto3 documentation:
@@ -208,7 +209,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes an environment member from an Cloud9 development environment.
 
 Type annotations for
-`aiobotocore.create_client("cloud9").delete_environment_membership` method.
+`session.create_client("cloud9").delete_environment_membership` method.
 
 Boto3 documentation:
 [Cloud9.Client.delete_environment_membership](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloud9.html#Cloud9.Client.delete_environment_membership)
@@ -234,7 +235,7 @@ Gets information about environment members for an Cloud9 development
 environment.
 
 Type annotations for
-`aiobotocore.create_client("cloud9").describe_environment_memberships` method.
+`session.create_client("cloud9").describe_environment_memberships` method.
 
 Boto3 documentation:
 [Cloud9.Client.describe_environment_memberships](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloud9.html#Cloud9.Client.describe_environment_memberships)
@@ -263,7 +264,7 @@ Returns a `Coroutine` for
 Gets status information for an Cloud9 development environment.
 
 Type annotations for
-`aiobotocore.create_client("cloud9").describe_environment_status` method.
+`session.create_client("cloud9").describe_environment_status` method.
 
 Boto3 documentation:
 [Cloud9.Client.describe_environment_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloud9.html#Cloud9.Client.describe_environment_status)
@@ -287,8 +288,8 @@ Returns a `Coroutine` for
 
 Gets information about Cloud9 development environments.
 
-Type annotations for
-`aiobotocore.create_client("cloud9").describe_environments` method.
+Type annotations for `session.create_client("cloud9").describe_environments`
+method.
 
 Boto3 documentation:
 [Cloud9.Client.describe_environments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloud9.html#Cloud9.Client.describe_environments)
@@ -312,8 +313,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("cloud9").generate_presigned_url` method.
+Type annotations for `session.create_client("cloud9").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Cloud9.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloud9.html#Cloud9.Client.generate_presigned_url)
@@ -336,7 +337,7 @@ Returns a `Coroutine` for `str`.
 
 Gets a list of Cloud9 development environment identifiers.
 
-Type annotations for `aiobotocore.create_client("cloud9").list_environments`
+Type annotations for `session.create_client("cloud9").list_environments`
 method.
 
 Boto3 documentation:
@@ -361,8 +362,8 @@ Returns a `Coroutine` for
 
 Gets a list of the tags associated with an Cloud9 development environment.
 
-Type annotations for
-`aiobotocore.create_client("cloud9").list_tags_for_resource` method.
+Type annotations for `session.create_client("cloud9").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Cloud9.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloud9.html#Cloud9.Client.list_tags_for_resource)
@@ -386,7 +387,7 @@ Returns a `Coroutine` for
 
 Adds tags to an Cloud9 development environment.
 
-Type annotations for `aiobotocore.create_client("cloud9").tag_resource` method.
+Type annotations for `session.create_client("cloud9").tag_resource` method.
 
 Boto3 documentation:
 [Cloud9.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloud9.html#Cloud9.Client.tag_resource)
@@ -409,8 +410,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from an Cloud9 development environment.
 
-Type annotations for `aiobotocore.create_client("cloud9").untag_resource`
-method.
+Type annotations for `session.create_client("cloud9").untag_resource` method.
 
 Boto3 documentation:
 [Cloud9.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloud9.html#Cloud9.Client.untag_resource)
@@ -433,7 +433,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Changes the settings of an existing Cloud9 development environment.
 
-Type annotations for `aiobotocore.create_client("cloud9").update_environment`
+Type annotations for `session.create_client("cloud9").update_environment`
 method.
 
 Boto3 documentation:
@@ -463,7 +463,7 @@ Changes the settings of an existing environment member for an Cloud9
 development environment.
 
 Type annotations for
-`aiobotocore.create_client("cloud9").update_environment_membership` method.
+`session.create_client("cloud9").update_environment_membership` method.
 
 Boto3 documentation:
 [Cloud9.Client.update_environment_membership](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloud9.html#Cloud9.Client.update_environment_membership)
@@ -484,11 +484,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateEnvironmentMembershipResultTypeDef](./type_defs.md#updateenvironmentmembershipresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("cloud9").__aenter__` method.
+
+Boto3 documentation:
+[Cloud9.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloud9.html#Cloud9.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [Cloud9Client](#cloud9client).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("cloud9").__aexit__` method.
+
+Boto3 documentation:
+[Cloud9.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloud9.html#Cloud9.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("cloud9").get_paginator` method
+Type annotations for `session.create_client("cloud9").get_paginator` method
 with overloads.
 
 - `client.get_paginator("describe_environment_memberships")` ->

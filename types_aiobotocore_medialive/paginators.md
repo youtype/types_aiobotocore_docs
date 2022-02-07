@@ -26,17 +26,19 @@ type annotations stubs module
 ## DescribeSchedulePaginator
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_paginator("describe_schedule")`.
+`session.create_client("medialive").get_paginator("describe_schedule")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_medialive.paginator import DescribeSchedulePaginator
 
-def get_describe_schedule_paginator() -> DescribeSchedulePaginator:
-    return Session().create_client("medialive").get_paginator("describe_schedule")
+session = get_session()
+async with session.create_client("medialive") as client:
+    client: MediaLiveClient
+    paginator: DescribeSchedulePaginator = client.get_paginator("describe_schedule")
 ```
 
 Boto3 documentation:
@@ -56,17 +58,19 @@ Arguments for `DescribeSchedulePaginator.paginate` method:
 ## ListChannelsPaginator
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_paginator("list_channels")`.
+`session.create_client("medialive").get_paginator("list_channels")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_medialive.paginator import ListChannelsPaginator
 
-def get_list_channels_paginator() -> ListChannelsPaginator:
-    return Session().create_client("medialive").get_paginator("list_channels")
+session = get_session()
+async with session.create_client("medialive") as client:
+    client: MediaLiveClient
+    paginator: ListChannelsPaginator = client.get_paginator("list_channels")
 ```
 
 Boto3 documentation:
@@ -85,17 +89,19 @@ Arguments for `ListChannelsPaginator.paginate` method:
 ## ListInputDeviceTransfersPaginator
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_paginator("list_input_device_transfers")`.
+`session.create_client("medialive").get_paginator("list_input_device_transfers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_medialive.paginator import ListInputDeviceTransfersPaginator
 
-def get_list_input_device_transfers_paginator() -> ListInputDeviceTransfersPaginator:
-    return Session().create_client("medialive").get_paginator("list_input_device_transfers")
+session = get_session()
+async with session.create_client("medialive") as client:
+    client: MediaLiveClient
+    paginator: ListInputDeviceTransfersPaginator = client.get_paginator("list_input_device_transfers")
 ```
 
 Boto3 documentation:
@@ -115,17 +121,19 @@ Arguments for `ListInputDeviceTransfersPaginator.paginate` method:
 ## ListInputDevicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_paginator("list_input_devices")`.
+`session.create_client("medialive").get_paginator("list_input_devices")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_medialive.paginator import ListInputDevicesPaginator
 
-def get_list_input_devices_paginator() -> ListInputDevicesPaginator:
-    return Session().create_client("medialive").get_paginator("list_input_devices")
+session = get_session()
+async with session.create_client("medialive") as client:
+    client: MediaLiveClient
+    paginator: ListInputDevicesPaginator = client.get_paginator("list_input_devices")
 ```
 
 Boto3 documentation:
@@ -144,17 +152,19 @@ Arguments for `ListInputDevicesPaginator.paginate` method:
 ## ListInputSecurityGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_paginator("list_input_security_groups")`.
+`session.create_client("medialive").get_paginator("list_input_security_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_medialive.paginator import ListInputSecurityGroupsPaginator
 
-def get_list_input_security_groups_paginator() -> ListInputSecurityGroupsPaginator:
-    return Session().create_client("medialive").get_paginator("list_input_security_groups")
+session = get_session()
+async with session.create_client("medialive") as client:
+    client: MediaLiveClient
+    paginator: ListInputSecurityGroupsPaginator = client.get_paginator("list_input_security_groups")
 ```
 
 Boto3 documentation:
@@ -173,17 +183,19 @@ Arguments for `ListInputSecurityGroupsPaginator.paginate` method:
 ## ListInputsPaginator
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_paginator("list_inputs")`.
+`session.create_client("medialive").get_paginator("list_inputs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_medialive.paginator import ListInputsPaginator
 
-def get_list_inputs_paginator() -> ListInputsPaginator:
-    return Session().create_client("medialive").get_paginator("list_inputs")
+session = get_session()
+async with session.create_client("medialive") as client:
+    client: MediaLiveClient
+    paginator: ListInputsPaginator = client.get_paginator("list_inputs")
 ```
 
 Boto3 documentation:
@@ -202,17 +214,19 @@ Arguments for `ListInputsPaginator.paginate` method:
 ## ListMultiplexProgramsPaginator
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_paginator("list_multiplex_programs")`.
+`session.create_client("medialive").get_paginator("list_multiplex_programs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_medialive.paginator import ListMultiplexProgramsPaginator
 
-def get_list_multiplex_programs_paginator() -> ListMultiplexProgramsPaginator:
-    return Session().create_client("medialive").get_paginator("list_multiplex_programs")
+session = get_session()
+async with session.create_client("medialive") as client:
+    client: MediaLiveClient
+    paginator: ListMultiplexProgramsPaginator = client.get_paginator("list_multiplex_programs")
 ```
 
 Boto3 documentation:
@@ -232,17 +246,19 @@ Arguments for `ListMultiplexProgramsPaginator.paginate` method:
 ## ListMultiplexesPaginator
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_paginator("list_multiplexes")`.
+`session.create_client("medialive").get_paginator("list_multiplexes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_medialive.paginator import ListMultiplexesPaginator
 
-def get_list_multiplexes_paginator() -> ListMultiplexesPaginator:
-    return Session().create_client("medialive").get_paginator("list_multiplexes")
+session = get_session()
+async with session.create_client("medialive") as client:
+    client: MediaLiveClient
+    paginator: ListMultiplexesPaginator = client.get_paginator("list_multiplexes")
 ```
 
 Boto3 documentation:
@@ -261,17 +277,19 @@ Arguments for `ListMultiplexesPaginator.paginate` method:
 ## ListOfferingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_paginator("list_offerings")`.
+`session.create_client("medialive").get_paginator("list_offerings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_medialive.paginator import ListOfferingsPaginator
 
-def get_list_offerings_paginator() -> ListOfferingsPaginator:
-    return Session().create_client("medialive").get_paginator("list_offerings")
+session = get_session()
+async with session.create_client("medialive") as client:
+    client: MediaLiveClient
+    paginator: ListOfferingsPaginator = client.get_paginator("list_offerings")
 ```
 
 Boto3 documentation:
@@ -300,17 +318,19 @@ Arguments for `ListOfferingsPaginator.paginate` method:
 ## ListReservationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("medialive").get_paginator("list_reservations")`.
+`session.create_client("medialive").get_paginator("list_reservations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_medialive.paginator import ListReservationsPaginator
 
-def get_list_reservations_paginator() -> ListReservationsPaginator:
-    return Session().create_client("medialive").get_paginator("list_reservations")
+session = get_session()
+async with session.create_client("medialive") as client:
+    client: MediaLiveClient
+    paginator: ListReservationsPaginator = client.get_paginator("list_reservations")
 ```
 
 Boto3 documentation:

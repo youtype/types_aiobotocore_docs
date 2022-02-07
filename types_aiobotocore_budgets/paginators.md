@@ -23,17 +23,19 @@ type annotations stubs module
 ## DescribeBudgetActionHistoriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("budgets").get_paginator("describe_budget_action_histories")`.
+`session.create_client("budgets").get_paginator("describe_budget_action_histories")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_budgets.paginator import DescribeBudgetActionHistoriesPaginator
 
-def get_describe_budget_action_histories_paginator() -> DescribeBudgetActionHistoriesPaginator:
-    return Session().create_client("budgets").get_paginator("describe_budget_action_histories")
+session = get_session()
+async with session.create_client("budgets") as client:
+    client: BudgetsClient
+    paginator: DescribeBudgetActionHistoriesPaginator = client.get_paginator("describe_budget_action_histories")
 ```
 
 Boto3 documentation:
@@ -56,17 +58,19 @@ Arguments for `DescribeBudgetActionHistoriesPaginator.paginate` method:
 ## DescribeBudgetActionsForAccountPaginator
 
 Type annotations for
-`aiobotocore.create_client("budgets").get_paginator("describe_budget_actions_for_account")`.
+`session.create_client("budgets").get_paginator("describe_budget_actions_for_account")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_budgets.paginator import DescribeBudgetActionsForAccountPaginator
 
-def get_describe_budget_actions_for_account_paginator() -> DescribeBudgetActionsForAccountPaginator:
-    return Session().create_client("budgets").get_paginator("describe_budget_actions_for_account")
+session = get_session()
+async with session.create_client("budgets") as client:
+    client: BudgetsClient
+    paginator: DescribeBudgetActionsForAccountPaginator = client.get_paginator("describe_budget_actions_for_account")
 ```
 
 Boto3 documentation:
@@ -86,17 +90,19 @@ Arguments for `DescribeBudgetActionsForAccountPaginator.paginate` method:
 ## DescribeBudgetActionsForBudgetPaginator
 
 Type annotations for
-`aiobotocore.create_client("budgets").get_paginator("describe_budget_actions_for_budget")`.
+`session.create_client("budgets").get_paginator("describe_budget_actions_for_budget")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_budgets.paginator import DescribeBudgetActionsForBudgetPaginator
 
-def get_describe_budget_actions_for_budget_paginator() -> DescribeBudgetActionsForBudgetPaginator:
-    return Session().create_client("budgets").get_paginator("describe_budget_actions_for_budget")
+session = get_session()
+async with session.create_client("budgets") as client:
+    client: BudgetsClient
+    paginator: DescribeBudgetActionsForBudgetPaginator = client.get_paginator("describe_budget_actions_for_budget")
 ```
 
 Boto3 documentation:
@@ -117,17 +123,19 @@ Arguments for `DescribeBudgetActionsForBudgetPaginator.paginate` method:
 ## DescribeBudgetPerformanceHistoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("budgets").get_paginator("describe_budget_performance_history")`.
+`session.create_client("budgets").get_paginator("describe_budget_performance_history")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_budgets.paginator import DescribeBudgetPerformanceHistoryPaginator
 
-def get_describe_budget_performance_history_paginator() -> DescribeBudgetPerformanceHistoryPaginator:
-    return Session().create_client("budgets").get_paginator("describe_budget_performance_history")
+session = get_session()
+async with session.create_client("budgets") as client:
+    client: BudgetsClient
+    paginator: DescribeBudgetPerformanceHistoryPaginator = client.get_paginator("describe_budget_performance_history")
 ```
 
 Boto3 documentation:
@@ -149,17 +157,19 @@ Arguments for `DescribeBudgetPerformanceHistoryPaginator.paginate` method:
 ## DescribeBudgetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("budgets").get_paginator("describe_budgets")`.
+`session.create_client("budgets").get_paginator("describe_budgets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_budgets.paginator import DescribeBudgetsPaginator
 
-def get_describe_budgets_paginator() -> DescribeBudgetsPaginator:
-    return Session().create_client("budgets").get_paginator("describe_budgets")
+session = get_session()
+async with session.create_client("budgets") as client:
+    client: BudgetsClient
+    paginator: DescribeBudgetsPaginator = client.get_paginator("describe_budgets")
 ```
 
 Boto3 documentation:
@@ -179,17 +189,19 @@ Arguments for `DescribeBudgetsPaginator.paginate` method:
 ## DescribeNotificationsForBudgetPaginator
 
 Type annotations for
-`aiobotocore.create_client("budgets").get_paginator("describe_notifications_for_budget")`.
+`session.create_client("budgets").get_paginator("describe_notifications_for_budget")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_budgets.paginator import DescribeNotificationsForBudgetPaginator
 
-def get_describe_notifications_for_budget_paginator() -> DescribeNotificationsForBudgetPaginator:
-    return Session().create_client("budgets").get_paginator("describe_notifications_for_budget")
+session = get_session()
+async with session.create_client("budgets") as client:
+    client: BudgetsClient
+    paginator: DescribeNotificationsForBudgetPaginator = client.get_paginator("describe_notifications_for_budget")
 ```
 
 Boto3 documentation:
@@ -210,17 +222,19 @@ Arguments for `DescribeNotificationsForBudgetPaginator.paginate` method:
 ## DescribeSubscribersForNotificationPaginator
 
 Type annotations for
-`aiobotocore.create_client("budgets").get_paginator("describe_subscribers_for_notification")`.
+`session.create_client("budgets").get_paginator("describe_subscribers_for_notification")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_budgets.paginator import DescribeSubscribersForNotificationPaginator
 
-def get_describe_subscribers_for_notification_paginator() -> DescribeSubscribersForNotificationPaginator:
-    return Session().create_client("budgets").get_paginator("describe_subscribers_for_notification")
+session = get_session()
+async with session.create_client("budgets") as client:
+    client: BudgetsClient
+    paginator: DescribeSubscribersForNotificationPaginator = client.get_paginator("describe_subscribers_for_notification")
 ```
 
 Boto3 documentation:

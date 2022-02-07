@@ -23,21 +23,24 @@ type annotations stubs module
     - [open_tunnel](#open_tunnel)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="iotsecuretunnelingclient"></a>
 
 ## IoTSecureTunnelingClient
 
-Type annotations for `aiobotocore.create_client("iotsecuretunneling")`
+Type annotations for `session.create_client("iotsecuretunneling")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_iotsecuretunneling.client import IoTSecureTunnelingClient
 
-def get_iotsecuretunneling_client() -> IoTSecureTunnelingClient:
-    return Session().client("iotsecuretunneling")
+session = get_session()
+async with session.create_client("iotsecuretunneling") as client:
+    client: IoTSecureTunnelingClient
 ```
 
 Boto3 documentation:
@@ -73,8 +76,8 @@ Exceptions:
 
 IoTSecureTunnelingClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("iotsecuretunneling").exceptions` method.
+Type annotations for `session.create_client("iotsecuretunneling").exceptions`
+method.
 
 Boto3 documentation:
 [IoTSecureTunneling.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsecuretunneling.html#IoTSecureTunneling.Client.exceptions)
@@ -87,19 +90,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("iotsecuretunneling").can_paginate` method.
+Type annotations for `session.create_client("iotsecuretunneling").can_paginate`
+method.
 
 Boto3 documentation:
 [IoTSecureTunneling.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsecuretunneling.html#IoTSecureTunneling.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="close_tunnel"></a>
 
@@ -107,8 +108,8 @@ Returns a `Coroutine` for `bool`.
 
 Closes a tunnel identified by the unique tunnel id.
 
-Type annotations for
-`aiobotocore.create_client("iotsecuretunneling").close_tunnel` method.
+Type annotations for `session.create_client("iotsecuretunneling").close_tunnel`
+method.
 
 Boto3 documentation:
 [IoTSecureTunneling.Client.close_tunnel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsecuretunneling.html#IoTSecureTunneling.Client.close_tunnel)
@@ -132,7 +133,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Gets information about a tunnel identified by the unique tunnel id.
 
 Type annotations for
-`aiobotocore.create_client("iotsecuretunneling").describe_tunnel` method.
+`session.create_client("iotsecuretunneling").describe_tunnel` method.
 
 Boto3 documentation:
 [IoTSecureTunneling.Client.describe_tunnel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsecuretunneling.html#IoTSecureTunneling.Client.describe_tunnel)
@@ -156,8 +157,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("iotsecuretunneling").generate_presigned_url`
-method.
+`session.create_client("iotsecuretunneling").generate_presigned_url` method.
 
 Boto3 documentation:
 [IoTSecureTunneling.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsecuretunneling.html#IoTSecureTunneling.Client.generate_presigned_url)
@@ -181,8 +181,7 @@ Returns a `Coroutine` for `str`.
 Lists the tags for the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("iotsecuretunneling").list_tags_for_resource`
-method.
+`session.create_client("iotsecuretunneling").list_tags_for_resource` method.
 
 Boto3 documentation:
 [IoTSecureTunneling.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsecuretunneling.html#IoTSecureTunneling.Client.list_tags_for_resource)
@@ -206,8 +205,8 @@ Returns a `Coroutine` for
 
 List all tunnels for an AWS account.
 
-Type annotations for
-`aiobotocore.create_client("iotsecuretunneling").list_tunnels` method.
+Type annotations for `session.create_client("iotsecuretunneling").list_tunnels`
+method.
 
 Boto3 documentation:
 [IoTSecureTunneling.Client.list_tunnels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsecuretunneling.html#IoTSecureTunneling.Client.list_tunnels)
@@ -233,8 +232,8 @@ Returns a `Coroutine` for
 Creates a new tunnel, and returns two client access tokens for clients to use
 to connect to the AWS IoT Secure Tunneling proxy server.
 
-Type annotations for
-`aiobotocore.create_client("iotsecuretunneling").open_tunnel` method.
+Type annotations for `session.create_client("iotsecuretunneling").open_tunnel`
+method.
 
 Boto3 documentation:
 [IoTSecureTunneling.Client.open_tunnel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsecuretunneling.html#IoTSecureTunneling.Client.open_tunnel)
@@ -261,8 +260,8 @@ Returns a `Coroutine` for
 
 A resource tag.
 
-Type annotations for
-`aiobotocore.create_client("iotsecuretunneling").tag_resource` method.
+Type annotations for `session.create_client("iotsecuretunneling").tag_resource`
+method.
 
 Boto3 documentation:
 [IoTSecureTunneling.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsecuretunneling.html#IoTSecureTunneling.Client.tag_resource)
@@ -286,7 +285,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes a tag from a resource.
 
 Type annotations for
-`aiobotocore.create_client("iotsecuretunneling").untag_resource` method.
+`session.create_client("iotsecuretunneling").untag_resource` method.
 
 Boto3 documentation:
 [IoTSecureTunneling.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsecuretunneling.html#IoTSecureTunneling.Client.untag_resource)
@@ -302,3 +301,38 @@ Keyword-only arguments:
 - `tagKeys`: `Sequence`\[`str`\] *(required)*
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("iotsecuretunneling").__aenter__`
+method.
+
+Boto3 documentation:
+[IoTSecureTunneling.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsecuretunneling.html#IoTSecureTunneling.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[IoTSecureTunnelingClient](#iotsecuretunnelingclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("iotsecuretunneling").__aexit__`
+method.
+
+Boto3 documentation:
+[IoTSecureTunneling.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsecuretunneling.html#IoTSecureTunneling.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

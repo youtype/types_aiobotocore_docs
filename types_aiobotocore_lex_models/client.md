@@ -58,22 +58,25 @@ type annotations stubs module
     - [start_migration](#start_migration)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="lexmodelbuildingserviceclient"></a>
 
 ## LexModelBuildingServiceClient
 
-Type annotations for `aiobotocore.create_client("lex-models")`
+Type annotations for `session.create_client("lex-models")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_lex_models.client import LexModelBuildingServiceClient
 
-def get_lex-models_client() -> LexModelBuildingServiceClient:
-    return Session().client("lex-models")
+session = get_session()
+async with session.create_client("lex-models") as client:
+    client: LexModelBuildingServiceClient
 ```
 
 Boto3 documentation:
@@ -115,8 +118,7 @@ Exceptions:
 
 LexModelBuildingServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("lex-models").exceptions`
-method.
+Type annotations for `session.create_client("lex-models").exceptions` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.exceptions)
@@ -129,19 +131,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("lex-models").can_paginate`
-method.
+Type annotations for `session.create_client("lex-models").can_paginate` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_bot_version"></a>
 
@@ -149,8 +148,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates a new version of the bot based on the `$LATEST` version.
 
-Type annotations for
-`aiobotocore.create_client("lex-models").create_bot_version` method.
+Type annotations for `session.create_client("lex-models").create_bot_version`
+method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.create_bot_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.create_bot_version)
@@ -177,7 +176,7 @@ Creates a new version of an intent based on the `$LATEST` version of the
 intent.
 
 Type annotations for
-`aiobotocore.create_client("lex-models").create_intent_version` method.
+`session.create_client("lex-models").create_intent_version` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.create_intent_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.create_intent_version)
@@ -204,7 +203,7 @@ Creates a new version of a slot type based on the `$LATEST` version of the
 specified slot type.
 
 Type annotations for
-`aiobotocore.create_client("lex-models").create_slot_type_version` method.
+`session.create_client("lex-models").create_slot_type_version` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.create_slot_type_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.create_slot_type_version)
@@ -229,8 +228,7 @@ Returns a `Coroutine` for
 
 Deletes all versions of the bot, including the `$LATEST` version.
 
-Type annotations for `aiobotocore.create_client("lex-models").delete_bot`
-method.
+Type annotations for `session.create_client("lex-models").delete_bot` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.delete_bot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.delete_bot)
@@ -250,7 +248,7 @@ Keyword-only arguments:
 
 Deletes an alias for the specified bot.
 
-Type annotations for `aiobotocore.create_client("lex-models").delete_bot_alias`
+Type annotations for `session.create_client("lex-models").delete_bot_alias`
 method.
 
 Boto3 documentation:
@@ -273,8 +271,7 @@ Keyword-only arguments:
 Deletes the association between an Amazon Lex bot and a messaging platform.
 
 Type annotations for
-`aiobotocore.create_client("lex-models").delete_bot_channel_association`
-method.
+`session.create_client("lex-models").delete_bot_channel_association` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.delete_bot_channel_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.delete_bot_channel_association)
@@ -297,8 +294,8 @@ Keyword-only arguments:
 
 Deletes a specific version of a bot.
 
-Type annotations for
-`aiobotocore.create_client("lex-models").delete_bot_version` method.
+Type annotations for `session.create_client("lex-models").delete_bot_version`
+method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.delete_bot_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.delete_bot_version)
@@ -320,7 +317,7 @@ Keyword-only arguments:
 
 Deletes all versions of the intent, including the `$LATEST` version.
 
-Type annotations for `aiobotocore.create_client("lex-models").delete_intent`
+Type annotations for `session.create_client("lex-models").delete_intent`
 method.
 
 Boto3 documentation:
@@ -342,7 +339,7 @@ Keyword-only arguments:
 Deletes a specific version of an intent.
 
 Type annotations for
-`aiobotocore.create_client("lex-models").delete_intent_version` method.
+`session.create_client("lex-models").delete_intent_version` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.delete_intent_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.delete_intent_version)
@@ -364,7 +361,7 @@ Keyword-only arguments:
 
 Deletes all versions of the slot type, including the `$LATEST` version.
 
-Type annotations for `aiobotocore.create_client("lex-models").delete_slot_type`
+Type annotations for `session.create_client("lex-models").delete_slot_type`
 method.
 
 Boto3 documentation:
@@ -386,7 +383,7 @@ Keyword-only arguments:
 Deletes a specific version of a slot type.
 
 Type annotations for
-`aiobotocore.create_client("lex-models").delete_slot_type_version` method.
+`session.create_client("lex-models").delete_slot_type_version` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.delete_slot_type_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.delete_slot_type_version)
@@ -408,8 +405,8 @@ Keyword-only arguments:
 
 Deletes stored utterances.
 
-Type annotations for
-`aiobotocore.create_client("lex-models").delete_utterances` method.
+Type annotations for `session.create_client("lex-models").delete_utterances`
+method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.delete_utterances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.delete_utterances)
@@ -431,7 +428,7 @@ Keyword-only arguments:
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("lex-models").generate_presigned_url` method.
+`session.create_client("lex-models").generate_presigned_url` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.generate_presigned_url)
@@ -454,7 +451,7 @@ Returns a `Coroutine` for `str`.
 
 Returns metadata information for a specific bot.
 
-Type annotations for `aiobotocore.create_client("lex-models").get_bot` method.
+Type annotations for `session.create_client("lex-models").get_bot` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.get_bot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.get_bot)
@@ -478,7 +475,7 @@ Returns a `Coroutine` for
 
 Returns information about an Amazon Lex bot alias.
 
-Type annotations for `aiobotocore.create_client("lex-models").get_bot_alias`
+Type annotations for `session.create_client("lex-models").get_bot_alias`
 method.
 
 Boto3 documentation:
@@ -503,7 +500,7 @@ Returns a `Coroutine` for
 
 Returns a list of aliases for a specified Amazon Lex bot.
 
-Type annotations for `aiobotocore.create_client("lex-models").get_bot_aliases`
+Type annotations for `session.create_client("lex-models").get_bot_aliases`
 method.
 
 Boto3 documentation:
@@ -532,7 +529,7 @@ Returns information about the association between an Amazon Lex bot and a
 messaging platform.
 
 Type annotations for
-`aiobotocore.create_client("lex-models").get_bot_channel_association` method.
+`session.create_client("lex-models").get_bot_channel_association` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.get_bot_channel_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.get_bot_channel_association)
@@ -559,7 +556,7 @@ Returns a `Coroutine` for
 Returns a list of all of the channels associated with the specified bot.
 
 Type annotations for
-`aiobotocore.create_client("lex-models").get_bot_channel_associations` method.
+`session.create_client("lex-models").get_bot_channel_associations` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.get_bot_channel_associations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.get_bot_channel_associations)
@@ -587,7 +584,7 @@ Returns a `Coroutine` for
 
 Gets information about all of the versions of a bot.
 
-Type annotations for `aiobotocore.create_client("lex-models").get_bot_versions`
+Type annotations for `session.create_client("lex-models").get_bot_versions`
 method.
 
 Boto3 documentation:
@@ -615,7 +612,7 @@ Returns bot information as follows * If you provide the `nameContains` field,
 the response includes information for the `$LATEST` version of all bots whose
 name contains the specified string.
 
-Type annotations for `aiobotocore.create_client("lex-models").get_bots` method.
+Type annotations for `session.create_client("lex-models").get_bots` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.get_bots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.get_bots)
@@ -640,8 +637,8 @@ Returns a `Coroutine` for
 
 Returns information about a built-in intent.
 
-Type annotations for
-`aiobotocore.create_client("lex-models").get_builtin_intent` method.
+Type annotations for `session.create_client("lex-models").get_builtin_intent`
+method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.get_builtin_intent](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.get_builtin_intent)
@@ -665,8 +662,8 @@ Returns a `Coroutine` for
 
 Gets a list of built-in intents that meet the specified criteria.
 
-Type annotations for
-`aiobotocore.create_client("lex-models").get_builtin_intents` method.
+Type annotations for `session.create_client("lex-models").get_builtin_intents`
+method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.get_builtin_intents](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.get_builtin_intents)
@@ -694,7 +691,7 @@ Returns a `Coroutine` for
 Gets a list of built-in slot types that meet the specified criteria.
 
 Type annotations for
-`aiobotocore.create_client("lex-models").get_builtin_slot_types` method.
+`session.create_client("lex-models").get_builtin_slot_types` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.get_builtin_slot_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.get_builtin_slot_types)
@@ -721,8 +718,7 @@ Returns a `Coroutine` for
 
 Exports the contents of a Amazon Lex resource in a specified format.
 
-Type annotations for `aiobotocore.create_client("lex-models").get_export`
-method.
+Type annotations for `session.create_client("lex-models").get_export` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.get_export](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.get_export)
@@ -749,8 +745,7 @@ Returns a `Coroutine` for
 
 Gets information about an import job started with the `StartImport` operation.
 
-Type annotations for `aiobotocore.create_client("lex-models").get_import`
-method.
+Type annotations for `session.create_client("lex-models").get_import` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.get_import](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.get_import)
@@ -773,8 +768,7 @@ Returns a `Coroutine` for
 
 Returns information about an intent.
 
-Type annotations for `aiobotocore.create_client("lex-models").get_intent`
-method.
+Type annotations for `session.create_client("lex-models").get_intent` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.get_intent](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.get_intent)
@@ -798,8 +792,8 @@ Returns a `Coroutine` for
 
 Gets information about all of the versions of an intent.
 
-Type annotations for
-`aiobotocore.create_client("lex-models").get_intent_versions` method.
+Type annotations for `session.create_client("lex-models").get_intent_versions`
+method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.get_intent_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.get_intent_versions)
@@ -827,8 +821,7 @@ Returns intent information as follows * If you specify the `nameContains`
 field, returns the `$LATEST` version of all intents that contain the specified
 string.
 
-Type annotations for `aiobotocore.create_client("lex-models").get_intents`
-method.
+Type annotations for `session.create_client("lex-models").get_intents` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.get_intents](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.get_intents)
@@ -854,7 +847,7 @@ Returns a `Coroutine` for
 Provides details about an ongoing or complete migration from an Amazon Lex V1
 bot to an Amazon Lex V2 bot.
 
-Type annotations for `aiobotocore.create_client("lex-models").get_migration`
+Type annotations for `session.create_client("lex-models").get_migration`
 method.
 
 Boto3 documentation:
@@ -878,7 +871,7 @@ Returns a `Coroutine` for
 
 Gets a list of migrations between Amazon Lex V1 and Amazon Lex V2.
 
-Type annotations for `aiobotocore.create_client("lex-models").get_migrations`
+Type annotations for `session.create_client("lex-models").get_migrations`
 method.
 
 Boto3 documentation:
@@ -909,7 +902,7 @@ Returns a `Coroutine` for
 
 Returns information about a specific version of a slot type.
 
-Type annotations for `aiobotocore.create_client("lex-models").get_slot_type`
+Type annotations for `session.create_client("lex-models").get_slot_type`
 method.
 
 Boto3 documentation:
@@ -935,7 +928,7 @@ Returns a `Coroutine` for
 Gets information about all versions of a slot type.
 
 Type annotations for
-`aiobotocore.create_client("lex-models").get_slot_type_versions` method.
+`session.create_client("lex-models").get_slot_type_versions` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.get_slot_type_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.get_slot_type_versions)
@@ -963,7 +956,7 @@ Returns slot type information as follows * If you specify the `nameContains`
 field, returns the `$LATEST` version of all slot types that contain the
 specified string.
 
-Type annotations for `aiobotocore.create_client("lex-models").get_slot_types`
+Type annotations for `session.create_client("lex-models").get_slot_types`
 method.
 
 Boto3 documentation:
@@ -990,8 +983,8 @@ Returns a `Coroutine` for
 Use the `GetUtterancesView` operation to get information about the utterances
 that your users have made to your bot.
 
-Type annotations for
-`aiobotocore.create_client("lex-models").get_utterances_view` method.
+Type annotations for `session.create_client("lex-models").get_utterances_view`
+method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.get_utterances_view](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.get_utterances_view)
@@ -1018,7 +1011,7 @@ Returns a `Coroutine` for
 Gets a list of tags associated with the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("lex-models").list_tags_for_resource` method.
+`session.create_client("lex-models").list_tags_for_resource` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.list_tags_for_resource)
@@ -1042,7 +1035,7 @@ Returns a `Coroutine` for
 
 Creates an Amazon Lex conversational bot or replaces an existing bot.
 
-Type annotations for `aiobotocore.create_client("lex-models").put_bot` method.
+Type annotations for `session.create_client("lex-models").put_bot` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.put_bot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.put_bot)
@@ -1081,7 +1074,7 @@ Returns a `Coroutine` for
 Creates an alias for the specified version of the bot or replaces an alias for
 the specified bot.
 
-Type annotations for `aiobotocore.create_client("lex-models").put_bot_alias`
+Type annotations for `session.create_client("lex-models").put_bot_alias`
 method.
 
 Boto3 documentation:
@@ -1112,8 +1105,7 @@ Returns a `Coroutine` for
 
 Creates an intent or replaces an existing intent.
 
-Type annotations for `aiobotocore.create_client("lex-models").put_intent`
-method.
+Type annotations for `session.create_client("lex-models").put_intent` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.put_intent](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.put_intent)
@@ -1156,7 +1148,7 @@ Returns a `Coroutine` for
 
 Creates a custom slot type or replaces an existing custom slot type.
 
-Type annotations for `aiobotocore.create_client("lex-models").put_slot_type`
+Type annotations for `session.create_client("lex-models").put_slot_type`
 method.
 
 Boto3 documentation:
@@ -1190,8 +1182,7 @@ Returns a `Coroutine` for
 
 Starts a job to import a resource to Amazon Lex.
 
-Type annotations for `aiobotocore.create_client("lex-models").start_import`
-method.
+Type annotations for `session.create_client("lex-models").start_import` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.start_import](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.start_import)
@@ -1219,7 +1210,7 @@ Returns a `Coroutine` for
 
 Starts migrating a bot from Amazon Lex V1 to Amazon Lex V2.
 
-Type annotations for `aiobotocore.create_client("lex-models").start_migration`
+Type annotations for `session.create_client("lex-models").start_migration`
 method.
 
 Boto3 documentation:
@@ -1248,8 +1239,7 @@ Returns a `Coroutine` for
 
 Adds the specified tags to the specified resource.
 
-Type annotations for `aiobotocore.create_client("lex-models").tag_resource`
-method.
+Type annotations for `session.create_client("lex-models").tag_resource` method.
 
 Boto3 documentation:
 [LexModelBuildingService.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.tag_resource)
@@ -1272,7 +1262,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from a bot, bot alias or bot channel.
 
-Type annotations for `aiobotocore.create_client("lex-models").untag_resource`
+Type annotations for `session.create_client("lex-models").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1290,12 +1280,45 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("lex-models").__aenter__` method.
+
+Boto3 documentation:
+[LexModelBuildingService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[LexModelBuildingServiceClient](#lexmodelbuildingserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("lex-models").__aexit__` method.
+
+Boto3 documentation:
+[LexModelBuildingService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-models.html#LexModelBuildingService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("lex-models").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("lex-models").get_paginator` method
+with overloads.
 
 - `client.get_paginator("get_bot_aliases")` ->
   [GetBotAliasesPaginator](./paginators.md#getbotaliasespaginator)

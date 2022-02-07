@@ -30,17 +30,19 @@ type annotations stubs module
 ## ListAnalysesPaginator
 
 Type annotations for
-`aiobotocore.create_client("quicksight").get_paginator("list_analyses")`.
+`session.create_client("quicksight").get_paginator("list_analyses")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_quicksight.paginator import ListAnalysesPaginator
 
-def get_list_analyses_paginator() -> ListAnalysesPaginator:
-    return Session().create_client("quicksight").get_paginator("list_analyses")
+session = get_session()
+async with session.create_client("quicksight") as client:
+    client: QuickSightClient
+    paginator: ListAnalysesPaginator = client.get_paginator("list_analyses")
 ```
 
 Boto3 documentation:
@@ -60,17 +62,19 @@ Arguments for `ListAnalysesPaginator.paginate` method:
 ## ListDashboardVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("quicksight").get_paginator("list_dashboard_versions")`.
+`session.create_client("quicksight").get_paginator("list_dashboard_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_quicksight.paginator import ListDashboardVersionsPaginator
 
-def get_list_dashboard_versions_paginator() -> ListDashboardVersionsPaginator:
-    return Session().create_client("quicksight").get_paginator("list_dashboard_versions")
+session = get_session()
+async with session.create_client("quicksight") as client:
+    client: QuickSightClient
+    paginator: ListDashboardVersionsPaginator = client.get_paginator("list_dashboard_versions")
 ```
 
 Boto3 documentation:
@@ -91,17 +95,19 @@ Arguments for `ListDashboardVersionsPaginator.paginate` method:
 ## ListDashboardsPaginator
 
 Type annotations for
-`aiobotocore.create_client("quicksight").get_paginator("list_dashboards")`.
+`session.create_client("quicksight").get_paginator("list_dashboards")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_quicksight.paginator import ListDashboardsPaginator
 
-def get_list_dashboards_paginator() -> ListDashboardsPaginator:
-    return Session().create_client("quicksight").get_paginator("list_dashboards")
+session = get_session()
+async with session.create_client("quicksight") as client:
+    client: QuickSightClient
+    paginator: ListDashboardsPaginator = client.get_paginator("list_dashboards")
 ```
 
 Boto3 documentation:
@@ -121,17 +127,19 @@ Arguments for `ListDashboardsPaginator.paginate` method:
 ## ListDataSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("quicksight").get_paginator("list_data_sets")`.
+`session.create_client("quicksight").get_paginator("list_data_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_quicksight.paginator import ListDataSetsPaginator
 
-def get_list_data_sets_paginator() -> ListDataSetsPaginator:
-    return Session().create_client("quicksight").get_paginator("list_data_sets")
+session = get_session()
+async with session.create_client("quicksight") as client:
+    client: QuickSightClient
+    paginator: ListDataSetsPaginator = client.get_paginator("list_data_sets")
 ```
 
 Boto3 documentation:
@@ -151,17 +159,19 @@ Arguments for `ListDataSetsPaginator.paginate` method:
 ## ListDataSourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("quicksight").get_paginator("list_data_sources")`.
+`session.create_client("quicksight").get_paginator("list_data_sources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_quicksight.paginator import ListDataSourcesPaginator
 
-def get_list_data_sources_paginator() -> ListDataSourcesPaginator:
-    return Session().create_client("quicksight").get_paginator("list_data_sources")
+session = get_session()
+async with session.create_client("quicksight") as client:
+    client: QuickSightClient
+    paginator: ListDataSourcesPaginator = client.get_paginator("list_data_sources")
 ```
 
 Boto3 documentation:
@@ -181,17 +191,19 @@ Arguments for `ListDataSourcesPaginator.paginate` method:
 ## ListIngestionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("quicksight").get_paginator("list_ingestions")`.
+`session.create_client("quicksight").get_paginator("list_ingestions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_quicksight.paginator import ListIngestionsPaginator
 
-def get_list_ingestions_paginator() -> ListIngestionsPaginator:
-    return Session().create_client("quicksight").get_paginator("list_ingestions")
+session = get_session()
+async with session.create_client("quicksight") as client:
+    client: QuickSightClient
+    paginator: ListIngestionsPaginator = client.get_paginator("list_ingestions")
 ```
 
 Boto3 documentation:
@@ -212,17 +224,19 @@ Arguments for `ListIngestionsPaginator.paginate` method:
 ## ListNamespacesPaginator
 
 Type annotations for
-`aiobotocore.create_client("quicksight").get_paginator("list_namespaces")`.
+`session.create_client("quicksight").get_paginator("list_namespaces")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_quicksight.paginator import ListNamespacesPaginator
 
-def get_list_namespaces_paginator() -> ListNamespacesPaginator:
-    return Session().create_client("quicksight").get_paginator("list_namespaces")
+session = get_session()
+async with session.create_client("quicksight") as client:
+    client: QuickSightClient
+    paginator: ListNamespacesPaginator = client.get_paginator("list_namespaces")
 ```
 
 Boto3 documentation:
@@ -242,17 +256,19 @@ Arguments for `ListNamespacesPaginator.paginate` method:
 ## ListTemplateAliasesPaginator
 
 Type annotations for
-`aiobotocore.create_client("quicksight").get_paginator("list_template_aliases")`.
+`session.create_client("quicksight").get_paginator("list_template_aliases")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_quicksight.paginator import ListTemplateAliasesPaginator
 
-def get_list_template_aliases_paginator() -> ListTemplateAliasesPaginator:
-    return Session().create_client("quicksight").get_paginator("list_template_aliases")
+session = get_session()
+async with session.create_client("quicksight") as client:
+    client: QuickSightClient
+    paginator: ListTemplateAliasesPaginator = client.get_paginator("list_template_aliases")
 ```
 
 Boto3 documentation:
@@ -273,17 +289,19 @@ Arguments for `ListTemplateAliasesPaginator.paginate` method:
 ## ListTemplateVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("quicksight").get_paginator("list_template_versions")`.
+`session.create_client("quicksight").get_paginator("list_template_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_quicksight.paginator import ListTemplateVersionsPaginator
 
-def get_list_template_versions_paginator() -> ListTemplateVersionsPaginator:
-    return Session().create_client("quicksight").get_paginator("list_template_versions")
+session = get_session()
+async with session.create_client("quicksight") as client:
+    client: QuickSightClient
+    paginator: ListTemplateVersionsPaginator = client.get_paginator("list_template_versions")
 ```
 
 Boto3 documentation:
@@ -304,17 +322,19 @@ Arguments for `ListTemplateVersionsPaginator.paginate` method:
 ## ListTemplatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("quicksight").get_paginator("list_templates")`.
+`session.create_client("quicksight").get_paginator("list_templates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_quicksight.paginator import ListTemplatesPaginator
 
-def get_list_templates_paginator() -> ListTemplatesPaginator:
-    return Session().create_client("quicksight").get_paginator("list_templates")
+session = get_session()
+async with session.create_client("quicksight") as client:
+    client: QuickSightClient
+    paginator: ListTemplatesPaginator = client.get_paginator("list_templates")
 ```
 
 Boto3 documentation:
@@ -334,17 +354,19 @@ Arguments for `ListTemplatesPaginator.paginate` method:
 ## ListThemeVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("quicksight").get_paginator("list_theme_versions")`.
+`session.create_client("quicksight").get_paginator("list_theme_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_quicksight.paginator import ListThemeVersionsPaginator
 
-def get_list_theme_versions_paginator() -> ListThemeVersionsPaginator:
-    return Session().create_client("quicksight").get_paginator("list_theme_versions")
+session = get_session()
+async with session.create_client("quicksight") as client:
+    client: QuickSightClient
+    paginator: ListThemeVersionsPaginator = client.get_paginator("list_theme_versions")
 ```
 
 Boto3 documentation:
@@ -365,17 +387,19 @@ Arguments for `ListThemeVersionsPaginator.paginate` method:
 ## ListThemesPaginator
 
 Type annotations for
-`aiobotocore.create_client("quicksight").get_paginator("list_themes")`.
+`session.create_client("quicksight").get_paginator("list_themes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_quicksight.paginator import ListThemesPaginator
 
-def get_list_themes_paginator() -> ListThemesPaginator:
-    return Session().create_client("quicksight").get_paginator("list_themes")
+session = get_session()
+async with session.create_client("quicksight") as client:
+    client: QuickSightClient
+    paginator: ListThemesPaginator = client.get_paginator("list_themes")
 ```
 
 Boto3 documentation:
@@ -396,17 +420,19 @@ Arguments for `ListThemesPaginator.paginate` method:
 ## SearchAnalysesPaginator
 
 Type annotations for
-`aiobotocore.create_client("quicksight").get_paginator("search_analyses")`.
+`session.create_client("quicksight").get_paginator("search_analyses")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_quicksight.paginator import SearchAnalysesPaginator
 
-def get_search_analyses_paginator() -> SearchAnalysesPaginator:
-    return Session().create_client("quicksight").get_paginator("search_analyses")
+session = get_session()
+async with session.create_client("quicksight") as client:
+    client: QuickSightClient
+    paginator: SearchAnalysesPaginator = client.get_paginator("search_analyses")
 ```
 
 Boto3 documentation:
@@ -429,17 +455,19 @@ Arguments for `SearchAnalysesPaginator.paginate` method:
 ## SearchDashboardsPaginator
 
 Type annotations for
-`aiobotocore.create_client("quicksight").get_paginator("search_dashboards")`.
+`session.create_client("quicksight").get_paginator("search_dashboards")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_quicksight.paginator import SearchDashboardsPaginator
 
-def get_search_dashboards_paginator() -> SearchDashboardsPaginator:
-    return Session().create_client("quicksight").get_paginator("search_dashboards")
+session = get_session()
+async with session.create_client("quicksight") as client:
+    client: QuickSightClient
+    paginator: SearchDashboardsPaginator = client.get_paginator("search_dashboards")
 ```
 
 Boto3 documentation:

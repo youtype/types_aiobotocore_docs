@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[mediaconnect]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[mediaconnect]'
+
+# standalone installation
 pip install types-aiobotocore-mediaconnect
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-mediaconnect
 
 ## MediaConnectClient
 
-Type annotations for `aiobotocore.create_client("mediaconnect")` as
+Type annotations for `session.create_client("mediaconnect")` as
 [MediaConnectClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_mediaconnect.client import MediaConnectClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_flow_media_streams](./client.md#add_flow_media_streams)
 - [add_flow_outputs](./client.md#add_flow_outputs)
 - [add_flow_sources](./client.md#add_flow_sources)
@@ -106,7 +112,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_mediaconnect.paginators import ListEntitlementsPaginator, ...
+from types_aiobotocore_mediaconnect.paginator import ListEntitlementsPaginator, ...
 ```
 
 - [ListEntitlementsPaginator](./paginators.md#listentitlementspaginator)
@@ -124,7 +130,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_mediaconnect.waiters import FlowActiveWaiter, ...
+from types_aiobotocore_mediaconnect.waiter import FlowActiveWaiter, ...
 ```
 
 - [FlowActiveWaiter](./waiters.md#flowactivewaiter)

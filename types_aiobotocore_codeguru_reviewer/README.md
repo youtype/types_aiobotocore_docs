@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[codeguru-reviewer]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[codeguru-reviewer]'
+
+# standalone installation
 pip install types-aiobotocore-codeguru-reviewer
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-codeguru-reviewer
 
 ## CodeGuruReviewerClient
 
-Type annotations for `aiobotocore.create_client("codeguru-reviewer")` as
+Type annotations for `session.create_client("codeguru-reviewer")` as
 [CodeGuruReviewerClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_codeguru_reviewer.client import CodeGuruReviewerClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_repository](./client.md#associate_repository)
 - [can_paginate](./client.md#can_paginate)
 - [create_code_review](./client.md#create_code_review)
@@ -88,7 +94,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_codeguru_reviewer.paginators import ListRepositoryAssociationsPaginator, ...
+from types_aiobotocore_codeguru_reviewer.paginator import ListRepositoryAssociationsPaginator, ...
 ```
 
 - [ListRepositoryAssociationsPaginator](./paginators.md#listrepositoryassociationspaginator)
@@ -103,7 +109,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_codeguru_reviewer.waiters import CodeReviewCompletedWaiter, ...
+from types_aiobotocore_codeguru_reviewer.waiter import CodeReviewCompletedWaiter, ...
 ```
 
 - [CodeReviewCompletedWaiter](./waiters.md#codereviewcompletedwaiter)

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[secretsmanager]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[secretsmanager]'
+
+# standalone installation
 pip install types-aiobotocore-secretsmanager
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-secretsmanager
 
 ## SecretsManagerClient
 
-Type annotations for `aiobotocore.create_client("secretsmanager")` as
+Type annotations for `session.create_client("secretsmanager")` as
 [SecretsManagerClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_secretsmanager.client import SecretsManagerClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_rotate_secret](./client.md#cancel_rotate_secret)
 - [create_secret](./client.md#create_secret)
@@ -99,7 +105,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_secretsmanager.paginators import ListSecretsPaginator, ...
+from types_aiobotocore_secretsmanager.paginator import ListSecretsPaginator, ...
 ```
 
 - [ListSecretsPaginator](./paginators.md#listsecretspaginator)

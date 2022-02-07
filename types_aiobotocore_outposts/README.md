@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[outposts]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[outposts]'
+
+# standalone installation
 pip install types-aiobotocore-outposts
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-outposts
 
 ## OutpostsClient
 
-Type annotations for `aiobotocore.create_client("outposts")` as
+Type annotations for `session.create_client("outposts")` as
 [OutpostsClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_outposts.client import OutpostsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_order](./client.md#cancel_order)
 - [create_order](./client.md#create_order)

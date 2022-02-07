@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[iot-jobs-data]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[iot-jobs-data]'
+
+# standalone installation
 pip install types-aiobotocore-iot-jobs-data
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-iot-jobs-data
 
 ## IoTJobsDataPlaneClient
 
-Type annotations for `aiobotocore.create_client("iot-jobs-data")` as
+Type annotations for `session.create_client("iot-jobs-data")` as
 [IoTJobsDataPlaneClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_iot_jobs_data.client import IoTJobsDataPlaneClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [describe_job_execution](./client.md#describe_job_execution)
 - [exceptions](./client.md#exceptions)

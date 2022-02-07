@@ -18,17 +18,19 @@ type annotations stubs module
 ## ListPlacementsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").get_paginator("list_placements")`.
+`session.create_client("iot1click-projects").get_paginator("list_placements")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iot1click_projects.paginator import ListPlacementsPaginator
 
-def get_list_placements_paginator() -> ListPlacementsPaginator:
-    return Session().create_client("iot1click-projects").get_paginator("list_placements")
+session = get_session()
+async with session.create_client("iot1click-projects") as client:
+    client: IoT1ClickProjectsClient
+    paginator: ListPlacementsPaginator = client.get_paginator("list_placements")
 ```
 
 Boto3 documentation:
@@ -48,17 +50,19 @@ Arguments for `ListPlacementsPaginator.paginate` method:
 ## ListProjectsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iot1click-projects").get_paginator("list_projects")`.
+`session.create_client("iot1click-projects").get_paginator("list_projects")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iot1click_projects.paginator import ListProjectsPaginator
 
-def get_list_projects_paginator() -> ListProjectsPaginator:
-    return Session().create_client("iot1click-projects").get_paginator("list_projects")
+session = get_session()
+async with session.create_client("iot1click-projects") as client:
+    client: IoT1ClickProjectsClient
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
 ```
 
 Boto3 documentation:

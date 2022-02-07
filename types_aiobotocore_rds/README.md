@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[rds]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[rds]'
+
+# standalone installation
 pip install types-aiobotocore-rds
 ```
 
@@ -30,8 +34,7 @@ pip install types-aiobotocore-rds
 
 ## RDSClient
 
-Type annotations for `aiobotocore.create_client("rds")` as
-[RDSClient](./client.md)
+Type annotations for `session.create_client("rds")` as [RDSClient](./client.md)
 
 Can be used directly:
 
@@ -43,6 +46,8 @@ from types_aiobotocore_rds.client import RDSClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_role_to_db_cluster](./client.md#add_role_to_db_cluster)
 - [add_role_to_db_instance](./client.md#add_role_to_db_instance)
 - [add_source_identifier_to_subscription](./client.md#add_source_identifier_to_subscription)
@@ -330,7 +335,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_rds.paginators import DescribeCertificatesPaginator, ...
+from types_aiobotocore_rds.paginator import DescribeCertificatesPaginator, ...
 ```
 
 - [DescribeCertificatesPaginator](./paginators.md#describecertificatespaginator)
@@ -380,7 +385,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_rds.waiters import DBClusterSnapshotAvailableWaiter, ...
+from types_aiobotocore_rds.waiter import DBClusterSnapshotAvailableWaiter, ...
 ```
 
 - [DBClusterSnapshotAvailableWaiter](./waiters.md#dbclustersnapshotavailablewaiter)

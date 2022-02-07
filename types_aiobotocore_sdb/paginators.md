@@ -18,17 +18,19 @@ type annotations stubs module
 ## ListDomainsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sdb").get_paginator("list_domains")`.
+`session.create_client("sdb").get_paginator("list_domains")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sdb.paginator import ListDomainsPaginator
 
-def get_list_domains_paginator() -> ListDomainsPaginator:
-    return Session().create_client("sdb").get_paginator("list_domains")
+session = get_session()
+async with session.create_client("sdb") as client:
+    client: SimpleDBClient
+    paginator: ListDomainsPaginator = client.get_paginator("list_domains")
 ```
 
 Boto3 documentation:
@@ -46,18 +48,19 @@ Arguments for `ListDomainsPaginator.paginate` method:
 
 ## SelectPaginator
 
-Type annotations for
-`aiobotocore.create_client("sdb").get_paginator("select")`.
+Type annotations for `session.create_client("sdb").get_paginator("select")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sdb.paginator import SelectPaginator
 
-def get_select_paginator() -> SelectPaginator:
-    return Session().create_client("sdb").get_paginator("select")
+session = get_session()
+async with session.create_client("sdb") as client:
+    client: SimpleDBClient
+    paginator: SelectPaginator = client.get_paginator("select")
 ```
 
 Boto3 documentation:

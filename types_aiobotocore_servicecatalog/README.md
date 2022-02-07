@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[servicecatalog]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[servicecatalog]'
+
+# standalone installation
 pip install types-aiobotocore-servicecatalog
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-servicecatalog
 
 ## ServiceCatalogClient
 
-Type annotations for `aiobotocore.create_client("servicecatalog")` as
+Type annotations for `session.create_client("servicecatalog")` as
 [ServiceCatalogClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_servicecatalog.client import ServiceCatalogClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_portfolio_share](./client.md#accept_portfolio_share)
 - [associate_budget_with_resource](./client.md#associate_budget_with_resource)
 - [associate_principal_with_portfolio](./client.md#associate_principal_with_portfolio)
@@ -160,7 +166,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_servicecatalog.paginators import ListAcceptedPortfolioSharesPaginator, ...
+from types_aiobotocore_servicecatalog.paginator import ListAcceptedPortfolioSharesPaginator, ...
 ```
 
 - [ListAcceptedPortfolioSharesPaginator](./paginators.md#listacceptedportfoliosharespaginator)

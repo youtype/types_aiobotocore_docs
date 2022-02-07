@@ -19,17 +19,19 @@ type annotations stubs module
 ## ListHapgsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudhsm").get_paginator("list_hapgs")`.
+`session.create_client("cloudhsm").get_paginator("list_hapgs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudhsm.paginator import ListHapgsPaginator
 
-def get_list_hapgs_paginator() -> ListHapgsPaginator:
-    return Session().create_client("cloudhsm").get_paginator("list_hapgs")
+session = get_session()
+async with session.create_client("cloudhsm") as client:
+    client: CloudHSMClient
+    paginator: ListHapgsPaginator = client.get_paginator("list_hapgs")
 ```
 
 Boto3 documentation:
@@ -48,17 +50,19 @@ Arguments for `ListHapgsPaginator.paginate` method:
 ## ListHsmsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudhsm").get_paginator("list_hsms")`.
+`session.create_client("cloudhsm").get_paginator("list_hsms")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudhsm.paginator import ListHsmsPaginator
 
-def get_list_hsms_paginator() -> ListHsmsPaginator:
-    return Session().create_client("cloudhsm").get_paginator("list_hsms")
+session = get_session()
+async with session.create_client("cloudhsm") as client:
+    client: CloudHSMClient
+    paginator: ListHsmsPaginator = client.get_paginator("list_hsms")
 ```
 
 Boto3 documentation:
@@ -77,17 +81,19 @@ Arguments for `ListHsmsPaginator.paginate` method:
 ## ListLunaClientsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudhsm").get_paginator("list_luna_clients")`.
+`session.create_client("cloudhsm").get_paginator("list_luna_clients")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudhsm.paginator import ListLunaClientsPaginator
 
-def get_list_luna_clients_paginator() -> ListLunaClientsPaginator:
-    return Session().create_client("cloudhsm").get_paginator("list_luna_clients")
+session = get_session()
+async with session.create_client("cloudhsm") as client:
+    client: CloudHSMClient
+    paginator: ListLunaClientsPaginator = client.get_paginator("list_luna_clients")
 ```
 
 Boto3 documentation:

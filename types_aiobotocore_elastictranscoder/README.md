@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[elastictranscoder]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[elastictranscoder]'
+
+# standalone installation
 pip install types-aiobotocore-elastictranscoder
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-elastictranscoder
 
 ## ElasticTranscoderClient
 
-Type annotations for `aiobotocore.create_client("elastictranscoder")` as
+Type annotations for `session.create_client("elastictranscoder")` as
 [ElasticTranscoderClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_elastictranscoder.client import ElasticTranscoderClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_job](./client.md#cancel_job)
 - [create_job](./client.md#create_job)
@@ -91,7 +97,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_elastictranscoder.paginators import ListJobsByPipelinePaginator, ...
+from types_aiobotocore_elastictranscoder.paginator import ListJobsByPipelinePaginator, ...
 ```
 
 - [ListJobsByPipelinePaginator](./paginators.md#listjobsbypipelinepaginator)
@@ -109,7 +115,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_elastictranscoder.waiters import JobCompleteWaiter, ...
+from types_aiobotocore_elastictranscoder.waiter import JobCompleteWaiter, ...
 ```
 
 - [JobCompleteWaiter](./waiters.md#jobcompletewaiter)

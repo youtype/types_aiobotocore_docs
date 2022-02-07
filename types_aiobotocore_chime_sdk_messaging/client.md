@@ -61,21 +61,24 @@ type annotations stubs module
     - [update_channel_flow](#update_channel_flow)
     - [update_channel_message](#update_channel_message)
     - [update_channel_read_marker](#update_channel_read_marker)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="chimesdkmessagingclient"></a>
 
 ## ChimeSDKMessagingClient
 
-Type annotations for `aiobotocore.create_client("chime-sdk-messaging")`
+Type annotations for `session.create_client("chime-sdk-messaging")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_chime_sdk_messaging.client import ChimeSDKMessagingClient
 
-def get_chime-sdk-messaging_client() -> ChimeSDKMessagingClient:
-    return Session().client("chime-sdk-messaging")
+session = get_session()
+async with session.create_client("chime-sdk-messaging") as client:
+    client: ChimeSDKMessagingClient
 ```
 
 Boto3 documentation:
@@ -118,8 +121,8 @@ Exceptions:
 
 ChimeSDKMessagingClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").exceptions` method.
+Type annotations for `session.create_client("chime-sdk-messaging").exceptions`
+method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.exceptions)
@@ -133,8 +136,7 @@ Returns [Exceptions](#exceptions).
 Associates a channel flow with a channel.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").associate_channel_flow`
-method.
+`session.create_client("chime-sdk-messaging").associate_channel_flow` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.associate_channel_flow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.associate_channel_flow)
@@ -158,7 +160,7 @@ Keyword-only arguments:
 Adds a specified number of users to a channel.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").batch_create_channel_membership`
+`session.create_client("chime-sdk-messaging").batch_create_channel_membership`
 method.
 
 Boto3 documentation:
@@ -187,18 +189,16 @@ Returns a `Coroutine` for
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").can_paginate` method.
+`session.create_client("chime-sdk-messaging").can_paginate` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="channel_flow_callback"></a>
 
@@ -207,8 +207,7 @@ Returns a `Coroutine` for `bool`.
 Calls back Chime SDK Messaging with a processing response message.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").channel_flow_callback`
-method.
+`session.create_client("chime-sdk-messaging").channel_flow_callback` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.channel_flow_callback](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.channel_flow_callback)
@@ -238,7 +237,7 @@ Returns a `Coroutine` for
 Creates a channel to which you can add users and send messages.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").create_channel` method.
+`session.create_client("chime-sdk-messaging").create_channel` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.create_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.create_channel)
@@ -269,7 +268,7 @@ Returns a `Coroutine` for
 Permanently bans a member from a channel.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").create_channel_ban` method.
+`session.create_client("chime-sdk-messaging").create_channel_ban` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.create_channel_ban](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.create_channel_ban)
@@ -296,7 +295,7 @@ Returns a `Coroutine` for
 Creates a channel flow, a container for processors.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").create_channel_flow` method.
+`session.create_client("chime-sdk-messaging").create_channel_flow` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.create_channel_flow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.create_channel_flow)
@@ -327,7 +326,7 @@ Returns a `Coroutine` for
 Adds a user to a channel.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").create_channel_membership`
+`session.create_client("chime-sdk-messaging").create_channel_membership`
 method.
 
 Boto3 documentation:
@@ -357,8 +356,7 @@ Returns a `Coroutine` for
 Creates a new `ChannelModerator`.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").create_channel_moderator`
-method.
+`session.create_client("chime-sdk-messaging").create_channel_moderator` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.create_channel_moderator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.create_channel_moderator)
@@ -386,7 +384,7 @@ Immediately makes a channel and its memberships inaccessible and marks them for
 deletion.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").delete_channel` method.
+`session.create_client("chime-sdk-messaging").delete_channel` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.delete_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.delete_channel)
@@ -408,7 +406,7 @@ Keyword-only arguments:
 Removes a user from a channel's ban list.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").delete_channel_ban` method.
+`session.create_client("chime-sdk-messaging").delete_channel_ban` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.delete_channel_ban](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.delete_channel_ban)
@@ -432,7 +430,7 @@ Keyword-only arguments:
 Deletes a channel flow, an irreversible process.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").delete_channel_flow` method.
+`session.create_client("chime-sdk-messaging").delete_channel_flow` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.delete_channel_flow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.delete_channel_flow)
@@ -454,7 +452,7 @@ Keyword-only arguments:
 Removes a member from a channel.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").delete_channel_membership`
+`session.create_client("chime-sdk-messaging").delete_channel_membership`
 method.
 
 Boto3 documentation:
@@ -479,8 +477,7 @@ Keyword-only arguments:
 Deletes a channel message.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").delete_channel_message`
-method.
+`session.create_client("chime-sdk-messaging").delete_channel_message` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.delete_channel_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.delete_channel_message)
@@ -504,8 +501,7 @@ Keyword-only arguments:
 Deletes a channel moderator.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").delete_channel_moderator`
-method.
+`session.create_client("chime-sdk-messaging").delete_channel_moderator` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.delete_channel_moderator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.delete_channel_moderator)
@@ -529,7 +525,7 @@ Keyword-only arguments:
 Returns the full details of a channel in an Amazon Chime `AppInstance` .
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").describe_channel` method.
+`session.create_client("chime-sdk-messaging").describe_channel` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.describe_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.describe_channel)
@@ -554,7 +550,7 @@ Returns a `Coroutine` for
 Returns the full details of a channel ban.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").describe_channel_ban` method.
+`session.create_client("chime-sdk-messaging").describe_channel_ban` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.describe_channel_ban](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.describe_channel_ban)
@@ -581,8 +577,7 @@ Returns a `Coroutine` for
 Returns the full details of a channel flow in an Amazon Chime `AppInstance`.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").describe_channel_flow`
-method.
+`session.create_client("chime-sdk-messaging").describe_channel_flow` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.describe_channel_flow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.describe_channel_flow)
@@ -607,7 +602,7 @@ Returns a `Coroutine` for
 Returns the full details of a user's channel membership.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").describe_channel_membership`
+`session.create_client("chime-sdk-messaging").describe_channel_membership`
 method.
 
 Boto3 documentation:
@@ -636,7 +631,7 @@ Returns the details of a channel based on the membership of the specified
 `AppInstanceUser` .
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").describe_channel_membership_for_app_instance_user`
+`session.create_client("chime-sdk-messaging").describe_channel_membership_for_app_instance_user`
 method.
 
 Boto3 documentation:
@@ -666,7 +661,7 @@ Returns the full details of a channel moderated by the specified
 `AppInstanceUser` .
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").describe_channel_moderated_by_app_instance_user`
+`session.create_client("chime-sdk-messaging").describe_channel_moderated_by_app_instance_user`
 method.
 
 Boto3 documentation:
@@ -695,7 +690,7 @@ Returns a `Coroutine` for
 Returns the full details of a single ChannelModerator.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").describe_channel_moderator`
+`session.create_client("chime-sdk-messaging").describe_channel_moderator`
 method.
 
 Boto3 documentation:
@@ -723,7 +718,7 @@ Returns a `Coroutine` for
 Disassociates a channel flow from all its channels.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").disassociate_channel_flow`
+`session.create_client("chime-sdk-messaging").disassociate_channel_flow`
 method.
 
 Boto3 documentation:
@@ -748,8 +743,7 @@ Keyword-only arguments:
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").generate_presigned_url`
-method.
+`session.create_client("chime-sdk-messaging").generate_presigned_url` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.generate_presigned_url)
@@ -774,7 +768,7 @@ Gets the membership preferences of an `AppInstanceUser` for the specified
 channel.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").get_channel_membership_preferences`
+`session.create_client("chime-sdk-messaging").get_channel_membership_preferences`
 method.
 
 Boto3 documentation:
@@ -802,7 +796,7 @@ Returns a `Coroutine` for
 Gets the full details of a channel message.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").get_channel_message` method.
+`session.create_client("chime-sdk-messaging").get_channel_message` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.get_channel_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.get_channel_message)
@@ -829,7 +823,7 @@ Returns a `Coroutine` for
 Gets message status for a specified `messageId`.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").get_channel_message_status`
+`session.create_client("chime-sdk-messaging").get_channel_message_status`
 method.
 
 Boto3 documentation:
@@ -857,7 +851,7 @@ Returns a `Coroutine` for
 The details of the endpoint for the messaging session.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").get_messaging_session_endpoint`
+`session.create_client("chime-sdk-messaging").get_messaging_session_endpoint`
 method.
 
 Boto3 documentation:
@@ -876,7 +870,7 @@ Returns a `Coroutine` for
 Lists all the users banned from a particular channel.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").list_channel_bans` method.
+`session.create_client("chime-sdk-messaging").list_channel_bans` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.list_channel_bans](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.list_channel_bans)
@@ -904,7 +898,7 @@ Returns a paginated lists of all the channel flows created under a single
 Chime.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").list_channel_flows` method.
+`session.create_client("chime-sdk-messaging").list_channel_flows` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.list_channel_flows](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.list_channel_flows)
@@ -931,8 +925,7 @@ Returns a `Coroutine` for
 Lists all channel memberships in a channel.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").list_channel_memberships`
-method.
+`session.create_client("chime-sdk-messaging").list_channel_memberships` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.list_channel_memberships](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.list_channel_memberships)
@@ -961,7 +954,7 @@ Returns a `Coroutine` for
 Lists all channels that a particular `AppInstanceUser` is a part of.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").list_channel_memberships_for_app_instance_user`
+`session.create_client("chime-sdk-messaging").list_channel_memberships_for_app_instance_user`
 method.
 
 Boto3 documentation:
@@ -991,8 +984,7 @@ Returns a `Coroutine` for
 List all the messages in a channel.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").list_channel_messages`
-method.
+`session.create_client("chime-sdk-messaging").list_channel_messages` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.list_channel_messages](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.list_channel_messages)
@@ -1023,8 +1015,7 @@ Returns a `Coroutine` for
 Lists all the moderators for a channel.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").list_channel_moderators`
-method.
+`session.create_client("chime-sdk-messaging").list_channel_moderators` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.list_channel_moderators](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.list_channel_moderators)
@@ -1052,7 +1043,7 @@ Returns a `Coroutine` for
 Lists all Channels created under a single Chime App as a paginated list.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").list_channels` method.
+`session.create_client("chime-sdk-messaging").list_channels` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.list_channels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.list_channels)
@@ -1080,7 +1071,7 @@ Returns a `Coroutine` for
 Lists all channels associated with a specified channel flow.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").list_channels_associated_with_channel_flow`
+`session.create_client("chime-sdk-messaging").list_channels_associated_with_channel_flow`
 method.
 
 Boto3 documentation:
@@ -1108,7 +1099,7 @@ Returns a `Coroutine` for
 A list of the channels moderated by an `AppInstanceUser` .
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").list_channels_moderated_by_app_instance_user`
+`session.create_client("chime-sdk-messaging").list_channels_moderated_by_app_instance_user`
 method.
 
 Boto3 documentation:
@@ -1138,8 +1129,7 @@ Returns a `Coroutine` for
 Lists the tags applied to an Amazon Chime SDK messaging resource.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").list_tags_for_resource`
-method.
+`session.create_client("chime-sdk-messaging").list_tags_for_resource` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.list_tags_for_resource)
@@ -1165,7 +1155,7 @@ Sets the membership preferences of an `AppInstanceUser` for the specified
 channel.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").put_channel_membership_preferences`
+`session.create_client("chime-sdk-messaging").put_channel_membership_preferences`
 method.
 
 Boto3 documentation:
@@ -1196,8 +1186,7 @@ Returns a `Coroutine` for
 Redacts message content, but not metadata.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").redact_channel_message`
-method.
+`session.create_client("chime-sdk-messaging").redact_channel_message` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.redact_channel_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.redact_channel_message)
@@ -1224,7 +1213,7 @@ Returns a `Coroutine` for
 Sends a message to a particular channel that the member is a part of.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").send_channel_message` method.
+`session.create_client("chime-sdk-messaging").send_channel_message` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.send_channel_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.send_channel_message)
@@ -1263,7 +1252,7 @@ Applies the specified tags to the specified Amazon Chime SDK messaging
 resource.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").tag_resource` method.
+`session.create_client("chime-sdk-messaging").tag_resource` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.tag_resource)
@@ -1286,7 +1275,7 @@ Removes the specified tags from the specified Amazon Chime SDK messaging
 resource.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").untag_resource` method.
+`session.create_client("chime-sdk-messaging").untag_resource` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.untag_resource)
@@ -1308,7 +1297,7 @@ Keyword-only arguments:
 Update a channel's attributes.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").update_channel` method.
+`session.create_client("chime-sdk-messaging").update_channel` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.update_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.update_channel)
@@ -1336,7 +1325,7 @@ Returns a `Coroutine` for
 Updates channel flow attributes.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").update_channel_flow` method.
+`session.create_client("chime-sdk-messaging").update_channel_flow` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.update_channel_flow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.update_channel_flow)
@@ -1365,8 +1354,7 @@ Returns a `Coroutine` for
 Updates the content of a message.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").update_channel_message`
-method.
+`session.create_client("chime-sdk-messaging").update_channel_message` method.
 
 Boto3 documentation:
 [ChimeSDKMessaging.Client.update_channel_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.update_channel_message)
@@ -1395,7 +1383,7 @@ Returns a `Coroutine` for
 The details of the time when a user last read messages in a channel.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-messaging").update_channel_read_marker`
+`session.create_client("chime-sdk-messaging").update_channel_read_marker`
 method.
 
 Boto3 documentation:
@@ -1414,3 +1402,37 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateChannelReadMarkerResponseTypeDef](./type_defs.md#updatechannelreadmarkerresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("chime-sdk-messaging").__aenter__`
+method.
+
+Boto3 documentation:
+[ChimeSDKMessaging.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ChimeSDKMessagingClient](#chimesdkmessagingclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("chime-sdk-messaging").__aexit__`
+method.
+
+Boto3 documentation:
+[ChimeSDKMessaging.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-messaging.html#ChimeSDKMessaging.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

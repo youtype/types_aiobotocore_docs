@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListBackendJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("amplifybackend").get_paginator("list_backend_jobs")`.
+`session.create_client("amplifybackend").get_paginator("list_backend_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_amplifybackend.paginator import ListBackendJobsPaginator
 
-def get_list_backend_jobs_paginator() -> ListBackendJobsPaginator:
-    return Session().create_client("amplifybackend").get_paginator("list_backend_jobs")
+session = get_session()
+async with session.create_client("amplifybackend") as client:
+    client: AmplifyBackendClient
+    paginator: ListBackendJobsPaginator = client.get_paginator("list_backend_jobs")
 ```
 
 Boto3 documentation:

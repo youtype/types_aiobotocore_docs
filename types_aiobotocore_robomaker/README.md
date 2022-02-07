@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[robomaker]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[robomaker]'
+
+# standalone installation
 pip install types-aiobotocore-robomaker
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-robomaker
 
 ## RoboMakerClient
 
-Type annotations for `aiobotocore.create_client("robomaker")` as
+Type annotations for `session.create_client("robomaker")` as
 [RoboMakerClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_robomaker.client import RoboMakerClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_delete_worlds](./client.md#batch_delete_worlds)
 - [batch_describe_simulation_job](./client.md#batch_describe_simulation_job)
 - [can_paginate](./client.md#can_paginate)
@@ -131,7 +137,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_robomaker.paginators import ListDeploymentJobsPaginator, ...
+from types_aiobotocore_robomaker.paginator import ListDeploymentJobsPaginator, ...
 ```
 
 - [ListDeploymentJobsPaginator](./paginators.md#listdeploymentjobspaginator)

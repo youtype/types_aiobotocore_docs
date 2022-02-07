@@ -81,6 +81,8 @@ type annotations stubs module
     - [update_stack_set](#update_stack_set)
     - [update_termination_protection](#update_termination_protection)
     - [validate_template](#validate_template)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -88,16 +90,17 @@ type annotations stubs module
 
 ## CloudFormationClient
 
-Type annotations for `aiobotocore.create_client("cloudformation")`
+Type annotations for `session.create_client("cloudformation")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_cloudformation.client import CloudFormationClient
 
-def get_cloudformation_client() -> CloudFormationClient:
-    return Session().client("cloudformation")
+session = get_session()
+async with session.create_client("cloudformation") as client:
+    client: CloudFormationClient
 ```
 
 Boto3 documentation:
@@ -153,7 +156,7 @@ Exceptions:
 
 CloudFormationClient exceptions.
 
-Type annotations for `aiobotocore.create_client("cloudformation").exceptions`
+Type annotations for `session.create_client("cloudformation").exceptions`
 method.
 
 Boto3 documentation:
@@ -168,8 +171,8 @@ Returns [Exceptions](#exceptions).
 Activates a public third-party extension, making it available for use in stack
 templates.
 
-Type annotations for
-`aiobotocore.create_client("cloudformation").activate_type` method.
+Type annotations for `session.create_client("cloudformation").activate_type`
+method.
 
 Boto3 documentation:
 [CloudFormation.Client.activate_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.activate_type)
@@ -203,7 +206,7 @@ Returns configuration data for the specified CloudFormation extensions, from
 the CloudFormation registry for the account and region.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").batch_describe_type_configurations`
+`session.create_client("cloudformation").batch_describe_type_configurations`
 method.
 
 Boto3 documentation:
@@ -230,19 +233,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("cloudformation").can_paginate`
+Type annotations for `session.create_client("cloudformation").can_paginate`
 method.
 
 Boto3 documentation:
 [CloudFormation.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_update_stack"></a>
 
@@ -251,7 +252,7 @@ Returns a `Coroutine` for `bool`.
 Cancels an update on the specified stack.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").cancel_update_stack` method.
+`session.create_client("cloudformation").cancel_update_stack` method.
 
 Boto3 documentation:
 [CloudFormation.Client.cancel_update_stack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.cancel_update_stack)
@@ -275,7 +276,7 @@ For a specified stack that is in the `UPDATE_ROLLBACK_FAILED` state, continues
 rolling it back to the `UPDATE_ROLLBACK_COMPLETE` state.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").continue_update_rollback` method.
+`session.create_client("cloudformation").continue_update_rollback` method.
 
 Boto3 documentation:
 [CloudFormation.Client.continue_update_rollback](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.continue_update_rollback)
@@ -302,7 +303,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").create_change_set` method.
+`session.create_client("cloudformation").create_change_set` method.
 
 Boto3 documentation:
 [CloudFormation.Client.create_change_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.create_change_set)
@@ -344,7 +345,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("cloudformation").create_stack`
+Type annotations for `session.create_client("cloudformation").create_stack`
 method.
 
 Boto3 documentation:
@@ -387,7 +388,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").create_stack_instances` method.
+`session.create_client("cloudformation").create_stack_instances` method.
 
 Boto3 documentation:
 [CloudFormation.Client.create_stack_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.create_stack_instances)
@@ -421,8 +422,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("cloudformation").create_stack_set` method.
+Type annotations for `session.create_client("cloudformation").create_stack_set`
+method.
 
 Boto3 documentation:
 [CloudFormation.Client.create_stack_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.create_stack_set)
@@ -463,8 +464,8 @@ Returns a `Coroutine` for
 Deactivates a public extension that was previously activated in this account
 and region.
 
-Type annotations for
-`aiobotocore.create_client("cloudformation").deactivate_type` method.
+Type annotations for `session.create_client("cloudformation").deactivate_type`
+method.
 
 Boto3 documentation:
 [CloudFormation.Client.deactivate_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.deactivate_type)
@@ -489,7 +490,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified change set.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").delete_change_set` method.
+`session.create_client("cloudformation").delete_change_set` method.
 
 Boto3 documentation:
 [CloudFormation.Client.delete_change_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.delete_change_set)
@@ -512,7 +513,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a specified stack.
 
-Type annotations for `aiobotocore.create_client("cloudformation").delete_stack`
+Type annotations for `session.create_client("cloudformation").delete_stack`
 method.
 
 Boto3 documentation:
@@ -537,7 +538,7 @@ Keyword-only arguments:
 Deletes stack instances for the specified accounts, in the specified Regions.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").delete_stack_instances` method.
+`session.create_client("cloudformation").delete_stack_instances` method.
 
 Boto3 documentation:
 [CloudFormation.Client.delete_stack_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.delete_stack_instances)
@@ -570,8 +571,8 @@ Returns a `Coroutine` for
 
 Deletes a stack set.
 
-Type annotations for
-`aiobotocore.create_client("cloudformation").delete_stack_set` method.
+Type annotations for `session.create_client("cloudformation").delete_stack_set`
+method.
 
 Boto3 documentation:
 [CloudFormation.Client.delete_stack_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.delete_stack_set)
@@ -595,8 +596,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Marks an extension or extension version as `DEPRECATED` in the CloudFormation
 registry, removing it from active use.
 
-Type annotations for
-`aiobotocore.create_client("cloudformation").deregister_type` method.
+Type annotations for `session.create_client("cloudformation").deregister_type`
+method.
 
 Boto3 documentation:
 [CloudFormation.Client.deregister_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.deregister_type)
@@ -623,7 +624,7 @@ Retrieves your account's CloudFormation limits, such as the maximum number of
 stacks that you can create in your account.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").describe_account_limits` method.
+`session.create_client("cloudformation").describe_account_limits` method.
 
 Boto3 documentation:
 [CloudFormation.Client.describe_account_limits](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.describe_account_limits)
@@ -648,7 +649,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").describe_change_set` method.
+`session.create_client("cloudformation").describe_change_set` method.
 
 Boto3 documentation:
 [CloudFormation.Client.describe_change_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.describe_change_set)
@@ -675,7 +676,7 @@ Returns a `Coroutine` for
 Returns information about a CloudFormation extension publisher.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").describe_publisher` method.
+`session.create_client("cloudformation").describe_publisher` method.
 
 Boto3 documentation:
 [CloudFormation.Client.describe_publisher](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.describe_publisher)
@@ -700,7 +701,7 @@ Returns a `Coroutine` for
 Returns information about a stack drift detection operation.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").describe_stack_drift_detection_status`
+`session.create_client("cloudformation").describe_stack_drift_detection_status`
 method.
 
 Boto3 documentation:
@@ -727,7 +728,7 @@ Returns all stack related events for a specified stack in reverse chronological
 order.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").describe_stack_events` method.
+`session.create_client("cloudformation").describe_stack_events` method.
 
 Boto3 documentation:
 [CloudFormation.Client.describe_stack_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.describe_stack_events)
@@ -753,7 +754,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").describe_stack_instance` method.
+`session.create_client("cloudformation").describe_stack_instance` method.
 
 Boto3 documentation:
 [CloudFormation.Client.describe_stack_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.describe_stack_instance)
@@ -781,7 +782,7 @@ Returns a `Coroutine` for
 Returns a description of the specified resource in the specified stack.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").describe_stack_resource` method.
+`session.create_client("cloudformation").describe_stack_resource` method.
 
 Boto3 documentation:
 [CloudFormation.Client.describe_stack_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.describe_stack_resource)
@@ -808,7 +809,7 @@ Returns drift information for the resources that have been checked for drift in
 the specified stack.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").describe_stack_resource_drifts`
+`session.create_client("cloudformation").describe_stack_resource_drifts`
 method.
 
 Boto3 documentation:
@@ -839,7 +840,7 @@ Returns Amazon Web Services resource descriptions for running and deleted
 stacks.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").describe_stack_resources` method.
+`session.create_client("cloudformation").describe_stack_resources` method.
 
 Boto3 documentation:
 [CloudFormation.Client.describe_stack_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.describe_stack_resources)
@@ -866,7 +867,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").describe_stack_set` method.
+`session.create_client("cloudformation").describe_stack_set` method.
 
 Boto3 documentation:
 [CloudFormation.Client.describe_stack_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.describe_stack_set)
@@ -892,8 +893,7 @@ Returns a `Coroutine` for
 Returns the description of the specified stack set operation.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").describe_stack_set_operation`
-method.
+`session.create_client("cloudformation").describe_stack_set_operation` method.
 
 Boto3 documentation:
 [CloudFormation.Client.describe_stack_set_operation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.describe_stack_set_operation)
@@ -919,8 +919,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("cloudformation").describe_stacks` method.
+Type annotations for `session.create_client("cloudformation").describe_stacks`
+method.
 
 Boto3 documentation:
 [CloudFormation.Client.describe_stacks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.describe_stacks)
@@ -944,8 +944,8 @@ Returns a `Coroutine` for
 
 Returns detailed information about an extension that has been registered.
 
-Type annotations for
-`aiobotocore.create_client("cloudformation").describe_type` method.
+Type annotations for `session.create_client("cloudformation").describe_type`
+method.
 
 Boto3 documentation:
 [CloudFormation.Client.describe_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.describe_type)
@@ -975,8 +975,7 @@ Returns information about an extension's registration, including its current
 status and type and version identifiers.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").describe_type_registration`
-method.
+`session.create_client("cloudformation").describe_type_registration` method.
 
 Boto3 documentation:
 [CloudFormation.Client.describe_type_registration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.describe_type_registration)
@@ -1003,7 +1002,7 @@ it's expected configuration, as defined in the stack template and any values
 specified as template parameters.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").detect_stack_drift` method.
+`session.create_client("cloudformation").detect_stack_drift` method.
 
 Boto3 documentation:
 [CloudFormation.Client.detect_stack_drift](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.detect_stack_drift)
@@ -1031,8 +1030,7 @@ has *drifted* , from it's expected configuration, as defined in the stack
 template and any values specified as template parameters.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").detect_stack_resource_drift`
-method.
+`session.create_client("cloudformation").detect_stack_resource_drift` method.
 
 Boto3 documentation:
 [CloudFormation.Client.detect_stack_resource_drift](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.detect_stack_resource_drift)
@@ -1058,7 +1056,7 @@ Returns a `Coroutine` for
 Detect drift on a stack set.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").detect_stack_set_drift` method.
+`session.create_client("cloudformation").detect_stack_set_drift` method.
 
 Boto3 documentation:
 [CloudFormation.Client.detect_stack_set_drift](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.detect_stack_set_drift)
@@ -1087,7 +1085,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").estimate_template_cost` method.
+`session.create_client("cloudformation").estimate_template_cost` method.
 
 Boto3 documentation:
 [CloudFormation.Client.estimate_template_cost](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.estimate_template_cost)
@@ -1116,7 +1114,7 @@ Updates a stack using the input information that was provided when the
 specified change set was created.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").execute_change_set` method.
+`session.create_client("cloudformation").execute_change_set` method.
 
 Boto3 documentation:
 [CloudFormation.Client.execute_change_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.execute_change_set)
@@ -1143,7 +1141,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").generate_presigned_url` method.
+`session.create_client("cloudformation").generate_presigned_url` method.
 
 Boto3 documentation:
 [CloudFormation.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.generate_presigned_url)
@@ -1166,8 +1164,8 @@ Returns a `Coroutine` for `str`.
 
 Returns the stack policy for a specified stack.
 
-Type annotations for
-`aiobotocore.create_client("cloudformation").get_stack_policy` method.
+Type annotations for `session.create_client("cloudformation").get_stack_policy`
+method.
 
 Boto3 documentation:
 [CloudFormation.Client.get_stack_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.get_stack_policy)
@@ -1190,7 +1188,7 @@ Returns a `Coroutine` for
 
 Returns the template body for a specified stack.
 
-Type annotations for `aiobotocore.create_client("cloudformation").get_template`
+Type annotations for `session.create_client("cloudformation").get_template`
 method.
 
 Boto3 documentation:
@@ -1217,7 +1215,7 @@ Returns a `Coroutine` for
 Returns information about a new or existing template.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_template_summary` method.
+`session.create_client("cloudformation").get_template_summary` method.
 
 Boto3 documentation:
 [CloudFormation.Client.get_template_summary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.get_template_summary)
@@ -1246,8 +1244,7 @@ Returns a `Coroutine` for
 Use the stack import operations for self-managed or service-managed StackSets.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").import_stacks_to_stack_set`
-method.
+`session.create_client("cloudformation").import_stacks_to_stack_set` method.
 
 Boto3 documentation:
 [CloudFormation.Client.import_stacks_to_stack_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.import_stacks_to_stack_set)
@@ -1278,8 +1275,8 @@ Returns a `Coroutine` for
 
 Returns the ID and status of each active change set for a stack.
 
-Type annotations for
-`aiobotocore.create_client("cloudformation").list_change_sets` method.
+Type annotations for `session.create_client("cloudformation").list_change_sets`
+method.
 
 Boto3 documentation:
 [CloudFormation.Client.list_change_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.list_change_sets)
@@ -1303,7 +1300,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("cloudformation").list_exports`
+Type annotations for `session.create_client("cloudformation").list_exports`
 method.
 
 Boto3 documentation:
@@ -1327,7 +1324,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("cloudformation").list_imports`
+Type annotations for `session.create_client("cloudformation").list_imports`
 method.
 
 Boto3 documentation:
@@ -1354,7 +1351,7 @@ Returns summary information about stack instances that are associated with the
 specified stack set.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").list_stack_instances` method.
+`session.create_client("cloudformation").list_stack_instances` method.
 
 Boto3 documentation:
 [CloudFormation.Client.list_stack_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.list_stack_instances)
@@ -1386,7 +1383,7 @@ Returns a `Coroutine` for
 Returns descriptions of all resources of the specified stack.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").list_stack_resources` method.
+`session.create_client("cloudformation").list_stack_resources` method.
 
 Boto3 documentation:
 [CloudFormation.Client.list_stack_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.list_stack_resources)
@@ -1412,7 +1409,7 @@ Returns a `Coroutine` for
 Returns summary information about the results of a stack set operation.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").list_stack_set_operation_results`
+`session.create_client("cloudformation").list_stack_set_operation_results`
 method.
 
 Boto3 documentation:
@@ -1442,7 +1439,7 @@ Returns a `Coroutine` for
 Returns summary information about operations performed on a stack set.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").list_stack_set_operations` method.
+`session.create_client("cloudformation").list_stack_set_operations` method.
 
 Boto3 documentation:
 [CloudFormation.Client.list_stack_set_operations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.list_stack_set_operations)
@@ -1469,8 +1466,8 @@ Returns a `Coroutine` for
 
 Returns summary information about stack sets that are associated with the user.
 
-Type annotations for
-`aiobotocore.create_client("cloudformation").list_stack_sets` method.
+Type annotations for `session.create_client("cloudformation").list_stack_sets`
+method.
 
 Boto3 documentation:
 [CloudFormation.Client.list_stack_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.list_stack_sets)
@@ -1497,7 +1494,7 @@ Returns a `Coroutine` for
 Returns the summary information for stacks whose status matches the specified
 StackStatusFilter.
 
-Type annotations for `aiobotocore.create_client("cloudformation").list_stacks`
+Type annotations for `session.create_client("cloudformation").list_stacks`
 method.
 
 Boto3 documentation:
@@ -1524,7 +1521,7 @@ Returns a `Coroutine` for
 Returns a list of registration tokens for the specified extension(s).
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").list_type_registrations` method.
+`session.create_client("cloudformation").list_type_registrations` method.
 
 Boto3 documentation:
 [CloudFormation.Client.list_type_registrations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.list_type_registrations)
@@ -1555,7 +1552,7 @@ Returns a `Coroutine` for
 Returns summary information about the versions of an extension.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").list_type_versions` method.
+`session.create_client("cloudformation").list_type_versions` method.
 
 Boto3 documentation:
 [CloudFormation.Client.list_type_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.list_type_versions)
@@ -1587,7 +1584,7 @@ Returns a `Coroutine` for
 Returns summary information about extension that have been registered with
 CloudFormation.
 
-Type annotations for `aiobotocore.create_client("cloudformation").list_types`
+Type annotations for `session.create_client("cloudformation").list_types`
 method.
 
 Boto3 documentation:
@@ -1620,7 +1617,7 @@ Returns a `Coroutine` for
 Publishes the specified extension to the CloudFormation registry as a public
 extension in this region.
 
-Type annotations for `aiobotocore.create_client("cloudformation").publish_type`
+Type annotations for `session.create_client("cloudformation").publish_type`
 method.
 
 Boto3 documentation:
@@ -1648,7 +1645,7 @@ Returns a `Coroutine` for
 Reports progress of a resource handler to CloudFormation.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").record_handler_progress` method.
+`session.create_client("cloudformation").record_handler_progress` method.
 
 Boto3 documentation:
 [CloudFormation.Client.record_handler_progress](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.record_handler_progress)
@@ -1681,7 +1678,7 @@ Registers your account as a publisher of public extensions in the
 CloudFormation registry.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").register_publisher` method.
+`session.create_client("cloudformation").register_publisher` method.
 
 Boto3 documentation:
 [CloudFormation.Client.register_publisher](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.register_publisher)
@@ -1706,8 +1703,8 @@ Returns a `Coroutine` for
 
 Registers an extension with the CloudFormation service.
 
-Type annotations for
-`aiobotocore.create_client("cloudformation").register_type` method.
+Type annotations for `session.create_client("cloudformation").register_type`
+method.
 
 Boto3 documentation:
 [CloudFormation.Client.register_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.register_type)
@@ -1736,8 +1733,8 @@ Returns a `Coroutine` for
 When specifying `RollbackStack` , you preserve the state of previously
 provisioned resources when an operation fails.
 
-Type annotations for
-`aiobotocore.create_client("cloudformation").rollback_stack` method.
+Type annotations for `session.create_client("cloudformation").rollback_stack`
+method.
 
 Boto3 documentation:
 [CloudFormation.Client.rollback_stack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.rollback_stack)
@@ -1762,8 +1759,8 @@ Returns a `Coroutine` for
 
 Sets a stack policy for a specified stack.
 
-Type annotations for
-`aiobotocore.create_client("cloudformation").set_stack_policy` method.
+Type annotations for `session.create_client("cloudformation").set_stack_policy`
+method.
 
 Boto3 documentation:
 [CloudFormation.Client.set_stack_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.set_stack_policy)
@@ -1787,7 +1784,7 @@ Specifies the configuration data for a registered CloudFormation extension, in
 the given account and region.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").set_type_configuration` method.
+`session.create_client("cloudformation").set_type_configuration` method.
 
 Boto3 documentation:
 [CloudFormation.Client.set_type_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.set_type_configuration)
@@ -1816,7 +1813,7 @@ Returns a `Coroutine` for
 Specify the default version of an extension.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").set_type_default_version` method.
+`session.create_client("cloudformation").set_type_default_version` method.
 
 Boto3 documentation:
 [CloudFormation.Client.set_type_default_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.set_type_default_version)
@@ -1842,8 +1839,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Sends a signal to the specified resource with a success or failure status.
 
-Type annotations for
-`aiobotocore.create_client("cloudformation").signal_resource` method.
+Type annotations for `session.create_client("cloudformation").signal_resource`
+method.
 
 Boto3 documentation:
 [CloudFormation.Client.signal_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.signal_resource)
@@ -1869,7 +1866,7 @@ Stops an in-progress operation on a stack set and its associated stack
 instances.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").stop_stack_set_operation` method.
+`session.create_client("cloudformation").stop_stack_set_operation` method.
 
 Boto3 documentation:
 [CloudFormation.Client.stop_stack_set_operation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.stop_stack_set_operation)
@@ -1895,7 +1892,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Tests a registered extension to make sure it meets all necessary requirements
 for being published in the CloudFormation registry.
 
-Type annotations for `aiobotocore.create_client("cloudformation").test_type`
+Type annotations for `session.create_client("cloudformation").test_type`
 method.
 
 Boto3 documentation:
@@ -1923,7 +1920,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("cloudformation").update_stack`
+Type annotations for `session.create_client("cloudformation").update_stack`
 method.
 
 Boto3 documentation:
@@ -1966,7 +1963,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").update_stack_instances` method.
+`session.create_client("cloudformation").update_stack_instances` method.
 
 Boto3 documentation:
 [CloudFormation.Client.update_stack_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.update_stack_instances)
@@ -2000,8 +1997,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("cloudformation").update_stack_set` method.
+Type annotations for `session.create_client("cloudformation").update_stack_set`
+method.
 
 Boto3 documentation:
 [CloudFormation.Client.update_stack_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.update_stack_set)
@@ -2048,8 +2045,7 @@ Returns a `Coroutine` for
 Updates termination protection for the specified stack.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").update_termination_protection`
-method.
+`session.create_client("cloudformation").update_termination_protection` method.
 
 Boto3 documentation:
 [CloudFormation.Client.update_termination_protection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.update_termination_protection)
@@ -2075,7 +2071,7 @@ Returns a `Coroutine` for
 Validates a specified template.
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").validate_template` method.
+`session.create_client("cloudformation").validate_template` method.
 
 Boto3 documentation:
 [CloudFormation.Client.validate_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.validate_template)
@@ -2093,13 +2089,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [ValidateTemplateOutputTypeDef](./type_defs.md#validatetemplateoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("cloudformation").__aenter__`
+method.
+
+Boto3 documentation:
+[CloudFormation.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CloudFormationClient](#cloudformationclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("cloudformation").__aexit__`
+method.
+
+Boto3 documentation:
+[CloudFormation.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("cloudformation").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("cloudformation").get_paginator`
+method with overloads.
 
 - `client.get_paginator("describe_account_limits")` ->
   [DescribeAccountLimitsPaginator](./paginators.md#describeaccountlimitspaginator)
@@ -2134,7 +2163,7 @@ overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("cloudformation").get_waiter`
+Type annotations for `session.create_client("cloudformation").get_waiter`
 method with overloads.
 
 - `client.get_waiter("change_set_create_complete")` ->

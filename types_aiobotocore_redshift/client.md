@@ -134,6 +134,8 @@ type annotations stubs module
     - [revoke_snapshot_access](#revoke_snapshot_access)
     - [rotate_encryption_key](#rotate_encryption_key)
     - [update_partner_status](#update_partner_status)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -141,16 +143,17 @@ type annotations stubs module
 
 ## RedshiftClient
 
-Type annotations for `aiobotocore.create_client("redshift")`
+Type annotations for `session.create_client("redshift")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_redshift.client import RedshiftClient
 
-def get_redshift_client() -> RedshiftClient:
-    return Session().client("redshift")
+session = get_session()
+async with session.create_client("redshift") as client:
+    client: RedshiftClient
 ```
 
 Boto3 documentation:
@@ -310,7 +313,7 @@ Exceptions:
 
 RedshiftClient exceptions.
 
-Type annotations for `aiobotocore.create_client("redshift").exceptions` method.
+Type annotations for `session.create_client("redshift").exceptions` method.
 
 Boto3 documentation:
 [Redshift.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.exceptions)
@@ -325,7 +328,7 @@ Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the
 configuration (term, payment type, or number of nodes) and no additional costs.
 
 Type annotations for
-`aiobotocore.create_client("redshift").accept_reserved_node_exchange` method.
+`session.create_client("redshift").accept_reserved_node_exchange` method.
 
 Boto3 documentation:
 [Redshift.Client.accept_reserved_node_exchange](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.accept_reserved_node_exchange)
@@ -350,8 +353,7 @@ Returns a `Coroutine` for
 
 Adds a partner integration to a cluster.
 
-Type annotations for `aiobotocore.create_client("redshift").add_partner`
-method.
+Type annotations for `session.create_client("redshift").add_partner` method.
 
 Boto3 documentation:
 [Redshift.Client.add_partner](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.add_partner)
@@ -379,7 +381,7 @@ From a datashare consumer account, associates a datashare with the account
 (AssociateEntireAccount) or the specified namespace (ConsumerArn).
 
 Type annotations for
-`aiobotocore.create_client("redshift").associate_data_share_consumer` method.
+`session.create_client("redshift").associate_data_share_consumer` method.
 
 Boto3 documentation:
 [Redshift.Client.associate_data_share_consumer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.associate_data_share_consumer)
@@ -406,7 +408,7 @@ Returns a `Coroutine` for
 Adds an inbound (ingress) rule to an Amazon Redshift security group.
 
 Type annotations for
-`aiobotocore.create_client("redshift").authorize_cluster_security_group_ingress`
+`session.create_client("redshift").authorize_cluster_security_group_ingress`
 method.
 
 Boto3 documentation:
@@ -435,8 +437,8 @@ Returns a `Coroutine` for
 From a data producer account, authorizes the sharing of a datashare with one or
 more consumer accounts.
 
-Type annotations for
-`aiobotocore.create_client("redshift").authorize_data_share` method.
+Type annotations for `session.create_client("redshift").authorize_data_share`
+method.
 
 Boto3 documentation:
 [Redshift.Client.authorize_data_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.authorize_data_share)
@@ -462,7 +464,7 @@ Returns a `Coroutine` for
 Grants access to a cluster.
 
 Type annotations for
-`aiobotocore.create_client("redshift").authorize_endpoint_access` method.
+`session.create_client("redshift").authorize_endpoint_access` method.
 
 Boto3 documentation:
 [Redshift.Client.authorize_endpoint_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.authorize_endpoint_access)
@@ -490,7 +492,7 @@ Authorizes the specified Amazon Web Services account to restore the specified
 snapshot.
 
 Type annotations for
-`aiobotocore.create_client("redshift").authorize_snapshot_access` method.
+`session.create_client("redshift").authorize_snapshot_access` method.
 
 Boto3 documentation:
 [Redshift.Client.authorize_snapshot_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.authorize_snapshot_access)
@@ -517,7 +519,7 @@ Returns a `Coroutine` for
 Deletes a set of cluster snapshots.
 
 Type annotations for
-`aiobotocore.create_client("redshift").batch_delete_cluster_snapshots` method.
+`session.create_client("redshift").batch_delete_cluster_snapshots` method.
 
 Boto3 documentation:
 [Redshift.Client.batch_delete_cluster_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.batch_delete_cluster_snapshots)
@@ -544,7 +546,7 @@ Returns a `Coroutine` for
 Modifies the settings for a set of cluster snapshots.
 
 Type annotations for
-`aiobotocore.create_client("redshift").batch_modify_cluster_snapshots` method.
+`session.create_client("redshift").batch_modify_cluster_snapshots` method.
 
 Boto3 documentation:
 [Redshift.Client.batch_modify_cluster_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.batch_modify_cluster_snapshots)
@@ -570,19 +572,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("redshift").can_paginate`
-method.
+Type annotations for `session.create_client("redshift").can_paginate` method.
 
 Boto3 documentation:
 [Redshift.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_resize"></a>
 
@@ -590,8 +589,7 @@ Returns a `Coroutine` for `bool`.
 
 Cancels a resize operation for a cluster.
 
-Type annotations for `aiobotocore.create_client("redshift").cancel_resize`
-method.
+Type annotations for `session.create_client("redshift").cancel_resize` method.
 
 Boto3 documentation:
 [Redshift.Client.cancel_resize](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.cancel_resize)
@@ -615,8 +613,8 @@ Returns a `Coroutine` for
 Copies the specified automated cluster snapshot to a new manual cluster
 snapshot.
 
-Type annotations for
-`aiobotocore.create_client("redshift").copy_cluster_snapshot` method.
+Type annotations for `session.create_client("redshift").copy_cluster_snapshot`
+method.
 
 Boto3 documentation:
 [Redshift.Client.copy_cluster_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.copy_cluster_snapshot)
@@ -644,7 +642,7 @@ Returns a `Coroutine` for
 Creates an authentication profile with the specified parameters.
 
 Type annotations for
-`aiobotocore.create_client("redshift").create_authentication_profile` method.
+`session.create_client("redshift").create_authentication_profile` method.
 
 Boto3 documentation:
 [Redshift.Client.create_authentication_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.create_authentication_profile)
@@ -669,8 +667,7 @@ Returns a `Coroutine` for
 
 Creates a new cluster with the specified parameters.
 
-Type annotations for `aiobotocore.create_client("redshift").create_cluster`
-method.
+Type annotations for `session.create_client("redshift").create_cluster` method.
 
 Boto3 documentation:
 [Redshift.Client.create_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.create_cluster)
@@ -727,7 +724,7 @@ Returns a `Coroutine` for
 Creates an Amazon Redshift parameter group.
 
 Type annotations for
-`aiobotocore.create_client("redshift").create_cluster_parameter_group` method.
+`session.create_client("redshift").create_cluster_parameter_group` method.
 
 Boto3 documentation:
 [Redshift.Client.create_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.create_cluster_parameter_group)
@@ -755,7 +752,7 @@ Returns a `Coroutine` for
 Creates a new Amazon Redshift security group.
 
 Type annotations for
-`aiobotocore.create_client("redshift").create_cluster_security_group` method.
+`session.create_client("redshift").create_cluster_security_group` method.
 
 Boto3 documentation:
 [Redshift.Client.create_cluster_security_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.create_cluster_security_group)
@@ -782,7 +779,7 @@ Returns a `Coroutine` for
 Creates a manual snapshot of the specified cluster.
 
 Type annotations for
-`aiobotocore.create_client("redshift").create_cluster_snapshot` method.
+`session.create_client("redshift").create_cluster_snapshot` method.
 
 Boto3 documentation:
 [Redshift.Client.create_cluster_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.create_cluster_snapshot)
@@ -810,7 +807,7 @@ Returns a `Coroutine` for
 Creates a new Amazon Redshift subnet group.
 
 Type annotations for
-`aiobotocore.create_client("redshift").create_cluster_subnet_group` method.
+`session.create_client("redshift").create_cluster_subnet_group` method.
 
 Boto3 documentation:
 [Redshift.Client.create_cluster_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.create_cluster_subnet_group)
@@ -837,8 +834,8 @@ Returns a `Coroutine` for
 
 Creates a Redshift-managed VPC endpoint.
 
-Type annotations for
-`aiobotocore.create_client("redshift").create_endpoint_access` method.
+Type annotations for `session.create_client("redshift").create_endpoint_access`
+method.
 
 Boto3 documentation:
 [Redshift.Client.create_endpoint_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.create_endpoint_access)
@@ -867,7 +864,7 @@ Returns a `Coroutine` for
 Creates an Amazon Redshift event notification subscription.
 
 Type annotations for
-`aiobotocore.create_client("redshift").create_event_subscription` method.
+`session.create_client("redshift").create_event_subscription` method.
 
 Boto3 documentation:
 [Redshift.Client.create_event_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.create_event_subscription)
@@ -901,7 +898,7 @@ connect to the client's HSM in order to store and retrieve the keys used to
 encrypt the cluster databases.
 
 Type annotations for
-`aiobotocore.create_client("redshift").create_hsm_client_certificate` method.
+`session.create_client("redshift").create_hsm_client_certificate` method.
 
 Boto3 documentation:
 [Redshift.Client.create_hsm_client_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.create_hsm_client_certificate)
@@ -929,7 +926,7 @@ Amazon Redshift cluster to store and use database encryption keys in a Hardware
 Security Module (HSM).
 
 Type annotations for
-`aiobotocore.create_client("redshift").create_hsm_configuration` method.
+`session.create_client("redshift").create_hsm_configuration` method.
 
 Boto3 documentation:
 [Redshift.Client.create_hsm_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.create_hsm_configuration)
@@ -960,7 +957,7 @@ Returns a `Coroutine` for
 Creates a scheduled action.
 
 Type annotations for
-`aiobotocore.create_client("redshift").create_scheduled_action` method.
+`session.create_client("redshift").create_scheduled_action` method.
 
 Boto3 documentation:
 [Redshift.Client.create_scheduled_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.create_scheduled_action)
@@ -996,7 +993,7 @@ master key (CMK) from Key Management Service (KMS) to encrypt copied snapshots
 in a destination region.
 
 Type annotations for
-`aiobotocore.create_client("redshift").create_snapshot_copy_grant` method.
+`session.create_client("redshift").create_snapshot_copy_grant` method.
 
 Boto3 documentation:
 [Redshift.Client.create_snapshot_copy_grant](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.create_snapshot_copy_grant)
@@ -1024,7 +1021,7 @@ Create a snapshot schedule that can be associated to a cluster and which
 overrides the default system backup schedule.
 
 Type annotations for
-`aiobotocore.create_client("redshift").create_snapshot_schedule` method.
+`session.create_client("redshift").create_snapshot_schedule` method.
 
 Boto3 documentation:
 [Redshift.Client.create_snapshot_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.create_snapshot_schedule)
@@ -1053,8 +1050,7 @@ Returns a `Coroutine` for
 
 Adds tags to a cluster.
 
-Type annotations for `aiobotocore.create_client("redshift").create_tags`
-method.
+Type annotations for `session.create_client("redshift").create_tags` method.
 
 Boto3 documentation:
 [Redshift.Client.create_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.create_tags)
@@ -1075,7 +1071,7 @@ Keyword-only arguments:
 
 Creates a usage limit for a specified Amazon Redshift feature on a cluster.
 
-Type annotations for `aiobotocore.create_client("redshift").create_usage_limit`
+Type annotations for `session.create_client("redshift").create_usage_limit`
 method.
 
 Boto3 documentation:
@@ -1110,8 +1106,8 @@ Returns a `Coroutine` for
 
 From the producer account, removes authorization from the specified datashare.
 
-Type annotations for
-`aiobotocore.create_client("redshift").deauthorize_data_share` method.
+Type annotations for `session.create_client("redshift").deauthorize_data_share`
+method.
 
 Boto3 documentation:
 [Redshift.Client.deauthorize_data_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.deauthorize_data_share)
@@ -1137,7 +1133,7 @@ Returns a `Coroutine` for
 Deletes an authentication profile.
 
 Type annotations for
-`aiobotocore.create_client("redshift").delete_authentication_profile` method.
+`session.create_client("redshift").delete_authentication_profile` method.
 
 Boto3 documentation:
 [Redshift.Client.delete_authentication_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.delete_authentication_profile)
@@ -1162,8 +1158,7 @@ Returns a `Coroutine` for
 Deletes a previously provisioned cluster without its final snapshot being
 created.
 
-Type annotations for `aiobotocore.create_client("redshift").delete_cluster`
-method.
+Type annotations for `session.create_client("redshift").delete_cluster` method.
 
 Boto3 documentation:
 [Redshift.Client.delete_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.delete_cluster)
@@ -1190,7 +1185,7 @@ Returns a `Coroutine` for
 Deletes a specified Amazon Redshift parameter group.
 
 Type annotations for
-`aiobotocore.create_client("redshift").delete_cluster_parameter_group` method.
+`session.create_client("redshift").delete_cluster_parameter_group` method.
 
 Boto3 documentation:
 [Redshift.Client.delete_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.delete_cluster_parameter_group)
@@ -1212,7 +1207,7 @@ Keyword-only arguments:
 Deletes an Amazon Redshift security group.
 
 Type annotations for
-`aiobotocore.create_client("redshift").delete_cluster_security_group` method.
+`session.create_client("redshift").delete_cluster_security_group` method.
 
 Boto3 documentation:
 [Redshift.Client.delete_cluster_security_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.delete_cluster_security_group)
@@ -1234,7 +1229,7 @@ Keyword-only arguments:
 Deletes the specified manual snapshot.
 
 Type annotations for
-`aiobotocore.create_client("redshift").delete_cluster_snapshot` method.
+`session.create_client("redshift").delete_cluster_snapshot` method.
 
 Boto3 documentation:
 [Redshift.Client.delete_cluster_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.delete_cluster_snapshot)
@@ -1260,7 +1255,7 @@ Returns a `Coroutine` for
 Deletes the specified cluster subnet group.
 
 Type annotations for
-`aiobotocore.create_client("redshift").delete_cluster_subnet_group` method.
+`session.create_client("redshift").delete_cluster_subnet_group` method.
 
 Boto3 documentation:
 [Redshift.Client.delete_cluster_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.delete_cluster_subnet_group)
@@ -1281,8 +1276,8 @@ Keyword-only arguments:
 
 Deletes a Redshift-managed VPC endpoint.
 
-Type annotations for
-`aiobotocore.create_client("redshift").delete_endpoint_access` method.
+Type annotations for `session.create_client("redshift").delete_endpoint_access`
+method.
 
 Boto3 documentation:
 [Redshift.Client.delete_endpoint_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.delete_endpoint_access)
@@ -1307,7 +1302,7 @@ Returns a `Coroutine` for
 Deletes an Amazon Redshift event notification subscription.
 
 Type annotations for
-`aiobotocore.create_client("redshift").delete_event_subscription` method.
+`session.create_client("redshift").delete_event_subscription` method.
 
 Boto3 documentation:
 [Redshift.Client.delete_event_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.delete_event_subscription)
@@ -1329,7 +1324,7 @@ Keyword-only arguments:
 Deletes the specified HSM client certificate.
 
 Type annotations for
-`aiobotocore.create_client("redshift").delete_hsm_client_certificate` method.
+`session.create_client("redshift").delete_hsm_client_certificate` method.
 
 Boto3 documentation:
 [Redshift.Client.delete_hsm_client_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.delete_hsm_client_certificate)
@@ -1351,7 +1346,7 @@ Keyword-only arguments:
 Deletes the specified Amazon Redshift HSM configuration.
 
 Type annotations for
-`aiobotocore.create_client("redshift").delete_hsm_configuration` method.
+`session.create_client("redshift").delete_hsm_configuration` method.
 
 Boto3 documentation:
 [Redshift.Client.delete_hsm_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.delete_hsm_configuration)
@@ -1372,8 +1367,7 @@ Keyword-only arguments:
 
 Deletes a partner integration from a cluster.
 
-Type annotations for `aiobotocore.create_client("redshift").delete_partner`
-method.
+Type annotations for `session.create_client("redshift").delete_partner` method.
 
 Boto3 documentation:
 [Redshift.Client.delete_partner](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.delete_partner)
@@ -1400,7 +1394,7 @@ Returns a `Coroutine` for
 Deletes a scheduled action.
 
 Type annotations for
-`aiobotocore.create_client("redshift").delete_scheduled_action` method.
+`session.create_client("redshift").delete_scheduled_action` method.
 
 Boto3 documentation:
 [Redshift.Client.delete_scheduled_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.delete_scheduled_action)
@@ -1422,7 +1416,7 @@ Keyword-only arguments:
 Deletes the specified snapshot copy grant.
 
 Type annotations for
-`aiobotocore.create_client("redshift").delete_snapshot_copy_grant` method.
+`session.create_client("redshift").delete_snapshot_copy_grant` method.
 
 Boto3 documentation:
 [Redshift.Client.delete_snapshot_copy_grant](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.delete_snapshot_copy_grant)
@@ -1444,7 +1438,7 @@ Keyword-only arguments:
 Deletes a snapshot schedule.
 
 Type annotations for
-`aiobotocore.create_client("redshift").delete_snapshot_schedule` method.
+`session.create_client("redshift").delete_snapshot_schedule` method.
 
 Boto3 documentation:
 [Redshift.Client.delete_snapshot_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.delete_snapshot_schedule)
@@ -1465,8 +1459,7 @@ Keyword-only arguments:
 
 Deletes tags from a resource.
 
-Type annotations for `aiobotocore.create_client("redshift").delete_tags`
-method.
+Type annotations for `session.create_client("redshift").delete_tags` method.
 
 Boto3 documentation:
 [Redshift.Client.delete_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.delete_tags)
@@ -1487,7 +1480,7 @@ Keyword-only arguments:
 
 Deletes a usage limit from a cluster.
 
-Type annotations for `aiobotocore.create_client("redshift").delete_usage_limit`
+Type annotations for `session.create_client("redshift").delete_usage_limit`
 method.
 
 Boto3 documentation:
@@ -1511,7 +1504,7 @@ Returns a list of attributes attached to an account See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeAccountAttributes).
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_account_attributes` method.
+`session.create_client("redshift").describe_account_attributes` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_account_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_account_attributes)
@@ -1536,8 +1529,7 @@ Returns a `Coroutine` for
 Describes an authentication profile.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_authentication_profiles`
-method.
+`session.create_client("redshift").describe_authentication_profiles` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_authentication_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_authentication_profiles)
@@ -1562,7 +1554,7 @@ Returns a `Coroutine` for
 Returns an array of `ClusterDbRevision` objects.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_cluster_db_revisions` method.
+`session.create_client("redshift").describe_cluster_db_revisions` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_cluster_db_revisions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_cluster_db_revisions)
@@ -1590,8 +1582,7 @@ Returns a list of Amazon Redshift parameter groups, including parameter groups
 you created and the default parameter group.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_cluster_parameter_groups`
-method.
+`session.create_client("redshift").describe_cluster_parameter_groups` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_cluster_parameter_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_cluster_parameter_groups)
@@ -1621,7 +1612,7 @@ Returns a detailed list of parameters contained within the specified Amazon
 Redshift parameter group.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_cluster_parameters` method.
+`session.create_client("redshift").describe_cluster_parameters` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_cluster_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_cluster_parameters)
@@ -1649,8 +1640,7 @@ Returns a `Coroutine` for
 Returns information about Amazon Redshift security groups.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_cluster_security_groups`
-method.
+`session.create_client("redshift").describe_cluster_security_groups` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_cluster_security_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_cluster_security_groups)
@@ -1680,7 +1670,7 @@ Returns one or more snapshot objects, which contain metadata about your cluster
 snapshots.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_cluster_snapshots` method.
+`session.create_client("redshift").describe_cluster_snapshots` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_cluster_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_cluster_snapshots)
@@ -1718,7 +1708,7 @@ Returns one or more cluster subnet group objects, which contain metadata about
 your cluster subnet groups.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_cluster_subnet_groups` method.
+`session.create_client("redshift").describe_cluster_subnet_groups` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_cluster_subnet_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_cluster_subnet_groups)
@@ -1747,7 +1737,7 @@ Returns a `Coroutine` for
 Returns a list of all the available maintenance tracks.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_cluster_tracks` method.
+`session.create_client("redshift").describe_cluster_tracks` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_cluster_tracks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_cluster_tracks)
@@ -1774,7 +1764,7 @@ Returns a `Coroutine` for
 Returns descriptions of the available Amazon Redshift cluster versions.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_cluster_versions` method.
+`session.create_client("redshift").describe_cluster_versions` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_cluster_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_cluster_versions)
@@ -1803,7 +1793,7 @@ Returns properties of provisioned clusters including general cluster
 properties, cluster database properties, maintenance and backup properties, and
 security and access properties.
 
-Type annotations for `aiobotocore.create_client("redshift").describe_clusters`
+Type annotations for `session.create_client("redshift").describe_clusters`
 method.
 
 Boto3 documentation:
@@ -1832,8 +1822,8 @@ Returns a `Coroutine` for
 Shows the status of any inbound or outbound datashares available in the
 specified account.
 
-Type annotations for
-`aiobotocore.create_client("redshift").describe_data_shares` method.
+Type annotations for `session.create_client("redshift").describe_data_shares`
+method.
 
 Boto3 documentation:
 [Redshift.Client.describe_data_shares](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_data_shares)
@@ -1861,8 +1851,7 @@ Returns a list of datashares where the account identifier being called is a
 consumer account identifier.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_data_shares_for_consumer`
-method.
+`session.create_client("redshift").describe_data_shares_for_consumer` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_data_shares_for_consumer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_data_shares_for_consumer)
@@ -1892,8 +1881,7 @@ Returns a list of datashares when the account identifier being called is a
 producer account identifier.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_data_shares_for_producer`
-method.
+`session.create_client("redshift").describe_data_shares_for_producer` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_data_shares_for_producer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_data_shares_for_producer)
@@ -1922,8 +1910,7 @@ Returns a `Coroutine` for
 Returns a list of parameter settings for the specified parameter group family.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_default_cluster_parameters`
-method.
+`session.create_client("redshift").describe_default_cluster_parameters` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_default_cluster_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_default_cluster_parameters)
@@ -1950,7 +1937,7 @@ Returns a `Coroutine` for
 Describes a Redshift-managed VPC endpoint.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_endpoint_access` method.
+`session.create_client("redshift").describe_endpoint_access` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_endpoint_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_endpoint_access)
@@ -1980,7 +1967,7 @@ Returns a `Coroutine` for
 Describes an endpoint authorization.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_endpoint_authorization` method.
+`session.create_client("redshift").describe_endpoint_authorization` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_endpoint_authorization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_endpoint_authorization)
@@ -2010,7 +1997,7 @@ Displays a list of event categories for all event source types, or for a
 specified source type.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_event_categories` method.
+`session.create_client("redshift").describe_event_categories` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_event_categories](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_event_categories)
@@ -2036,7 +2023,7 @@ Lists descriptions of all the Amazon Redshift event notification subscriptions
 for a customer account.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_event_subscriptions` method.
+`session.create_client("redshift").describe_event_subscriptions` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_event_subscriptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_event_subscriptions)
@@ -2065,7 +2052,7 @@ Returns a `Coroutine` for
 Returns events related to clusters, security groups, snapshots, and parameter
 groups for the past 14 days.
 
-Type annotations for `aiobotocore.create_client("redshift").describe_events`
+Type annotations for `session.create_client("redshift").describe_events`
 method.
 
 Boto3 documentation:
@@ -2096,8 +2083,7 @@ Returns a `Coroutine` for
 Returns information about the specified HSM client certificate.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_hsm_client_certificates`
-method.
+`session.create_client("redshift").describe_hsm_client_certificates` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_hsm_client_certificates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_hsm_client_certificates)
@@ -2126,7 +2112,7 @@ Returns a `Coroutine` for
 Returns information about the specified Amazon Redshift HSM configuration.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_hsm_configurations` method.
+`session.create_client("redshift").describe_hsm_configurations` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_hsm_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_hsm_configurations)
@@ -2156,7 +2142,7 @@ Describes whether information, such as queries and connection attempts, is
 being logged for the specified Amazon Redshift cluster.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_logging_status` method.
+`session.create_client("redshift").describe_logging_status` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_logging_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_logging_status)
@@ -2182,8 +2168,7 @@ Returns properties of possible node configurations such as node type, number of
 nodes, and disk usage for the specified action type.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_node_configuration_options`
-method.
+`session.create_client("redshift").describe_node_configuration_options` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_node_configuration_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_node_configuration_options)
@@ -2215,8 +2200,7 @@ Returns a `Coroutine` for
 Returns a list of orderable cluster options.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_orderable_cluster_options`
-method.
+`session.create_client("redshift").describe_orderable_cluster_options` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_orderable_cluster_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_orderable_cluster_options)
@@ -2243,7 +2227,7 @@ Returns a `Coroutine` for
 
 Returns information about the partner integrations defined for a cluster.
 
-Type annotations for `aiobotocore.create_client("redshift").describe_partners`
+Type annotations for `session.create_client("redshift").describe_partners`
 method.
 
 Boto3 documentation:
@@ -2272,7 +2256,7 @@ Returns exchange status details and associated metadata for a reserved-node
 exchange.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_reserved_node_exchange_status`
+`session.create_client("redshift").describe_reserved_node_exchange_status`
 method.
 
 Boto3 documentation:
@@ -2303,8 +2287,7 @@ their descriptions including the node type, the fixed and recurring costs of
 reserving the node and duration the node will be reserved for you.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_reserved_node_offerings`
-method.
+`session.create_client("redshift").describe_reserved_node_offerings` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_reserved_node_offerings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_reserved_node_offerings)
@@ -2331,7 +2314,7 @@ Returns a `Coroutine` for
 Returns the descriptions of the reserved nodes.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_reserved_nodes` method.
+`session.create_client("redshift").describe_reserved_nodes` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_reserved_nodes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_reserved_nodes)
@@ -2357,7 +2340,7 @@ Returns a `Coroutine` for
 
 Returns information about the last resize operation for the specified cluster.
 
-Type annotations for `aiobotocore.create_client("redshift").describe_resize`
+Type annotations for `session.create_client("redshift").describe_resize`
 method.
 
 Boto3 documentation:
@@ -2382,7 +2365,7 @@ Returns a `Coroutine` for
 Describes properties of scheduled actions.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_scheduled_actions` method.
+`session.create_client("redshift").describe_scheduled_actions` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_scheduled_actions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_scheduled_actions)
@@ -2417,7 +2400,7 @@ Returns a list of snapshot copy grants owned by the Amazon Web Services account
 in the destination region.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_snapshot_copy_grants` method.
+`session.create_client("redshift").describe_snapshot_copy_grants` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_snapshot_copy_grants](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_snapshot_copy_grants)
@@ -2446,7 +2429,7 @@ Returns a `Coroutine` for
 Returns a list of snapshot schedules.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_snapshot_schedules` method.
+`session.create_client("redshift").describe_snapshot_schedules` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_snapshot_schedules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_snapshot_schedules)
@@ -2475,7 +2458,7 @@ Returns a `Coroutine` for
 
 Returns account level backups storage size and provisional storage.
 
-Type annotations for `aiobotocore.create_client("redshift").describe_storage`
+Type annotations for `session.create_client("redshift").describe_storage`
 method.
 
 Boto3 documentation:
@@ -2494,7 +2477,7 @@ Lists the status of one or more table restore requests made using the
 RestoreTableFromClusterSnapshot API action.
 
 Type annotations for
-`aiobotocore.create_client("redshift").describe_table_restore_status` method.
+`session.create_client("redshift").describe_table_restore_status` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_table_restore_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_table_restore_status)
@@ -2521,8 +2504,7 @@ Returns a `Coroutine` for
 
 Returns a list of tags.
 
-Type annotations for `aiobotocore.create_client("redshift").describe_tags`
-method.
+Type annotations for `session.create_client("redshift").describe_tags` method.
 
 Boto3 documentation:
 [Redshift.Client.describe_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_tags)
@@ -2550,8 +2532,8 @@ Returns a `Coroutine` for
 
 Shows usage limits on a cluster.
 
-Type annotations for
-`aiobotocore.create_client("redshift").describe_usage_limits` method.
+Type annotations for `session.create_client("redshift").describe_usage_limits`
+method.
 
 Boto3 documentation:
 [Redshift.Client.describe_usage_limits](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.describe_usage_limits)
@@ -2583,7 +2565,7 @@ Returns a `Coroutine` for
 Stops logging information, such as queries and connection attempts, for the
 specified Amazon Redshift cluster.
 
-Type annotations for `aiobotocore.create_client("redshift").disable_logging`
+Type annotations for `session.create_client("redshift").disable_logging`
 method.
 
 Boto3 documentation:
@@ -2608,8 +2590,8 @@ Returns a `Coroutine` for
 Disables the automatic copying of snapshots from one region to another region
 for a specified cluster.
 
-Type annotations for
-`aiobotocore.create_client("redshift").disable_snapshot_copy` method.
+Type annotations for `session.create_client("redshift").disable_snapshot_copy`
+method.
 
 Boto3 documentation:
 [Redshift.Client.disable_snapshot_copy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.disable_snapshot_copy)
@@ -2634,8 +2616,7 @@ Returns a `Coroutine` for
 From a consumer account, remove association for the specified datashare.
 
 Type annotations for
-`aiobotocore.create_client("redshift").disassociate_data_share_consumer`
-method.
+`session.create_client("redshift").disassociate_data_share_consumer` method.
 
 Boto3 documentation:
 [Redshift.Client.disassociate_data_share_consumer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.disassociate_data_share_consumer)
@@ -2662,8 +2643,7 @@ Returns a `Coroutine` for
 Starts logging information, such as queries and connection attempts, for the
 specified Amazon Redshift cluster.
 
-Type annotations for `aiobotocore.create_client("redshift").enable_logging`
-method.
+Type annotations for `session.create_client("redshift").enable_logging` method.
 
 Boto3 documentation:
 [Redshift.Client.enable_logging](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.enable_logging)
@@ -2689,8 +2669,8 @@ Returns a `Coroutine` for
 Enables the automatic copy of snapshots from one region to another region for a
 specified cluster.
 
-Type annotations for
-`aiobotocore.create_client("redshift").enable_snapshot_copy` method.
+Type annotations for `session.create_client("redshift").enable_snapshot_copy`
+method.
 
 Boto3 documentation:
 [Redshift.Client.enable_snapshot_copy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.enable_snapshot_copy)
@@ -2718,8 +2698,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("redshift").generate_presigned_url` method.
+Type annotations for `session.create_client("redshift").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Redshift.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.generate_presigned_url)
@@ -2744,7 +2724,7 @@ Returns a database user name and temporary password with temporary
 authorization to log on to an Amazon Redshift database.
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_cluster_credentials` method.
+`session.create_client("redshift").get_cluster_credentials` method.
 
 Boto3 documentation:
 [Redshift.Client.get_cluster_credentials](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.get_cluster_credentials)
@@ -2774,7 +2754,7 @@ Returns a `Coroutine` for
 Gets the configuration options for the reserved-node exchange.
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_reserved_node_exchange_configuration_options`
+`session.create_client("redshift").get_reserved_node_exchange_configuration_options`
 method.
 
 Boto3 documentation:
@@ -2808,7 +2788,7 @@ Returns an array of DC2 ReservedNodeOfferings that matches the payment type,
 term, and usage price of the given DC1 reserved node.
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_reserved_node_exchange_offerings`
+`session.create_client("redshift").get_reserved_node_exchange_offerings`
 method.
 
 Boto3 documentation:
@@ -2836,7 +2816,7 @@ Returns a `Coroutine` for
 Modifies whether a cluster can use AQUA (Advanced Query Accelerator).
 
 Type annotations for
-`aiobotocore.create_client("redshift").modify_aqua_configuration` method.
+`session.create_client("redshift").modify_aqua_configuration` method.
 
 Boto3 documentation:
 [Redshift.Client.modify_aqua_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.modify_aqua_configuration)
@@ -2863,7 +2843,7 @@ Returns a `Coroutine` for
 Modifies an authentication profile.
 
 Type annotations for
-`aiobotocore.create_client("redshift").modify_authentication_profile` method.
+`session.create_client("redshift").modify_authentication_profile` method.
 
 Boto3 documentation:
 [Redshift.Client.modify_authentication_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.modify_authentication_profile)
@@ -2888,8 +2868,7 @@ Returns a `Coroutine` for
 
 Modifies the settings for a cluster.
 
-Type annotations for `aiobotocore.create_client("redshift").modify_cluster`
-method.
+Type annotations for `session.create_client("redshift").modify_cluster` method.
 
 Boto3 documentation:
 [Redshift.Client.modify_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.modify_cluster)
@@ -2937,7 +2916,7 @@ Returns a `Coroutine` for
 Modifies the database revision of a cluster.
 
 Type annotations for
-`aiobotocore.create_client("redshift").modify_cluster_db_revision` method.
+`session.create_client("redshift").modify_cluster_db_revision` method.
 
 Boto3 documentation:
 [Redshift.Client.modify_cluster_db_revision](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.modify_cluster_db_revision)
@@ -2964,7 +2943,7 @@ Modifies the list of Identity and Access Management (IAM) roles that can be
 used by the cluster to access other Amazon Web Services services.
 
 Type annotations for
-`aiobotocore.create_client("redshift").modify_cluster_iam_roles` method.
+`session.create_client("redshift").modify_cluster_iam_roles` method.
 
 Boto3 documentation:
 [Redshift.Client.modify_cluster_iam_roles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.modify_cluster_iam_roles)
@@ -2992,7 +2971,7 @@ Returns a `Coroutine` for
 Modifies the maintenance settings of a cluster.
 
 Type annotations for
-`aiobotocore.create_client("redshift").modify_cluster_maintenance` method.
+`session.create_client("redshift").modify_cluster_maintenance` method.
 
 Boto3 documentation:
 [Redshift.Client.modify_cluster_maintenance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.modify_cluster_maintenance)
@@ -3022,7 +3001,7 @@ Returns a `Coroutine` for
 Modifies the parameters of a parameter group.
 
 Type annotations for
-`aiobotocore.create_client("redshift").modify_cluster_parameter_group` method.
+`session.create_client("redshift").modify_cluster_parameter_group` method.
 
 Boto3 documentation:
 [Redshift.Client.modify_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.modify_cluster_parameter_group)
@@ -3050,7 +3029,7 @@ Returns a `Coroutine` for
 Modifies the settings for a snapshot.
 
 Type annotations for
-`aiobotocore.create_client("redshift").modify_cluster_snapshot` method.
+`session.create_client("redshift").modify_cluster_snapshot` method.
 
 Boto3 documentation:
 [Redshift.Client.modify_cluster_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.modify_cluster_snapshot)
@@ -3077,8 +3056,7 @@ Returns a `Coroutine` for
 Modifies a snapshot schedule for a cluster.
 
 Type annotations for
-`aiobotocore.create_client("redshift").modify_cluster_snapshot_schedule`
-method.
+`session.create_client("redshift").modify_cluster_snapshot_schedule` method.
 
 Boto3 documentation:
 [Redshift.Client.modify_cluster_snapshot_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.modify_cluster_snapshot_schedule)
@@ -3102,7 +3080,7 @@ Keyword-only arguments:
 Modifies a cluster subnet group to include the specified list of VPC subnets.
 
 Type annotations for
-`aiobotocore.create_client("redshift").modify_cluster_subnet_group` method.
+`session.create_client("redshift").modify_cluster_subnet_group` method.
 
 Boto3 documentation:
 [Redshift.Client.modify_cluster_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.modify_cluster_subnet_group)
@@ -3128,8 +3106,8 @@ Returns a `Coroutine` for
 
 Modifies a Redshift-managed VPC endpoint.
 
-Type annotations for
-`aiobotocore.create_client("redshift").modify_endpoint_access` method.
+Type annotations for `session.create_client("redshift").modify_endpoint_access`
+method.
 
 Boto3 documentation:
 [Redshift.Client.modify_endpoint_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.modify_endpoint_access)
@@ -3155,7 +3133,7 @@ Returns a `Coroutine` for
 Modifies an existing Amazon Redshift event notification subscription.
 
 Type annotations for
-`aiobotocore.create_client("redshift").modify_event_subscription` method.
+`session.create_client("redshift").modify_event_subscription` method.
 
 Boto3 documentation:
 [Redshift.Client.modify_event_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.modify_event_subscription)
@@ -3186,7 +3164,7 @@ Returns a `Coroutine` for
 Modifies a scheduled action.
 
 Type annotations for
-`aiobotocore.create_client("redshift").modify_scheduled_action` method.
+`session.create_client("redshift").modify_scheduled_action` method.
 
 Boto3 documentation:
 [Redshift.Client.modify_scheduled_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.modify_scheduled_action)
@@ -3221,7 +3199,7 @@ Services Region after they are copied from the source Amazon Web Services
 Region.
 
 Type annotations for
-`aiobotocore.create_client("redshift").modify_snapshot_copy_retention_period`
+`session.create_client("redshift").modify_snapshot_copy_retention_period`
 method.
 
 Boto3 documentation:
@@ -3249,7 +3227,7 @@ Returns a `Coroutine` for
 Modifies a snapshot schedule.
 
 Type annotations for
-`aiobotocore.create_client("redshift").modify_snapshot_schedule` method.
+`session.create_client("redshift").modify_snapshot_schedule` method.
 
 Boto3 documentation:
 [Redshift.Client.modify_snapshot_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.modify_snapshot_schedule)
@@ -3274,7 +3252,7 @@ Returns a `Coroutine` for
 
 Modifies a usage limit in a cluster.
 
-Type annotations for `aiobotocore.create_client("redshift").modify_usage_limit`
+Type annotations for `session.create_client("redshift").modify_usage_limit`
 method.
 
 Boto3 documentation:
@@ -3302,8 +3280,7 @@ Returns a `Coroutine` for
 
 Pauses a cluster.
 
-Type annotations for `aiobotocore.create_client("redshift").pause_cluster`
-method.
+Type annotations for `session.create_client("redshift").pause_cluster` method.
 
 Boto3 documentation:
 [Redshift.Client.pause_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.pause_cluster)
@@ -3327,7 +3304,7 @@ Returns a `Coroutine` for
 Allows you to purchase reserved nodes.
 
 Type annotations for
-`aiobotocore.create_client("redshift").purchase_reserved_node_offering` method.
+`session.create_client("redshift").purchase_reserved_node_offering` method.
 
 Boto3 documentation:
 [Redshift.Client.purchase_reserved_node_offering](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.purchase_reserved_node_offering)
@@ -3352,8 +3329,7 @@ Returns a `Coroutine` for
 
 Reboots a cluster.
 
-Type annotations for `aiobotocore.create_client("redshift").reboot_cluster`
-method.
+Type annotations for `session.create_client("redshift").reboot_cluster` method.
 
 Boto3 documentation:
 [Redshift.Client.reboot_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.reboot_cluster)
@@ -3376,7 +3352,7 @@ Returns a `Coroutine` for
 
 From the consumer account, rejects the specified datashare.
 
-Type annotations for `aiobotocore.create_client("redshift").reject_data_share`
+Type annotations for `session.create_client("redshift").reject_data_share`
 method.
 
 Boto3 documentation:
@@ -3402,7 +3378,7 @@ Sets one or more parameters of the specified parameter group to their default
 values and sets the source values of the parameters to "engine-default".
 
 Type annotations for
-`aiobotocore.create_client("redshift").reset_cluster_parameter_group` method.
+`session.create_client("redshift").reset_cluster_parameter_group` method.
 
 Boto3 documentation:
 [Redshift.Client.reset_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.reset_cluster_parameter_group)
@@ -3429,8 +3405,7 @@ Returns a `Coroutine` for
 
 Changes the size of the cluster.
 
-Type annotations for `aiobotocore.create_client("redshift").resize_cluster`
-method.
+Type annotations for `session.create_client("redshift").resize_cluster` method.
 
 Boto3 documentation:
 [Redshift.Client.resize_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.resize_cluster)
@@ -3460,7 +3435,7 @@ Returns a `Coroutine` for
 Creates a new cluster from a snapshot.
 
 Type annotations for
-`aiobotocore.create_client("redshift").restore_from_cluster_snapshot` method.
+`session.create_client("redshift").restore_from_cluster_snapshot` method.
 
 Boto3 documentation:
 [Redshift.Client.restore_from_cluster_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.restore_from_cluster_snapshot)
@@ -3516,8 +3491,7 @@ Returns a `Coroutine` for
 Creates a new table from a table in an Amazon Redshift cluster snapshot.
 
 Type annotations for
-`aiobotocore.create_client("redshift").restore_table_from_cluster_snapshot`
-method.
+`session.create_client("redshift").restore_table_from_cluster_snapshot` method.
 
 Boto3 documentation:
 [Redshift.Client.restore_table_from_cluster_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.restore_table_from_cluster_snapshot)
@@ -3549,8 +3523,7 @@ Returns a `Coroutine` for
 
 Resumes a paused cluster.
 
-Type annotations for `aiobotocore.create_client("redshift").resume_cluster`
-method.
+Type annotations for `session.create_client("redshift").resume_cluster` method.
 
 Boto3 documentation:
 [Redshift.Client.resume_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.resume_cluster)
@@ -3575,7 +3548,7 @@ Revokes an ingress rule in an Amazon Redshift security group for a previously
 authorized IP range or Amazon EC2 security group.
 
 Type annotations for
-`aiobotocore.create_client("redshift").revoke_cluster_security_group_ingress`
+`session.create_client("redshift").revoke_cluster_security_group_ingress`
 method.
 
 Boto3 documentation:
@@ -3603,8 +3576,8 @@ Returns a `Coroutine` for
 
 Revokes access to a cluster.
 
-Type annotations for
-`aiobotocore.create_client("redshift").revoke_endpoint_access` method.
+Type annotations for `session.create_client("redshift").revoke_endpoint_access`
+method.
 
 Boto3 documentation:
 [Redshift.Client.revoke_endpoint_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.revoke_endpoint_access)
@@ -3632,8 +3605,8 @@ Returns a `Coroutine` for
 Removes the ability of the specified Amazon Web Services account to restore the
 specified snapshot.
 
-Type annotations for
-`aiobotocore.create_client("redshift").revoke_snapshot_access` method.
+Type annotations for `session.create_client("redshift").revoke_snapshot_access`
+method.
 
 Boto3 documentation:
 [Redshift.Client.revoke_snapshot_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.revoke_snapshot_access)
@@ -3659,8 +3632,8 @@ Returns a `Coroutine` for
 
 Rotates the encryption keys for a cluster.
 
-Type annotations for
-`aiobotocore.create_client("redshift").rotate_encryption_key` method.
+Type annotations for `session.create_client("redshift").rotate_encryption_key`
+method.
 
 Boto3 documentation:
 [Redshift.Client.rotate_encryption_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.rotate_encryption_key)
@@ -3684,8 +3657,8 @@ Returns a `Coroutine` for
 
 Updates the status of a partner integration.
 
-Type annotations for
-`aiobotocore.create_client("redshift").update_partner_status` method.
+Type annotations for `session.create_client("redshift").update_partner_status`
+method.
 
 Boto3 documentation:
 [Redshift.Client.update_partner_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.update_partner_status)
@@ -3710,12 +3683,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [PartnerIntegrationOutputMessageTypeDef](./type_defs.md#partnerintegrationoutputmessagetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("redshift").__aenter__` method.
+
+Boto3 documentation:
+[Redshift.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [RedshiftClient](#redshiftclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("redshift").__aexit__` method.
+
+Boto3 documentation:
+[Redshift.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("redshift").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("redshift").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_cluster_db_revisions")` ->
   [DescribeClusterDbRevisionsPaginator](./paginators.md#describeclusterdbrevisionspaginator)
@@ -3786,8 +3791,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("redshift").get_waiter` method
-with overloads.
+Type annotations for `session.create_client("redshift").get_waiter` method with
+overloads.
 
 - `client.get_waiter("cluster_available")` ->
   [ClusterAvailableWaiter](./waiters.md#clusteravailablewaiter)

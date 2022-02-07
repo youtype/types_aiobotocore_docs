@@ -23,17 +23,19 @@ type annotations stubs module
 ## DescribeClustersPaginator
 
 Type annotations for
-`aiobotocore.create_client("dax").get_paginator("describe_clusters")`.
+`session.create_client("dax").get_paginator("describe_clusters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dax.paginator import DescribeClustersPaginator
 
-def get_describe_clusters_paginator() -> DescribeClustersPaginator:
-    return Session().create_client("dax").get_paginator("describe_clusters")
+session = get_session()
+async with session.create_client("dax") as client:
+    client: DAXClient
+    paginator: DescribeClustersPaginator = client.get_paginator("describe_clusters")
 ```
 
 Boto3 documentation:
@@ -53,17 +55,19 @@ Arguments for `DescribeClustersPaginator.paginate` method:
 ## DescribeDefaultParametersPaginator
 
 Type annotations for
-`aiobotocore.create_client("dax").get_paginator("describe_default_parameters")`.
+`session.create_client("dax").get_paginator("describe_default_parameters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dax.paginator import DescribeDefaultParametersPaginator
 
-def get_describe_default_parameters_paginator() -> DescribeDefaultParametersPaginator:
-    return Session().create_client("dax").get_paginator("describe_default_parameters")
+session = get_session()
+async with session.create_client("dax") as client:
+    client: DAXClient
+    paginator: DescribeDefaultParametersPaginator = client.get_paginator("describe_default_parameters")
 ```
 
 Boto3 documentation:
@@ -82,17 +86,19 @@ Arguments for `DescribeDefaultParametersPaginator.paginate` method:
 ## DescribeEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("dax").get_paginator("describe_events")`.
+`session.create_client("dax").get_paginator("describe_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dax.paginator import DescribeEventsPaginator
 
-def get_describe_events_paginator() -> DescribeEventsPaginator:
-    return Session().create_client("dax").get_paginator("describe_events")
+session = get_session()
+async with session.create_client("dax") as client:
+    client: DAXClient
+    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")
 ```
 
 Boto3 documentation:
@@ -116,17 +122,19 @@ Arguments for `DescribeEventsPaginator.paginate` method:
 ## DescribeParameterGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("dax").get_paginator("describe_parameter_groups")`.
+`session.create_client("dax").get_paginator("describe_parameter_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dax.paginator import DescribeParameterGroupsPaginator
 
-def get_describe_parameter_groups_paginator() -> DescribeParameterGroupsPaginator:
-    return Session().create_client("dax").get_paginator("describe_parameter_groups")
+session = get_session()
+async with session.create_client("dax") as client:
+    client: DAXClient
+    paginator: DescribeParameterGroupsPaginator = client.get_paginator("describe_parameter_groups")
 ```
 
 Boto3 documentation:
@@ -146,17 +154,19 @@ Arguments for `DescribeParameterGroupsPaginator.paginate` method:
 ## DescribeParametersPaginator
 
 Type annotations for
-`aiobotocore.create_client("dax").get_paginator("describe_parameters")`.
+`session.create_client("dax").get_paginator("describe_parameters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dax.paginator import DescribeParametersPaginator
 
-def get_describe_parameters_paginator() -> DescribeParametersPaginator:
-    return Session().create_client("dax").get_paginator("describe_parameters")
+session = get_session()
+async with session.create_client("dax") as client:
+    client: DAXClient
+    paginator: DescribeParametersPaginator = client.get_paginator("describe_parameters")
 ```
 
 Boto3 documentation:
@@ -177,17 +187,19 @@ Arguments for `DescribeParametersPaginator.paginate` method:
 ## DescribeSubnetGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("dax").get_paginator("describe_subnet_groups")`.
+`session.create_client("dax").get_paginator("describe_subnet_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dax.paginator import DescribeSubnetGroupsPaginator
 
-def get_describe_subnet_groups_paginator() -> DescribeSubnetGroupsPaginator:
-    return Session().create_client("dax").get_paginator("describe_subnet_groups")
+session = get_session()
+async with session.create_client("dax") as client:
+    client: DAXClient
+    paginator: DescribeSubnetGroupsPaginator = client.get_paginator("describe_subnet_groups")
 ```
 
 Boto3 documentation:
@@ -206,18 +218,19 @@ Arguments for `DescribeSubnetGroupsPaginator.paginate` method:
 
 ## ListTagsPaginator
 
-Type annotations for
-`aiobotocore.create_client("dax").get_paginator("list_tags")`.
+Type annotations for `session.create_client("dax").get_paginator("list_tags")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dax.paginator import ListTagsPaginator
 
-def get_list_tags_paginator() -> ListTagsPaginator:
-    return Session().create_client("dax").get_paginator("list_tags")
+session = get_session()
+async with session.create_client("dax") as client:
+    client: DAXClient
+    paginator: ListTagsPaginator = client.get_paginator("list_tags")
 ```
 
 Boto3 documentation:

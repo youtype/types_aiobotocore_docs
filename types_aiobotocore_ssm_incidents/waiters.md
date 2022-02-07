@@ -18,7 +18,7 @@ type annotations stubs module
 ## WaitForReplicationSetActiveWaiter
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").get_waiter("wait_for_replication_set_active")`.
+`session.create_client("ssm-incidents").get_waiter("wait_for_replication_set_active")`.
 
 Can be used directly:
 
@@ -28,7 +28,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ssm_incidents.waiter import WaitForReplicationSetActiveWaiter
 
 def get_wait_for_replication_set_active_waiter() -> WaitForReplicationSetActiveWaiter:
-    return Session().create_client("ssm-incidents").get_waiter("wait_for_replication_set_active")
+    return Session().client("ssm-incidents").get_waiter("wait_for_replication_set_active")
 ```
 
 Boto3 documentation:
@@ -44,7 +44,7 @@ Arguments for `WaitForReplicationSetActiveWaiter.wait` method:
 ## WaitForReplicationSetDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").get_waiter("wait_for_replication_set_deleted")`.
+`session.create_client("ssm-incidents").get_waiter("wait_for_replication_set_deleted")`.
 
 Can be used directly:
 
@@ -54,7 +54,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ssm_incidents.waiter import WaitForReplicationSetDeletedWaiter
 
 def get_wait_for_replication_set_deleted_waiter() -> WaitForReplicationSetDeletedWaiter:
-    return Session().create_client("ssm-incidents").get_waiter("wait_for_replication_set_deleted")
+    return Session().client("ssm-incidents").get_waiter("wait_for_replication_set_deleted")
 ```
 
 Boto3 documentation:

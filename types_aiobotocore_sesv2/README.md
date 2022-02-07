@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[sesv2]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[sesv2]'
+
+# standalone installation
 pip install types-aiobotocore-sesv2
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-sesv2
 
 ## SESV2Client
 
-Type annotations for `aiobotocore.create_client("sesv2")` as
+Type annotations for `session.create_client("sesv2")` as
 [SESV2Client](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_sesv2.client import SESV2Client
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_configuration_set](./client.md#create_configuration_set)
 - [create_configuration_set_event_destination](./client.md#create_configuration_set_event_destination)

@@ -54,22 +54,25 @@ type annotations stubs module
     - [update_virtual_node](#update_virtual_node)
     - [update_virtual_router](#update_virtual_router)
     - [update_virtual_service](#update_virtual_service)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="appmeshclient"></a>
 
 ## AppMeshClient
 
-Type annotations for `aiobotocore.create_client("appmesh")`
+Type annotations for `session.create_client("appmesh")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_appmesh.client import AppMeshClient
 
-def get_appmesh_client() -> AppMeshClient:
-    return Session().client("appmesh")
+session = get_session()
+async with session.create_client("appmesh") as client:
+    client: AppMeshClient
 ```
 
 Boto3 documentation:
@@ -113,7 +116,7 @@ Exceptions:
 
 AppMeshClient exceptions.
 
-Type annotations for `aiobotocore.create_client("appmesh").exceptions` method.
+Type annotations for `session.create_client("appmesh").exceptions` method.
 
 Boto3 documentation:
 [AppMesh.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.exceptions)
@@ -126,19 +129,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("appmesh").can_paginate`
-method.
+Type annotations for `session.create_client("appmesh").can_paginate` method.
 
 Boto3 documentation:
 [AppMesh.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_gateway_route"></a>
 
@@ -146,8 +146,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates a gateway route.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").create_gateway_route` method.
+Type annotations for `session.create_client("appmesh").create_gateway_route`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.create_gateway_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.create_gateway_route)
@@ -178,7 +178,7 @@ Returns a `Coroutine` for
 
 Creates a service mesh.
 
-Type annotations for `aiobotocore.create_client("appmesh").create_mesh` method.
+Type annotations for `session.create_client("appmesh").create_mesh` method.
 
 Boto3 documentation:
 [AppMesh.Client.create_mesh](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.create_mesh)
@@ -204,8 +204,7 @@ Returns a `Coroutine` for
 
 Creates a route that is associated with a virtual router.
 
-Type annotations for `aiobotocore.create_client("appmesh").create_route`
-method.
+Type annotations for `session.create_client("appmesh").create_route` method.
 
 Boto3 documentation:
 [AppMesh.Client.create_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.create_route)
@@ -234,8 +233,8 @@ Returns a `Coroutine` for
 
 Creates a virtual gateway.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").create_virtual_gateway` method.
+Type annotations for `session.create_client("appmesh").create_virtual_gateway`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.create_virtual_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.create_virtual_gateway)
@@ -265,7 +264,7 @@ Returns a `Coroutine` for
 
 Creates a virtual node within a service mesh.
 
-Type annotations for `aiobotocore.create_client("appmesh").create_virtual_node`
+Type annotations for `session.create_client("appmesh").create_virtual_node`
 method.
 
 Boto3 documentation:
@@ -296,8 +295,8 @@ Returns a `Coroutine` for
 
 Creates a virtual router within a service mesh.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").create_virtual_router` method.
+Type annotations for `session.create_client("appmesh").create_virtual_router`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.create_virtual_router](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.create_virtual_router)
@@ -327,8 +326,8 @@ Returns a `Coroutine` for
 
 Creates a virtual service within a service mesh.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").create_virtual_service` method.
+Type annotations for `session.create_client("appmesh").create_virtual_service`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.create_virtual_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.create_virtual_service)
@@ -358,8 +357,8 @@ Returns a `Coroutine` for
 
 Deletes an existing gateway route.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").delete_gateway_route` method.
+Type annotations for `session.create_client("appmesh").delete_gateway_route`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.delete_gateway_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.delete_gateway_route)
@@ -386,7 +385,7 @@ Returns a `Coroutine` for
 
 Deletes an existing service mesh.
 
-Type annotations for `aiobotocore.create_client("appmesh").delete_mesh` method.
+Type annotations for `session.create_client("appmesh").delete_mesh` method.
 
 Boto3 documentation:
 [AppMesh.Client.delete_mesh](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.delete_mesh)
@@ -409,8 +408,7 @@ Returns a `Coroutine` for
 
 Deletes an existing route.
 
-Type annotations for `aiobotocore.create_client("appmesh").delete_route`
-method.
+Type annotations for `session.create_client("appmesh").delete_route` method.
 
 Boto3 documentation:
 [AppMesh.Client.delete_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.delete_route)
@@ -436,8 +434,8 @@ Returns a `Coroutine` for
 
 Deletes an existing virtual gateway.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").delete_virtual_gateway` method.
+Type annotations for `session.create_client("appmesh").delete_virtual_gateway`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.delete_virtual_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.delete_virtual_gateway)
@@ -463,7 +461,7 @@ Returns a `Coroutine` for
 
 Deletes an existing virtual node.
 
-Type annotations for `aiobotocore.create_client("appmesh").delete_virtual_node`
+Type annotations for `session.create_client("appmesh").delete_virtual_node`
 method.
 
 Boto3 documentation:
@@ -490,8 +488,8 @@ Returns a `Coroutine` for
 
 Deletes an existing virtual router.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").delete_virtual_router` method.
+Type annotations for `session.create_client("appmesh").delete_virtual_router`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.delete_virtual_router](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.delete_virtual_router)
@@ -517,8 +515,8 @@ Returns a `Coroutine` for
 
 Deletes an existing virtual service.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").delete_virtual_service` method.
+Type annotations for `session.create_client("appmesh").delete_virtual_service`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.delete_virtual_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.delete_virtual_service)
@@ -544,8 +542,8 @@ Returns a `Coroutine` for
 
 Describes an existing gateway route.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").describe_gateway_route` method.
+Type annotations for `session.create_client("appmesh").describe_gateway_route`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.describe_gateway_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.describe_gateway_route)
@@ -572,8 +570,7 @@ Returns a `Coroutine` for
 
 Describes an existing service mesh.
 
-Type annotations for `aiobotocore.create_client("appmesh").describe_mesh`
-method.
+Type annotations for `session.create_client("appmesh").describe_mesh` method.
 
 Boto3 documentation:
 [AppMesh.Client.describe_mesh](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.describe_mesh)
@@ -597,8 +594,7 @@ Returns a `Coroutine` for
 
 Describes an existing route.
 
-Type annotations for `aiobotocore.create_client("appmesh").describe_route`
-method.
+Type annotations for `session.create_client("appmesh").describe_route` method.
 
 Boto3 documentation:
 [AppMesh.Client.describe_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.describe_route)
@@ -625,7 +621,7 @@ Returns a `Coroutine` for
 Describes an existing virtual gateway.
 
 Type annotations for
-`aiobotocore.create_client("appmesh").describe_virtual_gateway` method.
+`session.create_client("appmesh").describe_virtual_gateway` method.
 
 Boto3 documentation:
 [AppMesh.Client.describe_virtual_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.describe_virtual_gateway)
@@ -651,8 +647,8 @@ Returns a `Coroutine` for
 
 Describes an existing virtual node.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").describe_virtual_node` method.
+Type annotations for `session.create_client("appmesh").describe_virtual_node`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.describe_virtual_node](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.describe_virtual_node)
@@ -678,8 +674,8 @@ Returns a `Coroutine` for
 
 Describes an existing virtual router.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").describe_virtual_router` method.
+Type annotations for `session.create_client("appmesh").describe_virtual_router`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.describe_virtual_router](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.describe_virtual_router)
@@ -706,7 +702,7 @@ Returns a `Coroutine` for
 Describes an existing virtual service.
 
 Type annotations for
-`aiobotocore.create_client("appmesh").describe_virtual_service` method.
+`session.create_client("appmesh").describe_virtual_service` method.
 
 Boto3 documentation:
 [AppMesh.Client.describe_virtual_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.describe_virtual_service)
@@ -732,8 +728,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").generate_presigned_url` method.
+Type annotations for `session.create_client("appmesh").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.generate_presigned_url)
@@ -757,7 +753,7 @@ Returns a `Coroutine` for `str`.
 Returns a list of existing gateway routes that are associated to a virtual
 gateway.
 
-Type annotations for `aiobotocore.create_client("appmesh").list_gateway_routes`
+Type annotations for `session.create_client("appmesh").list_gateway_routes`
 method.
 
 Boto3 documentation:
@@ -786,7 +782,7 @@ Returns a `Coroutine` for
 
 Returns a list of existing service meshes.
 
-Type annotations for `aiobotocore.create_client("appmesh").list_meshes` method.
+Type annotations for `session.create_client("appmesh").list_meshes` method.
 
 Boto3 documentation:
 [AppMesh.Client.list_meshes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.list_meshes)
@@ -810,7 +806,7 @@ Returns a `Coroutine` for
 
 Returns a list of existing routes in a service mesh.
 
-Type annotations for `aiobotocore.create_client("appmesh").list_routes` method.
+Type annotations for `session.create_client("appmesh").list_routes` method.
 
 Boto3 documentation:
 [AppMesh.Client.list_routes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.list_routes)
@@ -837,8 +833,8 @@ Returns a `Coroutine` for
 
 List the tags for an App Mesh resource.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").list_tags_for_resource` method.
+Type annotations for `session.create_client("appmesh").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.list_tags_for_resource)
@@ -864,8 +860,8 @@ Returns a `Coroutine` for
 
 Returns a list of existing virtual gateways in a service mesh.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").list_virtual_gateways` method.
+Type annotations for `session.create_client("appmesh").list_virtual_gateways`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.list_virtual_gateways](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.list_virtual_gateways)
@@ -892,7 +888,7 @@ Returns a `Coroutine` for
 
 Returns a list of existing virtual nodes.
 
-Type annotations for `aiobotocore.create_client("appmesh").list_virtual_nodes`
+Type annotations for `session.create_client("appmesh").list_virtual_nodes`
 method.
 
 Boto3 documentation:
@@ -920,8 +916,8 @@ Returns a `Coroutine` for
 
 Returns a list of existing virtual routers in a service mesh.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").list_virtual_routers` method.
+Type annotations for `session.create_client("appmesh").list_virtual_routers`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.list_virtual_routers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.list_virtual_routers)
@@ -948,8 +944,8 @@ Returns a `Coroutine` for
 
 Returns a list of existing virtual services in a service mesh.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").list_virtual_services` method.
+Type annotations for `session.create_client("appmesh").list_virtual_services`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.list_virtual_services](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.list_virtual_services)
@@ -976,8 +972,7 @@ Returns a `Coroutine` for
 
 Associates the specified tags to a resource with the specified `resourceArn`.
 
-Type annotations for `aiobotocore.create_client("appmesh").tag_resource`
-method.
+Type annotations for `session.create_client("appmesh").tag_resource` method.
 
 Boto3 documentation:
 [AppMesh.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.tag_resource)
@@ -1001,8 +996,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes specified tags from a resource.
 
-Type annotations for `aiobotocore.create_client("appmesh").untag_resource`
-method.
+Type annotations for `session.create_client("appmesh").untag_resource` method.
 
 Boto3 documentation:
 [AppMesh.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.untag_resource)
@@ -1026,8 +1020,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates an existing gateway route that is associated to a specified virtual
 gateway in a service mesh.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").update_gateway_route` method.
+Type annotations for `session.create_client("appmesh").update_gateway_route`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.update_gateway_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.update_gateway_route)
@@ -1057,7 +1051,7 @@ Returns a `Coroutine` for
 
 Updates an existing service mesh.
 
-Type annotations for `aiobotocore.create_client("appmesh").update_mesh` method.
+Type annotations for `session.create_client("appmesh").update_mesh` method.
 
 Boto3 documentation:
 [AppMesh.Client.update_mesh](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.update_mesh)
@@ -1082,8 +1076,7 @@ Returns a `Coroutine` for
 
 Updates an existing route for a specified service mesh and virtual router.
 
-Type annotations for `aiobotocore.create_client("appmesh").update_route`
-method.
+Type annotations for `session.create_client("appmesh").update_route` method.
 
 Boto3 documentation:
 [AppMesh.Client.update_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.update_route)
@@ -1111,8 +1104,8 @@ Returns a `Coroutine` for
 
 Updates an existing virtual gateway in a specified service mesh.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").update_virtual_gateway` method.
+Type annotations for `session.create_client("appmesh").update_virtual_gateway`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.update_virtual_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.update_virtual_gateway)
@@ -1141,7 +1134,7 @@ Returns a `Coroutine` for
 
 Updates an existing virtual node in a specified service mesh.
 
-Type annotations for `aiobotocore.create_client("appmesh").update_virtual_node`
+Type annotations for `session.create_client("appmesh").update_virtual_node`
 method.
 
 Boto3 documentation:
@@ -1171,8 +1164,8 @@ Returns a `Coroutine` for
 
 Updates an existing virtual router in a specified service mesh.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").update_virtual_router` method.
+Type annotations for `session.create_client("appmesh").update_virtual_router`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.update_virtual_router](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.update_virtual_router)
@@ -1201,8 +1194,8 @@ Returns a `Coroutine` for
 
 Updates an existing virtual service in a specified service mesh.
 
-Type annotations for
-`aiobotocore.create_client("appmesh").update_virtual_service` method.
+Type annotations for `session.create_client("appmesh").update_virtual_service`
+method.
 
 Boto3 documentation:
 [AppMesh.Client.update_virtual_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.update_virtual_service)
@@ -1225,12 +1218,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateVirtualServiceOutputTypeDef](./type_defs.md#updatevirtualserviceoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("appmesh").__aenter__` method.
+
+Boto3 documentation:
+[AppMesh.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [AppMeshClient](#appmeshclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("appmesh").__aexit__` method.
+
+Boto3 documentation:
+[AppMesh.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appmesh.html#AppMesh.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("appmesh").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("appmesh").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_gateway_routes")` ->
   [ListGatewayRoutesPaginator](./paginators.md#listgatewayroutespaginator)

@@ -43,17 +43,19 @@ type annotations stubs module
 ## GetAccountAuthorizationDetailsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("get_account_authorization_details")`.
+`session.create_client("iam").get_paginator("get_account_authorization_details")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import GetAccountAuthorizationDetailsPaginator
 
-def get_get_account_authorization_details_paginator() -> GetAccountAuthorizationDetailsPaginator:
-    return Session().create_client("iam").get_paginator("get_account_authorization_details")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: GetAccountAuthorizationDetailsPaginator = client.get_paginator("get_account_authorization_details")
 ```
 
 Boto3 documentation:
@@ -72,18 +74,19 @@ Arguments for `GetAccountAuthorizationDetailsPaginator.paginate` method:
 
 ## GetGroupPaginator
 
-Type annotations for
-`aiobotocore.create_client("iam").get_paginator("get_group")`.
+Type annotations for `session.create_client("iam").get_paginator("get_group")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import GetGroupPaginator
 
-def get_get_group_paginator() -> GetGroupPaginator:
-    return Session().create_client("iam").get_paginator("get_group")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: GetGroupPaginator = client.get_paginator("get_group")
 ```
 
 Boto3 documentation:
@@ -103,17 +106,19 @@ Arguments for `GetGroupPaginator.paginate` method:
 ## ListAccessKeysPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_access_keys")`.
+`session.create_client("iam").get_paginator("list_access_keys")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListAccessKeysPaginator
 
-def get_list_access_keys_paginator() -> ListAccessKeysPaginator:
-    return Session().create_client("iam").get_paginator("list_access_keys")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListAccessKeysPaginator = client.get_paginator("list_access_keys")
 ```
 
 Boto3 documentation:
@@ -133,17 +138,19 @@ Arguments for `ListAccessKeysPaginator.paginate` method:
 ## ListAccountAliasesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_account_aliases")`.
+`session.create_client("iam").get_paginator("list_account_aliases")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListAccountAliasesPaginator
 
-def get_list_account_aliases_paginator() -> ListAccountAliasesPaginator:
-    return Session().create_client("iam").get_paginator("list_account_aliases")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListAccountAliasesPaginator = client.get_paginator("list_account_aliases")
 ```
 
 Boto3 documentation:
@@ -162,17 +169,19 @@ Arguments for `ListAccountAliasesPaginator.paginate` method:
 ## ListAttachedGroupPoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_attached_group_policies")`.
+`session.create_client("iam").get_paginator("list_attached_group_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListAttachedGroupPoliciesPaginator
 
-def get_list_attached_group_policies_paginator() -> ListAttachedGroupPoliciesPaginator:
-    return Session().create_client("iam").get_paginator("list_attached_group_policies")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListAttachedGroupPoliciesPaginator = client.get_paginator("list_attached_group_policies")
 ```
 
 Boto3 documentation:
@@ -193,17 +202,19 @@ Arguments for `ListAttachedGroupPoliciesPaginator.paginate` method:
 ## ListAttachedRolePoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_attached_role_policies")`.
+`session.create_client("iam").get_paginator("list_attached_role_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListAttachedRolePoliciesPaginator
 
-def get_list_attached_role_policies_paginator() -> ListAttachedRolePoliciesPaginator:
-    return Session().create_client("iam").get_paginator("list_attached_role_policies")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListAttachedRolePoliciesPaginator = client.get_paginator("list_attached_role_policies")
 ```
 
 Boto3 documentation:
@@ -224,17 +235,19 @@ Arguments for `ListAttachedRolePoliciesPaginator.paginate` method:
 ## ListAttachedUserPoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_attached_user_policies")`.
+`session.create_client("iam").get_paginator("list_attached_user_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListAttachedUserPoliciesPaginator
 
-def get_list_attached_user_policies_paginator() -> ListAttachedUserPoliciesPaginator:
-    return Session().create_client("iam").get_paginator("list_attached_user_policies")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListAttachedUserPoliciesPaginator = client.get_paginator("list_attached_user_policies")
 ```
 
 Boto3 documentation:
@@ -255,17 +268,19 @@ Arguments for `ListAttachedUserPoliciesPaginator.paginate` method:
 ## ListEntitiesForPolicyPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_entities_for_policy")`.
+`session.create_client("iam").get_paginator("list_entities_for_policy")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListEntitiesForPolicyPaginator
 
-def get_list_entities_for_policy_paginator() -> ListEntitiesForPolicyPaginator:
-    return Session().create_client("iam").get_paginator("list_entities_for_policy")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListEntitiesForPolicyPaginator = client.get_paginator("list_entities_for_policy")
 ```
 
 Boto3 documentation:
@@ -288,17 +303,19 @@ Arguments for `ListEntitiesForPolicyPaginator.paginate` method:
 ## ListGroupPoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_group_policies")`.
+`session.create_client("iam").get_paginator("list_group_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListGroupPoliciesPaginator
 
-def get_list_group_policies_paginator() -> ListGroupPoliciesPaginator:
-    return Session().create_client("iam").get_paginator("list_group_policies")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListGroupPoliciesPaginator = client.get_paginator("list_group_policies")
 ```
 
 Boto3 documentation:
@@ -318,17 +335,19 @@ Arguments for `ListGroupPoliciesPaginator.paginate` method:
 ## ListGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_groups")`.
+`session.create_client("iam").get_paginator("list_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListGroupsPaginator
 
-def get_list_groups_paginator() -> ListGroupsPaginator:
-    return Session().create_client("iam").get_paginator("list_groups")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListGroupsPaginator = client.get_paginator("list_groups")
 ```
 
 Boto3 documentation:
@@ -348,17 +367,19 @@ Arguments for `ListGroupsPaginator.paginate` method:
 ## ListGroupsForUserPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_groups_for_user")`.
+`session.create_client("iam").get_paginator("list_groups_for_user")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListGroupsForUserPaginator
 
-def get_list_groups_for_user_paginator() -> ListGroupsForUserPaginator:
-    return Session().create_client("iam").get_paginator("list_groups_for_user")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListGroupsForUserPaginator = client.get_paginator("list_groups_for_user")
 ```
 
 Boto3 documentation:
@@ -378,17 +399,19 @@ Arguments for `ListGroupsForUserPaginator.paginate` method:
 ## ListInstanceProfilesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_instance_profiles")`.
+`session.create_client("iam").get_paginator("list_instance_profiles")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListInstanceProfilesPaginator
 
-def get_list_instance_profiles_paginator() -> ListInstanceProfilesPaginator:
-    return Session().create_client("iam").get_paginator("list_instance_profiles")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListInstanceProfilesPaginator = client.get_paginator("list_instance_profiles")
 ```
 
 Boto3 documentation:
@@ -408,17 +431,19 @@ Arguments for `ListInstanceProfilesPaginator.paginate` method:
 ## ListInstanceProfilesForRolePaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_instance_profiles_for_role")`.
+`session.create_client("iam").get_paginator("list_instance_profiles_for_role")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListInstanceProfilesForRolePaginator
 
-def get_list_instance_profiles_for_role_paginator() -> ListInstanceProfilesForRolePaginator:
-    return Session().create_client("iam").get_paginator("list_instance_profiles_for_role")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListInstanceProfilesForRolePaginator = client.get_paginator("list_instance_profiles_for_role")
 ```
 
 Boto3 documentation:
@@ -438,17 +463,19 @@ Arguments for `ListInstanceProfilesForRolePaginator.paginate` method:
 ## ListMFADevicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_mfa_devices")`.
+`session.create_client("iam").get_paginator("list_mfa_devices")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListMFADevicesPaginator
 
-def get_list_mfa_devices_paginator() -> ListMFADevicesPaginator:
-    return Session().create_client("iam").get_paginator("list_mfa_devices")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListMFADevicesPaginator = client.get_paginator("list_mfa_devices")
 ```
 
 Boto3 documentation:
@@ -468,17 +495,19 @@ Arguments for `ListMFADevicesPaginator.paginate` method:
 ## ListPoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_policies")`.
+`session.create_client("iam").get_paginator("list_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListPoliciesPaginator
 
-def get_list_policies_paginator() -> ListPoliciesPaginator:
-    return Session().create_client("iam").get_paginator("list_policies")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListPoliciesPaginator = client.get_paginator("list_policies")
 ```
 
 Boto3 documentation:
@@ -501,17 +530,19 @@ Arguments for `ListPoliciesPaginator.paginate` method:
 ## ListPolicyVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_policy_versions")`.
+`session.create_client("iam").get_paginator("list_policy_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListPolicyVersionsPaginator
 
-def get_list_policy_versions_paginator() -> ListPolicyVersionsPaginator:
-    return Session().create_client("iam").get_paginator("list_policy_versions")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListPolicyVersionsPaginator = client.get_paginator("list_policy_versions")
 ```
 
 Boto3 documentation:
@@ -531,17 +562,19 @@ Arguments for `ListPolicyVersionsPaginator.paginate` method:
 ## ListRolePoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_role_policies")`.
+`session.create_client("iam").get_paginator("list_role_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListRolePoliciesPaginator
 
-def get_list_role_policies_paginator() -> ListRolePoliciesPaginator:
-    return Session().create_client("iam").get_paginator("list_role_policies")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListRolePoliciesPaginator = client.get_paginator("list_role_policies")
 ```
 
 Boto3 documentation:
@@ -561,17 +594,19 @@ Arguments for `ListRolePoliciesPaginator.paginate` method:
 ## ListRolesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_roles")`.
+`session.create_client("iam").get_paginator("list_roles")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListRolesPaginator
 
-def get_list_roles_paginator() -> ListRolesPaginator:
-    return Session().create_client("iam").get_paginator("list_roles")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListRolesPaginator = client.get_paginator("list_roles")
 ```
 
 Boto3 documentation:
@@ -591,17 +626,19 @@ Arguments for `ListRolesPaginator.paginate` method:
 ## ListSSHPublicKeysPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_ssh_public_keys")`.
+`session.create_client("iam").get_paginator("list_ssh_public_keys")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListSSHPublicKeysPaginator
 
-def get_list_ssh_public_keys_paginator() -> ListSSHPublicKeysPaginator:
-    return Session().create_client("iam").get_paginator("list_ssh_public_keys")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListSSHPublicKeysPaginator = client.get_paginator("list_ssh_public_keys")
 ```
 
 Boto3 documentation:
@@ -621,17 +658,19 @@ Arguments for `ListSSHPublicKeysPaginator.paginate` method:
 ## ListServerCertificatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_server_certificates")`.
+`session.create_client("iam").get_paginator("list_server_certificates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListServerCertificatesPaginator
 
-def get_list_server_certificates_paginator() -> ListServerCertificatesPaginator:
-    return Session().create_client("iam").get_paginator("list_server_certificates")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListServerCertificatesPaginator = client.get_paginator("list_server_certificates")
 ```
 
 Boto3 documentation:
@@ -651,17 +690,19 @@ Arguments for `ListServerCertificatesPaginator.paginate` method:
 ## ListSigningCertificatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_signing_certificates")`.
+`session.create_client("iam").get_paginator("list_signing_certificates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListSigningCertificatesPaginator
 
-def get_list_signing_certificates_paginator() -> ListSigningCertificatesPaginator:
-    return Session().create_client("iam").get_paginator("list_signing_certificates")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListSigningCertificatesPaginator = client.get_paginator("list_signing_certificates")
 ```
 
 Boto3 documentation:
@@ -681,17 +722,19 @@ Arguments for `ListSigningCertificatesPaginator.paginate` method:
 ## ListUserPoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_user_policies")`.
+`session.create_client("iam").get_paginator("list_user_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListUserPoliciesPaginator
 
-def get_list_user_policies_paginator() -> ListUserPoliciesPaginator:
-    return Session().create_client("iam").get_paginator("list_user_policies")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListUserPoliciesPaginator = client.get_paginator("list_user_policies")
 ```
 
 Boto3 documentation:
@@ -711,17 +754,19 @@ Arguments for `ListUserPoliciesPaginator.paginate` method:
 ## ListUserTagsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_user_tags")`.
+`session.create_client("iam").get_paginator("list_user_tags")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListUserTagsPaginator
 
-def get_list_user_tags_paginator() -> ListUserTagsPaginator:
-    return Session().create_client("iam").get_paginator("list_user_tags")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListUserTagsPaginator = client.get_paginator("list_user_tags")
 ```
 
 Boto3 documentation:
@@ -741,17 +786,19 @@ Arguments for `ListUserTagsPaginator.paginate` method:
 ## ListUsersPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_users")`.
+`session.create_client("iam").get_paginator("list_users")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListUsersPaginator
 
-def get_list_users_paginator() -> ListUsersPaginator:
-    return Session().create_client("iam").get_paginator("list_users")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListUsersPaginator = client.get_paginator("list_users")
 ```
 
 Boto3 documentation:
@@ -771,17 +818,19 @@ Arguments for `ListUsersPaginator.paginate` method:
 ## ListVirtualMFADevicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("list_virtual_mfa_devices")`.
+`session.create_client("iam").get_paginator("list_virtual_mfa_devices")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import ListVirtualMFADevicesPaginator
 
-def get_list_virtual_mfa_devices_paginator() -> ListVirtualMFADevicesPaginator:
-    return Session().create_client("iam").get_paginator("list_virtual_mfa_devices")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: ListVirtualMFADevicesPaginator = client.get_paginator("list_virtual_mfa_devices")
 ```
 
 Boto3 documentation:
@@ -802,17 +851,19 @@ Arguments for `ListVirtualMFADevicesPaginator.paginate` method:
 ## SimulateCustomPolicyPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("simulate_custom_policy")`.
+`session.create_client("iam").get_paginator("simulate_custom_policy")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import SimulateCustomPolicyPaginator
 
-def get_simulate_custom_policy_paginator() -> SimulateCustomPolicyPaginator:
-    return Session().create_client("iam").get_paginator("simulate_custom_policy")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: SimulateCustomPolicyPaginator = client.get_paginator("simulate_custom_policy")
 ```
 
 Boto3 documentation:
@@ -841,17 +892,19 @@ Arguments for `SimulateCustomPolicyPaginator.paginate` method:
 ## SimulatePrincipalPolicyPaginator
 
 Type annotations for
-`aiobotocore.create_client("iam").get_paginator("simulate_principal_policy")`.
+`session.create_client("iam").get_paginator("simulate_principal_policy")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iam.paginator import SimulatePrincipalPolicyPaginator
 
-def get_simulate_principal_policy_paginator() -> SimulatePrincipalPolicyPaginator:
-    return Session().create_client("iam").get_paginator("simulate_principal_policy")
+session = get_session()
+async with session.create_client("iam") as client:
+    client: IAMClient
+    paginator: SimulatePrincipalPolicyPaginator = client.get_paginator("simulate_principal_policy")
 ```
 
 Boto3 documentation:

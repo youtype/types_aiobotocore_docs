@@ -18,17 +18,19 @@ type annotations stubs module
 ## ListAccountRolesPaginator
 
 Type annotations for
-`aiobotocore.create_client("sso").get_paginator("list_account_roles")`.
+`session.create_client("sso").get_paginator("list_account_roles")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sso.paginator import ListAccountRolesPaginator
 
-def get_list_account_roles_paginator() -> ListAccountRolesPaginator:
-    return Session().create_client("sso").get_paginator("list_account_roles")
+session = get_session()
+async with session.create_client("sso") as client:
+    client: SSOClient
+    paginator: ListAccountRolesPaginator = client.get_paginator("list_account_roles")
 ```
 
 Boto3 documentation:
@@ -49,17 +51,19 @@ Arguments for `ListAccountRolesPaginator.paginate` method:
 ## ListAccountsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sso").get_paginator("list_accounts")`.
+`session.create_client("sso").get_paginator("list_accounts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sso.paginator import ListAccountsPaginator
 
-def get_list_accounts_paginator() -> ListAccountsPaginator:
-    return Session().create_client("sso").get_paginator("list_accounts")
+session = get_session()
+async with session.create_client("sso") as client:
+    client: SSOClient
+    paginator: ListAccountsPaginator = client.get_paginator("list_accounts")
 ```
 
 Boto3 documentation:

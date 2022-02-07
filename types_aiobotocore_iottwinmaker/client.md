@@ -42,21 +42,24 @@ type annotations stubs module
     - [update_entity](#update_entity)
     - [update_scene](#update_scene)
     - [update_workspace](#update_workspace)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="iottwinmakerclient"></a>
 
 ## IoTTwinMakerClient
 
-Type annotations for `aiobotocore.create_client("iottwinmaker")`
+Type annotations for `session.create_client("iottwinmaker")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_iottwinmaker.client import IoTTwinMakerClient
 
-def get_iottwinmaker_client() -> IoTTwinMakerClient:
-    return Session().client("iottwinmaker")
+session = get_session()
+async with session.create_client("iottwinmaker") as client:
+    client: IoTTwinMakerClient
 ```
 
 Boto3 documentation:
@@ -100,8 +103,7 @@ Exceptions:
 
 IoTTwinMakerClient exceptions.
 
-Type annotations for `aiobotocore.create_client("iottwinmaker").exceptions`
-method.
+Type annotations for `session.create_client("iottwinmaker").exceptions` method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.exceptions)
@@ -115,7 +117,7 @@ Returns [Exceptions](#exceptions).
 Sets values for multiple time series properties.
 
 Type annotations for
-`aiobotocore.create_client("iottwinmaker").batch_put_property_values` method.
+`session.create_client("iottwinmaker").batch_put_property_values` method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.batch_put_property_values](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.batch_put_property_values)
@@ -142,19 +144,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("iottwinmaker").can_paginate`
+Type annotations for `session.create_client("iottwinmaker").can_paginate`
 method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_component_type"></a>
 
@@ -163,7 +163,7 @@ Returns a `Coroutine` for `bool`.
 Creates a component type.
 
 Type annotations for
-`aiobotocore.create_client("iottwinmaker").create_component_type` method.
+`session.create_client("iottwinmaker").create_component_type` method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.create_component_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.create_component_type)
@@ -196,7 +196,7 @@ Returns a `Coroutine` for
 
 Creates an entity.
 
-Type annotations for `aiobotocore.create_client("iottwinmaker").create_entity`
+Type annotations for `session.create_client("iottwinmaker").create_entity`
 method.
 
 Boto3 documentation:
@@ -227,7 +227,7 @@ Returns a `Coroutine` for
 
 Creates a scene.
 
-Type annotations for `aiobotocore.create_client("iottwinmaker").create_scene`
+Type annotations for `session.create_client("iottwinmaker").create_scene`
 method.
 
 Boto3 documentation:
@@ -256,8 +256,8 @@ Returns a `Coroutine` for
 
 Creates a workplace.
 
-Type annotations for
-`aiobotocore.create_client("iottwinmaker").create_workspace` method.
+Type annotations for `session.create_client("iottwinmaker").create_workspace`
+method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.create_workspace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.create_workspace)
@@ -285,7 +285,7 @@ Returns a `Coroutine` for
 Deletes a component type.
 
 Type annotations for
-`aiobotocore.create_client("iottwinmaker").delete_component_type` method.
+`session.create_client("iottwinmaker").delete_component_type` method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.delete_component_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.delete_component_type)
@@ -310,7 +310,7 @@ Returns a `Coroutine` for
 
 Deletes an entity.
 
-Type annotations for `aiobotocore.create_client("iottwinmaker").delete_entity`
+Type annotations for `session.create_client("iottwinmaker").delete_entity`
 method.
 
 Boto3 documentation:
@@ -336,7 +336,7 @@ Returns a `Coroutine` for
 
 Deletes a scene.
 
-Type annotations for `aiobotocore.create_client("iottwinmaker").delete_scene`
+Type annotations for `session.create_client("iottwinmaker").delete_scene`
 method.
 
 Boto3 documentation:
@@ -360,8 +360,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a workspace.
 
-Type annotations for
-`aiobotocore.create_client("iottwinmaker").delete_workspace` method.
+Type annotations for `session.create_client("iottwinmaker").delete_workspace`
+method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.delete_workspace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.delete_workspace)
@@ -384,7 +384,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("iottwinmaker").generate_presigned_url` method.
+`session.create_client("iottwinmaker").generate_presigned_url` method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.generate_presigned_url)
@@ -407,8 +407,8 @@ Returns a `Coroutine` for `str`.
 
 Retrieves information about a component type.
 
-Type annotations for
-`aiobotocore.create_client("iottwinmaker").get_component_type` method.
+Type annotations for `session.create_client("iottwinmaker").get_component_type`
+method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.get_component_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.get_component_type)
@@ -433,8 +433,7 @@ Returns a `Coroutine` for
 
 Retrieves information about an entity.
 
-Type annotations for `aiobotocore.create_client("iottwinmaker").get_entity`
-method.
+Type annotations for `session.create_client("iottwinmaker").get_entity` method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.get_entity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.get_entity)
@@ -458,8 +457,8 @@ Returns a `Coroutine` for
 
 Gets the property values for a component, component type, entity, or workspace.
 
-Type annotations for
-`aiobotocore.create_client("iottwinmaker").get_property_value` method.
+Type annotations for `session.create_client("iottwinmaker").get_property_value`
+method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.get_property_value](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.get_property_value)
@@ -489,7 +488,7 @@ Retrieves information about the history of a time series property value for a
 component, component type, entity, or workspace.
 
 Type annotations for
-`aiobotocore.create_client("iottwinmaker").get_property_value_history` method.
+`session.create_client("iottwinmaker").get_property_value_history` method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.get_property_value_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.get_property_value_history)
@@ -526,8 +525,7 @@ Returns a `Coroutine` for
 
 Retrieves information about a scene.
 
-Type annotations for `aiobotocore.create_client("iottwinmaker").get_scene`
-method.
+Type annotations for `session.create_client("iottwinmaker").get_scene` method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.get_scene](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.get_scene)
@@ -551,7 +549,7 @@ Returns a `Coroutine` for
 
 Retrieves information about a workspace.
 
-Type annotations for `aiobotocore.create_client("iottwinmaker").get_workspace`
+Type annotations for `session.create_client("iottwinmaker").get_workspace`
 method.
 
 Boto3 documentation:
@@ -576,7 +574,7 @@ Returns a `Coroutine` for
 Lists all component types in a workspace.
 
 Type annotations for
-`aiobotocore.create_client("iottwinmaker").list_component_types` method.
+`session.create_client("iottwinmaker").list_component_types` method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.list_component_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.list_component_types)
@@ -604,7 +602,7 @@ Returns a `Coroutine` for
 
 Lists all entities in a workspace.
 
-Type annotations for `aiobotocore.create_client("iottwinmaker").list_entities`
+Type annotations for `session.create_client("iottwinmaker").list_entities`
 method.
 
 Boto3 documentation:
@@ -632,7 +630,7 @@ Returns a `Coroutine` for
 
 Lists all scenes in a workspace.
 
-Type annotations for `aiobotocore.create_client("iottwinmaker").list_scenes`
+Type annotations for `session.create_client("iottwinmaker").list_scenes`
 method.
 
 Boto3 documentation:
@@ -659,7 +657,7 @@ Returns a `Coroutine` for
 Lists all tags associated with a resource.
 
 Type annotations for
-`aiobotocore.create_client("iottwinmaker").list_tags_for_resource` method.
+`session.create_client("iottwinmaker").list_tags_for_resource` method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.list_tags_for_resource)
@@ -685,8 +683,8 @@ Returns a `Coroutine` for
 
 Retrieves information about workspaces in the current account.
 
-Type annotations for
-`aiobotocore.create_client("iottwinmaker").list_workspaces` method.
+Type annotations for `session.create_client("iottwinmaker").list_workspaces`
+method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.list_workspaces](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.list_workspaces)
@@ -710,7 +708,7 @@ Returns a `Coroutine` for
 
 Adds tags to a resource.
 
-Type annotations for `aiobotocore.create_client("iottwinmaker").tag_resource`
+Type annotations for `session.create_client("iottwinmaker").tag_resource`
 method.
 
 Boto3 documentation:
@@ -734,7 +732,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from a resource.
 
-Type annotations for `aiobotocore.create_client("iottwinmaker").untag_resource`
+Type annotations for `session.create_client("iottwinmaker").untag_resource`
 method.
 
 Boto3 documentation:
@@ -759,7 +757,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates information in a component type.
 
 Type annotations for
-`aiobotocore.create_client("iottwinmaker").update_component_type` method.
+`session.create_client("iottwinmaker").update_component_type` method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.update_component_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.update_component_type)
@@ -791,7 +789,7 @@ Returns a `Coroutine` for
 
 Updates an entity.
 
-Type annotations for `aiobotocore.create_client("iottwinmaker").update_entity`
+Type annotations for `session.create_client("iottwinmaker").update_entity`
 method.
 
 Boto3 documentation:
@@ -822,7 +820,7 @@ Returns a `Coroutine` for
 
 Updates a scene.
 
-Type annotations for `aiobotocore.create_client("iottwinmaker").update_scene`
+Type annotations for `session.create_client("iottwinmaker").update_scene`
 method.
 
 Boto3 documentation:
@@ -850,8 +848,8 @@ Returns a `Coroutine` for
 
 Updates a workspace.
 
-Type annotations for
-`aiobotocore.create_client("iottwinmaker").update_workspace` method.
+Type annotations for `session.create_client("iottwinmaker").update_workspace`
+method.
 
 Boto3 documentation:
 [IoTTwinMaker.Client.update_workspace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.update_workspace)
@@ -869,3 +867,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateWorkspaceResponseTypeDef](./type_defs.md#updateworkspaceresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("iottwinmaker").__aenter__` method.
+
+Boto3 documentation:
+[IoTTwinMaker.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [IoTTwinMakerClient](#iottwinmakerclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("iottwinmaker").__aexit__` method.
+
+Boto3 documentation:
+[IoTTwinMaker.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iottwinmaker.html#IoTTwinMaker.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

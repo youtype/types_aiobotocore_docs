@@ -27,22 +27,25 @@ type annotations stubs module
     - [list_custom_plugins](#list_custom_plugins)
     - [list_worker_configurations](#list_worker_configurations)
     - [update_connector](#update_connector)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="kafkaconnectclient"></a>
 
 ## KafkaConnectClient
 
-Type annotations for `aiobotocore.create_client("kafkaconnect")`
+Type annotations for `session.create_client("kafkaconnect")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_kafkaconnect.client import KafkaConnectClient
 
-def get_kafkaconnect_client() -> KafkaConnectClient:
-    return Session().client("kafkaconnect")
+session = get_session()
+async with session.create_client("kafkaconnect") as client:
+    client: KafkaConnectClient
 ```
 
 Boto3 documentation:
@@ -84,8 +87,7 @@ Exceptions:
 
 KafkaConnectClient exceptions.
 
-Type annotations for `aiobotocore.create_client("kafkaconnect").exceptions`
-method.
+Type annotations for `session.create_client("kafkaconnect").exceptions` method.
 
 Boto3 documentation:
 [KafkaConnect.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect.Client.exceptions)
@@ -98,19 +100,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("kafkaconnect").can_paginate`
+Type annotations for `session.create_client("kafkaconnect").can_paginate`
 method.
 
 Boto3 documentation:
 [KafkaConnect.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_connector"></a>
 
@@ -118,8 +118,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates a connector using the specified properties.
 
-Type annotations for
-`aiobotocore.create_client("kafkaconnect").create_connector` method.
+Type annotations for `session.create_client("kafkaconnect").create_connector`
+method.
 
 Boto3 documentation:
 [KafkaConnect.Client.create_connector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect.Client.create_connector)
@@ -161,7 +161,7 @@ Returns a `Coroutine` for
 Creates a custom plugin using the specified properties.
 
 Type annotations for
-`aiobotocore.create_client("kafkaconnect").create_custom_plugin` method.
+`session.create_client("kafkaconnect").create_custom_plugin` method.
 
 Boto3 documentation:
 [KafkaConnect.Client.create_custom_plugin](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect.Client.create_custom_plugin)
@@ -193,7 +193,7 @@ Returns a `Coroutine` for
 Creates a worker configuration using the specified properties.
 
 Type annotations for
-`aiobotocore.create_client("kafkaconnect").create_worker_configuration` method.
+`session.create_client("kafkaconnect").create_worker_configuration` method.
 
 Boto3 documentation:
 [KafkaConnect.Client.create_worker_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect.Client.create_worker_configuration)
@@ -219,8 +219,8 @@ Returns a `Coroutine` for
 
 Deletes the specified connector.
 
-Type annotations for
-`aiobotocore.create_client("kafkaconnect").delete_connector` method.
+Type annotations for `session.create_client("kafkaconnect").delete_connector`
+method.
 
 Boto3 documentation:
 [KafkaConnect.Client.delete_connector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect.Client.delete_connector)
@@ -244,8 +244,8 @@ Returns a `Coroutine` for
 
 Returns summary information about the connector.
 
-Type annotations for
-`aiobotocore.create_client("kafkaconnect").describe_connector` method.
+Type annotations for `session.create_client("kafkaconnect").describe_connector`
+method.
 
 Boto3 documentation:
 [KafkaConnect.Client.describe_connector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect.Client.describe_connector)
@@ -270,7 +270,7 @@ Returns a `Coroutine` for
 A summary description of the custom plugin.
 
 Type annotations for
-`aiobotocore.create_client("kafkaconnect").describe_custom_plugin` method.
+`session.create_client("kafkaconnect").describe_custom_plugin` method.
 
 Boto3 documentation:
 [KafkaConnect.Client.describe_custom_plugin](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect.Client.describe_custom_plugin)
@@ -295,8 +295,7 @@ Returns a `Coroutine` for
 Returns information about a worker configuration.
 
 Type annotations for
-`aiobotocore.create_client("kafkaconnect").describe_worker_configuration`
-method.
+`session.create_client("kafkaconnect").describe_worker_configuration` method.
 
 Boto3 documentation:
 [KafkaConnect.Client.describe_worker_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect.Client.describe_worker_configuration)
@@ -321,7 +320,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("kafkaconnect").generate_presigned_url` method.
+`session.create_client("kafkaconnect").generate_presigned_url` method.
 
 Boto3 documentation:
 [KafkaConnect.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect.Client.generate_presigned_url)
@@ -344,8 +343,8 @@ Returns a `Coroutine` for `str`.
 
 Returns a list of all the connectors in this account and Region.
 
-Type annotations for
-`aiobotocore.create_client("kafkaconnect").list_connectors` method.
+Type annotations for `session.create_client("kafkaconnect").list_connectors`
+method.
 
 Boto3 documentation:
 [KafkaConnect.Client.list_connectors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect.Client.list_connectors)
@@ -371,7 +370,7 @@ Returns a `Coroutine` for
 Returns a list of all of the custom plugins in this account and Region.
 
 Type annotations for
-`aiobotocore.create_client("kafkaconnect").list_custom_plugins` method.
+`session.create_client("kafkaconnect").list_custom_plugins` method.
 
 Boto3 documentation:
 [KafkaConnect.Client.list_custom_plugins](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect.Client.list_custom_plugins)
@@ -397,7 +396,7 @@ Returns a `Coroutine` for
 Returns a list of all of the worker configurations in this account and Region.
 
 Type annotations for
-`aiobotocore.create_client("kafkaconnect").list_worker_configurations` method.
+`session.create_client("kafkaconnect").list_worker_configurations` method.
 
 Boto3 documentation:
 [KafkaConnect.Client.list_worker_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect.Client.list_worker_configurations)
@@ -422,8 +421,8 @@ Returns a `Coroutine` for
 
 Updates the specified connector.
 
-Type annotations for
-`aiobotocore.create_client("kafkaconnect").update_connector` method.
+Type annotations for `session.create_client("kafkaconnect").update_connector`
+method.
 
 Boto3 documentation:
 [KafkaConnect.Client.update_connector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect.Client.update_connector)
@@ -443,11 +442,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateConnectorResponseTypeDef](./type_defs.md#updateconnectorresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("kafkaconnect").__aenter__` method.
+
+Boto3 documentation:
+[KafkaConnect.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [KafkaConnectClient](#kafkaconnectclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("kafkaconnect").__aexit__` method.
+
+Boto3 documentation:
+[KafkaConnect.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kafkaconnect.html#KafkaConnect.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("kafkaconnect").get_paginator`
+Type annotations for `session.create_client("kafkaconnect").get_paginator`
 method with overloads.
 
 - `client.get_paginator("list_connectors")` ->

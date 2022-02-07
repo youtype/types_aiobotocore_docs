@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[redshift-data]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[redshift-data]'
+
+# standalone installation
 pip install types-aiobotocore-redshift-data
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-redshift-data
 
 ## RedshiftDataAPIServiceClient
 
-Type annotations for `aiobotocore.create_client("redshift-data")` as
+Type annotations for `session.create_client("redshift-data")` as
 [RedshiftDataAPIServiceClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_redshift_data.client import RedshiftDataAPIServiceClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_execute_statement](./client.md#batch_execute_statement)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_statement](./client.md#cancel_statement)
@@ -82,7 +88,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_redshift_data.paginators import DescribeTablePaginator, ...
+from types_aiobotocore_redshift_data.paginator import DescribeTablePaginator, ...
 ```
 
 - [DescribeTablePaginator](./paginators.md#describetablepaginator)

@@ -69,6 +69,8 @@ type annotations stubs module
     - [restore_db_cluster_to_point_in_time](#restore_db_cluster_to_point_in_time)
     - [start_db_cluster](#start_db_cluster)
     - [stop_db_cluster](#stop_db_cluster)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -76,16 +78,17 @@ type annotations stubs module
 
 ## DocDBClient
 
-Type annotations for `aiobotocore.create_client("docdb")`
+Type annotations for `session.create_client("docdb")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_docdb.client import DocDBClient
 
-def get_docdb_client() -> DocDBClient:
-    return Session().client("docdb")
+session = get_session()
+async with session.create_client("docdb") as client:
+    client: DocDBClient
 ```
 
 Boto3 documentation:
@@ -176,7 +179,7 @@ Exceptions:
 
 DocDBClient exceptions.
 
-Type annotations for `aiobotocore.create_client("docdb").exceptions` method.
+Type annotations for `session.create_client("docdb").exceptions` method.
 
 Boto3 documentation:
 [DocDB.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.exceptions)
@@ -190,8 +193,7 @@ Returns [Exceptions](#exceptions).
 Adds a source identifier to an existing event notification subscription.
 
 Type annotations for
-`aiobotocore.create_client("docdb").add_source_identifier_to_subscription`
-method.
+`session.create_client("docdb").add_source_identifier_to_subscription` method.
 
 Boto3 documentation:
 [DocDB.Client.add_source_identifier_to_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.add_source_identifier_to_subscription)
@@ -216,7 +218,7 @@ Returns a `Coroutine` for
 
 Adds metadata tags to an Amazon DocumentDB resource.
 
-Type annotations for `aiobotocore.create_client("docdb").add_tags_to_resource`
+Type annotations for `session.create_client("docdb").add_tags_to_resource`
 method.
 
 Boto3 documentation:
@@ -241,7 +243,7 @@ Applies a pending maintenance action to a resource (for example, to an Amazon
 DocumentDB instance).
 
 Type annotations for
-`aiobotocore.create_client("docdb").apply_pending_maintenance_action` method.
+`session.create_client("docdb").apply_pending_maintenance_action` method.
 
 Boto3 documentation:
 [DocDB.Client.apply_pending_maintenance_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.apply_pending_maintenance_action)
@@ -267,18 +269,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("docdb").can_paginate` method.
+Type annotations for `session.create_client("docdb").can_paginate` method.
 
 Boto3 documentation:
 [DocDB.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="copy_db_cluster_parameter_group"></a>
 
@@ -287,7 +287,7 @@ Returns a `Coroutine` for `bool`.
 Copies the specified cluster parameter group.
 
 Type annotations for
-`aiobotocore.create_client("docdb").copy_db_cluster_parameter_group` method.
+`session.create_client("docdb").copy_db_cluster_parameter_group` method.
 
 Boto3 documentation:
 [DocDB.Client.copy_db_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.copy_db_cluster_parameter_group)
@@ -314,8 +314,8 @@ Returns a `Coroutine` for
 
 Copies a snapshot of a cluster.
 
-Type annotations for
-`aiobotocore.create_client("docdb").copy_db_cluster_snapshot` method.
+Type annotations for `session.create_client("docdb").copy_db_cluster_snapshot`
+method.
 
 Boto3 documentation:
 [DocDB.Client.copy_db_cluster_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.copy_db_cluster_snapshot)
@@ -345,8 +345,7 @@ Returns a `Coroutine` for
 
 Creates a new Amazon DocumentDB cluster.
 
-Type annotations for `aiobotocore.create_client("docdb").create_db_cluster`
-method.
+Type annotations for `session.create_client("docdb").create_db_cluster` method.
 
 Boto3 documentation:
 [DocDB.Client.create_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.create_db_cluster)
@@ -390,7 +389,7 @@ Returns a `Coroutine` for
 Creates a new cluster parameter group.
 
 Type annotations for
-`aiobotocore.create_client("docdb").create_db_cluster_parameter_group` method.
+`session.create_client("docdb").create_db_cluster_parameter_group` method.
 
 Boto3 documentation:
 [DocDB.Client.create_db_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.create_db_cluster_parameter_group)
@@ -418,7 +417,7 @@ Returns a `Coroutine` for
 Creates a snapshot of a cluster.
 
 Type annotations for
-`aiobotocore.create_client("docdb").create_db_cluster_snapshot` method.
+`session.create_client("docdb").create_db_cluster_snapshot` method.
 
 Boto3 documentation:
 [DocDB.Client.create_db_cluster_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.create_db_cluster_snapshot)
@@ -444,7 +443,7 @@ Returns a `Coroutine` for
 
 Creates a new instance.
 
-Type annotations for `aiobotocore.create_client("docdb").create_db_instance`
+Type annotations for `session.create_client("docdb").create_db_instance`
 method.
 
 Boto3 documentation:
@@ -477,8 +476,8 @@ Returns a `Coroutine` for
 
 Creates a new subnet group.
 
-Type annotations for
-`aiobotocore.create_client("docdb").create_db_subnet_group` method.
+Type annotations for `session.create_client("docdb").create_db_subnet_group`
+method.
 
 Boto3 documentation:
 [DocDB.Client.create_db_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.create_db_subnet_group)
@@ -505,8 +504,8 @@ Returns a `Coroutine` for
 
 Creates an Amazon DocumentDB event notification subscription.
 
-Type annotations for
-`aiobotocore.create_client("docdb").create_event_subscription` method.
+Type annotations for `session.create_client("docdb").create_event_subscription`
+method.
 
 Boto3 documentation:
 [DocDB.Client.create_event_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.create_event_subscription)
@@ -537,7 +536,7 @@ Returns a `Coroutine` for
 Creates an Amazon DocumentDB global cluster that can span multiple multiple
 Regions.
 
-Type annotations for `aiobotocore.create_client("docdb").create_global_cluster`
+Type annotations for `session.create_client("docdb").create_global_cluster`
 method.
 
 Boto3 documentation:
@@ -568,8 +567,7 @@ Returns a `Coroutine` for
 
 Deletes a previously provisioned cluster.
 
-Type annotations for `aiobotocore.create_client("docdb").delete_db_cluster`
-method.
+Type annotations for `session.create_client("docdb").delete_db_cluster` method.
 
 Boto3 documentation:
 [DocDB.Client.delete_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.delete_db_cluster)
@@ -595,7 +593,7 @@ Returns a `Coroutine` for
 Deletes a specified cluster parameter group.
 
 Type annotations for
-`aiobotocore.create_client("docdb").delete_db_cluster_parameter_group` method.
+`session.create_client("docdb").delete_db_cluster_parameter_group` method.
 
 Boto3 documentation:
 [DocDB.Client.delete_db_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.delete_db_cluster_parameter_group)
@@ -617,7 +615,7 @@ Keyword-only arguments:
 Deletes a cluster snapshot.
 
 Type annotations for
-`aiobotocore.create_client("docdb").delete_db_cluster_snapshot` method.
+`session.create_client("docdb").delete_db_cluster_snapshot` method.
 
 Boto3 documentation:
 [DocDB.Client.delete_db_cluster_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.delete_db_cluster_snapshot)
@@ -641,7 +639,7 @@ Returns a `Coroutine` for
 
 Deletes a previously provisioned instance.
 
-Type annotations for `aiobotocore.create_client("docdb").delete_db_instance`
+Type annotations for `session.create_client("docdb").delete_db_instance`
 method.
 
 Boto3 documentation:
@@ -666,8 +664,8 @@ Returns a `Coroutine` for
 
 Deletes a subnet group.
 
-Type annotations for
-`aiobotocore.create_client("docdb").delete_db_subnet_group` method.
+Type annotations for `session.create_client("docdb").delete_db_subnet_group`
+method.
 
 Boto3 documentation:
 [DocDB.Client.delete_db_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.delete_db_subnet_group)
@@ -688,8 +686,8 @@ Keyword-only arguments:
 
 Deletes an Amazon DocumentDB event notification subscription.
 
-Type annotations for
-`aiobotocore.create_client("docdb").delete_event_subscription` method.
+Type annotations for `session.create_client("docdb").delete_event_subscription`
+method.
 
 Boto3 documentation:
 [DocDB.Client.delete_event_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.delete_event_subscription)
@@ -713,7 +711,7 @@ Returns a `Coroutine` for
 
 Deletes a global cluster.
 
-Type annotations for `aiobotocore.create_client("docdb").delete_global_cluster`
+Type annotations for `session.create_client("docdb").delete_global_cluster`
 method.
 
 Boto3 documentation:
@@ -739,7 +737,7 @@ Returns a `Coroutine` for
 Returns a list of certificate authority (CA) certificates provided by Amazon
 DocumentDB for this account.
 
-Type annotations for `aiobotocore.create_client("docdb").describe_certificates`
+Type annotations for `session.create_client("docdb").describe_certificates`
 method.
 
 Boto3 documentation:
@@ -768,8 +766,7 @@ Returns a `Coroutine` for
 Returns a list of `DBClusterParameterGroup` descriptions.
 
 Type annotations for
-`aiobotocore.create_client("docdb").describe_db_cluster_parameter_groups`
-method.
+`session.create_client("docdb").describe_db_cluster_parameter_groups` method.
 
 Boto3 documentation:
 [DocDB.Client.describe_db_cluster_parameter_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.describe_db_cluster_parameter_groups)
@@ -797,7 +794,7 @@ Returns a `Coroutine` for
 Returns the detailed parameter list for a particular cluster parameter group.
 
 Type annotations for
-`aiobotocore.create_client("docdb").describe_db_cluster_parameters` method.
+`session.create_client("docdb").describe_db_cluster_parameters` method.
 
 Boto3 documentation:
 [DocDB.Client.describe_db_cluster_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.describe_db_cluster_parameters)
@@ -827,7 +824,7 @@ Returns a list of cluster snapshot attribute names and values for a manual DB
 cluster snapshot.
 
 Type annotations for
-`aiobotocore.create_client("docdb").describe_db_cluster_snapshot_attributes`
+`session.create_client("docdb").describe_db_cluster_snapshot_attributes`
 method.
 
 Boto3 documentation:
@@ -853,7 +850,7 @@ Returns a `Coroutine` for
 Returns information about cluster snapshots.
 
 Type annotations for
-`aiobotocore.create_client("docdb").describe_db_cluster_snapshots` method.
+`session.create_client("docdb").describe_db_cluster_snapshots` method.
 
 Boto3 documentation:
 [DocDB.Client.describe_db_cluster_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.describe_db_cluster_snapshots)
@@ -884,7 +881,7 @@ Returns a `Coroutine` for
 
 Returns information about provisioned Amazon DocumentDB clusters.
 
-Type annotations for `aiobotocore.create_client("docdb").describe_db_clusters`
+Type annotations for `session.create_client("docdb").describe_db_clusters`
 method.
 
 Boto3 documentation:
@@ -913,7 +910,7 @@ Returns a `Coroutine` for
 Returns a list of the available engines.
 
 Type annotations for
-`aiobotocore.create_client("docdb").describe_db_engine_versions` method.
+`session.create_client("docdb").describe_db_engine_versions` method.
 
 Boto3 documentation:
 [DocDB.Client.describe_db_engine_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.describe_db_engine_versions)
@@ -945,7 +942,7 @@ Returns a `Coroutine` for
 
 Returns information about provisioned Amazon DocumentDB instances.
 
-Type annotations for `aiobotocore.create_client("docdb").describe_db_instances`
+Type annotations for `session.create_client("docdb").describe_db_instances`
 method.
 
 Boto3 documentation:
@@ -973,8 +970,8 @@ Returns a `Coroutine` for
 
 Returns a list of `DBSubnetGroup` descriptions.
 
-Type annotations for
-`aiobotocore.create_client("docdb").describe_db_subnet_groups` method.
+Type annotations for `session.create_client("docdb").describe_db_subnet_groups`
+method.
 
 Boto3 documentation:
 [DocDB.Client.describe_db_subnet_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.describe_db_subnet_groups)
@@ -1003,7 +1000,7 @@ Returns the default engine and system parameter information for the cluster
 database engine.
 
 Type annotations for
-`aiobotocore.create_client("docdb").describe_engine_default_cluster_parameters`
+`session.create_client("docdb").describe_engine_default_cluster_parameters`
 method.
 
 Boto3 documentation:
@@ -1032,8 +1029,8 @@ Returns a `Coroutine` for
 Displays a list of categories for all event source types, or, if specified, for
 a specified source type.
 
-Type annotations for
-`aiobotocore.create_client("docdb").describe_event_categories` method.
+Type annotations for `session.create_client("docdb").describe_event_categories`
+method.
 
 Boto3 documentation:
 [DocDB.Client.describe_event_categories](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.describe_event_categories)
@@ -1059,7 +1056,7 @@ Returns a `Coroutine` for
 Lists all the subscription descriptions for a customer account.
 
 Type annotations for
-`aiobotocore.create_client("docdb").describe_event_subscriptions` method.
+`session.create_client("docdb").describe_event_subscriptions` method.
 
 Boto3 documentation:
 [DocDB.Client.describe_event_subscriptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.describe_event_subscriptions)
@@ -1087,8 +1084,7 @@ Returns a `Coroutine` for
 Returns events related to instances, security groups, snapshots, and DB
 parameter groups for the past 14 days.
 
-Type annotations for `aiobotocore.create_client("docdb").describe_events`
-method.
+Type annotations for `session.create_client("docdb").describe_events` method.
 
 Boto3 documentation:
 [DocDB.Client.describe_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.describe_events)
@@ -1119,8 +1115,8 @@ Returns a `Coroutine` for
 
 Returns information about Amazon DocumentDB global clusters.
 
-Type annotations for
-`aiobotocore.create_client("docdb").describe_global_clusters` method.
+Type annotations for `session.create_client("docdb").describe_global_clusters`
+method.
 
 Boto3 documentation:
 [DocDB.Client.describe_global_clusters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.describe_global_clusters)
@@ -1148,8 +1144,7 @@ Returns a `Coroutine` for
 Returns a list of orderable instance options for the specified engine.
 
 Type annotations for
-`aiobotocore.create_client("docdb").describe_orderable_db_instance_options`
-method.
+`session.create_client("docdb").describe_orderable_db_instance_options` method.
 
 Boto3 documentation:
 [DocDB.Client.describe_orderable_db_instance_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.describe_orderable_db_instance_options)
@@ -1182,8 +1177,7 @@ Returns a list of resources (for example, instances) that have at least one
 pending maintenance action.
 
 Type annotations for
-`aiobotocore.create_client("docdb").describe_pending_maintenance_actions`
-method.
+`session.create_client("docdb").describe_pending_maintenance_actions` method.
 
 Boto3 documentation:
 [DocDB.Client.describe_pending_maintenance_actions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.describe_pending_maintenance_actions)
@@ -1210,7 +1204,7 @@ Returns a `Coroutine` for
 
 Forces a failover for a cluster.
 
-Type annotations for `aiobotocore.create_client("docdb").failover_db_cluster`
+Type annotations for `session.create_client("docdb").failover_db_cluster`
 method.
 
 Boto3 documentation:
@@ -1236,8 +1230,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("docdb").generate_presigned_url` method.
+Type annotations for `session.create_client("docdb").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [DocDB.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.generate_presigned_url)
@@ -1260,8 +1254,8 @@ Returns a `Coroutine` for `str`.
 
 Lists all tags on an Amazon DocumentDB resource.
 
-Type annotations for
-`aiobotocore.create_client("docdb").list_tags_for_resource` method.
+Type annotations for `session.create_client("docdb").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [DocDB.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.list_tags_for_resource)
@@ -1286,8 +1280,7 @@ Returns a `Coroutine` for
 
 Modifies a setting for an Amazon DocumentDB cluster.
 
-Type annotations for `aiobotocore.create_client("docdb").modify_db_cluster`
-method.
+Type annotations for `session.create_client("docdb").modify_db_cluster` method.
 
 Boto3 documentation:
 [DocDB.Client.modify_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.modify_db_cluster)
@@ -1324,7 +1317,7 @@ Returns a `Coroutine` for
 Modifies the parameters of a cluster parameter group.
 
 Type annotations for
-`aiobotocore.create_client("docdb").modify_db_cluster_parameter_group` method.
+`session.create_client("docdb").modify_db_cluster_parameter_group` method.
 
 Boto3 documentation:
 [DocDB.Client.modify_db_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.modify_db_cluster_parameter_group)
@@ -1353,8 +1346,7 @@ Adds an attribute and values to, or removes an attribute and values from, a
 manual cluster snapshot.
 
 Type annotations for
-`aiobotocore.create_client("docdb").modify_db_cluster_snapshot_attribute`
-method.
+`session.create_client("docdb").modify_db_cluster_snapshot_attribute` method.
 
 Boto3 documentation:
 [DocDB.Client.modify_db_cluster_snapshot_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.modify_db_cluster_snapshot_attribute)
@@ -1381,7 +1373,7 @@ Returns a `Coroutine` for
 
 Modifies settings for an instance.
 
-Type annotations for `aiobotocore.create_client("docdb").modify_db_instance`
+Type annotations for `session.create_client("docdb").modify_db_instance`
 method.
 
 Boto3 documentation:
@@ -1413,8 +1405,8 @@ Returns a `Coroutine` for
 
 Modifies an existing subnet group.
 
-Type annotations for
-`aiobotocore.create_client("docdb").modify_db_subnet_group` method.
+Type annotations for `session.create_client("docdb").modify_db_subnet_group`
+method.
 
 Boto3 documentation:
 [DocDB.Client.modify_db_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.modify_db_subnet_group)
@@ -1440,8 +1432,8 @@ Returns a `Coroutine` for
 
 Modifies an existing Amazon DocumentDB event notification subscription.
 
-Type annotations for
-`aiobotocore.create_client("docdb").modify_event_subscription` method.
+Type annotations for `session.create_client("docdb").modify_event_subscription`
+method.
 
 Boto3 documentation:
 [DocDB.Client.modify_event_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.modify_event_subscription)
@@ -1469,7 +1461,7 @@ Returns a `Coroutine` for
 
 Modify a setting for an Amazon DocumentDB global cluster.
 
-Type annotations for `aiobotocore.create_client("docdb").modify_global_cluster`
+Type annotations for `session.create_client("docdb").modify_global_cluster`
 method.
 
 Boto3 documentation:
@@ -1496,7 +1488,7 @@ Returns a `Coroutine` for
 
 You might need to reboot your instance, usually for maintenance reasons.
 
-Type annotations for `aiobotocore.create_client("docdb").reboot_db_instance`
+Type annotations for `session.create_client("docdb").reboot_db_instance`
 method.
 
 Boto3 documentation:
@@ -1523,7 +1515,7 @@ Returns a `Coroutine` for
 Detaches an Amazon DocumentDB secondary cluster from a global cluster.
 
 Type annotations for
-`aiobotocore.create_client("docdb").remove_from_global_cluster` method.
+`session.create_client("docdb").remove_from_global_cluster` method.
 
 Boto3 documentation:
 [DocDB.Client.remove_from_global_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.remove_from_global_cluster)
@@ -1550,7 +1542,7 @@ Removes a source identifier from an existing Amazon DocumentDB event
 notification subscription.
 
 Type annotations for
-`aiobotocore.create_client("docdb").remove_source_identifier_from_subscription`
+`session.create_client("docdb").remove_source_identifier_from_subscription`
 method.
 
 Boto3 documentation:
@@ -1576,8 +1568,8 @@ Returns a `Coroutine` for
 
 Removes metadata tags from an Amazon DocumentDB resource.
 
-Type annotations for
-`aiobotocore.create_client("docdb").remove_tags_from_resource` method.
+Type annotations for `session.create_client("docdb").remove_tags_from_resource`
+method.
 
 Boto3 documentation:
 [DocDB.Client.remove_tags_from_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.remove_tags_from_resource)
@@ -1600,7 +1592,7 @@ Keyword-only arguments:
 Modifies the parameters of a cluster parameter group to the default value.
 
 Type annotations for
-`aiobotocore.create_client("docdb").reset_db_cluster_parameter_group` method.
+`session.create_client("docdb").reset_db_cluster_parameter_group` method.
 
 Boto3 documentation:
 [DocDB.Client.reset_db_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.reset_db_cluster_parameter_group)
@@ -1628,7 +1620,7 @@ Returns a `Coroutine` for
 Creates a new cluster from a snapshot or cluster snapshot.
 
 Type annotations for
-`aiobotocore.create_client("docdb").restore_db_cluster_from_snapshot` method.
+`session.create_client("docdb").restore_db_cluster_from_snapshot` method.
 
 Boto3 documentation:
 [DocDB.Client.restore_db_cluster_from_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.restore_db_cluster_from_snapshot)
@@ -1664,8 +1656,7 @@ Returns a `Coroutine` for
 Restores a cluster to an arbitrary point in time.
 
 Type annotations for
-`aiobotocore.create_client("docdb").restore_db_cluster_to_point_in_time`
-method.
+`session.create_client("docdb").restore_db_cluster_to_point_in_time` method.
 
 Boto3 documentation:
 [DocDB.Client.restore_db_cluster_to_point_in_time](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.restore_db_cluster_to_point_in_time)
@@ -1699,8 +1690,7 @@ Returns a `Coroutine` for
 
 Restarts the stopped cluster that is specified by `DBClusterIdentifier`.
 
-Type annotations for `aiobotocore.create_client("docdb").start_db_cluster`
-method.
+Type annotations for `session.create_client("docdb").start_db_cluster` method.
 
 Boto3 documentation:
 [DocDB.Client.start_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.start_db_cluster)
@@ -1723,8 +1713,7 @@ Returns a `Coroutine` for
 
 Stops the running cluster that is specified by `DBClusterIdentifier`.
 
-Type annotations for `aiobotocore.create_client("docdb").stop_db_cluster`
-method.
+Type annotations for `session.create_client("docdb").stop_db_cluster` method.
 
 Boto3 documentation:
 [DocDB.Client.stop_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.stop_db_cluster)
@@ -1741,12 +1730,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [StopDBClusterResultTypeDef](./type_defs.md#stopdbclusterresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("docdb").__aenter__` method.
+
+Boto3 documentation:
+[DocDB.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [DocDBClient](#docdbclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("docdb").__aexit__` method.
+
+Boto3 documentation:
+[DocDB.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html#DocDB.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("docdb").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("docdb").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_certificates")` ->
   [DescribeCertificatesPaginator](./paginators.md#describecertificatespaginator)
@@ -1779,8 +1800,8 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("docdb").get_waiter` method
-with overloads.
+Type annotations for `session.create_client("docdb").get_waiter` method with
+overloads.
 
 - `client.get_waiter("db_instance_available")` ->
   [DBInstanceAvailableWaiter](./waiters.md#dbinstanceavailablewaiter)

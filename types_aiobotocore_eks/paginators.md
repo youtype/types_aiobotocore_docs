@@ -23,17 +23,19 @@ type annotations stubs module
 ## DescribeAddonVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("eks").get_paginator("describe_addon_versions")`.
+`session.create_client("eks").get_paginator("describe_addon_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_eks.paginator import DescribeAddonVersionsPaginator
 
-def get_describe_addon_versions_paginator() -> DescribeAddonVersionsPaginator:
-    return Session().create_client("eks").get_paginator("describe_addon_versions")
+session = get_session()
+async with session.create_client("eks") as client:
+    client: EKSClient
+    paginator: DescribeAddonVersionsPaginator = client.get_paginator("describe_addon_versions")
 ```
 
 Boto3 documentation:
@@ -54,17 +56,19 @@ Arguments for `DescribeAddonVersionsPaginator.paginate` method:
 ## ListAddonsPaginator
 
 Type annotations for
-`aiobotocore.create_client("eks").get_paginator("list_addons")`.
+`session.create_client("eks").get_paginator("list_addons")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_eks.paginator import ListAddonsPaginator
 
-def get_list_addons_paginator() -> ListAddonsPaginator:
-    return Session().create_client("eks").get_paginator("list_addons")
+session = get_session()
+async with session.create_client("eks") as client:
+    client: EKSClient
+    paginator: ListAddonsPaginator = client.get_paginator("list_addons")
 ```
 
 Boto3 documentation:
@@ -84,17 +88,19 @@ Arguments for `ListAddonsPaginator.paginate` method:
 ## ListClustersPaginator
 
 Type annotations for
-`aiobotocore.create_client("eks").get_paginator("list_clusters")`.
+`session.create_client("eks").get_paginator("list_clusters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_eks.paginator import ListClustersPaginator
 
-def get_list_clusters_paginator() -> ListClustersPaginator:
-    return Session().create_client("eks").get_paginator("list_clusters")
+session = get_session()
+async with session.create_client("eks") as client:
+    client: EKSClient
+    paginator: ListClustersPaginator = client.get_paginator("list_clusters")
 ```
 
 Boto3 documentation:
@@ -114,17 +120,19 @@ Arguments for `ListClustersPaginator.paginate` method:
 ## ListFargateProfilesPaginator
 
 Type annotations for
-`aiobotocore.create_client("eks").get_paginator("list_fargate_profiles")`.
+`session.create_client("eks").get_paginator("list_fargate_profiles")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_eks.paginator import ListFargateProfilesPaginator
 
-def get_list_fargate_profiles_paginator() -> ListFargateProfilesPaginator:
-    return Session().create_client("eks").get_paginator("list_fargate_profiles")
+session = get_session()
+async with session.create_client("eks") as client:
+    client: EKSClient
+    paginator: ListFargateProfilesPaginator = client.get_paginator("list_fargate_profiles")
 ```
 
 Boto3 documentation:
@@ -144,17 +152,19 @@ Arguments for `ListFargateProfilesPaginator.paginate` method:
 ## ListIdentityProviderConfigsPaginator
 
 Type annotations for
-`aiobotocore.create_client("eks").get_paginator("list_identity_provider_configs")`.
+`session.create_client("eks").get_paginator("list_identity_provider_configs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_eks.paginator import ListIdentityProviderConfigsPaginator
 
-def get_list_identity_provider_configs_paginator() -> ListIdentityProviderConfigsPaginator:
-    return Session().create_client("eks").get_paginator("list_identity_provider_configs")
+session = get_session()
+async with session.create_client("eks") as client:
+    client: EKSClient
+    paginator: ListIdentityProviderConfigsPaginator = client.get_paginator("list_identity_provider_configs")
 ```
 
 Boto3 documentation:
@@ -174,17 +184,19 @@ Arguments for `ListIdentityProviderConfigsPaginator.paginate` method:
 ## ListNodegroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("eks").get_paginator("list_nodegroups")`.
+`session.create_client("eks").get_paginator("list_nodegroups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_eks.paginator import ListNodegroupsPaginator
 
-def get_list_nodegroups_paginator() -> ListNodegroupsPaginator:
-    return Session().create_client("eks").get_paginator("list_nodegroups")
+session = get_session()
+async with session.create_client("eks") as client:
+    client: EKSClient
+    paginator: ListNodegroupsPaginator = client.get_paginator("list_nodegroups")
 ```
 
 Boto3 documentation:
@@ -204,17 +216,19 @@ Arguments for `ListNodegroupsPaginator.paginate` method:
 ## ListUpdatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("eks").get_paginator("list_updates")`.
+`session.create_client("eks").get_paginator("list_updates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_eks.paginator import ListUpdatesPaginator
 
-def get_list_updates_paginator() -> ListUpdatesPaginator:
-    return Session().create_client("eks").get_paginator("list_updates")
+session = get_session()
+async with session.create_client("eks") as client:
+    client: EKSClient
+    paginator: ListUpdatesPaginator = client.get_paginator("list_updates")
 ```
 
 Boto3 documentation:

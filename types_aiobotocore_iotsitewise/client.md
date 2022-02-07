@@ -81,6 +81,8 @@ type annotations stubs module
     - [update_gateway_capability_configuration](#update_gateway_capability_configuration)
     - [update_portal](#update_portal)
     - [update_project](#update_project)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -88,16 +90,17 @@ type annotations stubs module
 
 ## IoTSiteWiseClient
 
-Type annotations for `aiobotocore.create_client("iotsitewise")`
+Type annotations for `session.create_client("iotsitewise")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_iotsitewise.client import IoTSiteWiseClient
 
-def get_iotsitewise_client() -> IoTSiteWiseClient:
-    return Session().client("iotsitewise")
+session = get_session()
+async with session.create_client("iotsitewise") as client:
+    client: IoTSiteWiseClient
 ```
 
 Boto3 documentation:
@@ -141,8 +144,7 @@ Exceptions:
 
 IoTSiteWiseClient exceptions.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").exceptions`
-method.
+Type annotations for `session.create_client("iotsitewise").exceptions` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.exceptions)
@@ -156,8 +158,8 @@ Returns [Exceptions](#exceptions).
 Associates a child asset with the given parent asset through a hierarchy
 defined in the parent asset's model.
 
-Type annotations for
-`aiobotocore.create_client("iotsitewise").associate_assets` method.
+Type annotations for `session.create_client("iotsitewise").associate_assets`
+method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.associate_assets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.associate_assets)
@@ -181,7 +183,7 @@ Keyword-only arguments:
 Associates a time series (data stream) with an asset property.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").associate_time_series_to_asset_property`
+`session.create_client("iotsitewise").associate_time_series_to_asset_property`
 method.
 
 Boto3 documentation:
@@ -207,8 +209,7 @@ Keyword-only arguments:
 Associates a group (batch) of assets with an IoT SiteWise Monitor project.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").batch_associate_project_assets`
-method.
+`session.create_client("iotsitewise").batch_associate_project_assets` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.batch_associate_project_assets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.batch_associate_project_assets)
@@ -235,7 +236,7 @@ Returns a `Coroutine` for
 Disassociates a group (batch) of assets from an IoT SiteWise Monitor project.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").batch_disassociate_project_assets`
+`session.create_client("iotsitewise").batch_disassociate_project_assets`
 method.
 
 Boto3 documentation:
@@ -263,8 +264,7 @@ Returns a `Coroutine` for
 Sends a list of asset property values to IoT SiteWise.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").batch_put_asset_property_value`
-method.
+`session.create_client("iotsitewise").batch_put_asset_property_value` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.batch_put_asset_property_value](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.batch_put_asset_property_value)
@@ -290,19 +290,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").can_paginate`
+Type annotations for `session.create_client("iotsitewise").can_paginate`
 method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_access_policy"></a>
 
@@ -313,7 +311,7 @@ Services SSO user, Amazon Web Services SSO group, or IAM user) access to the
 specified IoT SiteWise Monitor portal or project resource.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").create_access_policy` method.
+`session.create_client("iotsitewise").create_access_policy` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.create_access_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.create_access_policy)
@@ -344,7 +342,7 @@ Returns a `Coroutine` for
 
 Creates an asset from an existing asset model.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").create_asset`
+Type annotations for `session.create_client("iotsitewise").create_asset`
 method.
 
 Boto3 documentation:
@@ -371,8 +369,8 @@ Returns a `Coroutine` for
 
 Creates an asset model from specified property and hierarchy definitions.
 
-Type annotations for
-`aiobotocore.create_client("iotsitewise").create_asset_model` method.
+Type annotations for `session.create_client("iotsitewise").create_asset_model`
+method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.create_asset_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.create_asset_model)
@@ -405,8 +403,8 @@ Returns a `Coroutine` for
 
 Creates a dashboard in an IoT SiteWise Monitor project.
 
-Type annotations for
-`aiobotocore.create_client("iotsitewise").create_dashboard` method.
+Type annotations for `session.create_client("iotsitewise").create_dashboard`
+method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.create_dashboard](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.create_dashboard)
@@ -435,7 +433,7 @@ Returns a `Coroutine` for
 Creates a gateway, which is a virtual or edge device that delivers industrial
 data streams from local servers to IoT SiteWise.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").create_gateway`
+Type annotations for `session.create_client("iotsitewise").create_gateway`
 method.
 
 Boto3 documentation:
@@ -462,7 +460,7 @@ Returns a `Coroutine` for
 
 Creates a portal, which can contain projects and dashboards.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").create_portal`
+Type annotations for `session.create_client("iotsitewise").create_portal`
 method.
 
 Boto3 documentation:
@@ -495,7 +493,7 @@ Returns a `Coroutine` for
 
 Creates a project in the specified portal.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").create_project`
+Type annotations for `session.create_client("iotsitewise").create_project`
 method.
 
 Boto3 documentation:
@@ -525,7 +523,7 @@ Deletes an access policy that grants the specified identity access to the
 specified IoT SiteWise Monitor resource.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").delete_access_policy` method.
+`session.create_client("iotsitewise").delete_access_policy` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.delete_access_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.delete_access_policy)
@@ -549,7 +547,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an asset.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").delete_asset`
+Type annotations for `session.create_client("iotsitewise").delete_asset`
 method.
 
 Boto3 documentation:
@@ -574,8 +572,8 @@ Returns a `Coroutine` for
 
 Deletes an asset model.
 
-Type annotations for
-`aiobotocore.create_client("iotsitewise").delete_asset_model` method.
+Type annotations for `session.create_client("iotsitewise").delete_asset_model`
+method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.delete_asset_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.delete_asset_model)
@@ -600,8 +598,8 @@ Returns a `Coroutine` for
 
 Deletes a dashboard from IoT SiteWise Monitor.
 
-Type annotations for
-`aiobotocore.create_client("iotsitewise").delete_dashboard` method.
+Type annotations for `session.create_client("iotsitewise").delete_dashboard`
+method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.delete_dashboard](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.delete_dashboard)
@@ -624,7 +622,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a gateway from IoT SiteWise.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").delete_gateway`
+Type annotations for `session.create_client("iotsitewise").delete_gateway`
 method.
 
 Boto3 documentation:
@@ -645,7 +643,7 @@ Keyword-only arguments:
 
 Deletes a portal from IoT SiteWise Monitor.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").delete_portal`
+Type annotations for `session.create_client("iotsitewise").delete_portal`
 method.
 
 Boto3 documentation:
@@ -670,7 +668,7 @@ Returns a `Coroutine` for
 
 Deletes a project from IoT SiteWise Monitor.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").delete_project`
+Type annotations for `session.create_client("iotsitewise").delete_project`
 method.
 
 Boto3 documentation:
@@ -694,8 +692,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a time series (data stream).
 
-Type annotations for
-`aiobotocore.create_client("iotsitewise").delete_time_series` method.
+Type annotations for `session.create_client("iotsitewise").delete_time_series`
+method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.delete_time_series](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.delete_time_series)
@@ -721,7 +719,7 @@ Describes an access policy, which specifies an identity's access to an IoT
 SiteWise Monitor portal or project.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").describe_access_policy` method.
+`session.create_client("iotsitewise").describe_access_policy` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.describe_access_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.describe_access_policy)
@@ -745,7 +743,7 @@ Returns a `Coroutine` for
 
 Retrieves information about an asset.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").describe_asset`
+Type annotations for `session.create_client("iotsitewise").describe_asset`
 method.
 
 Boto3 documentation:
@@ -770,7 +768,7 @@ Returns a `Coroutine` for
 Retrieves information about an asset model.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").describe_asset_model` method.
+`session.create_client("iotsitewise").describe_asset_model` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.describe_asset_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.describe_asset_model)
@@ -795,7 +793,7 @@ Returns a `Coroutine` for
 Retrieves information about an asset property.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").describe_asset_property` method.
+`session.create_client("iotsitewise").describe_asset_property` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.describe_asset_property](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.describe_asset_property)
@@ -820,8 +818,8 @@ Returns a `Coroutine` for
 
 Retrieves information about a dashboard.
 
-Type annotations for
-`aiobotocore.create_client("iotsitewise").describe_dashboard` method.
+Type annotations for `session.create_client("iotsitewise").describe_dashboard`
+method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.describe_dashboard](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.describe_dashboard)
@@ -847,7 +845,7 @@ Retrieves information about the default encryption configuration for the Amazon
 Web Services account in the default or specified Region.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").describe_default_encryption_configuration`
+`session.create_client("iotsitewise").describe_default_encryption_configuration`
 method.
 
 Boto3 documentation:
@@ -865,8 +863,8 @@ Returns a `Coroutine` for
 
 Retrieves information about a gateway.
 
-Type annotations for
-`aiobotocore.create_client("iotsitewise").describe_gateway` method.
+Type annotations for `session.create_client("iotsitewise").describe_gateway`
+method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.describe_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.describe_gateway)
@@ -890,7 +888,7 @@ Returns a `Coroutine` for
 Retrieves information about a gateway capability configuration.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").describe_gateway_capability_configuration`
+`session.create_client("iotsitewise").describe_gateway_capability_configuration`
 method.
 
 Boto3 documentation:
@@ -917,7 +915,7 @@ Returns a `Coroutine` for
 Retrieves the current IoT SiteWise logging options.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").describe_logging_options` method.
+`session.create_client("iotsitewise").describe_logging_options` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.describe_logging_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.describe_logging_options)
@@ -934,7 +932,7 @@ Returns a `Coroutine` for
 
 Retrieves information about a portal.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").describe_portal`
+Type annotations for `session.create_client("iotsitewise").describe_portal`
 method.
 
 Boto3 documentation:
@@ -958,8 +956,8 @@ Returns a `Coroutine` for
 
 Retrieves information about a project.
 
-Type annotations for
-`aiobotocore.create_client("iotsitewise").describe_project` method.
+Type annotations for `session.create_client("iotsitewise").describe_project`
+method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.describe_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.describe_project)
@@ -983,8 +981,7 @@ Returns a `Coroutine` for
 Retrieves information about the storage configuration for IoT SiteWise.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").describe_storage_configuration`
-method.
+`session.create_client("iotsitewise").describe_storage_configuration` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.describe_storage_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.describe_storage_configuration)
@@ -1002,7 +999,7 @@ Returns a `Coroutine` for
 Retrieves information about a time series (data stream).
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").describe_time_series` method.
+`session.create_client("iotsitewise").describe_time_series` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.describe_time_series](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.describe_time_series)
@@ -1029,8 +1026,8 @@ Returns a `Coroutine` for
 Disassociates a child asset from the given parent asset through a hierarchy
 defined in the parent asset's model.
 
-Type annotations for
-`aiobotocore.create_client("iotsitewise").disassociate_assets` method.
+Type annotations for `session.create_client("iotsitewise").disassociate_assets`
+method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.disassociate_assets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.disassociate_assets)
@@ -1055,7 +1052,7 @@ Keyword-only arguments:
 Disassociates a time series (data stream) from an asset property.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").disassociate_time_series_from_asset_property`
+`session.create_client("iotsitewise").disassociate_time_series_from_asset_property`
 method.
 
 Boto3 documentation:
@@ -1082,7 +1079,7 @@ Keyword-only arguments:
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").generate_presigned_url` method.
+`session.create_client("iotsitewise").generate_presigned_url` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.generate_presigned_url)
@@ -1106,8 +1103,7 @@ Returns a `Coroutine` for `str`.
 Gets aggregated values for an asset property.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_asset_property_aggregates`
-method.
+`session.create_client("iotsitewise").get_asset_property_aggregates` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.get_asset_property_aggregates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.get_asset_property_aggregates)
@@ -1144,7 +1140,7 @@ Returns a `Coroutine` for
 Gets an asset property's current value.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_asset_property_value` method.
+`session.create_client("iotsitewise").get_asset_property_value` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.get_asset_property_value](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.get_asset_property_value)
@@ -1171,8 +1167,7 @@ Returns a `Coroutine` for
 Gets the history of an asset property's values.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_asset_property_value_history`
-method.
+`session.create_client("iotsitewise").get_asset_property_value_history` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.get_asset_property_value_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.get_asset_property_value_history)
@@ -1206,7 +1201,7 @@ Get interpolated values for an asset property for a specified time interval,
 during a period of time.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_interpolated_asset_property_values`
+`session.create_client("iotsitewise").get_interpolated_asset_property_values`
 method.
 
 Boto3 documentation:
@@ -1246,7 +1241,7 @@ Services SSO user, an Amazon Web Services SSO group, or an IAM user) or an IoT
 SiteWise Monitor resource (a portal or project).
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").list_access_policies` method.
+`session.create_client("iotsitewise").list_access_policies` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.list_access_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.list_access_policies)
@@ -1276,8 +1271,8 @@ Returns a `Coroutine` for
 
 Retrieves a paginated list of summaries of all asset models.
 
-Type annotations for
-`aiobotocore.create_client("iotsitewise").list_asset_models` method.
+Type annotations for `session.create_client("iotsitewise").list_asset_models`
+method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.list_asset_models](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.list_asset_models)
@@ -1302,7 +1297,7 @@ Returns a `Coroutine` for
 Retrieves a paginated list of asset relationships for an asset.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").list_asset_relationships` method.
+`session.create_client("iotsitewise").list_asset_relationships` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.list_asset_relationships](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.list_asset_relationships)
@@ -1330,8 +1325,7 @@ Returns a `Coroutine` for
 
 Retrieves a paginated list of asset summaries.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").list_assets`
-method.
+Type annotations for `session.create_client("iotsitewise").list_assets` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.list_assets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.list_assets)
@@ -1358,7 +1352,7 @@ Returns a `Coroutine` for
 Retrieves a paginated list of associated assets.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").list_associated_assets` method.
+`session.create_client("iotsitewise").list_associated_assets` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.list_associated_assets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.list_associated_assets)
@@ -1387,7 +1381,7 @@ Returns a `Coroutine` for
 
 Retrieves a paginated list of dashboards for an IoT SiteWise Monitor project.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").list_dashboards`
+Type annotations for `session.create_client("iotsitewise").list_dashboards`
 method.
 
 Boto3 documentation:
@@ -1413,7 +1407,7 @@ Returns a `Coroutine` for
 
 Retrieves a paginated list of gateways.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").list_gateways`
+Type annotations for `session.create_client("iotsitewise").list_gateways`
 method.
 
 Boto3 documentation:
@@ -1438,7 +1432,7 @@ Returns a `Coroutine` for
 
 Retrieves a paginated list of IoT SiteWise Monitor portals.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").list_portals`
+Type annotations for `session.create_client("iotsitewise").list_portals`
 method.
 
 Boto3 documentation:
@@ -1464,8 +1458,8 @@ Returns a `Coroutine` for
 Retrieves a paginated list of assets associated with an IoT SiteWise Monitor
 project.
 
-Type annotations for
-`aiobotocore.create_client("iotsitewise").list_project_assets` method.
+Type annotations for `session.create_client("iotsitewise").list_project_assets`
+method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.list_project_assets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.list_project_assets)
@@ -1491,7 +1485,7 @@ Returns a `Coroutine` for
 
 Retrieves a paginated list of projects for an IoT SiteWise Monitor portal.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").list_projects`
+Type annotations for `session.create_client("iotsitewise").list_projects`
 method.
 
 Boto3 documentation:
@@ -1518,7 +1512,7 @@ Returns a `Coroutine` for
 Retrieves the list of tags for an IoT SiteWise resource.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").list_tags_for_resource` method.
+`session.create_client("iotsitewise").list_tags_for_resource` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.list_tags_for_resource)
@@ -1542,8 +1536,8 @@ Returns a `Coroutine` for
 
 Retrieves a paginated list of time series (data streams).
 
-Type annotations for
-`aiobotocore.create_client("iotsitewise").list_time_series` method.
+Type annotations for `session.create_client("iotsitewise").list_time_series`
+method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.list_time_series](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.list_time_series)
@@ -1572,7 +1566,7 @@ Returns a `Coroutine` for
 Sets the default encryption configuration for the Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").put_default_encryption_configuration`
+`session.create_client("iotsitewise").put_default_encryption_configuration`
 method.
 
 Boto3 documentation:
@@ -1599,8 +1593,8 @@ Returns a `Coroutine` for
 
 Sets logging options for IoT SiteWise.
 
-Type annotations for
-`aiobotocore.create_client("iotsitewise").put_logging_options` method.
+Type annotations for `session.create_client("iotsitewise").put_logging_options`
+method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.put_logging_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.put_logging_options)
@@ -1625,7 +1619,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Configures storage settings for IoT SiteWise.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").put_storage_configuration` method.
+`session.create_client("iotsitewise").put_storage_configuration` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.put_storage_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.put_storage_configuration)
@@ -1655,7 +1649,7 @@ Returns a `Coroutine` for
 
 Adds tags to an IoT SiteWise resource.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").tag_resource`
+Type annotations for `session.create_client("iotsitewise").tag_resource`
 method.
 
 Boto3 documentation:
@@ -1679,7 +1673,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes a tag from an IoT SiteWise resource.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").untag_resource`
+Type annotations for `session.create_client("iotsitewise").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1705,7 +1699,7 @@ Updates an existing access policy that specifies an identity's access to an IoT
 SiteWise Monitor portal or project resource.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").update_access_policy` method.
+`session.create_client("iotsitewise").update_access_policy` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.update_access_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.update_access_policy)
@@ -1735,7 +1729,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an asset's name.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").update_asset`
+Type annotations for `session.create_client("iotsitewise").update_asset`
 method.
 
 Boto3 documentation:
@@ -1761,8 +1755,8 @@ Returns a `Coroutine` for
 
 Updates an asset model and all of the assets that were created from the model.
 
-Type annotations for
-`aiobotocore.create_client("iotsitewise").update_asset_model` method.
+Type annotations for `session.create_client("iotsitewise").update_asset_model`
+method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.update_asset_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.update_asset_model)
@@ -1796,7 +1790,7 @@ Returns a `Coroutine` for
 Updates an asset property's alias and notification state.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").update_asset_property` method.
+`session.create_client("iotsitewise").update_asset_property` method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.update_asset_property](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.update_asset_property)
@@ -1822,8 +1816,8 @@ Keyword-only arguments:
 
 Updates an IoT SiteWise Monitor dashboard.
 
-Type annotations for
-`aiobotocore.create_client("iotsitewise").update_dashboard` method.
+Type annotations for `session.create_client("iotsitewise").update_dashboard`
+method.
 
 Boto3 documentation:
 [IoTSiteWise.Client.update_dashboard](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.update_dashboard)
@@ -1849,7 +1843,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a gateway's name.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").update_gateway`
+Type annotations for `session.create_client("iotsitewise").update_gateway`
 method.
 
 Boto3 documentation:
@@ -1873,7 +1867,7 @@ Updates a gateway capability configuration or defines a new capability
 configuration.
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").update_gateway_capability_configuration`
+`session.create_client("iotsitewise").update_gateway_capability_configuration`
 method.
 
 Boto3 documentation:
@@ -1900,7 +1894,7 @@ Returns a `Coroutine` for
 
 Updates an IoT SiteWise Monitor portal.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").update_portal`
+Type annotations for `session.create_client("iotsitewise").update_portal`
 method.
 
 Boto3 documentation:
@@ -1932,7 +1926,7 @@ Returns a `Coroutine` for
 
 Updates an IoT SiteWise Monitor project.
 
-Type annotations for `aiobotocore.create_client("iotsitewise").update_project`
+Type annotations for `session.create_client("iotsitewise").update_project`
 method.
 
 Boto3 documentation:
@@ -1952,11 +1946,43 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("iotsitewise").__aenter__` method.
+
+Boto3 documentation:
+[IoTSiteWise.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [IoTSiteWiseClient](#iotsitewiseclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("iotsitewise").__aexit__` method.
+
+Boto3 documentation:
+[IoTSiteWise.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html#IoTSiteWise.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("iotsitewise").get_paginator`
+Type annotations for `session.create_client("iotsitewise").get_paginator`
 method with overloads.
 
 - `client.get_paginator("get_asset_property_aggregates")` ->
@@ -1992,8 +2018,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("iotsitewise").get_waiter`
-method with overloads.
+Type annotations for `session.create_client("iotsitewise").get_waiter` method
+with overloads.
 
 - `client.get_waiter("asset_active")` ->
   [AssetActiveWaiter](./waiters.md#assetactivewaiter)

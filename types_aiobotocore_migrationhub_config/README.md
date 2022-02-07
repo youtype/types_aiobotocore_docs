@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[migrationhub-config]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[migrationhub-config]'
+
+# standalone installation
 pip install types-aiobotocore-migrationhub-config
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-migrationhub-config
 
 ## MigrationHubConfigClient
 
-Type annotations for `aiobotocore.create_client("migrationhub-config")` as
+Type annotations for `session.create_client("migrationhub-config")` as
 [MigrationHubConfigClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_migrationhub_config.client import MigrationHubConfigClien
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_home_region_control](./client.md#create_home_region_control)
 - [describe_home_region_controls](./client.md#describe_home_region_controls)

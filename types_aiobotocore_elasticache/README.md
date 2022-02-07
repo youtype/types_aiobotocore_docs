@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[elasticache]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[elasticache]'
+
+# standalone installation
 pip install types-aiobotocore-elasticache
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-elasticache
 
 ## ElastiCacheClient
 
-Type annotations for `aiobotocore.create_client("elasticache")` as
+Type annotations for `session.create_client("elasticache")` as
 [ElastiCacheClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_elasticache.client import ElastiCacheClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_tags_to_resource](./client.md#add_tags_to_resource)
 - [authorize_cache_security_group_ingress](./client.md#authorize_cache_security_group_ingress)
 - [batch_apply_update_action](./client.md#batch_apply_update_action)
@@ -199,7 +205,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_elasticache.paginators import DescribeCacheClustersPaginator, ...
+from types_aiobotocore_elasticache.paginator import DescribeCacheClustersPaginator, ...
 ```
 
 - [DescribeCacheClustersPaginator](./paginators.md#describecacheclusterspaginator)
@@ -230,7 +236,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_elasticache.waiters import CacheClusterAvailableWaiter, ...
+from types_aiobotocore_elasticache.waiter import CacheClusterAvailableWaiter, ...
 ```
 
 - [CacheClusterAvailableWaiter](./waiters.md#cacheclusteravailablewaiter)

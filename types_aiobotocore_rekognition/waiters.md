@@ -18,7 +18,7 @@ type annotations stubs module
 ## ProjectVersionRunningWaiter
 
 Type annotations for
-`aiobotocore.create_client("rekognition").get_waiter("project_version_running")`.
+`session.create_client("rekognition").get_waiter("project_version_running")`.
 
 Can be used directly:
 
@@ -28,7 +28,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_rekognition.waiter import ProjectVersionRunningWaiter
 
 def get_project_version_running_waiter() -> ProjectVersionRunningWaiter:
-    return Session().create_client("rekognition").get_waiter("project_version_running")
+    return Session().client("rekognition").get_waiter("project_version_running")
 ```
 
 Boto3 documentation:
@@ -47,7 +47,7 @@ Arguments for `ProjectVersionRunningWaiter.wait` method:
 ## ProjectVersionTrainingCompletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("rekognition").get_waiter("project_version_training_completed")`.
+`session.create_client("rekognition").get_waiter("project_version_training_completed")`.
 
 Can be used directly:
 
@@ -57,7 +57,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_rekognition.waiter import ProjectVersionTrainingCompletedWaiter
 
 def get_project_version_training_completed_waiter() -> ProjectVersionTrainingCompletedWaiter:
-    return Session().create_client("rekognition").get_waiter("project_version_training_completed")
+    return Session().client("rekognition").get_waiter("project_version_training_completed")
 ```
 
 Boto3 documentation:

@@ -17,21 +17,24 @@ type annotations stubs module
     - [can_paginate](#can_paginate)
     - [generate_presigned_url](#generate_presigned_url)
     - [send_command](#send_command)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="qldbsessionclient"></a>
 
 ## QLDBSessionClient
 
-Type annotations for `aiobotocore.create_client("qldb-session")`
+Type annotations for `session.create_client("qldb-session")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_qldb_session.client import QLDBSessionClient
 
-def get_qldb-session_client() -> QLDBSessionClient:
-    return Session().client("qldb-session")
+session = get_session()
+async with session.create_client("qldb-session") as client:
+    client: QLDBSessionClient
 ```
 
 Boto3 documentation:
@@ -71,8 +74,7 @@ Exceptions:
 
 QLDBSessionClient exceptions.
 
-Type annotations for `aiobotocore.create_client("qldb-session").exceptions`
-method.
+Type annotations for `session.create_client("qldb-session").exceptions` method.
 
 Boto3 documentation:
 [QLDBSession.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb-session.html#QLDBSession.Client.exceptions)
@@ -85,19 +87,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("qldb-session").can_paginate`
+Type annotations for `session.create_client("qldb-session").can_paginate`
 method.
 
 Boto3 documentation:
 [QLDBSession.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb-session.html#QLDBSession.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -106,7 +106,7 @@ Returns a `Coroutine` for `bool`.
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("qldb-session").generate_presigned_url` method.
+`session.create_client("qldb-session").generate_presigned_url` method.
 
 Boto3 documentation:
 [QLDBSession.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb-session.html#QLDBSession.Client.generate_presigned_url)
@@ -129,7 +129,7 @@ Returns a `Coroutine` for `str`.
 
 Sends a command to an Amazon QLDB ledger.
 
-Type annotations for `aiobotocore.create_client("qldb-session").send_command`
+Type annotations for `session.create_client("qldb-session").send_command`
 method.
 
 Boto3 documentation:
@@ -157,3 +157,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [SendCommandResultTypeDef](./type_defs.md#sendcommandresulttypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("qldb-session").__aenter__` method.
+
+Boto3 documentation:
+[QLDBSession.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb-session.html#QLDBSession.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [QLDBSessionClient](#qldbsessionclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("qldb-session").__aexit__` method.
+
+Boto3 documentation:
+[QLDBSession.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb-session.html#QLDBSession.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

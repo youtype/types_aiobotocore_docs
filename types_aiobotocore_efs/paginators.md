@@ -19,17 +19,19 @@ type annotations stubs module
 ## DescribeFileSystemsPaginator
 
 Type annotations for
-`aiobotocore.create_client("efs").get_paginator("describe_file_systems")`.
+`session.create_client("efs").get_paginator("describe_file_systems")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_efs.paginator import DescribeFileSystemsPaginator
 
-def get_describe_file_systems_paginator() -> DescribeFileSystemsPaginator:
-    return Session().create_client("efs").get_paginator("describe_file_systems")
+session = get_session()
+async with session.create_client("efs") as client:
+    client: EFSClient
+    paginator: DescribeFileSystemsPaginator = client.get_paginator("describe_file_systems")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `DescribeFileSystemsPaginator.paginate` method:
 ## DescribeMountTargetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("efs").get_paginator("describe_mount_targets")`.
+`session.create_client("efs").get_paginator("describe_mount_targets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_efs.paginator import DescribeMountTargetsPaginator
 
-def get_describe_mount_targets_paginator() -> DescribeMountTargetsPaginator:
-    return Session().create_client("efs").get_paginator("describe_mount_targets")
+session = get_session()
+async with session.create_client("efs") as client:
+    client: EFSClient
+    paginator: DescribeMountTargetsPaginator = client.get_paginator("describe_mount_targets")
 ```
 
 Boto3 documentation:
@@ -82,17 +86,19 @@ Arguments for `DescribeMountTargetsPaginator.paginate` method:
 ## DescribeTagsPaginator
 
 Type annotations for
-`aiobotocore.create_client("efs").get_paginator("describe_tags")`.
+`session.create_client("efs").get_paginator("describe_tags")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_efs.paginator import DescribeTagsPaginator
 
-def get_describe_tags_paginator() -> DescribeTagsPaginator:
-    return Session().create_client("efs").get_paginator("describe_tags")
+session = get_session()
+async with session.create_client("efs") as client:
+    client: EFSClient
+    paginator: DescribeTagsPaginator = client.get_paginator("describe_tags")
 ```
 
 Boto3 documentation:

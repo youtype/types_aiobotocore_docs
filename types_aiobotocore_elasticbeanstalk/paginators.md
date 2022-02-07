@@ -21,17 +21,19 @@ type annotations stubs module
 ## DescribeApplicationVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").get_paginator("describe_application_versions")`.
+`session.create_client("elasticbeanstalk").get_paginator("describe_application_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticbeanstalk.paginator import DescribeApplicationVersionsPaginator
 
-def get_describe_application_versions_paginator() -> DescribeApplicationVersionsPaginator:
-    return Session().create_client("elasticbeanstalk").get_paginator("describe_application_versions")
+session = get_session()
+async with session.create_client("elasticbeanstalk") as client:
+    client: ElasticBeanstalkClient
+    paginator: DescribeApplicationVersionsPaginator = client.get_paginator("describe_application_versions")
 ```
 
 Boto3 documentation:
@@ -52,17 +54,19 @@ Arguments for `DescribeApplicationVersionsPaginator.paginate` method:
 ## DescribeEnvironmentManagedActionHistoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").get_paginator("describe_environment_managed_action_history")`.
+`session.create_client("elasticbeanstalk").get_paginator("describe_environment_managed_action_history")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticbeanstalk.paginator import DescribeEnvironmentManagedActionHistoryPaginator
 
-def get_describe_environment_managed_action_history_paginator() -> DescribeEnvironmentManagedActionHistoryPaginator:
-    return Session().create_client("elasticbeanstalk").get_paginator("describe_environment_managed_action_history")
+session = get_session()
+async with session.create_client("elasticbeanstalk") as client:
+    client: ElasticBeanstalkClient
+    paginator: DescribeEnvironmentManagedActionHistoryPaginator = client.get_paginator("describe_environment_managed_action_history")
 ```
 
 Boto3 documentation:
@@ -84,17 +88,19 @@ method:
 ## DescribeEnvironmentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").get_paginator("describe_environments")`.
+`session.create_client("elasticbeanstalk").get_paginator("describe_environments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticbeanstalk.paginator import DescribeEnvironmentsPaginator
 
-def get_describe_environments_paginator() -> DescribeEnvironmentsPaginator:
-    return Session().create_client("elasticbeanstalk").get_paginator("describe_environments")
+session = get_session()
+async with session.create_client("elasticbeanstalk") as client:
+    client: ElasticBeanstalkClient
+    paginator: DescribeEnvironmentsPaginator = client.get_paginator("describe_environments")
 ```
 
 Boto3 documentation:
@@ -119,17 +125,19 @@ Arguments for `DescribeEnvironmentsPaginator.paginate` method:
 ## DescribeEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").get_paginator("describe_events")`.
+`session.create_client("elasticbeanstalk").get_paginator("describe_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticbeanstalk.paginator import DescribeEventsPaginator
 
-def get_describe_events_paginator() -> DescribeEventsPaginator:
-    return Session().create_client("elasticbeanstalk").get_paginator("describe_events")
+session = get_session()
+async with session.create_client("elasticbeanstalk") as client:
+    client: ElasticBeanstalkClient
+    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")
 ```
 
 Boto3 documentation:
@@ -158,17 +166,19 @@ Arguments for `DescribeEventsPaginator.paginate` method:
 ## ListPlatformVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").get_paginator("list_platform_versions")`.
+`session.create_client("elasticbeanstalk").get_paginator("list_platform_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticbeanstalk.paginator import ListPlatformVersionsPaginator
 
-def get_list_platform_versions_paginator() -> ListPlatformVersionsPaginator:
-    return Session().create_client("elasticbeanstalk").get_paginator("list_platform_versions")
+session = get_session()
+async with session.create_client("elasticbeanstalk") as client:
+    client: ElasticBeanstalkClient
+    paginator: ListPlatformVersionsPaginator = client.get_paginator("list_platform_versions")
 ```
 
 Boto3 documentation:

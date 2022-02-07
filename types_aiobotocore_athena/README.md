@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[athena]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[athena]'
+
+# standalone installation
 pip install types-aiobotocore-athena
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-athena
 
 ## AthenaClient
 
-Type annotations for `aiobotocore.create_client("athena")` as
+Type annotations for `session.create_client("athena")` as
 [AthenaClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_athena.client import AthenaClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_get_named_query](./client.md#batch_get_named_query)
 - [batch_get_query_execution](./client.md#batch_get_query_execution)
 - [can_paginate](./client.md#can_paginate)
@@ -104,7 +110,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_athena.paginators import GetQueryResultsPaginator, ...
+from types_aiobotocore_athena.paginator import GetQueryResultsPaginator, ...
 ```
 
 - [GetQueryResultsPaginator](./paginators.md#getqueryresultspaginator)

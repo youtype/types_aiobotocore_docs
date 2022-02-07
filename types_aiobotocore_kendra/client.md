@@ -71,21 +71,24 @@ type annotations stubs module
     - [update_query_suggestions_block_list](#update_query_suggestions_block_list)
     - [update_query_suggestions_config](#update_query_suggestions_config)
     - [update_thesaurus](#update_thesaurus)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="kendraclient"></a>
 
 ## kendraClient
 
-Type annotations for `aiobotocore.create_client("kendra")`
+Type annotations for `session.create_client("kendra")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_kendra.client import kendraClient
 
-def get_kendra_client() -> kendraClient:
-    return Session().client("kendra")
+session = get_session()
+async with session.create_client("kendra") as client:
+    client: kendraClient
 ```
 
 Boto3 documentation:
@@ -130,7 +133,7 @@ Exceptions:
 
 kendraClient exceptions.
 
-Type annotations for `aiobotocore.create_client("kendra").exceptions` method.
+Type annotations for `session.create_client("kendra").exceptions` method.
 
 Boto3 documentation:
 [kendra.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.exceptions)
@@ -145,7 +148,7 @@ Grants users or groups in your Amazon Web Services SSO identity source access
 to your Amazon Kendra experience.
 
 Type annotations for
-`aiobotocore.create_client("kendra").associate_entities_to_experience` method.
+`session.create_client("kendra").associate_entities_to_experience` method.
 
 Boto3 documentation:
 [kendra.Client.associate_entities_to_experience](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.associate_entities_to_experience)
@@ -175,7 +178,7 @@ Defines the specific permissions of users or groups in your Amazon Web Services
 SSO identity source with access to your Amazon Kendra experience.
 
 Type annotations for
-`aiobotocore.create_client("kendra").associate_personas_to_entities` method.
+`session.create_client("kendra").associate_personas_to_entities` method.
 
 Boto3 documentation:
 [kendra.Client.associate_personas_to_entities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.associate_personas_to_entities)
@@ -203,8 +206,8 @@ Returns a `Coroutine` for
 
 Removes one or more documents from an index.
 
-Type annotations for
-`aiobotocore.create_client("kendra").batch_delete_document` method.
+Type annotations for `session.create_client("kendra").batch_delete_document`
+method.
 
 Boto3 documentation:
 [kendra.Client.batch_delete_document](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.batch_delete_document)
@@ -234,7 +237,7 @@ Returns the indexing status for one or more documents submitted with the
 operation.
 
 Type annotations for
-`aiobotocore.create_client("kendra").batch_get_document_status` method.
+`session.create_client("kendra").batch_get_document_status` method.
 
 Boto3 documentation:
 [kendra.Client.batch_get_document_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.batch_get_document_status)
@@ -261,7 +264,7 @@ Returns a `Coroutine` for
 
 Adds one or more documents to an index.
 
-Type annotations for `aiobotocore.create_client("kendra").batch_put_document`
+Type annotations for `session.create_client("kendra").batch_put_document`
 method.
 
 Boto3 documentation:
@@ -291,18 +294,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("kendra").can_paginate` method.
+Type annotations for `session.create_client("kendra").can_paginate` method.
 
 Boto3 documentation:
 [kendra.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="clear_query_suggestions"></a>
 
@@ -310,8 +311,8 @@ Returns a `Coroutine` for `bool`.
 
 Clears existing query suggestions from an index.
 
-Type annotations for
-`aiobotocore.create_client("kendra").clear_query_suggestions` method.
+Type annotations for `session.create_client("kendra").clear_query_suggestions`
+method.
 
 Boto3 documentation:
 [kendra.Client.clear_query_suggestions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.clear_query_suggestions)
@@ -332,7 +333,7 @@ Keyword-only arguments:
 
 Creates a data source that you want to use with an Amazon Kendra index.
 
-Type annotations for `aiobotocore.create_client("kendra").create_data_source`
+Type annotations for `session.create_client("kendra").create_data_source`
 method.
 
 Boto3 documentation:
@@ -369,7 +370,7 @@ Returns a `Coroutine` for
 
 Creates an Amazon Kendra experience such as a search application.
 
-Type annotations for `aiobotocore.create_client("kendra").create_experience`
+Type annotations for `session.create_client("kendra").create_experience`
 method.
 
 Boto3 documentation:
@@ -399,7 +400,7 @@ Returns a `Coroutine` for
 
 Creates an new set of frequently asked question (FAQ) questions and answers.
 
-Type annotations for `aiobotocore.create_client("kendra").create_faq` method.
+Type annotations for `session.create_client("kendra").create_faq` method.
 
 Boto3 documentation:
 [kendra.Client.create_faq](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.create_faq)
@@ -430,7 +431,7 @@ Returns a `Coroutine` for
 
 Creates a new Amazon Kendra index.
 
-Type annotations for `aiobotocore.create_client("kendra").create_index` method.
+Type annotations for `session.create_client("kendra").create_index` method.
 
 Boto3 documentation:
 [kendra.Client.create_index](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.create_index)
@@ -467,8 +468,7 @@ Returns a `Coroutine` for
 Creates a block list to exlcude certain queries from suggestions.
 
 Type annotations for
-`aiobotocore.create_client("kendra").create_query_suggestions_block_list`
-method.
+`session.create_client("kendra").create_query_suggestions_block_list` method.
 
 Boto3 documentation:
 [kendra.Client.create_query_suggestions_block_list](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.create_query_suggestions_block_list)
@@ -498,8 +498,7 @@ Returns a `Coroutine` for
 
 Creates a thesaurus for an index.
 
-Type annotations for `aiobotocore.create_client("kendra").create_thesaurus`
-method.
+Type annotations for `session.create_client("kendra").create_thesaurus` method.
 
 Boto3 documentation:
 [kendra.Client.create_thesaurus](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.create_thesaurus)
@@ -528,7 +527,7 @@ Returns a `Coroutine` for
 
 Deletes an Amazon Kendra data source.
 
-Type annotations for `aiobotocore.create_client("kendra").delete_data_source`
+Type annotations for `session.create_client("kendra").delete_data_source`
 method.
 
 Boto3 documentation:
@@ -551,7 +550,7 @@ Keyword-only arguments:
 
 Deletes your Amazon Kendra experience such as a search application.
 
-Type annotations for `aiobotocore.create_client("kendra").delete_experience`
+Type annotations for `session.create_client("kendra").delete_experience`
 method.
 
 Boto3 documentation:
@@ -575,7 +574,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes an FAQ from an index.
 
-Type annotations for `aiobotocore.create_client("kendra").delete_faq` method.
+Type annotations for `session.create_client("kendra").delete_faq` method.
 
 Boto3 documentation:
 [kendra.Client.delete_faq](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.delete_faq)
@@ -596,7 +595,7 @@ Keyword-only arguments:
 
 Deletes an existing Amazon Kendra index.
 
-Type annotations for `aiobotocore.create_client("kendra").delete_index` method.
+Type annotations for `session.create_client("kendra").delete_index` method.
 
 Boto3 documentation:
 [kendra.Client.delete_index](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.delete_index)
@@ -617,8 +616,8 @@ Keyword-only arguments:
 Deletes a group so that all users and sub groups that belong to the group can
 no longer access documents only available to that group.
 
-Type annotations for
-`aiobotocore.create_client("kendra").delete_principal_mapping` method.
+Type annotations for `session.create_client("kendra").delete_principal_mapping`
+method.
 
 Boto3 documentation:
 [kendra.Client.delete_principal_mapping](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.delete_principal_mapping)
@@ -643,8 +642,7 @@ Keyword-only arguments:
 Deletes a block list used for query suggestions for an index.
 
 Type annotations for
-`aiobotocore.create_client("kendra").delete_query_suggestions_block_list`
-method.
+`session.create_client("kendra").delete_query_suggestions_block_list` method.
 
 Boto3 documentation:
 [kendra.Client.delete_query_suggestions_block_list](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.delete_query_suggestions_block_list)
@@ -666,8 +664,7 @@ Keyword-only arguments:
 
 Deletes an existing Amazon Kendra thesaurus.
 
-Type annotations for `aiobotocore.create_client("kendra").delete_thesaurus`
-method.
+Type annotations for `session.create_client("kendra").delete_thesaurus` method.
 
 Boto3 documentation:
 [kendra.Client.delete_thesaurus](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.delete_thesaurus)
@@ -688,7 +685,7 @@ Keyword-only arguments:
 
 Gets information about a Amazon Kendra data source.
 
-Type annotations for `aiobotocore.create_client("kendra").describe_data_source`
+Type annotations for `session.create_client("kendra").describe_data_source`
 method.
 
 Boto3 documentation:
@@ -715,7 +712,7 @@ Returns a `Coroutine` for
 Gets information about your Amazon Kendra experience such as a search
 application.
 
-Type annotations for `aiobotocore.create_client("kendra").describe_experience`
+Type annotations for `session.create_client("kendra").describe_experience`
 method.
 
 Boto3 documentation:
@@ -741,7 +738,7 @@ Returns a `Coroutine` for
 
 Gets information about an FAQ list.
 
-Type annotations for `aiobotocore.create_client("kendra").describe_faq` method.
+Type annotations for `session.create_client("kendra").describe_faq` method.
 
 Boto3 documentation:
 [kendra.Client.describe_faq](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.describe_faq)
@@ -766,8 +763,7 @@ Returns a `Coroutine` for
 Describes an existing Amazon Kendra index See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeIndex).
 
-Type annotations for `aiobotocore.create_client("kendra").describe_index`
-method.
+Type annotations for `session.create_client("kendra").describe_index` method.
 
 Boto3 documentation:
 [kendra.Client.describe_index](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.describe_index)
@@ -792,7 +788,7 @@ Describes the processing of `PUT` and `DELETE` actions for mapping users to
 their groups.
 
 Type annotations for
-`aiobotocore.create_client("kendra").describe_principal_mapping` method.
+`session.create_client("kendra").describe_principal_mapping` method.
 
 Boto3 documentation:
 [kendra.Client.describe_principal_mapping](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.describe_principal_mapping)
@@ -819,8 +815,7 @@ Returns a `Coroutine` for
 Describes a block list used for query suggestions for an index.
 
 Type annotations for
-`aiobotocore.create_client("kendra").describe_query_suggestions_block_list`
-method.
+`session.create_client("kendra").describe_query_suggestions_block_list` method.
 
 Boto3 documentation:
 [kendra.Client.describe_query_suggestions_block_list](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.describe_query_suggestions_block_list)
@@ -846,7 +841,7 @@ Returns a `Coroutine` for
 Describes the settings of query suggestions for an index.
 
 Type annotations for
-`aiobotocore.create_client("kendra").describe_query_suggestions_config` method.
+`session.create_client("kendra").describe_query_suggestions_config` method.
 
 Boto3 documentation:
 [kendra.Client.describe_query_suggestions_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.describe_query_suggestions_config)
@@ -870,7 +865,7 @@ Returns a `Coroutine` for
 
 Describes an existing Amazon Kendra thesaurus.
 
-Type annotations for `aiobotocore.create_client("kendra").describe_thesaurus`
+Type annotations for `session.create_client("kendra").describe_thesaurus`
 method.
 
 Boto3 documentation:
@@ -898,8 +893,7 @@ Prevents users or groups in your Amazon Web Services SSO identity source from
 accessing your Amazon Kendra experience.
 
 Type annotations for
-`aiobotocore.create_client("kendra").disassociate_entities_from_experience`
-method.
+`session.create_client("kendra").disassociate_entities_from_experience` method.
 
 Boto3 documentation:
 [kendra.Client.disassociate_entities_from_experience](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.disassociate_entities_from_experience)
@@ -929,8 +923,7 @@ Removes the specific permissions of users or groups in your Amazon Web Services
 SSO identity source with access to your Amazon Kendra experience.
 
 Type annotations for
-`aiobotocore.create_client("kendra").disassociate_personas_from_entities`
-method.
+`session.create_client("kendra").disassociate_personas_from_entities` method.
 
 Boto3 documentation:
 [kendra.Client.disassociate_personas_from_entities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.disassociate_personas_from_entities)
@@ -956,8 +949,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("kendra").generate_presigned_url` method.
+Type annotations for `session.create_client("kendra").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [kendra.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.generate_presigned_url)
@@ -980,8 +973,8 @@ Returns a `Coroutine` for `str`.
 
 Fetches the queries that are suggested to your users.
 
-Type annotations for
-`aiobotocore.create_client("kendra").get_query_suggestions` method.
+Type annotations for `session.create_client("kendra").get_query_suggestions`
+method.
 
 Boto3 documentation:
 [kendra.Client.get_query_suggestions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.get_query_suggestions)
@@ -1007,8 +1000,7 @@ Returns a `Coroutine` for
 
 Retrieves search metrics data.
 
-Type annotations for `aiobotocore.create_client("kendra").get_snapshots`
-method.
+Type annotations for `session.create_client("kendra").get_snapshots` method.
 
 Boto3 documentation:
 [kendra.Client.get_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.get_snapshots)
@@ -1036,7 +1028,7 @@ Returns a `Coroutine` for
 Gets statistics about synchronizing Amazon Kendra with a data source.
 
 Type annotations for
-`aiobotocore.create_client("kendra").list_data_source_sync_jobs` method.
+`session.create_client("kendra").list_data_source_sync_jobs` method.
 
 Boto3 documentation:
 [kendra.Client.list_data_source_sync_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.list_data_source_sync_jobs)
@@ -1066,7 +1058,7 @@ Returns a `Coroutine` for
 
 Lists the data sources that you have created.
 
-Type annotations for `aiobotocore.create_client("kendra").list_data_sources`
+Type annotations for `session.create_client("kendra").list_data_sources`
 method.
 
 Boto3 documentation:
@@ -1093,7 +1085,7 @@ Returns a `Coroutine` for
 Lists specific permissions of users and groups with access to your Amazon
 Kendra experience.
 
-Type annotations for `aiobotocore.create_client("kendra").list_entity_personas`
+Type annotations for `session.create_client("kendra").list_entity_personas`
 method.
 
 Boto3 documentation:
@@ -1122,8 +1114,8 @@ Returns a `Coroutine` for
 Lists users or groups in your Amazon Web Services SSO identity source that are
 granted access to your Amazon Kendra experience.
 
-Type annotations for
-`aiobotocore.create_client("kendra").list_experience_entities` method.
+Type annotations for `session.create_client("kendra").list_experience_entities`
+method.
 
 Boto3 documentation:
 [kendra.Client.list_experience_entities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.list_experience_entities)
@@ -1149,8 +1141,7 @@ Returns a `Coroutine` for
 
 Lists one or more Amazon Kendra experiences.
 
-Type annotations for `aiobotocore.create_client("kendra").list_experiences`
-method.
+Type annotations for `session.create_client("kendra").list_experiences` method.
 
 Boto3 documentation:
 [kendra.Client.list_experiences](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.list_experiences)
@@ -1175,7 +1166,7 @@ Returns a `Coroutine` for
 
 Gets a list of FAQ lists associated with an index.
 
-Type annotations for `aiobotocore.create_client("kendra").list_faqs` method.
+Type annotations for `session.create_client("kendra").list_faqs` method.
 
 Boto3 documentation:
 [kendra.Client.list_faqs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.list_faqs)
@@ -1202,8 +1193,7 @@ Provides a list of groups that are mapped to users before a given ordering or
 timestamp identifier.
 
 Type annotations for
-`aiobotocore.create_client("kendra").list_groups_older_than_ordering_id`
-method.
+`session.create_client("kendra").list_groups_older_than_ordering_id` method.
 
 Boto3 documentation:
 [kendra.Client.list_groups_older_than_ordering_id](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.list_groups_older_than_ordering_id)
@@ -1231,7 +1221,7 @@ Returns a `Coroutine` for
 
 Lists the Amazon Kendra indexes that you have created.
 
-Type annotations for `aiobotocore.create_client("kendra").list_indices` method.
+Type annotations for `session.create_client("kendra").list_indices` method.
 
 Boto3 documentation:
 [kendra.Client.list_indices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.list_indices)
@@ -1256,8 +1246,7 @@ Returns a `Coroutine` for
 Lists the block lists used for query suggestions for an index.
 
 Type annotations for
-`aiobotocore.create_client("kendra").list_query_suggestions_block_lists`
-method.
+`session.create_client("kendra").list_query_suggestions_block_lists` method.
 
 Boto3 documentation:
 [kendra.Client.list_query_suggestions_block_lists](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.list_query_suggestions_block_lists)
@@ -1283,8 +1272,8 @@ Returns a `Coroutine` for
 
 Gets a list of tags associated with a specified resource.
 
-Type annotations for
-`aiobotocore.create_client("kendra").list_tags_for_resource` method.
+Type annotations for `session.create_client("kendra").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [kendra.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.list_tags_for_resource)
@@ -1308,8 +1297,7 @@ Returns a `Coroutine` for
 
 Lists the Amazon Kendra thesauri associated with an index.
 
-Type annotations for `aiobotocore.create_client("kendra").list_thesauri`
-method.
+Type annotations for `session.create_client("kendra").list_thesauri` method.
 
 Boto3 documentation:
 [kendra.Client.list_thesauri](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.list_thesauri)
@@ -1335,8 +1323,8 @@ Returns a `Coroutine` for
 Maps users to their groups so that you only need to provide the user ID when
 you issue the query.
 
-Type annotations for
-`aiobotocore.create_client("kendra").put_principal_mapping` method.
+Type annotations for `session.create_client("kendra").put_principal_mapping`
+method.
 
 Boto3 documentation:
 [kendra.Client.put_principal_mapping](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.put_principal_mapping)
@@ -1363,7 +1351,7 @@ Keyword-only arguments:
 
 Searches an active index.
 
-Type annotations for `aiobotocore.create_client("kendra").query` method.
+Type annotations for `session.create_client("kendra").query` method.
 
 Boto3 documentation:
 [kendra.Client.query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.query)
@@ -1402,7 +1390,7 @@ Returns a `Coroutine` for
 Starts a synchronization job for a data source.
 
 Type annotations for
-`aiobotocore.create_client("kendra").start_data_source_sync_job` method.
+`session.create_client("kendra").start_data_source_sync_job` method.
 
 Boto3 documentation:
 [kendra.Client.start_data_source_sync_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.start_data_source_sync_job)
@@ -1428,7 +1416,7 @@ Returns a `Coroutine` for
 Stops a running synchronization job.
 
 Type annotations for
-`aiobotocore.create_client("kendra").stop_data_source_sync_job` method.
+`session.create_client("kendra").stop_data_source_sync_job` method.
 
 Boto3 documentation:
 [kendra.Client.stop_data_source_sync_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.stop_data_source_sync_job)
@@ -1451,8 +1439,7 @@ Keyword-only arguments:
 Enables you to provide feedback to Amazon Kendra to improve the performance of
 your index.
 
-Type annotations for `aiobotocore.create_client("kendra").submit_feedback`
-method.
+Type annotations for `session.create_client("kendra").submit_feedback` method.
 
 Boto3 documentation:
 [kendra.Client.submit_feedback](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.submit_feedback)
@@ -1477,7 +1464,7 @@ Keyword-only arguments:
 
 Adds the specified tag to the specified index, FAQ, or data source resource.
 
-Type annotations for `aiobotocore.create_client("kendra").tag_resource` method.
+Type annotations for `session.create_client("kendra").tag_resource` method.
 
 Boto3 documentation:
 [kendra.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.tag_resource)
@@ -1500,8 +1487,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes a tag from an index, FAQ, or a data source.
 
-Type annotations for `aiobotocore.create_client("kendra").untag_resource`
-method.
+Type annotations for `session.create_client("kendra").untag_resource` method.
 
 Boto3 documentation:
 [kendra.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.untag_resource)
@@ -1524,7 +1510,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an existing Amazon Kendra data source.
 
-Type annotations for `aiobotocore.create_client("kendra").update_data_source`
+Type annotations for `session.create_client("kendra").update_data_source`
 method.
 
 Boto3 documentation:
@@ -1556,7 +1542,7 @@ Keyword-only arguments:
 
 Updates your Amazon Kendra experience such as a search application.
 
-Type annotations for `aiobotocore.create_client("kendra").update_experience`
+Type annotations for `session.create_client("kendra").update_experience`
 method.
 
 Boto3 documentation:
@@ -1583,7 +1569,7 @@ Keyword-only arguments:
 
 Updates an existing Amazon Kendra index.
 
-Type annotations for `aiobotocore.create_client("kendra").update_index` method.
+Type annotations for `session.create_client("kendra").update_index` method.
 
 Boto3 documentation:
 [kendra.Client.update_index](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.update_index)
@@ -1617,8 +1603,7 @@ Keyword-only arguments:
 Updates a block list used for query suggestions for an index.
 
 Type annotations for
-`aiobotocore.create_client("kendra").update_query_suggestions_block_list`
-method.
+`session.create_client("kendra").update_query_suggestions_block_list` method.
 
 Boto3 documentation:
 [kendra.Client.update_query_suggestions_block_list](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.update_query_suggestions_block_list)
@@ -1645,7 +1630,7 @@ Keyword-only arguments:
 Updates the settings of query suggestions for an index.
 
 Type annotations for
-`aiobotocore.create_client("kendra").update_query_suggestions_config` method.
+`session.create_client("kendra").update_query_suggestions_config` method.
 
 Boto3 documentation:
 [kendra.Client.update_query_suggestions_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.update_query_suggestions_config)
@@ -1671,8 +1656,7 @@ Keyword-only arguments:
 
 Updates a thesaurus file associated with an index.
 
-Type annotations for `aiobotocore.create_client("kendra").update_thesaurus`
-method.
+Type annotations for `session.create_client("kendra").update_thesaurus` method.
 
 Boto3 documentation:
 [kendra.Client.update_thesaurus](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.update_thesaurus)
@@ -1690,3 +1674,35 @@ Keyword-only arguments:
 - `Description`: `str`
 - `RoleArn`: `str`
 - `SourceS3Path`: [S3PathTypeDef](./type_defs.md#s3pathtypedef)
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("kendra").__aenter__` method.
+
+Boto3 documentation:
+[kendra.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [kendraClient](#kendraclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("kendra").__aexit__` method.
+
+Boto3 documentation:
+[kendra.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kendra.html#kendra.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

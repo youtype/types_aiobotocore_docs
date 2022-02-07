@@ -35,22 +35,25 @@ type annotations stubs module
     - [request_service_quota_increase](#request_service_quota_increase)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="servicequotasclient"></a>
 
 ## ServiceQuotasClient
 
-Type annotations for `aiobotocore.create_client("service-quotas")`
+Type annotations for `session.create_client("service-quotas")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_service_quotas.client import ServiceQuotasClient
 
-def get_service-quotas_client() -> ServiceQuotasClient:
-    return Session().client("service-quotas")
+session = get_session()
+async with session.create_client("service-quotas") as client:
+    client: ServiceQuotasClient
 ```
 
 Boto3 documentation:
@@ -101,7 +104,7 @@ Exceptions:
 
 ServiceQuotasClient exceptions.
 
-Type annotations for `aiobotocore.create_client("service-quotas").exceptions`
+Type annotations for `session.create_client("service-quotas").exceptions`
 method.
 
 Boto3 documentation:
@@ -116,7 +119,7 @@ Returns [Exceptions](#exceptions).
 Associates your quota request template with your organization.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").associate_service_quota_template`
+`session.create_client("service-quotas").associate_service_quota_template`
 method.
 
 Boto3 documentation:
@@ -133,19 +136,17 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("service-quotas").can_paginate`
+Type annotations for `session.create_client("service-quotas").can_paginate`
 method.
 
 Boto3 documentation:
 [ServiceQuotas.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/service-quotas.html#ServiceQuotas.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="delete_service_quota_increase_request_from_template"></a>
 
@@ -155,7 +156,7 @@ Deletes the quota increase request for the specified quota from your quota
 request template.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").delete_service_quota_increase_request_from_template`
+`session.create_client("service-quotas").delete_service_quota_increase_request_from_template`
 method.
 
 Boto3 documentation:
@@ -183,7 +184,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disables your quota request template.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").disassociate_service_quota_template`
+`session.create_client("service-quotas").disassociate_service_quota_template`
 method.
 
 Boto3 documentation:
@@ -201,7 +202,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").generate_presigned_url` method.
+`session.create_client("service-quotas").generate_presigned_url` method.
 
 Boto3 documentation:
 [ServiceQuotas.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/service-quotas.html#ServiceQuotas.Client.generate_presigned_url)
@@ -225,7 +226,7 @@ Returns a `Coroutine` for `str`.
 Retrieves the status of the association for the quota request template.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").get_association_for_service_quota_template`
+`session.create_client("service-quotas").get_association_for_service_quota_template`
 method.
 
 Boto3 documentation:
@@ -244,8 +245,7 @@ Returns a `Coroutine` for
 Retrieves the default value for the specified quota.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").get_aws_default_service_quota`
-method.
+`session.create_client("service-quotas").get_aws_default_service_quota` method.
 
 Boto3 documentation:
 [ServiceQuotas.Client.get_aws_default_service_quota](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/service-quotas.html#ServiceQuotas.Client.get_aws_default_service_quota)
@@ -271,7 +271,7 @@ Returns a `Coroutine` for
 Retrieves information about the specified quota increase request.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").get_requested_service_quota_change`
+`session.create_client("service-quotas").get_requested_service_quota_change`
 method.
 
 Boto3 documentation:
@@ -297,7 +297,7 @@ Returns a `Coroutine` for
 Retrieves the applied quota value for the specified quota.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").get_service_quota` method.
+`session.create_client("service-quotas").get_service_quota` method.
 
 Boto3 documentation:
 [ServiceQuotas.Client.get_service_quota](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/service-quotas.html#ServiceQuotas.Client.get_service_quota)
@@ -323,7 +323,7 @@ Retrieves information about the specified quota increase request in your quota
 request template.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").get_service_quota_increase_request_from_template`
+`session.create_client("service-quotas").get_service_quota_increase_request_from_template`
 method.
 
 Boto3 documentation:
@@ -352,7 +352,7 @@ Returns a `Coroutine` for
 Lists the default values for the quotas for the specified AWS service.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").list_aws_default_service_quotas`
+`session.create_client("service-quotas").list_aws_default_service_quotas`
 method.
 
 Boto3 documentation:
@@ -380,7 +380,7 @@ Returns a `Coroutine` for
 Retrieves the quota increase requests for the specified service.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").list_requested_service_quota_change_history`
+`session.create_client("service-quotas").list_requested_service_quota_change_history`
 method.
 
 Boto3 documentation:
@@ -410,7 +410,7 @@ Returns a `Coroutine` for
 Retrieves the quota increase requests for the specified quota.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").list_requested_service_quota_change_history_by_quota`
+`session.create_client("service-quotas").list_requested_service_quota_change_history_by_quota`
 method.
 
 Boto3 documentation:
@@ -441,7 +441,7 @@ Returns a `Coroutine` for
 Lists the quota increase requests in the specified quota request template.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").list_service_quota_increase_requests_in_template`
+`session.create_client("service-quotas").list_service_quota_increase_requests_in_template`
 method.
 
 Boto3 documentation:
@@ -471,7 +471,7 @@ Returns a `Coroutine` for
 Lists the applied quota values for the specified AWS service.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").list_service_quotas` method.
+`session.create_client("service-quotas").list_service_quotas` method.
 
 Boto3 documentation:
 [ServiceQuotas.Client.list_service_quotas](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/service-quotas.html#ServiceQuotas.Client.list_service_quotas)
@@ -497,8 +497,8 @@ Returns a `Coroutine` for
 
 Lists the names and codes for the services integrated with Service Quotas.
 
-Type annotations for
-`aiobotocore.create_client("service-quotas").list_services` method.
+Type annotations for `session.create_client("service-quotas").list_services`
+method.
 
 Boto3 documentation:
 [ServiceQuotas.Client.list_services](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/service-quotas.html#ServiceQuotas.Client.list_services)
@@ -523,7 +523,7 @@ Returns a `Coroutine` for
 Returns a list of the tags assigned to the specified applied quota.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").list_tags_for_resource` method.
+`session.create_client("service-quotas").list_tags_for_resource` method.
 
 Boto3 documentation:
 [ServiceQuotas.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/service-quotas.html#ServiceQuotas.Client.list_tags_for_resource)
@@ -548,7 +548,7 @@ Returns a `Coroutine` for
 Adds a quota increase request to your quota request template.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").put_service_quota_increase_request_into_template`
+`session.create_client("service-quotas").put_service_quota_increase_request_into_template`
 method.
 
 Boto3 documentation:
@@ -578,7 +578,7 @@ Returns a `Coroutine` for
 Submits a quota increase request for the specified quota.
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").request_service_quota_increase`
+`session.create_client("service-quotas").request_service_quota_increase`
 method.
 
 Boto3 documentation:
@@ -605,7 +605,7 @@ Returns a `Coroutine` for
 
 Adds tags to the specified applied quota.
 
-Type annotations for `aiobotocore.create_client("service-quotas").tag_resource`
+Type annotations for `session.create_client("service-quotas").tag_resource`
 method.
 
 Boto3 documentation:
@@ -629,8 +629,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from the specified applied quota.
 
-Type annotations for
-`aiobotocore.create_client("service-quotas").untag_resource` method.
+Type annotations for `session.create_client("service-quotas").untag_resource`
+method.
 
 Boto3 documentation:
 [ServiceQuotas.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/service-quotas.html#ServiceQuotas.Client.untag_resource)
@@ -647,13 +647,46 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("service-quotas").__aenter__`
+method.
+
+Boto3 documentation:
+[ServiceQuotas.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/service-quotas.html#ServiceQuotas.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ServiceQuotasClient](#servicequotasclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("service-quotas").__aexit__`
+method.
+
+Boto3 documentation:
+[ServiceQuotas.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/service-quotas.html#ServiceQuotas.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("service-quotas").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("service-quotas").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_aws_default_service_quotas")` ->
   [ListAWSDefaultServiceQuotasPaginator](./paginators.md#listawsdefaultservicequotaspaginator)

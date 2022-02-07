@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[elasticbeanstalk]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[elasticbeanstalk]'
+
+# standalone installation
 pip install types-aiobotocore-elasticbeanstalk
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-elasticbeanstalk
 
 ## ElasticBeanstalkClient
 
-Type annotations for `aiobotocore.create_client("elasticbeanstalk")` as
+Type annotations for `session.create_client("elasticbeanstalk")` as
 [ElasticBeanstalkClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_elasticbeanstalk.client import ElasticBeanstalkClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [abort_environment_update](./client.md#abort_environment_update)
 - [apply_environment_managed_action](./client.md#apply_environment_managed_action)
 - [associate_environment_operations_role](./client.md#associate_environment_operations_role)
@@ -133,7 +139,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_elasticbeanstalk.paginators import DescribeApplicationVersionsPaginator, ...
+from types_aiobotocore_elasticbeanstalk.paginator import DescribeApplicationVersionsPaginator, ...
 ```
 
 - [DescribeApplicationVersionsPaginator](./paginators.md#describeapplicationversionspaginator)
@@ -152,7 +158,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_elasticbeanstalk.waiters import EnvironmentExistsWaiter, ...
+from types_aiobotocore_elasticbeanstalk.waiter import EnvironmentExistsWaiter, ...
 ```
 
 - [EnvironmentExistsWaiter](./waiters.md#environmentexistswaiter)

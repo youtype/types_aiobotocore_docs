@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[opsworkscm]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[opsworkscm]'
+
+# standalone installation
 pip install types-aiobotocore-opsworkscm
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-opsworkscm
 
 ## OpsWorksCMClient
 
-Type annotations for `aiobotocore.create_client("opsworkscm")` as
+Type annotations for `session.create_client("opsworkscm")` as
 [OpsWorksCMClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_opsworkscm.client import OpsWorksCMClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_node](./client.md#associate_node)
 - [can_paginate](./client.md#can_paginate)
 - [create_backup](./client.md#create_backup)
@@ -92,7 +98,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_opsworkscm.paginators import DescribeBackupsPaginator, ...
+from types_aiobotocore_opsworkscm.paginator import DescribeBackupsPaginator, ...
 ```
 
 - [DescribeBackupsPaginator](./paginators.md#describebackupspaginator)
@@ -110,7 +116,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_opsworkscm.waiters import NodeAssociatedWaiter, ...
+from types_aiobotocore_opsworkscm.waiter import NodeAssociatedWaiter, ...
 ```
 
 - [NodeAssociatedWaiter](./waiters.md#nodeassociatedwaiter)

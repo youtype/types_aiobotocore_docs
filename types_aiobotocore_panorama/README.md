@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[panorama]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[panorama]'
+
+# standalone installation
 pip install types-aiobotocore-panorama
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-panorama
 
 ## PanoramaClient
 
-Type annotations for `aiobotocore.create_client("panorama")` as
+Type annotations for `session.create_client("panorama")` as
 [PanoramaClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_panorama.client import PanoramaClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_application_instance](./client.md#create_application_instance)
 - [create_job_for_devices](./client.md#create_job_for_devices)

@@ -34,22 +34,25 @@ type annotations stubs module
     - [update_project](#update_project)
     - [update_team_member](#update_team_member)
     - [update_user_profile](#update_user_profile)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="codestarclient"></a>
 
 ## CodeStarClient
 
-Type annotations for `aiobotocore.create_client("codestar")`
+Type annotations for `session.create_client("codestar")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_codestar.client import CodeStarClient
 
-def get_codestar_client() -> CodeStarClient:
-    return Session().client("codestar")
+session = get_session()
+async with session.create_client("codestar") as client:
+    client: CodeStarClient
 ```
 
 Boto3 documentation:
@@ -96,7 +99,7 @@ Exceptions:
 
 CodeStarClient exceptions.
 
-Type annotations for `aiobotocore.create_client("codestar").exceptions` method.
+Type annotations for `session.create_client("codestar").exceptions` method.
 
 Boto3 documentation:
 [CodeStar.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.exceptions)
@@ -109,8 +112,8 @@ Returns [Exceptions](#exceptions).
 
 Adds an IAM user to the team for an AWS CodeStar project.
 
-Type annotations for
-`aiobotocore.create_client("codestar").associate_team_member` method.
+Type annotations for `session.create_client("codestar").associate_team_member`
+method.
 
 Boto3 documentation:
 [CodeStar.Client.associate_team_member](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.associate_team_member)
@@ -138,19 +141,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("codestar").can_paginate`
-method.
+Type annotations for `session.create_client("codestar").can_paginate` method.
 
 Boto3 documentation:
 [CodeStar.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_project"></a>
 
@@ -158,8 +158,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a project, including project resources.
 
-Type annotations for `aiobotocore.create_client("codestar").create_project`
-method.
+Type annotations for `session.create_client("codestar").create_project` method.
 
 Boto3 documentation:
 [CodeStar.Client.create_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.create_project)
@@ -189,8 +188,8 @@ Returns a `Coroutine` for
 Creates a profile for a user that includes user preferences, such as the
 display name and email address assocciated with the user, in AWS CodeStar.
 
-Type annotations for
-`aiobotocore.create_client("codestar").create_user_profile` method.
+Type annotations for `session.create_client("codestar").create_user_profile`
+method.
 
 Boto3 documentation:
 [CodeStar.Client.create_user_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.create_user_profile)
@@ -217,8 +216,7 @@ Returns a `Coroutine` for
 
 Deletes a project, including project resources.
 
-Type annotations for `aiobotocore.create_client("codestar").delete_project`
-method.
+Type annotations for `session.create_client("codestar").delete_project` method.
 
 Boto3 documentation:
 [CodeStar.Client.delete_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.delete_project)
@@ -244,8 +242,8 @@ Returns a `Coroutine` for
 Deletes a user profile in AWS CodeStar, including all personal preference data
 associated with that profile, such as display name and email address.
 
-Type annotations for
-`aiobotocore.create_client("codestar").delete_user_profile` method.
+Type annotations for `session.create_client("codestar").delete_user_profile`
+method.
 
 Boto3 documentation:
 [CodeStar.Client.delete_user_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.delete_user_profile)
@@ -269,7 +267,7 @@ Returns a `Coroutine` for
 
 Describes a project and its resources.
 
-Type annotations for `aiobotocore.create_client("codestar").describe_project`
+Type annotations for `session.create_client("codestar").describe_project`
 method.
 
 Boto3 documentation:
@@ -293,8 +291,8 @@ Returns a `Coroutine` for
 
 Describes a user in AWS CodeStar and the user attributes across all projects.
 
-Type annotations for
-`aiobotocore.create_client("codestar").describe_user_profile` method.
+Type annotations for `session.create_client("codestar").describe_user_profile`
+method.
 
 Boto3 documentation:
 [CodeStar.Client.describe_user_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.describe_user_profile)
@@ -319,7 +317,7 @@ Returns a `Coroutine` for
 Removes a user from a project.
 
 Type annotations for
-`aiobotocore.create_client("codestar").disassociate_team_member` method.
+`session.create_client("codestar").disassociate_team_member` method.
 
 Boto3 documentation:
 [CodeStar.Client.disassociate_team_member](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.disassociate_team_member)
@@ -343,8 +341,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("codestar").generate_presigned_url` method.
+Type annotations for `session.create_client("codestar").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [CodeStar.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.generate_presigned_url)
@@ -367,8 +365,7 @@ Returns a `Coroutine` for `str`.
 
 Lists all projects in AWS CodeStar associated with your AWS account.
 
-Type annotations for `aiobotocore.create_client("codestar").list_projects`
-method.
+Type annotations for `session.create_client("codestar").list_projects` method.
 
 Boto3 documentation:
 [CodeStar.Client.list_projects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.list_projects)
@@ -392,8 +389,7 @@ Returns a `Coroutine` for
 
 Lists resources associated with a project in AWS CodeStar.
 
-Type annotations for `aiobotocore.create_client("codestar").list_resources`
-method.
+Type annotations for `session.create_client("codestar").list_resources` method.
 
 Boto3 documentation:
 [CodeStar.Client.list_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.list_resources)
@@ -418,8 +414,8 @@ Returns a `Coroutine` for
 
 Gets the tags for a project.
 
-Type annotations for
-`aiobotocore.create_client("codestar").list_tags_for_project` method.
+Type annotations for `session.create_client("codestar").list_tags_for_project`
+method.
 
 Boto3 documentation:
 [CodeStar.Client.list_tags_for_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.list_tags_for_project)
@@ -445,7 +441,7 @@ Returns a `Coroutine` for
 
 Lists all team members associated with a project.
 
-Type annotations for `aiobotocore.create_client("codestar").list_team_members`
+Type annotations for `session.create_client("codestar").list_team_members`
 method.
 
 Boto3 documentation:
@@ -471,7 +467,7 @@ Returns a `Coroutine` for
 
 Lists all the user profiles configured for your AWS account in AWS CodeStar.
 
-Type annotations for `aiobotocore.create_client("codestar").list_user_profiles`
+Type annotations for `session.create_client("codestar").list_user_profiles`
 method.
 
 Boto3 documentation:
@@ -497,8 +493,7 @@ Returns a `Coroutine` for
 
 Adds tags to a project.
 
-Type annotations for `aiobotocore.create_client("codestar").tag_project`
-method.
+Type annotations for `session.create_client("codestar").tag_project` method.
 
 Boto3 documentation:
 [CodeStar.Client.tag_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.tag_project)
@@ -522,8 +517,7 @@ Returns a `Coroutine` for
 
 Removes tags from a project.
 
-Type annotations for `aiobotocore.create_client("codestar").untag_project`
-method.
+Type annotations for `session.create_client("codestar").untag_project` method.
 
 Boto3 documentation:
 [CodeStar.Client.untag_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.untag_project)
@@ -546,8 +540,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a project in AWS CodeStar.
 
-Type annotations for `aiobotocore.create_client("codestar").update_project`
-method.
+Type annotations for `session.create_client("codestar").update_project` method.
 
 Boto3 documentation:
 [CodeStar.Client.update_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.update_project)
@@ -571,7 +564,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a team member's attributes in an AWS CodeStar project.
 
-Type annotations for `aiobotocore.create_client("codestar").update_team_member`
+Type annotations for `session.create_client("codestar").update_team_member`
 method.
 
 Boto3 documentation:
@@ -599,8 +592,8 @@ Returns a `Coroutine` for
 
 Updates a user's profile in AWS CodeStar.
 
-Type annotations for
-`aiobotocore.create_client("codestar").update_user_profile` method.
+Type annotations for `session.create_client("codestar").update_user_profile`
+method.
 
 Boto3 documentation:
 [CodeStar.Client.update_user_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.update_user_profile)
@@ -621,12 +614,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateUserProfileResultTypeDef](./type_defs.md#updateuserprofileresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("codestar").__aenter__` method.
+
+Boto3 documentation:
+[CodeStar.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CodeStarClient](#codestarclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("codestar").__aexit__` method.
+
+Boto3 documentation:
+[CodeStar.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar.html#CodeStar.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("codestar").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("codestar").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_projects")` ->
   [ListProjectsPaginator](./paginators.md#listprojectspaginator)

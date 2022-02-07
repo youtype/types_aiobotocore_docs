@@ -29,17 +29,19 @@ type annotations stubs module
 ## DescribeCertificatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("dms").get_paginator("describe_certificates")`.
+`session.create_client("dms").get_paginator("describe_certificates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dms.paginator import DescribeCertificatesPaginator
 
-def get_describe_certificates_paginator() -> DescribeCertificatesPaginator:
-    return Session().create_client("dms").get_paginator("describe_certificates")
+session = get_session()
+async with session.create_client("dms") as client:
+    client: DatabaseMigrationServiceClient
+    paginator: DescribeCertificatesPaginator = client.get_paginator("describe_certificates")
 ```
 
 Boto3 documentation:
@@ -59,17 +61,19 @@ Arguments for `DescribeCertificatesPaginator.paginate` method:
 ## DescribeConnectionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("dms").get_paginator("describe_connections")`.
+`session.create_client("dms").get_paginator("describe_connections")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dms.paginator import DescribeConnectionsPaginator
 
-def get_describe_connections_paginator() -> DescribeConnectionsPaginator:
-    return Session().create_client("dms").get_paginator("describe_connections")
+session = get_session()
+async with session.create_client("dms") as client:
+    client: DatabaseMigrationServiceClient
+    paginator: DescribeConnectionsPaginator = client.get_paginator("describe_connections")
 ```
 
 Boto3 documentation:
@@ -89,17 +93,19 @@ Arguments for `DescribeConnectionsPaginator.paginate` method:
 ## DescribeEndpointTypesPaginator
 
 Type annotations for
-`aiobotocore.create_client("dms").get_paginator("describe_endpoint_types")`.
+`session.create_client("dms").get_paginator("describe_endpoint_types")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dms.paginator import DescribeEndpointTypesPaginator
 
-def get_describe_endpoint_types_paginator() -> DescribeEndpointTypesPaginator:
-    return Session().create_client("dms").get_paginator("describe_endpoint_types")
+session = get_session()
+async with session.create_client("dms") as client:
+    client: DatabaseMigrationServiceClient
+    paginator: DescribeEndpointTypesPaginator = client.get_paginator("describe_endpoint_types")
 ```
 
 Boto3 documentation:
@@ -119,17 +125,19 @@ Arguments for `DescribeEndpointTypesPaginator.paginate` method:
 ## DescribeEndpointsPaginator
 
 Type annotations for
-`aiobotocore.create_client("dms").get_paginator("describe_endpoints")`.
+`session.create_client("dms").get_paginator("describe_endpoints")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dms.paginator import DescribeEndpointsPaginator
 
-def get_describe_endpoints_paginator() -> DescribeEndpointsPaginator:
-    return Session().create_client("dms").get_paginator("describe_endpoints")
+session = get_session()
+async with session.create_client("dms") as client:
+    client: DatabaseMigrationServiceClient
+    paginator: DescribeEndpointsPaginator = client.get_paginator("describe_endpoints")
 ```
 
 Boto3 documentation:
@@ -149,17 +157,19 @@ Arguments for `DescribeEndpointsPaginator.paginate` method:
 ## DescribeEventSubscriptionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("dms").get_paginator("describe_event_subscriptions")`.
+`session.create_client("dms").get_paginator("describe_event_subscriptions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dms.paginator import DescribeEventSubscriptionsPaginator
 
-def get_describe_event_subscriptions_paginator() -> DescribeEventSubscriptionsPaginator:
-    return Session().create_client("dms").get_paginator("describe_event_subscriptions")
+session = get_session()
+async with session.create_client("dms") as client:
+    client: DatabaseMigrationServiceClient
+    paginator: DescribeEventSubscriptionsPaginator = client.get_paginator("describe_event_subscriptions")
 ```
 
 Boto3 documentation:
@@ -180,17 +190,19 @@ Arguments for `DescribeEventSubscriptionsPaginator.paginate` method:
 ## DescribeEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("dms").get_paginator("describe_events")`.
+`session.create_client("dms").get_paginator("describe_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dms.paginator import DescribeEventsPaginator
 
-def get_describe_events_paginator() -> DescribeEventsPaginator:
-    return Session().create_client("dms").get_paginator("describe_events")
+session = get_session()
+async with session.create_client("dms") as client:
+    client: DatabaseMigrationServiceClient
+    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")
 ```
 
 Boto3 documentation:
@@ -217,17 +229,19 @@ Arguments for `DescribeEventsPaginator.paginate` method:
 ## DescribeOrderableReplicationInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("dms").get_paginator("describe_orderable_replication_instances")`.
+`session.create_client("dms").get_paginator("describe_orderable_replication_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dms.paginator import DescribeOrderableReplicationInstancesPaginator
 
-def get_describe_orderable_replication_instances_paginator() -> DescribeOrderableReplicationInstancesPaginator:
-    return Session().create_client("dms").get_paginator("describe_orderable_replication_instances")
+session = get_session()
+async with session.create_client("dms") as client:
+    client: DatabaseMigrationServiceClient
+    paginator: DescribeOrderableReplicationInstancesPaginator = client.get_paginator("describe_orderable_replication_instances")
 ```
 
 Boto3 documentation:
@@ -246,17 +260,19 @@ Arguments for `DescribeOrderableReplicationInstancesPaginator.paginate` method:
 ## DescribeReplicationInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("dms").get_paginator("describe_replication_instances")`.
+`session.create_client("dms").get_paginator("describe_replication_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dms.paginator import DescribeReplicationInstancesPaginator
 
-def get_describe_replication_instances_paginator() -> DescribeReplicationInstancesPaginator:
-    return Session().create_client("dms").get_paginator("describe_replication_instances")
+session = get_session()
+async with session.create_client("dms") as client:
+    client: DatabaseMigrationServiceClient
+    paginator: DescribeReplicationInstancesPaginator = client.get_paginator("describe_replication_instances")
 ```
 
 Boto3 documentation:
@@ -276,17 +292,19 @@ Arguments for `DescribeReplicationInstancesPaginator.paginate` method:
 ## DescribeReplicationSubnetGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("dms").get_paginator("describe_replication_subnet_groups")`.
+`session.create_client("dms").get_paginator("describe_replication_subnet_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dms.paginator import DescribeReplicationSubnetGroupsPaginator
 
-def get_describe_replication_subnet_groups_paginator() -> DescribeReplicationSubnetGroupsPaginator:
-    return Session().create_client("dms").get_paginator("describe_replication_subnet_groups")
+session = get_session()
+async with session.create_client("dms") as client:
+    client: DatabaseMigrationServiceClient
+    paginator: DescribeReplicationSubnetGroupsPaginator = client.get_paginator("describe_replication_subnet_groups")
 ```
 
 Boto3 documentation:
@@ -306,17 +324,19 @@ Arguments for `DescribeReplicationSubnetGroupsPaginator.paginate` method:
 ## DescribeReplicationTaskAssessmentResultsPaginator
 
 Type annotations for
-`aiobotocore.create_client("dms").get_paginator("describe_replication_task_assessment_results")`.
+`session.create_client("dms").get_paginator("describe_replication_task_assessment_results")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dms.paginator import DescribeReplicationTaskAssessmentResultsPaginator
 
-def get_describe_replication_task_assessment_results_paginator() -> DescribeReplicationTaskAssessmentResultsPaginator:
-    return Session().create_client("dms").get_paginator("describe_replication_task_assessment_results")
+session = get_session()
+async with session.create_client("dms") as client:
+    client: DatabaseMigrationServiceClient
+    paginator: DescribeReplicationTaskAssessmentResultsPaginator = client.get_paginator("describe_replication_task_assessment_results")
 ```
 
 Boto3 documentation:
@@ -337,17 +357,19 @@ method:
 ## DescribeReplicationTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("dms").get_paginator("describe_replication_tasks")`.
+`session.create_client("dms").get_paginator("describe_replication_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dms.paginator import DescribeReplicationTasksPaginator
 
-def get_describe_replication_tasks_paginator() -> DescribeReplicationTasksPaginator:
-    return Session().create_client("dms").get_paginator("describe_replication_tasks")
+session = get_session()
+async with session.create_client("dms") as client:
+    client: DatabaseMigrationServiceClient
+    paginator: DescribeReplicationTasksPaginator = client.get_paginator("describe_replication_tasks")
 ```
 
 Boto3 documentation:
@@ -368,17 +390,19 @@ Arguments for `DescribeReplicationTasksPaginator.paginate` method:
 ## DescribeSchemasPaginator
 
 Type annotations for
-`aiobotocore.create_client("dms").get_paginator("describe_schemas")`.
+`session.create_client("dms").get_paginator("describe_schemas")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dms.paginator import DescribeSchemasPaginator
 
-def get_describe_schemas_paginator() -> DescribeSchemasPaginator:
-    return Session().create_client("dms").get_paginator("describe_schemas")
+session = get_session()
+async with session.create_client("dms") as client:
+    client: DatabaseMigrationServiceClient
+    paginator: DescribeSchemasPaginator = client.get_paginator("describe_schemas")
 ```
 
 Boto3 documentation:
@@ -398,17 +422,19 @@ Arguments for `DescribeSchemasPaginator.paginate` method:
 ## DescribeTableStatisticsPaginator
 
 Type annotations for
-`aiobotocore.create_client("dms").get_paginator("describe_table_statistics")`.
+`session.create_client("dms").get_paginator("describe_table_statistics")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dms.paginator import DescribeTableStatisticsPaginator
 
-def get_describe_table_statistics_paginator() -> DescribeTableStatisticsPaginator:
-    return Session().create_client("dms").get_paginator("describe_table_statistics")
+session = get_session()
+async with session.create_client("dms") as client:
+    client: DatabaseMigrationServiceClient
+    paginator: DescribeTableStatisticsPaginator = client.get_paginator("describe_table_statistics")
 ```
 
 Boto3 documentation:

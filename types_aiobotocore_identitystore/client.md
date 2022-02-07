@@ -20,21 +20,24 @@ type annotations stubs module
     - [generate_presigned_url](#generate_presigned_url)
     - [list_groups](#list_groups)
     - [list_users](#list_users)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="identitystoreclient"></a>
 
 ## IdentityStoreClient
 
-Type annotations for `aiobotocore.create_client("identitystore")`
+Type annotations for `session.create_client("identitystore")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_identitystore.client import IdentityStoreClient
 
-def get_identitystore_client() -> IdentityStoreClient:
-    return Session().client("identitystore")
+session = get_session()
+async with session.create_client("identitystore") as client:
+    client: IdentityStoreClient
 ```
 
 Boto3 documentation:
@@ -73,7 +76,7 @@ Exceptions:
 
 IdentityStoreClient exceptions.
 
-Type annotations for `aiobotocore.create_client("identitystore").exceptions`
+Type annotations for `session.create_client("identitystore").exceptions`
 method.
 
 Boto3 documentation:
@@ -87,19 +90,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("identitystore").can_paginate`
+Type annotations for `session.create_client("identitystore").can_paginate`
 method.
 
 Boto3 documentation:
 [IdentityStore.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/identitystore.html#IdentityStore.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="describe_group"></a>
 
@@ -108,8 +109,8 @@ Returns a `Coroutine` for `bool`.
 Retrieves the group metadata and attributes from `GroupId` in an identity
 store.
 
-Type annotations for
-`aiobotocore.create_client("identitystore").describe_group` method.
+Type annotations for `session.create_client("identitystore").describe_group`
+method.
 
 Boto3 documentation:
 [IdentityStore.Client.describe_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/identitystore.html#IdentityStore.Client.describe_group)
@@ -133,7 +134,7 @@ Returns a `Coroutine` for
 
 Retrieves the user metadata and attributes from `UserId` in an identity store.
 
-Type annotations for `aiobotocore.create_client("identitystore").describe_user`
+Type annotations for `session.create_client("identitystore").describe_user`
 method.
 
 Boto3 documentation:
@@ -159,7 +160,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("identitystore").generate_presigned_url` method.
+`session.create_client("identitystore").generate_presigned_url` method.
 
 Boto3 documentation:
 [IdentityStore.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/identitystore.html#IdentityStore.Client.generate_presigned_url)
@@ -183,7 +184,7 @@ Returns a `Coroutine` for `str`.
 Lists the attribute name and value of the group that you specified in the
 search.
 
-Type annotations for `aiobotocore.create_client("identitystore").list_groups`
+Type annotations for `session.create_client("identitystore").list_groups`
 method.
 
 Boto3 documentation:
@@ -211,7 +212,7 @@ Returns a `Coroutine` for
 Lists the attribute name and value of the user that you specified in the
 search.
 
-Type annotations for `aiobotocore.create_client("identitystore").list_users`
+Type annotations for `session.create_client("identitystore").list_users`
 method.
 
 Boto3 documentation:
@@ -231,3 +232,36 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [ListUsersResponseTypeDef](./type_defs.md#listusersresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("identitystore").__aenter__`
+method.
+
+Boto3 documentation:
+[IdentityStore.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/identitystore.html#IdentityStore.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [IdentityStoreClient](#identitystoreclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("identitystore").__aexit__` method.
+
+Boto3 documentation:
+[IdentityStore.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/identitystore.html#IdentityStore.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

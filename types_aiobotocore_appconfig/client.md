@@ -49,21 +49,24 @@ type annotations stubs module
     - [update_deployment_strategy](#update_deployment_strategy)
     - [update_environment](#update_environment)
     - [validate_configuration](#validate_configuration)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="appconfigclient"></a>
 
 ## AppConfigClient
 
-Type annotations for `aiobotocore.create_client("appconfig")`
+Type annotations for `session.create_client("appconfig")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_appconfig.client import AppConfigClient
 
-def get_appconfig_client() -> AppConfigClient:
-    return Session().client("appconfig")
+session = get_session()
+async with session.create_client("appconfig") as client:
+    client: AppConfigClient
 ```
 
 Boto3 documentation:
@@ -103,8 +106,7 @@ Exceptions:
 
 AppConfigClient exceptions.
 
-Type annotations for `aiobotocore.create_client("appconfig").exceptions`
-method.
+Type annotations for `session.create_client("appconfig").exceptions` method.
 
 Boto3 documentation:
 [AppConfig.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.exceptions)
@@ -117,19 +119,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("appconfig").can_paginate`
-method.
+Type annotations for `session.create_client("appconfig").can_paginate` method.
 
 Boto3 documentation:
 [AppConfig.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_application"></a>
 
@@ -137,8 +136,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates an application.
 
-Type annotations for
-`aiobotocore.create_client("appconfig").create_application` method.
+Type annotations for `session.create_client("appconfig").create_application`
+method.
 
 Boto3 documentation:
 [AppConfig.Client.create_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.create_application)
@@ -166,7 +165,7 @@ Creates a configuration profile, which is information that enables AppConfig to
 access the configuration source.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").create_configuration_profile` method.
+`session.create_client("appconfig").create_configuration_profile` method.
 
 Boto3 documentation:
 [AppConfig.Client.create_configuration_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.create_configuration_profile)
@@ -200,7 +199,7 @@ Creates a deployment strategy that defines important criteria for rolling out
 your configuration to the designated targets.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").create_deployment_strategy` method.
+`session.create_client("appconfig").create_deployment_strategy` method.
 
 Boto3 documentation:
 [AppConfig.Client.create_deployment_strategy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.create_deployment_strategy)
@@ -231,8 +230,8 @@ Returns a `Coroutine` for
 
 Creates an environment.
 
-Type annotations for
-`aiobotocore.create_client("appconfig").create_environment` method.
+Type annotations for `session.create_client("appconfig").create_environment`
+method.
 
 Boto3 documentation:
 [AppConfig.Client.create_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.create_environment)
@@ -261,7 +260,7 @@ Returns a `Coroutine` for
 Creates a new configuration in the AppConfig hosted configuration store.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").create_hosted_configuration_version`
+`session.create_client("appconfig").create_hosted_configuration_version`
 method.
 
 Boto3 documentation:
@@ -291,8 +290,8 @@ Returns a `Coroutine` for
 
 Deletes an application.
 
-Type annotations for
-`aiobotocore.create_client("appconfig").delete_application` method.
+Type annotations for `session.create_client("appconfig").delete_application`
+method.
 
 Boto3 documentation:
 [AppConfig.Client.delete_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.delete_application)
@@ -314,7 +313,7 @@ Keyword-only arguments:
 Deletes a configuration profile.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").delete_configuration_profile` method.
+`session.create_client("appconfig").delete_configuration_profile` method.
 
 Boto3 documentation:
 [AppConfig.Client.delete_configuration_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.delete_configuration_profile)
@@ -337,7 +336,7 @@ Keyword-only arguments:
 Deletes a deployment strategy.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").delete_deployment_strategy` method.
+`session.create_client("appconfig").delete_deployment_strategy` method.
 
 Boto3 documentation:
 [AppConfig.Client.delete_deployment_strategy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.delete_deployment_strategy)
@@ -358,8 +357,8 @@ Keyword-only arguments:
 
 Deletes an environment.
 
-Type annotations for
-`aiobotocore.create_client("appconfig").delete_environment` method.
+Type annotations for `session.create_client("appconfig").delete_environment`
+method.
 
 Boto3 documentation:
 [AppConfig.Client.delete_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.delete_environment)
@@ -383,7 +382,7 @@ Deletes a version of a configuration from the AppConfig hosted configuration
 store.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").delete_hosted_configuration_version`
+`session.create_client("appconfig").delete_hosted_configuration_version`
 method.
 
 Boto3 documentation:
@@ -408,7 +407,7 @@ Keyword-only arguments:
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").generate_presigned_url` method.
+`session.create_client("appconfig").generate_presigned_url` method.
 
 Boto3 documentation:
 [AppConfig.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.generate_presigned_url)
@@ -431,7 +430,7 @@ Returns a `Coroutine` for `str`.
 
 Retrieves information about an application.
 
-Type annotations for `aiobotocore.create_client("appconfig").get_application`
+Type annotations for `session.create_client("appconfig").get_application`
 method.
 
 Boto3 documentation:
@@ -455,7 +454,7 @@ Returns a `Coroutine` for
 
 Retrieves information about a configuration.
 
-Type annotations for `aiobotocore.create_client("appconfig").get_configuration`
+Type annotations for `session.create_client("appconfig").get_configuration`
 method.
 
 Boto3 documentation:
@@ -484,7 +483,7 @@ Returns a `Coroutine` for
 Retrieves information about a configuration profile.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").get_configuration_profile` method.
+`session.create_client("appconfig").get_configuration_profile` method.
 
 Boto3 documentation:
 [AppConfig.Client.get_configuration_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.get_configuration_profile)
@@ -509,7 +508,7 @@ Returns a `Coroutine` for
 
 Retrieves information about a configuration deployment.
 
-Type annotations for `aiobotocore.create_client("appconfig").get_deployment`
+Type annotations for `session.create_client("appconfig").get_deployment`
 method.
 
 Boto3 documentation:
@@ -536,7 +535,7 @@ Returns a `Coroutine` for
 Retrieves information about a deployment strategy.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").get_deployment_strategy` method.
+`session.create_client("appconfig").get_deployment_strategy` method.
 
 Boto3 documentation:
 [AppConfig.Client.get_deployment_strategy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.get_deployment_strategy)
@@ -560,7 +559,7 @@ Returns a `Coroutine` for
 
 Retrieves information about an environment.
 
-Type annotations for `aiobotocore.create_client("appconfig").get_environment`
+Type annotations for `session.create_client("appconfig").get_environment`
 method.
 
 Boto3 documentation:
@@ -586,8 +585,7 @@ Returns a `Coroutine` for
 Retrieves information about a specific configuration version.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").get_hosted_configuration_version`
-method.
+`session.create_client("appconfig").get_hosted_configuration_version` method.
 
 Boto3 documentation:
 [AppConfig.Client.get_hosted_configuration_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.get_hosted_configuration_version)
@@ -613,7 +611,7 @@ Returns a `Coroutine` for
 
 Lists all applications in your Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("appconfig").list_applications`
+Type annotations for `session.create_client("appconfig").list_applications`
 method.
 
 Boto3 documentation:
@@ -639,7 +637,7 @@ Returns a `Coroutine` for
 Lists the configuration profiles for an application.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").list_configuration_profiles` method.
+`session.create_client("appconfig").list_configuration_profiles` method.
 
 Boto3 documentation:
 [AppConfig.Client.list_configuration_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.list_configuration_profiles)
@@ -667,7 +665,7 @@ Returns a `Coroutine` for
 Lists deployment strategies.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").list_deployment_strategies` method.
+`session.create_client("appconfig").list_deployment_strategies` method.
 
 Boto3 documentation:
 [AppConfig.Client.list_deployment_strategies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.list_deployment_strategies)
@@ -692,7 +690,7 @@ Returns a `Coroutine` for
 
 Lists the deployments for an environment.
 
-Type annotations for `aiobotocore.create_client("appconfig").list_deployments`
+Type annotations for `session.create_client("appconfig").list_deployments`
 method.
 
 Boto3 documentation:
@@ -719,7 +717,7 @@ Returns a `Coroutine` for
 
 Lists the environments for an application.
 
-Type annotations for `aiobotocore.create_client("appconfig").list_environments`
+Type annotations for `session.create_client("appconfig").list_environments`
 method.
 
 Boto3 documentation:
@@ -747,8 +745,7 @@ Lists configurations stored in the AppConfig hosted configuration store by
 version.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").list_hosted_configuration_versions`
-method.
+`session.create_client("appconfig").list_hosted_configuration_versions` method.
 
 Boto3 documentation:
 [AppConfig.Client.list_hosted_configuration_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.list_hosted_configuration_versions)
@@ -776,7 +773,7 @@ Returns a `Coroutine` for
 Retrieves the list of key-value tags assigned to the resource.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").list_tags_for_resource` method.
+`session.create_client("appconfig").list_tags_for_resource` method.
 
 Boto3 documentation:
 [AppConfig.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.list_tags_for_resource)
@@ -800,7 +797,7 @@ Returns a `Coroutine` for
 
 Starts a deployment.
 
-Type annotations for `aiobotocore.create_client("appconfig").start_deployment`
+Type annotations for `session.create_client("appconfig").start_deployment`
 method.
 
 Boto3 documentation:
@@ -830,7 +827,7 @@ Returns a `Coroutine` for
 
 Stops a deployment.
 
-Type annotations for `aiobotocore.create_client("appconfig").stop_deployment`
+Type annotations for `session.create_client("appconfig").stop_deployment`
 method.
 
 Boto3 documentation:
@@ -856,8 +853,7 @@ Returns a `Coroutine` for
 
 Assigns metadata to an AppConfig resource.
 
-Type annotations for `aiobotocore.create_client("appconfig").tag_resource`
-method.
+Type annotations for `session.create_client("appconfig").tag_resource` method.
 
 Boto3 documentation:
 [AppConfig.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.tag_resource)
@@ -878,7 +874,7 @@ Keyword-only arguments:
 
 Deletes a tag key and value from an AppConfig resource.
 
-Type annotations for `aiobotocore.create_client("appconfig").untag_resource`
+Type annotations for `session.create_client("appconfig").untag_resource`
 method.
 
 Boto3 documentation:
@@ -900,8 +896,8 @@ Keyword-only arguments:
 
 Updates an application.
 
-Type annotations for
-`aiobotocore.create_client("appconfig").update_application` method.
+Type annotations for `session.create_client("appconfig").update_application`
+method.
 
 Boto3 documentation:
 [AppConfig.Client.update_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.update_application)
@@ -928,7 +924,7 @@ Returns a `Coroutine` for
 Updates a configuration profile.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").update_configuration_profile` method.
+`session.create_client("appconfig").update_configuration_profile` method.
 
 Boto3 documentation:
 [AppConfig.Client.update_configuration_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.update_configuration_profile)
@@ -959,7 +955,7 @@ Returns a `Coroutine` for
 Updates a deployment strategy.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").update_deployment_strategy` method.
+`session.create_client("appconfig").update_deployment_strategy` method.
 
 Boto3 documentation:
 [AppConfig.Client.update_deployment_strategy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.update_deployment_strategy)
@@ -988,8 +984,8 @@ Returns a `Coroutine` for
 
 Updates an environment.
 
-Type annotations for
-`aiobotocore.create_client("appconfig").update_environment` method.
+Type annotations for `session.create_client("appconfig").update_environment`
+method.
 
 Boto3 documentation:
 [AppConfig.Client.update_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.update_environment)
@@ -1018,7 +1014,7 @@ Returns a `Coroutine` for
 Uses the validators in a configuration profile to validate a configuration.
 
 Type annotations for
-`aiobotocore.create_client("appconfig").validate_configuration` method.
+`session.create_client("appconfig").validate_configuration` method.
 
 Boto3 documentation:
 [AppConfig.Client.validate_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.validate_configuration)
@@ -1034,3 +1030,35 @@ Keyword-only arguments:
 - `ApplicationId`: `str` *(required)*
 - `ConfigurationProfileId`: `str` *(required)*
 - `ConfigurationVersion`: `str` *(required)*
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("appconfig").__aenter__` method.
+
+Boto3 documentation:
+[AppConfig.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [AppConfigClient](#appconfigclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("appconfig").__aexit__` method.
+
+Boto3 documentation:
+[AppConfig.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appconfig.html#AppConfig.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

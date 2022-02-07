@@ -81,6 +81,8 @@ type annotations stubs module
     - [revoke_cache_security_group_ingress](#revoke_cache_security_group_ingress)
     - [start_migration](#start_migration)
     - [test_failover](#test_failover)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -88,16 +90,17 @@ type annotations stubs module
 
 ## ElastiCacheClient
 
-Type annotations for `aiobotocore.create_client("elasticache")`
+Type annotations for `session.create_client("elasticache")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_elasticache.client import ElastiCacheClient
 
-def get_elasticache_client() -> ElastiCacheClient:
-    return Session().client("elasticache")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
 ```
 
 Boto3 documentation:
@@ -198,8 +201,7 @@ Exceptions:
 
 ElastiCacheClient exceptions.
 
-Type annotations for `aiobotocore.create_client("elasticache").exceptions`
-method.
+Type annotations for `session.create_client("elasticache").exceptions` method.
 
 Boto3 documentation:
 [ElastiCache.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.exceptions)
@@ -213,7 +215,7 @@ Returns [Exceptions](#exceptions).
 A tag is a key-value pair where the key and value are case-sensitive.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").add_tags_to_resource` method.
+`session.create_client("elasticache").add_tags_to_resource` method.
 
 Boto3 documentation:
 [ElastiCache.Client.add_tags_to_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.add_tags_to_resource)
@@ -239,7 +241,7 @@ Returns a `Coroutine` for
 Allows network ingress to a cache security group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").authorize_cache_security_group_ingress`
+`session.create_client("elasticache").authorize_cache_security_group_ingress`
 method.
 
 Boto3 documentation:
@@ -267,7 +269,7 @@ Returns a `Coroutine` for
 Apply the service update.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").batch_apply_update_action` method.
+`session.create_client("elasticache").batch_apply_update_action` method.
 
 Boto3 documentation:
 [ElastiCache.Client.batch_apply_update_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.batch_apply_update_action)
@@ -294,7 +296,7 @@ Returns a `Coroutine` for
 Stop the service update.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").batch_stop_update_action` method.
+`session.create_client("elasticache").batch_stop_update_action` method.
 
 Boto3 documentation:
 [ElastiCache.Client.batch_stop_update_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.batch_stop_update_action)
@@ -320,19 +322,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("elasticache").can_paginate`
+Type annotations for `session.create_client("elasticache").can_paginate`
 method.
 
 Boto3 documentation:
 [ElastiCache.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="complete_migration"></a>
 
@@ -340,8 +340,8 @@ Returns a `Coroutine` for `bool`.
 
 Complete the migration of data.
 
-Type annotations for
-`aiobotocore.create_client("elasticache").complete_migration` method.
+Type annotations for `session.create_client("elasticache").complete_migration`
+method.
 
 Boto3 documentation:
 [ElastiCache.Client.complete_migration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.complete_migration)
@@ -366,7 +366,7 @@ Returns a `Coroutine` for
 
 Makes a copy of an existing snapshot.
 
-Type annotations for `aiobotocore.create_client("elasticache").copy_snapshot`
+Type annotations for `session.create_client("elasticache").copy_snapshot`
 method.
 
 Boto3 documentation:
@@ -395,7 +395,7 @@ Returns a `Coroutine` for
 Creates a cluster.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").create_cache_cluster` method.
+`session.create_client("elasticache").create_cache_cluster` method.
 
 Boto3 documentation:
 [ElastiCache.Client.create_cache_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.create_cache_cluster)
@@ -447,7 +447,7 @@ Returns a `Coroutine` for
 Creates a new Amazon ElastiCache cache parameter group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").create_cache_parameter_group` method.
+`session.create_client("elasticache").create_cache_parameter_group` method.
 
 Boto3 documentation:
 [ElastiCache.Client.create_cache_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.create_cache_parameter_group)
@@ -475,7 +475,7 @@ Returns a `Coroutine` for
 Creates a new cache security group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").create_cache_security_group` method.
+`session.create_client("elasticache").create_cache_security_group` method.
 
 Boto3 documentation:
 [ElastiCache.Client.create_cache_security_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.create_cache_security_group)
@@ -502,7 +502,7 @@ Returns a `Coroutine` for
 Creates a new cache subnet group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").create_cache_subnet_group` method.
+`session.create_client("elasticache").create_cache_subnet_group` method.
 
 Boto3 documentation:
 [ElastiCache.Client.create_cache_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.create_cache_subnet_group)
@@ -531,8 +531,7 @@ Global Datastore for Redis offers fully managed, fast, reliable and secure
 cross-region replication.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").create_global_replication_group`
-method.
+`session.create_client("elasticache").create_global_replication_group` method.
 
 Boto3 documentation:
 [ElastiCache.Client.create_global_replication_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.create_global_replication_group)
@@ -560,7 +559,7 @@ Creates a Redis (cluster mode disabled) or a Redis (cluster mode enabled)
 replication group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").create_replication_group` method.
+`session.create_client("elasticache").create_replication_group` method.
 
 Boto3 documentation:
 [ElastiCache.Client.create_replication_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.create_replication_group)
@@ -620,7 +619,7 @@ Returns a `Coroutine` for
 Creates a copy of an entire cluster or replication group at a specific moment
 in time.
 
-Type annotations for `aiobotocore.create_client("elasticache").create_snapshot`
+Type annotations for `session.create_client("elasticache").create_snapshot`
 method.
 
 Boto3 documentation:
@@ -648,8 +647,7 @@ Returns a `Coroutine` for
 
 For Redis engine version 6.0 onwards: Creates a Redis user.
 
-Type annotations for `aiobotocore.create_client("elasticache").create_user`
-method.
+Type annotations for `session.create_client("elasticache").create_user` method.
 
 Boto3 documentation:
 [ElastiCache.Client.create_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.create_user)
@@ -678,8 +676,8 @@ Returns a `Coroutine` for
 
 For Redis engine version 6.0 onwards: Creates a Redis user group.
 
-Type annotations for
-`aiobotocore.create_client("elasticache").create_user_group` method.
+Type annotations for `session.create_client("elasticache").create_user_group`
+method.
 
 Boto3 documentation:
 [ElastiCache.Client.create_user_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.create_user_group)
@@ -707,7 +705,7 @@ Decreases the number of node groups in a Global datastore See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DecreaseNodeGroupsInGlobalReplicationGroup).
 
 Type annotations for
-`aiobotocore.create_client("elasticache").decrease_node_groups_in_global_replication_group`
+`session.create_client("elasticache").decrease_node_groups_in_global_replication_group`
 method.
 
 Boto3 documentation:
@@ -740,7 +738,7 @@ replication group or the number of replica nodes in one or more node groups
 (shards) of a Redis (cluster mode enabled) replication group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").decrease_replica_count` method.
+`session.create_client("elasticache").decrease_replica_count` method.
 
 Boto3 documentation:
 [ElastiCache.Client.decrease_replica_count](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.decrease_replica_count)
@@ -770,7 +768,7 @@ Returns a `Coroutine` for
 Deletes a previously provisioned cluster.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").delete_cache_cluster` method.
+`session.create_client("elasticache").delete_cache_cluster` method.
 
 Boto3 documentation:
 [ElastiCache.Client.delete_cache_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.delete_cache_cluster)
@@ -796,7 +794,7 @@ Returns a `Coroutine` for
 Deletes the specified cache parameter group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").delete_cache_parameter_group` method.
+`session.create_client("elasticache").delete_cache_parameter_group` method.
 
 Boto3 documentation:
 [ElastiCache.Client.delete_cache_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.delete_cache_parameter_group)
@@ -818,7 +816,7 @@ Keyword-only arguments:
 Deletes a cache security group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").delete_cache_security_group` method.
+`session.create_client("elasticache").delete_cache_security_group` method.
 
 Boto3 documentation:
 [ElastiCache.Client.delete_cache_security_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.delete_cache_security_group)
@@ -840,7 +838,7 @@ Keyword-only arguments:
 Deletes a cache subnet group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").delete_cache_subnet_group` method.
+`session.create_client("elasticache").delete_cache_subnet_group` method.
 
 Boto3 documentation:
 [ElastiCache.Client.delete_cache_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.delete_cache_subnet_group)
@@ -864,8 +862,7 @@ DisassociateGlobalReplicationGroup to remove the secondary clusters in the
 Global datastore.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").delete_global_replication_group`
-method.
+`session.create_client("elasticache").delete_global_replication_group` method.
 
 Boto3 documentation:
 [ElastiCache.Client.delete_global_replication_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.delete_global_replication_group)
@@ -891,7 +888,7 @@ Returns a `Coroutine` for
 Deletes an existing replication group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").delete_replication_group` method.
+`session.create_client("elasticache").delete_replication_group` method.
 
 Boto3 documentation:
 [ElastiCache.Client.delete_replication_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.delete_replication_group)
@@ -917,7 +914,7 @@ Returns a `Coroutine` for
 
 Deletes an existing snapshot.
 
-Type annotations for `aiobotocore.create_client("elasticache").delete_snapshot`
+Type annotations for `session.create_client("elasticache").delete_snapshot`
 method.
 
 Boto3 documentation:
@@ -941,8 +938,7 @@ Returns a `Coroutine` for
 
 For Redis engine version 6.0 onwards: Deletes a user.
 
-Type annotations for `aiobotocore.create_client("elasticache").delete_user`
-method.
+Type annotations for `session.create_client("elasticache").delete_user` method.
 
 Boto3 documentation:
 [ElastiCache.Client.delete_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.delete_user)
@@ -965,8 +961,8 @@ Returns a `Coroutine` for
 
 For Redis engine version 6.0 onwards: Deletes a user group.
 
-Type annotations for
-`aiobotocore.create_client("elasticache").delete_user_group` method.
+Type annotations for `session.create_client("elasticache").delete_user_group`
+method.
 
 Boto3 documentation:
 [ElastiCache.Client.delete_user_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.delete_user_group)
@@ -992,7 +988,7 @@ specified, or about a specific cache cluster if a cluster identifier is
 supplied.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").describe_cache_clusters` method.
+`session.create_client("elasticache").describe_cache_clusters` method.
 
 Boto3 documentation:
 [ElastiCache.Client.describe_cache_clusters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.describe_cache_clusters)
@@ -1021,8 +1017,7 @@ Returns a `Coroutine` for
 Returns a list of the available cache engines and their versions.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").describe_cache_engine_versions`
-method.
+`session.create_client("elasticache").describe_cache_engine_versions` method.
 
 Boto3 documentation:
 [ElastiCache.Client.describe_cache_engine_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.describe_cache_engine_versions)
@@ -1052,8 +1047,7 @@ Returns a `Coroutine` for
 Returns a list of cache parameter group descriptions.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").describe_cache_parameter_groups`
-method.
+`session.create_client("elasticache").describe_cache_parameter_groups` method.
 
 Boto3 documentation:
 [ElastiCache.Client.describe_cache_parameter_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.describe_cache_parameter_groups)
@@ -1080,7 +1074,7 @@ Returns a `Coroutine` for
 Returns the detailed parameter list for a particular cache parameter group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").describe_cache_parameters` method.
+`session.create_client("elasticache").describe_cache_parameters` method.
 
 Boto3 documentation:
 [ElastiCache.Client.describe_cache_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.describe_cache_parameters)
@@ -1108,8 +1102,7 @@ Returns a `Coroutine` for
 Returns a list of cache security group descriptions.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").describe_cache_security_groups`
-method.
+`session.create_client("elasticache").describe_cache_security_groups` method.
 
 Boto3 documentation:
 [ElastiCache.Client.describe_cache_security_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.describe_cache_security_groups)
@@ -1136,7 +1129,7 @@ Returns a `Coroutine` for
 Returns a list of cache subnet group descriptions.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").describe_cache_subnet_groups` method.
+`session.create_client("elasticache").describe_cache_subnet_groups` method.
 
 Boto3 documentation:
 [ElastiCache.Client.describe_cache_subnet_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.describe_cache_subnet_groups)
@@ -1164,7 +1157,7 @@ Returns the default engine and system parameter information for the specified
 cache engine.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").describe_engine_default_parameters`
+`session.create_client("elasticache").describe_engine_default_parameters`
 method.
 
 Boto3 documentation:
@@ -1192,7 +1185,7 @@ Returns a `Coroutine` for
 Returns events related to clusters, cache security groups, and cache parameter
 groups.
 
-Type annotations for `aiobotocore.create_client("elasticache").describe_events`
+Type annotations for `session.create_client("elasticache").describe_events`
 method.
 
 Boto3 documentation:
@@ -1223,7 +1216,7 @@ Returns a `Coroutine` for
 Returns information about a particular global replication group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").describe_global_replication_groups`
+`session.create_client("elasticache").describe_global_replication_groups`
 method.
 
 Boto3 documentation:
@@ -1252,7 +1245,7 @@ Returns a `Coroutine` for
 Returns information about a particular replication group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").describe_replication_groups` method.
+`session.create_client("elasticache").describe_replication_groups` method.
 
 Boto3 documentation:
 [ElastiCache.Client.describe_replication_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.describe_replication_groups)
@@ -1280,8 +1273,7 @@ Returns information about reserved cache nodes for this account, or about a
 specified reserved cache node.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").describe_reserved_cache_nodes`
-method.
+`session.create_client("elasticache").describe_reserved_cache_nodes` method.
 
 Boto3 documentation:
 [ElastiCache.Client.describe_reserved_cache_nodes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.describe_reserved_cache_nodes)
@@ -1313,7 +1305,7 @@ Returns a `Coroutine` for
 Lists available reserved cache node offerings.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").describe_reserved_cache_nodes_offerings`
+`session.create_client("elasticache").describe_reserved_cache_nodes_offerings`
 method.
 
 Boto3 documentation:
@@ -1346,7 +1338,7 @@ Returns details of the service updates See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeServiceUpdates).
 
 Type annotations for
-`aiobotocore.create_client("elasticache").describe_service_updates` method.
+`session.create_client("elasticache").describe_service_updates` method.
 
 Boto3 documentation:
 [ElastiCache.Client.describe_service_updates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.describe_service_updates)
@@ -1374,8 +1366,8 @@ Returns a `Coroutine` for
 
 Returns information about cluster or replication group snapshots.
 
-Type annotations for
-`aiobotocore.create_client("elasticache").describe_snapshots` method.
+Type annotations for `session.create_client("elasticache").describe_snapshots`
+method.
 
 Boto3 documentation:
 [ElastiCache.Client.describe_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.describe_snapshots)
@@ -1407,7 +1399,7 @@ Returns details of the update actions See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/DescribeUpdateActions).
 
 Type annotations for
-`aiobotocore.create_client("elasticache").describe_update_actions` method.
+`session.create_client("elasticache").describe_update_actions` method.
 
 Boto3 documentation:
 [ElastiCache.Client.describe_update_actions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.describe_update_actions)
@@ -1444,7 +1436,7 @@ Returns a `Coroutine` for
 Returns a list of user groups.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").describe_user_groups` method.
+`session.create_client("elasticache").describe_user_groups` method.
 
 Boto3 documentation:
 [ElastiCache.Client.describe_user_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.describe_user_groups)
@@ -1470,7 +1462,7 @@ Returns a `Coroutine` for
 
 Returns a list of users.
 
-Type annotations for `aiobotocore.create_client("elasticache").describe_users`
+Type annotations for `session.create_client("elasticache").describe_users`
 method.
 
 Boto3 documentation:
@@ -1500,7 +1492,7 @@ Remove a secondary cluster from the Global datastore using the Global datastore
 name.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").disassociate_global_replication_group`
+`session.create_client("elasticache").disassociate_global_replication_group`
 method.
 
 Boto3 documentation:
@@ -1528,7 +1520,7 @@ Returns a `Coroutine` for
 Used to failover the primary region to a selected secondary region.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").failover_global_replication_group`
+`session.create_client("elasticache").failover_global_replication_group`
 method.
 
 Boto3 documentation:
@@ -1556,7 +1548,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").generate_presigned_url` method.
+`session.create_client("elasticache").generate_presigned_url` method.
 
 Boto3 documentation:
 [ElastiCache.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.generate_presigned_url)
@@ -1581,7 +1573,7 @@ Increase the number of node groups in the Global datastore See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/IncreaseNodeGroupsInGlobalReplicationGroup).
 
 Type annotations for
-`aiobotocore.create_client("elasticache").increase_node_groups_in_global_replication_group`
+`session.create_client("elasticache").increase_node_groups_in_global_replication_group`
 method.
 
 Boto3 documentation:
@@ -1614,7 +1606,7 @@ replication group or the number of replica nodes in one or more node groups
 (shards) of a Redis (cluster mode enabled) replication group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").increase_replica_count` method.
+`session.create_client("elasticache").increase_replica_count` method.
 
 Boto3 documentation:
 [ElastiCache.Client.increase_replica_count](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.increase_replica_count)
@@ -1644,7 +1636,7 @@ Lists all available node types that you can scale your Redis cluster's or
 replication group's current node type.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").list_allowed_node_type_modifications`
+`session.create_client("elasticache").list_allowed_node_type_modifications`
 method.
 
 Boto3 documentation:
@@ -1671,7 +1663,7 @@ Returns a `Coroutine` for
 Lists all tags currently on a named resource.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").list_tags_for_resource` method.
+`session.create_client("elasticache").list_tags_for_resource` method.
 
 Boto3 documentation:
 [ElastiCache.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.list_tags_for_resource)
@@ -1696,7 +1688,7 @@ Returns a `Coroutine` for
 Modifies the settings for a cluster.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").modify_cache_cluster` method.
+`session.create_client("elasticache").modify_cache_cluster` method.
 
 Boto3 documentation:
 [ElastiCache.Client.modify_cache_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.modify_cache_cluster)
@@ -1742,7 +1734,7 @@ Returns a `Coroutine` for
 Modifies the parameters of a cache parameter group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").modify_cache_parameter_group` method.
+`session.create_client("elasticache").modify_cache_parameter_group` method.
 
 Boto3 documentation:
 [ElastiCache.Client.modify_cache_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.modify_cache_parameter_group)
@@ -1770,7 +1762,7 @@ Returns a `Coroutine` for
 Modifies an existing cache subnet group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").modify_cache_subnet_group` method.
+`session.create_client("elasticache").modify_cache_subnet_group` method.
 
 Boto3 documentation:
 [ElastiCache.Client.modify_cache_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.modify_cache_subnet_group)
@@ -1797,8 +1789,7 @@ Returns a `Coroutine` for
 Modifies the settings for a Global datastore.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").modify_global_replication_group`
-method.
+`session.create_client("elasticache").modify_global_replication_group` method.
 
 Boto3 documentation:
 [ElastiCache.Client.modify_global_replication_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.modify_global_replication_group)
@@ -1829,7 +1820,7 @@ Returns a `Coroutine` for
 Modifies the settings for a replication group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").modify_replication_group` method.
+`session.create_client("elasticache").modify_replication_group` method.
 
 Boto3 documentation:
 [ElastiCache.Client.modify_replication_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.modify_replication_group)
@@ -1881,7 +1872,7 @@ Modifies a replication group's shards (node groups) by allowing you to add
 shards, remove shards, or rebalance the keyspaces among existing shards.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").modify_replication_group_shard_configuration`
+`session.create_client("elasticache").modify_replication_group_shard_configuration`
 method.
 
 Boto3 documentation:
@@ -1913,8 +1904,7 @@ Returns a `Coroutine` for
 
 Changes user password(s) and/or access string.
 
-Type annotations for `aiobotocore.create_client("elasticache").modify_user`
-method.
+Type annotations for `session.create_client("elasticache").modify_user` method.
 
 Boto3 documentation:
 [ElastiCache.Client.modify_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.modify_user)
@@ -1941,8 +1931,8 @@ Returns a `Coroutine` for
 
 Changes the list of users that belong to the user group.
 
-Type annotations for
-`aiobotocore.create_client("elasticache").modify_user_group` method.
+Type annotations for `session.create_client("elasticache").modify_user_group`
+method.
 
 Boto3 documentation:
 [ElastiCache.Client.modify_user_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.modify_user_group)
@@ -1968,7 +1958,7 @@ Returns a `Coroutine` for
 Allows you to purchase a reserved cache node offering.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").purchase_reserved_cache_nodes_offering`
+`session.create_client("elasticache").purchase_reserved_cache_nodes_offering`
 method.
 
 Boto3 documentation:
@@ -1998,7 +1988,7 @@ Redistribute slots to ensure uniform distribution across existing shards in the
 cluster.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").rebalance_slots_in_global_replication_group`
+`session.create_client("elasticache").rebalance_slots_in_global_replication_group`
 method.
 
 Boto3 documentation:
@@ -2026,7 +2016,7 @@ Returns a `Coroutine` for
 Reboots some, or all, of the cache nodes within a provisioned cluster.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").reboot_cache_cluster` method.
+`session.create_client("elasticache").reboot_cache_cluster` method.
 
 Boto3 documentation:
 [ElastiCache.Client.reboot_cache_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.reboot_cache_cluster)
@@ -2052,7 +2042,7 @@ Returns a `Coroutine` for
 Removes the tags identified by the `TagKeys` list from the named resource.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").remove_tags_from_resource` method.
+`session.create_client("elasticache").remove_tags_from_resource` method.
 
 Boto3 documentation:
 [ElastiCache.Client.remove_tags_from_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.remove_tags_from_resource)
@@ -2079,7 +2069,7 @@ Modifies the parameters of a cache parameter group to the engine or system
 default value.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").reset_cache_parameter_group` method.
+`session.create_client("elasticache").reset_cache_parameter_group` method.
 
 Boto3 documentation:
 [ElastiCache.Client.reset_cache_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.reset_cache_parameter_group)
@@ -2107,7 +2097,7 @@ Returns a `Coroutine` for
 Revokes ingress from a cache security group.
 
 Type annotations for
-`aiobotocore.create_client("elasticache").revoke_cache_security_group_ingress`
+`session.create_client("elasticache").revoke_cache_security_group_ingress`
 method.
 
 Boto3 documentation:
@@ -2134,7 +2124,7 @@ Returns a `Coroutine` for
 
 Start the migration of data.
 
-Type annotations for `aiobotocore.create_client("elasticache").start_migration`
+Type annotations for `session.create_client("elasticache").start_migration`
 method.
 
 Boto3 documentation:
@@ -2163,7 +2153,7 @@ Represents the input of a `TestFailover` operation which test automatic
 failover on a specified node group (called shard in the console) in a
 replication group (called cluster in the console).
 
-Type annotations for `aiobotocore.create_client("elasticache").test_failover`
+Type annotations for `session.create_client("elasticache").test_failover`
 method.
 
 Boto3 documentation:
@@ -2182,11 +2172,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [TestFailoverResultTypeDef](./type_defs.md#testfailoverresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("elasticache").__aenter__` method.
+
+Boto3 documentation:
+[ElastiCache.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ElastiCacheClient](#elasticacheclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("elasticache").__aexit__` method.
+
+Boto3 documentation:
+[ElastiCache.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html#ElastiCache.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("elasticache").get_paginator`
+Type annotations for `session.create_client("elasticache").get_paginator`
 method with overloads.
 
 - `client.get_paginator("describe_cache_clusters")` ->
@@ -2228,8 +2250,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("elasticache").get_waiter`
-method with overloads.
+Type annotations for `session.create_client("elasticache").get_waiter` method
+with overloads.
 
 - `client.get_waiter("cache_cluster_available")` ->
   [CacheClusterAvailableWaiter](./waiters.md#cacheclusteravailablewaiter)

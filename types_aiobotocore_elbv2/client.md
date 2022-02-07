@@ -50,6 +50,8 @@ type annotations stubs module
     - [set_rule_priorities](#set_rule_priorities)
     - [set_security_groups](#set_security_groups)
     - [set_subnets](#set_subnets)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -57,16 +59,17 @@ type annotations stubs module
 
 ## ElasticLoadBalancingv2Client
 
-Type annotations for `aiobotocore.create_client("elbv2")`
+Type annotations for `session.create_client("elbv2")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_elbv2.client import ElasticLoadBalancingv2Client
 
-def get_elbv2_client() -> ElasticLoadBalancingv2Client:
-    return Session().client("elbv2")
+session = get_session()
+async with session.create_client("elbv2") as client:
+    client: ElasticLoadBalancingv2Client
 ```
 
 Boto3 documentation:
@@ -137,7 +140,7 @@ Exceptions:
 
 ElasticLoadBalancingv2Client exceptions.
 
-Type annotations for `aiobotocore.create_client("elbv2").exceptions` method.
+Type annotations for `session.create_client("elbv2").exceptions` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.exceptions)
@@ -151,8 +154,8 @@ Returns [Exceptions](#exceptions).
 Adds the specified SSL server certificate to the certificate list for the
 specified HTTPS or TLS listener.
 
-Type annotations for
-`aiobotocore.create_client("elbv2").add_listener_certificates` method.
+Type annotations for `session.create_client("elbv2").add_listener_certificates`
+method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.add_listener_certificates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.add_listener_certificates)
@@ -179,7 +182,7 @@ Returns a `Coroutine` for
 
 Adds the specified tags to the specified Elastic Load Balancing resource.
 
-Type annotations for `aiobotocore.create_client("elbv2").add_tags` method.
+Type annotations for `session.create_client("elbv2").add_tags` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.add_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.add_tags)
@@ -202,18 +205,16 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("elbv2").can_paginate` method.
+Type annotations for `session.create_client("elbv2").can_paginate` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_listener"></a>
 
@@ -222,8 +223,7 @@ Returns a `Coroutine` for `bool`.
 Creates a listener for the specified Application Load Balancer, Network Load
 Balancer, or Gateway Load Balancer.
 
-Type annotations for `aiobotocore.create_client("elbv2").create_listener`
-method.
+Type annotations for `session.create_client("elbv2").create_listener` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.create_listener](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.create_listener)
@@ -256,7 +256,7 @@ Returns a `Coroutine` for
 Creates an Application Load Balancer, Network Load Balancer, or Gateway Load
 Balancer.
 
-Type annotations for `aiobotocore.create_client("elbv2").create_load_balancer`
+Type annotations for `session.create_client("elbv2").create_load_balancer`
 method.
 
 Boto3 documentation:
@@ -291,7 +291,7 @@ Returns a `Coroutine` for
 
 Creates a rule for the specified listener.
 
-Type annotations for `aiobotocore.create_client("elbv2").create_rule` method.
+Type annotations for `session.create_client("elbv2").create_rule` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.create_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.create_rule)
@@ -321,7 +321,7 @@ Returns a `Coroutine` for
 
 Creates a target group.
 
-Type annotations for `aiobotocore.create_client("elbv2").create_target_group`
+Type annotations for `session.create_client("elbv2").create_target_group`
 method.
 
 Boto3 documentation:
@@ -363,8 +363,7 @@ Returns a `Coroutine` for
 
 Deletes the specified listener.
 
-Type annotations for `aiobotocore.create_client("elbv2").delete_listener`
-method.
+Type annotations for `session.create_client("elbv2").delete_listener` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.delete_listener](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.delete_listener)
@@ -387,7 +386,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified Application Load Balancer, Network Load Balancer, or
 Gateway Load Balancer.
 
-Type annotations for `aiobotocore.create_client("elbv2").delete_load_balancer`
+Type annotations for `session.create_client("elbv2").delete_load_balancer`
 method.
 
 Boto3 documentation:
@@ -411,7 +410,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified rule.
 
-Type annotations for `aiobotocore.create_client("elbv2").delete_rule` method.
+Type annotations for `session.create_client("elbv2").delete_rule` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.delete_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.delete_rule)
@@ -433,7 +432,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified target group.
 
-Type annotations for `aiobotocore.create_client("elbv2").delete_target_group`
+Type annotations for `session.create_client("elbv2").delete_target_group`
 method.
 
 Boto3 documentation:
@@ -457,7 +456,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deregisters the specified targets from the specified target group.
 
-Type annotations for `aiobotocore.create_client("elbv2").deregister_targets`
+Type annotations for `session.create_client("elbv2").deregister_targets`
 method.
 
 Boto3 documentation:
@@ -485,8 +484,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Describes the current Elastic Load Balancing resource limits for your Amazon
 Web Services account.
 
-Type annotations for
-`aiobotocore.create_client("elbv2").describe_account_limits` method.
+Type annotations for `session.create_client("elbv2").describe_account_limits`
+method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.describe_account_limits](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.describe_account_limits)
@@ -513,7 +512,7 @@ Describes the default certificate and the certificate list for the specified
 HTTPS or TLS listener.
 
 Type annotations for
-`aiobotocore.create_client("elbv2").describe_listener_certificates` method.
+`session.create_client("elbv2").describe_listener_certificates` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.describe_listener_certificates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.describe_listener_certificates)
@@ -540,7 +539,7 @@ Returns a `Coroutine` for
 Describes the specified listeners or the listeners for the specified
 Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.
 
-Type annotations for `aiobotocore.create_client("elbv2").describe_listeners`
+Type annotations for `session.create_client("elbv2").describe_listeners`
 method.
 
 Boto3 documentation:
@@ -570,7 +569,7 @@ Describes the attributes for the specified Application Load Balancer, Network
 Load Balancer, or Gateway Load Balancer.
 
 Type annotations for
-`aiobotocore.create_client("elbv2").describe_load_balancer_attributes` method.
+`session.create_client("elbv2").describe_load_balancer_attributes` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.describe_load_balancer_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.describe_load_balancer_attributes)
@@ -594,8 +593,8 @@ Returns a `Coroutine` for
 
 Describes the specified load balancers or all of your load balancers.
 
-Type annotations for
-`aiobotocore.create_client("elbv2").describe_load_balancers` method.
+Type annotations for `session.create_client("elbv2").describe_load_balancers`
+method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.describe_load_balancers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.describe_load_balancers)
@@ -622,8 +621,7 @@ Returns a `Coroutine` for
 
 Describes the specified rules or the rules for the specified listener.
 
-Type annotations for `aiobotocore.create_client("elbv2").describe_rules`
-method.
+Type annotations for `session.create_client("elbv2").describe_rules` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.describe_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.describe_rules)
@@ -649,7 +647,7 @@ Returns a `Coroutine` for
 
 Describes the specified policies or all policies used for SSL negotiation.
 
-Type annotations for `aiobotocore.create_client("elbv2").describe_ssl_policies`
+Type annotations for `session.create_client("elbv2").describe_ssl_policies`
 method.
 
 Boto3 documentation:
@@ -678,7 +676,7 @@ Returns a `Coroutine` for
 
 Describes the tags for the specified Elastic Load Balancing resources.
 
-Type annotations for `aiobotocore.create_client("elbv2").describe_tags` method.
+Type annotations for `session.create_client("elbv2").describe_tags` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.describe_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.describe_tags)
@@ -702,7 +700,7 @@ Returns a `Coroutine` for
 Describes the attributes for the specified target group.
 
 Type annotations for
-`aiobotocore.create_client("elbv2").describe_target_group_attributes` method.
+`session.create_client("elbv2").describe_target_group_attributes` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.describe_target_group_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.describe_target_group_attributes)
@@ -726,8 +724,8 @@ Returns a `Coroutine` for
 
 Describes the specified target groups or all of your target groups.
 
-Type annotations for
-`aiobotocore.create_client("elbv2").describe_target_groups` method.
+Type annotations for `session.create_client("elbv2").describe_target_groups`
+method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.describe_target_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.describe_target_groups)
@@ -755,8 +753,8 @@ Returns a `Coroutine` for
 
 Describes the health of the specified targets or all of your targets.
 
-Type annotations for
-`aiobotocore.create_client("elbv2").describe_target_health` method.
+Type annotations for `session.create_client("elbv2").describe_target_health`
+method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.describe_target_health](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.describe_target_health)
@@ -782,8 +780,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("elbv2").generate_presigned_url` method.
+Type annotations for `session.create_client("elbv2").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.generate_presigned_url)
@@ -806,8 +804,7 @@ Returns a `Coroutine` for `str`.
 
 Replaces the specified properties of the specified listener.
 
-Type annotations for `aiobotocore.create_client("elbv2").modify_listener`
-method.
+Type annotations for `session.create_client("elbv2").modify_listener` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.modify_listener](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.modify_listener)
@@ -839,7 +836,7 @@ Modifies the specified attributes of the specified Application Load Balancer,
 Network Load Balancer, or Gateway Load Balancer.
 
 Type annotations for
-`aiobotocore.create_client("elbv2").modify_load_balancer_attributes` method.
+`session.create_client("elbv2").modify_load_balancer_attributes` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.modify_load_balancer_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.modify_load_balancer_attributes)
@@ -866,7 +863,7 @@ Returns a `Coroutine` for
 
 Replaces the specified properties of the specified rule.
 
-Type annotations for `aiobotocore.create_client("elbv2").modify_rule` method.
+Type annotations for `session.create_client("elbv2").modify_rule` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.modify_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.modify_rule)
@@ -893,7 +890,7 @@ Returns a `Coroutine` for
 Modifies the health checks used when evaluating the health state of the targets
 in the specified target group.
 
-Type annotations for `aiobotocore.create_client("elbv2").modify_target_group`
+Type annotations for `session.create_client("elbv2").modify_target_group`
 method.
 
 Boto3 documentation:
@@ -928,7 +925,7 @@ Returns a `Coroutine` for
 Modifies the specified attributes of the specified target group.
 
 Type annotations for
-`aiobotocore.create_client("elbv2").modify_target_group_attributes` method.
+`session.create_client("elbv2").modify_target_group_attributes` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.modify_target_group_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.modify_target_group_attributes)
@@ -955,8 +952,7 @@ Returns a `Coroutine` for
 
 Registers the specified targets with the specified target group.
 
-Type annotations for `aiobotocore.create_client("elbv2").register_targets`
-method.
+Type annotations for `session.create_client("elbv2").register_targets` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.register_targets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.register_targets)
@@ -983,7 +979,7 @@ Removes the specified certificate from the certificate list for the specified
 HTTPS or TLS listener.
 
 Type annotations for
-`aiobotocore.create_client("elbv2").remove_listener_certificates` method.
+`session.create_client("elbv2").remove_listener_certificates` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.remove_listener_certificates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.remove_listener_certificates)
@@ -1009,7 +1005,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the specified tags from the specified Elastic Load Balancing resources.
 
-Type annotations for `aiobotocore.create_client("elbv2").remove_tags` method.
+Type annotations for `session.create_client("elbv2").remove_tags` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.remove_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.remove_tags)
@@ -1033,7 +1029,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Sets the type of IP addresses used by the subnets of the specified Application
 Load Balancer or Network Load Balancer.
 
-Type annotations for `aiobotocore.create_client("elbv2").set_ip_address_type`
+Type annotations for `session.create_client("elbv2").set_ip_address_type`
 method.
 
 Boto3 documentation:
@@ -1060,7 +1056,7 @@ Returns a `Coroutine` for
 
 Sets the priorities of the specified rules.
 
-Type annotations for `aiobotocore.create_client("elbv2").set_rule_priorities`
+Type annotations for `session.create_client("elbv2").set_rule_priorities`
 method.
 
 Boto3 documentation:
@@ -1088,7 +1084,7 @@ Returns a `Coroutine` for
 Associates the specified security groups with the specified Application Load
 Balancer.
 
-Type annotations for `aiobotocore.create_client("elbv2").set_security_groups`
+Type annotations for `session.create_client("elbv2").set_security_groups`
 method.
 
 Boto3 documentation:
@@ -1115,7 +1111,7 @@ Returns a `Coroutine` for
 Enables the Availability Zones for the specified public subnets for the
 specified Application Load Balancer or Network Load Balancer.
 
-Type annotations for `aiobotocore.create_client("elbv2").set_subnets` method.
+Type annotations for `session.create_client("elbv2").set_subnets` method.
 
 Boto3 documentation:
 [ElasticLoadBalancingv2.Client.set_subnets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.set_subnets)
@@ -1136,12 +1132,45 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [SetSubnetsOutputTypeDef](./type_defs.md#setsubnetsoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("elbv2").__aenter__` method.
+
+Boto3 documentation:
+[ElasticLoadBalancingv2.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[ElasticLoadBalancingv2Client](#elasticloadbalancingv2client).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("elbv2").__aexit__` method.
+
+Boto3 documentation:
+[ElasticLoadBalancingv2.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elbv2.html#ElasticLoadBalancingv2.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("elbv2").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("elbv2").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_account_limits")` ->
   [DescribeAccountLimitsPaginator](./paginators.md#describeaccountlimitspaginator)
@@ -1162,8 +1191,8 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("elbv2").get_waiter` method
-with overloads.
+Type annotations for `session.create_client("elbv2").get_waiter` method with
+overloads.
 
 - `client.get_waiter("load_balancer_available")` ->
   [LoadBalancerAvailableWaiter](./waiters.md#loadbalanceravailablewaiter)

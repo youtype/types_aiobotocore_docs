@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[mediastore-data]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[mediastore-data]'
+
+# standalone installation
 pip install types-aiobotocore-mediastore-data
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-mediastore-data
 
 ## MediaStoreDataClient
 
-Type annotations for `aiobotocore.create_client("mediastore-data")` as
+Type annotations for `session.create_client("mediastore-data")` as
 [MediaStoreDataClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_mediastore_data.client import MediaStoreDataClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [delete_object](./client.md#delete_object)
 - [describe_object](./client.md#describe_object)
@@ -74,7 +80,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_mediastore_data.paginators import ListItemsPaginator, ...
+from types_aiobotocore_mediastore_data.paginator import ListItemsPaginator, ...
 ```
 
 - [ListItemsPaginator](./paginators.md#listitemspaginator)

@@ -71,22 +71,25 @@ type annotations stubs module
     - [stop_solution_version_creation](#stop_solution_version_creation)
     - [update_campaign](#update_campaign)
     - [update_recommender](#update_recommender)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="personalizeclient"></a>
 
 ## PersonalizeClient
 
-Type annotations for `aiobotocore.create_client("personalize")`
+Type annotations for `session.create_client("personalize")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_personalize.client import PersonalizeClient
 
-def get_personalize_client() -> PersonalizeClient:
-    return Session().client("personalize")
+session = get_session()
+async with session.create_client("personalize") as client:
+    client: PersonalizeClient
 ```
 
 Boto3 documentation:
@@ -126,8 +129,7 @@ Exceptions:
 
 PersonalizeClient exceptions.
 
-Type annotations for `aiobotocore.create_client("personalize").exceptions`
-method.
+Type annotations for `session.create_client("personalize").exceptions` method.
 
 Boto3 documentation:
 [Personalize.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.exceptions)
@@ -140,19 +142,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("personalize").can_paginate`
+Type annotations for `session.create_client("personalize").can_paginate`
 method.
 
 Boto3 documentation:
 [Personalize.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_batch_inference_job"></a>
 
@@ -161,7 +161,7 @@ Returns a `Coroutine` for `bool`.
 Creates a batch inference job.
 
 Type annotations for
-`aiobotocore.create_client("personalize").create_batch_inference_job` method.
+`session.create_client("personalize").create_batch_inference_job` method.
 
 Boto3 documentation:
 [Personalize.Client.create_batch_inference_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.create_batch_inference_job)
@@ -198,7 +198,7 @@ Returns a `Coroutine` for
 Creates a batch segment job.
 
 Type annotations for
-`aiobotocore.create_client("personalize").create_batch_segment_job` method.
+`session.create_client("personalize").create_batch_segment_job` method.
 
 Boto3 documentation:
 [Personalize.Client.create_batch_segment_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.create_batch_segment_job)
@@ -232,7 +232,7 @@ Returns a `Coroutine` for
 
 Creates a campaign that deploys a solution version.
 
-Type annotations for `aiobotocore.create_client("personalize").create_campaign`
+Type annotations for `session.create_client("personalize").create_campaign`
 method.
 
 Boto3 documentation:
@@ -260,7 +260,7 @@ Returns a `Coroutine` for
 
 Creates an empty dataset and adds it to the specified dataset group.
 
-Type annotations for `aiobotocore.create_client("personalize").create_dataset`
+Type annotations for `session.create_client("personalize").create_dataset`
 method.
 
 Boto3 documentation:
@@ -288,7 +288,7 @@ Returns a `Coroutine` for
 Creates a job that exports data from your dataset to an Amazon S3 bucket.
 
 Type annotations for
-`aiobotocore.create_client("personalize").create_dataset_export_job` method.
+`session.create_client("personalize").create_dataset_export_job` method.
 
 Boto3 documentation:
 [Personalize.Client.create_dataset_export_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.create_dataset_export_job)
@@ -319,7 +319,7 @@ Returns a `Coroutine` for
 Creates an empty dataset group.
 
 Type annotations for
-`aiobotocore.create_client("personalize").create_dataset_group` method.
+`session.create_client("personalize").create_dataset_group` method.
 
 Boto3 documentation:
 [Personalize.Client.create_dataset_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.create_dataset_group)
@@ -348,7 +348,7 @@ Creates a job that imports training data from your data source (an Amazon S3
 bucket) to an Amazon Personalize dataset.
 
 Type annotations for
-`aiobotocore.create_client("personalize").create_dataset_import_job` method.
+`session.create_client("personalize").create_dataset_import_job` method.
 
 Boto3 documentation:
 [Personalize.Client.create_dataset_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.create_dataset_import_job)
@@ -380,7 +380,7 @@ dataset group using the
 API.
 
 Type annotations for
-`aiobotocore.create_client("personalize").create_event_tracker` method.
+`session.create_client("personalize").create_event_tracker` method.
 
 Boto3 documentation:
 [Personalize.Client.create_event_tracker](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.create_event_tracker)
@@ -405,7 +405,7 @@ Returns a `Coroutine` for
 
 Creates a recommendation filter.
 
-Type annotations for `aiobotocore.create_client("personalize").create_filter`
+Type annotations for `session.create_client("personalize").create_filter`
 method.
 
 Boto3 documentation:
@@ -432,8 +432,8 @@ Returns a `Coroutine` for
 Creates a recommender with the recipe (a Domain dataset group use case) you
 specify.
 
-Type annotations for
-`aiobotocore.create_client("personalize").create_recommender` method.
+Type annotations for `session.create_client("personalize").create_recommender`
+method.
 
 Boto3 documentation:
 [Personalize.Client.create_recommender](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.create_recommender)
@@ -461,7 +461,7 @@ Returns a `Coroutine` for
 
 Creates an Amazon Personalize schema from the specified schema string.
 
-Type annotations for `aiobotocore.create_client("personalize").create_schema`
+Type annotations for `session.create_client("personalize").create_schema`
 method.
 
 Boto3 documentation:
@@ -487,7 +487,7 @@ Returns a `Coroutine` for
 
 Creates the configuration for training a model.
 
-Type annotations for `aiobotocore.create_client("personalize").create_solution`
+Type annotations for `session.create_client("personalize").create_solution`
 method.
 
 Boto3 documentation:
@@ -519,7 +519,7 @@ Returns a `Coroutine` for
 Trains or retrains an active solution in a Custom dataset group.
 
 Type annotations for
-`aiobotocore.create_client("personalize").create_solution_version` method.
+`session.create_client("personalize").create_solution_version` method.
 
 Boto3 documentation:
 [Personalize.Client.create_solution_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.create_solution_version)
@@ -544,7 +544,7 @@ Returns a `Coroutine` for
 
 Removes a campaign by deleting the solution deployment.
 
-Type annotations for `aiobotocore.create_client("personalize").delete_campaign`
+Type annotations for `session.create_client("personalize").delete_campaign`
 method.
 
 Boto3 documentation:
@@ -565,7 +565,7 @@ Keyword-only arguments:
 
 Deletes a dataset.
 
-Type annotations for `aiobotocore.create_client("personalize").delete_dataset`
+Type annotations for `session.create_client("personalize").delete_dataset`
 method.
 
 Boto3 documentation:
@@ -587,7 +587,7 @@ Keyword-only arguments:
 Deletes a dataset group.
 
 Type annotations for
-`aiobotocore.create_client("personalize").delete_dataset_group` method.
+`session.create_client("personalize").delete_dataset_group` method.
 
 Boto3 documentation:
 [Personalize.Client.delete_dataset_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.delete_dataset_group)
@@ -609,7 +609,7 @@ Keyword-only arguments:
 Deletes the event tracker.
 
 Type annotations for
-`aiobotocore.create_client("personalize").delete_event_tracker` method.
+`session.create_client("personalize").delete_event_tracker` method.
 
 Boto3 documentation:
 [Personalize.Client.delete_event_tracker](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.delete_event_tracker)
@@ -630,7 +630,7 @@ Keyword-only arguments:
 
 Deletes a filter.
 
-Type annotations for `aiobotocore.create_client("personalize").delete_filter`
+Type annotations for `session.create_client("personalize").delete_filter`
 method.
 
 Boto3 documentation:
@@ -651,8 +651,8 @@ Keyword-only arguments:
 
 Deactivates and removes a recommender.
 
-Type annotations for
-`aiobotocore.create_client("personalize").delete_recommender` method.
+Type annotations for `session.create_client("personalize").delete_recommender`
+method.
 
 Boto3 documentation:
 [Personalize.Client.delete_recommender](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.delete_recommender)
@@ -673,7 +673,7 @@ Keyword-only arguments:
 
 Deletes a schema.
 
-Type annotations for `aiobotocore.create_client("personalize").delete_schema`
+Type annotations for `session.create_client("personalize").delete_schema`
 method.
 
 Boto3 documentation:
@@ -694,7 +694,7 @@ Keyword-only arguments:
 
 Deletes all versions of a solution and the `Solution` object itself.
 
-Type annotations for `aiobotocore.create_client("personalize").delete_solution`
+Type annotations for `session.create_client("personalize").delete_solution`
 method.
 
 Boto3 documentation:
@@ -715,8 +715,8 @@ Keyword-only arguments:
 
 Describes the given algorithm.
 
-Type annotations for
-`aiobotocore.create_client("personalize").describe_algorithm` method.
+Type annotations for `session.create_client("personalize").describe_algorithm`
+method.
 
 Boto3 documentation:
 [Personalize.Client.describe_algorithm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.describe_algorithm)
@@ -743,7 +743,7 @@ Name (ARN), status, input and output configurations, and the ARN of the
 solution version used to generate the recommendations.
 
 Type annotations for
-`aiobotocore.create_client("personalize").describe_batch_inference_job` method.
+`session.create_client("personalize").describe_batch_inference_job` method.
 
 Boto3 documentation:
 [Personalize.Client.describe_batch_inference_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.describe_batch_inference_job)
@@ -770,7 +770,7 @@ Gets the properties of a batch segment job including name, Amazon Resource Name
 version used to generate segments.
 
 Type annotations for
-`aiobotocore.create_client("personalize").describe_batch_segment_job` method.
+`session.create_client("personalize").describe_batch_segment_job` method.
 
 Boto3 documentation:
 [Personalize.Client.describe_batch_segment_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.describe_batch_segment_job)
@@ -794,8 +794,8 @@ Returns a `Coroutine` for
 
 Describes the given campaign, including its status.
 
-Type annotations for
-`aiobotocore.create_client("personalize").describe_campaign` method.
+Type annotations for `session.create_client("personalize").describe_campaign`
+method.
 
 Boto3 documentation:
 [Personalize.Client.describe_campaign](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.describe_campaign)
@@ -818,8 +818,8 @@ Returns a `Coroutine` for
 
 Describes the given dataset.
 
-Type annotations for
-`aiobotocore.create_client("personalize").describe_dataset` method.
+Type annotations for `session.create_client("personalize").describe_dataset`
+method.
 
 Boto3 documentation:
 [Personalize.Client.describe_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.describe_dataset)
@@ -844,7 +844,7 @@ Describes the dataset export job created by CreateDatasetExportJob , including
 the export job status.
 
 Type annotations for
-`aiobotocore.create_client("personalize").describe_dataset_export_job` method.
+`session.create_client("personalize").describe_dataset_export_job` method.
 
 Boto3 documentation:
 [Personalize.Client.describe_dataset_export_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.describe_dataset_export_job)
@@ -869,7 +869,7 @@ Returns a `Coroutine` for
 Describes the given dataset group.
 
 Type annotations for
-`aiobotocore.create_client("personalize").describe_dataset_group` method.
+`session.create_client("personalize").describe_dataset_group` method.
 
 Boto3 documentation:
 [Personalize.Client.describe_dataset_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.describe_dataset_group)
@@ -895,7 +895,7 @@ Describes the dataset import job created by CreateDatasetImportJob , including
 the import job status.
 
 Type annotations for
-`aiobotocore.create_client("personalize").describe_dataset_import_job` method.
+`session.create_client("personalize").describe_dataset_import_job` method.
 
 Boto3 documentation:
 [Personalize.Client.describe_dataset_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.describe_dataset_import_job)
@@ -920,7 +920,7 @@ Returns a `Coroutine` for
 Describes an event tracker.
 
 Type annotations for
-`aiobotocore.create_client("personalize").describe_event_tracker` method.
+`session.create_client("personalize").describe_event_tracker` method.
 
 Boto3 documentation:
 [Personalize.Client.describe_event_tracker](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.describe_event_tracker)
@@ -945,8 +945,7 @@ Returns a `Coroutine` for
 Describes the given feature transformation.
 
 Type annotations for
-`aiobotocore.create_client("personalize").describe_feature_transformation`
-method.
+`session.create_client("personalize").describe_feature_transformation` method.
 
 Boto3 documentation:
 [Personalize.Client.describe_feature_transformation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.describe_feature_transformation)
@@ -970,7 +969,7 @@ Returns a `Coroutine` for
 
 Describes a filter's properties.
 
-Type annotations for `aiobotocore.create_client("personalize").describe_filter`
+Type annotations for `session.create_client("personalize").describe_filter`
 method.
 
 Boto3 documentation:
@@ -994,7 +993,7 @@ Returns a `Coroutine` for
 
 Describes a recipe.
 
-Type annotations for `aiobotocore.create_client("personalize").describe_recipe`
+Type annotations for `session.create_client("personalize").describe_recipe`
 method.
 
 Boto3 documentation:
@@ -1019,7 +1018,7 @@ Returns a `Coroutine` for
 Describes the given recommender, including its status.
 
 Type annotations for
-`aiobotocore.create_client("personalize").describe_recommender` method.
+`session.create_client("personalize").describe_recommender` method.
 
 Boto3 documentation:
 [Personalize.Client.describe_recommender](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.describe_recommender)
@@ -1043,7 +1042,7 @@ Returns a `Coroutine` for
 
 Describes a schema.
 
-Type annotations for `aiobotocore.create_client("personalize").describe_schema`
+Type annotations for `session.create_client("personalize").describe_schema`
 method.
 
 Boto3 documentation:
@@ -1067,8 +1066,8 @@ Returns a `Coroutine` for
 
 Describes a solution.
 
-Type annotations for
-`aiobotocore.create_client("personalize").describe_solution` method.
+Type annotations for `session.create_client("personalize").describe_solution`
+method.
 
 Boto3 documentation:
 [Personalize.Client.describe_solution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.describe_solution)
@@ -1092,7 +1091,7 @@ Returns a `Coroutine` for
 Describes a specific version of a solution.
 
 Type annotations for
-`aiobotocore.create_client("personalize").describe_solution_version` method.
+`session.create_client("personalize").describe_solution_version` method.
 
 Boto3 documentation:
 [Personalize.Client.describe_solution_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.describe_solution_version)
@@ -1117,7 +1116,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("personalize").generate_presigned_url` method.
+`session.create_client("personalize").generate_presigned_url` method.
 
 Boto3 documentation:
 [Personalize.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.generate_presigned_url)
@@ -1141,7 +1140,7 @@ Returns a `Coroutine` for `str`.
 Gets the metrics for the specified solution version.
 
 Type annotations for
-`aiobotocore.create_client("personalize").get_solution_metrics` method.
+`session.create_client("personalize").get_solution_metrics` method.
 
 Boto3 documentation:
 [Personalize.Client.get_solution_metrics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.get_solution_metrics)
@@ -1167,7 +1166,7 @@ Gets a list of the batch inference jobs that have been performed off of a
 solution version.
 
 Type annotations for
-`aiobotocore.create_client("personalize").list_batch_inference_jobs` method.
+`session.create_client("personalize").list_batch_inference_jobs` method.
 
 Boto3 documentation:
 [Personalize.Client.list_batch_inference_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.list_batch_inference_jobs)
@@ -1195,7 +1194,7 @@ Gets a list of the batch segment jobs that have been performed off of a
 solution version that you specify.
 
 Type annotations for
-`aiobotocore.create_client("personalize").list_batch_segment_jobs` method.
+`session.create_client("personalize").list_batch_segment_jobs` method.
 
 Boto3 documentation:
 [Personalize.Client.list_batch_segment_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.list_batch_segment_jobs)
@@ -1221,7 +1220,7 @@ Returns a `Coroutine` for
 
 Returns a list of campaigns that use the given solution.
 
-Type annotations for `aiobotocore.create_client("personalize").list_campaigns`
+Type annotations for `session.create_client("personalize").list_campaigns`
 method.
 
 Boto3 documentation:
@@ -1248,7 +1247,7 @@ Returns a `Coroutine` for
 Returns a list of dataset export jobs that use the given dataset.
 
 Type annotations for
-`aiobotocore.create_client("personalize").list_dataset_export_jobs` method.
+`session.create_client("personalize").list_dataset_export_jobs` method.
 
 Boto3 documentation:
 [Personalize.Client.list_dataset_export_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.list_dataset_export_jobs)
@@ -1274,8 +1273,8 @@ Returns a `Coroutine` for
 
 Returns a list of dataset groups.
 
-Type annotations for
-`aiobotocore.create_client("personalize").list_dataset_groups` method.
+Type annotations for `session.create_client("personalize").list_dataset_groups`
+method.
 
 Boto3 documentation:
 [Personalize.Client.list_dataset_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.list_dataset_groups)
@@ -1301,7 +1300,7 @@ Returns a `Coroutine` for
 Returns a list of dataset import jobs that use the given dataset.
 
 Type annotations for
-`aiobotocore.create_client("personalize").list_dataset_import_jobs` method.
+`session.create_client("personalize").list_dataset_import_jobs` method.
 
 Boto3 documentation:
 [Personalize.Client.list_dataset_import_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.list_dataset_import_jobs)
@@ -1327,7 +1326,7 @@ Returns a `Coroutine` for
 
 Returns the list of datasets contained in the given dataset group.
 
-Type annotations for `aiobotocore.create_client("personalize").list_datasets`
+Type annotations for `session.create_client("personalize").list_datasets`
 method.
 
 Boto3 documentation:
@@ -1353,8 +1352,8 @@ Returns a `Coroutine` for
 
 Returns the list of event trackers associated with the account.
 
-Type annotations for
-`aiobotocore.create_client("personalize").list_event_trackers` method.
+Type annotations for `session.create_client("personalize").list_event_trackers`
+method.
 
 Boto3 documentation:
 [Personalize.Client.list_event_trackers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.list_event_trackers)
@@ -1380,7 +1379,7 @@ Returns a `Coroutine` for
 
 Lists all filters that belong to a given dataset group.
 
-Type annotations for `aiobotocore.create_client("personalize").list_filters`
+Type annotations for `session.create_client("personalize").list_filters`
 method.
 
 Boto3 documentation:
@@ -1406,7 +1405,7 @@ Returns a `Coroutine` for
 
 Returns a list of available recipes.
 
-Type annotations for `aiobotocore.create_client("personalize").list_recipes`
+Type annotations for `session.create_client("personalize").list_recipes`
 method.
 
 Boto3 documentation:
@@ -1434,8 +1433,8 @@ Returns a `Coroutine` for
 
 Returns a list of recommenders in a given Domain dataset group.
 
-Type annotations for
-`aiobotocore.create_client("personalize").list_recommenders` method.
+Type annotations for `session.create_client("personalize").list_recommenders`
+method.
 
 Boto3 documentation:
 [Personalize.Client.list_recommenders](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.list_recommenders)
@@ -1460,7 +1459,7 @@ Returns a `Coroutine` for
 
 Returns the list of schemas associated with the account.
 
-Type annotations for `aiobotocore.create_client("personalize").list_schemas`
+Type annotations for `session.create_client("personalize").list_schemas`
 method.
 
 Boto3 documentation:
@@ -1486,7 +1485,7 @@ Returns a `Coroutine` for
 Returns a list of solution versions for the given solution.
 
 Type annotations for
-`aiobotocore.create_client("personalize").list_solution_versions` method.
+`session.create_client("personalize").list_solution_versions` method.
 
 Boto3 documentation:
 [Personalize.Client.list_solution_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.list_solution_versions)
@@ -1512,7 +1511,7 @@ Returns a `Coroutine` for
 
 Returns a list of solutions that use the given dataset group.
 
-Type annotations for `aiobotocore.create_client("personalize").list_solutions`
+Type annotations for `session.create_client("personalize").list_solutions`
 method.
 
 Boto3 documentation:
@@ -1540,8 +1539,7 @@ Stops creating a solution version that is in a state of CREATE_PENDING or
 CREATE IN_PROGRESS.
 
 Type annotations for
-`aiobotocore.create_client("personalize").stop_solution_version_creation`
-method.
+`session.create_client("personalize").stop_solution_version_creation` method.
 
 Boto3 documentation:
 [Personalize.Client.stop_solution_version_creation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.stop_solution_version_creation)
@@ -1563,7 +1561,7 @@ Keyword-only arguments:
 Updates a campaign by either deploying a new solution or changing the value of
 the campaign's `minProvisionedTPS` parameter.
 
-Type annotations for `aiobotocore.create_client("personalize").update_campaign`
+Type annotations for `session.create_client("personalize").update_campaign`
 method.
 
 Boto3 documentation:
@@ -1591,8 +1589,8 @@ Returns a `Coroutine` for
 
 Updates the recommender to modify the recommender configuration.
 
-Type annotations for
-`aiobotocore.create_client("personalize").update_recommender` method.
+Type annotations for `session.create_client("personalize").update_recommender`
+method.
 
 Boto3 documentation:
 [Personalize.Client.update_recommender](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.update_recommender)
@@ -1613,11 +1611,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateRecommenderResponseTypeDef](./type_defs.md#updaterecommenderresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("personalize").__aenter__` method.
+
+Boto3 documentation:
+[Personalize.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [PersonalizeClient](#personalizeclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("personalize").__aexit__` method.
+
+Boto3 documentation:
+[Personalize.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html#Personalize.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("personalize").get_paginator`
+Type annotations for `session.create_client("personalize").get_paginator`
 method with overloads.
 
 - `client.get_paginator("list_batch_inference_jobs")` ->

@@ -21,17 +21,19 @@ type annotations stubs module
 ## DescribeReservedElasticsearchInstanceOfferingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("es").get_paginator("describe_reserved_elasticsearch_instance_offerings")`.
+`session.create_client("es").get_paginator("describe_reserved_elasticsearch_instance_offerings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_es.paginator import DescribeReservedElasticsearchInstanceOfferingsPaginator
 
-def get_describe_reserved_elasticsearch_instance_offerings_paginator() -> DescribeReservedElasticsearchInstanceOfferingsPaginator:
-    return Session().create_client("es").get_paginator("describe_reserved_elasticsearch_instance_offerings")
+session = get_session()
+async with session.create_client("es") as client:
+    client: ElasticsearchServiceClient
+    paginator: DescribeReservedElasticsearchInstanceOfferingsPaginator = client.get_paginator("describe_reserved_elasticsearch_instance_offerings")
 ```
 
 Boto3 documentation:
@@ -52,17 +54,19 @@ Arguments for
 ## DescribeReservedElasticsearchInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("es").get_paginator("describe_reserved_elasticsearch_instances")`.
+`session.create_client("es").get_paginator("describe_reserved_elasticsearch_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_es.paginator import DescribeReservedElasticsearchInstancesPaginator
 
-def get_describe_reserved_elasticsearch_instances_paginator() -> DescribeReservedElasticsearchInstancesPaginator:
-    return Session().create_client("es").get_paginator("describe_reserved_elasticsearch_instances")
+session = get_session()
+async with session.create_client("es") as client:
+    client: ElasticsearchServiceClient
+    paginator: DescribeReservedElasticsearchInstancesPaginator = client.get_paginator("describe_reserved_elasticsearch_instances")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ method:
 ## GetUpgradeHistoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("es").get_paginator("get_upgrade_history")`.
+`session.create_client("es").get_paginator("get_upgrade_history")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_es.paginator import GetUpgradeHistoryPaginator
 
-def get_get_upgrade_history_paginator() -> GetUpgradeHistoryPaginator:
-    return Session().create_client("es").get_paginator("get_upgrade_history")
+session = get_session()
+async with session.create_client("es") as client:
+    client: ElasticsearchServiceClient
+    paginator: GetUpgradeHistoryPaginator = client.get_paginator("get_upgrade_history")
 ```
 
 Boto3 documentation:
@@ -113,17 +119,19 @@ Arguments for `GetUpgradeHistoryPaginator.paginate` method:
 ## ListElasticsearchInstanceTypesPaginator
 
 Type annotations for
-`aiobotocore.create_client("es").get_paginator("list_elasticsearch_instance_types")`.
+`session.create_client("es").get_paginator("list_elasticsearch_instance_types")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_es.paginator import ListElasticsearchInstanceTypesPaginator
 
-def get_list_elasticsearch_instance_types_paginator() -> ListElasticsearchInstanceTypesPaginator:
-    return Session().create_client("es").get_paginator("list_elasticsearch_instance_types")
+session = get_session()
+async with session.create_client("es") as client:
+    client: ElasticsearchServiceClient
+    paginator: ListElasticsearchInstanceTypesPaginator = client.get_paginator("list_elasticsearch_instance_types")
 ```
 
 Boto3 documentation:
@@ -144,17 +152,19 @@ Arguments for `ListElasticsearchInstanceTypesPaginator.paginate` method:
 ## ListElasticsearchVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("es").get_paginator("list_elasticsearch_versions")`.
+`session.create_client("es").get_paginator("list_elasticsearch_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_es.paginator import ListElasticsearchVersionsPaginator
 
-def get_list_elasticsearch_versions_paginator() -> ListElasticsearchVersionsPaginator:
-    return Session().create_client("es").get_paginator("list_elasticsearch_versions")
+session = get_session()
+async with session.create_client("es") as client:
+    client: ElasticsearchServiceClient
+    paginator: ListElasticsearchVersionsPaginator = client.get_paginator("list_elasticsearch_versions")
 ```
 
 Boto3 documentation:

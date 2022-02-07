@@ -20,17 +20,19 @@ type annotations stubs module
 ## DescribeStreamPaginator
 
 Type annotations for
-`aiobotocore.create_client("kinesis").get_paginator("describe_stream")`.
+`session.create_client("kinesis").get_paginator("describe_stream")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kinesis.paginator import DescribeStreamPaginator
 
-def get_describe_stream_paginator() -> DescribeStreamPaginator:
-    return Session().create_client("kinesis").get_paginator("describe_stream")
+session = get_session()
+async with session.create_client("kinesis") as client:
+    client: KinesisClient
+    paginator: DescribeStreamPaginator = client.get_paginator("describe_stream")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `DescribeStreamPaginator.paginate` method:
 ## ListShardsPaginator
 
 Type annotations for
-`aiobotocore.create_client("kinesis").get_paginator("list_shards")`.
+`session.create_client("kinesis").get_paginator("list_shards")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kinesis.paginator import ListShardsPaginator
 
-def get_list_shards_paginator() -> ListShardsPaginator:
-    return Session().create_client("kinesis").get_paginator("list_shards")
+session = get_session()
+async with session.create_client("kinesis") as client:
+    client: KinesisClient
+    paginator: ListShardsPaginator = client.get_paginator("list_shards")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `ListShardsPaginator.paginate` method:
 ## ListStreamConsumersPaginator
 
 Type annotations for
-`aiobotocore.create_client("kinesis").get_paginator("list_stream_consumers")`.
+`session.create_client("kinesis").get_paginator("list_stream_consumers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kinesis.paginator import ListStreamConsumersPaginator
 
-def get_list_stream_consumers_paginator() -> ListStreamConsumersPaginator:
-    return Session().create_client("kinesis").get_paginator("list_stream_consumers")
+session = get_session()
+async with session.create_client("kinesis") as client:
+    client: KinesisClient
+    paginator: ListStreamConsumersPaginator = client.get_paginator("list_stream_consumers")
 ```
 
 Boto3 documentation:
@@ -114,17 +120,19 @@ Arguments for `ListStreamConsumersPaginator.paginate` method:
 ## ListStreamsPaginator
 
 Type annotations for
-`aiobotocore.create_client("kinesis").get_paginator("list_streams")`.
+`session.create_client("kinesis").get_paginator("list_streams")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kinesis.paginator import ListStreamsPaginator
 
-def get_list_streams_paginator() -> ListStreamsPaginator:
-    return Session().create_client("kinesis").get_paginator("list_streams")
+session = get_session()
+async with session.create_client("kinesis") as client:
+    client: KinesisClient
+    paginator: ListStreamsPaginator = client.get_paginator("list_streams")
 ```
 
 Boto3 documentation:

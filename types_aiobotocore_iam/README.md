@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[iam]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[iam]'
+
+# standalone installation
 pip install types-aiobotocore-iam
 ```
 
@@ -33,8 +37,7 @@ pip install types-aiobotocore-iam
 
 ## IAMClient
 
-Type annotations for `aiobotocore.create_client("iam")` as
-[IAMClient](./client.md)
+Type annotations for `session.create_client("iam")` as [IAMClient](./client.md)
 
 Can be used directly:
 
@@ -46,6 +49,8 @@ from types_aiobotocore_iam.client import IAMClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_client_id_to_open_id_connect_provider](./client.md#add_client_id_to_open_id_connect_provider)
 - [add_role_to_instance_profile](./client.md#add_role_to_instance_profile)
 - [add_user_to_group](./client.md#add_user_to_group)
@@ -249,7 +254,7 @@ IAMClient [exceptions](./client.md#exceptions)
 
 ## IAMServiceResource
 
-Type annotations for `aiobotocore.resource("iam")` as
+Type annotations for `session.resource("iam")` as
 [IAMServiceResource](./service_resource.md#iamserviceresource)
 
 Can be used directly:
@@ -283,7 +288,7 @@ from types_aiobotocore_iam.service_resource import ServiceResourceGroupsCollecti
 
 ### Resources
 
-Type annotations for additional resources from `aiobotocore.resource("iam").*`.
+Type annotations for additional resources from `session.resource("iam").*`.
 
 Can be used directly:
 
@@ -323,7 +328,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_iam.paginators import GetAccountAuthorizationDetailsPaginator, ...
+from types_aiobotocore_iam.paginator import GetAccountAuthorizationDetailsPaginator, ...
 ```
 
 - [GetAccountAuthorizationDetailsPaginator](./paginators.md#getaccountauthorizationdetailspaginator)
@@ -364,7 +369,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_iam.waiters import InstanceProfileExistsWaiter, ...
+from types_aiobotocore_iam.waiter import InstanceProfileExistsWaiter, ...
 ```
 
 - [InstanceProfileExistsWaiter](./waiters.md#instanceprofileexistswaiter)

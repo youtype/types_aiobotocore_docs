@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[ecs]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[ecs]'
+
+# standalone installation
 pip install types-aiobotocore-ecs
 ```
 
@@ -30,8 +34,7 @@ pip install types-aiobotocore-ecs
 
 ## ECSClient
 
-Type annotations for `aiobotocore.create_client("ecs")` as
-[ECSClient](./client.md)
+Type annotations for `session.create_client("ecs")` as [ECSClient](./client.md)
 
 Can be used directly:
 
@@ -43,6 +46,8 @@ from types_aiobotocore_ecs.client import ECSClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_capacity_provider](./client.md#create_capacity_provider)
 - [create_cluster](./client.md#create_cluster)
@@ -143,7 +148,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_ecs.paginators import ListAccountSettingsPaginator, ...
+from types_aiobotocore_ecs.paginator import ListAccountSettingsPaginator, ...
 ```
 
 - [ListAccountSettingsPaginator](./paginators.md#listaccountsettingspaginator)
@@ -165,7 +170,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_ecs.waiters import ServicesInactiveWaiter, ...
+from types_aiobotocore_ecs.waiter import ServicesInactiveWaiter, ...
 ```
 
 - [ServicesInactiveWaiter](./waiters.md#servicesinactivewaiter)

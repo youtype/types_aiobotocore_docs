@@ -37,22 +37,25 @@ type annotations stubs module
     - [stop_assessment](#stop_assessment)
     - [update_application_component_config](#update_application_component_config)
     - [update_server_config](#update_server_config)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="migrationhubstrategyrecommendationsclient"></a>
 
 ## MigrationHubStrategyRecommendationsClient
 
-Type annotations for `aiobotocore.create_client("migrationhubstrategy")`
+Type annotations for `session.create_client("migrationhubstrategy")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_migrationhubstrategy.client import MigrationHubStrategyRecommendationsClient
 
-def get_migrationhubstrategy_client() -> MigrationHubStrategyRecommendationsClient:
-    return Session().client("migrationhubstrategy")
+session = get_session()
+async with session.create_client("migrationhubstrategy") as client:
+    client: MigrationHubStrategyRecommendationsClient
 ```
 
 Boto3 documentation:
@@ -94,8 +97,8 @@ Exceptions:
 
 MigrationHubStrategyRecommendationsClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").exceptions` method.
+Type annotations for `session.create_client("migrationhubstrategy").exceptions`
+method.
 
 Boto3 documentation:
 [MigrationHubStrategyRecommendations.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.exceptions)
@@ -109,18 +112,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").can_paginate` method.
+`session.create_client("migrationhubstrategy").can_paginate` method.
 
 Boto3 documentation:
 [MigrationHubStrategyRecommendations.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -129,8 +130,7 @@ Returns a `Coroutine` for `bool`.
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").generate_presigned_url`
-method.
+`session.create_client("migrationhubstrategy").generate_presigned_url` method.
 
 Boto3 documentation:
 [MigrationHubStrategyRecommendations.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.generate_presigned_url)
@@ -154,7 +154,7 @@ Returns a `Coroutine` for `str`.
 Retrieves details about an application component.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").get_application_component_details`
+`session.create_client("migrationhubstrategy").get_application_component_details`
 method.
 
 Boto3 documentation:
@@ -181,7 +181,7 @@ Retrieves a list of all the recommended strategies and tools for an application
 component running on a server.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").get_application_component_strategies`
+`session.create_client("migrationhubstrategy").get_application_component_strategies`
 method.
 
 Boto3 documentation:
@@ -207,7 +207,7 @@ Returns a `Coroutine` for
 Retrieves the status of an on-going assessment.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").get_assessment` method.
+`session.create_client("migrationhubstrategy").get_assessment` method.
 
 Boto3 documentation:
 [MigrationHubStrategyRecommendations.Client.get_assessment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.get_assessment)
@@ -231,8 +231,7 @@ Returns a `Coroutine` for
 Retrieves the details about a specific import task.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").get_import_file_task`
-method.
+`session.create_client("migrationhubstrategy").get_import_file_task` method.
 
 Boto3 documentation:
 [MigrationHubStrategyRecommendations.Client.get_import_file_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.get_import_file_task)
@@ -257,7 +256,7 @@ Returns a `Coroutine` for
 Retrieves your migration and modernization preferences.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").get_portfolio_preferences`
+`session.create_client("migrationhubstrategy").get_portfolio_preferences`
 method.
 
 Boto3 documentation:
@@ -277,8 +276,7 @@ Retrieves overall summary including the number of servers to rehost and the
 overall number of anti-patterns.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").get_portfolio_summary`
-method.
+`session.create_client("migrationhubstrategy").get_portfolio_summary` method.
 
 Boto3 documentation:
 [MigrationHubStrategyRecommendations.Client.get_portfolio_summary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.get_portfolio_summary)
@@ -296,7 +294,7 @@ Returns a `Coroutine` for
 Retrieves detailed information about the specified recommendation report.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").get_recommendation_report_details`
+`session.create_client("migrationhubstrategy").get_recommendation_report_details`
 method.
 
 Boto3 documentation:
@@ -322,7 +320,7 @@ Returns a `Coroutine` for
 Retrieves detailed information about a specified server.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").get_server_details` method.
+`session.create_client("migrationhubstrategy").get_server_details` method.
 
 Boto3 documentation:
 [MigrationHubStrategyRecommendations.Client.get_server_details](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.get_server_details)
@@ -349,8 +347,7 @@ Returns a `Coroutine` for
 Retrieves recommended strategies and tools for the specified server.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").get_server_strategies`
-method.
+`session.create_client("migrationhubstrategy").get_server_strategies` method.
 
 Boto3 documentation:
 [MigrationHubStrategyRecommendations.Client.get_server_strategies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.get_server_strategies)
@@ -375,7 +372,7 @@ Returns a `Coroutine` for
 Retrieves a list of all the application components (processes).
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").list_application_components`
+`session.create_client("migrationhubstrategy").list_application_components`
 method.
 
 Boto3 documentation:
@@ -407,7 +404,7 @@ Returns a `Coroutine` for
 Retrieves a list of all the installed collectors.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").list_collectors` method.
+`session.create_client("migrationhubstrategy").list_collectors` method.
 
 Boto3 documentation:
 [MigrationHubStrategyRecommendations.Client.list_collectors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.list_collectors)
@@ -432,8 +429,7 @@ Returns a `Coroutine` for
 Retrieves a list of all the imports performed.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").list_import_file_task`
-method.
+`session.create_client("migrationhubstrategy").list_import_file_task` method.
 
 Boto3 documentation:
 [MigrationHubStrategyRecommendations.Client.list_import_file_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.list_import_file_task)
@@ -459,7 +455,7 @@ Returns a `Coroutine` for
 Returns a list of all the servers.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").list_servers` method.
+`session.create_client("migrationhubstrategy").list_servers` method.
 
 Boto3 documentation:
 [MigrationHubStrategyRecommendations.Client.list_servers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.list_servers)
@@ -488,7 +484,7 @@ Returns a `Coroutine` for
 Saves the specified migration and modernization preferences.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").put_portfolio_preferences`
+`session.create_client("migrationhubstrategy").put_portfolio_preferences`
 method.
 
 Boto3 documentation:
@@ -518,7 +514,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Starts the assessment of an on-premises environment.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").start_assessment` method.
+`session.create_client("migrationhubstrategy").start_assessment` method.
 
 Boto3 documentation:
 [MigrationHubStrategyRecommendations.Client.start_assessment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.start_assessment)
@@ -543,8 +539,7 @@ Returns a `Coroutine` for
 Starts a file import.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").start_import_file_task`
-method.
+`session.create_client("migrationhubstrategy").start_import_file_task` method.
 
 Boto3 documentation:
 [MigrationHubStrategyRecommendations.Client.start_import_file_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.start_import_file_task)
@@ -574,7 +569,7 @@ Returns a `Coroutine` for
 Starts generating a recommendation report.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").start_recommendation_report_generation`
+`session.create_client("migrationhubstrategy").start_recommendation_report_generation`
 method.
 
 Boto3 documentation:
@@ -601,7 +596,7 @@ Returns a `Coroutine` for
 Stops the assessment of an on-premises environment.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").stop_assessment` method.
+`session.create_client("migrationhubstrategy").stop_assessment` method.
 
 Boto3 documentation:
 [MigrationHubStrategyRecommendations.Client.stop_assessment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.stop_assessment)
@@ -624,7 +619,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the configuration of an application component.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").update_application_component_config`
+`session.create_client("migrationhubstrategy").update_application_component_config`
 method.
 
 Boto3 documentation:
@@ -655,8 +650,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the configuration of the specified server.
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").update_server_config`
-method.
+`session.create_client("migrationhubstrategy").update_server_config` method.
 
 Boto3 documentation:
 [MigrationHubStrategyRecommendations.Client.update_server_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.update_server_config)
@@ -675,12 +669,47 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("migrationhubstrategy").__aenter__`
+method.
+
+Boto3 documentation:
+[MigrationHubStrategyRecommendations.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[MigrationHubStrategyRecommendationsClient](#migrationhubstrategyrecommendationsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("migrationhubstrategy").__aexit__`
+method.
+
+Boto3 documentation:
+[MigrationHubStrategyRecommendations.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhubstrategy.html#MigrationHubStrategyRecommendations.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").get_paginator` method with
+`session.create_client("migrationhubstrategy").get_paginator` method with
 overloads.
 
 - `client.get_paginator("get_server_details")` ->

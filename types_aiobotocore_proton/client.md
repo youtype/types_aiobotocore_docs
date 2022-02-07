@@ -83,6 +83,8 @@ type annotations stubs module
     - [update_service_template](#update_service_template)
     - [update_service_template_version](#update_service_template_version)
     - [update_template_sync_config](#update_template_sync_config)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -90,16 +92,17 @@ type annotations stubs module
 
 ## ProtonClient
 
-Type annotations for `aiobotocore.create_client("proton")`
+Type annotations for `session.create_client("proton")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_proton.client import ProtonClient
 
-def get_proton_client() -> ProtonClient:
-    return Session().client("proton")
+session = get_session()
+async with session.create_client("proton") as client:
+    client: ProtonClient
 ```
 
 Boto3 documentation:
@@ -140,7 +143,7 @@ Exceptions:
 
 ProtonClient exceptions.
 
-Type annotations for `aiobotocore.create_client("proton").exceptions` method.
+Type annotations for `session.create_client("proton").exceptions` method.
 
 Boto3 documentation:
 [Proton.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.exceptions)
@@ -154,8 +157,7 @@ Returns [Exceptions](#exceptions).
 In a management account, an environment account connection request is accepted.
 
 Type annotations for
-`aiobotocore.create_client("proton").accept_environment_account_connection`
-method.
+`session.create_client("proton").accept_environment_account_connection` method.
 
 Boto3 documentation:
 [Proton.Client.accept_environment_account_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.accept_environment_account_connection)
@@ -179,18 +181,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("proton").can_paginate` method.
+Type annotations for `session.create_client("proton").can_paginate` method.
 
 Boto3 documentation:
 [Proton.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_environment_deployment"></a>
 
@@ -200,7 +200,7 @@ Attempts to cancel an environment deployment on an UpdateEnvironment action, if
 the deployment is `IN_PROGRESS`.
 
 Type annotations for
-`aiobotocore.create_client("proton").cancel_environment_deployment` method.
+`session.create_client("proton").cancel_environment_deployment` method.
 
 Boto3 documentation:
 [Proton.Client.cancel_environment_deployment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.cancel_environment_deployment)
@@ -226,8 +226,7 @@ Attempts to cancel a service instance deployment on an UpdateServiceInstance
 action, if the deployment is `IN_PROGRESS`.
 
 Type annotations for
-`aiobotocore.create_client("proton").cancel_service_instance_deployment`
-method.
+`session.create_client("proton").cancel_service_instance_deployment` method.
 
 Boto3 documentation:
 [Proton.Client.cancel_service_instance_deployment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.cancel_service_instance_deployment)
@@ -254,8 +253,7 @@ Attempts to cancel a service pipeline deployment on an UpdateServicePipeline
 action, if the deployment is `IN_PROGRESS`.
 
 Type annotations for
-`aiobotocore.create_client("proton").cancel_service_pipeline_deployment`
-method.
+`session.create_client("proton").cancel_service_pipeline_deployment` method.
 
 Boto3 documentation:
 [Proton.Client.cancel_service_pipeline_deployment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.cancel_service_pipeline_deployment)
@@ -279,7 +277,7 @@ Returns a `Coroutine` for
 
 Deploy a new environment.
 
-Type annotations for `aiobotocore.create_client("proton").create_environment`
+Type annotations for `session.create_client("proton").create_environment`
 method.
 
 Boto3 documentation:
@@ -317,8 +315,7 @@ environment infrastructure resources can be provisioned in the environment
 account from a management account.
 
 Type annotations for
-`aiobotocore.create_client("proton").create_environment_account_connection`
-method.
+`session.create_client("proton").create_environment_account_connection` method.
 
 Boto3 documentation:
 [Proton.Client.create_environment_account_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.create_environment_account_connection)
@@ -347,7 +344,7 @@ Returns a `Coroutine` for
 Create an environment template for Proton.
 
 Type annotations for
-`aiobotocore.create_client("proton").create_environment_template` method.
+`session.create_client("proton").create_environment_template` method.
 
 Boto3 documentation:
 [Proton.Client.create_environment_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.create_environment_template)
@@ -378,8 +375,7 @@ Returns a `Coroutine` for
 Create a new major or minor version of an environment template.
 
 Type annotations for
-`aiobotocore.create_client("proton").create_environment_template_version`
-method.
+`session.create_client("proton").create_environment_template_version` method.
 
 Boto3 documentation:
 [Proton.Client.create_environment_template_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.create_environment_template_version)
@@ -411,7 +407,7 @@ Returns a `Coroutine` for
 Create and register a link to a repository that can be used with pull request
 provisioning or template sync configurations.
 
-Type annotations for `aiobotocore.create_client("proton").create_repository`
+Type annotations for `session.create_client("proton").create_repository`
 method.
 
 Boto3 documentation:
@@ -439,8 +435,7 @@ Returns a `Coroutine` for
 
 Create an Proton service.
 
-Type annotations for `aiobotocore.create_client("proton").create_service`
-method.
+Type annotations for `session.create_client("proton").create_service` method.
 
 Boto3 documentation:
 [Proton.Client.create_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.create_service)
@@ -472,8 +467,8 @@ Returns a `Coroutine` for
 
 Create a service template.
 
-Type annotations for
-`aiobotocore.create_client("proton").create_service_template` method.
+Type annotations for `session.create_client("proton").create_service_template`
+method.
 
 Boto3 documentation:
 [Proton.Client.create_service_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.create_service_template)
@@ -504,7 +499,7 @@ Returns a `Coroutine` for
 Create a new major or minor version of a service template.
 
 Type annotations for
-`aiobotocore.create_client("proton").create_service_template_version` method.
+`session.create_client("proton").create_service_template_version` method.
 
 Boto3 documentation:
 [Proton.Client.create_service_template_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.create_service_template_version)
@@ -539,7 +534,7 @@ Returns a `Coroutine` for
 Set up a template for automated template version creation.
 
 Type annotations for
-`aiobotocore.create_client("proton").create_template_sync_config` method.
+`session.create_client("proton").create_template_sync_config` method.
 
 Boto3 documentation:
 [Proton.Client.create_template_sync_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.create_template_sync_config)
@@ -570,7 +565,7 @@ Returns a `Coroutine` for
 
 Delete an environment.
 
-Type annotations for `aiobotocore.create_client("proton").delete_environment`
+Type annotations for `session.create_client("proton").delete_environment`
 method.
 
 Boto3 documentation:
@@ -596,8 +591,7 @@ Returns a `Coroutine` for
 In an environment account, delete an environment account connection.
 
 Type annotations for
-`aiobotocore.create_client("proton").delete_environment_account_connection`
-method.
+`session.create_client("proton").delete_environment_account_connection` method.
 
 Boto3 documentation:
 [Proton.Client.delete_environment_account_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.delete_environment_account_connection)
@@ -623,7 +617,7 @@ If no other major or minor versions of an environment template exist, delete
 the environment template.
 
 Type annotations for
-`aiobotocore.create_client("proton").delete_environment_template` method.
+`session.create_client("proton").delete_environment_template` method.
 
 Boto3 documentation:
 [Proton.Client.delete_environment_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.delete_environment_template)
@@ -649,8 +643,7 @@ If no other minor versions of an environment template exist, delete a major
 version of the environment template if it's not the `Recommended` version.
 
 Type annotations for
-`aiobotocore.create_client("proton").delete_environment_template_version`
-method.
+`session.create_client("proton").delete_environment_template_version` method.
 
 Boto3 documentation:
 [Proton.Client.delete_environment_template_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.delete_environment_template_version)
@@ -676,7 +669,7 @@ Returns a `Coroutine` for
 
 De-register and unlink your repository.
 
-Type annotations for `aiobotocore.create_client("proton").delete_repository`
+Type annotations for `session.create_client("proton").delete_repository`
 method.
 
 Boto3 documentation:
@@ -702,8 +695,7 @@ Returns a `Coroutine` for
 
 Delete a service.
 
-Type annotations for `aiobotocore.create_client("proton").delete_service`
-method.
+Type annotations for `session.create_client("proton").delete_service` method.
 
 Boto3 documentation:
 [Proton.Client.delete_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.delete_service)
@@ -727,8 +719,8 @@ Returns a `Coroutine` for
 If no other major or minor versions of the service template exist, delete the
 service template.
 
-Type annotations for
-`aiobotocore.create_client("proton").delete_service_template` method.
+Type annotations for `session.create_client("proton").delete_service_template`
+method.
 
 Boto3 documentation:
 [Proton.Client.delete_service_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.delete_service_template)
@@ -754,7 +746,7 @@ If no other minor versions of a service template exist, delete a major version
 of the service template if it's not the `Recommended` version.
 
 Type annotations for
-`aiobotocore.create_client("proton").delete_service_template_version` method.
+`session.create_client("proton").delete_service_template_version` method.
 
 Boto3 documentation:
 [Proton.Client.delete_service_template_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.delete_service_template_version)
@@ -781,7 +773,7 @@ Returns a `Coroutine` for
 Delete a template sync configuration.
 
 Type annotations for
-`aiobotocore.create_client("proton").delete_template_sync_config` method.
+`session.create_client("proton").delete_template_sync_config` method.
 
 Boto3 documentation:
 [Proton.Client.delete_template_sync_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.delete_template_sync_config)
@@ -807,8 +799,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("proton").generate_presigned_url` method.
+Type annotations for `session.create_client("proton").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Proton.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.generate_presigned_url)
@@ -831,7 +823,7 @@ Returns a `Coroutine` for `str`.
 
 Get detail data for the Proton pipeline service role.
 
-Type annotations for `aiobotocore.create_client("proton").get_account_settings`
+Type annotations for `session.create_client("proton").get_account_settings`
 method.
 
 Boto3 documentation:
@@ -849,8 +841,7 @@ Returns a `Coroutine` for
 
 Get detail data for an environment.
 
-Type annotations for `aiobotocore.create_client("proton").get_environment`
-method.
+Type annotations for `session.create_client("proton").get_environment` method.
 
 Boto3 documentation:
 [Proton.Client.get_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.get_environment)
@@ -875,8 +866,7 @@ In an environment account, view the detail data for an environment account
 connection.
 
 Type annotations for
-`aiobotocore.create_client("proton").get_environment_account_connection`
-method.
+`session.create_client("proton").get_environment_account_connection` method.
 
 Boto3 documentation:
 [Proton.Client.get_environment_account_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.get_environment_account_connection)
@@ -900,8 +890,8 @@ Returns a `Coroutine` for
 
 Get detail data for an environment template.
 
-Type annotations for
-`aiobotocore.create_client("proton").get_environment_template` method.
+Type annotations for `session.create_client("proton").get_environment_template`
+method.
 
 Boto3 documentation:
 [Proton.Client.get_environment_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.get_environment_template)
@@ -926,7 +916,7 @@ Returns a `Coroutine` for
 View detail data for a major or minor version of an environment template.
 
 Type annotations for
-`aiobotocore.create_client("proton").get_environment_template_version` method.
+`session.create_client("proton").get_environment_template_version` method.
 
 Boto3 documentation:
 [Proton.Client.get_environment_template_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.get_environment_template_version)
@@ -952,8 +942,7 @@ Returns a `Coroutine` for
 
 Get detail data for a repository.
 
-Type annotations for `aiobotocore.create_client("proton").get_repository`
-method.
+Type annotations for `session.create_client("proton").get_repository` method.
 
 Boto3 documentation:
 [Proton.Client.get_repository](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.get_repository)
@@ -979,7 +968,7 @@ Returns a `Coroutine` for
 Get the repository sync status.
 
 Type annotations for
-`aiobotocore.create_client("proton").get_repository_sync_status` method.
+`session.create_client("proton").get_repository_sync_status` method.
 
 Boto3 documentation:
 [Proton.Client.get_repository_sync_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.get_repository_sync_status)
@@ -1008,7 +997,7 @@ Returns a `Coroutine` for
 
 Get detail data for a service.
 
-Type annotations for `aiobotocore.create_client("proton").get_service` method.
+Type annotations for `session.create_client("proton").get_service` method.
 
 Boto3 documentation:
 [Proton.Client.get_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.get_service)
@@ -1031,7 +1020,7 @@ Returns a `Coroutine` for
 
 Get detail data for a service instance.
 
-Type annotations for `aiobotocore.create_client("proton").get_service_instance`
+Type annotations for `session.create_client("proton").get_service_instance`
 method.
 
 Boto3 documentation:
@@ -1057,7 +1046,7 @@ Returns a `Coroutine` for
 
 Get detail data for a service template.
 
-Type annotations for `aiobotocore.create_client("proton").get_service_template`
+Type annotations for `session.create_client("proton").get_service_template`
 method.
 
 Boto3 documentation:
@@ -1083,7 +1072,7 @@ Returns a `Coroutine` for
 View detail data for a major or minor version of a service template.
 
 Type annotations for
-`aiobotocore.create_client("proton").get_service_template_version` method.
+`session.create_client("proton").get_service_template_version` method.
 
 Boto3 documentation:
 [Proton.Client.get_service_template_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.get_service_template_version)
@@ -1109,8 +1098,8 @@ Returns a `Coroutine` for
 
 Get detail data for a template sync configuration.
 
-Type annotations for
-`aiobotocore.create_client("proton").get_template_sync_config` method.
+Type annotations for `session.create_client("proton").get_template_sync_config`
+method.
 
 Boto3 documentation:
 [Proton.Client.get_template_sync_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.get_template_sync_config)
@@ -1136,8 +1125,8 @@ Returns a `Coroutine` for
 
 Get the status of a template sync.
 
-Type annotations for
-`aiobotocore.create_client("proton").get_template_sync_status` method.
+Type annotations for `session.create_client("proton").get_template_sync_status`
+method.
 
 Boto3 documentation:
 [Proton.Client.get_template_sync_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.get_template_sync_status)
@@ -1165,8 +1154,7 @@ Returns a `Coroutine` for
 View a list of environment account connections.
 
 Type annotations for
-`aiobotocore.create_client("proton").list_environment_account_connections`
-method.
+`session.create_client("proton").list_environment_account_connections` method.
 
 Boto3 documentation:
 [Proton.Client.list_environment_account_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.list_environment_account_connections)
@@ -1197,8 +1185,8 @@ Returns a `Coroutine` for
 
 List the infrastructure as code outputs for your environment.
 
-Type annotations for
-`aiobotocore.create_client("proton").list_environment_outputs` method.
+Type annotations for `session.create_client("proton").list_environment_outputs`
+method.
 
 Boto3 documentation:
 [Proton.Client.list_environment_outputs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.list_environment_outputs)
@@ -1224,7 +1212,7 @@ Returns a `Coroutine` for
 List the provisioned resources for your environment.
 
 Type annotations for
-`aiobotocore.create_client("proton").list_environment_provisioned_resources`
+`session.create_client("proton").list_environment_provisioned_resources`
 method.
 
 Boto3 documentation:
@@ -1251,8 +1239,7 @@ Returns a `Coroutine` for
 List major or minor versions of an environment template with detail data.
 
 Type annotations for
-`aiobotocore.create_client("proton").list_environment_template_versions`
-method.
+`session.create_client("proton").list_environment_template_versions` method.
 
 Boto3 documentation:
 [Proton.Client.list_environment_template_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.list_environment_template_versions)
@@ -1280,7 +1267,7 @@ Returns a `Coroutine` for
 List environment templates.
 
 Type annotations for
-`aiobotocore.create_client("proton").list_environment_templates` method.
+`session.create_client("proton").list_environment_templates` method.
 
 Boto3 documentation:
 [Proton.Client.list_environment_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.list_environment_templates)
@@ -1305,7 +1292,7 @@ Returns a `Coroutine` for
 
 List environments with detail data summaries.
 
-Type annotations for `aiobotocore.create_client("proton").list_environments`
+Type annotations for `session.create_client("proton").list_environments`
 method.
 
 Boto3 documentation:
@@ -1332,7 +1319,7 @@ Returns a `Coroutine` for
 
 List repositories with detail data.
 
-Type annotations for `aiobotocore.create_client("proton").list_repositories`
+Type annotations for `session.create_client("proton").list_repositories`
 method.
 
 Boto3 documentation:
@@ -1358,7 +1345,7 @@ Returns a `Coroutine` for
 List repository sync definitions with detail data.
 
 Type annotations for
-`aiobotocore.create_client("proton").list_repository_sync_definitions` method.
+`session.create_client("proton").list_repository_sync_definitions` method.
 
 Boto3 documentation:
 [Proton.Client.list_repository_sync_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.list_repository_sync_definitions)
@@ -1388,7 +1375,7 @@ Returns a `Coroutine` for
 View a list service instance infrastructure as code outputs with detail data.
 
 Type annotations for
-`aiobotocore.create_client("proton").list_service_instance_outputs` method.
+`session.create_client("proton").list_service_instance_outputs` method.
 
 Boto3 documentation:
 [Proton.Client.list_service_instance_outputs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.list_service_instance_outputs)
@@ -1415,7 +1402,7 @@ Returns a `Coroutine` for
 List provisioned resources for a service instance with details.
 
 Type annotations for
-`aiobotocore.create_client("proton").list_service_instance_provisioned_resources`
+`session.create_client("proton").list_service_instance_provisioned_resources`
 method.
 
 Boto3 documentation:
@@ -1443,8 +1430,8 @@ Returns a `Coroutine` for
 
 List service instances with summaries of detail data.
 
-Type annotations for
-`aiobotocore.create_client("proton").list_service_instances` method.
+Type annotations for `session.create_client("proton").list_service_instances`
+method.
 
 Boto3 documentation:
 [Proton.Client.list_service_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.list_service_instances)
@@ -1471,7 +1458,7 @@ Returns a `Coroutine` for
 View a list service pipeline infrastructure as code outputs with detail.
 
 Type annotations for
-`aiobotocore.create_client("proton").list_service_pipeline_outputs` method.
+`session.create_client("proton").list_service_pipeline_outputs` method.
 
 Boto3 documentation:
 [Proton.Client.list_service_pipeline_outputs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.list_service_pipeline_outputs)
@@ -1497,7 +1484,7 @@ Returns a `Coroutine` for
 List provisioned resources for a service and pipeline with details.
 
 Type annotations for
-`aiobotocore.create_client("proton").list_service_pipeline_provisioned_resources`
+`session.create_client("proton").list_service_pipeline_provisioned_resources`
 method.
 
 Boto3 documentation:
@@ -1525,7 +1512,7 @@ Returns a `Coroutine` for
 List major or minor versions of a service template with detail data.
 
 Type annotations for
-`aiobotocore.create_client("proton").list_service_template_versions` method.
+`session.create_client("proton").list_service_template_versions` method.
 
 Boto3 documentation:
 [Proton.Client.list_service_template_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.list_service_template_versions)
@@ -1552,8 +1539,8 @@ Returns a `Coroutine` for
 
 List service templates with detail data.
 
-Type annotations for
-`aiobotocore.create_client("proton").list_service_templates` method.
+Type annotations for `session.create_client("proton").list_service_templates`
+method.
 
 Boto3 documentation:
 [Proton.Client.list_service_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.list_service_templates)
@@ -1578,8 +1565,7 @@ Returns a `Coroutine` for
 
 List services with summaries of detail data.
 
-Type annotations for `aiobotocore.create_client("proton").list_services`
-method.
+Type annotations for `session.create_client("proton").list_services` method.
 
 Boto3 documentation:
 [Proton.Client.list_services](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.list_services)
@@ -1603,8 +1589,8 @@ Returns a `Coroutine` for
 
 List tags for a resource.
 
-Type annotations for
-`aiobotocore.create_client("proton").list_tags_for_resource` method.
+Type annotations for `session.create_client("proton").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Proton.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.list_tags_for_resource)
@@ -1632,7 +1618,7 @@ Notify Proton of status changes to a provisioned resource when you use pull
 request provisioning.
 
 Type annotations for
-`aiobotocore.create_client("proton").notify_resource_deployment_status_change`
+`session.create_client("proton").notify_resource_deployment_status_change`
 method.
 
 Boto3 documentation:
@@ -1664,8 +1650,7 @@ In a management account, reject an environment account connection from another
 environment account.
 
 Type annotations for
-`aiobotocore.create_client("proton").reject_environment_account_connection`
-method.
+`session.create_client("proton").reject_environment_account_connection` method.
 
 Boto3 documentation:
 [Proton.Client.reject_environment_account_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.reject_environment_account_connection)
@@ -1689,7 +1674,7 @@ Returns a `Coroutine` for
 
 Tag a resource.
 
-Type annotations for `aiobotocore.create_client("proton").tag_resource` method.
+Type annotations for `session.create_client("proton").tag_resource` method.
 
 Boto3 documentation:
 [Proton.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.tag_resource)
@@ -1712,8 +1697,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Remove a tag from a resource.
 
-Type annotations for `aiobotocore.create_client("proton").untag_resource`
-method.
+Type annotations for `session.create_client("proton").untag_resource` method.
 
 Boto3 documentation:
 [Proton.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.untag_resource)
@@ -1736,8 +1720,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Update the Proton service pipeline role or repository settings.
 
-Type annotations for
-`aiobotocore.create_client("proton").update_account_settings` method.
+Type annotations for `session.create_client("proton").update_account_settings`
+method.
 
 Boto3 documentation:
 [Proton.Client.update_account_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.update_account_settings)
@@ -1763,7 +1747,7 @@ Returns a `Coroutine` for
 
 Update an environment.
 
-Type annotations for `aiobotocore.create_client("proton").update_environment`
+Type annotations for `session.create_client("proton").update_environment`
 method.
 
 Boto3 documentation:
@@ -1801,8 +1785,7 @@ In an environment account, update an environment account connection to use a
 new IAM role.
 
 Type annotations for
-`aiobotocore.create_client("proton").update_environment_account_connection`
-method.
+`session.create_client("proton").update_environment_account_connection` method.
 
 Boto3 documentation:
 [Proton.Client.update_environment_account_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.update_environment_account_connection)
@@ -1828,7 +1811,7 @@ Returns a `Coroutine` for
 Update an environment template.
 
 Type annotations for
-`aiobotocore.create_client("proton").update_environment_template` method.
+`session.create_client("proton").update_environment_template` method.
 
 Boto3 documentation:
 [Proton.Client.update_environment_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.update_environment_template)
@@ -1855,8 +1838,7 @@ Returns a `Coroutine` for
 Update a major or minor version of an environment template.
 
 Type annotations for
-`aiobotocore.create_client("proton").update_environment_template_version`
-method.
+`session.create_client("proton").update_environment_template_version` method.
 
 Boto3 documentation:
 [Proton.Client.update_environment_template_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.update_environment_template_version)
@@ -1885,8 +1867,7 @@ Returns a `Coroutine` for
 
 Edit a service description or use a spec to add and delete service instances.
 
-Type annotations for `aiobotocore.create_client("proton").update_service`
-method.
+Type annotations for `session.create_client("proton").update_service` method.
 
 Boto3 documentation:
 [Proton.Client.update_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.update_service)
@@ -1911,8 +1892,8 @@ Returns a `Coroutine` for
 
 Update a service instance.
 
-Type annotations for
-`aiobotocore.create_client("proton").update_service_instance` method.
+Type annotations for `session.create_client("proton").update_service_instance`
+method.
 
 Boto3 documentation:
 [Proton.Client.update_service_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.update_service_instance)
@@ -1943,8 +1924,8 @@ Returns a `Coroutine` for
 
 Update the service pipeline.
 
-Type annotations for
-`aiobotocore.create_client("proton").update_service_pipeline` method.
+Type annotations for `session.create_client("proton").update_service_pipeline`
+method.
 
 Boto3 documentation:
 [Proton.Client.update_service_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.update_service_pipeline)
@@ -1974,8 +1955,8 @@ Returns a `Coroutine` for
 
 Update a service template.
 
-Type annotations for
-`aiobotocore.create_client("proton").update_service_template` method.
+Type annotations for `session.create_client("proton").update_service_template`
+method.
 
 Boto3 documentation:
 [Proton.Client.update_service_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.update_service_template)
@@ -2002,7 +1983,7 @@ Returns a `Coroutine` for
 Update a major or minor version of a service template.
 
 Type annotations for
-`aiobotocore.create_client("proton").update_service_template_version` method.
+`session.create_client("proton").update_service_template_version` method.
 
 Boto3 documentation:
 [Proton.Client.update_service_template_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.update_service_template_version)
@@ -2035,7 +2016,7 @@ Update template sync configuration parameters, except for the `templateName`
 and `templateType` .
 
 Type annotations for
-`aiobotocore.create_client("proton").update_template_sync_config` method.
+`session.create_client("proton").update_template_sync_config` method.
 
 Boto3 documentation:
 [Proton.Client.update_template_sync_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.update_template_sync_config)
@@ -2060,11 +2041,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateTemplateSyncConfigOutputTypeDef](./type_defs.md#updatetemplatesyncconfigoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("proton").__aenter__` method.
+
+Boto3 documentation:
+[Proton.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ProtonClient](#protonclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("proton").__aexit__` method.
+
+Boto3 documentation:
+[Proton.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/proton.html#Proton.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("proton").get_paginator` method
+Type annotations for `session.create_client("proton").get_paginator` method
 with overloads.
 
 - `client.get_paginator("list_environment_account_connections")` ->
@@ -2106,8 +2119,8 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("proton").get_waiter` method
-with overloads.
+Type annotations for `session.create_client("proton").get_waiter` method with
+overloads.
 
 - `client.get_waiter("environment_deployed")` ->
   [EnvironmentDeployedWaiter](./waiters.md#environmentdeployedwaiter)

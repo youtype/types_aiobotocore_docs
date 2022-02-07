@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[mediaconvert]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[mediaconvert]'
+
+# standalone installation
 pip install types-aiobotocore-mediaconvert
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-mediaconvert
 
 ## MediaConvertClient
 
-Type annotations for `aiobotocore.create_client("mediaconvert")` as
+Type annotations for `session.create_client("mediaconvert")` as
 [MediaConvertClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_mediaconvert.client import MediaConvertClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_certificate](./client.md#associate_certificate)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_job](./client.md#cancel_job)
@@ -99,7 +105,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_mediaconvert.paginators import DescribeEndpointsPaginator, ...
+from types_aiobotocore_mediaconvert.paginator import DescribeEndpointsPaginator, ...
 ```
 
 - [DescribeEndpointsPaginator](./paginators.md#describeendpointspaginator)

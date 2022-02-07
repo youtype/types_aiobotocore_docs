@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[license-manager]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[license-manager]'
+
+# standalone installation
 pip install types-aiobotocore-license-manager
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-license-manager
 
 ## LicenseManagerClient
 
-Type annotations for `aiobotocore.create_client("license-manager")` as
+Type annotations for `session.create_client("license-manager")` as
 [LicenseManagerClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_license_manager.client import LicenseManagerClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_grant](./client.md#accept_grant)
 - [can_paginate](./client.md#can_paginate)
 - [check_in_license](./client.md#check_in_license)
@@ -130,7 +136,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_license_manager.paginators import ListAssociationsForLicenseConfigurationPaginator, ...
+from types_aiobotocore_license_manager.paginator import ListAssociationsForLicenseConfigurationPaginator, ...
 ```
 
 - [ListAssociationsForLicenseConfigurationPaginator](./paginators.md#listassociationsforlicenseconfigurationpaginator)

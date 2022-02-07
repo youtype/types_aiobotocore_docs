@@ -97,21 +97,24 @@ type annotations stubs module
     - [update_custom_verification_email_template](#update_custom_verification_email_template)
     - [update_email_identity_policy](#update_email_identity_policy)
     - [update_email_template](#update_email_template)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="sesv2client"></a>
 
 ## SESV2Client
 
-Type annotations for `aiobotocore.create_client("sesv2")`
+Type annotations for `session.create_client("sesv2")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_sesv2.client import SESV2Client
 
-def get_sesv2_client() -> SESV2Client:
-    return Session().client("sesv2")
+session = get_session()
+async with session.create_client("sesv2") as client:
+    client: SESV2Client
 ```
 
 Boto3 documentation:
@@ -157,7 +160,7 @@ Exceptions:
 
 SESV2Client exceptions.
 
-Type annotations for `aiobotocore.create_client("sesv2").exceptions` method.
+Type annotations for `session.create_client("sesv2").exceptions` method.
 
 Boto3 documentation:
 [SESV2.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.exceptions)
@@ -170,18 +173,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("sesv2").can_paginate` method.
+Type annotations for `session.create_client("sesv2").can_paginate` method.
 
 Boto3 documentation:
 [SESV2.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_configuration_set"></a>
 
@@ -189,8 +190,8 @@ Returns a `Coroutine` for `bool`.
 
 Create a configuration set.
 
-Type annotations for
-`aiobotocore.create_client("sesv2").create_configuration_set` method.
+Type annotations for `session.create_client("sesv2").create_configuration_set`
+method.
 
 Boto3 documentation:
 [SESV2.Client.create_configuration_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.create_configuration_set)
@@ -225,7 +226,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Create an event destination.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").create_configuration_set_event_destination`
+`session.create_client("sesv2").create_configuration_set_event_destination`
 method.
 
 Boto3 documentation:
@@ -254,8 +255,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates a contact, which is an end-user who is receiving the email, and adds
 them to a contact list.
 
-Type annotations for `aiobotocore.create_client("sesv2").create_contact`
-method.
+Type annotations for `session.create_client("sesv2").create_contact` method.
 
 Boto3 documentation:
 [SESV2.Client.create_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.create_contact)
@@ -282,7 +282,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a contact list.
 
-Type annotations for `aiobotocore.create_client("sesv2").create_contact_list`
+Type annotations for `session.create_client("sesv2").create_contact_list`
 method.
 
 Boto3 documentation:
@@ -310,7 +310,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates a new custom verification email template.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").create_custom_verification_email_template`
+`session.create_client("sesv2").create_custom_verification_email_template`
 method.
 
 Boto3 documentation:
@@ -339,8 +339,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Create a new pool of dedicated IP addresses.
 
-Type annotations for
-`aiobotocore.create_client("sesv2").create_dedicated_ip_pool` method.
+Type annotations for `session.create_client("sesv2").create_dedicated_ip_pool`
+method.
 
 Boto3 documentation:
 [SESV2.Client.create_dedicated_ip_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.create_dedicated_ip_pool)
@@ -365,7 +365,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Create a new predictive inbox placement test.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").create_deliverability_test_report` method.
+`session.create_client("sesv2").create_deliverability_test_report` method.
 
 Boto3 documentation:
 [SESV2.Client.create_deliverability_test_report](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.create_deliverability_test_report)
@@ -393,7 +393,7 @@ Returns a `Coroutine` for
 
 Starts the process of verifying an email identity.
 
-Type annotations for `aiobotocore.create_client("sesv2").create_email_identity`
+Type annotations for `session.create_client("sesv2").create_email_identity`
 method.
 
 Boto3 documentation:
@@ -424,7 +424,7 @@ Creates the specified sending authorization policy for the given identity (an
 email address or a domain).
 
 Type annotations for
-`aiobotocore.create_client("sesv2").create_email_identity_policy` method.
+`session.create_client("sesv2").create_email_identity_policy` method.
 
 Boto3 documentation:
 [SESV2.Client.create_email_identity_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.create_email_identity_policy)
@@ -449,7 +449,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates an email template.
 
-Type annotations for `aiobotocore.create_client("sesv2").create_email_template`
+Type annotations for `session.create_client("sesv2").create_email_template`
 method.
 
 Boto3 documentation:
@@ -476,8 +476,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates an import job for a data destination.
 
-Type annotations for `aiobotocore.create_client("sesv2").create_import_job`
-method.
+Type annotations for `session.create_client("sesv2").create_import_job` method.
 
 Boto3 documentation:
 [SESV2.Client.create_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.create_import_job)
@@ -505,8 +504,8 @@ Returns a `Coroutine` for
 
 Delete an existing configuration set.
 
-Type annotations for
-`aiobotocore.create_client("sesv2").delete_configuration_set` method.
+Type annotations for `session.create_client("sesv2").delete_configuration_set`
+method.
 
 Boto3 documentation:
 [SESV2.Client.delete_configuration_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.delete_configuration_set)
@@ -530,7 +529,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Delete an event destination.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").delete_configuration_set_event_destination`
+`session.create_client("sesv2").delete_configuration_set_event_destination`
 method.
 
 Boto3 documentation:
@@ -555,8 +554,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes a contact from a contact list.
 
-Type annotations for `aiobotocore.create_client("sesv2").delete_contact`
-method.
+Type annotations for `session.create_client("sesv2").delete_contact` method.
 
 Boto3 documentation:
 [SESV2.Client.delete_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.delete_contact)
@@ -579,7 +577,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a contact list and all of the contacts on that list.
 
-Type annotations for `aiobotocore.create_client("sesv2").delete_contact_list`
+Type annotations for `session.create_client("sesv2").delete_contact_list`
 method.
 
 Boto3 documentation:
@@ -604,7 +602,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes an existing custom verification email template.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").delete_custom_verification_email_template`
+`session.create_client("sesv2").delete_custom_verification_email_template`
 method.
 
 Boto3 documentation:
@@ -628,8 +626,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Delete a dedicated IP pool.
 
-Type annotations for
-`aiobotocore.create_client("sesv2").delete_dedicated_ip_pool` method.
+Type annotations for `session.create_client("sesv2").delete_dedicated_ip_pool`
+method.
 
 Boto3 documentation:
 [SESV2.Client.delete_dedicated_ip_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.delete_dedicated_ip_pool)
@@ -652,7 +650,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an email identity.
 
-Type annotations for `aiobotocore.create_client("sesv2").delete_email_identity`
+Type annotations for `session.create_client("sesv2").delete_email_identity`
 method.
 
 Boto3 documentation:
@@ -678,7 +676,7 @@ Deletes the specified sending authorization policy for the given identity (an
 email address or a domain).
 
 Type annotations for
-`aiobotocore.create_client("sesv2").delete_email_identity_policy` method.
+`session.create_client("sesv2").delete_email_identity_policy` method.
 
 Boto3 documentation:
 [SESV2.Client.delete_email_identity_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.delete_email_identity_policy)
@@ -702,7 +700,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an email template.
 
-Type annotations for `aiobotocore.create_client("sesv2").delete_email_template`
+Type annotations for `session.create_client("sesv2").delete_email_template`
 method.
 
 Boto3 documentation:
@@ -727,7 +725,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes an email address from the suppression list for your account.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").delete_suppressed_destination` method.
+`session.create_client("sesv2").delete_suppressed_destination` method.
 
 Boto3 documentation:
 [SESV2.Client.delete_suppressed_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.delete_suppressed_destination)
@@ -750,8 +748,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("sesv2").generate_presigned_url` method.
+Type annotations for `session.create_client("sesv2").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [SESV2.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.generate_presigned_url)
@@ -775,7 +773,7 @@ Returns a `Coroutine` for `str`.
 Obtain information about the email-sending status and capabilities of your
 Amazon SES account in the current Amazon Web Services Region.
 
-Type annotations for `aiobotocore.create_client("sesv2").get_account` method.
+Type annotations for `session.create_client("sesv2").get_account` method.
 
 Boto3 documentation:
 [SESV2.Client.get_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.get_account)
@@ -791,7 +789,7 @@ Returns a `Coroutine` for
 
 Retrieve a list of the blacklists that your dedicated IP addresses appear on.
 
-Type annotations for `aiobotocore.create_client("sesv2").get_blacklist_reports`
+Type annotations for `session.create_client("sesv2").get_blacklist_reports`
 method.
 
 Boto3 documentation:
@@ -818,7 +816,7 @@ Get information about an existing configuration set, including the dedicated IP
 pool that it's associated with, whether or not it's enabled for sending email,
 and more.
 
-Type annotations for `aiobotocore.create_client("sesv2").get_configuration_set`
+Type annotations for `session.create_client("sesv2").get_configuration_set`
 method.
 
 Boto3 documentation:
@@ -845,7 +843,7 @@ Retrieve a list of event destinations that are associated with a configuration
 set.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").get_configuration_set_event_destinations`
+`session.create_client("sesv2").get_configuration_set_event_destinations`
 method.
 
 Boto3 documentation:
@@ -870,7 +868,7 @@ Returns a `Coroutine` for
 
 Returns a contact from a contact list.
 
-Type annotations for `aiobotocore.create_client("sesv2").get_contact` method.
+Type annotations for `session.create_client("sesv2").get_contact` method.
 
 Boto3 documentation:
 [SESV2.Client.get_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.get_contact)
@@ -894,8 +892,7 @@ Returns a `Coroutine` for
 
 Returns contact list metadata.
 
-Type annotations for `aiobotocore.create_client("sesv2").get_contact_list`
-method.
+Type annotations for `session.create_client("sesv2").get_contact_list` method.
 
 Boto3 documentation:
 [SESV2.Client.get_contact_list](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.get_contact_list)
@@ -920,8 +917,7 @@ Returns the custom email verification template for the template name you
 specify.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").get_custom_verification_email_template`
-method.
+`session.create_client("sesv2").get_custom_verification_email_template` method.
 
 Boto3 documentation:
 [SESV2.Client.get_custom_verification_email_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.get_custom_verification_email_template)
@@ -947,8 +943,7 @@ Get information about a dedicated IP address, including the name of the
 dedicated IP pool that it's associated with, as well information about the
 automatic warm-up process for the address.
 
-Type annotations for `aiobotocore.create_client("sesv2").get_dedicated_ip`
-method.
+Type annotations for `session.create_client("sesv2").get_dedicated_ip` method.
 
 Boto3 documentation:
 [SESV2.Client.get_dedicated_ip](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.get_dedicated_ip)
@@ -972,8 +967,7 @@ Returns a `Coroutine` for
 List the dedicated IP addresses that are associated with your Amazon Web
 Services account.
 
-Type annotations for `aiobotocore.create_client("sesv2").get_dedicated_ips`
-method.
+Type annotations for `session.create_client("sesv2").get_dedicated_ips` method.
 
 Boto3 documentation:
 [SESV2.Client.get_dedicated_ips](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.get_dedicated_ips)
@@ -1000,8 +994,7 @@ Retrieve information about the status of the Deliverability dashboard for your
 account.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").get_deliverability_dashboard_options`
-method.
+`session.create_client("sesv2").get_deliverability_dashboard_options` method.
 
 Boto3 documentation:
 [SESV2.Client.get_deliverability_dashboard_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.get_deliverability_dashboard_options)
@@ -1019,7 +1012,7 @@ Returns a `Coroutine` for
 Retrieve the results of a predictive inbox placement test.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").get_deliverability_test_report` method.
+`session.create_client("sesv2").get_deliverability_test_report` method.
 
 Boto3 documentation:
 [SESV2.Client.get_deliverability_test_report](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.get_deliverability_test_report)
@@ -1044,7 +1037,7 @@ Returns a `Coroutine` for
 Retrieve all the deliverability data for a specific campaign.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").get_domain_deliverability_campaign` method.
+`session.create_client("sesv2").get_domain_deliverability_campaign` method.
 
 Boto3 documentation:
 [SESV2.Client.get_domain_deliverability_campaign](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.get_domain_deliverability_campaign)
@@ -1070,7 +1063,7 @@ Retrieve inbox placement and engagement rates for the domains that you use to
 send email.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").get_domain_statistics_report` method.
+`session.create_client("sesv2").get_domain_statistics_report` method.
 
 Boto3 documentation:
 [SESV2.Client.get_domain_statistics_report](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.get_domain_statistics_report)
@@ -1098,7 +1091,7 @@ Provides information about a specific identity, including the identity's
 verification status, sending authorization policies, its DKIM authentication
 status, and its custom Mail-From settings.
 
-Type annotations for `aiobotocore.create_client("sesv2").get_email_identity`
+Type annotations for `session.create_client("sesv2").get_email_identity`
 method.
 
 Boto3 documentation:
@@ -1125,7 +1118,7 @@ Returns the requested sending authorization policies for the given identity (an
 email address or a domain).
 
 Type annotations for
-`aiobotocore.create_client("sesv2").get_email_identity_policies` method.
+`session.create_client("sesv2").get_email_identity_policies` method.
 
 Boto3 documentation:
 [SESV2.Client.get_email_identity_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.get_email_identity_policies)
@@ -1150,7 +1143,7 @@ Returns a `Coroutine` for
 Displays the template object (which includes the subject line, HTML part and
 text part) for the template you specify.
 
-Type annotations for `aiobotocore.create_client("sesv2").get_email_template`
+Type annotations for `session.create_client("sesv2").get_email_template`
 method.
 
 Boto3 documentation:
@@ -1175,8 +1168,7 @@ Returns a `Coroutine` for
 
 Provides information about an import job.
 
-Type annotations for `aiobotocore.create_client("sesv2").get_import_job`
-method.
+Type annotations for `session.create_client("sesv2").get_import_job` method.
 
 Boto3 documentation:
 [SESV2.Client.get_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.get_import_job)
@@ -1201,7 +1193,7 @@ Retrieves information about a specific email address that's on the suppression
 list for your account.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").get_suppressed_destination` method.
+`session.create_client("sesv2").get_suppressed_destination` method.
 
 Boto3 documentation:
 [SESV2.Client.get_suppressed_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.get_suppressed_destination)
@@ -1226,8 +1218,8 @@ Returns a `Coroutine` for
 List all of the configuration sets associated with your account in the current
 region.
 
-Type annotations for
-`aiobotocore.create_client("sesv2").list_configuration_sets` method.
+Type annotations for `session.create_client("sesv2").list_configuration_sets`
+method.
 
 Boto3 documentation:
 [SESV2.Client.list_configuration_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.list_configuration_sets)
@@ -1252,7 +1244,7 @@ Returns a `Coroutine` for
 
 Lists all of the contact lists available.
 
-Type annotations for `aiobotocore.create_client("sesv2").list_contact_lists`
+Type annotations for `session.create_client("sesv2").list_contact_lists`
 method.
 
 Boto3 documentation:
@@ -1278,7 +1270,7 @@ Returns a `Coroutine` for
 
 Lists the contacts present in a specific contact list.
 
-Type annotations for `aiobotocore.create_client("sesv2").list_contacts` method.
+Type annotations for `session.create_client("sesv2").list_contacts` method.
 
 Boto3 documentation:
 [SESV2.Client.list_contacts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.list_contacts)
@@ -1307,7 +1299,7 @@ Lists the existing custom verification email templates for your account in the
 current Amazon Web Services Region.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").list_custom_verification_email_templates`
+`session.create_client("sesv2").list_custom_verification_email_templates`
 method.
 
 Boto3 documentation:
@@ -1334,8 +1326,8 @@ Returns a `Coroutine` for
 List all of the dedicated IP pools that exist in your Amazon Web Services
 account in the current Region.
 
-Type annotations for
-`aiobotocore.create_client("sesv2").list_dedicated_ip_pools` method.
+Type annotations for `session.create_client("sesv2").list_dedicated_ip_pools`
+method.
 
 Boto3 documentation:
 [SESV2.Client.list_dedicated_ip_pools](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.list_dedicated_ip_pools)
@@ -1362,7 +1354,7 @@ Show a list of the predictive inbox placement tests that you've performed,
 regardless of their statuses.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").list_deliverability_test_reports` method.
+`session.create_client("sesv2").list_deliverability_test_reports` method.
 
 Boto3 documentation:
 [SESV2.Client.list_deliverability_test_reports](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.list_deliverability_test_reports)
@@ -1389,8 +1381,7 @@ Retrieve deliverability data for all the campaigns that used a specific domain
 to send email during a specified time range.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").list_domain_deliverability_campaigns`
-method.
+`session.create_client("sesv2").list_domain_deliverability_campaigns` method.
 
 Boto3 documentation:
 [SESV2.Client.list_domain_deliverability_campaigns](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.list_domain_deliverability_campaigns)
@@ -1419,7 +1410,7 @@ Returns a `Coroutine` for
 Returns a list of all of the email identities that are associated with your
 Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("sesv2").list_email_identities`
+Type annotations for `session.create_client("sesv2").list_email_identities`
 method.
 
 Boto3 documentation:
@@ -1446,7 +1437,7 @@ Returns a `Coroutine` for
 Lists the email templates present in your Amazon SES account in the current
 Amazon Web Services Region.
 
-Type annotations for `aiobotocore.create_client("sesv2").list_email_templates`
+Type annotations for `session.create_client("sesv2").list_email_templates`
 method.
 
 Boto3 documentation:
@@ -1472,8 +1463,7 @@ Returns a `Coroutine` for
 
 Lists all of the import jobs.
 
-Type annotations for `aiobotocore.create_client("sesv2").list_import_jobs`
-method.
+Type annotations for `session.create_client("sesv2").list_import_jobs` method.
 
 Boto3 documentation:
 [SESV2.Client.list_import_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.list_import_jobs)
@@ -1501,7 +1491,7 @@ Retrieves a list of email addresses that are on the suppression list for your
 account.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").list_suppressed_destinations` method.
+`session.create_client("sesv2").list_suppressed_destinations` method.
 
 Boto3 documentation:
 [SESV2.Client.list_suppressed_destinations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.list_suppressed_destinations)
@@ -1531,8 +1521,8 @@ Returns a `Coroutine` for
 Retrieve a list of the tags (keys and values) that are associated with a
 specified resource.
 
-Type annotations for
-`aiobotocore.create_client("sesv2").list_tags_for_resource` method.
+Type annotations for `session.create_client("sesv2").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [SESV2.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.list_tags_for_resource)
@@ -1557,7 +1547,7 @@ Returns a `Coroutine` for
 Enable or disable the automatic warm-up feature for dedicated IP addresses.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").put_account_dedicated_ip_warmup_attributes`
+`session.create_client("sesv2").put_account_dedicated_ip_warmup_attributes`
 method.
 
 Boto3 documentation:
@@ -1581,7 +1571,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Update your Amazon SES account details.
 
-Type annotations for `aiobotocore.create_client("sesv2").put_account_details`
+Type annotations for `session.create_client("sesv2").put_account_details`
 method.
 
 Boto3 documentation:
@@ -1611,7 +1601,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Enable or disable the ability of your account to send email.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").put_account_sending_attributes` method.
+`session.create_client("sesv2").put_account_sending_attributes` method.
 
 Boto3 documentation:
 [SESV2.Client.put_account_sending_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.put_account_sending_attributes)
@@ -1635,7 +1625,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Change the settings for the account-level suppression list.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").put_account_suppression_attributes` method.
+`session.create_client("sesv2").put_account_suppression_attributes` method.
 
 Boto3 documentation:
 [SESV2.Client.put_account_suppression_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.put_account_suppression_attributes)
@@ -1660,8 +1650,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associate a configuration set with a dedicated IP pool.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").put_configuration_set_delivery_options`
-method.
+`session.create_client("sesv2").put_configuration_set_delivery_options` method.
 
 Boto3 documentation:
 [SESV2.Client.put_configuration_set_delivery_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.put_configuration_set_delivery_options)
@@ -1688,7 +1677,7 @@ Enable or disable collection of reputation metrics for emails that you send
 using a particular configuration set in a specific Amazon Web Services Region.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").put_configuration_set_reputation_options`
+`session.create_client("sesv2").put_configuration_set_reputation_options`
 method.
 
 Boto3 documentation:
@@ -1715,8 +1704,7 @@ Enable or disable email sending for messages that use a particular
 configuration set in a specific Amazon Web Services Region.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").put_configuration_set_sending_options`
-method.
+`session.create_client("sesv2").put_configuration_set_sending_options` method.
 
 Boto3 documentation:
 [SESV2.Client.put_configuration_set_sending_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.put_configuration_set_sending_options)
@@ -1741,7 +1729,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Specify the account suppression list preferences for a configuration set.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").put_configuration_set_suppression_options`
+`session.create_client("sesv2").put_configuration_set_suppression_options`
 method.
 
 Boto3 documentation:
@@ -1769,8 +1757,7 @@ Specify a custom domain to use for open and click tracking elements in email
 that you send.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").put_configuration_set_tracking_options`
-method.
+`session.create_client("sesv2").put_configuration_set_tracking_options` method.
 
 Boto3 documentation:
 [SESV2.Client.put_configuration_set_tracking_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.put_configuration_set_tracking_options)
@@ -1794,8 +1781,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Move a dedicated IP address to an existing dedicated IP pool.
 
-Type annotations for
-`aiobotocore.create_client("sesv2").put_dedicated_ip_in_pool` method.
+Type annotations for `session.create_client("sesv2").put_dedicated_ip_in_pool`
+method.
 
 Boto3 documentation:
 [SESV2.Client.put_dedicated_ip_in_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.put_dedicated_ip_in_pool)
@@ -1821,7 +1808,7 @@ See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDedicatedIpWarmupAttributes).
 
 Type annotations for
-`aiobotocore.create_client("sesv2").put_dedicated_ip_warmup_attributes` method.
+`session.create_client("sesv2").put_dedicated_ip_warmup_attributes` method.
 
 Boto3 documentation:
 [SESV2.Client.put_dedicated_ip_warmup_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.put_dedicated_ip_warmup_attributes)
@@ -1846,8 +1833,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Enable or disable the Deliverability dashboard.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").put_deliverability_dashboard_option`
-method.
+`session.create_client("sesv2").put_deliverability_dashboard_option` method.
 
 Boto3 documentation:
 [SESV2.Client.put_deliverability_dashboard_option](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.put_deliverability_dashboard_option)
@@ -1873,7 +1859,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Used to associate a configuration set with an email identity.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").put_email_identity_configuration_set_attributes`
+`session.create_client("sesv2").put_email_identity_configuration_set_attributes`
 method.
 
 Boto3 documentation:
@@ -1900,7 +1886,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Used to enable or disable DKIM authentication for an email identity.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").put_email_identity_dkim_attributes` method.
+`session.create_client("sesv2").put_email_identity_dkim_attributes` method.
 
 Boto3 documentation:
 [SESV2.Client.put_email_identity_dkim_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.put_email_identity_dkim_attributes)
@@ -1926,7 +1912,7 @@ Used to configure or change the DKIM authentication settings for an email
 domain identity.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").put_email_identity_dkim_signing_attributes`
+`session.create_client("sesv2").put_email_identity_dkim_signing_attributes`
 method.
 
 Boto3 documentation:
@@ -1957,8 +1943,7 @@ Returns a `Coroutine` for
 Used to enable or disable feedback forwarding for an identity.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").put_email_identity_feedback_attributes`
-method.
+`session.create_client("sesv2").put_email_identity_feedback_attributes` method.
 
 Boto3 documentation:
 [SESV2.Client.put_email_identity_feedback_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.put_email_identity_feedback_attributes)
@@ -1984,7 +1969,7 @@ Used to enable or disable the custom Mail-From domain configuration for an
 email identity.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").put_email_identity_mail_from_attributes`
+`session.create_client("sesv2").put_email_identity_mail_from_attributes`
 method.
 
 Boto3 documentation:
@@ -2012,7 +1997,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds an email address to the suppression list for your account.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").put_suppressed_destination` method.
+`session.create_client("sesv2").put_suppressed_destination` method.
 
 Boto3 documentation:
 [SESV2.Client.put_suppressed_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.put_suppressed_destination)
@@ -2038,8 +2023,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Composes an email message to multiple destinations.
 
-Type annotations for `aiobotocore.create_client("sesv2").send_bulk_email`
-method.
+Type annotations for `session.create_client("sesv2").send_bulk_email` method.
 
 Boto3 documentation:
 [SESV2.Client.send_bulk_email](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.send_bulk_email)
@@ -2077,7 +2061,7 @@ Adds an email address to the list of identities for your Amazon SES account in
 the current Amazon Web Services Region and attempts to verify it.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").send_custom_verification_email` method.
+`session.create_client("sesv2").send_custom_verification_email` method.
 
 Boto3 documentation:
 [SESV2.Client.send_custom_verification_email](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.send_custom_verification_email)
@@ -2103,7 +2087,7 @@ Returns a `Coroutine` for
 
 Sends an email message.
 
-Type annotations for `aiobotocore.create_client("sesv2").send_email` method.
+Type annotations for `session.create_client("sesv2").send_email` method.
 
 Boto3 documentation:
 [SESV2.Client.send_email](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.send_email)
@@ -2138,7 +2122,7 @@ Returns a `Coroutine` for
 
 Add one or more tags (keys and values) to a specified resource.
 
-Type annotations for `aiobotocore.create_client("sesv2").tag_resource` method.
+Type annotations for `session.create_client("sesv2").tag_resource` method.
 
 Boto3 documentation:
 [SESV2.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.tag_resource)
@@ -2163,7 +2147,7 @@ Creates a preview of the MIME content of an email when provided with a template
 and a set of replacement data.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").test_render_email_template` method.
+`session.create_client("sesv2").test_render_email_template` method.
 
 Boto3 documentation:
 [SESV2.Client.test_render_email_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.test_render_email_template)
@@ -2188,8 +2172,7 @@ Returns a `Coroutine` for
 
 Remove one or more tags (keys and values) from a specified resource.
 
-Type annotations for `aiobotocore.create_client("sesv2").untag_resource`
-method.
+Type annotations for `session.create_client("sesv2").untag_resource` method.
 
 Boto3 documentation:
 [SESV2.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.untag_resource)
@@ -2213,7 +2196,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Update the configuration of an event destination for a configuration set.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").update_configuration_set_event_destination`
+`session.create_client("sesv2").update_configuration_set_event_destination`
 method.
 
 Boto3 documentation:
@@ -2241,8 +2224,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a contact's preferences for a list.
 
-Type annotations for `aiobotocore.create_client("sesv2").update_contact`
-method.
+Type annotations for `session.create_client("sesv2").update_contact` method.
 
 Boto3 documentation:
 [SESV2.Client.update_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.update_contact)
@@ -2269,7 +2251,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates contact list metadata.
 
-Type annotations for `aiobotocore.create_client("sesv2").update_contact_list`
+Type annotations for `session.create_client("sesv2").update_contact_list`
 method.
 
 Boto3 documentation:
@@ -2296,7 +2278,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates an existing custom verification email template.
 
 Type annotations for
-`aiobotocore.create_client("sesv2").update_custom_verification_email_template`
+`session.create_client("sesv2").update_custom_verification_email_template`
 method.
 
 Boto3 documentation:
@@ -2327,7 +2309,7 @@ Updates the specified sending authorization policy for the given identity (an
 email address or a domain).
 
 Type annotations for
-`aiobotocore.create_client("sesv2").update_email_identity_policy` method.
+`session.create_client("sesv2").update_email_identity_policy` method.
 
 Boto3 documentation:
 [SESV2.Client.update_email_identity_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.update_email_identity_policy)
@@ -2352,7 +2334,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an email template.
 
-Type annotations for `aiobotocore.create_client("sesv2").update_email_template`
+Type annotations for `session.create_client("sesv2").update_email_template`
 method.
 
 Boto3 documentation:
@@ -2372,3 +2354,35 @@ Keyword-only arguments:
   *(required)*
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("sesv2").__aenter__` method.
+
+Boto3 documentation:
+[SESV2.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SESV2Client](#sesv2client).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("sesv2").__aexit__` method.
+
+Boto3 documentation:
+[SESV2.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sesv2.html#SESV2.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

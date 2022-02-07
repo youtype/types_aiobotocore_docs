@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[route53]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[route53]'
+
+# standalone installation
 pip install types-aiobotocore-route53
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-route53
 
 ## Route53Client
 
-Type annotations for `aiobotocore.create_client("route53")` as
+Type annotations for `session.create_client("route53")` as
 [Route53Client](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_route53.client import Route53Client
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [activate_key_signing_key](./client.md#activate_key_signing_key)
 - [associate_vpc_with_hosted_zone](./client.md#associate_vpc_with_hosted_zone)
 - [can_paginate](./client.md#can_paginate)
@@ -194,7 +200,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_route53.paginators import ListHealthChecksPaginator, ...
+from types_aiobotocore_route53.paginator import ListHealthChecksPaginator, ...
 ```
 
 - [ListHealthChecksPaginator](./paginators.md#listhealthcheckspaginator)
@@ -213,7 +219,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_route53.waiters import ResourceRecordSetsChangedWaiter, ...
+from types_aiobotocore_route53.waiter import ResourceRecordSetsChangedWaiter, ...
 ```
 
 - [ResourceRecordSetsChangedWaiter](./waiters.md#resourcerecordsetschangedwaiter)

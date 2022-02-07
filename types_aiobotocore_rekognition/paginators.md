@@ -23,17 +23,19 @@ type annotations stubs module
 ## DescribeProjectVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rekognition").get_paginator("describe_project_versions")`.
+`session.create_client("rekognition").get_paginator("describe_project_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rekognition.paginator import DescribeProjectVersionsPaginator
 
-def get_describe_project_versions_paginator() -> DescribeProjectVersionsPaginator:
-    return Session().create_client("rekognition").get_paginator("describe_project_versions")
+session = get_session()
+async with session.create_client("rekognition") as client:
+    client: RekognitionClient
+    paginator: DescribeProjectVersionsPaginator = client.get_paginator("describe_project_versions")
 ```
 
 Boto3 documentation:
@@ -54,17 +56,19 @@ Arguments for `DescribeProjectVersionsPaginator.paginate` method:
 ## DescribeProjectsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rekognition").get_paginator("describe_projects")`.
+`session.create_client("rekognition").get_paginator("describe_projects")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rekognition.paginator import DescribeProjectsPaginator
 
-def get_describe_projects_paginator() -> DescribeProjectsPaginator:
-    return Session().create_client("rekognition").get_paginator("describe_projects")
+session = get_session()
+async with session.create_client("rekognition") as client:
+    client: RekognitionClient
+    paginator: DescribeProjectsPaginator = client.get_paginator("describe_projects")
 ```
 
 Boto3 documentation:
@@ -84,17 +88,19 @@ Arguments for `DescribeProjectsPaginator.paginate` method:
 ## ListCollectionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rekognition").get_paginator("list_collections")`.
+`session.create_client("rekognition").get_paginator("list_collections")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rekognition.paginator import ListCollectionsPaginator
 
-def get_list_collections_paginator() -> ListCollectionsPaginator:
-    return Session().create_client("rekognition").get_paginator("list_collections")
+session = get_session()
+async with session.create_client("rekognition") as client:
+    client: RekognitionClient
+    paginator: ListCollectionsPaginator = client.get_paginator("list_collections")
 ```
 
 Boto3 documentation:
@@ -113,17 +119,19 @@ Arguments for `ListCollectionsPaginator.paginate` method:
 ## ListDatasetEntriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("rekognition").get_paginator("list_dataset_entries")`.
+`session.create_client("rekognition").get_paginator("list_dataset_entries")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rekognition.paginator import ListDatasetEntriesPaginator
 
-def get_list_dataset_entries_paginator() -> ListDatasetEntriesPaginator:
-    return Session().create_client("rekognition").get_paginator("list_dataset_entries")
+session = get_session()
+async with session.create_client("rekognition") as client:
+    client: RekognitionClient
+    paginator: ListDatasetEntriesPaginator = client.get_paginator("list_dataset_entries")
 ```
 
 Boto3 documentation:
@@ -147,17 +155,19 @@ Arguments for `ListDatasetEntriesPaginator.paginate` method:
 ## ListDatasetLabelsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rekognition").get_paginator("list_dataset_labels")`.
+`session.create_client("rekognition").get_paginator("list_dataset_labels")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rekognition.paginator import ListDatasetLabelsPaginator
 
-def get_list_dataset_labels_paginator() -> ListDatasetLabelsPaginator:
-    return Session().create_client("rekognition").get_paginator("list_dataset_labels")
+session = get_session()
+async with session.create_client("rekognition") as client:
+    client: RekognitionClient
+    paginator: ListDatasetLabelsPaginator = client.get_paginator("list_dataset_labels")
 ```
 
 Boto3 documentation:
@@ -177,17 +187,19 @@ Arguments for `ListDatasetLabelsPaginator.paginate` method:
 ## ListFacesPaginator
 
 Type annotations for
-`aiobotocore.create_client("rekognition").get_paginator("list_faces")`.
+`session.create_client("rekognition").get_paginator("list_faces")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rekognition.paginator import ListFacesPaginator
 
-def get_list_faces_paginator() -> ListFacesPaginator:
-    return Session().create_client("rekognition").get_paginator("list_faces")
+session = get_session()
+async with session.create_client("rekognition") as client:
+    client: RekognitionClient
+    paginator: ListFacesPaginator = client.get_paginator("list_faces")
 ```
 
 Boto3 documentation:
@@ -207,17 +219,19 @@ Arguments for `ListFacesPaginator.paginate` method:
 ## ListStreamProcessorsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rekognition").get_paginator("list_stream_processors")`.
+`session.create_client("rekognition").get_paginator("list_stream_processors")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rekognition.paginator import ListStreamProcessorsPaginator
 
-def get_list_stream_processors_paginator() -> ListStreamProcessorsPaginator:
-    return Session().create_client("rekognition").get_paginator("list_stream_processors")
+session = get_session()
+async with session.create_client("rekognition") as client:
+    client: RekognitionClient
+    paginator: ListStreamProcessorsPaginator = client.get_paginator("list_stream_processors")
 ```
 
 Boto3 documentation:

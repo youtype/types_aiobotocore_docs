@@ -55,22 +55,25 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_action_type](#update_action_type)
     - [update_pipeline](#update_pipeline)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="codepipelineclient"></a>
 
 ## CodePipelineClient
 
-Type annotations for `aiobotocore.create_client("codepipeline")`
+Type annotations for `session.create_client("codepipeline")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_codepipeline.client import CodePipelineClient
 
-def get_codepipeline_client() -> CodePipelineClient:
-    return Session().client("codepipeline")
+session = get_session()
+async with session.create_client("codepipeline") as client:
+    client: CodePipelineClient
 ```
 
 Boto3 documentation:
@@ -141,8 +144,7 @@ Exceptions:
 
 CodePipelineClient exceptions.
 
-Type annotations for `aiobotocore.create_client("codepipeline").exceptions`
-method.
+Type annotations for `session.create_client("codepipeline").exceptions` method.
 
 Boto3 documentation:
 [CodePipeline.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.exceptions)
@@ -156,8 +158,8 @@ Returns [Exceptions](#exceptions).
 Returns information about a specified job and whether that job has been
 received by the job worker.
 
-Type annotations for
-`aiobotocore.create_client("codepipeline").acknowledge_job` method.
+Type annotations for `session.create_client("codepipeline").acknowledge_job`
+method.
 
 Boto3 documentation:
 [CodePipeline.Client.acknowledge_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.acknowledge_job)
@@ -182,7 +184,7 @@ Returns a `Coroutine` for
 Confirms a job worker has received the specified job.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").acknowledge_third_party_job` method.
+`session.create_client("codepipeline").acknowledge_third_party_job` method.
 
 Boto3 documentation:
 [CodePipeline.Client.acknowledge_third_party_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.acknowledge_third_party_job)
@@ -208,19 +210,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("codepipeline").can_paginate`
+Type annotations for `session.create_client("codepipeline").can_paginate`
 method.
 
 Boto3 documentation:
 [CodePipeline.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_custom_action_type"></a>
 
@@ -230,7 +230,7 @@ Creates a new custom action that can be used in all pipelines associated with
 the AWS account.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").create_custom_action_type` method.
+`session.create_client("codepipeline").create_custom_action_type` method.
 
 Boto3 documentation:
 [CodePipeline.Client.create_custom_action_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.create_custom_action_type)
@@ -266,8 +266,8 @@ Returns a `Coroutine` for
 
 Creates a pipeline.
 
-Type annotations for
-`aiobotocore.create_client("codepipeline").create_pipeline` method.
+Type annotations for `session.create_client("codepipeline").create_pipeline`
+method.
 
 Boto3 documentation:
 [CodePipeline.Client.create_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.create_pipeline)
@@ -294,7 +294,7 @@ Returns a `Coroutine` for
 Marks a custom action as deleted.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").delete_custom_action_type` method.
+`session.create_client("codepipeline").delete_custom_action_type` method.
 
 Boto3 documentation:
 [CodePipeline.Client.delete_custom_action_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.delete_custom_action_type)
@@ -318,8 +318,8 @@ Keyword-only arguments:
 
 Deletes the specified pipeline.
 
-Type annotations for
-`aiobotocore.create_client("codepipeline").delete_pipeline` method.
+Type annotations for `session.create_client("codepipeline").delete_pipeline`
+method.
 
 Boto3 documentation:
 [CodePipeline.Client.delete_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.delete_pipeline)
@@ -339,7 +339,7 @@ Keyword-only arguments:
 
 Deletes a previously created webhook by name.
 
-Type annotations for `aiobotocore.create_client("codepipeline").delete_webhook`
+Type annotations for `session.create_client("codepipeline").delete_webhook`
 method.
 
 Boto3 documentation:
@@ -364,7 +364,7 @@ Removes the connection between the webhook that was created by CodePipeline and
 the external tool with events to be detected.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").deregister_webhook_with_third_party`
+`session.create_client("codepipeline").deregister_webhook_with_third_party`
 method.
 
 Boto3 documentation:
@@ -390,7 +390,7 @@ Prevents artifacts in a pipeline from transitioning to the next stage in the
 pipeline.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").disable_stage_transition` method.
+`session.create_client("codepipeline").disable_stage_transition` method.
 
 Boto3 documentation:
 [CodePipeline.Client.disable_stage_transition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.disable_stage_transition)
@@ -416,7 +416,7 @@ Keyword-only arguments:
 Enables artifacts in a pipeline to transition to a stage in a pipeline.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").enable_stage_transition` method.
+`session.create_client("codepipeline").enable_stage_transition` method.
 
 Boto3 documentation:
 [CodePipeline.Client.enable_stage_transition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.enable_stage_transition)
@@ -441,7 +441,7 @@ Keyword-only arguments:
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").generate_presigned_url` method.
+`session.create_client("codepipeline").generate_presigned_url` method.
 
 Boto3 documentation:
 [CodePipeline.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.generate_presigned_url)
@@ -465,8 +465,8 @@ Returns a `Coroutine` for `str`.
 Returns information about an action type created for an external provider,
 where the action is to be used by customers of the external provider.
 
-Type annotations for
-`aiobotocore.create_client("codepipeline").get_action_type` method.
+Type annotations for `session.create_client("codepipeline").get_action_type`
+method.
 
 Boto3 documentation:
 [CodePipeline.Client.get_action_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.get_action_type)
@@ -493,8 +493,8 @@ Returns a `Coroutine` for
 
 Returns information about a job.
 
-Type annotations for
-`aiobotocore.create_client("codepipeline").get_job_details` method.
+Type annotations for `session.create_client("codepipeline").get_job_details`
+method.
 
 Boto3 documentation:
 [CodePipeline.Client.get_job_details](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.get_job_details)
@@ -517,7 +517,7 @@ Returns a `Coroutine` for
 
 Returns the metadata, structure, stages, and actions of a pipeline.
 
-Type annotations for `aiobotocore.create_client("codepipeline").get_pipeline`
+Type annotations for `session.create_client("codepipeline").get_pipeline`
 method.
 
 Boto3 documentation:
@@ -545,7 +545,7 @@ artifacts, the pipeline execution ID, and the name, version, and status of the
 pipeline.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").get_pipeline_execution` method.
+`session.create_client("codepipeline").get_pipeline_execution` method.
 
 Boto3 documentation:
 [CodePipeline.Client.get_pipeline_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.get_pipeline_execution)
@@ -571,8 +571,8 @@ Returns a `Coroutine` for
 Returns information about the state of a pipeline, including the stages and
 actions.
 
-Type annotations for
-`aiobotocore.create_client("codepipeline").get_pipeline_state` method.
+Type annotations for `session.create_client("codepipeline").get_pipeline_state`
+method.
 
 Boto3 documentation:
 [CodePipeline.Client.get_pipeline_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.get_pipeline_state)
@@ -597,7 +597,7 @@ Returns a `Coroutine` for
 Requests the details of a job for a third party action.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").get_third_party_job_details` method.
+`session.create_client("codepipeline").get_third_party_job_details` method.
 
 Boto3 documentation:
 [CodePipeline.Client.get_third_party_job_details](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.get_third_party_job_details)
@@ -623,7 +623,7 @@ Returns a `Coroutine` for
 Lists the action executions that have occurred in a pipeline.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").list_action_executions` method.
+`session.create_client("codepipeline").list_action_executions` method.
 
 Boto3 documentation:
 [CodePipeline.Client.list_action_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.list_action_executions)
@@ -652,8 +652,8 @@ Returns a `Coroutine` for
 Gets a summary of all AWS CodePipeline action types associated with your
 account.
 
-Type annotations for
-`aiobotocore.create_client("codepipeline").list_action_types` method.
+Type annotations for `session.create_client("codepipeline").list_action_types`
+method.
 
 Boto3 documentation:
 [CodePipeline.Client.list_action_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.list_action_types)
@@ -679,7 +679,7 @@ Returns a `Coroutine` for
 Gets a summary of the most recent executions for a pipeline.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").list_pipeline_executions` method.
+`session.create_client("codepipeline").list_pipeline_executions` method.
 
 Boto3 documentation:
 [CodePipeline.Client.list_pipeline_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.list_pipeline_executions)
@@ -705,7 +705,7 @@ Returns a `Coroutine` for
 
 Gets a summary of all of the pipelines associated with your account.
 
-Type annotations for `aiobotocore.create_client("codepipeline").list_pipelines`
+Type annotations for `session.create_client("codepipeline").list_pipelines`
 method.
 
 Boto3 documentation:
@@ -732,7 +732,7 @@ Gets the set of key-value pairs (metadata) that are used to manage the
 resource.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").list_tags_for_resource` method.
+`session.create_client("codepipeline").list_tags_for_resource` method.
 
 Boto3 documentation:
 [CodePipeline.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.list_tags_for_resource)
@@ -758,7 +758,7 @@ Returns a `Coroutine` for
 
 Gets a listing of all the webhooks in this AWS Region for this account.
 
-Type annotations for `aiobotocore.create_client("codepipeline").list_webhooks`
+Type annotations for `session.create_client("codepipeline").list_webhooks`
 method.
 
 Boto3 documentation:
@@ -783,7 +783,7 @@ Returns a `Coroutine` for
 
 Returns information about any jobs for AWS CodePipeline to act on.
 
-Type annotations for `aiobotocore.create_client("codepipeline").poll_for_jobs`
+Type annotations for `session.create_client("codepipeline").poll_for_jobs`
 method.
 
 Boto3 documentation:
@@ -811,7 +811,7 @@ Returns a `Coroutine` for
 Determines whether there are any third party jobs for a job worker to act on.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").poll_for_third_party_jobs` method.
+`session.create_client("codepipeline").poll_for_third_party_jobs` method.
 
 Boto3 documentation:
 [CodePipeline.Client.poll_for_third_party_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.poll_for_third_party_jobs)
@@ -838,7 +838,7 @@ Returns a `Coroutine` for
 Provides information to AWS CodePipeline about new revisions to a source.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").put_action_revision` method.
+`session.create_client("codepipeline").put_action_revision` method.
 
 Boto3 documentation:
 [CodePipeline.Client.put_action_revision](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.put_action_revision)
@@ -867,7 +867,7 @@ Returns a `Coroutine` for
 Provides the response to a manual approval request to AWS CodePipeline.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").put_approval_result` method.
+`session.create_client("codepipeline").put_approval_result` method.
 
 Boto3 documentation:
 [CodePipeline.Client.put_approval_result](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.put_approval_result)
@@ -897,7 +897,7 @@ Returns a `Coroutine` for
 Represents the failure of a job as returned to the pipeline by a job worker.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").put_job_failure_result` method.
+`session.create_client("codepipeline").put_job_failure_result` method.
 
 Boto3 documentation:
 [CodePipeline.Client.put_job_failure_result](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.put_job_failure_result)
@@ -921,7 +921,7 @@ Keyword-only arguments:
 Represents the success of a job as returned to the pipeline by a job worker.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").put_job_success_result` method.
+`session.create_client("codepipeline").put_job_success_result` method.
 
 Boto3 documentation:
 [CodePipeline.Client.put_job_success_result](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.put_job_success_result)
@@ -950,7 +950,7 @@ Represents the failure of a third party job as returned to the pipeline by a
 job worker.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").put_third_party_job_failure_result`
+`session.create_client("codepipeline").put_third_party_job_failure_result`
 method.
 
 Boto3 documentation:
@@ -977,7 +977,7 @@ Represents the success of a third party job as returned to the pipeline by a
 job worker.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").put_third_party_job_success_result`
+`session.create_client("codepipeline").put_third_party_job_success_result`
 method.
 
 Boto3 documentation:
@@ -1005,7 +1005,7 @@ Keyword-only arguments:
 
 Defines a webhook and returns a unique webhook URL generated by CodePipeline.
 
-Type annotations for `aiobotocore.create_client("codepipeline").put_webhook`
+Type annotations for `session.create_client("codepipeline").put_webhook`
 method.
 
 Boto3 documentation:
@@ -1034,7 +1034,7 @@ Configures a connection between the webhook that was created and the external
 tool with events to be detected.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").register_webhook_with_third_party`
+`session.create_client("codepipeline").register_webhook_with_third_party`
 method.
 
 Boto3 documentation:
@@ -1059,7 +1059,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Resumes the pipeline execution by retrying the last failed actions in a stage.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").retry_stage_execution` method.
+`session.create_client("codepipeline").retry_stage_execution` method.
 
 Boto3 documentation:
 [CodePipeline.Client.retry_stage_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.retry_stage_execution)
@@ -1088,7 +1088,7 @@ Returns a `Coroutine` for
 Starts the specified pipeline.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").start_pipeline_execution` method.
+`session.create_client("codepipeline").start_pipeline_execution` method.
 
 Boto3 documentation:
 [CodePipeline.Client.start_pipeline_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.start_pipeline_execution)
@@ -1114,7 +1114,7 @@ Returns a `Coroutine` for
 Stops the specified pipeline execution.
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").stop_pipeline_execution` method.
+`session.create_client("codepipeline").stop_pipeline_execution` method.
 
 Boto3 documentation:
 [CodePipeline.Client.stop_pipeline_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.stop_pipeline_execution)
@@ -1141,7 +1141,7 @@ Returns a `Coroutine` for
 
 Adds to or modifies the tags of the given resource.
 
-Type annotations for `aiobotocore.create_client("codepipeline").tag_resource`
+Type annotations for `session.create_client("codepipeline").tag_resource`
 method.
 
 Boto3 documentation:
@@ -1165,7 +1165,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from an AWS resource.
 
-Type annotations for `aiobotocore.create_client("codepipeline").untag_resource`
+Type annotations for `session.create_client("codepipeline").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1190,8 +1190,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates an action type that was created with any supported integration model,
 where the action type is to be used by customers of the action type provider.
 
-Type annotations for
-`aiobotocore.create_client("codepipeline").update_action_type` method.
+Type annotations for `session.create_client("codepipeline").update_action_type`
+method.
 
 Boto3 documentation:
 [CodePipeline.Client.update_action_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.update_action_type)
@@ -1214,8 +1214,8 @@ Keyword-only arguments:
 
 Updates a specified pipeline with edits or changes to its structure.
 
-Type annotations for
-`aiobotocore.create_client("codepipeline").update_pipeline` method.
+Type annotations for `session.create_client("codepipeline").update_pipeline`
+method.
 
 Boto3 documentation:
 [CodePipeline.Client.update_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.update_pipeline)
@@ -1234,11 +1234,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdatePipelineOutputTypeDef](./type_defs.md#updatepipelineoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("codepipeline").__aenter__` method.
+
+Boto3 documentation:
+[CodePipeline.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CodePipelineClient](#codepipelineclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("codepipeline").__aexit__` method.
+
+Boto3 documentation:
+[CodePipeline.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html#CodePipeline.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("codepipeline").get_paginator`
+Type annotations for `session.create_client("codepipeline").get_paginator`
 method with overloads.
 
 - `client.get_paginator("list_action_executions")` ->

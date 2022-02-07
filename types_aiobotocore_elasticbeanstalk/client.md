@@ -63,6 +63,8 @@ type annotations stubs module
     - [update_environment](#update_environment)
     - [update_tags_for_resource](#update_tags_for_resource)
     - [validate_configuration_settings](#validate_configuration_settings)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -70,16 +72,17 @@ type annotations stubs module
 
 ## ElasticBeanstalkClient
 
-Type annotations for `aiobotocore.create_client("elasticbeanstalk")`
+Type annotations for `session.create_client("elasticbeanstalk")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_elasticbeanstalk.client import ElasticBeanstalkClient
 
-def get_elasticbeanstalk_client() -> ElasticBeanstalkClient:
-    return Session().client("elasticbeanstalk")
+session = get_session()
+async with session.create_client("elasticbeanstalk") as client:
+    client: ElasticBeanstalkClient
 ```
 
 Boto3 documentation:
@@ -132,7 +135,7 @@ Exceptions:
 
 ElasticBeanstalkClient exceptions.
 
-Type annotations for `aiobotocore.create_client("elasticbeanstalk").exceptions`
+Type annotations for `session.create_client("elasticbeanstalk").exceptions`
 method.
 
 Boto3 documentation:
@@ -148,8 +151,7 @@ Cancels in-progress environment configuration update or application version
 deployment.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").abort_environment_update`
-method.
+`session.create_client("elasticbeanstalk").abort_environment_update` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.abort_environment_update](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.abort_environment_update)
@@ -172,7 +174,7 @@ Keyword-only arguments:
 Applies a scheduled managed action immediately.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").apply_environment_managed_action`
+`session.create_client("elasticbeanstalk").apply_environment_managed_action`
 method.
 
 Boto3 documentation:
@@ -200,7 +202,7 @@ Returns a `Coroutine` for
 Add or change the operations role used by an environment.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").associate_environment_operations_role`
+`session.create_client("elasticbeanstalk").associate_environment_operations_role`
 method.
 
 Boto3 documentation:
@@ -223,19 +225,17 @@ Keyword-only arguments:
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").can_paginate` method.
+Type annotations for `session.create_client("elasticbeanstalk").can_paginate`
+method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="check_dns_availability"></a>
 
@@ -244,7 +244,7 @@ Returns a `Coroutine` for `bool`.
 Checks if the specified CNAME is available.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").check_dns_availability` method.
+`session.create_client("elasticbeanstalk").check_dns_availability` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.check_dns_availability](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.check_dns_availability)
@@ -270,7 +270,7 @@ Create or update a group of environments that each run a separate component of
 a single application.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").compose_environments` method.
+`session.create_client("elasticbeanstalk").compose_environments` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.compose_environments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.compose_environments)
@@ -298,7 +298,7 @@ Creates an application that has one configuration template named `default` and
 no application versions.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").create_application` method.
+`session.create_client("elasticbeanstalk").create_application` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.create_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.create_application)
@@ -327,8 +327,7 @@ Returns a `Coroutine` for
 Creates an application version for the specified application.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").create_application_version`
-method.
+`session.create_client("elasticbeanstalk").create_application_version` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.create_application_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.create_application_version)
@@ -363,7 +362,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").create_configuration_template`
+`session.create_client("elasticbeanstalk").create_configuration_template`
 method.
 
 Boto3 documentation:
@@ -400,7 +399,7 @@ Launches an AWS Elastic Beanstalk environment for the specified application
 using the specified configuration.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").create_environment` method.
+`session.create_client("elasticbeanstalk").create_environment` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.create_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.create_environment)
@@ -440,7 +439,7 @@ Returns a `Coroutine` for
 Create a new version of your custom platform.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").create_platform_version` method.
+`session.create_client("elasticbeanstalk").create_platform_version` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.create_platform_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.create_platform_version)
@@ -473,7 +472,7 @@ Creates a bucket in Amazon S3 to store application versions, logs, and other
 files used by Elastic Beanstalk environments.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").create_storage_location` method.
+`session.create_client("elasticbeanstalk").create_storage_location` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.create_storage_location](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.create_storage_location)
@@ -492,7 +491,7 @@ Deletes the specified application along with all associated versions and
 configurations.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").delete_application` method.
+`session.create_client("elasticbeanstalk").delete_application` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.delete_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.delete_application)
@@ -515,8 +514,7 @@ Keyword-only arguments:
 Deletes the specified version from the specified application.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").delete_application_version`
-method.
+`session.create_client("elasticbeanstalk").delete_application_version` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.delete_application_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.delete_application_version)
@@ -540,7 +538,7 @@ Keyword-only arguments:
 Deletes the specified configuration template.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").delete_configuration_template`
+`session.create_client("elasticbeanstalk").delete_configuration_template`
 method.
 
 Boto3 documentation:
@@ -564,7 +562,7 @@ Keyword-only arguments:
 Deletes the draft configuration associated with the running environment.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").delete_environment_configuration`
+`session.create_client("elasticbeanstalk").delete_environment_configuration`
 method.
 
 Boto3 documentation:
@@ -588,7 +586,7 @@ Keyword-only arguments:
 Deletes the specified version of a custom platform.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").delete_platform_version` method.
+`session.create_client("elasticbeanstalk").delete_platform_version` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.delete_platform_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.delete_platform_version)
@@ -614,8 +612,7 @@ Returns attributes related to AWS Elastic Beanstalk that are associated with
 the calling AWS account.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").describe_account_attributes`
-method.
+`session.create_client("elasticbeanstalk").describe_account_attributes` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.describe_account_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.describe_account_attributes)
@@ -633,7 +630,7 @@ Returns a `Coroutine` for
 Retrieve a list of application versions.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").describe_application_versions`
+`session.create_client("elasticbeanstalk").describe_application_versions`
 method.
 
 Boto3 documentation:
@@ -662,7 +659,7 @@ Returns a `Coroutine` for
 Returns the descriptions of existing applications.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").describe_applications` method.
+`session.create_client("elasticbeanstalk").describe_applications` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.describe_applications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.describe_applications)
@@ -688,7 +685,7 @@ Describes the configuration options that are used in a particular configuration
 template or environment, or that a specified solution stack defines.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").describe_configuration_options`
+`session.create_client("elasticbeanstalk").describe_configuration_options`
 method.
 
 Boto3 documentation:
@@ -722,7 +719,7 @@ is, either a configuration template or the configuration set associated with a
 running environment.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").describe_configuration_settings`
+`session.create_client("elasticbeanstalk").describe_configuration_settings`
 method.
 
 Boto3 documentation:
@@ -750,8 +747,7 @@ Returns a `Coroutine` for
 Returns information about the overall health of the specified environment.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").describe_environment_health`
-method.
+`session.create_client("elasticbeanstalk").describe_environment_health` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.describe_environment_health](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.describe_environment_health)
@@ -779,7 +775,7 @@ Returns a `Coroutine` for
 Lists an environment's completed and failed managed actions.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").describe_environment_managed_action_history`
+`session.create_client("elasticbeanstalk").describe_environment_managed_action_history`
 method.
 
 Boto3 documentation:
@@ -809,7 +805,7 @@ Returns a `Coroutine` for
 Lists an environment's upcoming and in-progress managed actions.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").describe_environment_managed_actions`
+`session.create_client("elasticbeanstalk").describe_environment_managed_actions`
 method.
 
 Boto3 documentation:
@@ -837,7 +833,7 @@ Returns a `Coroutine` for
 Returns AWS resources for this environment.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").describe_environment_resources`
+`session.create_client("elasticbeanstalk").describe_environment_resources`
 method.
 
 Boto3 documentation:
@@ -864,7 +860,7 @@ Returns a `Coroutine` for
 Returns descriptions for existing environments.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").describe_environments` method.
+`session.create_client("elasticbeanstalk").describe_environments` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.describe_environments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.describe_environments)
@@ -896,7 +892,7 @@ Returns a `Coroutine` for
 Returns list of event descriptions matching criteria up to the last 6 weeks.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").describe_events` method.
+`session.create_client("elasticbeanstalk").describe_events` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.describe_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.describe_events)
@@ -932,8 +928,7 @@ Retrieves detailed information about the health of instances in your AWS
 Elastic Beanstalk.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").describe_instances_health`
-method.
+`session.create_client("elasticbeanstalk").describe_instances_health` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.describe_instances_health](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.describe_instances_health)
@@ -962,8 +957,7 @@ Returns a `Coroutine` for
 Describes a platform version.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").describe_platform_version`
-method.
+`session.create_client("elasticbeanstalk").describe_platform_version` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.describe_platform_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.describe_platform_version)
@@ -988,7 +982,7 @@ Returns a `Coroutine` for
 Disassociate the operations role from an environment.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").disassociate_environment_operations_role`
+`session.create_client("elasticbeanstalk").disassociate_environment_operations_role`
 method.
 
 Boto3 documentation:
@@ -1011,7 +1005,7 @@ Keyword-only arguments:
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").generate_presigned_url` method.
+`session.create_client("elasticbeanstalk").generate_presigned_url` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.generate_presigned_url)
@@ -1036,7 +1030,7 @@ Returns a list of the available solution stack names, with the public version
 first and then in reverse chronological order.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").list_available_solution_stacks`
+`session.create_client("elasticbeanstalk").list_available_solution_stacks`
 method.
 
 Boto3 documentation:
@@ -1055,7 +1049,7 @@ Returns a `Coroutine` for
 Lists the platform branches available for your account in an AWS Region.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").list_platform_branches` method.
+`session.create_client("elasticbeanstalk").list_platform_branches` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.list_platform_branches](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.list_platform_branches)
@@ -1083,7 +1077,7 @@ Returns a `Coroutine` for
 Lists the platform versions available for your account in an AWS Region.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").list_platform_versions` method.
+`session.create_client("elasticbeanstalk").list_platform_versions` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.list_platform_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.list_platform_versions)
@@ -1111,7 +1105,7 @@ Returns a `Coroutine` for
 Return the tags applied to an AWS Elastic Beanstalk resource.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").list_tags_for_resource` method.
+`session.create_client("elasticbeanstalk").list_tags_for_resource` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.list_tags_for_resource)
@@ -1137,7 +1131,7 @@ Deletes and recreates all of the AWS resources (for example: the Auto Scaling
 group, load balancer, etc.) for a specified environment and forces a restart.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").rebuild_environment` method.
+`session.create_client("elasticbeanstalk").rebuild_environment` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.rebuild_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.rebuild_environment)
@@ -1161,8 +1155,7 @@ Initiates a request to compile the specified type of information of the
 deployed environment.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").request_environment_info`
-method.
+`session.create_client("elasticbeanstalk").request_environment_info` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.request_environment_info](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.request_environment_info)
@@ -1188,7 +1181,7 @@ Causes the environment to restart the application container server running on
 each Amazon EC2 instance.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").restart_app_server` method.
+`session.create_client("elasticbeanstalk").restart_app_server` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.restart_app_server](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.restart_app_server)
@@ -1211,8 +1204,7 @@ Keyword-only arguments:
 Retrieves the compiled information from a RequestEnvironmentInfo request.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").retrieve_environment_info`
-method.
+`session.create_client("elasticbeanstalk").retrieve_environment_info` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.retrieve_environment_info](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.retrieve_environment_info)
@@ -1240,7 +1232,7 @@ Returns a `Coroutine` for
 Swaps the CNAMEs of two environments.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").swap_environment_cnames` method.
+`session.create_client("elasticbeanstalk").swap_environment_cnames` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.swap_environment_cnames](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.swap_environment_cnames)
@@ -1265,7 +1257,7 @@ Keyword-only arguments:
 Terminates the specified environment.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").terminate_environment` method.
+`session.create_client("elasticbeanstalk").terminate_environment` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.terminate_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.terminate_environment)
@@ -1293,7 +1285,7 @@ Returns a `Coroutine` for
 Updates the specified application to have the specified properties.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").update_application` method.
+`session.create_client("elasticbeanstalk").update_application` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.update_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.update_application)
@@ -1319,7 +1311,7 @@ Returns a `Coroutine` for
 Modifies lifecycle settings for an application.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").update_application_resource_lifecycle`
+`session.create_client("elasticbeanstalk").update_application_resource_lifecycle`
 method.
 
 Boto3 documentation:
@@ -1348,8 +1340,7 @@ Returns a `Coroutine` for
 Updates the specified application version to have the specified properties.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").update_application_version`
-method.
+`session.create_client("elasticbeanstalk").update_application_version` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.update_application_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.update_application_version)
@@ -1377,7 +1368,7 @@ Updates the specified configuration template to have the specified properties
 or configuration option values.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").update_configuration_template`
+`session.create_client("elasticbeanstalk").update_configuration_template`
 method.
 
 Boto3 documentation:
@@ -1411,7 +1402,7 @@ the configuration settings to an entirely new configuration template, or
 updates select configuration option values in the running environment.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").update_environment` method.
+`session.create_client("elasticbeanstalk").update_environment` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.update_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.update_environment)
@@ -1449,8 +1440,7 @@ Returns a `Coroutine` for
 Update the list of tags applied to an AWS Elastic Beanstalk resource.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").update_tags_for_resource`
-method.
+`session.create_client("elasticbeanstalk").update_tags_for_resource` method.
 
 Boto3 documentation:
 [ElasticBeanstalk.Client.update_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.update_tags_for_resource)
@@ -1475,7 +1465,7 @@ Takes a set of configuration settings and either a configuration template or
 environment, and determines whether those values are valid.
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").validate_configuration_settings`
+`session.create_client("elasticbeanstalk").validate_configuration_settings`
 method.
 
 Boto3 documentation:
@@ -1499,13 +1489,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [ConfigurationSettingsValidationMessagesTypeDef](./type_defs.md#configurationsettingsvalidationmessagestypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("elasticbeanstalk").__aenter__`
+method.
+
+Boto3 documentation:
+[ElasticBeanstalk.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ElasticBeanstalkClient](#elasticbeanstalkclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("elasticbeanstalk").__aexit__`
+method.
+
+Boto3 documentation:
+[ElasticBeanstalk.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticbeanstalk.html#ElasticBeanstalk.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("elasticbeanstalk").get_paginator`
+method with overloads.
 
 - `client.get_paginator("describe_application_versions")` ->
   [DescribeApplicationVersionsPaginator](./paginators.md#describeapplicationversionspaginator)
@@ -1522,7 +1545,7 @@ overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("elasticbeanstalk").get_waiter`
+Type annotations for `session.create_client("elasticbeanstalk").get_waiter`
 method with overloads.
 
 - `client.get_waiter("environment_exists")` ->

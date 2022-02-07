@@ -30,17 +30,19 @@ type annotations stubs module
 ## GetAssetPropertyAggregatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_paginator("get_asset_property_aggregates")`.
+`session.create_client("iotsitewise").get_paginator("get_asset_property_aggregates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotsitewise.paginator import GetAssetPropertyAggregatesPaginator
 
-def get_get_asset_property_aggregates_paginator() -> GetAssetPropertyAggregatesPaginator:
-    return Session().create_client("iotsitewise").get_paginator("get_asset_property_aggregates")
+session = get_session()
+async with session.create_client("iotsitewise") as client:
+    client: IoTSiteWiseClient
+    paginator: GetAssetPropertyAggregatesPaginator = client.get_paginator("get_asset_property_aggregates")
 ```
 
 Boto3 documentation:
@@ -70,17 +72,19 @@ Arguments for `GetAssetPropertyAggregatesPaginator.paginate` method:
 ## GetAssetPropertyValueHistoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_paginator("get_asset_property_value_history")`.
+`session.create_client("iotsitewise").get_paginator("get_asset_property_value_history")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotsitewise.paginator import GetAssetPropertyValueHistoryPaginator
 
-def get_get_asset_property_value_history_paginator() -> GetAssetPropertyValueHistoryPaginator:
-    return Session().create_client("iotsitewise").get_paginator("get_asset_property_value_history")
+session = get_session()
+async with session.create_client("iotsitewise") as client:
+    client: IoTSiteWiseClient
+    paginator: GetAssetPropertyValueHistoryPaginator = client.get_paginator("get_asset_property_value_history")
 ```
 
 Boto3 documentation:
@@ -106,17 +110,19 @@ Arguments for `GetAssetPropertyValueHistoryPaginator.paginate` method:
 ## GetInterpolatedAssetPropertyValuesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_paginator("get_interpolated_asset_property_values")`.
+`session.create_client("iotsitewise").get_paginator("get_interpolated_asset_property_values")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotsitewise.paginator import GetInterpolatedAssetPropertyValuesPaginator
 
-def get_get_interpolated_asset_property_values_paginator() -> GetInterpolatedAssetPropertyValuesPaginator:
-    return Session().create_client("iotsitewise").get_paginator("get_interpolated_asset_property_values")
+session = get_session()
+async with session.create_client("iotsitewise") as client:
+    client: IoTSiteWiseClient
+    paginator: GetInterpolatedAssetPropertyValuesPaginator = client.get_paginator("get_interpolated_asset_property_values")
 ```
 
 Boto3 documentation:
@@ -146,17 +152,19 @@ Arguments for `GetInterpolatedAssetPropertyValuesPaginator.paginate` method:
 ## ListAccessPoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_paginator("list_access_policies")`.
+`session.create_client("iotsitewise").get_paginator("list_access_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotsitewise.paginator import ListAccessPoliciesPaginator
 
-def get_list_access_policies_paginator() -> ListAccessPoliciesPaginator:
-    return Session().create_client("iotsitewise").get_paginator("list_access_policies")
+session = get_session()
+async with session.create_client("iotsitewise") as client:
+    client: IoTSiteWiseClient
+    paginator: ListAccessPoliciesPaginator = client.get_paginator("list_access_policies")
 ```
 
 Boto3 documentation:
@@ -180,17 +188,19 @@ Arguments for `ListAccessPoliciesPaginator.paginate` method:
 ## ListAssetModelsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_paginator("list_asset_models")`.
+`session.create_client("iotsitewise").get_paginator("list_asset_models")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotsitewise.paginator import ListAssetModelsPaginator
 
-def get_list_asset_models_paginator() -> ListAssetModelsPaginator:
-    return Session().create_client("iotsitewise").get_paginator("list_asset_models")
+session = get_session()
+async with session.create_client("iotsitewise") as client:
+    client: IoTSiteWiseClient
+    paginator: ListAssetModelsPaginator = client.get_paginator("list_asset_models")
 ```
 
 Boto3 documentation:
@@ -209,17 +219,19 @@ Arguments for `ListAssetModelsPaginator.paginate` method:
 ## ListAssetRelationshipsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_paginator("list_asset_relationships")`.
+`session.create_client("iotsitewise").get_paginator("list_asset_relationships")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotsitewise.paginator import ListAssetRelationshipsPaginator
 
-def get_list_asset_relationships_paginator() -> ListAssetRelationshipsPaginator:
-    return Session().create_client("iotsitewise").get_paginator("list_asset_relationships")
+session = get_session()
+async with session.create_client("iotsitewise") as client:
+    client: IoTSiteWiseClient
+    paginator: ListAssetRelationshipsPaginator = client.get_paginator("list_asset_relationships")
 ```
 
 Boto3 documentation:
@@ -241,17 +253,19 @@ Arguments for `ListAssetRelationshipsPaginator.paginate` method:
 ## ListAssetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_paginator("list_assets")`.
+`session.create_client("iotsitewise").get_paginator("list_assets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotsitewise.paginator import ListAssetsPaginator
 
-def get_list_assets_paginator() -> ListAssetsPaginator:
-    return Session().create_client("iotsitewise").get_paginator("list_assets")
+session = get_session()
+async with session.create_client("iotsitewise") as client:
+    client: IoTSiteWiseClient
+    paginator: ListAssetsPaginator = client.get_paginator("list_assets")
 ```
 
 Boto3 documentation:
@@ -272,17 +286,19 @@ Arguments for `ListAssetsPaginator.paginate` method:
 ## ListAssociatedAssetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_paginator("list_associated_assets")`.
+`session.create_client("iotsitewise").get_paginator("list_associated_assets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotsitewise.paginator import ListAssociatedAssetsPaginator
 
-def get_list_associated_assets_paginator() -> ListAssociatedAssetsPaginator:
-    return Session().create_client("iotsitewise").get_paginator("list_associated_assets")
+session = get_session()
+async with session.create_client("iotsitewise") as client:
+    client: IoTSiteWiseClient
+    paginator: ListAssociatedAssetsPaginator = client.get_paginator("list_associated_assets")
 ```
 
 Boto3 documentation:
@@ -305,17 +321,19 @@ Arguments for `ListAssociatedAssetsPaginator.paginate` method:
 ## ListDashboardsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_paginator("list_dashboards")`.
+`session.create_client("iotsitewise").get_paginator("list_dashboards")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotsitewise.paginator import ListDashboardsPaginator
 
-def get_list_dashboards_paginator() -> ListDashboardsPaginator:
-    return Session().create_client("iotsitewise").get_paginator("list_dashboards")
+session = get_session()
+async with session.create_client("iotsitewise") as client:
+    client: IoTSiteWiseClient
+    paginator: ListDashboardsPaginator = client.get_paginator("list_dashboards")
 ```
 
 Boto3 documentation:
@@ -335,17 +353,19 @@ Arguments for `ListDashboardsPaginator.paginate` method:
 ## ListGatewaysPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_paginator("list_gateways")`.
+`session.create_client("iotsitewise").get_paginator("list_gateways")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotsitewise.paginator import ListGatewaysPaginator
 
-def get_list_gateways_paginator() -> ListGatewaysPaginator:
-    return Session().create_client("iotsitewise").get_paginator("list_gateways")
+session = get_session()
+async with session.create_client("iotsitewise") as client:
+    client: IoTSiteWiseClient
+    paginator: ListGatewaysPaginator = client.get_paginator("list_gateways")
 ```
 
 Boto3 documentation:
@@ -364,17 +384,19 @@ Arguments for `ListGatewaysPaginator.paginate` method:
 ## ListPortalsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_paginator("list_portals")`.
+`session.create_client("iotsitewise").get_paginator("list_portals")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotsitewise.paginator import ListPortalsPaginator
 
-def get_list_portals_paginator() -> ListPortalsPaginator:
-    return Session().create_client("iotsitewise").get_paginator("list_portals")
+session = get_session()
+async with session.create_client("iotsitewise") as client:
+    client: IoTSiteWiseClient
+    paginator: ListPortalsPaginator = client.get_paginator("list_portals")
 ```
 
 Boto3 documentation:
@@ -393,17 +415,19 @@ Arguments for `ListPortalsPaginator.paginate` method:
 ## ListProjectAssetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_paginator("list_project_assets")`.
+`session.create_client("iotsitewise").get_paginator("list_project_assets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotsitewise.paginator import ListProjectAssetsPaginator
 
-def get_list_project_assets_paginator() -> ListProjectAssetsPaginator:
-    return Session().create_client("iotsitewise").get_paginator("list_project_assets")
+session = get_session()
+async with session.create_client("iotsitewise") as client:
+    client: IoTSiteWiseClient
+    paginator: ListProjectAssetsPaginator = client.get_paginator("list_project_assets")
 ```
 
 Boto3 documentation:
@@ -423,17 +447,19 @@ Arguments for `ListProjectAssetsPaginator.paginate` method:
 ## ListProjectsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_paginator("list_projects")`.
+`session.create_client("iotsitewise").get_paginator("list_projects")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotsitewise.paginator import ListProjectsPaginator
 
-def get_list_projects_paginator() -> ListProjectsPaginator:
-    return Session().create_client("iotsitewise").get_paginator("list_projects")
+session = get_session()
+async with session.create_client("iotsitewise") as client:
+    client: IoTSiteWiseClient
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
 ```
 
 Boto3 documentation:
@@ -453,17 +479,19 @@ Arguments for `ListProjectsPaginator.paginate` method:
 ## ListTimeSeriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_paginator("list_time_series")`.
+`session.create_client("iotsitewise").get_paginator("list_time_series")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotsitewise.paginator import ListTimeSeriesPaginator
 
-def get_list_time_series_paginator() -> ListTimeSeriesPaginator:
-    return Session().create_client("iotsitewise").get_paginator("list_time_series")
+session = get_session()
+async with session.create_client("iotsitewise") as client:
+    client: IoTSiteWiseClient
+    paginator: ListTimeSeriesPaginator = client.get_paginator("list_time_series")
 ```
 
 Boto3 documentation:

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[s3]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[s3]'
+
+# standalone installation
 pip install types-aiobotocore-s3
 ```
 
@@ -33,8 +37,7 @@ pip install types-aiobotocore-s3
 
 ## S3Client
 
-Type annotations for `aiobotocore.create_client("s3")` as
-[S3Client](./client.md)
+Type annotations for `session.create_client("s3")` as [S3Client](./client.md)
 
 Can be used directly:
 
@@ -46,6 +49,8 @@ from types_aiobotocore_s3.client import S3Client
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [abort_multipart_upload](./client.md#abort_multipart_upload)
 - [can_paginate](./client.md#can_paginate)
 - [complete_multipart_upload](./client.md#complete_multipart_upload)
@@ -174,7 +179,7 @@ S3Client [exceptions](./client.md#exceptions)
 
 ## S3ServiceResource
 
-Type annotations for `aiobotocore.resource("s3")` as
+Type annotations for `session.resource("s3")` as
 [S3ServiceResource](./service_resource.md#s3serviceresource)
 
 Can be used directly:
@@ -201,7 +206,7 @@ from types_aiobotocore_s3.service_resource import ServiceResourceBucketsCollecti
 
 ### Resources
 
-Type annotations for additional resources from `aiobotocore.resource("s3").*`.
+Type annotations for additional resources from `session.resource("s3").*`.
 
 Can be used directly:
 
@@ -238,7 +243,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_s3.paginators import ListMultipartUploadsPaginator, ...
+from types_aiobotocore_s3.paginator import ListMultipartUploadsPaginator, ...
 ```
 
 - [ListMultipartUploadsPaginator](./paginators.md#listmultipartuploadspaginator)
@@ -257,7 +262,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_s3.waiters import BucketExistsWaiter, ...
+from types_aiobotocore_s3.waiter import BucketExistsWaiter, ...
 ```
 
 - [BucketExistsWaiter](./waiters.md#bucketexistswaiter)

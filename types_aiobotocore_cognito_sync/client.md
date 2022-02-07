@@ -33,21 +33,24 @@ type annotations stubs module
     - [subscribe_to_dataset](#subscribe_to_dataset)
     - [unsubscribe_from_dataset](#unsubscribe_from_dataset)
     - [update_records](#update_records)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="cognitosyncclient"></a>
 
 ## CognitoSyncClient
 
-Type annotations for `aiobotocore.create_client("cognito-sync")`
+Type annotations for `session.create_client("cognito-sync")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_cognito_sync.client import CognitoSyncClient
 
-def get_cognito-sync_client() -> CognitoSyncClient:
-    return Session().client("cognito-sync")
+session = get_session()
+async with session.create_client("cognito-sync") as client:
+    client: CognitoSyncClient
 ```
 
 Boto3 documentation:
@@ -94,8 +97,7 @@ Exceptions:
 
 CognitoSyncClient exceptions.
 
-Type annotations for `aiobotocore.create_client("cognito-sync").exceptions`
-method.
+Type annotations for `session.create_client("cognito-sync").exceptions` method.
 
 Boto3 documentation:
 [CognitoSync.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.exceptions)
@@ -109,7 +111,7 @@ Returns [Exceptions](#exceptions).
 Initiates a bulk publish of all existing datasets for an Identity Pool to the
 configured stream.
 
-Type annotations for `aiobotocore.create_client("cognito-sync").bulk_publish`
+Type annotations for `session.create_client("cognito-sync").bulk_publish`
 method.
 
 Boto3 documentation:
@@ -133,19 +135,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("cognito-sync").can_paginate`
+Type annotations for `session.create_client("cognito-sync").can_paginate`
 method.
 
 Boto3 documentation:
 [CognitoSync.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="delete_dataset"></a>
 
@@ -153,7 +153,7 @@ Returns a `Coroutine` for `bool`.
 
 Deletes the specific dataset.
 
-Type annotations for `aiobotocore.create_client("cognito-sync").delete_dataset`
+Type annotations for `session.create_client("cognito-sync").delete_dataset`
 method.
 
 Boto3 documentation:
@@ -179,8 +179,8 @@ Returns a `Coroutine` for
 
 Gets meta data about a dataset by identity and dataset name.
 
-Type annotations for
-`aiobotocore.create_client("cognito-sync").describe_dataset` method.
+Type annotations for `session.create_client("cognito-sync").describe_dataset`
+method.
 
 Boto3 documentation:
 [CognitoSync.Client.describe_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.describe_dataset)
@@ -207,8 +207,7 @@ Gets usage details (for example, data storage) about a particular identity
 pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-sync").describe_identity_pool_usage`
-method.
+`session.create_client("cognito-sync").describe_identity_pool_usage` method.
 
 Boto3 documentation:
 [CognitoSync.Client.describe_identity_pool_usage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.describe_identity_pool_usage)
@@ -234,7 +233,7 @@ Gets usage information for an identity, including number of datasets and data
 usage.
 
 Type annotations for
-`aiobotocore.create_client("cognito-sync").describe_identity_usage` method.
+`session.create_client("cognito-sync").describe_identity_usage` method.
 
 Boto3 documentation:
 [CognitoSync.Client.describe_identity_usage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.describe_identity_usage)
@@ -260,7 +259,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("cognito-sync").generate_presigned_url` method.
+`session.create_client("cognito-sync").generate_presigned_url` method.
 
 Boto3 documentation:
 [CognitoSync.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.generate_presigned_url)
@@ -284,7 +283,7 @@ Returns a `Coroutine` for `str`.
 Get the status of the last BulkPublish operation for an identity pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-sync").get_bulk_publish_details` method.
+`session.create_client("cognito-sync").get_bulk_publish_details` method.
 
 Boto3 documentation:
 [CognitoSync.Client.get_bulk_publish_details](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.get_bulk_publish_details)
@@ -309,8 +308,8 @@ Returns a `Coroutine` for
 Gets the events and the corresponding Lambda functions associated with an
 identity pool.
 
-Type annotations for
-`aiobotocore.create_client("cognito-sync").get_cognito_events` method.
+Type annotations for `session.create_client("cognito-sync").get_cognito_events`
+method.
 
 Boto3 documentation:
 [CognitoSync.Client.get_cognito_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.get_cognito_events)
@@ -335,8 +334,7 @@ Returns a `Coroutine` for
 Gets the configuration settings of an identity pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-sync").get_identity_pool_configuration`
-method.
+`session.create_client("cognito-sync").get_identity_pool_configuration` method.
 
 Boto3 documentation:
 [CognitoSync.Client.get_identity_pool_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.get_identity_pool_configuration)
@@ -360,7 +358,7 @@ Returns a `Coroutine` for
 
 Lists datasets for an identity.
 
-Type annotations for `aiobotocore.create_client("cognito-sync").list_datasets`
+Type annotations for `session.create_client("cognito-sync").list_datasets`
 method.
 
 Boto3 documentation:
@@ -388,7 +386,7 @@ Returns a `Coroutine` for
 Gets a list of identity pools registered with Cognito.
 
 Type annotations for
-`aiobotocore.create_client("cognito-sync").list_identity_pool_usage` method.
+`session.create_client("cognito-sync").list_identity_pool_usage` method.
 
 Boto3 documentation:
 [CognitoSync.Client.list_identity_pool_usage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.list_identity_pool_usage)
@@ -414,7 +412,7 @@ Returns a `Coroutine` for
 Gets paginated records, optionally changed after a particular sync count for a
 dataset and identity.
 
-Type annotations for `aiobotocore.create_client("cognito-sync").list_records`
+Type annotations for `session.create_client("cognito-sync").list_records`
 method.
 
 Boto3 documentation:
@@ -444,8 +442,8 @@ Returns a `Coroutine` for
 
 Registers a device to receive push sync notifications.
 
-Type annotations for
-`aiobotocore.create_client("cognito-sync").register_device` method.
+Type annotations for `session.create_client("cognito-sync").register_device`
+method.
 
 Boto3 documentation:
 [CognitoSync.Client.register_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.register_device)
@@ -471,8 +469,8 @@ Returns a `Coroutine` for
 
 Sets the AWS Lambda function for a given event type for an identity pool.
 
-Type annotations for
-`aiobotocore.create_client("cognito-sync").set_cognito_events` method.
+Type annotations for `session.create_client("cognito-sync").set_cognito_events`
+method.
 
 Boto3 documentation:
 [CognitoSync.Client.set_cognito_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.set_cognito_events)
@@ -495,8 +493,7 @@ Keyword-only arguments:
 Sets the necessary configuration for push sync.
 
 Type annotations for
-`aiobotocore.create_client("cognito-sync").set_identity_pool_configuration`
-method.
+`session.create_client("cognito-sync").set_identity_pool_configuration` method.
 
 Boto3 documentation:
 [CognitoSync.Client.set_identity_pool_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.set_identity_pool_configuration)
@@ -525,7 +522,7 @@ Subscribes to receive notifications when a dataset is modified by another
 device.
 
 Type annotations for
-`aiobotocore.create_client("cognito-sync").subscribe_to_dataset` method.
+`session.create_client("cognito-sync").subscribe_to_dataset` method.
 
 Boto3 documentation:
 [CognitoSync.Client.subscribe_to_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.subscribe_to_dataset)
@@ -553,7 +550,7 @@ Unsubscribes from receiving notifications when a dataset is modified by another
 device.
 
 Type annotations for
-`aiobotocore.create_client("cognito-sync").unsubscribe_from_dataset` method.
+`session.create_client("cognito-sync").unsubscribe_from_dataset` method.
 
 Boto3 documentation:
 [CognitoSync.Client.unsubscribe_from_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.unsubscribe_from_dataset)
@@ -579,7 +576,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Posts updates to records and adds and deletes records for a dataset and user.
 
-Type annotations for `aiobotocore.create_client("cognito-sync").update_records`
+Type annotations for `session.create_client("cognito-sync").update_records`
 method.
 
 Boto3 documentation:
@@ -603,3 +600,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateRecordsResponseTypeDef](./type_defs.md#updaterecordsresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("cognito-sync").__aenter__` method.
+
+Boto3 documentation:
+[CognitoSync.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CognitoSyncClient](#cognitosyncclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("cognito-sync").__aexit__` method.
+
+Boto3 documentation:
+[CognitoSync.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-sync.html#CognitoSync.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

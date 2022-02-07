@@ -24,17 +24,19 @@ type annotations stubs module
 ## ListClusterOperationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("kafka").get_paginator("list_cluster_operations")`.
+`session.create_client("kafka").get_paginator("list_cluster_operations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kafka.paginator import ListClusterOperationsPaginator
 
-def get_list_cluster_operations_paginator() -> ListClusterOperationsPaginator:
-    return Session().create_client("kafka").get_paginator("list_cluster_operations")
+session = get_session()
+async with session.create_client("kafka") as client:
+    client: KafkaClient
+    paginator: ListClusterOperationsPaginator = client.get_paginator("list_cluster_operations")
 ```
 
 Boto3 documentation:
@@ -54,17 +56,19 @@ Arguments for `ListClusterOperationsPaginator.paginate` method:
 ## ListClustersPaginator
 
 Type annotations for
-`aiobotocore.create_client("kafka").get_paginator("list_clusters")`.
+`session.create_client("kafka").get_paginator("list_clusters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kafka.paginator import ListClustersPaginator
 
-def get_list_clusters_paginator() -> ListClustersPaginator:
-    return Session().create_client("kafka").get_paginator("list_clusters")
+session = get_session()
+async with session.create_client("kafka") as client:
+    client: KafkaClient
+    paginator: ListClustersPaginator = client.get_paginator("list_clusters")
 ```
 
 Boto3 documentation:
@@ -84,17 +88,19 @@ Arguments for `ListClustersPaginator.paginate` method:
 ## ListClustersV2Paginator
 
 Type annotations for
-`aiobotocore.create_client("kafka").get_paginator("list_clusters_v2")`.
+`session.create_client("kafka").get_paginator("list_clusters_v2")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kafka.paginator import ListClustersV2Paginator
 
-def get_list_clusters_v2_paginator() -> ListClustersV2Paginator:
-    return Session().create_client("kafka").get_paginator("list_clusters_v2")
+session = get_session()
+async with session.create_client("kafka") as client:
+    client: KafkaClient
+    paginator: ListClustersV2Paginator = client.get_paginator("list_clusters_v2")
 ```
 
 Boto3 documentation:
@@ -115,17 +121,19 @@ Arguments for `ListClustersV2Paginator.paginate` method:
 ## ListConfigurationRevisionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("kafka").get_paginator("list_configuration_revisions")`.
+`session.create_client("kafka").get_paginator("list_configuration_revisions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kafka.paginator import ListConfigurationRevisionsPaginator
 
-def get_list_configuration_revisions_paginator() -> ListConfigurationRevisionsPaginator:
-    return Session().create_client("kafka").get_paginator("list_configuration_revisions")
+session = get_session()
+async with session.create_client("kafka") as client:
+    client: KafkaClient
+    paginator: ListConfigurationRevisionsPaginator = client.get_paginator("list_configuration_revisions")
 ```
 
 Boto3 documentation:
@@ -145,17 +153,19 @@ Arguments for `ListConfigurationRevisionsPaginator.paginate` method:
 ## ListConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("kafka").get_paginator("list_configurations")`.
+`session.create_client("kafka").get_paginator("list_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kafka.paginator import ListConfigurationsPaginator
 
-def get_list_configurations_paginator() -> ListConfigurationsPaginator:
-    return Session().create_client("kafka").get_paginator("list_configurations")
+session = get_session()
+async with session.create_client("kafka") as client:
+    client: KafkaClient
+    paginator: ListConfigurationsPaginator = client.get_paginator("list_configurations")
 ```
 
 Boto3 documentation:
@@ -174,17 +184,19 @@ Arguments for `ListConfigurationsPaginator.paginate` method:
 ## ListKafkaVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("kafka").get_paginator("list_kafka_versions")`.
+`session.create_client("kafka").get_paginator("list_kafka_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kafka.paginator import ListKafkaVersionsPaginator
 
-def get_list_kafka_versions_paginator() -> ListKafkaVersionsPaginator:
-    return Session().create_client("kafka").get_paginator("list_kafka_versions")
+session = get_session()
+async with session.create_client("kafka") as client:
+    client: KafkaClient
+    paginator: ListKafkaVersionsPaginator = client.get_paginator("list_kafka_versions")
 ```
 
 Boto3 documentation:
@@ -203,17 +215,19 @@ Arguments for `ListKafkaVersionsPaginator.paginate` method:
 ## ListNodesPaginator
 
 Type annotations for
-`aiobotocore.create_client("kafka").get_paginator("list_nodes")`.
+`session.create_client("kafka").get_paginator("list_nodes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kafka.paginator import ListNodesPaginator
 
-def get_list_nodes_paginator() -> ListNodesPaginator:
-    return Session().create_client("kafka").get_paginator("list_nodes")
+session = get_session()
+async with session.create_client("kafka") as client:
+    client: KafkaClient
+    paginator: ListNodesPaginator = client.get_paginator("list_nodes")
 ```
 
 Boto3 documentation:
@@ -233,17 +247,19 @@ Arguments for `ListNodesPaginator.paginate` method:
 ## ListScramSecretsPaginator
 
 Type annotations for
-`aiobotocore.create_client("kafka").get_paginator("list_scram_secrets")`.
+`session.create_client("kafka").get_paginator("list_scram_secrets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_kafka.paginator import ListScramSecretsPaginator
 
-def get_list_scram_secrets_paginator() -> ListScramSecretsPaginator:
-    return Session().create_client("kafka").get_paginator("list_scram_secrets")
+session = get_session()
+async with session.create_client("kafka") as client:
+    client: KafkaClient
+    paginator: ListScramSecretsPaginator = client.get_paginator("list_scram_secrets")
 ```
 
 Boto3 documentation:

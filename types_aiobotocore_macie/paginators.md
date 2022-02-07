@@ -18,17 +18,19 @@ type annotations stubs module
 ## ListMemberAccountsPaginator
 
 Type annotations for
-`aiobotocore.create_client("macie").get_paginator("list_member_accounts")`.
+`session.create_client("macie").get_paginator("list_member_accounts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_macie.paginator import ListMemberAccountsPaginator
 
-def get_list_member_accounts_paginator() -> ListMemberAccountsPaginator:
-    return Session().create_client("macie").get_paginator("list_member_accounts")
+session = get_session()
+async with session.create_client("macie") as client:
+    client: MacieClient
+    paginator: ListMemberAccountsPaginator = client.get_paginator("list_member_accounts")
 ```
 
 Boto3 documentation:
@@ -47,17 +49,19 @@ Arguments for `ListMemberAccountsPaginator.paginate` method:
 ## ListS3ResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("macie").get_paginator("list_s3_resources")`.
+`session.create_client("macie").get_paginator("list_s3_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_macie.paginator import ListS3ResourcesPaginator
 
-def get_list_s3_resources_paginator() -> ListS3ResourcesPaginator:
-    return Session().create_client("macie").get_paginator("list_s3_resources")
+session = get_session()
+async with session.create_client("macie") as client:
+    client: MacieClient
+    paginator: ListS3ResourcesPaginator = client.get_paginator("list_s3_resources")
 ```
 
 Boto3 documentation:

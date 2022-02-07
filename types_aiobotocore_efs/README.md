@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[efs]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[efs]'
+
+# standalone installation
 pip install types-aiobotocore-efs
 ```
 
@@ -29,8 +33,7 @@ pip install types-aiobotocore-efs
 
 ## EFSClient
 
-Type annotations for `aiobotocore.create_client("efs")` as
-[EFSClient](./client.md)
+Type annotations for `session.create_client("efs")` as [EFSClient](./client.md)
 
 Can be used directly:
 
@@ -42,6 +45,8 @@ from types_aiobotocore_efs.client import EFSClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_access_point](./client.md#create_access_point)
 - [create_file_system](./client.md#create_file_system)
@@ -120,7 +125,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_efs.paginators import DescribeFileSystemsPaginator, ...
+from types_aiobotocore_efs.paginator import DescribeFileSystemsPaginator, ...
 ```
 
 - [DescribeFileSystemsPaginator](./paginators.md#describefilesystemspaginator)

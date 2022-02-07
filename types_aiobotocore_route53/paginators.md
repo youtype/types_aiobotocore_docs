@@ -21,17 +21,19 @@ type annotations stubs module
 ## ListHealthChecksPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53").get_paginator("list_health_checks")`.
+`session.create_client("route53").get_paginator("list_health_checks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53.paginator import ListHealthChecksPaginator
 
-def get_list_health_checks_paginator() -> ListHealthChecksPaginator:
-    return Session().create_client("route53").get_paginator("list_health_checks")
+session = get_session()
+async with session.create_client("route53") as client:
+    client: Route53Client
+    paginator: ListHealthChecksPaginator = client.get_paginator("list_health_checks")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `ListHealthChecksPaginator.paginate` method:
 ## ListHostedZonesPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53").get_paginator("list_hosted_zones")`.
+`session.create_client("route53").get_paginator("list_hosted_zones")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53.paginator import ListHostedZonesPaginator
 
-def get_list_hosted_zones_paginator() -> ListHostedZonesPaginator:
-    return Session().create_client("route53").get_paginator("list_hosted_zones")
+session = get_session()
+async with session.create_client("route53") as client:
+    client: Route53Client
+    paginator: ListHostedZonesPaginator = client.get_paginator("list_hosted_zones")
 ```
 
 Boto3 documentation:
@@ -80,17 +84,19 @@ Arguments for `ListHostedZonesPaginator.paginate` method:
 ## ListQueryLoggingConfigsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53").get_paginator("list_query_logging_configs")`.
+`session.create_client("route53").get_paginator("list_query_logging_configs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53.paginator import ListQueryLoggingConfigsPaginator
 
-def get_list_query_logging_configs_paginator() -> ListQueryLoggingConfigsPaginator:
-    return Session().create_client("route53").get_paginator("list_query_logging_configs")
+session = get_session()
+async with session.create_client("route53") as client:
+    client: Route53Client
+    paginator: ListQueryLoggingConfigsPaginator = client.get_paginator("list_query_logging_configs")
 ```
 
 Boto3 documentation:
@@ -110,17 +116,19 @@ Arguments for `ListQueryLoggingConfigsPaginator.paginate` method:
 ## ListResourceRecordSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53").get_paginator("list_resource_record_sets")`.
+`session.create_client("route53").get_paginator("list_resource_record_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53.paginator import ListResourceRecordSetsPaginator
 
-def get_list_resource_record_sets_paginator() -> ListResourceRecordSetsPaginator:
-    return Session().create_client("route53").get_paginator("list_resource_record_sets")
+session = get_session()
+async with session.create_client("route53") as client:
+    client: Route53Client
+    paginator: ListResourceRecordSetsPaginator = client.get_paginator("list_resource_record_sets")
 ```
 
 Boto3 documentation:
@@ -140,17 +148,19 @@ Arguments for `ListResourceRecordSetsPaginator.paginate` method:
 ## ListVPCAssociationAuthorizationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53").get_paginator("list_vpc_association_authorizations")`.
+`session.create_client("route53").get_paginator("list_vpc_association_authorizations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53.paginator import ListVPCAssociationAuthorizationsPaginator
 
-def get_list_vpc_association_authorizations_paginator() -> ListVPCAssociationAuthorizationsPaginator:
-    return Session().create_client("route53").get_paginator("list_vpc_association_authorizations")
+session = get_session()
+async with session.create_client("route53") as client:
+    client: Route53Client
+    paginator: ListVPCAssociationAuthorizationsPaginator = client.get_paginator("list_vpc_association_authorizations")
 ```
 
 Boto3 documentation:

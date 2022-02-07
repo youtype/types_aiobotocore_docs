@@ -44,22 +44,25 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_channel](#update_channel)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="ivsclient"></a>
 
 ## IVSClient
 
-Type annotations for `aiobotocore.create_client("ivs")`
+Type annotations for `session.create_client("ivs")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_ivs.client import IVSClient
 
-def get_ivs_client() -> IVSClient:
-    return Session().client("ivs")
+session = get_session()
+async with session.create_client("ivs") as client:
+    client: IVSClient
 ```
 
 Boto3 documentation:
@@ -103,7 +106,7 @@ Exceptions:
 
 IVSClient exceptions.
 
-Type annotations for `aiobotocore.create_client("ivs").exceptions` method.
+Type annotations for `session.create_client("ivs").exceptions` method.
 
 Boto3 documentation:
 [IVS.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.exceptions)
@@ -116,8 +119,7 @@ Returns [Exceptions](#exceptions).
 
 Performs GetChannel on multiple ARNs simultaneously.
 
-Type annotations for `aiobotocore.create_client("ivs").batch_get_channel`
-method.
+Type annotations for `session.create_client("ivs").batch_get_channel` method.
 
 Boto3 documentation:
 [IVS.Client.batch_get_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.batch_get_channel)
@@ -140,7 +142,7 @@ Returns a `Coroutine` for
 
 Performs GetStreamKey on multiple ARNs simultaneously.
 
-Type annotations for `aiobotocore.create_client("ivs").batch_get_stream_key`
+Type annotations for `session.create_client("ivs").batch_get_stream_key`
 method.
 
 Boto3 documentation:
@@ -165,18 +167,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("ivs").can_paginate` method.
+Type annotations for `session.create_client("ivs").can_paginate` method.
 
 Boto3 documentation:
 [IVS.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_channel"></a>
 
@@ -184,7 +184,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a new channel and an associated stream key to start streaming.
 
-Type annotations for `aiobotocore.create_client("ivs").create_channel` method.
+Type annotations for `session.create_client("ivs").create_channel` method.
 
 Boto3 documentation:
 [IVS.Client.create_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.create_channel)
@@ -213,7 +213,7 @@ Returns a `Coroutine` for
 Creates a new recording configuration, used to enable recording to Amazon S3.
 
 Type annotations for
-`aiobotocore.create_client("ivs").create_recording_configuration` method.
+`session.create_client("ivs").create_recording_configuration` method.
 
 Boto3 documentation:
 [IVS.Client.create_recording_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.create_recording_configuration)
@@ -241,8 +241,7 @@ Returns a `Coroutine` for
 
 Creates a stream key, used to initiate a stream, for the specified channel ARN.
 
-Type annotations for `aiobotocore.create_client("ivs").create_stream_key`
-method.
+Type annotations for `session.create_client("ivs").create_stream_key` method.
 
 Boto3 documentation:
 [IVS.Client.create_stream_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.create_stream_key)
@@ -266,7 +265,7 @@ Returns a `Coroutine` for
 
 Deletes the specified channel and its associated stream keys.
 
-Type annotations for `aiobotocore.create_client("ivs").delete_channel` method.
+Type annotations for `session.create_client("ivs").delete_channel` method.
 
 Boto3 documentation:
 [IVS.Client.delete_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.delete_channel)
@@ -286,8 +285,8 @@ Keyword-only arguments:
 
 Deletes a specified authorization key pair.
 
-Type annotations for
-`aiobotocore.create_client("ivs").delete_playback_key_pair` method.
+Type annotations for `session.create_client("ivs").delete_playback_key_pair`
+method.
 
 Boto3 documentation:
 [IVS.Client.delete_playback_key_pair](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.delete_playback_key_pair)
@@ -311,7 +310,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the recording configuration for the specified ARN.
 
 Type annotations for
-`aiobotocore.create_client("ivs").delete_recording_configuration` method.
+`session.create_client("ivs").delete_recording_configuration` method.
 
 Boto3 documentation:
 [IVS.Client.delete_recording_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.delete_recording_configuration)
@@ -333,8 +332,7 @@ Keyword-only arguments:
 Deletes the stream key for the specified ARN, so it can no longer be used to
 stream.
 
-Type annotations for `aiobotocore.create_client("ivs").delete_stream_key`
-method.
+Type annotations for `session.create_client("ivs").delete_stream_key` method.
 
 Boto3 documentation:
 [IVS.Client.delete_stream_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.delete_stream_key)
@@ -354,7 +352,7 @@ Keyword-only arguments:
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("ivs").generate_presigned_url`
+Type annotations for `session.create_client("ivs").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -378,7 +376,7 @@ Returns a `Coroutine` for `str`.
 
 Gets the channel configuration for the specified channel ARN.
 
-Type annotations for `aiobotocore.create_client("ivs").get_channel` method.
+Type annotations for `session.create_client("ivs").get_channel` method.
 
 Boto3 documentation:
 [IVS.Client.get_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.get_channel)
@@ -402,7 +400,7 @@ Returns a `Coroutine` for
 Gets a specified playback authorization key pair and returns the `arn` and
 `fingerprint`.
 
-Type annotations for `aiobotocore.create_client("ivs").get_playback_key_pair`
+Type annotations for `session.create_client("ivs").get_playback_key_pair`
 method.
 
 Boto3 documentation:
@@ -427,8 +425,8 @@ Returns a `Coroutine` for
 
 Gets the recording configuration for the specified ARN.
 
-Type annotations for
-`aiobotocore.create_client("ivs").get_recording_configuration` method.
+Type annotations for `session.create_client("ivs").get_recording_configuration`
+method.
 
 Boto3 documentation:
 [IVS.Client.get_recording_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.get_recording_configuration)
@@ -452,7 +450,7 @@ Returns a `Coroutine` for
 
 Gets information about the active (live) stream on a specified channel.
 
-Type annotations for `aiobotocore.create_client("ivs").get_stream` method.
+Type annotations for `session.create_client("ivs").get_stream` method.
 
 Boto3 documentation:
 [IVS.Client.get_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.get_stream)
@@ -475,7 +473,7 @@ Returns a `Coroutine` for
 
 Gets stream-key information for a specified ARN.
 
-Type annotations for `aiobotocore.create_client("ivs").get_stream_key` method.
+Type annotations for `session.create_client("ivs").get_stream_key` method.
 
 Boto3 documentation:
 [IVS.Client.get_stream_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.get_stream_key)
@@ -498,8 +496,7 @@ Returns a `Coroutine` for
 
 Gets metadata on a specified stream.
 
-Type annotations for `aiobotocore.create_client("ivs").get_stream_session`
-method.
+Type annotations for `session.create_client("ivs").get_stream_session` method.
 
 Boto3 documentation:
 [IVS.Client.get_stream_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.get_stream_session)
@@ -525,8 +522,8 @@ Returns a `Coroutine` for
 Imports the public portion of a new key pair and returns its `arn` and
 `fingerprint`.
 
-Type annotations for
-`aiobotocore.create_client("ivs").import_playback_key_pair` method.
+Type annotations for `session.create_client("ivs").import_playback_key_pair`
+method.
 
 Boto3 documentation:
 [IVS.Client.import_playback_key_pair](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.import_playback_key_pair)
@@ -553,7 +550,7 @@ Returns a `Coroutine` for
 Gets summary information about all channels in your account, in the Amazon Web
 Services region where the API request is processed.
 
-Type annotations for `aiobotocore.create_client("ivs").list_channels` method.
+Type annotations for `session.create_client("ivs").list_channels` method.
 
 Boto3 documentation:
 [IVS.Client.list_channels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.list_channels)
@@ -579,7 +576,7 @@ Returns a `Coroutine` for
 
 Gets summary information about playback key pairs.
 
-Type annotations for `aiobotocore.create_client("ivs").list_playback_key_pairs`
+Type annotations for `session.create_client("ivs").list_playback_key_pairs`
 method.
 
 Boto3 documentation:
@@ -607,7 +604,7 @@ Gets summary information about all recording configurations in your account, in
 the Amazon Web Services region where the API request is processed.
 
 Type annotations for
-`aiobotocore.create_client("ivs").list_recording_configurations` method.
+`session.create_client("ivs").list_recording_configurations` method.
 
 Boto3 documentation:
 [IVS.Client.list_recording_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.list_recording_configurations)
@@ -632,8 +629,7 @@ Returns a `Coroutine` for
 
 Gets summary information about stream keys for the specified channel.
 
-Type annotations for `aiobotocore.create_client("ivs").list_stream_keys`
-method.
+Type annotations for `session.create_client("ivs").list_stream_keys` method.
 
 Boto3 documentation:
 [IVS.Client.list_stream_keys](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.list_stream_keys)
@@ -659,7 +655,7 @@ Returns a `Coroutine` for
 Gets a summary of current and previous streams for a specified channel in your
 account, in the AWS region where the API request is processed.
 
-Type annotations for `aiobotocore.create_client("ivs").list_stream_sessions`
+Type annotations for `session.create_client("ivs").list_stream_sessions`
 method.
 
 Boto3 documentation:
@@ -687,7 +683,7 @@ Returns a `Coroutine` for
 Gets summary information about live streams in your account, in the Amazon Web
 Services region where the API request is processed.
 
-Type annotations for `aiobotocore.create_client("ivs").list_streams` method.
+Type annotations for `session.create_client("ivs").list_streams` method.
 
 Boto3 documentation:
 [IVS.Client.list_streams](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.list_streams)
@@ -712,7 +708,7 @@ Returns a `Coroutine` for
 
 Gets information about Amazon Web Services tags for the specified ARN.
 
-Type annotations for `aiobotocore.create_client("ivs").list_tags_for_resource`
+Type annotations for `session.create_client("ivs").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -737,7 +733,7 @@ Returns a `Coroutine` for
 
 Inserts metadata into the active stream of the specified channel.
 
-Type annotations for `aiobotocore.create_client("ivs").put_metadata` method.
+Type annotations for `session.create_client("ivs").put_metadata` method.
 
 Boto3 documentation:
 [IVS.Client.put_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.put_metadata)
@@ -758,7 +754,7 @@ Keyword-only arguments:
 
 Disconnects the incoming RTMPS stream for the specified channel.
 
-Type annotations for `aiobotocore.create_client("ivs").stop_stream` method.
+Type annotations for `session.create_client("ivs").stop_stream` method.
 
 Boto3 documentation:
 [IVS.Client.stop_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.stop_stream)
@@ -781,7 +777,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds or updates tags for the Amazon Web Services resource with the specified
 ARN.
 
-Type annotations for `aiobotocore.create_client("ivs").tag_resource` method.
+Type annotations for `session.create_client("ivs").tag_resource` method.
 
 Boto3 documentation:
 [IVS.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.tag_resource)
@@ -804,7 +800,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from the resource with the specified ARN.
 
-Type annotations for `aiobotocore.create_client("ivs").untag_resource` method.
+Type annotations for `session.create_client("ivs").untag_resource` method.
 
 Boto3 documentation:
 [IVS.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.untag_resource)
@@ -827,7 +823,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a channel's configuration.
 
-Type annotations for `aiobotocore.create_client("ivs").update_channel` method.
+Type annotations for `session.create_client("ivs").update_channel` method.
 
 Boto3 documentation:
 [IVS.Client.update_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.update_channel)
@@ -849,12 +845,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateChannelResponseTypeDef](./type_defs.md#updatechannelresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("ivs").__aenter__` method.
+
+Boto3 documentation:
+[IVS.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [IVSClient](#ivsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("ivs").__aexit__` method.
+
+Boto3 documentation:
+[IVS.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ivs.html#IVS.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("ivs").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("ivs").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_channels")` ->
   [ListChannelsPaginator](./paginators.md#listchannelspaginator)

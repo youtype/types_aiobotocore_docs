@@ -22,21 +22,24 @@ type annotations stubs module
     - [execute_statement](#execute_statement)
     - [generate_presigned_url](#generate_presigned_url)
     - [rollback_transaction](#rollback_transaction)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="rdsdataserviceclient"></a>
 
 ## RDSDataServiceClient
 
-Type annotations for `aiobotocore.create_client("rds-data")`
+Type annotations for `session.create_client("rds-data")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_rds_data.client import RDSDataServiceClient
 
-def get_rds-data_client() -> RDSDataServiceClient:
-    return Session().client("rds-data")
+session = get_session()
+async with session.create_client("rds-data") as client:
+    client: RDSDataServiceClient
 ```
 
 Boto3 documentation:
@@ -76,7 +79,7 @@ Exceptions:
 
 RDSDataServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("rds-data").exceptions` method.
+Type annotations for `session.create_client("rds-data").exceptions` method.
 
 Boto3 documentation:
 [RDSDataService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds-data.html#RDSDataService.Client.exceptions)
@@ -90,7 +93,7 @@ Returns [Exceptions](#exceptions).
 Runs a batch SQL statement over an array of data.
 
 Type annotations for
-`aiobotocore.create_client("rds-data").batch_execute_statement` method.
+`session.create_client("rds-data").batch_execute_statement` method.
 
 Boto3 documentation:
 [RDSDataService.Client.batch_execute_statement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds-data.html#RDSDataService.Client.batch_execute_statement)
@@ -121,7 +124,7 @@ Returns a `Coroutine` for
 
 Starts a SQL transaction.
 
-Type annotations for `aiobotocore.create_client("rds-data").begin_transaction`
+Type annotations for `session.create_client("rds-data").begin_transaction`
 method.
 
 Boto3 documentation:
@@ -148,19 +151,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("rds-data").can_paginate`
-method.
+Type annotations for `session.create_client("rds-data").can_paginate` method.
 
 Boto3 documentation:
 [RDSDataService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds-data.html#RDSDataService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="commit_transaction"></a>
 
@@ -169,7 +169,7 @@ Returns a `Coroutine` for `bool`.
 Ends a SQL transaction started with the `BeginTransaction` operation and
 commits the changes.
 
-Type annotations for `aiobotocore.create_client("rds-data").commit_transaction`
+Type annotations for `session.create_client("rds-data").commit_transaction`
 method.
 
 Boto3 documentation:
@@ -196,8 +196,7 @@ Returns a `Coroutine` for
 
 Runs one or more SQL statements.
 
-Type annotations for `aiobotocore.create_client("rds-data").execute_sql`
-method.
+Type annotations for `session.create_client("rds-data").execute_sql` method.
 
 Boto3 documentation:
 [RDSDataService.Client.execute_sql](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds-data.html#RDSDataService.Client.execute_sql)
@@ -224,7 +223,7 @@ Returns a `Coroutine` for
 
 Runs a SQL statement against a database.
 
-Type annotations for `aiobotocore.create_client("rds-data").execute_statement`
+Type annotations for `session.create_client("rds-data").execute_statement`
 method.
 
 Boto3 documentation:
@@ -259,8 +258,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("rds-data").generate_presigned_url` method.
+Type annotations for `session.create_client("rds-data").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [RDSDataService.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds-data.html#RDSDataService.Client.generate_presigned_url)
@@ -283,8 +282,8 @@ Returns a `Coroutine` for `str`.
 
 Performs a rollback of a transaction.
 
-Type annotations for
-`aiobotocore.create_client("rds-data").rollback_transaction` method.
+Type annotations for `session.create_client("rds-data").rollback_transaction`
+method.
 
 Boto3 documentation:
 [RDSDataService.Client.rollback_transaction](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds-data.html#RDSDataService.Client.rollback_transaction)
@@ -303,3 +302,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [RollbackTransactionResponseTypeDef](./type_defs.md#rollbacktransactionresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("rds-data").__aenter__` method.
+
+Boto3 documentation:
+[RDSDataService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds-data.html#RDSDataService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [RDSDataServiceClient](#rdsdataserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("rds-data").__aexit__` method.
+
+Boto3 documentation:
+[RDSDataService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds-data.html#RDSDataService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

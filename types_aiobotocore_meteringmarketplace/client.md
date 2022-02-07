@@ -20,21 +20,24 @@ type annotations stubs module
     - [meter_usage](#meter_usage)
     - [register_usage](#register_usage)
     - [resolve_customer](#resolve_customer)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="marketplacemeteringclient"></a>
 
 ## MarketplaceMeteringClient
 
-Type annotations for `aiobotocore.create_client("meteringmarketplace")`
+Type annotations for `session.create_client("meteringmarketplace")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_meteringmarketplace.client import MarketplaceMeteringClient
 
-def get_meteringmarketplace_client() -> MarketplaceMeteringClient:
-    return Session().client("meteringmarketplace")
+session = get_session()
+async with session.create_client("meteringmarketplace") as client:
+    client: MarketplaceMeteringClient
 ```
 
 Boto3 documentation:
@@ -85,8 +88,8 @@ Exceptions:
 
 MarketplaceMeteringClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("meteringmarketplace").exceptions` method.
+Type annotations for `session.create_client("meteringmarketplace").exceptions`
+method.
 
 Boto3 documentation:
 [MarketplaceMetering.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/meteringmarketplace.html#MarketplaceMetering.Client.exceptions)
@@ -101,7 +104,7 @@ BatchMeterUsage is called from a SaaS application listed on the AWS Marketplace
 to post metering records for a set of customers.
 
 Type annotations for
-`aiobotocore.create_client("meteringmarketplace").batch_meter_usage` method.
+`session.create_client("meteringmarketplace").batch_meter_usage` method.
 
 Boto3 documentation:
 [MarketplaceMetering.Client.batch_meter_usage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/meteringmarketplace.html#MarketplaceMetering.Client.batch_meter_usage)
@@ -128,18 +131,16 @@ Returns a `Coroutine` for
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("meteringmarketplace").can_paginate` method.
+`session.create_client("meteringmarketplace").can_paginate` method.
 
 Boto3 documentation:
 [MarketplaceMetering.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/meteringmarketplace.html#MarketplaceMetering.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -148,8 +149,7 @@ Returns a `Coroutine` for `bool`.
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("meteringmarketplace").generate_presigned_url`
-method.
+`session.create_client("meteringmarketplace").generate_presigned_url` method.
 
 Boto3 documentation:
 [MarketplaceMetering.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/meteringmarketplace.html#MarketplaceMetering.Client.generate_presigned_url)
@@ -172,8 +172,8 @@ Returns a `Coroutine` for `str`.
 
 API to emit metering records.
 
-Type annotations for
-`aiobotocore.create_client("meteringmarketplace").meter_usage` method.
+Type annotations for `session.create_client("meteringmarketplace").meter_usage`
+method.
 
 Boto3 documentation:
 [MarketplaceMetering.Client.meter_usage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/meteringmarketplace.html#MarketplaceMetering.Client.meter_usage)
@@ -205,7 +205,7 @@ with the AWS Marketplace Metering Service and call the RegisterUsage operation
 for software entitlement and metering.
 
 Type annotations for
-`aiobotocore.create_client("meteringmarketplace").register_usage` method.
+`session.create_client("meteringmarketplace").register_usage` method.
 
 Boto3 documentation:
 [MarketplaceMetering.Client.register_usage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/meteringmarketplace.html#MarketplaceMetering.Client.register_usage)
@@ -232,7 +232,7 @@ ResolveCustomer is called by a SaaS application during the registration
 process.
 
 Type annotations for
-`aiobotocore.create_client("meteringmarketplace").resolve_customer` method.
+`session.create_client("meteringmarketplace").resolve_customer` method.
 
 Boto3 documentation:
 [MarketplaceMetering.Client.resolve_customer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/meteringmarketplace.html#MarketplaceMetering.Client.resolve_customer)
@@ -248,3 +248,38 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [ResolveCustomerResultTypeDef](./type_defs.md#resolvecustomerresulttypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("meteringmarketplace").__aenter__`
+method.
+
+Boto3 documentation:
+[MarketplaceMetering.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/meteringmarketplace.html#MarketplaceMetering.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[MarketplaceMeteringClient](#marketplacemeteringclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("meteringmarketplace").__aexit__`
+method.
+
+Boto3 documentation:
+[MarketplaceMetering.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/meteringmarketplace.html#MarketplaceMetering.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

@@ -52,17 +52,19 @@ type annotations stubs module
 ## DescribeCertificatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_certificates")`.
+`session.create_client("rds").get_paginator("describe_certificates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeCertificatesPaginator
 
-def get_describe_certificates_paginator() -> DescribeCertificatesPaginator:
-    return Session().create_client("rds").get_paginator("describe_certificates")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeCertificatesPaginator = client.get_paginator("describe_certificates")
 ```
 
 Boto3 documentation:
@@ -83,17 +85,19 @@ Arguments for `DescribeCertificatesPaginator.paginate` method:
 ## DescribeCustomAvailabilityZonesPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_custom_availability_zones")`.
+`session.create_client("rds").get_paginator("describe_custom_availability_zones")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeCustomAvailabilityZonesPaginator
 
-def get_describe_custom_availability_zones_paginator() -> DescribeCustomAvailabilityZonesPaginator:
-    return Session().create_client("rds").get_paginator("describe_custom_availability_zones")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeCustomAvailabilityZonesPaginator = client.get_paginator("describe_custom_availability_zones")
 ```
 
 Boto3 documentation:
@@ -114,17 +118,19 @@ Arguments for `DescribeCustomAvailabilityZonesPaginator.paginate` method:
 ## DescribeDBClusterBacktracksPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_cluster_backtracks")`.
+`session.create_client("rds").get_paginator("describe_db_cluster_backtracks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBClusterBacktracksPaginator
 
-def get_describe_db_cluster_backtracks_paginator() -> DescribeDBClusterBacktracksPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_cluster_backtracks")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBClusterBacktracksPaginator = client.get_paginator("describe_db_cluster_backtracks")
 ```
 
 Boto3 documentation:
@@ -146,17 +152,19 @@ Arguments for `DescribeDBClusterBacktracksPaginator.paginate` method:
 ## DescribeDBClusterEndpointsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_cluster_endpoints")`.
+`session.create_client("rds").get_paginator("describe_db_cluster_endpoints")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBClusterEndpointsPaginator
 
-def get_describe_db_cluster_endpoints_paginator() -> DescribeDBClusterEndpointsPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_cluster_endpoints")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBClusterEndpointsPaginator = client.get_paginator("describe_db_cluster_endpoints")
 ```
 
 Boto3 documentation:
@@ -178,17 +186,19 @@ Arguments for `DescribeDBClusterEndpointsPaginator.paginate` method:
 ## DescribeDBClusterParameterGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_cluster_parameter_groups")`.
+`session.create_client("rds").get_paginator("describe_db_cluster_parameter_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBClusterParameterGroupsPaginator
 
-def get_describe_db_cluster_parameter_groups_paginator() -> DescribeDBClusterParameterGroupsPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_cluster_parameter_groups")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBClusterParameterGroupsPaginator = client.get_paginator("describe_db_cluster_parameter_groups")
 ```
 
 Boto3 documentation:
@@ -209,17 +219,19 @@ Arguments for `DescribeDBClusterParameterGroupsPaginator.paginate` method:
 ## DescribeDBClusterParametersPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_cluster_parameters")`.
+`session.create_client("rds").get_paginator("describe_db_cluster_parameters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBClusterParametersPaginator
 
-def get_describe_db_cluster_parameters_paginator() -> DescribeDBClusterParametersPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_cluster_parameters")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBClusterParametersPaginator = client.get_paginator("describe_db_cluster_parameters")
 ```
 
 Boto3 documentation:
@@ -241,17 +253,19 @@ Arguments for `DescribeDBClusterParametersPaginator.paginate` method:
 ## DescribeDBClusterSnapshotsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_cluster_snapshots")`.
+`session.create_client("rds").get_paginator("describe_db_cluster_snapshots")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBClusterSnapshotsPaginator
 
-def get_describe_db_cluster_snapshots_paginator() -> DescribeDBClusterSnapshotsPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_cluster_snapshots")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBClusterSnapshotsPaginator = client.get_paginator("describe_db_cluster_snapshots")
 ```
 
 Boto3 documentation:
@@ -276,17 +290,19 @@ Arguments for `DescribeDBClusterSnapshotsPaginator.paginate` method:
 ## DescribeDBClustersPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_clusters")`.
+`session.create_client("rds").get_paginator("describe_db_clusters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBClustersPaginator
 
-def get_describe_db_clusters_paginator() -> DescribeDBClustersPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_clusters")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBClustersPaginator = client.get_paginator("describe_db_clusters")
 ```
 
 Boto3 documentation:
@@ -308,17 +324,19 @@ Arguments for `DescribeDBClustersPaginator.paginate` method:
 ## DescribeDBEngineVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_engine_versions")`.
+`session.create_client("rds").get_paginator("describe_db_engine_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBEngineVersionsPaginator
 
-def get_describe_db_engine_versions_paginator() -> DescribeDBEngineVersionsPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_engine_versions")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBEngineVersionsPaginator = client.get_paginator("describe_db_engine_versions")
 ```
 
 Boto3 documentation:
@@ -345,17 +363,19 @@ Arguments for `DescribeDBEngineVersionsPaginator.paginate` method:
 ## DescribeDBInstanceAutomatedBackupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_instance_automated_backups")`.
+`session.create_client("rds").get_paginator("describe_db_instance_automated_backups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBInstanceAutomatedBackupsPaginator
 
-def get_describe_db_instance_automated_backups_paginator() -> DescribeDBInstanceAutomatedBackupsPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_instance_automated_backups")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBInstanceAutomatedBackupsPaginator = client.get_paginator("describe_db_instance_automated_backups")
 ```
 
 Boto3 documentation:
@@ -378,17 +398,19 @@ Arguments for `DescribeDBInstanceAutomatedBackupsPaginator.paginate` method:
 ## DescribeDBInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_instances")`.
+`session.create_client("rds").get_paginator("describe_db_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBInstancesPaginator
 
-def get_describe_db_instances_paginator() -> DescribeDBInstancesPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_instances")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBInstancesPaginator = client.get_paginator("describe_db_instances")
 ```
 
 Boto3 documentation:
@@ -409,17 +431,19 @@ Arguments for `DescribeDBInstancesPaginator.paginate` method:
 ## DescribeDBLogFilesPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_log_files")`.
+`session.create_client("rds").get_paginator("describe_db_log_files")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBLogFilesPaginator
 
-def get_describe_db_log_files_paginator() -> DescribeDBLogFilesPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_log_files")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBLogFilesPaginator = client.get_paginator("describe_db_log_files")
 ```
 
 Boto3 documentation:
@@ -443,17 +467,19 @@ Arguments for `DescribeDBLogFilesPaginator.paginate` method:
 ## DescribeDBParameterGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_parameter_groups")`.
+`session.create_client("rds").get_paginator("describe_db_parameter_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBParameterGroupsPaginator
 
-def get_describe_db_parameter_groups_paginator() -> DescribeDBParameterGroupsPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_parameter_groups")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBParameterGroupsPaginator = client.get_paginator("describe_db_parameter_groups")
 ```
 
 Boto3 documentation:
@@ -474,17 +500,19 @@ Arguments for `DescribeDBParameterGroupsPaginator.paginate` method:
 ## DescribeDBParametersPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_parameters")`.
+`session.create_client("rds").get_paginator("describe_db_parameters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBParametersPaginator
 
-def get_describe_db_parameters_paginator() -> DescribeDBParametersPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_parameters")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBParametersPaginator = client.get_paginator("describe_db_parameters")
 ```
 
 Boto3 documentation:
@@ -506,17 +534,19 @@ Arguments for `DescribeDBParametersPaginator.paginate` method:
 ## DescribeDBProxiesPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_proxies")`.
+`session.create_client("rds").get_paginator("describe_db_proxies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBProxiesPaginator
 
-def get_describe_db_proxies_paginator() -> DescribeDBProxiesPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_proxies")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBProxiesPaginator = client.get_paginator("describe_db_proxies")
 ```
 
 Boto3 documentation:
@@ -537,17 +567,19 @@ Arguments for `DescribeDBProxiesPaginator.paginate` method:
 ## DescribeDBProxyEndpointsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_proxy_endpoints")`.
+`session.create_client("rds").get_paginator("describe_db_proxy_endpoints")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBProxyEndpointsPaginator
 
-def get_describe_db_proxy_endpoints_paginator() -> DescribeDBProxyEndpointsPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_proxy_endpoints")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBProxyEndpointsPaginator = client.get_paginator("describe_db_proxy_endpoints")
 ```
 
 Boto3 documentation:
@@ -569,17 +601,19 @@ Arguments for `DescribeDBProxyEndpointsPaginator.paginate` method:
 ## DescribeDBProxyTargetGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_proxy_target_groups")`.
+`session.create_client("rds").get_paginator("describe_db_proxy_target_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBProxyTargetGroupsPaginator
 
-def get_describe_db_proxy_target_groups_paginator() -> DescribeDBProxyTargetGroupsPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_proxy_target_groups")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBProxyTargetGroupsPaginator = client.get_paginator("describe_db_proxy_target_groups")
 ```
 
 Boto3 documentation:
@@ -601,17 +635,19 @@ Arguments for `DescribeDBProxyTargetGroupsPaginator.paginate` method:
 ## DescribeDBProxyTargetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_proxy_targets")`.
+`session.create_client("rds").get_paginator("describe_db_proxy_targets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBProxyTargetsPaginator
 
-def get_describe_db_proxy_targets_paginator() -> DescribeDBProxyTargetsPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_proxy_targets")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBProxyTargetsPaginator = client.get_paginator("describe_db_proxy_targets")
 ```
 
 Boto3 documentation:
@@ -633,17 +669,19 @@ Arguments for `DescribeDBProxyTargetsPaginator.paginate` method:
 ## DescribeDBSecurityGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_security_groups")`.
+`session.create_client("rds").get_paginator("describe_db_security_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBSecurityGroupsPaginator
 
-def get_describe_db_security_groups_paginator() -> DescribeDBSecurityGroupsPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_security_groups")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBSecurityGroupsPaginator = client.get_paginator("describe_db_security_groups")
 ```
 
 Boto3 documentation:
@@ -664,17 +702,19 @@ Arguments for `DescribeDBSecurityGroupsPaginator.paginate` method:
 ## DescribeDBSnapshotsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_snapshots")`.
+`session.create_client("rds").get_paginator("describe_db_snapshots")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBSnapshotsPaginator
 
-def get_describe_db_snapshots_paginator() -> DescribeDBSnapshotsPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_snapshots")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBSnapshotsPaginator = client.get_paginator("describe_db_snapshots")
 ```
 
 Boto3 documentation:
@@ -700,17 +740,19 @@ Arguments for `DescribeDBSnapshotsPaginator.paginate` method:
 ## DescribeDBSubnetGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_db_subnet_groups")`.
+`session.create_client("rds").get_paginator("describe_db_subnet_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeDBSubnetGroupsPaginator
 
-def get_describe_db_subnet_groups_paginator() -> DescribeDBSubnetGroupsPaginator:
-    return Session().create_client("rds").get_paginator("describe_db_subnet_groups")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeDBSubnetGroupsPaginator = client.get_paginator("describe_db_subnet_groups")
 ```
 
 Boto3 documentation:
@@ -731,17 +773,19 @@ Arguments for `DescribeDBSubnetGroupsPaginator.paginate` method:
 ## DescribeEngineDefaultClusterParametersPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_engine_default_cluster_parameters")`.
+`session.create_client("rds").get_paginator("describe_engine_default_cluster_parameters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeEngineDefaultClusterParametersPaginator
 
-def get_describe_engine_default_cluster_parameters_paginator() -> DescribeEngineDefaultClusterParametersPaginator:
-    return Session().create_client("rds").get_paginator("describe_engine_default_cluster_parameters")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeEngineDefaultClusterParametersPaginator = client.get_paginator("describe_engine_default_cluster_parameters")
 ```
 
 Boto3 documentation:
@@ -763,17 +807,19 @@ method:
 ## DescribeEngineDefaultParametersPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_engine_default_parameters")`.
+`session.create_client("rds").get_paginator("describe_engine_default_parameters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeEngineDefaultParametersPaginator
 
-def get_describe_engine_default_parameters_paginator() -> DescribeEngineDefaultParametersPaginator:
-    return Session().create_client("rds").get_paginator("describe_engine_default_parameters")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeEngineDefaultParametersPaginator = client.get_paginator("describe_engine_default_parameters")
 ```
 
 Boto3 documentation:
@@ -794,17 +840,19 @@ Arguments for `DescribeEngineDefaultParametersPaginator.paginate` method:
 ## DescribeEventSubscriptionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_event_subscriptions")`.
+`session.create_client("rds").get_paginator("describe_event_subscriptions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeEventSubscriptionsPaginator
 
-def get_describe_event_subscriptions_paginator() -> DescribeEventSubscriptionsPaginator:
-    return Session().create_client("rds").get_paginator("describe_event_subscriptions")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeEventSubscriptionsPaginator = client.get_paginator("describe_event_subscriptions")
 ```
 
 Boto3 documentation:
@@ -825,17 +873,19 @@ Arguments for `DescribeEventSubscriptionsPaginator.paginate` method:
 ## DescribeEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_events")`.
+`session.create_client("rds").get_paginator("describe_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeEventsPaginator
 
-def get_describe_events_paginator() -> DescribeEventsPaginator:
-    return Session().create_client("rds").get_paginator("describe_events")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")
 ```
 
 Boto3 documentation:
@@ -861,17 +911,19 @@ Arguments for `DescribeEventsPaginator.paginate` method:
 ## DescribeExportTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_export_tasks")`.
+`session.create_client("rds").get_paginator("describe_export_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeExportTasksPaginator
 
-def get_describe_export_tasks_paginator() -> DescribeExportTasksPaginator:
-    return Session().create_client("rds").get_paginator("describe_export_tasks")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeExportTasksPaginator = client.get_paginator("describe_export_tasks")
 ```
 
 Boto3 documentation:
@@ -893,17 +945,19 @@ Arguments for `DescribeExportTasksPaginator.paginate` method:
 ## DescribeGlobalClustersPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_global_clusters")`.
+`session.create_client("rds").get_paginator("describe_global_clusters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeGlobalClustersPaginator
 
-def get_describe_global_clusters_paginator() -> DescribeGlobalClustersPaginator:
-    return Session().create_client("rds").get_paginator("describe_global_clusters")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeGlobalClustersPaginator = client.get_paginator("describe_global_clusters")
 ```
 
 Boto3 documentation:
@@ -924,17 +978,19 @@ Arguments for `DescribeGlobalClustersPaginator.paginate` method:
 ## DescribeInstallationMediaPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_installation_media")`.
+`session.create_client("rds").get_paginator("describe_installation_media")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeInstallationMediaPaginator
 
-def get_describe_installation_media_paginator() -> DescribeInstallationMediaPaginator:
-    return Session().create_client("rds").get_paginator("describe_installation_media")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeInstallationMediaPaginator = client.get_paginator("describe_installation_media")
 ```
 
 Boto3 documentation:
@@ -955,17 +1011,19 @@ Arguments for `DescribeInstallationMediaPaginator.paginate` method:
 ## DescribeOptionGroupOptionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_option_group_options")`.
+`session.create_client("rds").get_paginator("describe_option_group_options")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeOptionGroupOptionsPaginator
 
-def get_describe_option_group_options_paginator() -> DescribeOptionGroupOptionsPaginator:
-    return Session().create_client("rds").get_paginator("describe_option_group_options")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeOptionGroupOptionsPaginator = client.get_paginator("describe_option_group_options")
 ```
 
 Boto3 documentation:
@@ -987,17 +1045,19 @@ Arguments for `DescribeOptionGroupOptionsPaginator.paginate` method:
 ## DescribeOptionGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_option_groups")`.
+`session.create_client("rds").get_paginator("describe_option_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeOptionGroupsPaginator
 
-def get_describe_option_groups_paginator() -> DescribeOptionGroupsPaginator:
-    return Session().create_client("rds").get_paginator("describe_option_groups")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeOptionGroupsPaginator = client.get_paginator("describe_option_groups")
 ```
 
 Boto3 documentation:
@@ -1020,17 +1080,19 @@ Arguments for `DescribeOptionGroupsPaginator.paginate` method:
 ## DescribeOrderableDBInstanceOptionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_orderable_db_instance_options")`.
+`session.create_client("rds").get_paginator("describe_orderable_db_instance_options")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeOrderableDBInstanceOptionsPaginator
 
-def get_describe_orderable_db_instance_options_paginator() -> DescribeOrderableDBInstanceOptionsPaginator:
-    return Session().create_client("rds").get_paginator("describe_orderable_db_instance_options")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeOrderableDBInstanceOptionsPaginator = client.get_paginator("describe_orderable_db_instance_options")
 ```
 
 Boto3 documentation:
@@ -1056,17 +1118,19 @@ Arguments for `DescribeOrderableDBInstanceOptionsPaginator.paginate` method:
 ## DescribePendingMaintenanceActionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_pending_maintenance_actions")`.
+`session.create_client("rds").get_paginator("describe_pending_maintenance_actions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribePendingMaintenanceActionsPaginator
 
-def get_describe_pending_maintenance_actions_paginator() -> DescribePendingMaintenanceActionsPaginator:
-    return Session().create_client("rds").get_paginator("describe_pending_maintenance_actions")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribePendingMaintenanceActionsPaginator = client.get_paginator("describe_pending_maintenance_actions")
 ```
 
 Boto3 documentation:
@@ -1087,17 +1151,19 @@ Arguments for `DescribePendingMaintenanceActionsPaginator.paginate` method:
 ## DescribeReservedDBInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_reserved_db_instances")`.
+`session.create_client("rds").get_paginator("describe_reserved_db_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeReservedDBInstancesPaginator
 
-def get_describe_reserved_db_instances_paginator() -> DescribeReservedDBInstancesPaginator:
-    return Session().create_client("rds").get_paginator("describe_reserved_db_instances")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeReservedDBInstancesPaginator = client.get_paginator("describe_reserved_db_instances")
 ```
 
 Boto3 documentation:
@@ -1125,17 +1191,19 @@ Arguments for `DescribeReservedDBInstancesPaginator.paginate` method:
 ## DescribeReservedDBInstancesOfferingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_reserved_db_instances_offerings")`.
+`session.create_client("rds").get_paginator("describe_reserved_db_instances_offerings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeReservedDBInstancesOfferingsPaginator
 
-def get_describe_reserved_db_instances_offerings_paginator() -> DescribeReservedDBInstancesOfferingsPaginator:
-    return Session().create_client("rds").get_paginator("describe_reserved_db_instances_offerings")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeReservedDBInstancesOfferingsPaginator = client.get_paginator("describe_reserved_db_instances_offerings")
 ```
 
 Boto3 documentation:
@@ -1161,17 +1229,19 @@ Arguments for `DescribeReservedDBInstancesOfferingsPaginator.paginate` method:
 ## DescribeSourceRegionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("describe_source_regions")`.
+`session.create_client("rds").get_paginator("describe_source_regions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DescribeSourceRegionsPaginator
 
-def get_describe_source_regions_paginator() -> DescribeSourceRegionsPaginator:
-    return Session().create_client("rds").get_paginator("describe_source_regions")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DescribeSourceRegionsPaginator = client.get_paginator("describe_source_regions")
 ```
 
 Boto3 documentation:
@@ -1192,17 +1262,19 @@ Arguments for `DescribeSourceRegionsPaginator.paginate` method:
 ## DownloadDBLogFilePortionPaginator
 
 Type annotations for
-`aiobotocore.create_client("rds").get_paginator("download_db_log_file_portion")`.
+`session.create_client("rds").get_paginator("download_db_log_file_portion")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rds.paginator import DownloadDBLogFilePortionPaginator
 
-def get_download_db_log_file_portion_paginator() -> DownloadDBLogFilePortionPaginator:
-    return Session().create_client("rds").get_paginator("download_db_log_file_portion")
+session = get_session()
+async with session.create_client("rds") as client:
+    client: RDSClient
+    paginator: DownloadDBLogFilePortionPaginator = client.get_paginator("download_db_log_file_portion")
 ```
 
 Boto3 documentation:

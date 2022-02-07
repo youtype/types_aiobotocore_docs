@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListTerminologiesPaginator
 
 Type annotations for
-`aiobotocore.create_client("translate").get_paginator("list_terminologies")`.
+`session.create_client("translate").get_paginator("list_terminologies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_translate.paginator import ListTerminologiesPaginator
 
-def get_list_terminologies_paginator() -> ListTerminologiesPaginator:
-    return Session().create_client("translate").get_paginator("list_terminologies")
+session = get_session()
+async with session.create_client("translate") as client:
+    client: TranslateClient
+    paginator: ListTerminologiesPaginator = client.get_paginator("list_terminologies")
 ```
 
 Boto3 documentation:

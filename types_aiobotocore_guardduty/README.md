@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[guardduty]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[guardduty]'
+
+# standalone installation
 pip install types-aiobotocore-guardduty
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-guardduty
 
 ## GuardDutyClient
 
-Type annotations for `aiobotocore.create_client("guardduty")` as
+Type annotations for `session.create_client("guardduty")` as
 [GuardDutyClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_guardduty.client import GuardDutyClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_invitation](./client.md#accept_invitation)
 - [archive_findings](./client.md#archive_findings)
 - [can_paginate](./client.md#can_paginate)
@@ -125,7 +131,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_guardduty.paginators import ListDetectorsPaginator, ...
+from types_aiobotocore_guardduty.paginator import ListDetectorsPaginator, ...
 ```
 
 - [ListDetectorsPaginator](./paginators.md#listdetectorspaginator)

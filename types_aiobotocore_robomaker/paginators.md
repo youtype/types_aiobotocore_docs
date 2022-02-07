@@ -27,17 +27,19 @@ type annotations stubs module
 ## ListDeploymentJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("robomaker").get_paginator("list_deployment_jobs")`.
+`session.create_client("robomaker").get_paginator("list_deployment_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_robomaker.paginator import ListDeploymentJobsPaginator
 
-def get_list_deployment_jobs_paginator() -> ListDeploymentJobsPaginator:
-    return Session().create_client("robomaker").get_paginator("list_deployment_jobs")
+session = get_session()
+async with session.create_client("robomaker") as client:
+    client: RoboMakerClient
+    paginator: ListDeploymentJobsPaginator = client.get_paginator("list_deployment_jobs")
 ```
 
 Boto3 documentation:
@@ -57,17 +59,19 @@ Arguments for `ListDeploymentJobsPaginator.paginate` method:
 ## ListFleetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("robomaker").get_paginator("list_fleets")`.
+`session.create_client("robomaker").get_paginator("list_fleets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_robomaker.paginator import ListFleetsPaginator
 
-def get_list_fleets_paginator() -> ListFleetsPaginator:
-    return Session().create_client("robomaker").get_paginator("list_fleets")
+session = get_session()
+async with session.create_client("robomaker") as client:
+    client: RoboMakerClient
+    paginator: ListFleetsPaginator = client.get_paginator("list_fleets")
 ```
 
 Boto3 documentation:
@@ -87,17 +91,19 @@ Arguments for `ListFleetsPaginator.paginate` method:
 ## ListRobotApplicationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("robomaker").get_paginator("list_robot_applications")`.
+`session.create_client("robomaker").get_paginator("list_robot_applications")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_robomaker.paginator import ListRobotApplicationsPaginator
 
-def get_list_robot_applications_paginator() -> ListRobotApplicationsPaginator:
-    return Session().create_client("robomaker").get_paginator("list_robot_applications")
+session = get_session()
+async with session.create_client("robomaker") as client:
+    client: RoboMakerClient
+    paginator: ListRobotApplicationsPaginator = client.get_paginator("list_robot_applications")
 ```
 
 Boto3 documentation:
@@ -118,17 +124,19 @@ Arguments for `ListRobotApplicationsPaginator.paginate` method:
 ## ListRobotsPaginator
 
 Type annotations for
-`aiobotocore.create_client("robomaker").get_paginator("list_robots")`.
+`session.create_client("robomaker").get_paginator("list_robots")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_robomaker.paginator import ListRobotsPaginator
 
-def get_list_robots_paginator() -> ListRobotsPaginator:
-    return Session().create_client("robomaker").get_paginator("list_robots")
+session = get_session()
+async with session.create_client("robomaker") as client:
+    client: RoboMakerClient
+    paginator: ListRobotsPaginator = client.get_paginator("list_robots")
 ```
 
 Boto3 documentation:
@@ -148,17 +156,19 @@ Arguments for `ListRobotsPaginator.paginate` method:
 ## ListSimulationApplicationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("robomaker").get_paginator("list_simulation_applications")`.
+`session.create_client("robomaker").get_paginator("list_simulation_applications")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_robomaker.paginator import ListSimulationApplicationsPaginator
 
-def get_list_simulation_applications_paginator() -> ListSimulationApplicationsPaginator:
-    return Session().create_client("robomaker").get_paginator("list_simulation_applications")
+session = get_session()
+async with session.create_client("robomaker") as client:
+    client: RoboMakerClient
+    paginator: ListSimulationApplicationsPaginator = client.get_paginator("list_simulation_applications")
 ```
 
 Boto3 documentation:
@@ -179,17 +189,19 @@ Arguments for `ListSimulationApplicationsPaginator.paginate` method:
 ## ListSimulationJobBatchesPaginator
 
 Type annotations for
-`aiobotocore.create_client("robomaker").get_paginator("list_simulation_job_batches")`.
+`session.create_client("robomaker").get_paginator("list_simulation_job_batches")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_robomaker.paginator import ListSimulationJobBatchesPaginator
 
-def get_list_simulation_job_batches_paginator() -> ListSimulationJobBatchesPaginator:
-    return Session().create_client("robomaker").get_paginator("list_simulation_job_batches")
+session = get_session()
+async with session.create_client("robomaker") as client:
+    client: RoboMakerClient
+    paginator: ListSimulationJobBatchesPaginator = client.get_paginator("list_simulation_job_batches")
 ```
 
 Boto3 documentation:
@@ -209,17 +221,19 @@ Arguments for `ListSimulationJobBatchesPaginator.paginate` method:
 ## ListSimulationJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("robomaker").get_paginator("list_simulation_jobs")`.
+`session.create_client("robomaker").get_paginator("list_simulation_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_robomaker.paginator import ListSimulationJobsPaginator
 
-def get_list_simulation_jobs_paginator() -> ListSimulationJobsPaginator:
-    return Session().create_client("robomaker").get_paginator("list_simulation_jobs")
+session = get_session()
+async with session.create_client("robomaker") as client:
+    client: RoboMakerClient
+    paginator: ListSimulationJobsPaginator = client.get_paginator("list_simulation_jobs")
 ```
 
 Boto3 documentation:
@@ -239,17 +253,19 @@ Arguments for `ListSimulationJobsPaginator.paginate` method:
 ## ListWorldExportJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("robomaker").get_paginator("list_world_export_jobs")`.
+`session.create_client("robomaker").get_paginator("list_world_export_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_robomaker.paginator import ListWorldExportJobsPaginator
 
-def get_list_world_export_jobs_paginator() -> ListWorldExportJobsPaginator:
-    return Session().create_client("robomaker").get_paginator("list_world_export_jobs")
+session = get_session()
+async with session.create_client("robomaker") as client:
+    client: RoboMakerClient
+    paginator: ListWorldExportJobsPaginator = client.get_paginator("list_world_export_jobs")
 ```
 
 Boto3 documentation:
@@ -269,17 +285,19 @@ Arguments for `ListWorldExportJobsPaginator.paginate` method:
 ## ListWorldGenerationJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("robomaker").get_paginator("list_world_generation_jobs")`.
+`session.create_client("robomaker").get_paginator("list_world_generation_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_robomaker.paginator import ListWorldGenerationJobsPaginator
 
-def get_list_world_generation_jobs_paginator() -> ListWorldGenerationJobsPaginator:
-    return Session().create_client("robomaker").get_paginator("list_world_generation_jobs")
+session = get_session()
+async with session.create_client("robomaker") as client:
+    client: RoboMakerClient
+    paginator: ListWorldGenerationJobsPaginator = client.get_paginator("list_world_generation_jobs")
 ```
 
 Boto3 documentation:
@@ -299,17 +317,19 @@ Arguments for `ListWorldGenerationJobsPaginator.paginate` method:
 ## ListWorldTemplatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("robomaker").get_paginator("list_world_templates")`.
+`session.create_client("robomaker").get_paginator("list_world_templates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_robomaker.paginator import ListWorldTemplatesPaginator
 
-def get_list_world_templates_paginator() -> ListWorldTemplatesPaginator:
-    return Session().create_client("robomaker").get_paginator("list_world_templates")
+session = get_session()
+async with session.create_client("robomaker") as client:
+    client: RoboMakerClient
+    paginator: ListWorldTemplatesPaginator = client.get_paginator("list_world_templates")
 ```
 
 Boto3 documentation:
@@ -328,17 +348,19 @@ Arguments for `ListWorldTemplatesPaginator.paginate` method:
 ## ListWorldsPaginator
 
 Type annotations for
-`aiobotocore.create_client("robomaker").get_paginator("list_worlds")`.
+`session.create_client("robomaker").get_paginator("list_worlds")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_robomaker.paginator import ListWorldsPaginator
 
-def get_list_worlds_paginator() -> ListWorldsPaginator:
-    return Session().create_client("robomaker").get_paginator("list_worlds")
+session = get_session()
+async with session.create_client("robomaker") as client:
+    client: RoboMakerClient
+    paginator: ListWorldsPaginator = client.get_paginator("list_worlds")
 ```
 
 Boto3 documentation:

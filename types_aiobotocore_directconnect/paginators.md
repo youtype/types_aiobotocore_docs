@@ -19,17 +19,19 @@ type annotations stubs module
 ## DescribeDirectConnectGatewayAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("directconnect").get_paginator("describe_direct_connect_gateway_associations")`.
+`session.create_client("directconnect").get_paginator("describe_direct_connect_gateway_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_directconnect.paginator import DescribeDirectConnectGatewayAssociationsPaginator
 
-def get_describe_direct_connect_gateway_associations_paginator() -> DescribeDirectConnectGatewayAssociationsPaginator:
-    return Session().create_client("directconnect").get_paginator("describe_direct_connect_gateway_associations")
+session = get_session()
+async with session.create_client("directconnect") as client:
+    client: DirectConnectClient
+    paginator: DescribeDirectConnectGatewayAssociationsPaginator = client.get_paginator("describe_direct_connect_gateway_associations")
 ```
 
 Boto3 documentation:
@@ -53,17 +55,19 @@ method:
 ## DescribeDirectConnectGatewayAttachmentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("directconnect").get_paginator("describe_direct_connect_gateway_attachments")`.
+`session.create_client("directconnect").get_paginator("describe_direct_connect_gateway_attachments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_directconnect.paginator import DescribeDirectConnectGatewayAttachmentsPaginator
 
-def get_describe_direct_connect_gateway_attachments_paginator() -> DescribeDirectConnectGatewayAttachmentsPaginator:
-    return Session().create_client("directconnect").get_paginator("describe_direct_connect_gateway_attachments")
+session = get_session()
+async with session.create_client("directconnect") as client:
+    client: DirectConnectClient
+    paginator: DescribeDirectConnectGatewayAttachmentsPaginator = client.get_paginator("describe_direct_connect_gateway_attachments")
 ```
 
 Boto3 documentation:
@@ -85,17 +89,19 @@ method:
 ## DescribeDirectConnectGatewaysPaginator
 
 Type annotations for
-`aiobotocore.create_client("directconnect").get_paginator("describe_direct_connect_gateways")`.
+`session.create_client("directconnect").get_paginator("describe_direct_connect_gateways")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_directconnect.paginator import DescribeDirectConnectGatewaysPaginator
 
-def get_describe_direct_connect_gateways_paginator() -> DescribeDirectConnectGatewaysPaginator:
-    return Session().create_client("directconnect").get_paginator("describe_direct_connect_gateways")
+session = get_session()
+async with session.create_client("directconnect") as client:
+    client: DirectConnectClient
+    paginator: DescribeDirectConnectGatewaysPaginator = client.get_paginator("describe_direct_connect_gateways")
 ```
 
 Boto3 documentation:

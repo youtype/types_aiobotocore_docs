@@ -64,22 +64,25 @@ type annotations stubs module
     - [update_license_manager_report_generator](#update_license_manager_report_generator)
     - [update_license_specifications_for_resource](#update_license_specifications_for_resource)
     - [update_service_settings](#update_service_settings)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="licensemanagerclient"></a>
 
 ## LicenseManagerClient
 
-Type annotations for `aiobotocore.create_client("license-manager")`
+Type annotations for `session.create_client("license-manager")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_license_manager.client import LicenseManagerClient
 
-def get_license-manager_client() -> LicenseManagerClient:
-    return Session().client("license-manager")
+session = get_session()
+async with session.create_client("license-manager") as client:
+    client: LicenseManagerClient
 ```
 
 Boto3 documentation:
@@ -130,7 +133,7 @@ Exceptions:
 
 LicenseManagerClient exceptions.
 
-Type annotations for `aiobotocore.create_client("license-manager").exceptions`
+Type annotations for `session.create_client("license-manager").exceptions`
 method.
 
 Boto3 documentation:
@@ -144,8 +147,8 @@ Returns [Exceptions](#exceptions).
 
 Accepts the specified grant.
 
-Type annotations for
-`aiobotocore.create_client("license-manager").accept_grant` method.
+Type annotations for `session.create_client("license-manager").accept_grant`
+method.
 
 Boto3 documentation:
 [LicenseManager.Client.accept_grant](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.accept_grant)
@@ -168,19 +171,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("license-manager").can_paginate` method.
+Type annotations for `session.create_client("license-manager").can_paginate`
+method.
 
 Boto3 documentation:
 [LicenseManager.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="check_in_license"></a>
 
@@ -189,7 +190,7 @@ Returns a `Coroutine` for `bool`.
 Checks in the specified license.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").check_in_license` method.
+`session.create_client("license-manager").check_in_license` method.
 
 Boto3 documentation:
 [LicenseManager.Client.check_in_license](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.check_in_license)
@@ -213,7 +214,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Checks out the specified license for offline use.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").checkout_borrow_license` method.
+`session.create_client("license-manager").checkout_borrow_license` method.
 
 Boto3 documentation:
 [LicenseManager.Client.checkout_borrow_license](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.checkout_borrow_license)
@@ -248,7 +249,7 @@ Returns a `Coroutine` for
 Checks out the specified license.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").checkout_license` method.
+`session.create_client("license-manager").checkout_license` method.
 
 Boto3 documentation:
 [LicenseManager.Client.checkout_license](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.checkout_license)
@@ -280,8 +281,8 @@ Returns a `Coroutine` for
 
 Creates a grant for the specified license.
 
-Type annotations for
-`aiobotocore.create_client("license-manager").create_grant` method.
+Type annotations for `session.create_client("license-manager").create_grant`
+method.
 
 Boto3 documentation:
 [LicenseManager.Client.create_grant](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.create_grant)
@@ -312,7 +313,7 @@ Returns a `Coroutine` for
 Creates a new version of the specified grant.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").create_grant_version` method.
+`session.create_client("license-manager").create_grant_version` method.
 
 Boto3 documentation:
 [LicenseManager.Client.create_grant_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.create_grant_version)
@@ -343,8 +344,8 @@ Returns a `Coroutine` for
 
 Creates a license.
 
-Type annotations for
-`aiobotocore.create_client("license-manager").create_license` method.
+Type annotations for `session.create_client("license-manager").create_license`
+method.
 
 Boto3 documentation:
 [LicenseManager.Client.create_license](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.create_license)
@@ -384,8 +385,7 @@ Returns a `Coroutine` for
 Creates a license configuration.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").create_license_configuration`
-method.
+`session.create_client("license-manager").create_license_configuration` method.
 
 Boto3 documentation:
 [LicenseManager.Client.create_license_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.create_license_configuration)
@@ -420,7 +420,7 @@ Returns a `Coroutine` for
 Creates a new license conversion task.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").create_license_conversion_task_for_resource`
+`session.create_client("license-manager").create_license_conversion_task_for_resource`
 method.
 
 Boto3 documentation:
@@ -453,7 +453,7 @@ Returns a `Coroutine` for
 Creates a report generator.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").create_license_manager_report_generator`
+`session.create_client("license-manager").create_license_manager_report_generator`
 method.
 
 Boto3 documentation:
@@ -488,7 +488,7 @@ Returns a `Coroutine` for
 Creates a new version of the specified license.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").create_license_version` method.
+`session.create_client("license-manager").create_license_version` method.
 
 Boto3 documentation:
 [LicenseManager.Client.create_license_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.create_license_version)
@@ -529,8 +529,8 @@ Returns a `Coroutine` for
 
 Creates a long-lived token.
 
-Type annotations for
-`aiobotocore.create_client("license-manager").create_token` method.
+Type annotations for `session.create_client("license-manager").create_token`
+method.
 
 Boto3 documentation:
 [LicenseManager.Client.create_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.create_token)
@@ -557,8 +557,8 @@ Returns a `Coroutine` for
 
 Deletes the specified grant.
 
-Type annotations for
-`aiobotocore.create_client("license-manager").delete_grant` method.
+Type annotations for `session.create_client("license-manager").delete_grant`
+method.
 
 Boto3 documentation:
 [LicenseManager.Client.delete_grant](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.delete_grant)
@@ -583,8 +583,8 @@ Returns a `Coroutine` for
 
 Deletes the specified license.
 
-Type annotations for
-`aiobotocore.create_client("license-manager").delete_license` method.
+Type annotations for `session.create_client("license-manager").delete_license`
+method.
 
 Boto3 documentation:
 [LicenseManager.Client.delete_license](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.delete_license)
@@ -609,8 +609,7 @@ Returns a `Coroutine` for
 Deletes the specified license configuration.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").delete_license_configuration`
-method.
+`session.create_client("license-manager").delete_license_configuration` method.
 
 Boto3 documentation:
 [LicenseManager.Client.delete_license_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.delete_license_configuration)
@@ -634,7 +633,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified report generator.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").delete_license_manager_report_generator`
+`session.create_client("license-manager").delete_license_manager_report_generator`
 method.
 
 Boto3 documentation:
@@ -658,8 +657,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified token.
 
-Type annotations for
-`aiobotocore.create_client("license-manager").delete_token` method.
+Type annotations for `session.create_client("license-manager").delete_token`
+method.
 
 Boto3 documentation:
 [LicenseManager.Client.delete_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.delete_token)
@@ -682,8 +681,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Extends the expiration date for license consumption.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").extend_license_consumption`
-method.
+`session.create_client("license-manager").extend_license_consumption` method.
 
 Boto3 documentation:
 [LicenseManager.Client.extend_license_consumption](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.extend_license_consumption)
@@ -709,7 +707,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").generate_presigned_url` method.
+`session.create_client("license-manager").generate_presigned_url` method.
 
 Boto3 documentation:
 [LicenseManager.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.generate_presigned_url)
@@ -733,7 +731,7 @@ Returns a `Coroutine` for `str`.
 Gets a temporary access token to use with AssumeRoleWithWebIdentity.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").get_access_token` method.
+`session.create_client("license-manager").get_access_token` method.
 
 Boto3 documentation:
 [LicenseManager.Client.get_access_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.get_access_token)
@@ -757,7 +755,7 @@ Returns a `Coroutine` for
 
 Gets detailed information about the specified grant.
 
-Type annotations for `aiobotocore.create_client("license-manager").get_grant`
+Type annotations for `session.create_client("license-manager").get_grant`
 method.
 
 Boto3 documentation:
@@ -782,7 +780,7 @@ Returns a `Coroutine` for
 
 Gets detailed information about the specified license.
 
-Type annotations for `aiobotocore.create_client("license-manager").get_license`
+Type annotations for `session.create_client("license-manager").get_license`
 method.
 
 Boto3 documentation:
@@ -808,8 +806,7 @@ Returns a `Coroutine` for
 Gets detailed information about the specified license configuration.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").get_license_configuration`
-method.
+`session.create_client("license-manager").get_license_configuration` method.
 
 Boto3 documentation:
 [LicenseManager.Client.get_license_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.get_license_configuration)
@@ -834,8 +831,7 @@ Returns a `Coroutine` for
 Gets information about the specified license type conversion task.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").get_license_conversion_task`
-method.
+`session.create_client("license-manager").get_license_conversion_task` method.
 
 Boto3 documentation:
 [LicenseManager.Client.get_license_conversion_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.get_license_conversion_task)
@@ -860,7 +856,7 @@ Returns a `Coroutine` for
 Gets information about the specified report generator.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").get_license_manager_report_generator`
+`session.create_client("license-manager").get_license_manager_report_generator`
 method.
 
 Boto3 documentation:
@@ -886,7 +882,7 @@ Returns a `Coroutine` for
 Gets detailed information about the usage of the specified license.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").get_license_usage` method.
+`session.create_client("license-manager").get_license_usage` method.
 
 Boto3 documentation:
 [LicenseManager.Client.get_license_usage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.get_license_usage)
@@ -910,7 +906,7 @@ Returns a `Coroutine` for
 Gets the License Manager settings for the current Region.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").get_service_settings` method.
+`session.create_client("license-manager").get_service_settings` method.
 
 Boto3 documentation:
 [LicenseManager.Client.get_service_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.get_service_settings)
@@ -928,7 +924,7 @@ Returns a `Coroutine` for
 Lists the resource associations for the specified license configuration.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").list_associations_for_license_configuration`
+`session.create_client("license-manager").list_associations_for_license_configuration`
 method.
 
 Boto3 documentation:
@@ -957,7 +953,7 @@ Returns a `Coroutine` for
 Lists the grants distributed for the specified license.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").list_distributed_grants` method.
+`session.create_client("license-manager").list_distributed_grants` method.
 
 Boto3 documentation:
 [LicenseManager.Client.list_distributed_grants](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.list_distributed_grants)
@@ -985,7 +981,7 @@ Returns a `Coroutine` for
 Lists the license configuration operations that failed.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").list_failures_for_license_configuration_operations`
+`session.create_client("license-manager").list_failures_for_license_configuration_operations`
 method.
 
 Boto3 documentation:
@@ -1014,8 +1010,7 @@ Returns a `Coroutine` for
 Lists the license configurations for your account.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").list_license_configurations`
-method.
+`session.create_client("license-manager").list_license_configurations` method.
 
 Boto3 documentation:
 [LicenseManager.Client.list_license_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.list_license_configurations)
@@ -1043,7 +1038,7 @@ Returns a `Coroutine` for
 Lists the license type conversion tasks for your account.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").list_license_conversion_tasks`
+`session.create_client("license-manager").list_license_conversion_tasks`
 method.
 
 Boto3 documentation:
@@ -1071,7 +1066,7 @@ Returns a `Coroutine` for
 Lists the report generators for your account.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").list_license_manager_report_generators`
+`session.create_client("license-manager").list_license_manager_report_generators`
 method.
 
 Boto3 documentation:
@@ -1099,7 +1094,7 @@ Returns a `Coroutine` for
 Describes the license configurations for the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").list_license_specifications_for_resource`
+`session.create_client("license-manager").list_license_specifications_for_resource`
 method.
 
 Boto3 documentation:
@@ -1127,7 +1122,7 @@ Returns a `Coroutine` for
 Lists all versions of the specified license.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").list_license_versions` method.
+`session.create_client("license-manager").list_license_versions` method.
 
 Boto3 documentation:
 [LicenseManager.Client.list_license_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.list_license_versions)
@@ -1153,8 +1148,8 @@ Returns a `Coroutine` for
 
 Lists the licenses for your account.
 
-Type annotations for
-`aiobotocore.create_client("license-manager").list_licenses` method.
+Type annotations for `session.create_client("license-manager").list_licenses`
+method.
 
 Boto3 documentation:
 [LicenseManager.Client.list_licenses](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.list_licenses)
@@ -1181,7 +1176,7 @@ Returns a `Coroutine` for
 Lists grants that are received but not accepted.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").list_received_grants` method.
+`session.create_client("license-manager").list_received_grants` method.
 
 Boto3 documentation:
 [LicenseManager.Client.list_received_grants](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.list_received_grants)
@@ -1209,7 +1204,7 @@ Returns a `Coroutine` for
 Lists received licenses.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").list_received_licenses` method.
+`session.create_client("license-manager").list_received_licenses` method.
 
 Boto3 documentation:
 [LicenseManager.Client.list_received_licenses](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.list_received_licenses)
@@ -1237,7 +1232,7 @@ Returns a `Coroutine` for
 Lists resources managed using Systems Manager inventory.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").list_resource_inventory` method.
+`session.create_client("license-manager").list_resource_inventory` method.
 
 Boto3 documentation:
 [LicenseManager.Client.list_resource_inventory](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.list_resource_inventory)
@@ -1265,7 +1260,7 @@ Returns a `Coroutine` for
 Lists the tags for the specified license configuration.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").list_tags_for_resource` method.
+`session.create_client("license-manager").list_tags_for_resource` method.
 
 Boto3 documentation:
 [LicenseManager.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.list_tags_for_resource)
@@ -1289,7 +1284,7 @@ Returns a `Coroutine` for
 
 Lists your tokens.
 
-Type annotations for `aiobotocore.create_client("license-manager").list_tokens`
+Type annotations for `session.create_client("license-manager").list_tokens`
 method.
 
 Boto3 documentation:
@@ -1318,7 +1313,7 @@ Lists all license usage records for a license configuration, displaying license
 consumption details by resource at a selected point in time.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").list_usage_for_license_configuration`
+`session.create_client("license-manager").list_usage_for_license_configuration`
 method.
 
 Boto3 documentation:
@@ -1346,8 +1341,8 @@ Returns a `Coroutine` for
 
 Rejects the specified grant.
 
-Type annotations for
-`aiobotocore.create_client("license-manager").reject_grant` method.
+Type annotations for `session.create_client("license-manager").reject_grant`
+method.
 
 Boto3 documentation:
 [LicenseManager.Client.reject_grant](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.reject_grant)
@@ -1370,8 +1365,8 @@ Returns a `Coroutine` for
 
 Adds the specified tags to the specified license configuration.
 
-Type annotations for
-`aiobotocore.create_client("license-manager").tag_resource` method.
+Type annotations for `session.create_client("license-manager").tag_resource`
+method.
 
 Boto3 documentation:
 [LicenseManager.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.tag_resource)
@@ -1394,8 +1389,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the specified tags from the specified license configuration.
 
-Type annotations for
-`aiobotocore.create_client("license-manager").untag_resource` method.
+Type annotations for `session.create_client("license-manager").untag_resource`
+method.
 
 Boto3 documentation:
 [LicenseManager.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.untag_resource)
@@ -1419,8 +1414,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Modifies the attributes of an existing license configuration.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").update_license_configuration`
-method.
+`session.create_client("license-manager").update_license_configuration` method.
 
 Boto3 documentation:
 [LicenseManager.Client.update_license_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.update_license_configuration)
@@ -1454,7 +1448,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a report generator.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").update_license_manager_report_generator`
+`session.create_client("license-manager").update_license_manager_report_generator`
 method.
 
 Boto3 documentation:
@@ -1489,7 +1483,7 @@ Adds or removes the specified license configurations for the specified Amazon
 Web Services resource.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").update_license_specifications_for_resource`
+`session.create_client("license-manager").update_license_specifications_for_resource`
 method.
 
 Boto3 documentation:
@@ -1518,7 +1512,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates License Manager settings for the current Region.
 
 Type annotations for
-`aiobotocore.create_client("license-manager").update_service_settings` method.
+`session.create_client("license-manager").update_service_settings` method.
 
 Boto3 documentation:
 [LicenseManager.Client.update_service_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.update_service_settings)
@@ -1539,13 +1533,46 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("license-manager").__aenter__`
+method.
+
+Boto3 documentation:
+[LicenseManager.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [LicenseManagerClient](#licensemanagerclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("license-manager").__aexit__`
+method.
+
+Boto3 documentation:
+[LicenseManager.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/license-manager.html#LicenseManager.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("license-manager").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("license-manager").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_associations_for_license_configuration")` ->
   [ListAssociationsForLicenseConfigurationPaginator](./paginators.md#listassociationsforlicenseconfigurationpaginator)

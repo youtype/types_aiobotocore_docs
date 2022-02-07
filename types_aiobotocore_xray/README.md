@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[xray]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[xray]'
+
+# standalone installation
 pip install types-aiobotocore-xray
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-xray
 
 ## XRayClient
 
-Type annotations for `aiobotocore.create_client("xray")` as
+Type annotations for `session.create_client("xray")` as
 [XRayClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_xray.client import XRayClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_get_traces](./client.md#batch_get_traces)
 - [can_paginate](./client.md#can_paginate)
 - [create_group](./client.md#create_group)
@@ -97,7 +103,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_xray.paginators import BatchGetTracesPaginator, ...
+from types_aiobotocore_xray.paginator import BatchGetTracesPaginator, ...
 ```
 
 - [BatchGetTracesPaginator](./paginators.md#batchgettracespaginator)

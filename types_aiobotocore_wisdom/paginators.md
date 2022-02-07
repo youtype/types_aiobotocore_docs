@@ -23,17 +23,19 @@ type annotations stubs module
 ## ListAssistantAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("wisdom").get_paginator("list_assistant_associations")`.
+`session.create_client("wisdom").get_paginator("list_assistant_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_wisdom.paginator import ListAssistantAssociationsPaginator
 
-def get_list_assistant_associations_paginator() -> ListAssistantAssociationsPaginator:
-    return Session().create_client("wisdom").get_paginator("list_assistant_associations")
+session = get_session()
+async with session.create_client("wisdom") as client:
+    client: ConnectWisdomServiceClient
+    paginator: ListAssistantAssociationsPaginator = client.get_paginator("list_assistant_associations")
 ```
 
 Boto3 documentation:
@@ -53,17 +55,19 @@ Arguments for `ListAssistantAssociationsPaginator.paginate` method:
 ## ListAssistantsPaginator
 
 Type annotations for
-`aiobotocore.create_client("wisdom").get_paginator("list_assistants")`.
+`session.create_client("wisdom").get_paginator("list_assistants")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_wisdom.paginator import ListAssistantsPaginator
 
-def get_list_assistants_paginator() -> ListAssistantsPaginator:
-    return Session().create_client("wisdom").get_paginator("list_assistants")
+session = get_session()
+async with session.create_client("wisdom") as client:
+    client: ConnectWisdomServiceClient
+    paginator: ListAssistantsPaginator = client.get_paginator("list_assistants")
 ```
 
 Boto3 documentation:
@@ -82,17 +86,19 @@ Arguments for `ListAssistantsPaginator.paginate` method:
 ## ListContentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("wisdom").get_paginator("list_contents")`.
+`session.create_client("wisdom").get_paginator("list_contents")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_wisdom.paginator import ListContentsPaginator
 
-def get_list_contents_paginator() -> ListContentsPaginator:
-    return Session().create_client("wisdom").get_paginator("list_contents")
+session = get_session()
+async with session.create_client("wisdom") as client:
+    client: ConnectWisdomServiceClient
+    paginator: ListContentsPaginator = client.get_paginator("list_contents")
 ```
 
 Boto3 documentation:
@@ -112,17 +118,19 @@ Arguments for `ListContentsPaginator.paginate` method:
 ## ListKnowledgeBasesPaginator
 
 Type annotations for
-`aiobotocore.create_client("wisdom").get_paginator("list_knowledge_bases")`.
+`session.create_client("wisdom").get_paginator("list_knowledge_bases")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_wisdom.paginator import ListKnowledgeBasesPaginator
 
-def get_list_knowledge_bases_paginator() -> ListKnowledgeBasesPaginator:
-    return Session().create_client("wisdom").get_paginator("list_knowledge_bases")
+session = get_session()
+async with session.create_client("wisdom") as client:
+    client: ConnectWisdomServiceClient
+    paginator: ListKnowledgeBasesPaginator = client.get_paginator("list_knowledge_bases")
 ```
 
 Boto3 documentation:
@@ -141,17 +149,19 @@ Arguments for `ListKnowledgeBasesPaginator.paginate` method:
 ## QueryAssistantPaginator
 
 Type annotations for
-`aiobotocore.create_client("wisdom").get_paginator("query_assistant")`.
+`session.create_client("wisdom").get_paginator("query_assistant")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_wisdom.paginator import QueryAssistantPaginator
 
-def get_query_assistant_paginator() -> QueryAssistantPaginator:
-    return Session().create_client("wisdom").get_paginator("query_assistant")
+session = get_session()
+async with session.create_client("wisdom") as client:
+    client: ConnectWisdomServiceClient
+    paginator: QueryAssistantPaginator = client.get_paginator("query_assistant")
 ```
 
 Boto3 documentation:
@@ -172,17 +182,19 @@ Arguments for `QueryAssistantPaginator.paginate` method:
 ## SearchContentPaginator
 
 Type annotations for
-`aiobotocore.create_client("wisdom").get_paginator("search_content")`.
+`session.create_client("wisdom").get_paginator("search_content")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_wisdom.paginator import SearchContentPaginator
 
-def get_search_content_paginator() -> SearchContentPaginator:
-    return Session().create_client("wisdom").get_paginator("search_content")
+session = get_session()
+async with session.create_client("wisdom") as client:
+    client: ConnectWisdomServiceClient
+    paginator: SearchContentPaginator = client.get_paginator("search_content")
 ```
 
 Boto3 documentation:
@@ -205,17 +217,19 @@ Arguments for `SearchContentPaginator.paginate` method:
 ## SearchSessionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("wisdom").get_paginator("search_sessions")`.
+`session.create_client("wisdom").get_paginator("search_sessions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_wisdom.paginator import SearchSessionsPaginator
 
-def get_search_sessions_paginator() -> SearchSessionsPaginator:
-    return Session().create_client("wisdom").get_paginator("search_sessions")
+session = get_session()
+async with session.create_client("wisdom") as client:
+    client: ConnectWisdomServiceClient
+    paginator: SearchSessionsPaginator = client.get_paginator("search_sessions")
 ```
 
 Boto3 documentation:

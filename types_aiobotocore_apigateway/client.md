@@ -136,22 +136,25 @@ type annotations stubs module
     - [update_usage](#update_usage)
     - [update_usage_plan](#update_usage_plan)
     - [update_vpc_link](#update_vpc_link)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="apigatewayclient"></a>
 
 ## APIGatewayClient
 
-Type annotations for `aiobotocore.create_client("apigateway")`
+Type annotations for `session.create_client("apigateway")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_apigateway.client import APIGatewayClient
 
-def get_apigateway_client() -> APIGatewayClient:
-    return Session().client("apigateway")
+session = get_session()
+async with session.create_client("apigateway") as client:
+    client: APIGatewayClient
 ```
 
 Boto3 documentation:
@@ -192,8 +195,7 @@ Exceptions:
 
 APIGatewayClient exceptions.
 
-Type annotations for `aiobotocore.create_client("apigateway").exceptions`
-method.
+Type annotations for `session.create_client("apigateway").exceptions` method.
 
 Boto3 documentation:
 [APIGateway.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.exceptions)
@@ -206,19 +208,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("apigateway").can_paginate`
-method.
+Type annotations for `session.create_client("apigateway").can_paginate` method.
 
 Boto3 documentation:
 [APIGateway.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_api_key"></a>
 
@@ -226,7 +225,7 @@ Returns a `Coroutine` for `bool`.
 
 Create an ApiKey resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").create_api_key`
+Type annotations for `session.create_client("apigateway").create_api_key`
 method.
 
 Boto3 documentation:
@@ -257,8 +256,8 @@ Returns a `Coroutine` for
 
 Adds a new Authorizer resource to an existing RestApi resource.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").create_authorizer` method.
+Type annotations for `session.create_client("apigateway").create_authorizer`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.create_authorizer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.create_authorizer)
@@ -291,7 +290,7 @@ Returns a `Coroutine` for
 Creates a new BasePathMapping resource.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").create_base_path_mapping` method.
+`session.create_client("apigateway").create_base_path_mapping` method.
 
 Boto3 documentation:
 [APIGateway.Client.create_base_path_mapping](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.create_base_path_mapping)
@@ -319,8 +318,8 @@ Returns a `Coroutine` for
 Creates a Deployment resource, which makes a specified RestApi callable over
 the internet.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").create_deployment` method.
+Type annotations for `session.create_client("apigateway").create_deployment`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.create_deployment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.create_deployment)
@@ -355,7 +354,7 @@ See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationPart).
 
 Type annotations for
-`aiobotocore.create_client("apigateway").create_documentation_part` method.
+`session.create_client("apigateway").create_documentation_part` method.
 
 Boto3 documentation:
 [APIGateway.Client.create_documentation_part](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.create_documentation_part)
@@ -385,7 +384,7 @@ See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/CreateDocumentationVersion).
 
 Type annotations for
-`aiobotocore.create_client("apigateway").create_documentation_version` method.
+`session.create_client("apigateway").create_documentation_version` method.
 
 Boto3 documentation:
 [APIGateway.Client.create_documentation_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.create_documentation_version)
@@ -412,8 +411,8 @@ Returns a `Coroutine` for
 
 Creates a new domain name.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").create_domain_name` method.
+Type annotations for `session.create_client("apigateway").create_domain_name`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.create_domain_name](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.create_domain_name)
@@ -451,8 +450,7 @@ Returns a `Coroutine` for
 
 Adds a new Model resource to an existing RestApi resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").create_model`
-method.
+Type annotations for `session.create_client("apigateway").create_model` method.
 
 Boto3 documentation:
 [APIGateway.Client.create_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.create_model)
@@ -480,7 +478,7 @@ Returns a `Coroutine` for
 Creates a ReqeustValidator of a given RestApi .
 
 Type annotations for
-`aiobotocore.create_client("apigateway").create_request_validator` method.
+`session.create_client("apigateway").create_request_validator` method.
 
 Boto3 documentation:
 [APIGateway.Client.create_request_validator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.create_request_validator)
@@ -507,7 +505,7 @@ Returns a `Coroutine` for
 
 Creates a Resource resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").create_resource`
+Type annotations for `session.create_client("apigateway").create_resource`
 method.
 
 Boto3 documentation:
@@ -533,7 +531,7 @@ Returns a `Coroutine` for
 
 Creates a new RestApi resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").create_rest_api`
+Type annotations for `session.create_client("apigateway").create_rest_api`
 method.
 
 Boto3 documentation:
@@ -569,8 +567,7 @@ Returns a `Coroutine` for
 Creates a new Stage resource that references a pre-existing Deployment for the
 API.
 
-Type annotations for `aiobotocore.create_client("apigateway").create_stage`
-method.
+Type annotations for `session.create_client("apigateway").create_stage` method.
 
 Boto3 documentation:
 [APIGateway.Client.create_stage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.create_stage)
@@ -606,8 +603,8 @@ Returns a `Coroutine` for
 Creates a usage plan with the throttle and quota limits, as well as the
 associated API stages, specified in the payload.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").create_usage_plan` method.
+Type annotations for `session.create_client("apigateway").create_usage_plan`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.create_usage_plan](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.create_usage_plan)
@@ -636,7 +633,7 @@ Returns a `Coroutine` for
 Creates a usage plan key for adding an existing API key to a usage plan.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").create_usage_plan_key` method.
+`session.create_client("apigateway").create_usage_plan_key` method.
 
 Boto3 documentation:
 [APIGateway.Client.create_usage_plan_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.create_usage_plan_key)
@@ -664,7 +661,7 @@ Creates a VPC link, under the caller's account in a selected region, in an
 asynchronous operation that typically takes 2-4 minutes to complete and become
 operational.
 
-Type annotations for `aiobotocore.create_client("apigateway").create_vpc_link`
+Type annotations for `session.create_client("apigateway").create_vpc_link`
 method.
 
 Boto3 documentation:
@@ -691,7 +688,7 @@ Returns a `Coroutine` for
 
 Deletes the ApiKey resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").delete_api_key`
+Type annotations for `session.create_client("apigateway").delete_api_key`
 method.
 
 Boto3 documentation:
@@ -712,8 +709,8 @@ Keyword-only arguments:
 
 Deletes an existing Authorizer resource.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").delete_authorizer` method.
+Type annotations for `session.create_client("apigateway").delete_authorizer`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.delete_authorizer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.delete_authorizer)
@@ -735,7 +732,7 @@ Keyword-only arguments:
 Deletes the BasePathMapping resource.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").delete_base_path_mapping` method.
+`session.create_client("apigateway").delete_base_path_mapping` method.
 
 Boto3 documentation:
 [APIGateway.Client.delete_base_path_mapping](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.delete_base_path_mapping)
@@ -758,7 +755,7 @@ Keyword-only arguments:
 Deletes the ClientCertificate resource.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").delete_client_certificate` method.
+`session.create_client("apigateway").delete_client_certificate` method.
 
 Boto3 documentation:
 [APIGateway.Client.delete_client_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.delete_client_certificate)
@@ -779,8 +776,8 @@ Keyword-only arguments:
 
 Deletes a Deployment resource.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").delete_deployment` method.
+Type annotations for `session.create_client("apigateway").delete_deployment`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.delete_deployment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.delete_deployment)
@@ -803,7 +800,7 @@ See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationPart).
 
 Type annotations for
-`aiobotocore.create_client("apigateway").delete_documentation_part` method.
+`session.create_client("apigateway").delete_documentation_part` method.
 
 Boto3 documentation:
 [APIGateway.Client.delete_documentation_part](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.delete_documentation_part)
@@ -827,7 +824,7 @@ See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/DeleteDocumentationVersion).
 
 Type annotations for
-`aiobotocore.create_client("apigateway").delete_documentation_version` method.
+`session.create_client("apigateway").delete_documentation_version` method.
 
 Boto3 documentation:
 [APIGateway.Client.delete_documentation_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.delete_documentation_version)
@@ -849,8 +846,8 @@ Keyword-only arguments:
 
 Deletes the DomainName resource.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").delete_domain_name` method.
+Type annotations for `session.create_client("apigateway").delete_domain_name`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.delete_domain_name](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.delete_domain_name)
@@ -873,7 +870,7 @@ Clears any customization of a GatewayResponse of a specified response type on
 the given RestApi and resets it with the default settings.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").delete_gateway_response` method.
+`session.create_client("apigateway").delete_gateway_response` method.
 
 Boto3 documentation:
 [APIGateway.Client.delete_gateway_response](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.delete_gateway_response)
@@ -896,8 +893,8 @@ Keyword-only arguments:
 
 Represents a delete integration.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").delete_integration` method.
+Type annotations for `session.create_client("apigateway").delete_integration`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.delete_integration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.delete_integration)
@@ -921,7 +918,7 @@ Keyword-only arguments:
 Represents a delete integration response.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").delete_integration_response` method.
+`session.create_client("apigateway").delete_integration_response` method.
 
 Boto3 documentation:
 [APIGateway.Client.delete_integration_response](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.delete_integration_response)
@@ -945,7 +942,7 @@ Keyword-only arguments:
 
 Deletes an existing Method resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").delete_method`
+Type annotations for `session.create_client("apigateway").delete_method`
 method.
 
 Boto3 documentation:
@@ -969,7 +966,7 @@ Keyword-only arguments:
 Deletes an existing MethodResponse resource.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").delete_method_response` method.
+`session.create_client("apigateway").delete_method_response` method.
 
 Boto3 documentation:
 [APIGateway.Client.delete_method_response](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.delete_method_response)
@@ -993,8 +990,7 @@ Keyword-only arguments:
 
 Deletes a model.
 
-Type annotations for `aiobotocore.create_client("apigateway").delete_model`
-method.
+Type annotations for `session.create_client("apigateway").delete_model` method.
 
 Boto3 documentation:
 [APIGateway.Client.delete_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.delete_model)
@@ -1016,7 +1012,7 @@ Keyword-only arguments:
 Deletes a RequestValidator of a given RestApi .
 
 Type annotations for
-`aiobotocore.create_client("apigateway").delete_request_validator` method.
+`session.create_client("apigateway").delete_request_validator` method.
 
 Boto3 documentation:
 [APIGateway.Client.delete_request_validator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.delete_request_validator)
@@ -1038,7 +1034,7 @@ Keyword-only arguments:
 
 Deletes a Resource resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").delete_resource`
+Type annotations for `session.create_client("apigateway").delete_resource`
 method.
 
 Boto3 documentation:
@@ -1060,7 +1056,7 @@ Keyword-only arguments:
 
 Deletes the specified API.
 
-Type annotations for `aiobotocore.create_client("apigateway").delete_rest_api`
+Type annotations for `session.create_client("apigateway").delete_rest_api`
 method.
 
 Boto3 documentation:
@@ -1081,8 +1077,7 @@ Keyword-only arguments:
 
 Deletes a Stage resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").delete_stage`
-method.
+Type annotations for `session.create_client("apigateway").delete_stage` method.
 
 Boto3 documentation:
 [APIGateway.Client.delete_stage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.delete_stage)
@@ -1103,8 +1098,8 @@ Keyword-only arguments:
 
 Deletes a usage plan of a given plan Id.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").delete_usage_plan` method.
+Type annotations for `session.create_client("apigateway").delete_usage_plan`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.delete_usage_plan](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.delete_usage_plan)
@@ -1126,7 +1121,7 @@ Deletes a usage plan key and remove the underlying API key from the associated
 usage plan.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").delete_usage_plan_key` method.
+`session.create_client("apigateway").delete_usage_plan_key` method.
 
 Boto3 documentation:
 [APIGateway.Client.delete_usage_plan_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.delete_usage_plan_key)
@@ -1148,7 +1143,7 @@ Keyword-only arguments:
 
 Deletes an existing VpcLink of a specified identifier.
 
-Type annotations for `aiobotocore.create_client("apigateway").delete_vpc_link`
+Type annotations for `session.create_client("apigateway").delete_vpc_link`
 method.
 
 Boto3 documentation:
@@ -1170,7 +1165,7 @@ Keyword-only arguments:
 Flushes all authorizer cache entries on a stage.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").flush_stage_authorizers_cache` method.
+`session.create_client("apigateway").flush_stage_authorizers_cache` method.
 
 Boto3 documentation:
 [APIGateway.Client.flush_stage_authorizers_cache](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.flush_stage_authorizers_cache)
@@ -1192,8 +1187,8 @@ Keyword-only arguments:
 
 Flushes a stage's cache.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").flush_stage_cache` method.
+Type annotations for `session.create_client("apigateway").flush_stage_cache`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.flush_stage_cache](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.flush_stage_cache)
@@ -1215,7 +1210,7 @@ Keyword-only arguments:
 Generates a ClientCertificate resource.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").generate_client_certificate` method.
+`session.create_client("apigateway").generate_client_certificate` method.
 
 Boto3 documentation:
 [APIGateway.Client.generate_client_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.generate_client_certificate)
@@ -1241,7 +1236,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").generate_presigned_url` method.
+`session.create_client("apigateway").generate_presigned_url` method.
 
 Boto3 documentation:
 [APIGateway.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.generate_presigned_url)
@@ -1264,8 +1259,7 @@ Returns a `Coroutine` for `str`.
 
 Gets information about the current Account resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_account`
-method.
+Type annotations for `session.create_client("apigateway").get_account` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_account)
@@ -1280,8 +1274,7 @@ Returns a `Coroutine` for [AccountTypeDef](./type_defs.md#accounttypedef).
 
 Gets information about the current ApiKey resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_api_key`
-method.
+Type annotations for `session.create_client("apigateway").get_api_key` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_api_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_api_key)
@@ -1305,8 +1298,7 @@ Returns a `Coroutine` for
 
 Gets information about the current ApiKeys resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_api_keys`
-method.
+Type annotations for `session.create_client("apigateway").get_api_keys` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_api_keys](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_api_keys)
@@ -1332,7 +1324,7 @@ Returns a `Coroutine` for [ApiKeysTypeDef](./type_defs.md#apikeystypedef).
 
 Describe an existing Authorizer resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_authorizer`
+Type annotations for `session.create_client("apigateway").get_authorizer`
 method.
 
 Boto3 documentation:
@@ -1357,7 +1349,7 @@ Returns a `Coroutine` for
 
 Describe an existing Authorizers resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_authorizers`
+Type annotations for `session.create_client("apigateway").get_authorizers`
 method.
 
 Boto3 documentation:
@@ -1384,7 +1376,7 @@ Returns a `Coroutine` for
 Describe a BasePathMapping resource.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").get_base_path_mapping` method.
+`session.create_client("apigateway").get_base_path_mapping` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_base_path_mapping](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_base_path_mapping)
@@ -1410,7 +1402,7 @@ Returns a `Coroutine` for
 Represents a collection of BasePathMapping resources.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").get_base_path_mappings` method.
+`session.create_client("apigateway").get_base_path_mappings` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_base_path_mappings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_base_path_mappings)
@@ -1437,7 +1429,7 @@ Returns a `Coroutine` for
 Gets information about the current ClientCertificate resource.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").get_client_certificate` method.
+`session.create_client("apigateway").get_client_certificate` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_client_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_client_certificate)
@@ -1462,7 +1454,7 @@ Returns a `Coroutine` for
 Gets a collection of ClientCertificate resources.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").get_client_certificates` method.
+`session.create_client("apigateway").get_client_certificates` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_client_certificates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_client_certificates)
@@ -1487,7 +1479,7 @@ Returns a `Coroutine` for
 
 Gets information about a Deployment resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_deployment`
+Type annotations for `session.create_client("apigateway").get_deployment`
 method.
 
 Boto3 documentation:
@@ -1513,7 +1505,7 @@ Returns a `Coroutine` for
 
 Gets information about a Deployments collection.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_deployments`
+Type annotations for `session.create_client("apigateway").get_deployments`
 method.
 
 Boto3 documentation:
@@ -1541,7 +1533,7 @@ See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationPart).
 
 Type annotations for
-`aiobotocore.create_client("apigateway").get_documentation_part` method.
+`session.create_client("apigateway").get_documentation_part` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_documentation_part](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_documentation_part)
@@ -1568,7 +1560,7 @@ See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationParts).
 
 Type annotations for
-`aiobotocore.create_client("apigateway").get_documentation_parts` method.
+`session.create_client("apigateway").get_documentation_parts` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_documentation_parts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_documentation_parts)
@@ -1601,7 +1593,7 @@ See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersion).
 
 Type annotations for
-`aiobotocore.create_client("apigateway").get_documentation_version` method.
+`session.create_client("apigateway").get_documentation_version` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_documentation_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_documentation_version)
@@ -1628,7 +1620,7 @@ See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetDocumentationVersions).
 
 Type annotations for
-`aiobotocore.create_client("apigateway").get_documentation_versions` method.
+`session.create_client("apigateway").get_documentation_versions` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_documentation_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_documentation_versions)
@@ -1655,7 +1647,7 @@ Returns a `Coroutine` for
 Represents a domain name that is contained in a simpler, more intuitive URL
 that can be called.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_domain_name`
+Type annotations for `session.create_client("apigateway").get_domain_name`
 method.
 
 Boto3 documentation:
@@ -1679,7 +1671,7 @@ Returns a `Coroutine` for
 
 Represents a collection of DomainName resources.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_domain_names`
+Type annotations for `session.create_client("apigateway").get_domain_names`
 method.
 
 Boto3 documentation:
@@ -1704,8 +1696,7 @@ Returns a `Coroutine` for
 
 Exports a deployed version of a RestApi in a specified format.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_export`
-method.
+Type annotations for `session.create_client("apigateway").get_export` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_export](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_export)
@@ -1732,8 +1723,8 @@ Returns a `Coroutine` for
 
 Gets a GatewayResponse of a specified response type on the given RestApi .
 
-Type annotations for
-`aiobotocore.create_client("apigateway").get_gateway_response` method.
+Type annotations for `session.create_client("apigateway").get_gateway_response`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.get_gateway_response](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_gateway_response)
@@ -1760,7 +1751,7 @@ Returns a `Coroutine` for
 Gets the GatewayResponses collection on the given RestApi.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").get_gateway_responses` method.
+`session.create_client("apigateway").get_gateway_responses` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_gateway_responses](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_gateway_responses)
@@ -1786,7 +1777,7 @@ Returns a `Coroutine` for
 
 Get the integration settings.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_integration`
+Type annotations for `session.create_client("apigateway").get_integration`
 method.
 
 Boto3 documentation:
@@ -1813,7 +1804,7 @@ Returns a `Coroutine` for
 Represents a get integration response.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").get_integration_response` method.
+`session.create_client("apigateway").get_integration_response` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_integration_response](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_integration_response)
@@ -1840,8 +1831,7 @@ Returns a `Coroutine` for
 
 Describe an existing Method resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_method`
-method.
+Type annotations for `session.create_client("apigateway").get_method` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_method](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_method)
@@ -1866,8 +1856,8 @@ Returns a `Coroutine` for
 
 Describes a MethodResponse resource.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").get_method_response` method.
+Type annotations for `session.create_client("apigateway").get_method_response`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.get_method_response](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_method_response)
@@ -1894,8 +1884,7 @@ Returns a `Coroutine` for
 
 Describes an existing model defined for a RestApi resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_model`
-method.
+Type annotations for `session.create_client("apigateway").get_model` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_model)
@@ -1921,8 +1910,8 @@ Returns a `Coroutine` for
 Generates a sample mapping template that can be used to transform a payload
 into the structure of a model.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").get_model_template` method.
+Type annotations for `session.create_client("apigateway").get_model_template`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.get_model_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_model_template)
@@ -1946,8 +1935,7 @@ Returns a `Coroutine` for [TemplateTypeDef](./type_defs.md#templatetypedef).
 
 Describes existing Models defined for a RestApi resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_models`
-method.
+Type annotations for `session.create_client("apigateway").get_models` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_models](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_models)
@@ -1972,7 +1960,7 @@ Returns a `Coroutine` for [ModelsTypeDef](./type_defs.md#modelstypedef).
 Gets a RequestValidator of a given RestApi .
 
 Type annotations for
-`aiobotocore.create_client("apigateway").get_request_validator` method.
+`session.create_client("apigateway").get_request_validator` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_request_validator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_request_validator)
@@ -1998,7 +1986,7 @@ Returns a `Coroutine` for
 Gets the RequestValidators collection of a given RestApi .
 
 Type annotations for
-`aiobotocore.create_client("apigateway").get_request_validators` method.
+`session.create_client("apigateway").get_request_validators` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_request_validators](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_request_validators)
@@ -2024,8 +2012,7 @@ Returns a `Coroutine` for
 
 Lists information about a resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_resource`
-method.
+Type annotations for `session.create_client("apigateway").get_resource` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_resource)
@@ -2050,7 +2037,7 @@ Returns a `Coroutine` for
 
 Lists information about a collection of Resource resources.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_resources`
+Type annotations for `session.create_client("apigateway").get_resources`
 method.
 
 Boto3 documentation:
@@ -2076,8 +2063,7 @@ Returns a `Coroutine` for [ResourcesTypeDef](./type_defs.md#resourcestypedef).
 
 Lists the RestApi resource in the collection.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_rest_api`
-method.
+Type annotations for `session.create_client("apigateway").get_rest_api` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_rest_api](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_rest_api)
@@ -2100,7 +2086,7 @@ Returns a `Coroutine` for
 
 Lists the RestApis resources for your collection.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_rest_apis`
+Type annotations for `session.create_client("apigateway").get_rest_apis`
 method.
 
 Boto3 documentation:
@@ -2124,7 +2110,7 @@ Returns a `Coroutine` for [RestApisTypeDef](./type_defs.md#restapistypedef).
 
 Generates a client SDK for a RestApi and Stage .
 
-Type annotations for `aiobotocore.create_client("apigateway").get_sdk` method.
+Type annotations for `session.create_client("apigateway").get_sdk` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_sdk](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_sdk)
@@ -2151,8 +2137,7 @@ Returns a `Coroutine` for
 See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkType).
 
-Type annotations for `aiobotocore.create_client("apigateway").get_sdk_type`
-method.
+Type annotations for `session.create_client("apigateway").get_sdk_type` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_sdk_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_sdk_type)
@@ -2176,7 +2161,7 @@ Returns a `Coroutine` for
 See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/GetSdkTypes).
 
-Type annotations for `aiobotocore.create_client("apigateway").get_sdk_types`
+Type annotations for `session.create_client("apigateway").get_sdk_types`
 method.
 
 Boto3 documentation:
@@ -2200,8 +2185,7 @@ Returns a `Coroutine` for [SdkTypesTypeDef](./type_defs.md#sdktypestypedef).
 
 Gets information about a Stage resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_stage`
-method.
+Type annotations for `session.create_client("apigateway").get_stage` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_stage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_stage)
@@ -2225,8 +2209,7 @@ Returns a `Coroutine` for
 
 Gets information about one or more Stage resources.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_stages`
-method.
+Type annotations for `session.create_client("apigateway").get_stages` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_stages](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_stages)
@@ -2249,7 +2232,7 @@ Returns a `Coroutine` for [StagesTypeDef](./type_defs.md#stagestypedef).
 
 Gets the Tags collection for a given resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_tags` method.
+Type annotations for `session.create_client("apigateway").get_tags` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_tags)
@@ -2273,8 +2256,7 @@ Returns a `Coroutine` for [TagsTypeDef](./type_defs.md#tagstypedef).
 
 Gets the usage data of a usage plan in a specified time interval.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_usage`
-method.
+Type annotations for `session.create_client("apigateway").get_usage` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_usage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_usage)
@@ -2301,7 +2283,7 @@ Returns a `Coroutine` for [UsageTypeDef](./type_defs.md#usagetypedef).
 
 Gets a usage plan of a given plan identifier.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_usage_plan`
+Type annotations for `session.create_client("apigateway").get_usage_plan`
 method.
 
 Boto3 documentation:
@@ -2325,8 +2307,8 @@ Returns a `Coroutine` for
 
 Gets a usage plan key of a given key identifier.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").get_usage_plan_key` method.
+Type annotations for `session.create_client("apigateway").get_usage_plan_key`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.get_usage_plan_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_usage_plan_key)
@@ -2352,8 +2334,8 @@ Returns a `Coroutine` for
 Gets all the usage plan keys representing the API keys added to a specified
 usage plan.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").get_usage_plan_keys` method.
+Type annotations for `session.create_client("apigateway").get_usage_plan_keys`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.get_usage_plan_keys](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_usage_plan_keys)
@@ -2380,7 +2362,7 @@ Returns a `Coroutine` for
 
 Gets all the usage plans of the caller's account.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_usage_plans`
+Type annotations for `session.create_client("apigateway").get_usage_plans`
 method.
 
 Boto3 documentation:
@@ -2406,8 +2388,7 @@ Returns a `Coroutine` for
 
 Gets a specified VPC link under the caller's account in a region.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_vpc_link`
-method.
+Type annotations for `session.create_client("apigateway").get_vpc_link` method.
 
 Boto3 documentation:
 [APIGateway.Client.get_vpc_link](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.get_vpc_link)
@@ -2430,7 +2411,7 @@ Returns a `Coroutine` for
 
 Gets the VpcLinks collection under the caller's account in a selected region.
 
-Type annotations for `aiobotocore.create_client("apigateway").get_vpc_links`
+Type annotations for `session.create_client("apigateway").get_vpc_links`
 method.
 
 Boto3 documentation:
@@ -2454,7 +2435,7 @@ Returns a `Coroutine` for [VpcLinksTypeDef](./type_defs.md#vpclinkstypedef).
 
 Import API keys from an external source, such as a CSV-formatted file.
 
-Type annotations for `aiobotocore.create_client("apigateway").import_api_keys`
+Type annotations for `session.create_client("apigateway").import_api_keys`
 method.
 
 Boto3 documentation:
@@ -2482,7 +2463,7 @@ See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/ImportDocumentationParts).
 
 Type annotations for
-`aiobotocore.create_client("apigateway").import_documentation_parts` method.
+`session.create_client("apigateway").import_documentation_parts` method.
 
 Boto3 documentation:
 [APIGateway.Client.import_documentation_parts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.import_documentation_parts)
@@ -2510,7 +2491,7 @@ Returns a `Coroutine` for
 A feature of the API Gateway control service for creating a new API from an
 external API definition file.
 
-Type annotations for `aiobotocore.create_client("apigateway").import_rest_api`
+Type annotations for `session.create_client("apigateway").import_rest_api`
 method.
 
 Boto3 documentation:
@@ -2537,8 +2518,8 @@ Returns a `Coroutine` for
 Creates a customization of a GatewayResponse of a specified response type and
 status code on the given RestApi .
 
-Type annotations for
-`aiobotocore.create_client("apigateway").put_gateway_response` method.
+Type annotations for `session.create_client("apigateway").put_gateway_response`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.put_gateway_response](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.put_gateway_response)
@@ -2567,7 +2548,7 @@ Returns a `Coroutine` for
 
 Sets up a method's integration.
 
-Type annotations for `aiobotocore.create_client("apigateway").put_integration`
+Type annotations for `session.create_client("apigateway").put_integration`
 method.
 
 Boto3 documentation:
@@ -2609,7 +2590,7 @@ Returns a `Coroutine` for
 Represents a put integration.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").put_integration_response` method.
+`session.create_client("apigateway").put_integration_response` method.
 
 Boto3 documentation:
 [APIGateway.Client.put_integration_response](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.put_integration_response)
@@ -2641,8 +2622,7 @@ Returns a `Coroutine` for
 
 Add a method to an existing Resource resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").put_method`
-method.
+Type annotations for `session.create_client("apigateway").put_method` method.
 
 Boto3 documentation:
 [APIGateway.Client.put_method](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.put_method)
@@ -2675,8 +2655,8 @@ Returns a `Coroutine` for
 
 Adds a MethodResponse to an existing Method resource.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").put_method_response` method.
+Type annotations for `session.create_client("apigateway").put_method_response`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.put_method_response](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.put_method_response)
@@ -2706,8 +2686,7 @@ Returns a `Coroutine` for
 A feature of the API Gateway control service for updating an existing API with
 an input of external API definitions.
 
-Type annotations for `aiobotocore.create_client("apigateway").put_rest_api`
-method.
+Type annotations for `session.create_client("apigateway").put_rest_api` method.
 
 Boto3 documentation:
 [APIGateway.Client.put_rest_api](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.put_rest_api)
@@ -2734,8 +2713,7 @@ Returns a `Coroutine` for
 
 Adds or updates a tag on a given resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").tag_resource`
-method.
+Type annotations for `session.create_client("apigateway").tag_resource` method.
 
 Boto3 documentation:
 [APIGateway.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.tag_resource)
@@ -2758,7 +2736,7 @@ Simulate the execution of an Authorizer in your RestApi with headers,
 parameters, and an incoming request body.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").test_invoke_authorizer` method.
+`session.create_client("apigateway").test_invoke_authorizer` method.
 
 Boto3 documentation:
 [APIGateway.Client.test_invoke_authorizer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.test_invoke_authorizer)
@@ -2790,8 +2768,8 @@ Returns a `Coroutine` for
 Simulate the execution of a Method in your RestApi with headers, parameters,
 and an incoming request body.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").test_invoke_method` method.
+Type annotations for `session.create_client("apigateway").test_invoke_method`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.test_invoke_method](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.test_invoke_method)
@@ -2823,7 +2801,7 @@ Returns a `Coroutine` for
 
 Removes a tag from a given resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").untag_resource`
+Type annotations for `session.create_client("apigateway").untag_resource`
 method.
 
 Boto3 documentation:
@@ -2845,7 +2823,7 @@ Keyword-only arguments:
 
 Changes information about the current Account resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").update_account`
+Type annotations for `session.create_client("apigateway").update_account`
 method.
 
 Boto3 documentation:
@@ -2869,7 +2847,7 @@ Returns a `Coroutine` for [AccountTypeDef](./type_defs.md#accounttypedef).
 
 Changes information about an ApiKey resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").update_api_key`
+Type annotations for `session.create_client("apigateway").update_api_key`
 method.
 
 Boto3 documentation:
@@ -2895,8 +2873,8 @@ Returns a `Coroutine` for
 
 Updates an existing Authorizer resource.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").update_authorizer` method.
+Type annotations for `session.create_client("apigateway").update_authorizer`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.update_authorizer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.update_authorizer)
@@ -2923,7 +2901,7 @@ Returns a `Coroutine` for
 Changes information about the BasePathMapping resource.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").update_base_path_mapping` method.
+`session.create_client("apigateway").update_base_path_mapping` method.
 
 Boto3 documentation:
 [APIGateway.Client.update_base_path_mapping](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.update_base_path_mapping)
@@ -2951,7 +2929,7 @@ Returns a `Coroutine` for
 Changes information about an ClientCertificate resource.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").update_client_certificate` method.
+`session.create_client("apigateway").update_client_certificate` method.
 
 Boto3 documentation:
 [APIGateway.Client.update_client_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.update_client_certificate)
@@ -2977,8 +2955,8 @@ Returns a `Coroutine` for
 
 Changes information about a Deployment resource.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").update_deployment` method.
+Type annotations for `session.create_client("apigateway").update_deployment`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.update_deployment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.update_deployment)
@@ -3006,7 +2984,7 @@ See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationPart).
 
 Type annotations for
-`aiobotocore.create_client("apigateway").update_documentation_part` method.
+`session.create_client("apigateway").update_documentation_part` method.
 
 Boto3 documentation:
 [APIGateway.Client.update_documentation_part](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.update_documentation_part)
@@ -3035,7 +3013,7 @@ See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/apigateway-2015-07-09/UpdateDocumentationVersion).
 
 Type annotations for
-`aiobotocore.create_client("apigateway").update_documentation_version` method.
+`session.create_client("apigateway").update_documentation_version` method.
 
 Boto3 documentation:
 [APIGateway.Client.update_documentation_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.update_documentation_version)
@@ -3062,8 +3040,8 @@ Returns a `Coroutine` for
 
 Changes information about the DomainName resource.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").update_domain_name` method.
+Type annotations for `session.create_client("apigateway").update_domain_name`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.update_domain_name](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.update_domain_name)
@@ -3090,7 +3068,7 @@ Returns a `Coroutine` for
 Updates a GatewayResponse of a specified response type on the given RestApi .
 
 Type annotations for
-`aiobotocore.create_client("apigateway").update_gateway_response` method.
+`session.create_client("apigateway").update_gateway_response` method.
 
 Boto3 documentation:
 [APIGateway.Client.update_gateway_response](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.update_gateway_response)
@@ -3118,8 +3096,8 @@ Returns a `Coroutine` for
 
 Represents an update integration.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").update_integration` method.
+Type annotations for `session.create_client("apigateway").update_integration`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.update_integration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.update_integration)
@@ -3148,7 +3126,7 @@ Returns a `Coroutine` for
 Represents an update integration response.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").update_integration_response` method.
+`session.create_client("apigateway").update_integration_response` method.
 
 Boto3 documentation:
 [APIGateway.Client.update_integration_response](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.update_integration_response)
@@ -3177,7 +3155,7 @@ Returns a `Coroutine` for
 
 Updates an existing Method resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").update_method`
+Type annotations for `session.create_client("apigateway").update_method`
 method.
 
 Boto3 documentation:
@@ -3206,7 +3184,7 @@ Returns a `Coroutine` for
 Updates an existing MethodResponse resource.
 
 Type annotations for
-`aiobotocore.create_client("apigateway").update_method_response` method.
+`session.create_client("apigateway").update_method_response` method.
 
 Boto3 documentation:
 [APIGateway.Client.update_method_response](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.update_method_response)
@@ -3235,8 +3213,7 @@ Returns a `Coroutine` for
 
 Changes information about a model.
 
-Type annotations for `aiobotocore.create_client("apigateway").update_model`
-method.
+Type annotations for `session.create_client("apigateway").update_model` method.
 
 Boto3 documentation:
 [APIGateway.Client.update_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.update_model)
@@ -3263,7 +3240,7 @@ Returns a `Coroutine` for
 Updates a RequestValidator of a given RestApi .
 
 Type annotations for
-`aiobotocore.create_client("apigateway").update_request_validator` method.
+`session.create_client("apigateway").update_request_validator` method.
 
 Boto3 documentation:
 [APIGateway.Client.update_request_validator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.update_request_validator)
@@ -3290,7 +3267,7 @@ Returns a `Coroutine` for
 
 Changes information about a Resource resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").update_resource`
+Type annotations for `session.create_client("apigateway").update_resource`
 method.
 
 Boto3 documentation:
@@ -3317,7 +3294,7 @@ Returns a `Coroutine` for
 
 Changes information about the specified API.
 
-Type annotations for `aiobotocore.create_client("apigateway").update_rest_api`
+Type annotations for `session.create_client("apigateway").update_rest_api`
 method.
 
 Boto3 documentation:
@@ -3343,8 +3320,7 @@ Returns a `Coroutine` for
 
 Changes information about a Stage resource.
 
-Type annotations for `aiobotocore.create_client("apigateway").update_stage`
-method.
+Type annotations for `session.create_client("apigateway").update_stage` method.
 
 Boto3 documentation:
 [APIGateway.Client.update_stage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.update_stage)
@@ -3371,8 +3347,7 @@ Returns a `Coroutine` for
 Grants a temporary extension to the remaining quota of a usage plan associated
 with a specified API key.
 
-Type annotations for `aiobotocore.create_client("apigateway").update_usage`
-method.
+Type annotations for `session.create_client("apigateway").update_usage` method.
 
 Boto3 documentation:
 [APIGateway.Client.update_usage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.update_usage)
@@ -3397,8 +3372,8 @@ Returns a `Coroutine` for [UsageTypeDef](./type_defs.md#usagetypedef).
 
 Updates a usage plan of a given plan Id.
 
-Type annotations for
-`aiobotocore.create_client("apigateway").update_usage_plan` method.
+Type annotations for `session.create_client("apigateway").update_usage_plan`
+method.
 
 Boto3 documentation:
 [APIGateway.Client.update_usage_plan](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.update_usage_plan)
@@ -3423,7 +3398,7 @@ Returns a `Coroutine` for
 
 Updates an existing VpcLink of a specified identifier.
 
-Type annotations for `aiobotocore.create_client("apigateway").update_vpc_link`
+Type annotations for `session.create_client("apigateway").update_vpc_link`
 method.
 
 Boto3 documentation:
@@ -3443,12 +3418,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [VpcLinkResponseMetadataTypeDef](./type_defs.md#vpclinkresponsemetadatatypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("apigateway").__aenter__` method.
+
+Boto3 documentation:
+[APIGateway.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [APIGatewayClient](#apigatewayclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("apigateway").__aexit__` method.
+
+Boto3 documentation:
+[APIGateway.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html#APIGateway.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("apigateway").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("apigateway").get_paginator` method
+with overloads.
 
 - `client.get_paginator("get_api_keys")` ->
   [GetApiKeysPaginator](./paginators.md#getapikeyspaginator)

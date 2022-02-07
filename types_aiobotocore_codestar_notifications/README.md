@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[codestar-notifications]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[codestar-notifications]'
+
+# standalone installation
 pip install types-aiobotocore-codestar-notifications
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-codestar-notifications
 
 ## CodeStarNotificationsClient
 
-Type annotations for `aiobotocore.create_client("codestar-notifications")` as
+Type annotations for `session.create_client("codestar-notifications")` as
 [CodeStarNotificationsClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_codestar_notifications.client import CodeStarNotification
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_notification_rule](./client.md#create_notification_rule)
 - [delete_notification_rule](./client.md#delete_notification_rule)
@@ -86,7 +92,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_codestar_notifications.paginators import ListEventTypesPaginator, ...
+from types_aiobotocore_codestar_notifications.paginator import ListEventTypesPaginator, ...
 ```
 
 - [ListEventTypesPaginator](./paginators.md#listeventtypespaginator)

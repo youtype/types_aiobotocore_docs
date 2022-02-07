@@ -19,21 +19,24 @@ type annotations stubs module
     - [generate_presigned_url](#generate_presigned_url)
     - [get_ice_server_config](#get_ice_server_config)
     - [send_alexa_offer_to_master](#send_alexa_offer_to_master)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="kinesisvideosignalingchannelsclient"></a>
 
 ## KinesisVideoSignalingChannelsClient
 
-Type annotations for `aiobotocore.create_client("kinesis-video-signaling")`
+Type annotations for `session.create_client("kinesis-video-signaling")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_kinesis_video_signaling.client import KinesisVideoSignalingChannelsClient
 
-def get_kinesis-video-signaling_client() -> KinesisVideoSignalingChannelsClient:
-    return Session().client("kinesis-video-signaling")
+session = get_session()
+async with session.create_client("kinesis-video-signaling") as client:
+    client: KinesisVideoSignalingChannelsClient
 ```
 
 Boto3 documentation:
@@ -74,7 +77,7 @@ Exceptions:
 KinesisVideoSignalingChannelsClient exceptions.
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-signaling").exceptions` method.
+`session.create_client("kinesis-video-signaling").exceptions` method.
 
 Boto3 documentation:
 [KinesisVideoSignalingChannels.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-signaling.html#KinesisVideoSignalingChannels.Client.exceptions)
@@ -88,18 +91,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-signaling").can_paginate` method.
+`session.create_client("kinesis-video-signaling").can_paginate` method.
 
 Boto3 documentation:
 [KinesisVideoSignalingChannels.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-signaling.html#KinesisVideoSignalingChannels.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -108,7 +109,7 @@ Returns a `Coroutine` for `bool`.
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-signaling").generate_presigned_url`
+`session.create_client("kinesis-video-signaling").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -135,7 +136,7 @@ information, including URIs, username, and password which can be used to
 configure the WebRTC connection.
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-signaling").get_ice_server_config`
+`session.create_client("kinesis-video-signaling").get_ice_server_config`
 method.
 
 Boto3 documentation:
@@ -165,7 +166,7 @@ This API allows you to connect WebRTC-enabled devices with Alexa display
 devices.
 
 Type annotations for
-`aiobotocore.create_client("kinesis-video-signaling").send_alexa_offer_to_master`
+`session.create_client("kinesis-video-signaling").send_alexa_offer_to_master`
 method.
 
 Boto3 documentation:
@@ -185,3 +186,38 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [SendAlexaOfferToMasterResponseTypeDef](./type_defs.md#sendalexaoffertomasterresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for
+`session.create_client("kinesis-video-signaling").__aenter__` method.
+
+Boto3 documentation:
+[KinesisVideoSignalingChannels.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-signaling.html#KinesisVideoSignalingChannels.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[KinesisVideoSignalingChannelsClient](#kinesisvideosignalingchannelsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for
+`session.create_client("kinesis-video-signaling").__aexit__` method.
+
+Boto3 documentation:
+[KinesisVideoSignalingChannels.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis-video-signaling.html#KinesisVideoSignalingChannels.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

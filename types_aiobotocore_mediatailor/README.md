@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[mediatailor]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[mediatailor]'
+
+# standalone installation
 pip install types-aiobotocore-mediatailor
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-mediatailor
 
 ## MediaTailorClient
 
-Type annotations for `aiobotocore.create_client("mediatailor")` as
+Type annotations for `session.create_client("mediatailor")` as
 [MediaTailorClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_mediatailor.client import MediaTailorClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [configure_logs_for_playback_configuration](./client.md#configure_logs_for_playback_configuration)
 - [create_channel](./client.md#create_channel)
@@ -103,7 +109,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_mediatailor.paginators import GetChannelSchedulePaginator, ...
+from types_aiobotocore_mediatailor.paginator import GetChannelSchedulePaginator, ...
 ```
 
 - [GetChannelSchedulePaginator](./paginators.md#getchannelschedulepaginator)

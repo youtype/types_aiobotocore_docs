@@ -21,17 +21,19 @@ type annotations stubs module
 ## DescribeAddressesPaginator
 
 Type annotations for
-`aiobotocore.create_client("snowball").get_paginator("describe_addresses")`.
+`session.create_client("snowball").get_paginator("describe_addresses")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_snowball.paginator import DescribeAddressesPaginator
 
-def get_describe_addresses_paginator() -> DescribeAddressesPaginator:
-    return Session().create_client("snowball").get_paginator("describe_addresses")
+session = get_session()
+async with session.create_client("snowball") as client:
+    client: SnowballClient
+    paginator: DescribeAddressesPaginator = client.get_paginator("describe_addresses")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `DescribeAddressesPaginator.paginate` method:
 ## ListClusterJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("snowball").get_paginator("list_cluster_jobs")`.
+`session.create_client("snowball").get_paginator("list_cluster_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_snowball.paginator import ListClusterJobsPaginator
 
-def get_list_cluster_jobs_paginator() -> ListClusterJobsPaginator:
-    return Session().create_client("snowball").get_paginator("list_cluster_jobs")
+session = get_session()
+async with session.create_client("snowball") as client:
+    client: SnowballClient
+    paginator: ListClusterJobsPaginator = client.get_paginator("list_cluster_jobs")
 ```
 
 Boto3 documentation:
@@ -80,17 +84,19 @@ Arguments for `ListClusterJobsPaginator.paginate` method:
 ## ListClustersPaginator
 
 Type annotations for
-`aiobotocore.create_client("snowball").get_paginator("list_clusters")`.
+`session.create_client("snowball").get_paginator("list_clusters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_snowball.paginator import ListClustersPaginator
 
-def get_list_clusters_paginator() -> ListClustersPaginator:
-    return Session().create_client("snowball").get_paginator("list_clusters")
+session = get_session()
+async with session.create_client("snowball") as client:
+    client: SnowballClient
+    paginator: ListClustersPaginator = client.get_paginator("list_clusters")
 ```
 
 Boto3 documentation:
@@ -109,17 +115,19 @@ Arguments for `ListClustersPaginator.paginate` method:
 ## ListCompatibleImagesPaginator
 
 Type annotations for
-`aiobotocore.create_client("snowball").get_paginator("list_compatible_images")`.
+`session.create_client("snowball").get_paginator("list_compatible_images")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_snowball.paginator import ListCompatibleImagesPaginator
 
-def get_list_compatible_images_paginator() -> ListCompatibleImagesPaginator:
-    return Session().create_client("snowball").get_paginator("list_compatible_images")
+session = get_session()
+async with session.create_client("snowball") as client:
+    client: SnowballClient
+    paginator: ListCompatibleImagesPaginator = client.get_paginator("list_compatible_images")
 ```
 
 Boto3 documentation:
@@ -138,17 +146,19 @@ Arguments for `ListCompatibleImagesPaginator.paginate` method:
 ## ListJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("snowball").get_paginator("list_jobs")`.
+`session.create_client("snowball").get_paginator("list_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_snowball.paginator import ListJobsPaginator
 
-def get_list_jobs_paginator() -> ListJobsPaginator:
-    return Session().create_client("snowball").get_paginator("list_jobs")
+session = get_session()
+async with session.create_client("snowball") as client:
+    client: SnowballClient
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
 ```
 
 Boto3 documentation:

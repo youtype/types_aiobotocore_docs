@@ -93,22 +93,25 @@ type annotations stubs module
     - [update_test_grid_project](#update_test_grid_project)
     - [update_upload](#update_upload)
     - [update_vpce_configuration](#update_vpce_configuration)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="devicefarmclient"></a>
 
 ## DeviceFarmClient
 
-Type annotations for `aiobotocore.create_client("devicefarm")`
+Type annotations for `session.create_client("devicefarm")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_devicefarm.client import DeviceFarmClient
 
-def get_devicefarm_client() -> DeviceFarmClient:
-    return Session().client("devicefarm")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
 ```
 
 Boto3 documentation:
@@ -154,8 +157,7 @@ Exceptions:
 
 DeviceFarmClient exceptions.
 
-Type annotations for `aiobotocore.create_client("devicefarm").exceptions`
-method.
+Type annotations for `session.create_client("devicefarm").exceptions` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.exceptions)
@@ -168,19 +170,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("devicefarm").can_paginate`
-method.
+Type annotations for `session.create_client("devicefarm").can_paginate` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_device_pool"></a>
 
@@ -188,8 +187,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates a device pool.
 
-Type annotations for
-`aiobotocore.create_client("devicefarm").create_device_pool` method.
+Type annotations for `session.create_client("devicefarm").create_device_pool`
+method.
 
 Boto3 documentation:
 [DeviceFarm.Client.create_device_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.create_device_pool)
@@ -219,7 +218,7 @@ Creates a profile that can be applied to one or more private fleet device
 instances.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").create_instance_profile` method.
+`session.create_client("devicefarm").create_instance_profile` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.create_instance_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.create_instance_profile)
@@ -248,7 +247,7 @@ Returns a `Coroutine` for
 Creates a network profile.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").create_network_profile` method.
+`session.create_client("devicefarm").create_network_profile` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.create_network_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.create_network_profile)
@@ -283,7 +282,7 @@ Returns a `Coroutine` for
 
 Creates a project.
 
-Type annotations for `aiobotocore.create_client("devicefarm").create_project`
+Type annotations for `session.create_client("devicefarm").create_project`
 method.
 
 Boto3 documentation:
@@ -309,7 +308,7 @@ Returns a `Coroutine` for
 Specifies and starts a remote access session.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").create_remote_access_session` method.
+`session.create_client("devicefarm").create_remote_access_session` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.create_remote_access_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.create_remote_access_session)
@@ -346,7 +345,7 @@ Returns a `Coroutine` for
 Creates a Selenium testing project.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").create_test_grid_project` method.
+`session.create_client("devicefarm").create_test_grid_project` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.create_test_grid_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.create_test_grid_project)
@@ -374,8 +373,8 @@ Returns a `Coroutine` for
 Creates a signed, short-term URL that can be passed to a Selenium
 `RemoteWebDriver` constructor.
 
-Type annotations for
-`aiobotocore.create_client("devicefarm").create_test_grid_url` method.
+Type annotations for `session.create_client("devicefarm").create_test_grid_url`
+method.
 
 Boto3 documentation:
 [DeviceFarm.Client.create_test_grid_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.create_test_grid_url)
@@ -400,7 +399,7 @@ Returns a `Coroutine` for
 
 Uploads an app or test scripts.
 
-Type annotations for `aiobotocore.create_client("devicefarm").create_upload`
+Type annotations for `session.create_client("devicefarm").create_upload`
 method.
 
 Boto3 documentation:
@@ -429,7 +428,7 @@ Creates a configuration record in Device Farm for your Amazon Virtual Private
 Cloud (VPC) endpoint.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").create_vpce_configuration` method.
+`session.create_client("devicefarm").create_vpce_configuration` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.create_vpce_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.create_vpce_configuration)
@@ -456,8 +455,8 @@ Returns a `Coroutine` for
 
 Deletes a device pool given the pool ARN.
 
-Type annotations for
-`aiobotocore.create_client("devicefarm").delete_device_pool` method.
+Type annotations for `session.create_client("devicefarm").delete_device_pool`
+method.
 
 Boto3 documentation:
 [DeviceFarm.Client.delete_device_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.delete_device_pool)
@@ -481,7 +480,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a profile that can be applied to one or more private device instances.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").delete_instance_profile` method.
+`session.create_client("devicefarm").delete_instance_profile` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.delete_instance_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.delete_instance_profile)
@@ -505,7 +504,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a network profile.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").delete_network_profile` method.
+`session.create_client("devicefarm").delete_network_profile` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.delete_network_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.delete_network_profile)
@@ -528,7 +527,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an AWS Device Farm project, given the project ARN.
 
-Type annotations for `aiobotocore.create_client("devicefarm").delete_project`
+Type annotations for `session.create_client("devicefarm").delete_project`
 method.
 
 Boto3 documentation:
@@ -552,7 +551,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a completed remote access session and its results.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").delete_remote_access_session` method.
+`session.create_client("devicefarm").delete_remote_access_session` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.delete_remote_access_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.delete_remote_access_session)
@@ -575,8 +574,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the run, given the run ARN.
 
-Type annotations for `aiobotocore.create_client("devicefarm").delete_run`
-method.
+Type annotations for `session.create_client("devicefarm").delete_run` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.delete_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.delete_run)
@@ -599,7 +597,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a Selenium testing project and all content generated under it.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").delete_test_grid_project` method.
+`session.create_client("devicefarm").delete_test_grid_project` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.delete_test_grid_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.delete_test_grid_project)
@@ -622,7 +620,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an upload given the upload ARN.
 
-Type annotations for `aiobotocore.create_client("devicefarm").delete_upload`
+Type annotations for `session.create_client("devicefarm").delete_upload`
 method.
 
 Boto3 documentation:
@@ -646,7 +644,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a configuration for your Amazon Virtual Private Cloud (VPC) endpoint.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").delete_vpce_configuration` method.
+`session.create_client("devicefarm").delete_vpce_configuration` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.delete_vpce_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.delete_vpce_configuration)
@@ -670,7 +668,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").generate_presigned_url` method.
+`session.create_client("devicefarm").generate_presigned_url` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.generate_presigned_url)
@@ -694,8 +692,8 @@ Returns a `Coroutine` for `str`.
 Returns the number of unmetered iOS or unmetered Android devices that have been
 purchased by the account.
 
-Type annotations for
-`aiobotocore.create_client("devicefarm").get_account_settings` method.
+Type annotations for `session.create_client("devicefarm").get_account_settings`
+method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_account_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_account_settings)
@@ -712,8 +710,7 @@ Returns a `Coroutine` for
 
 Gets information about a unique device type.
 
-Type annotations for `aiobotocore.create_client("devicefarm").get_device`
-method.
+Type annotations for `session.create_client("devicefarm").get_device` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_device)
@@ -737,8 +734,8 @@ Returns a `Coroutine` for
 Returns information about a device instance that belongs to a private device
 fleet.
 
-Type annotations for
-`aiobotocore.create_client("devicefarm").get_device_instance` method.
+Type annotations for `session.create_client("devicefarm").get_device_instance`
+method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_device_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_device_instance)
@@ -762,7 +759,7 @@ Returns a `Coroutine` for
 
 Gets information about a device pool.
 
-Type annotations for `aiobotocore.create_client("devicefarm").get_device_pool`
+Type annotations for `session.create_client("devicefarm").get_device_pool`
 method.
 
 Boto3 documentation:
@@ -787,7 +784,7 @@ Returns a `Coroutine` for
 Gets information about compatibility with a device pool.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_device_pool_compatibility` method.
+`session.create_client("devicefarm").get_device_pool_compatibility` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_device_pool_compatibility](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_device_pool_compatibility)
@@ -816,8 +813,8 @@ Returns a `Coroutine` for
 
 Returns information about the specified instance profile.
 
-Type annotations for
-`aiobotocore.create_client("devicefarm").get_instance_profile` method.
+Type annotations for `session.create_client("devicefarm").get_instance_profile`
+method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_instance_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_instance_profile)
@@ -841,7 +838,7 @@ Returns a `Coroutine` for
 
 Gets information about a job.
 
-Type annotations for `aiobotocore.create_client("devicefarm").get_job` method.
+Type annotations for `session.create_client("devicefarm").get_job` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_job)
@@ -864,8 +861,8 @@ Returns a `Coroutine` for
 
 Returns information about a network profile.
 
-Type annotations for
-`aiobotocore.create_client("devicefarm").get_network_profile` method.
+Type annotations for `session.create_client("devicefarm").get_network_profile`
+method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_network_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_network_profile)
@@ -890,8 +887,8 @@ Returns a `Coroutine` for
 Gets the current status and future status of all offerings purchased by an AWS
 account.
 
-Type annotations for
-`aiobotocore.create_client("devicefarm").get_offering_status` method.
+Type annotations for `session.create_client("devicefarm").get_offering_status`
+method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_offering_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_offering_status)
@@ -915,8 +912,7 @@ Returns a `Coroutine` for
 
 Gets information about a project.
 
-Type annotations for `aiobotocore.create_client("devicefarm").get_project`
-method.
+Type annotations for `session.create_client("devicefarm").get_project` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_project)
@@ -940,7 +936,7 @@ Returns a `Coroutine` for
 Returns a link to a currently running remote access session.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_remote_access_session` method.
+`session.create_client("devicefarm").get_remote_access_session` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_remote_access_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_remote_access_session)
@@ -964,7 +960,7 @@ Returns a `Coroutine` for
 
 Gets information about a run.
 
-Type annotations for `aiobotocore.create_client("devicefarm").get_run` method.
+Type annotations for `session.create_client("devicefarm").get_run` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_run)
@@ -987,8 +983,7 @@ Returns a `Coroutine` for
 
 Gets information about a suite.
 
-Type annotations for `aiobotocore.create_client("devicefarm").get_suite`
-method.
+Type annotations for `session.create_client("devicefarm").get_suite` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_suite](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_suite)
@@ -1011,7 +1006,7 @@ Returns a `Coroutine` for
 
 Gets information about a test.
 
-Type annotations for `aiobotocore.create_client("devicefarm").get_test` method.
+Type annotations for `session.create_client("devicefarm").get_test` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_test](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_test)
@@ -1035,7 +1030,7 @@ Returns a `Coroutine` for
 Retrieves information about a Selenium testing project.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_test_grid_project` method.
+`session.create_client("devicefarm").get_test_grid_project` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_test_grid_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_test_grid_project)
@@ -1061,7 +1056,7 @@ A session is an instance of a browser created through a `RemoteWebDriver` with
 the URL from CreateTestGridUrlResult$url.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_test_grid_session` method.
+`session.create_client("devicefarm").get_test_grid_session` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_test_grid_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_test_grid_session)
@@ -1087,8 +1082,7 @@ Returns a `Coroutine` for
 
 Gets information about an upload.
 
-Type annotations for `aiobotocore.create_client("devicefarm").get_upload`
-method.
+Type annotations for `session.create_client("devicefarm").get_upload` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_upload](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_upload)
@@ -1113,7 +1107,7 @@ Returns information about the configuration settings for your Amazon Virtual
 Private Cloud (VPC) endpoint.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_vpce_configuration` method.
+`session.create_client("devicefarm").get_vpce_configuration` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.get_vpce_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.get_vpce_configuration)
@@ -1138,8 +1132,7 @@ Returns a `Coroutine` for
 Installs an application to the device in a remote access session.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").install_to_remote_access_session`
-method.
+`session.create_client("devicefarm").install_to_remote_access_session` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.install_to_remote_access_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.install_to_remote_access_session)
@@ -1164,7 +1157,7 @@ Returns a `Coroutine` for
 
 Gets information about artifacts.
 
-Type annotations for `aiobotocore.create_client("devicefarm").list_artifacts`
+Type annotations for `session.create_client("devicefarm").list_artifacts`
 method.
 
 Boto3 documentation:
@@ -1193,7 +1186,7 @@ Returns information about the private device instances associated with one or
 more AWS accounts.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").list_device_instances` method.
+`session.create_client("devicefarm").list_device_instances` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_device_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_device_instances)
@@ -1218,8 +1211,8 @@ Returns a `Coroutine` for
 
 Gets information about device pools.
 
-Type annotations for
-`aiobotocore.create_client("devicefarm").list_device_pools` method.
+Type annotations for `session.create_client("devicefarm").list_device_pools`
+method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_device_pools](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_device_pools)
@@ -1244,8 +1237,7 @@ Returns a `Coroutine` for
 
 Gets information about unique device types.
 
-Type annotations for `aiobotocore.create_client("devicefarm").list_devices`
-method.
+Type annotations for `session.create_client("devicefarm").list_devices` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_devices)
@@ -1272,7 +1264,7 @@ Returns a `Coroutine` for
 Returns information about all the instance profiles in an AWS account.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").list_instance_profiles` method.
+`session.create_client("devicefarm").list_instance_profiles` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_instance_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_instance_profiles)
@@ -1297,8 +1289,7 @@ Returns a `Coroutine` for
 
 Gets information about jobs for a given test run.
 
-Type annotations for `aiobotocore.create_client("devicefarm").list_jobs`
-method.
+Type annotations for `session.create_client("devicefarm").list_jobs` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_jobs)
@@ -1323,7 +1314,7 @@ Returns a `Coroutine` for
 Returns the list of available network profiles.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").list_network_profiles` method.
+`session.create_client("devicefarm").list_network_profiles` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_network_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_network_profiles)
@@ -1350,7 +1341,7 @@ Returns a `Coroutine` for
 Returns a list of offering promotions.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").list_offering_promotions` method.
+`session.create_client("devicefarm").list_offering_promotions` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_offering_promotions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_offering_promotions)
@@ -1376,7 +1367,7 @@ Returns a list of all historical purchases, renewals, and system renewal
 transactions for an AWS account.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").list_offering_transactions` method.
+`session.create_client("devicefarm").list_offering_transactions` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_offering_transactions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_offering_transactions)
@@ -1401,7 +1392,7 @@ Returns a `Coroutine` for
 Returns a list of products or offerings that the user can manage through the
 API.
 
-Type annotations for `aiobotocore.create_client("devicefarm").list_offerings`
+Type annotations for `session.create_client("devicefarm").list_offerings`
 method.
 
 Boto3 documentation:
@@ -1425,7 +1416,7 @@ Returns a `Coroutine` for
 
 Gets information about projects.
 
-Type annotations for `aiobotocore.create_client("devicefarm").list_projects`
+Type annotations for `session.create_client("devicefarm").list_projects`
 method.
 
 Boto3 documentation:
@@ -1451,7 +1442,7 @@ Returns a `Coroutine` for
 Returns a list of all currently running remote access sessions.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").list_remote_access_sessions` method.
+`session.create_client("devicefarm").list_remote_access_sessions` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_remote_access_sessions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_remote_access_sessions)
@@ -1476,8 +1467,7 @@ Returns a `Coroutine` for
 
 Gets information about runs, given an AWS Device Farm project ARN.
 
-Type annotations for `aiobotocore.create_client("devicefarm").list_runs`
-method.
+Type annotations for `session.create_client("devicefarm").list_runs` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_runs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_runs)
@@ -1501,8 +1491,7 @@ Returns a `Coroutine` for
 
 Gets information about samples, given an AWS Device Farm job ARN.
 
-Type annotations for `aiobotocore.create_client("devicefarm").list_samples`
-method.
+Type annotations for `session.create_client("devicefarm").list_samples` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_samples](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_samples)
@@ -1526,8 +1515,7 @@ Returns a `Coroutine` for
 
 Gets information about test suites for a given job.
 
-Type annotations for `aiobotocore.create_client("devicefarm").list_suites`
-method.
+Type annotations for `session.create_client("devicefarm").list_suites` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_suites](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_suites)
@@ -1552,7 +1540,7 @@ Returns a `Coroutine` for
 List the tags for an AWS Device Farm resource.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").list_tags_for_resource` method.
+`session.create_client("devicefarm").list_tags_for_resource` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_tags_for_resource)
@@ -1577,7 +1565,7 @@ Returns a `Coroutine` for
 Gets a list of all Selenium testing projects in your account.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").list_test_grid_projects` method.
+`session.create_client("devicefarm").list_test_grid_projects` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_test_grid_projects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_test_grid_projects)
@@ -1603,8 +1591,7 @@ Returns a `Coroutine` for
 Returns a list of the actions taken in a TestGridSession .
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").list_test_grid_session_actions`
-method.
+`session.create_client("devicefarm").list_test_grid_session_actions` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_test_grid_session_actions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_test_grid_session_actions)
@@ -1631,8 +1618,7 @@ Returns a `Coroutine` for
 Retrieves a list of artifacts created during the session.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").list_test_grid_session_artifacts`
-method.
+`session.create_client("devicefarm").list_test_grid_session_artifacts` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_test_grid_session_artifacts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_test_grid_session_artifacts)
@@ -1661,7 +1647,7 @@ Returns a `Coroutine` for
 Retrieves a list of sessions for a TestGridProject .
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").list_test_grid_sessions` method.
+`session.create_client("devicefarm").list_test_grid_sessions` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_test_grid_sessions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_test_grid_sessions)
@@ -1693,8 +1679,7 @@ Returns a `Coroutine` for
 
 Gets information about tests in a given test suite.
 
-Type annotations for `aiobotocore.create_client("devicefarm").list_tests`
-method.
+Type annotations for `session.create_client("devicefarm").list_tests` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_tests](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_tests)
@@ -1718,8 +1703,8 @@ Returns a `Coroutine` for
 
 Gets information about unique problems, such as exceptions or crashes.
 
-Type annotations for
-`aiobotocore.create_client("devicefarm").list_unique_problems` method.
+Type annotations for `session.create_client("devicefarm").list_unique_problems`
+method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_unique_problems](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_unique_problems)
@@ -1744,8 +1729,7 @@ Returns a `Coroutine` for
 
 Gets information about uploads, given an AWS Device Farm project ARN.
 
-Type annotations for `aiobotocore.create_client("devicefarm").list_uploads`
-method.
+Type annotations for `session.create_client("devicefarm").list_uploads` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_uploads](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_uploads)
@@ -1772,7 +1756,7 @@ Returns information about all Amazon Virtual Private Cloud (VPC) endpoint
 configurations in the AWS account.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").list_vpce_configurations` method.
+`session.create_client("devicefarm").list_vpce_configurations` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.list_vpce_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.list_vpce_configurations)
@@ -1797,8 +1781,8 @@ Returns a `Coroutine` for
 
 Immediately purchases offerings for an AWS account.
 
-Type annotations for
-`aiobotocore.create_client("devicefarm").purchase_offering` method.
+Type annotations for `session.create_client("devicefarm").purchase_offering`
+method.
 
 Boto3 documentation:
 [DeviceFarm.Client.purchase_offering](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.purchase_offering)
@@ -1824,7 +1808,7 @@ Returns a `Coroutine` for
 Explicitly sets the quantity of devices to renew for an offering, starting from
 the `effectiveDate` of the next period.
 
-Type annotations for `aiobotocore.create_client("devicefarm").renew_offering`
+Type annotations for `session.create_client("devicefarm").renew_offering`
 method.
 
 Boto3 documentation:
@@ -1849,8 +1833,7 @@ Returns a `Coroutine` for
 
 Schedules a run.
 
-Type annotations for `aiobotocore.create_client("devicefarm").schedule_run`
-method.
+Type annotations for `session.create_client("devicefarm").schedule_run` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.schedule_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.schedule_run)
@@ -1884,7 +1867,7 @@ Returns a `Coroutine` for
 
 Initiates a stop request for the current job.
 
-Type annotations for `aiobotocore.create_client("devicefarm").stop_job` method.
+Type annotations for `session.create_client("devicefarm").stop_job` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.stop_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.stop_job)
@@ -1908,7 +1891,7 @@ Returns a `Coroutine` for
 Ends a specified remote access session.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").stop_remote_access_session` method.
+`session.create_client("devicefarm").stop_remote_access_session` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.stop_remote_access_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.stop_remote_access_session)
@@ -1932,7 +1915,7 @@ Returns a `Coroutine` for
 
 Initiates a stop request for the current test run.
 
-Type annotations for `aiobotocore.create_client("devicefarm").stop_run` method.
+Type annotations for `session.create_client("devicefarm").stop_run` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.stop_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.stop_run)
@@ -1955,8 +1938,7 @@ Returns a `Coroutine` for
 
 Associates the specified tags to a resource with the specified `resourceArn`.
 
-Type annotations for `aiobotocore.create_client("devicefarm").tag_resource`
-method.
+Type annotations for `session.create_client("devicefarm").tag_resource` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.tag_resource)
@@ -1979,7 +1961,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified tags from a resource.
 
-Type annotations for `aiobotocore.create_client("devicefarm").untag_resource`
+Type annotations for `session.create_client("devicefarm").untag_resource`
 method.
 
 Boto3 documentation:
@@ -2004,7 +1986,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates information about a private device instance.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").update_device_instance` method.
+`session.create_client("devicefarm").update_device_instance` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.update_device_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.update_device_instance)
@@ -2031,8 +2013,8 @@ Returns a `Coroutine` for
 Modifies the name, description, and rules in a device pool given the attributes
 and the pool ARN.
 
-Type annotations for
-`aiobotocore.create_client("devicefarm").update_device_pool` method.
+Type annotations for `session.create_client("devicefarm").update_device_pool`
+method.
 
 Boto3 documentation:
 [DeviceFarm.Client.update_device_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.update_device_pool)
@@ -2062,7 +2044,7 @@ Returns a `Coroutine` for
 Updates information about an existing private device instance profile.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").update_instance_profile` method.
+`session.create_client("devicefarm").update_instance_profile` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.update_instance_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.update_instance_profile)
@@ -2092,7 +2074,7 @@ Returns a `Coroutine` for
 Updates the network profile.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").update_network_profile` method.
+`session.create_client("devicefarm").update_network_profile` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.update_network_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.update_network_profile)
@@ -2127,7 +2109,7 @@ Returns a `Coroutine` for
 
 Modifies the specified project name, given the project ARN and a new name.
 
-Type annotations for `aiobotocore.create_client("devicefarm").update_project`
+Type annotations for `session.create_client("devicefarm").update_project`
 method.
 
 Boto3 documentation:
@@ -2154,7 +2136,7 @@ Returns a `Coroutine` for
 Change details of a project.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").update_test_grid_project` method.
+`session.create_client("devicefarm").update_test_grid_project` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.update_test_grid_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.update_test_grid_project)
@@ -2182,7 +2164,7 @@ Returns a `Coroutine` for
 
 Updates an uploaded test spec.
 
-Type annotations for `aiobotocore.create_client("devicefarm").update_upload`
+Type annotations for `session.create_client("devicefarm").update_upload`
 method.
 
 Boto3 documentation:
@@ -2211,7 +2193,7 @@ Updates information about an Amazon Virtual Private Cloud (VPC) endpoint
 configuration.
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").update_vpce_configuration` method.
+`session.create_client("devicefarm").update_vpce_configuration` method.
 
 Boto3 documentation:
 [DeviceFarm.Client.update_vpce_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.update_vpce_configuration)
@@ -2233,12 +2215,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateVPCEConfigurationResultTypeDef](./type_defs.md#updatevpceconfigurationresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("devicefarm").__aenter__` method.
+
+Boto3 documentation:
+[DeviceFarm.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [DeviceFarmClient](#devicefarmclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("devicefarm").__aexit__` method.
+
+Boto3 documentation:
+[DeviceFarm.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devicefarm.html#DeviceFarm.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("devicefarm").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("devicefarm").get_paginator` method
+with overloads.
 
 - `client.get_paginator("get_offering_status")` ->
   [GetOfferingStatusPaginator](./paginators.md#getofferingstatuspaginator)

@@ -35,22 +35,25 @@ type annotations stubs module
     - [set_status](#set_status)
     - [set_task_status](#set_task_status)
     - [validate_pipeline_definition](#validate_pipeline_definition)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="datapipelineclient"></a>
 
 ## DataPipelineClient
 
-Type annotations for `aiobotocore.create_client("datapipeline")`
+Type annotations for `session.create_client("datapipeline")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_datapipeline.client import DataPipelineClient
 
-def get_datapipeline_client() -> DataPipelineClient:
-    return Session().client("datapipeline")
+session = get_session()
+async with session.create_client("datapipeline") as client:
+    client: DataPipelineClient
 ```
 
 Boto3 documentation:
@@ -89,8 +92,7 @@ Exceptions:
 
 DataPipelineClient exceptions.
 
-Type annotations for `aiobotocore.create_client("datapipeline").exceptions`
-method.
+Type annotations for `session.create_client("datapipeline").exceptions` method.
 
 Boto3 documentation:
 [DataPipeline.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.exceptions)
@@ -103,8 +105,8 @@ Returns [Exceptions](#exceptions).
 
 Validates the specified pipeline and starts processing pipeline tasks.
 
-Type annotations for
-`aiobotocore.create_client("datapipeline").activate_pipeline` method.
+Type annotations for `session.create_client("datapipeline").activate_pipeline`
+method.
 
 Boto3 documentation:
 [DataPipeline.Client.activate_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.activate_pipeline)
@@ -129,8 +131,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds or modifies tags for the specified pipeline.
 
-Type annotations for `aiobotocore.create_client("datapipeline").add_tags`
-method.
+Type annotations for `session.create_client("datapipeline").add_tags` method.
 
 Boto3 documentation:
 [DataPipeline.Client.add_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.add_tags)
@@ -153,19 +154,17 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("datapipeline").can_paginate`
+Type annotations for `session.create_client("datapipeline").can_paginate`
 method.
 
 Boto3 documentation:
 [DataPipeline.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_pipeline"></a>
 
@@ -173,8 +172,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates a new, empty pipeline.
 
-Type annotations for
-`aiobotocore.create_client("datapipeline").create_pipeline` method.
+Type annotations for `session.create_client("datapipeline").create_pipeline`
+method.
 
 Boto3 documentation:
 [DataPipeline.Client.create_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.create_pipeline)
@@ -201,7 +200,7 @@ Returns a `Coroutine` for
 Deactivates the specified running pipeline.
 
 Type annotations for
-`aiobotocore.create_client("datapipeline").deactivate_pipeline` method.
+`session.create_client("datapipeline").deactivate_pipeline` method.
 
 Boto3 documentation:
 [DataPipeline.Client.deactivate_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.deactivate_pipeline)
@@ -225,8 +224,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a pipeline, its pipeline definition, and its run history.
 
-Type annotations for
-`aiobotocore.create_client("datapipeline").delete_pipeline` method.
+Type annotations for `session.create_client("datapipeline").delete_pipeline`
+method.
 
 Boto3 documentation:
 [DataPipeline.Client.delete_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.delete_pipeline)
@@ -246,8 +245,8 @@ Keyword-only arguments:
 
 Gets the object definitions for a set of objects associated with the pipeline.
 
-Type annotations for
-`aiobotocore.create_client("datapipeline").describe_objects` method.
+Type annotations for `session.create_client("datapipeline").describe_objects`
+method.
 
 Boto3 documentation:
 [DataPipeline.Client.describe_objects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.describe_objects)
@@ -273,8 +272,8 @@ Returns a `Coroutine` for
 
 Retrieves metadata about one or more pipelines.
 
-Type annotations for
-`aiobotocore.create_client("datapipeline").describe_pipelines` method.
+Type annotations for `session.create_client("datapipeline").describe_pipelines`
+method.
 
 Boto3 documentation:
 [DataPipeline.Client.describe_pipelines](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.describe_pipelines)
@@ -300,7 +299,7 @@ Task runners call `EvaluateExpression` to evaluate a string in the context of
 the specified object.
 
 Type annotations for
-`aiobotocore.create_client("datapipeline").evaluate_expression` method.
+`session.create_client("datapipeline").evaluate_expression` method.
 
 Boto3 documentation:
 [DataPipeline.Client.evaluate_expression](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.evaluate_expression)
@@ -327,7 +326,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("datapipeline").generate_presigned_url` method.
+`session.create_client("datapipeline").generate_presigned_url` method.
 
 Boto3 documentation:
 [DataPipeline.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.generate_presigned_url)
@@ -351,7 +350,7 @@ Returns a `Coroutine` for `str`.
 Gets the definition of the specified pipeline.
 
 Type annotations for
-`aiobotocore.create_client("datapipeline").get_pipeline_definition` method.
+`session.create_client("datapipeline").get_pipeline_definition` method.
 
 Boto3 documentation:
 [DataPipeline.Client.get_pipeline_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.get_pipeline_definition)
@@ -377,7 +376,7 @@ Returns a `Coroutine` for
 Lists the pipeline identifiers for all active pipelines that you have
 permission to access.
 
-Type annotations for `aiobotocore.create_client("datapipeline").list_pipelines`
+Type annotations for `session.create_client("datapipeline").list_pipelines`
 method.
 
 Boto3 documentation:
@@ -402,7 +401,7 @@ Returns a `Coroutine` for
 Task runners call `PollForTask` to receive a task to perform from AWS Data
 Pipeline.
 
-Type annotations for `aiobotocore.create_client("datapipeline").poll_for_task`
+Type annotations for `session.create_client("datapipeline").poll_for_task`
 method.
 
 Boto3 documentation:
@@ -430,7 +429,7 @@ Returns a `Coroutine` for
 Adds tasks, schedules, and preconditions to the specified pipeline.
 
 Type annotations for
-`aiobotocore.create_client("datapipeline").put_pipeline_definition` method.
+`session.create_client("datapipeline").put_pipeline_definition` method.
 
 Boto3 documentation:
 [DataPipeline.Client.put_pipeline_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.put_pipeline_definition)
@@ -462,7 +461,7 @@ Returns a `Coroutine` for
 Queries the specified pipeline for the names of objects that match the
 specified set of conditions.
 
-Type annotations for `aiobotocore.create_client("datapipeline").query_objects`
+Type annotations for `session.create_client("datapipeline").query_objects`
 method.
 
 Boto3 documentation:
@@ -490,7 +489,7 @@ Returns a `Coroutine` for
 
 Removes existing tags from the specified pipeline.
 
-Type annotations for `aiobotocore.create_client("datapipeline").remove_tags`
+Type annotations for `session.create_client("datapipeline").remove_tags`
 method.
 
 Boto3 documentation:
@@ -516,7 +515,7 @@ Task runners call `ReportTaskProgress` when assigned a task to acknowledge that
 it has the task.
 
 Type annotations for
-`aiobotocore.create_client("datapipeline").report_task_progress` method.
+`session.create_client("datapipeline").report_task_progress` method.
 
 Boto3 documentation:
 [DataPipeline.Client.report_task_progress](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.report_task_progress)
@@ -543,8 +542,7 @@ Task runners call `ReportTaskRunnerHeartbeat` every 15 minutes to indicate that
 they are operational.
 
 Type annotations for
-`aiobotocore.create_client("datapipeline").report_task_runner_heartbeat`
-method.
+`session.create_client("datapipeline").report_task_runner_heartbeat` method.
 
 Boto3 documentation:
 [DataPipeline.Client.report_task_runner_heartbeat](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.report_task_runner_heartbeat)
@@ -571,8 +569,7 @@ Returns a `Coroutine` for
 Requests that the status of the specified physical or logical pipeline objects
 be updated in the specified pipeline.
 
-Type annotations for `aiobotocore.create_client("datapipeline").set_status`
-method.
+Type annotations for `session.create_client("datapipeline").set_status` method.
 
 Boto3 documentation:
 [DataPipeline.Client.set_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.set_status)
@@ -595,8 +592,8 @@ Keyword-only arguments:
 Task runners call `SetTaskStatus` to notify AWS Data Pipeline that a task is
 completed and provide information about the final status.
 
-Type annotations for
-`aiobotocore.create_client("datapipeline").set_task_status` method.
+Type annotations for `session.create_client("datapipeline").set_task_status`
+method.
 
 Boto3 documentation:
 [DataPipeline.Client.set_task_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.set_task_status)
@@ -624,8 +621,7 @@ Validates the specified pipeline definition to ensure that it is well formed
 and can be run without error.
 
 Type annotations for
-`aiobotocore.create_client("datapipeline").validate_pipeline_definition`
-method.
+`session.create_client("datapipeline").validate_pipeline_definition` method.
 
 Boto3 documentation:
 [DataPipeline.Client.validate_pipeline_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.validate_pipeline_definition)
@@ -650,11 +646,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [ValidatePipelineDefinitionOutputTypeDef](./type_defs.md#validatepipelinedefinitionoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("datapipeline").__aenter__` method.
+
+Boto3 documentation:
+[DataPipeline.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [DataPipelineClient](#datapipelineclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("datapipeline").__aexit__` method.
+
+Boto3 documentation:
+[DataPipeline.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datapipeline.html#DataPipeline.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("datapipeline").get_paginator`
+Type annotations for `session.create_client("datapipeline").get_paginator`
 method with overloads.
 
 - `client.get_paginator("describe_objects")` ->

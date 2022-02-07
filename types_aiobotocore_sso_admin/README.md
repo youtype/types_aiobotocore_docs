@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[sso-admin]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[sso-admin]'
+
+# standalone installation
 pip install types-aiobotocore-sso-admin
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-sso-admin
 
 ## SSOAdminClient
 
-Type annotations for `aiobotocore.create_client("sso-admin")` as
+Type annotations for `session.create_client("sso-admin")` as
 [SSOAdminClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_sso_admin.client import SSOAdminClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [attach_managed_policy_to_permission_set](./client.md#attach_managed_policy_to_permission_set)
 - [can_paginate](./client.md#can_paginate)
 - [create_account_assignment](./client.md#create_account_assignment)
@@ -103,7 +109,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_sso_admin.paginators import ListAccountAssignmentCreationStatusPaginator, ...
+from types_aiobotocore_sso_admin.paginator import ListAccountAssignmentCreationStatusPaginator, ...
 ```
 
 - [ListAccountAssignmentCreationStatusPaginator](./paginators.md#listaccountassignmentcreationstatuspaginator)

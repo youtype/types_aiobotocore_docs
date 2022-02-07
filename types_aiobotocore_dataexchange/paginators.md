@@ -21,17 +21,19 @@ type annotations stubs module
 ## ListDataSetRevisionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("dataexchange").get_paginator("list_data_set_revisions")`.
+`session.create_client("dataexchange").get_paginator("list_data_set_revisions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dataexchange.paginator import ListDataSetRevisionsPaginator
 
-def get_list_data_set_revisions_paginator() -> ListDataSetRevisionsPaginator:
-    return Session().create_client("dataexchange").get_paginator("list_data_set_revisions")
+session = get_session()
+async with session.create_client("dataexchange") as client:
+    client: DataExchangeClient
+    paginator: ListDataSetRevisionsPaginator = client.get_paginator("list_data_set_revisions")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `ListDataSetRevisionsPaginator.paginate` method:
 ## ListDataSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("dataexchange").get_paginator("list_data_sets")`.
+`session.create_client("dataexchange").get_paginator("list_data_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dataexchange.paginator import ListDataSetsPaginator
 
-def get_list_data_sets_paginator() -> ListDataSetsPaginator:
-    return Session().create_client("dataexchange").get_paginator("list_data_sets")
+session = get_session()
+async with session.create_client("dataexchange") as client:
+    client: DataExchangeClient
+    paginator: ListDataSetsPaginator = client.get_paginator("list_data_sets")
 ```
 
 Boto3 documentation:
@@ -81,17 +85,19 @@ Arguments for `ListDataSetsPaginator.paginate` method:
 ## ListEventActionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("dataexchange").get_paginator("list_event_actions")`.
+`session.create_client("dataexchange").get_paginator("list_event_actions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dataexchange.paginator import ListEventActionsPaginator
 
-def get_list_event_actions_paginator() -> ListEventActionsPaginator:
-    return Session().create_client("dataexchange").get_paginator("list_event_actions")
+session = get_session()
+async with session.create_client("dataexchange") as client:
+    client: DataExchangeClient
+    paginator: ListEventActionsPaginator = client.get_paginator("list_event_actions")
 ```
 
 Boto3 documentation:
@@ -111,17 +117,19 @@ Arguments for `ListEventActionsPaginator.paginate` method:
 ## ListJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("dataexchange").get_paginator("list_jobs")`.
+`session.create_client("dataexchange").get_paginator("list_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dataexchange.paginator import ListJobsPaginator
 
-def get_list_jobs_paginator() -> ListJobsPaginator:
-    return Session().create_client("dataexchange").get_paginator("list_jobs")
+session = get_session()
+async with session.create_client("dataexchange") as client:
+    client: DataExchangeClient
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
 ```
 
 Boto3 documentation:
@@ -142,17 +150,19 @@ Arguments for `ListJobsPaginator.paginate` method:
 ## ListRevisionAssetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("dataexchange").get_paginator("list_revision_assets")`.
+`session.create_client("dataexchange").get_paginator("list_revision_assets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dataexchange.paginator import ListRevisionAssetsPaginator
 
-def get_list_revision_assets_paginator() -> ListRevisionAssetsPaginator:
-    return Session().create_client("dataexchange").get_paginator("list_revision_assets")
+session = get_session()
+async with session.create_client("dataexchange") as client:
+    client: DataExchangeClient
+    paginator: ListRevisionAssetsPaginator = client.get_paginator("list_revision_assets")
 ```
 
 Boto3 documentation:

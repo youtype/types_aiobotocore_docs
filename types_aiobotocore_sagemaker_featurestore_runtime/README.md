@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[sagemaker-featurestore-runtime]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[sagemaker-featurestore-runtime]'
+
+# standalone installation
 pip install types-aiobotocore-sagemaker-featurestore-runtime
 ```
 
@@ -28,9 +32,8 @@ pip install types-aiobotocore-sagemaker-featurestore-runtime
 
 ## SageMakerFeatureStoreRuntimeClient
 
-Type annotations for
-`aiobotocore.create_client("sagemaker-featurestore-runtime")` as
-[SageMakerFeatureStoreRuntimeClient](./client.md)
+Type annotations for `session.create_client("sagemaker-featurestore-runtime")`
+as [SageMakerFeatureStoreRuntimeClient](./client.md)
 
 Can be used directly:
 
@@ -42,6 +45,8 @@ from types_aiobotocore_sagemaker_featurestore_runtime.client import SageMakerFea
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_get_record](./client.md#batch_get_record)
 - [can_paginate](./client.md#can_paginate)
 - [delete_record](./client.md#delete_record)

@@ -79,6 +79,8 @@ type annotations stubs module
     - [restore_db_cluster_to_point_in_time](#restore_db_cluster_to_point_in_time)
     - [start_db_cluster](#start_db_cluster)
     - [stop_db_cluster](#stop_db_cluster)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -86,16 +88,17 @@ type annotations stubs module
 
 ## NeptuneClient
 
-Type annotations for `aiobotocore.create_client("neptune")`
+Type annotations for `session.create_client("neptune")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_neptune.client import NeptuneClient
 
-def get_neptune_client() -> NeptuneClient:
-    return Session().client("neptune")
+session = get_session()
+async with session.create_client("neptune") as client:
+    client: NeptuneClient
 ```
 
 Boto3 documentation:
@@ -192,7 +195,7 @@ Exceptions:
 
 NeptuneClient exceptions.
 
-Type annotations for `aiobotocore.create_client("neptune").exceptions` method.
+Type annotations for `session.create_client("neptune").exceptions` method.
 
 Boto3 documentation:
 [Neptune.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.exceptions)
@@ -206,8 +209,8 @@ Returns [Exceptions](#exceptions).
 Associates an Identity and Access Management (IAM) role with an Neptune DB
 cluster.
 
-Type annotations for
-`aiobotocore.create_client("neptune").add_role_to_db_cluster` method.
+Type annotations for `session.create_client("neptune").add_role_to_db_cluster`
+method.
 
 Boto3 documentation:
 [Neptune.Client.add_role_to_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.add_role_to_db_cluster)
@@ -231,7 +234,7 @@ Keyword-only arguments:
 Adds a source identifier to an existing event notification subscription.
 
 Type annotations for
-`aiobotocore.create_client("neptune").add_source_identifier_to_subscription`
+`session.create_client("neptune").add_source_identifier_to_subscription`
 method.
 
 Boto3 documentation:
@@ -257,8 +260,8 @@ Returns a `Coroutine` for
 
 Adds metadata tags to an Amazon Neptune resource.
 
-Type annotations for
-`aiobotocore.create_client("neptune").add_tags_to_resource` method.
+Type annotations for `session.create_client("neptune").add_tags_to_resource`
+method.
 
 Boto3 documentation:
 [Neptune.Client.add_tags_to_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.add_tags_to_resource)
@@ -282,7 +285,7 @@ Applies a pending maintenance action to a resource (for example, to a DB
 instance).
 
 Type annotations for
-`aiobotocore.create_client("neptune").apply_pending_maintenance_action` method.
+`session.create_client("neptune").apply_pending_maintenance_action` method.
 
 Boto3 documentation:
 [Neptune.Client.apply_pending_maintenance_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.apply_pending_maintenance_action)
@@ -308,19 +311,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("neptune").can_paginate`
-method.
+Type annotations for `session.create_client("neptune").can_paginate` method.
 
 Boto3 documentation:
 [Neptune.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="copy_db_cluster_parameter_group"></a>
 
@@ -329,7 +329,7 @@ Returns a `Coroutine` for `bool`.
 Copies the specified DB cluster parameter group.
 
 Type annotations for
-`aiobotocore.create_client("neptune").copy_db_cluster_parameter_group` method.
+`session.create_client("neptune").copy_db_cluster_parameter_group` method.
 
 Boto3 documentation:
 [Neptune.Client.copy_db_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.copy_db_cluster_parameter_group)
@@ -357,7 +357,7 @@ Returns a `Coroutine` for
 Copies a snapshot of a DB cluster.
 
 Type annotations for
-`aiobotocore.create_client("neptune").copy_db_cluster_snapshot` method.
+`session.create_client("neptune").copy_db_cluster_snapshot` method.
 
 Boto3 documentation:
 [Neptune.Client.copy_db_cluster_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.copy_db_cluster_snapshot)
@@ -387,8 +387,8 @@ Returns a `Coroutine` for
 
 Copies the specified DB parameter group.
 
-Type annotations for
-`aiobotocore.create_client("neptune").copy_db_parameter_group` method.
+Type annotations for `session.create_client("neptune").copy_db_parameter_group`
+method.
 
 Boto3 documentation:
 [Neptune.Client.copy_db_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.copy_db_parameter_group)
@@ -415,7 +415,7 @@ Returns a `Coroutine` for
 
 Creates a new Amazon Neptune DB cluster.
 
-Type annotations for `aiobotocore.create_client("neptune").create_db_cluster`
+Type annotations for `session.create_client("neptune").create_db_cluster`
 method.
 
 Boto3 documentation:
@@ -466,7 +466,7 @@ Creates a new custom endpoint and associates it with an Amazon Neptune DB
 cluster.
 
 Type annotations for
-`aiobotocore.create_client("neptune").create_db_cluster_endpoint` method.
+`session.create_client("neptune").create_db_cluster_endpoint` method.
 
 Boto3 documentation:
 [Neptune.Client.create_db_cluster_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.create_db_cluster_endpoint)
@@ -496,8 +496,7 @@ Returns a `Coroutine` for
 Creates a new DB cluster parameter group.
 
 Type annotations for
-`aiobotocore.create_client("neptune").create_db_cluster_parameter_group`
-method.
+`session.create_client("neptune").create_db_cluster_parameter_group` method.
 
 Boto3 documentation:
 [Neptune.Client.create_db_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.create_db_cluster_parameter_group)
@@ -525,7 +524,7 @@ Returns a `Coroutine` for
 Creates a snapshot of a DB cluster.
 
 Type annotations for
-`aiobotocore.create_client("neptune").create_db_cluster_snapshot` method.
+`session.create_client("neptune").create_db_cluster_snapshot` method.
 
 Boto3 documentation:
 [Neptune.Client.create_db_cluster_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.create_db_cluster_snapshot)
@@ -551,7 +550,7 @@ Returns a `Coroutine` for
 
 Creates a new DB instance.
 
-Type annotations for `aiobotocore.create_client("neptune").create_db_instance`
+Type annotations for `session.create_client("neptune").create_db_instance`
 method.
 
 Boto3 documentation:
@@ -619,7 +618,7 @@ Returns a `Coroutine` for
 Creates a new DB parameter group.
 
 Type annotations for
-`aiobotocore.create_client("neptune").create_db_parameter_group` method.
+`session.create_client("neptune").create_db_parameter_group` method.
 
 Boto3 documentation:
 [Neptune.Client.create_db_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.create_db_parameter_group)
@@ -646,8 +645,8 @@ Returns a `Coroutine` for
 
 Creates a new DB subnet group.
 
-Type annotations for
-`aiobotocore.create_client("neptune").create_db_subnet_group` method.
+Type annotations for `session.create_client("neptune").create_db_subnet_group`
+method.
 
 Boto3 documentation:
 [Neptune.Client.create_db_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.create_db_subnet_group)
@@ -675,7 +674,7 @@ Returns a `Coroutine` for
 Creates an event notification subscription.
 
 Type annotations for
-`aiobotocore.create_client("neptune").create_event_subscription` method.
+`session.create_client("neptune").create_event_subscription` method.
 
 Boto3 documentation:
 [Neptune.Client.create_event_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.create_event_subscription)
@@ -705,7 +704,7 @@ Returns a `Coroutine` for
 
 The DeleteDBCluster action deletes a previously provisioned DB cluster.
 
-Type annotations for `aiobotocore.create_client("neptune").delete_db_cluster`
+Type annotations for `session.create_client("neptune").delete_db_cluster`
 method.
 
 Boto3 documentation:
@@ -732,7 +731,7 @@ Returns a `Coroutine` for
 Deletes a custom endpoint and removes it from an Amazon Neptune DB cluster.
 
 Type annotations for
-`aiobotocore.create_client("neptune").delete_db_cluster_endpoint` method.
+`session.create_client("neptune").delete_db_cluster_endpoint` method.
 
 Boto3 documentation:
 [Neptune.Client.delete_db_cluster_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.delete_db_cluster_endpoint)
@@ -757,8 +756,7 @@ Returns a `Coroutine` for
 Deletes a specified DB cluster parameter group.
 
 Type annotations for
-`aiobotocore.create_client("neptune").delete_db_cluster_parameter_group`
-method.
+`session.create_client("neptune").delete_db_cluster_parameter_group` method.
 
 Boto3 documentation:
 [Neptune.Client.delete_db_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.delete_db_cluster_parameter_group)
@@ -780,7 +778,7 @@ Keyword-only arguments:
 Deletes a DB cluster snapshot.
 
 Type annotations for
-`aiobotocore.create_client("neptune").delete_db_cluster_snapshot` method.
+`session.create_client("neptune").delete_db_cluster_snapshot` method.
 
 Boto3 documentation:
 [Neptune.Client.delete_db_cluster_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.delete_db_cluster_snapshot)
@@ -804,7 +802,7 @@ Returns a `Coroutine` for
 
 The DeleteDBInstance action deletes a previously provisioned DB instance.
 
-Type annotations for `aiobotocore.create_client("neptune").delete_db_instance`
+Type annotations for `session.create_client("neptune").delete_db_instance`
 method.
 
 Boto3 documentation:
@@ -832,7 +830,7 @@ Returns a `Coroutine` for
 Deletes a specified DBParameterGroup.
 
 Type annotations for
-`aiobotocore.create_client("neptune").delete_db_parameter_group` method.
+`session.create_client("neptune").delete_db_parameter_group` method.
 
 Boto3 documentation:
 [Neptune.Client.delete_db_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.delete_db_parameter_group)
@@ -853,8 +851,8 @@ Keyword-only arguments:
 
 Deletes a DB subnet group.
 
-Type annotations for
-`aiobotocore.create_client("neptune").delete_db_subnet_group` method.
+Type annotations for `session.create_client("neptune").delete_db_subnet_group`
+method.
 
 Boto3 documentation:
 [Neptune.Client.delete_db_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.delete_db_subnet_group)
@@ -876,7 +874,7 @@ Keyword-only arguments:
 Deletes an event notification subscription.
 
 Type annotations for
-`aiobotocore.create_client("neptune").delete_event_subscription` method.
+`session.create_client("neptune").delete_event_subscription` method.
 
 Boto3 documentation:
 [Neptune.Client.delete_event_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.delete_event_subscription)
@@ -901,7 +899,7 @@ Returns a `Coroutine` for
 Returns information about endpoints for an Amazon Neptune DB cluster.
 
 Type annotations for
-`aiobotocore.create_client("neptune").describe_db_cluster_endpoints` method.
+`session.create_client("neptune").describe_db_cluster_endpoints` method.
 
 Boto3 documentation:
 [Neptune.Client.describe_db_cluster_endpoints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.describe_db_cluster_endpoints)
@@ -930,8 +928,7 @@ Returns a `Coroutine` for
 Returns a list of `DBClusterParameterGroup` descriptions.
 
 Type annotations for
-`aiobotocore.create_client("neptune").describe_db_cluster_parameter_groups`
-method.
+`session.create_client("neptune").describe_db_cluster_parameter_groups` method.
 
 Boto3 documentation:
 [Neptune.Client.describe_db_cluster_parameter_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.describe_db_cluster_parameter_groups)
@@ -960,7 +957,7 @@ Returns the detailed parameter list for a particular DB cluster parameter
 group.
 
 Type annotations for
-`aiobotocore.create_client("neptune").describe_db_cluster_parameters` method.
+`session.create_client("neptune").describe_db_cluster_parameters` method.
 
 Boto3 documentation:
 [Neptune.Client.describe_db_cluster_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.describe_db_cluster_parameters)
@@ -990,7 +987,7 @@ Returns a list of DB cluster snapshot attribute names and values for a manual
 DB cluster snapshot.
 
 Type annotations for
-`aiobotocore.create_client("neptune").describe_db_cluster_snapshot_attributes`
+`session.create_client("neptune").describe_db_cluster_snapshot_attributes`
 method.
 
 Boto3 documentation:
@@ -1016,7 +1013,7 @@ Returns a `Coroutine` for
 Returns information about DB cluster snapshots.
 
 Type annotations for
-`aiobotocore.create_client("neptune").describe_db_cluster_snapshots` method.
+`session.create_client("neptune").describe_db_cluster_snapshots` method.
 
 Boto3 documentation:
 [Neptune.Client.describe_db_cluster_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.describe_db_cluster_snapshots)
@@ -1047,8 +1044,8 @@ Returns a `Coroutine` for
 
 Returns information about provisioned DB clusters, and supports pagination.
 
-Type annotations for
-`aiobotocore.create_client("neptune").describe_db_clusters` method.
+Type annotations for `session.create_client("neptune").describe_db_clusters`
+method.
 
 Boto3 documentation:
 [Neptune.Client.describe_db_clusters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.describe_db_clusters)
@@ -1076,7 +1073,7 @@ Returns a `Coroutine` for
 Returns a list of the available DB engines.
 
 Type annotations for
-`aiobotocore.create_client("neptune").describe_db_engine_versions` method.
+`session.create_client("neptune").describe_db_engine_versions` method.
 
 Boto3 documentation:
 [Neptune.Client.describe_db_engine_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.describe_db_engine_versions)
@@ -1108,8 +1105,8 @@ Returns a `Coroutine` for
 
 Returns information about provisioned instances, and supports pagination.
 
-Type annotations for
-`aiobotocore.create_client("neptune").describe_db_instances` method.
+Type annotations for `session.create_client("neptune").describe_db_instances`
+method.
 
 Boto3 documentation:
 [Neptune.Client.describe_db_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.describe_db_instances)
@@ -1137,7 +1134,7 @@ Returns a `Coroutine` for
 Returns a list of `DBParameterGroup` descriptions.
 
 Type annotations for
-`aiobotocore.create_client("neptune").describe_db_parameter_groups` method.
+`session.create_client("neptune").describe_db_parameter_groups` method.
 
 Boto3 documentation:
 [Neptune.Client.describe_db_parameter_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.describe_db_parameter_groups)
@@ -1164,8 +1161,8 @@ Returns a `Coroutine` for
 
 Returns the detailed parameter list for a particular DB parameter group.
 
-Type annotations for
-`aiobotocore.create_client("neptune").describe_db_parameters` method.
+Type annotations for `session.create_client("neptune").describe_db_parameters`
+method.
 
 Boto3 documentation:
 [Neptune.Client.describe_db_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.describe_db_parameters)
@@ -1194,7 +1191,7 @@ Returns a `Coroutine` for
 Returns a list of DBSubnetGroup descriptions.
 
 Type annotations for
-`aiobotocore.create_client("neptune").describe_db_subnet_groups` method.
+`session.create_client("neptune").describe_db_subnet_groups` method.
 
 Boto3 documentation:
 [Neptune.Client.describe_db_subnet_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.describe_db_subnet_groups)
@@ -1223,7 +1220,7 @@ Returns the default engine and system parameter information for the cluster
 database engine.
 
 Type annotations for
-`aiobotocore.create_client("neptune").describe_engine_default_cluster_parameters`
+`session.create_client("neptune").describe_engine_default_cluster_parameters`
 method.
 
 Boto3 documentation:
@@ -1253,8 +1250,7 @@ Returns the default engine and system parameter information for the specified
 database engine.
 
 Type annotations for
-`aiobotocore.create_client("neptune").describe_engine_default_parameters`
-method.
+`session.create_client("neptune").describe_engine_default_parameters` method.
 
 Boto3 documentation:
 [Neptune.Client.describe_engine_default_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.describe_engine_default_parameters)
@@ -1283,7 +1279,7 @@ Displays a list of categories for all event source types, or, if specified, for
 a specified source type.
 
 Type annotations for
-`aiobotocore.create_client("neptune").describe_event_categories` method.
+`session.create_client("neptune").describe_event_categories` method.
 
 Boto3 documentation:
 [Neptune.Client.describe_event_categories](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.describe_event_categories)
@@ -1309,7 +1305,7 @@ Returns a `Coroutine` for
 Lists all the subscription descriptions for a customer account.
 
 Type annotations for
-`aiobotocore.create_client("neptune").describe_event_subscriptions` method.
+`session.create_client("neptune").describe_event_subscriptions` method.
 
 Boto3 documentation:
 [Neptune.Client.describe_event_subscriptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.describe_event_subscriptions)
@@ -1337,8 +1333,7 @@ Returns a `Coroutine` for
 Returns events related to DB instances, DB security groups, DB snapshots, and
 DB parameter groups for the past 14 days.
 
-Type annotations for `aiobotocore.create_client("neptune").describe_events`
-method.
+Type annotations for `session.create_client("neptune").describe_events` method.
 
 Boto3 documentation:
 [Neptune.Client.describe_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.describe_events)
@@ -1370,7 +1365,7 @@ Returns a `Coroutine` for
 Returns a list of orderable DB instance options for the specified engine.
 
 Type annotations for
-`aiobotocore.create_client("neptune").describe_orderable_db_instance_options`
+`session.create_client("neptune").describe_orderable_db_instance_options`
 method.
 
 Boto3 documentation:
@@ -1404,8 +1399,7 @@ Returns a list of resources (for example, DB instances) that have at least one
 pending maintenance action.
 
 Type annotations for
-`aiobotocore.create_client("neptune").describe_pending_maintenance_actions`
-method.
+`session.create_client("neptune").describe_pending_maintenance_actions` method.
 
 Boto3 documentation:
 [Neptune.Client.describe_pending_maintenance_actions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.describe_pending_maintenance_actions)
@@ -1434,7 +1428,7 @@ You can call DescribeValidDBInstanceModifications to learn what modifications
 you can make to your DB instance.
 
 Type annotations for
-`aiobotocore.create_client("neptune").describe_valid_db_instance_modifications`
+`session.create_client("neptune").describe_valid_db_instance_modifications`
 method.
 
 Boto3 documentation:
@@ -1459,7 +1453,7 @@ Returns a `Coroutine` for
 
 Forces a failover for a DB cluster.
 
-Type annotations for `aiobotocore.create_client("neptune").failover_db_cluster`
+Type annotations for `session.create_client("neptune").failover_db_cluster`
 method.
 
 Boto3 documentation:
@@ -1485,8 +1479,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("neptune").generate_presigned_url` method.
+Type annotations for `session.create_client("neptune").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Neptune.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.generate_presigned_url)
@@ -1509,8 +1503,8 @@ Returns a `Coroutine` for `str`.
 
 Lists all tags on an Amazon Neptune resource.
 
-Type annotations for
-`aiobotocore.create_client("neptune").list_tags_for_resource` method.
+Type annotations for `session.create_client("neptune").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Neptune.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.list_tags_for_resource)
@@ -1535,7 +1529,7 @@ Returns a `Coroutine` for
 
 Modify a setting for a DB cluster.
 
-Type annotations for `aiobotocore.create_client("neptune").modify_db_cluster`
+Type annotations for `session.create_client("neptune").modify_db_cluster`
 method.
 
 Boto3 documentation:
@@ -1578,7 +1572,7 @@ Returns a `Coroutine` for
 Modifies the properties of an endpoint in an Amazon Neptune DB cluster.
 
 Type annotations for
-`aiobotocore.create_client("neptune").modify_db_cluster_endpoint` method.
+`session.create_client("neptune").modify_db_cluster_endpoint` method.
 
 Boto3 documentation:
 [Neptune.Client.modify_db_cluster_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.modify_db_cluster_endpoint)
@@ -1606,8 +1600,7 @@ Returns a `Coroutine` for
 Modifies the parameters of a DB cluster parameter group.
 
 Type annotations for
-`aiobotocore.create_client("neptune").modify_db_cluster_parameter_group`
-method.
+`session.create_client("neptune").modify_db_cluster_parameter_group` method.
 
 Boto3 documentation:
 [Neptune.Client.modify_db_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.modify_db_cluster_parameter_group)
@@ -1636,8 +1629,7 @@ Adds an attribute and values to, or removes an attribute and values from, a
 manual DB cluster snapshot.
 
 Type annotations for
-`aiobotocore.create_client("neptune").modify_db_cluster_snapshot_attribute`
-method.
+`session.create_client("neptune").modify_db_cluster_snapshot_attribute` method.
 
 Boto3 documentation:
 [Neptune.Client.modify_db_cluster_snapshot_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.modify_db_cluster_snapshot_attribute)
@@ -1664,7 +1656,7 @@ Returns a `Coroutine` for
 
 Modifies settings for a DB instance.
 
-Type annotations for `aiobotocore.create_client("neptune").modify_db_instance`
+Type annotations for `session.create_client("neptune").modify_db_instance`
 method.
 
 Boto3 documentation:
@@ -1727,7 +1719,7 @@ Returns a `Coroutine` for
 Modifies the parameters of a DB parameter group.
 
 Type annotations for
-`aiobotocore.create_client("neptune").modify_db_parameter_group` method.
+`session.create_client("neptune").modify_db_parameter_group` method.
 
 Boto3 documentation:
 [Neptune.Client.modify_db_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.modify_db_parameter_group)
@@ -1754,8 +1746,8 @@ Returns a `Coroutine` for
 
 Modifies an existing DB subnet group.
 
-Type annotations for
-`aiobotocore.create_client("neptune").modify_db_subnet_group` method.
+Type annotations for `session.create_client("neptune").modify_db_subnet_group`
+method.
 
 Boto3 documentation:
 [Neptune.Client.modify_db_subnet_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.modify_db_subnet_group)
@@ -1782,7 +1774,7 @@ Returns a `Coroutine` for
 Modifies an existing event notification subscription.
 
 Type annotations for
-`aiobotocore.create_client("neptune").modify_event_subscription` method.
+`session.create_client("neptune").modify_event_subscription` method.
 
 Boto3 documentation:
 [Neptune.Client.modify_event_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.modify_event_subscription)
@@ -1811,7 +1803,7 @@ Returns a `Coroutine` for
 Not supported.
 
 Type annotations for
-`aiobotocore.create_client("neptune").promote_read_replica_db_cluster` method.
+`session.create_client("neptune").promote_read_replica_db_cluster` method.
 
 Boto3 documentation:
 [Neptune.Client.promote_read_replica_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.promote_read_replica_db_cluster)
@@ -1835,7 +1827,7 @@ Returns a `Coroutine` for
 
 You might need to reboot your DB instance, usually for maintenance reasons.
 
-Type annotations for `aiobotocore.create_client("neptune").reboot_db_instance`
+Type annotations for `session.create_client("neptune").reboot_db_instance`
 method.
 
 Boto3 documentation:
@@ -1862,7 +1854,7 @@ Returns a `Coroutine` for
 Disassociates an Identity and Access Management (IAM) role from a DB cluster.
 
 Type annotations for
-`aiobotocore.create_client("neptune").remove_role_from_db_cluster` method.
+`session.create_client("neptune").remove_role_from_db_cluster` method.
 
 Boto3 documentation:
 [Neptune.Client.remove_role_from_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.remove_role_from_db_cluster)
@@ -1886,7 +1878,7 @@ Keyword-only arguments:
 Removes a source identifier from an existing event notification subscription.
 
 Type annotations for
-`aiobotocore.create_client("neptune").remove_source_identifier_from_subscription`
+`session.create_client("neptune").remove_source_identifier_from_subscription`
 method.
 
 Boto3 documentation:
@@ -1913,7 +1905,7 @@ Returns a `Coroutine` for
 Removes metadata tags from an Amazon Neptune resource.
 
 Type annotations for
-`aiobotocore.create_client("neptune").remove_tags_from_resource` method.
+`session.create_client("neptune").remove_tags_from_resource` method.
 
 Boto3 documentation:
 [Neptune.Client.remove_tags_from_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.remove_tags_from_resource)
@@ -1936,7 +1928,7 @@ Keyword-only arguments:
 Modifies the parameters of a DB cluster parameter group to the default value.
 
 Type annotations for
-`aiobotocore.create_client("neptune").reset_db_cluster_parameter_group` method.
+`session.create_client("neptune").reset_db_cluster_parameter_group` method.
 
 Boto3 documentation:
 [Neptune.Client.reset_db_cluster_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.reset_db_cluster_parameter_group)
@@ -1965,7 +1957,7 @@ Modifies the parameters of a DB parameter group to the engine/system default
 value.
 
 Type annotations for
-`aiobotocore.create_client("neptune").reset_db_parameter_group` method.
+`session.create_client("neptune").reset_db_parameter_group` method.
 
 Boto3 documentation:
 [Neptune.Client.reset_db_parameter_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.reset_db_parameter_group)
@@ -1993,7 +1985,7 @@ Returns a `Coroutine` for
 Creates a new DB cluster from a DB snapshot or DB cluster snapshot.
 
 Type annotations for
-`aiobotocore.create_client("neptune").restore_db_cluster_from_snapshot` method.
+`session.create_client("neptune").restore_db_cluster_from_snapshot` method.
 
 Boto3 documentation:
 [Neptune.Client.restore_db_cluster_from_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.restore_db_cluster_from_snapshot)
@@ -2034,8 +2026,7 @@ Returns a `Coroutine` for
 Restores a DB cluster to an arbitrary point in time.
 
 Type annotations for
-`aiobotocore.create_client("neptune").restore_db_cluster_to_point_in_time`
-method.
+`session.create_client("neptune").restore_db_cluster_to_point_in_time` method.
 
 Boto3 documentation:
 [Neptune.Client.restore_db_cluster_to_point_in_time](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.restore_db_cluster_to_point_in_time)
@@ -2074,7 +2065,7 @@ Returns a `Coroutine` for
 Starts an Amazon Neptune DB cluster that was stopped using the Amazon console,
 the Amazon CLI stop-db-cluster command, or the StopDBCluster API.
 
-Type annotations for `aiobotocore.create_client("neptune").start_db_cluster`
+Type annotations for `session.create_client("neptune").start_db_cluster`
 method.
 
 Boto3 documentation:
@@ -2098,8 +2089,7 @@ Returns a `Coroutine` for
 
 Stops an Amazon Neptune DB cluster.
 
-Type annotations for `aiobotocore.create_client("neptune").stop_db_cluster`
-method.
+Type annotations for `session.create_client("neptune").stop_db_cluster` method.
 
 Boto3 documentation:
 [Neptune.Client.stop_db_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.stop_db_cluster)
@@ -2116,12 +2106,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [StopDBClusterResultTypeDef](./type_defs.md#stopdbclusterresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("neptune").__aenter__` method.
+
+Boto3 documentation:
+[Neptune.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [NeptuneClient](#neptuneclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("neptune").__aexit__` method.
+
+Boto3 documentation:
+[Neptune.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("neptune").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("neptune").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_db_cluster_endpoints")` ->
   [DescribeDBClusterEndpointsPaginator](./paginators.md#describedbclusterendpointspaginator)
@@ -2158,8 +2180,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("neptune").get_waiter` method
-with overloads.
+Type annotations for `session.create_client("neptune").get_waiter` method with
+overloads.
 
 - `client.get_waiter("db_instance_available")` ->
   [DBInstanceAvailableWaiter](./waiters.md#dbinstanceavailablewaiter)

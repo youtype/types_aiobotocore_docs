@@ -39,22 +39,25 @@ type annotations stubs module
     - [resolve_component_candidates](#resolve_component_candidates)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="greengrassv2client"></a>
 
 ## GreengrassV2Client
 
-Type annotations for `aiobotocore.create_client("greengrassv2")`
+Type annotations for `session.create_client("greengrassv2")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_greengrassv2.client import GreengrassV2Client
 
-def get_greengrassv2_client() -> GreengrassV2Client:
-    return Session().client("greengrassv2")
+session = get_session()
+async with session.create_client("greengrassv2") as client:
+    client: GreengrassV2Client
 ```
 
 Boto3 documentation:
@@ -96,8 +99,7 @@ Exceptions:
 
 GreengrassV2Client exceptions.
 
-Type annotations for `aiobotocore.create_client("greengrassv2").exceptions`
-method.
+Type annotations for `session.create_client("greengrassv2").exceptions` method.
 
 Boto3 documentation:
 [GreengrassV2.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.exceptions)
@@ -111,7 +113,7 @@ Returns [Exceptions](#exceptions).
 Associate a list of client devices with a core device.
 
 Type annotations for
-`aiobotocore.create_client("greengrassv2").batch_associate_client_device_with_core_device`
+`session.create_client("greengrassv2").batch_associate_client_device_with_core_device`
 method.
 
 Boto3 documentation:
@@ -140,7 +142,7 @@ Returns a `Coroutine` for
 Disassociate a list of client devices from a core device.
 
 Type annotations for
-`aiobotocore.create_client("greengrassv2").batch_disassociate_client_device_from_core_device`
+`session.create_client("greengrassv2").batch_disassociate_client_device_from_core_device`
 method.
 
 Boto3 documentation:
@@ -168,19 +170,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("greengrassv2").can_paginate`
+Type annotations for `session.create_client("greengrassv2").can_paginate`
 method.
 
 Boto3 documentation:
 [GreengrassV2.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_deployment"></a>
 
@@ -188,8 +188,8 @@ Returns a `Coroutine` for `bool`.
 
 Cancels a deployment.
 
-Type annotations for
-`aiobotocore.create_client("greengrassv2").cancel_deployment` method.
+Type annotations for `session.create_client("greengrassv2").cancel_deployment`
+method.
 
 Boto3 documentation:
 [GreengrassV2.Client.cancel_deployment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.cancel_deployment)
@@ -213,7 +213,7 @@ Returns a `Coroutine` for
 Creates a component.
 
 Type annotations for
-`aiobotocore.create_client("greengrassv2").create_component_version` method.
+`session.create_client("greengrassv2").create_component_version` method.
 
 Boto3 documentation:
 [GreengrassV2.Client.create_component_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.create_component_version)
@@ -242,8 +242,8 @@ Returns a `Coroutine` for
 Creates a continuous deployment for a target, which is a Greengrass core device
 or group of core devices.
 
-Type annotations for
-`aiobotocore.create_client("greengrassv2").create_deployment` method.
+Type annotations for `session.create_client("greengrassv2").create_deployment`
+method.
 
 Boto3 documentation:
 [GreengrassV2.Client.create_deployment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.create_deployment)
@@ -275,8 +275,8 @@ Returns a `Coroutine` for
 
 Deletes a version of a component from IoT Greengrass.
 
-Type annotations for
-`aiobotocore.create_client("greengrassv2").delete_component` method.
+Type annotations for `session.create_client("greengrassv2").delete_component`
+method.
 
 Boto3 documentation:
 [GreengrassV2.Client.delete_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.delete_component)
@@ -296,8 +296,8 @@ Keyword-only arguments:
 
 Deletes a Greengrass core device, which is an IoT thing.
 
-Type annotations for
-`aiobotocore.create_client("greengrassv2").delete_core_device` method.
+Type annotations for `session.create_client("greengrassv2").delete_core_device`
+method.
 
 Boto3 documentation:
 [GreengrassV2.Client.delete_core_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.delete_core_device)
@@ -318,8 +318,8 @@ Keyword-only arguments:
 
 Retrieves metadata for a version of a component.
 
-Type annotations for
-`aiobotocore.create_client("greengrassv2").describe_component` method.
+Type annotations for `session.create_client("greengrassv2").describe_component`
+method.
 
 Boto3 documentation:
 [GreengrassV2.Client.describe_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.describe_component)
@@ -344,7 +344,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("greengrassv2").generate_presigned_url` method.
+`session.create_client("greengrassv2").generate_presigned_url` method.
 
 Boto3 documentation:
 [GreengrassV2.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.generate_presigned_url)
@@ -367,7 +367,7 @@ Returns a `Coroutine` for `str`.
 
 Gets the recipe for a version of a component.
 
-Type annotations for `aiobotocore.create_client("greengrassv2").get_component`
+Type annotations for `session.create_client("greengrassv2").get_component`
 method.
 
 Boto3 documentation:
@@ -394,8 +394,7 @@ Returns a `Coroutine` for
 Gets the pre-signed URL to download a public component artifact.
 
 Type annotations for
-`aiobotocore.create_client("greengrassv2").get_component_version_artifact`
-method.
+`session.create_client("greengrassv2").get_component_version_artifact` method.
 
 Boto3 documentation:
 [GreengrassV2.Client.get_component_version_artifact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.get_component_version_artifact)
@@ -420,8 +419,8 @@ Returns a `Coroutine` for
 
 Retrieves metadata for a Greengrass core device.
 
-Type annotations for
-`aiobotocore.create_client("greengrassv2").get_core_device` method.
+Type annotations for `session.create_client("greengrassv2").get_core_device`
+method.
 
 Boto3 documentation:
 [GreengrassV2.Client.get_core_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.get_core_device)
@@ -444,7 +443,7 @@ Returns a `Coroutine` for
 
 Gets a deployment.
 
-Type annotations for `aiobotocore.create_client("greengrassv2").get_deployment`
+Type annotations for `session.create_client("greengrassv2").get_deployment`
 method.
 
 Boto3 documentation:
@@ -470,7 +469,7 @@ Retrieves a paginated list of client devices that are associated with a core
 device.
 
 Type annotations for
-`aiobotocore.create_client("greengrassv2").list_client_devices_associated_with_core_device`
+`session.create_client("greengrassv2").list_client_devices_associated_with_core_device`
 method.
 
 Boto3 documentation:
@@ -499,7 +498,7 @@ Returns a `Coroutine` for
 Retrieves a paginated list of all versions for a component.
 
 Type annotations for
-`aiobotocore.create_client("greengrassv2").list_component_versions` method.
+`session.create_client("greengrassv2").list_component_versions` method.
 
 Boto3 documentation:
 [GreengrassV2.Client.list_component_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.list_component_versions)
@@ -525,8 +524,8 @@ Returns a `Coroutine` for
 
 Retrieves a paginated list of component summaries.
 
-Type annotations for
-`aiobotocore.create_client("greengrassv2").list_components` method.
+Type annotations for `session.create_client("greengrassv2").list_components`
+method.
 
 Boto3 documentation:
 [GreengrassV2.Client.list_components](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.list_components)
@@ -552,8 +551,8 @@ Returns a `Coroutine` for
 
 Retrieves a paginated list of Greengrass core devices.
 
-Type annotations for
-`aiobotocore.create_client("greengrassv2").list_core_devices` method.
+Type annotations for `session.create_client("greengrassv2").list_core_devices`
+method.
 
 Boto3 documentation:
 [GreengrassV2.Client.list_core_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.list_core_devices)
@@ -579,8 +578,8 @@ Returns a `Coroutine` for
 
 Retrieves a paginated list of deployments.
 
-Type annotations for
-`aiobotocore.create_client("greengrassv2").list_deployments` method.
+Type annotations for `session.create_client("greengrassv2").list_deployments`
+method.
 
 Boto3 documentation:
 [GreengrassV2.Client.list_deployments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.list_deployments)
@@ -609,7 +608,7 @@ Retrieves a paginated list of deployment jobs that IoT Greengrass sends to
 Greengrass core devices.
 
 Type annotations for
-`aiobotocore.create_client("greengrassv2").list_effective_deployments` method.
+`session.create_client("greengrassv2").list_effective_deployments` method.
 
 Boto3 documentation:
 [GreengrassV2.Client.list_effective_deployments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.list_effective_deployments)
@@ -637,7 +636,7 @@ Retrieves a paginated list of the components that a Greengrass core device
 runs.
 
 Type annotations for
-`aiobotocore.create_client("greengrassv2").list_installed_components` method.
+`session.create_client("greengrassv2").list_installed_components` method.
 
 Boto3 documentation:
 [GreengrassV2.Client.list_installed_components](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.list_installed_components)
@@ -664,7 +663,7 @@ Returns a `Coroutine` for
 Retrieves the list of tags for an IoT Greengrass resource.
 
 Type annotations for
-`aiobotocore.create_client("greengrassv2").list_tags_for_resource` method.
+`session.create_client("greengrassv2").list_tags_for_resource` method.
 
 Boto3 documentation:
 [GreengrassV2.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.list_tags_for_resource)
@@ -690,8 +689,7 @@ Retrieves a list of components that meet the component, version, and platform
 requirements of a deployment.
 
 Type annotations for
-`aiobotocore.create_client("greengrassv2").resolve_component_candidates`
-method.
+`session.create_client("greengrassv2").resolve_component_candidates` method.
 
 Boto3 documentation:
 [GreengrassV2.Client.resolve_component_candidates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.resolve_component_candidates)
@@ -720,7 +718,7 @@ Returns a `Coroutine` for
 
 Adds tags to an IoT Greengrass resource.
 
-Type annotations for `aiobotocore.create_client("greengrassv2").tag_resource`
+Type annotations for `session.create_client("greengrassv2").tag_resource`
 method.
 
 Boto3 documentation:
@@ -744,7 +742,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes a tag from an IoT Greengrass resource.
 
-Type annotations for `aiobotocore.create_client("greengrassv2").untag_resource`
+Type annotations for `session.create_client("greengrassv2").untag_resource`
 method.
 
 Boto3 documentation:
@@ -762,11 +760,43 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("greengrassv2").__aenter__` method.
+
+Boto3 documentation:
+[GreengrassV2.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [GreengrassV2Client](#greengrassv2client).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("greengrassv2").__aexit__` method.
+
+Boto3 documentation:
+[GreengrassV2.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/greengrassv2.html#GreengrassV2.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("greengrassv2").get_paginator`
+Type annotations for `session.create_client("greengrassv2").get_paginator`
 method with overloads.
 
 - `client.get_paginator("list_client_devices_associated_with_core_device")` ->

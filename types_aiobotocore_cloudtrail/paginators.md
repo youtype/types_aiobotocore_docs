@@ -20,17 +20,19 @@ type annotations stubs module
 ## ListPublicKeysPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudtrail").get_paginator("list_public_keys")`.
+`session.create_client("cloudtrail").get_paginator("list_public_keys")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudtrail.paginator import ListPublicKeysPaginator
 
-def get_list_public_keys_paginator() -> ListPublicKeysPaginator:
-    return Session().create_client("cloudtrail").get_paginator("list_public_keys")
+session = get_session()
+async with session.create_client("cloudtrail") as client:
+    client: CloudTrailClient
+    paginator: ListPublicKeysPaginator = client.get_paginator("list_public_keys")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `ListPublicKeysPaginator.paginate` method:
 ## ListTagsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudtrail").get_paginator("list_tags")`.
+`session.create_client("cloudtrail").get_paginator("list_tags")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudtrail.paginator import ListTagsPaginator
 
-def get_list_tags_paginator() -> ListTagsPaginator:
-    return Session().create_client("cloudtrail").get_paginator("list_tags")
+session = get_session()
+async with session.create_client("cloudtrail") as client:
+    client: CloudTrailClient
+    paginator: ListTagsPaginator = client.get_paginator("list_tags")
 ```
 
 Boto3 documentation:
@@ -81,17 +85,19 @@ Arguments for `ListTagsPaginator.paginate` method:
 ## ListTrailsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudtrail").get_paginator("list_trails")`.
+`session.create_client("cloudtrail").get_paginator("list_trails")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudtrail.paginator import ListTrailsPaginator
 
-def get_list_trails_paginator() -> ListTrailsPaginator:
-    return Session().create_client("cloudtrail").get_paginator("list_trails")
+session = get_session()
+async with session.create_client("cloudtrail") as client:
+    client: CloudTrailClient
+    paginator: ListTrailsPaginator = client.get_paginator("list_trails")
 ```
 
 Boto3 documentation:
@@ -110,17 +116,19 @@ Arguments for `ListTrailsPaginator.paginate` method:
 ## LookupEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudtrail").get_paginator("lookup_events")`.
+`session.create_client("cloudtrail").get_paginator("lookup_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudtrail.paginator import LookupEventsPaginator
 
-def get_lookup_events_paginator() -> LookupEventsPaginator:
-    return Session().create_client("cloudtrail").get_paginator("lookup_events")
+session = get_session()
+async with session.create_client("cloudtrail") as client:
+    client: CloudTrailClient
+    paginator: LookupEventsPaginator = client.get_paginator("lookup_events")
 ```
 
 Boto3 documentation:

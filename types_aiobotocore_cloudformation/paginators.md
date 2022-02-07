@@ -30,17 +30,19 @@ type annotations stubs module
 ## DescribeAccountLimitsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_paginator("describe_account_limits")`.
+`session.create_client("cloudformation").get_paginator("describe_account_limits")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudformation.paginator import DescribeAccountLimitsPaginator
 
-def get_describe_account_limits_paginator() -> DescribeAccountLimitsPaginator:
-    return Session().create_client("cloudformation").get_paginator("describe_account_limits")
+session = get_session()
+async with session.create_client("cloudformation") as client:
+    client: CloudFormationClient
+    paginator: DescribeAccountLimitsPaginator = client.get_paginator("describe_account_limits")
 ```
 
 Boto3 documentation:
@@ -59,17 +61,19 @@ Arguments for `DescribeAccountLimitsPaginator.paginate` method:
 ## DescribeChangeSetPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_paginator("describe_change_set")`.
+`session.create_client("cloudformation").get_paginator("describe_change_set")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudformation.paginator import DescribeChangeSetPaginator
 
-def get_describe_change_set_paginator() -> DescribeChangeSetPaginator:
-    return Session().create_client("cloudformation").get_paginator("describe_change_set")
+session = get_session()
+async with session.create_client("cloudformation") as client:
+    client: CloudFormationClient
+    paginator: DescribeChangeSetPaginator = client.get_paginator("describe_change_set")
 ```
 
 Boto3 documentation:
@@ -90,17 +94,19 @@ Arguments for `DescribeChangeSetPaginator.paginate` method:
 ## DescribeStackEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_paginator("describe_stack_events")`.
+`session.create_client("cloudformation").get_paginator("describe_stack_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudformation.paginator import DescribeStackEventsPaginator
 
-def get_describe_stack_events_paginator() -> DescribeStackEventsPaginator:
-    return Session().create_client("cloudformation").get_paginator("describe_stack_events")
+session = get_session()
+async with session.create_client("cloudformation") as client:
+    client: CloudFormationClient
+    paginator: DescribeStackEventsPaginator = client.get_paginator("describe_stack_events")
 ```
 
 Boto3 documentation:
@@ -120,17 +126,19 @@ Arguments for `DescribeStackEventsPaginator.paginate` method:
 ## DescribeStacksPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_paginator("describe_stacks")`.
+`session.create_client("cloudformation").get_paginator("describe_stacks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudformation.paginator import DescribeStacksPaginator
 
-def get_describe_stacks_paginator() -> DescribeStacksPaginator:
-    return Session().create_client("cloudformation").get_paginator("describe_stacks")
+session = get_session()
+async with session.create_client("cloudformation") as client:
+    client: CloudFormationClient
+    paginator: DescribeStacksPaginator = client.get_paginator("describe_stacks")
 ```
 
 Boto3 documentation:
@@ -150,17 +158,19 @@ Arguments for `DescribeStacksPaginator.paginate` method:
 ## ListChangeSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_paginator("list_change_sets")`.
+`session.create_client("cloudformation").get_paginator("list_change_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudformation.paginator import ListChangeSetsPaginator
 
-def get_list_change_sets_paginator() -> ListChangeSetsPaginator:
-    return Session().create_client("cloudformation").get_paginator("list_change_sets")
+session = get_session()
+async with session.create_client("cloudformation") as client:
+    client: CloudFormationClient
+    paginator: ListChangeSetsPaginator = client.get_paginator("list_change_sets")
 ```
 
 Boto3 documentation:
@@ -180,17 +190,19 @@ Arguments for `ListChangeSetsPaginator.paginate` method:
 ## ListExportsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_paginator("list_exports")`.
+`session.create_client("cloudformation").get_paginator("list_exports")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudformation.paginator import ListExportsPaginator
 
-def get_list_exports_paginator() -> ListExportsPaginator:
-    return Session().create_client("cloudformation").get_paginator("list_exports")
+session = get_session()
+async with session.create_client("cloudformation") as client:
+    client: CloudFormationClient
+    paginator: ListExportsPaginator = client.get_paginator("list_exports")
 ```
 
 Boto3 documentation:
@@ -209,17 +221,19 @@ Arguments for `ListExportsPaginator.paginate` method:
 ## ListImportsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_paginator("list_imports")`.
+`session.create_client("cloudformation").get_paginator("list_imports")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudformation.paginator import ListImportsPaginator
 
-def get_list_imports_paginator() -> ListImportsPaginator:
-    return Session().create_client("cloudformation").get_paginator("list_imports")
+session = get_session()
+async with session.create_client("cloudformation") as client:
+    client: CloudFormationClient
+    paginator: ListImportsPaginator = client.get_paginator("list_imports")
 ```
 
 Boto3 documentation:
@@ -239,17 +253,19 @@ Arguments for `ListImportsPaginator.paginate` method:
 ## ListStackInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_paginator("list_stack_instances")`.
+`session.create_client("cloudformation").get_paginator("list_stack_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudformation.paginator import ListStackInstancesPaginator
 
-def get_list_stack_instances_paginator() -> ListStackInstancesPaginator:
-    return Session().create_client("cloudformation").get_paginator("list_stack_instances")
+session = get_session()
+async with session.create_client("cloudformation") as client:
+    client: CloudFormationClient
+    paginator: ListStackInstancesPaginator = client.get_paginator("list_stack_instances")
 ```
 
 Boto3 documentation:
@@ -274,17 +290,19 @@ Arguments for `ListStackInstancesPaginator.paginate` method:
 ## ListStackResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_paginator("list_stack_resources")`.
+`session.create_client("cloudformation").get_paginator("list_stack_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudformation.paginator import ListStackResourcesPaginator
 
-def get_list_stack_resources_paginator() -> ListStackResourcesPaginator:
-    return Session().create_client("cloudformation").get_paginator("list_stack_resources")
+session = get_session()
+async with session.create_client("cloudformation") as client:
+    client: CloudFormationClient
+    paginator: ListStackResourcesPaginator = client.get_paginator("list_stack_resources")
 ```
 
 Boto3 documentation:
@@ -304,17 +322,19 @@ Arguments for `ListStackResourcesPaginator.paginate` method:
 ## ListStackSetOperationResultsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_paginator("list_stack_set_operation_results")`.
+`session.create_client("cloudformation").get_paginator("list_stack_set_operation_results")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudformation.paginator import ListStackSetOperationResultsPaginator
 
-def get_list_stack_set_operation_results_paginator() -> ListStackSetOperationResultsPaginator:
-    return Session().create_client("cloudformation").get_paginator("list_stack_set_operation_results")
+session = get_session()
+async with session.create_client("cloudformation") as client:
+    client: CloudFormationClient
+    paginator: ListStackSetOperationResultsPaginator = client.get_paginator("list_stack_set_operation_results")
 ```
 
 Boto3 documentation:
@@ -336,17 +356,19 @@ Arguments for `ListStackSetOperationResultsPaginator.paginate` method:
 ## ListStackSetOperationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_paginator("list_stack_set_operations")`.
+`session.create_client("cloudformation").get_paginator("list_stack_set_operations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudformation.paginator import ListStackSetOperationsPaginator
 
-def get_list_stack_set_operations_paginator() -> ListStackSetOperationsPaginator:
-    return Session().create_client("cloudformation").get_paginator("list_stack_set_operations")
+session = get_session()
+async with session.create_client("cloudformation") as client:
+    client: CloudFormationClient
+    paginator: ListStackSetOperationsPaginator = client.get_paginator("list_stack_set_operations")
 ```
 
 Boto3 documentation:
@@ -367,17 +389,19 @@ Arguments for `ListStackSetOperationsPaginator.paginate` method:
 ## ListStackSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_paginator("list_stack_sets")`.
+`session.create_client("cloudformation").get_paginator("list_stack_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudformation.paginator import ListStackSetsPaginator
 
-def get_list_stack_sets_paginator() -> ListStackSetsPaginator:
-    return Session().create_client("cloudformation").get_paginator("list_stack_sets")
+session = get_session()
+async with session.create_client("cloudformation") as client:
+    client: CloudFormationClient
+    paginator: ListStackSetsPaginator = client.get_paginator("list_stack_sets")
 ```
 
 Boto3 documentation:
@@ -398,17 +422,19 @@ Arguments for `ListStackSetsPaginator.paginate` method:
 ## ListStacksPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_paginator("list_stacks")`.
+`session.create_client("cloudformation").get_paginator("list_stacks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudformation.paginator import ListStacksPaginator
 
-def get_list_stacks_paginator() -> ListStacksPaginator:
-    return Session().create_client("cloudformation").get_paginator("list_stacks")
+session = get_session()
+async with session.create_client("cloudformation") as client:
+    client: CloudFormationClient
+    paginator: ListStacksPaginator = client.get_paginator("list_stacks")
 ```
 
 Boto3 documentation:
@@ -429,17 +455,19 @@ Arguments for `ListStacksPaginator.paginate` method:
 ## ListTypesPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_paginator("list_types")`.
+`session.create_client("cloudformation").get_paginator("list_types")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudformation.paginator import ListTypesPaginator
 
-def get_list_types_paginator() -> ListTypesPaginator:
-    return Session().create_client("cloudformation").get_paginator("list_types")
+session = get_session()
+async with session.create_client("cloudformation") as client:
+    client: CloudFormationClient
+    paginator: ListTypesPaginator = client.get_paginator("list_types")
 ```
 
 Boto3 documentation:

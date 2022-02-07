@@ -44,22 +44,25 @@ type annotations stubs module
     - [update_data_set](#update_data_set)
     - [update_event_action](#update_event_action)
     - [update_revision](#update_revision)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="dataexchangeclient"></a>
 
 ## DataExchangeClient
 
-Type annotations for `aiobotocore.create_client("dataexchange")`
+Type annotations for `session.create_client("dataexchange")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_dataexchange.client import DataExchangeClient
 
-def get_dataexchange_client() -> DataExchangeClient:
-    return Session().client("dataexchange")
+session = get_session()
+async with session.create_client("dataexchange") as client:
+    client: DataExchangeClient
 ```
 
 Boto3 documentation:
@@ -100,8 +103,7 @@ Exceptions:
 
 DataExchangeClient exceptions.
 
-Type annotations for `aiobotocore.create_client("dataexchange").exceptions`
-method.
+Type annotations for `session.create_client("dataexchange").exceptions` method.
 
 Boto3 documentation:
 [DataExchange.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.exceptions)
@@ -114,19 +116,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("dataexchange").can_paginate`
+Type annotations for `session.create_client("dataexchange").can_paginate`
 method.
 
 Boto3 documentation:
 [DataExchange.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_job"></a>
 
@@ -134,8 +134,7 @@ Returns a `Coroutine` for `bool`.
 
 This operation cancels a job.
 
-Type annotations for `aiobotocore.create_client("dataexchange").cancel_job`
-method.
+Type annotations for `session.create_client("dataexchange").cancel_job` method.
 
 Boto3 documentation:
 [DataExchange.Client.cancel_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.cancel_job)
@@ -155,8 +154,8 @@ Keyword-only arguments:
 
 This operation creates a data set.
 
-Type annotations for
-`aiobotocore.create_client("dataexchange").create_data_set` method.
+Type annotations for `session.create_client("dataexchange").create_data_set`
+method.
 
 Boto3 documentation:
 [DataExchange.Client.create_data_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.create_data_set)
@@ -183,7 +182,7 @@ Returns a `Coroutine` for
 This operation creates an event action.
 
 Type annotations for
-`aiobotocore.create_client("dataexchange").create_event_action` method.
+`session.create_client("dataexchange").create_event_action` method.
 
 Boto3 documentation:
 [DataExchange.Client.create_event_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.create_event_action)
@@ -208,8 +207,7 @@ Returns a `Coroutine` for
 
 This operation creates a job.
 
-Type annotations for `aiobotocore.create_client("dataexchange").create_job`
-method.
+Type annotations for `session.create_client("dataexchange").create_job` method.
 
 Boto3 documentation:
 [DataExchange.Client.create_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.create_job)
@@ -234,8 +232,8 @@ Returns a `Coroutine` for
 
 This operation creates a revision for a data set.
 
-Type annotations for
-`aiobotocore.create_client("dataexchange").create_revision` method.
+Type annotations for `session.create_client("dataexchange").create_revision`
+method.
 
 Boto3 documentation:
 [DataExchange.Client.create_revision](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.create_revision)
@@ -260,7 +258,7 @@ Returns a `Coroutine` for
 
 This operation deletes an asset.
 
-Type annotations for `aiobotocore.create_client("dataexchange").delete_asset`
+Type annotations for `session.create_client("dataexchange").delete_asset`
 method.
 
 Boto3 documentation:
@@ -283,8 +281,8 @@ Keyword-only arguments:
 
 This operation deletes a data set.
 
-Type annotations for
-`aiobotocore.create_client("dataexchange").delete_data_set` method.
+Type annotations for `session.create_client("dataexchange").delete_data_set`
+method.
 
 Boto3 documentation:
 [DataExchange.Client.delete_data_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.delete_data_set)
@@ -305,7 +303,7 @@ Keyword-only arguments:
 This operation deletes the event action.
 
 Type annotations for
-`aiobotocore.create_client("dataexchange").delete_event_action` method.
+`session.create_client("dataexchange").delete_event_action` method.
 
 Boto3 documentation:
 [DataExchange.Client.delete_event_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.delete_event_action)
@@ -326,8 +324,8 @@ Keyword-only arguments:
 
 This operation deletes a revision.
 
-Type annotations for
-`aiobotocore.create_client("dataexchange").delete_revision` method.
+Type annotations for `session.create_client("dataexchange").delete_revision`
+method.
 
 Boto3 documentation:
 [DataExchange.Client.delete_revision](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.delete_revision)
@@ -349,7 +347,7 @@ Keyword-only arguments:
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("dataexchange").generate_presigned_url` method.
+`session.create_client("dataexchange").generate_presigned_url` method.
 
 Boto3 documentation:
 [DataExchange.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.generate_presigned_url)
@@ -372,8 +370,7 @@ Returns a `Coroutine` for `str`.
 
 This operation returns information about an asset.
 
-Type annotations for `aiobotocore.create_client("dataexchange").get_asset`
-method.
+Type annotations for `session.create_client("dataexchange").get_asset` method.
 
 Boto3 documentation:
 [DataExchange.Client.get_asset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.get_asset)
@@ -398,7 +395,7 @@ Returns a `Coroutine` for
 
 This operation returns information about a data set.
 
-Type annotations for `aiobotocore.create_client("dataexchange").get_data_set`
+Type annotations for `session.create_client("dataexchange").get_data_set`
 method.
 
 Boto3 documentation:
@@ -422,8 +419,8 @@ Returns a `Coroutine` for
 
 This operation retrieves information about an event action.
 
-Type annotations for
-`aiobotocore.create_client("dataexchange").get_event_action` method.
+Type annotations for `session.create_client("dataexchange").get_event_action`
+method.
 
 Boto3 documentation:
 [DataExchange.Client.get_event_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.get_event_action)
@@ -446,8 +443,7 @@ Returns a `Coroutine` for
 
 This operation returns information about a job.
 
-Type annotations for `aiobotocore.create_client("dataexchange").get_job`
-method.
+Type annotations for `session.create_client("dataexchange").get_job` method.
 
 Boto3 documentation:
 [DataExchange.Client.get_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.get_job)
@@ -470,7 +466,7 @@ Returns a `Coroutine` for
 
 This operation returns information about a revision.
 
-Type annotations for `aiobotocore.create_client("dataexchange").get_revision`
+Type annotations for `session.create_client("dataexchange").get_revision`
 method.
 
 Boto3 documentation:
@@ -497,7 +493,7 @@ This operation lists a data set's revisions sorted by CreatedAt in descending
 order.
 
 Type annotations for
-`aiobotocore.create_client("dataexchange").list_data_set_revisions` method.
+`session.create_client("dataexchange").list_data_set_revisions` method.
 
 Boto3 documentation:
 [DataExchange.Client.list_data_set_revisions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.list_data_set_revisions)
@@ -523,7 +519,7 @@ Returns a `Coroutine` for
 
 This operation lists your data sets.
 
-Type annotations for `aiobotocore.create_client("dataexchange").list_data_sets`
+Type annotations for `session.create_client("dataexchange").list_data_sets`
 method.
 
 Boto3 documentation:
@@ -549,8 +545,8 @@ Returns a `Coroutine` for
 
 This operation lists your event actions.
 
-Type annotations for
-`aiobotocore.create_client("dataexchange").list_event_actions` method.
+Type annotations for `session.create_client("dataexchange").list_event_actions`
+method.
 
 Boto3 documentation:
 [DataExchange.Client.list_event_actions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.list_event_actions)
@@ -576,8 +572,7 @@ Returns a `Coroutine` for
 
 This operation lists your jobs sorted by CreatedAt in descending order.
 
-Type annotations for `aiobotocore.create_client("dataexchange").list_jobs`
-method.
+Type annotations for `session.create_client("dataexchange").list_jobs` method.
 
 Boto3 documentation:
 [DataExchange.Client.list_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.list_jobs)
@@ -605,7 +600,7 @@ This operation lists a revision's assets sorted alphabetically in descending
 order.
 
 Type annotations for
-`aiobotocore.create_client("dataexchange").list_revision_assets` method.
+`session.create_client("dataexchange").list_revision_assets` method.
 
 Boto3 documentation:
 [DataExchange.Client.list_revision_assets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.list_revision_assets)
@@ -633,7 +628,7 @@ Returns a `Coroutine` for
 This operation lists the tags on the resource.
 
 Type annotations for
-`aiobotocore.create_client("dataexchange").list_tags_for_resource` method.
+`session.create_client("dataexchange").list_tags_for_resource` method.
 
 Boto3 documentation:
 [DataExchange.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.list_tags_for_resource)
@@ -657,7 +652,7 @@ Returns a `Coroutine` for
 
 This operation invokes an API Gateway API asset.
 
-Type annotations for `aiobotocore.create_client("dataexchange").send_api_asset`
+Type annotations for `session.create_client("dataexchange").send_api_asset`
 method.
 
 Boto3 documentation:
@@ -688,8 +683,7 @@ Returns a `Coroutine` for
 
 This operation starts a job.
 
-Type annotations for `aiobotocore.create_client("dataexchange").start_job`
-method.
+Type annotations for `session.create_client("dataexchange").start_job` method.
 
 Boto3 documentation:
 [DataExchange.Client.start_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.start_job)
@@ -711,7 +705,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 This operation tags a resource.
 
-Type annotations for `aiobotocore.create_client("dataexchange").tag_resource`
+Type annotations for `session.create_client("dataexchange").tag_resource`
 method.
 
 Boto3 documentation:
@@ -733,7 +727,7 @@ Keyword-only arguments:
 
 This operation removes one or more tags from a resource.
 
-Type annotations for `aiobotocore.create_client("dataexchange").untag_resource`
+Type annotations for `session.create_client("dataexchange").untag_resource`
 method.
 
 Boto3 documentation:
@@ -755,7 +749,7 @@ Keyword-only arguments:
 
 This operation updates an asset.
 
-Type annotations for `aiobotocore.create_client("dataexchange").update_asset`
+Type annotations for `session.create_client("dataexchange").update_asset`
 method.
 
 Boto3 documentation:
@@ -782,8 +776,8 @@ Returns a `Coroutine` for
 
 This operation updates a data set.
 
-Type annotations for
-`aiobotocore.create_client("dataexchange").update_data_set` method.
+Type annotations for `session.create_client("dataexchange").update_data_set`
+method.
 
 Boto3 documentation:
 [DataExchange.Client.update_data_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.update_data_set)
@@ -809,7 +803,7 @@ Returns a `Coroutine` for
 This operation updates the event action.
 
 Type annotations for
-`aiobotocore.create_client("dataexchange").update_event_action` method.
+`session.create_client("dataexchange").update_event_action` method.
 
 Boto3 documentation:
 [DataExchange.Client.update_event_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.update_event_action)
@@ -834,8 +828,8 @@ Returns a `Coroutine` for
 
 This operation updates a revision.
 
-Type annotations for
-`aiobotocore.create_client("dataexchange").update_revision` method.
+Type annotations for `session.create_client("dataexchange").update_revision`
+method.
 
 Boto3 documentation:
 [DataExchange.Client.update_revision](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.update_revision)
@@ -855,11 +849,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateRevisionResponseTypeDef](./type_defs.md#updaterevisionresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("dataexchange").__aenter__` method.
+
+Boto3 documentation:
+[DataExchange.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [DataExchangeClient](#dataexchangeclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("dataexchange").__aexit__` method.
+
+Boto3 documentation:
+[DataExchange.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dataexchange.html#DataExchange.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("dataexchange").get_paginator`
+Type annotations for `session.create_client("dataexchange").get_paginator`
 method with overloads.
 
 - `client.get_paginator("list_data_set_revisions")` ->

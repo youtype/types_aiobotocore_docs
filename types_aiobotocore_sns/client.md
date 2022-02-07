@@ -56,22 +56,25 @@ type annotations stubs module
     - [unsubscribe](#unsubscribe)
     - [untag_resource](#untag_resource)
     - [verify_sms_sandbox_phone_number](#verify_sms_sandbox_phone_number)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="snsclient"></a>
 
 ## SNSClient
 
-Type annotations for `aiobotocore.create_client("sns")`
+Type annotations for `session.create_client("sns")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_sns.client import SNSClient
 
-def get_sns_client() -> SNSClient:
-    return Session().client("sns")
+session = get_session()
+async with session.create_client("sns") as client:
+    client: SNSClient
 ```
 
 Boto3 documentation:
@@ -137,7 +140,7 @@ Exceptions:
 
 SNSClient exceptions.
 
-Type annotations for `aiobotocore.create_client("sns").exceptions` method.
+Type annotations for `session.create_client("sns").exceptions` method.
 
 Boto3 documentation:
 [SNS.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.exceptions)
@@ -151,7 +154,7 @@ Returns [Exceptions](#exceptions).
 Adds a statement to a topic's access control policy, granting access for the
 specified Amazon Web Services accounts to the specified actions.
 
-Type annotations for `aiobotocore.create_client("sns").add_permission` method.
+Type annotations for `session.create_client("sns").add_permission` method.
 
 Boto3 documentation:
 [SNS.Client.add_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.add_permission)
@@ -174,18 +177,16 @@ Keyword-only arguments:
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("sns").can_paginate` method.
+Type annotations for `session.create_client("sns").can_paginate` method.
 
 Boto3 documentation:
 [SNS.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="check_if_phone_number_is_opted_out"></a>
 
@@ -195,7 +196,7 @@ Accepts a phone number and indicates whether the phone holder has opted out of
 receiving SMS messages from your Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("sns").check_if_phone_number_is_opted_out` method.
+`session.create_client("sns").check_if_phone_number_is_opted_out` method.
 
 Boto3 documentation:
 [SNS.Client.check_if_phone_number_is_opted_out](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.check_if_phone_number_is_opted_out)
@@ -220,7 +221,7 @@ Returns a `Coroutine` for
 Verifies an endpoint owner's intent to receive messages by validating the token
 sent to the endpoint by an earlier `Subscribe` action.
 
-Type annotations for `aiobotocore.create_client("sns").confirm_subscription`
+Type annotations for `session.create_client("sns").confirm_subscription`
 method.
 
 Boto3 documentation:
@@ -249,8 +250,8 @@ Creates a platform application object for one of the supported push
 notification services, such as APNS and GCM (Firebase Cloud Messaging), to
 which devices and mobile apps may register.
 
-Type annotations for
-`aiobotocore.create_client("sns").create_platform_application` method.
+Type annotations for `session.create_client("sns").create_platform_application`
+method.
 
 Boto3 documentation:
 [SNS.Client.create_platform_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.create_platform_application)
@@ -277,8 +278,8 @@ Returns a `Coroutine` for
 Creates an endpoint for a device and mobile app on one of the supported push
 notification services, such as GCM (Firebase Cloud Messaging) and APNS.
 
-Type annotations for
-`aiobotocore.create_client("sns").create_platform_endpoint` method.
+Type annotations for `session.create_client("sns").create_platform_endpoint`
+method.
 
 Boto3 documentation:
 [SNS.Client.create_platform_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.create_platform_endpoint)
@@ -307,7 +308,7 @@ Adds a destination phone number to an Amazon Web Services account in the SMS
 sandbox and sends a one-time password (OTP) to that phone number.
 
 Type annotations for
-`aiobotocore.create_client("sns").create_sms_sandbox_phone_number` method.
+`session.create_client("sns").create_sms_sandbox_phone_number` method.
 
 Boto3 documentation:
 [SNS.Client.create_sms_sandbox_phone_number](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.create_sms_sandbox_phone_number)
@@ -332,7 +333,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a topic to which notifications can be published.
 
-Type annotations for `aiobotocore.create_client("sns").create_topic` method.
+Type annotations for `session.create_client("sns").create_topic` method.
 
 Boto3 documentation:
 [SNS.Client.create_topic](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.create_topic)
@@ -357,7 +358,7 @@ Returns a `Coroutine` for
 
 Deletes the endpoint for a device and mobile app from Amazon SNS.
 
-Type annotations for `aiobotocore.create_client("sns").delete_endpoint` method.
+Type annotations for `session.create_client("sns").delete_endpoint` method.
 
 Boto3 documentation:
 [SNS.Client.delete_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.delete_endpoint)
@@ -378,8 +379,8 @@ Keyword-only arguments:
 Deletes a platform application object for one of the supported push
 notification services, such as APNS and GCM (Firebase Cloud Messaging).
 
-Type annotations for
-`aiobotocore.create_client("sns").delete_platform_application` method.
+Type annotations for `session.create_client("sns").delete_platform_application`
+method.
 
 Boto3 documentation:
 [SNS.Client.delete_platform_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.delete_platform_application)
@@ -402,7 +403,7 @@ Deletes an Amazon Web Services account's verified or pending phone number from
 the SMS sandbox.
 
 Type annotations for
-`aiobotocore.create_client("sns").delete_sms_sandbox_phone_number` method.
+`session.create_client("sns").delete_sms_sandbox_phone_number` method.
 
 Boto3 documentation:
 [SNS.Client.delete_sms_sandbox_phone_number](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.delete_sms_sandbox_phone_number)
@@ -425,7 +426,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a topic and all its subscriptions.
 
-Type annotations for `aiobotocore.create_client("sns").delete_topic` method.
+Type annotations for `session.create_client("sns").delete_topic` method.
 
 Boto3 documentation:
 [SNS.Client.delete_topic](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.delete_topic)
@@ -445,7 +446,7 @@ Keyword-only arguments:
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("sns").generate_presigned_url`
+Type annotations for `session.create_client("sns").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -470,7 +471,7 @@ Returns a `Coroutine` for `str`.
 Retrieves the endpoint attributes for a device on one of the supported push
 notification services, such as GCM (Firebase Cloud Messaging) and APNS.
 
-Type annotations for `aiobotocore.create_client("sns").get_endpoint_attributes`
+Type annotations for `session.create_client("sns").get_endpoint_attributes`
 method.
 
 Boto3 documentation:
@@ -497,7 +498,7 @@ Retrieves the attributes of the platform application object for the supported
 push notification services, such as APNS and GCM (Firebase Cloud Messaging).
 
 Type annotations for
-`aiobotocore.create_client("sns").get_platform_application_attributes` method.
+`session.create_client("sns").get_platform_application_attributes` method.
 
 Boto3 documentation:
 [SNS.Client.get_platform_application_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.get_platform_application_attributes)
@@ -522,8 +523,7 @@ Returns a `Coroutine` for
 Returns the settings for sending SMS messages from your Amazon Web Services
 account.
 
-Type annotations for `aiobotocore.create_client("sns").get_sms_attributes`
-method.
+Type annotations for `session.create_client("sns").get_sms_attributes` method.
 
 Boto3 documentation:
 [SNS.Client.get_sms_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.get_sms_attributes)
@@ -549,7 +549,7 @@ Retrieves the SMS sandbox status for the calling Amazon Web Services account in
 the target Amazon Web Services Region.
 
 Type annotations for
-`aiobotocore.create_client("sns").get_sms_sandbox_account_status` method.
+`session.create_client("sns").get_sms_sandbox_account_status` method.
 
 Boto3 documentation:
 [SNS.Client.get_sms_sandbox_account_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.get_sms_sandbox_account_status)
@@ -566,8 +566,8 @@ Returns a `Coroutine` for
 
 Returns all of the properties of a subscription.
 
-Type annotations for
-`aiobotocore.create_client("sns").get_subscription_attributes` method.
+Type annotations for `session.create_client("sns").get_subscription_attributes`
+method.
 
 Boto3 documentation:
 [SNS.Client.get_subscription_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.get_subscription_attributes)
@@ -591,7 +591,7 @@ Returns a `Coroutine` for
 
 Returns all of the properties of a topic.
 
-Type annotations for `aiobotocore.create_client("sns").get_topic_attributes`
+Type annotations for `session.create_client("sns").get_topic_attributes`
 method.
 
 Boto3 documentation:
@@ -618,8 +618,7 @@ Lists the endpoints and endpoint attributes for devices in a supported push
 notification service, such as GCM (Firebase Cloud Messaging) and APNS.
 
 Type annotations for
-`aiobotocore.create_client("sns").list_endpoints_by_platform_application`
-method.
+`session.create_client("sns").list_endpoints_by_platform_application` method.
 
 Boto3 documentation:
 [SNS.Client.list_endpoints_by_platform_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.list_endpoints_by_platform_application)
@@ -645,8 +644,8 @@ Returns a `Coroutine` for
 Lists the calling Amazon Web Services account's dedicated origination numbers
 and their metadata.
 
-Type annotations for
-`aiobotocore.create_client("sns").list_origination_numbers` method.
+Type annotations for `session.create_client("sns").list_origination_numbers`
+method.
 
 Boto3 documentation:
 [SNS.Client.list_origination_numbers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.list_origination_numbers)
@@ -673,7 +672,7 @@ Returns a list of phone numbers that are opted out, meaning you cannot send SMS
 messages to them.
 
 Type annotations for
-`aiobotocore.create_client("sns").list_phone_numbers_opted_out` method.
+`session.create_client("sns").list_phone_numbers_opted_out` method.
 
 Boto3 documentation:
 [SNS.Client.list_phone_numbers_opted_out](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.list_phone_numbers_opted_out)
@@ -698,8 +697,8 @@ Returns a `Coroutine` for
 Lists the platform application objects for the supported push notification
 services, such as APNS and GCM (Firebase Cloud Messaging).
 
-Type annotations for
-`aiobotocore.create_client("sns").list_platform_applications` method.
+Type annotations for `session.create_client("sns").list_platform_applications`
+method.
 
 Boto3 documentation:
 [SNS.Client.list_platform_applications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.list_platform_applications)
@@ -725,7 +724,7 @@ Lists the calling Amazon Web Services account's current verified and pending
 destination phone numbers in the SMS sandbox.
 
 Type annotations for
-`aiobotocore.create_client("sns").list_sms_sandbox_phone_numbers` method.
+`session.create_client("sns").list_sms_sandbox_phone_numbers` method.
 
 Boto3 documentation:
 [SNS.Client.list_sms_sandbox_phone_numbers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.list_sms_sandbox_phone_numbers)
@@ -750,8 +749,7 @@ Returns a `Coroutine` for
 
 Returns a list of the requester's subscriptions.
 
-Type annotations for `aiobotocore.create_client("sns").list_subscriptions`
-method.
+Type annotations for `session.create_client("sns").list_subscriptions` method.
 
 Boto3 documentation:
 [SNS.Client.list_subscriptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.list_subscriptions)
@@ -775,8 +773,8 @@ Returns a `Coroutine` for
 
 Returns a list of the subscriptions to a specific topic.
 
-Type annotations for
-`aiobotocore.create_client("sns").list_subscriptions_by_topic` method.
+Type annotations for `session.create_client("sns").list_subscriptions_by_topic`
+method.
 
 Boto3 documentation:
 [SNS.Client.list_subscriptions_by_topic](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.list_subscriptions_by_topic)
@@ -801,7 +799,7 @@ Returns a `Coroutine` for
 
 List all tags added to the specified Amazon SNS topic.
 
-Type annotations for `aiobotocore.create_client("sns").list_tags_for_resource`
+Type annotations for `session.create_client("sns").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -826,7 +824,7 @@ Returns a `Coroutine` for
 
 Returns a list of the requester's topics.
 
-Type annotations for `aiobotocore.create_client("sns").list_topics` method.
+Type annotations for `session.create_client("sns").list_topics` method.
 
 Boto3 documentation:
 [SNS.Client.list_topics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.list_topics)
@@ -850,8 +848,7 @@ Returns a `Coroutine` for
 Use this request to opt in a phone number that is opted out, which enables you
 to resume sending SMS messages to the number.
 
-Type annotations for `aiobotocore.create_client("sns").opt_in_phone_number`
-method.
+Type annotations for `session.create_client("sns").opt_in_phone_number` method.
 
 Boto3 documentation:
 [SNS.Client.opt_in_phone_number](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.opt_in_phone_number)
@@ -876,7 +873,7 @@ Sends a message to an Amazon SNS topic, a text message (SMS message) directly
 to a phone number, or a message to a mobile platform endpoint (when you specify
 the `TargetArn` ).
 
-Type annotations for `aiobotocore.create_client("sns").publish` method.
+Type annotations for `session.create_client("sns").publish` method.
 
 Boto3 documentation:
 [SNS.Client.publish](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.publish)
@@ -908,7 +905,7 @@ Returns a `Coroutine` for
 
 Publishes up to ten messages to the specified topic.
 
-Type annotations for `aiobotocore.create_client("sns").publish_batch` method.
+Type annotations for `session.create_client("sns").publish_batch` method.
 
 Boto3 documentation:
 [SNS.Client.publish_batch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.publish_batch)
@@ -934,8 +931,7 @@ Returns a `Coroutine` for
 
 Removes a statement from a topic's access control policy.
 
-Type annotations for `aiobotocore.create_client("sns").remove_permission`
-method.
+Type annotations for `session.create_client("sns").remove_permission` method.
 
 Boto3 documentation:
 [SNS.Client.remove_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.remove_permission)
@@ -957,7 +953,7 @@ Keyword-only arguments:
 Sets the attributes for an endpoint for a device on one of the supported push
 notification services, such as GCM (Firebase Cloud Messaging) and APNS.
 
-Type annotations for `aiobotocore.create_client("sns").set_endpoint_attributes`
+Type annotations for `session.create_client("sns").set_endpoint_attributes`
 method.
 
 Boto3 documentation:
@@ -982,7 +978,7 @@ Sets the attributes of the platform application object for the supported push
 notification services, such as APNS and GCM (Firebase Cloud Messaging).
 
 Type annotations for
-`aiobotocore.create_client("sns").set_platform_application_attributes` method.
+`session.create_client("sns").set_platform_application_attributes` method.
 
 Boto3 documentation:
 [SNS.Client.set_platform_application_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.set_platform_application_attributes)
@@ -1005,8 +1001,7 @@ Keyword-only arguments:
 Use this request to set the default settings for sending SMS messages and
 receiving daily SMS usage reports.
 
-Type annotations for `aiobotocore.create_client("sns").set_sms_attributes`
-method.
+Type annotations for `session.create_client("sns").set_sms_attributes` method.
 
 Boto3 documentation:
 [SNS.Client.set_sms_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.set_sms_attributes)
@@ -1030,8 +1025,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Allows a subscription owner to set an attribute of the subscription to a new
 value.
 
-Type annotations for
-`aiobotocore.create_client("sns").set_subscription_attributes` method.
+Type annotations for `session.create_client("sns").set_subscription_attributes`
+method.
 
 Boto3 documentation:
 [SNS.Client.set_subscription_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.set_subscription_attributes)
@@ -1054,7 +1049,7 @@ Keyword-only arguments:
 
 Allows a topic owner to set an attribute of the topic to a new value.
 
-Type annotations for `aiobotocore.create_client("sns").set_topic_attributes`
+Type annotations for `session.create_client("sns").set_topic_attributes`
 method.
 
 Boto3 documentation:
@@ -1078,7 +1073,7 @@ Keyword-only arguments:
 
 Subscribes an endpoint to an Amazon SNS topic.
 
-Type annotations for `aiobotocore.create_client("sns").subscribe` method.
+Type annotations for `session.create_client("sns").subscribe` method.
 
 Boto3 documentation:
 [SNS.Client.subscribe](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.subscribe)
@@ -1105,7 +1100,7 @@ Returns a `Coroutine` for
 
 Add tags to the specified Amazon SNS topic.
 
-Type annotations for `aiobotocore.create_client("sns").tag_resource` method.
+Type annotations for `session.create_client("sns").tag_resource` method.
 
 Boto3 documentation:
 [SNS.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.tag_resource)
@@ -1128,7 +1123,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a subscription.
 
-Type annotations for `aiobotocore.create_client("sns").unsubscribe` method.
+Type annotations for `session.create_client("sns").unsubscribe` method.
 
 Boto3 documentation:
 [SNS.Client.unsubscribe](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.unsubscribe)
@@ -1148,7 +1143,7 @@ Keyword-only arguments:
 
 Remove tags from the specified Amazon SNS topic.
 
-Type annotations for `aiobotocore.create_client("sns").untag_resource` method.
+Type annotations for `session.create_client("sns").untag_resource` method.
 
 Boto3 documentation:
 [SNS.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.untag_resource)
@@ -1173,7 +1168,7 @@ Verifies a destination phone number with a one-time password (OTP) for the
 calling Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("sns").verify_sms_sandbox_phone_number` method.
+`session.create_client("sns").verify_sms_sandbox_phone_number` method.
 
 Boto3 documentation:
 [SNS.Client.verify_sms_sandbox_phone_number](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.verify_sms_sandbox_phone_number)
@@ -1191,12 +1186,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("sns").__aenter__` method.
+
+Boto3 documentation:
+[SNS.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SNSClient](#snsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("sns").__aexit__` method.
+
+Boto3 documentation:
+[SNS.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html#SNS.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("sns").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("sns").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_endpoints_by_platform_application")` ->
   [ListEndpointsByPlatformApplicationPaginator](./paginators.md#listendpointsbyplatformapplicationpaginator)

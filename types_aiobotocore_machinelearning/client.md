@@ -44,6 +44,8 @@ type annotations stubs module
     - [update_data_source](#update_data_source)
     - [update_evaluation](#update_evaluation)
     - [update_ml_model](#update_ml_model)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -51,16 +53,17 @@ type annotations stubs module
 
 ## MachineLearningClient
 
-Type annotations for `aiobotocore.create_client("machinelearning")`
+Type annotations for `session.create_client("machinelearning")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_machinelearning.client import MachineLearningClient
 
-def get_machinelearning_client() -> MachineLearningClient:
-    return Session().client("machinelearning")
+session = get_session()
+async with session.create_client("machinelearning") as client:
+    client: MachineLearningClient
 ```
 
 Boto3 documentation:
@@ -102,7 +105,7 @@ Exceptions:
 
 MachineLearningClient exceptions.
 
-Type annotations for `aiobotocore.create_client("machinelearning").exceptions`
+Type annotations for `session.create_client("machinelearning").exceptions`
 method.
 
 Boto3 documentation:
@@ -116,7 +119,7 @@ Returns [Exceptions](#exceptions).
 
 Adds one or more tags to an object, up to a limit of 10.
 
-Type annotations for `aiobotocore.create_client("machinelearning").add_tags`
+Type annotations for `session.create_client("machinelearning").add_tags`
 method.
 
 Boto3 documentation:
@@ -144,19 +147,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("machinelearning").can_paginate` method.
+Type annotations for `session.create_client("machinelearning").can_paginate`
+method.
 
 Boto3 documentation:
 [MachineLearning.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_batch_prediction"></a>
 
@@ -165,7 +166,7 @@ Returns a `Coroutine` for `bool`.
 Generates predictions for a group of observations.
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").create_batch_prediction` method.
+`session.create_client("machinelearning").create_batch_prediction` method.
 
 Boto3 documentation:
 [MachineLearning.Client.create_batch_prediction](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.create_batch_prediction)
@@ -196,8 +197,7 @@ Creates a `DataSource` object from an
 RDS).
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").create_data_source_from_rds`
-method.
+`session.create_client("machinelearning").create_data_source_from_rds` method.
 
 Boto3 documentation:
 [MachineLearning.Client.create_data_source_from_rds](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.create_data_source_from_rds)
@@ -227,7 +227,7 @@ Returns a `Coroutine` for
 Creates a `DataSource` from a database hosted on an Amazon Redshift cluster.
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").create_data_source_from_redshift`
+`session.create_client("machinelearning").create_data_source_from_redshift`
 method.
 
 Boto3 documentation:
@@ -258,8 +258,7 @@ Returns a `Coroutine` for
 Creates a `DataSource` object.
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").create_data_source_from_s3`
-method.
+`session.create_client("machinelearning").create_data_source_from_s3` method.
 
 Boto3 documentation:
 [MachineLearning.Client.create_data_source_from_s3](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.create_data_source_from_s3)
@@ -288,7 +287,7 @@ Returns a `Coroutine` for
 Creates a new `Evaluation` of an `MLModel`.
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").create_evaluation` method.
+`session.create_client("machinelearning").create_evaluation` method.
 
 Boto3 documentation:
 [MachineLearning.Client.create_evaluation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.create_evaluation)
@@ -315,8 +314,8 @@ Returns a `Coroutine` for
 Creates a new `MLModel` using the `DataSource` and the recipe as information
 sources.
 
-Type annotations for
-`aiobotocore.create_client("machinelearning").create_ml_model` method.
+Type annotations for `session.create_client("machinelearning").create_ml_model`
+method.
 
 Boto3 documentation:
 [MachineLearning.Client.create_ml_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.create_ml_model)
@@ -346,7 +345,7 @@ Returns a `Coroutine` for
 Creates a real-time endpoint for the `MLModel`.
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").create_realtime_endpoint` method.
+`session.create_client("machinelearning").create_realtime_endpoint` method.
 
 Boto3 documentation:
 [MachineLearning.Client.create_realtime_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.create_realtime_endpoint)
@@ -371,7 +370,7 @@ Returns a `Coroutine` for
 Assigns the DELETED status to a `BatchPrediction` , rendering it unusable.
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").delete_batch_prediction` method.
+`session.create_client("machinelearning").delete_batch_prediction` method.
 
 Boto3 documentation:
 [MachineLearning.Client.delete_batch_prediction](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.delete_batch_prediction)
@@ -396,7 +395,7 @@ Returns a `Coroutine` for
 Assigns the DELETED status to a `DataSource` , rendering it unusable.
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").delete_data_source` method.
+`session.create_client("machinelearning").delete_data_source` method.
 
 Boto3 documentation:
 [MachineLearning.Client.delete_data_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.delete_data_source)
@@ -421,7 +420,7 @@ Returns a `Coroutine` for
 Assigns the `DELETED` status to an `Evaluation` , rendering it unusable.
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").delete_evaluation` method.
+`session.create_client("machinelearning").delete_evaluation` method.
 
 Boto3 documentation:
 [MachineLearning.Client.delete_evaluation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.delete_evaluation)
@@ -444,8 +443,8 @@ Returns a `Coroutine` for
 
 Assigns the `DELETED` status to an `MLModel` , rendering it unusable.
 
-Type annotations for
-`aiobotocore.create_client("machinelearning").delete_ml_model` method.
+Type annotations for `session.create_client("machinelearning").delete_ml_model`
+method.
 
 Boto3 documentation:
 [MachineLearning.Client.delete_ml_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.delete_ml_model)
@@ -469,7 +468,7 @@ Returns a `Coroutine` for
 Deletes a real time endpoint of an `MLModel` .
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").delete_realtime_endpoint` method.
+`session.create_client("machinelearning").delete_realtime_endpoint` method.
 
 Boto3 documentation:
 [MachineLearning.Client.delete_realtime_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.delete_realtime_endpoint)
@@ -493,7 +492,7 @@ Returns a `Coroutine` for
 
 Deletes the specified tags associated with an ML object.
 
-Type annotations for `aiobotocore.create_client("machinelearning").delete_tags`
+Type annotations for `session.create_client("machinelearning").delete_tags`
 method.
 
 Boto3 documentation:
@@ -523,8 +522,7 @@ Returns a list of `BatchPrediction` operations that match the search criteria
 in the request.
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").describe_batch_predictions`
-method.
+`session.create_client("machinelearning").describe_batch_predictions` method.
 
 Boto3 documentation:
 [MachineLearning.Client.describe_batch_predictions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.describe_batch_predictions)
@@ -560,7 +558,7 @@ Returns a `Coroutine` for
 Returns a list of `DataSource` that match the search criteria in the request.
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").describe_data_sources` method.
+`session.create_client("machinelearning").describe_data_sources` method.
 
 Boto3 documentation:
 [MachineLearning.Client.describe_data_sources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.describe_data_sources)
@@ -597,7 +595,7 @@ Returns a list of `DescribeEvaluations` that match the search criteria in the
 request.
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").describe_evaluations` method.
+`session.create_client("machinelearning").describe_evaluations` method.
 
 Boto3 documentation:
 [MachineLearning.Client.describe_evaluations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.describe_evaluations)
@@ -633,7 +631,7 @@ Returns a `Coroutine` for
 Returns a list of `MLModel` that match the search criteria in the request.
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").describe_ml_models` method.
+`session.create_client("machinelearning").describe_ml_models` method.
 
 Boto3 documentation:
 [MachineLearning.Client.describe_ml_models](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.describe_ml_models)
@@ -668,8 +666,8 @@ Returns a `Coroutine` for
 
 Describes one or more of the tags for your Amazon ML object.
 
-Type annotations for
-`aiobotocore.create_client("machinelearning").describe_tags` method.
+Type annotations for `session.create_client("machinelearning").describe_tags`
+method.
 
 Boto3 documentation:
 [MachineLearning.Client.describe_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.describe_tags)
@@ -696,7 +694,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").generate_presigned_url` method.
+`session.create_client("machinelearning").generate_presigned_url` method.
 
 Boto3 documentation:
 [MachineLearning.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.generate_presigned_url)
@@ -721,7 +719,7 @@ Returns a `BatchPrediction` that includes detailed metadata, status, and data
 file information for a `Batch Prediction` request.
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").get_batch_prediction` method.
+`session.create_client("machinelearning").get_batch_prediction` method.
 
 Boto3 documentation:
 [MachineLearning.Client.get_batch_prediction](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.get_batch_prediction)
@@ -746,8 +744,8 @@ Returns a `Coroutine` for
 Returns a `DataSource` that includes metadata and data file information, as
 well as the current status of the `DataSource` .
 
-Type annotations for
-`aiobotocore.create_client("machinelearning").get_data_source` method.
+Type annotations for `session.create_client("machinelearning").get_data_source`
+method.
 
 Boto3 documentation:
 [MachineLearning.Client.get_data_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.get_data_source)
@@ -772,8 +770,8 @@ Returns a `Coroutine` for
 Returns an `Evaluation` that includes metadata as well as the current status of
 the `Evaluation` .
 
-Type annotations for
-`aiobotocore.create_client("machinelearning").get_evaluation` method.
+Type annotations for `session.create_client("machinelearning").get_evaluation`
+method.
 
 Boto3 documentation:
 [MachineLearning.Client.get_evaluation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.get_evaluation)
@@ -797,8 +795,8 @@ Returns a `Coroutine` for
 Returns an `MLModel` that includes detailed metadata, data source information,
 and the current status of the `MLModel` .
 
-Type annotations for
-`aiobotocore.create_client("machinelearning").get_ml_model` method.
+Type annotations for `session.create_client("machinelearning").get_ml_model`
+method.
 
 Boto3 documentation:
 [MachineLearning.Client.get_ml_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.get_ml_model)
@@ -822,8 +820,7 @@ Returns a `Coroutine` for
 
 Generates a prediction for the observation using the specified `ML Model` .
 
-Type annotations for `aiobotocore.create_client("machinelearning").predict`
-method.
+Type annotations for `session.create_client("machinelearning").predict` method.
 
 Boto3 documentation:
 [MachineLearning.Client.predict](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.predict)
@@ -849,7 +846,7 @@ Returns a `Coroutine` for
 Updates the `BatchPredictionName` of a `BatchPrediction` .
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").update_batch_prediction` method.
+`session.create_client("machinelearning").update_batch_prediction` method.
 
 Boto3 documentation:
 [MachineLearning.Client.update_batch_prediction](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.update_batch_prediction)
@@ -875,7 +872,7 @@ Returns a `Coroutine` for
 Updates the `DataSourceName` of a `DataSource` .
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").update_data_source` method.
+`session.create_client("machinelearning").update_data_source` method.
 
 Boto3 documentation:
 [MachineLearning.Client.update_data_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.update_data_source)
@@ -901,7 +898,7 @@ Returns a `Coroutine` for
 Updates the `EvaluationName` of an `Evaluation` .
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").update_evaluation` method.
+`session.create_client("machinelearning").update_evaluation` method.
 
 Boto3 documentation:
 [MachineLearning.Client.update_evaluation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.update_evaluation)
@@ -925,8 +922,8 @@ Returns a `Coroutine` for
 
 Updates the `MLModelName` and the `ScoreThreshold` of an `MLModel` .
 
-Type annotations for
-`aiobotocore.create_client("machinelearning").update_ml_model` method.
+Type annotations for `session.create_client("machinelearning").update_ml_model`
+method.
 
 Boto3 documentation:
 [MachineLearning.Client.update_ml_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.update_ml_model)
@@ -945,13 +942,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateMLModelOutputTypeDef](./type_defs.md#updatemlmodeloutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("machinelearning").__aenter__`
+method.
+
+Boto3 documentation:
+[MachineLearning.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [MachineLearningClient](#machinelearningclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("machinelearning").__aexit__`
+method.
+
+Boto3 documentation:
+[MachineLearning.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("machinelearning").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("machinelearning").get_paginator`
+method with overloads.
 
 - `client.get_paginator("describe_batch_predictions")` ->
   [DescribeBatchPredictionsPaginator](./paginators.md#describebatchpredictionspaginator)
@@ -966,7 +996,7 @@ overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("machinelearning").get_waiter`
+Type annotations for `session.create_client("machinelearning").get_waiter`
 method with overloads.
 
 - `client.get_waiter("batch_prediction_available")` ->

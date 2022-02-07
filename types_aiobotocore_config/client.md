@@ -102,22 +102,25 @@ type annotations stubs module
     - [stop_configuration_recorder](#stop_configuration_recorder)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="configserviceclient"></a>
 
 ## ConfigServiceClient
 
-Type annotations for `aiobotocore.create_client("config")`
+Type annotations for `session.create_client("config")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_config.client import ConfigServiceClient
 
-def get_config_client() -> ConfigServiceClient:
-    return Session().client("config")
+session = get_session()
+async with session.create_client("config") as client:
+    client: ConfigServiceClient
 ```
 
 Boto3 documentation:
@@ -204,7 +207,7 @@ Exceptions:
 
 ConfigServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("config").exceptions` method.
+Type annotations for `session.create_client("config").exceptions` method.
 
 Boto3 documentation:
 [ConfigService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.exceptions)
@@ -219,8 +222,7 @@ Returns the current configuration items for resources that are present in your
 Config aggregator.
 
 Type annotations for
-`aiobotocore.create_client("config").batch_get_aggregate_resource_config`
-method.
+`session.create_client("config").batch_get_aggregate_resource_config` method.
 
 Boto3 documentation:
 [ConfigService.Client.batch_get_aggregate_resource_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.batch_get_aggregate_resource_config)
@@ -248,7 +250,7 @@ Returns a `Coroutine` for
 Returns the `BaseConfigurationItem` for one or more requested resources.
 
 Type annotations for
-`aiobotocore.create_client("config").batch_get_resource_config` method.
+`session.create_client("config").batch_get_resource_config` method.
 
 Boto3 documentation:
 [ConfigService.Client.batch_get_resource_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.batch_get_resource_config)
@@ -274,18 +276,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("config").can_paginate` method.
+Type annotations for `session.create_client("config").can_paginate` method.
 
 Boto3 documentation:
 [ConfigService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="delete_aggregation_authorization"></a>
 
@@ -295,7 +295,7 @@ Deletes the authorization granted to the specified configuration aggregator
 account in a specified region.
 
 Type annotations for
-`aiobotocore.create_client("config").delete_aggregation_authorization` method.
+`session.create_client("config").delete_aggregation_authorization` method.
 
 Boto3 documentation:
 [ConfigService.Client.delete_aggregation_authorization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.delete_aggregation_authorization)
@@ -317,7 +317,7 @@ Keyword-only arguments:
 
 Deletes the specified Config rule and all of its evaluation results.
 
-Type annotations for `aiobotocore.create_client("config").delete_config_rule`
+Type annotations for `session.create_client("config").delete_config_rule`
 method.
 
 Boto3 documentation:
@@ -341,7 +341,7 @@ Deletes the specified configuration aggregator and the aggregated data
 associated with the aggregator.
 
 Type annotations for
-`aiobotocore.create_client("config").delete_configuration_aggregator` method.
+`session.create_client("config").delete_configuration_aggregator` method.
 
 Boto3 documentation:
 [ConfigService.Client.delete_configuration_aggregator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.delete_configuration_aggregator)
@@ -363,7 +363,7 @@ Keyword-only arguments:
 Deletes the configuration recorder.
 
 Type annotations for
-`aiobotocore.create_client("config").delete_configuration_recorder` method.
+`session.create_client("config").delete_configuration_recorder` method.
 
 Boto3 documentation:
 [ConfigService.Client.delete_configuration_recorder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.delete_configuration_recorder)
@@ -385,8 +385,8 @@ Keyword-only arguments:
 Deletes the specified conformance pack and all the Config rules, remediation
 actions, and all evaluation results within that conformance pack.
 
-Type annotations for
-`aiobotocore.create_client("config").delete_conformance_pack` method.
+Type annotations for `session.create_client("config").delete_conformance_pack`
+method.
 
 Boto3 documentation:
 [ConfigService.Client.delete_conformance_pack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.delete_conformance_pack)
@@ -407,8 +407,8 @@ Keyword-only arguments:
 
 Deletes the delivery channel.
 
-Type annotations for
-`aiobotocore.create_client("config").delete_delivery_channel` method.
+Type annotations for `session.create_client("config").delete_delivery_channel`
+method.
 
 Boto3 documentation:
 [ConfigService.Client.delete_delivery_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.delete_delivery_channel)
@@ -430,7 +430,7 @@ Keyword-only arguments:
 Deletes the evaluation results for the specified Config rule.
 
 Type annotations for
-`aiobotocore.create_client("config").delete_evaluation_results` method.
+`session.create_client("config").delete_evaluation_results` method.
 
 Boto3 documentation:
 [ConfigService.Client.delete_evaluation_results](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.delete_evaluation_results)
@@ -455,7 +455,7 @@ Deletes the specified organization config rule and all of its evaluation
 results from all member accounts in that organization.
 
 Type annotations for
-`aiobotocore.create_client("config").delete_organization_config_rule` method.
+`session.create_client("config").delete_organization_config_rule` method.
 
 Boto3 documentation:
 [ConfigService.Client.delete_organization_config_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.delete_organization_config_rule)
@@ -478,8 +478,7 @@ Deletes the specified organization conformance pack and all of the config rules
 and remediation actions from all member accounts in that organization.
 
 Type annotations for
-`aiobotocore.create_client("config").delete_organization_conformance_pack`
-method.
+`session.create_client("config").delete_organization_conformance_pack` method.
 
 Boto3 documentation:
 [ConfigService.Client.delete_organization_conformance_pack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.delete_organization_conformance_pack)
@@ -502,8 +501,7 @@ Deletes pending authorization requests for a specified aggregator account in a
 specified region.
 
 Type annotations for
-`aiobotocore.create_client("config").delete_pending_aggregation_request`
-method.
+`session.create_client("config").delete_pending_aggregation_request` method.
 
 Boto3 documentation:
 [ConfigService.Client.delete_pending_aggregation_request](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.delete_pending_aggregation_request)
@@ -526,7 +524,7 @@ Keyword-only arguments:
 Deletes the remediation configuration.
 
 Type annotations for
-`aiobotocore.create_client("config").delete_remediation_configuration` method.
+`session.create_client("config").delete_remediation_configuration` method.
 
 Boto3 documentation:
 [ConfigService.Client.delete_remediation_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.delete_remediation_configuration)
@@ -551,7 +549,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes one or more remediation exceptions mentioned in the resource keys.
 
 Type annotations for
-`aiobotocore.create_client("config").delete_remediation_exceptions` method.
+`session.create_client("config").delete_remediation_exceptions` method.
 
 Boto3 documentation:
 [ConfigService.Client.delete_remediation_exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.delete_remediation_exceptions)
@@ -578,8 +576,8 @@ Returns a `Coroutine` for
 
 Records the configuration state for a custom resource that has been deleted.
 
-Type annotations for
-`aiobotocore.create_client("config").delete_resource_config` method.
+Type annotations for `session.create_client("config").delete_resource_config`
+method.
 
 Boto3 documentation:
 [ConfigService.Client.delete_resource_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.delete_resource_config)
@@ -602,7 +600,7 @@ Keyword-only arguments:
 Deletes the retention configuration.
 
 Type annotations for
-`aiobotocore.create_client("config").delete_retention_configuration` method.
+`session.create_client("config").delete_retention_configuration` method.
 
 Boto3 documentation:
 [ConfigService.Client.delete_retention_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.delete_retention_configuration)
@@ -624,7 +622,7 @@ Keyword-only arguments:
 Deletes the stored query for a single Amazon Web Services account and a single
 Amazon Web Services Region.
 
-Type annotations for `aiobotocore.create_client("config").delete_stored_query`
+Type annotations for `session.create_client("config").delete_stored_query`
 method.
 
 Boto3 documentation:
@@ -649,8 +647,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the
 specified delivery channel.
 
-Type annotations for
-`aiobotocore.create_client("config").deliver_config_snapshot` method.
+Type annotations for `session.create_client("config").deliver_config_snapshot`
+method.
 
 Boto3 documentation:
 [ConfigService.Client.deliver_config_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.deliver_config_snapshot)
@@ -676,7 +674,7 @@ Returns a list of compliant and noncompliant rules with the number of resources
 for compliant and noncompliant rules.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_aggregate_compliance_by_config_rules`
+`session.create_client("config").describe_aggregate_compliance_by_config_rules`
 method.
 
 Boto3 documentation:
@@ -709,7 +707,7 @@ with the count of compliant and noncompliant Config rules within each
 conformance pack.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_aggregate_compliance_by_conformance_packs`
+`session.create_client("config").describe_aggregate_compliance_by_conformance_packs`
 method.
 
 Boto3 documentation:
@@ -741,8 +739,7 @@ Returns a list of authorizations granted to various aggregator accounts and
 regions.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_aggregation_authorizations`
-method.
+`session.create_client("config").describe_aggregation_authorizations` method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_aggregation_authorizations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_aggregation_authorizations)
@@ -768,8 +765,7 @@ Returns a `Coroutine` for
 Indicates whether the specified Config rules are compliant.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_compliance_by_config_rule`
-method.
+`session.create_client("config").describe_compliance_by_config_rule` method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_compliance_by_config_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_compliance_by_config_rule)
@@ -797,7 +793,7 @@ Returns a `Coroutine` for
 Indicates whether the specified Amazon Web Services resources are compliant.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_compliance_by_resource` method.
+`session.create_client("config").describe_compliance_by_resource` method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_compliance_by_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_compliance_by_resource)
@@ -827,7 +823,7 @@ Returns a `Coroutine` for
 Returns status information for each of your Config managed rules.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_config_rule_evaluation_status`
+`session.create_client("config").describe_config_rule_evaluation_status`
 method.
 
 Boto3 documentation:
@@ -854,8 +850,8 @@ Returns a `Coroutine` for
 
 Returns details about your Config rules.
 
-Type annotations for
-`aiobotocore.create_client("config").describe_config_rules` method.
+Type annotations for `session.create_client("config").describe_config_rules`
+method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_config_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_config_rules)
@@ -881,7 +877,7 @@ Returns a `Coroutine` for
 Returns status information for sources within an aggregator.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_configuration_aggregator_sources_status`
+`session.create_client("config").describe_configuration_aggregator_sources_status`
 method.
 
 Boto3 documentation:
@@ -912,8 +908,7 @@ Returns a `Coroutine` for
 Returns the details of one or more configuration aggregators.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_configuration_aggregators`
-method.
+`session.create_client("config").describe_configuration_aggregators` method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_configuration_aggregators](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_configuration_aggregators)
@@ -940,7 +935,7 @@ Returns a `Coroutine` for
 Returns the current status of the specified configuration recorder.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_configuration_recorder_status`
+`session.create_client("config").describe_configuration_recorder_status`
 method.
 
 Boto3 documentation:
@@ -966,7 +961,7 @@ Returns a `Coroutine` for
 Returns the details for the specified configuration recorders.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_configuration_recorders` method.
+`session.create_client("config").describe_configuration_recorders` method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_configuration_recorders](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_configuration_recorders)
@@ -991,8 +986,7 @@ Returns a `Coroutine` for
 Returns compliance details for each rule in that conformance pack.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_conformance_pack_compliance`
-method.
+`session.create_client("config").describe_conformance_pack_compliance` method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_conformance_pack_compliance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_conformance_pack_compliance)
@@ -1021,7 +1015,7 @@ Returns a `Coroutine` for
 Provides one or more conformance packs deployment status.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_conformance_pack_status` method.
+`session.create_client("config").describe_conformance_pack_status` method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_conformance_pack_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_conformance_pack_status)
@@ -1048,7 +1042,7 @@ Returns a `Coroutine` for
 Returns a list of one or more conformance packs.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_conformance_packs` method.
+`session.create_client("config").describe_conformance_packs` method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_conformance_packs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_conformance_packs)
@@ -1075,7 +1069,7 @@ Returns a `Coroutine` for
 Returns the current status of the specified delivery channel.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_delivery_channel_status` method.
+`session.create_client("config").describe_delivery_channel_status` method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_delivery_channel_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_delivery_channel_status)
@@ -1100,7 +1094,7 @@ Returns a `Coroutine` for
 Returns details about the specified delivery channel.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_delivery_channels` method.
+`session.create_client("config").describe_delivery_channels` method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_delivery_channels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_delivery_channels)
@@ -1125,7 +1119,7 @@ Returns a `Coroutine` for
 Provides organization config rule deployment status for an organization.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_organization_config_rule_statuses`
+`session.create_client("config").describe_organization_config_rule_statuses`
 method.
 
 Boto3 documentation:
@@ -1153,8 +1147,7 @@ Returns a `Coroutine` for
 Returns a list of organization config rules.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_organization_config_rules`
-method.
+`session.create_client("config").describe_organization_config_rules` method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_organization_config_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_organization_config_rules)
@@ -1181,7 +1174,7 @@ Returns a `Coroutine` for
 Provides organization conformance pack deployment status for an organization.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_organization_conformance_pack_statuses`
+`session.create_client("config").describe_organization_conformance_pack_statuses`
 method.
 
 Boto3 documentation:
@@ -1210,7 +1203,7 @@ Returns a `Coroutine` for
 Returns a list of organization conformance packs.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_organization_conformance_packs`
+`session.create_client("config").describe_organization_conformance_packs`
 method.
 
 Boto3 documentation:
@@ -1238,8 +1231,7 @@ Returns a `Coroutine` for
 Returns a list of all pending aggregation requests.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_pending_aggregation_requests`
-method.
+`session.create_client("config").describe_pending_aggregation_requests` method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_pending_aggregation_requests](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_pending_aggregation_requests)
@@ -1265,8 +1257,7 @@ Returns a `Coroutine` for
 Returns the details of one or more remediation configurations.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_remediation_configurations`
-method.
+`session.create_client("config").describe_remediation_configurations` method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_remediation_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_remediation_configurations)
@@ -1291,7 +1282,7 @@ Returns a `Coroutine` for
 Returns the details of one or more remediation exceptions.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_remediation_exceptions` method.
+`session.create_client("config").describe_remediation_exceptions` method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_remediation_exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_remediation_exceptions)
@@ -1322,8 +1313,7 @@ including state, timestamps for when steps for the remediation execution occur,
 and any error messages for steps that have failed.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_remediation_execution_status`
-method.
+`session.create_client("config").describe_remediation_execution_status` method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_remediation_execution_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_remediation_execution_status)
@@ -1352,7 +1342,7 @@ Returns a `Coroutine` for
 Returns the details of one or more retention configurations.
 
 Type annotations for
-`aiobotocore.create_client("config").describe_retention_configurations` method.
+`session.create_client("config").describe_retention_configurations` method.
 
 Boto3 documentation:
 [ConfigService.Client.describe_retention_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.describe_retention_configurations)
@@ -1377,8 +1367,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("config").generate_presigned_url` method.
+Type annotations for `session.create_client("config").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [ConfigService.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.generate_presigned_url)
@@ -1403,7 +1393,7 @@ Returns the evaluation results for the specified Config rule for a specific
 resource in a rule.
 
 Type annotations for
-`aiobotocore.create_client("config").get_aggregate_compliance_details_by_config_rule`
+`session.create_client("config").get_aggregate_compliance_details_by_config_rule`
 method.
 
 Boto3 documentation:
@@ -1437,7 +1427,7 @@ Returns the number of compliant and noncompliant rules for one or more accounts
 and regions in an aggregator.
 
 Type annotations for
-`aiobotocore.create_client("config").get_aggregate_config_rule_compliance_summary`
+`session.create_client("config").get_aggregate_config_rule_compliance_summary`
 method.
 
 Boto3 documentation:
@@ -1471,7 +1461,7 @@ Returns the count of compliant and noncompliant conformance packs across all
 Amazon Web Services accounts and Amazon Web Services Regions in an aggregator.
 
 Type annotations for
-`aiobotocore.create_client("config").get_aggregate_conformance_pack_compliance_summary`
+`session.create_client("config").get_aggregate_conformance_pack_compliance_summary`
 method.
 
 Boto3 documentation:
@@ -1505,7 +1495,7 @@ Returns the resource counts across accounts and regions that are present in
 your Config aggregator.
 
 Type annotations for
-`aiobotocore.create_client("config").get_aggregate_discovered_resource_counts`
+`session.create_client("config").get_aggregate_discovered_resource_counts`
 method.
 
 Boto3 documentation:
@@ -1538,7 +1528,7 @@ Returns configuration item that is aggregated for your specific resource in a
 specific source account and region.
 
 Type annotations for
-`aiobotocore.create_client("config").get_aggregate_resource_config` method.
+`session.create_client("config").get_aggregate_resource_config` method.
 
 Boto3 documentation:
 [ConfigService.Client.get_aggregate_resource_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.get_aggregate_resource_config)
@@ -1566,8 +1556,7 @@ Returns a `Coroutine` for
 Returns the evaluation results for the specified Config rule.
 
 Type annotations for
-`aiobotocore.create_client("config").get_compliance_details_by_config_rule`
-method.
+`session.create_client("config").get_compliance_details_by_config_rule` method.
 
 Boto3 documentation:
 [ConfigService.Client.get_compliance_details_by_config_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.get_compliance_details_by_config_rule)
@@ -1596,8 +1585,7 @@ Returns a `Coroutine` for
 Returns the evaluation results for the specified Amazon Web Services resource.
 
 Type annotations for
-`aiobotocore.create_client("config").get_compliance_details_by_resource`
-method.
+`session.create_client("config").get_compliance_details_by_resource` method.
 
 Boto3 documentation:
 [ConfigService.Client.get_compliance_details_by_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.get_compliance_details_by_resource)
@@ -1627,8 +1615,7 @@ Returns the number of Config rules that are compliant and noncompliant, up to a
 maximum of 25 for each.
 
 Type annotations for
-`aiobotocore.create_client("config").get_compliance_summary_by_config_rule`
-method.
+`session.create_client("config").get_compliance_summary_by_config_rule` method.
 
 Boto3 documentation:
 [ConfigService.Client.get_compliance_summary_by_config_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.get_compliance_summary_by_config_rule)
@@ -1647,7 +1634,7 @@ Returns the number of resources that are compliant and the number that are
 noncompliant.
 
 Type annotations for
-`aiobotocore.create_client("config").get_compliance_summary_by_resource_type`
+`session.create_client("config").get_compliance_summary_by_resource_type`
 method.
 
 Boto3 documentation:
@@ -1674,7 +1661,7 @@ Returns compliance details of a conformance pack for all Amazon Web Services
 resources that are monitered by conformance pack.
 
 Type annotations for
-`aiobotocore.create_client("config").get_conformance_pack_compliance_details`
+`session.create_client("config").get_conformance_pack_compliance_details`
 method.
 
 Boto3 documentation:
@@ -1705,7 +1692,7 @@ Returns compliance details for the conformance pack based on the cumulative
 compliance results of all the rules in that conformance pack.
 
 Type annotations for
-`aiobotocore.create_client("config").get_conformance_pack_compliance_summary`
+`session.create_client("config").get_conformance_pack_compliance_summary`
 method.
 
 Boto3 documentation:
@@ -1735,7 +1722,7 @@ number of resources that Config is recording in this region for your Amazon Web
 Services account.
 
 Type annotations for
-`aiobotocore.create_client("config").get_discovered_resource_counts` method.
+`session.create_client("config").get_discovered_resource_counts` method.
 
 Boto3 documentation:
 [ConfigService.Client.get_discovered_resource_counts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.get_discovered_resource_counts)
@@ -1763,7 +1750,7 @@ Returns detailed status for each member account within an organization for a
 given organization config rule.
 
 Type annotations for
-`aiobotocore.create_client("config").get_organization_config_rule_detailed_status`
+`session.create_client("config").get_organization_config_rule_detailed_status`
 method.
 
 Boto3 documentation:
@@ -1795,7 +1782,7 @@ Returns detailed status for each member account within an organization for a
 given organization conformance pack.
 
 Type annotations for
-`aiobotocore.create_client("config").get_organization_conformance_pack_detailed_status`
+`session.create_client("config").get_organization_conformance_pack_detailed_status`
 method.
 
 Boto3 documentation:
@@ -1826,7 +1813,7 @@ Returns a `Coroutine` for
 Returns a list of `ConfigurationItems` for the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("config").get_resource_config_history` method.
+`session.create_client("config").get_resource_config_history` method.
 
 Boto3 documentation:
 [ConfigService.Client.get_resource_config_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.get_resource_config_history)
@@ -1858,8 +1845,7 @@ Returns a `Coroutine` for
 
 Returns the details of a specific stored query.
 
-Type annotations for `aiobotocore.create_client("config").get_stored_query`
-method.
+Type annotations for `session.create_client("config").get_stored_query` method.
 
 Boto3 documentation:
 [ConfigService.Client.get_stored_query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.get_stored_query)
@@ -1884,8 +1870,7 @@ Accepts a resource type and returns a list of resource identifiers that are
 aggregated for a specific resource type across accounts and regions.
 
 Type annotations for
-`aiobotocore.create_client("config").list_aggregate_discovered_resources`
-method.
+`session.create_client("config").list_aggregate_discovered_resources` method.
 
 Boto3 documentation:
 [ConfigService.Client.list_aggregate_discovered_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.list_aggregate_discovered_resources)
@@ -1916,7 +1901,7 @@ Accepts a resource type and returns a list of resource identifiers for the
 resources of that type.
 
 Type annotations for
-`aiobotocore.create_client("config").list_discovered_resources` method.
+`session.create_client("config").list_discovered_resources` method.
 
 Boto3 documentation:
 [ConfigService.Client.list_discovered_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.list_discovered_resources)
@@ -1947,7 +1932,7 @@ Returns a `Coroutine` for
 Lists the stored queries for a single Amazon Web Services account and a single
 Amazon Web Services Region.
 
-Type annotations for `aiobotocore.create_client("config").list_stored_queries`
+Type annotations for `session.create_client("config").list_stored_queries`
 method.
 
 Boto3 documentation:
@@ -1973,8 +1958,8 @@ Returns a `Coroutine` for
 
 List the tags for Config resource.
 
-Type annotations for
-`aiobotocore.create_client("config").list_tags_for_resource` method.
+Type annotations for `session.create_client("config").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [ConfigService.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.list_tags_for_resource)
@@ -2002,7 +1987,7 @@ Authorizes the aggregator account and region to collect data from the source
 account and region.
 
 Type annotations for
-`aiobotocore.create_client("config").put_aggregation_authorization` method.
+`session.create_client("config").put_aggregation_authorization` method.
 
 Boto3 documentation:
 [ConfigService.Client.put_aggregation_authorization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.put_aggregation_authorization)
@@ -2029,8 +2014,7 @@ Returns a `Coroutine` for
 Adds or updates an Config rule for evaluating whether your Amazon Web Services
 resources comply with your desired configurations.
 
-Type annotations for `aiobotocore.create_client("config").put_config_rule`
-method.
+Type annotations for `session.create_client("config").put_config_rule` method.
 
 Boto3 documentation:
 [ConfigService.Client.put_config_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.put_config_rule)
@@ -2054,7 +2038,7 @@ Creates and updates the configuration aggregator with the selected source
 accounts and regions.
 
 Type annotations for
-`aiobotocore.create_client("config").put_configuration_aggregator` method.
+`session.create_client("config").put_configuration_aggregator` method.
 
 Boto3 documentation:
 [ConfigService.Client.put_configuration_aggregator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.put_configuration_aggregator)
@@ -2085,7 +2069,7 @@ Creates a new configuration recorder to record the selected resource
 configurations.
 
 Type annotations for
-`aiobotocore.create_client("config").put_configuration_recorder` method.
+`session.create_client("config").put_configuration_recorder` method.
 
 Boto3 documentation:
 [ConfigService.Client.put_configuration_recorder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.put_configuration_recorder)
@@ -2108,7 +2092,7 @@ Keyword-only arguments:
 
 Creates or updates a conformance pack.
 
-Type annotations for `aiobotocore.create_client("config").put_conformance_pack`
+Type annotations for `session.create_client("config").put_conformance_pack`
 method.
 
 Boto3 documentation:
@@ -2140,7 +2124,7 @@ Returns a `Coroutine` for
 Creates a delivery channel object to deliver configuration information to an
 Amazon S3 bucket and Amazon SNS topic.
 
-Type annotations for `aiobotocore.create_client("config").put_delivery_channel`
+Type annotations for `session.create_client("config").put_delivery_channel`
 method.
 
 Boto3 documentation:
@@ -2163,8 +2147,7 @@ Keyword-only arguments:
 
 Used by an Lambda function to deliver evaluation results to Config.
 
-Type annotations for `aiobotocore.create_client("config").put_evaluations`
-method.
+Type annotations for `session.create_client("config").put_evaluations` method.
 
 Boto3 documentation:
 [ConfigService.Client.put_evaluations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.put_evaluations)
@@ -2190,8 +2173,8 @@ Returns a `Coroutine` for
 
 Add or updates the evaluations for process checks.
 
-Type annotations for
-`aiobotocore.create_client("config").put_external_evaluation` method.
+Type annotations for `session.create_client("config").put_external_evaluation`
+method.
 
 Boto3 documentation:
 [ConfigService.Client.put_external_evaluation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.put_external_evaluation)
@@ -2220,7 +2203,7 @@ evaluating whether your Amazon Web Services resources comply with your desired
 configurations.
 
 Type annotations for
-`aiobotocore.create_client("config").put_organization_config_rule` method.
+`session.create_client("config").put_organization_config_rule` method.
 
 Boto3 documentation:
 [ConfigService.Client.put_organization_config_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.put_organization_config_rule)
@@ -2251,7 +2234,7 @@ Deploys conformance packs across member accounts in an Amazon Web Services
 Organization.
 
 Type annotations for
-`aiobotocore.create_client("config").put_organization_conformance_pack` method.
+`session.create_client("config").put_organization_conformance_pack` method.
 
 Boto3 documentation:
 [ConfigService.Client.put_organization_conformance_pack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.put_organization_conformance_pack)
@@ -2284,7 +2267,7 @@ Adds or updates the remediation configuration with a specific Config rule with
 the selected target or action.
 
 Type annotations for
-`aiobotocore.create_client("config").put_remediation_configurations` method.
+`session.create_client("config").put_remediation_configurations` method.
 
 Boto3 documentation:
 [ConfigService.Client.put_remediation_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.put_remediation_configurations)
@@ -2312,7 +2295,7 @@ A remediation exception is when a specific resource is no longer considered for
 auto-remediation.
 
 Type annotations for
-`aiobotocore.create_client("config").put_remediation_exceptions` method.
+`session.create_client("config").put_remediation_exceptions` method.
 
 Boto3 documentation:
 [ConfigService.Client.put_remediation_exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.put_remediation_exceptions)
@@ -2341,7 +2324,7 @@ Returns a `Coroutine` for
 
 Records the configuration state for the resource provided in the request.
 
-Type annotations for `aiobotocore.create_client("config").put_resource_config`
+Type annotations for `session.create_client("config").put_resource_config`
 method.
 
 Boto3 documentation:
@@ -2370,7 +2353,7 @@ Creates and updates the retention configuration with details about retention
 period (number of days) that Config stores your historical information.
 
 Type annotations for
-`aiobotocore.create_client("config").put_retention_configuration` method.
+`session.create_client("config").put_retention_configuration` method.
 
 Boto3 documentation:
 [ConfigService.Client.put_retention_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.put_retention_configuration)
@@ -2394,8 +2377,7 @@ Returns a `Coroutine` for
 
 Saves a new query or updates an existing saved query.
 
-Type annotations for `aiobotocore.create_client("config").put_stored_query`
-method.
+Type annotations for `session.create_client("config").put_stored_query` method.
 
 Boto3 documentation:
 [ConfigService.Client.put_stored_query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.put_stored_query)
@@ -2421,7 +2403,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("config").select_aggregate_resource_config` method.
+`session.create_client("config").select_aggregate_resource_config` method.
 
 Boto3 documentation:
 [ConfigService.Client.select_aggregate_resource_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.select_aggregate_resource_config)
@@ -2449,8 +2431,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("config").select_resource_config` method.
+Type annotations for `session.create_client("config").select_resource_config`
+method.
 
 Boto3 documentation:
 [ConfigService.Client.select_resource_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.select_resource_config)
@@ -2478,7 +2460,7 @@ Runs an on-demand evaluation for the specified Config rules against the last
 known configuration state of the resources.
 
 Type annotations for
-`aiobotocore.create_client("config").start_config_rules_evaluation` method.
+`session.create_client("config").start_config_rules_evaluation` method.
 
 Boto3 documentation:
 [ConfigService.Client.start_config_rules_evaluation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.start_config_rules_evaluation)
@@ -2503,7 +2485,7 @@ Starts recording configurations of the Amazon Web Services resources you have
 selected to record in your Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("config").start_configuration_recorder` method.
+`session.create_client("config").start_configuration_recorder` method.
 
 Boto3 documentation:
 [ConfigService.Client.start_configuration_recorder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.start_configuration_recorder)
@@ -2526,7 +2508,7 @@ Runs an on-demand remediation for the specified Config rules against the last
 known remediation configuration.
 
 Type annotations for
-`aiobotocore.create_client("config").start_remediation_execution` method.
+`session.create_client("config").start_remediation_execution` method.
 
 Boto3 documentation:
 [ConfigService.Client.start_remediation_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.start_remediation_execution)
@@ -2555,7 +2537,7 @@ Stops recording configurations of the Amazon Web Services resources you have
 selected to record in your Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("config").stop_configuration_recorder` method.
+`session.create_client("config").stop_configuration_recorder` method.
 
 Boto3 documentation:
 [ConfigService.Client.stop_configuration_recorder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.stop_configuration_recorder)
@@ -2576,7 +2558,7 @@ Keyword-only arguments:
 
 Associates the specified tags to a resource with the specified resourceArn.
 
-Type annotations for `aiobotocore.create_client("config").tag_resource` method.
+Type annotations for `session.create_client("config").tag_resource` method.
 
 Boto3 documentation:
 [ConfigService.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.tag_resource)
@@ -2597,8 +2579,7 @@ Keyword-only arguments:
 
 Deletes specified tags from a resource.
 
-Type annotations for `aiobotocore.create_client("config").untag_resource`
-method.
+Type annotations for `session.create_client("config").untag_resource` method.
 
 Boto3 documentation:
 [ConfigService.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.untag_resource)
@@ -2613,11 +2594,43 @@ Keyword-only arguments:
 - `ResourceArn`: `str` *(required)*
 - `TagKeys`: `Sequence`\[`str`\] *(required)*
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("config").__aenter__` method.
+
+Boto3 documentation:
+[ConfigService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ConfigServiceClient](#configserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("config").__aexit__` method.
+
+Boto3 documentation:
+[ConfigService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html#ConfigService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("config").get_paginator` method
+Type annotations for `session.create_client("config").get_paginator` method
 with overloads.
 
 - `client.get_paginator("describe_aggregate_compliance_by_config_rules")` ->

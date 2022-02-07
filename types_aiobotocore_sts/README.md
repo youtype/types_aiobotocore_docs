@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[sts]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[sts]'
+
+# standalone installation
 pip install types-aiobotocore-sts
 ```
 
@@ -28,8 +32,7 @@ pip install types-aiobotocore-sts
 
 ## STSClient
 
-Type annotations for `aiobotocore.create_client("sts")` as
-[STSClient](./client.md)
+Type annotations for `session.create_client("sts")` as [STSClient](./client.md)
 
 Can be used directly:
 
@@ -41,6 +44,8 @@ from types_aiobotocore_sts.client import STSClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [assume_role](./client.md#assume_role)
 - [assume_role_with_saml](./client.md#assume_role_with_saml)
 - [assume_role_with_web_identity](./client.md#assume_role_with_web_identity)

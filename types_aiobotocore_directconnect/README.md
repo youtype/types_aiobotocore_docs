@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[directconnect]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[directconnect]'
+
+# standalone installation
 pip install types-aiobotocore-directconnect
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-directconnect
 
 ## DirectConnectClient
 
-Type annotations for `aiobotocore.create_client("directconnect")` as
+Type annotations for `session.create_client("directconnect")` as
 [DirectConnectClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_directconnect.client import DirectConnectClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_direct_connect_gateway_association_proposal](./client.md#accept_direct_connect_gateway_association_proposal)
 - [allocate_connection_on_interconnect](./client.md#allocate_connection_on_interconnect)
 - [allocate_hosted_connection](./client.md#allocate_hosted_connection)
@@ -132,7 +138,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_directconnect.paginators import DescribeDirectConnectGatewayAssociationsPaginator, ...
+from types_aiobotocore_directconnect.paginator import DescribeDirectConnectGatewayAssociationsPaginator, ...
 ```
 
 - [DescribeDirectConnectGatewayAssociationsPaginator](./paginators.md#describedirectconnectgatewayassociationspaginator)

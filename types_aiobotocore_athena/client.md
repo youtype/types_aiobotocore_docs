@@ -50,22 +50,25 @@ type annotations stubs module
     - [update_data_catalog](#update_data_catalog)
     - [update_prepared_statement](#update_prepared_statement)
     - [update_work_group](#update_work_group)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="athenaclient"></a>
 
 ## AthenaClient
 
-Type annotations for `aiobotocore.create_client("athena")`
+Type annotations for `session.create_client("athena")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_athena.client import AthenaClient
 
-def get_athena_client() -> AthenaClient:
-    return Session().client("athena")
+session = get_session()
+async with session.create_client("athena") as client:
+    client: AthenaClient
 ```
 
 Boto3 documentation:
@@ -104,7 +107,7 @@ Exceptions:
 
 AthenaClient exceptions.
 
-Type annotations for `aiobotocore.create_client("athena").exceptions` method.
+Type annotations for `session.create_client("athena").exceptions` method.
 
 Boto3 documentation:
 [Athena.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.exceptions)
@@ -118,8 +121,8 @@ Returns [Exceptions](#exceptions).
 Returns the details of a single named query or a list of up to 50 queries,
 which you provide as an array of query ID strings.
 
-Type annotations for
-`aiobotocore.create_client("athena").batch_get_named_query` method.
+Type annotations for `session.create_client("athena").batch_get_named_query`
+method.
 
 Boto3 documentation:
 [Athena.Client.batch_get_named_query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.batch_get_named_query)
@@ -145,7 +148,7 @@ Returns the details of a single query execution or a list of up to 50 query
 executions, which you provide as an array of query execution ID strings.
 
 Type annotations for
-`aiobotocore.create_client("athena").batch_get_query_execution` method.
+`session.create_client("athena").batch_get_query_execution` method.
 
 Boto3 documentation:
 [Athena.Client.batch_get_query_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.batch_get_query_execution)
@@ -169,18 +172,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("athena").can_paginate` method.
+Type annotations for `session.create_client("athena").can_paginate` method.
 
 Boto3 documentation:
 [Athena.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_data_catalog"></a>
 
@@ -188,7 +189,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates (registers) a data catalog with the specified name and properties.
 
-Type annotations for `aiobotocore.create_client("athena").create_data_catalog`
+Type annotations for `session.create_client("athena").create_data_catalog`
 method.
 
 Boto3 documentation:
@@ -216,7 +217,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a named query in the specified workgroup.
 
-Type annotations for `aiobotocore.create_client("athena").create_named_query`
+Type annotations for `session.create_client("athena").create_named_query`
 method.
 
 Boto3 documentation:
@@ -247,7 +248,7 @@ Returns a `Coroutine` for
 Creates a prepared statement for use with SQL queries in Athena.
 
 Type annotations for
-`aiobotocore.create_client("athena").create_prepared_statement` method.
+`session.create_client("athena").create_prepared_statement` method.
 
 Boto3 documentation:
 [Athena.Client.create_prepared_statement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.create_prepared_statement)
@@ -273,7 +274,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a workgroup with the specified name.
 
-Type annotations for `aiobotocore.create_client("athena").create_work_group`
+Type annotations for `session.create_client("athena").create_work_group`
 method.
 
 Boto3 documentation:
@@ -300,7 +301,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a data catalog.
 
-Type annotations for `aiobotocore.create_client("athena").delete_data_catalog`
+Type annotations for `session.create_client("athena").delete_data_catalog`
 method.
 
 Boto3 documentation:
@@ -325,7 +326,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the named query if you have access to the workgroup in which the query
 was saved.
 
-Type annotations for `aiobotocore.create_client("athena").delete_named_query`
+Type annotations for `session.create_client("athena").delete_named_query`
 method.
 
 Boto3 documentation:
@@ -351,7 +352,7 @@ Deletes the prepared statement with the specified name from the specified
 workgroup.
 
 Type annotations for
-`aiobotocore.create_client("athena").delete_prepared_statement` method.
+`session.create_client("athena").delete_prepared_statement` method.
 
 Boto3 documentation:
 [Athena.Client.delete_prepared_statement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.delete_prepared_statement)
@@ -375,7 +376,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the workgroup with the specified name.
 
-Type annotations for `aiobotocore.create_client("athena").delete_work_group`
+Type annotations for `session.create_client("athena").delete_work_group`
 method.
 
 Boto3 documentation:
@@ -399,8 +400,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("athena").generate_presigned_url` method.
+Type annotations for `session.create_client("athena").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Athena.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.generate_presigned_url)
@@ -423,8 +424,7 @@ Returns a `Coroutine` for `str`.
 
 Returns the specified data catalog.
 
-Type annotations for `aiobotocore.create_client("athena").get_data_catalog`
-method.
+Type annotations for `session.create_client("athena").get_data_catalog` method.
 
 Boto3 documentation:
 [Athena.Client.get_data_catalog](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.get_data_catalog)
@@ -447,7 +447,7 @@ Returns a `Coroutine` for
 
 Returns a database object for the specified database and data catalog.
 
-Type annotations for `aiobotocore.create_client("athena").get_database` method.
+Type annotations for `session.create_client("athena").get_database` method.
 
 Boto3 documentation:
 [Athena.Client.get_database](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.get_database)
@@ -471,8 +471,7 @@ Returns a `Coroutine` for
 
 Returns information about a single query.
 
-Type annotations for `aiobotocore.create_client("athena").get_named_query`
-method.
+Type annotations for `session.create_client("athena").get_named_query` method.
 
 Boto3 documentation:
 [Athena.Client.get_named_query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.get_named_query)
@@ -496,8 +495,8 @@ Returns a `Coroutine` for
 Retrieves the prepared statement with the specified name from the specified
 workgroup.
 
-Type annotations for
-`aiobotocore.create_client("athena").get_prepared_statement` method.
+Type annotations for `session.create_client("athena").get_prepared_statement`
+method.
 
 Boto3 documentation:
 [Athena.Client.get_prepared_statement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.get_prepared_statement)
@@ -523,7 +522,7 @@ Returns a `Coroutine` for
 Returns information about a single execution of a query if you have access to
 the workgroup in which the query ran.
 
-Type annotations for `aiobotocore.create_client("athena").get_query_execution`
+Type annotations for `session.create_client("athena").get_query_execution`
 method.
 
 Boto3 documentation:
@@ -549,7 +548,7 @@ Returns a `Coroutine` for
 Streams the results of a single query execution specified by `QueryExecutionId`
 from the Athena query results location in Amazon S3.
 
-Type annotations for `aiobotocore.create_client("athena").get_query_results`
+Type annotations for `session.create_client("athena").get_query_results`
 method.
 
 Boto3 documentation:
@@ -575,7 +574,7 @@ Returns a `Coroutine` for
 
 Returns table metadata for the specified catalog, database, and table.
 
-Type annotations for `aiobotocore.create_client("athena").get_table_metadata`
+Type annotations for `session.create_client("athena").get_table_metadata`
 method.
 
 Boto3 documentation:
@@ -602,8 +601,7 @@ Returns a `Coroutine` for
 
 Returns information about the workgroup with the specified name.
 
-Type annotations for `aiobotocore.create_client("athena").get_work_group`
-method.
+Type annotations for `session.create_client("athena").get_work_group` method.
 
 Boto3 documentation:
 [Athena.Client.get_work_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.get_work_group)
@@ -626,7 +624,7 @@ Returns a `Coroutine` for
 
 Lists the data catalogs in the current Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("athena").list_data_catalogs`
+Type annotations for `session.create_client("athena").list_data_catalogs`
 method.
 
 Boto3 documentation:
@@ -652,8 +650,7 @@ Returns a `Coroutine` for
 
 Lists the databases in the specified data catalog.
 
-Type annotations for `aiobotocore.create_client("athena").list_databases`
-method.
+Type annotations for `session.create_client("athena").list_databases` method.
 
 Boto3 documentation:
 [Athena.Client.list_databases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.list_databases)
@@ -679,7 +676,7 @@ Returns a `Coroutine` for
 Returns a list of engine versions that are available to choose from, including
 the Auto option.
 
-Type annotations for `aiobotocore.create_client("athena").list_engine_versions`
+Type annotations for `session.create_client("athena").list_engine_versions`
 method.
 
 Boto3 documentation:
@@ -706,7 +703,7 @@ Returns a `Coroutine` for
 Provides a list of available query IDs only for queries saved in the specified
 workgroup.
 
-Type annotations for `aiobotocore.create_client("athena").list_named_queries`
+Type annotations for `session.create_client("athena").list_named_queries`
 method.
 
 Boto3 documentation:
@@ -733,8 +730,8 @@ Returns a `Coroutine` for
 
 Lists the prepared statements in the specfied workgroup.
 
-Type annotations for
-`aiobotocore.create_client("athena").list_prepared_statements` method.
+Type annotations for `session.create_client("athena").list_prepared_statements`
+method.
 
 Boto3 documentation:
 [Athena.Client.list_prepared_statements](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.list_prepared_statements)
@@ -761,8 +758,8 @@ Returns a `Coroutine` for
 Provides a list of available query execution IDs for the queries in the
 specified workgroup.
 
-Type annotations for
-`aiobotocore.create_client("athena").list_query_executions` method.
+Type annotations for `session.create_client("athena").list_query_executions`
+method.
 
 Boto3 documentation:
 [Athena.Client.list_query_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.list_query_executions)
@@ -788,7 +785,7 @@ Returns a `Coroutine` for
 
 Lists the metadata for the tables in the specified data catalog database.
 
-Type annotations for `aiobotocore.create_client("athena").list_table_metadata`
+Type annotations for `session.create_client("athena").list_table_metadata`
 method.
 
 Boto3 documentation:
@@ -817,8 +814,8 @@ Returns a `Coroutine` for
 
 Lists the tags associated with an Athena workgroup or data catalog resource.
 
-Type annotations for
-`aiobotocore.create_client("athena").list_tags_for_resource` method.
+Type annotations for `session.create_client("athena").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Athena.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.list_tags_for_resource)
@@ -844,8 +841,7 @@ Returns a `Coroutine` for
 
 Lists available workgroups for the account.
 
-Type annotations for `aiobotocore.create_client("athena").list_work_groups`
-method.
+Type annotations for `session.create_client("athena").list_work_groups` method.
 
 Boto3 documentation:
 [Athena.Client.list_work_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.list_work_groups)
@@ -869,8 +865,8 @@ Returns a `Coroutine` for
 
 Runs the SQL query statements contained in the `Query`.
 
-Type annotations for
-`aiobotocore.create_client("athena").start_query_execution` method.
+Type annotations for `session.create_client("athena").start_query_execution`
+method.
 
 Boto3 documentation:
 [Athena.Client.start_query_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.start_query_execution)
@@ -900,7 +896,7 @@ Returns a `Coroutine` for
 
 Stops a query execution.
 
-Type annotations for `aiobotocore.create_client("athena").stop_query_execution`
+Type annotations for `session.create_client("athena").stop_query_execution`
 method.
 
 Boto3 documentation:
@@ -924,7 +920,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds one or more tags to an Athena resource.
 
-Type annotations for `aiobotocore.create_client("athena").tag_resource` method.
+Type annotations for `session.create_client("athena").tag_resource` method.
 
 Boto3 documentation:
 [Athena.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.tag_resource)
@@ -947,8 +943,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from a data catalog or workgroup resource.
 
-Type annotations for `aiobotocore.create_client("athena").untag_resource`
-method.
+Type annotations for `session.create_client("athena").untag_resource` method.
 
 Boto3 documentation:
 [Athena.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.untag_resource)
@@ -971,7 +966,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the data catalog that has the specified name.
 
-Type annotations for `aiobotocore.create_client("athena").update_data_catalog`
+Type annotations for `session.create_client("athena").update_data_catalog`
 method.
 
 Boto3 documentation:
@@ -999,7 +994,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a prepared statement.
 
 Type annotations for
-`aiobotocore.create_client("athena").update_prepared_statement` method.
+`session.create_client("athena").update_prepared_statement` method.
 
 Boto3 documentation:
 [Athena.Client.update_prepared_statement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.update_prepared_statement)
@@ -1025,7 +1020,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the workgroup with the specified name.
 
-Type annotations for `aiobotocore.create_client("athena").update_work_group`
+Type annotations for `session.create_client("athena").update_work_group`
 method.
 
 Boto3 documentation:
@@ -1046,11 +1041,43 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("athena").__aenter__` method.
+
+Boto3 documentation:
+[Athena.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [AthenaClient](#athenaclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("athena").__aexit__` method.
+
+Boto3 documentation:
+[Athena.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html#Athena.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("athena").get_paginator` method
+Type annotations for `session.create_client("athena").get_paginator` method
 with overloads.
 
 - `client.get_paginator("get_query_results")` ->

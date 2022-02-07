@@ -30,22 +30,25 @@ type annotations stubs module
     - [stop_text_translation_job](#stop_text_translation_job)
     - [translate_text](#translate_text)
     - [update_parallel_data](#update_parallel_data)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="translateclient"></a>
 
 ## TranslateClient
 
-Type annotations for `aiobotocore.create_client("translate")`
+Type annotations for `session.create_client("translate")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_translate.client import TranslateClient
 
-def get_translate_client() -> TranslateClient:
-    return Session().client("translate")
+session = get_session()
+async with session.create_client("translate") as client:
+    client: TranslateClient
 ```
 
 Boto3 documentation:
@@ -92,8 +95,7 @@ Exceptions:
 
 TranslateClient exceptions.
 
-Type annotations for `aiobotocore.create_client("translate").exceptions`
-method.
+Type annotations for `session.create_client("translate").exceptions` method.
 
 Boto3 documentation:
 [Translate.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html#Translate.Client.exceptions)
@@ -106,19 +108,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("translate").can_paginate`
-method.
+Type annotations for `session.create_client("translate").can_paginate` method.
 
 Boto3 documentation:
 [Translate.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html#Translate.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_parallel_data"></a>
 
@@ -127,8 +126,8 @@ Returns a `Coroutine` for `bool`.
 Creates a parallel data resource in Amazon Translate by importing an input file
 from Amazon S3.
 
-Type annotations for
-`aiobotocore.create_client("translate").create_parallel_data` method.
+Type annotations for `session.create_client("translate").create_parallel_data`
+method.
 
 Boto3 documentation:
 [Translate.Client.create_parallel_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html#Translate.Client.create_parallel_data)
@@ -158,8 +157,8 @@ Returns a `Coroutine` for
 
 Deletes a parallel data resource in Amazon Translate.
 
-Type annotations for
-`aiobotocore.create_client("translate").delete_parallel_data` method.
+Type annotations for `session.create_client("translate").delete_parallel_data`
+method.
 
 Boto3 documentation:
 [Translate.Client.delete_parallel_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html#Translate.Client.delete_parallel_data)
@@ -183,8 +182,8 @@ Returns a `Coroutine` for
 
 A synchronous action that deletes a custom terminology.
 
-Type annotations for
-`aiobotocore.create_client("translate").delete_terminology` method.
+Type annotations for `session.create_client("translate").delete_terminology`
+method.
 
 Boto3 documentation:
 [Translate.Client.delete_terminology](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html#Translate.Client.delete_terminology)
@@ -208,7 +207,7 @@ including name, ID, status, source and target languages, input/output S3
 buckets, and so on.
 
 Type annotations for
-`aiobotocore.create_client("translate").describe_text_translation_job` method.
+`session.create_client("translate").describe_text_translation_job` method.
 
 Boto3 documentation:
 [Translate.Client.describe_text_translation_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html#Translate.Client.describe_text_translation_job)
@@ -233,7 +232,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("translate").generate_presigned_url` method.
+`session.create_client("translate").generate_presigned_url` method.
 
 Boto3 documentation:
 [Translate.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html#Translate.Client.generate_presigned_url)
@@ -256,7 +255,7 @@ Returns a `Coroutine` for `str`.
 
 Provides information about a parallel data resource.
 
-Type annotations for `aiobotocore.create_client("translate").get_parallel_data`
+Type annotations for `session.create_client("translate").get_parallel_data`
 method.
 
 Boto3 documentation:
@@ -280,7 +279,7 @@ Returns a `Coroutine` for
 
 Retrieves a custom terminology.
 
-Type annotations for `aiobotocore.create_client("translate").get_terminology`
+Type annotations for `session.create_client("translate").get_terminology`
 method.
 
 Boto3 documentation:
@@ -307,8 +306,8 @@ Returns a `Coroutine` for
 Creates or updates a custom terminology, depending on whether or not one
 already exists for the given terminology name.
 
-Type annotations for
-`aiobotocore.create_client("translate").import_terminology` method.
+Type annotations for `session.create_client("translate").import_terminology`
+method.
 
 Boto3 documentation:
 [Translate.Client.import_terminology](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html#Translate.Client.import_terminology)
@@ -338,8 +337,8 @@ Returns a `Coroutine` for
 
 Provides a list of your parallel data resources in Amazon Translate.
 
-Type annotations for
-`aiobotocore.create_client("translate").list_parallel_data` method.
+Type annotations for `session.create_client("translate").list_parallel_data`
+method.
 
 Boto3 documentation:
 [Translate.Client.list_parallel_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html#Translate.Client.list_parallel_data)
@@ -364,8 +363,8 @@ Returns a `Coroutine` for
 
 Provides a list of custom terminologies associated with your account.
 
-Type annotations for
-`aiobotocore.create_client("translate").list_terminologies` method.
+Type annotations for `session.create_client("translate").list_terminologies`
+method.
 
 Boto3 documentation:
 [Translate.Client.list_terminologies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html#Translate.Client.list_terminologies)
@@ -391,7 +390,7 @@ Returns a `Coroutine` for
 Gets a list of the batch translation jobs that you have submitted.
 
 Type annotations for
-`aiobotocore.create_client("translate").list_text_translation_jobs` method.
+`session.create_client("translate").list_text_translation_jobs` method.
 
 Boto3 documentation:
 [Translate.Client.list_text_translation_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html#Translate.Client.list_text_translation_jobs)
@@ -419,7 +418,7 @@ Returns a `Coroutine` for
 Starts an asynchronous batch translation job.
 
 Type annotations for
-`aiobotocore.create_client("translate").start_text_translation_job` method.
+`session.create_client("translate").start_text_translation_job` method.
 
 Boto3 documentation:
 [Translate.Client.start_text_translation_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html#Translate.Client.start_text_translation_job)
@@ -457,7 +456,7 @@ Returns a `Coroutine` for
 Stops an asynchronous batch translation job that is in progress.
 
 Type annotations for
-`aiobotocore.create_client("translate").stop_text_translation_job` method.
+`session.create_client("translate").stop_text_translation_job` method.
 
 Boto3 documentation:
 [Translate.Client.stop_text_translation_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html#Translate.Client.stop_text_translation_job)
@@ -481,7 +480,7 @@ Returns a `Coroutine` for
 
 Translates input text from the source language to the target language.
 
-Type annotations for `aiobotocore.create_client("translate").translate_text`
+Type annotations for `session.create_client("translate").translate_text`
 method.
 
 Boto3 documentation:
@@ -511,8 +510,8 @@ Returns a `Coroutine` for
 Updates a previously created parallel data resource by importing a new input
 file from Amazon S3.
 
-Type annotations for
-`aiobotocore.create_client("translate").update_parallel_data` method.
+Type annotations for `session.create_client("translate").update_parallel_data`
+method.
 
 Boto3 documentation:
 [Translate.Client.update_parallel_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html#Translate.Client.update_parallel_data)
@@ -535,12 +534,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateParallelDataResponseTypeDef](./type_defs.md#updateparalleldataresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("translate").__aenter__` method.
+
+Boto3 documentation:
+[Translate.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html#Translate.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [TranslateClient](#translateclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("translate").__aexit__` method.
+
+Boto3 documentation:
+[Translate.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html#Translate.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("translate").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("translate").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_terminologies")` ->
   [ListTerminologiesPaginator](./paginators.md#listterminologiespaginator)

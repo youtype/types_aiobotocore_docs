@@ -34,22 +34,25 @@ type annotations stubs module
     - [start_logging](#start_logging)
     - [stop_logging](#stop_logging)
     - [update_trail](#update_trail)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="cloudtrailclient"></a>
 
 ## CloudTrailClient
 
-Type annotations for `aiobotocore.create_client("cloudtrail")`
+Type annotations for `session.create_client("cloudtrail")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_cloudtrail.client import CloudTrailClient
 
-def get_cloudtrail_client() -> CloudTrailClient:
-    return Session().client("cloudtrail")
+session = get_session()
+async with session.create_client("cloudtrail") as client:
+    client: CloudTrailClient
 ```
 
 Boto3 documentation:
@@ -127,8 +130,7 @@ Exceptions:
 
 CloudTrailClient exceptions.
 
-Type annotations for `aiobotocore.create_client("cloudtrail").exceptions`
-method.
+Type annotations for `session.create_client("cloudtrail").exceptions` method.
 
 Boto3 documentation:
 [CloudTrail.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.exceptions)
@@ -141,7 +143,7 @@ Returns [Exceptions](#exceptions).
 
 Adds one or more tags to a trail, up to a limit of 50.
 
-Type annotations for `aiobotocore.create_client("cloudtrail").add_tags` method.
+Type annotations for `session.create_client("cloudtrail").add_tags` method.
 
 Boto3 documentation:
 [CloudTrail.Client.add_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.add_tags)
@@ -164,19 +166,16 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("cloudtrail").can_paginate`
-method.
+Type annotations for `session.create_client("cloudtrail").can_paginate` method.
 
 Boto3 documentation:
 [CloudTrail.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_trail"></a>
 
@@ -185,8 +184,7 @@ Returns a `Coroutine` for `bool`.
 Creates a trail that specifies the settings for delivery of log data to an
 Amazon S3 bucket.
 
-Type annotations for `aiobotocore.create_client("cloudtrail").create_trail`
-method.
+Type annotations for `session.create_client("cloudtrail").create_trail` method.
 
 Boto3 documentation:
 [CloudTrail.Client.create_trail](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.create_trail)
@@ -220,8 +218,7 @@ Returns a `Coroutine` for
 
 Deletes a trail.
 
-Type annotations for `aiobotocore.create_client("cloudtrail").delete_trail`
-method.
+Type annotations for `session.create_client("cloudtrail").delete_trail` method.
 
 Boto3 documentation:
 [CloudTrail.Client.delete_trail](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.delete_trail)
@@ -244,7 +241,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Retrieves settings for one or more trails associated with the current region
 for your account.
 
-Type annotations for `aiobotocore.create_client("cloudtrail").describe_trails`
+Type annotations for `session.create_client("cloudtrail").describe_trails`
 method.
 
 Boto3 documentation:
@@ -270,7 +267,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("cloudtrail").generate_presigned_url` method.
+`session.create_client("cloudtrail").generate_presigned_url` method.
 
 Boto3 documentation:
 [CloudTrail.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.generate_presigned_url)
@@ -294,8 +291,8 @@ Returns a `Coroutine` for `str`.
 Describes the settings for the event selectors that you configured for your
 trail.
 
-Type annotations for
-`aiobotocore.create_client("cloudtrail").get_event_selectors` method.
+Type annotations for `session.create_client("cloudtrail").get_event_selectors`
+method.
 
 Boto3 documentation:
 [CloudTrail.Client.get_event_selectors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.get_event_selectors)
@@ -321,7 +318,7 @@ Describes the settings for the Insights event selectors that you configured for
 your trail.
 
 Type annotations for
-`aiobotocore.create_client("cloudtrail").get_insight_selectors` method.
+`session.create_client("cloudtrail").get_insight_selectors` method.
 
 Boto3 documentation:
 [CloudTrail.Client.get_insight_selectors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.get_insight_selectors)
@@ -345,8 +342,7 @@ Returns a `Coroutine` for
 
 Returns settings information for a specified trail.
 
-Type annotations for `aiobotocore.create_client("cloudtrail").get_trail`
-method.
+Type annotations for `session.create_client("cloudtrail").get_trail` method.
 
 Boto3 documentation:
 [CloudTrail.Client.get_trail](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.get_trail)
@@ -369,7 +365,7 @@ Returns a `Coroutine` for
 
 Returns a JSON-formatted list of information about the specified trail.
 
-Type annotations for `aiobotocore.create_client("cloudtrail").get_trail_status`
+Type annotations for `session.create_client("cloudtrail").get_trail_status`
 method.
 
 Boto3 documentation:
@@ -394,7 +390,7 @@ Returns a `Coroutine` for
 Returns all public keys whose private keys were used to sign the digest files
 within the specified time range.
 
-Type annotations for `aiobotocore.create_client("cloudtrail").list_public_keys`
+Type annotations for `session.create_client("cloudtrail").list_public_keys`
 method.
 
 Boto3 documentation:
@@ -420,8 +416,7 @@ Returns a `Coroutine` for
 
 Lists the tags for the trail in the current region.
 
-Type annotations for `aiobotocore.create_client("cloudtrail").list_tags`
-method.
+Type annotations for `session.create_client("cloudtrail").list_tags` method.
 
 Boto3 documentation:
 [CloudTrail.Client.list_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.list_tags)
@@ -445,8 +440,7 @@ Returns a `Coroutine` for
 
 Lists trails that are in the current account.
 
-Type annotations for `aiobotocore.create_client("cloudtrail").list_trails`
-method.
+Type annotations for `session.create_client("cloudtrail").list_trails` method.
 
 Boto3 documentation:
 [CloudTrail.Client.list_trails](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.list_trails)
@@ -472,7 +466,7 @@ events\](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-
 concepts.html#cloudtrail-concepts-management-events)\_ or
 `CloudTrail Insights events <https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail- concepts.html#cloudtrail-concepts-insigh...`.
 
-Type annotations for `aiobotocore.create_client("cloudtrail").lookup_events`
+Type annotations for `session.create_client("cloudtrail").lookup_events`
 method.
 
 Boto3 documentation:
@@ -503,8 +497,8 @@ Returns a `Coroutine` for
 
 Configures an event selector or advanced event selectors for your trail.
 
-Type annotations for
-`aiobotocore.create_client("cloudtrail").put_event_selectors` method.
+Type annotations for `session.create_client("cloudtrail").put_event_selectors`
+method.
 
 Boto3 documentation:
 [CloudTrail.Client.put_event_selectors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.put_event_selectors)
@@ -534,7 +528,7 @@ Lets you enable Insights event logging by specifying the Insights selectors
 that you want to enable on an existing trail.
 
 Type annotations for
-`aiobotocore.create_client("cloudtrail").put_insight_selectors` method.
+`session.create_client("cloudtrail").put_insight_selectors` method.
 
 Boto3 documentation:
 [CloudTrail.Client.put_insight_selectors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.put_insight_selectors)
@@ -561,8 +555,7 @@ Returns a `Coroutine` for
 
 Removes the specified tags from a trail.
 
-Type annotations for `aiobotocore.create_client("cloudtrail").remove_tags`
-method.
+Type annotations for `session.create_client("cloudtrail").remove_tags` method.
 
 Boto3 documentation:
 [CloudTrail.Client.remove_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.remove_tags)
@@ -586,7 +579,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Starts the recording of Amazon Web Services API calls and log file delivery for
 a trail.
 
-Type annotations for `aiobotocore.create_client("cloudtrail").start_logging`
+Type annotations for `session.create_client("cloudtrail").start_logging`
 method.
 
 Boto3 documentation:
@@ -610,8 +603,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Suspends the recording of Amazon Web Services API calls and log file delivery
 for the specified trail.
 
-Type annotations for `aiobotocore.create_client("cloudtrail").stop_logging`
-method.
+Type annotations for `session.create_client("cloudtrail").stop_logging` method.
 
 Boto3 documentation:
 [CloudTrail.Client.stop_logging](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.stop_logging)
@@ -634,8 +626,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates trail settings that control what events you are logging, and how to
 handle log files.
 
-Type annotations for `aiobotocore.create_client("cloudtrail").update_trail`
-method.
+Type annotations for `session.create_client("cloudtrail").update_trail` method.
 
 Boto3 documentation:
 [CloudTrail.Client.update_trail](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.update_trail)
@@ -662,12 +653,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateTrailResponseTypeDef](./type_defs.md#updatetrailresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("cloudtrail").__aenter__` method.
+
+Boto3 documentation:
+[CloudTrail.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CloudTrailClient](#cloudtrailclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("cloudtrail").__aexit__` method.
+
+Boto3 documentation:
+[CloudTrail.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html#CloudTrail.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("cloudtrail").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("cloudtrail").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_public_keys")` ->
   [ListPublicKeysPaginator](./paginators.md#listpublickeyspaginator)

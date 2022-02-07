@@ -41,22 +41,25 @@ type annotations stubs module
     - [update_job](#update_job)
     - [update_job_shipment_state](#update_job_shipment_state)
     - [update_long_term_pricing](#update_long_term_pricing)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="snowballclient"></a>
 
 ## SnowballClient
 
-Type annotations for `aiobotocore.create_client("snowball")`
+Type annotations for `session.create_client("snowball")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_snowball.client import SnowballClient
 
-def get_snowball_client() -> SnowballClient:
-    return Session().client("snowball")
+session = get_session()
+async with session.create_client("snowball") as client:
+    client: SnowballClient
 ```
 
 Boto3 documentation:
@@ -101,7 +104,7 @@ Exceptions:
 
 SnowballClient exceptions.
 
-Type annotations for `aiobotocore.create_client("snowball").exceptions` method.
+Type annotations for `session.create_client("snowball").exceptions` method.
 
 Boto3 documentation:
 [Snowball.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.exceptions)
@@ -114,19 +117,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("snowball").can_paginate`
-method.
+Type annotations for `session.create_client("snowball").can_paginate` method.
 
 Boto3 documentation:
 [Snowball.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_cluster"></a>
 
@@ -134,8 +134,7 @@ Returns a `Coroutine` for `bool`.
 
 Cancels a cluster job.
 
-Type annotations for `aiobotocore.create_client("snowball").cancel_cluster`
-method.
+Type annotations for `session.create_client("snowball").cancel_cluster` method.
 
 Boto3 documentation:
 [Snowball.Client.cancel_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.cancel_cluster)
@@ -157,7 +156,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Cancels the specified job.
 
-Type annotations for `aiobotocore.create_client("snowball").cancel_job` method.
+Type annotations for `session.create_client("snowball").cancel_job` method.
 
 Boto3 documentation:
 [Snowball.Client.cancel_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.cancel_job)
@@ -179,8 +178,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates an address for a Snow device to be shipped to.
 
-Type annotations for `aiobotocore.create_client("snowball").create_address`
-method.
+Type annotations for `session.create_client("snowball").create_address` method.
 
 Boto3 documentation:
 [Snowball.Client.create_address](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.create_address)
@@ -203,8 +201,7 @@ Returns a `Coroutine` for
 
 Creates an empty cluster.
 
-Type annotations for `aiobotocore.create_client("snowball").create_cluster`
-method.
+Type annotations for `session.create_client("snowball").create_cluster` method.
 
 Boto3 documentation:
 [Snowball.Client.create_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.create_cluster)
@@ -245,7 +242,7 @@ Returns a `Coroutine` for
 Creates a job to import or export data between Amazon S3 and your on-premises
 data center.
 
-Type annotations for `aiobotocore.create_client("snowball").create_job` method.
+Type annotations for `session.create_client("snowball").create_job` method.
 
 Boto3 documentation:
 [Snowball.Client.create_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.create_job)
@@ -289,7 +286,7 @@ Returns a `Coroutine` for
 Creates a job with the long-term usage option for a device.
 
 Type annotations for
-`aiobotocore.create_client("snowball").create_long_term_pricing` method.
+`session.create_client("snowball").create_long_term_pricing` method.
 
 Boto3 documentation:
 [Snowball.Client.create_long_term_pricing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.create_long_term_pricing)
@@ -318,7 +315,7 @@ Creates a shipping label that will be used to return the Snow device to Amazon
 Web Services.
 
 Type annotations for
-`aiobotocore.create_client("snowball").create_return_shipping_label` method.
+`session.create_client("snowball").create_return_shipping_label` method.
 
 Boto3 documentation:
 [Snowball.Client.create_return_shipping_label](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.create_return_shipping_label)
@@ -344,7 +341,7 @@ Returns a `Coroutine` for
 Takes an `AddressId` and returns specific details about that address in the
 form of an `Address` object.
 
-Type annotations for `aiobotocore.create_client("snowball").describe_address`
+Type annotations for `session.create_client("snowball").describe_address`
 method.
 
 Boto3 documentation:
@@ -368,7 +365,7 @@ Returns a `Coroutine` for
 
 Returns a specified number of `ADDRESS` objects.
 
-Type annotations for `aiobotocore.create_client("snowball").describe_addresses`
+Type annotations for `session.create_client("snowball").describe_addresses`
 method.
 
 Boto3 documentation:
@@ -395,7 +392,7 @@ Returns a `Coroutine` for
 Returns information about a specific cluster including shipping information,
 cluster status, and other important metadata.
 
-Type annotations for `aiobotocore.create_client("snowball").describe_cluster`
+Type annotations for `session.create_client("snowball").describe_cluster`
 method.
 
 Boto3 documentation:
@@ -420,8 +417,7 @@ Returns a `Coroutine` for
 Returns information about a specific job including shipping information, job
 status, and other important metadata.
 
-Type annotations for `aiobotocore.create_client("snowball").describe_job`
-method.
+Type annotations for `session.create_client("snowball").describe_job` method.
 
 Boto3 documentation:
 [Snowball.Client.describe_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.describe_job)
@@ -446,7 +442,7 @@ Information on the shipping label of a Snow device that is being returned to
 Amazon Web Services.
 
 Type annotations for
-`aiobotocore.create_client("snowball").describe_return_shipping_label` method.
+`session.create_client("snowball").describe_return_shipping_label` method.
 
 Boto3 documentation:
 [Snowball.Client.describe_return_shipping_label](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.describe_return_shipping_label)
@@ -470,8 +466,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("snowball").generate_presigned_url` method.
+Type annotations for `session.create_client("snowball").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Snowball.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.generate_presigned_url)
@@ -495,7 +491,7 @@ Returns a `Coroutine` for `str`.
 Returns a link to an Amazon S3 presigned URL for the manifest file associated
 with the specified `JobId` value.
 
-Type annotations for `aiobotocore.create_client("snowball").get_job_manifest`
+Type annotations for `session.create_client("snowball").get_job_manifest`
 method.
 
 Boto3 documentation:
@@ -519,8 +515,8 @@ Returns a `Coroutine` for
 
 Returns the `UnlockCode` code value for the specified job.
 
-Type annotations for
-`aiobotocore.create_client("snowball").get_job_unlock_code` method.
+Type annotations for `session.create_client("snowball").get_job_unlock_code`
+method.
 
 Boto3 documentation:
 [Snowball.Client.get_job_unlock_code](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.get_job_unlock_code)
@@ -545,7 +541,7 @@ Returns a `Coroutine` for
 Returns information about the Snow Family service limit for your account, and
 also the number of Snow devices your account has in use.
 
-Type annotations for `aiobotocore.create_client("snowball").get_snowball_usage`
+Type annotations for `session.create_client("snowball").get_snowball_usage`
 method.
 
 Boto3 documentation:
@@ -564,8 +560,8 @@ Returns a `Coroutine` for
 Returns an Amazon S3 presigned URL for an update file associated with a
 specified `JobId` .
 
-Type annotations for
-`aiobotocore.create_client("snowball").get_software_updates` method.
+Type annotations for `session.create_client("snowball").get_software_updates`
+method.
 
 Boto3 documentation:
 [Snowball.Client.get_software_updates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.get_software_updates)
@@ -589,7 +585,7 @@ Returns a `Coroutine` for
 
 Returns an array of `JobListEntry` objects of the specified length.
 
-Type annotations for `aiobotocore.create_client("snowball").list_cluster_jobs`
+Type annotations for `session.create_client("snowball").list_cluster_jobs`
 method.
 
 Boto3 documentation:
@@ -615,8 +611,7 @@ Returns a `Coroutine` for
 
 Returns an array of `ClusterListEntry` objects of the specified length.
 
-Type annotations for `aiobotocore.create_client("snowball").list_clusters`
-method.
+Type annotations for `session.create_client("snowball").list_clusters` method.
 
 Boto3 documentation:
 [Snowball.Client.list_clusters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.list_clusters)
@@ -642,8 +637,8 @@ This action returns a list of the different Amazon EC2 Amazon Machine Images
 (AMIs) that are owned by your Amazon Web Services accountthat would be
 supported for use on a Snow device.
 
-Type annotations for
-`aiobotocore.create_client("snowball").list_compatible_images` method.
+Type annotations for `session.create_client("snowball").list_compatible_images`
+method.
 
 Boto3 documentation:
 [Snowball.Client.list_compatible_images](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.list_compatible_images)
@@ -668,7 +663,7 @@ Returns a `Coroutine` for
 
 Returns an array of `JobListEntry` objects of the specified length.
 
-Type annotations for `aiobotocore.create_client("snowball").list_jobs` method.
+Type annotations for `session.create_client("snowball").list_jobs` method.
 
 Boto3 documentation:
 [Snowball.Client.list_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.list_jobs)
@@ -692,8 +687,8 @@ Returns a `Coroutine` for
 
 Lists all long-term pricing types.
 
-Type annotations for
-`aiobotocore.create_client("snowball").list_long_term_pricing` method.
+Type annotations for `session.create_client("snowball").list_long_term_pricing`
+method.
 
 Boto3 documentation:
 [Snowball.Client.list_long_term_pricing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.list_long_term_pricing)
@@ -719,8 +714,7 @@ Returns a `Coroutine` for
 While a cluster's `ClusterState` value is in the `AwaitingQuorum` state, you
 can update some of the information associated with a cluster.
 
-Type annotations for `aiobotocore.create_client("snowball").update_cluster`
-method.
+Type annotations for `session.create_client("snowball").update_cluster` method.
 
 Boto3 documentation:
 [Snowball.Client.update_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.update_cluster)
@@ -752,7 +746,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 While a job's `JobState` value is `New` , you can update some of the
 information associated with a job.
 
-Type annotations for `aiobotocore.create_client("snowball").update_job` method.
+Type annotations for `session.create_client("snowball").update_job` method.
 
 Boto3 documentation:
 [Snowball.Client.update_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.update_job)
@@ -786,7 +780,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the state when a shipment state changes to a different state.
 
 Type annotations for
-`aiobotocore.create_client("snowball").update_job_shipment_state` method.
+`session.create_client("snowball").update_job_shipment_state` method.
 
 Boto3 documentation:
 [Snowball.Client.update_job_shipment_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.update_job_shipment_state)
@@ -812,7 +806,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the long-term pricing type.
 
 Type annotations for
-`aiobotocore.create_client("snowball").update_long_term_pricing` method.
+`session.create_client("snowball").update_long_term_pricing` method.
 
 Boto3 documentation:
 [Snowball.Client.update_long_term_pricing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.update_long_term_pricing)
@@ -831,12 +825,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("snowball").__aenter__` method.
+
+Boto3 documentation:
+[Snowball.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SnowballClient](#snowballclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("snowball").__aexit__` method.
+
+Boto3 documentation:
+[Snowball.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snowball.html#Snowball.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("snowball").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("snowball").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_addresses")` ->
   [DescribeAddressesPaginator](./paginators.md#describeaddressespaginator)

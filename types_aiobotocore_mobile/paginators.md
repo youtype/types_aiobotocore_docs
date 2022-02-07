@@ -18,17 +18,19 @@ type annotations stubs module
 ## ListBundlesPaginator
 
 Type annotations for
-`aiobotocore.create_client("mobile").get_paginator("list_bundles")`.
+`session.create_client("mobile").get_paginator("list_bundles")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mobile.paginator import ListBundlesPaginator
 
-def get_list_bundles_paginator() -> ListBundlesPaginator:
-    return Session().create_client("mobile").get_paginator("list_bundles")
+session = get_session()
+async with session.create_client("mobile") as client:
+    client: MobileClient
+    paginator: ListBundlesPaginator = client.get_paginator("list_bundles")
 ```
 
 Boto3 documentation:
@@ -47,17 +49,19 @@ Arguments for `ListBundlesPaginator.paginate` method:
 ## ListProjectsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mobile").get_paginator("list_projects")`.
+`session.create_client("mobile").get_paginator("list_projects")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mobile.paginator import ListProjectsPaginator
 
-def get_list_projects_paginator() -> ListProjectsPaginator:
-    return Session().create_client("mobile").get_paginator("list_projects")
+session = get_session()
+async with session.create_client("mobile") as client:
+    client: MobileClient
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
 ```
 
 Boto3 documentation:

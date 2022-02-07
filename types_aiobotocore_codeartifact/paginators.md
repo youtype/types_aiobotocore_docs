@@ -22,17 +22,19 @@ type annotations stubs module
 ## ListDomainsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").get_paginator("list_domains")`.
+`session.create_client("codeartifact").get_paginator("list_domains")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codeartifact.paginator import ListDomainsPaginator
 
-def get_list_domains_paginator() -> ListDomainsPaginator:
-    return Session().create_client("codeartifact").get_paginator("list_domains")
+session = get_session()
+async with session.create_client("codeartifact") as client:
+    client: CodeArtifactClient
+    paginator: ListDomainsPaginator = client.get_paginator("list_domains")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `ListDomainsPaginator.paginate` method:
 ## ListPackageVersionAssetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").get_paginator("list_package_version_assets")`.
+`session.create_client("codeartifact").get_paginator("list_package_version_assets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codeartifact.paginator import ListPackageVersionAssetsPaginator
 
-def get_list_package_version_assets_paginator() -> ListPackageVersionAssetsPaginator:
-    return Session().create_client("codeartifact").get_paginator("list_package_version_assets")
+session = get_session()
+async with session.create_client("codeartifact") as client:
+    client: CodeArtifactClient
+    paginator: ListPackageVersionAssetsPaginator = client.get_paginator("list_package_version_assets")
 ```
 
 Boto3 documentation:
@@ -87,17 +91,19 @@ Arguments for `ListPackageVersionAssetsPaginator.paginate` method:
 ## ListPackageVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").get_paginator("list_package_versions")`.
+`session.create_client("codeartifact").get_paginator("list_package_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codeartifact.paginator import ListPackageVersionsPaginator
 
-def get_list_package_versions_paginator() -> ListPackageVersionsPaginator:
-    return Session().create_client("codeartifact").get_paginator("list_package_versions")
+session = get_session()
+async with session.create_client("codeartifact") as client:
+    client: CodeArtifactClient
+    paginator: ListPackageVersionsPaginator = client.get_paginator("list_package_versions")
 ```
 
 Boto3 documentation:
@@ -125,17 +131,19 @@ Arguments for `ListPackageVersionsPaginator.paginate` method:
 ## ListPackagesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").get_paginator("list_packages")`.
+`session.create_client("codeartifact").get_paginator("list_packages")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codeartifact.paginator import ListPackagesPaginator
 
-def get_list_packages_paginator() -> ListPackagesPaginator:
-    return Session().create_client("codeartifact").get_paginator("list_packages")
+session = get_session()
+async with session.create_client("codeartifact") as client:
+    client: CodeArtifactClient
+    paginator: ListPackagesPaginator = client.get_paginator("list_packages")
 ```
 
 Boto3 documentation:
@@ -160,17 +168,19 @@ Arguments for `ListPackagesPaginator.paginate` method:
 ## ListRepositoriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").get_paginator("list_repositories")`.
+`session.create_client("codeartifact").get_paginator("list_repositories")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codeartifact.paginator import ListRepositoriesPaginator
 
-def get_list_repositories_paginator() -> ListRepositoriesPaginator:
-    return Session().create_client("codeartifact").get_paginator("list_repositories")
+session = get_session()
+async with session.create_client("codeartifact") as client:
+    client: CodeArtifactClient
+    paginator: ListRepositoriesPaginator = client.get_paginator("list_repositories")
 ```
 
 Boto3 documentation:
@@ -190,17 +200,19 @@ Arguments for `ListRepositoriesPaginator.paginate` method:
 ## ListRepositoriesInDomainPaginator
 
 Type annotations for
-`aiobotocore.create_client("codeartifact").get_paginator("list_repositories_in_domain")`.
+`session.create_client("codeartifact").get_paginator("list_repositories_in_domain")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codeartifact.paginator import ListRepositoriesInDomainPaginator
 
-def get_list_repositories_in_domain_paginator() -> ListRepositoriesInDomainPaginator:
-    return Session().create_client("codeartifact").get_paginator("list_repositories_in_domain")
+session = get_session()
+async with session.create_client("codeartifact") as client:
+    client: CodeArtifactClient
+    paginator: ListRepositoriesInDomainPaginator = client.get_paginator("list_repositories_in_domain")
 ```
 
 Boto3 documentation:

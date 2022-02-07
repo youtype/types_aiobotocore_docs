@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[comprehend]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[comprehend]'
+
+# standalone installation
 pip install types-aiobotocore-comprehend
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-comprehend
 
 ## ComprehendClient
 
-Type annotations for `aiobotocore.create_client("comprehend")` as
+Type annotations for `session.create_client("comprehend")` as
 [ComprehendClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_comprehend.client import ComprehendClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_detect_dominant_language](./client.md#batch_detect_dominant_language)
 - [batch_detect_entities](./client.md#batch_detect_entities)
 - [batch_detect_key_phrases](./client.md#batch_detect_key_phrases)
@@ -144,7 +150,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_comprehend.paginators import ListDocumentClassificationJobsPaginator, ...
+from types_aiobotocore_comprehend.paginator import ListDocumentClassificationJobsPaginator, ...
 ```
 
 - [ListDocumentClassificationJobsPaginator](./paginators.md#listdocumentclassificationjobspaginator)

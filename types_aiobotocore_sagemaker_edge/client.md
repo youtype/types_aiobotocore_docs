@@ -18,21 +18,24 @@ type annotations stubs module
     - [generate_presigned_url](#generate_presigned_url)
     - [get_device_registration](#get_device_registration)
     - [send_heartbeat](#send_heartbeat)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="sagemakeredgemanagerclient"></a>
 
 ## SagemakerEdgeManagerClient
 
-Type annotations for `aiobotocore.create_client("sagemaker-edge")`
+Type annotations for `session.create_client("sagemaker-edge")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker_edge.client import SagemakerEdgeManagerClient
 
-def get_sagemaker-edge_client() -> SagemakerEdgeManagerClient:
-    return Session().client("sagemaker-edge")
+session = get_session()
+async with session.create_client("sagemaker-edge") as client:
+    client: SagemakerEdgeManagerClient
 ```
 
 Boto3 documentation:
@@ -67,7 +70,7 @@ Exceptions:
 
 SagemakerEdgeManagerClient exceptions.
 
-Type annotations for `aiobotocore.create_client("sagemaker-edge").exceptions`
+Type annotations for `session.create_client("sagemaker-edge").exceptions`
 method.
 
 Boto3 documentation:
@@ -81,19 +84,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("sagemaker-edge").can_paginate`
+Type annotations for `session.create_client("sagemaker-edge").can_paginate`
 method.
 
 Boto3 documentation:
 [SagemakerEdgeManager.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker-edge.html#SagemakerEdgeManager.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -102,7 +103,7 @@ Returns a `Coroutine` for `bool`.
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker-edge").generate_presigned_url` method.
+`session.create_client("sagemaker-edge").generate_presigned_url` method.
 
 Boto3 documentation:
 [SagemakerEdgeManager.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker-edge.html#SagemakerEdgeManager.Client.generate_presigned_url)
@@ -126,7 +127,7 @@ Returns a `Coroutine` for `str`.
 Use to check if a device is registered with SageMaker Edge Manager.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker-edge").get_device_registration` method.
+`session.create_client("sagemaker-edge").get_device_registration` method.
 
 Boto3 documentation:
 [SagemakerEdgeManager.Client.get_device_registration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker-edge.html#SagemakerEdgeManager.Client.get_device_registration)
@@ -151,8 +152,8 @@ Returns a `Coroutine` for
 
 Use to get the current status of devices registered on SageMaker Edge Manager.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker-edge").send_heartbeat` method.
+Type annotations for `session.create_client("sagemaker-edge").send_heartbeat`
+method.
 
 Boto3 documentation:
 [SagemakerEdgeManager.Client.send_heartbeat](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker-edge.html#SagemakerEdgeManager.Client.send_heartbeat)
@@ -170,3 +171,38 @@ Keyword-only arguments:
 - `AgentMetrics`:
   `Sequence`\[[EdgeMetricTypeDef](./type_defs.md#edgemetrictypedef)\]
 - `Models`: `Sequence`\[[ModelTypeDef](./type_defs.md#modeltypedef)\]
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("sagemaker-edge").__aenter__`
+method.
+
+Boto3 documentation:
+[SagemakerEdgeManager.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker-edge.html#SagemakerEdgeManager.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[SagemakerEdgeManagerClient](#sagemakeredgemanagerclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("sagemaker-edge").__aexit__`
+method.
+
+Boto3 documentation:
+[SagemakerEdgeManager.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker-edge.html#SagemakerEdgeManager.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

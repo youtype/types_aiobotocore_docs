@@ -19,17 +19,19 @@ type annotations stubs module
 ## ListScheduledQueriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("timestream-query").get_paginator("list_scheduled_queries")`.
+`session.create_client("timestream-query").get_paginator("list_scheduled_queries")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_timestream_query.paginator import ListScheduledQueriesPaginator
 
-def get_list_scheduled_queries_paginator() -> ListScheduledQueriesPaginator:
-    return Session().create_client("timestream-query").get_paginator("list_scheduled_queries")
+session = get_session()
+async with session.create_client("timestream-query") as client:
+    client: TimestreamQueryClient
+    paginator: ListScheduledQueriesPaginator = client.get_paginator("list_scheduled_queries")
 ```
 
 Boto3 documentation:
@@ -48,17 +50,19 @@ Arguments for `ListScheduledQueriesPaginator.paginate` method:
 ## ListTagsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("timestream-query").get_paginator("list_tags_for_resource")`.
+`session.create_client("timestream-query").get_paginator("list_tags_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_timestream_query.paginator import ListTagsForResourcePaginator
 
-def get_list_tags_for_resource_paginator() -> ListTagsForResourcePaginator:
-    return Session().create_client("timestream-query").get_paginator("list_tags_for_resource")
+session = get_session()
+async with session.create_client("timestream-query") as client:
+    client: TimestreamQueryClient
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
 ```
 
 Boto3 documentation:
@@ -78,17 +82,19 @@ Arguments for `ListTagsForResourcePaginator.paginate` method:
 ## QueryPaginator
 
 Type annotations for
-`aiobotocore.create_client("timestream-query").get_paginator("query")`.
+`session.create_client("timestream-query").get_paginator("query")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_timestream_query.paginator import QueryPaginator
 
-def get_query_paginator() -> QueryPaginator:
-    return Session().create_client("timestream-query").get_paginator("query")
+session = get_session()
+async with session.create_client("timestream-query") as client:
+    client: TimestreamQueryClient
+    paginator: QueryPaginator = client.get_paginator("query")
 ```
 
 Boto3 documentation:

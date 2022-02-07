@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[memorydb]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[memorydb]'
+
+# standalone installation
 pip install types-aiobotocore-memorydb
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-memorydb
 
 ## MemoryDBClient
 
-Type annotations for `aiobotocore.create_client("memorydb")` as
+Type annotations for `session.create_client("memorydb")` as
 [MemoryDBClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_memorydb.client import MemoryDBClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_update_cluster](./client.md#batch_update_cluster)
 - [can_paginate](./client.md#can_paginate)
 - [copy_snapshot](./client.md#copy_snapshot)

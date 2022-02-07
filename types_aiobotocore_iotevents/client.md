@@ -42,21 +42,24 @@ type annotations stubs module
     - [update_alarm_model](#update_alarm_model)
     - [update_detector_model](#update_detector_model)
     - [update_input](#update_input)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="ioteventsclient"></a>
 
 ## IoTEventsClient
 
-Type annotations for `aiobotocore.create_client("iotevents")`
+Type annotations for `session.create_client("iotevents")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_iotevents.client import IoTEventsClient
 
-def get_iotevents_client() -> IoTEventsClient:
-    return Session().client("iotevents")
+session = get_session()
+async with session.create_client("iotevents") as client:
+    client: IoTEventsClient
 ```
 
 Boto3 documentation:
@@ -99,8 +102,7 @@ Exceptions:
 
 IoTEventsClient exceptions.
 
-Type annotations for `aiobotocore.create_client("iotevents").exceptions`
-method.
+Type annotations for `session.create_client("iotevents").exceptions` method.
 
 Boto3 documentation:
 [IoTEvents.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.exceptions)
@@ -113,19 +115,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("iotevents").can_paginate`
-method.
+Type annotations for `session.create_client("iotevents").can_paginate` method.
 
 Boto3 documentation:
 [IoTEvents.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_alarm_model"></a>
 
@@ -133,8 +132,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates an alarm model to monitor an AWS IoT Events input attribute.
 
-Type annotations for
-`aiobotocore.create_client("iotevents").create_alarm_model` method.
+Type annotations for `session.create_client("iotevents").create_alarm_model`
+method.
 
 Boto3 documentation:
 [IoTEvents.Client.create_alarm_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.create_alarm_model)
@@ -170,8 +169,8 @@ Returns a `Coroutine` for
 
 Creates a detector model.
 
-Type annotations for
-`aiobotocore.create_client("iotevents").create_detector_model` method.
+Type annotations for `session.create_client("iotevents").create_detector_model`
+method.
 
 Boto3 documentation:
 [IoTEvents.Client.create_detector_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.create_detector_model)
@@ -204,8 +203,7 @@ Returns a `Coroutine` for
 
 Creates an input.
 
-Type annotations for `aiobotocore.create_client("iotevents").create_input`
-method.
+Type annotations for `session.create_client("iotevents").create_input` method.
 
 Boto3 documentation:
 [IoTEvents.Client.create_input](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.create_input)
@@ -232,8 +230,8 @@ Returns a `Coroutine` for
 
 Deletes an alarm model.
 
-Type annotations for
-`aiobotocore.create_client("iotevents").delete_alarm_model` method.
+Type annotations for `session.create_client("iotevents").delete_alarm_model`
+method.
 
 Boto3 documentation:
 [IoTEvents.Client.delete_alarm_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.delete_alarm_model)
@@ -256,8 +254,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a detector model.
 
-Type annotations for
-`aiobotocore.create_client("iotevents").delete_detector_model` method.
+Type annotations for `session.create_client("iotevents").delete_detector_model`
+method.
 
 Boto3 documentation:
 [IoTEvents.Client.delete_detector_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.delete_detector_model)
@@ -280,8 +278,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an input.
 
-Type annotations for `aiobotocore.create_client("iotevents").delete_input`
-method.
+Type annotations for `session.create_client("iotevents").delete_input` method.
 
 Boto3 documentation:
 [IoTEvents.Client.delete_input](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.delete_input)
@@ -303,8 +300,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Retrieves information about an alarm model.
 
-Type annotations for
-`aiobotocore.create_client("iotevents").describe_alarm_model` method.
+Type annotations for `session.create_client("iotevents").describe_alarm_model`
+method.
 
 Boto3 documentation:
 [IoTEvents.Client.describe_alarm_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.describe_alarm_model)
@@ -330,7 +327,7 @@ Returns a `Coroutine` for
 Describes a detector model.
 
 Type annotations for
-`aiobotocore.create_client("iotevents").describe_detector_model` method.
+`session.create_client("iotevents").describe_detector_model` method.
 
 Boto3 documentation:
 [IoTEvents.Client.describe_detector_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.describe_detector_model)
@@ -356,8 +353,7 @@ Returns a `Coroutine` for
 Retrieves runtime information about a detector model analysis.
 
 Type annotations for
-`aiobotocore.create_client("iotevents").describe_detector_model_analysis`
-method.
+`session.create_client("iotevents").describe_detector_model_analysis` method.
 
 Boto3 documentation:
 [IoTEvents.Client.describe_detector_model_analysis](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.describe_detector_model_analysis)
@@ -381,7 +377,7 @@ Returns a `Coroutine` for
 
 Describes an input.
 
-Type annotations for `aiobotocore.create_client("iotevents").describe_input`
+Type annotations for `session.create_client("iotevents").describe_input`
 method.
 
 Boto3 documentation:
@@ -406,7 +402,7 @@ Returns a `Coroutine` for
 Retrieves the current settings of the AWS IoT Events logging options.
 
 Type annotations for
-`aiobotocore.create_client("iotevents").describe_logging_options` method.
+`session.create_client("iotevents").describe_logging_options` method.
 
 Boto3 documentation:
 [IoTEvents.Client.describe_logging_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.describe_logging_options)
@@ -424,7 +420,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("iotevents").generate_presigned_url` method.
+`session.create_client("iotevents").generate_presigned_url` method.
 
 Boto3 documentation:
 [IoTEvents.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.generate_presigned_url)
@@ -448,7 +444,7 @@ Returns a `Coroutine` for `str`.
 Retrieves one or more analysis results of the detector model.
 
 Type annotations for
-`aiobotocore.create_client("iotevents").get_detector_model_analysis_results`
+`session.create_client("iotevents").get_detector_model_analysis_results`
 method.
 
 Boto3 documentation:
@@ -476,7 +472,7 @@ Returns a `Coroutine` for
 Lists all the versions of an alarm model.
 
 Type annotations for
-`aiobotocore.create_client("iotevents").list_alarm_model_versions` method.
+`session.create_client("iotevents").list_alarm_model_versions` method.
 
 Boto3 documentation:
 [IoTEvents.Client.list_alarm_model_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.list_alarm_model_versions)
@@ -502,7 +498,7 @@ Returns a `Coroutine` for
 
 Lists the alarm models that you created.
 
-Type annotations for `aiobotocore.create_client("iotevents").list_alarm_models`
+Type annotations for `session.create_client("iotevents").list_alarm_models`
 method.
 
 Boto3 documentation:
@@ -528,7 +524,7 @@ Returns a `Coroutine` for
 Lists all the versions of a detector model.
 
 Type annotations for
-`aiobotocore.create_client("iotevents").list_detector_model_versions` method.
+`session.create_client("iotevents").list_detector_model_versions` method.
 
 Boto3 documentation:
 [IoTEvents.Client.list_detector_model_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.list_detector_model_versions)
@@ -554,8 +550,8 @@ Returns a `Coroutine` for
 
 Lists the detector models you have created.
 
-Type annotations for
-`aiobotocore.create_client("iotevents").list_detector_models` method.
+Type annotations for `session.create_client("iotevents").list_detector_models`
+method.
 
 Boto3 documentation:
 [IoTEvents.Client.list_detector_models](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.list_detector_models)
@@ -580,8 +576,8 @@ Returns a `Coroutine` for
 
 Lists one or more input routings.
 
-Type annotations for
-`aiobotocore.create_client("iotevents").list_input_routings` method.
+Type annotations for `session.create_client("iotevents").list_input_routings`
+method.
 
 Boto3 documentation:
 [IoTEvents.Client.list_input_routings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.list_input_routings)
@@ -608,8 +604,7 @@ Returns a `Coroutine` for
 
 Lists the inputs you have created.
 
-Type annotations for `aiobotocore.create_client("iotevents").list_inputs`
-method.
+Type annotations for `session.create_client("iotevents").list_inputs` method.
 
 Boto3 documentation:
 [IoTEvents.Client.list_inputs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.list_inputs)
@@ -634,7 +629,7 @@ Returns a `Coroutine` for
 Lists the tags (metadata) you have assigned to the resource.
 
 Type annotations for
-`aiobotocore.create_client("iotevents").list_tags_for_resource` method.
+`session.create_client("iotevents").list_tags_for_resource` method.
 
 Boto3 documentation:
 [IoTEvents.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.list_tags_for_resource)
@@ -658,8 +653,8 @@ Returns a `Coroutine` for
 
 Sets or updates the AWS IoT Events logging options.
 
-Type annotations for
-`aiobotocore.create_client("iotevents").put_logging_options` method.
+Type annotations for `session.create_client("iotevents").put_logging_options`
+method.
 
 Boto3 documentation:
 [IoTEvents.Client.put_logging_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.put_logging_options)
@@ -682,7 +677,7 @@ Keyword-only arguments:
 Performs an analysis of your detector model.
 
 Type annotations for
-`aiobotocore.create_client("iotevents").start_detector_model_analysis` method.
+`session.create_client("iotevents").start_detector_model_analysis` method.
 
 Boto3 documentation:
 [IoTEvents.Client.start_detector_model_analysis](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.start_detector_model_analysis)
@@ -708,8 +703,7 @@ Returns a `Coroutine` for
 
 Adds to or modifies the tags of the given resource.
 
-Type annotations for `aiobotocore.create_client("iotevents").tag_resource`
-method.
+Type annotations for `session.create_client("iotevents").tag_resource` method.
 
 Boto3 documentation:
 [IoTEvents.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.tag_resource)
@@ -732,7 +726,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the given tags (metadata) from the resource.
 
-Type annotations for `aiobotocore.create_client("iotevents").untag_resource`
+Type annotations for `session.create_client("iotevents").untag_resource`
 method.
 
 Boto3 documentation:
@@ -756,8 +750,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an alarm model.
 
-Type annotations for
-`aiobotocore.create_client("iotevents").update_alarm_model` method.
+Type annotations for `session.create_client("iotevents").update_alarm_model`
+method.
 
 Boto3 documentation:
 [IoTEvents.Client.update_alarm_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.update_alarm_model)
@@ -791,8 +785,8 @@ Returns a `Coroutine` for
 
 Updates a detector model.
 
-Type annotations for
-`aiobotocore.create_client("iotevents").update_detector_model` method.
+Type annotations for `session.create_client("iotevents").update_detector_model`
+method.
 
 Boto3 documentation:
 [IoTEvents.Client.update_detector_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.update_detector_model)
@@ -823,8 +817,7 @@ Returns a `Coroutine` for
 
 Updates an input.
 
-Type annotations for `aiobotocore.create_client("iotevents").update_input`
-method.
+Type annotations for `session.create_client("iotevents").update_input` method.
 
 Boto3 documentation:
 [IoTEvents.Client.update_input](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.update_input)
@@ -843,3 +836,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateInputResponseTypeDef](./type_defs.md#updateinputresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("iotevents").__aenter__` method.
+
+Boto3 documentation:
+[IoTEvents.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [IoTEventsClient](#ioteventsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("iotevents").__aexit__` method.
+
+Boto3 documentation:
+[IoTEvents.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents.html#IoTEvents.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

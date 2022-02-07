@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[codepipeline]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[codepipeline]'
+
+# standalone installation
 pip install types-aiobotocore-codepipeline
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-codepipeline
 
 ## CodePipelineClient
 
-Type annotations for `aiobotocore.create_client("codepipeline")` as
+Type annotations for `session.create_client("codepipeline")` as
 [CodePipelineClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_codepipeline.client import CodePipelineClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [acknowledge_job](./client.md#acknowledge_job)
 - [acknowledge_third_party_job](./client.md#acknowledge_third_party_job)
 - [can_paginate](./client.md#can_paginate)
@@ -141,7 +147,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_codepipeline.paginators import ListActionExecutionsPaginator, ...
+from types_aiobotocore_codepipeline.paginator import ListActionExecutionsPaginator, ...
 ```
 
 - [ListActionExecutionsPaginator](./paginators.md#listactionexecutionspaginator)

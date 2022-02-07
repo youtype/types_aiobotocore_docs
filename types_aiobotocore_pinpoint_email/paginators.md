@@ -21,17 +21,19 @@ type annotations stubs module
 ## GetDedicatedIpsPaginator
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").get_paginator("get_dedicated_ips")`.
+`session.create_client("pinpoint-email").get_paginator("get_dedicated_ips")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_pinpoint_email.paginator import GetDedicatedIpsPaginator
 
-def get_get_dedicated_ips_paginator() -> GetDedicatedIpsPaginator:
-    return Session().create_client("pinpoint-email").get_paginator("get_dedicated_ips")
+session = get_session()
+async with session.create_client("pinpoint-email") as client:
+    client: PinpointEmailClient
+    paginator: GetDedicatedIpsPaginator = client.get_paginator("get_dedicated_ips")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `GetDedicatedIpsPaginator.paginate` method:
 ## ListConfigurationSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").get_paginator("list_configuration_sets")`.
+`session.create_client("pinpoint-email").get_paginator("list_configuration_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_pinpoint_email.paginator import ListConfigurationSetsPaginator
 
-def get_list_configuration_sets_paginator() -> ListConfigurationSetsPaginator:
-    return Session().create_client("pinpoint-email").get_paginator("list_configuration_sets")
+session = get_session()
+async with session.create_client("pinpoint-email") as client:
+    client: PinpointEmailClient
+    paginator: ListConfigurationSetsPaginator = client.get_paginator("list_configuration_sets")
 ```
 
 Boto3 documentation:
@@ -80,17 +84,19 @@ Arguments for `ListConfigurationSetsPaginator.paginate` method:
 ## ListDedicatedIpPoolsPaginator
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").get_paginator("list_dedicated_ip_pools")`.
+`session.create_client("pinpoint-email").get_paginator("list_dedicated_ip_pools")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_pinpoint_email.paginator import ListDedicatedIpPoolsPaginator
 
-def get_list_dedicated_ip_pools_paginator() -> ListDedicatedIpPoolsPaginator:
-    return Session().create_client("pinpoint-email").get_paginator("list_dedicated_ip_pools")
+session = get_session()
+async with session.create_client("pinpoint-email") as client:
+    client: PinpointEmailClient
+    paginator: ListDedicatedIpPoolsPaginator = client.get_paginator("list_dedicated_ip_pools")
 ```
 
 Boto3 documentation:
@@ -109,17 +115,19 @@ Arguments for `ListDedicatedIpPoolsPaginator.paginate` method:
 ## ListDeliverabilityTestReportsPaginator
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").get_paginator("list_deliverability_test_reports")`.
+`session.create_client("pinpoint-email").get_paginator("list_deliverability_test_reports")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_pinpoint_email.paginator import ListDeliverabilityTestReportsPaginator
 
-def get_list_deliverability_test_reports_paginator() -> ListDeliverabilityTestReportsPaginator:
-    return Session().create_client("pinpoint-email").get_paginator("list_deliverability_test_reports")
+session = get_session()
+async with session.create_client("pinpoint-email") as client:
+    client: PinpointEmailClient
+    paginator: ListDeliverabilityTestReportsPaginator = client.get_paginator("list_deliverability_test_reports")
 ```
 
 Boto3 documentation:
@@ -138,17 +146,19 @@ Arguments for `ListDeliverabilityTestReportsPaginator.paginate` method:
 ## ListEmailIdentitiesPaginator
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").get_paginator("list_email_identities")`.
+`session.create_client("pinpoint-email").get_paginator("list_email_identities")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_pinpoint_email.paginator import ListEmailIdentitiesPaginator
 
-def get_list_email_identities_paginator() -> ListEmailIdentitiesPaginator:
-    return Session().create_client("pinpoint-email").get_paginator("list_email_identities")
+session = get_session()
+async with session.create_client("pinpoint-email") as client:
+    client: PinpointEmailClient
+    paginator: ListEmailIdentitiesPaginator = client.get_paginator("list_email_identities")
 ```
 
 Boto3 documentation:

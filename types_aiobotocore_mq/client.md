@@ -38,22 +38,25 @@ type annotations stubs module
     - [update_broker](#update_broker)
     - [update_configuration](#update_configuration)
     - [update_user](#update_user)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="mqclient"></a>
 
 ## MQClient
 
-Type annotations for `aiobotocore.create_client("mq")`
+Type annotations for `session.create_client("mq")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_mq.client import MQClient
 
-def get_mq_client() -> MQClient:
-    return Session().client("mq")
+session = get_session()
+async with session.create_client("mq") as client:
+    client: MQClient
 ```
 
 Boto3 documentation:
@@ -93,7 +96,7 @@ Exceptions:
 
 MQClient exceptions.
 
-Type annotations for `aiobotocore.create_client("mq").exceptions` method.
+Type annotations for `session.create_client("mq").exceptions` method.
 
 Boto3 documentation:
 [MQ.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.exceptions)
@@ -106,18 +109,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("mq").can_paginate` method.
+Type annotations for `session.create_client("mq").can_paginate` method.
 
 Boto3 documentation:
 [MQ.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_broker"></a>
 
@@ -125,7 +126,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a broker.
 
-Type annotations for `aiobotocore.create_client("mq").create_broker` method.
+Type annotations for `session.create_client("mq").create_broker` method.
 
 Boto3 documentation:
 [MQ.Client.create_broker](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.create_broker)
@@ -172,8 +173,7 @@ Returns a `Coroutine` for
 
 Creates a new configuration for the specified configuration name.
 
-Type annotations for `aiobotocore.create_client("mq").create_configuration`
-method.
+Type annotations for `session.create_client("mq").create_configuration` method.
 
 Boto3 documentation:
 [MQ.Client.create_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.create_configuration)
@@ -202,7 +202,7 @@ Returns a `Coroutine` for
 
 Add a tag to a resource.
 
-Type annotations for `aiobotocore.create_client("mq").create_tags` method.
+Type annotations for `session.create_client("mq").create_tags` method.
 
 Boto3 documentation:
 [MQ.Client.create_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.create_tags)
@@ -223,7 +223,7 @@ Keyword-only arguments:
 
 Creates an ActiveMQ user.
 
-Type annotations for `aiobotocore.create_client("mq").create_user` method.
+Type annotations for `session.create_client("mq").create_user` method.
 
 Boto3 documentation:
 [MQ.Client.create_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.create_user)
@@ -249,7 +249,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a broker.
 
-Type annotations for `aiobotocore.create_client("mq").delete_broker` method.
+Type annotations for `session.create_client("mq").delete_broker` method.
 
 Boto3 documentation:
 [MQ.Client.delete_broker](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.delete_broker)
@@ -272,7 +272,7 @@ Returns a `Coroutine` for
 
 Removes a tag from a resource.
 
-Type annotations for `aiobotocore.create_client("mq").delete_tags` method.
+Type annotations for `session.create_client("mq").delete_tags` method.
 
 Boto3 documentation:
 [MQ.Client.delete_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.delete_tags)
@@ -293,7 +293,7 @@ Keyword-only arguments:
 
 Deletes an ActiveMQ user.
 
-Type annotations for `aiobotocore.create_client("mq").delete_user` method.
+Type annotations for `session.create_client("mq").delete_user` method.
 
 Boto3 documentation:
 [MQ.Client.delete_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.delete_user)
@@ -316,7 +316,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Returns information about the specified broker.
 
-Type annotations for `aiobotocore.create_client("mq").describe_broker` method.
+Type annotations for `session.create_client("mq").describe_broker` method.
 
 Boto3 documentation:
 [MQ.Client.describe_broker](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.describe_broker)
@@ -339,8 +339,8 @@ Returns a `Coroutine` for
 
 Describe available engine types and versions.
 
-Type annotations for
-`aiobotocore.create_client("mq").describe_broker_engine_types` method.
+Type annotations for `session.create_client("mq").describe_broker_engine_types`
+method.
 
 Boto3 documentation:
 [MQ.Client.describe_broker_engine_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.describe_broker_engine_types)
@@ -367,7 +367,7 @@ Returns a `Coroutine` for
 Describe available broker instance options.
 
 Type annotations for
-`aiobotocore.create_client("mq").describe_broker_instance_options` method.
+`session.create_client("mq").describe_broker_instance_options` method.
 
 Boto3 documentation:
 [MQ.Client.describe_broker_instance_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.describe_broker_instance_options)
@@ -395,7 +395,7 @@ Returns a `Coroutine` for
 
 Returns information about the specified configuration.
 
-Type annotations for `aiobotocore.create_client("mq").describe_configuration`
+Type annotations for `session.create_client("mq").describe_configuration`
 method.
 
 Boto3 documentation:
@@ -421,7 +421,7 @@ Returns a `Coroutine` for
 Returns the specified configuration revision for the specified configuration.
 
 Type annotations for
-`aiobotocore.create_client("mq").describe_configuration_revision` method.
+`session.create_client("mq").describe_configuration_revision` method.
 
 Boto3 documentation:
 [MQ.Client.describe_configuration_revision](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.describe_configuration_revision)
@@ -446,7 +446,7 @@ Returns a `Coroutine` for
 
 Returns information about an ActiveMQ user.
 
-Type annotations for `aiobotocore.create_client("mq").describe_user` method.
+Type annotations for `session.create_client("mq").describe_user` method.
 
 Boto3 documentation:
 [MQ.Client.describe_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.describe_user)
@@ -470,7 +470,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("mq").generate_presigned_url`
+Type annotations for `session.create_client("mq").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -494,7 +494,7 @@ Returns a `Coroutine` for `str`.
 
 Returns a list of all brokers.
 
-Type annotations for `aiobotocore.create_client("mq").list_brokers` method.
+Type annotations for `session.create_client("mq").list_brokers` method.
 
 Boto3 documentation:
 [MQ.Client.list_brokers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.list_brokers)
@@ -518,8 +518,8 @@ Returns a `Coroutine` for
 
 Returns a list of all revisions for the specified configuration.
 
-Type annotations for
-`aiobotocore.create_client("mq").list_configuration_revisions` method.
+Type annotations for `session.create_client("mq").list_configuration_revisions`
+method.
 
 Boto3 documentation:
 [MQ.Client.list_configuration_revisions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.list_configuration_revisions)
@@ -545,8 +545,7 @@ Returns a `Coroutine` for
 
 Returns a list of all configurations.
 
-Type annotations for `aiobotocore.create_client("mq").list_configurations`
-method.
+Type annotations for `session.create_client("mq").list_configurations` method.
 
 Boto3 documentation:
 [MQ.Client.list_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.list_configurations)
@@ -571,7 +570,7 @@ Returns a `Coroutine` for
 
 Lists tags for a resource.
 
-Type annotations for `aiobotocore.create_client("mq").list_tags` method.
+Type annotations for `session.create_client("mq").list_tags` method.
 
 Boto3 documentation:
 [MQ.Client.list_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.list_tags)
@@ -594,7 +593,7 @@ Returns a `Coroutine` for
 
 Returns a list of all ActiveMQ users.
 
-Type annotations for `aiobotocore.create_client("mq").list_users` method.
+Type annotations for `session.create_client("mq").list_users` method.
 
 Boto3 documentation:
 [MQ.Client.list_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.list_users)
@@ -619,7 +618,7 @@ Returns a `Coroutine` for
 
 Reboots a broker.
 
-Type annotations for `aiobotocore.create_client("mq").reboot_broker` method.
+Type annotations for `session.create_client("mq").reboot_broker` method.
 
 Boto3 documentation:
 [MQ.Client.reboot_broker](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.reboot_broker)
@@ -641,7 +640,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds a pending configuration change to a broker.
 
-Type annotations for `aiobotocore.create_client("mq").update_broker` method.
+Type annotations for `session.create_client("mq").update_broker` method.
 
 Boto3 documentation:
 [MQ.Client.update_broker](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.update_broker)
@@ -677,8 +676,7 @@ Returns a `Coroutine` for
 
 Updates the specified configuration.
 
-Type annotations for `aiobotocore.create_client("mq").update_configuration`
-method.
+Type annotations for `session.create_client("mq").update_configuration` method.
 
 Boto3 documentation:
 [MQ.Client.update_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.update_configuration)
@@ -704,7 +702,7 @@ Returns a `Coroutine` for
 
 Updates the information for an ActiveMQ user.
 
-Type annotations for `aiobotocore.create_client("mq").update_user` method.
+Type annotations for `session.create_client("mq").update_user` method.
 
 Boto3 documentation:
 [MQ.Client.update_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.update_user)
@@ -724,12 +722,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("mq").__aenter__` method.
+
+Boto3 documentation:
+[MQ.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [MQClient](#mqclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("mq").__aexit__` method.
+
+Boto3 documentation:
+[MQ.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mq.html#MQ.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("mq").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("mq").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_brokers")` ->
   [ListBrokersPaginator](./paginators.md#listbrokerspaginator)

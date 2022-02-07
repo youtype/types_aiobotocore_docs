@@ -34,21 +34,24 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_connector_profile](#update_connector_profile)
     - [update_flow](#update_flow)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="appflowclient"></a>
 
 ## AppflowClient
 
-Type annotations for `aiobotocore.create_client("appflow")`
+Type annotations for `session.create_client("appflow")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_appflow.client import AppflowClient
 
-def get_appflow_client() -> AppflowClient:
-    return Session().client("appflow")
+session = get_session()
+async with session.create_client("appflow") as client:
+    client: AppflowClient
 ```
 
 Boto3 documentation:
@@ -90,7 +93,7 @@ Exceptions:
 
 AppflowClient exceptions.
 
-Type annotations for `aiobotocore.create_client("appflow").exceptions` method.
+Type annotations for `session.create_client("appflow").exceptions` method.
 
 Boto3 documentation:
 [Appflow.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.exceptions)
@@ -103,19 +106,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("appflow").can_paginate`
-method.
+Type annotations for `session.create_client("appflow").can_paginate` method.
 
 Boto3 documentation:
 [Appflow.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_connector_profile"></a>
 
@@ -125,7 +125,7 @@ Creates a new connector profile associated with your Amazon Web Services
 account.
 
 Type annotations for
-`aiobotocore.create_client("appflow").create_connector_profile` method.
+`session.create_client("appflow").create_connector_profile` method.
 
 Boto3 documentation:
 [Appflow.Client.create_connector_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.create_connector_profile)
@@ -157,7 +157,7 @@ Returns a `Coroutine` for
 
 Enables your application to create a new flow using Amazon AppFlow.
 
-Type annotations for `aiobotocore.create_client("appflow").create_flow` method.
+Type annotations for `session.create_client("appflow").create_flow` method.
 
 Boto3 documentation:
 [Appflow.Client.create_flow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.create_flow)
@@ -193,7 +193,7 @@ Returns a `Coroutine` for
 Enables you to delete an existing connector profile.
 
 Type annotations for
-`aiobotocore.create_client("appflow").delete_connector_profile` method.
+`session.create_client("appflow").delete_connector_profile` method.
 
 Boto3 documentation:
 [Appflow.Client.delete_connector_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.delete_connector_profile)
@@ -217,7 +217,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Enables your application to delete an existing flow.
 
-Type annotations for `aiobotocore.create_client("appflow").delete_flow` method.
+Type annotations for `session.create_client("appflow").delete_flow` method.
 
 Boto3 documentation:
 [Appflow.Client.delete_flow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.delete_flow)
@@ -242,7 +242,7 @@ Provides details regarding the entity used with the connector, with a
 description of the data model for each entity.
 
 Type annotations for
-`aiobotocore.create_client("appflow").describe_connector_entity` method.
+`session.create_client("appflow").describe_connector_entity` method.
 
 Boto3 documentation:
 [Appflow.Client.describe_connector_entity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.describe_connector_entity)
@@ -270,7 +270,7 @@ Returns a list of `connector-profile` details matching the provided
 `connector- profile` names and `connector-types`.
 
 Type annotations for
-`aiobotocore.create_client("appflow").describe_connector_profiles` method.
+`session.create_client("appflow").describe_connector_profiles` method.
 
 Boto3 documentation:
 [Appflow.Client.describe_connector_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.describe_connector_profiles)
@@ -298,7 +298,7 @@ Returns a `Coroutine` for
 Describes the connectors vended by Amazon AppFlow for specified connector
 types.
 
-Type annotations for `aiobotocore.create_client("appflow").describe_connectors`
+Type annotations for `session.create_client("appflow").describe_connectors`
 method.
 
 Boto3 documentation:
@@ -325,8 +325,7 @@ Returns a `Coroutine` for
 
 Provides a description of the specified flow.
 
-Type annotations for `aiobotocore.create_client("appflow").describe_flow`
-method.
+Type annotations for `session.create_client("appflow").describe_flow` method.
 
 Boto3 documentation:
 [Appflow.Client.describe_flow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.describe_flow)
@@ -350,7 +349,7 @@ Returns a `Coroutine` for
 Fetches the execution history of the flow.
 
 Type annotations for
-`aiobotocore.create_client("appflow").describe_flow_execution_records` method.
+`session.create_client("appflow").describe_flow_execution_records` method.
 
 Boto3 documentation:
 [Appflow.Client.describe_flow_execution_records](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.describe_flow_execution_records)
@@ -376,8 +375,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("appflow").generate_presigned_url` method.
+Type annotations for `session.create_client("appflow").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Appflow.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.generate_presigned_url)
@@ -400,8 +399,8 @@ Returns a `Coroutine` for `str`.
 
 Returns the list of available connector entities supported by Amazon AppFlow.
 
-Type annotations for
-`aiobotocore.create_client("appflow").list_connector_entities` method.
+Type annotations for `session.create_client("appflow").list_connector_entities`
+method.
 
 Boto3 documentation:
 [Appflow.Client.list_connector_entities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.list_connector_entities)
@@ -427,7 +426,7 @@ Returns a `Coroutine` for
 
 Lists all of the flows associated with your account.
 
-Type annotations for `aiobotocore.create_client("appflow").list_flows` method.
+Type annotations for `session.create_client("appflow").list_flows` method.
 
 Boto3 documentation:
 [Appflow.Client.list_flows](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.list_flows)
@@ -451,8 +450,8 @@ Returns a `Coroutine` for
 
 Retrieves the tags that are associated with a specified flow.
 
-Type annotations for
-`aiobotocore.create_client("appflow").list_tags_for_resource` method.
+Type annotations for `session.create_client("appflow").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Appflow.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.list_tags_for_resource)
@@ -476,7 +475,7 @@ Returns a `Coroutine` for
 
 Activates an existing flow.
 
-Type annotations for `aiobotocore.create_client("appflow").start_flow` method.
+Type annotations for `session.create_client("appflow").start_flow` method.
 
 Boto3 documentation:
 [Appflow.Client.start_flow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.start_flow)
@@ -499,7 +498,7 @@ Returns a `Coroutine` for
 
 Deactivates the existing flow.
 
-Type annotations for `aiobotocore.create_client("appflow").stop_flow` method.
+Type annotations for `session.create_client("appflow").stop_flow` method.
 
 Boto3 documentation:
 [Appflow.Client.stop_flow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.stop_flow)
@@ -522,8 +521,7 @@ Returns a `Coroutine` for
 
 Applies a tag to the specified flow.
 
-Type annotations for `aiobotocore.create_client("appflow").tag_resource`
-method.
+Type annotations for `session.create_client("appflow").tag_resource` method.
 
 Boto3 documentation:
 [Appflow.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.tag_resource)
@@ -546,8 +544,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes a tag from the specified flow.
 
-Type annotations for `aiobotocore.create_client("appflow").untag_resource`
-method.
+Type annotations for `session.create_client("appflow").untag_resource` method.
 
 Boto3 documentation:
 [Appflow.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.untag_resource)
@@ -571,7 +568,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a given connector profile associated with your account.
 
 Type annotations for
-`aiobotocore.create_client("appflow").update_connector_profile` method.
+`session.create_client("appflow").update_connector_profile` method.
 
 Boto3 documentation:
 [Appflow.Client.update_connector_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.update_connector_profile)
@@ -600,7 +597,7 @@ Returns a `Coroutine` for
 
 Updates an existing flow.
 
-Type annotations for `aiobotocore.create_client("appflow").update_flow` method.
+Type annotations for `session.create_client("appflow").update_flow` method.
 
 Boto3 documentation:
 [Appflow.Client.update_flow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.update_flow)
@@ -626,3 +623,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateFlowResponseTypeDef](./type_defs.md#updateflowresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("appflow").__aenter__` method.
+
+Boto3 documentation:
+[Appflow.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [AppflowClient](#appflowclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("appflow").__aexit__` method.
+
+Boto3 documentation:
+[Appflow.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appflow.html#Appflow.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

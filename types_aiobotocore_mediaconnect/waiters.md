@@ -19,7 +19,7 @@ type annotations stubs module
 ## FlowActiveWaiter
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").get_waiter("flow_active")`.
+`session.create_client("mediaconnect").get_waiter("flow_active")`.
 
 Can be used directly:
 
@@ -29,7 +29,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_mediaconnect.waiter import FlowActiveWaiter
 
 def get_flow_active_waiter() -> FlowActiveWaiter:
-    return Session().create_client("mediaconnect").get_waiter("flow_active")
+    return Session().client("mediaconnect").get_waiter("flow_active")
 ```
 
 Boto3 documentation:
@@ -45,7 +45,7 @@ Arguments for `FlowActiveWaiter.wait` method:
 ## FlowDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").get_waiter("flow_deleted")`.
+`session.create_client("mediaconnect").get_waiter("flow_deleted")`.
 
 Can be used directly:
 
@@ -55,7 +55,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_mediaconnect.waiter import FlowDeletedWaiter
 
 def get_flow_deleted_waiter() -> FlowDeletedWaiter:
-    return Session().create_client("mediaconnect").get_waiter("flow_deleted")
+    return Session().client("mediaconnect").get_waiter("flow_deleted")
 ```
 
 Boto3 documentation:
@@ -71,7 +71,7 @@ Arguments for `FlowDeletedWaiter.wait` method:
 ## FlowStandbyWaiter
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").get_waiter("flow_standby")`.
+`session.create_client("mediaconnect").get_waiter("flow_standby")`.
 
 Can be used directly:
 
@@ -81,7 +81,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_mediaconnect.waiter import FlowStandbyWaiter
 
 def get_flow_standby_waiter() -> FlowStandbyWaiter:
-    return Session().create_client("mediaconnect").get_waiter("flow_standby")
+    return Session().client("mediaconnect").get_waiter("flow_standby")
 ```
 
 Boto3 documentation:

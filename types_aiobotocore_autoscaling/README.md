@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[autoscaling]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[autoscaling]'
+
+# standalone installation
 pip install types-aiobotocore-autoscaling
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-autoscaling
 
 ## AutoScalingClient
 
-Type annotations for `aiobotocore.create_client("autoscaling")` as
+Type annotations for `session.create_client("autoscaling")` as
 [AutoScalingClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_autoscaling.client import AutoScalingClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [attach_instances](./client.md#attach_instances)
 - [attach_load_balancer_target_groups](./client.md#attach_load_balancer_target_groups)
 - [attach_load_balancers](./client.md#attach_load_balancers)
@@ -135,7 +141,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_autoscaling.paginators import DescribeAutoScalingGroupsPaginator, ...
+from types_aiobotocore_autoscaling.paginator import DescribeAutoScalingGroupsPaginator, ...
 ```
 
 - [DescribeAutoScalingGroupsPaginator](./paginators.md#describeautoscalinggroupspaginator)

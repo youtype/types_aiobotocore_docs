@@ -23,17 +23,19 @@ type annotations stubs module
 ## DescribeAffectedAccountsForOrganizationPaginator
 
 Type annotations for
-`aiobotocore.create_client("health").get_paginator("describe_affected_accounts_for_organization")`.
+`session.create_client("health").get_paginator("describe_affected_accounts_for_organization")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_health.paginator import DescribeAffectedAccountsForOrganizationPaginator
 
-def get_describe_affected_accounts_for_organization_paginator() -> DescribeAffectedAccountsForOrganizationPaginator:
-    return Session().create_client("health").get_paginator("describe_affected_accounts_for_organization")
+session = get_session()
+async with session.create_client("health") as client:
+    client: HealthClient
+    paginator: DescribeAffectedAccountsForOrganizationPaginator = client.get_paginator("describe_affected_accounts_for_organization")
 ```
 
 Boto3 documentation:
@@ -54,17 +56,19 @@ method:
 ## DescribeAffectedEntitiesPaginator
 
 Type annotations for
-`aiobotocore.create_client("health").get_paginator("describe_affected_entities")`.
+`session.create_client("health").get_paginator("describe_affected_entities")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_health.paginator import DescribeAffectedEntitiesPaginator
 
-def get_describe_affected_entities_paginator() -> DescribeAffectedEntitiesPaginator:
-    return Session().create_client("health").get_paginator("describe_affected_entities")
+session = get_session()
+async with session.create_client("health") as client:
+    client: HealthClient
+    paginator: DescribeAffectedEntitiesPaginator = client.get_paginator("describe_affected_entities")
 ```
 
 Boto3 documentation:
@@ -86,17 +90,19 @@ Arguments for `DescribeAffectedEntitiesPaginator.paginate` method:
 ## DescribeAffectedEntitiesForOrganizationPaginator
 
 Type annotations for
-`aiobotocore.create_client("health").get_paginator("describe_affected_entities_for_organization")`.
+`session.create_client("health").get_paginator("describe_affected_entities_for_organization")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_health.paginator import DescribeAffectedEntitiesForOrganizationPaginator
 
-def get_describe_affected_entities_for_organization_paginator() -> DescribeAffectedEntitiesForOrganizationPaginator:
-    return Session().create_client("health").get_paginator("describe_affected_entities_for_organization")
+session = get_session()
+async with session.create_client("health") as client:
+    client: HealthClient
+    paginator: DescribeAffectedEntitiesForOrganizationPaginator = client.get_paginator("describe_affected_entities_for_organization")
 ```
 
 Boto3 documentation:
@@ -120,17 +126,19 @@ method:
 ## DescribeEventAggregatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("health").get_paginator("describe_event_aggregates")`.
+`session.create_client("health").get_paginator("describe_event_aggregates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_health.paginator import DescribeEventAggregatesPaginator
 
-def get_describe_event_aggregates_paginator() -> DescribeEventAggregatesPaginator:
-    return Session().create_client("health").get_paginator("describe_event_aggregates")
+session = get_session()
+async with session.create_client("health") as client:
+    client: HealthClient
+    paginator: DescribeEventAggregatesPaginator = client.get_paginator("describe_event_aggregates")
 ```
 
 Boto3 documentation:
@@ -153,17 +161,19 @@ Arguments for `DescribeEventAggregatesPaginator.paginate` method:
 ## DescribeEventTypesPaginator
 
 Type annotations for
-`aiobotocore.create_client("health").get_paginator("describe_event_types")`.
+`session.create_client("health").get_paginator("describe_event_types")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_health.paginator import DescribeEventTypesPaginator
 
-def get_describe_event_types_paginator() -> DescribeEventTypesPaginator:
-    return Session().create_client("health").get_paginator("describe_event_types")
+session = get_session()
+async with session.create_client("health") as client:
+    client: HealthClient
+    paginator: DescribeEventTypesPaginator = client.get_paginator("describe_event_types")
 ```
 
 Boto3 documentation:
@@ -184,17 +194,19 @@ Arguments for `DescribeEventTypesPaginator.paginate` method:
 ## DescribeEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("health").get_paginator("describe_events")`.
+`session.create_client("health").get_paginator("describe_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_health.paginator import DescribeEventsPaginator
 
-def get_describe_events_paginator() -> DescribeEventsPaginator:
-    return Session().create_client("health").get_paginator("describe_events")
+session = get_session()
+async with session.create_client("health") as client:
+    client: HealthClient
+    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")
 ```
 
 Boto3 documentation:
@@ -215,17 +227,19 @@ Arguments for `DescribeEventsPaginator.paginate` method:
 ## DescribeEventsForOrganizationPaginator
 
 Type annotations for
-`aiobotocore.create_client("health").get_paginator("describe_events_for_organization")`.
+`session.create_client("health").get_paginator("describe_events_for_organization")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_health.paginator import DescribeEventsForOrganizationPaginator
 
-def get_describe_events_for_organization_paginator() -> DescribeEventsForOrganizationPaginator:
-    return Session().create_client("health").get_paginator("describe_events_for_organization")
+session = get_session()
+async with session.create_client("health") as client:
+    client: HealthClient
+    paginator: DescribeEventsForOrganizationPaginator = client.get_paginator("describe_events_for_organization")
 ```
 
 Boto3 documentation:

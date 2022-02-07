@@ -19,7 +19,7 @@ type annotations stubs module
 ## EnvironmentExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").get_waiter("environment_exists")`.
+`session.create_client("elasticbeanstalk").get_waiter("environment_exists")`.
 
 Can be used directly:
 
@@ -29,7 +29,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_elasticbeanstalk.waiter import EnvironmentExistsWaiter
 
 def get_environment_exists_waiter() -> EnvironmentExistsWaiter:
-    return Session().create_client("elasticbeanstalk").get_waiter("environment_exists")
+    return Session().client("elasticbeanstalk").get_waiter("environment_exists")
 ```
 
 Boto3 documentation:
@@ -52,7 +52,7 @@ Arguments for `EnvironmentExistsWaiter.wait` method:
 ## EnvironmentTerminatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").get_waiter("environment_terminated")`.
+`session.create_client("elasticbeanstalk").get_waiter("environment_terminated")`.
 
 Can be used directly:
 
@@ -62,7 +62,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_elasticbeanstalk.waiter import EnvironmentTerminatedWaiter
 
 def get_environment_terminated_waiter() -> EnvironmentTerminatedWaiter:
-    return Session().create_client("elasticbeanstalk").get_waiter("environment_terminated")
+    return Session().client("elasticbeanstalk").get_waiter("environment_terminated")
 ```
 
 Boto3 documentation:
@@ -85,7 +85,7 @@ Arguments for `EnvironmentTerminatedWaiter.wait` method:
 ## EnvironmentUpdatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("elasticbeanstalk").get_waiter("environment_updated")`.
+`session.create_client("elasticbeanstalk").get_waiter("environment_updated")`.
 
 Can be used directly:
 
@@ -95,7 +95,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_elasticbeanstalk.waiter import EnvironmentUpdatedWaiter
 
 def get_environment_updated_waiter() -> EnvironmentUpdatedWaiter:
-    return Session().create_client("elasticbeanstalk").get_waiter("environment_updated")
+    return Session().client("elasticbeanstalk").get_waiter("environment_updated")
 ```
 
 Boto3 documentation:

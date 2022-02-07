@@ -22,17 +22,19 @@ type annotations stubs module
 ## GetResourcePoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").get_paginator("get_resource_policies")`.
+`session.create_client("ssm-incidents").get_paginator("get_resource_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm_incidents.paginator import GetResourcePoliciesPaginator
 
-def get_get_resource_policies_paginator() -> GetResourcePoliciesPaginator:
-    return Session().create_client("ssm-incidents").get_paginator("get_resource_policies")
+session = get_session()
+async with session.create_client("ssm-incidents") as client:
+    client: SSMIncidentsClient
+    paginator: GetResourcePoliciesPaginator = client.get_paginator("get_resource_policies")
 ```
 
 Boto3 documentation:
@@ -52,17 +54,19 @@ Arguments for `GetResourcePoliciesPaginator.paginate` method:
 ## ListIncidentRecordsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").get_paginator("list_incident_records")`.
+`session.create_client("ssm-incidents").get_paginator("list_incident_records")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm_incidents.paginator import ListIncidentRecordsPaginator
 
-def get_list_incident_records_paginator() -> ListIncidentRecordsPaginator:
-    return Session().create_client("ssm-incidents").get_paginator("list_incident_records")
+session = get_session()
+async with session.create_client("ssm-incidents") as client:
+    client: SSMIncidentsClient
+    paginator: ListIncidentRecordsPaginator = client.get_paginator("list_incident_records")
 ```
 
 Boto3 documentation:
@@ -82,17 +86,19 @@ Arguments for `ListIncidentRecordsPaginator.paginate` method:
 ## ListRelatedItemsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").get_paginator("list_related_items")`.
+`session.create_client("ssm-incidents").get_paginator("list_related_items")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm_incidents.paginator import ListRelatedItemsPaginator
 
-def get_list_related_items_paginator() -> ListRelatedItemsPaginator:
-    return Session().create_client("ssm-incidents").get_paginator("list_related_items")
+session = get_session()
+async with session.create_client("ssm-incidents") as client:
+    client: SSMIncidentsClient
+    paginator: ListRelatedItemsPaginator = client.get_paginator("list_related_items")
 ```
 
 Boto3 documentation:
@@ -112,17 +118,19 @@ Arguments for `ListRelatedItemsPaginator.paginate` method:
 ## ListReplicationSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").get_paginator("list_replication_sets")`.
+`session.create_client("ssm-incidents").get_paginator("list_replication_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm_incidents.paginator import ListReplicationSetsPaginator
 
-def get_list_replication_sets_paginator() -> ListReplicationSetsPaginator:
-    return Session().create_client("ssm-incidents").get_paginator("list_replication_sets")
+session = get_session()
+async with session.create_client("ssm-incidents") as client:
+    client: SSMIncidentsClient
+    paginator: ListReplicationSetsPaginator = client.get_paginator("list_replication_sets")
 ```
 
 Boto3 documentation:
@@ -141,17 +149,19 @@ Arguments for `ListReplicationSetsPaginator.paginate` method:
 ## ListResponsePlansPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").get_paginator("list_response_plans")`.
+`session.create_client("ssm-incidents").get_paginator("list_response_plans")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm_incidents.paginator import ListResponsePlansPaginator
 
-def get_list_response_plans_paginator() -> ListResponsePlansPaginator:
-    return Session().create_client("ssm-incidents").get_paginator("list_response_plans")
+session = get_session()
+async with session.create_client("ssm-incidents") as client:
+    client: SSMIncidentsClient
+    paginator: ListResponsePlansPaginator = client.get_paginator("list_response_plans")
 ```
 
 Boto3 documentation:
@@ -170,17 +180,19 @@ Arguments for `ListResponsePlansPaginator.paginate` method:
 ## ListTimelineEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm-incidents").get_paginator("list_timeline_events")`.
+`session.create_client("ssm-incidents").get_paginator("list_timeline_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm_incidents.paginator import ListTimelineEventsPaginator
 
-def get_list_timeline_events_paginator() -> ListTimelineEventsPaginator:
-    return Session().create_client("ssm-incidents").get_paginator("list_timeline_events")
+session = get_session()
+async with session.create_client("ssm-incidents") as client:
+    client: SSMIncidentsClient
+    paginator: ListTimelineEventsPaginator = client.get_paginator("list_timeline_events")
 ```
 
 Boto3 documentation:

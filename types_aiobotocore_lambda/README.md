@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[lambda]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[lambda]'
+
+# standalone installation
 pip install types-aiobotocore-lambda
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-lambda
 
 ## LambdaClient
 
-Type annotations for `aiobotocore.create_client("lambda")` as
+Type annotations for `session.create_client("lambda")` as
 [LambdaClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_lambda.client import LambdaClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_layer_version_permission](./client.md#add_layer_version_permission)
 - [add_permission](./client.md#add_permission)
 - [can_paginate](./client.md#can_paginate)
@@ -159,7 +165,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_lambda.paginators import ListAliasesPaginator, ...
+from types_aiobotocore_lambda.paginator import ListAliasesPaginator, ...
 ```
 
 - [ListAliasesPaginator](./paginators.md#listaliasespaginator)
@@ -183,7 +189,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_lambda.waiters import FunctionActiveWaiter, ...
+from types_aiobotocore_lambda.waiter import FunctionActiveWaiter, ...
 ```
 
 - [FunctionActiveWaiter](./waiters.md#functionactivewaiter)

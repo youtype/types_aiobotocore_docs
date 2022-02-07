@@ -19,7 +19,7 @@ type annotations stubs module
 ## FunctionActiveWaiter
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_waiter("function_active")`.
+`session.create_client("lambda").get_waiter("function_active")`.
 
 Can be used directly:
 
@@ -29,7 +29,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_lambda.waiter import FunctionActiveWaiter
 
 def get_function_active_waiter() -> FunctionActiveWaiter:
-    return Session().create_client("lambda").get_waiter("function_active")
+    return Session().client("lambda").get_waiter("function_active")
 ```
 
 Boto3 documentation:
@@ -46,7 +46,7 @@ Arguments for `FunctionActiveWaiter.wait` method:
 ## FunctionExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_waiter("function_exists")`.
+`session.create_client("lambda").get_waiter("function_exists")`.
 
 Can be used directly:
 
@@ -56,7 +56,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_lambda.waiter import FunctionExistsWaiter
 
 def get_function_exists_waiter() -> FunctionExistsWaiter:
-    return Session().create_client("lambda").get_waiter("function_exists")
+    return Session().client("lambda").get_waiter("function_exists")
 ```
 
 Boto3 documentation:
@@ -73,7 +73,7 @@ Arguments for `FunctionExistsWaiter.wait` method:
 ## FunctionUpdatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_waiter("function_updated")`.
+`session.create_client("lambda").get_waiter("function_updated")`.
 
 Can be used directly:
 
@@ -83,7 +83,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_lambda.waiter import FunctionUpdatedWaiter
 
 def get_function_updated_waiter() -> FunctionUpdatedWaiter:
-    return Session().create_client("lambda").get_waiter("function_updated")
+    return Session().client("lambda").get_waiter("function_updated")
 ```
 
 Boto3 documentation:

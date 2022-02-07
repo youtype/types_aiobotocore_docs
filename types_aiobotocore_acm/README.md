@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[acm]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[acm]'
+
+# standalone installation
 pip install types-aiobotocore-acm
 ```
 
@@ -30,8 +34,7 @@ pip install types-aiobotocore-acm
 
 ## ACMClient
 
-Type annotations for `aiobotocore.create_client("acm")` as
-[ACMClient](./client.md)
+Type annotations for `session.create_client("acm")` as [ACMClient](./client.md)
 
 Can be used directly:
 
@@ -43,6 +46,8 @@ from types_aiobotocore_acm.client import ACMClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_tags_to_certificate](./client.md#add_tags_to_certificate)
 - [can_paginate](./client.md#can_paginate)
 - [delete_certificate](./client.md#delete_certificate)
@@ -98,7 +103,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_acm.paginators import ListCertificatesPaginator, ...
+from types_aiobotocore_acm.paginator import ListCertificatesPaginator, ...
 ```
 
 - [ListCertificatesPaginator](./paginators.md#listcertificatespaginator)
@@ -113,7 +118,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_acm.waiters import CertificateValidatedWaiter, ...
+from types_aiobotocore_acm.waiter import CertificateValidatedWaiter, ...
 ```
 
 - [CertificateValidatedWaiter](./waiters.md#certificatevalidatedwaiter)

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[cognito-identity]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[cognito-identity]'
+
+# standalone installation
 pip install types-aiobotocore-cognito-identity
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-cognito-identity
 
 ## CognitoIdentityClient
 
-Type annotations for `aiobotocore.create_client("cognito-identity")` as
+Type annotations for `session.create_client("cognito-identity")` as
 [CognitoIdentityClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_cognito_identity.client import CognitoIdentityClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_identity_pool](./client.md#create_identity_pool)
 - [delete_identities](./client.md#delete_identities)
@@ -99,7 +105,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_cognito_identity.paginators import ListIdentityPoolsPaginator, ...
+from types_aiobotocore_cognito_identity.paginator import ListIdentityPoolsPaginator, ...
 ```
 
 - [ListIdentityPoolsPaginator](./paginators.md#listidentitypoolspaginator)

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[iot]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[iot]'
+
+# standalone installation
 pip install types-aiobotocore-iot
 ```
 
@@ -29,8 +33,7 @@ pip install types-aiobotocore-iot
 
 ## IoTClient
 
-Type annotations for `aiobotocore.create_client("iot")` as
-[IoTClient](./client.md)
+Type annotations for `session.create_client("iot")` as [IoTClient](./client.md)
 
 Can be used directly:
 
@@ -42,6 +45,8 @@ from types_aiobotocore_iot.client import IoTClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_certificate_transfer](./client.md#accept_certificate_transfer)
 - [add_thing_to_billing_group](./client.md#add_thing_to_billing_group)
 - [add_thing_to_thing_group](./client.md#add_thing_to_thing_group)
@@ -332,7 +337,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_iot.paginators import GetBehaviorModelTrainingSummariesPaginator, ...
+from types_aiobotocore_iot.paginator import GetBehaviorModelTrainingSummariesPaginator, ...
 ```
 
 - [GetBehaviorModelTrainingSummariesPaginator](./paginators.md#getbehaviormodeltrainingsummariespaginator)

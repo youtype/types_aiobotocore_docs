@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[detective]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[detective]'
+
+# standalone installation
 pip install types-aiobotocore-detective
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-detective
 
 ## DetectiveClient
 
-Type annotations for `aiobotocore.create_client("detective")` as
+Type annotations for `session.create_client("detective")` as
 [DetectiveClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_detective.client import DetectiveClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_invitation](./client.md#accept_invitation)
 - [can_paginate](./client.md#can_paginate)
 - [create_graph](./client.md#create_graph)

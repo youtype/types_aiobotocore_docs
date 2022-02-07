@@ -24,22 +24,25 @@ type annotations stubs module
     - [list_resource_requests](#list_resource_requests)
     - [list_resources](#list_resources)
     - [update_resource](#update_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_waiter](#get_waiter)
 
 <a id="cloudcontrolapiclient"></a>
 
 ## CloudControlApiClient
 
-Type annotations for `aiobotocore.create_client("cloudcontrol")`
+Type annotations for `session.create_client("cloudcontrol")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_cloudcontrol.client import CloudControlApiClient
 
-def get_cloudcontrol_client() -> CloudControlApiClient:
-    return Session().client("cloudcontrol")
+session = get_session()
+async with session.create_client("cloudcontrol") as client:
+    client: CloudControlApiClient
 ```
 
 Boto3 documentation:
@@ -94,8 +97,7 @@ Exceptions:
 
 CloudControlApiClient exceptions.
 
-Type annotations for `aiobotocore.create_client("cloudcontrol").exceptions`
-method.
+Type annotations for `session.create_client("cloudcontrol").exceptions` method.
 
 Boto3 documentation:
 [CloudControlApi.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudcontrol.html#CloudControlApi.Client.exceptions)
@@ -108,19 +110,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("cloudcontrol").can_paginate`
+Type annotations for `session.create_client("cloudcontrol").can_paginate`
 method.
 
 Boto3 documentation:
 [CloudControlApi.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudcontrol.html#CloudControlApi.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_resource_request"></a>
 
@@ -129,7 +129,7 @@ Returns a `Coroutine` for `bool`.
 Cancels the specified resource operation request.
 
 Type annotations for
-`aiobotocore.create_client("cloudcontrol").cancel_resource_request` method.
+`session.create_client("cloudcontrol").cancel_resource_request` method.
 
 Boto3 documentation:
 [CloudControlApi.Client.cancel_resource_request](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudcontrol.html#CloudControlApi.Client.cancel_resource_request)
@@ -153,8 +153,8 @@ Returns a `Coroutine` for
 
 Creates the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("cloudcontrol").create_resource` method.
+Type annotations for `session.create_client("cloudcontrol").create_resource`
+method.
 
 Boto3 documentation:
 [CloudControlApi.Client.create_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudcontrol.html#CloudControlApi.Client.create_resource)
@@ -181,8 +181,8 @@ Returns a `Coroutine` for
 
 Deletes the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("cloudcontrol").delete_resource` method.
+Type annotations for `session.create_client("cloudcontrol").delete_resource`
+method.
 
 Boto3 documentation:
 [CloudControlApi.Client.delete_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudcontrol.html#CloudControlApi.Client.delete_resource)
@@ -210,7 +210,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("cloudcontrol").generate_presigned_url` method.
+`session.create_client("cloudcontrol").generate_presigned_url` method.
 
 Boto3 documentation:
 [CloudControlApi.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudcontrol.html#CloudControlApi.Client.generate_presigned_url)
@@ -233,7 +233,7 @@ Returns a `Coroutine` for `str`.
 
 Returns information about the current state of the specified resource.
 
-Type annotations for `aiobotocore.create_client("cloudcontrol").get_resource`
+Type annotations for `session.create_client("cloudcontrol").get_resource`
 method.
 
 Boto3 documentation:
@@ -261,7 +261,7 @@ Returns a `Coroutine` for
 Returns the current status of a resource operation request.
 
 Type annotations for
-`aiobotocore.create_client("cloudcontrol").get_resource_request_status` method.
+`session.create_client("cloudcontrol").get_resource_request_status` method.
 
 Boto3 documentation:
 [CloudControlApi.Client.get_resource_request_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudcontrol.html#CloudControlApi.Client.get_resource_request_status)
@@ -286,7 +286,7 @@ Returns a `Coroutine` for
 Returns existing resource operation requests.
 
 Type annotations for
-`aiobotocore.create_client("cloudcontrol").list_resource_requests` method.
+`session.create_client("cloudcontrol").list_resource_requests` method.
 
 Boto3 documentation:
 [CloudControlApi.Client.list_resource_requests](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudcontrol.html#CloudControlApi.Client.list_resource_requests)
@@ -313,7 +313,7 @@ Returns a `Coroutine` for
 
 Returns information about the specified resources.
 
-Type annotations for `aiobotocore.create_client("cloudcontrol").list_resources`
+Type annotations for `session.create_client("cloudcontrol").list_resources`
 method.
 
 Boto3 documentation:
@@ -342,8 +342,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("cloudcontrol").update_resource` method.
+Type annotations for `session.create_client("cloudcontrol").update_resource`
+method.
 
 Boto3 documentation:
 [CloudControlApi.Client.update_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudcontrol.html#CloudControlApi.Client.update_resource)
@@ -365,12 +365,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateResourceOutputTypeDef](./type_defs.md#updateresourceoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("cloudcontrol").__aenter__` method.
+
+Boto3 documentation:
+[CloudControlApi.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudcontrol.html#CloudControlApi.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CloudControlApiClient](#cloudcontrolapiclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("cloudcontrol").__aexit__` method.
+
+Boto3 documentation:
+[CloudControlApi.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudcontrol.html#CloudControlApi.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_waiter"></a>
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("cloudcontrol").get_waiter`
-method with overloads.
+Type annotations for `session.create_client("cloudcontrol").get_waiter` method
+with overloads.
 
 - `client.get_waiter("resource_request_success")` ->
   [ResourceRequestSuccessWaiter](./waiters.md#resourcerequestsuccesswaiter)

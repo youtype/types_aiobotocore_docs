@@ -23,17 +23,19 @@ type annotations stubs module
 ## GetChannelSchedulePaginator
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").get_paginator("get_channel_schedule")`.
+`session.create_client("mediatailor").get_paginator("get_channel_schedule")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediatailor.paginator import GetChannelSchedulePaginator
 
-def get_get_channel_schedule_paginator() -> GetChannelSchedulePaginator:
-    return Session().create_client("mediatailor").get_paginator("get_channel_schedule")
+session = get_session()
+async with session.create_client("mediatailor") as client:
+    client: MediaTailorClient
+    paginator: GetChannelSchedulePaginator = client.get_paginator("get_channel_schedule")
 ```
 
 Boto3 documentation:
@@ -54,17 +56,19 @@ Arguments for `GetChannelSchedulePaginator.paginate` method:
 ## ListAlertsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").get_paginator("list_alerts")`.
+`session.create_client("mediatailor").get_paginator("list_alerts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediatailor.paginator import ListAlertsPaginator
 
-def get_list_alerts_paginator() -> ListAlertsPaginator:
-    return Session().create_client("mediatailor").get_paginator("list_alerts")
+session = get_session()
+async with session.create_client("mediatailor") as client:
+    client: MediaTailorClient
+    paginator: ListAlertsPaginator = client.get_paginator("list_alerts")
 ```
 
 Boto3 documentation:
@@ -84,17 +88,19 @@ Arguments for `ListAlertsPaginator.paginate` method:
 ## ListChannelsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").get_paginator("list_channels")`.
+`session.create_client("mediatailor").get_paginator("list_channels")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediatailor.paginator import ListChannelsPaginator
 
-def get_list_channels_paginator() -> ListChannelsPaginator:
-    return Session().create_client("mediatailor").get_paginator("list_channels")
+session = get_session()
+async with session.create_client("mediatailor") as client:
+    client: MediaTailorClient
+    paginator: ListChannelsPaginator = client.get_paginator("list_channels")
 ```
 
 Boto3 documentation:
@@ -113,17 +119,19 @@ Arguments for `ListChannelsPaginator.paginate` method:
 ## ListPlaybackConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").get_paginator("list_playback_configurations")`.
+`session.create_client("mediatailor").get_paginator("list_playback_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediatailor.paginator import ListPlaybackConfigurationsPaginator
 
-def get_list_playback_configurations_paginator() -> ListPlaybackConfigurationsPaginator:
-    return Session().create_client("mediatailor").get_paginator("list_playback_configurations")
+session = get_session()
+async with session.create_client("mediatailor") as client:
+    client: MediaTailorClient
+    paginator: ListPlaybackConfigurationsPaginator = client.get_paginator("list_playback_configurations")
 ```
 
 Boto3 documentation:
@@ -142,17 +150,19 @@ Arguments for `ListPlaybackConfigurationsPaginator.paginate` method:
 ## ListPrefetchSchedulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").get_paginator("list_prefetch_schedules")`.
+`session.create_client("mediatailor").get_paginator("list_prefetch_schedules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediatailor.paginator import ListPrefetchSchedulesPaginator
 
-def get_list_prefetch_schedules_paginator() -> ListPrefetchSchedulesPaginator:
-    return Session().create_client("mediatailor").get_paginator("list_prefetch_schedules")
+session = get_session()
+async with session.create_client("mediatailor") as client:
+    client: MediaTailorClient
+    paginator: ListPrefetchSchedulesPaginator = client.get_paginator("list_prefetch_schedules")
 ```
 
 Boto3 documentation:
@@ -173,17 +183,19 @@ Arguments for `ListPrefetchSchedulesPaginator.paginate` method:
 ## ListSourceLocationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").get_paginator("list_source_locations")`.
+`session.create_client("mediatailor").get_paginator("list_source_locations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediatailor.paginator import ListSourceLocationsPaginator
 
-def get_list_source_locations_paginator() -> ListSourceLocationsPaginator:
-    return Session().create_client("mediatailor").get_paginator("list_source_locations")
+session = get_session()
+async with session.create_client("mediatailor") as client:
+    client: MediaTailorClient
+    paginator: ListSourceLocationsPaginator = client.get_paginator("list_source_locations")
 ```
 
 Boto3 documentation:
@@ -202,17 +214,19 @@ Arguments for `ListSourceLocationsPaginator.paginate` method:
 ## ListVodSourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").get_paginator("list_vod_sources")`.
+`session.create_client("mediatailor").get_paginator("list_vod_sources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediatailor.paginator import ListVodSourcesPaginator
 
-def get_list_vod_sources_paginator() -> ListVodSourcesPaginator:
-    return Session().create_client("mediatailor").get_paginator("list_vod_sources")
+session = get_session()
+async with session.create_client("mediatailor") as client:
+    client: MediaTailorClient
+    paginator: ListVodSourcesPaginator = client.get_paginator("list_vod_sources")
 ```
 
 Boto3 documentation:

@@ -47,22 +47,25 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_application](#update_application)
     - [update_application_maintenance_configuration](#update_application_maintenance_configuration)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="kinesisanalyticsv2client"></a>
 
 ## KinesisAnalyticsV2Client
 
-Type annotations for `aiobotocore.create_client("kinesisanalyticsv2")`
+Type annotations for `session.create_client("kinesisanalyticsv2")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_kinesisanalyticsv2.client import KinesisAnalyticsV2Client
 
-def get_kinesisanalyticsv2_client() -> KinesisAnalyticsV2Client:
-    return Session().client("kinesisanalyticsv2")
+session = get_session()
+async with session.create_client("kinesisanalyticsv2") as client:
+    client: KinesisAnalyticsV2Client
 ```
 
 Boto3 documentation:
@@ -109,8 +112,8 @@ Exceptions:
 
 KinesisAnalyticsV2Client exceptions.
 
-Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").exceptions` method.
+Type annotations for `session.create_client("kinesisanalyticsv2").exceptions`
+method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.exceptions)
@@ -125,7 +128,7 @@ Adds an Amazon CloudWatch log stream to monitor application configuration
 errors.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").add_application_cloud_watch_logging_option`
+`session.create_client("kinesisanalyticsv2").add_application_cloud_watch_logging_option`
 method.
 
 Boto3 documentation:
@@ -156,7 +159,7 @@ Returns a `Coroutine` for
 Adds a streaming source to your SQL-based Kinesis Data Analytics application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").add_application_input` method.
+`session.create_client("kinesisanalyticsv2").add_application_input` method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.add_application_input](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.add_application_input)
@@ -184,7 +187,7 @@ Adds an InputProcessingConfiguration to a SQL-based Kinesis Data Analytics
 application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").add_application_input_processing_configuration`
+`session.create_client("kinesisanalyticsv2").add_application_input_processing_configuration`
 method.
 
 Boto3 documentation:
@@ -217,8 +220,7 @@ Adds an external destination to your SQL-based Kinesis Data Analytics
 application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").add_application_output`
-method.
+`session.create_client("kinesisanalyticsv2").add_application_output` method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.add_application_output](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.add_application_output)
@@ -246,7 +248,7 @@ Adds a reference data source to an existing SQL-based Kinesis Data Analytics
 application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").add_application_reference_data_source`
+`session.create_client("kinesisanalyticsv2").add_application_reference_data_source`
 method.
 
 Boto3 documentation:
@@ -276,7 +278,7 @@ Returns a `Coroutine` for
 Adds a Virtual Private Cloud (VPC) configuration to the application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").add_application_vpc_configuration`
+`session.create_client("kinesisanalyticsv2").add_application_vpc_configuration`
 method.
 
 Boto3 documentation:
@@ -306,19 +308,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").can_paginate` method.
+Type annotations for `session.create_client("kinesisanalyticsv2").can_paginate`
+method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_application"></a>
 
@@ -327,7 +327,7 @@ Returns a `Coroutine` for `bool`.
 Creates a Kinesis Data Analytics application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").create_application` method.
+`session.create_client("kinesisanalyticsv2").create_application` method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.create_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.create_application)
@@ -363,7 +363,7 @@ Creates and returns a URL that you can use to connect to an application's
 extension.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").create_application_presigned_url`
+`session.create_client("kinesisanalyticsv2").create_application_presigned_url`
 method.
 
 Boto3 documentation:
@@ -391,7 +391,7 @@ Returns a `Coroutine` for
 Creates a snapshot of the application's state data.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").create_application_snapshot`
+`session.create_client("kinesisanalyticsv2").create_application_snapshot`
 method.
 
 Boto3 documentation:
@@ -417,7 +417,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").delete_application` method.
+`session.create_client("kinesisanalyticsv2").delete_application` method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.delete_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.delete_application)
@@ -443,7 +443,7 @@ Deletes an Amazon CloudWatch log stream from an Kinesis Data Analytics
 application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").delete_application_cloud_watch_logging_option`
+`session.create_client("kinesisanalyticsv2").delete_application_cloud_watch_logging_option`
 method.
 
 Boto3 documentation:
@@ -473,7 +473,7 @@ Returns a `Coroutine` for
 Deletes an InputProcessingConfiguration from an input.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").delete_application_input_processing_configuration`
+`session.create_client("kinesisanalyticsv2").delete_application_input_processing_configuration`
 method.
 
 Boto3 documentation:
@@ -503,8 +503,7 @@ Deletes the output destination configuration from your SQL-based Kinesis Data
 Analytics application's configuration.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").delete_application_output`
-method.
+`session.create_client("kinesisanalyticsv2").delete_application_output` method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.delete_application_output](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.delete_application_output)
@@ -532,7 +531,7 @@ Deletes a reference data source configuration from the specified SQL-based
 Kinesis Data Analytics application's configuration.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").delete_application_reference_data_source`
+`session.create_client("kinesisanalyticsv2").delete_application_reference_data_source`
 method.
 
 Boto3 documentation:
@@ -560,7 +559,7 @@ Returns a `Coroutine` for
 Deletes a snapshot of application state.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").delete_application_snapshot`
+`session.create_client("kinesisanalyticsv2").delete_application_snapshot`
 method.
 
 Boto3 documentation:
@@ -587,7 +586,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes a VPC configuration from a Kinesis Data Analytics application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").delete_application_vpc_configuration`
+`session.create_client("kinesisanalyticsv2").delete_application_vpc_configuration`
 method.
 
 Boto3 documentation:
@@ -616,7 +615,7 @@ Returns a `Coroutine` for
 Returns information about a specific Kinesis Data Analytics application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").describe_application` method.
+`session.create_client("kinesisanalyticsv2").describe_application` method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.describe_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.describe_application)
@@ -642,7 +641,7 @@ Returns a `Coroutine` for
 Returns information about a snapshot of application state data.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").describe_application_snapshot`
+`session.create_client("kinesisanalyticsv2").describe_application_snapshot`
 method.
 
 Boto3 documentation:
@@ -669,7 +668,7 @@ Returns a `Coroutine` for
 Provides a detailed description of a specified version of the application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").describe_application_version`
+`session.create_client("kinesisanalyticsv2").describe_application_version`
 method.
 
 Boto3 documentation:
@@ -698,7 +697,7 @@ evaluating sample records on the specified streaming source (Kinesis data
 stream or Kinesis Data Firehose delivery stream) or Amazon S3 object.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").discover_input_schema` method.
+`session.create_client("kinesisanalyticsv2").discover_input_schema` method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.discover_input_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.discover_input_schema)
@@ -730,8 +729,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").generate_presigned_url`
-method.
+`session.create_client("kinesisanalyticsv2").generate_presigned_url` method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.generate_presigned_url)
@@ -755,7 +753,7 @@ Returns a `Coroutine` for `str`.
 Lists information about the current application snapshots.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").list_application_snapshots`
+`session.create_client("kinesisanalyticsv2").list_application_snapshots`
 method.
 
 Boto3 documentation:
@@ -784,8 +782,7 @@ Lists all the versions for the specified application, including versions that
 were rolled back.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").list_application_versions`
-method.
+`session.create_client("kinesisanalyticsv2").list_application_versions` method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.list_application_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.list_application_versions)
@@ -812,7 +809,7 @@ Returns a `Coroutine` for
 Returns a list of Kinesis Data Analytics applications in your account.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").list_applications` method.
+`session.create_client("kinesisanalyticsv2").list_applications` method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.list_applications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.list_applications)
@@ -837,8 +834,7 @@ Returns a `Coroutine` for
 Retrieves the list of key-value tags assigned to the application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").list_tags_for_resource`
-method.
+`session.create_client("kinesisanalyticsv2").list_tags_for_resource` method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.list_tags_for_resource)
@@ -863,7 +859,7 @@ Returns a `Coroutine` for
 Reverts the application to the previous running version.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").rollback_application` method.
+`session.create_client("kinesisanalyticsv2").rollback_application` method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.rollback_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.rollback_application)
@@ -889,7 +885,7 @@ Returns a `Coroutine` for
 Starts the specified Kinesis Data Analytics application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").start_application` method.
+`session.create_client("kinesisanalyticsv2").start_application` method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.start_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.start_application)
@@ -914,7 +910,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Stops the application from processing data.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").stop_application` method.
+`session.create_client("kinesisanalyticsv2").stop_application` method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.stop_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.stop_application)
@@ -937,8 +933,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds one or more key-value tags to a Kinesis Data Analytics application.
 
-Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").tag_resource` method.
+Type annotations for `session.create_client("kinesisanalyticsv2").tag_resource`
+method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.tag_resource)
@@ -962,7 +958,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes one or more tags from a Kinesis Data Analytics application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").untag_resource` method.
+`session.create_client("kinesisanalyticsv2").untag_resource` method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.untag_resource)
@@ -986,7 +982,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates an existing Kinesis Data Analytics application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").update_application` method.
+`session.create_client("kinesisanalyticsv2").update_application` method.
 
 Boto3 documentation:
 [KinesisAnalyticsV2.Client.update_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.update_application)
@@ -1021,7 +1017,7 @@ Updates the maintenance configuration of the Kinesis Data Analytics
 application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").update_application_maintenance_configuration`
+`session.create_client("kinesisanalyticsv2").update_application_maintenance_configuration`
 method.
 
 Boto3 documentation:
@@ -1044,12 +1040,47 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateApplicationMaintenanceConfigurationResponseTypeDef](./type_defs.md#updateapplicationmaintenanceconfigurationresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("kinesisanalyticsv2").__aenter__`
+method.
+
+Boto3 documentation:
+[KinesisAnalyticsV2.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[KinesisAnalyticsV2Client](#kinesisanalyticsv2client).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("kinesisanalyticsv2").__aexit__`
+method.
+
+Boto3 documentation:
+[KinesisAnalyticsV2.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html#KinesisAnalyticsV2.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalyticsv2").get_paginator` method with
+`session.create_client("kinesisanalyticsv2").get_paginator` method with
 overloads.
 
 - `client.get_paginator("list_application_snapshots")` ->

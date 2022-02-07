@@ -49,6 +49,8 @@ type annotations stubs module
     - [set_vault_notifications](#set_vault_notifications)
     - [upload_archive](#upload_archive)
     - [upload_multipart_part](#upload_multipart_part)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -56,16 +58,17 @@ type annotations stubs module
 
 ## GlacierClient
 
-Type annotations for `aiobotocore.create_client("glacier")`
+Type annotations for `session.create_client("glacier")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_glacier.client import GlacierClient
 
-def get_glacier_client() -> GlacierClient:
-    return Session().client("glacier")
+session = get_session()
+async with session.create_client("glacier") as client:
+    client: GlacierClient
 ```
 
 Boto3 documentation:
@@ -107,7 +110,7 @@ Exceptions:
 
 GlacierClient exceptions.
 
-Type annotations for `aiobotocore.create_client("glacier").exceptions` method.
+Type annotations for `session.create_client("glacier").exceptions` method.
 
 Boto3 documentation:
 [Glacier.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.exceptions)
@@ -120,8 +123,8 @@ Returns [Exceptions](#exceptions).
 
 This operation aborts a multipart upload identified by the upload ID.
 
-Type annotations for
-`aiobotocore.create_client("glacier").abort_multipart_upload` method.
+Type annotations for `session.create_client("glacier").abort_multipart_upload`
+method.
 
 Boto3 documentation:
 [Glacier.Client.abort_multipart_upload](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.abort_multipart_upload)
@@ -145,7 +148,7 @@ Keyword-only arguments:
 This operation aborts the vault locking process if the vault lock is not in the
 `Locked` state.
 
-Type annotations for `aiobotocore.create_client("glacier").abort_vault_lock`
+Type annotations for `session.create_client("glacier").abort_vault_lock`
 method.
 
 Boto3 documentation:
@@ -167,7 +170,7 @@ Keyword-only arguments:
 
 This operation adds the specified tags to a vault.
 
-Type annotations for `aiobotocore.create_client("glacier").add_tags_to_vault`
+Type annotations for `session.create_client("glacier").add_tags_to_vault`
 method.
 
 Boto3 documentation:
@@ -190,19 +193,16 @@ Keyword-only arguments:
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("glacier").can_paginate`
-method.
+Type annotations for `session.create_client("glacier").can_paginate` method.
 
 Boto3 documentation:
 [Glacier.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="complete_multipart_upload"></a>
 
@@ -213,7 +213,7 @@ archive parts have been uploaded and that Glacier can now assemble the archive
 from the uploaded parts.
 
 Type annotations for
-`aiobotocore.create_client("glacier").complete_multipart_upload` method.
+`session.create_client("glacier").complete_multipart_upload` method.
 
 Boto3 documentation:
 [Glacier.Client.complete_multipart_upload](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.complete_multipart_upload)
@@ -243,7 +243,7 @@ This operation completes the vault locking process by transitioning the vault
 lock from the `InProgress` state to the `Locked` state, which causes the vault
 lock policy to become unchangeable.
 
-Type annotations for `aiobotocore.create_client("glacier").complete_vault_lock`
+Type annotations for `session.create_client("glacier").complete_vault_lock`
 method.
 
 Boto3 documentation:
@@ -267,8 +267,7 @@ Keyword-only arguments:
 
 This operation creates a new vault with the specified name.
 
-Type annotations for `aiobotocore.create_client("glacier").create_vault`
-method.
+Type annotations for `session.create_client("glacier").create_vault` method.
 
 Boto3 documentation:
 [Glacier.Client.create_vault](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.create_vault)
@@ -292,8 +291,7 @@ Returns a `Coroutine` for
 
 This operation deletes an archive from a vault.
 
-Type annotations for `aiobotocore.create_client("glacier").delete_archive`
-method.
+Type annotations for `session.create_client("glacier").delete_archive` method.
 
 Boto3 documentation:
 [Glacier.Client.delete_archive](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.delete_archive)
@@ -315,8 +313,7 @@ Keyword-only arguments:
 
 This operation deletes a vault.
 
-Type annotations for `aiobotocore.create_client("glacier").delete_vault`
-method.
+Type annotations for `session.create_client("glacier").delete_vault` method.
 
 Boto3 documentation:
 [Glacier.Client.delete_vault](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.delete_vault)
@@ -338,7 +335,7 @@ Keyword-only arguments:
 This operation deletes the access policy associated with the specified vault.
 
 Type annotations for
-`aiobotocore.create_client("glacier").delete_vault_access_policy` method.
+`session.create_client("glacier").delete_vault_access_policy` method.
 
 Boto3 documentation:
 [Glacier.Client.delete_vault_access_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.delete_vault_access_policy)
@@ -361,7 +358,7 @@ Keyword-only arguments:
 This operation deletes the notification configuration set for a vault.
 
 Type annotations for
-`aiobotocore.create_client("glacier").delete_vault_notifications` method.
+`session.create_client("glacier").delete_vault_notifications` method.
 
 Boto3 documentation:
 [Glacier.Client.delete_vault_notifications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.delete_vault_notifications)
@@ -386,8 +383,7 @@ including the job initiation date, the user who initiated the job, the job
 status code/message and the Amazon SNS topic to notify after Amazon S3 Glacier
 (Glacier) completes the job.
 
-Type annotations for `aiobotocore.create_client("glacier").describe_job`
-method.
+Type annotations for `session.create_client("glacier").describe_job` method.
 
 Boto3 documentation:
 [Glacier.Client.describe_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.describe_job)
@@ -414,8 +410,7 @@ This operation returns information about a vault, including the vault's Amazon
 Resource Name (ARN), the date the vault was created, the number of archives it
 contains, and the total size of all the archives in the vault.
 
-Type annotations for `aiobotocore.create_client("glacier").describe_vault`
-method.
+Type annotations for `session.create_client("glacier").describe_vault` method.
 
 Boto3 documentation:
 [Glacier.Client.describe_vault](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.describe_vault)
@@ -439,8 +434,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("glacier").generate_presigned_url` method.
+Type annotations for `session.create_client("glacier").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Glacier.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.generate_presigned_url)
@@ -465,7 +460,7 @@ This operation returns the current data retrieval policy for the account and
 region specified in the GET request.
 
 Type annotations for
-`aiobotocore.create_client("glacier").get_data_retrieval_policy` method.
+`session.create_client("glacier").get_data_retrieval_policy` method.
 
 Boto3 documentation:
 [Glacier.Client.get_data_retrieval_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.get_data_retrieval_policy)
@@ -489,8 +484,7 @@ Returns a `Coroutine` for
 
 This operation downloads the output of the job you initiated using InitiateJob.
 
-Type annotations for `aiobotocore.create_client("glacier").get_job_output`
-method.
+Type annotations for `session.create_client("glacier").get_job_output` method.
 
 Boto3 documentation:
 [Glacier.Client.get_job_output](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.get_job_output)
@@ -519,8 +513,8 @@ more information on setting this subresource, see \[Set Vault Access Policy
 (PUT access-policy)\](https://docs.aws.amazon.com/amazonglacier/latest/dev/api-
 SetVaultAccessPolicy.html)\_.
 
-Type annotations for
-`aiobotocore.create_client("glacier").get_vault_access_policy` method.
+Type annotations for `session.create_client("glacier").get_vault_access_policy`
+method.
 
 Boto3 documentation:
 [Glacier.Client.get_vault_access_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.get_vault_access_policy)
@@ -547,8 +541,7 @@ This operation retrieves the following attributes from the `lock-policy`
 subresource set on the specified vault * The vault lock policy set on the
 vault.
 
-Type annotations for `aiobotocore.create_client("glacier").get_vault_lock`
-method.
+Type annotations for `session.create_client("glacier").get_vault_lock` method.
 
 Boto3 documentation:
 [Glacier.Client.get_vault_lock](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.get_vault_lock)
@@ -573,8 +566,8 @@ Returns a `Coroutine` for
 This operation retrieves the `notification-configuration` subresource of the
 specified vault.
 
-Type annotations for
-`aiobotocore.create_client("glacier").get_vault_notifications` method.
+Type annotations for `session.create_client("glacier").get_vault_notifications`
+method.
 
 Boto3 documentation:
 [Glacier.Client.get_vault_notifications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.get_vault_notifications)
@@ -600,8 +593,7 @@ Returns a `Coroutine` for
 This operation initiates a job of the specified type, which can be a select, an
 archival retrieval, or a vault retrieval.
 
-Type annotations for `aiobotocore.create_client("glacier").initiate_job`
-method.
+Type annotations for `session.create_client("glacier").initiate_job` method.
 
 Boto3 documentation:
 [Glacier.Client.initiate_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.initiate_job)
@@ -627,7 +619,7 @@ Returns a `Coroutine` for
 This operation initiates a multipart upload.
 
 Type annotations for
-`aiobotocore.create_client("glacier").initiate_multipart_upload` method.
+`session.create_client("glacier").initiate_multipart_upload` method.
 
 Boto3 documentation:
 [Glacier.Client.initiate_multipart_upload](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.initiate_multipart_upload)
@@ -655,7 +647,7 @@ Returns a `Coroutine` for
 This operation initiates the vault locking process by doing the following \*
 Installing a vault lock policy on the specified vault.
 
-Type annotations for `aiobotocore.create_client("glacier").initiate_vault_lock`
+Type annotations for `session.create_client("glacier").initiate_vault_lock`
 method.
 
 Boto3 documentation:
@@ -683,7 +675,7 @@ Returns a `Coroutine` for
 This operation lists jobs for a vault, including jobs that are in-progress and
 jobs that have recently finished.
 
-Type annotations for `aiobotocore.create_client("glacier").list_jobs` method.
+Type annotations for `session.create_client("glacier").list_jobs` method.
 
 Boto3 documentation:
 [Glacier.Client.list_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.list_jobs)
@@ -711,8 +703,8 @@ Returns a `Coroutine` for
 
 This operation lists in-progress multipart uploads for the specified vault.
 
-Type annotations for
-`aiobotocore.create_client("glacier").list_multipart_uploads` method.
+Type annotations for `session.create_client("glacier").list_multipart_uploads`
+method.
 
 Boto3 documentation:
 [Glacier.Client.list_multipart_uploads](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.list_multipart_uploads)
@@ -740,7 +732,7 @@ Returns a `Coroutine` for
 This operation lists the parts of an archive that have been uploaded in a
 specific multipart upload.
 
-Type annotations for `aiobotocore.create_client("glacier").list_parts` method.
+Type annotations for `session.create_client("glacier").list_parts` method.
 
 Boto3 documentation:
 [Glacier.Client.list_parts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.list_parts)
@@ -769,7 +761,7 @@ This operation lists the provisioned capacity units for the specified AWS
 account.
 
 Type annotations for
-`aiobotocore.create_client("glacier").list_provisioned_capacity` method.
+`session.create_client("glacier").list_provisioned_capacity` method.
 
 Boto3 documentation:
 [Glacier.Client.list_provisioned_capacity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.list_provisioned_capacity)
@@ -793,7 +785,7 @@ Returns a `Coroutine` for
 
 This operation lists all the tags attached to a vault.
 
-Type annotations for `aiobotocore.create_client("glacier").list_tags_for_vault`
+Type annotations for `session.create_client("glacier").list_tags_for_vault`
 method.
 
 Boto3 documentation:
@@ -819,7 +811,7 @@ Returns a `Coroutine` for
 
 This operation lists all vaults owned by the calling user's account.
 
-Type annotations for `aiobotocore.create_client("glacier").list_vaults` method.
+Type annotations for `session.create_client("glacier").list_vaults` method.
 
 Boto3 documentation:
 [Glacier.Client.list_vaults](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.list_vaults)
@@ -845,7 +837,7 @@ Returns a `Coroutine` for
 This operation purchases a provisioned capacity unit for an AWS account.
 
 Type annotations for
-`aiobotocore.create_client("glacier").purchase_provisioned_capacity` method.
+`session.create_client("glacier").purchase_provisioned_capacity` method.
 
 Boto3 documentation:
 [Glacier.Client.purchase_provisioned_capacity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.purchase_provisioned_capacity)
@@ -870,8 +862,8 @@ Returns a `Coroutine` for
 This operation removes one or more tags from the set of tags attached to a
 vault.
 
-Type annotations for
-`aiobotocore.create_client("glacier").remove_tags_from_vault` method.
+Type annotations for `session.create_client("glacier").remove_tags_from_vault`
+method.
 
 Boto3 documentation:
 [Glacier.Client.remove_tags_from_vault](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.remove_tags_from_vault)
@@ -896,7 +888,7 @@ This operation sets and then enacts a data retrieval policy in the region
 specified in the PUT request.
 
 Type annotations for
-`aiobotocore.create_client("glacier").set_data_retrieval_policy` method.
+`session.create_client("glacier").set_data_retrieval_policy` method.
 
 Boto3 documentation:
 [Glacier.Client.set_data_retrieval_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.set_data_retrieval_policy)
@@ -920,8 +912,8 @@ Keyword-only arguments:
 This operation configures an access policy for a vault and will overwrite an
 existing policy.
 
-Type annotations for
-`aiobotocore.create_client("glacier").set_vault_access_policy` method.
+Type annotations for `session.create_client("glacier").set_vault_access_policy`
+method.
 
 Boto3 documentation:
 [Glacier.Client.set_vault_access_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.set_vault_access_policy)
@@ -945,8 +937,8 @@ Keyword-only arguments:
 This operation configures notifications that will be sent when specific events
 happen to a vault.
 
-Type annotations for
-`aiobotocore.create_client("glacier").set_vault_notifications` method.
+Type annotations for `session.create_client("glacier").set_vault_notifications`
+method.
 
 Boto3 documentation:
 [Glacier.Client.set_vault_notifications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.set_vault_notifications)
@@ -970,8 +962,7 @@ Keyword-only arguments:
 
 This operation adds an archive to a vault.
 
-Type annotations for `aiobotocore.create_client("glacier").upload_archive`
-method.
+Type annotations for `session.create_client("glacier").upload_archive` method.
 
 Boto3 documentation:
 [Glacier.Client.upload_archive](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.upload_archive)
@@ -998,8 +989,8 @@ Returns a `Coroutine` for
 
 This operation uploads a part of an archive.
 
-Type annotations for
-`aiobotocore.create_client("glacier").upload_multipart_part` method.
+Type annotations for `session.create_client("glacier").upload_multipart_part`
+method.
 
 Boto3 documentation:
 [Glacier.Client.upload_multipart_part](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.upload_multipart_part)
@@ -1022,12 +1013,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UploadMultipartPartOutputTypeDef](./type_defs.md#uploadmultipartpartoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("glacier").__aenter__` method.
+
+Boto3 documentation:
+[Glacier.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [GlacierClient](#glacierclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("glacier").__aexit__` method.
+
+Boto3 documentation:
+[Glacier.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html#Glacier.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("glacier").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("glacier").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_jobs")` ->
   [ListJobsPaginator](./paginators.md#listjobspaginator)
@@ -1042,8 +1065,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("glacier").get_waiter` method
-with overloads.
+Type annotations for `session.create_client("glacier").get_waiter` method with
+overloads.
 
 - `client.get_waiter("vault_exists")` ->
   [VaultExistsWaiter](./waiters.md#vaultexistswaiter)

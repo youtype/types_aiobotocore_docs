@@ -66,6 +66,8 @@ type annotations stubs module
     - [update_table](#update_table)
     - [update_table_replica_auto_scaling](#update_table_replica_auto_scaling)
     - [update_time_to_live](#update_time_to_live)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -73,16 +75,17 @@ type annotations stubs module
 
 ## DynamoDBClient
 
-Type annotations for `aiobotocore.create_client("dynamodb")`
+Type annotations for `session.create_client("dynamodb")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_dynamodb.client import DynamoDBClient
 
-def get_dynamodb_client() -> DynamoDBClient:
-    return Session().client("dynamodb")
+session = get_session()
+async with session.create_client("dynamodb") as client:
+    client: DynamoDBClient
 ```
 
 Boto3 documentation:
@@ -145,7 +148,7 @@ Exceptions:
 
 DynamoDBClient exceptions.
 
-Type annotations for `aiobotocore.create_client("dynamodb").exceptions` method.
+Type annotations for `session.create_client("dynamodb").exceptions` method.
 
 Boto3 documentation:
 [DynamoDB.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.exceptions)
@@ -160,7 +163,7 @@ This operation allows you to perform batch reads or writes on data stored in
 DynamoDB, using PartiQL.
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").batch_execute_statement` method.
+`session.create_client("dynamodb").batch_execute_statement` method.
 
 Boto3 documentation:
 [DynamoDB.Client.batch_execute_statement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.batch_execute_statement)
@@ -189,8 +192,7 @@ Returns a `Coroutine` for
 The `BatchGetItem` operation returns the attributes of one or more items from
 one or more tables.
 
-Type annotations for `aiobotocore.create_client("dynamodb").batch_get_item`
-method.
+Type annotations for `session.create_client("dynamodb").batch_get_item` method.
 
 Boto3 documentation:
 [DynamoDB.Client.batch_get_item](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.batch_get_item)
@@ -218,7 +220,7 @@ Returns a `Coroutine` for
 The `BatchWriteItem` operation puts or deletes multiple items in one or more
 tables.
 
-Type annotations for `aiobotocore.create_client("dynamodb").batch_write_item`
+Type annotations for `session.create_client("dynamodb").batch_write_item`
 method.
 
 Boto3 documentation:
@@ -248,19 +250,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("dynamodb").can_paginate`
-method.
+Type annotations for `session.create_client("dynamodb").can_paginate` method.
 
 Boto3 documentation:
 [DynamoDB.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_backup"></a>
 
@@ -268,8 +267,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a backup for an existing table.
 
-Type annotations for `aiobotocore.create_client("dynamodb").create_backup`
-method.
+Type annotations for `session.create_client("dynamodb").create_backup` method.
 
 Boto3 documentation:
 [DynamoDB.Client.create_backup](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.create_backup)
@@ -293,8 +291,8 @@ Returns a `Coroutine` for
 
 Creates a global table from an existing table.
 
-Type annotations for
-`aiobotocore.create_client("dynamodb").create_global_table` method.
+Type annotations for `session.create_client("dynamodb").create_global_table`
+method.
 
 Boto3 documentation:
 [DynamoDB.Client.create_global_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.create_global_table)
@@ -320,8 +318,7 @@ Returns a `Coroutine` for
 
 The `CreateTable` operation adds a new table to your account.
 
-Type annotations for `aiobotocore.create_client("dynamodb").create_table`
-method.
+Type annotations for `session.create_client("dynamodb").create_table` method.
 
 Boto3 documentation:
 [DynamoDB.Client.create_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.create_table)
@@ -363,8 +360,7 @@ Returns a `Coroutine` for
 
 Deletes an existing backup of a table.
 
-Type annotations for `aiobotocore.create_client("dynamodb").delete_backup`
-method.
+Type annotations for `session.create_client("dynamodb").delete_backup` method.
 
 Boto3 documentation:
 [DynamoDB.Client.delete_backup](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.delete_backup)
@@ -387,8 +383,7 @@ Returns a `Coroutine` for
 
 Deletes a single item in a table by primary key.
 
-Type annotations for `aiobotocore.create_client("dynamodb").delete_item`
-method.
+Type annotations for `session.create_client("dynamodb").delete_item` method.
 
 Boto3 documentation:
 [DynamoDB.Client.delete_item](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.delete_item)
@@ -430,8 +425,7 @@ Returns a `Coroutine` for
 
 The `DeleteTable` operation deletes a table and all of its items.
 
-Type annotations for `aiobotocore.create_client("dynamodb").delete_table`
-method.
+Type annotations for `session.create_client("dynamodb").delete_table` method.
 
 Boto3 documentation:
 [DynamoDB.Client.delete_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.delete_table)
@@ -454,7 +448,7 @@ Returns a `Coroutine` for
 
 Describes an existing backup of a table.
 
-Type annotations for `aiobotocore.create_client("dynamodb").describe_backup`
+Type annotations for `session.create_client("dynamodb").describe_backup`
 method.
 
 Boto3 documentation:
@@ -480,7 +474,7 @@ Checks the status of continuous backups and point in time recovery on the
 specified table.
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").describe_continuous_backups` method.
+`session.create_client("dynamodb").describe_continuous_backups` method.
 
 Boto3 documentation:
 [DynamoDB.Client.describe_continuous_backups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.describe_continuous_backups)
@@ -506,7 +500,7 @@ Returns information about contributor insights, for a given table or global
 secondary index.
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").describe_contributor_insights` method.
+`session.create_client("dynamodb").describe_contributor_insights` method.
 
 Boto3 documentation:
 [DynamoDB.Client.describe_contributor_insights](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.describe_contributor_insights)
@@ -531,7 +525,7 @@ Returns a `Coroutine` for
 
 Returns the regional endpoint information.
 
-Type annotations for `aiobotocore.create_client("dynamodb").describe_endpoints`
+Type annotations for `session.create_client("dynamodb").describe_endpoints`
 method.
 
 Boto3 documentation:
@@ -549,7 +543,7 @@ Returns a `Coroutine` for
 
 Describes an existing table export.
 
-Type annotations for `aiobotocore.create_client("dynamodb").describe_export`
+Type annotations for `session.create_client("dynamodb").describe_export`
 method.
 
 Boto3 documentation:
@@ -573,8 +567,8 @@ Returns a `Coroutine` for
 
 Returns information about the specified global table.
 
-Type annotations for
-`aiobotocore.create_client("dynamodb").describe_global_table` method.
+Type annotations for `session.create_client("dynamodb").describe_global_table`
+method.
 
 Boto3 documentation:
 [DynamoDB.Client.describe_global_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.describe_global_table)
@@ -599,7 +593,7 @@ Returns a `Coroutine` for
 Describes Region-specific settings for a global table.
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").describe_global_table_settings` method.
+`session.create_client("dynamodb").describe_global_table_settings` method.
 
 Boto3 documentation:
 [DynamoDB.Client.describe_global_table_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.describe_global_table_settings)
@@ -624,7 +618,7 @@ Returns a `Coroutine` for
 Returns information about the status of Kinesis streaming.
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").describe_kinesis_streaming_destination`
+`session.create_client("dynamodb").describe_kinesis_streaming_destination`
 method.
 
 Boto3 documentation:
@@ -651,7 +645,7 @@ Returns the current provisioned-capacity quotas for your Amazon Web Services
 account in a Region, both for the Region as a whole and for any one DynamoDB
 table that you create there.
 
-Type annotations for `aiobotocore.create_client("dynamodb").describe_limits`
+Type annotations for `session.create_client("dynamodb").describe_limits`
 method.
 
 Boto3 documentation:
@@ -669,8 +663,7 @@ Returns a `Coroutine` for
 Returns information about the table, including the current status of the table,
 when it was created, the primary key schema, and any indexes on the table.
 
-Type annotations for `aiobotocore.create_client("dynamodb").describe_table`
-method.
+Type annotations for `session.create_client("dynamodb").describe_table` method.
 
 Boto3 documentation:
 [DynamoDB.Client.describe_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.describe_table)
@@ -694,8 +687,7 @@ Returns a `Coroutine` for
 Describes auto scaling settings across replicas of the global table at once.
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").describe_table_replica_auto_scaling`
-method.
+`session.create_client("dynamodb").describe_table_replica_auto_scaling` method.
 
 Boto3 documentation:
 [DynamoDB.Client.describe_table_replica_auto_scaling](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.describe_table_replica_auto_scaling)
@@ -719,8 +711,8 @@ Returns a `Coroutine` for
 
 Gives a description of the Time to Live (TTL) status on the specified table.
 
-Type annotations for
-`aiobotocore.create_client("dynamodb").describe_time_to_live` method.
+Type annotations for `session.create_client("dynamodb").describe_time_to_live`
+method.
 
 Boto3 documentation:
 [DynamoDB.Client.describe_time_to_live](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.describe_time_to_live)
@@ -745,7 +737,7 @@ Returns a `Coroutine` for
 Stops replication from the DynamoDB table to the Kinesis data stream.
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").disable_kinesis_streaming_destination`
+`session.create_client("dynamodb").disable_kinesis_streaming_destination`
 method.
 
 Boto3 documentation:
@@ -773,7 +765,7 @@ Starts table data replication to the specified Kinesis data stream at a
 timestamp chosen during the enable workflow.
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").enable_kinesis_streaming_destination`
+`session.create_client("dynamodb").enable_kinesis_streaming_destination`
 method.
 
 Boto3 documentation:
@@ -800,7 +792,7 @@ Returns a `Coroutine` for
 This operation allows you to perform reads and singleton writes on data stored
 in DynamoDB, using PartiQL.
 
-Type annotations for `aiobotocore.create_client("dynamodb").execute_statement`
+Type annotations for `session.create_client("dynamodb").execute_statement`
 method.
 
 Boto3 documentation:
@@ -833,8 +825,8 @@ Returns a `Coroutine` for
 This operation allows you to perform transactional reads or writes on data
 stored in DynamoDB, using PartiQL.
 
-Type annotations for
-`aiobotocore.create_client("dynamodb").execute_transaction` method.
+Type annotations for `session.create_client("dynamodb").execute_transaction`
+method.
 
 Boto3 documentation:
 [DynamoDB.Client.execute_transaction](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.execute_transaction)
@@ -864,7 +856,7 @@ Returns a `Coroutine` for
 Exports table data to an S3 bucket.
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").export_table_to_point_in_time` method.
+`session.create_client("dynamodb").export_table_to_point_in_time` method.
 
 Boto3 documentation:
 [DynamoDB.Client.export_table_to_point_in_time](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.export_table_to_point_in_time)
@@ -896,8 +888,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("dynamodb").generate_presigned_url` method.
+Type annotations for `session.create_client("dynamodb").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [DynamoDB.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.generate_presigned_url)
@@ -921,7 +913,7 @@ Returns a `Coroutine` for `str`.
 The `GetItem` operation returns a set of attributes for the item with the given
 primary key.
 
-Type annotations for `aiobotocore.create_client("dynamodb").get_item` method.
+Type annotations for `session.create_client("dynamodb").get_item` method.
 
 Boto3 documentation:
 [DynamoDB.Client.get_item](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.get_item)
@@ -954,8 +946,7 @@ Returns a `Coroutine` for
 
 List backups associated with an Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("dynamodb").list_backups`
-method.
+Type annotations for `session.create_client("dynamodb").list_backups` method.
 
 Boto3 documentation:
 [DynamoDB.Client.list_backups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.list_backups)
@@ -985,7 +976,7 @@ Returns a list of ContributorInsightsSummary for a table and all its global
 secondary indexes.
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").list_contributor_insights` method.
+`session.create_client("dynamodb").list_contributor_insights` method.
 
 Boto3 documentation:
 [DynamoDB.Client.list_contributor_insights](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.list_contributor_insights)
@@ -1011,8 +1002,7 @@ Returns a `Coroutine` for
 
 Lists completed exports within the past 90 days.
 
-Type annotations for `aiobotocore.create_client("dynamodb").list_exports`
-method.
+Type annotations for `session.create_client("dynamodb").list_exports` method.
 
 Boto3 documentation:
 [DynamoDB.Client.list_exports](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.list_exports)
@@ -1037,7 +1027,7 @@ Returns a `Coroutine` for
 
 Lists all global tables that have a replica in the specified Region.
 
-Type annotations for `aiobotocore.create_client("dynamodb").list_global_tables`
+Type annotations for `session.create_client("dynamodb").list_global_tables`
 method.
 
 Boto3 documentation:
@@ -1065,8 +1055,7 @@ Returns a `Coroutine` for
 Returns an array of table names associated with the current account and
 endpoint.
 
-Type annotations for `aiobotocore.create_client("dynamodb").list_tables`
-method.
+Type annotations for `session.create_client("dynamodb").list_tables` method.
 
 Boto3 documentation:
 [DynamoDB.Client.list_tables](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.list_tables)
@@ -1090,8 +1079,8 @@ Returns a `Coroutine` for
 
 List all tags on an Amazon DynamoDB resource.
 
-Type annotations for
-`aiobotocore.create_client("dynamodb").list_tags_of_resource` method.
+Type annotations for `session.create_client("dynamodb").list_tags_of_resource`
+method.
 
 Boto3 documentation:
 [DynamoDB.Client.list_tags_of_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.list_tags_of_resource)
@@ -1116,7 +1105,7 @@ Returns a `Coroutine` for
 
 Creates a new item, or replaces an old item with a new item.
 
-Type annotations for `aiobotocore.create_client("dynamodb").put_item` method.
+Type annotations for `session.create_client("dynamodb").put_item` method.
 
 Boto3 documentation:
 [DynamoDB.Client.put_item](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.put_item)
@@ -1159,7 +1148,7 @@ Returns a `Coroutine` for
 You must provide the name of the partition key attribute and a single value for
 that attribute.
 
-Type annotations for `aiobotocore.create_client("dynamodb").query` method.
+Type annotations for `session.create_client("dynamodb").query` method.
 
 Boto3 documentation:
 [DynamoDB.Client.query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.query)
@@ -1209,7 +1198,7 @@ Returns a `Coroutine` for
 Creates a new table from an existing backup.
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").restore_table_from_backup` method.
+`session.create_client("dynamodb").restore_table_from_backup` method.
 
 Boto3 documentation:
 [DynamoDB.Client.restore_table_from_backup](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.restore_table_from_backup)
@@ -1245,7 +1234,7 @@ Restores the specified table to the specified point in time within
 `EarliestRestorableDateTime` and `LatestRestorableDateTime`.
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").restore_table_to_point_in_time` method.
+`session.create_client("dynamodb").restore_table_to_point_in_time` method.
 
 Boto3 documentation:
 [DynamoDB.Client.restore_table_to_point_in_time](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.restore_table_to_point_in_time)
@@ -1283,7 +1272,7 @@ Returns a `Coroutine` for
 The `Scan` operation returns one or more items and item attributes by accessing
 every item in a table or a secondary index.
 
-Type annotations for `aiobotocore.create_client("dynamodb").scan` method.
+Type annotations for `session.create_client("dynamodb").scan` method.
 
 Boto3 documentation:
 [DynamoDB.Client.scan](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.scan)
@@ -1330,8 +1319,7 @@ Returns a `Coroutine` for
 
 Associate a set of tags with an Amazon DynamoDB resource.
 
-Type annotations for `aiobotocore.create_client("dynamodb").tag_resource`
-method.
+Type annotations for `session.create_client("dynamodb").tag_resource` method.
 
 Boto3 documentation:
 [DynamoDB.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.tag_resource)
@@ -1354,7 +1342,7 @@ Keyword-only arguments:
 multiple items from one or more tables (but not from indexes) in a single
 account and Region.
 
-Type annotations for `aiobotocore.create_client("dynamodb").transact_get_items`
+Type annotations for `session.create_client("dynamodb").transact_get_items`
 method.
 
 Boto3 documentation:
@@ -1384,8 +1372,8 @@ Returns a `Coroutine` for
 `TransactWriteItems` is a synchronous write operation that groups up to 25
 action requests.
 
-Type annotations for
-`aiobotocore.create_client("dynamodb").transact_write_items` method.
+Type annotations for `session.create_client("dynamodb").transact_write_items`
+method.
 
 Boto3 documentation:
 [DynamoDB.Client.transact_write_items](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.transact_write_items)
@@ -1416,8 +1404,7 @@ Returns a `Coroutine` for
 
 Removes the association of tags from an Amazon DynamoDB resource.
 
-Type annotations for `aiobotocore.create_client("dynamodb").untag_resource`
-method.
+Type annotations for `session.create_client("dynamodb").untag_resource` method.
 
 Boto3 documentation:
 [DynamoDB.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.untag_resource)
@@ -1440,7 +1427,7 @@ Keyword-only arguments:
 specified table.
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").update_continuous_backups` method.
+`session.create_client("dynamodb").update_continuous_backups` method.
 
 Boto3 documentation:
 [DynamoDB.Client.update_continuous_backups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.update_continuous_backups)
@@ -1468,7 +1455,7 @@ Returns a `Coroutine` for
 Updates the status for contributor insights for a specific table or index.
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").update_contributor_insights` method.
+`session.create_client("dynamodb").update_contributor_insights` method.
 
 Boto3 documentation:
 [DynamoDB.Client.update_contributor_insights](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.update_contributor_insights)
@@ -1496,8 +1483,8 @@ Returns a `Coroutine` for
 
 Adds or removes replicas in the specified global table.
 
-Type annotations for
-`aiobotocore.create_client("dynamodb").update_global_table` method.
+Type annotations for `session.create_client("dynamodb").update_global_table`
+method.
 
 Boto3 documentation:
 [DynamoDB.Client.update_global_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.update_global_table)
@@ -1525,7 +1512,7 @@ Returns a `Coroutine` for
 Updates settings for a global table.
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").update_global_table_settings` method.
+`session.create_client("dynamodb").update_global_table_settings` method.
 
 Boto3 documentation:
 [DynamoDB.Client.update_global_table_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.update_global_table_settings)
@@ -1558,8 +1545,7 @@ Returns a `Coroutine` for
 Edits an existing item's attributes, or adds a new item to the table if it does
 not already exist.
 
-Type annotations for `aiobotocore.create_client("dynamodb").update_item`
-method.
+Type annotations for `session.create_client("dynamodb").update_item` method.
 
 Boto3 documentation:
 [DynamoDB.Client.update_item](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.update_item)
@@ -1605,8 +1591,7 @@ Returns a `Coroutine` for
 Modifies the provisioned throughput settings, global secondary indexes, or
 DynamoDB Streams settings for a given table.
 
-Type annotations for `aiobotocore.create_client("dynamodb").update_table`
-method.
+Type annotations for `session.create_client("dynamodb").update_table` method.
 
 Boto3 documentation:
 [DynamoDB.Client.update_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.update_table)
@@ -1644,8 +1629,7 @@ Returns a `Coroutine` for
 Updates auto scaling settings on your global tables at once.
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").update_table_replica_auto_scaling`
-method.
+`session.create_client("dynamodb").update_table_replica_auto_scaling` method.
 
 Boto3 documentation:
 [DynamoDB.Client.update_table_replica_auto_scaling](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.update_table_replica_auto_scaling)
@@ -1676,8 +1660,8 @@ Returns a `Coroutine` for
 The `UpdateTimeToLive` method enables or disables Time to Live (TTL) for the
 specified table.
 
-Type annotations for
-`aiobotocore.create_client("dynamodb").update_time_to_live` method.
+Type annotations for `session.create_client("dynamodb").update_time_to_live`
+method.
 
 Boto3 documentation:
 [DynamoDB.Client.update_time_to_live](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.update_time_to_live)
@@ -1698,12 +1682,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateTimeToLiveOutputTypeDef](./type_defs.md#updatetimetoliveoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("dynamodb").__aenter__` method.
+
+Boto3 documentation:
+[DynamoDB.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [DynamoDBClient](#dynamodbclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("dynamodb").__aexit__` method.
+
+Boto3 documentation:
+[DynamoDB.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html#DynamoDB.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("dynamodb").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("dynamodb").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_backups")` ->
   [ListBackupsPaginator](./paginators.md#listbackupspaginator)
@@ -1720,8 +1736,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("dynamodb").get_waiter` method
-with overloads.
+Type annotations for `session.create_client("dynamodb").get_waiter` method with
+overloads.
 
 - `client.get_waiter("table_exists")` ->
   [TableExistsWaiter](./waiters.md#tableexistswaiter)

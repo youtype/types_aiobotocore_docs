@@ -20,17 +20,19 @@ type annotations stubs module
 ## DescribeImageTagsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecr-public").get_paginator("describe_image_tags")`.
+`session.create_client("ecr-public").get_paginator("describe_image_tags")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecr_public.paginator import DescribeImageTagsPaginator
 
-def get_describe_image_tags_paginator() -> DescribeImageTagsPaginator:
-    return Session().create_client("ecr-public").get_paginator("describe_image_tags")
+session = get_session()
+async with session.create_client("ecr-public") as client:
+    client: ECRPublicClient
+    paginator: DescribeImageTagsPaginator = client.get_paginator("describe_image_tags")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `DescribeImageTagsPaginator.paginate` method:
 ## DescribeImagesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecr-public").get_paginator("describe_images")`.
+`session.create_client("ecr-public").get_paginator("describe_images")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecr_public.paginator import DescribeImagesPaginator
 
-def get_describe_images_paginator() -> DescribeImagesPaginator:
-    return Session().create_client("ecr-public").get_paginator("describe_images")
+session = get_session()
+async with session.create_client("ecr-public") as client:
+    client: ECRPublicClient
+    paginator: DescribeImagesPaginator = client.get_paginator("describe_images")
 ```
 
 Boto3 documentation:
@@ -84,17 +88,19 @@ Arguments for `DescribeImagesPaginator.paginate` method:
 ## DescribeRegistriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecr-public").get_paginator("describe_registries")`.
+`session.create_client("ecr-public").get_paginator("describe_registries")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecr_public.paginator import DescribeRegistriesPaginator
 
-def get_describe_registries_paginator() -> DescribeRegistriesPaginator:
-    return Session().create_client("ecr-public").get_paginator("describe_registries")
+session = get_session()
+async with session.create_client("ecr-public") as client:
+    client: ECRPublicClient
+    paginator: DescribeRegistriesPaginator = client.get_paginator("describe_registries")
 ```
 
 Boto3 documentation:
@@ -113,17 +119,19 @@ Arguments for `DescribeRegistriesPaginator.paginate` method:
 ## DescribeRepositoriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecr-public").get_paginator("describe_repositories")`.
+`session.create_client("ecr-public").get_paginator("describe_repositories")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecr_public.paginator import DescribeRepositoriesPaginator
 
-def get_describe_repositories_paginator() -> DescribeRepositoriesPaginator:
-    return Session().create_client("ecr-public").get_paginator("describe_repositories")
+session = get_session()
+async with session.create_client("ecr-public") as client:
+    client: ECRPublicClient
+    paginator: DescribeRepositoriesPaginator = client.get_paginator("describe_repositories")
 ```
 
 Boto3 documentation:

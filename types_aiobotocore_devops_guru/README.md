@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[devops-guru]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[devops-guru]'
+
+# standalone installation
 pip install types-aiobotocore-devops-guru
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-devops-guru
 
 ## DevOpsGuruClient
 
-Type annotations for `aiobotocore.create_client("devops-guru")` as
+Type annotations for `session.create_client("devops-guru")` as
 [DevOpsGuruClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_devops_guru.client import DevOpsGuruClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_notification_channel](./client.md#add_notification_channel)
 - [can_paginate](./client.md#can_paginate)
 - [describe_account_health](./client.md#describe_account_health)
@@ -98,7 +104,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_devops_guru.paginators import DescribeOrganizationResourceCollectionHealthPaginator, ...
+from types_aiobotocore_devops_guru.paginator import DescribeOrganizationResourceCollectionHealthPaginator, ...
 ```
 
 - [DescribeOrganizationResourceCollectionHealthPaginator](./paginators.md#describeorganizationresourcecollectionhealthpaginator)

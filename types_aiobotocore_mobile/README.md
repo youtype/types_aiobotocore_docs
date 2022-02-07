@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[mobile]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[mobile]'
+
+# standalone installation
 pip install types-aiobotocore-mobile
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-mobile
 
 ## MobileClient
 
-Type annotations for `aiobotocore.create_client("mobile")` as
+Type annotations for `session.create_client("mobile")` as
 [MobileClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_mobile.client import MobileClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_project](./client.md#create_project)
 - [delete_project](./client.md#delete_project)
@@ -82,7 +88,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_mobile.paginators import ListBundlesPaginator, ...
+from types_aiobotocore_mobile.paginator import ListBundlesPaginator, ...
 ```
 
 - [ListBundlesPaginator](./paginators.md#listbundlespaginator)

@@ -22,7 +22,7 @@ type annotations stubs module
 ## AppExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("opsworks").get_waiter("app_exists")`.
+`session.create_client("opsworks").get_waiter("app_exists")`.
 
 Can be used directly:
 
@@ -32,7 +32,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_opsworks.waiter import AppExistsWaiter
 
 def get_app_exists_waiter() -> AppExistsWaiter:
-    return Session().create_client("opsworks").get_waiter("app_exists")
+    return Session().client("opsworks").get_waiter("app_exists")
 ```
 
 Boto3 documentation:
@@ -49,7 +49,7 @@ Arguments for `AppExistsWaiter.wait` method:
 ## DeploymentSuccessfulWaiter
 
 Type annotations for
-`aiobotocore.create_client("opsworks").get_waiter("deployment_successful")`.
+`session.create_client("opsworks").get_waiter("deployment_successful")`.
 
 Can be used directly:
 
@@ -59,7 +59,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_opsworks.waiter import DeploymentSuccessfulWaiter
 
 def get_deployment_successful_waiter() -> DeploymentSuccessfulWaiter:
-    return Session().create_client("opsworks").get_waiter("deployment_successful")
+    return Session().client("opsworks").get_waiter("deployment_successful")
 ```
 
 Boto3 documentation:
@@ -77,7 +77,7 @@ Arguments for `DeploymentSuccessfulWaiter.wait` method:
 ## InstanceOnlineWaiter
 
 Type annotations for
-`aiobotocore.create_client("opsworks").get_waiter("instance_online")`.
+`session.create_client("opsworks").get_waiter("instance_online")`.
 
 Can be used directly:
 
@@ -87,7 +87,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_opsworks.waiter import InstanceOnlineWaiter
 
 def get_instance_online_waiter() -> InstanceOnlineWaiter:
-    return Session().create_client("opsworks").get_waiter("instance_online")
+    return Session().client("opsworks").get_waiter("instance_online")
 ```
 
 Boto3 documentation:
@@ -105,7 +105,7 @@ Arguments for `InstanceOnlineWaiter.wait` method:
 ## InstanceRegisteredWaiter
 
 Type annotations for
-`aiobotocore.create_client("opsworks").get_waiter("instance_registered")`.
+`session.create_client("opsworks").get_waiter("instance_registered")`.
 
 Can be used directly:
 
@@ -115,7 +115,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_opsworks.waiter import InstanceRegisteredWaiter
 
 def get_instance_registered_waiter() -> InstanceRegisteredWaiter:
-    return Session().create_client("opsworks").get_waiter("instance_registered")
+    return Session().client("opsworks").get_waiter("instance_registered")
 ```
 
 Boto3 documentation:
@@ -133,7 +133,7 @@ Arguments for `InstanceRegisteredWaiter.wait` method:
 ## InstanceStoppedWaiter
 
 Type annotations for
-`aiobotocore.create_client("opsworks").get_waiter("instance_stopped")`.
+`session.create_client("opsworks").get_waiter("instance_stopped")`.
 
 Can be used directly:
 
@@ -143,7 +143,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_opsworks.waiter import InstanceStoppedWaiter
 
 def get_instance_stopped_waiter() -> InstanceStoppedWaiter:
-    return Session().create_client("opsworks").get_waiter("instance_stopped")
+    return Session().client("opsworks").get_waiter("instance_stopped")
 ```
 
 Boto3 documentation:
@@ -161,7 +161,7 @@ Arguments for `InstanceStoppedWaiter.wait` method:
 ## InstanceTerminatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("opsworks").get_waiter("instance_terminated")`.
+`session.create_client("opsworks").get_waiter("instance_terminated")`.
 
 Can be used directly:
 
@@ -171,7 +171,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_opsworks.waiter import InstanceTerminatedWaiter
 
 def get_instance_terminated_waiter() -> InstanceTerminatedWaiter:
-    return Session().create_client("opsworks").get_waiter("instance_terminated")
+    return Session().client("opsworks").get_waiter("instance_terminated")
 ```
 
 Boto3 documentation:

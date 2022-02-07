@@ -20,17 +20,19 @@ type annotations stubs module
 ## GetExecutionHistoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("stepfunctions").get_paginator("get_execution_history")`.
+`session.create_client("stepfunctions").get_paginator("get_execution_history")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_stepfunctions.paginator import GetExecutionHistoryPaginator
 
-def get_get_execution_history_paginator() -> GetExecutionHistoryPaginator:
-    return Session().create_client("stepfunctions").get_paginator("get_execution_history")
+session = get_session()
+async with session.create_client("stepfunctions") as client:
+    client: SFNClient
+    paginator: GetExecutionHistoryPaginator = client.get_paginator("get_execution_history")
 ```
 
 Boto3 documentation:
@@ -52,17 +54,19 @@ Arguments for `GetExecutionHistoryPaginator.paginate` method:
 ## ListActivitiesPaginator
 
 Type annotations for
-`aiobotocore.create_client("stepfunctions").get_paginator("list_activities")`.
+`session.create_client("stepfunctions").get_paginator("list_activities")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_stepfunctions.paginator import ListActivitiesPaginator
 
-def get_list_activities_paginator() -> ListActivitiesPaginator:
-    return Session().create_client("stepfunctions").get_paginator("list_activities")
+session = get_session()
+async with session.create_client("stepfunctions") as client:
+    client: SFNClient
+    paginator: ListActivitiesPaginator = client.get_paginator("list_activities")
 ```
 
 Boto3 documentation:
@@ -81,17 +85,19 @@ Arguments for `ListActivitiesPaginator.paginate` method:
 ## ListExecutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("stepfunctions").get_paginator("list_executions")`.
+`session.create_client("stepfunctions").get_paginator("list_executions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_stepfunctions.paginator import ListExecutionsPaginator
 
-def get_list_executions_paginator() -> ListExecutionsPaginator:
-    return Session().create_client("stepfunctions").get_paginator("list_executions")
+session = get_session()
+async with session.create_client("stepfunctions") as client:
+    client: SFNClient
+    paginator: ListExecutionsPaginator = client.get_paginator("list_executions")
 ```
 
 Boto3 documentation:
@@ -112,17 +118,19 @@ Arguments for `ListExecutionsPaginator.paginate` method:
 ## ListStateMachinesPaginator
 
 Type annotations for
-`aiobotocore.create_client("stepfunctions").get_paginator("list_state_machines")`.
+`session.create_client("stepfunctions").get_paginator("list_state_machines")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_stepfunctions.paginator import ListStateMachinesPaginator
 
-def get_list_state_machines_paginator() -> ListStateMachinesPaginator:
-    return Session().create_client("stepfunctions").get_paginator("list_state_machines")
+session = get_session()
+async with session.create_client("stepfunctions") as client:
+    client: SFNClient
+    paginator: ListStateMachinesPaginator = client.get_paginator("list_state_machines")
 ```
 
 Boto3 documentation:

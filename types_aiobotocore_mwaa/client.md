@@ -27,22 +27,25 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_environment](#update_environment)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="mwaaclient"></a>
 
 ## MWAAClient
 
-Type annotations for `aiobotocore.create_client("mwaa")`
+Type annotations for `session.create_client("mwaa")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_mwaa.client import MWAAClient
 
-def get_mwaa_client() -> MWAAClient:
-    return Session().client("mwaa")
+session = get_session()
+async with session.create_client("mwaa") as client:
+    client: MWAAClient
 ```
 
 Boto3 documentation:
@@ -80,7 +83,7 @@ Exceptions:
 
 MWAAClient exceptions.
 
-Type annotations for `aiobotocore.create_client("mwaa").exceptions` method.
+Type annotations for `session.create_client("mwaa").exceptions` method.
 
 Boto3 documentation:
 [MWAA.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mwaa.html#MWAA.Client.exceptions)
@@ -93,18 +96,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("mwaa").can_paginate` method.
+Type annotations for `session.create_client("mwaa").can_paginate` method.
 
 Boto3 documentation:
 [MWAA.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mwaa.html#MWAA.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_cli_token"></a>
 
@@ -112,8 +113,7 @@ Returns a `Coroutine` for `bool`.
 
 Create a CLI token to use Airflow CLI.
 
-Type annotations for `aiobotocore.create_client("mwaa").create_cli_token`
-method.
+Type annotations for `session.create_client("mwaa").create_cli_token` method.
 
 Boto3 documentation:
 [MWAA.Client.create_cli_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mwaa.html#MWAA.Client.create_cli_token)
@@ -136,8 +136,7 @@ Returns a `Coroutine` for
 
 Creates an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
 
-Type annotations for `aiobotocore.create_client("mwaa").create_environment`
-method.
+Type annotations for `session.create_client("mwaa").create_environment` method.
 
 Boto3 documentation:
 [MWAA.Client.create_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mwaa.html#MWAA.Client.create_environment)
@@ -185,7 +184,7 @@ Returns a `Coroutine` for
 Create a JWT token to be used to login to Airflow Web UI with claims based
 Authentication.
 
-Type annotations for `aiobotocore.create_client("mwaa").create_web_login_token`
+Type annotations for `session.create_client("mwaa").create_web_login_token`
 method.
 
 Boto3 documentation:
@@ -210,8 +209,7 @@ Returns a `Coroutine` for
 
 Deletes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
 
-Type annotations for `aiobotocore.create_client("mwaa").delete_environment`
-method.
+Type annotations for `session.create_client("mwaa").delete_environment` method.
 
 Boto3 documentation:
 [MWAA.Client.delete_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mwaa.html#MWAA.Client.delete_environment)
@@ -234,7 +232,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("mwaa").generate_presigned_url`
+Type annotations for `session.create_client("mwaa").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -259,8 +257,7 @@ Returns a `Coroutine` for `str`.
 Retrieves the details of an Amazon Managed Workflows for Apache Airflow (MWAA)
 environment.
 
-Type annotations for `aiobotocore.create_client("mwaa").get_environment`
-method.
+Type annotations for `session.create_client("mwaa").get_environment` method.
 
 Boto3 documentation:
 [MWAA.Client.get_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mwaa.html#MWAA.Client.get_environment)
@@ -283,8 +280,7 @@ Returns a `Coroutine` for
 
 Lists the Amazon Managed Workflows for Apache Airflow (MWAA) environments.
 
-Type annotations for `aiobotocore.create_client("mwaa").list_environments`
-method.
+Type annotations for `session.create_client("mwaa").list_environments` method.
 
 Boto3 documentation:
 [MWAA.Client.list_environments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mwaa.html#MWAA.Client.list_environments)
@@ -309,7 +305,7 @@ Returns a `Coroutine` for
 Lists the key-value tag pairs associated to the Amazon Managed Workflows for
 Apache Airflow (MWAA) environment.
 
-Type annotations for `aiobotocore.create_client("mwaa").list_tags_for_resource`
+Type annotations for `session.create_client("mwaa").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -334,8 +330,7 @@ Returns a `Coroutine` for
 
 An operation for publishing metrics from the customers to the Ops plane.
 
-Type annotations for `aiobotocore.create_client("mwaa").publish_metrics`
-method.
+Type annotations for `session.create_client("mwaa").publish_metrics` method.
 
 Boto3 documentation:
 [MWAA.Client.publish_metrics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mwaa.html#MWAA.Client.publish_metrics)
@@ -361,7 +356,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates key-value tag pairs to your Amazon Managed Workflows for Apache
 Airflow (MWAA) environment.
 
-Type annotations for `aiobotocore.create_client("mwaa").tag_resource` method.
+Type annotations for `session.create_client("mwaa").tag_resource` method.
 
 Boto3 documentation:
 [MWAA.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mwaa.html#MWAA.Client.tag_resource)
@@ -385,7 +380,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes key-value tag pairs associated to your Amazon Managed Workflows for
 Apache Airflow (MWAA) environment.
 
-Type annotations for `aiobotocore.create_client("mwaa").untag_resource` method.
+Type annotations for `session.create_client("mwaa").untag_resource` method.
 
 Boto3 documentation:
 [MWAA.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mwaa.html#MWAA.Client.untag_resource)
@@ -408,8 +403,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
 
-Type annotations for `aiobotocore.create_client("mwaa").update_environment`
-method.
+Type annotations for `session.create_client("mwaa").update_environment` method.
 
 Boto3 documentation:
 [MWAA.Client.update_environment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mwaa.html#MWAA.Client.update_environment)
@@ -447,12 +441,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateEnvironmentOutputTypeDef](./type_defs.md#updateenvironmentoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("mwaa").__aenter__` method.
+
+Boto3 documentation:
+[MWAA.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mwaa.html#MWAA.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [MWAAClient](#mwaaclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("mwaa").__aexit__` method.
+
+Boto3 documentation:
+[MWAA.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mwaa.html#MWAA.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("mwaa").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("mwaa").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_environments")` ->
   [ListEnvironmentsPaginator](./paginators.md#listenvironmentspaginator)

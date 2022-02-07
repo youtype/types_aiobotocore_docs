@@ -29,22 +29,25 @@ type annotations stubs module
     - [unclaim_device](#unclaim_device)
     - [untag_resource](#untag_resource)
     - [update_device_state](#update_device_state)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="iot1clickdevicesserviceclient"></a>
 
 ## IoT1ClickDevicesServiceClient
 
-Type annotations for `aiobotocore.create_client("iot1click-devices")`
+Type annotations for `session.create_client("iot1click-devices")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_iot1click_devices.client import IoT1ClickDevicesServiceClient
 
-def get_iot1click-devices_client() -> IoT1ClickDevicesServiceClient:
-    return Session().client("iot1click-devices")
+session = get_session()
+async with session.create_client("iot1click-devices") as client:
+    client: IoT1ClickDevicesServiceClient
 ```
 
 Boto3 documentation:
@@ -85,8 +88,8 @@ Exceptions:
 
 IoT1ClickDevicesServiceClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("iot1click-devices").exceptions` method.
+Type annotations for `session.create_client("iot1click-devices").exceptions`
+method.
 
 Boto3 documentation:
 [IoT1ClickDevicesService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.exceptions)
@@ -99,19 +102,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("iot1click-devices").can_paginate` method.
+Type annotations for `session.create_client("iot1click-devices").can_paginate`
+method.
 
 Boto3 documentation:
 [IoT1ClickDevicesService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="claim_devices_by_claim_code"></a>
 
@@ -121,7 +122,7 @@ Adds device(s) to your account (i.e., claim one or more devices) if and only if
 you received a claim code with the device(s).
 
 Type annotations for
-`aiobotocore.create_client("iot1click-devices").claim_devices_by_claim_code`
+`session.create_client("iot1click-devices").claim_devices_by_claim_code`
 method.
 
 Boto3 documentation:
@@ -148,7 +149,7 @@ Given a device ID, returns a DescribeDeviceResponse object describing the
 details of the device.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-devices").describe_device` method.
+`session.create_client("iot1click-devices").describe_device` method.
 
 Boto3 documentation:
 [IoT1ClickDevicesService.Client.describe_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.describe_device)
@@ -172,7 +173,7 @@ Returns a `Coroutine` for
 Given a device ID, finalizes the claim request for the associated device.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-devices").finalize_device_claim` method.
+`session.create_client("iot1click-devices").finalize_device_claim` method.
 
 Boto3 documentation:
 [IoT1ClickDevicesService.Client.finalize_device_claim](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.finalize_device_claim)
@@ -198,7 +199,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-devices").generate_presigned_url` method.
+`session.create_client("iot1click-devices").generate_presigned_url` method.
 
 Boto3 documentation:
 [IoT1ClickDevicesService.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.generate_presigned_url)
@@ -222,7 +223,7 @@ Returns a `Coroutine` for `str`.
 Given a device ID, returns the invokable methods associated with the device.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-devices").get_device_methods` method.
+`session.create_client("iot1click-devices").get_device_methods` method.
 
 Boto3 documentation:
 [IoT1ClickDevicesService.Client.get_device_methods](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.get_device_methods)
@@ -247,7 +248,7 @@ Returns a `Coroutine` for
 Given a device ID, initiates a claim request for the associated device.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-devices").initiate_device_claim` method.
+`session.create_client("iot1click-devices").initiate_device_claim` method.
 
 Boto3 documentation:
 [IoT1ClickDevicesService.Client.initiate_device_claim](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.initiate_device_claim)
@@ -273,7 +274,7 @@ Given a device ID, issues a request to invoke a named device method (with
 possible parameters).
 
 Type annotations for
-`aiobotocore.create_client("iot1click-devices").invoke_device_method` method.
+`session.create_client("iot1click-devices").invoke_device_method` method.
 
 Boto3 documentation:
 [IoT1ClickDevicesService.Client.invoke_device_method](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.invoke_device_method)
@@ -301,7 +302,7 @@ Using a device ID, returns a DeviceEventsResponse object containing an array of
 events for the device.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-devices").list_device_events` method.
+`session.create_client("iot1click-devices").list_device_events` method.
 
 Boto3 documentation:
 [IoT1ClickDevicesService.Client.list_device_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.list_device_events)
@@ -329,8 +330,8 @@ Returns a `Coroutine` for
 
 Lists the 1-Click compatible devices associated with your AWS account.
 
-Type annotations for
-`aiobotocore.create_client("iot1click-devices").list_devices` method.
+Type annotations for `session.create_client("iot1click-devices").list_devices`
+method.
 
 Boto3 documentation:
 [IoT1ClickDevicesService.Client.list_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.list_devices)
@@ -356,7 +357,7 @@ Returns a `Coroutine` for
 Lists the tags associated with the specified resource ARN.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-devices").list_tags_for_resource` method.
+`session.create_client("iot1click-devices").list_tags_for_resource` method.
 
 Boto3 documentation:
 [IoT1ClickDevicesService.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.list_tags_for_resource)
@@ -380,8 +381,8 @@ Returns a `Coroutine` for
 
 Adds or updates the tags associated with the resource ARN.
 
-Type annotations for
-`aiobotocore.create_client("iot1click-devices").tag_resource` method.
+Type annotations for `session.create_client("iot1click-devices").tag_resource`
+method.
 
 Boto3 documentation:
 [IoT1ClickDevicesService.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.tag_resource)
@@ -403,7 +404,7 @@ Keyword-only arguments:
 Disassociates a device from your AWS account using its device ID.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-devices").unclaim_device` method.
+`session.create_client("iot1click-devices").unclaim_device` method.
 
 Boto3 documentation:
 [IoT1ClickDevicesService.Client.unclaim_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.unclaim_device)
@@ -428,7 +429,7 @@ Using tag keys, deletes the tags (key/value pairs) associated with the
 specified resource ARN.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-devices").untag_resource` method.
+`session.create_client("iot1click-devices").untag_resource` method.
 
 Boto3 documentation:
 [IoT1ClickDevicesService.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.untag_resource)
@@ -451,7 +452,7 @@ Using a Boolean value (true or false), this operation enables or disables the
 device given a device ID.
 
 Type annotations for
-`aiobotocore.create_client("iot1click-devices").update_device_state` method.
+`session.create_client("iot1click-devices").update_device_state` method.
 
 Boto3 documentation:
 [IoT1ClickDevicesService.Client.update_device_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.update_device_state)
@@ -469,13 +470,47 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("iot1click-devices").__aenter__`
+method.
+
+Boto3 documentation:
+[IoT1ClickDevicesService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[IoT1ClickDevicesServiceClient](#iot1clickdevicesserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("iot1click-devices").__aexit__`
+method.
+
+Boto3 documentation:
+[IoT1ClickDevicesService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot1click-devices.html#IoT1ClickDevicesService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("iot1click-devices").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("iot1click-devices").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_device_events")` ->
   [ListDeviceEventsPaginator](./paginators.md#listdeviceeventspaginator)

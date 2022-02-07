@@ -35,17 +35,19 @@ type annotations stubs module
 ## GetClassifiersPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("get_classifiers")`.
+`session.create_client("glue").get_paginator("get_classifiers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import GetClassifiersPaginator
 
-def get_get_classifiers_paginator() -> GetClassifiersPaginator:
-    return Session().create_client("glue").get_paginator("get_classifiers")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: GetClassifiersPaginator = client.get_paginator("get_classifiers")
 ```
 
 Boto3 documentation:
@@ -64,17 +66,19 @@ Arguments for `GetClassifiersPaginator.paginate` method:
 ## GetConnectionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("get_connections")`.
+`session.create_client("glue").get_paginator("get_connections")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import GetConnectionsPaginator
 
-def get_get_connections_paginator() -> GetConnectionsPaginator:
-    return Session().create_client("glue").get_paginator("get_connections")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: GetConnectionsPaginator = client.get_paginator("get_connections")
 ```
 
 Boto3 documentation:
@@ -97,17 +101,19 @@ Arguments for `GetConnectionsPaginator.paginate` method:
 ## GetCrawlerMetricsPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("get_crawler_metrics")`.
+`session.create_client("glue").get_paginator("get_crawler_metrics")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import GetCrawlerMetricsPaginator
 
-def get_get_crawler_metrics_paginator() -> GetCrawlerMetricsPaginator:
-    return Session().create_client("glue").get_paginator("get_crawler_metrics")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: GetCrawlerMetricsPaginator = client.get_paginator("get_crawler_metrics")
 ```
 
 Boto3 documentation:
@@ -127,17 +133,19 @@ Arguments for `GetCrawlerMetricsPaginator.paginate` method:
 ## GetCrawlersPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("get_crawlers")`.
+`session.create_client("glue").get_paginator("get_crawlers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import GetCrawlersPaginator
 
-def get_get_crawlers_paginator() -> GetCrawlersPaginator:
-    return Session().create_client("glue").get_paginator("get_crawlers")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: GetCrawlersPaginator = client.get_paginator("get_crawlers")
 ```
 
 Boto3 documentation:
@@ -156,17 +164,19 @@ Arguments for `GetCrawlersPaginator.paginate` method:
 ## GetDatabasesPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("get_databases")`.
+`session.create_client("glue").get_paginator("get_databases")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import GetDatabasesPaginator
 
-def get_get_databases_paginator() -> GetDatabasesPaginator:
-    return Session().create_client("glue").get_paginator("get_databases")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: GetDatabasesPaginator = client.get_paginator("get_databases")
 ```
 
 Boto3 documentation:
@@ -188,17 +198,19 @@ Arguments for `GetDatabasesPaginator.paginate` method:
 ## GetDevEndpointsPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("get_dev_endpoints")`.
+`session.create_client("glue").get_paginator("get_dev_endpoints")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import GetDevEndpointsPaginator
 
-def get_get_dev_endpoints_paginator() -> GetDevEndpointsPaginator:
-    return Session().create_client("glue").get_paginator("get_dev_endpoints")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: GetDevEndpointsPaginator = client.get_paginator("get_dev_endpoints")
 ```
 
 Boto3 documentation:
@@ -217,17 +229,19 @@ Arguments for `GetDevEndpointsPaginator.paginate` method:
 ## GetJobRunsPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("get_job_runs")`.
+`session.create_client("glue").get_paginator("get_job_runs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import GetJobRunsPaginator
 
-def get_get_job_runs_paginator() -> GetJobRunsPaginator:
-    return Session().create_client("glue").get_paginator("get_job_runs")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: GetJobRunsPaginator = client.get_paginator("get_job_runs")
 ```
 
 Boto3 documentation:
@@ -246,18 +260,19 @@ Arguments for `GetJobRunsPaginator.paginate` method:
 
 ## GetJobsPaginator
 
-Type annotations for
-`aiobotocore.create_client("glue").get_paginator("get_jobs")`.
+Type annotations for `session.create_client("glue").get_paginator("get_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import GetJobsPaginator
 
-def get_get_jobs_paginator() -> GetJobsPaginator:
-    return Session().create_client("glue").get_paginator("get_jobs")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: GetJobsPaginator = client.get_paginator("get_jobs")
 ```
 
 Boto3 documentation:
@@ -276,17 +291,19 @@ Arguments for `GetJobsPaginator.paginate` method:
 ## GetPartitionIndexesPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("get_partition_indexes")`.
+`session.create_client("glue").get_paginator("get_partition_indexes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import GetPartitionIndexesPaginator
 
-def get_get_partition_indexes_paginator() -> GetPartitionIndexesPaginator:
-    return Session().create_client("glue").get_paginator("get_partition_indexes")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: GetPartitionIndexesPaginator = client.get_paginator("get_partition_indexes")
 ```
 
 Boto3 documentation:
@@ -308,17 +325,19 @@ Arguments for `GetPartitionIndexesPaginator.paginate` method:
 ## GetPartitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("get_partitions")`.
+`session.create_client("glue").get_paginator("get_partitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import GetPartitionsPaginator
 
-def get_get_partitions_paginator() -> GetPartitionsPaginator:
-    return Session().create_client("glue").get_paginator("get_partitions")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: GetPartitionsPaginator = client.get_paginator("get_partitions")
 ```
 
 Boto3 documentation:
@@ -345,17 +364,19 @@ Arguments for `GetPartitionsPaginator.paginate` method:
 ## GetResourcePoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("get_resource_policies")`.
+`session.create_client("glue").get_paginator("get_resource_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import GetResourcePoliciesPaginator
 
-def get_get_resource_policies_paginator() -> GetResourcePoliciesPaginator:
-    return Session().create_client("glue").get_paginator("get_resource_policies")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: GetResourcePoliciesPaginator = client.get_paginator("get_resource_policies")
 ```
 
 Boto3 documentation:
@@ -374,17 +395,19 @@ Arguments for `GetResourcePoliciesPaginator.paginate` method:
 ## GetSecurityConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("get_security_configurations")`.
+`session.create_client("glue").get_paginator("get_security_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import GetSecurityConfigurationsPaginator
 
-def get_get_security_configurations_paginator() -> GetSecurityConfigurationsPaginator:
-    return Session().create_client("glue").get_paginator("get_security_configurations")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: GetSecurityConfigurationsPaginator = client.get_paginator("get_security_configurations")
 ```
 
 Boto3 documentation:
@@ -403,17 +426,19 @@ Arguments for `GetSecurityConfigurationsPaginator.paginate` method:
 ## GetTableVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("get_table_versions")`.
+`session.create_client("glue").get_paginator("get_table_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import GetTableVersionsPaginator
 
-def get_get_table_versions_paginator() -> GetTableVersionsPaginator:
-    return Session().create_client("glue").get_paginator("get_table_versions")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: GetTableVersionsPaginator = client.get_paginator("get_table_versions")
 ```
 
 Boto3 documentation:
@@ -435,17 +460,19 @@ Arguments for `GetTableVersionsPaginator.paginate` method:
 ## GetTablesPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("get_tables")`.
+`session.create_client("glue").get_paginator("get_tables")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import GetTablesPaginator
 
-def get_get_tables_paginator() -> GetTablesPaginator:
-    return Session().create_client("glue").get_paginator("get_tables")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: GetTablesPaginator = client.get_paginator("get_tables")
 ```
 
 Boto3 documentation:
@@ -469,17 +496,19 @@ Arguments for `GetTablesPaginator.paginate` method:
 ## GetTriggersPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("get_triggers")`.
+`session.create_client("glue").get_paginator("get_triggers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import GetTriggersPaginator
 
-def get_get_triggers_paginator() -> GetTriggersPaginator:
-    return Session().create_client("glue").get_paginator("get_triggers")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: GetTriggersPaginator = client.get_paginator("get_triggers")
 ```
 
 Boto3 documentation:
@@ -499,17 +528,19 @@ Arguments for `GetTriggersPaginator.paginate` method:
 ## GetUserDefinedFunctionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("get_user_defined_functions")`.
+`session.create_client("glue").get_paginator("get_user_defined_functions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import GetUserDefinedFunctionsPaginator
 
-def get_get_user_defined_functions_paginator() -> GetUserDefinedFunctionsPaginator:
-    return Session().create_client("glue").get_paginator("get_user_defined_functions")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: GetUserDefinedFunctionsPaginator = client.get_paginator("get_user_defined_functions")
 ```
 
 Boto3 documentation:
@@ -531,17 +562,19 @@ Arguments for `GetUserDefinedFunctionsPaginator.paginate` method:
 ## ListRegistriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("list_registries")`.
+`session.create_client("glue").get_paginator("list_registries")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import ListRegistriesPaginator
 
-def get_list_registries_paginator() -> ListRegistriesPaginator:
-    return Session().create_client("glue").get_paginator("list_registries")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: ListRegistriesPaginator = client.get_paginator("list_registries")
 ```
 
 Boto3 documentation:
@@ -560,17 +593,19 @@ Arguments for `ListRegistriesPaginator.paginate` method:
 ## ListSchemaVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("list_schema_versions")`.
+`session.create_client("glue").get_paginator("list_schema_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import ListSchemaVersionsPaginator
 
-def get_list_schema_versions_paginator() -> ListSchemaVersionsPaginator:
-    return Session().create_client("glue").get_paginator("list_schema_versions")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: ListSchemaVersionsPaginator = client.get_paginator("list_schema_versions")
 ```
 
 Boto3 documentation:
@@ -590,17 +625,19 @@ Arguments for `ListSchemaVersionsPaginator.paginate` method:
 ## ListSchemasPaginator
 
 Type annotations for
-`aiobotocore.create_client("glue").get_paginator("list_schemas")`.
+`session.create_client("glue").get_paginator("list_schemas")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glue.paginator import ListSchemasPaginator
 
-def get_list_schemas_paginator() -> ListSchemasPaginator:
-    return Session().create_client("glue").get_paginator("list_schemas")
+session = get_session()
+async with session.create_client("glue") as client:
+    client: GlueClient
+    paginator: ListSchemasPaginator = client.get_paginator("list_schemas")
 ```
 
 Boto3 documentation:

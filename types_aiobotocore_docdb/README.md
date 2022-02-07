@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[docdb]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[docdb]'
+
+# standalone installation
 pip install types-aiobotocore-docdb
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-docdb
 
 ## DocDBClient
 
-Type annotations for `aiobotocore.create_client("docdb")` as
+Type annotations for `session.create_client("docdb")` as
 [DocDBClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_docdb.client import DocDBClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_source_identifier_to_subscription](./client.md#add_source_identifier_to_subscription)
 - [add_tags_to_resource](./client.md#add_tags_to_resource)
 - [apply_pending_maintenance_action](./client.md#apply_pending_maintenance_action)
@@ -177,7 +183,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_docdb.paginators import DescribeCertificatesPaginator, ...
+from types_aiobotocore_docdb.paginator import DescribeCertificatesPaginator, ...
 ```
 
 - [DescribeCertificatesPaginator](./paginators.md#describecertificatespaginator)
@@ -204,7 +210,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_docdb.waiters import DBInstanceAvailableWaiter, ...
+from types_aiobotocore_docdb.waiter import DBInstanceAvailableWaiter, ...
 ```
 
 - [DBInstanceAvailableWaiter](./waiters.md#dbinstanceavailablewaiter)

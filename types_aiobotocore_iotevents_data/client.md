@@ -27,21 +27,24 @@ type annotations stubs module
     - [generate_presigned_url](#generate_presigned_url)
     - [list_alarms](#list_alarms)
     - [list_detectors](#list_detectors)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="ioteventsdataclient"></a>
 
 ## IoTEventsDataClient
 
-Type annotations for `aiobotocore.create_client("iotevents-data")`
+Type annotations for `session.create_client("iotevents-data")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_iotevents_data.client import IoTEventsDataClient
 
-def get_iotevents-data_client() -> IoTEventsDataClient:
-    return Session().client("iotevents-data")
+session = get_session()
+async with session.create_client("iotevents-data") as client:
+    client: IoTEventsDataClient
 ```
 
 Boto3 documentation:
@@ -80,7 +83,7 @@ Exceptions:
 
 IoTEventsDataClient exceptions.
 
-Type annotations for `aiobotocore.create_client("iotevents-data").exceptions`
+Type annotations for `session.create_client("iotevents-data").exceptions`
 method.
 
 Boto3 documentation:
@@ -95,7 +98,7 @@ Returns [Exceptions](#exceptions).
 Acknowledges one or more alarms.
 
 Type annotations for
-`aiobotocore.create_client("iotevents-data").batch_acknowledge_alarm` method.
+`session.create_client("iotevents-data").batch_acknowledge_alarm` method.
 
 Boto3 documentation:
 [IoTEventsData.Client.batch_acknowledge_alarm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents-data.html#IoTEventsData.Client.batch_acknowledge_alarm)
@@ -122,7 +125,7 @@ Returns a `Coroutine` for
 Disables one or more alarms.
 
 Type annotations for
-`aiobotocore.create_client("iotevents-data").batch_disable_alarm` method.
+`session.create_client("iotevents-data").batch_disable_alarm` method.
 
 Boto3 documentation:
 [IoTEventsData.Client.batch_disable_alarm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents-data.html#IoTEventsData.Client.batch_disable_alarm)
@@ -149,7 +152,7 @@ Returns a `Coroutine` for
 Enables one or more alarms.
 
 Type annotations for
-`aiobotocore.create_client("iotevents-data").batch_enable_alarm` method.
+`session.create_client("iotevents-data").batch_enable_alarm` method.
 
 Boto3 documentation:
 [IoTEventsData.Client.batch_enable_alarm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents-data.html#IoTEventsData.Client.batch_enable_alarm)
@@ -176,7 +179,7 @@ Returns a `Coroutine` for
 Sends a set of messages to the AWS IoT Events system.
 
 Type annotations for
-`aiobotocore.create_client("iotevents-data").batch_put_message` method.
+`session.create_client("iotevents-data").batch_put_message` method.
 
 Boto3 documentation:
 [IoTEventsData.Client.batch_put_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents-data.html#IoTEventsData.Client.batch_put_message)
@@ -201,7 +204,7 @@ Returns a `Coroutine` for
 Resets one or more alarms.
 
 Type annotations for
-`aiobotocore.create_client("iotevents-data").batch_reset_alarm` method.
+`session.create_client("iotevents-data").batch_reset_alarm` method.
 
 Boto3 documentation:
 [IoTEventsData.Client.batch_reset_alarm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents-data.html#IoTEventsData.Client.batch_reset_alarm)
@@ -227,7 +230,7 @@ Returns a `Coroutine` for
 Changes one or more alarms to the snooze mode.
 
 Type annotations for
-`aiobotocore.create_client("iotevents-data").batch_snooze_alarm` method.
+`session.create_client("iotevents-data").batch_snooze_alarm` method.
 
 Boto3 documentation:
 [IoTEventsData.Client.batch_snooze_alarm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents-data.html#IoTEventsData.Client.batch_snooze_alarm)
@@ -255,7 +258,7 @@ Updates the state, variable values, and timer settings of one or more detectors
 (instances) of a specified detector model.
 
 Type annotations for
-`aiobotocore.create_client("iotevents-data").batch_update_detector` method.
+`session.create_client("iotevents-data").batch_update_detector` method.
 
 Boto3 documentation:
 [IoTEventsData.Client.batch_update_detector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents-data.html#IoTEventsData.Client.batch_update_detector)
@@ -281,19 +284,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("iotevents-data").can_paginate`
+Type annotations for `session.create_client("iotevents-data").can_paginate`
 method.
 
 Boto3 documentation:
 [IoTEventsData.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents-data.html#IoTEventsData.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="describe_alarm"></a>
 
@@ -301,8 +302,8 @@ Returns a `Coroutine` for `bool`.
 
 Retrieves information about an alarm.
 
-Type annotations for
-`aiobotocore.create_client("iotevents-data").describe_alarm` method.
+Type annotations for `session.create_client("iotevents-data").describe_alarm`
+method.
 
 Boto3 documentation:
 [IoTEventsData.Client.describe_alarm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents-data.html#IoTEventsData.Client.describe_alarm)
@@ -327,7 +328,7 @@ Returns a `Coroutine` for
 Returns information about the specified detector (instance).
 
 Type annotations for
-`aiobotocore.create_client("iotevents-data").describe_detector` method.
+`session.create_client("iotevents-data").describe_detector` method.
 
 Boto3 documentation:
 [IoTEventsData.Client.describe_detector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents-data.html#IoTEventsData.Client.describe_detector)
@@ -352,7 +353,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("iotevents-data").generate_presigned_url` method.
+`session.create_client("iotevents-data").generate_presigned_url` method.
 
 Boto3 documentation:
 [IoTEventsData.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents-data.html#IoTEventsData.Client.generate_presigned_url)
@@ -375,7 +376,7 @@ Returns a `Coroutine` for `str`.
 
 Lists one or more alarms.
 
-Type annotations for `aiobotocore.create_client("iotevents-data").list_alarms`
+Type annotations for `session.create_client("iotevents-data").list_alarms`
 method.
 
 Boto3 documentation:
@@ -401,8 +402,8 @@ Returns a `Coroutine` for
 
 Lists detectors (the instances of a detector model).
 
-Type annotations for
-`aiobotocore.create_client("iotevents-data").list_detectors` method.
+Type annotations for `session.create_client("iotevents-data").list_detectors`
+method.
 
 Boto3 documentation:
 [IoTEventsData.Client.list_detectors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents-data.html#IoTEventsData.Client.list_detectors)
@@ -421,3 +422,37 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [ListDetectorsResponseTypeDef](./type_defs.md#listdetectorsresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("iotevents-data").__aenter__`
+method.
+
+Boto3 documentation:
+[IoTEventsData.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents-data.html#IoTEventsData.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [IoTEventsDataClient](#ioteventsdataclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("iotevents-data").__aexit__`
+method.
+
+Boto3 documentation:
+[IoTEventsData.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotevents-data.html#IoTEventsData.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

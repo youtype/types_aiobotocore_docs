@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[appstream]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[appstream]'
+
+# standalone installation
 pip install types-aiobotocore-appstream
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-appstream
 
 ## AppStreamClient
 
-Type annotations for `aiobotocore.create_client("appstream")` as
+Type annotations for `session.create_client("appstream")` as
 [AppStreamClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_appstream.client import AppStreamClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_application_fleet](./client.md#associate_application_fleet)
 - [associate_fleet](./client.md#associate_fleet)
 - [batch_associate_user_stack](./client.md#batch_associate_user_stack)
@@ -137,7 +143,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_appstream.paginators import DescribeDirectoryConfigsPaginator, ...
+from types_aiobotocore_appstream.paginator import DescribeDirectoryConfigsPaginator, ...
 ```
 
 - [DescribeDirectoryConfigsPaginator](./paginators.md#describedirectoryconfigspaginator)
@@ -161,7 +167,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_appstream.waiters import FleetStartedWaiter, ...
+from types_aiobotocore_appstream.waiter import FleetStartedWaiter, ...
 ```
 
 - [FleetStartedWaiter](./waiters.md#fleetstartedwaiter)

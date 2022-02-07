@@ -34,21 +34,24 @@ type annotations stubs module
     - [get_recommendation_summaries](#get_recommendation_summaries)
     - [put_recommendation_preferences](#put_recommendation_preferences)
     - [update_enrollment_status](#update_enrollment_status)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="computeoptimizerclient"></a>
 
 ## ComputeOptimizerClient
 
-Type annotations for `aiobotocore.create_client("compute-optimizer")`
+Type annotations for `session.create_client("compute-optimizer")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_compute_optimizer.client import ComputeOptimizerClient
 
-def get_compute-optimizer_client() -> ComputeOptimizerClient:
-    return Session().client("compute-optimizer")
+session = get_session()
+async with session.create_client("compute-optimizer") as client:
+    client: ComputeOptimizerClient
 ```
 
 Boto3 documentation:
@@ -91,8 +94,8 @@ Exceptions:
 
 ComputeOptimizerClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("compute-optimizer").exceptions` method.
+Type annotations for `session.create_client("compute-optimizer").exceptions`
+method.
 
 Boto3 documentation:
 [ComputeOptimizer.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/compute-optimizer.html#ComputeOptimizer.Client.exceptions)
@@ -105,19 +108,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("compute-optimizer").can_paginate` method.
+Type annotations for `session.create_client("compute-optimizer").can_paginate`
+method.
 
 Boto3 documentation:
 [ComputeOptimizer.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/compute-optimizer.html#ComputeOptimizer.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="delete_recommendation_preferences"></a>
 
@@ -126,7 +127,7 @@ Returns a `Coroutine` for `bool`.
 Deletes a recommendation preference, such as enhanced infrastructure metrics.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").delete_recommendation_preferences`
+`session.create_client("compute-optimizer").delete_recommendation_preferences`
 method.
 
 Boto3 documentation:
@@ -157,7 +158,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Describes recommendation export jobs created in the last seven days.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").describe_recommendation_export_jobs`
+`session.create_client("compute-optimizer").describe_recommendation_export_jobs`
 method.
 
 Boto3 documentation:
@@ -186,7 +187,7 @@ Returns a `Coroutine` for
 Exports optimization recommendations for Auto Scaling groups.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").export_auto_scaling_group_recommendations`
+`session.create_client("compute-optimizer").export_auto_scaling_group_recommendations`
 method.
 
 Boto3 documentation:
@@ -223,7 +224,7 @@ Returns a `Coroutine` for
 Exports optimization recommendations for Amazon EBS volumes.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").export_ebs_volume_recommendations`
+`session.create_client("compute-optimizer").export_ebs_volume_recommendations`
 method.
 
 Boto3 documentation:
@@ -258,7 +259,7 @@ Returns a `Coroutine` for
 Exports optimization recommendations for Amazon EC2 instances.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").export_ec2_instance_recommendations`
+`session.create_client("compute-optimizer").export_ec2_instance_recommendations`
 method.
 
 Boto3 documentation:
@@ -295,7 +296,7 @@ Returns a `Coroutine` for
 Exports optimization recommendations for Lambda functions.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").export_lambda_function_recommendations`
+`session.create_client("compute-optimizer").export_lambda_function_recommendations`
 method.
 
 Boto3 documentation:
@@ -331,7 +332,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").generate_presigned_url` method.
+`session.create_client("compute-optimizer").generate_presigned_url` method.
 
 Boto3 documentation:
 [ComputeOptimizer.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/compute-optimizer.html#ComputeOptimizer.Client.generate_presigned_url)
@@ -355,7 +356,7 @@ Returns a `Coroutine` for `str`.
 Returns Auto Scaling group recommendations.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").get_auto_scaling_group_recommendations`
+`session.create_client("compute-optimizer").get_auto_scaling_group_recommendations`
 method.
 
 Boto3 documentation:
@@ -387,7 +388,7 @@ Returns a `Coroutine` for
 Returns Amazon Elastic Block Store (Amazon EBS) volume recommendations.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").get_ebs_volume_recommendations`
+`session.create_client("compute-optimizer").get_ebs_volume_recommendations`
 method.
 
 Boto3 documentation:
@@ -417,7 +418,7 @@ Returns a `Coroutine` for
 Returns Amazon EC2 instance recommendations.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").get_ec2_instance_recommendations`
+`session.create_client("compute-optimizer").get_ec2_instance_recommendations`
 method.
 
 Boto3 documentation:
@@ -450,7 +451,7 @@ Returns the projected utilization metrics of Amazon EC2 instance
 recommendations.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").get_ec2_recommendation_projected_metrics`
+`session.create_client("compute-optimizer").get_ec2_recommendation_projected_metrics`
 method.
 
 Boto3 documentation:
@@ -483,7 +484,7 @@ Returns the recommendation preferences that are in effect for a given resource,
 such as enhanced infrastructure metrics.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").get_effective_recommendation_preferences`
+`session.create_client("compute-optimizer").get_effective_recommendation_preferences`
 method.
 
 Boto3 documentation:
@@ -510,7 +511,7 @@ Returns the enrollment (opt in) status of an account to the Compute Optimizer
 service.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").get_enrollment_status` method.
+`session.create_client("compute-optimizer").get_enrollment_status` method.
 
 Boto3 documentation:
 [ComputeOptimizer.Client.get_enrollment_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/compute-optimizer.html#ComputeOptimizer.Client.get_enrollment_status)
@@ -529,7 +530,7 @@ Returns the Compute Optimizer enrollment (opt-in) status of organization member
 accounts, if your account is an organization management account.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").get_enrollment_statuses_for_organization`
+`session.create_client("compute-optimizer").get_enrollment_statuses_for_organization`
 method.
 
 Boto3 documentation:
@@ -558,7 +559,7 @@ Returns a `Coroutine` for
 Returns Lambda function recommendations.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").get_lambda_function_recommendations`
+`session.create_client("compute-optimizer").get_lambda_function_recommendations`
 method.
 
 Boto3 documentation:
@@ -590,7 +591,7 @@ Returns existing recommendation preferences, such as enhanced infrastructure
 metrics.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").get_recommendation_preferences`
+`session.create_client("compute-optimizer").get_recommendation_preferences`
 method.
 
 Boto3 documentation:
@@ -620,7 +621,7 @@ Returns a `Coroutine` for
 Returns the optimization findings for an account.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").get_recommendation_summaries`
+`session.create_client("compute-optimizer").get_recommendation_summaries`
 method.
 
 Boto3 documentation:
@@ -649,7 +650,7 @@ Creates a new recommendation preference or updates an existing recommendation
 preference, such as enhanced infrastructure metrics.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").put_recommendation_preferences`
+`session.create_client("compute-optimizer").put_recommendation_preferences`
 method.
 
 Boto3 documentation:
@@ -679,8 +680,7 @@ Updates the enrollment (opt in and opt out) status of an account to the Compute
 Optimizer service.
 
 Type annotations for
-`aiobotocore.create_client("compute-optimizer").update_enrollment_status`
-method.
+`session.create_client("compute-optimizer").update_enrollment_status` method.
 
 Boto3 documentation:
 [ComputeOptimizer.Client.update_enrollment_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/compute-optimizer.html#ComputeOptimizer.Client.update_enrollment_status)
@@ -698,3 +698,37 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateEnrollmentStatusResponseTypeDef](./type_defs.md#updateenrollmentstatusresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("compute-optimizer").__aenter__`
+method.
+
+Boto3 documentation:
+[ComputeOptimizer.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/compute-optimizer.html#ComputeOptimizer.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ComputeOptimizerClient](#computeoptimizerclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("compute-optimizer").__aexit__`
+method.
+
+Boto3 documentation:
+[ComputeOptimizer.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/compute-optimizer.html#ComputeOptimizer.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

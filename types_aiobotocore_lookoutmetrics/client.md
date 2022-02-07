@@ -41,21 +41,24 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_anomaly_detector](#update_anomaly_detector)
     - [update_metric_set](#update_metric_set)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="lookoutmetricsclient"></a>
 
 ## LookoutMetricsClient
 
-Type annotations for `aiobotocore.create_client("lookoutmetrics")`
+Type annotations for `session.create_client("lookoutmetrics")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_lookoutmetrics.client import LookoutMetricsClient
 
-def get_lookoutmetrics_client() -> LookoutMetricsClient:
-    return Session().client("lookoutmetrics")
+session = get_session()
+async with session.create_client("lookoutmetrics") as client:
+    client: LookoutMetricsClient
 ```
 
 Boto3 documentation:
@@ -96,7 +99,7 @@ Exceptions:
 
 LookoutMetricsClient exceptions.
 
-Type annotations for `aiobotocore.create_client("lookoutmetrics").exceptions`
+Type annotations for `session.create_client("lookoutmetrics").exceptions`
 method.
 
 Boto3 documentation:
@@ -111,7 +114,7 @@ Returns [Exceptions](#exceptions).
 Activates an anomaly detector.
 
 Type annotations for
-`aiobotocore.create_client("lookoutmetrics").activate_anomaly_detector` method.
+`session.create_client("lookoutmetrics").activate_anomaly_detector` method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.activate_anomaly_detector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.activate_anomaly_detector)
@@ -135,8 +138,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Runs a backtest for anomaly detection for the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("lookoutmetrics").back_test_anomaly_detector`
-method.
+`session.create_client("lookoutmetrics").back_test_anomaly_detector` method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.back_test_anomaly_detector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.back_test_anomaly_detector)
@@ -159,19 +161,17 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("lookoutmetrics").can_paginate`
+Type annotations for `session.create_client("lookoutmetrics").can_paginate`
 method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_alert"></a>
 
@@ -179,7 +179,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates an alert for an anomaly detector.
 
-Type annotations for `aiobotocore.create_client("lookoutmetrics").create_alert`
+Type annotations for `session.create_client("lookoutmetrics").create_alert`
 method.
 
 Boto3 documentation:
@@ -209,7 +209,7 @@ Returns a `Coroutine` for
 Creates an anomaly detector.
 
 Type annotations for
-`aiobotocore.create_client("lookoutmetrics").create_anomaly_detector` method.
+`session.create_client("lookoutmetrics").create_anomaly_detector` method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.create_anomaly_detector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.create_anomaly_detector)
@@ -240,7 +240,7 @@ Returns a `Coroutine` for
 Creates a dataset.
 
 Type annotations for
-`aiobotocore.create_client("lookoutmetrics").create_metric_set` method.
+`session.create_client("lookoutmetrics").create_metric_set` method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.create_metric_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.create_metric_set)
@@ -276,7 +276,7 @@ Returns a `Coroutine` for
 
 Deletes an alert.
 
-Type annotations for `aiobotocore.create_client("lookoutmetrics").delete_alert`
+Type annotations for `session.create_client("lookoutmetrics").delete_alert`
 method.
 
 Boto3 documentation:
@@ -300,7 +300,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a detector.
 
 Type annotations for
-`aiobotocore.create_client("lookoutmetrics").delete_anomaly_detector` method.
+`session.create_client("lookoutmetrics").delete_anomaly_detector` method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.delete_anomaly_detector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.delete_anomaly_detector)
@@ -323,8 +323,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Describes an alert.
 
-Type annotations for
-`aiobotocore.create_client("lookoutmetrics").describe_alert` method.
+Type annotations for `session.create_client("lookoutmetrics").describe_alert`
+method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.describe_alert](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.describe_alert)
@@ -348,7 +348,7 @@ Returns a `Coroutine` for
 Returns information about the status of the specified anomaly detection jobs.
 
 Type annotations for
-`aiobotocore.create_client("lookoutmetrics").describe_anomaly_detection_executions`
+`session.create_client("lookoutmetrics").describe_anomaly_detection_executions`
 method.
 
 Boto3 documentation:
@@ -377,7 +377,7 @@ Returns a `Coroutine` for
 Describes a detector.
 
 Type annotations for
-`aiobotocore.create_client("lookoutmetrics").describe_anomaly_detector` method.
+`session.create_client("lookoutmetrics").describe_anomaly_detector` method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.describe_anomaly_detector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.describe_anomaly_detector)
@@ -402,7 +402,7 @@ Returns a `Coroutine` for
 Describes a dataset.
 
 Type annotations for
-`aiobotocore.create_client("lookoutmetrics").describe_metric_set` method.
+`session.create_client("lookoutmetrics").describe_metric_set` method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.describe_metric_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.describe_metric_set)
@@ -427,7 +427,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("lookoutmetrics").generate_presigned_url` method.
+`session.create_client("lookoutmetrics").generate_presigned_url` method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.generate_presigned_url)
@@ -451,7 +451,7 @@ Returns a `Coroutine` for `str`.
 Returns details about a group of anomalous metrics.
 
 Type annotations for
-`aiobotocore.create_client("lookoutmetrics").get_anomaly_group` method.
+`session.create_client("lookoutmetrics").get_anomaly_group` method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.get_anomaly_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.get_anomaly_group)
@@ -475,7 +475,7 @@ Returns a `Coroutine` for
 
 Get feedback for an anomaly group.
 
-Type annotations for `aiobotocore.create_client("lookoutmetrics").get_feedback`
+Type annotations for `session.create_client("lookoutmetrics").get_feedback`
 method.
 
 Boto3 documentation:
@@ -504,8 +504,8 @@ Returns a `Coroutine` for
 
 Returns a selection of sample records from an Amazon S3 datasource.
 
-Type annotations for
-`aiobotocore.create_client("lookoutmetrics").get_sample_data` method.
+Type annotations for `session.create_client("lookoutmetrics").get_sample_data`
+method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.get_sample_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.get_sample_data)
@@ -529,7 +529,7 @@ Returns a `Coroutine` for
 
 Lists the alerts attached to a detector.
 
-Type annotations for `aiobotocore.create_client("lookoutmetrics").list_alerts`
+Type annotations for `session.create_client("lookoutmetrics").list_alerts`
 method.
 
 Boto3 documentation:
@@ -556,7 +556,7 @@ Returns a `Coroutine` for
 Lists the detectors in the current AWS Region.
 
 Type annotations for
-`aiobotocore.create_client("lookoutmetrics").list_anomaly_detectors` method.
+`session.create_client("lookoutmetrics").list_anomaly_detectors` method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.list_anomaly_detectors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.list_anomaly_detectors)
@@ -582,8 +582,7 @@ Returns a `Coroutine` for
 Returns a list of anomaly groups.
 
 Type annotations for
-`aiobotocore.create_client("lookoutmetrics").list_anomaly_group_summaries`
-method.
+`session.create_client("lookoutmetrics").list_anomaly_group_summaries` method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.list_anomaly_group_summaries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.list_anomaly_group_summaries)
@@ -611,7 +610,7 @@ Returns a `Coroutine` for
 Gets a list of anomalous metrics for a measure in an anomaly group.
 
 Type annotations for
-`aiobotocore.create_client("lookoutmetrics").list_anomaly_group_time_series`
+`session.create_client("lookoutmetrics").list_anomaly_group_time_series`
 method.
 
 Boto3 documentation:
@@ -640,8 +639,8 @@ Returns a `Coroutine` for
 
 Lists the datasets in the current AWS Region.
 
-Type annotations for
-`aiobotocore.create_client("lookoutmetrics").list_metric_sets` method.
+Type annotations for `session.create_client("lookoutmetrics").list_metric_sets`
+method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.list_metric_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.list_metric_sets)
@@ -669,7 +668,7 @@ Gets a list of
 tags.html)\_ for a detector, dataset, or alert.
 
 Type annotations for
-`aiobotocore.create_client("lookoutmetrics").list_tags_for_resource` method.
+`session.create_client("lookoutmetrics").list_tags_for_resource` method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.list_tags_for_resource)
@@ -693,7 +692,7 @@ Returns a `Coroutine` for
 
 Add feedback for an anomalous metric.
 
-Type annotations for `aiobotocore.create_client("lookoutmetrics").put_feedback`
+Type annotations for `session.create_client("lookoutmetrics").put_feedback`
 method.
 
 Boto3 documentation:
@@ -720,7 +719,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds \[tags\](https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-
 tags.html)\_ to a detector, dataset, or alert.
 
-Type annotations for `aiobotocore.create_client("lookoutmetrics").tag_resource`
+Type annotations for `session.create_client("lookoutmetrics").tag_resource`
 method.
 
 Boto3 documentation:
@@ -746,8 +745,8 @@ Removes
 \[tags\](https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-
 tags.html)\_ from a detector, dataset, or alert.
 
-Type annotations for
-`aiobotocore.create_client("lookoutmetrics").untag_resource` method.
+Type annotations for `session.create_client("lookoutmetrics").untag_resource`
+method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.untag_resource)
@@ -771,7 +770,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a detector.
 
 Type annotations for
-`aiobotocore.create_client("lookoutmetrics").update_anomaly_detector` method.
+`session.create_client("lookoutmetrics").update_anomaly_detector` method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.update_anomaly_detector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.update_anomaly_detector)
@@ -800,7 +799,7 @@ Returns a `Coroutine` for
 Updates a dataset.
 
 Type annotations for
-`aiobotocore.create_client("lookoutmetrics").update_metric_set` method.
+`session.create_client("lookoutmetrics").update_metric_set` method.
 
 Boto3 documentation:
 [LookoutMetrics.Client.update_metric_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.update_metric_set)
@@ -824,3 +823,37 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateMetricSetResponseTypeDef](./type_defs.md#updatemetricsetresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("lookoutmetrics").__aenter__`
+method.
+
+Boto3 documentation:
+[LookoutMetrics.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [LookoutMetricsClient](#lookoutmetricsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("lookoutmetrics").__aexit__`
+method.
+
+Boto3 documentation:
+[LookoutMetrics.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutmetrics.html#LookoutMetrics.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

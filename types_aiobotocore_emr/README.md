@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[emr]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[emr]'
+
+# standalone installation
 pip install types-aiobotocore-emr
 ```
 
@@ -30,8 +34,7 @@ pip install types-aiobotocore-emr
 
 ## EMRClient
 
-Type annotations for `aiobotocore.create_client("emr")` as
-[EMRClient](./client.md)
+Type annotations for `session.create_client("emr")` as [EMRClient](./client.md)
 
 Can be used directly:
 
@@ -43,6 +46,8 @@ from types_aiobotocore_emr.client import EMRClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_instance_fleet](./client.md#add_instance_fleet)
 - [add_instance_groups](./client.md#add_instance_groups)
 - [add_job_flow_steps](./client.md#add_job_flow_steps)
@@ -122,7 +127,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_emr.paginators import ListBootstrapActionsPaginator, ...
+from types_aiobotocore_emr.paginator import ListBootstrapActionsPaginator, ...
 ```
 
 - [ListBootstrapActionsPaginator](./paginators.md#listbootstrapactionspaginator)
@@ -146,7 +151,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_emr.waiters import ClusterRunningWaiter, ...
+from types_aiobotocore_emr.waiter import ClusterRunningWaiter, ...
 ```
 
 - [ClusterRunningWaiter](./waiters.md#clusterrunningwaiter)

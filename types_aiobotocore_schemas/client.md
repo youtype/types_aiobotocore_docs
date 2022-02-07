@@ -47,6 +47,8 @@ type annotations stubs module
     - [update_discoverer](#update_discoverer)
     - [update_registry](#update_registry)
     - [update_schema](#update_schema)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -54,16 +56,17 @@ type annotations stubs module
 
 ## SchemasClient
 
-Type annotations for `aiobotocore.create_client("schemas")`
+Type annotations for `session.create_client("schemas")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_schemas.client import SchemasClient
 
-def get_schemas_client() -> SchemasClient:
-    return Session().client("schemas")
+session = get_session()
+async with session.create_client("schemas") as client:
+    client: SchemasClient
 ```
 
 Boto3 documentation:
@@ -107,7 +110,7 @@ Exceptions:
 
 SchemasClient exceptions.
 
-Type annotations for `aiobotocore.create_client("schemas").exceptions` method.
+Type annotations for `session.create_client("schemas").exceptions` method.
 
 Boto3 documentation:
 [Schemas.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.exceptions)
@@ -120,19 +123,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("schemas").can_paginate`
-method.
+Type annotations for `session.create_client("schemas").can_paginate` method.
 
 Boto3 documentation:
 [Schemas.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_discoverer"></a>
 
@@ -140,7 +140,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a discoverer.
 
-Type annotations for `aiobotocore.create_client("schemas").create_discoverer`
+Type annotations for `session.create_client("schemas").create_discoverer`
 method.
 
 Boto3 documentation:
@@ -167,8 +167,7 @@ Returns a `Coroutine` for
 
 Creates a registry.
 
-Type annotations for `aiobotocore.create_client("schemas").create_registry`
-method.
+Type annotations for `session.create_client("schemas").create_registry` method.
 
 Boto3 documentation:
 [Schemas.Client.create_registry](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.create_registry)
@@ -193,8 +192,7 @@ Returns a `Coroutine` for
 
 Creates a schema definition.
 
-Type annotations for `aiobotocore.create_client("schemas").create_schema`
-method.
+Type annotations for `session.create_client("schemas").create_schema` method.
 
 Boto3 documentation:
 [Schemas.Client.create_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.create_schema)
@@ -222,7 +220,7 @@ Returns a `Coroutine` for
 
 Deletes a discoverer.
 
-Type annotations for `aiobotocore.create_client("schemas").delete_discoverer`
+Type annotations for `session.create_client("schemas").delete_discoverer`
 method.
 
 Boto3 documentation:
@@ -243,8 +241,7 @@ Keyword-only arguments:
 
 Deletes a Registry.
 
-Type annotations for `aiobotocore.create_client("schemas").delete_registry`
-method.
+Type annotations for `session.create_client("schemas").delete_registry` method.
 
 Boto3 documentation:
 [Schemas.Client.delete_registry](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.delete_registry)
@@ -264,8 +261,8 @@ Keyword-only arguments:
 
 Delete the resource-based policy attached to the specified registry.
 
-Type annotations for
-`aiobotocore.create_client("schemas").delete_resource_policy` method.
+Type annotations for `session.create_client("schemas").delete_resource_policy`
+method.
 
 Boto3 documentation:
 [Schemas.Client.delete_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.delete_resource_policy)
@@ -286,8 +283,7 @@ Keyword-only arguments:
 
 Delete a schema definition.
 
-Type annotations for `aiobotocore.create_client("schemas").delete_schema`
-method.
+Type annotations for `session.create_client("schemas").delete_schema` method.
 
 Boto3 documentation:
 [Schemas.Client.delete_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.delete_schema)
@@ -309,8 +305,8 @@ Keyword-only arguments:
 Delete the schema version definition See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/DeleteSchemaVersion).
 
-Type annotations for
-`aiobotocore.create_client("schemas").delete_schema_version` method.
+Type annotations for `session.create_client("schemas").delete_schema_version`
+method.
 
 Boto3 documentation:
 [Schemas.Client.delete_schema_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.delete_schema_version)
@@ -333,8 +329,8 @@ Keyword-only arguments:
 
 Describe the code binding URI.
 
-Type annotations for
-`aiobotocore.create_client("schemas").describe_code_binding` method.
+Type annotations for `session.create_client("schemas").describe_code_binding`
+method.
 
 Boto3 documentation:
 [Schemas.Client.describe_code_binding](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.describe_code_binding)
@@ -361,7 +357,7 @@ Returns a `Coroutine` for
 
 Describes the discoverer.
 
-Type annotations for `aiobotocore.create_client("schemas").describe_discoverer`
+Type annotations for `session.create_client("schemas").describe_discoverer`
 method.
 
 Boto3 documentation:
@@ -386,7 +382,7 @@ Returns a `Coroutine` for
 
 Describes the registry.
 
-Type annotations for `aiobotocore.create_client("schemas").describe_registry`
+Type annotations for `session.create_client("schemas").describe_registry`
 method.
 
 Boto3 documentation:
@@ -410,8 +406,7 @@ Returns a `Coroutine` for
 
 Retrieve the schema definition.
 
-Type annotations for `aiobotocore.create_client("schemas").describe_schema`
-method.
+Type annotations for `session.create_client("schemas").describe_schema` method.
 
 Boto3 documentation:
 [Schemas.Client.describe_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.describe_schema)
@@ -437,8 +432,7 @@ Returns a `Coroutine` for
 See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ExportSchema).
 
-Type annotations for `aiobotocore.create_client("schemas").export_schema`
-method.
+Type annotations for `session.create_client("schemas").export_schema` method.
 
 Boto3 documentation:
 [Schemas.Client.export_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.export_schema)
@@ -464,8 +458,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("schemas").generate_presigned_url` method.
+Type annotations for `session.create_client("schemas").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Schemas.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.generate_presigned_url)
@@ -488,8 +482,8 @@ Returns a `Coroutine` for `str`.
 
 Get the code binding source URI.
 
-Type annotations for
-`aiobotocore.create_client("schemas").get_code_binding_source` method.
+Type annotations for `session.create_client("schemas").get_code_binding_source`
+method.
 
 Boto3 documentation:
 [Schemas.Client.get_code_binding_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.get_code_binding_source)
@@ -516,8 +510,8 @@ Returns a `Coroutine` for
 
 Get the discovered schema that was generated based on sampled events.
 
-Type annotations for
-`aiobotocore.create_client("schemas").get_discovered_schema` method.
+Type annotations for `session.create_client("schemas").get_discovered_schema`
+method.
 
 Boto3 documentation:
 [Schemas.Client.get_discovered_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.get_discovered_schema)
@@ -542,7 +536,7 @@ Returns a `Coroutine` for
 
 Retrieves the resource-based policy attached to a given registry.
 
-Type annotations for `aiobotocore.create_client("schemas").get_resource_policy`
+Type annotations for `session.create_client("schemas").get_resource_policy`
 method.
 
 Boto3 documentation:
@@ -567,7 +561,7 @@ Returns a `Coroutine` for
 
 List the discoverers.
 
-Type annotations for `aiobotocore.create_client("schemas").list_discoverers`
+Type annotations for `session.create_client("schemas").list_discoverers`
 method.
 
 Boto3 documentation:
@@ -594,8 +588,7 @@ Returns a `Coroutine` for
 
 List the registries.
 
-Type annotations for `aiobotocore.create_client("schemas").list_registries`
-method.
+Type annotations for `session.create_client("schemas").list_registries` method.
 
 Boto3 documentation:
 [Schemas.Client.list_registries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.list_registries)
@@ -621,8 +614,8 @@ Returns a `Coroutine` for
 
 Provides a list of the schema versions and related information.
 
-Type annotations for
-`aiobotocore.create_client("schemas").list_schema_versions` method.
+Type annotations for `session.create_client("schemas").list_schema_versions`
+method.
 
 Boto3 documentation:
 [Schemas.Client.list_schema_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.list_schema_versions)
@@ -649,8 +642,7 @@ Returns a `Coroutine` for
 
 List the schemas.
 
-Type annotations for `aiobotocore.create_client("schemas").list_schemas`
-method.
+Type annotations for `session.create_client("schemas").list_schemas` method.
 
 Boto3 documentation:
 [Schemas.Client.list_schemas](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.list_schemas)
@@ -676,8 +668,8 @@ Returns a `Coroutine` for
 
 Get tags for resource.
 
-Type annotations for
-`aiobotocore.create_client("schemas").list_tags_for_resource` method.
+Type annotations for `session.create_client("schemas").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Schemas.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.list_tags_for_resource)
@@ -702,7 +694,7 @@ Returns a `Coroutine` for
 Put code binding URI See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/PutCodeBinding).
 
-Type annotations for `aiobotocore.create_client("schemas").put_code_binding`
+Type annotations for `session.create_client("schemas").put_code_binding`
 method.
 
 Boto3 documentation:
@@ -729,7 +721,7 @@ Returns a `Coroutine` for
 
 The name of the policy.
 
-Type annotations for `aiobotocore.create_client("schemas").put_resource_policy`
+Type annotations for `session.create_client("schemas").put_resource_policy`
 method.
 
 Boto3 documentation:
@@ -757,8 +749,7 @@ Returns a `Coroutine` for
 Search the schemas See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/SearchSchemas).
 
-Type annotations for `aiobotocore.create_client("schemas").search_schemas`
-method.
+Type annotations for `session.create_client("schemas").search_schemas` method.
 
 Boto3 documentation:
 [Schemas.Client.search_schemas](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.search_schemas)
@@ -785,7 +776,7 @@ Returns a `Coroutine` for
 Starts the discoverer See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/StartDiscoverer).
 
-Type annotations for `aiobotocore.create_client("schemas").start_discoverer`
+Type annotations for `session.create_client("schemas").start_discoverer`
 method.
 
 Boto3 documentation:
@@ -810,8 +801,7 @@ Returns a `Coroutine` for
 Stops the discoverer See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/StopDiscoverer).
 
-Type annotations for `aiobotocore.create_client("schemas").stop_discoverer`
-method.
+Type annotations for `session.create_client("schemas").stop_discoverer` method.
 
 Boto3 documentation:
 [Schemas.Client.stop_discoverer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.stop_discoverer)
@@ -834,8 +824,7 @@ Returns a `Coroutine` for
 
 Add tags to a resource.
 
-Type annotations for `aiobotocore.create_client("schemas").tag_resource`
-method.
+Type annotations for `session.create_client("schemas").tag_resource` method.
 
 Boto3 documentation:
 [Schemas.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.tag_resource)
@@ -856,8 +845,7 @@ Keyword-only arguments:
 
 Removes tags from a resource.
 
-Type annotations for `aiobotocore.create_client("schemas").untag_resource`
-method.
+Type annotations for `session.create_client("schemas").untag_resource` method.
 
 Boto3 documentation:
 [Schemas.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.untag_resource)
@@ -879,7 +867,7 @@ Keyword-only arguments:
 Updates the discoverer See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/UpdateDiscoverer).
 
-Type annotations for `aiobotocore.create_client("schemas").update_discoverer`
+Type annotations for `session.create_client("schemas").update_discoverer`
 method.
 
 Boto3 documentation:
@@ -905,8 +893,7 @@ Returns a `Coroutine` for
 
 Updates a registry.
 
-Type annotations for `aiobotocore.create_client("schemas").update_registry`
-method.
+Type annotations for `session.create_client("schemas").update_registry` method.
 
 Boto3 documentation:
 [Schemas.Client.update_registry](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.update_registry)
@@ -930,8 +917,7 @@ Returns a `Coroutine` for
 
 Updates the schema definition .
 
-Type annotations for `aiobotocore.create_client("schemas").update_schema`
-method.
+Type annotations for `session.create_client("schemas").update_schema` method.
 
 Boto3 documentation:
 [Schemas.Client.update_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.update_schema)
@@ -953,12 +939,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateSchemaResponseTypeDef](./type_defs.md#updateschemaresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("schemas").__aenter__` method.
+
+Boto3 documentation:
+[Schemas.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SchemasClient](#schemasclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("schemas").__aexit__` method.
+
+Boto3 documentation:
+[Schemas.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/schemas.html#Schemas.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("schemas").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("schemas").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_discoverers")` ->
   [ListDiscoverersPaginator](./paginators.md#listdiscovererspaginator)
@@ -975,8 +993,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("schemas").get_waiter` method
-with overloads.
+Type annotations for `session.create_client("schemas").get_waiter` method with
+overloads.
 
 - `client.get_waiter("code_binding_exists")` ->
   [CodeBindingExistsWaiter](./waiters.md#codebindingexistswaiter)

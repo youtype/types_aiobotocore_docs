@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[greengrass]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[greengrass]'
+
+# standalone installation
 pip install types-aiobotocore-greengrass
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-greengrass
 
 ## GreengrassClient
 
-Type annotations for `aiobotocore.create_client("greengrass")` as
+Type annotations for `session.create_client("greengrass")` as
 [GreengrassClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_greengrass.client import GreengrassClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_role_to_group](./client.md#associate_role_to_group)
 - [associate_service_role_to_account](./client.md#associate_service_role_to_account)
 - [can_paginate](./client.md#can_paginate)
@@ -159,7 +165,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_greengrass.paginators import ListBulkDeploymentDetailedReportsPaginator, ...
+from types_aiobotocore_greengrass.paginator import ListBulkDeploymentDetailedReportsPaginator, ...
 ```
 
 - [ListBulkDeploymentDetailedReportsPaginator](./paginators.md#listbulkdeploymentdetailedreportspaginator)

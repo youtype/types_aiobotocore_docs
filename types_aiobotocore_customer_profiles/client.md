@@ -49,21 +49,24 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_domain](#update_domain)
     - [update_profile](#update_profile)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="customerprofilesclient"></a>
 
 ## CustomerProfilesClient
 
-Type annotations for `aiobotocore.create_client("customer-profiles")`
+Type annotations for `session.create_client("customer-profiles")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_customer_profiles.client import CustomerProfilesClient
 
-def get_customer-profiles_client() -> CustomerProfilesClient:
-    return Session().client("customer-profiles")
+session = get_session()
+async with session.create_client("customer-profiles") as client:
+    client: CustomerProfilesClient
 ```
 
 Boto3 documentation:
@@ -102,8 +105,8 @@ Exceptions:
 
 CustomerProfilesClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("customer-profiles").exceptions` method.
+Type annotations for `session.create_client("customer-profiles").exceptions`
+method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.exceptions)
@@ -118,7 +121,7 @@ Associates a new key value with a specific profile, such as a Contact Trace
 Record (CTR) ContactId.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").add_profile_key` method.
+`session.create_client("customer-profiles").add_profile_key` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.add_profile_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.add_profile_key)
@@ -144,19 +147,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("customer-profiles").can_paginate` method.
+Type annotations for `session.create_client("customer-profiles").can_paginate`
+method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_domain"></a>
 
@@ -165,8 +166,8 @@ Returns a `Coroutine` for `bool`.
 Creates a domain, which is a container for all customer data, such as customer
 profile attributes, object types, profile keys, and encryption keys.
 
-Type annotations for
-`aiobotocore.create_client("customer-profiles").create_domain` method.
+Type annotations for `session.create_client("customer-profiles").create_domain`
+method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.create_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.create_domain)
@@ -195,7 +196,7 @@ Returns a `Coroutine` for
 Creates a standard profile.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").create_profile` method.
+`session.create_client("customer-profiles").create_profile` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.create_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.create_profile)
@@ -240,8 +241,8 @@ Returns a `Coroutine` for
 Deletes a specific domain and all of its customer data, such as customer
 profile attributes and their related objects.
 
-Type annotations for
-`aiobotocore.create_client("customer-profiles").delete_domain` method.
+Type annotations for `session.create_client("customer-profiles").delete_domain`
+method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.delete_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.delete_domain)
@@ -265,7 +266,7 @@ Returns a `Coroutine` for
 Removes an integration from a specific domain.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").delete_integration` method.
+`session.create_client("customer-profiles").delete_integration` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.delete_integration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.delete_integration)
@@ -291,7 +292,7 @@ Returns a `Coroutine` for
 Deletes the standard customer profile and all data pertaining to the profile.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").delete_profile` method.
+`session.create_client("customer-profiles").delete_profile` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.delete_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.delete_profile)
@@ -316,7 +317,7 @@ Returns a `Coroutine` for
 Removes a searchable key from a customer profile.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").delete_profile_key` method.
+`session.create_client("customer-profiles").delete_profile_key` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.delete_profile_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.delete_profile_key)
@@ -344,7 +345,7 @@ Returns a `Coroutine` for
 Removes an object associated with a profile of a given ProfileObjectType.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").delete_profile_object` method.
+`session.create_client("customer-profiles").delete_profile_object` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.delete_profile_object](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.delete_profile_object)
@@ -373,8 +374,7 @@ Removes a ProfileObjectType from a specific domain as well as removes all the
 ProfileObjects of that type.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").delete_profile_object_type`
-method.
+`session.create_client("customer-profiles").delete_profile_object_type` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.delete_profile_object_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.delete_profile_object_type)
@@ -400,7 +400,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").generate_presigned_url` method.
+`session.create_client("customer-profiles").generate_presigned_url` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.generate_presigned_url)
@@ -425,8 +425,7 @@ Tests the auto-merging settings of your Identity Resolution Job without merging
 your data.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").get_auto_merging_preview`
-method.
+`session.create_client("customer-profiles").get_auto_merging_preview` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.get_auto_merging_preview](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.get_auto_merging_preview)
@@ -455,8 +454,8 @@ Returns a `Coroutine` for
 
 Returns information about a specific domain.
 
-Type annotations for
-`aiobotocore.create_client("customer-profiles").get_domain` method.
+Type annotations for `session.create_client("customer-profiles").get_domain`
+method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.get_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.get_domain)
@@ -480,7 +479,7 @@ Returns a `Coroutine` for
 Returns information about an Identity Resolution Job in a specific domain.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").get_identity_resolution_job`
+`session.create_client("customer-profiles").get_identity_resolution_job`
 method.
 
 Boto3 documentation:
@@ -507,7 +506,7 @@ Returns a `Coroutine` for
 Returns an integration for a domain.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").get_integration` method.
+`session.create_client("customer-profiles").get_integration` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.get_integration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.get_integration)
@@ -531,8 +530,8 @@ Returns a `Coroutine` for
 
 This API is in preview release for Amazon Connect and subject to change.
 
-Type annotations for
-`aiobotocore.create_client("customer-profiles").get_matches` method.
+Type annotations for `session.create_client("customer-profiles").get_matches`
+method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.get_matches](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.get_matches)
@@ -558,8 +557,7 @@ Returns a `Coroutine` for
 Returns the object types for a specific domain.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").get_profile_object_type`
-method.
+`session.create_client("customer-profiles").get_profile_object_type` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.get_profile_object_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.get_profile_object_type)
@@ -585,7 +583,7 @@ Returns a `Coroutine` for
 Returns the template information for a specific object type.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").get_profile_object_type_template`
+`session.create_client("customer-profiles").get_profile_object_type_template`
 method.
 
 Boto3 documentation:
@@ -611,8 +609,7 @@ Returns a `Coroutine` for
 Lists all of the integrations associated to a specific URI in the AWS account.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").list_account_integrations`
-method.
+`session.create_client("customer-profiles").list_account_integrations` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.list_account_integrations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.list_account_integrations)
@@ -638,8 +635,8 @@ Returns a `Coroutine` for
 
 Returns a list of all the domains for an AWS account that have been created.
 
-Type annotations for
-`aiobotocore.create_client("customer-profiles").list_domains` method.
+Type annotations for `session.create_client("customer-profiles").list_domains`
+method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.list_domains](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.list_domains)
@@ -664,7 +661,7 @@ Returns a `Coroutine` for
 Lists all of the Identity Resolution Jobs in your domain.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").list_identity_resolution_jobs`
+`session.create_client("customer-profiles").list_identity_resolution_jobs`
 method.
 
 Boto3 documentation:
@@ -692,7 +689,7 @@ Returns a `Coroutine` for
 Lists all of the integrations in your domain.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").list_integrations` method.
+`session.create_client("customer-profiles").list_integrations` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.list_integrations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.list_integrations)
@@ -718,7 +715,7 @@ Returns a `Coroutine` for
 Lists all of the template information for object types.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").list_profile_object_type_templates`
+`session.create_client("customer-profiles").list_profile_object_type_templates`
 method.
 
 Boto3 documentation:
@@ -745,8 +742,7 @@ Returns a `Coroutine` for
 Lists all of the templates available within the service.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").list_profile_object_types`
-method.
+`session.create_client("customer-profiles").list_profile_object_types` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.list_profile_object_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.list_profile_object_types)
@@ -774,7 +770,7 @@ Returns a list of objects associated with a profile of a given
 ProfileObjectType.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").list_profile_objects` method.
+`session.create_client("customer-profiles").list_profile_objects` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.list_profile_objects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.list_profile_objects)
@@ -804,7 +800,7 @@ Returns a `Coroutine` for
 Displays the tags associated with an Amazon Connect Customer Profiles resource.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").list_tags_for_resource` method.
+`session.create_client("customer-profiles").list_tags_for_resource` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.list_tags_for_resource)
@@ -829,7 +825,7 @@ Returns a `Coroutine` for
 This API is in preview release for Amazon Connect and subject to change.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").merge_profiles` method.
+`session.create_client("customer-profiles").merge_profiles` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.merge_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.merge_profiles)
@@ -858,7 +854,7 @@ Adds an integration between the service and a third-party service, which
 includes Amazon AppFlow and Amazon Connect.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").put_integration` method.
+`session.create_client("customer-profiles").put_integration` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.put_integration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.put_integration)
@@ -887,7 +883,7 @@ Returns a `Coroutine` for
 Adds additional objects to customer profiles of a given ObjectType.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").put_profile_object` method.
+`session.create_client("customer-profiles").put_profile_object` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.put_profile_object](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.put_profile_object)
@@ -914,8 +910,7 @@ Returns a `Coroutine` for
 Defines a ProfileObjectType.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").put_profile_object_type`
-method.
+`session.create_client("customer-profiles").put_profile_object_type` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.put_profile_object_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.put_profile_object_type)
@@ -953,7 +948,7 @@ Searches for profiles within a specific domain name using name, phone number,
 email address, account number, or a custom defined index.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").search_profiles` method.
+`session.create_client("customer-profiles").search_profiles` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.search_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.search_profiles)
@@ -981,8 +976,8 @@ Returns a `Coroutine` for
 Assigns one or more tags (key-value pairs) to the specified Amazon Connect
 Customer Profiles resource.
 
-Type annotations for
-`aiobotocore.create_client("customer-profiles").tag_resource` method.
+Type annotations for `session.create_client("customer-profiles").tag_resource`
+method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.tag_resource)
@@ -1007,7 +1002,7 @@ Removes one or more tags from the specified Amazon Connect Customer Profiles
 resource.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").untag_resource` method.
+`session.create_client("customer-profiles").untag_resource` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.untag_resource)
@@ -1031,8 +1026,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the properties of a domain, including creating or selecting a dead
 letter queue or an encryption key.
 
-Type annotations for
-`aiobotocore.create_client("customer-profiles").update_domain` method.
+Type annotations for `session.create_client("customer-profiles").update_domain`
+method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.update_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.update_domain)
@@ -1061,7 +1056,7 @@ Returns a `Coroutine` for
 Updates the properties of a profile.
 
 Type annotations for
-`aiobotocore.create_client("customer-profiles").update_profile` method.
+`session.create_client("customer-profiles").update_profile` method.
 
 Boto3 documentation:
 [CustomerProfiles.Client.update_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.update_profile)
@@ -1100,3 +1095,37 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateProfileResponseTypeDef](./type_defs.md#updateprofileresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("customer-profiles").__aenter__`
+method.
+
+Boto3 documentation:
+[CustomerProfiles.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CustomerProfilesClient](#customerprofilesclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("customer-profiles").__aexit__`
+method.
+
+Boto3 documentation:
+[CustomerProfiles.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/customer-profiles.html#CustomerProfiles.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

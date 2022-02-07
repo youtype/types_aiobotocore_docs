@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[pi]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[pi]'
+
+# standalone installation
 pip install types-aiobotocore-pi
 ```
 
@@ -28,8 +32,7 @@ pip install types-aiobotocore-pi
 
 ## PIClient
 
-Type annotations for `aiobotocore.create_client("pi")` as
-[PIClient](./client.md)
+Type annotations for `session.create_client("pi")` as [PIClient](./client.md)
 
 Can be used directly:
 
@@ -41,6 +44,8 @@ from types_aiobotocore_pi.client import PIClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [describe_dimension_keys](./client.md#describe_dimension_keys)
 - [exceptions](./client.md#exceptions)

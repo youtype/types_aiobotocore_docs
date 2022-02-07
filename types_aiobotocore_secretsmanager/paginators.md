@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListSecretsPaginator
 
 Type annotations for
-`aiobotocore.create_client("secretsmanager").get_paginator("list_secrets")`.
+`session.create_client("secretsmanager").get_paginator("list_secrets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_secretsmanager.paginator import ListSecretsPaginator
 
-def get_list_secrets_paginator() -> ListSecretsPaginator:
-    return Session().create_client("secretsmanager").get_paginator("list_secrets")
+session = get_session()
+async with session.create_client("secretsmanager") as client:
+    client: SecretsManagerClient
+    paginator: ListSecretsPaginator = client.get_paginator("list_secrets")
 ```
 
 Boto3 documentation:

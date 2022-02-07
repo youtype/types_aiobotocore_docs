@@ -30,22 +30,25 @@ type annotations stubs module
     - [generate_presigned_url](#generate_presigned_url)
     - [refresh_trusted_advisor_check](#refresh_trusted_advisor_check)
     - [resolve_case](#resolve_case)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="supportclient"></a>
 
 ## SupportClient
 
-Type annotations for `aiobotocore.create_client("support")`
+Type annotations for `session.create_client("support")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_support.client import SupportClient
 
-def get_support_client() -> SupportClient:
-    return Session().client("support")
+session = get_session()
+async with session.create_client("support") as client:
+    client: SupportClient
 ```
 
 Boto3 documentation:
@@ -88,7 +91,7 @@ Exceptions:
 
 SupportClient exceptions.
 
-Type annotations for `aiobotocore.create_client("support").exceptions` method.
+Type annotations for `session.create_client("support").exceptions` method.
 
 Boto3 documentation:
 [Support.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support.html#Support.Client.exceptions)
@@ -101,8 +104,8 @@ Returns [Exceptions](#exceptions).
 
 Adds one or more attachments to an attachment set.
 
-Type annotations for
-`aiobotocore.create_client("support").add_attachments_to_set` method.
+Type annotations for `session.create_client("support").add_attachments_to_set`
+method.
 
 Boto3 documentation:
 [Support.Client.add_attachments_to_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support.html#Support.Client.add_attachments_to_set)
@@ -130,7 +133,7 @@ Returns a `Coroutine` for
 Adds additional customer communication to an Amazon Web Services Support case.
 
 Type annotations for
-`aiobotocore.create_client("support").add_communication_to_case` method.
+`session.create_client("support").add_communication_to_case` method.
 
 Boto3 documentation:
 [Support.Client.add_communication_to_case](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support.html#Support.Client.add_communication_to_case)
@@ -157,19 +160,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("support").can_paginate`
-method.
+Type annotations for `session.create_client("support").can_paginate` method.
 
 Boto3 documentation:
 [Support.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support.html#Support.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_case"></a>
 
@@ -177,7 +177,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a case in the Amazon Web Services Support Center.
 
-Type annotations for `aiobotocore.create_client("support").create_case` method.
+Type annotations for `session.create_client("support").create_case` method.
 
 Boto3 documentation:
 [Support.Client.create_case](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support.html#Support.Client.create_case)
@@ -208,7 +208,7 @@ Returns a `Coroutine` for
 
 Returns the attachment that has the specified ID.
 
-Type annotations for `aiobotocore.create_client("support").describe_attachment`
+Type annotations for `session.create_client("support").describe_attachment`
 method.
 
 Boto3 documentation:
@@ -233,8 +233,7 @@ Returns a `Coroutine` for
 
 Returns a list of cases that you specify by passing one or more case IDs.
 
-Type annotations for `aiobotocore.create_client("support").describe_cases`
-method.
+Type annotations for `session.create_client("support").describe_cases` method.
 
 Boto3 documentation:
 [Support.Client.describe_cases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support.html#Support.Client.describe_cases)
@@ -265,8 +264,8 @@ Returns a `Coroutine` for
 
 Returns communications and attachments for one or more support cases.
 
-Type annotations for
-`aiobotocore.create_client("support").describe_communications` method.
+Type annotations for `session.create_client("support").describe_communications`
+method.
 
 Boto3 documentation:
 [Support.Client.describe_communications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support.html#Support.Client.describe_communications)
@@ -295,7 +294,7 @@ Returns a `Coroutine` for
 Returns the current list of Amazon Web Services services and a list of service
 categories for each service.
 
-Type annotations for `aiobotocore.create_client("support").describe_services`
+Type annotations for `session.create_client("support").describe_services`
 method.
 
 Boto3 documentation:
@@ -321,7 +320,7 @@ Returns a `Coroutine` for
 Returns the list of severity levels that you can assign to a support case.
 
 Type annotations for
-`aiobotocore.create_client("support").describe_severity_levels` method.
+`session.create_client("support").describe_severity_levels` method.
 
 Boto3 documentation:
 [Support.Client.describe_severity_levels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support.html#Support.Client.describe_severity_levels)
@@ -347,7 +346,7 @@ Returns the refresh status of the Trusted Advisor checks that have the
 specified check IDs.
 
 Type annotations for
-`aiobotocore.create_client("support").describe_trusted_advisor_check_refresh_statuses`
+`session.create_client("support").describe_trusted_advisor_check_refresh_statuses`
 method.
 
 Boto3 documentation:
@@ -375,7 +374,7 @@ Returns the results of the Trusted Advisor check that has the specified check
 ID.
 
 Type annotations for
-`aiobotocore.create_client("support").describe_trusted_advisor_check_result`
+`session.create_client("support").describe_trusted_advisor_check_result`
 method.
 
 Boto3 documentation:
@@ -403,7 +402,7 @@ Returns the results for the Trusted Advisor check summaries for the check IDs
 that you specified.
 
 Type annotations for
-`aiobotocore.create_client("support").describe_trusted_advisor_check_summaries`
+`session.create_client("support").describe_trusted_advisor_check_summaries`
 method.
 
 Boto3 documentation:
@@ -430,7 +429,7 @@ Returns information about all available Trusted Advisor checks, including the
 name, ID, category, description, and metadata.
 
 Type annotations for
-`aiobotocore.create_client("support").describe_trusted_advisor_checks` method.
+`session.create_client("support").describe_trusted_advisor_checks` method.
 
 Boto3 documentation:
 [Support.Client.describe_trusted_advisor_checks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support.html#Support.Client.describe_trusted_advisor_checks)
@@ -454,8 +453,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("support").generate_presigned_url` method.
+Type annotations for `session.create_client("support").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Support.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support.html#Support.Client.generate_presigned_url)
@@ -479,7 +478,7 @@ Returns a `Coroutine` for `str`.
 Refreshes the Trusted Advisor check that you specify using the check ID.
 
 Type annotations for
-`aiobotocore.create_client("support").refresh_trusted_advisor_check` method.
+`session.create_client("support").refresh_trusted_advisor_check` method.
 
 Boto3 documentation:
 [Support.Client.refresh_trusted_advisor_check](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support.html#Support.Client.refresh_trusted_advisor_check)
@@ -503,8 +502,7 @@ Returns a `Coroutine` for
 
 Resolves a support case.
 
-Type annotations for `aiobotocore.create_client("support").resolve_case`
-method.
+Type annotations for `session.create_client("support").resolve_case` method.
 
 Boto3 documentation:
 [Support.Client.resolve_case](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support.html#Support.Client.resolve_case)
@@ -521,12 +519,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [ResolveCaseResponseTypeDef](./type_defs.md#resolvecaseresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("support").__aenter__` method.
+
+Boto3 documentation:
+[Support.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support.html#Support.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SupportClient](#supportclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("support").__aexit__` method.
+
+Boto3 documentation:
+[Support.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support.html#Support.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("support").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("support").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_cases")` ->
   [DescribeCasesPaginator](./paginators.md#describecasespaginator)

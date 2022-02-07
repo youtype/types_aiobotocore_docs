@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[es]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[es]'
+
+# standalone installation
 pip install types-aiobotocore-es
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-es
 
 ## ElasticsearchServiceClient
 
-Type annotations for `aiobotocore.create_client("es")` as
+Type annotations for `session.create_client("es")` as
 [ElasticsearchServiceClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_es.client import ElasticsearchServiceClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_inbound_cross_cluster_search_connection](./client.md#accept_inbound_cross_cluster_search_connection)
 - [add_tags](./client.md#add_tags)
 - [associate_package](./client.md#associate_package)
@@ -116,7 +122,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_es.paginators import DescribeReservedElasticsearchInstanceOfferingsPaginator, ...
+from types_aiobotocore_es.paginator import DescribeReservedElasticsearchInstanceOfferingsPaginator, ...
 ```
 
 - [DescribeReservedElasticsearchInstanceOfferingsPaginator](./paginators.md#describereservedelasticsearchinstanceofferingspaginator)

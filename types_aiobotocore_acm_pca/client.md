@@ -39,6 +39,8 @@ type annotations stubs module
     - [tag_certificate_authority](#tag_certificate_authority)
     - [untag_certificate_authority](#untag_certificate_authority)
     - [update_certificate_authority](#update_certificate_authority)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -46,16 +48,17 @@ type annotations stubs module
 
 ## ACMPCAClient
 
-Type annotations for `aiobotocore.create_client("acm-pca")`
+Type annotations for `session.create_client("acm-pca")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_acm_pca.client import ACMPCAClient
 
-def get_acm-pca_client() -> ACMPCAClient:
-    return Session().client("acm-pca")
+session = get_session()
+async with session.create_client("acm-pca") as client:
+    client: ACMPCAClient
 ```
 
 Boto3 documentation:
@@ -108,7 +111,7 @@ Exceptions:
 
 ACMPCAClient exceptions.
 
-Type annotations for `aiobotocore.create_client("acm-pca").exceptions` method.
+Type annotations for `session.create_client("acm-pca").exceptions` method.
 
 Boto3 documentation:
 [ACMPCA.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.exceptions)
@@ -121,19 +124,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("acm-pca").can_paginate`
-method.
+Type annotations for `session.create_client("acm-pca").can_paginate` method.
 
 Boto3 documentation:
 [ACMPCA.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_certificate_authority"></a>
 
@@ -142,7 +142,7 @@ Returns a `Coroutine` for `bool`.
 Creates a root or subordinate private certificate authority (CA).
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").create_certificate_authority` method.
+`session.create_client("acm-pca").create_certificate_authority` method.
 
 Boto3 documentation:
 [ACMPCA.Client.create_certificate_authority](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.create_certificate_authority)
@@ -178,7 +178,7 @@ Returns a `Coroutine` for
 Creates an audit report that lists every time that your CA private key is used.
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").create_certificate_authority_audit_report`
+`session.create_client("acm-pca").create_certificate_authority_audit_report`
 method.
 
 Boto3 documentation:
@@ -208,7 +208,7 @@ Returns a `Coroutine` for
 Grants one or more permissions on a private CA to the AWS Certificate Manager
 (ACM) service principal (`acm.amazonaws.com` ).
 
-Type annotations for `aiobotocore.create_client("acm-pca").create_permission`
+Type annotations for `session.create_client("acm-pca").create_permission`
 method.
 
 Boto3 documentation:
@@ -234,7 +234,7 @@ Keyword-only arguments:
 Deletes a private certificate authority (CA).
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").delete_certificate_authority` method.
+`session.create_client("acm-pca").delete_certificate_authority` method.
 
 Boto3 documentation:
 [ACMPCA.Client.delete_certificate_authority](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.delete_certificate_authority)
@@ -257,7 +257,7 @@ Keyword-only arguments:
 Revokes permissions on a private CA granted to the AWS Certificate Manager
 (ACM) service principal (acm.amazonaws.com).
 
-Type annotations for `aiobotocore.create_client("acm-pca").delete_permission`
+Type annotations for `session.create_client("acm-pca").delete_permission`
 method.
 
 Boto3 documentation:
@@ -280,8 +280,7 @@ Keyword-only arguments:
 
 Deletes the resource-based policy attached to a private CA.
 
-Type annotations for `aiobotocore.create_client("acm-pca").delete_policy`
-method.
+Type annotations for `session.create_client("acm-pca").delete_policy` method.
 
 Boto3 documentation:
 [ACMPCA.Client.delete_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.delete_policy)
@@ -303,7 +302,7 @@ Lists information about your private certificate authority (CA) or one that has
 been shared with you.
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").describe_certificate_authority` method.
+`session.create_client("acm-pca").describe_certificate_authority` method.
 
 Boto3 documentation:
 [ACMPCA.Client.describe_certificate_authority](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.describe_certificate_authority)
@@ -331,7 +330,7 @@ pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html)\_
 action.
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").describe_certificate_authority_audit_report`
+`session.create_client("acm-pca").describe_certificate_authority_audit_report`
 method.
 
 Boto3 documentation:
@@ -358,8 +357,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("acm-pca").generate_presigned_url` method.
+Type annotations for `session.create_client("acm-pca").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [ACMPCA.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.generate_presigned_url)
@@ -383,8 +382,7 @@ Returns a `Coroutine` for `str`.
 Retrieves a certificate from your private CA or one that has been shared with
 you.
 
-Type annotations for `aiobotocore.create_client("acm-pca").get_certificate`
-method.
+Type annotations for `session.create_client("acm-pca").get_certificate` method.
 
 Boto3 documentation:
 [ACMPCA.Client.get_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.get_certificate)
@@ -410,7 +408,7 @@ Retrieves the certificate and certificate chain for your private certificate
 authority (CA) or one that has been shared with you.
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").get_certificate_authority_certificate`
+`session.create_client("acm-pca").get_certificate_authority_certificate`
 method.
 
 Boto3 documentation:
@@ -437,7 +435,7 @@ Retrieves the certificate signing request (CSR) for your private certificate
 authority (CA).
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").get_certificate_authority_csr` method.
+`session.create_client("acm-pca").get_certificate_authority_csr` method.
 
 Boto3 documentation:
 [ACMPCA.Client.get_certificate_authority_csr](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.get_certificate_authority_csr)
@@ -461,7 +459,7 @@ Returns a `Coroutine` for
 
 Retrieves the resource-based policy attached to a private CA.
 
-Type annotations for `aiobotocore.create_client("acm-pca").get_policy` method.
+Type annotations for `session.create_client("acm-pca").get_policy` method.
 
 Boto3 documentation:
 [ACMPCA.Client.get_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.get_policy)
@@ -485,7 +483,7 @@ Returns a `Coroutine` for
 Imports a signed private CA certificate into ACM Private CA.
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").import_certificate_authority_certificate`
+`session.create_client("acm-pca").import_certificate_authority_certificate`
 method.
 
 Boto3 documentation:
@@ -511,7 +509,7 @@ Keyword-only arguments:
 Uses your private certificate authority (CA), or one that has been shared with
 you, to issue a client certificate.
 
-Type annotations for `aiobotocore.create_client("acm-pca").issue_certificate`
+Type annotations for `session.create_client("acm-pca").issue_certificate`
 method.
 
 Boto3 documentation:
@@ -547,7 +545,7 @@ Lists the private certificate authorities that you created by using the
 pca/latest/APIReference/API_CreateCertificateAuthority.html)\_ action.
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").list_certificate_authorities` method.
+`session.create_client("acm-pca").list_certificate_authorities` method.
 
 Boto3 documentation:
 [ACMPCA.Client.list_certificate_authorities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.list_certificate_authorities)
@@ -574,7 +572,7 @@ Returns a `Coroutine` for
 List all permissions on a private CA, if any, granted to the AWS Certificate
 Manager (ACM) service principal (acm.amazonaws.com).
 
-Type annotations for `aiobotocore.create_client("acm-pca").list_permissions`
+Type annotations for `session.create_client("acm-pca").list_permissions`
 method.
 
 Boto3 documentation:
@@ -601,7 +599,7 @@ Returns a `Coroutine` for
 Lists the tags, if any, that are associated with your private CA or one that
 has been shared with you.
 
-Type annotations for `aiobotocore.create_client("acm-pca").list_tags` method.
+Type annotations for `session.create_client("acm-pca").list_tags` method.
 
 Boto3 documentation:
 [ACMPCA.Client.list_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.list_tags)
@@ -626,7 +624,7 @@ Returns a `Coroutine` for
 
 Attaches a resource-based policy to a private CA.
 
-Type annotations for `aiobotocore.create_client("acm-pca").put_policy` method.
+Type annotations for `session.create_client("acm-pca").put_policy` method.
 
 Boto3 documentation:
 [ACMPCA.Client.put_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.put_policy)
@@ -648,7 +646,7 @@ Keyword-only arguments:
 Restores a certificate authority (CA) that is in the `DELETED` state.
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").restore_certificate_authority` method.
+`session.create_client("acm-pca").restore_certificate_authority` method.
 
 Boto3 documentation:
 [ACMPCA.Client.restore_certificate_authority](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.restore_certificate_authority)
@@ -669,7 +667,7 @@ Keyword-only arguments:
 
 Revokes a certificate that was issued inside ACM Private CA.
 
-Type annotations for `aiobotocore.create_client("acm-pca").revoke_certificate`
+Type annotations for `session.create_client("acm-pca").revoke_certificate`
 method.
 
 Boto3 documentation:
@@ -695,7 +693,7 @@ Keyword-only arguments:
 Adds one or more tags to your private CA.
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").tag_certificate_authority` method.
+`session.create_client("acm-pca").tag_certificate_authority` method.
 
 Boto3 documentation:
 [ACMPCA.Client.tag_certificate_authority](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.tag_certificate_authority)
@@ -718,7 +716,7 @@ Keyword-only arguments:
 Remove one or more tags from your private CA.
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").untag_certificate_authority` method.
+`session.create_client("acm-pca").untag_certificate_authority` method.
 
 Boto3 documentation:
 [ACMPCA.Client.untag_certificate_authority](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.untag_certificate_authority)
@@ -741,7 +739,7 @@ Keyword-only arguments:
 Updates the status or configuration of a private certificate authority (CA).
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").update_certificate_authority` method.
+`session.create_client("acm-pca").update_certificate_authority` method.
 
 Boto3 documentation:
 [ACMPCA.Client.update_certificate_authority](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.update_certificate_authority)
@@ -760,12 +758,44 @@ Keyword-only arguments:
 - `Status`:
   [CertificateAuthorityStatusType](./literals.md#certificateauthoritystatustype)
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("acm-pca").__aenter__` method.
+
+Boto3 documentation:
+[ACMPCA.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ACMPCAClient](#acmpcaclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("acm-pca").__aexit__` method.
+
+Boto3 documentation:
+[ACMPCA.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("acm-pca").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("acm-pca").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_certificate_authorities")` ->
   [ListCertificateAuthoritiesPaginator](./paginators.md#listcertificateauthoritiespaginator)
@@ -778,8 +808,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("acm-pca").get_waiter` method
-with overloads.
+Type annotations for `session.create_client("acm-pca").get_waiter` method with
+overloads.
 
 - `client.get_waiter("audit_report_created")` ->
   [AuditReportCreatedWaiter](./waiters.md#auditreportcreatedwaiter)

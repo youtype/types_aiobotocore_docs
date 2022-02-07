@@ -24,22 +24,25 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_rule](#update_rule)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="recyclebinclient"></a>
 
 ## RecycleBinClient
 
-Type annotations for `aiobotocore.create_client("rbin")`
+Type annotations for `session.create_client("rbin")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_rbin.client import RecycleBinClient
 
-def get_rbin_client() -> RecycleBinClient:
-    return Session().client("rbin")
+session = get_session()
+async with session.create_client("rbin") as client:
+    client: RecycleBinClient
 ```
 
 Boto3 documentation:
@@ -77,7 +80,7 @@ Exceptions:
 
 RecycleBinClient exceptions.
 
-Type annotations for `aiobotocore.create_client("rbin").exceptions` method.
+Type annotations for `session.create_client("rbin").exceptions` method.
 
 Boto3 documentation:
 [RecycleBin.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rbin.html#RecycleBin.Client.exceptions)
@@ -90,18 +93,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("rbin").can_paginate` method.
+Type annotations for `session.create_client("rbin").can_paginate` method.
 
 Boto3 documentation:
 [RecycleBin.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rbin.html#RecycleBin.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_rule"></a>
 
@@ -109,7 +110,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a Recycle Bin retention rule.
 
-Type annotations for `aiobotocore.create_client("rbin").create_rule` method.
+Type annotations for `session.create_client("rbin").create_rule` method.
 
 Boto3 documentation:
 [RecycleBin.Client.create_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rbin.html#RecycleBin.Client.create_rule)
@@ -139,7 +140,7 @@ Returns a `Coroutine` for
 
 Deletes a Recycle Bin retention rule.
 
-Type annotations for `aiobotocore.create_client("rbin").delete_rule` method.
+Type annotations for `session.create_client("rbin").delete_rule` method.
 
 Boto3 documentation:
 [RecycleBin.Client.delete_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rbin.html#RecycleBin.Client.delete_rule)
@@ -161,7 +162,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("rbin").generate_presigned_url`
+Type annotations for `session.create_client("rbin").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -185,7 +186,7 @@ Returns a `Coroutine` for `str`.
 
 Gets information about a Recycle Bin retention rule.
 
-Type annotations for `aiobotocore.create_client("rbin").get_rule` method.
+Type annotations for `session.create_client("rbin").get_rule` method.
 
 Boto3 documentation:
 [RecycleBin.Client.get_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rbin.html#RecycleBin.Client.get_rule)
@@ -208,7 +209,7 @@ Returns a `Coroutine` for
 
 Lists the Recycle Bin retention rules in the Region.
 
-Type annotations for `aiobotocore.create_client("rbin").list_rules` method.
+Type annotations for `session.create_client("rbin").list_rules` method.
 
 Boto3 documentation:
 [RecycleBin.Client.list_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rbin.html#RecycleBin.Client.list_rules)
@@ -236,7 +237,7 @@ Returns a `Coroutine` for
 
 Lists the tags assigned a specific resource.
 
-Type annotations for `aiobotocore.create_client("rbin").list_tags_for_resource`
+Type annotations for `session.create_client("rbin").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -261,7 +262,7 @@ Returns a `Coroutine` for
 
 Assigns tags to the specified resource.
 
-Type annotations for `aiobotocore.create_client("rbin").tag_resource` method.
+Type annotations for `session.create_client("rbin").tag_resource` method.
 
 Boto3 documentation:
 [RecycleBin.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rbin.html#RecycleBin.Client.tag_resource)
@@ -284,7 +285,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Unassigns a tag from a resource.
 
-Type annotations for `aiobotocore.create_client("rbin").untag_resource` method.
+Type annotations for `session.create_client("rbin").untag_resource` method.
 
 Boto3 documentation:
 [RecycleBin.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rbin.html#RecycleBin.Client.untag_resource)
@@ -307,7 +308,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an existing Recycle Bin retention rule.
 
-Type annotations for `aiobotocore.create_client("rbin").update_rule` method.
+Type annotations for `session.create_client("rbin").update_rule` method.
 
 Boto3 documentation:
 [RecycleBin.Client.update_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rbin.html#RecycleBin.Client.update_rule)
@@ -331,12 +332,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateRuleResponseTypeDef](./type_defs.md#updateruleresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("rbin").__aenter__` method.
+
+Boto3 documentation:
+[RecycleBin.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rbin.html#RecycleBin.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [RecycleBinClient](#recyclebinclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("rbin").__aexit__` method.
+
+Boto3 documentation:
+[RecycleBin.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rbin.html#RecycleBin.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("rbin").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("rbin").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_rules")` ->
   [ListRulesPaginator](./paginators.md#listrulespaginator)

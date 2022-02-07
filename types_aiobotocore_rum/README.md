@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[rum]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[rum]'
+
+# standalone installation
 pip install types-aiobotocore-rum
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-rum
 
 ## CloudWatchRUMClient
 
-Type annotations for `aiobotocore.create_client("rum")` as
+Type annotations for `session.create_client("rum")` as
 [CloudWatchRUMClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_rum.client import CloudWatchRUMClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_app_monitor](./client.md#create_app_monitor)
 - [delete_app_monitor](./client.md#delete_app_monitor)
@@ -82,7 +88,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_rum.paginators import GetAppMonitorDataPaginator, ...
+from types_aiobotocore_rum.paginator import GetAppMonitorDataPaginator, ...
 ```
 
 - [GetAppMonitorDataPaginator](./paginators.md#getappmonitordatapaginator)

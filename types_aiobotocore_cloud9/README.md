@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[cloud9]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[cloud9]'
+
+# standalone installation
 pip install types-aiobotocore-cloud9
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-cloud9
 
 ## Cloud9Client
 
-Type annotations for `aiobotocore.create_client("cloud9")` as
+Type annotations for `session.create_client("cloud9")` as
 [Cloud9Client](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_cloud9.client import Cloud9Client
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_environment_ec2](./client.md#create_environment_ec2)
 - [create_environment_membership](./client.md#create_environment_membership)
@@ -86,7 +92,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_cloud9.paginators import DescribeEnvironmentMembershipsPaginator, ...
+from types_aiobotocore_cloud9.paginator import DescribeEnvironmentMembershipsPaginator, ...
 ```
 
 - [DescribeEnvironmentMembershipsPaginator](./paginators.md#describeenvironmentmembershipspaginator)

@@ -67,22 +67,25 @@ type annotations stubs module
     - [update_place_index](#update_place_index)
     - [update_route_calculator](#update_route_calculator)
     - [update_tracker](#update_tracker)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="locationserviceclient"></a>
 
 ## LocationServiceClient
 
-Type annotations for `aiobotocore.create_client("location")`
+Type annotations for `session.create_client("location")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_location.client import LocationServiceClient
 
-def get_location_client() -> LocationServiceClient:
-    return Session().client("location")
+session = get_session()
+async with session.create_client("location") as client:
+    client: LocationServiceClient
 ```
 
 Boto3 documentation:
@@ -123,7 +126,7 @@ Exceptions:
 
 LocationServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("location").exceptions` method.
+Type annotations for `session.create_client("location").exceptions` method.
 
 Boto3 documentation:
 [LocationService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.exceptions)
@@ -137,7 +140,7 @@ Returns [Exceptions](#exceptions).
 Creates an association between a geofence collection and a tracker resource.
 
 Type annotations for
-`aiobotocore.create_client("location").associate_tracker_consumer` method.
+`session.create_client("location").associate_tracker_consumer` method.
 
 Boto3 documentation:
 [LocationService.Client.associate_tracker_consumer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.associate_tracker_consumer)
@@ -162,7 +165,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the position history of one or more devices from a tracker resource.
 
 Type annotations for
-`aiobotocore.create_client("location").batch_delete_device_position_history`
+`session.create_client("location").batch_delete_device_position_history`
 method.
 
 Boto3 documentation:
@@ -188,8 +191,8 @@ Returns a `Coroutine` for
 
 Deletes a batch of geofences from a geofence collection.
 
-Type annotations for
-`aiobotocore.create_client("location").batch_delete_geofence` method.
+Type annotations for `session.create_client("location").batch_delete_geofence`
+method.
 
 Boto3 documentation:
 [LocationService.Client.batch_delete_geofence](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.batch_delete_geofence)
@@ -216,7 +219,7 @@ Evaluates device positions against the geofence geometries from a given
 geofence collection.
 
 Type annotations for
-`aiobotocore.create_client("location").batch_evaluate_geofences` method.
+`session.create_client("location").batch_evaluate_geofences` method.
 
 Boto3 documentation:
 [LocationService.Client.batch_evaluate_geofences](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.batch_evaluate_geofences)
@@ -244,7 +247,7 @@ Returns a `Coroutine` for
 Lists the latest device positions for requested devices.
 
 Type annotations for
-`aiobotocore.create_client("location").batch_get_device_position` method.
+`session.create_client("location").batch_get_device_position` method.
 
 Boto3 documentation:
 [LocationService.Client.batch_get_device_position](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.batch_get_device_position)
@@ -271,7 +274,7 @@ A batch request for storing geofence geometries into a given geofence
 collection, or updates the geometry of an existing geofence if a geofence ID is
 included in the request.
 
-Type annotations for `aiobotocore.create_client("location").batch_put_geofence`
+Type annotations for `session.create_client("location").batch_put_geofence`
 method.
 
 Boto3 documentation:
@@ -300,7 +303,7 @@ Returns a `Coroutine` for
 Uploads position update data for one or more devices to a tracker resource.
 
 Type annotations for
-`aiobotocore.create_client("location").batch_update_device_position` method.
+`session.create_client("location").batch_update_device_position` method.
 
 Boto3 documentation:
 [LocationService.Client.batch_update_device_position](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.batch_update_device_position)
@@ -325,7 +328,7 @@ Returns a `Coroutine` for
 
 ### calculate_route
 
-Type annotations for `aiobotocore.create_client("location").calculate_route`
+Type annotations for `session.create_client("location").calculate_route`
 method.
 
 Boto3 documentation:
@@ -361,19 +364,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("location").can_paginate`
-method.
+Type annotations for `session.create_client("location").can_paginate` method.
 
 Boto3 documentation:
 [LocationService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_geofence_collection"></a>
 
@@ -382,7 +382,7 @@ Returns a `Coroutine` for `bool`.
 Creates a geofence collection, which manages and stores geofences.
 
 Type annotations for
-`aiobotocore.create_client("location").create_geofence_collection` method.
+`session.create_client("location").create_geofence_collection` method.
 
 Boto3 documentation:
 [LocationService.Client.create_geofence_collection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.create_geofence_collection)
@@ -412,7 +412,7 @@ Returns a `Coroutine` for
 Creates a map resource in your AWS account, which provides map tiles of
 different styles sourced from global location data providers.
 
-Type annotations for `aiobotocore.create_client("location").create_map` method.
+Type annotations for `session.create_client("location").create_map` method.
 
 Boto3 documentation:
 [LocationService.Client.create_map](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.create_map)
@@ -441,7 +441,7 @@ Returns a `Coroutine` for
 
 Creates a place index resource in your AWS account.
 
-Type annotations for `aiobotocore.create_client("location").create_place_index`
+Type annotations for `session.create_client("location").create_place_index`
 method.
 
 Boto3 documentation:
@@ -473,7 +473,7 @@ Returns a `Coroutine` for
 Creates a route calculator resource in your AWS account.
 
 Type annotations for
-`aiobotocore.create_client("location").create_route_calculator` method.
+`session.create_client("location").create_route_calculator` method.
 
 Boto3 documentation:
 [LocationService.Client.create_route_calculator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.create_route_calculator)
@@ -502,8 +502,7 @@ Returns a `Coroutine` for
 Creates a tracker resource in your AWS account, which lets you retrieve current
 and historical location of devices.
 
-Type annotations for `aiobotocore.create_client("location").create_tracker`
-method.
+Type annotations for `session.create_client("location").create_tracker` method.
 
 Boto3 documentation:
 [LocationService.Client.create_tracker](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.create_tracker)
@@ -534,7 +533,7 @@ Returns a `Coroutine` for
 Deletes a geofence collection from your AWS account.
 
 Type annotations for
-`aiobotocore.create_client("location").delete_geofence_collection` method.
+`session.create_client("location").delete_geofence_collection` method.
 
 Boto3 documentation:
 [LocationService.Client.delete_geofence_collection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.delete_geofence_collection)
@@ -557,7 +556,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a map resource from your AWS account.
 
-Type annotations for `aiobotocore.create_client("location").delete_map` method.
+Type annotations for `session.create_client("location").delete_map` method.
 
 Boto3 documentation:
 [LocationService.Client.delete_map](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.delete_map)
@@ -579,7 +578,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a place index resource from your AWS account.
 
-Type annotations for `aiobotocore.create_client("location").delete_place_index`
+Type annotations for `session.create_client("location").delete_place_index`
 method.
 
 Boto3 documentation:
@@ -604,7 +603,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a route calculator resource from your AWS account.
 
 Type annotations for
-`aiobotocore.create_client("location").delete_route_calculator` method.
+`session.create_client("location").delete_route_calculator` method.
 
 Boto3 documentation:
 [LocationService.Client.delete_route_calculator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.delete_route_calculator)
@@ -627,8 +626,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a tracker resource from your AWS account.
 
-Type annotations for `aiobotocore.create_client("location").delete_tracker`
-method.
+Type annotations for `session.create_client("location").delete_tracker` method.
 
 Boto3 documentation:
 [LocationService.Client.delete_tracker](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.delete_tracker)
@@ -651,7 +649,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Retrieves the geofence collection details.
 
 Type annotations for
-`aiobotocore.create_client("location").describe_geofence_collection` method.
+`session.create_client("location").describe_geofence_collection` method.
 
 Boto3 documentation:
 [LocationService.Client.describe_geofence_collection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.describe_geofence_collection)
@@ -675,8 +673,7 @@ Returns a `Coroutine` for
 
 Retrieves the map resource details.
 
-Type annotations for `aiobotocore.create_client("location").describe_map`
-method.
+Type annotations for `session.create_client("location").describe_map` method.
 
 Boto3 documentation:
 [LocationService.Client.describe_map](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.describe_map)
@@ -699,8 +696,8 @@ Returns a `Coroutine` for
 
 Retrieves the place index resource details.
 
-Type annotations for
-`aiobotocore.create_client("location").describe_place_index` method.
+Type annotations for `session.create_client("location").describe_place_index`
+method.
 
 Boto3 documentation:
 [LocationService.Client.describe_place_index](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.describe_place_index)
@@ -725,7 +722,7 @@ Returns a `Coroutine` for
 Retrieves the route calculator resource details.
 
 Type annotations for
-`aiobotocore.create_client("location").describe_route_calculator` method.
+`session.create_client("location").describe_route_calculator` method.
 
 Boto3 documentation:
 [LocationService.Client.describe_route_calculator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.describe_route_calculator)
@@ -749,7 +746,7 @@ Returns a `Coroutine` for
 
 Retrieves the tracker resource details.
 
-Type annotations for `aiobotocore.create_client("location").describe_tracker`
+Type annotations for `session.create_client("location").describe_tracker`
 method.
 
 Boto3 documentation:
@@ -774,7 +771,7 @@ Returns a `Coroutine` for
 Removes the association between a tracker resource and a geofence collection.
 
 Type annotations for
-`aiobotocore.create_client("location").disassociate_tracker_consumer` method.
+`session.create_client("location").disassociate_tracker_consumer` method.
 
 Boto3 documentation:
 [LocationService.Client.disassociate_tracker_consumer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.disassociate_tracker_consumer)
@@ -798,8 +795,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("location").generate_presigned_url` method.
+Type annotations for `session.create_client("location").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [LocationService.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.generate_presigned_url)
@@ -822,8 +819,8 @@ Returns a `Coroutine` for `str`.
 
 Retrieves a device's most recent position according to its sample time.
 
-Type annotations for
-`aiobotocore.create_client("location").get_device_position` method.
+Type annotations for `session.create_client("location").get_device_position`
+method.
 
 Boto3 documentation:
 [LocationService.Client.get_device_position](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.get_device_position)
@@ -850,7 +847,7 @@ Retrieves the device position history from a tracker resource within a
 specified range of time.
 
 Type annotations for
-`aiobotocore.create_client("location").get_device_position_history` method.
+`session.create_client("location").get_device_position_history` method.
 
 Boto3 documentation:
 [LocationService.Client.get_device_position_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.get_device_position_history)
@@ -878,8 +875,7 @@ Returns a `Coroutine` for
 
 Retrieves the geofence details from a geofence collection.
 
-Type annotations for `aiobotocore.create_client("location").get_geofence`
-method.
+Type annotations for `session.create_client("location").get_geofence` method.
 
 Boto3 documentation:
 [LocationService.Client.get_geofence](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.get_geofence)
@@ -903,8 +899,7 @@ Returns a `Coroutine` for
 
 Retrieves glyphs used to display labels on a map.
 
-Type annotations for `aiobotocore.create_client("location").get_map_glyphs`
-method.
+Type annotations for `session.create_client("location").get_map_glyphs` method.
 
 Boto3 documentation:
 [LocationService.Client.get_map_glyphs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.get_map_glyphs)
@@ -929,7 +924,7 @@ Returns a `Coroutine` for
 
 Retrieves the sprite sheet corresponding to a map resource.
 
-Type annotations for `aiobotocore.create_client("location").get_map_sprites`
+Type annotations for `session.create_client("location").get_map_sprites`
 method.
 
 Boto3 documentation:
@@ -955,7 +950,7 @@ Returns a `Coroutine` for
 Retrieves the map style descriptor from a map resource.
 
 Type annotations for
-`aiobotocore.create_client("location").get_map_style_descriptor` method.
+`session.create_client("location").get_map_style_descriptor` method.
 
 Boto3 documentation:
 [LocationService.Client.get_map_style_descriptor](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.get_map_style_descriptor)
@@ -979,8 +974,7 @@ Returns a `Coroutine` for
 
 Retrieves a vector data tile from the map resource.
 
-Type annotations for `aiobotocore.create_client("location").get_map_tile`
-method.
+Type annotations for `session.create_client("location").get_map_tile` method.
 
 Boto3 documentation:
 [LocationService.Client.get_map_tile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.get_map_tile)
@@ -1006,8 +1000,8 @@ Returns a `Coroutine` for
 
 A batch request to retrieve all device positions.
 
-Type annotations for
-`aiobotocore.create_client("location").list_device_positions` method.
+Type annotations for `session.create_client("location").list_device_positions`
+method.
 
 Boto3 documentation:
 [LocationService.Client.list_device_positions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.list_device_positions)
@@ -1034,7 +1028,7 @@ Returns a `Coroutine` for
 Lists geofence collections in your AWS account.
 
 Type annotations for
-`aiobotocore.create_client("location").list_geofence_collections` method.
+`session.create_client("location").list_geofence_collections` method.
 
 Boto3 documentation:
 [LocationService.Client.list_geofence_collections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.list_geofence_collections)
@@ -1059,8 +1053,7 @@ Returns a `Coroutine` for
 
 Lists geofences stored in a given geofence collection.
 
-Type annotations for `aiobotocore.create_client("location").list_geofences`
-method.
+Type annotations for `session.create_client("location").list_geofences` method.
 
 Boto3 documentation:
 [LocationService.Client.list_geofences](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.list_geofences)
@@ -1084,7 +1077,7 @@ Returns a `Coroutine` for
 
 Lists map resources in your AWS account.
 
-Type annotations for `aiobotocore.create_client("location").list_maps` method.
+Type annotations for `session.create_client("location").list_maps` method.
 
 Boto3 documentation:
 [LocationService.Client.list_maps](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.list_maps)
@@ -1108,7 +1101,7 @@ Returns a `Coroutine` for
 
 Lists place index resources in your AWS account.
 
-Type annotations for `aiobotocore.create_client("location").list_place_indexes`
+Type annotations for `session.create_client("location").list_place_indexes`
 method.
 
 Boto3 documentation:
@@ -1134,8 +1127,8 @@ Returns a `Coroutine` for
 
 Lists route calculator resources in your AWS account.
 
-Type annotations for
-`aiobotocore.create_client("location").list_route_calculators` method.
+Type annotations for `session.create_client("location").list_route_calculators`
+method.
 
 Boto3 documentation:
 [LocationService.Client.list_route_calculators](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.list_route_calculators)
@@ -1161,8 +1154,8 @@ Returns a `Coroutine` for
 Returns a list of tags that are applied to the specified Amazon Location
 resource.
 
-Type annotations for
-`aiobotocore.create_client("location").list_tags_for_resource` method.
+Type annotations for `session.create_client("location").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [LocationService.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.list_tags_for_resource)
@@ -1186,8 +1179,8 @@ Returns a `Coroutine` for
 
 Lists geofence collections currently associated to the given tracker resource.
 
-Type annotations for
-`aiobotocore.create_client("location").list_tracker_consumers` method.
+Type annotations for `session.create_client("location").list_tracker_consumers`
+method.
 
 Boto3 documentation:
 [LocationService.Client.list_tracker_consumers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.list_tracker_consumers)
@@ -1213,8 +1206,7 @@ Returns a `Coroutine` for
 
 Lists tracker resources in your AWS account.
 
-Type annotations for `aiobotocore.create_client("location").list_trackers`
-method.
+Type annotations for `session.create_client("location").list_trackers` method.
 
 Boto3 documentation:
 [LocationService.Client.list_trackers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.list_trackers)
@@ -1239,8 +1231,7 @@ Returns a `Coroutine` for
 Stores a geofence geometry in a given geofence collection, or updates the
 geometry of an existing geofence if a geofence ID is included in the request.
 
-Type annotations for `aiobotocore.create_client("location").put_geofence`
-method.
+Type annotations for `session.create_client("location").put_geofence` method.
 
 Boto3 documentation:
 [LocationService.Client.put_geofence](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.put_geofence)
@@ -1267,7 +1258,7 @@ Returns a `Coroutine` for
 Reverse geocodes a given coordinate and returns a legible address.
 
 Type annotations for
-`aiobotocore.create_client("location").search_place_index_for_position` method.
+`session.create_client("location").search_place_index_for_position` method.
 
 Boto3 documentation:
 [LocationService.Client.search_place_index_for_position](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.search_place_index_for_position)
@@ -1296,8 +1287,7 @@ Generates suggestions for addresses and points of interest based on partial or
 misspelled free-form text.
 
 Type annotations for
-`aiobotocore.create_client("location").search_place_index_for_suggestions`
-method.
+`session.create_client("location").search_place_index_for_suggestions` method.
 
 Boto3 documentation:
 [LocationService.Client.search_place_index_for_suggestions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.search_place_index_for_suggestions)
@@ -1329,7 +1319,7 @@ Geocodes free-form text, such as an address, name, city, or region to allow you
 to search for Places or points of interest.
 
 Type annotations for
-`aiobotocore.create_client("location").search_place_index_for_text` method.
+`session.create_client("location").search_place_index_for_text` method.
 
 Boto3 documentation:
 [LocationService.Client.search_place_index_for_text](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.search_place_index_for_text)
@@ -1360,8 +1350,7 @@ Returns a `Coroutine` for
 Assigns one or more tags (key-value pairs) to the specified Amazon Location
 Service resource.
 
-Type annotations for `aiobotocore.create_client("location").tag_resource`
-method.
+Type annotations for `session.create_client("location").tag_resource` method.
 
 Boto3 documentation:
 [LocationService.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.tag_resource)
@@ -1384,8 +1373,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from the specified Amazon Location resource.
 
-Type annotations for `aiobotocore.create_client("location").untag_resource`
-method.
+Type annotations for `session.create_client("location").untag_resource` method.
 
 Boto3 documentation:
 [LocationService.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.untag_resource)
@@ -1409,7 +1397,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the specified properties of a given geofence collection.
 
 Type annotations for
-`aiobotocore.create_client("location").update_geofence_collection` method.
+`session.create_client("location").update_geofence_collection` method.
 
 Boto3 documentation:
 [LocationService.Client.update_geofence_collection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.update_geofence_collection)
@@ -1436,7 +1424,7 @@ Returns a `Coroutine` for
 
 Updates the specified properties of a given map resource.
 
-Type annotations for `aiobotocore.create_client("location").update_map` method.
+Type annotations for `session.create_client("location").update_map` method.
 
 Boto3 documentation:
 [LocationService.Client.update_map](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.update_map)
@@ -1461,7 +1449,7 @@ Returns a `Coroutine` for
 
 Updates the specified properties of a given place index resource.
 
-Type annotations for `aiobotocore.create_client("location").update_place_index`
+Type annotations for `session.create_client("location").update_place_index`
 method.
 
 Boto3 documentation:
@@ -1491,7 +1479,7 @@ Returns a `Coroutine` for
 Updates the specified properties for a given route calculator resource.
 
 Type annotations for
-`aiobotocore.create_client("location").update_route_calculator` method.
+`session.create_client("location").update_route_calculator` method.
 
 Boto3 documentation:
 [LocationService.Client.update_route_calculator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.update_route_calculator)
@@ -1517,8 +1505,7 @@ Returns a `Coroutine` for
 
 Updates the specified properties of a given tracker resource.
 
-Type annotations for `aiobotocore.create_client("location").update_tracker`
-method.
+Type annotations for `session.create_client("location").update_tracker` method.
 
 Boto3 documentation:
 [LocationService.Client.update_tracker](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.update_tracker)
@@ -1540,12 +1527,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateTrackerResponseTypeDef](./type_defs.md#updatetrackerresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("location").__aenter__` method.
+
+Boto3 documentation:
+[LocationService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [LocationServiceClient](#locationserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("location").__aexit__` method.
+
+Boto3 documentation:
+[LocationService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/location.html#LocationService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("location").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("location").get_paginator` method
+with overloads.
 
 - `client.get_paginator("get_device_position_history")` ->
   [GetDevicePositionHistoryPaginator](./paginators.md#getdevicepositionhistorypaginator)

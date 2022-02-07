@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[alexaforbusiness]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[alexaforbusiness]'
+
+# standalone installation
 pip install types-aiobotocore-alexaforbusiness
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-alexaforbusiness
 
 ## AlexaForBusinessClient
 
-Type annotations for `aiobotocore.create_client("alexaforbusiness")` as
+Type annotations for `session.create_client("alexaforbusiness")` as
 [AlexaForBusinessClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_alexaforbusiness.client import AlexaForBusinessClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [approve_skill](./client.md#approve_skill)
 - [associate_contact_with_address_book](./client.md#associate_contact_with_address_book)
 - [associate_device_with_network_profile](./client.md#associate_device_with_network_profile)
@@ -173,7 +179,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_alexaforbusiness.paginators import ListBusinessReportSchedulesPaginator, ...
+from types_aiobotocore_alexaforbusiness.paginator import ListBusinessReportSchedulesPaginator, ...
 ```
 
 - [ListBusinessReportSchedulesPaginator](./paginators.md#listbusinessreportschedulespaginator)

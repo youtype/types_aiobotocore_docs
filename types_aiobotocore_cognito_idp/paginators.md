@@ -25,17 +25,19 @@ type annotations stubs module
 ## AdminListGroupsForUserPaginator
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").get_paginator("admin_list_groups_for_user")`.
+`session.create_client("cognito-idp").get_paginator("admin_list_groups_for_user")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cognito_idp.paginator import AdminListGroupsForUserPaginator
 
-def get_admin_list_groups_for_user_paginator() -> AdminListGroupsForUserPaginator:
-    return Session().create_client("cognito-idp").get_paginator("admin_list_groups_for_user")
+session = get_session()
+async with session.create_client("cognito-idp") as client:
+    client: CognitoIdentityProviderClient
+    paginator: AdminListGroupsForUserPaginator = client.get_paginator("admin_list_groups_for_user")
 ```
 
 Boto3 documentation:
@@ -56,17 +58,19 @@ Arguments for `AdminListGroupsForUserPaginator.paginate` method:
 ## AdminListUserAuthEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").get_paginator("admin_list_user_auth_events")`.
+`session.create_client("cognito-idp").get_paginator("admin_list_user_auth_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cognito_idp.paginator import AdminListUserAuthEventsPaginator
 
-def get_admin_list_user_auth_events_paginator() -> AdminListUserAuthEventsPaginator:
-    return Session().create_client("cognito-idp").get_paginator("admin_list_user_auth_events")
+session = get_session()
+async with session.create_client("cognito-idp") as client:
+    client: CognitoIdentityProviderClient
+    paginator: AdminListUserAuthEventsPaginator = client.get_paginator("admin_list_user_auth_events")
 ```
 
 Boto3 documentation:
@@ -87,17 +91,19 @@ Arguments for `AdminListUserAuthEventsPaginator.paginate` method:
 ## ListGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").get_paginator("list_groups")`.
+`session.create_client("cognito-idp").get_paginator("list_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cognito_idp.paginator import ListGroupsPaginator
 
-def get_list_groups_paginator() -> ListGroupsPaginator:
-    return Session().create_client("cognito-idp").get_paginator("list_groups")
+session = get_session()
+async with session.create_client("cognito-idp") as client:
+    client: CognitoIdentityProviderClient
+    paginator: ListGroupsPaginator = client.get_paginator("list_groups")
 ```
 
 Boto3 documentation:
@@ -117,17 +123,19 @@ Arguments for `ListGroupsPaginator.paginate` method:
 ## ListIdentityProvidersPaginator
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").get_paginator("list_identity_providers")`.
+`session.create_client("cognito-idp").get_paginator("list_identity_providers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cognito_idp.paginator import ListIdentityProvidersPaginator
 
-def get_list_identity_providers_paginator() -> ListIdentityProvidersPaginator:
-    return Session().create_client("cognito-idp").get_paginator("list_identity_providers")
+session = get_session()
+async with session.create_client("cognito-idp") as client:
+    client: CognitoIdentityProviderClient
+    paginator: ListIdentityProvidersPaginator = client.get_paginator("list_identity_providers")
 ```
 
 Boto3 documentation:
@@ -147,17 +155,19 @@ Arguments for `ListIdentityProvidersPaginator.paginate` method:
 ## ListResourceServersPaginator
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").get_paginator("list_resource_servers")`.
+`session.create_client("cognito-idp").get_paginator("list_resource_servers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cognito_idp.paginator import ListResourceServersPaginator
 
-def get_list_resource_servers_paginator() -> ListResourceServersPaginator:
-    return Session().create_client("cognito-idp").get_paginator("list_resource_servers")
+session = get_session()
+async with session.create_client("cognito-idp") as client:
+    client: CognitoIdentityProviderClient
+    paginator: ListResourceServersPaginator = client.get_paginator("list_resource_servers")
 ```
 
 Boto3 documentation:
@@ -177,17 +187,19 @@ Arguments for `ListResourceServersPaginator.paginate` method:
 ## ListUserPoolClientsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").get_paginator("list_user_pool_clients")`.
+`session.create_client("cognito-idp").get_paginator("list_user_pool_clients")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cognito_idp.paginator import ListUserPoolClientsPaginator
 
-def get_list_user_pool_clients_paginator() -> ListUserPoolClientsPaginator:
-    return Session().create_client("cognito-idp").get_paginator("list_user_pool_clients")
+session = get_session()
+async with session.create_client("cognito-idp") as client:
+    client: CognitoIdentityProviderClient
+    paginator: ListUserPoolClientsPaginator = client.get_paginator("list_user_pool_clients")
 ```
 
 Boto3 documentation:
@@ -207,17 +219,19 @@ Arguments for `ListUserPoolClientsPaginator.paginate` method:
 ## ListUserPoolsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").get_paginator("list_user_pools")`.
+`session.create_client("cognito-idp").get_paginator("list_user_pools")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cognito_idp.paginator import ListUserPoolsPaginator
 
-def get_list_user_pools_paginator() -> ListUserPoolsPaginator:
-    return Session().create_client("cognito-idp").get_paginator("list_user_pools")
+session = get_session()
+async with session.create_client("cognito-idp") as client:
+    client: CognitoIdentityProviderClient
+    paginator: ListUserPoolsPaginator = client.get_paginator("list_user_pools")
 ```
 
 Boto3 documentation:
@@ -236,17 +250,19 @@ Arguments for `ListUserPoolsPaginator.paginate` method:
 ## ListUsersPaginator
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").get_paginator("list_users")`.
+`session.create_client("cognito-idp").get_paginator("list_users")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cognito_idp.paginator import ListUsersPaginator
 
-def get_list_users_paginator() -> ListUsersPaginator:
-    return Session().create_client("cognito-idp").get_paginator("list_users")
+session = get_session()
+async with session.create_client("cognito-idp") as client:
+    client: CognitoIdentityProviderClient
+    paginator: ListUsersPaginator = client.get_paginator("list_users")
 ```
 
 Boto3 documentation:
@@ -268,17 +284,19 @@ Arguments for `ListUsersPaginator.paginate` method:
 ## ListUsersInGroupPaginator
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").get_paginator("list_users_in_group")`.
+`session.create_client("cognito-idp").get_paginator("list_users_in_group")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cognito_idp.paginator import ListUsersInGroupPaginator
 
-def get_list_users_in_group_paginator() -> ListUsersInGroupPaginator:
-    return Session().create_client("cognito-idp").get_paginator("list_users_in_group")
+session = get_session()
+async with session.create_client("cognito-idp") as client:
+    client: CognitoIdentityProviderClient
+    paginator: ListUsersInGroupPaginator = client.get_paginator("list_users_in_group")
 ```
 
 Boto3 documentation:

@@ -24,7 +24,7 @@ type annotations stubs module
 ## EnvironmentDeployedWaiter
 
 Type annotations for
-`aiobotocore.create_client("proton").get_waiter("environment_deployed")`.
+`session.create_client("proton").get_waiter("environment_deployed")`.
 
 Can be used directly:
 
@@ -34,7 +34,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_proton.waiter import EnvironmentDeployedWaiter
 
 def get_environment_deployed_waiter() -> EnvironmentDeployedWaiter:
-    return Session().create_client("proton").get_waiter("environment_deployed")
+    return Session().client("proton").get_waiter("environment_deployed")
 ```
 
 Boto3 documentation:
@@ -50,7 +50,7 @@ Arguments for `EnvironmentDeployedWaiter.wait` method:
 ## EnvironmentTemplateVersionRegisteredWaiter
 
 Type annotations for
-`aiobotocore.create_client("proton").get_waiter("environment_template_version_registered")`.
+`session.create_client("proton").get_waiter("environment_template_version_registered")`.
 
 Can be used directly:
 
@@ -60,7 +60,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_proton.waiter import EnvironmentTemplateVersionRegisteredWaiter
 
 def get_environment_template_version_registered_waiter() -> EnvironmentTemplateVersionRegisteredWaiter:
-    return Session().create_client("proton").get_waiter("environment_template_version_registered")
+    return Session().client("proton").get_waiter("environment_template_version_registered")
 ```
 
 Boto3 documentation:
@@ -78,7 +78,7 @@ Arguments for `EnvironmentTemplateVersionRegisteredWaiter.wait` method:
 ## ServiceCreatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("proton").get_waiter("service_created")`.
+`session.create_client("proton").get_waiter("service_created")`.
 
 Can be used directly:
 
@@ -88,7 +88,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_proton.waiter import ServiceCreatedWaiter
 
 def get_service_created_waiter() -> ServiceCreatedWaiter:
-    return Session().create_client("proton").get_waiter("service_created")
+    return Session().client("proton").get_waiter("service_created")
 ```
 
 Boto3 documentation:
@@ -104,7 +104,7 @@ Arguments for `ServiceCreatedWaiter.wait` method:
 ## ServiceDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("proton").get_waiter("service_deleted")`.
+`session.create_client("proton").get_waiter("service_deleted")`.
 
 Can be used directly:
 
@@ -114,7 +114,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_proton.waiter import ServiceDeletedWaiter
 
 def get_service_deleted_waiter() -> ServiceDeletedWaiter:
-    return Session().create_client("proton").get_waiter("service_deleted")
+    return Session().client("proton").get_waiter("service_deleted")
 ```
 
 Boto3 documentation:
@@ -130,7 +130,7 @@ Arguments for `ServiceDeletedWaiter.wait` method:
 ## ServiceInstanceDeployedWaiter
 
 Type annotations for
-`aiobotocore.create_client("proton").get_waiter("service_instance_deployed")`.
+`session.create_client("proton").get_waiter("service_instance_deployed")`.
 
 Can be used directly:
 
@@ -140,7 +140,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_proton.waiter import ServiceInstanceDeployedWaiter
 
 def get_service_instance_deployed_waiter() -> ServiceInstanceDeployedWaiter:
-    return Session().create_client("proton").get_waiter("service_instance_deployed")
+    return Session().client("proton").get_waiter("service_instance_deployed")
 ```
 
 Boto3 documentation:
@@ -157,7 +157,7 @@ Arguments for `ServiceInstanceDeployedWaiter.wait` method:
 ## ServicePipelineDeployedWaiter
 
 Type annotations for
-`aiobotocore.create_client("proton").get_waiter("service_pipeline_deployed")`.
+`session.create_client("proton").get_waiter("service_pipeline_deployed")`.
 
 Can be used directly:
 
@@ -167,7 +167,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_proton.waiter import ServicePipelineDeployedWaiter
 
 def get_service_pipeline_deployed_waiter() -> ServicePipelineDeployedWaiter:
-    return Session().create_client("proton").get_waiter("service_pipeline_deployed")
+    return Session().client("proton").get_waiter("service_pipeline_deployed")
 ```
 
 Boto3 documentation:
@@ -183,7 +183,7 @@ Arguments for `ServicePipelineDeployedWaiter.wait` method:
 ## ServiceTemplateVersionRegisteredWaiter
 
 Type annotations for
-`aiobotocore.create_client("proton").get_waiter("service_template_version_registered")`.
+`session.create_client("proton").get_waiter("service_template_version_registered")`.
 
 Can be used directly:
 
@@ -193,7 +193,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_proton.waiter import ServiceTemplateVersionRegisteredWaiter
 
 def get_service_template_version_registered_waiter() -> ServiceTemplateVersionRegisteredWaiter:
-    return Session().create_client("proton").get_waiter("service_template_version_registered")
+    return Session().client("proton").get_waiter("service_template_version_registered")
 ```
 
 Boto3 documentation:
@@ -211,7 +211,7 @@ Arguments for `ServiceTemplateVersionRegisteredWaiter.wait` method:
 ## ServiceUpdatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("proton").get_waiter("service_updated")`.
+`session.create_client("proton").get_waiter("service_updated")`.
 
 Can be used directly:
 
@@ -221,7 +221,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_proton.waiter import ServiceUpdatedWaiter
 
 def get_service_updated_waiter() -> ServiceUpdatedWaiter:
-    return Session().create_client("proton").get_waiter("service_updated")
+    return Session().client("proton").get_waiter("service_updated")
 ```
 
 Boto3 documentation:

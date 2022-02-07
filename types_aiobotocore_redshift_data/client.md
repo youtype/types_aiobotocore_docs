@@ -26,22 +26,25 @@ type annotations stubs module
     - [list_schemas](#list_schemas)
     - [list_statements](#list_statements)
     - [list_tables](#list_tables)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="redshiftdataapiserviceclient"></a>
 
 ## RedshiftDataAPIServiceClient
 
-Type annotations for `aiobotocore.create_client("redshift-data")`
+Type annotations for `session.create_client("redshift-data")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_redshift_data.client import RedshiftDataAPIServiceClient
 
-def get_redshift-data_client() -> RedshiftDataAPIServiceClient:
-    return Session().client("redshift-data")
+session = get_session()
+async with session.create_client("redshift-data") as client:
+    client: RedshiftDataAPIServiceClient
 ```
 
 Boto3 documentation:
@@ -82,7 +85,7 @@ Exceptions:
 
 RedshiftDataAPIServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("redshift-data").exceptions`
+Type annotations for `session.create_client("redshift-data").exceptions`
 method.
 
 Boto3 documentation:
@@ -98,7 +101,7 @@ Runs one or more SQL statements, which can be data manipulation language (DML)
 or data definition language (DDL).
 
 Type annotations for
-`aiobotocore.create_client("redshift-data").batch_execute_statement` method.
+`session.create_client("redshift-data").batch_execute_statement` method.
 
 Boto3 documentation:
 [RedshiftDataAPIService.Client.batch_execute_statement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html#RedshiftDataAPIService.Client.batch_execute_statement)
@@ -128,19 +131,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("redshift-data").can_paginate`
+Type annotations for `session.create_client("redshift-data").can_paginate`
 method.
 
 Boto3 documentation:
 [RedshiftDataAPIService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html#RedshiftDataAPIService.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_statement"></a>
 
@@ -148,8 +149,8 @@ Returns a `Coroutine` for `bool`.
 
 Cancels a running query.
 
-Type annotations for
-`aiobotocore.create_client("redshift-data").cancel_statement` method.
+Type annotations for `session.create_client("redshift-data").cancel_statement`
+method.
 
 Boto3 documentation:
 [RedshiftDataAPIService.Client.cancel_statement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html#RedshiftDataAPIService.Client.cancel_statement)
@@ -174,7 +175,7 @@ Describes the details about a specific instance when a query was run by the
 Amazon Redshift Data API.
 
 Type annotations for
-`aiobotocore.create_client("redshift-data").describe_statement` method.
+`session.create_client("redshift-data").describe_statement` method.
 
 Boto3 documentation:
 [RedshiftDataAPIService.Client.describe_statement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html#RedshiftDataAPIService.Client.describe_statement)
@@ -198,8 +199,8 @@ Returns a `Coroutine` for
 
 Describes the detailed information about a table from metadata in the cluster.
 
-Type annotations for
-`aiobotocore.create_client("redshift-data").describe_table` method.
+Type annotations for `session.create_client("redshift-data").describe_table`
+method.
 
 Boto3 documentation:
 [RedshiftDataAPIService.Client.describe_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html#RedshiftDataAPIService.Client.describe_table)
@@ -231,8 +232,8 @@ Returns a `Coroutine` for
 Runs an SQL statement, which can be data manipulation language (DML) or data
 definition language (DDL).
 
-Type annotations for
-`aiobotocore.create_client("redshift-data").execute_statement` method.
+Type annotations for `session.create_client("redshift-data").execute_statement`
+method.
 
 Boto3 documentation:
 [RedshiftDataAPIService.Client.execute_statement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html#RedshiftDataAPIService.Client.execute_statement)
@@ -264,7 +265,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("redshift-data").generate_presigned_url` method.
+`session.create_client("redshift-data").generate_presigned_url` method.
 
 Boto3 documentation:
 [RedshiftDataAPIService.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html#RedshiftDataAPIService.Client.generate_presigned_url)
@@ -288,7 +289,7 @@ Returns a `Coroutine` for `str`.
 Fetches the temporarily cached result of an SQL statement.
 
 Type annotations for
-`aiobotocore.create_client("redshift-data").get_statement_result` method.
+`session.create_client("redshift-data").get_statement_result` method.
 
 Boto3 documentation:
 [RedshiftDataAPIService.Client.get_statement_result](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html#RedshiftDataAPIService.Client.get_statement_result)
@@ -313,8 +314,8 @@ Returns a `Coroutine` for
 
 List the databases in a cluster.
 
-Type annotations for
-`aiobotocore.create_client("redshift-data").list_databases` method.
+Type annotations for `session.create_client("redshift-data").list_databases`
+method.
 
 Boto3 documentation:
 [RedshiftDataAPIService.Client.list_databases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html#RedshiftDataAPIService.Client.list_databases)
@@ -342,7 +343,7 @@ Returns a `Coroutine` for
 
 Lists the schemas in a database.
 
-Type annotations for `aiobotocore.create_client("redshift-data").list_schemas`
+Type annotations for `session.create_client("redshift-data").list_schemas`
 method.
 
 Boto3 documentation:
@@ -373,8 +374,8 @@ Returns a `Coroutine` for
 
 List of SQL statements.
 
-Type annotations for
-`aiobotocore.create_client("redshift-data").list_statements` method.
+Type annotations for `session.create_client("redshift-data").list_statements`
+method.
 
 Boto3 documentation:
 [RedshiftDataAPIService.Client.list_statements](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html#RedshiftDataAPIService.Client.list_statements)
@@ -401,7 +402,7 @@ Returns a `Coroutine` for
 
 List the tables in a database.
 
-Type annotations for `aiobotocore.create_client("redshift-data").list_tables`
+Type annotations for `session.create_client("redshift-data").list_tables`
 method.
 
 Boto3 documentation:
@@ -427,11 +428,45 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [ListTablesResponseTypeDef](./type_defs.md#listtablesresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("redshift-data").__aenter__`
+method.
+
+Boto3 documentation:
+[RedshiftDataAPIService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html#RedshiftDataAPIService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[RedshiftDataAPIServiceClient](#redshiftdataapiserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("redshift-data").__aexit__` method.
+
+Boto3 documentation:
+[RedshiftDataAPIService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html#RedshiftDataAPIService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("redshift-data").get_paginator`
+Type annotations for `session.create_client("redshift-data").get_paginator`
 method with overloads.
 
 - `client.get_paginator("describe_table")` ->

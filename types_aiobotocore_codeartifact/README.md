@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[codeartifact]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[codeartifact]'
+
+# standalone installation
 pip install types-aiobotocore-codeartifact
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-codeartifact
 
 ## CodeArtifactClient
 
-Type annotations for `aiobotocore.create_client("codeartifact")` as
+Type annotations for `session.create_client("codeartifact")` as
 [CodeArtifactClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_codeartifact.client import CodeArtifactClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_external_connection](./client.md#associate_external_connection)
 - [can_paginate](./client.md#can_paginate)
 - [copy_package_versions](./client.md#copy_package_versions)
@@ -106,7 +112,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_codeartifact.paginators import ListDomainsPaginator, ...
+from types_aiobotocore_codeartifact.paginator import ListDomainsPaginator, ...
 ```
 
 - [ListDomainsPaginator](./paginators.md#listdomainspaginator)

@@ -33,17 +33,19 @@ type annotations stubs module
 ## DescribeCacheClustersPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_cache_clusters")`.
+`session.create_client("elasticache").get_paginator("describe_cache_clusters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeCacheClustersPaginator
 
-def get_describe_cache_clusters_paginator() -> DescribeCacheClustersPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_cache_clusters")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeCacheClustersPaginator = client.get_paginator("describe_cache_clusters")
 ```
 
 Boto3 documentation:
@@ -65,17 +67,19 @@ Arguments for `DescribeCacheClustersPaginator.paginate` method:
 ## DescribeCacheEngineVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_cache_engine_versions")`.
+`session.create_client("elasticache").get_paginator("describe_cache_engine_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeCacheEngineVersionsPaginator
 
-def get_describe_cache_engine_versions_paginator() -> DescribeCacheEngineVersionsPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_cache_engine_versions")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeCacheEngineVersionsPaginator = client.get_paginator("describe_cache_engine_versions")
 ```
 
 Boto3 documentation:
@@ -98,17 +102,19 @@ Arguments for `DescribeCacheEngineVersionsPaginator.paginate` method:
 ## DescribeCacheParameterGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_cache_parameter_groups")`.
+`session.create_client("elasticache").get_paginator("describe_cache_parameter_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeCacheParameterGroupsPaginator
 
-def get_describe_cache_parameter_groups_paginator() -> DescribeCacheParameterGroupsPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_cache_parameter_groups")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeCacheParameterGroupsPaginator = client.get_paginator("describe_cache_parameter_groups")
 ```
 
 Boto3 documentation:
@@ -128,17 +134,19 @@ Arguments for `DescribeCacheParameterGroupsPaginator.paginate` method:
 ## DescribeCacheParametersPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_cache_parameters")`.
+`session.create_client("elasticache").get_paginator("describe_cache_parameters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeCacheParametersPaginator
 
-def get_describe_cache_parameters_paginator() -> DescribeCacheParametersPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_cache_parameters")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeCacheParametersPaginator = client.get_paginator("describe_cache_parameters")
 ```
 
 Boto3 documentation:
@@ -159,17 +167,19 @@ Arguments for `DescribeCacheParametersPaginator.paginate` method:
 ## DescribeCacheSecurityGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_cache_security_groups")`.
+`session.create_client("elasticache").get_paginator("describe_cache_security_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeCacheSecurityGroupsPaginator
 
-def get_describe_cache_security_groups_paginator() -> DescribeCacheSecurityGroupsPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_cache_security_groups")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeCacheSecurityGroupsPaginator = client.get_paginator("describe_cache_security_groups")
 ```
 
 Boto3 documentation:
@@ -189,17 +199,19 @@ Arguments for `DescribeCacheSecurityGroupsPaginator.paginate` method:
 ## DescribeCacheSubnetGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_cache_subnet_groups")`.
+`session.create_client("elasticache").get_paginator("describe_cache_subnet_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeCacheSubnetGroupsPaginator
 
-def get_describe_cache_subnet_groups_paginator() -> DescribeCacheSubnetGroupsPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_cache_subnet_groups")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeCacheSubnetGroupsPaginator = client.get_paginator("describe_cache_subnet_groups")
 ```
 
 Boto3 documentation:
@@ -219,17 +231,19 @@ Arguments for `DescribeCacheSubnetGroupsPaginator.paginate` method:
 ## DescribeEngineDefaultParametersPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_engine_default_parameters")`.
+`session.create_client("elasticache").get_paginator("describe_engine_default_parameters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeEngineDefaultParametersPaginator
 
-def get_describe_engine_default_parameters_paginator() -> DescribeEngineDefaultParametersPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_engine_default_parameters")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeEngineDefaultParametersPaginator = client.get_paginator("describe_engine_default_parameters")
 ```
 
 Boto3 documentation:
@@ -249,17 +263,19 @@ Arguments for `DescribeEngineDefaultParametersPaginator.paginate` method:
 ## DescribeEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_events")`.
+`session.create_client("elasticache").get_paginator("describe_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeEventsPaginator
 
-def get_describe_events_paginator() -> DescribeEventsPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_events")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")
 ```
 
 Boto3 documentation:
@@ -283,17 +299,19 @@ Arguments for `DescribeEventsPaginator.paginate` method:
 ## DescribeGlobalReplicationGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_global_replication_groups")`.
+`session.create_client("elasticache").get_paginator("describe_global_replication_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeGlobalReplicationGroupsPaginator
 
-def get_describe_global_replication_groups_paginator() -> DescribeGlobalReplicationGroupsPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_global_replication_groups")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeGlobalReplicationGroupsPaginator = client.get_paginator("describe_global_replication_groups")
 ```
 
 Boto3 documentation:
@@ -314,17 +332,19 @@ Arguments for `DescribeGlobalReplicationGroupsPaginator.paginate` method:
 ## DescribeReplicationGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_replication_groups")`.
+`session.create_client("elasticache").get_paginator("describe_replication_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeReplicationGroupsPaginator
 
-def get_describe_replication_groups_paginator() -> DescribeReplicationGroupsPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_replication_groups")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeReplicationGroupsPaginator = client.get_paginator("describe_replication_groups")
 ```
 
 Boto3 documentation:
@@ -344,17 +364,19 @@ Arguments for `DescribeReplicationGroupsPaginator.paginate` method:
 ## DescribeReservedCacheNodesPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_reserved_cache_nodes")`.
+`session.create_client("elasticache").get_paginator("describe_reserved_cache_nodes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeReservedCacheNodesPaginator
 
-def get_describe_reserved_cache_nodes_paginator() -> DescribeReservedCacheNodesPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_reserved_cache_nodes")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeReservedCacheNodesPaginator = client.get_paginator("describe_reserved_cache_nodes")
 ```
 
 Boto3 documentation:
@@ -379,17 +401,19 @@ Arguments for `DescribeReservedCacheNodesPaginator.paginate` method:
 ## DescribeReservedCacheNodesOfferingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_reserved_cache_nodes_offerings")`.
+`session.create_client("elasticache").get_paginator("describe_reserved_cache_nodes_offerings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeReservedCacheNodesOfferingsPaginator
 
-def get_describe_reserved_cache_nodes_offerings_paginator() -> DescribeReservedCacheNodesOfferingsPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_reserved_cache_nodes_offerings")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeReservedCacheNodesOfferingsPaginator = client.get_paginator("describe_reserved_cache_nodes_offerings")
 ```
 
 Boto3 documentation:
@@ -413,17 +437,19 @@ Arguments for `DescribeReservedCacheNodesOfferingsPaginator.paginate` method:
 ## DescribeServiceUpdatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_service_updates")`.
+`session.create_client("elasticache").get_paginator("describe_service_updates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeServiceUpdatesPaginator
 
-def get_describe_service_updates_paginator() -> DescribeServiceUpdatesPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_service_updates")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeServiceUpdatesPaginator = client.get_paginator("describe_service_updates")
 ```
 
 Boto3 documentation:
@@ -445,17 +471,19 @@ Arguments for `DescribeServiceUpdatesPaginator.paginate` method:
 ## DescribeSnapshotsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_snapshots")`.
+`session.create_client("elasticache").get_paginator("describe_snapshots")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeSnapshotsPaginator
 
-def get_describe_snapshots_paginator() -> DescribeSnapshotsPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_snapshots")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeSnapshotsPaginator = client.get_paginator("describe_snapshots")
 ```
 
 Boto3 documentation:
@@ -479,17 +507,19 @@ Arguments for `DescribeSnapshotsPaginator.paginate` method:
 ## DescribeUpdateActionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_update_actions")`.
+`session.create_client("elasticache").get_paginator("describe_update_actions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeUpdateActionsPaginator
 
-def get_describe_update_actions_paginator() -> DescribeUpdateActionsPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_update_actions")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeUpdateActionsPaginator = client.get_paginator("describe_update_actions")
 ```
 
 Boto3 documentation:
@@ -519,17 +549,19 @@ Arguments for `DescribeUpdateActionsPaginator.paginate` method:
 ## DescribeUserGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_user_groups")`.
+`session.create_client("elasticache").get_paginator("describe_user_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeUserGroupsPaginator
 
-def get_describe_user_groups_paginator() -> DescribeUserGroupsPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_user_groups")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeUserGroupsPaginator = client.get_paginator("describe_user_groups")
 ```
 
 Boto3 documentation:
@@ -549,17 +581,19 @@ Arguments for `DescribeUserGroupsPaginator.paginate` method:
 ## DescribeUsersPaginator
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_paginator("describe_users")`.
+`session.create_client("elasticache").get_paginator("describe_users")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elasticache.paginator import DescribeUsersPaginator
 
-def get_describe_users_paginator() -> DescribeUsersPaginator:
-    return Session().create_client("elasticache").get_paginator("describe_users")
+session = get_session()
+async with session.create_client("elasticache") as client:
+    client: ElastiCacheClient
+    paginator: DescribeUsersPaginator = client.get_paginator("describe_users")
 ```
 
 Boto3 documentation:

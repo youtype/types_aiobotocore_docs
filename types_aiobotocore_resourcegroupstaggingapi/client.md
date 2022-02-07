@@ -24,22 +24,25 @@ type annotations stubs module
     - [start_report_creation](#start_report_creation)
     - [tag_resources](#tag_resources)
     - [untag_resources](#untag_resources)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="resourcegroupstaggingapiclient"></a>
 
 ## ResourceGroupsTaggingAPIClient
 
-Type annotations for `aiobotocore.create_client("resourcegroupstaggingapi")`
+Type annotations for `session.create_client("resourcegroupstaggingapi")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_resourcegroupstaggingapi.client import ResourceGroupsTaggingAPIClient
 
-def get_resourcegroupstaggingapi_client() -> ResourceGroupsTaggingAPIClient:
-    return Session().client("resourcegroupstaggingapi")
+session = get_session()
+async with session.create_client("resourcegroupstaggingapi") as client:
+    client: ResourceGroupsTaggingAPIClient
 ```
 
 Boto3 documentation:
@@ -80,7 +83,7 @@ Exceptions:
 ResourceGroupsTaggingAPIClient exceptions.
 
 Type annotations for
-`aiobotocore.create_client("resourcegroupstaggingapi").exceptions` method.
+`session.create_client("resourcegroupstaggingapi").exceptions` method.
 
 Boto3 documentation:
 [ResourceGroupsTaggingAPI.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resourcegroupstaggingapi.html#ResourceGroupsTaggingAPI.Client.exceptions)
@@ -94,18 +97,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("resourcegroupstaggingapi").can_paginate` method.
+`session.create_client("resourcegroupstaggingapi").can_paginate` method.
 
 Boto3 documentation:
 [ResourceGroupsTaggingAPI.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resourcegroupstaggingapi.html#ResourceGroupsTaggingAPI.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="describe_report_creation"></a>
 
@@ -114,7 +115,7 @@ Returns a `Coroutine` for `bool`.
 Describes the status of the `StartReportCreation` operation.
 
 Type annotations for
-`aiobotocore.create_client("resourcegroupstaggingapi").describe_report_creation`
+`session.create_client("resourcegroupstaggingapi").describe_report_creation`
 method.
 
 Boto3 documentation:
@@ -133,7 +134,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("resourcegroupstaggingapi").generate_presigned_url`
+`session.create_client("resourcegroupstaggingapi").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -159,7 +160,7 @@ Returns a table that shows counts of resources that are noncompliant with their
 tag policies.
 
 Type annotations for
-`aiobotocore.create_client("resourcegroupstaggingapi").get_compliance_summary`
+`session.create_client("resourcegroupstaggingapi").get_compliance_summary`
 method.
 
 Boto3 documentation:
@@ -193,7 +194,7 @@ Returns all the tagged or previously tagged resources that are located in the
 specified Amazon Web Services Region for the account.
 
 Type annotations for
-`aiobotocore.create_client("resourcegroupstaggingapi").get_resources` method.
+`session.create_client("resourcegroupstaggingapi").get_resources` method.
 
 Boto3 documentation:
 [ResourceGroupsTaggingAPI.Client.get_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resourcegroupstaggingapi.html#ResourceGroupsTaggingAPI.Client.get_resources)
@@ -226,7 +227,7 @@ Returns all tag keys currently in use in the specified Amazon Web Services
 Region for the calling account.
 
 Type annotations for
-`aiobotocore.create_client("resourcegroupstaggingapi").get_tag_keys` method.
+`session.create_client("resourcegroupstaggingapi").get_tag_keys` method.
 
 Boto3 documentation:
 [ResourceGroupsTaggingAPI.Client.get_tag_keys](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resourcegroupstaggingapi.html#ResourceGroupsTaggingAPI.Client.get_tag_keys)
@@ -251,7 +252,7 @@ Returns all tag values for the specified key that are used in the specified
 Amazon Web Services Region for the calling account.
 
 Type annotations for
-`aiobotocore.create_client("resourcegroupstaggingapi").get_tag_values` method.
+`session.create_client("resourcegroupstaggingapi").get_tag_values` method.
 
 Boto3 documentation:
 [ResourceGroupsTaggingAPI.Client.get_tag_values](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resourcegroupstaggingapi.html#ResourceGroupsTaggingAPI.Client.get_tag_values)
@@ -278,7 +279,7 @@ organization and tells whether each resource is compliant with the effective
 tag policy.
 
 Type annotations for
-`aiobotocore.create_client("resourcegroupstaggingapi").start_report_creation`
+`session.create_client("resourcegroupstaggingapi").start_report_creation`
 method.
 
 Boto3 documentation:
@@ -303,7 +304,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("resourcegroupstaggingapi").tag_resources` method.
+`session.create_client("resourcegroupstaggingapi").tag_resources` method.
 
 Boto3 documentation:
 [ResourceGroupsTaggingAPI.Client.tag_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resourcegroupstaggingapi.html#ResourceGroupsTaggingAPI.Client.tag_resources)
@@ -328,7 +329,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("resourcegroupstaggingapi").untag_resources` method.
+`session.create_client("resourcegroupstaggingapi").untag_resources` method.
 
 Boto3 documentation:
 [ResourceGroupsTaggingAPI.Client.untag_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resourcegroupstaggingapi.html#ResourceGroupsTaggingAPI.Client.untag_resources)
@@ -346,13 +347,48 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UntagResourcesOutputTypeDef](./type_defs.md#untagresourcesoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for
+`session.create_client("resourcegroupstaggingapi").__aenter__` method.
+
+Boto3 documentation:
+[ResourceGroupsTaggingAPI.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resourcegroupstaggingapi.html#ResourceGroupsTaggingAPI.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[ResourceGroupsTaggingAPIClient](#resourcegroupstaggingapiclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for
+`session.create_client("resourcegroupstaggingapi").__aexit__` method.
+
+Boto3 documentation:
+[ResourceGroupsTaggingAPI.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/resourcegroupstaggingapi.html#ResourceGroupsTaggingAPI.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
 Type annotations for
-`aiobotocore.create_client("resourcegroupstaggingapi").get_paginator` method
-with overloads.
+`session.create_client("resourcegroupstaggingapi").get_paginator` method with
+overloads.
 
 - `client.get_paginator("get_compliance_summary")` ->
   [GetComplianceSummaryPaginator](./paginators.md#getcompliancesummarypaginator)

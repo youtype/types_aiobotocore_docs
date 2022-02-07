@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[waf-regional]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[waf-regional]'
+
+# standalone installation
 pip install types-aiobotocore-waf-regional
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-waf-regional
 
 ## WAFRegionalClient
 
-Type annotations for `aiobotocore.create_client("waf-regional")` as
+Type annotations for `session.create_client("waf-regional")` as
 [WAFRegionalClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_waf_regional.client import WAFRegionalClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_web_acl](./client.md#associate_web_acl)
 - [can_paginate](./client.md#can_paginate)
 - [create_byte_match_set](./client.md#create_byte_match_set)

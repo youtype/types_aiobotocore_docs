@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[drs]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[drs]'
+
+# standalone installation
 pip install types-aiobotocore-drs
 ```
 
@@ -29,8 +33,7 @@ pip install types-aiobotocore-drs
 
 ## drsClient
 
-Type annotations for `aiobotocore.create_client("drs")` as
-[drsClient](./client.md)
+Type annotations for `session.create_client("drs")` as [drsClient](./client.md)
 
 Can be used directly:
 
@@ -42,6 +45,8 @@ from types_aiobotocore_drs.client import drsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_replication_configuration_template](./client.md#create_replication_configuration_template)
 - [delete_job](./client.md#delete_job)
@@ -102,7 +107,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_drs.paginators import DescribeJobLogItemsPaginator, ...
+from types_aiobotocore_drs.paginator import DescribeJobLogItemsPaginator, ...
 ```
 
 - [DescribeJobLogItemsPaginator](./paginators.md#describejoblogitemspaginator)

@@ -21,17 +21,19 @@ type annotations stubs module
 ## ListBackupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").get_paginator("list_backups")`.
+`session.create_client("dynamodb").get_paginator("list_backups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dynamodb.paginator import ListBackupsPaginator
 
-def get_list_backups_paginator() -> ListBackupsPaginator:
-    return Session().create_client("dynamodb").get_paginator("list_backups")
+session = get_session()
+async with session.create_client("dynamodb") as client:
+    client: DynamoDBClient
+    paginator: ListBackupsPaginator = client.get_paginator("list_backups")
 ```
 
 Boto3 documentation:
@@ -54,17 +56,19 @@ Arguments for `ListBackupsPaginator.paginate` method:
 ## ListTablesPaginator
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").get_paginator("list_tables")`.
+`session.create_client("dynamodb").get_paginator("list_tables")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dynamodb.paginator import ListTablesPaginator
 
-def get_list_tables_paginator() -> ListTablesPaginator:
-    return Session().create_client("dynamodb").get_paginator("list_tables")
+session = get_session()
+async with session.create_client("dynamodb") as client:
+    client: DynamoDBClient
+    paginator: ListTablesPaginator = client.get_paginator("list_tables")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `ListTablesPaginator.paginate` method:
 ## ListTagsOfResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").get_paginator("list_tags_of_resource")`.
+`session.create_client("dynamodb").get_paginator("list_tags_of_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dynamodb.paginator import ListTagsOfResourcePaginator
 
-def get_list_tags_of_resource_paginator() -> ListTagsOfResourcePaginator:
-    return Session().create_client("dynamodb").get_paginator("list_tags_of_resource")
+session = get_session()
+async with session.create_client("dynamodb") as client:
+    client: DynamoDBClient
+    paginator: ListTagsOfResourcePaginator = client.get_paginator("list_tags_of_resource")
 ```
 
 Boto3 documentation:
@@ -113,17 +119,19 @@ Arguments for `ListTagsOfResourcePaginator.paginate` method:
 ## QueryPaginator
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").get_paginator("query")`.
+`session.create_client("dynamodb").get_paginator("query")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dynamodb.paginator import QueryPaginator
 
-def get_query_paginator() -> QueryPaginator:
-    return Session().create_client("dynamodb").get_paginator("query")
+session = get_session()
+async with session.create_client("dynamodb") as client:
+    client: DynamoDBClient
+    paginator: QueryPaginator = client.get_paginator("query")
 ```
 
 Boto3 documentation:
@@ -163,18 +171,19 @@ Arguments for `QueryPaginator.paginate` method:
 
 ## ScanPaginator
 
-Type annotations for
-`aiobotocore.create_client("dynamodb").get_paginator("scan")`.
+Type annotations for `session.create_client("dynamodb").get_paginator("scan")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_dynamodb.paginator import ScanPaginator
 
-def get_scan_paginator() -> ScanPaginator:
-    return Session().create_client("dynamodb").get_paginator("scan")
+session = get_session()
+async with session.create_client("dynamodb") as client:
+    client: DynamoDBClient
+    paginator: ScanPaginator = client.get_paginator("scan")
 ```
 
 Boto3 documentation:

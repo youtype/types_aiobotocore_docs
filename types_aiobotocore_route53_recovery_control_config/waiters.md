@@ -22,7 +22,7 @@ type annotations stubs module
 ## ClusterCreatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").get_waiter("cluster_created")`.
+`session.create_client("route53-recovery-control-config").get_waiter("cluster_created")`.
 
 Can be used directly:
 
@@ -32,7 +32,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_route53_recovery_control_config.waiter import ClusterCreatedWaiter
 
 def get_cluster_created_waiter() -> ClusterCreatedWaiter:
-    return Session().create_client("route53-recovery-control-config").get_waiter("cluster_created")
+    return Session().client("route53-recovery-control-config").get_waiter("cluster_created")
 ```
 
 Boto3 documentation:
@@ -48,7 +48,7 @@ Arguments for `ClusterCreatedWaiter.wait` method:
 ## ClusterDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").get_waiter("cluster_deleted")`.
+`session.create_client("route53-recovery-control-config").get_waiter("cluster_deleted")`.
 
 Can be used directly:
 
@@ -58,7 +58,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_route53_recovery_control_config.waiter import ClusterDeletedWaiter
 
 def get_cluster_deleted_waiter() -> ClusterDeletedWaiter:
-    return Session().create_client("route53-recovery-control-config").get_waiter("cluster_deleted")
+    return Session().client("route53-recovery-control-config").get_waiter("cluster_deleted")
 ```
 
 Boto3 documentation:
@@ -74,7 +74,7 @@ Arguments for `ClusterDeletedWaiter.wait` method:
 ## ControlPanelCreatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").get_waiter("control_panel_created")`.
+`session.create_client("route53-recovery-control-config").get_waiter("control_panel_created")`.
 
 Can be used directly:
 
@@ -84,7 +84,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_route53_recovery_control_config.waiter import ControlPanelCreatedWaiter
 
 def get_control_panel_created_waiter() -> ControlPanelCreatedWaiter:
-    return Session().create_client("route53-recovery-control-config").get_waiter("control_panel_created")
+    return Session().client("route53-recovery-control-config").get_waiter("control_panel_created")
 ```
 
 Boto3 documentation:
@@ -100,7 +100,7 @@ Arguments for `ControlPanelCreatedWaiter.wait` method:
 ## ControlPanelDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").get_waiter("control_panel_deleted")`.
+`session.create_client("route53-recovery-control-config").get_waiter("control_panel_deleted")`.
 
 Can be used directly:
 
@@ -110,7 +110,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_route53_recovery_control_config.waiter import ControlPanelDeletedWaiter
 
 def get_control_panel_deleted_waiter() -> ControlPanelDeletedWaiter:
-    return Session().create_client("route53-recovery-control-config").get_waiter("control_panel_deleted")
+    return Session().client("route53-recovery-control-config").get_waiter("control_panel_deleted")
 ```
 
 Boto3 documentation:
@@ -126,7 +126,7 @@ Arguments for `ControlPanelDeletedWaiter.wait` method:
 ## RoutingControlCreatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").get_waiter("routing_control_created")`.
+`session.create_client("route53-recovery-control-config").get_waiter("routing_control_created")`.
 
 Can be used directly:
 
@@ -136,7 +136,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_route53_recovery_control_config.waiter import RoutingControlCreatedWaiter
 
 def get_routing_control_created_waiter() -> RoutingControlCreatedWaiter:
-    return Session().create_client("route53-recovery-control-config").get_waiter("routing_control_created")
+    return Session().client("route53-recovery-control-config").get_waiter("routing_control_created")
 ```
 
 Boto3 documentation:
@@ -152,7 +152,7 @@ Arguments for `RoutingControlCreatedWaiter.wait` method:
 ## RoutingControlDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config").get_waiter("routing_control_deleted")`.
+`session.create_client("route53-recovery-control-config").get_waiter("routing_control_deleted")`.
 
 Can be used directly:
 
@@ -162,7 +162,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_route53_recovery_control_config.waiter import RoutingControlDeletedWaiter
 
 def get_routing_control_deleted_waiter() -> RoutingControlDeletedWaiter:
-    return Session().create_client("route53-recovery-control-config").get_waiter("routing_control_deleted")
+    return Session().client("route53-recovery-control-config").get_waiter("routing_control_deleted")
 ```
 
 Boto3 documentation:

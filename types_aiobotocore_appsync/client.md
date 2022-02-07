@@ -65,22 +65,25 @@ type annotations stubs module
     - [update_graphql_api](#update_graphql_api)
     - [update_resolver](#update_resolver)
     - [update_type](#update_type)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="appsyncclient"></a>
 
 ## AppSyncClient
 
-Type annotations for `aiobotocore.create_client("appsync")`
+Type annotations for `session.create_client("appsync")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_appsync.client import AppSyncClient
 
-def get_appsync_client() -> AppSyncClient:
-    return Session().client("appsync")
+session = get_session()
+async with session.create_client("appsync") as client:
+    client: AppSyncClient
 ```
 
 Boto3 documentation:
@@ -125,7 +128,7 @@ Exceptions:
 
 AppSyncClient exceptions.
 
-Type annotations for `aiobotocore.create_client("appsync").exceptions` method.
+Type annotations for `session.create_client("appsync").exceptions` method.
 
 Boto3 documentation:
 [AppSync.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.exceptions)
@@ -138,8 +141,7 @@ Returns [Exceptions](#exceptions).
 
 Maps an endpoint to your custom domain.
 
-Type annotations for `aiobotocore.create_client("appsync").associate_api`
-method.
+Type annotations for `session.create_client("appsync").associate_api` method.
 
 Boto3 documentation:
 [AppSync.Client.associate_api](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.associate_api)
@@ -163,19 +165,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("appsync").can_paginate`
-method.
+Type annotations for `session.create_client("appsync").can_paginate` method.
 
 Boto3 documentation:
 [AppSync.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_api_cache"></a>
 
@@ -183,7 +182,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a cache for the GraphQL API.
 
-Type annotations for `aiobotocore.create_client("appsync").create_api_cache`
+Type annotations for `session.create_client("appsync").create_api_cache`
 method.
 
 Boto3 documentation:
@@ -213,8 +212,7 @@ Returns a `Coroutine` for
 
 Creates a unique key that you can distribute to clients who invoke your API.
 
-Type annotations for `aiobotocore.create_client("appsync").create_api_key`
-method.
+Type annotations for `session.create_client("appsync").create_api_key` method.
 
 Boto3 documentation:
 [AppSync.Client.create_api_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.create_api_key)
@@ -239,7 +237,7 @@ Returns a `Coroutine` for
 
 Creates a `DataSource` object.
 
-Type annotations for `aiobotocore.create_client("appsync").create_data_source`
+Type annotations for `session.create_client("appsync").create_data_source`
 method.
 
 Boto3 documentation:
@@ -280,7 +278,7 @@ Returns a `Coroutine` for
 
 Creates a custom `DomainName` object.
 
-Type annotations for `aiobotocore.create_client("appsync").create_domain_name`
+Type annotations for `session.create_client("appsync").create_domain_name`
 method.
 
 Boto3 documentation:
@@ -307,8 +305,7 @@ Returns a `Coroutine` for
 
 Creates a `Function` object.
 
-Type annotations for `aiobotocore.create_client("appsync").create_function`
-method.
+Type annotations for `session.create_client("appsync").create_function` method.
 
 Boto3 documentation:
 [AppSync.Client.create_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.create_function)
@@ -338,7 +335,7 @@ Returns a `Coroutine` for
 
 Creates a `GraphqlApi` object.
 
-Type annotations for `aiobotocore.create_client("appsync").create_graphql_api`
+Type annotations for `session.create_client("appsync").create_graphql_api`
 method.
 
 Boto3 documentation:
@@ -376,8 +373,7 @@ Returns a `Coroutine` for
 
 Creates a `Resolver` object.
 
-Type annotations for `aiobotocore.create_client("appsync").create_resolver`
-method.
+Type annotations for `session.create_client("appsync").create_resolver` method.
 
 Boto3 documentation:
 [AppSync.Client.create_resolver](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.create_resolver)
@@ -410,7 +406,7 @@ Returns a `Coroutine` for
 
 Creates a `Type` object.
 
-Type annotations for `aiobotocore.create_client("appsync").create_type` method.
+Type annotations for `session.create_client("appsync").create_type` method.
 
 Boto3 documentation:
 [AppSync.Client.create_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.create_type)
@@ -436,7 +432,7 @@ Returns a `Coroutine` for
 
 Deletes an `ApiCache` object.
 
-Type annotations for `aiobotocore.create_client("appsync").delete_api_cache`
+Type annotations for `session.create_client("appsync").delete_api_cache`
 method.
 
 Boto3 documentation:
@@ -459,8 +455,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an API key.
 
-Type annotations for `aiobotocore.create_client("appsync").delete_api_key`
-method.
+Type annotations for `session.create_client("appsync").delete_api_key` method.
 
 Boto3 documentation:
 [AppSync.Client.delete_api_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.delete_api_key)
@@ -483,7 +478,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a `DataSource` object.
 
-Type annotations for `aiobotocore.create_client("appsync").delete_data_source`
+Type annotations for `session.create_client("appsync").delete_data_source`
 method.
 
 Boto3 documentation:
@@ -508,7 +503,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a custom `DomainName` object.
 
-Type annotations for `aiobotocore.create_client("appsync").delete_domain_name`
+Type annotations for `session.create_client("appsync").delete_domain_name`
 method.
 
 Boto3 documentation:
@@ -532,8 +527,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a `Function` .
 
-Type annotations for `aiobotocore.create_client("appsync").delete_function`
-method.
+Type annotations for `session.create_client("appsync").delete_function` method.
 
 Boto3 documentation:
 [AppSync.Client.delete_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.delete_function)
@@ -556,7 +550,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a `GraphqlApi` object.
 
-Type annotations for `aiobotocore.create_client("appsync").delete_graphql_api`
+Type annotations for `session.create_client("appsync").delete_graphql_api`
 method.
 
 Boto3 documentation:
@@ -580,8 +574,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a `Resolver` object.
 
-Type annotations for `aiobotocore.create_client("appsync").delete_resolver`
-method.
+Type annotations for `session.create_client("appsync").delete_resolver` method.
 
 Boto3 documentation:
 [AppSync.Client.delete_resolver](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.delete_resolver)
@@ -605,7 +598,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a `Type` object.
 
-Type annotations for `aiobotocore.create_client("appsync").delete_type` method.
+Type annotations for `session.create_client("appsync").delete_type` method.
 
 Boto3 documentation:
 [AppSync.Client.delete_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.delete_type)
@@ -628,7 +621,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes an `ApiAssociation` object from a custom domain.
 
-Type annotations for `aiobotocore.create_client("appsync").disassociate_api`
+Type annotations for `session.create_client("appsync").disassociate_api`
 method.
 
 Boto3 documentation:
@@ -651,8 +644,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Flushes an `ApiCache` object.
 
-Type annotations for `aiobotocore.create_client("appsync").flush_api_cache`
-method.
+Type annotations for `session.create_client("appsync").flush_api_cache` method.
 
 Boto3 documentation:
 [AppSync.Client.flush_api_cache](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.flush_api_cache)
@@ -674,8 +666,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("appsync").generate_presigned_url` method.
+Type annotations for `session.create_client("appsync").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [AppSync.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.generate_presigned_url)
@@ -698,7 +690,7 @@ Returns a `Coroutine` for `str`.
 
 Retrieves an `ApiAssociation` object.
 
-Type annotations for `aiobotocore.create_client("appsync").get_api_association`
+Type annotations for `session.create_client("appsync").get_api_association`
 method.
 
 Boto3 documentation:
@@ -723,8 +715,7 @@ Returns a `Coroutine` for
 
 Retrieves an `ApiCache` object.
 
-Type annotations for `aiobotocore.create_client("appsync").get_api_cache`
-method.
+Type annotations for `session.create_client("appsync").get_api_cache` method.
 
 Boto3 documentation:
 [AppSync.Client.get_api_cache](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.get_api_cache)
@@ -747,8 +738,7 @@ Returns a `Coroutine` for
 
 Retrieves a `DataSource` object.
 
-Type annotations for `aiobotocore.create_client("appsync").get_data_source`
-method.
+Type annotations for `session.create_client("appsync").get_data_source` method.
 
 Boto3 documentation:
 [AppSync.Client.get_data_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.get_data_source)
@@ -772,8 +762,7 @@ Returns a `Coroutine` for
 
 Retrieves a custom `DomainName` object.
 
-Type annotations for `aiobotocore.create_client("appsync").get_domain_name`
-method.
+Type annotations for `session.create_client("appsync").get_domain_name` method.
 
 Boto3 documentation:
 [AppSync.Client.get_domain_name](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.get_domain_name)
@@ -796,8 +785,7 @@ Returns a `Coroutine` for
 
 Get a `Function` .
 
-Type annotations for `aiobotocore.create_client("appsync").get_function`
-method.
+Type annotations for `session.create_client("appsync").get_function` method.
 
 Boto3 documentation:
 [AppSync.Client.get_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.get_function)
@@ -821,8 +809,7 @@ Returns a `Coroutine` for
 
 Retrieves a `GraphqlApi` object.
 
-Type annotations for `aiobotocore.create_client("appsync").get_graphql_api`
-method.
+Type annotations for `session.create_client("appsync").get_graphql_api` method.
 
 Boto3 documentation:
 [AppSync.Client.get_graphql_api](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.get_graphql_api)
@@ -846,7 +833,7 @@ Returns a `Coroutine` for
 Retrieves the introspection schema for a GraphQL API.
 
 Type annotations for
-`aiobotocore.create_client("appsync").get_introspection_schema` method.
+`session.create_client("appsync").get_introspection_schema` method.
 
 Boto3 documentation:
 [AppSync.Client.get_introspection_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.get_introspection_schema)
@@ -872,8 +859,7 @@ Returns a `Coroutine` for
 
 Retrieves a `Resolver` object.
 
-Type annotations for `aiobotocore.create_client("appsync").get_resolver`
-method.
+Type annotations for `session.create_client("appsync").get_resolver` method.
 
 Boto3 documentation:
 [AppSync.Client.get_resolver](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.get_resolver)
@@ -899,7 +885,7 @@ Returns a `Coroutine` for
 Retrieves the current status of a schema creation operation.
 
 Type annotations for
-`aiobotocore.create_client("appsync").get_schema_creation_status` method.
+`session.create_client("appsync").get_schema_creation_status` method.
 
 Boto3 documentation:
 [AppSync.Client.get_schema_creation_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.get_schema_creation_status)
@@ -923,7 +909,7 @@ Returns a `Coroutine` for
 
 Retrieves a `Type` object.
 
-Type annotations for `aiobotocore.create_client("appsync").get_type` method.
+Type annotations for `session.create_client("appsync").get_type` method.
 
 Boto3 documentation:
 [AppSync.Client.get_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.get_type)
@@ -949,8 +935,7 @@ Returns a `Coroutine` for
 
 Lists the API keys for a given API.
 
-Type annotations for `aiobotocore.create_client("appsync").list_api_keys`
-method.
+Type annotations for `session.create_client("appsync").list_api_keys` method.
 
 Boto3 documentation:
 [AppSync.Client.list_api_keys](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.list_api_keys)
@@ -975,7 +960,7 @@ Returns a `Coroutine` for
 
 Lists the data sources for a given API.
 
-Type annotations for `aiobotocore.create_client("appsync").list_data_sources`
+Type annotations for `session.create_client("appsync").list_data_sources`
 method.
 
 Boto3 documentation:
@@ -1001,7 +986,7 @@ Returns a `Coroutine` for
 
 Lists multiple custom domain names.
 
-Type annotations for `aiobotocore.create_client("appsync").list_domain_names`
+Type annotations for `session.create_client("appsync").list_domain_names`
 method.
 
 Boto3 documentation:
@@ -1026,8 +1011,7 @@ Returns a `Coroutine` for
 
 List multiple functions.
 
-Type annotations for `aiobotocore.create_client("appsync").list_functions`
-method.
+Type annotations for `session.create_client("appsync").list_functions` method.
 
 Boto3 documentation:
 [AppSync.Client.list_functions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.list_functions)
@@ -1052,7 +1036,7 @@ Returns a `Coroutine` for
 
 Lists your GraphQL APIs.
 
-Type annotations for `aiobotocore.create_client("appsync").list_graphql_apis`
+Type annotations for `session.create_client("appsync").list_graphql_apis`
 method.
 
 Boto3 documentation:
@@ -1077,8 +1061,7 @@ Returns a `Coroutine` for
 
 Lists the resolvers for a given API and type.
 
-Type annotations for `aiobotocore.create_client("appsync").list_resolvers`
-method.
+Type annotations for `session.create_client("appsync").list_resolvers` method.
 
 Boto3 documentation:
 [AppSync.Client.list_resolvers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.list_resolvers)
@@ -1105,7 +1088,7 @@ Returns a `Coroutine` for
 List the resolvers that are associated with a specific function.
 
 Type annotations for
-`aiobotocore.create_client("appsync").list_resolvers_by_function` method.
+`session.create_client("appsync").list_resolvers_by_function` method.
 
 Boto3 documentation:
 [AppSync.Client.list_resolvers_by_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.list_resolvers_by_function)
@@ -1132,8 +1115,8 @@ Returns a `Coroutine` for
 
 Lists the tags for a resource.
 
-Type annotations for
-`aiobotocore.create_client("appsync").list_tags_for_resource` method.
+Type annotations for `session.create_client("appsync").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [AppSync.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.list_tags_for_resource)
@@ -1157,7 +1140,7 @@ Returns a `Coroutine` for
 
 Lists the types for a given API.
 
-Type annotations for `aiobotocore.create_client("appsync").list_types` method.
+Type annotations for `session.create_client("appsync").list_types` method.
 
 Boto3 documentation:
 [AppSync.Client.list_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.list_types)
@@ -1184,8 +1167,8 @@ Returns a `Coroutine` for
 
 Adds a new schema to your GraphQL API.
 
-Type annotations for
-`aiobotocore.create_client("appsync").start_schema_creation` method.
+Type annotations for `session.create_client("appsync").start_schema_creation`
+method.
 
 Boto3 documentation:
 [AppSync.Client.start_schema_creation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.start_schema_creation)
@@ -1211,8 +1194,7 @@ Returns a `Coroutine` for
 
 Tags a resource with user-supplied tags.
 
-Type annotations for `aiobotocore.create_client("appsync").tag_resource`
-method.
+Type annotations for `session.create_client("appsync").tag_resource` method.
 
 Boto3 documentation:
 [AppSync.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.tag_resource)
@@ -1235,8 +1217,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Untags a resource.
 
-Type annotations for `aiobotocore.create_client("appsync").untag_resource`
-method.
+Type annotations for `session.create_client("appsync").untag_resource` method.
 
 Boto3 documentation:
 [AppSync.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.untag_resource)
@@ -1259,7 +1240,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the cache for the GraphQL API.
 
-Type annotations for `aiobotocore.create_client("appsync").update_api_cache`
+Type annotations for `session.create_client("appsync").update_api_cache`
 method.
 
 Boto3 documentation:
@@ -1287,8 +1268,7 @@ Returns a `Coroutine` for
 
 Updates an API key.
 
-Type annotations for `aiobotocore.create_client("appsync").update_api_key`
-method.
+Type annotations for `session.create_client("appsync").update_api_key` method.
 
 Boto3 documentation:
 [AppSync.Client.update_api_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.update_api_key)
@@ -1314,7 +1294,7 @@ Returns a `Coroutine` for
 
 Updates a `DataSource` object.
 
-Type annotations for `aiobotocore.create_client("appsync").update_data_source`
+Type annotations for `session.create_client("appsync").update_data_source`
 method.
 
 Boto3 documentation:
@@ -1355,7 +1335,7 @@ Returns a `Coroutine` for
 
 Updates a custom `DomainName` object.
 
-Type annotations for `aiobotocore.create_client("appsync").update_domain_name`
+Type annotations for `session.create_client("appsync").update_domain_name`
 method.
 
 Boto3 documentation:
@@ -1381,8 +1361,7 @@ Returns a `Coroutine` for
 
 Updates a `Function` object.
 
-Type annotations for `aiobotocore.create_client("appsync").update_function`
-method.
+Type annotations for `session.create_client("appsync").update_function` method.
 
 Boto3 documentation:
 [AppSync.Client.update_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.update_function)
@@ -1413,7 +1392,7 @@ Returns a `Coroutine` for
 
 Updates a `GraphqlApi` object.
 
-Type annotations for `aiobotocore.create_client("appsync").update_graphql_api`
+Type annotations for `session.create_client("appsync").update_graphql_api`
 method.
 
 Boto3 documentation:
@@ -1451,8 +1430,7 @@ Returns a `Coroutine` for
 
 Updates a `Resolver` object.
 
-Type annotations for `aiobotocore.create_client("appsync").update_resolver`
-method.
+Type annotations for `session.create_client("appsync").update_resolver` method.
 
 Boto3 documentation:
 [AppSync.Client.update_resolver](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.update_resolver)
@@ -1485,7 +1463,7 @@ Returns a `Coroutine` for
 
 Updates a `Type` object.
 
-Type annotations for `aiobotocore.create_client("appsync").update_type` method.
+Type annotations for `session.create_client("appsync").update_type` method.
 
 Boto3 documentation:
 [AppSync.Client.update_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.update_type)
@@ -1506,12 +1484,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateTypeResponseTypeDef](./type_defs.md#updatetyperesponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("appsync").__aenter__` method.
+
+Boto3 documentation:
+[AppSync.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [AppSyncClient](#appsyncclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("appsync").__aexit__` method.
+
+Boto3 documentation:
+[AppSync.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appsync.html#AppSync.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("appsync").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("appsync").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_api_keys")` ->
   [ListApiKeysPaginator](./paginators.md#listapikeyspaginator)

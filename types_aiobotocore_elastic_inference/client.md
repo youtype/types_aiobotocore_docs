@@ -22,22 +22,25 @@ type annotations stubs module
     - [list_tags_for_resource](#list_tags_for_resource)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="elasticinferenceclient"></a>
 
 ## ElasticInferenceClient
 
-Type annotations for `aiobotocore.create_client("elastic-inference")`
+Type annotations for `session.create_client("elastic-inference")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_elastic_inference.client import ElasticInferenceClient
 
-def get_elastic-inference_client() -> ElasticInferenceClient:
-    return Session().client("elastic-inference")
+session = get_session()
+async with session.create_client("elastic-inference") as client:
+    client: ElasticInferenceClient
 ```
 
 Boto3 documentation:
@@ -74,8 +77,8 @@ Exceptions:
 
 ElasticInferenceClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("elastic-inference").exceptions` method.
+Type annotations for `session.create_client("elastic-inference").exceptions`
+method.
 
 Boto3 documentation:
 [ElasticInference.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastic-inference.html#ElasticInference.Client.exceptions)
@@ -88,19 +91,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("elastic-inference").can_paginate` method.
+Type annotations for `session.create_client("elastic-inference").can_paginate`
+method.
 
 Boto3 documentation:
 [ElasticInference.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastic-inference.html#ElasticInference.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="describe_accelerator_offerings"></a>
 
@@ -110,7 +111,7 @@ Describes the locations in which a given accelerator type or set of types is
 present in a given region.
 
 Type annotations for
-`aiobotocore.create_client("elastic-inference").describe_accelerator_offerings`
+`session.create_client("elastic-inference").describe_accelerator_offerings`
 method.
 
 Boto3 documentation:
@@ -139,8 +140,7 @@ Describes the accelerator types available in a given region, as well as their
 characteristics, such as memory and throughput.
 
 Type annotations for
-`aiobotocore.create_client("elastic-inference").describe_accelerator_types`
-method.
+`session.create_client("elastic-inference").describe_accelerator_types` method.
 
 Boto3 documentation:
 [ElasticInference.Client.describe_accelerator_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastic-inference.html#ElasticInference.Client.describe_accelerator_types)
@@ -159,7 +159,7 @@ Describes information over a provided set of accelerators belonging to an
 account.
 
 Type annotations for
-`aiobotocore.create_client("elastic-inference").describe_accelerators` method.
+`session.create_client("elastic-inference").describe_accelerators` method.
 
 Boto3 documentation:
 [ElasticInference.Client.describe_accelerators](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastic-inference.html#ElasticInference.Client.describe_accelerators)
@@ -187,7 +187,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("elastic-inference").generate_presigned_url` method.
+`session.create_client("elastic-inference").generate_presigned_url` method.
 
 Boto3 documentation:
 [ElasticInference.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastic-inference.html#ElasticInference.Client.generate_presigned_url)
@@ -211,7 +211,7 @@ Returns a `Coroutine` for `str`.
 Returns all tags of an Elastic Inference Accelerator.
 
 Type annotations for
-`aiobotocore.create_client("elastic-inference").list_tags_for_resource` method.
+`session.create_client("elastic-inference").list_tags_for_resource` method.
 
 Boto3 documentation:
 [ElasticInference.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastic-inference.html#ElasticInference.Client.list_tags_for_resource)
@@ -235,8 +235,8 @@ Returns a `Coroutine` for
 
 Adds the specified tags to an Elastic Inference Accelerator.
 
-Type annotations for
-`aiobotocore.create_client("elastic-inference").tag_resource` method.
+Type annotations for `session.create_client("elastic-inference").tag_resource`
+method.
 
 Boto3 documentation:
 [ElasticInference.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastic-inference.html#ElasticInference.Client.tag_resource)
@@ -260,7 +260,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes the specified tags from an Elastic Inference Accelerator.
 
 Type annotations for
-`aiobotocore.create_client("elastic-inference").untag_resource` method.
+`session.create_client("elastic-inference").untag_resource` method.
 
 Boto3 documentation:
 [ElasticInference.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastic-inference.html#ElasticInference.Client.untag_resource)
@@ -277,13 +277,46 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("elastic-inference").__aenter__`
+method.
+
+Boto3 documentation:
+[ElasticInference.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastic-inference.html#ElasticInference.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ElasticInferenceClient](#elasticinferenceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("elastic-inference").__aexit__`
+method.
+
+Boto3 documentation:
+[ElasticInference.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastic-inference.html#ElasticInference.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("elastic-inference").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("elastic-inference").get_paginator`
+method with overloads.
 
 - `client.get_paginator("describe_accelerators")` ->
   [DescribeAcceleratorsPaginator](./paginators.md#describeacceleratorspaginator)

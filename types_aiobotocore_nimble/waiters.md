@@ -28,7 +28,7 @@ type annotations stubs module
 ## LaunchProfileDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_waiter("launch_profile_deleted")`.
+`session.create_client("nimble").get_waiter("launch_profile_deleted")`.
 
 Can be used directly:
 
@@ -38,7 +38,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_nimble.waiter import LaunchProfileDeletedWaiter
 
 def get_launch_profile_deleted_waiter() -> LaunchProfileDeletedWaiter:
-    return Session().create_client("nimble").get_waiter("launch_profile_deleted")
+    return Session().client("nimble").get_waiter("launch_profile_deleted")
 ```
 
 Boto3 documentation:
@@ -55,7 +55,7 @@ Arguments for `LaunchProfileDeletedWaiter.wait` method:
 ## LaunchProfileReadyWaiter
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_waiter("launch_profile_ready")`.
+`session.create_client("nimble").get_waiter("launch_profile_ready")`.
 
 Can be used directly:
 
@@ -65,7 +65,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_nimble.waiter import LaunchProfileReadyWaiter
 
 def get_launch_profile_ready_waiter() -> LaunchProfileReadyWaiter:
-    return Session().create_client("nimble").get_waiter("launch_profile_ready")
+    return Session().client("nimble").get_waiter("launch_profile_ready")
 ```
 
 Boto3 documentation:
@@ -82,7 +82,7 @@ Arguments for `LaunchProfileReadyWaiter.wait` method:
 ## StreamingImageDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_waiter("streaming_image_deleted")`.
+`session.create_client("nimble").get_waiter("streaming_image_deleted")`.
 
 Can be used directly:
 
@@ -92,7 +92,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_nimble.waiter import StreamingImageDeletedWaiter
 
 def get_streaming_image_deleted_waiter() -> StreamingImageDeletedWaiter:
-    return Session().create_client("nimble").get_waiter("streaming_image_deleted")
+    return Session().client("nimble").get_waiter("streaming_image_deleted")
 ```
 
 Boto3 documentation:
@@ -109,7 +109,7 @@ Arguments for `StreamingImageDeletedWaiter.wait` method:
 ## StreamingImageReadyWaiter
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_waiter("streaming_image_ready")`.
+`session.create_client("nimble").get_waiter("streaming_image_ready")`.
 
 Can be used directly:
 
@@ -119,7 +119,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_nimble.waiter import StreamingImageReadyWaiter
 
 def get_streaming_image_ready_waiter() -> StreamingImageReadyWaiter:
-    return Session().create_client("nimble").get_waiter("streaming_image_ready")
+    return Session().client("nimble").get_waiter("streaming_image_ready")
 ```
 
 Boto3 documentation:
@@ -136,7 +136,7 @@ Arguments for `StreamingImageReadyWaiter.wait` method:
 ## StreamingSessionDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_waiter("streaming_session_deleted")`.
+`session.create_client("nimble").get_waiter("streaming_session_deleted")`.
 
 Can be used directly:
 
@@ -146,7 +146,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_nimble.waiter import StreamingSessionDeletedWaiter
 
 def get_streaming_session_deleted_waiter() -> StreamingSessionDeletedWaiter:
-    return Session().create_client("nimble").get_waiter("streaming_session_deleted")
+    return Session().client("nimble").get_waiter("streaming_session_deleted")
 ```
 
 Boto3 documentation:
@@ -163,7 +163,7 @@ Arguments for `StreamingSessionDeletedWaiter.wait` method:
 ## StreamingSessionReadyWaiter
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_waiter("streaming_session_ready")`.
+`session.create_client("nimble").get_waiter("streaming_session_ready")`.
 
 Can be used directly:
 
@@ -173,7 +173,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_nimble.waiter import StreamingSessionReadyWaiter
 
 def get_streaming_session_ready_waiter() -> StreamingSessionReadyWaiter:
-    return Session().create_client("nimble").get_waiter("streaming_session_ready")
+    return Session().client("nimble").get_waiter("streaming_session_ready")
 ```
 
 Boto3 documentation:
@@ -190,7 +190,7 @@ Arguments for `StreamingSessionReadyWaiter.wait` method:
 ## StreamingSessionStoppedWaiter
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_waiter("streaming_session_stopped")`.
+`session.create_client("nimble").get_waiter("streaming_session_stopped")`.
 
 Can be used directly:
 
@@ -200,7 +200,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_nimble.waiter import StreamingSessionStoppedWaiter
 
 def get_streaming_session_stopped_waiter() -> StreamingSessionStoppedWaiter:
-    return Session().create_client("nimble").get_waiter("streaming_session_stopped")
+    return Session().client("nimble").get_waiter("streaming_session_stopped")
 ```
 
 Boto3 documentation:
@@ -217,7 +217,7 @@ Arguments for `StreamingSessionStoppedWaiter.wait` method:
 ## StreamingSessionStreamReadyWaiter
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_waiter("streaming_session_stream_ready")`.
+`session.create_client("nimble").get_waiter("streaming_session_stream_ready")`.
 
 Can be used directly:
 
@@ -227,7 +227,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_nimble.waiter import StreamingSessionStreamReadyWaiter
 
 def get_streaming_session_stream_ready_waiter() -> StreamingSessionStreamReadyWaiter:
-    return Session().create_client("nimble").get_waiter("streaming_session_stream_ready")
+    return Session().client("nimble").get_waiter("streaming_session_stream_ready")
 ```
 
 Boto3 documentation:
@@ -245,7 +245,7 @@ Arguments for `StreamingSessionStreamReadyWaiter.wait` method:
 ## StudioComponentDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_waiter("studio_component_deleted")`.
+`session.create_client("nimble").get_waiter("studio_component_deleted")`.
 
 Can be used directly:
 
@@ -255,7 +255,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_nimble.waiter import StudioComponentDeletedWaiter
 
 def get_studio_component_deleted_waiter() -> StudioComponentDeletedWaiter:
-    return Session().create_client("nimble").get_waiter("studio_component_deleted")
+    return Session().client("nimble").get_waiter("studio_component_deleted")
 ```
 
 Boto3 documentation:
@@ -272,7 +272,7 @@ Arguments for `StudioComponentDeletedWaiter.wait` method:
 ## StudioComponentReadyWaiter
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_waiter("studio_component_ready")`.
+`session.create_client("nimble").get_waiter("studio_component_ready")`.
 
 Can be used directly:
 
@@ -282,7 +282,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_nimble.waiter import StudioComponentReadyWaiter
 
 def get_studio_component_ready_waiter() -> StudioComponentReadyWaiter:
-    return Session().create_client("nimble").get_waiter("studio_component_ready")
+    return Session().client("nimble").get_waiter("studio_component_ready")
 ```
 
 Boto3 documentation:
@@ -299,7 +299,7 @@ Arguments for `StudioComponentReadyWaiter.wait` method:
 ## StudioDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_waiter("studio_deleted")`.
+`session.create_client("nimble").get_waiter("studio_deleted")`.
 
 Can be used directly:
 
@@ -309,7 +309,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_nimble.waiter import StudioDeletedWaiter
 
 def get_studio_deleted_waiter() -> StudioDeletedWaiter:
-    return Session().create_client("nimble").get_waiter("studio_deleted")
+    return Session().client("nimble").get_waiter("studio_deleted")
 ```
 
 Boto3 documentation:
@@ -325,7 +325,7 @@ Arguments for `StudioDeletedWaiter.wait` method:
 ## StudioReadyWaiter
 
 Type annotations for
-`aiobotocore.create_client("nimble").get_waiter("studio_ready")`.
+`session.create_client("nimble").get_waiter("studio_ready")`.
 
 Can be used directly:
 
@@ -335,7 +335,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_nimble.waiter import StudioReadyWaiter
 
 def get_studio_ready_waiter() -> StudioReadyWaiter:
-    return Session().create_client("nimble").get_waiter("studio_ready")
+    return Session().client("nimble").get_waiter("studio_ready")
 ```
 
 Boto3 documentation:

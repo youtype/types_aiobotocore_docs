@@ -19,7 +19,7 @@ type annotations stubs module
 ## AuditReportCreatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").get_waiter("audit_report_created")`.
+`session.create_client("acm-pca").get_waiter("audit_report_created")`.
 
 Can be used directly:
 
@@ -29,7 +29,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_acm_pca.waiter import AuditReportCreatedWaiter
 
 def get_audit_report_created_waiter() -> AuditReportCreatedWaiter:
-    return Session().create_client("acm-pca").get_waiter("audit_report_created")
+    return Session().client("acm-pca").get_waiter("audit_report_created")
 ```
 
 Boto3 documentation:
@@ -46,7 +46,7 @@ Arguments for `AuditReportCreatedWaiter.wait` method:
 ## CertificateAuthorityCSRCreatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").get_waiter("certificate_authority_csr_created")`.
+`session.create_client("acm-pca").get_waiter("certificate_authority_csr_created")`.
 
 Can be used directly:
 
@@ -56,7 +56,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_acm_pca.waiter import CertificateAuthorityCSRCreatedWaiter
 
 def get_certificate_authority_csr_created_waiter() -> CertificateAuthorityCSRCreatedWaiter:
-    return Session().create_client("acm-pca").get_waiter("certificate_authority_csr_created")
+    return Session().client("acm-pca").get_waiter("certificate_authority_csr_created")
 ```
 
 Boto3 documentation:
@@ -72,7 +72,7 @@ Arguments for `CertificateAuthorityCSRCreatedWaiter.wait` method:
 ## CertificateIssuedWaiter
 
 Type annotations for
-`aiobotocore.create_client("acm-pca").get_waiter("certificate_issued")`.
+`session.create_client("acm-pca").get_waiter("certificate_issued")`.
 
 Can be used directly:
 
@@ -82,7 +82,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_acm_pca.waiter import CertificateIssuedWaiter
 
 def get_certificate_issued_waiter() -> CertificateIssuedWaiter:
-    return Session().create_client("acm-pca").get_waiter("certificate_issued")
+    return Session().client("acm-pca").get_waiter("certificate_issued")
 ```
 
 Boto3 documentation:

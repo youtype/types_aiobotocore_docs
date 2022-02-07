@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[timestream-write]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[timestream-write]'
+
+# standalone installation
 pip install types-aiobotocore-timestream-write
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-timestream-write
 
 ## TimestreamWriteClient
 
-Type annotations for `aiobotocore.create_client("timestream-write")` as
+Type annotations for `session.create_client("timestream-write")` as
 [TimestreamWriteClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_timestream_write.client import TimestreamWriteClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_database](./client.md#create_database)
 - [create_table](./client.md#create_table)

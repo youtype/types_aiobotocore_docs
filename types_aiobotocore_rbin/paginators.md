@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("rbin").get_paginator("list_rules")`.
+`session.create_client("rbin").get_paginator("list_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_rbin.paginator import ListRulesPaginator
 
-def get_list_rules_paginator() -> ListRulesPaginator:
-    return Session().create_client("rbin").get_paginator("list_rules")
+session = get_session()
+async with session.create_client("rbin") as client:
+    client: RecycleBinClient
+    paginator: ListRulesPaginator = client.get_paginator("list_rules")
 ```
 
 Boto3 documentation:

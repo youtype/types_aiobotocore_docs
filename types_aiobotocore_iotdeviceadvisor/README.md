@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[iotdeviceadvisor]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[iotdeviceadvisor]'
+
+# standalone installation
 pip install types-aiobotocore-iotdeviceadvisor
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-iotdeviceadvisor
 
 ## IoTDeviceAdvisorClient
 
-Type annotations for `aiobotocore.create_client("iotdeviceadvisor")` as
+Type annotations for `session.create_client("iotdeviceadvisor")` as
 [IoTDeviceAdvisorClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_iotdeviceadvisor.client import IoTDeviceAdvisorClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_suite_definition](./client.md#create_suite_definition)
 - [delete_suite_definition](./client.md#delete_suite_definition)

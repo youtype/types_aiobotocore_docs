@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[mgn]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[mgn]'
+
+# standalone installation
 pip install types-aiobotocore-mgn
 ```
 
@@ -29,8 +33,7 @@ pip install types-aiobotocore-mgn
 
 ## mgnClient
 
-Type annotations for `aiobotocore.create_client("mgn")` as
-[mgnClient](./client.md)
+Type annotations for `session.create_client("mgn")` as [mgnClient](./client.md)
 
 Can be used directly:
 
@@ -42,6 +45,8 @@ from types_aiobotocore_mgn.client import mgnClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [change_server_life_cycle_state](./client.md#change_server_life_cycle_state)
 - [create_replication_configuration_template](./client.md#create_replication_configuration_template)
@@ -102,7 +107,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_mgn.paginators import DescribeJobLogItemsPaginator, ...
+from types_aiobotocore_mgn.paginator import DescribeJobLogItemsPaginator, ...
 ```
 
 - [DescribeJobLogItemsPaginator](./paginators.md#describejoblogitemspaginator)

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[sms-voice]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[sms-voice]'
+
+# standalone installation
 pip install types-aiobotocore-sms-voice
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-sms-voice
 
 ## PinpointSMSVoiceClient
 
-Type annotations for `aiobotocore.create_client("sms-voice")` as
+Type annotations for `session.create_client("sms-voice")` as
 [PinpointSMSVoiceClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_sms_voice.client import PinpointSMSVoiceClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_configuration_set](./client.md#create_configuration_set)
 - [create_configuration_set_event_destination](./client.md#create_configuration_set_event_destination)

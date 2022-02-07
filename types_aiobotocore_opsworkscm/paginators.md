@@ -20,17 +20,19 @@ type annotations stubs module
 ## DescribeBackupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("opsworkscm").get_paginator("describe_backups")`.
+`session.create_client("opsworkscm").get_paginator("describe_backups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_opsworkscm.paginator import DescribeBackupsPaginator
 
-def get_describe_backups_paginator() -> DescribeBackupsPaginator:
-    return Session().create_client("opsworkscm").get_paginator("describe_backups")
+session = get_session()
+async with session.create_client("opsworkscm") as client:
+    client: OpsWorksCMClient
+    paginator: DescribeBackupsPaginator = client.get_paginator("describe_backups")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `DescribeBackupsPaginator.paginate` method:
 ## DescribeEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("opsworkscm").get_paginator("describe_events")`.
+`session.create_client("opsworkscm").get_paginator("describe_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_opsworkscm.paginator import DescribeEventsPaginator
 
-def get_describe_events_paginator() -> DescribeEventsPaginator:
-    return Session().create_client("opsworkscm").get_paginator("describe_events")
+session = get_session()
+async with session.create_client("opsworkscm") as client:
+    client: OpsWorksCMClient
+    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")
 ```
 
 Boto3 documentation:
@@ -81,17 +85,19 @@ Arguments for `DescribeEventsPaginator.paginate` method:
 ## DescribeServersPaginator
 
 Type annotations for
-`aiobotocore.create_client("opsworkscm").get_paginator("describe_servers")`.
+`session.create_client("opsworkscm").get_paginator("describe_servers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_opsworkscm.paginator import DescribeServersPaginator
 
-def get_describe_servers_paginator() -> DescribeServersPaginator:
-    return Session().create_client("opsworkscm").get_paginator("describe_servers")
+session = get_session()
+async with session.create_client("opsworkscm") as client:
+    client: OpsWorksCMClient
+    paginator: DescribeServersPaginator = client.get_paginator("describe_servers")
 ```
 
 Boto3 documentation:
@@ -111,17 +117,19 @@ Arguments for `DescribeServersPaginator.paginate` method:
 ## ListTagsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("opsworkscm").get_paginator("list_tags_for_resource")`.
+`session.create_client("opsworkscm").get_paginator("list_tags_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_opsworkscm.paginator import ListTagsForResourcePaginator
 
-def get_list_tags_for_resource_paginator() -> ListTagsForResourcePaginator:
-    return Session().create_client("opsworkscm").get_paginator("list_tags_for_resource")
+session = get_session()
+async with session.create_client("opsworkscm") as client:
+    client: OpsWorksCMClient
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
 ```
 
 Boto3 documentation:

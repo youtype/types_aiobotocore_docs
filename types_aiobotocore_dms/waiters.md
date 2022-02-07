@@ -24,7 +24,7 @@ type annotations stubs module
 ## EndpointDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("dms").get_waiter("endpoint_deleted")`.
+`session.create_client("dms").get_waiter("endpoint_deleted")`.
 
 Can be used directly:
 
@@ -34,7 +34,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_dms.waiter import EndpointDeletedWaiter
 
 def get_endpoint_deleted_waiter() -> EndpointDeletedWaiter:
-    return Session().create_client("dms").get_waiter("endpoint_deleted")
+    return Session().client("dms").get_waiter("endpoint_deleted")
 ```
 
 Boto3 documentation:
@@ -52,7 +52,7 @@ Arguments for `EndpointDeletedWaiter.wait` method:
 ## ReplicationInstanceAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("dms").get_waiter("replication_instance_available")`.
+`session.create_client("dms").get_waiter("replication_instance_available")`.
 
 Can be used directly:
 
@@ -62,7 +62,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_dms.waiter import ReplicationInstanceAvailableWaiter
 
 def get_replication_instance_available_waiter() -> ReplicationInstanceAvailableWaiter:
-    return Session().create_client("dms").get_waiter("replication_instance_available")
+    return Session().client("dms").get_waiter("replication_instance_available")
 ```
 
 Boto3 documentation:
@@ -80,7 +80,7 @@ Arguments for `ReplicationInstanceAvailableWaiter.wait` method:
 ## ReplicationInstanceDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("dms").get_waiter("replication_instance_deleted")`.
+`session.create_client("dms").get_waiter("replication_instance_deleted")`.
 
 Can be used directly:
 
@@ -90,7 +90,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_dms.waiter import ReplicationInstanceDeletedWaiter
 
 def get_replication_instance_deleted_waiter() -> ReplicationInstanceDeletedWaiter:
-    return Session().create_client("dms").get_waiter("replication_instance_deleted")
+    return Session().client("dms").get_waiter("replication_instance_deleted")
 ```
 
 Boto3 documentation:
@@ -108,7 +108,7 @@ Arguments for `ReplicationInstanceDeletedWaiter.wait` method:
 ## ReplicationTaskDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("dms").get_waiter("replication_task_deleted")`.
+`session.create_client("dms").get_waiter("replication_task_deleted")`.
 
 Can be used directly:
 
@@ -118,7 +118,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_dms.waiter import ReplicationTaskDeletedWaiter
 
 def get_replication_task_deleted_waiter() -> ReplicationTaskDeletedWaiter:
-    return Session().create_client("dms").get_waiter("replication_task_deleted")
+    return Session().client("dms").get_waiter("replication_task_deleted")
 ```
 
 Boto3 documentation:
@@ -137,7 +137,7 @@ Arguments for `ReplicationTaskDeletedWaiter.wait` method:
 ## ReplicationTaskReadyWaiter
 
 Type annotations for
-`aiobotocore.create_client("dms").get_waiter("replication_task_ready")`.
+`session.create_client("dms").get_waiter("replication_task_ready")`.
 
 Can be used directly:
 
@@ -147,7 +147,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_dms.waiter import ReplicationTaskReadyWaiter
 
 def get_replication_task_ready_waiter() -> ReplicationTaskReadyWaiter:
-    return Session().create_client("dms").get_waiter("replication_task_ready")
+    return Session().client("dms").get_waiter("replication_task_ready")
 ```
 
 Boto3 documentation:
@@ -166,7 +166,7 @@ Arguments for `ReplicationTaskReadyWaiter.wait` method:
 ## ReplicationTaskRunningWaiter
 
 Type annotations for
-`aiobotocore.create_client("dms").get_waiter("replication_task_running")`.
+`session.create_client("dms").get_waiter("replication_task_running")`.
 
 Can be used directly:
 
@@ -176,7 +176,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_dms.waiter import ReplicationTaskRunningWaiter
 
 def get_replication_task_running_waiter() -> ReplicationTaskRunningWaiter:
-    return Session().create_client("dms").get_waiter("replication_task_running")
+    return Session().client("dms").get_waiter("replication_task_running")
 ```
 
 Boto3 documentation:
@@ -195,7 +195,7 @@ Arguments for `ReplicationTaskRunningWaiter.wait` method:
 ## ReplicationTaskStoppedWaiter
 
 Type annotations for
-`aiobotocore.create_client("dms").get_waiter("replication_task_stopped")`.
+`session.create_client("dms").get_waiter("replication_task_stopped")`.
 
 Can be used directly:
 
@@ -205,7 +205,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_dms.waiter import ReplicationTaskStoppedWaiter
 
 def get_replication_task_stopped_waiter() -> ReplicationTaskStoppedWaiter:
-    return Session().create_client("dms").get_waiter("replication_task_stopped")
+    return Session().client("dms").get_waiter("replication_task_stopped")
 ```
 
 Boto3 documentation:
@@ -224,7 +224,7 @@ Arguments for `ReplicationTaskStoppedWaiter.wait` method:
 ## TestConnectionSucceedsWaiter
 
 Type annotations for
-`aiobotocore.create_client("dms").get_waiter("test_connection_succeeds")`.
+`session.create_client("dms").get_waiter("test_connection_succeeds")`.
 
 Can be used directly:
 
@@ -234,7 +234,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_dms.waiter import TestConnectionSucceedsWaiter
 
 def get_test_connection_succeeds_waiter() -> TestConnectionSucceedsWaiter:
-    return Session().create_client("dms").get_waiter("test_connection_succeeds")
+    return Session().client("dms").get_waiter("test_connection_succeeds")
 ```
 
 Boto3 documentation:

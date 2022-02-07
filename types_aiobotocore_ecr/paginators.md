@@ -22,17 +22,19 @@ type annotations stubs module
 ## DescribeImageScanFindingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecr").get_paginator("describe_image_scan_findings")`.
+`session.create_client("ecr").get_paginator("describe_image_scan_findings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecr.paginator import DescribeImageScanFindingsPaginator
 
-def get_describe_image_scan_findings_paginator() -> DescribeImageScanFindingsPaginator:
-    return Session().create_client("ecr").get_paginator("describe_image_scan_findings")
+session = get_session()
+async with session.create_client("ecr") as client:
+    client: ECRClient
+    paginator: DescribeImageScanFindingsPaginator = client.get_paginator("describe_image_scan_findings")
 ```
 
 Boto3 documentation:
@@ -55,17 +57,19 @@ Arguments for `DescribeImageScanFindingsPaginator.paginate` method:
 ## DescribeImagesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecr").get_paginator("describe_images")`.
+`session.create_client("ecr").get_paginator("describe_images")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecr.paginator import DescribeImagesPaginator
 
-def get_describe_images_paginator() -> DescribeImagesPaginator:
-    return Session().create_client("ecr").get_paginator("describe_images")
+session = get_session()
+async with session.create_client("ecr") as client:
+    client: ECRClient
+    paginator: DescribeImagesPaginator = client.get_paginator("describe_images")
 ```
 
 Boto3 documentation:
@@ -90,17 +94,19 @@ Arguments for `DescribeImagesPaginator.paginate` method:
 ## DescribePullThroughCacheRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecr").get_paginator("describe_pull_through_cache_rules")`.
+`session.create_client("ecr").get_paginator("describe_pull_through_cache_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecr.paginator import DescribePullThroughCacheRulesPaginator
 
-def get_describe_pull_through_cache_rules_paginator() -> DescribePullThroughCacheRulesPaginator:
-    return Session().create_client("ecr").get_paginator("describe_pull_through_cache_rules")
+session = get_session()
+async with session.create_client("ecr") as client:
+    client: ECRClient
+    paginator: DescribePullThroughCacheRulesPaginator = client.get_paginator("describe_pull_through_cache_rules")
 ```
 
 Boto3 documentation:
@@ -121,17 +127,19 @@ Arguments for `DescribePullThroughCacheRulesPaginator.paginate` method:
 ## DescribeRepositoriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecr").get_paginator("describe_repositories")`.
+`session.create_client("ecr").get_paginator("describe_repositories")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecr.paginator import DescribeRepositoriesPaginator
 
-def get_describe_repositories_paginator() -> DescribeRepositoriesPaginator:
-    return Session().create_client("ecr").get_paginator("describe_repositories")
+session = get_session()
+async with session.create_client("ecr") as client:
+    client: ECRClient
+    paginator: DescribeRepositoriesPaginator = client.get_paginator("describe_repositories")
 ```
 
 Boto3 documentation:
@@ -152,17 +160,19 @@ Arguments for `DescribeRepositoriesPaginator.paginate` method:
 ## GetLifecyclePolicyPreviewPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecr").get_paginator("get_lifecycle_policy_preview")`.
+`session.create_client("ecr").get_paginator("get_lifecycle_policy_preview")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecr.paginator import GetLifecyclePolicyPreviewPaginator
 
-def get_get_lifecycle_policy_preview_paginator() -> GetLifecyclePolicyPreviewPaginator:
-    return Session().create_client("ecr").get_paginator("get_lifecycle_policy_preview")
+session = get_session()
+async with session.create_client("ecr") as client:
+    client: ECRClient
+    paginator: GetLifecyclePolicyPreviewPaginator = client.get_paginator("get_lifecycle_policy_preview")
 ```
 
 Boto3 documentation:
@@ -187,17 +197,19 @@ Arguments for `GetLifecyclePolicyPreviewPaginator.paginate` method:
 ## ListImagesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ecr").get_paginator("list_images")`.
+`session.create_client("ecr").get_paginator("list_images")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ecr.paginator import ListImagesPaginator
 
-def get_list_images_paginator() -> ListImagesPaginator:
-    return Session().create_client("ecr").get_paginator("list_images")
+session = get_session()
+async with session.create_client("ecr") as client:
+    client: ECRClient
+    paginator: ListImagesPaginator = client.get_paginator("list_images")
 ```
 
 Boto3 documentation:

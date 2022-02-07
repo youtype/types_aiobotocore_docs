@@ -29,17 +29,19 @@ type annotations stubs module
 ## DescribeCertificatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("docdb").get_paginator("describe_certificates")`.
+`session.create_client("docdb").get_paginator("describe_certificates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_docdb.paginator import DescribeCertificatesPaginator
 
-def get_describe_certificates_paginator() -> DescribeCertificatesPaginator:
-    return Session().create_client("docdb").get_paginator("describe_certificates")
+session = get_session()
+async with session.create_client("docdb") as client:
+    client: DocDBClient
+    paginator: DescribeCertificatesPaginator = client.get_paginator("describe_certificates")
 ```
 
 Boto3 documentation:
@@ -60,17 +62,19 @@ Arguments for `DescribeCertificatesPaginator.paginate` method:
 ## DescribeDBClusterParameterGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("docdb").get_paginator("describe_db_cluster_parameter_groups")`.
+`session.create_client("docdb").get_paginator("describe_db_cluster_parameter_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_docdb.paginator import DescribeDBClusterParameterGroupsPaginator
 
-def get_describe_db_cluster_parameter_groups_paginator() -> DescribeDBClusterParameterGroupsPaginator:
-    return Session().create_client("docdb").get_paginator("describe_db_cluster_parameter_groups")
+session = get_session()
+async with session.create_client("docdb") as client:
+    client: DocDBClient
+    paginator: DescribeDBClusterParameterGroupsPaginator = client.get_paginator("describe_db_cluster_parameter_groups")
 ```
 
 Boto3 documentation:
@@ -91,17 +95,19 @@ Arguments for `DescribeDBClusterParameterGroupsPaginator.paginate` method:
 ## DescribeDBClusterParametersPaginator
 
 Type annotations for
-`aiobotocore.create_client("docdb").get_paginator("describe_db_cluster_parameters")`.
+`session.create_client("docdb").get_paginator("describe_db_cluster_parameters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_docdb.paginator import DescribeDBClusterParametersPaginator
 
-def get_describe_db_cluster_parameters_paginator() -> DescribeDBClusterParametersPaginator:
-    return Session().create_client("docdb").get_paginator("describe_db_cluster_parameters")
+session = get_session()
+async with session.create_client("docdb") as client:
+    client: DocDBClient
+    paginator: DescribeDBClusterParametersPaginator = client.get_paginator("describe_db_cluster_parameters")
 ```
 
 Boto3 documentation:
@@ -123,17 +129,19 @@ Arguments for `DescribeDBClusterParametersPaginator.paginate` method:
 ## DescribeDBClusterSnapshotsPaginator
 
 Type annotations for
-`aiobotocore.create_client("docdb").get_paginator("describe_db_cluster_snapshots")`.
+`session.create_client("docdb").get_paginator("describe_db_cluster_snapshots")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_docdb.paginator import DescribeDBClusterSnapshotsPaginator
 
-def get_describe_db_cluster_snapshots_paginator() -> DescribeDBClusterSnapshotsPaginator:
-    return Session().create_client("docdb").get_paginator("describe_db_cluster_snapshots")
+session = get_session()
+async with session.create_client("docdb") as client:
+    client: DocDBClient
+    paginator: DescribeDBClusterSnapshotsPaginator = client.get_paginator("describe_db_cluster_snapshots")
 ```
 
 Boto3 documentation:
@@ -158,17 +166,19 @@ Arguments for `DescribeDBClusterSnapshotsPaginator.paginate` method:
 ## DescribeDBClustersPaginator
 
 Type annotations for
-`aiobotocore.create_client("docdb").get_paginator("describe_db_clusters")`.
+`session.create_client("docdb").get_paginator("describe_db_clusters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_docdb.paginator import DescribeDBClustersPaginator
 
-def get_describe_db_clusters_paginator() -> DescribeDBClustersPaginator:
-    return Session().create_client("docdb").get_paginator("describe_db_clusters")
+session = get_session()
+async with session.create_client("docdb") as client:
+    client: DocDBClient
+    paginator: DescribeDBClustersPaginator = client.get_paginator("describe_db_clusters")
 ```
 
 Boto3 documentation:
@@ -189,17 +199,19 @@ Arguments for `DescribeDBClustersPaginator.paginate` method:
 ## DescribeDBEngineVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("docdb").get_paginator("describe_db_engine_versions")`.
+`session.create_client("docdb").get_paginator("describe_db_engine_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_docdb.paginator import DescribeDBEngineVersionsPaginator
 
-def get_describe_db_engine_versions_paginator() -> DescribeDBEngineVersionsPaginator:
-    return Session().create_client("docdb").get_paginator("describe_db_engine_versions")
+session = get_session()
+async with session.create_client("docdb") as client:
+    client: DocDBClient
+    paginator: DescribeDBEngineVersionsPaginator = client.get_paginator("describe_db_engine_versions")
 ```
 
 Boto3 documentation:
@@ -225,17 +237,19 @@ Arguments for `DescribeDBEngineVersionsPaginator.paginate` method:
 ## DescribeDBInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("docdb").get_paginator("describe_db_instances")`.
+`session.create_client("docdb").get_paginator("describe_db_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_docdb.paginator import DescribeDBInstancesPaginator
 
-def get_describe_db_instances_paginator() -> DescribeDBInstancesPaginator:
-    return Session().create_client("docdb").get_paginator("describe_db_instances")
+session = get_session()
+async with session.create_client("docdb") as client:
+    client: DocDBClient
+    paginator: DescribeDBInstancesPaginator = client.get_paginator("describe_db_instances")
 ```
 
 Boto3 documentation:
@@ -256,17 +270,19 @@ Arguments for `DescribeDBInstancesPaginator.paginate` method:
 ## DescribeDBSubnetGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("docdb").get_paginator("describe_db_subnet_groups")`.
+`session.create_client("docdb").get_paginator("describe_db_subnet_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_docdb.paginator import DescribeDBSubnetGroupsPaginator
 
-def get_describe_db_subnet_groups_paginator() -> DescribeDBSubnetGroupsPaginator:
-    return Session().create_client("docdb").get_paginator("describe_db_subnet_groups")
+session = get_session()
+async with session.create_client("docdb") as client:
+    client: DocDBClient
+    paginator: DescribeDBSubnetGroupsPaginator = client.get_paginator("describe_db_subnet_groups")
 ```
 
 Boto3 documentation:
@@ -287,17 +303,19 @@ Arguments for `DescribeDBSubnetGroupsPaginator.paginate` method:
 ## DescribeEventSubscriptionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("docdb").get_paginator("describe_event_subscriptions")`.
+`session.create_client("docdb").get_paginator("describe_event_subscriptions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_docdb.paginator import DescribeEventSubscriptionsPaginator
 
-def get_describe_event_subscriptions_paginator() -> DescribeEventSubscriptionsPaginator:
-    return Session().create_client("docdb").get_paginator("describe_event_subscriptions")
+session = get_session()
+async with session.create_client("docdb") as client:
+    client: DocDBClient
+    paginator: DescribeEventSubscriptionsPaginator = client.get_paginator("describe_event_subscriptions")
 ```
 
 Boto3 documentation:
@@ -318,17 +336,19 @@ Arguments for `DescribeEventSubscriptionsPaginator.paginate` method:
 ## DescribeEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("docdb").get_paginator("describe_events")`.
+`session.create_client("docdb").get_paginator("describe_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_docdb.paginator import DescribeEventsPaginator
 
-def get_describe_events_paginator() -> DescribeEventsPaginator:
-    return Session().create_client("docdb").get_paginator("describe_events")
+session = get_session()
+async with session.create_client("docdb") as client:
+    client: DocDBClient
+    paginator: DescribeEventsPaginator = client.get_paginator("describe_events")
 ```
 
 Boto3 documentation:
@@ -354,17 +374,19 @@ Arguments for `DescribeEventsPaginator.paginate` method:
 ## DescribeGlobalClustersPaginator
 
 Type annotations for
-`aiobotocore.create_client("docdb").get_paginator("describe_global_clusters")`.
+`session.create_client("docdb").get_paginator("describe_global_clusters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_docdb.paginator import DescribeGlobalClustersPaginator
 
-def get_describe_global_clusters_paginator() -> DescribeGlobalClustersPaginator:
-    return Session().create_client("docdb").get_paginator("describe_global_clusters")
+session = get_session()
+async with session.create_client("docdb") as client:
+    client: DocDBClient
+    paginator: DescribeGlobalClustersPaginator = client.get_paginator("describe_global_clusters")
 ```
 
 Boto3 documentation:
@@ -385,17 +407,19 @@ Arguments for `DescribeGlobalClustersPaginator.paginate` method:
 ## DescribeOrderableDBInstanceOptionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("docdb").get_paginator("describe_orderable_db_instance_options")`.
+`session.create_client("docdb").get_paginator("describe_orderable_db_instance_options")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_docdb.paginator import DescribeOrderableDBInstanceOptionsPaginator
 
-def get_describe_orderable_db_instance_options_paginator() -> DescribeOrderableDBInstanceOptionsPaginator:
-    return Session().create_client("docdb").get_paginator("describe_orderable_db_instance_options")
+session = get_session()
+async with session.create_client("docdb") as client:
+    client: DocDBClient
+    paginator: DescribeOrderableDBInstanceOptionsPaginator = client.get_paginator("describe_orderable_db_instance_options")
 ```
 
 Boto3 documentation:
@@ -420,17 +444,19 @@ Arguments for `DescribeOrderableDBInstanceOptionsPaginator.paginate` method:
 ## DescribePendingMaintenanceActionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("docdb").get_paginator("describe_pending_maintenance_actions")`.
+`session.create_client("docdb").get_paginator("describe_pending_maintenance_actions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_docdb.paginator import DescribePendingMaintenanceActionsPaginator
 
-def get_describe_pending_maintenance_actions_paginator() -> DescribePendingMaintenanceActionsPaginator:
-    return Session().create_client("docdb").get_paginator("describe_pending_maintenance_actions")
+session = get_session()
+async with session.create_client("docdb") as client:
+    client: DocDBClient
+    paginator: DescribePendingMaintenanceActionsPaginator = client.get_paginator("describe_pending_maintenance_actions")
 ```
 
 Boto3 documentation:

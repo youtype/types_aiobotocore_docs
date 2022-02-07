@@ -82,22 +82,25 @@ type annotations stubs module
     - [update_typed_link_facet](#update_typed_link_facet)
     - [upgrade_applied_schema](#upgrade_applied_schema)
     - [upgrade_published_schema](#upgrade_published_schema)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="clouddirectoryclient"></a>
 
 ## CloudDirectoryClient
 
-Type annotations for `aiobotocore.create_client("clouddirectory")`
+Type annotations for `session.create_client("clouddirectory")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_clouddirectory.client import CloudDirectoryClient
 
-def get_clouddirectory_client() -> CloudDirectoryClient:
-    return Session().client("clouddirectory")
+session = get_session()
+async with session.create_client("clouddirectory") as client:
+    client: CloudDirectoryClient
 ```
 
 Boto3 documentation:
@@ -166,7 +169,7 @@ Exceptions:
 
 CloudDirectoryClient exceptions.
 
-Type annotations for `aiobotocore.create_client("clouddirectory").exceptions`
+Type annotations for `session.create_client("clouddirectory").exceptions`
 method.
 
 Boto3 documentation:
@@ -181,7 +184,7 @@ Returns [Exceptions](#exceptions).
 Adds a new Facet to an object.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").add_facet_to_object` method.
+`session.create_client("clouddirectory").add_facet_to_object` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.add_facet_to_object](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.add_facet_to_object)
@@ -211,7 +214,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Copies the input published schema, at the specified version, into the Directory
 with the same name and version as that of the published schema.
 
-Type annotations for `aiobotocore.create_client("clouddirectory").apply_schema`
+Type annotations for `session.create_client("clouddirectory").apply_schema`
 method.
 
 Boto3 documentation:
@@ -236,8 +239,8 @@ Returns a `Coroutine` for
 
 Attaches an existing object to another object.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").attach_object` method.
+Type annotations for `session.create_client("clouddirectory").attach_object`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.attach_object](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.attach_object)
@@ -265,8 +268,8 @@ Returns a `Coroutine` for
 
 Attaches a policy object to a regular object.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").attach_policy` method.
+Type annotations for `session.create_client("clouddirectory").attach_policy`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.attach_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.attach_policy)
@@ -292,8 +295,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Attaches the specified object to the specified index.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").attach_to_index` method.
+Type annotations for `session.create_client("clouddirectory").attach_to_index`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.attach_to_index](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.attach_to_index)
@@ -321,7 +324,7 @@ Returns a `Coroutine` for
 Attaches a typed link to a specified source and target object.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").attach_typed_link` method.
+`session.create_client("clouddirectory").attach_typed_link` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.attach_typed_link](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.attach_typed_link)
@@ -354,7 +357,7 @@ Returns a `Coroutine` for
 
 Performs all the read operations in a batch.
 
-Type annotations for `aiobotocore.create_client("clouddirectory").batch_read`
+Type annotations for `session.create_client("clouddirectory").batch_read`
 method.
 
 Boto3 documentation:
@@ -383,7 +386,7 @@ Returns a `Coroutine` for
 
 Performs all the write operations in a batch.
 
-Type annotations for `aiobotocore.create_client("clouddirectory").batch_write`
+Type annotations for `session.create_client("clouddirectory").batch_write`
 method.
 
 Boto3 documentation:
@@ -410,19 +413,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("clouddirectory").can_paginate`
+Type annotations for `session.create_client("clouddirectory").can_paginate`
 method.
 
 Boto3 documentation:
 [CloudDirectory.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_directory"></a>
 
@@ -430,8 +431,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates a Directory by copying the published schema into the directory.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").create_directory` method.
+Type annotations for `session.create_client("clouddirectory").create_directory`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.create_directory](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.create_directory)
@@ -455,7 +456,7 @@ Returns a `Coroutine` for
 
 Creates a new Facet in a schema.
 
-Type annotations for `aiobotocore.create_client("clouddirectory").create_facet`
+Type annotations for `session.create_client("clouddirectory").create_facet`
 method.
 
 Boto3 documentation:
@@ -483,7 +484,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates an index object.
 
-Type annotations for `aiobotocore.create_client("clouddirectory").create_index`
+Type annotations for `session.create_client("clouddirectory").create_index`
 method.
 
 Boto3 documentation:
@@ -514,8 +515,8 @@ Returns a `Coroutine` for
 
 Creates an object in a Directory.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").create_object` method.
+Type annotations for `session.create_client("clouddirectory").create_object`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.create_object](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.create_object)
@@ -546,8 +547,8 @@ Returns a `Coroutine` for
 
 Creates a new schema in a development state.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").create_schema` method.
+Type annotations for `session.create_client("clouddirectory").create_schema`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.create_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.create_schema)
@@ -571,7 +572,7 @@ Returns a `Coroutine` for
 Creates a TypedLinkFacet.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").create_typed_link_facet` method.
+`session.create_client("clouddirectory").create_typed_link_facet` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.create_typed_link_facet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.create_typed_link_facet)
@@ -596,8 +597,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a directory.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").delete_directory` method.
+Type annotations for `session.create_client("clouddirectory").delete_directory`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.delete_directory](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.delete_directory)
@@ -620,7 +621,7 @@ Returns a `Coroutine` for
 
 Deletes a given Facet.
 
-Type annotations for `aiobotocore.create_client("clouddirectory").delete_facet`
+Type annotations for `session.create_client("clouddirectory").delete_facet`
 method.
 
 Boto3 documentation:
@@ -644,8 +645,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an object and its associated attributes.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").delete_object` method.
+Type annotations for `session.create_client("clouddirectory").delete_object`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.delete_object](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.delete_object)
@@ -669,8 +670,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a given schema.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").delete_schema` method.
+Type annotations for `session.create_client("clouddirectory").delete_schema`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.delete_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.delete_schema)
@@ -694,7 +695,7 @@ Returns a `Coroutine` for
 Deletes a TypedLinkFacet.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").delete_typed_link_facet` method.
+`session.create_client("clouddirectory").delete_typed_link_facet` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.delete_typed_link_facet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.delete_typed_link_facet)
@@ -719,7 +720,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Detaches the specified object from the specified index.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").detach_from_index` method.
+`session.create_client("clouddirectory").detach_from_index` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.detach_from_index](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.detach_from_index)
@@ -746,8 +747,8 @@ Returns a `Coroutine` for
 
 Detaches a given object from the parent object.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").detach_object` method.
+Type annotations for `session.create_client("clouddirectory").detach_object`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.detach_object](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.detach_object)
@@ -773,8 +774,8 @@ Returns a `Coroutine` for
 
 Detaches a policy from an object.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").detach_policy` method.
+Type annotations for `session.create_client("clouddirectory").detach_policy`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.detach_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.detach_policy)
@@ -801,7 +802,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Detaches a typed link from a specified source and target object.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").detach_typed_link` method.
+`session.create_client("clouddirectory").detach_typed_link` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.detach_typed_link](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.detach_typed_link)
@@ -825,7 +826,7 @@ Keyword-only arguments:
 Disables the specified directory.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").disable_directory` method.
+`session.create_client("clouddirectory").disable_directory` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.disable_directory](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.disable_directory)
@@ -848,8 +849,8 @@ Returns a `Coroutine` for
 
 Enables the specified directory.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").enable_directory` method.
+Type annotations for `session.create_client("clouddirectory").enable_directory`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.enable_directory](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.enable_directory)
@@ -873,7 +874,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").generate_presigned_url` method.
+`session.create_client("clouddirectory").generate_presigned_url` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.generate_presigned_url)
@@ -897,8 +898,7 @@ Returns a `Coroutine` for `str`.
 Returns current applied schema version ARN, including the minor version in use.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_applied_schema_version`
-method.
+`session.create_client("clouddirectory").get_applied_schema_version` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.get_applied_schema_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.get_applied_schema_version)
@@ -922,8 +922,8 @@ Returns a `Coroutine` for
 
 Retrieves metadata about a directory.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").get_directory` method.
+Type annotations for `session.create_client("clouddirectory").get_directory`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.get_directory](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.get_directory)
@@ -947,7 +947,7 @@ Returns a `Coroutine` for
 Gets details of the Facet , such as facet name, attributes, Rule s, or
 `ObjectType`.
 
-Type annotations for `aiobotocore.create_client("clouddirectory").get_facet`
+Type annotations for `session.create_client("clouddirectory").get_facet`
 method.
 
 Boto3 documentation:
@@ -973,7 +973,7 @@ Returns a `Coroutine` for
 Retrieves attributes that are associated with a typed link.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_link_attributes` method.
+`session.create_client("clouddirectory").get_link_attributes` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.get_link_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.get_link_attributes)
@@ -1004,7 +1004,7 @@ Returns a `Coroutine` for
 Retrieves attributes within a facet that are associated with an object.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_object_attributes` method.
+`session.create_client("clouddirectory").get_object_attributes` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.get_object_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.get_object_attributes)
@@ -1036,7 +1036,7 @@ Returns a `Coroutine` for
 Retrieves metadata about an object.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_object_information` method.
+`session.create_client("clouddirectory").get_object_information` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.get_object_information](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.get_object_information)
@@ -1065,7 +1065,7 @@ Returns a `Coroutine` for
 Retrieves a JSON representation of the schema.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_schema_as_json` method.
+`session.create_client("clouddirectory").get_schema_as_json` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.get_schema_as_json](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.get_schema_as_json)
@@ -1090,7 +1090,7 @@ Returns a `Coroutine` for
 Returns the identity attribute order for a specific TypedLinkFacet.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").get_typed_link_facet_information`
+`session.create_client("clouddirectory").get_typed_link_facet_information`
 method.
 
 Boto3 documentation:
@@ -1117,7 +1117,7 @@ Returns a `Coroutine` for
 Lists schema major versions applied to a directory.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_applied_schema_arns` method.
+`session.create_client("clouddirectory").list_applied_schema_arns` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_applied_schema_arns](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_applied_schema_arns)
@@ -1145,7 +1145,7 @@ Returns a `Coroutine` for
 Lists indices attached to the specified object.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_attached_indices` method.
+`session.create_client("clouddirectory").list_attached_indices` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_attached_indices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_attached_indices)
@@ -1176,8 +1176,7 @@ Returns a `Coroutine` for
 Retrieves each Amazon Resource Name (ARN) of schemas in the development state.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_development_schema_arns`
-method.
+`session.create_client("clouddirectory").list_development_schema_arns` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_development_schema_arns](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_development_schema_arns)
@@ -1202,8 +1201,8 @@ Returns a `Coroutine` for
 
 Lists directories created within an account.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").list_directories` method.
+Type annotations for `session.create_client("clouddirectory").list_directories`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_directories](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_directories)
@@ -1229,7 +1228,7 @@ Returns a `Coroutine` for
 Retrieves attributes attached to the facet.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_facet_attributes` method.
+`session.create_client("clouddirectory").list_facet_attributes` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_facet_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_facet_attributes)
@@ -1256,8 +1255,8 @@ Returns a `Coroutine` for
 
 Retrieves the names of facets that exist in a schema.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").list_facet_names` method.
+Type annotations for `session.create_client("clouddirectory").list_facet_names`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_facet_names](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_facet_names)
@@ -1284,7 +1283,7 @@ Returns a paginated list of all the incoming TypedLinkSpecifier information for
 an object.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_incoming_typed_links` method.
+`session.create_client("clouddirectory").list_incoming_typed_links` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_incoming_typed_links](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_incoming_typed_links)
@@ -1318,7 +1317,7 @@ Returns a `Coroutine` for
 
 Lists objects attached to the specified index.
 
-Type annotations for `aiobotocore.create_client("clouddirectory").list_index`
+Type annotations for `session.create_client("clouddirectory").list_index`
 method.
 
 Boto3 documentation:
@@ -1351,7 +1350,7 @@ Returns a `Coroutine` for
 Lists the major version families of each managed schema.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_managed_schema_arns` method.
+`session.create_client("clouddirectory").list_managed_schema_arns` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_managed_schema_arns](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_managed_schema_arns)
@@ -1378,7 +1377,7 @@ Returns a `Coroutine` for
 Lists all attributes that are associated with an object.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_object_attributes` method.
+`session.create_client("clouddirectory").list_object_attributes` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_object_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_object_attributes)
@@ -1411,7 +1410,7 @@ Returns a paginated list of child objects that are associated with a given
 object.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_object_children` method.
+`session.create_client("clouddirectory").list_object_children` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_object_children](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_object_children)
@@ -1443,7 +1442,7 @@ Retrieves all available parent paths for any object type such as node, leaf
 node, policy node, and index node objects.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_object_parent_paths` method.
+`session.create_client("clouddirectory").list_object_parent_paths` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_object_parent_paths](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_object_parent_paths)
@@ -1473,7 +1472,7 @@ Lists parent objects that are associated with a given object in pagination
 fashion.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_object_parents` method.
+`session.create_client("clouddirectory").list_object_parents` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_object_parents](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_object_parents)
@@ -1505,7 +1504,7 @@ Returns a `Coroutine` for
 Returns policies attached to an object in pagination fashion.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_object_policies` method.
+`session.create_client("clouddirectory").list_object_policies` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_object_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_object_policies)
@@ -1537,7 +1536,7 @@ Returns a paginated list of all the outgoing TypedLinkSpecifier information for
 an object.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_outgoing_typed_links` method.
+`session.create_client("clouddirectory").list_outgoing_typed_links` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_outgoing_typed_links](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_outgoing_typed_links)
@@ -1572,7 +1571,7 @@ Returns a `Coroutine` for
 Returns all of the `ObjectIdentifiers` to which a given policy is attached.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_policy_attachments` method.
+`session.create_client("clouddirectory").list_policy_attachments` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_policy_attachments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_policy_attachments)
@@ -1603,8 +1602,7 @@ Returns a `Coroutine` for
 Lists the major version families of each published schema.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_published_schema_arns`
-method.
+`session.create_client("clouddirectory").list_published_schema_arns` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_published_schema_arns](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_published_schema_arns)
@@ -1631,7 +1629,7 @@ Returns a `Coroutine` for
 Returns tags for a resource.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_tags_for_resource` method.
+`session.create_client("clouddirectory").list_tags_for_resource` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_tags_for_resource)
@@ -1659,7 +1657,7 @@ Returns a paginated list of all attribute definitions for a particular
 TypedLinkFacet.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_typed_link_facet_attributes`
+`session.create_client("clouddirectory").list_typed_link_facet_attributes`
 method.
 
 Boto3 documentation:
@@ -1688,8 +1686,7 @@ Returns a `Coroutine` for
 Returns a paginated list of `TypedLink` facet names for a particular schema.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").list_typed_link_facet_names`
-method.
+`session.create_client("clouddirectory").list_typed_link_facet_names` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.list_typed_link_facet_names](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.list_typed_link_facet_names)
@@ -1715,8 +1712,8 @@ Returns a `Coroutine` for
 
 Lists all policies from the root of the Directory to the object specified.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").lookup_policy` method.
+Type annotations for `session.create_client("clouddirectory").lookup_policy`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.lookup_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.lookup_policy)
@@ -1744,8 +1741,8 @@ Returns a `Coroutine` for
 Publishes a development schema with a major version and a recommended minor
 version.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").publish_schema` method.
+Type annotations for `session.create_client("clouddirectory").publish_schema`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.publish_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.publish_schema)
@@ -1772,7 +1769,7 @@ Returns a `Coroutine` for
 Allows a schema to be updated using JSON upload.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").put_schema_from_json` method.
+`session.create_client("clouddirectory").put_schema_from_json` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.put_schema_from_json](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.put_schema_from_json)
@@ -1798,7 +1795,7 @@ Returns a `Coroutine` for
 Removes the specified facet from the specified object.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").remove_facet_from_object` method.
+`session.create_client("clouddirectory").remove_facet_from_object` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.remove_facet_from_object](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.remove_facet_from_object)
@@ -1825,7 +1822,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 An API operation for adding tags to a resource.
 
-Type annotations for `aiobotocore.create_client("clouddirectory").tag_resource`
+Type annotations for `session.create_client("clouddirectory").tag_resource`
 method.
 
 Boto3 documentation:
@@ -1849,8 +1846,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 An API operation for removing tags from a resource.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").untag_resource` method.
+Type annotations for `session.create_client("clouddirectory").untag_resource`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.untag_resource)
@@ -1873,7 +1870,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Does the following * Adds new `Attributes` , `Rules` , or `ObjectTypes` .
 
-Type annotations for `aiobotocore.create_client("clouddirectory").update_facet`
+Type annotations for `session.create_client("clouddirectory").update_facet`
 method.
 
 Boto3 documentation:
@@ -1901,7 +1898,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a given typed link’s attributes.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").update_link_attributes` method.
+`session.create_client("clouddirectory").update_link_attributes` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.update_link_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.update_link_attributes)
@@ -1931,7 +1928,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a given object's attributes.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").update_object_attributes` method.
+`session.create_client("clouddirectory").update_object_attributes` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.update_object_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.update_object_attributes)
@@ -1960,8 +1957,8 @@ Returns a `Coroutine` for
 
 Updates the schema name with a new name.
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").update_schema` method.
+Type annotations for `session.create_client("clouddirectory").update_schema`
+method.
 
 Boto3 documentation:
 [CloudDirectory.Client.update_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.update_schema)
@@ -1986,7 +1983,7 @@ Returns a `Coroutine` for
 Updates a TypedLinkFacet.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").update_typed_link_facet` method.
+`session.create_client("clouddirectory").update_typed_link_facet` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.update_typed_link_facet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.update_typed_link_facet)
@@ -2016,7 +2013,7 @@ Upgrades a single directory in-place using the `PublishedSchemaArn` with schema
 updates found in `MinorVersion`.
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").upgrade_applied_schema` method.
+`session.create_client("clouddirectory").upgrade_applied_schema` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.upgrade_applied_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.upgrade_applied_schema)
@@ -2044,7 +2041,7 @@ Upgrades a published schema under a new minor version revision using the
 current contents of `DevelopmentSchemaArn` .
 
 Type annotations for
-`aiobotocore.create_client("clouddirectory").upgrade_published_schema` method.
+`session.create_client("clouddirectory").upgrade_published_schema` method.
 
 Boto3 documentation:
 [CloudDirectory.Client.upgrade_published_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.upgrade_published_schema)
@@ -2065,13 +2062,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpgradePublishedSchemaResponseTypeDef](./type_defs.md#upgradepublishedschemaresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("clouddirectory").__aenter__`
+method.
+
+Boto3 documentation:
+[CloudDirectory.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CloudDirectoryClient](#clouddirectoryclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("clouddirectory").__aexit__`
+method.
+
+Boto3 documentation:
+[CloudDirectory.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/clouddirectory.html#CloudDirectory.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("clouddirectory").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("clouddirectory").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_applied_schema_arns")` ->
   [ListAppliedSchemaArnsPaginator](./paginators.md#listappliedschemaarnspaginator)

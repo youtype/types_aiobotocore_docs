@@ -26,17 +26,19 @@ type annotations stubs module
 ## ListAliasesPaginator
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_paginator("list_aliases")`.
+`session.create_client("lambda").get_paginator("list_aliases")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lambda.paginator import ListAliasesPaginator
 
-def get_list_aliases_paginator() -> ListAliasesPaginator:
-    return Session().create_client("lambda").get_paginator("list_aliases")
+session = get_session()
+async with session.create_client("lambda") as client:
+    client: LambdaClient
+    paginator: ListAliasesPaginator = client.get_paginator("list_aliases")
 ```
 
 Boto3 documentation:
@@ -57,17 +59,19 @@ Arguments for `ListAliasesPaginator.paginate` method:
 ## ListCodeSigningConfigsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_paginator("list_code_signing_configs")`.
+`session.create_client("lambda").get_paginator("list_code_signing_configs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lambda.paginator import ListCodeSigningConfigsPaginator
 
-def get_list_code_signing_configs_paginator() -> ListCodeSigningConfigsPaginator:
-    return Session().create_client("lambda").get_paginator("list_code_signing_configs")
+session = get_session()
+async with session.create_client("lambda") as client:
+    client: LambdaClient
+    paginator: ListCodeSigningConfigsPaginator = client.get_paginator("list_code_signing_configs")
 ```
 
 Boto3 documentation:
@@ -86,17 +90,19 @@ Arguments for `ListCodeSigningConfigsPaginator.paginate` method:
 ## ListEventSourceMappingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_paginator("list_event_source_mappings")`.
+`session.create_client("lambda").get_paginator("list_event_source_mappings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lambda.paginator import ListEventSourceMappingsPaginator
 
-def get_list_event_source_mappings_paginator() -> ListEventSourceMappingsPaginator:
-    return Session().create_client("lambda").get_paginator("list_event_source_mappings")
+session = get_session()
+async with session.create_client("lambda") as client:
+    client: LambdaClient
+    paginator: ListEventSourceMappingsPaginator = client.get_paginator("list_event_source_mappings")
 ```
 
 Boto3 documentation:
@@ -117,17 +123,19 @@ Arguments for `ListEventSourceMappingsPaginator.paginate` method:
 ## ListFunctionEventInvokeConfigsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_paginator("list_function_event_invoke_configs")`.
+`session.create_client("lambda").get_paginator("list_function_event_invoke_configs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lambda.paginator import ListFunctionEventInvokeConfigsPaginator
 
-def get_list_function_event_invoke_configs_paginator() -> ListFunctionEventInvokeConfigsPaginator:
-    return Session().create_client("lambda").get_paginator("list_function_event_invoke_configs")
+session = get_session()
+async with session.create_client("lambda") as client:
+    client: LambdaClient
+    paginator: ListFunctionEventInvokeConfigsPaginator = client.get_paginator("list_function_event_invoke_configs")
 ```
 
 Boto3 documentation:
@@ -147,17 +155,19 @@ Arguments for `ListFunctionEventInvokeConfigsPaginator.paginate` method:
 ## ListFunctionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_paginator("list_functions")`.
+`session.create_client("lambda").get_paginator("list_functions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lambda.paginator import ListFunctionsPaginator
 
-def get_list_functions_paginator() -> ListFunctionsPaginator:
-    return Session().create_client("lambda").get_paginator("list_functions")
+session = get_session()
+async with session.create_client("lambda") as client:
+    client: LambdaClient
+    paginator: ListFunctionsPaginator = client.get_paginator("list_functions")
 ```
 
 Boto3 documentation:
@@ -179,17 +189,19 @@ Arguments for `ListFunctionsPaginator.paginate` method:
 ## ListFunctionsByCodeSigningConfigPaginator
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_paginator("list_functions_by_code_signing_config")`.
+`session.create_client("lambda").get_paginator("list_functions_by_code_signing_config")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lambda.paginator import ListFunctionsByCodeSigningConfigPaginator
 
-def get_list_functions_by_code_signing_config_paginator() -> ListFunctionsByCodeSigningConfigPaginator:
-    return Session().create_client("lambda").get_paginator("list_functions_by_code_signing_config")
+session = get_session()
+async with session.create_client("lambda") as client:
+    client: LambdaClient
+    paginator: ListFunctionsByCodeSigningConfigPaginator = client.get_paginator("list_functions_by_code_signing_config")
 ```
 
 Boto3 documentation:
@@ -209,17 +221,19 @@ Arguments for `ListFunctionsByCodeSigningConfigPaginator.paginate` method:
 ## ListLayerVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_paginator("list_layer_versions")`.
+`session.create_client("lambda").get_paginator("list_layer_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lambda.paginator import ListLayerVersionsPaginator
 
-def get_list_layer_versions_paginator() -> ListLayerVersionsPaginator:
-    return Session().create_client("lambda").get_paginator("list_layer_versions")
+session = get_session()
+async with session.create_client("lambda") as client:
+    client: LambdaClient
+    paginator: ListLayerVersionsPaginator = client.get_paginator("list_layer_versions")
 ```
 
 Boto3 documentation:
@@ -241,17 +255,19 @@ Arguments for `ListLayerVersionsPaginator.paginate` method:
 ## ListLayersPaginator
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_paginator("list_layers")`.
+`session.create_client("lambda").get_paginator("list_layers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lambda.paginator import ListLayersPaginator
 
-def get_list_layers_paginator() -> ListLayersPaginator:
-    return Session().create_client("lambda").get_paginator("list_layers")
+session = get_session()
+async with session.create_client("lambda") as client:
+    client: LambdaClient
+    paginator: ListLayersPaginator = client.get_paginator("list_layers")
 ```
 
 Boto3 documentation:
@@ -272,17 +288,19 @@ Arguments for `ListLayersPaginator.paginate` method:
 ## ListProvisionedConcurrencyConfigsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_paginator("list_provisioned_concurrency_configs")`.
+`session.create_client("lambda").get_paginator("list_provisioned_concurrency_configs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lambda.paginator import ListProvisionedConcurrencyConfigsPaginator
 
-def get_list_provisioned_concurrency_configs_paginator() -> ListProvisionedConcurrencyConfigsPaginator:
-    return Session().create_client("lambda").get_paginator("list_provisioned_concurrency_configs")
+session = get_session()
+async with session.create_client("lambda") as client:
+    client: LambdaClient
+    paginator: ListProvisionedConcurrencyConfigsPaginator = client.get_paginator("list_provisioned_concurrency_configs")
 ```
 
 Boto3 documentation:
@@ -302,17 +320,19 @@ Arguments for `ListProvisionedConcurrencyConfigsPaginator.paginate` method:
 ## ListVersionsByFunctionPaginator
 
 Type annotations for
-`aiobotocore.create_client("lambda").get_paginator("list_versions_by_function")`.
+`session.create_client("lambda").get_paginator("list_versions_by_function")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lambda.paginator import ListVersionsByFunctionPaginator
 
-def get_list_versions_by_function_paginator() -> ListVersionsByFunctionPaginator:
-    return Session().create_client("lambda").get_paginator("list_versions_by_function")
+session = get_session()
+async with session.create_client("lambda") as client:
+    client: LambdaClient
+    paginator: ListVersionsByFunctionPaginator = client.get_paginator("list_versions_by_function")
 ```
 
 Boto3 documentation:

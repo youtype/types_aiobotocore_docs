@@ -20,7 +20,7 @@ type annotations stubs module
 ## CacheClusterAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_waiter("cache_cluster_available")`.
+`session.create_client("elasticache").get_waiter("cache_cluster_available")`.
 
 Can be used directly:
 
@@ -30,7 +30,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_elasticache.waiter import CacheClusterAvailableWaiter
 
 def get_cache_cluster_available_waiter() -> CacheClusterAvailableWaiter:
-    return Session().create_client("elasticache").get_waiter("cache_cluster_available")
+    return Session().client("elasticache").get_waiter("cache_cluster_available")
 ```
 
 Boto3 documentation:
@@ -50,7 +50,7 @@ Arguments for `CacheClusterAvailableWaiter.wait` method:
 ## CacheClusterDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_waiter("cache_cluster_deleted")`.
+`session.create_client("elasticache").get_waiter("cache_cluster_deleted")`.
 
 Can be used directly:
 
@@ -60,7 +60,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_elasticache.waiter import CacheClusterDeletedWaiter
 
 def get_cache_cluster_deleted_waiter() -> CacheClusterDeletedWaiter:
-    return Session().create_client("elasticache").get_waiter("cache_cluster_deleted")
+    return Session().client("elasticache").get_waiter("cache_cluster_deleted")
 ```
 
 Boto3 documentation:
@@ -80,7 +80,7 @@ Arguments for `CacheClusterDeletedWaiter.wait` method:
 ## ReplicationGroupAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_waiter("replication_group_available")`.
+`session.create_client("elasticache").get_waiter("replication_group_available")`.
 
 Can be used directly:
 
@@ -90,7 +90,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_elasticache.waiter import ReplicationGroupAvailableWaiter
 
 def get_replication_group_available_waiter() -> ReplicationGroupAvailableWaiter:
-    return Session().create_client("elasticache").get_waiter("replication_group_available")
+    return Session().client("elasticache").get_waiter("replication_group_available")
 ```
 
 Boto3 documentation:
@@ -108,7 +108,7 @@ Arguments for `ReplicationGroupAvailableWaiter.wait` method:
 ## ReplicationGroupDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("elasticache").get_waiter("replication_group_deleted")`.
+`session.create_client("elasticache").get_waiter("replication_group_deleted")`.
 
 Can be used directly:
 
@@ -118,7 +118,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_elasticache.waiter import ReplicationGroupDeletedWaiter
 
 def get_replication_group_deleted_waiter() -> ReplicationGroupDeletedWaiter:
-    return Session().create_client("elasticache").get_waiter("replication_group_deleted")
+    return Session().client("elasticache").get_waiter("replication_group_deleted")
 ```
 
 Boto3 documentation:

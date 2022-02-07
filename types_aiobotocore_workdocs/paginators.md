@@ -25,17 +25,19 @@ type annotations stubs module
 ## DescribeActivitiesPaginator
 
 Type annotations for
-`aiobotocore.create_client("workdocs").get_paginator("describe_activities")`.
+`session.create_client("workdocs").get_paginator("describe_activities")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workdocs.paginator import DescribeActivitiesPaginator
 
-def get_describe_activities_paginator() -> DescribeActivitiesPaginator:
-    return Session().create_client("workdocs").get_paginator("describe_activities")
+session = get_session()
+async with session.create_client("workdocs") as client:
+    client: WorkDocsClient
+    paginator: DescribeActivitiesPaginator = client.get_paginator("describe_activities")
 ```
 
 Boto3 documentation:
@@ -62,17 +64,19 @@ Arguments for `DescribeActivitiesPaginator.paginate` method:
 ## DescribeCommentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("workdocs").get_paginator("describe_comments")`.
+`session.create_client("workdocs").get_paginator("describe_comments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workdocs.paginator import DescribeCommentsPaginator
 
-def get_describe_comments_paginator() -> DescribeCommentsPaginator:
-    return Session().create_client("workdocs").get_paginator("describe_comments")
+session = get_session()
+async with session.create_client("workdocs") as client:
+    client: WorkDocsClient
+    paginator: DescribeCommentsPaginator = client.get_paginator("describe_comments")
 ```
 
 Boto3 documentation:
@@ -94,17 +98,19 @@ Arguments for `DescribeCommentsPaginator.paginate` method:
 ## DescribeDocumentVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("workdocs").get_paginator("describe_document_versions")`.
+`session.create_client("workdocs").get_paginator("describe_document_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workdocs.paginator import DescribeDocumentVersionsPaginator
 
-def get_describe_document_versions_paginator() -> DescribeDocumentVersionsPaginator:
-    return Session().create_client("workdocs").get_paginator("describe_document_versions")
+session = get_session()
+async with session.create_client("workdocs") as client:
+    client: WorkDocsClient
+    paginator: DescribeDocumentVersionsPaginator = client.get_paginator("describe_document_versions")
 ```
 
 Boto3 documentation:
@@ -127,17 +133,19 @@ Arguments for `DescribeDocumentVersionsPaginator.paginate` method:
 ## DescribeFolderContentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("workdocs").get_paginator("describe_folder_contents")`.
+`session.create_client("workdocs").get_paginator("describe_folder_contents")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workdocs.paginator import DescribeFolderContentsPaginator
 
-def get_describe_folder_contents_paginator() -> DescribeFolderContentsPaginator:
-    return Session().create_client("workdocs").get_paginator("describe_folder_contents")
+session = get_session()
+async with session.create_client("workdocs") as client:
+    client: WorkDocsClient
+    paginator: DescribeFolderContentsPaginator = client.get_paginator("describe_folder_contents")
 ```
 
 Boto3 documentation:
@@ -162,17 +170,19 @@ Arguments for `DescribeFolderContentsPaginator.paginate` method:
 ## DescribeGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("workdocs").get_paginator("describe_groups")`.
+`session.create_client("workdocs").get_paginator("describe_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workdocs.paginator import DescribeGroupsPaginator
 
-def get_describe_groups_paginator() -> DescribeGroupsPaginator:
-    return Session().create_client("workdocs").get_paginator("describe_groups")
+session = get_session()
+async with session.create_client("workdocs") as client:
+    client: WorkDocsClient
+    paginator: DescribeGroupsPaginator = client.get_paginator("describe_groups")
 ```
 
 Boto3 documentation:
@@ -194,17 +204,19 @@ Arguments for `DescribeGroupsPaginator.paginate` method:
 ## DescribeNotificationSubscriptionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("workdocs").get_paginator("describe_notification_subscriptions")`.
+`session.create_client("workdocs").get_paginator("describe_notification_subscriptions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workdocs.paginator import DescribeNotificationSubscriptionsPaginator
 
-def get_describe_notification_subscriptions_paginator() -> DescribeNotificationSubscriptionsPaginator:
-    return Session().create_client("workdocs").get_paginator("describe_notification_subscriptions")
+session = get_session()
+async with session.create_client("workdocs") as client:
+    client: WorkDocsClient
+    paginator: DescribeNotificationSubscriptionsPaginator = client.get_paginator("describe_notification_subscriptions")
 ```
 
 Boto3 documentation:
@@ -224,17 +236,19 @@ Arguments for `DescribeNotificationSubscriptionsPaginator.paginate` method:
 ## DescribeResourcePermissionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("workdocs").get_paginator("describe_resource_permissions")`.
+`session.create_client("workdocs").get_paginator("describe_resource_permissions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workdocs.paginator import DescribeResourcePermissionsPaginator
 
-def get_describe_resource_permissions_paginator() -> DescribeResourcePermissionsPaginator:
-    return Session().create_client("workdocs").get_paginator("describe_resource_permissions")
+session = get_session()
+async with session.create_client("workdocs") as client:
+    client: WorkDocsClient
+    paginator: DescribeResourcePermissionsPaginator = client.get_paginator("describe_resource_permissions")
 ```
 
 Boto3 documentation:
@@ -256,17 +270,19 @@ Arguments for `DescribeResourcePermissionsPaginator.paginate` method:
 ## DescribeRootFoldersPaginator
 
 Type annotations for
-`aiobotocore.create_client("workdocs").get_paginator("describe_root_folders")`.
+`session.create_client("workdocs").get_paginator("describe_root_folders")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workdocs.paginator import DescribeRootFoldersPaginator
 
-def get_describe_root_folders_paginator() -> DescribeRootFoldersPaginator:
-    return Session().create_client("workdocs").get_paginator("describe_root_folders")
+session = get_session()
+async with session.create_client("workdocs") as client:
+    client: WorkDocsClient
+    paginator: DescribeRootFoldersPaginator = client.get_paginator("describe_root_folders")
 ```
 
 Boto3 documentation:
@@ -286,17 +302,19 @@ Arguments for `DescribeRootFoldersPaginator.paginate` method:
 ## DescribeUsersPaginator
 
 Type annotations for
-`aiobotocore.create_client("workdocs").get_paginator("describe_users")`.
+`session.create_client("workdocs").get_paginator("describe_users")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workdocs.paginator import DescribeUsersPaginator
 
-def get_describe_users_paginator() -> DescribeUsersPaginator:
-    return Session().create_client("workdocs").get_paginator("describe_users")
+session = get_session()
+async with session.create_client("workdocs") as client:
+    client: WorkDocsClient
+    paginator: DescribeUsersPaginator = client.get_paginator("describe_users")
 ```
 
 Boto3 documentation:

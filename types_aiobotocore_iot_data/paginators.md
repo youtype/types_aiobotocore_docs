@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListRetainedMessagesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iot-data").get_paginator("list_retained_messages")`.
+`session.create_client("iot-data").get_paginator("list_retained_messages")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iot_data.paginator import ListRetainedMessagesPaginator
 
-def get_list_retained_messages_paginator() -> ListRetainedMessagesPaginator:
-    return Session().create_client("iot-data").get_paginator("list_retained_messages")
+session = get_session()
+async with session.create_client("iot-data") as client:
+    client: IoTDataPlaneClient
+    paginator: ListRetainedMessagesPaginator = client.get_paginator("list_retained_messages")
 ```
 
 Boto3 documentation:

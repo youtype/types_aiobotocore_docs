@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[proton]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[proton]'
+
+# standalone installation
 pip install types-aiobotocore-proton
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-proton
 
 ## ProtonClient
 
-Type annotations for `aiobotocore.create_client("proton")` as
+Type annotations for `session.create_client("proton")` as
 [ProtonClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_proton.client import ProtonClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_environment_account_connection](./client.md#accept_environment_account_connection)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_environment_deployment](./client.md#cancel_environment_deployment)
@@ -141,7 +147,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_proton.paginators import ListEnvironmentAccountConnectionsPaginator, ...
+from types_aiobotocore_proton.paginator import ListEnvironmentAccountConnectionsPaginator, ...
 ```
 
 - [ListEnvironmentAccountConnectionsPaginator](./paginators.md#listenvironmentaccountconnectionspaginator)
@@ -172,7 +178,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_proton.waiters import EnvironmentDeployedWaiter, ...
+from types_aiobotocore_proton.waiter import EnvironmentDeployedWaiter, ...
 ```
 
 - [EnvironmentDeployedWaiter](./waiters.md#environmentdeployedwaiter)

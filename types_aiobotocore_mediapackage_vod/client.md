@@ -33,22 +33,25 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_packaging_group](#update_packaging_group)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="mediapackagevodclient"></a>
 
 ## MediaPackageVodClient
 
-Type annotations for `aiobotocore.create_client("mediapackage-vod")`
+Type annotations for `session.create_client("mediapackage-vod")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_mediapackage_vod.client import MediaPackageVodClient
 
-def get_mediapackage-vod_client() -> MediaPackageVodClient:
-    return Session().client("mediapackage-vod")
+session = get_session()
+async with session.create_client("mediapackage-vod") as client:
+    client: MediaPackageVodClient
 ```
 
 Boto3 documentation:
@@ -88,7 +91,7 @@ Exceptions:
 
 MediaPackageVodClient exceptions.
 
-Type annotations for `aiobotocore.create_client("mediapackage-vod").exceptions`
+Type annotations for `session.create_client("mediapackage-vod").exceptions`
 method.
 
 Boto3 documentation:
@@ -102,19 +105,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("mediapackage-vod").can_paginate` method.
+Type annotations for `session.create_client("mediapackage-vod").can_paginate`
+method.
 
 Boto3 documentation:
 [MediaPackageVod.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="configure_logs"></a>
 
@@ -125,8 +126,8 @@ also: \[AWS API
 Documentation\](https://docs.aws.amazon.com/goto/WebAPI/mediapackage-
 vod-2018-11-07/ConfigureLogs).
 
-Type annotations for
-`aiobotocore.create_client("mediapackage-vod").configure_logs` method.
+Type annotations for `session.create_client("mediapackage-vod").configure_logs`
+method.
 
 Boto3 documentation:
 [MediaPackageVod.Client.configure_logs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.configure_logs)
@@ -151,8 +152,8 @@ Returns a `Coroutine` for
 
 Creates a new MediaPackage VOD Asset resource.
 
-Type annotations for
-`aiobotocore.create_client("mediapackage-vod").create_asset` method.
+Type annotations for `session.create_client("mediapackage-vod").create_asset`
+method.
 
 Boto3 documentation:
 [MediaPackageVod.Client.create_asset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.create_asset)
@@ -181,7 +182,7 @@ Returns a `Coroutine` for
 Creates a new MediaPackage VOD PackagingConfiguration resource.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage-vod").create_packaging_configuration`
+`session.create_client("mediapackage-vod").create_packaging_configuration`
 method.
 
 Boto3 documentation:
@@ -213,7 +214,7 @@ Returns a `Coroutine` for
 Creates a new MediaPackage VOD PackagingGroup resource.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage-vod").create_packaging_group` method.
+`session.create_client("mediapackage-vod").create_packaging_group` method.
 
 Boto3 documentation:
 [MediaPackageVod.Client.create_packaging_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.create_packaging_group)
@@ -241,8 +242,8 @@ Returns a `Coroutine` for
 
 Deletes an existing MediaPackage VOD Asset resource.
 
-Type annotations for
-`aiobotocore.create_client("mediapackage-vod").delete_asset` method.
+Type annotations for `session.create_client("mediapackage-vod").delete_asset`
+method.
 
 Boto3 documentation:
 [MediaPackageVod.Client.delete_asset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.delete_asset)
@@ -265,7 +266,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a MediaPackage VOD PackagingConfiguration resource.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage-vod").delete_packaging_configuration`
+`session.create_client("mediapackage-vod").delete_packaging_configuration`
 method.
 
 Boto3 documentation:
@@ -290,7 +291,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a MediaPackage VOD PackagingGroup resource.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage-vod").delete_packaging_group` method.
+`session.create_client("mediapackage-vod").delete_packaging_group` method.
 
 Boto3 documentation:
 [MediaPackageVod.Client.delete_packaging_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.delete_packaging_group)
@@ -313,8 +314,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Returns a description of a MediaPackage VOD Asset resource.
 
-Type annotations for
-`aiobotocore.create_client("mediapackage-vod").describe_asset` method.
+Type annotations for `session.create_client("mediapackage-vod").describe_asset`
+method.
 
 Boto3 documentation:
 [MediaPackageVod.Client.describe_asset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.describe_asset)
@@ -338,7 +339,7 @@ Returns a `Coroutine` for
 Returns a description of a MediaPackage VOD PackagingConfiguration resource.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage-vod").describe_packaging_configuration`
+`session.create_client("mediapackage-vod").describe_packaging_configuration`
 method.
 
 Boto3 documentation:
@@ -364,8 +365,7 @@ Returns a `Coroutine` for
 Returns a description of a MediaPackage VOD PackagingGroup resource.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage-vod").describe_packaging_group`
-method.
+`session.create_client("mediapackage-vod").describe_packaging_group` method.
 
 Boto3 documentation:
 [MediaPackageVod.Client.describe_packaging_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.describe_packaging_group)
@@ -390,7 +390,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage-vod").generate_presigned_url` method.
+`session.create_client("mediapackage-vod").generate_presigned_url` method.
 
 Boto3 documentation:
 [MediaPackageVod.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.generate_presigned_url)
@@ -413,8 +413,8 @@ Returns a `Coroutine` for `str`.
 
 Returns a collection of MediaPackage VOD Asset resources.
 
-Type annotations for
-`aiobotocore.create_client("mediapackage-vod").list_assets` method.
+Type annotations for `session.create_client("mediapackage-vod").list_assets`
+method.
 
 Boto3 documentation:
 [MediaPackageVod.Client.list_assets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.list_assets)
@@ -440,7 +440,7 @@ Returns a `Coroutine` for
 Returns a collection of MediaPackage VOD PackagingConfiguration resources.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage-vod").list_packaging_configurations`
+`session.create_client("mediapackage-vod").list_packaging_configurations`
 method.
 
 Boto3 documentation:
@@ -468,7 +468,7 @@ Returns a `Coroutine` for
 Returns a collection of MediaPackage VOD PackagingGroup resources.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage-vod").list_packaging_groups` method.
+`session.create_client("mediapackage-vod").list_packaging_groups` method.
 
 Boto3 documentation:
 [MediaPackageVod.Client.list_packaging_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.list_packaging_groups)
@@ -494,7 +494,7 @@ Returns a `Coroutine` for
 Returns a list of the tags assigned to the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage-vod").list_tags_for_resource` method.
+`session.create_client("mediapackage-vod").list_tags_for_resource` method.
 
 Boto3 documentation:
 [MediaPackageVod.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.list_tags_for_resource)
@@ -518,8 +518,8 @@ Returns a `Coroutine` for
 
 Adds tags to the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("mediapackage-vod").tag_resource` method.
+Type annotations for `session.create_client("mediapackage-vod").tag_resource`
+method.
 
 Boto3 documentation:
 [MediaPackageVod.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.tag_resource)
@@ -540,8 +540,8 @@ Keyword-only arguments:
 
 Removes tags from the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("mediapackage-vod").untag_resource` method.
+Type annotations for `session.create_client("mediapackage-vod").untag_resource`
+method.
 
 Boto3 documentation:
 [MediaPackageVod.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.untag_resource)
@@ -563,7 +563,7 @@ Keyword-only arguments:
 Updates a specific packaging group.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage-vod").update_packaging_group` method.
+`session.create_client("mediapackage-vod").update_packaging_group` method.
 
 Boto3 documentation:
 [MediaPackageVod.Client.update_packaging_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.update_packaging_group)
@@ -582,13 +582,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdatePackagingGroupResponseTypeDef](./type_defs.md#updatepackaginggroupresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("mediapackage-vod").__aenter__`
+method.
+
+Boto3 documentation:
+[MediaPackageVod.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [MediaPackageVodClient](#mediapackagevodclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("mediapackage-vod").__aexit__`
+method.
+
+Boto3 documentation:
+[MediaPackageVod.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage-vod.html#MediaPackageVod.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("mediapackage-vod").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("mediapackage-vod").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_assets")` ->
   [ListAssetsPaginator](./paginators.md#listassetspaginator)

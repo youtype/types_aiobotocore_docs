@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListAccessPointsForObjectLambdaPaginator
 
 Type annotations for
-`aiobotocore.create_client("s3control").get_paginator("list_access_points_for_object_lambda")`.
+`session.create_client("s3control").get_paginator("list_access_points_for_object_lambda")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_s3control.paginator import ListAccessPointsForObjectLambdaPaginator
 
-def get_list_access_points_for_object_lambda_paginator() -> ListAccessPointsForObjectLambdaPaginator:
-    return Session().create_client("s3control").get_paginator("list_access_points_for_object_lambda")
+session = get_session()
+async with session.create_client("s3control") as client:
+    client: S3ControlClient
+    paginator: ListAccessPointsForObjectLambdaPaginator = client.get_paginator("list_access_points_for_object_lambda")
 ```
 
 Boto3 documentation:

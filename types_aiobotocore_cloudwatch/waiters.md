@@ -18,7 +18,7 @@ type annotations stubs module
 ## AlarmExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").get_waiter("alarm_exists")`.
+`session.create_client("cloudwatch").get_waiter("alarm_exists")`.
 
 Can be used directly:
 
@@ -28,7 +28,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_cloudwatch.waiter import AlarmExistsWaiter
 
 def get_alarm_exists_waiter() -> AlarmExistsWaiter:
-    return Session().create_client("cloudwatch").get_waiter("alarm_exists")
+    return Session().client("cloudwatch").get_waiter("alarm_exists")
 ```
 
 Boto3 documentation:
@@ -52,7 +52,7 @@ Arguments for `AlarmExistsWaiter.wait` method:
 ## CompositeAlarmExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").get_waiter("composite_alarm_exists")`.
+`session.create_client("cloudwatch").get_waiter("composite_alarm_exists")`.
 
 Can be used directly:
 
@@ -62,7 +62,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_cloudwatch.waiter import CompositeAlarmExistsWaiter
 
 def get_composite_alarm_exists_waiter() -> CompositeAlarmExistsWaiter:
-    return Session().create_client("cloudwatch").get_waiter("composite_alarm_exists")
+    return Session().client("cloudwatch").get_waiter("composite_alarm_exists")
 ```
 
 Boto3 documentation:

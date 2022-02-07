@@ -79,22 +79,25 @@ type annotations stubs module
     - [update_direct_connect_gateway_association](#update_direct_connect_gateway_association)
     - [update_lag](#update_lag)
     - [update_virtual_interface_attributes](#update_virtual_interface_attributes)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="directconnectclient"></a>
 
 ## DirectConnectClient
 
-Type annotations for `aiobotocore.create_client("directconnect")`
+Type annotations for `session.create_client("directconnect")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_directconnect.client import DirectConnectClient
 
-def get_directconnect_client() -> DirectConnectClient:
-    return Session().client("directconnect")
+session = get_session()
+async with session.create_client("directconnect") as client:
+    client: DirectConnectClient
 ```
 
 Boto3 documentation:
@@ -132,7 +135,7 @@ Exceptions:
 
 DirectConnectClient exceptions.
 
-Type annotations for `aiobotocore.create_client("directconnect").exceptions`
+Type annotations for `session.create_client("directconnect").exceptions`
 method.
 
 Boto3 documentation:
@@ -148,7 +151,7 @@ Accepts a proposal request to attach a virtual private gateway or transit
 gateway to a Direct Connect gateway.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").accept_direct_connect_gateway_association_proposal`
+`session.create_client("directconnect").accept_direct_connect_gateway_association_proposal`
 method.
 
 Boto3 documentation:
@@ -179,7 +182,7 @@ Returns a `Coroutine` for
 Deprecated.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").allocate_connection_on_interconnect`
+`session.create_client("directconnect").allocate_connection_on_interconnect`
 method.
 
 Boto3 documentation:
@@ -210,7 +213,7 @@ Creates a hosted connection on the specified interconnect or a link aggregation
 group (LAG) of interconnects.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").allocate_hosted_connection` method.
+`session.create_client("directconnect").allocate_hosted_connection` method.
 
 Boto3 documentation:
 [DirectConnect.Client.allocate_hosted_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.allocate_hosted_connection)
@@ -241,7 +244,7 @@ Provisions a private virtual interface to be owned by the specified Amazon Web
 Services account.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").allocate_private_virtual_interface`
+`session.create_client("directconnect").allocate_private_virtual_interface`
 method.
 
 Boto3 documentation:
@@ -272,7 +275,7 @@ Provisions a public virtual interface to be owned by the specified Amazon Web
 Services account.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").allocate_public_virtual_interface`
+`session.create_client("directconnect").allocate_public_virtual_interface`
 method.
 
 Boto3 documentation:
@@ -303,7 +306,7 @@ Provisions a transit virtual interface to be owned by the specified Amazon Web
 Services account.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").allocate_transit_virtual_interface`
+`session.create_client("directconnect").allocate_transit_virtual_interface`
 method.
 
 Boto3 documentation:
@@ -333,8 +336,7 @@ Returns a `Coroutine` for
 Associates an existing connection with a link aggregation group (LAG).
 
 Type annotations for
-`aiobotocore.create_client("directconnect").associate_connection_with_lag`
-method.
+`session.create_client("directconnect").associate_connection_with_lag` method.
 
 Boto3 documentation:
 [DirectConnect.Client.associate_connection_with_lag](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.associate_connection_with_lag)
@@ -361,8 +363,7 @@ Associates a hosted connection and its virtual interfaces with a link
 aggregation group (LAG) or interconnect.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").associate_hosted_connection`
-method.
+`session.create_client("directconnect").associate_hosted_connection` method.
 
 Boto3 documentation:
 [DirectConnect.Client.associate_hosted_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.associate_hosted_connection)
@@ -389,7 +390,7 @@ Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity
 Association Key (CAK) pair with an Direct Connect dedicated connection.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").associate_mac_sec_key` method.
+`session.create_client("directconnect").associate_mac_sec_key` method.
 
 Boto3 documentation:
 [DirectConnect.Client.associate_mac_sec_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.associate_mac_sec_key)
@@ -418,8 +419,7 @@ Associates a virtual interface with a specified link aggregation group (LAG) or
 connection.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").associate_virtual_interface`
-method.
+`session.create_client("directconnect").associate_virtual_interface` method.
 
 Boto3 documentation:
 [DirectConnect.Client.associate_virtual_interface](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.associate_virtual_interface)
@@ -444,19 +444,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("directconnect").can_paginate`
+Type annotations for `session.create_client("directconnect").can_paginate`
 method.
 
 Boto3 documentation:
 [DirectConnect.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="confirm_connection"></a>
 
@@ -465,7 +463,7 @@ Returns a `Coroutine` for `bool`.
 Confirms the creation of the specified hosted connection on an interconnect.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").confirm_connection` method.
+`session.create_client("directconnect").confirm_connection` method.
 
 Boto3 documentation:
 [DirectConnect.Client.confirm_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.confirm_connection)
@@ -491,7 +489,7 @@ The confirmation of the terms of agreement when creating the connection/link
 aggregation group (LAG).
 
 Type annotations for
-`aiobotocore.create_client("directconnect").confirm_customer_agreement` method.
+`session.create_client("directconnect").confirm_customer_agreement` method.
 
 Boto3 documentation:
 [DirectConnect.Client.confirm_customer_agreement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.confirm_customer_agreement)
@@ -517,7 +515,7 @@ Accepts ownership of a private virtual interface created by another Amazon Web
 Services account.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").confirm_private_virtual_interface`
+`session.create_client("directconnect").confirm_private_virtual_interface`
 method.
 
 Boto3 documentation:
@@ -546,7 +544,7 @@ Accepts ownership of a public virtual interface created by another Amazon Web
 Services account.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").confirm_public_virtual_interface`
+`session.create_client("directconnect").confirm_public_virtual_interface`
 method.
 
 Boto3 documentation:
@@ -573,7 +571,7 @@ Accepts ownership of a transit virtual interface created by another Amazon Web
 Services account.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").confirm_transit_virtual_interface`
+`session.create_client("directconnect").confirm_transit_virtual_interface`
 method.
 
 Boto3 documentation:
@@ -599,8 +597,8 @@ Returns a `Coroutine` for
 
 Creates a BGP peer on the specified virtual interface.
 
-Type annotations for
-`aiobotocore.create_client("directconnect").create_bgp_peer` method.
+Type annotations for `session.create_client("directconnect").create_bgp_peer`
+method.
 
 Boto3 documentation:
 [DirectConnect.Client.create_bgp_peer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.create_bgp_peer)
@@ -625,8 +623,8 @@ Returns a `Coroutine` for
 Creates a connection between a customer network and a specific Direct Connect
 location.
 
-Type annotations for
-`aiobotocore.create_client("directconnect").create_connection` method.
+Type annotations for `session.create_client("directconnect").create_connection`
+method.
 
 Boto3 documentation:
 [DirectConnect.Client.create_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.create_connection)
@@ -657,8 +655,7 @@ Creates a Direct Connect gateway, which is an intermediate object that enables
 you to connect a set of virtual interfaces and virtual private gateways.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").create_direct_connect_gateway`
-method.
+`session.create_client("directconnect").create_direct_connect_gateway` method.
 
 Boto3 documentation:
 [DirectConnect.Client.create_direct_connect_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.create_direct_connect_gateway)
@@ -685,7 +682,7 @@ Creates an association between a Direct Connect gateway and a virtual private
 gateway.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").create_direct_connect_gateway_association`
+`session.create_client("directconnect").create_direct_connect_gateway_association`
 method.
 
 Boto3 documentation:
@@ -716,7 +713,7 @@ Creates a proposal to associate the specified virtual private gateway or
 transit gateway with the specified Direct Connect gateway.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").create_direct_connect_gateway_association_proposal`
+`session.create_client("directconnect").create_direct_connect_gateway_association_proposal`
 method.
 
 Boto3 documentation:
@@ -750,7 +747,7 @@ Creates an interconnect between an Direct Connect Partner's network and a
 specific Direct Connect location.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").create_interconnect` method.
+`session.create_client("directconnect").create_interconnect` method.
 
 Boto3 documentation:
 [DirectConnect.Client.create_interconnect](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.create_interconnect)
@@ -781,7 +778,7 @@ Creates a link aggregation group (LAG) with the specified number of bundled
 physical dedicated connections between the customer network and a specific
 Direct Connect location.
 
-Type annotations for `aiobotocore.create_client("directconnect").create_lag`
+Type annotations for `session.create_client("directconnect").create_lag`
 method.
 
 Boto3 documentation:
@@ -814,7 +811,7 @@ Returns a `Coroutine` for
 Creates a private virtual interface.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").create_private_virtual_interface`
+`session.create_client("directconnect").create_private_virtual_interface`
 method.
 
 Boto3 documentation:
@@ -843,7 +840,7 @@ Returns a `Coroutine` for
 Creates a public virtual interface.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").create_public_virtual_interface`
+`session.create_client("directconnect").create_public_virtual_interface`
 method.
 
 Boto3 documentation:
@@ -872,7 +869,7 @@ Returns a `Coroutine` for
 Creates a transit virtual interface.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").create_transit_virtual_interface`
+`session.create_client("directconnect").create_transit_virtual_interface`
 method.
 
 Boto3 documentation:
@@ -901,8 +898,8 @@ Returns a `Coroutine` for
 Deletes the specified BGP peer on the specified virtual interface with the
 specified customer address and ASN.
 
-Type annotations for
-`aiobotocore.create_client("directconnect").delete_bgp_peer` method.
+Type annotations for `session.create_client("directconnect").delete_bgp_peer`
+method.
 
 Boto3 documentation:
 [DirectConnect.Client.delete_bgp_peer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.delete_bgp_peer)
@@ -928,8 +925,8 @@ Returns a `Coroutine` for
 
 Deletes the specified connection.
 
-Type annotations for
-`aiobotocore.create_client("directconnect").delete_connection` method.
+Type annotations for `session.create_client("directconnect").delete_connection`
+method.
 
 Boto3 documentation:
 [DirectConnect.Client.delete_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.delete_connection)
@@ -953,8 +950,7 @@ Returns a `Coroutine` for
 Deletes the specified Direct Connect gateway.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").delete_direct_connect_gateway`
-method.
+`session.create_client("directconnect").delete_direct_connect_gateway` method.
 
 Boto3 documentation:
 [DirectConnect.Client.delete_direct_connect_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.delete_direct_connect_gateway)
@@ -980,7 +976,7 @@ Deletes the association between the specified Direct Connect gateway and
 virtual private gateway.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").delete_direct_connect_gateway_association`
+`session.create_client("directconnect").delete_direct_connect_gateway_association`
 method.
 
 Boto3 documentation:
@@ -1009,7 +1005,7 @@ Deletes the association proposal request between the specified Direct Connect
 gateway and virtual private gateway or transit gateway.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").delete_direct_connect_gateway_association_proposal`
+`session.create_client("directconnect").delete_direct_connect_gateway_association_proposal`
 method.
 
 Boto3 documentation:
@@ -1036,7 +1032,7 @@ Returns a `Coroutine` for
 Deletes the specified interconnect.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").delete_interconnect` method.
+`session.create_client("directconnect").delete_interconnect` method.
 
 Boto3 documentation:
 [DirectConnect.Client.delete_interconnect](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.delete_interconnect)
@@ -1060,7 +1056,7 @@ Returns a `Coroutine` for
 
 Deletes the specified link aggregation group (LAG).
 
-Type annotations for `aiobotocore.create_client("directconnect").delete_lag`
+Type annotations for `session.create_client("directconnect").delete_lag`
 method.
 
 Boto3 documentation:
@@ -1085,7 +1081,7 @@ Returns a `Coroutine` for
 Deletes a virtual interface.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").delete_virtual_interface` method.
+`session.create_client("directconnect").delete_virtual_interface` method.
 
 Boto3 documentation:
 [DirectConnect.Client.delete_virtual_interface](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.delete_virtual_interface)
@@ -1110,7 +1106,7 @@ Returns a `Coroutine` for
 Deprecated.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").describe_connection_loa` method.
+`session.create_client("directconnect").describe_connection_loa` method.
 
 Boto3 documentation:
 [DirectConnect.Client.describe_connection_loa](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.describe_connection_loa)
@@ -1138,7 +1134,7 @@ Returns a `Coroutine` for
 Displays the specified connection or all connections in this Region.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").describe_connections` method.
+`session.create_client("directconnect").describe_connections` method.
 
 Boto3 documentation:
 [DirectConnect.Client.describe_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.describe_connections)
@@ -1163,7 +1159,7 @@ Returns a `Coroutine` for
 Deprecated.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").describe_connections_on_interconnect`
+`session.create_client("directconnect").describe_connections_on_interconnect`
 method.
 
 Boto3 documentation:
@@ -1190,7 +1186,7 @@ Get and view a list of customer agreements, along with their signed status and
 whether the customer is an NNIPartner, NNIPartnerV2, or a nonPartner.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").describe_customer_metadata` method.
+`session.create_client("directconnect").describe_customer_metadata` method.
 
 Boto3 documentation:
 [DirectConnect.Client.describe_customer_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.describe_customer_metadata)
@@ -1209,7 +1205,7 @@ Describes one or more association proposals for connection between a virtual
 private gateway or transit gateway and a Direct Connect gateway.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").describe_direct_connect_gateway_association_proposals`
+`session.create_client("directconnect").describe_direct_connect_gateway_association_proposals`
 method.
 
 Boto3 documentation:
@@ -1241,7 +1237,7 @@ Lists the associations between your Direct Connect gateways and virtual private
 gateways and transit gateways.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").describe_direct_connect_gateway_associations`
+`session.create_client("directconnect").describe_direct_connect_gateway_associations`
 method.
 
 Boto3 documentation:
@@ -1274,7 +1270,7 @@ Lists the attachments between your Direct Connect gateways and virtual
 interfaces.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").describe_direct_connect_gateway_attachments`
+`session.create_client("directconnect").describe_direct_connect_gateway_attachments`
 method.
 
 Boto3 documentation:
@@ -1305,7 +1301,7 @@ Lists all your Direct Connect gateways or only the specified Direct Connect
 gateway.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").describe_direct_connect_gateways`
+`session.create_client("directconnect").describe_direct_connect_gateways`
 method.
 
 Boto3 documentation:
@@ -1334,8 +1330,7 @@ Lists the hosted connections that have been provisioned on the specified
 interconnect or link aggregation group (LAG).
 
 Type annotations for
-`aiobotocore.create_client("directconnect").describe_hosted_connections`
-method.
+`session.create_client("directconnect").describe_hosted_connections` method.
 
 Boto3 documentation:
 [DirectConnect.Client.describe_hosted_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.describe_hosted_connections)
@@ -1360,7 +1355,7 @@ Returns a `Coroutine` for
 Deprecated.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").describe_interconnect_loa` method.
+`session.create_client("directconnect").describe_interconnect_loa` method.
 
 Boto3 documentation:
 [DirectConnect.Client.describe_interconnect_loa](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.describe_interconnect_loa)
@@ -1389,7 +1384,7 @@ Lists the interconnects owned by the Amazon Web Services account or only the
 specified interconnect.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").describe_interconnects` method.
+`session.create_client("directconnect").describe_interconnects` method.
 
 Boto3 documentation:
 [DirectConnect.Client.describe_interconnects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.describe_interconnects)
@@ -1413,7 +1408,7 @@ Returns a `Coroutine` for
 
 Describes all your link aggregation groups (LAG) or the specified LAG.
 
-Type annotations for `aiobotocore.create_client("directconnect").describe_lags`
+Type annotations for `session.create_client("directconnect").describe_lags`
 method.
 
 Boto3 documentation:
@@ -1437,7 +1432,7 @@ Returns a `Coroutine` for [LagsTypeDef](./type_defs.md#lagstypedef).
 Gets the LOA-CFA for a connection, interconnect, or link aggregation group
 (LAG).
 
-Type annotations for `aiobotocore.create_client("directconnect").describe_loa`
+Type annotations for `session.create_client("directconnect").describe_loa`
 method.
 
 Boto3 documentation:
@@ -1465,7 +1460,7 @@ Returns a `Coroutine` for
 Lists the Direct Connect locations in the current Amazon Web Services Region.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").describe_locations` method.
+`session.create_client("directconnect").describe_locations` method.
 
 Boto3 documentation:
 [DirectConnect.Client.describe_locations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.describe_locations)
@@ -1482,8 +1477,7 @@ Returns a `Coroutine` for [LocationsTypeDef](./type_defs.md#locationstypedef).
 Details about the router.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").describe_router_configuration`
-method.
+`session.create_client("directconnect").describe_router_configuration` method.
 
 Boto3 documentation:
 [DirectConnect.Client.describe_router_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.describe_router_configuration)
@@ -1508,7 +1502,7 @@ Returns a `Coroutine` for
 
 Describes the tags associated with the specified Direct Connect resources.
 
-Type annotations for `aiobotocore.create_client("directconnect").describe_tags`
+Type annotations for `session.create_client("directconnect").describe_tags`
 method.
 
 Boto3 documentation:
@@ -1533,7 +1527,7 @@ Returns a `Coroutine` for
 Lists the virtual private gateways owned by the Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").describe_virtual_gateways` method.
+`session.create_client("directconnect").describe_virtual_gateways` method.
 
 Boto3 documentation:
 [DirectConnect.Client.describe_virtual_gateways](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.describe_virtual_gateways)
@@ -1551,8 +1545,7 @@ Returns a `Coroutine` for
 Displays all virtual interfaces for an Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").describe_virtual_interfaces`
-method.
+`session.create_client("directconnect").describe_virtual_interfaces` method.
 
 Boto3 documentation:
 [DirectConnect.Client.describe_virtual_interfaces](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.describe_virtual_interfaces)
@@ -1578,7 +1571,7 @@ Returns a `Coroutine` for
 Disassociates a connection from a link aggregation group (LAG).
 
 Type annotations for
-`aiobotocore.create_client("directconnect").disassociate_connection_from_lag`
+`session.create_client("directconnect").disassociate_connection_from_lag`
 method.
 
 Boto3 documentation:
@@ -1606,7 +1599,7 @@ Removes the association between a MAC Security (MACsec) security key and an
 Direct Connect dedicated connection.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").disassociate_mac_sec_key` method.
+`session.create_client("directconnect").disassociate_mac_sec_key` method.
 
 Boto3 documentation:
 [DirectConnect.Client.disassociate_mac_sec_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.disassociate_mac_sec_key)
@@ -1632,7 +1625,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").generate_presigned_url` method.
+`session.create_client("directconnect").generate_presigned_url` method.
 
 Boto3 documentation:
 [DirectConnect.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.generate_presigned_url)
@@ -1656,7 +1649,7 @@ Returns a `Coroutine` for `str`.
 Lists the virtual interface failover test history.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").list_virtual_interface_test_history`
+`session.create_client("directconnect").list_virtual_interface_test_history`
 method.
 
 Boto3 documentation:
@@ -1689,7 +1682,7 @@ meets your resiliency requirements by placing the BGP peering session in the
 DOWN state.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").start_bgp_failover_test` method.
+`session.create_client("directconnect").start_bgp_failover_test` method.
 
 Boto3 documentation:
 [DirectConnect.Client.start_bgp_failover_test](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.start_bgp_failover_test)
@@ -1716,7 +1709,7 @@ Returns a `Coroutine` for
 Stops the virtual interface failover test.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").stop_bgp_failover_test` method.
+`session.create_client("directconnect").stop_bgp_failover_test` method.
 
 Boto3 documentation:
 [DirectConnect.Client.stop_bgp_failover_test](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.stop_bgp_failover_test)
@@ -1740,7 +1733,7 @@ Returns a `Coroutine` for
 
 Adds the specified tags to the specified Direct Connect resource.
 
-Type annotations for `aiobotocore.create_client("directconnect").tag_resource`
+Type annotations for `session.create_client("directconnect").tag_resource`
 method.
 
 Boto3 documentation:
@@ -1764,8 +1757,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from the specified Direct Connect resource.
 
-Type annotations for
-`aiobotocore.create_client("directconnect").untag_resource` method.
+Type annotations for `session.create_client("directconnect").untag_resource`
+method.
 
 Boto3 documentation:
 [DirectConnect.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.untag_resource)
@@ -1788,8 +1781,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the Direct Connect dedicated connection configuration.
 
-Type annotations for
-`aiobotocore.create_client("directconnect").update_connection` method.
+Type annotations for `session.create_client("directconnect").update_connection`
+method.
 
 Boto3 documentation:
 [DirectConnect.Client.update_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.update_connection)
@@ -1815,8 +1808,7 @@ Returns a `Coroutine` for
 Updates the name of a current Direct Connect gateway.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").update_direct_connect_gateway`
-method.
+`session.create_client("directconnect").update_direct_connect_gateway` method.
 
 Boto3 documentation:
 [DirectConnect.Client.update_direct_connect_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.update_direct_connect_gateway)
@@ -1842,7 +1834,7 @@ Returns a `Coroutine` for
 Updates the specified attributes of the Direct Connect gateway association.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").update_direct_connect_gateway_association`
+`session.create_client("directconnect").update_direct_connect_gateway_association`
 method.
 
 Boto3 documentation:
@@ -1871,7 +1863,7 @@ Returns a `Coroutine` for
 
 Updates the attributes of the specified link aggregation group (LAG).
 
-Type annotations for `aiobotocore.create_client("directconnect").update_lag`
+Type annotations for `session.create_client("directconnect").update_lag`
 method.
 
 Boto3 documentation:
@@ -1899,7 +1891,7 @@ Returns a `Coroutine` for
 Updates the specified attributes of the specified virtual private interface.
 
 Type annotations for
-`aiobotocore.create_client("directconnect").update_virtual_interface_attributes`
+`session.create_client("directconnect").update_virtual_interface_attributes`
 method.
 
 Boto3 documentation:
@@ -1921,11 +1913,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [VirtualInterfaceResponseMetadataTypeDef](./type_defs.md#virtualinterfaceresponsemetadatatypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("directconnect").__aenter__`
+method.
+
+Boto3 documentation:
+[DirectConnect.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [DirectConnectClient](#directconnectclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("directconnect").__aexit__` method.
+
+Boto3 documentation:
+[DirectConnect.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html#DirectConnect.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("directconnect").get_paginator`
+Type annotations for `session.create_client("directconnect").get_paginator`
 method with overloads.
 
 - `client.get_paginator("describe_direct_connect_gateway_associations")` ->

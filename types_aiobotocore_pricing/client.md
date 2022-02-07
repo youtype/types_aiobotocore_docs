@@ -19,22 +19,25 @@ type annotations stubs module
     - [generate_presigned_url](#generate_presigned_url)
     - [get_attribute_values](#get_attribute_values)
     - [get_products](#get_products)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="pricingclient"></a>
 
 ## PricingClient
 
-Type annotations for `aiobotocore.create_client("pricing")`
+Type annotations for `session.create_client("pricing")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_pricing.client import PricingClient
 
-def get_pricing_client() -> PricingClient:
-    return Session().client("pricing")
+session = get_session()
+async with session.create_client("pricing") as client:
+    client: PricingClient
 ```
 
 Boto3 documentation:
@@ -73,7 +76,7 @@ Exceptions:
 
 PricingClient exceptions.
 
-Type annotations for `aiobotocore.create_client("pricing").exceptions` method.
+Type annotations for `session.create_client("pricing").exceptions` method.
 
 Boto3 documentation:
 [Pricing.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pricing.html#Pricing.Client.exceptions)
@@ -86,19 +89,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("pricing").can_paginate`
-method.
+Type annotations for `session.create_client("pricing").can_paginate` method.
 
 Boto3 documentation:
 [Pricing.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pricing.html#Pricing.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="describe_services"></a>
 
@@ -107,7 +107,7 @@ Returns a `Coroutine` for `bool`.
 Returns the metadata for one service or a list of the metadata for all
 services.
 
-Type annotations for `aiobotocore.create_client("pricing").describe_services`
+Type annotations for `session.create_client("pricing").describe_services`
 method.
 
 Boto3 documentation:
@@ -134,8 +134,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("pricing").generate_presigned_url` method.
+Type annotations for `session.create_client("pricing").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Pricing.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pricing.html#Pricing.Client.generate_presigned_url)
@@ -158,8 +158,8 @@ Returns a `Coroutine` for `str`.
 
 Returns a list of attribute values.
 
-Type annotations for
-`aiobotocore.create_client("pricing").get_attribute_values` method.
+Type annotations for `session.create_client("pricing").get_attribute_values`
+method.
 
 Boto3 documentation:
 [Pricing.Client.get_attribute_values](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pricing.html#Pricing.Client.get_attribute_values)
@@ -186,8 +186,7 @@ Returns a `Coroutine` for
 
 Returns a list of all products that match the filter criteria.
 
-Type annotations for `aiobotocore.create_client("pricing").get_products`
-method.
+Type annotations for `session.create_client("pricing").get_products` method.
 
 Boto3 documentation:
 [Pricing.Client.get_products](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pricing.html#Pricing.Client.get_products)
@@ -208,12 +207,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [GetProductsResponseTypeDef](./type_defs.md#getproductsresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("pricing").__aenter__` method.
+
+Boto3 documentation:
+[Pricing.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pricing.html#Pricing.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [PricingClient](#pricingclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("pricing").__aexit__` method.
+
+Boto3 documentation:
+[Pricing.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pricing.html#Pricing.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("pricing").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("pricing").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_services")` ->
   [DescribeServicesPaginator](./paginators.md#describeservicespaginator)

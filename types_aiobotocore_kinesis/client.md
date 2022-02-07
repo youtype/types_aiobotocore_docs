@@ -45,6 +45,8 @@ type annotations stubs module
     - [subscribe_to_shard](#subscribe_to_shard)
     - [update_shard_count](#update_shard_count)
     - [update_stream_mode](#update_stream_mode)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -52,16 +54,17 @@ type annotations stubs module
 
 ## KinesisClient
 
-Type annotations for `aiobotocore.create_client("kinesis")`
+Type annotations for `session.create_client("kinesis")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_kinesis.client import KinesisClient
 
-def get_kinesis_client() -> KinesisClient:
-    return Session().client("kinesis")
+session = get_session()
+async with session.create_client("kinesis") as client:
+    client: KinesisClient
 ```
 
 Boto3 documentation:
@@ -110,7 +113,7 @@ Exceptions:
 
 KinesisClient exceptions.
 
-Type annotations for `aiobotocore.create_client("kinesis").exceptions` method.
+Type annotations for `session.create_client("kinesis").exceptions` method.
 
 Boto3 documentation:
 [Kinesis.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.exceptions)
@@ -123,7 +126,7 @@ Returns [Exceptions](#exceptions).
 
 Adds or updates tags for the specified Kinesis data stream.
 
-Type annotations for `aiobotocore.create_client("kinesis").add_tags_to_stream`
+Type annotations for `session.create_client("kinesis").add_tags_to_stream`
 method.
 
 Boto3 documentation:
@@ -146,19 +149,16 @@ Keyword-only arguments:
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("kinesis").can_paginate`
-method.
+Type annotations for `session.create_client("kinesis").can_paginate` method.
 
 Boto3 documentation:
 [Kinesis.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_stream"></a>
 
@@ -166,8 +166,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a Kinesis data stream.
 
-Type annotations for `aiobotocore.create_client("kinesis").create_stream`
-method.
+Type annotations for `session.create_client("kinesis").create_stream` method.
 
 Boto3 documentation:
 [Kinesis.Client.create_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.create_stream)
@@ -192,7 +191,7 @@ Decreases the Kinesis data stream's retention period, which is the length of
 time data records are accessible after they are added to the stream.
 
 Type annotations for
-`aiobotocore.create_client("kinesis").decrease_stream_retention_period` method.
+`session.create_client("kinesis").decrease_stream_retention_period` method.
 
 Boto3 documentation:
 [Kinesis.Client.decrease_stream_retention_period](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.decrease_stream_retention_period)
@@ -214,8 +213,7 @@ Keyword-only arguments:
 
 Deletes a Kinesis data stream and all its shards and data.
 
-Type annotations for `aiobotocore.create_client("kinesis").delete_stream`
-method.
+Type annotations for `session.create_client("kinesis").delete_stream` method.
 
 Boto3 documentation:
 [Kinesis.Client.delete_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.delete_stream)
@@ -237,7 +235,7 @@ Keyword-only arguments:
 To deregister a consumer, provide its ARN.
 
 Type annotations for
-`aiobotocore.create_client("kinesis").deregister_stream_consumer` method.
+`session.create_client("kinesis").deregister_stream_consumer` method.
 
 Boto3 documentation:
 [Kinesis.Client.deregister_stream_consumer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.deregister_stream_consumer)
@@ -260,8 +258,7 @@ Keyword-only arguments:
 
 Describes the shard limits and usage for the account.
 
-Type annotations for `aiobotocore.create_client("kinesis").describe_limits`
-method.
+Type annotations for `session.create_client("kinesis").describe_limits` method.
 
 Boto3 documentation:
 [Kinesis.Client.describe_limits](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.describe_limits)
@@ -277,8 +274,7 @@ Returns a `Coroutine` for
 
 Describes the specified Kinesis data stream.
 
-Type annotations for `aiobotocore.create_client("kinesis").describe_stream`
-method.
+Type annotations for `session.create_client("kinesis").describe_stream` method.
 
 Boto3 documentation:
 [Kinesis.Client.describe_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.describe_stream)
@@ -305,7 +301,7 @@ To get the description of a registered consumer, provide the ARN of the
 consumer.
 
 Type annotations for
-`aiobotocore.create_client("kinesis").describe_stream_consumer` method.
+`session.create_client("kinesis").describe_stream_consumer` method.
 
 Boto3 documentation:
 [Kinesis.Client.describe_stream_consumer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.describe_stream_consumer)
@@ -332,8 +328,8 @@ Returns a `Coroutine` for
 Provides a summarized description of the specified Kinesis data stream without
 the shard list.
 
-Type annotations for
-`aiobotocore.create_client("kinesis").describe_stream_summary` method.
+Type annotations for `session.create_client("kinesis").describe_stream_summary`
+method.
 
 Boto3 documentation:
 [Kinesis.Client.describe_stream_summary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.describe_stream_summary)
@@ -358,7 +354,7 @@ Returns a `Coroutine` for
 Disables enhanced monitoring.
 
 Type annotations for
-`aiobotocore.create_client("kinesis").disable_enhanced_monitoring` method.
+`session.create_client("kinesis").disable_enhanced_monitoring` method.
 
 Boto3 documentation:
 [Kinesis.Client.disable_enhanced_monitoring](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.disable_enhanced_monitoring)
@@ -385,7 +381,7 @@ Returns a `Coroutine` for
 Enables enhanced Kinesis data stream monitoring for shard-level metrics.
 
 Type annotations for
-`aiobotocore.create_client("kinesis").enable_enhanced_monitoring` method.
+`session.create_client("kinesis").enable_enhanced_monitoring` method.
 
 Boto3 documentation:
 [Kinesis.Client.enable_enhanced_monitoring](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.enable_enhanced_monitoring)
@@ -411,8 +407,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("kinesis").generate_presigned_url` method.
+Type annotations for `session.create_client("kinesis").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Kinesis.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.generate_presigned_url)
@@ -435,7 +431,7 @@ Returns a `Coroutine` for `str`.
 
 Gets data records from a Kinesis data stream's shard.
 
-Type annotations for `aiobotocore.create_client("kinesis").get_records` method.
+Type annotations for `session.create_client("kinesis").get_records` method.
 
 Boto3 documentation:
 [Kinesis.Client.get_records](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.get_records)
@@ -459,7 +455,7 @@ Returns a `Coroutine` for
 
 Gets an Amazon Kinesis shard iterator.
 
-Type annotations for `aiobotocore.create_client("kinesis").get_shard_iterator`
+Type annotations for `session.create_client("kinesis").get_shard_iterator`
 method.
 
 Boto3 documentation:
@@ -491,7 +487,7 @@ Increases the Kinesis data stream's retention period, which is the length of
 time data records are accessible after they are added to the stream.
 
 Type annotations for
-`aiobotocore.create_client("kinesis").increase_stream_retention_period` method.
+`session.create_client("kinesis").increase_stream_retention_period` method.
 
 Boto3 documentation:
 [Kinesis.Client.increase_stream_retention_period](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.increase_stream_retention_period)
@@ -513,7 +509,7 @@ Keyword-only arguments:
 
 Lists the shards in a stream and provides information about each shard.
 
-Type annotations for `aiobotocore.create_client("kinesis").list_shards` method.
+Type annotations for `session.create_client("kinesis").list_shards` method.
 
 Boto3 documentation:
 [Kinesis.Client.list_shards](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.list_shards)
@@ -542,8 +538,8 @@ Returns a `Coroutine` for
 Lists the consumers registered to receive data from a stream using enhanced
 fan- out, and provides information about each consumer.
 
-Type annotations for
-`aiobotocore.create_client("kinesis").list_stream_consumers` method.
+Type annotations for `session.create_client("kinesis").list_stream_consumers`
+method.
 
 Boto3 documentation:
 [Kinesis.Client.list_stream_consumers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.list_stream_consumers)
@@ -570,8 +566,7 @@ Returns a `Coroutine` for
 
 Lists your Kinesis data streams.
 
-Type annotations for `aiobotocore.create_client("kinesis").list_streams`
-method.
+Type annotations for `session.create_client("kinesis").list_streams` method.
 
 Boto3 documentation:
 [Kinesis.Client.list_streams](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.list_streams)
@@ -595,8 +590,8 @@ Returns a `Coroutine` for
 
 Lists the tags for the specified Kinesis data stream.
 
-Type annotations for
-`aiobotocore.create_client("kinesis").list_tags_for_stream` method.
+Type annotations for `session.create_client("kinesis").list_tags_for_stream`
+method.
 
 Boto3 documentation:
 [Kinesis.Client.list_tags_for_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.list_tags_for_stream)
@@ -623,8 +618,7 @@ Returns a `Coroutine` for
 Merges two adjacent shards in a Kinesis data stream and combines them into a
 single shard to reduce the stream's capacity to ingest and transport data.
 
-Type annotations for `aiobotocore.create_client("kinesis").merge_shards`
-method.
+Type annotations for `session.create_client("kinesis").merge_shards` method.
 
 Boto3 documentation:
 [Kinesis.Client.merge_shards](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.merge_shards)
@@ -646,7 +640,7 @@ Keyword-only arguments:
 
 Writes a single data record into an Amazon Kinesis data stream.
 
-Type annotations for `aiobotocore.create_client("kinesis").put_record` method.
+Type annotations for `session.create_client("kinesis").put_record` method.
 
 Boto3 documentation:
 [Kinesis.Client.put_record](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.put_record)
@@ -674,7 +668,7 @@ Returns a `Coroutine` for
 Writes multiple data records into a Kinesis data stream in a single call (also
 referred to as a `PutRecords` request).
 
-Type annotations for `aiobotocore.create_client("kinesis").put_records` method.
+Type annotations for `session.create_client("kinesis").put_records` method.
 
 Boto3 documentation:
 [Kinesis.Client.put_records](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.put_records)
@@ -701,7 +695,7 @@ Returns a `Coroutine` for
 Registers a consumer with a Kinesis data stream.
 
 Type annotations for
-`aiobotocore.create_client("kinesis").register_stream_consumer` method.
+`session.create_client("kinesis").register_stream_consumer` method.
 
 Boto3 documentation:
 [Kinesis.Client.register_stream_consumer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.register_stream_consumer)
@@ -726,8 +720,8 @@ Returns a `Coroutine` for
 
 Removes tags from the specified Kinesis data stream.
 
-Type annotations for
-`aiobotocore.create_client("kinesis").remove_tags_from_stream` method.
+Type annotations for `session.create_client("kinesis").remove_tags_from_stream`
+method.
 
 Boto3 documentation:
 [Kinesis.Client.remove_tags_from_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.remove_tags_from_stream)
@@ -750,7 +744,7 @@ Keyword-only arguments:
 Splits a shard into two new shards in the Kinesis data stream, to increase the
 stream's capacity to ingest and transport data.
 
-Type annotations for `aiobotocore.create_client("kinesis").split_shard` method.
+Type annotations for `session.create_client("kinesis").split_shard` method.
 
 Boto3 documentation:
 [Kinesis.Client.split_shard](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.split_shard)
@@ -773,8 +767,8 @@ Keyword-only arguments:
 Enables or updates server-side encryption using an Amazon Web Services KMS key
 for a specified stream.
 
-Type annotations for
-`aiobotocore.create_client("kinesis").start_stream_encryption` method.
+Type annotations for `session.create_client("kinesis").start_stream_encryption`
+method.
 
 Boto3 documentation:
 [Kinesis.Client.start_stream_encryption](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.start_stream_encryption)
@@ -798,8 +792,8 @@ Keyword-only arguments:
 
 Disables server-side encryption for a specified stream.
 
-Type annotations for
-`aiobotocore.create_client("kinesis").stop_stream_encryption` method.
+Type annotations for `session.create_client("kinesis").stop_stream_encryption`
+method.
 
 Boto3 documentation:
 [Kinesis.Client.stop_stream_encryption](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.stop_stream_encryption)
@@ -825,7 +819,7 @@ This operation establishes an HTTP/2 connection between the consumer you
 specify in the `ConsumerARN` parameter and the shard you specify in the
 `ShardId` parameter.
 
-Type annotations for `aiobotocore.create_client("kinesis").subscribe_to_shard`
+Type annotations for `session.create_client("kinesis").subscribe_to_shard`
 method.
 
 Boto3 documentation:
@@ -855,7 +849,7 @@ Returns a `Coroutine` for
 Updates the shard count of the specified stream to the specified number of
 shards.
 
-Type annotations for `aiobotocore.create_client("kinesis").update_shard_count`
+Type annotations for `session.create_client("kinesis").update_shard_count`
 method.
 
 Boto3 documentation:
@@ -883,7 +877,7 @@ Returns a `Coroutine` for
 
 Updates the capacity mode of the data stream.
 
-Type annotations for `aiobotocore.create_client("kinesis").update_stream_mode`
+Type annotations for `session.create_client("kinesis").update_stream_mode`
 method.
 
 Boto3 documentation:
@@ -902,12 +896,44 @@ Keyword-only arguments:
   [StreamModeDetailsTypeDef](./type_defs.md#streammodedetailstypedef)
   *(required)*
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("kinesis").__aenter__` method.
+
+Boto3 documentation:
+[Kinesis.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [KinesisClient](#kinesisclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("kinesis").__aexit__` method.
+
+Boto3 documentation:
+[Kinesis.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html#Kinesis.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("kinesis").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("kinesis").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_stream")` ->
   [DescribeStreamPaginator](./paginators.md#describestreampaginator)
@@ -922,8 +948,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("kinesis").get_waiter` method
-with overloads.
+Type annotations for `session.create_client("kinesis").get_waiter` method with
+overloads.
 
 - `client.get_waiter("stream_exists")` ->
   [StreamExistsWaiter](./waiters.md#streamexistswaiter)

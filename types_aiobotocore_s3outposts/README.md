@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[s3outposts]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[s3outposts]'
+
+# standalone installation
 pip install types-aiobotocore-s3outposts
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-s3outposts
 
 ## S3OutpostsClient
 
-Type annotations for `aiobotocore.create_client("s3outposts")` as
+Type annotations for `session.create_client("s3outposts")` as
 [S3OutpostsClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_s3outposts.client import S3OutpostsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_endpoint](./client.md#create_endpoint)
 - [delete_endpoint](./client.md#delete_endpoint)
@@ -73,7 +79,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_s3outposts.paginators import ListEndpointsPaginator, ...
+from types_aiobotocore_s3outposts.paginator import ListEndpointsPaginator, ...
 ```
 
 - [ListEndpointsPaginator](./paginators.md#listendpointspaginator)

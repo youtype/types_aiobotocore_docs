@@ -17,21 +17,24 @@ type annotations stubs module
     - [can_paginate](#can_paginate)
     - [generate_presigned_url](#generate_presigned_url)
     - [list_realtime_contact_analysis_segments](#list_realtime_contact_analysis_segments)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="connectcontactlensclient"></a>
 
 ## ConnectContactLensClient
 
-Type annotations for `aiobotocore.create_client("connect-contact-lens")`
+Type annotations for `session.create_client("connect-contact-lens")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_connect_contact_lens.client import ConnectContactLensClient
 
-def get_connect-contact-lens_client() -> ConnectContactLensClient:
-    return Session().client("connect-contact-lens")
+session = get_session()
+async with session.create_client("connect-contact-lens") as client:
+    client: ConnectContactLensClient
 ```
 
 Boto3 documentation:
@@ -70,8 +73,8 @@ Exceptions:
 
 ConnectContactLensClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("connect-contact-lens").exceptions` method.
+Type annotations for `session.create_client("connect-contact-lens").exceptions`
+method.
 
 Boto3 documentation:
 [ConnectContactLens.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect-contact-lens.html#ConnectContactLens.Client.exceptions)
@@ -85,18 +88,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("connect-contact-lens").can_paginate` method.
+`session.create_client("connect-contact-lens").can_paginate` method.
 
 Boto3 documentation:
 [ConnectContactLens.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect-contact-lens.html#ConnectContactLens.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -105,8 +106,7 @@ Returns a `Coroutine` for `bool`.
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("connect-contact-lens").generate_presigned_url`
-method.
+`session.create_client("connect-contact-lens").generate_presigned_url` method.
 
 Boto3 documentation:
 [ConnectContactLens.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect-contact-lens.html#ConnectContactLens.Client.generate_presigned_url)
@@ -130,7 +130,7 @@ Returns a `Coroutine` for `str`.
 Provides a list of analysis segments for a real-time analysis session.
 
 Type annotations for
-`aiobotocore.create_client("connect-contact-lens").list_realtime_contact_analysis_segments`
+`session.create_client("connect-contact-lens").list_realtime_contact_analysis_segments`
 method.
 
 Boto3 documentation:
@@ -151,3 +151,38 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [ListRealtimeContactAnalysisSegmentsResponseTypeDef](./type_defs.md#listrealtimecontactanalysissegmentsresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("connect-contact-lens").__aenter__`
+method.
+
+Boto3 documentation:
+[ConnectContactLens.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect-contact-lens.html#ConnectContactLens.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[ConnectContactLensClient](#connectcontactlensclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("connect-contact-lens").__aexit__`
+method.
+
+Boto3 documentation:
+[ConnectContactLens.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect-contact-lens.html#ConnectContactLens.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

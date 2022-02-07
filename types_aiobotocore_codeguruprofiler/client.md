@@ -39,22 +39,25 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_profiling_group](#update_profiling_group)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="codeguruprofilerclient"></a>
 
 ## CodeGuruProfilerClient
 
-Type annotations for `aiobotocore.create_client("codeguruprofiler")`
+Type annotations for `session.create_client("codeguruprofiler")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_codeguruprofiler.client import CodeGuruProfilerClient
 
-def get_codeguruprofiler_client() -> CodeGuruProfilerClient:
-    return Session().client("codeguruprofiler")
+session = get_session()
+async with session.create_client("codeguruprofiler") as client:
+    client: CodeGuruProfilerClient
 ```
 
 Boto3 documentation:
@@ -94,7 +97,7 @@ Exceptions:
 
 CodeGuruProfilerClient exceptions.
 
-Type annotations for `aiobotocore.create_client("codeguruprofiler").exceptions`
+Type annotations for `session.create_client("codeguruprofiler").exceptions`
 method.
 
 Boto3 documentation:
@@ -109,8 +112,7 @@ Returns [Exceptions](#exceptions).
 Add up to 2 anomaly notifications channels for a profiling group.
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").add_notification_channels`
-method.
+`session.create_client("codeguruprofiler").add_notification_channels` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.add_notification_channels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.add_notification_channels)
@@ -138,8 +140,7 @@ Returns the time series of values for a requested list of frame metrics from a
 time period.
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").batch_get_frame_metric_data`
-method.
+`session.create_client("codeguruprofiler").batch_get_frame_metric_data` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.batch_get_frame_metric_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.batch_get_frame_metric_data)
@@ -170,19 +171,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("codeguruprofiler").can_paginate` method.
+Type annotations for `session.create_client("codeguruprofiler").can_paginate`
+method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="configure_agent"></a>
 
@@ -191,7 +190,7 @@ Returns a `Coroutine` for `bool`.
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").configure_agent` method.
+`session.create_client("codeguruprofiler").configure_agent` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.configure_agent](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.configure_agent)
@@ -218,7 +217,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").create_profiling_group` method.
+`session.create_client("codeguruprofiler").create_profiling_group` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.create_profiling_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.create_profiling_group)
@@ -248,7 +247,7 @@ Returns a `Coroutine` for
 Deletes a profiling group.
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").delete_profiling_group` method.
+`session.create_client("codeguruprofiler").delete_profiling_group` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.delete_profiling_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.delete_profiling_group)
@@ -272,8 +271,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").describe_profiling_group`
-method.
+`session.create_client("codeguruprofiler").describe_profiling_group` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.describe_profiling_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.describe_profiling_group)
@@ -298,7 +296,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").generate_presigned_url` method.
+`session.create_client("codeguruprofiler").generate_presigned_url` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.generate_presigned_url)
@@ -322,7 +320,7 @@ Returns a `Coroutine` for `str`.
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").get_findings_report_account_summary`
+`session.create_client("codeguruprofiler").get_findings_report_account_summary`
 method.
 
 Boto3 documentation:
@@ -350,7 +348,7 @@ Returns a `Coroutine` for
 Get the current configuration for anomaly notifications for a profiling group.
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").get_notification_configuration`
+`session.create_client("codeguruprofiler").get_notification_configuration`
 method.
 
 Boto3 documentation:
@@ -375,7 +373,7 @@ Returns a `Coroutine` for
 
 Returns the JSON-formatted resource-based policy on a profiling group.
 
-Type annotations for `aiobotocore.create_client("codeguruprofiler").get_policy`
+Type annotations for `session.create_client("codeguruprofiler").get_policy`
 method.
 
 Boto3 documentation:
@@ -399,8 +397,8 @@ Returns a `Coroutine` for
 
 Gets the aggregated profile of a profiling group for a specified time range.
 
-Type annotations for
-`aiobotocore.create_client("codeguruprofiler").get_profile` method.
+Type annotations for `session.create_client("codeguruprofiler").get_profile`
+method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.get_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.get_profile)
@@ -429,7 +427,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").get_recommendations` method.
+`session.create_client("codeguruprofiler").get_recommendations` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.get_recommendations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.get_recommendations)
@@ -457,7 +455,7 @@ Returns a `Coroutine` for
 List the available reports for a given profiling group and time range.
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").list_findings_reports` method.
+`session.create_client("codeguruprofiler").list_findings_reports` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.list_findings_reports](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.list_findings_reports)
@@ -488,7 +486,7 @@ Lists the start times of the available aggregated profiles of a profiling group
 for an aggregation period within the specified time range.
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").list_profile_times` method.
+`session.create_client("codeguruprofiler").list_profile_times` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.list_profile_times](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.list_profile_times)
@@ -520,7 +518,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").list_profiling_groups` method.
+`session.create_client("codeguruprofiler").list_profiling_groups` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.list_profiling_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.list_profiling_groups)
@@ -547,7 +545,7 @@ Returns a `Coroutine` for
 Returns a list of the tags that are assigned to a specified resource.
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").list_tags_for_resource` method.
+`session.create_client("codeguruprofiler").list_tags_for_resource` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.list_tags_for_resource)
@@ -572,7 +570,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").post_agent_profile` method.
+`session.create_client("codeguruprofiler").post_agent_profile` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.post_agent_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.post_agent_profile)
@@ -600,8 +598,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds permissions to a profiling group's resource-based policy that are provided
 using an action group.
 
-Type annotations for
-`aiobotocore.create_client("codeguruprofiler").put_permission` method.
+Type annotations for `session.create_client("codeguruprofiler").put_permission`
+method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.put_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.put_permission)
@@ -629,8 +627,7 @@ Returns a `Coroutine` for
 Remove one anomaly notifications channel for a profiling group.
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").remove_notification_channel`
-method.
+`session.create_client("codeguruprofiler").remove_notification_channel` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.remove_notification_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.remove_notification_channel)
@@ -656,7 +653,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").remove_permission` method.
+`session.create_client("codeguruprofiler").remove_permission` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.remove_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.remove_permission)
@@ -683,7 +680,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").submit_feedback` method.
+`session.create_client("codeguruprofiler").submit_feedback` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.submit_feedback](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.submit_feedback)
@@ -708,8 +705,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Use to assign one or more tags to a resource.
 
-Type annotations for
-`aiobotocore.create_client("codeguruprofiler").tag_resource` method.
+Type annotations for `session.create_client("codeguruprofiler").tag_resource`
+method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.tag_resource)
@@ -732,8 +729,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Use to remove one or more tags from a resource.
 
-Type annotations for
-`aiobotocore.create_client("codeguruprofiler").untag_resource` method.
+Type annotations for `session.create_client("codeguruprofiler").untag_resource`
+method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.untag_resource)
@@ -757,7 +754,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").update_profiling_group` method.
+`session.create_client("codeguruprofiler").update_profiling_group` method.
 
 Boto3 documentation:
 [CodeGuruProfiler.Client.update_profiling_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.update_profiling_group)
@@ -778,13 +775,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateProfilingGroupResponseTypeDef](./type_defs.md#updateprofilinggroupresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("codeguruprofiler").__aenter__`
+method.
+
+Boto3 documentation:
+[CodeGuruProfiler.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CodeGuruProfilerClient](#codeguruprofilerclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("codeguruprofiler").__aexit__`
+method.
+
+Boto3 documentation:
+[CodeGuruProfiler.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguruprofiler.html#CodeGuruProfiler.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("codeguruprofiler").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("codeguruprofiler").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_profile_times")` ->
   [ListProfileTimesPaginator](./paginators.md#listprofiletimespaginator)

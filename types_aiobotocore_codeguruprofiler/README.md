@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[codeguruprofiler]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[codeguruprofiler]'
+
+# standalone installation
 pip install types-aiobotocore-codeguruprofiler
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-codeguruprofiler
 
 ## CodeGuruProfilerClient
 
-Type annotations for `aiobotocore.create_client("codeguruprofiler")` as
+Type annotations for `session.create_client("codeguruprofiler")` as
 [CodeGuruProfilerClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_codeguruprofiler.client import CodeGuruProfilerClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_notification_channels](./client.md#add_notification_channels)
 - [batch_get_frame_metric_data](./client.md#batch_get_frame_metric_data)
 - [can_paginate](./client.md#can_paginate)
@@ -94,7 +100,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_codeguruprofiler.paginators import ListProfileTimesPaginator, ...
+from types_aiobotocore_codeguruprofiler.paginator import ListProfileTimesPaginator, ...
 ```
 
 - [ListProfileTimesPaginator](./paginators.md#listprofiletimespaginator)

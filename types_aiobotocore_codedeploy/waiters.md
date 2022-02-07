@@ -17,7 +17,7 @@ type annotations stubs module
 ## DeploymentSuccessfulWaiter
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").get_waiter("deployment_successful")`.
+`session.create_client("codedeploy").get_waiter("deployment_successful")`.
 
 Can be used directly:
 
@@ -27,7 +27,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_codedeploy.waiter import DeploymentSuccessfulWaiter
 
 def get_deployment_successful_waiter() -> DeploymentSuccessfulWaiter:
-    return Session().create_client("codedeploy").get_waiter("deployment_successful")
+    return Session().client("codedeploy").get_waiter("deployment_successful")
 ```
 
 Boto3 documentation:

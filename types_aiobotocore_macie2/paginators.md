@@ -26,17 +26,19 @@ type annotations stubs module
 ## DescribeBucketsPaginator
 
 Type annotations for
-`aiobotocore.create_client("macie2").get_paginator("describe_buckets")`.
+`session.create_client("macie2").get_paginator("describe_buckets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_macie2.paginator import DescribeBucketsPaginator
 
-def get_describe_buckets_paginator() -> DescribeBucketsPaginator:
-    return Session().create_client("macie2").get_paginator("describe_buckets")
+session = get_session()
+async with session.create_client("macie2") as client:
+    client: Macie2Client
+    paginator: DescribeBucketsPaginator = client.get_paginator("describe_buckets")
 ```
 
 Boto3 documentation:
@@ -59,17 +61,19 @@ Arguments for `DescribeBucketsPaginator.paginate` method:
 ## GetUsageStatisticsPaginator
 
 Type annotations for
-`aiobotocore.create_client("macie2").get_paginator("get_usage_statistics")`.
+`session.create_client("macie2").get_paginator("get_usage_statistics")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_macie2.paginator import GetUsageStatisticsPaginator
 
-def get_get_usage_statistics_paginator() -> GetUsageStatisticsPaginator:
-    return Session().create_client("macie2").get_paginator("get_usage_statistics")
+session = get_session()
+async with session.create_client("macie2") as client:
+    client: Macie2Client
+    paginator: GetUsageStatisticsPaginator = client.get_paginator("get_usage_statistics")
 ```
 
 Boto3 documentation:
@@ -93,17 +97,19 @@ Arguments for `GetUsageStatisticsPaginator.paginate` method:
 ## ListClassificationJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("macie2").get_paginator("list_classification_jobs")`.
+`session.create_client("macie2").get_paginator("list_classification_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_macie2.paginator import ListClassificationJobsPaginator
 
-def get_list_classification_jobs_paginator() -> ListClassificationJobsPaginator:
-    return Session().create_client("macie2").get_paginator("list_classification_jobs")
+session = get_session()
+async with session.create_client("macie2") as client:
+    client: Macie2Client
+    paginator: ListClassificationJobsPaginator = client.get_paginator("list_classification_jobs")
 ```
 
 Boto3 documentation:
@@ -126,17 +132,19 @@ Arguments for `ListClassificationJobsPaginator.paginate` method:
 ## ListCustomDataIdentifiersPaginator
 
 Type annotations for
-`aiobotocore.create_client("macie2").get_paginator("list_custom_data_identifiers")`.
+`session.create_client("macie2").get_paginator("list_custom_data_identifiers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_macie2.paginator import ListCustomDataIdentifiersPaginator
 
-def get_list_custom_data_identifiers_paginator() -> ListCustomDataIdentifiersPaginator:
-    return Session().create_client("macie2").get_paginator("list_custom_data_identifiers")
+session = get_session()
+async with session.create_client("macie2") as client:
+    client: Macie2Client
+    paginator: ListCustomDataIdentifiersPaginator = client.get_paginator("list_custom_data_identifiers")
 ```
 
 Boto3 documentation:
@@ -155,17 +163,19 @@ Arguments for `ListCustomDataIdentifiersPaginator.paginate` method:
 ## ListFindingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("macie2").get_paginator("list_findings")`.
+`session.create_client("macie2").get_paginator("list_findings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_macie2.paginator import ListFindingsPaginator
 
-def get_list_findings_paginator() -> ListFindingsPaginator:
-    return Session().create_client("macie2").get_paginator("list_findings")
+session = get_session()
+async with session.create_client("macie2") as client:
+    client: Macie2Client
+    paginator: ListFindingsPaginator = client.get_paginator("list_findings")
 ```
 
 Boto3 documentation:
@@ -187,17 +197,19 @@ Arguments for `ListFindingsPaginator.paginate` method:
 ## ListFindingsFiltersPaginator
 
 Type annotations for
-`aiobotocore.create_client("macie2").get_paginator("list_findings_filters")`.
+`session.create_client("macie2").get_paginator("list_findings_filters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_macie2.paginator import ListFindingsFiltersPaginator
 
-def get_list_findings_filters_paginator() -> ListFindingsFiltersPaginator:
-    return Session().create_client("macie2").get_paginator("list_findings_filters")
+session = get_session()
+async with session.create_client("macie2") as client:
+    client: Macie2Client
+    paginator: ListFindingsFiltersPaginator = client.get_paginator("list_findings_filters")
 ```
 
 Boto3 documentation:
@@ -216,17 +228,19 @@ Arguments for `ListFindingsFiltersPaginator.paginate` method:
 ## ListInvitationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("macie2").get_paginator("list_invitations")`.
+`session.create_client("macie2").get_paginator("list_invitations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_macie2.paginator import ListInvitationsPaginator
 
-def get_list_invitations_paginator() -> ListInvitationsPaginator:
-    return Session().create_client("macie2").get_paginator("list_invitations")
+session = get_session()
+async with session.create_client("macie2") as client:
+    client: Macie2Client
+    paginator: ListInvitationsPaginator = client.get_paginator("list_invitations")
 ```
 
 Boto3 documentation:
@@ -245,17 +259,19 @@ Arguments for `ListInvitationsPaginator.paginate` method:
 ## ListMembersPaginator
 
 Type annotations for
-`aiobotocore.create_client("macie2").get_paginator("list_members")`.
+`session.create_client("macie2").get_paginator("list_members")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_macie2.paginator import ListMembersPaginator
 
-def get_list_members_paginator() -> ListMembersPaginator:
-    return Session().create_client("macie2").get_paginator("list_members")
+session = get_session()
+async with session.create_client("macie2") as client:
+    client: Macie2Client
+    paginator: ListMembersPaginator = client.get_paginator("list_members")
 ```
 
 Boto3 documentation:
@@ -275,17 +291,19 @@ Arguments for `ListMembersPaginator.paginate` method:
 ## ListOrganizationAdminAccountsPaginator
 
 Type annotations for
-`aiobotocore.create_client("macie2").get_paginator("list_organization_admin_accounts")`.
+`session.create_client("macie2").get_paginator("list_organization_admin_accounts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_macie2.paginator import ListOrganizationAdminAccountsPaginator
 
-def get_list_organization_admin_accounts_paginator() -> ListOrganizationAdminAccountsPaginator:
-    return Session().create_client("macie2").get_paginator("list_organization_admin_accounts")
+session = get_session()
+async with session.create_client("macie2") as client:
+    client: Macie2Client
+    paginator: ListOrganizationAdminAccountsPaginator = client.get_paginator("list_organization_admin_accounts")
 ```
 
 Boto3 documentation:
@@ -304,17 +322,19 @@ Arguments for `ListOrganizationAdminAccountsPaginator.paginate` method:
 ## SearchResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("macie2").get_paginator("search_resources")`.
+`session.create_client("macie2").get_paginator("search_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_macie2.paginator import SearchResourcesPaginator
 
-def get_search_resources_paginator() -> SearchResourcesPaginator:
-    return Session().create_client("macie2").get_paginator("search_resources")
+session = get_session()
+async with session.create_client("macie2") as client:
+    client: Macie2Client
+    paginator: SearchResourcesPaginator = client.get_paginator("search_resources")
 ```
 
 Boto3 documentation:

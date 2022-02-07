@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListRepositoryAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").get_paginator("list_repository_associations")`.
+`session.create_client("codeguru-reviewer").get_paginator("list_repository_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codeguru_reviewer.paginator import ListRepositoryAssociationsPaginator
 
-def get_list_repository_associations_paginator() -> ListRepositoryAssociationsPaginator:
-    return Session().create_client("codeguru-reviewer").get_paginator("list_repository_associations")
+session = get_session()
+async with session.create_client("codeguru-reviewer") as client:
+    client: CodeGuruReviewerClient
+    paginator: ListRepositoryAssociationsPaginator = client.get_paginator("list_repository_associations")
 ```
 
 Boto3 documentation:

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[waf]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[waf]'
+
+# standalone installation
 pip install types-aiobotocore-waf
 ```
 
@@ -29,8 +33,7 @@ pip install types-aiobotocore-waf
 
 ## WAFClient
 
-Type annotations for `aiobotocore.create_client("waf")` as
-[WAFClient](./client.md)
+Type annotations for `session.create_client("waf")` as [WAFClient](./client.md)
 
 Can be used directly:
 
@@ -42,6 +45,8 @@ from types_aiobotocore_waf.client import WAFClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_byte_match_set](./client.md#create_byte_match_set)
 - [create_geo_match_set](./client.md#create_geo_match_set)
@@ -161,7 +166,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_waf.paginators import GetRateBasedRuleManagedKeysPaginator, ...
+from types_aiobotocore_waf.paginator import GetRateBasedRuleManagedKeysPaginator, ...
 ```
 
 - [GetRateBasedRuleManagedKeysPaginator](./paginators.md#getratebasedrulemanagedkeyspaginator)

@@ -19,21 +19,24 @@ type annotations stubs module
     - [describe_home_region_controls](#describe_home_region_controls)
     - [generate_presigned_url](#generate_presigned_url)
     - [get_home_region](#get_home_region)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="migrationhubconfigclient"></a>
 
 ## MigrationHubConfigClient
 
-Type annotations for `aiobotocore.create_client("migrationhub-config")`
+Type annotations for `session.create_client("migrationhub-config")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_migrationhub_config.client import MigrationHubConfigClient
 
-def get_migrationhub-config_client() -> MigrationHubConfigClient:
-    return Session().client("migrationhub-config")
+session = get_session()
+async with session.create_client("migrationhub-config") as client:
+    client: MigrationHubConfigClient
 ```
 
 Boto3 documentation:
@@ -73,8 +76,8 @@ Exceptions:
 
 MigrationHubConfigClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("migrationhub-config").exceptions` method.
+Type annotations for `session.create_client("migrationhub-config").exceptions`
+method.
 
 Boto3 documentation:
 [MigrationHubConfig.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhub-config.html#MigrationHubConfig.Client.exceptions)
@@ -88,18 +91,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("migrationhub-config").can_paginate` method.
+`session.create_client("migrationhub-config").can_paginate` method.
 
 Boto3 documentation:
 [MigrationHubConfig.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhub-config.html#MigrationHubConfig.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_home_region_control"></a>
 
@@ -108,7 +109,7 @@ Returns a `Coroutine` for `bool`.
 This API sets up the home region for the calling account only.
 
 Type annotations for
-`aiobotocore.create_client("migrationhub-config").create_home_region_control`
+`session.create_client("migrationhub-config").create_home_region_control`
 method.
 
 Boto3 documentation:
@@ -136,7 +137,7 @@ Returns a `Coroutine` for
 This API permits filtering on the `ControlId` and `HomeRegion` fields.
 
 Type annotations for
-`aiobotocore.create_client("migrationhub-config").describe_home_region_controls`
+`session.create_client("migrationhub-config").describe_home_region_controls`
 method.
 
 Boto3 documentation:
@@ -166,8 +167,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("migrationhub-config").generate_presigned_url`
-method.
+`session.create_client("migrationhub-config").generate_presigned_url` method.
 
 Boto3 documentation:
 [MigrationHubConfig.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhub-config.html#MigrationHubConfig.Client.generate_presigned_url)
@@ -191,7 +191,7 @@ Returns a `Coroutine` for `str`.
 Returns the calling account’s home region, if configured.
 
 Type annotations for
-`aiobotocore.create_client("migrationhub-config").get_home_region` method.
+`session.create_client("migrationhub-config").get_home_region` method.
 
 Boto3 documentation:
 [MigrationHubConfig.Client.get_home_region](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhub-config.html#MigrationHubConfig.Client.get_home_region)
@@ -200,3 +200,38 @@ Asynchronous method. Use `await get_home_region(...)` for a synchronous call.
 
 Returns a `Coroutine` for
 [GetHomeRegionResultTypeDef](./type_defs.md#gethomeregionresulttypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("migrationhub-config").__aenter__`
+method.
+
+Boto3 documentation:
+[MigrationHubConfig.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhub-config.html#MigrationHubConfig.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[MigrationHubConfigClient](#migrationhubconfigclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("migrationhub-config").__aexit__`
+method.
+
+Boto3 documentation:
+[MigrationHubConfig.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migrationhub-config.html#MigrationHubConfig.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

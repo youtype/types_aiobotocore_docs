@@ -22,17 +22,19 @@ type annotations stubs module
 ## ListActionExecutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").get_paginator("list_action_executions")`.
+`session.create_client("codepipeline").get_paginator("list_action_executions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codepipeline.paginator import ListActionExecutionsPaginator
 
-def get_list_action_executions_paginator() -> ListActionExecutionsPaginator:
-    return Session().create_client("codepipeline").get_paginator("list_action_executions")
+session = get_session()
+async with session.create_client("codepipeline") as client:
+    client: CodePipelineClient
+    paginator: ListActionExecutionsPaginator = client.get_paginator("list_action_executions")
 ```
 
 Boto3 documentation:
@@ -54,17 +56,19 @@ Arguments for `ListActionExecutionsPaginator.paginate` method:
 ## ListActionTypesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").get_paginator("list_action_types")`.
+`session.create_client("codepipeline").get_paginator("list_action_types")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codepipeline.paginator import ListActionTypesPaginator
 
-def get_list_action_types_paginator() -> ListActionTypesPaginator:
-    return Session().create_client("codepipeline").get_paginator("list_action_types")
+session = get_session()
+async with session.create_client("codepipeline") as client:
+    client: CodePipelineClient
+    paginator: ListActionTypesPaginator = client.get_paginator("list_action_types")
 ```
 
 Boto3 documentation:
@@ -85,17 +89,19 @@ Arguments for `ListActionTypesPaginator.paginate` method:
 ## ListPipelineExecutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").get_paginator("list_pipeline_executions")`.
+`session.create_client("codepipeline").get_paginator("list_pipeline_executions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codepipeline.paginator import ListPipelineExecutionsPaginator
 
-def get_list_pipeline_executions_paginator() -> ListPipelineExecutionsPaginator:
-    return Session().create_client("codepipeline").get_paginator("list_pipeline_executions")
+session = get_session()
+async with session.create_client("codepipeline") as client:
+    client: CodePipelineClient
+    paginator: ListPipelineExecutionsPaginator = client.get_paginator("list_pipeline_executions")
 ```
 
 Boto3 documentation:
@@ -115,17 +121,19 @@ Arguments for `ListPipelineExecutionsPaginator.paginate` method:
 ## ListPipelinesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").get_paginator("list_pipelines")`.
+`session.create_client("codepipeline").get_paginator("list_pipelines")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codepipeline.paginator import ListPipelinesPaginator
 
-def get_list_pipelines_paginator() -> ListPipelinesPaginator:
-    return Session().create_client("codepipeline").get_paginator("list_pipelines")
+session = get_session()
+async with session.create_client("codepipeline") as client:
+    client: CodePipelineClient
+    paginator: ListPipelinesPaginator = client.get_paginator("list_pipelines")
 ```
 
 Boto3 documentation:
@@ -144,17 +152,19 @@ Arguments for `ListPipelinesPaginator.paginate` method:
 ## ListTagsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").get_paginator("list_tags_for_resource")`.
+`session.create_client("codepipeline").get_paginator("list_tags_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codepipeline.paginator import ListTagsForResourcePaginator
 
-def get_list_tags_for_resource_paginator() -> ListTagsForResourcePaginator:
-    return Session().create_client("codepipeline").get_paginator("list_tags_for_resource")
+session = get_session()
+async with session.create_client("codepipeline") as client:
+    client: CodePipelineClient
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
 ```
 
 Boto3 documentation:
@@ -174,17 +184,19 @@ Arguments for `ListTagsForResourcePaginator.paginate` method:
 ## ListWebhooksPaginator
 
 Type annotations for
-`aiobotocore.create_client("codepipeline").get_paginator("list_webhooks")`.
+`session.create_client("codepipeline").get_paginator("list_webhooks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codepipeline.paginator import ListWebhooksPaginator
 
-def get_list_webhooks_paginator() -> ListWebhooksPaginator:
-    return Session().create_client("codepipeline").get_paginator("list_webhooks")
+session = get_session()
+async with session.create_client("codepipeline") as client:
+    client: CodePipelineClient
+    paginator: ListWebhooksPaginator = client.get_paginator("list_webhooks")
 ```
 
 Boto3 documentation:

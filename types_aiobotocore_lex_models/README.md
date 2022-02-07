@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[lex-models]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[lex-models]'
+
+# standalone installation
 pip install types-aiobotocore-lex-models
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-lex-models
 
 ## LexModelBuildingServiceClient
 
-Type annotations for `aiobotocore.create_client("lex-models")` as
+Type annotations for `session.create_client("lex-models")` as
 [LexModelBuildingServiceClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_lex_models.client import LexModelBuildingServiceClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_bot_version](./client.md#create_bot_version)
 - [create_intent_version](./client.md#create_intent_version)
@@ -115,7 +121,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_lex_models.paginators import GetBotAliasesPaginator, ...
+from types_aiobotocore_lex_models.paginator import GetBotAliasesPaginator, ...
 ```
 
 - [GetBotAliasesPaginator](./paginators.md#getbotaliasespaginator)

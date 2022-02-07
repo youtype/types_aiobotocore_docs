@@ -22,22 +22,25 @@ type annotations stubs module
     - [list_report_definitions](#list_report_definitions)
     - [put_report_definition](#put_report_definition)
     - [update_report_definition](#update_report_definition)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="applicationcostprofilerclient"></a>
 
 ## ApplicationCostProfilerClient
 
-Type annotations for `aiobotocore.create_client("applicationcostprofiler")`
+Type annotations for `session.create_client("applicationcostprofiler")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_applicationcostprofiler.client import ApplicationCostProfilerClient
 
-def get_applicationcostprofiler_client() -> ApplicationCostProfilerClient:
-    return Session().client("applicationcostprofiler")
+session = get_session()
+async with session.create_client("applicationcostprofiler") as client:
+    client: ApplicationCostProfilerClient
 ```
 
 Boto3 documentation:
@@ -77,7 +80,7 @@ Exceptions:
 ApplicationCostProfilerClient exceptions.
 
 Type annotations for
-`aiobotocore.create_client("applicationcostprofiler").exceptions` method.
+`session.create_client("applicationcostprofiler").exceptions` method.
 
 Boto3 documentation:
 [ApplicationCostProfiler.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/applicationcostprofiler.html#ApplicationCostProfiler.Client.exceptions)
@@ -91,18 +94,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("applicationcostprofiler").can_paginate` method.
+`session.create_client("applicationcostprofiler").can_paginate` method.
 
 Boto3 documentation:
 [ApplicationCostProfiler.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/applicationcostprofiler.html#ApplicationCostProfiler.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="delete_report_definition"></a>
 
@@ -111,7 +112,7 @@ Returns a `Coroutine` for `bool`.
 Deletes the specified report definition in AWS Application Cost Profiler.
 
 Type annotations for
-`aiobotocore.create_client("applicationcostprofiler").delete_report_definition`
+`session.create_client("applicationcostprofiler").delete_report_definition`
 method.
 
 Boto3 documentation:
@@ -137,7 +138,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("applicationcostprofiler").generate_presigned_url`
+`session.create_client("applicationcostprofiler").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -163,7 +164,7 @@ Retrieves the definition of a report already configured in AWS Application Cost
 Profiler.
 
 Type annotations for
-`aiobotocore.create_client("applicationcostprofiler").get_report_definition`
+`session.create_client("applicationcostprofiler").get_report_definition`
 method.
 
 Boto3 documentation:
@@ -189,7 +190,7 @@ Returns a `Coroutine` for
 Ingests application usage data from Amazon Simple Storage Service (Amazon S3).
 
 Type annotations for
-`aiobotocore.create_client("applicationcostprofiler").import_application_usage`
+`session.create_client("applicationcostprofiler").import_application_usage`
 method.
 
 Boto3 documentation:
@@ -217,7 +218,7 @@ Returns a `Coroutine` for
 Retrieves a list of all reports and their configurations for your AWS account.
 
 Type annotations for
-`aiobotocore.create_client("applicationcostprofiler").list_report_definitions`
+`session.create_client("applicationcostprofiler").list_report_definitions`
 method.
 
 Boto3 documentation:
@@ -244,7 +245,7 @@ Returns a `Coroutine` for
 Creates the report definition for a report in Application Cost Profiler.
 
 Type annotations for
-`aiobotocore.create_client("applicationcostprofiler").put_report_definition`
+`session.create_client("applicationcostprofiler").put_report_definition`
 method.
 
 Boto3 documentation:
@@ -276,7 +277,7 @@ Returns a `Coroutine` for
 Updates existing report in AWS Application Cost Profiler.
 
 Type annotations for
-`aiobotocore.create_client("applicationcostprofiler").update_report_definition`
+`session.create_client("applicationcostprofiler").update_report_definition`
 method.
 
 Boto3 documentation:
@@ -301,13 +302,48 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateReportDefinitionResultTypeDef](./type_defs.md#updatereportdefinitionresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for
+`session.create_client("applicationcostprofiler").__aenter__` method.
+
+Boto3 documentation:
+[ApplicationCostProfiler.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/applicationcostprofiler.html#ApplicationCostProfiler.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[ApplicationCostProfilerClient](#applicationcostprofilerclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for
+`session.create_client("applicationcostprofiler").__aexit__` method.
+
+Boto3 documentation:
+[ApplicationCostProfiler.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/applicationcostprofiler.html#ApplicationCostProfiler.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
 Type annotations for
-`aiobotocore.create_client("applicationcostprofiler").get_paginator` method
-with overloads.
+`session.create_client("applicationcostprofiler").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_report_definitions")` ->
   [ListReportDefinitionsPaginator](./paginators.md#listreportdefinitionspaginator)

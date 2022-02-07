@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[stepfunctions]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[stepfunctions]'
+
+# standalone installation
 pip install types-aiobotocore-stepfunctions
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-stepfunctions
 
 ## SFNClient
 
-Type annotations for `aiobotocore.create_client("stepfunctions")` as
+Type annotations for `session.create_client("stepfunctions")` as
 [SFNClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_stepfunctions.client import SFNClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_activity](./client.md#create_activity)
 - [create_state_machine](./client.md#create_state_machine)
@@ -112,7 +118,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_stepfunctions.paginators import GetExecutionHistoryPaginator, ...
+from types_aiobotocore_stepfunctions.paginator import GetExecutionHistoryPaginator, ...
 ```
 
 - [GetExecutionHistoryPaginator](./paginators.md#getexecutionhistorypaginator)

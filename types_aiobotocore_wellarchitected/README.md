@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[wellarchitected]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[wellarchitected]'
+
+# standalone installation
 pip install types-aiobotocore-wellarchitected
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-wellarchitected
 
 ## WellArchitectedClient
 
-Type annotations for `aiobotocore.create_client("wellarchitected")` as
+Type annotations for `session.create_client("wellarchitected")` as
 [WellArchitectedClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_wellarchitected.client import WellArchitectedClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_lenses](./client.md#associate_lenses)
 - [can_paginate](./client.md#can_paginate)
 - [create_lens_share](./client.md#create_lens_share)

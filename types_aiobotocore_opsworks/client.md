@@ -90,6 +90,8 @@ type annotations stubs module
     - [update_stack](#update_stack)
     - [update_user_profile](#update_user_profile)
     - [update_volume](#update_volume)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -97,16 +99,17 @@ type annotations stubs module
 
 ## OpsWorksClient
 
-Type annotations for `aiobotocore.create_client("opsworks")`
+Type annotations for `session.create_client("opsworks")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_opsworks.client import OpsWorksClient
 
-def get_opsworks_client() -> OpsWorksClient:
-    return Session().client("opsworks")
+session = get_session()
+async with session.create_client("opsworks") as client:
+    client: OpsWorksClient
 ```
 
 Boto3 documentation:
@@ -142,7 +145,7 @@ Exceptions:
 
 OpsWorksClient exceptions.
 
-Type annotations for `aiobotocore.create_client("opsworks").exceptions` method.
+Type annotations for `session.create_client("opsworks").exceptions` method.
 
 Boto3 documentation:
 [OpsWorks.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.exceptions)
@@ -155,7 +158,7 @@ Returns [Exceptions](#exceptions).
 
 Assign a registered instance to a layer.
 
-Type annotations for `aiobotocore.create_client("opsworks").assign_instance`
+Type annotations for `session.create_client("opsworks").assign_instance`
 method.
 
 Boto3 documentation:
@@ -178,8 +181,7 @@ Keyword-only arguments:
 Assigns one of the stack's registered Amazon EBS volumes to a specified
 instance.
 
-Type annotations for `aiobotocore.create_client("opsworks").assign_volume`
-method.
+Type annotations for `session.create_client("opsworks").assign_volume` method.
 
 Boto3 documentation:
 [OpsWorks.Client.assign_volume](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.assign_volume)
@@ -201,8 +203,8 @@ Keyword-only arguments:
 Associates one of the stack's registered Elastic IP addresses with a specified
 instance.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").associate_elastic_ip` method.
+Type annotations for `session.create_client("opsworks").associate_elastic_ip`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.associate_elastic_ip](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.associate_elastic_ip)
@@ -225,7 +227,7 @@ Keyword-only arguments:
 Attaches an Elastic Load Balancing load balancer to a specified layer.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").attach_elastic_load_balancer` method.
+`session.create_client("opsworks").attach_elastic_load_balancer` method.
 
 Boto3 documentation:
 [OpsWorks.Client.attach_elastic_load_balancer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.attach_elastic_load_balancer)
@@ -247,19 +249,16 @@ Keyword-only arguments:
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("opsworks").can_paginate`
-method.
+Type annotations for `session.create_client("opsworks").can_paginate` method.
 
 Boto3 documentation:
 [OpsWorks.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="clone_stack"></a>
 
@@ -267,8 +266,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a clone of a specified stack.
 
-Type annotations for `aiobotocore.create_client("opsworks").clone_stack`
-method.
+Type annotations for `session.create_client("opsworks").clone_stack` method.
 
 Boto3 documentation:
 [OpsWorks.Client.clone_stack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.clone_stack)
@@ -316,7 +314,7 @@ Returns a `Coroutine` for
 
 Creates an app for a specified stack.
 
-Type annotations for `aiobotocore.create_client("opsworks").create_app` method.
+Type annotations for `session.create_client("opsworks").create_app` method.
 
 Boto3 documentation:
 [OpsWorks.Client.create_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.create_app)
@@ -355,7 +353,7 @@ Returns a `Coroutine` for
 
 Runs deployment or stack commands.
 
-Type annotations for `aiobotocore.create_client("opsworks").create_deployment`
+Type annotations for `session.create_client("opsworks").create_deployment`
 method.
 
 Boto3 documentation:
@@ -387,7 +385,7 @@ Returns a `Coroutine` for
 
 Creates an instance in a specified stack.
 
-Type annotations for `aiobotocore.create_client("opsworks").create_instance`
+Type annotations for `session.create_client("opsworks").create_instance`
 method.
 
 Boto3 documentation:
@@ -429,8 +427,7 @@ Returns a `Coroutine` for
 
 Creates a layer.
 
-Type annotations for `aiobotocore.create_client("opsworks").create_layer`
-method.
+Type annotations for `session.create_client("opsworks").create_layer` method.
 
 Boto3 documentation:
 [OpsWorks.Client.create_layer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.create_layer)
@@ -475,8 +472,7 @@ Returns a `Coroutine` for
 
 Creates a new stack.
 
-Type annotations for `aiobotocore.create_client("opsworks").create_stack`
-method.
+Type annotations for `session.create_client("opsworks").create_stack` method.
 
 Boto3 documentation:
 [OpsWorks.Client.create_stack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.create_stack)
@@ -521,8 +517,8 @@ Returns a `Coroutine` for
 
 Creates a new user profile.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").create_user_profile` method.
+Type annotations for `session.create_client("opsworks").create_user_profile`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.create_user_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.create_user_profile)
@@ -549,7 +545,7 @@ Returns a `Coroutine` for
 
 Deletes a specified app.
 
-Type annotations for `aiobotocore.create_client("opsworks").delete_app` method.
+Type annotations for `session.create_client("opsworks").delete_app` method.
 
 Boto3 documentation:
 [OpsWorks.Client.delete_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.delete_app)
@@ -570,7 +566,7 @@ Keyword-only arguments:
 Deletes a specified instance, which terminates the associated Amazon EC2
 instance.
 
-Type annotations for `aiobotocore.create_client("opsworks").delete_instance`
+Type annotations for `session.create_client("opsworks").delete_instance`
 method.
 
 Boto3 documentation:
@@ -593,8 +589,7 @@ Keyword-only arguments:
 
 Deletes a specified layer.
 
-Type annotations for `aiobotocore.create_client("opsworks").delete_layer`
-method.
+Type annotations for `session.create_client("opsworks").delete_layer` method.
 
 Boto3 documentation:
 [OpsWorks.Client.delete_layer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.delete_layer)
@@ -614,8 +609,7 @@ Keyword-only arguments:
 
 Deletes a specified stack.
 
-Type annotations for `aiobotocore.create_client("opsworks").delete_stack`
-method.
+Type annotations for `session.create_client("opsworks").delete_stack` method.
 
 Boto3 documentation:
 [OpsWorks.Client.delete_stack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.delete_stack)
@@ -635,8 +629,8 @@ Keyword-only arguments:
 
 Deletes a user profile.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").delete_user_profile` method.
+Type annotations for `session.create_client("opsworks").delete_user_profile`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.delete_user_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.delete_user_profile)
@@ -657,8 +651,8 @@ Keyword-only arguments:
 
 Deregisters a specified Amazon ECS cluster from a stack.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").deregister_ecs_cluster` method.
+Type annotations for `session.create_client("opsworks").deregister_ecs_cluster`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.deregister_ecs_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.deregister_ecs_cluster)
@@ -679,8 +673,8 @@ Keyword-only arguments:
 
 Deregisters a specified Elastic IP address.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").deregister_elastic_ip` method.
+Type annotations for `session.create_client("opsworks").deregister_elastic_ip`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.deregister_elastic_ip](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.deregister_elastic_ip)
@@ -701,8 +695,8 @@ Keyword-only arguments:
 
 Deregister a registered Amazon EC2 or on-premises instance.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").deregister_instance` method.
+Type annotations for `session.create_client("opsworks").deregister_instance`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.deregister_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.deregister_instance)
@@ -724,7 +718,7 @@ Keyword-only arguments:
 Deregisters an Amazon RDS instance.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").deregister_rds_db_instance` method.
+`session.create_client("opsworks").deregister_rds_db_instance` method.
 
 Boto3 documentation:
 [OpsWorks.Client.deregister_rds_db_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.deregister_rds_db_instance)
@@ -745,7 +739,7 @@ Keyword-only arguments:
 
 Deregisters an Amazon EBS volume.
 
-Type annotations for `aiobotocore.create_client("opsworks").deregister_volume`
+Type annotations for `session.create_client("opsworks").deregister_volume`
 method.
 
 Boto3 documentation:
@@ -767,7 +761,7 @@ Keyword-only arguments:
 Describes the available AWS OpsWorks Stacks agent versions.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").describe_agent_versions` method.
+`session.create_client("opsworks").describe_agent_versions` method.
 
 Boto3 documentation:
 [OpsWorks.Client.describe_agent_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.describe_agent_versions)
@@ -793,8 +787,7 @@ Returns a `Coroutine` for
 
 Requests a description of a specified set of apps.
 
-Type annotations for `aiobotocore.create_client("opsworks").describe_apps`
-method.
+Type annotations for `session.create_client("opsworks").describe_apps` method.
 
 Boto3 documentation:
 [OpsWorks.Client.describe_apps](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.describe_apps)
@@ -818,7 +811,7 @@ Returns a `Coroutine` for
 
 Describes the results of specified commands.
 
-Type annotations for `aiobotocore.create_client("opsworks").describe_commands`
+Type annotations for `session.create_client("opsworks").describe_commands`
 method.
 
 Boto3 documentation:
@@ -844,8 +837,8 @@ Returns a `Coroutine` for
 
 Requests a description of a specified set of deployments.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").describe_deployments` method.
+Type annotations for `session.create_client("opsworks").describe_deployments`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.describe_deployments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.describe_deployments)
@@ -871,8 +864,8 @@ Returns a `Coroutine` for
 
 Describes Amazon ECS clusters that are registered with a stack.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").describe_ecs_clusters` method.
+Type annotations for `session.create_client("opsworks").describe_ecs_clusters`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.describe_ecs_clusters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.describe_ecs_clusters)
@@ -901,8 +894,8 @@ Describes \[Elastic IP
 addresses\](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-
 addresses-eip.html)\_ .
 
-Type annotations for
-`aiobotocore.create_client("opsworks").describe_elastic_ips` method.
+Type annotations for `session.create_client("opsworks").describe_elastic_ips`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.describe_elastic_ips](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.describe_elastic_ips)
@@ -929,7 +922,7 @@ Returns a `Coroutine` for
 Describes a stack's Elastic Load Balancing instances.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").describe_elastic_load_balancers` method.
+`session.create_client("opsworks").describe_elastic_load_balancers` method.
 
 Boto3 documentation:
 [OpsWorks.Client.describe_elastic_load_balancers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.describe_elastic_load_balancers)
@@ -954,7 +947,7 @@ Returns a `Coroutine` for
 
 Requests a description of a set of instances.
 
-Type annotations for `aiobotocore.create_client("opsworks").describe_instances`
+Type annotations for `session.create_client("opsworks").describe_instances`
 method.
 
 Boto3 documentation:
@@ -981,7 +974,7 @@ Returns a `Coroutine` for
 
 Requests a description of one or more layers in a specified stack.
 
-Type annotations for `aiobotocore.create_client("opsworks").describe_layers`
+Type annotations for `session.create_client("opsworks").describe_layers`
 method.
 
 Boto3 documentation:
@@ -1007,8 +1000,7 @@ Returns a `Coroutine` for
 Describes load-based auto scaling configurations for specified layers.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").describe_load_based_auto_scaling`
-method.
+`session.create_client("opsworks").describe_load_based_auto_scaling` method.
 
 Boto3 documentation:
 [OpsWorks.Client.describe_load_based_auto_scaling](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.describe_load_based_auto_scaling)
@@ -1033,7 +1025,7 @@ Returns a `Coroutine` for
 Describes a user's SSH information.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").describe_my_user_profile` method.
+`session.create_client("opsworks").describe_my_user_profile` method.
 
 Boto3 documentation:
 [OpsWorks.Client.describe_my_user_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.describe_my_user_profile)
@@ -1051,7 +1043,7 @@ Returns a `Coroutine` for
 Describes the operating systems that are supported by AWS OpsWorks Stacks.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").describe_operating_systems` method.
+`session.create_client("opsworks").describe_operating_systems` method.
 
 Boto3 documentation:
 [OpsWorks.Client.describe_operating_systems](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.describe_operating_systems)
@@ -1068,8 +1060,8 @@ Returns a `Coroutine` for
 
 Describes the permissions for a specified stack.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").describe_permissions` method.
+Type annotations for `session.create_client("opsworks").describe_permissions`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.describe_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.describe_permissions)
@@ -1094,8 +1086,8 @@ Returns a `Coroutine` for
 
 Describe an instance's RAID arrays.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").describe_raid_arrays` method.
+Type annotations for `session.create_client("opsworks").describe_raid_arrays`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.describe_raid_arrays](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.describe_raid_arrays)
@@ -1122,7 +1114,7 @@ Returns a `Coroutine` for
 Describes Amazon RDS instances.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").describe_rds_db_instances` method.
+`session.create_client("opsworks").describe_rds_db_instances` method.
 
 Boto3 documentation:
 [OpsWorks.Client.describe_rds_db_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.describe_rds_db_instances)
@@ -1148,7 +1140,7 @@ Returns a `Coroutine` for
 Describes AWS OpsWorks Stacks service errors.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").describe_service_errors` method.
+`session.create_client("opsworks").describe_service_errors` method.
 
 Boto3 documentation:
 [OpsWorks.Client.describe_service_errors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.describe_service_errors)
@@ -1175,7 +1167,7 @@ Returns a `Coroutine` for
 Requests a description of a stack's provisioning parameters.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").describe_stack_provisioning_parameters`
+`session.create_client("opsworks").describe_stack_provisioning_parameters`
 method.
 
 Boto3 documentation:
@@ -1201,8 +1193,8 @@ Returns a `Coroutine` for
 Describes the number of layers and apps in a specified stack, and the number of
 instances in each state, such as `running_setup` or `online` .
 
-Type annotations for
-`aiobotocore.create_client("opsworks").describe_stack_summary` method.
+Type annotations for `session.create_client("opsworks").describe_stack_summary`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.describe_stack_summary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.describe_stack_summary)
@@ -1226,7 +1218,7 @@ Returns a `Coroutine` for
 
 Requests a description of one or more stacks.
 
-Type annotations for `aiobotocore.create_client("opsworks").describe_stacks`
+Type annotations for `session.create_client("opsworks").describe_stacks`
 method.
 
 Boto3 documentation:
@@ -1251,8 +1243,7 @@ Returns a `Coroutine` for
 Describes time-based auto scaling configurations for specified instances.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").describe_time_based_auto_scaling`
-method.
+`session.create_client("opsworks").describe_time_based_auto_scaling` method.
 
 Boto3 documentation:
 [OpsWorks.Client.describe_time_based_auto_scaling](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.describe_time_based_auto_scaling)
@@ -1276,8 +1267,8 @@ Returns a `Coroutine` for
 
 Describe specified users.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").describe_user_profiles` method.
+Type annotations for `session.create_client("opsworks").describe_user_profiles`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.describe_user_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.describe_user_profiles)
@@ -1301,7 +1292,7 @@ Returns a `Coroutine` for
 
 Describes an instance's Amazon EBS volumes.
 
-Type annotations for `aiobotocore.create_client("opsworks").describe_volumes`
+Type annotations for `session.create_client("opsworks").describe_volumes`
 method.
 
 Boto3 documentation:
@@ -1329,7 +1320,7 @@ Returns a `Coroutine` for
 Detaches a specified Elastic Load Balancing instance from its layer.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").detach_elastic_load_balancer` method.
+`session.create_client("opsworks").detach_elastic_load_balancer` method.
 
 Boto3 documentation:
 [OpsWorks.Client.detach_elastic_load_balancer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.detach_elastic_load_balancer)
@@ -1352,7 +1343,7 @@ Keyword-only arguments:
 Disassociates an Elastic IP address from its instance.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").disassociate_elastic_ip` method.
+`session.create_client("opsworks").disassociate_elastic_ip` method.
 
 Boto3 documentation:
 [OpsWorks.Client.disassociate_elastic_ip](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.disassociate_elastic_ip)
@@ -1373,8 +1364,8 @@ Keyword-only arguments:
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").generate_presigned_url` method.
+Type annotations for `session.create_client("opsworks").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.generate_presigned_url)
@@ -1399,7 +1390,7 @@ Gets a generated host name for the specified layer, based on the current host
 name theme.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").get_hostname_suggestion` method.
+`session.create_client("opsworks").get_hostname_suggestion` method.
 
 Boto3 documentation:
 [OpsWorks.Client.get_hostname_suggestion](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.get_hostname_suggestion)
@@ -1423,8 +1414,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("opsworks").grant_access`
-method.
+Type annotations for `session.create_client("opsworks").grant_access` method.
 
 Boto3 documentation:
 [OpsWorks.Client.grant_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.grant_access)
@@ -1448,7 +1438,7 @@ Returns a `Coroutine` for
 
 Returns a list of tags that are applied to the specified stack or layer.
 
-Type annotations for `aiobotocore.create_client("opsworks").list_tags` method.
+Type annotations for `session.create_client("opsworks").list_tags` method.
 
 Boto3 documentation:
 [OpsWorks.Client.list_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.list_tags)
@@ -1473,7 +1463,7 @@ Returns a `Coroutine` for
 
 Reboots a specified instance.
 
-Type annotations for `aiobotocore.create_client("opsworks").reboot_instance`
+Type annotations for `session.create_client("opsworks").reboot_instance`
 method.
 
 Boto3 documentation:
@@ -1494,8 +1484,8 @@ Keyword-only arguments:
 
 Registers a specified Amazon ECS cluster with a stack.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").register_ecs_cluster` method.
+Type annotations for `session.create_client("opsworks").register_ecs_cluster`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.register_ecs_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.register_ecs_cluster)
@@ -1520,8 +1510,8 @@ Returns a `Coroutine` for
 
 Registers an Elastic IP address with a specified stack.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").register_elastic_ip` method.
+Type annotations for `session.create_client("opsworks").register_elastic_ip`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.register_elastic_ip](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.register_elastic_ip)
@@ -1547,7 +1537,7 @@ Returns a `Coroutine` for
 Registers instances that were created outside of AWS OpsWorks Stacks with a
 specified stack.
 
-Type annotations for `aiobotocore.create_client("opsworks").register_instance`
+Type annotations for `session.create_client("opsworks").register_instance`
 method.
 
 Boto3 documentation:
@@ -1579,7 +1569,7 @@ Returns a `Coroutine` for
 Registers an Amazon RDS instance with a stack.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").register_rds_db_instance` method.
+`session.create_client("opsworks").register_rds_db_instance` method.
 
 Boto3 documentation:
 [OpsWorks.Client.register_rds_db_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.register_rds_db_instance)
@@ -1603,7 +1593,7 @@ Keyword-only arguments:
 
 Registers an Amazon EBS volume with a specified stack.
 
-Type annotations for `aiobotocore.create_client("opsworks").register_volume`
+Type annotations for `session.create_client("opsworks").register_volume`
 method.
 
 Boto3 documentation:
@@ -1629,7 +1619,7 @@ Returns a `Coroutine` for
 Specify the load-based auto scaling configuration for a specified layer.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").set_load_based_auto_scaling` method.
+`session.create_client("opsworks").set_load_based_auto_scaling` method.
 
 Boto3 documentation:
 [OpsWorks.Client.set_load_based_auto_scaling](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.set_load_based_auto_scaling)
@@ -1655,8 +1645,7 @@ Keyword-only arguments:
 
 Specifies a user's permissions.
 
-Type annotations for `aiobotocore.create_client("opsworks").set_permission`
-method.
+Type annotations for `session.create_client("opsworks").set_permission` method.
 
 Boto3 documentation:
 [OpsWorks.Client.set_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.set_permission)
@@ -1681,7 +1670,7 @@ Keyword-only arguments:
 Specify the time-based auto scaling configuration for a specified instance.
 
 Type annotations for
-`aiobotocore.create_client("opsworks").set_time_based_auto_scaling` method.
+`session.create_client("opsworks").set_time_based_auto_scaling` method.
 
 Boto3 documentation:
 [OpsWorks.Client.set_time_based_auto_scaling](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.set_time_based_auto_scaling)
@@ -1704,8 +1693,7 @@ Keyword-only arguments:
 
 Starts a specified instance.
 
-Type annotations for `aiobotocore.create_client("opsworks").start_instance`
-method.
+Type annotations for `session.create_client("opsworks").start_instance` method.
 
 Boto3 documentation:
 [OpsWorks.Client.start_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.start_instance)
@@ -1725,8 +1713,7 @@ Keyword-only arguments:
 
 Starts a stack's instances.
 
-Type annotations for `aiobotocore.create_client("opsworks").start_stack`
-method.
+Type annotations for `session.create_client("opsworks").start_stack` method.
 
 Boto3 documentation:
 [OpsWorks.Client.start_stack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.start_stack)
@@ -1746,8 +1733,7 @@ Keyword-only arguments:
 
 Stops a specified instance.
 
-Type annotations for `aiobotocore.create_client("opsworks").stop_instance`
-method.
+Type annotations for `session.create_client("opsworks").stop_instance` method.
 
 Boto3 documentation:
 [OpsWorks.Client.stop_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.stop_instance)
@@ -1768,7 +1754,7 @@ Keyword-only arguments:
 
 Stops a specified stack.
 
-Type annotations for `aiobotocore.create_client("opsworks").stop_stack` method.
+Type annotations for `session.create_client("opsworks").stop_stack` method.
 
 Boto3 documentation:
 [OpsWorks.Client.stop_stack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.stop_stack)
@@ -1789,8 +1775,7 @@ Keyword-only arguments:
 Apply cost-allocation tags to a specified stack or layer in AWS OpsWorks
 Stacks.
 
-Type annotations for `aiobotocore.create_client("opsworks").tag_resource`
-method.
+Type annotations for `session.create_client("opsworks").tag_resource` method.
 
 Boto3 documentation:
 [OpsWorks.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.tag_resource)
@@ -1811,7 +1796,7 @@ Keyword-only arguments:
 
 Unassigns a registered instance from all layers that are using the instance.
 
-Type annotations for `aiobotocore.create_client("opsworks").unassign_instance`
+Type annotations for `session.create_client("opsworks").unassign_instance`
 method.
 
 Boto3 documentation:
@@ -1832,7 +1817,7 @@ Keyword-only arguments:
 
 Unassigns an assigned Amazon EBS volume.
 
-Type annotations for `aiobotocore.create_client("opsworks").unassign_volume`
+Type annotations for `session.create_client("opsworks").unassign_volume`
 method.
 
 Boto3 documentation:
@@ -1853,8 +1838,7 @@ Keyword-only arguments:
 
 Removes tags from a specified stack or layer.
 
-Type annotations for `aiobotocore.create_client("opsworks").untag_resource`
-method.
+Type annotations for `session.create_client("opsworks").untag_resource` method.
 
 Boto3 documentation:
 [OpsWorks.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.untag_resource)
@@ -1875,7 +1859,7 @@ Keyword-only arguments:
 
 Updates a specified app.
 
-Type annotations for `aiobotocore.create_client("opsworks").update_app` method.
+Type annotations for `session.create_client("opsworks").update_app` method.
 
 Boto3 documentation:
 [OpsWorks.Client.update_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.update_app)
@@ -1910,7 +1894,7 @@ Keyword-only arguments:
 
 Updates a registered Elastic IP address's name.
 
-Type annotations for `aiobotocore.create_client("opsworks").update_elastic_ip`
+Type annotations for `session.create_client("opsworks").update_elastic_ip`
 method.
 
 Boto3 documentation:
@@ -1932,7 +1916,7 @@ Keyword-only arguments:
 
 Updates a specified instance.
 
-Type annotations for `aiobotocore.create_client("opsworks").update_instance`
+Type annotations for `session.create_client("opsworks").update_instance`
 method.
 
 Boto3 documentation:
@@ -1964,8 +1948,7 @@ Keyword-only arguments:
 
 Updates a specified layer.
 
-Type annotations for `aiobotocore.create_client("opsworks").update_layer`
-method.
+Type annotations for `session.create_client("opsworks").update_layer` method.
 
 Boto3 documentation:
 [OpsWorks.Client.update_layer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.update_layer)
@@ -2006,8 +1989,8 @@ Keyword-only arguments:
 
 Updates a user's SSH public key.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").update_my_user_profile` method.
+Type annotations for `session.create_client("opsworks").update_my_user_profile`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.update_my_user_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.update_my_user_profile)
@@ -2028,8 +2011,8 @@ Keyword-only arguments:
 
 Updates an Amazon RDS instance.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").update_rds_db_instance` method.
+Type annotations for `session.create_client("opsworks").update_rds_db_instance`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.update_rds_db_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.update_rds_db_instance)
@@ -2052,8 +2035,7 @@ Keyword-only arguments:
 
 Updates a specified stack.
 
-Type annotations for `aiobotocore.create_client("opsworks").update_stack`
-method.
+Type annotations for `session.create_client("opsworks").update_stack` method.
 
 Boto3 documentation:
 [OpsWorks.Client.update_stack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.update_stack)
@@ -2094,8 +2076,8 @@ Keyword-only arguments:
 
 Updates a specified user profile.
 
-Type annotations for
-`aiobotocore.create_client("opsworks").update_user_profile` method.
+Type annotations for `session.create_client("opsworks").update_user_profile`
+method.
 
 Boto3 documentation:
 [OpsWorks.Client.update_user_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.update_user_profile)
@@ -2119,8 +2101,7 @@ Keyword-only arguments:
 
 Updates an Amazon EBS volume's name or mount point.
 
-Type annotations for `aiobotocore.create_client("opsworks").update_volume`
-method.
+Type annotations for `session.create_client("opsworks").update_volume` method.
 
 Boto3 documentation:
 [OpsWorks.Client.update_volume](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.update_volume)
@@ -2136,12 +2117,44 @@ Keyword-only arguments:
 - `Name`: `str`
 - `MountPoint`: `str`
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("opsworks").__aenter__` method.
+
+Boto3 documentation:
+[OpsWorks.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [OpsWorksClient](#opsworksclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("opsworks").__aexit__` method.
+
+Boto3 documentation:
+[OpsWorks.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opsworks.html#OpsWorks.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("opsworks").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("opsworks").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_ecs_clusters")` ->
   [DescribeEcsClustersPaginator](./paginators.md#describeecsclusterspaginator)
@@ -2150,8 +2163,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("opsworks").get_waiter` method
-with overloads.
+Type annotations for `session.create_client("opsworks").get_waiter` method with
+overloads.
 
 - `client.get_waiter("app_exists")` ->
   [AppExistsWaiter](./waiters.md#appexistswaiter)

@@ -17,17 +17,19 @@ type annotations stubs module
 ## DescribeAcceleratorsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elastic-inference").get_paginator("describe_accelerators")`.
+`session.create_client("elastic-inference").get_paginator("describe_accelerators")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elastic_inference.paginator import DescribeAcceleratorsPaginator
 
-def get_describe_accelerators_paginator() -> DescribeAcceleratorsPaginator:
-    return Session().create_client("elastic-inference").get_paginator("describe_accelerators")
+session = get_session()
+async with session.create_client("elastic-inference") as client:
+    client: ElasticInferenceClient
+    paginator: DescribeAcceleratorsPaginator = client.get_paginator("describe_accelerators")
 ```
 
 Boto3 documentation:

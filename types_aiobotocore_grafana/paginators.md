@@ -18,17 +18,19 @@ type annotations stubs module
 ## ListPermissionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("grafana").get_paginator("list_permissions")`.
+`session.create_client("grafana").get_paginator("list_permissions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_grafana.paginator import ListPermissionsPaginator
 
-def get_list_permissions_paginator() -> ListPermissionsPaginator:
-    return Session().create_client("grafana").get_paginator("list_permissions")
+session = get_session()
+async with session.create_client("grafana") as client:
+    client: ManagedGrafanaClient
+    paginator: ListPermissionsPaginator = client.get_paginator("list_permissions")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `ListPermissionsPaginator.paginate` method:
 ## ListWorkspacesPaginator
 
 Type annotations for
-`aiobotocore.create_client("grafana").get_paginator("list_workspaces")`.
+`session.create_client("grafana").get_paginator("list_workspaces")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_grafana.paginator import ListWorkspacesPaginator
 
-def get_list_workspaces_paginator() -> ListWorkspacesPaginator:
-    return Session().create_client("grafana").get_paginator("list_workspaces")
+session = get_session()
+async with session.create_client("grafana") as client:
+    client: ManagedGrafanaClient
+    paginator: ListWorkspacesPaginator = client.get_paginator("list_workspaces")
 ```
 
 Boto3 documentation:

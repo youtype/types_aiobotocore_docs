@@ -38,22 +38,25 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_dataset_entries](#update_dataset_entries)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="lookoutforvisionclient"></a>
 
 ## LookoutforVisionClient
 
-Type annotations for `aiobotocore.create_client("lookoutvision")`
+Type annotations for `session.create_client("lookoutvision")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_lookoutvision.client import LookoutforVisionClient
 
-def get_lookoutvision_client() -> LookoutforVisionClient:
-    return Session().client("lookoutvision")
+session = get_session()
+async with session.create_client("lookoutvision") as client:
+    client: LookoutforVisionClient
 ```
 
 Boto3 documentation:
@@ -94,7 +97,7 @@ Exceptions:
 
 LookoutforVisionClient exceptions.
 
-Type annotations for `aiobotocore.create_client("lookoutvision").exceptions`
+Type annotations for `session.create_client("lookoutvision").exceptions`
 method.
 
 Boto3 documentation:
@@ -108,19 +111,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("lookoutvision").can_paginate`
+Type annotations for `session.create_client("lookoutvision").can_paginate`
 method.
 
 Boto3 documentation:
 [LookoutforVision.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_dataset"></a>
 
@@ -128,8 +129,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates a new dataset in an Amazon Lookout for Vision project.
 
-Type annotations for
-`aiobotocore.create_client("lookoutvision").create_dataset` method.
+Type annotations for `session.create_client("lookoutvision").create_dataset`
+method.
 
 Boto3 documentation:
 [LookoutforVision.Client.create_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.create_dataset)
@@ -156,7 +157,7 @@ Returns a `Coroutine` for
 Creates a new version of a model within an an Amazon Lookout for Vision
 project.
 
-Type annotations for `aiobotocore.create_client("lookoutvision").create_model`
+Type annotations for `session.create_client("lookoutvision").create_model`
 method.
 
 Boto3 documentation:
@@ -186,8 +187,8 @@ Returns a `Coroutine` for
 
 Creates an empty Amazon Lookout for Vision project.
 
-Type annotations for
-`aiobotocore.create_client("lookoutvision").create_project` method.
+Type annotations for `session.create_client("lookoutvision").create_project`
+method.
 
 Boto3 documentation:
 [LookoutforVision.Client.create_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.create_project)
@@ -211,8 +212,8 @@ Returns a `Coroutine` for
 
 Deletes an existing Amazon Lookout for Vision `dataset` .
 
-Type annotations for
-`aiobotocore.create_client("lookoutvision").delete_dataset` method.
+Type annotations for `session.create_client("lookoutvision").delete_dataset`
+method.
 
 Boto3 documentation:
 [LookoutforVision.Client.delete_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.delete_dataset)
@@ -236,7 +237,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an Amazon Lookout for Vision model.
 
-Type annotations for `aiobotocore.create_client("lookoutvision").delete_model`
+Type annotations for `session.create_client("lookoutvision").delete_model`
 method.
 
 Boto3 documentation:
@@ -262,8 +263,8 @@ Returns a `Coroutine` for
 
 Deletes an Amazon Lookout for Vision project.
 
-Type annotations for
-`aiobotocore.create_client("lookoutvision").delete_project` method.
+Type annotations for `session.create_client("lookoutvision").delete_project`
+method.
 
 Boto3 documentation:
 [LookoutforVision.Client.delete_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.delete_project)
@@ -287,8 +288,8 @@ Returns a `Coroutine` for
 
 Describe an Amazon Lookout for Vision dataset.
 
-Type annotations for
-`aiobotocore.create_client("lookoutvision").describe_dataset` method.
+Type annotations for `session.create_client("lookoutvision").describe_dataset`
+method.
 
 Boto3 documentation:
 [LookoutforVision.Client.describe_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.describe_dataset)
@@ -312,8 +313,8 @@ Returns a `Coroutine` for
 
 Describes a version of an Amazon Lookout for Vision model.
 
-Type annotations for
-`aiobotocore.create_client("lookoutvision").describe_model` method.
+Type annotations for `session.create_client("lookoutvision").describe_model`
+method.
 
 Boto3 documentation:
 [LookoutforVision.Client.describe_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.describe_model)
@@ -338,8 +339,7 @@ Returns a `Coroutine` for
 Describes an Amazon Lookout for Vision model packaging job.
 
 Type annotations for
-`aiobotocore.create_client("lookoutvision").describe_model_packaging_job`
-method.
+`session.create_client("lookoutvision").describe_model_packaging_job` method.
 
 Boto3 documentation:
 [LookoutforVision.Client.describe_model_packaging_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.describe_model_packaging_job)
@@ -364,8 +364,8 @@ Returns a `Coroutine` for
 
 Describes an Amazon Lookout for Vision project.
 
-Type annotations for
-`aiobotocore.create_client("lookoutvision").describe_project` method.
+Type annotations for `session.create_client("lookoutvision").describe_project`
+method.
 
 Boto3 documentation:
 [LookoutforVision.Client.describe_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.describe_project)
@@ -388,8 +388,8 @@ Returns a `Coroutine` for
 
 Detects anomalies in an image that you supply.
 
-Type annotations for
-`aiobotocore.create_client("lookoutvision").detect_anomalies` method.
+Type annotations for `session.create_client("lookoutvision").detect_anomalies`
+method.
 
 Boto3 documentation:
 [LookoutforVision.Client.detect_anomalies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.detect_anomalies)
@@ -416,7 +416,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("lookoutvision").generate_presigned_url` method.
+`session.create_client("lookoutvision").generate_presigned_url` method.
 
 Boto3 documentation:
 [LookoutforVision.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.generate_presigned_url)
@@ -440,7 +440,7 @@ Returns a `Coroutine` for `str`.
 Lists the JSON Lines within a dataset.
 
 Type annotations for
-`aiobotocore.create_client("lookoutvision").list_dataset_entries` method.
+`session.create_client("lookoutvision").list_dataset_entries` method.
 
 Boto3 documentation:
 [LookoutforVision.Client.list_dataset_entries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.list_dataset_entries)
@@ -474,7 +474,7 @@ Lists the model packaging jobs created for an Amazon Lookout for Vision
 project.
 
 Type annotations for
-`aiobotocore.create_client("lookoutvision").list_model_packaging_jobs` method.
+`session.create_client("lookoutvision").list_model_packaging_jobs` method.
 
 Boto3 documentation:
 [LookoutforVision.Client.list_model_packaging_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.list_model_packaging_jobs)
@@ -500,7 +500,7 @@ Returns a `Coroutine` for
 
 Lists the versions of a model in an Amazon Lookout for Vision project.
 
-Type annotations for `aiobotocore.create_client("lookoutvision").list_models`
+Type annotations for `session.create_client("lookoutvision").list_models`
 method.
 
 Boto3 documentation:
@@ -526,7 +526,7 @@ Returns a `Coroutine` for
 
 Lists the Amazon Lookout for Vision projects in your AWS account.
 
-Type annotations for `aiobotocore.create_client("lookoutvision").list_projects`
+Type annotations for `session.create_client("lookoutvision").list_projects`
 method.
 
 Boto3 documentation:
@@ -553,7 +553,7 @@ Returns a list of tags attached to the specified Amazon Lookout for Vision
 model.
 
 Type annotations for
-`aiobotocore.create_client("lookoutvision").list_tags_for_resource` method.
+`session.create_client("lookoutvision").list_tags_for_resource` method.
 
 Boto3 documentation:
 [LookoutforVision.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.list_tags_for_resource)
@@ -577,7 +577,7 @@ Returns a `Coroutine` for
 
 Starts the running of the version of an Amazon Lookout for Vision model.
 
-Type annotations for `aiobotocore.create_client("lookoutvision").start_model`
+Type annotations for `session.create_client("lookoutvision").start_model`
 method.
 
 Boto3 documentation:
@@ -605,7 +605,7 @@ Returns a `Coroutine` for
 Starts an Amazon Lookout for Vision model packaging job.
 
 Type annotations for
-`aiobotocore.create_client("lookoutvision").start_model_packaging_job` method.
+`session.create_client("lookoutvision").start_model_packaging_job` method.
 
 Boto3 documentation:
 [LookoutforVision.Client.start_model_packaging_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.start_model_packaging_job)
@@ -636,7 +636,7 @@ Returns a `Coroutine` for
 
 Stops the hosting of a running model.
 
-Type annotations for `aiobotocore.create_client("lookoutvision").stop_model`
+Type annotations for `session.create_client("lookoutvision").stop_model`
 method.
 
 Boto3 documentation:
@@ -662,7 +662,7 @@ Returns a `Coroutine` for
 
 Adds one or more key-value tags to an Amazon Lookout for Vision model.
 
-Type annotations for `aiobotocore.create_client("lookoutvision").tag_resource`
+Type annotations for `session.create_client("lookoutvision").tag_resource`
 method.
 
 Boto3 documentation:
@@ -686,8 +686,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from an Amazon Lookout for Vision model.
 
-Type annotations for
-`aiobotocore.create_client("lookoutvision").untag_resource` method.
+Type annotations for `session.create_client("lookoutvision").untag_resource`
+method.
 
 Boto3 documentation:
 [LookoutforVision.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.untag_resource)
@@ -711,7 +711,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds or updates one or more JSON Line entries in a dataset.
 
 Type annotations for
-`aiobotocore.create_client("lookoutvision").update_dataset_entries` method.
+`session.create_client("lookoutvision").update_dataset_entries` method.
 
 Boto3 documentation:
 [LookoutforVision.Client.update_dataset_entries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.update_dataset_entries)
@@ -732,11 +732,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateDatasetEntriesResponseTypeDef](./type_defs.md#updatedatasetentriesresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("lookoutvision").__aenter__`
+method.
+
+Boto3 documentation:
+[LookoutforVision.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [LookoutforVisionClient](#lookoutforvisionclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("lookoutvision").__aexit__` method.
+
+Boto3 documentation:
+[LookoutforVision.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("lookoutvision").get_paginator`
+Type annotations for `session.create_client("lookoutvision").get_paginator`
 method with overloads.
 
 - `client.get_paginator("list_dataset_entries")` ->

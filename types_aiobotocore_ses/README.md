@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[ses]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[ses]'
+
+# standalone installation
 pip install types-aiobotocore-ses
 ```
 
@@ -30,8 +34,7 @@ pip install types-aiobotocore-ses
 
 ## SESClient
 
-Type annotations for `aiobotocore.create_client("ses")` as
-[SESClient](./client.md)
+Type annotations for `session.create_client("ses")` as [SESClient](./client.md)
 
 Can be used directly:
 
@@ -43,6 +46,8 @@ from types_aiobotocore_ses.client import SESClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [clone_receipt_rule_set](./client.md#clone_receipt_rule_set)
 - [create_configuration_set](./client.md#create_configuration_set)
@@ -172,7 +177,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_ses.paginators import ListConfigurationSetsPaginator, ...
+from types_aiobotocore_ses.paginator import ListConfigurationSetsPaginator, ...
 ```
 
 - [ListConfigurationSetsPaginator](./paginators.md#listconfigurationsetspaginator)
@@ -191,7 +196,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_ses.waiters import IdentityExistsWaiter, ...
+from types_aiobotocore_ses.waiter import IdentityExistsWaiter, ...
 ```
 
 - [IdentityExistsWaiter](./waiters.md#identityexistswaiter)

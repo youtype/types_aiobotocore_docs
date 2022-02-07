@@ -37,22 +37,25 @@ type annotations stubs module
     - [stop_access_logging](#stop_access_logging)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="mediastoreclient"></a>
 
 ## MediaStoreClient
 
-Type annotations for `aiobotocore.create_client("mediastore")`
+Type annotations for `session.create_client("mediastore")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_mediastore.client import MediaStoreClient
 
-def get_mediastore_client() -> MediaStoreClient:
-    return Session().client("mediastore")
+session = get_session()
+async with session.create_client("mediastore") as client:
+    client: MediaStoreClient
 ```
 
 Boto3 documentation:
@@ -92,8 +95,7 @@ Exceptions:
 
 MediaStoreClient exceptions.
 
-Type annotations for `aiobotocore.create_client("mediastore").exceptions`
-method.
+Type annotations for `session.create_client("mediastore").exceptions` method.
 
 Boto3 documentation:
 [MediaStore.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.exceptions)
@@ -106,19 +108,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("mediastore").can_paginate`
-method.
+Type annotations for `session.create_client("mediastore").can_paginate` method.
 
 Boto3 documentation:
 [MediaStore.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_container"></a>
 
@@ -126,7 +125,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a storage container to hold objects.
 
-Type annotations for `aiobotocore.create_client("mediastore").create_container`
+Type annotations for `session.create_client("mediastore").create_container`
 method.
 
 Boto3 documentation:
@@ -151,7 +150,7 @@ Returns a `Coroutine` for
 
 Deletes the specified container.
 
-Type annotations for `aiobotocore.create_client("mediastore").delete_container`
+Type annotations for `session.create_client("mediastore").delete_container`
 method.
 
 Boto3 documentation:
@@ -175,7 +174,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the access policy that is associated with the specified container.
 
 Type annotations for
-`aiobotocore.create_client("mediastore").delete_container_policy` method.
+`session.create_client("mediastore").delete_container_policy` method.
 
 Boto3 documentation:
 [MediaStore.Client.delete_container_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.delete_container_policy)
@@ -199,8 +198,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the cross-origin resource sharing (CORS) configuration information that
 is set for the container.
 
-Type annotations for
-`aiobotocore.create_client("mediastore").delete_cors_policy` method.
+Type annotations for `session.create_client("mediastore").delete_cors_policy`
+method.
 
 Boto3 documentation:
 [MediaStore.Client.delete_cors_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.delete_cors_policy)
@@ -224,7 +223,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes an object lifecycle policy from a container.
 
 Type annotations for
-`aiobotocore.create_client("mediastore").delete_lifecycle_policy` method.
+`session.create_client("mediastore").delete_lifecycle_policy` method.
 
 Boto3 documentation:
 [MediaStore.Client.delete_lifecycle_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.delete_lifecycle_policy)
@@ -247,8 +246,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the metric policy that is associated with the specified container.
 
-Type annotations for
-`aiobotocore.create_client("mediastore").delete_metric_policy` method.
+Type annotations for `session.create_client("mediastore").delete_metric_policy`
+method.
 
 Boto3 documentation:
 [MediaStore.Client.delete_metric_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.delete_metric_policy)
@@ -271,8 +270,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Retrieves the properties of the requested container.
 
-Type annotations for
-`aiobotocore.create_client("mediastore").describe_container` method.
+Type annotations for `session.create_client("mediastore").describe_container`
+method.
 
 Boto3 documentation:
 [MediaStore.Client.describe_container](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.describe_container)
@@ -297,7 +296,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("mediastore").generate_presigned_url` method.
+`session.create_client("mediastore").generate_presigned_url` method.
 
 Boto3 documentation:
 [MediaStore.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.generate_presigned_url)
@@ -320,8 +319,8 @@ Returns a `Coroutine` for `str`.
 
 Retrieves the access policy for the specified container.
 
-Type annotations for
-`aiobotocore.create_client("mediastore").get_container_policy` method.
+Type annotations for `session.create_client("mediastore").get_container_policy`
+method.
 
 Boto3 documentation:
 [MediaStore.Client.get_container_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.get_container_policy)
@@ -346,7 +345,7 @@ Returns a `Coroutine` for
 Returns the cross-origin resource sharing (CORS) configuration information that
 is set for the container.
 
-Type annotations for `aiobotocore.create_client("mediastore").get_cors_policy`
+Type annotations for `session.create_client("mediastore").get_cors_policy`
 method.
 
 Boto3 documentation:
@@ -370,8 +369,8 @@ Returns a `Coroutine` for
 
 Retrieves the object lifecycle policy that is assigned to a container.
 
-Type annotations for
-`aiobotocore.create_client("mediastore").get_lifecycle_policy` method.
+Type annotations for `session.create_client("mediastore").get_lifecycle_policy`
+method.
 
 Boto3 documentation:
 [MediaStore.Client.get_lifecycle_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.get_lifecycle_policy)
@@ -395,8 +394,8 @@ Returns a `Coroutine` for
 
 Returns the metric policy for the specified container.
 
-Type annotations for
-`aiobotocore.create_client("mediastore").get_metric_policy` method.
+Type annotations for `session.create_client("mediastore").get_metric_policy`
+method.
 
 Boto3 documentation:
 [MediaStore.Client.get_metric_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.get_metric_policy)
@@ -419,7 +418,7 @@ Returns a `Coroutine` for
 
 Lists the properties of all containers in AWS Elemental MediaStore.
 
-Type annotations for `aiobotocore.create_client("mediastore").list_containers`
+Type annotations for `session.create_client("mediastore").list_containers`
 method.
 
 Boto3 documentation:
@@ -445,7 +444,7 @@ Returns a `Coroutine` for
 Returns a list of the tags assigned to the specified container.
 
 Type annotations for
-`aiobotocore.create_client("mediastore").list_tags_for_resource` method.
+`session.create_client("mediastore").list_tags_for_resource` method.
 
 Boto3 documentation:
 [MediaStore.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.list_tags_for_resource)
@@ -470,8 +469,8 @@ Returns a `Coroutine` for
 Creates an access policy for the specified container to restrict the users and
 clients that can access it.
 
-Type annotations for
-`aiobotocore.create_client("mediastore").put_container_policy` method.
+Type annotations for `session.create_client("mediastore").put_container_policy`
+method.
 
 Boto3 documentation:
 [MediaStore.Client.put_container_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.put_container_policy)
@@ -496,7 +495,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Sets the cross-origin resource sharing (CORS) configuration on a container so
 that the container can service cross-origin requests.
 
-Type annotations for `aiobotocore.create_client("mediastore").put_cors_policy`
+Type annotations for `session.create_client("mediastore").put_cors_policy`
 method.
 
 Boto3 documentation:
@@ -521,8 +520,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Writes an object lifecycle policy to a container.
 
-Type annotations for
-`aiobotocore.create_client("mediastore").put_lifecycle_policy` method.
+Type annotations for `session.create_client("mediastore").put_lifecycle_policy`
+method.
 
 Boto3 documentation:
 [MediaStore.Client.put_lifecycle_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.put_lifecycle_policy)
@@ -546,8 +545,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 The metric policy that you want to add to the container.
 
-Type annotations for
-`aiobotocore.create_client("mediastore").put_metric_policy` method.
+Type annotations for `session.create_client("mediastore").put_metric_policy`
+method.
 
 Boto3 documentation:
 [MediaStore.Client.put_metric_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.put_metric_policy)
@@ -571,8 +570,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Starts access logging on the specified container.
 
-Type annotations for
-`aiobotocore.create_client("mediastore").start_access_logging` method.
+Type annotations for `session.create_client("mediastore").start_access_logging`
+method.
 
 Boto3 documentation:
 [MediaStore.Client.start_access_logging](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.start_access_logging)
@@ -595,8 +594,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Stops access logging on the specified container.
 
-Type annotations for
-`aiobotocore.create_client("mediastore").stop_access_logging` method.
+Type annotations for `session.create_client("mediastore").stop_access_logging`
+method.
 
 Boto3 documentation:
 [MediaStore.Client.stop_access_logging](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.stop_access_logging)
@@ -619,8 +618,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds tags to the specified AWS Elemental MediaStore container.
 
-Type annotations for `aiobotocore.create_client("mediastore").tag_resource`
-method.
+Type annotations for `session.create_client("mediastore").tag_resource` method.
 
 Boto3 documentation:
 [MediaStore.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.tag_resource)
@@ -643,7 +641,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from the specified container.
 
-Type annotations for `aiobotocore.create_client("mediastore").untag_resource`
+Type annotations for `session.create_client("mediastore").untag_resource`
 method.
 
 Boto3 documentation:
@@ -661,12 +659,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("mediastore").__aenter__` method.
+
+Boto3 documentation:
+[MediaStore.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [MediaStoreClient](#mediastoreclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("mediastore").__aexit__` method.
+
+Boto3 documentation:
+[MediaStore.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediastore.html#MediaStore.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("mediastore").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("mediastore").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_containers")` ->
   [ListContainersPaginator](./paginators.md#listcontainerspaginator)

@@ -22,17 +22,19 @@ type annotations stubs module
 ## ListConfigsPaginator
 
 Type annotations for
-`aiobotocore.create_client("groundstation").get_paginator("list_configs")`.
+`session.create_client("groundstation").get_paginator("list_configs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_groundstation.paginator import ListConfigsPaginator
 
-def get_list_configs_paginator() -> ListConfigsPaginator:
-    return Session().create_client("groundstation").get_paginator("list_configs")
+session = get_session()
+async with session.create_client("groundstation") as client:
+    client: GroundStationClient
+    paginator: ListConfigsPaginator = client.get_paginator("list_configs")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `ListConfigsPaginator.paginate` method:
 ## ListContactsPaginator
 
 Type annotations for
-`aiobotocore.create_client("groundstation").get_paginator("list_contacts")`.
+`session.create_client("groundstation").get_paginator("list_contacts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_groundstation.paginator import ListContactsPaginator
 
-def get_list_contacts_paginator() -> ListContactsPaginator:
-    return Session().create_client("groundstation").get_paginator("list_contacts")
+session = get_session()
+async with session.create_client("groundstation") as client:
+    client: GroundStationClient
+    paginator: ListContactsPaginator = client.get_paginator("list_contacts")
 ```
 
 Boto3 documentation:
@@ -88,17 +92,19 @@ Arguments for `ListContactsPaginator.paginate` method:
 ## ListDataflowEndpointGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("groundstation").get_paginator("list_dataflow_endpoint_groups")`.
+`session.create_client("groundstation").get_paginator("list_dataflow_endpoint_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_groundstation.paginator import ListDataflowEndpointGroupsPaginator
 
-def get_list_dataflow_endpoint_groups_paginator() -> ListDataflowEndpointGroupsPaginator:
-    return Session().create_client("groundstation").get_paginator("list_dataflow_endpoint_groups")
+session = get_session()
+async with session.create_client("groundstation") as client:
+    client: GroundStationClient
+    paginator: ListDataflowEndpointGroupsPaginator = client.get_paginator("list_dataflow_endpoint_groups")
 ```
 
 Boto3 documentation:
@@ -117,17 +123,19 @@ Arguments for `ListDataflowEndpointGroupsPaginator.paginate` method:
 ## ListGroundStationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("groundstation").get_paginator("list_ground_stations")`.
+`session.create_client("groundstation").get_paginator("list_ground_stations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_groundstation.paginator import ListGroundStationsPaginator
 
-def get_list_ground_stations_paginator() -> ListGroundStationsPaginator:
-    return Session().create_client("groundstation").get_paginator("list_ground_stations")
+session = get_session()
+async with session.create_client("groundstation") as client:
+    client: GroundStationClient
+    paginator: ListGroundStationsPaginator = client.get_paginator("list_ground_stations")
 ```
 
 Boto3 documentation:
@@ -147,17 +155,19 @@ Arguments for `ListGroundStationsPaginator.paginate` method:
 ## ListMissionProfilesPaginator
 
 Type annotations for
-`aiobotocore.create_client("groundstation").get_paginator("list_mission_profiles")`.
+`session.create_client("groundstation").get_paginator("list_mission_profiles")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_groundstation.paginator import ListMissionProfilesPaginator
 
-def get_list_mission_profiles_paginator() -> ListMissionProfilesPaginator:
-    return Session().create_client("groundstation").get_paginator("list_mission_profiles")
+session = get_session()
+async with session.create_client("groundstation") as client:
+    client: GroundStationClient
+    paginator: ListMissionProfilesPaginator = client.get_paginator("list_mission_profiles")
 ```
 
 Boto3 documentation:
@@ -176,17 +186,19 @@ Arguments for `ListMissionProfilesPaginator.paginate` method:
 ## ListSatellitesPaginator
 
 Type annotations for
-`aiobotocore.create_client("groundstation").get_paginator("list_satellites")`.
+`session.create_client("groundstation").get_paginator("list_satellites")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_groundstation.paginator import ListSatellitesPaginator
 
-def get_list_satellites_paginator() -> ListSatellitesPaginator:
-    return Session().create_client("groundstation").get_paginator("list_satellites")
+session = get_session()
+async with session.create_client("groundstation") as client:
+    client: GroundStationClient
+    paginator: ListSatellitesPaginator = client.get_paginator("list_satellites")
 ```
 
 Boto3 documentation:

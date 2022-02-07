@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[cloudcontrol]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[cloudcontrol]'
+
+# standalone installation
 pip install types-aiobotocore-cloudcontrol
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-cloudcontrol
 
 ## CloudControlApiClient
 
-Type annotations for `aiobotocore.create_client("cloudcontrol")` as
+Type annotations for `session.create_client("cloudcontrol")` as
 [CloudControlApiClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_cloudcontrol.client import CloudControlApiClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_resource_request](./client.md#cancel_resource_request)
 - [create_resource](./client.md#create_resource)
@@ -94,7 +100,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_cloudcontrol.waiters import ResourceRequestSuccessWaiter, ...
+from types_aiobotocore_cloudcontrol.waiter import ResourceRequestSuccessWaiter, ...
 ```
 
 - [ResourceRequestSuccessWaiter](./waiters.md#resourcerequestsuccesswaiter)

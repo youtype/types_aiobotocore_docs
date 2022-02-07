@@ -73,22 +73,25 @@ type annotations stubs module
     - [put_storage_lens_configuration_tagging](#put_storage_lens_configuration_tagging)
     - [update_job_priority](#update_job_priority)
     - [update_job_status](#update_job_status)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="s3controlclient"></a>
 
 ## S3ControlClient
 
-Type annotations for `aiobotocore.create_client("s3control")`
+Type annotations for `session.create_client("s3control")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_s3control.client import S3ControlClient
 
-def get_s3control_client() -> S3ControlClient:
-    return Session().client("s3control")
+session = get_session()
+async with session.create_client("s3control") as client:
+    client: S3ControlClient
 ```
 
 Boto3 documentation:
@@ -134,8 +137,7 @@ Exceptions:
 
 S3ControlClient exceptions.
 
-Type annotations for `aiobotocore.create_client("s3control").exceptions`
-method.
+Type annotations for `session.create_client("s3control").exceptions` method.
 
 Boto3 documentation:
 [S3Control.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.exceptions)
@@ -148,19 +150,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("s3control").can_paginate`
-method.
+Type annotations for `session.create_client("s3control").can_paginate` method.
 
 Boto3 documentation:
 [S3Control.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_access_point"></a>
 
@@ -168,8 +167,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates an access point and associates it with the specified bucket.
 
-Type annotations for
-`aiobotocore.create_client("s3control").create_access_point` method.
+Type annotations for `session.create_client("s3control").create_access_point`
+method.
 
 Boto3 documentation:
 [S3Control.Client.create_access_point](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.create_access_point)
@@ -200,7 +199,7 @@ Returns a `Coroutine` for
 Creates an Object Lambda Access Point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").create_access_point_for_object_lambda`
+`session.create_client("s3control").create_access_point_for_object_lambda`
 method.
 
 Boto3 documentation:
@@ -229,8 +228,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("s3control").create_bucket`
-method.
+Type annotations for `session.create_client("s3control").create_bucket` method.
 
 Boto3 documentation:
 [S3Control.Client.create_bucket](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.create_bucket)
@@ -264,8 +262,7 @@ Returns a `Coroutine` for
 You can use S3 Batch Operations to perform large-scale batch actions on Amazon
 S3 objects.
 
-Type annotations for `aiobotocore.create_client("s3control").create_job`
-method.
+Type annotations for `session.create_client("s3control").create_job` method.
 
 Boto3 documentation:
 [S3Control.Client.create_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.create_job)
@@ -301,8 +298,7 @@ Creates a Multi-Region Access Point and associates it with the specified
 buckets.
 
 Type annotations for
-`aiobotocore.create_client("s3control").create_multi_region_access_point`
-method.
+`session.create_client("s3control").create_multi_region_access_point` method.
 
 Boto3 documentation:
 [S3Control.Client.create_multi_region_access_point](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.create_multi_region_access_point)
@@ -330,8 +326,8 @@ Returns a `Coroutine` for
 
 Deletes the specified access point.
 
-Type annotations for
-`aiobotocore.create_client("s3control").delete_access_point` method.
+Type annotations for `session.create_client("s3control").delete_access_point`
+method.
 
 Boto3 documentation:
 [S3Control.Client.delete_access_point](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.delete_access_point)
@@ -354,7 +350,7 @@ Keyword-only arguments:
 Deletes the specified Object Lambda Access Point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").delete_access_point_for_object_lambda`
+`session.create_client("s3control").delete_access_point_for_object_lambda`
 method.
 
 Boto3 documentation:
@@ -378,7 +374,7 @@ Keyword-only arguments:
 Deletes the access point policy for the specified access point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").delete_access_point_policy` method.
+`session.create_client("s3control").delete_access_point_policy` method.
 
 Boto3 documentation:
 [S3Control.Client.delete_access_point_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.delete_access_point_policy)
@@ -401,7 +397,7 @@ Keyword-only arguments:
 Removes the resource policy for an Object Lambda Access Point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").delete_access_point_policy_for_object_lambda`
+`session.create_client("s3control").delete_access_point_policy_for_object_lambda`
 method.
 
 Boto3 documentation:
@@ -425,8 +421,7 @@ Keyword-only arguments:
 
 .
 
-Type annotations for `aiobotocore.create_client("s3control").delete_bucket`
-method.
+Type annotations for `session.create_client("s3control").delete_bucket` method.
 
 Boto3 documentation:
 [S3Control.Client.delete_bucket](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.delete_bucket)
@@ -448,7 +443,7 @@ Keyword-only arguments:
 .
 
 Type annotations for
-`aiobotocore.create_client("s3control").delete_bucket_lifecycle_configuration`
+`session.create_client("s3control").delete_bucket_lifecycle_configuration`
 method.
 
 Boto3 documentation:
@@ -471,8 +466,8 @@ Keyword-only arguments:
 
 .
 
-Type annotations for
-`aiobotocore.create_client("s3control").delete_bucket_policy` method.
+Type annotations for `session.create_client("s3control").delete_bucket_policy`
+method.
 
 Boto3 documentation:
 [S3Control.Client.delete_bucket_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.delete_bucket_policy)
@@ -494,8 +489,8 @@ Keyword-only arguments:
 
 .
 
-Type annotations for
-`aiobotocore.create_client("s3control").delete_bucket_tagging` method.
+Type annotations for `session.create_client("s3control").delete_bucket_tagging`
+method.
 
 Boto3 documentation:
 [S3Control.Client.delete_bucket_tagging](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.delete_bucket_tagging)
@@ -517,8 +512,8 @@ Keyword-only arguments:
 
 Removes the entire tag set from the specified S3 Batch Operations job.
 
-Type annotations for
-`aiobotocore.create_client("s3control").delete_job_tagging` method.
+Type annotations for `session.create_client("s3control").delete_job_tagging`
+method.
 
 Boto3 documentation:
 [S3Control.Client.delete_job_tagging](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.delete_job_tagging)
@@ -543,8 +538,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a Multi-Region Access Point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").delete_multi_region_access_point`
-method.
+`session.create_client("s3control").delete_multi_region_access_point` method.
 
 Boto3 documentation:
 [S3Control.Client.delete_multi_region_access_point](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.delete_multi_region_access_point)
@@ -574,7 +568,7 @@ Removes the `PublicAccessBlock` configuration for an Amazon Web Services
 account.
 
 Type annotations for
-`aiobotocore.create_client("s3control").delete_public_access_block` method.
+`session.create_client("s3control").delete_public_access_block` method.
 
 Boto3 documentation:
 [S3Control.Client.delete_public_access_block](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.delete_public_access_block)
@@ -596,8 +590,7 @@ Keyword-only arguments:
 Deletes the Amazon S3 Storage Lens configuration.
 
 Type annotations for
-`aiobotocore.create_client("s3control").delete_storage_lens_configuration`
-method.
+`session.create_client("s3control").delete_storage_lens_configuration` method.
 
 Boto3 documentation:
 [S3Control.Client.delete_storage_lens_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.delete_storage_lens_configuration)
@@ -620,7 +613,7 @@ Keyword-only arguments:
 Deletes the Amazon S3 Storage Lens configuration tags.
 
 Type annotations for
-`aiobotocore.create_client("s3control").delete_storage_lens_configuration_tagging`
+`session.create_client("s3control").delete_storage_lens_configuration_tagging`
 method.
 
 Boto3 documentation:
@@ -645,8 +638,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Retrieves the configuration parameters and status for a Batch Operations job.
 
-Type annotations for `aiobotocore.create_client("s3control").describe_job`
-method.
+Type annotations for `session.create_client("s3control").describe_job` method.
 
 Boto3 documentation:
 [S3Control.Client.describe_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.describe_job)
@@ -672,7 +664,7 @@ Retrieves the status of an asynchronous request to manage a Multi-Region Access
 Point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").describe_multi_region_access_point_operation`
+`session.create_client("s3control").describe_multi_region_access_point_operation`
 method.
 
 Boto3 documentation:
@@ -700,7 +692,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("s3control").generate_presigned_url` method.
+`session.create_client("s3control").generate_presigned_url` method.
 
 Boto3 documentation:
 [S3Control.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.generate_presigned_url)
@@ -723,7 +715,7 @@ Returns a `Coroutine` for `str`.
 
 Returns configuration information about the specified access point.
 
-Type annotations for `aiobotocore.create_client("s3control").get_access_point`
+Type annotations for `session.create_client("s3control").get_access_point`
 method.
 
 Boto3 documentation:
@@ -749,7 +741,7 @@ Returns a `Coroutine` for
 Returns configuration for an Object Lambda Access Point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").get_access_point_configuration_for_object_lambda`
+`session.create_client("s3control").get_access_point_configuration_for_object_lambda`
 method.
 
 Boto3 documentation:
@@ -779,8 +771,7 @@ Point The following actions are related to `GetAccessPointForObjectLambda` \*
 `CreateAccessPointForObjectLambda <https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPointForObjectLambda.htm...`.
 
 Type annotations for
-`aiobotocore.create_client("s3control").get_access_point_for_object_lambda`
-method.
+`session.create_client("s3control").get_access_point_for_object_lambda` method.
 
 Boto3 documentation:
 [S3Control.Client.get_access_point_for_object_lambda](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.get_access_point_for_object_lambda)
@@ -806,7 +797,7 @@ Returns a `Coroutine` for
 Returns the access point policy associated with the specified access point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").get_access_point_policy` method.
+`session.create_client("s3control").get_access_point_policy` method.
 
 Boto3 documentation:
 [S3Control.Client.get_access_point_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.get_access_point_policy)
@@ -832,7 +823,7 @@ Returns a `Coroutine` for
 Returns the resource policy for an Object Lambda Access Point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").get_access_point_policy_for_object_lambda`
+`session.create_client("s3control").get_access_point_policy_for_object_lambda`
 method.
 
 Boto3 documentation:
@@ -860,7 +851,7 @@ Indicates whether the specified access point currently has a policy that allows
 public access.
 
 Type annotations for
-`aiobotocore.create_client("s3control").get_access_point_policy_status` method.
+`session.create_client("s3control").get_access_point_policy_status` method.
 
 Boto3 documentation:
 [S3Control.Client.get_access_point_policy_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.get_access_point_policy_status)
@@ -887,7 +878,7 @@ Returns the status of the resource policy associated with an Object Lambda
 Access Point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").get_access_point_policy_status_for_object_lambda`
+`session.create_client("s3control").get_access_point_policy_status_for_object_lambda`
 method.
 
 Boto3 documentation:
@@ -914,8 +905,7 @@ Returns a `Coroutine` for
 
 Gets an Amazon S3 on Outposts bucket.
 
-Type annotations for `aiobotocore.create_client("s3control").get_bucket`
-method.
+Type annotations for `session.create_client("s3control").get_bucket` method.
 
 Boto3 documentation:
 [S3Control.Client.get_bucket](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.get_bucket)
@@ -940,8 +930,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("s3control").get_bucket_lifecycle_configuration`
-method.
+`session.create_client("s3control").get_bucket_lifecycle_configuration` method.
 
 Boto3 documentation:
 [S3Control.Client.get_bucket_lifecycle_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.get_bucket_lifecycle_configuration)
@@ -966,7 +955,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("s3control").get_bucket_policy`
+Type annotations for `session.create_client("s3control").get_bucket_policy`
 method.
 
 Boto3 documentation:
@@ -991,8 +980,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("s3control").get_bucket_tagging` method.
+Type annotations for `session.create_client("s3control").get_bucket_tagging`
+method.
 
 Boto3 documentation:
 [S3Control.Client.get_bucket_tagging](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.get_bucket_tagging)
@@ -1017,7 +1006,7 @@ Returns a `Coroutine` for
 
 Returns the tags on an S3 Batch Operations job.
 
-Type annotations for `aiobotocore.create_client("s3control").get_job_tagging`
+Type annotations for `session.create_client("s3control").get_job_tagging`
 method.
 
 Boto3 documentation:
@@ -1044,7 +1033,7 @@ Returns configuration information about the specified Multi-Region Access
 Point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").get_multi_region_access_point` method.
+`session.create_client("s3control").get_multi_region_access_point` method.
 
 Boto3 documentation:
 [S3Control.Client.get_multi_region_access_point](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.get_multi_region_access_point)
@@ -1070,7 +1059,7 @@ Returns a `Coroutine` for
 Returns the access control policy of the specified Multi-Region Access Point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").get_multi_region_access_point_policy`
+`session.create_client("s3control").get_multi_region_access_point_policy`
 method.
 
 Boto3 documentation:
@@ -1098,7 +1087,7 @@ Indicates whether the specified Multi-Region Access Point has an access control
 policy that allows public access.
 
 Type annotations for
-`aiobotocore.create_client("s3control").get_multi_region_access_point_policy_status`
+`session.create_client("s3control").get_multi_region_access_point_policy_status`
 method.
 
 Boto3 documentation:
@@ -1127,7 +1116,7 @@ Retrieves the `PublicAccessBlock` configuration for an Amazon Web Services
 account.
 
 Type annotations for
-`aiobotocore.create_client("s3control").get_public_access_block` method.
+`session.create_client("s3control").get_public_access_block` method.
 
 Boto3 documentation:
 [S3Control.Client.get_public_access_block](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.get_public_access_block)
@@ -1152,7 +1141,7 @@ Returns a `Coroutine` for
 Gets the Amazon S3 Storage Lens configuration.
 
 Type annotations for
-`aiobotocore.create_client("s3control").get_storage_lens_configuration` method.
+`session.create_client("s3control").get_storage_lens_configuration` method.
 
 Boto3 documentation:
 [S3Control.Client.get_storage_lens_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.get_storage_lens_configuration)
@@ -1178,7 +1167,7 @@ Returns a `Coroutine` for
 Gets the tags of Amazon S3 Storage Lens configuration.
 
 Type annotations for
-`aiobotocore.create_client("s3control").get_storage_lens_configuration_tagging`
+`session.create_client("s3control").get_storage_lens_configuration_tagging`
 method.
 
 Boto3 documentation:
@@ -1205,8 +1194,8 @@ Returns a `Coroutine` for
 Returns a list of the access points currently associated with the specified
 bucket.
 
-Type annotations for
-`aiobotocore.create_client("s3control").list_access_points` method.
+Type annotations for `session.create_client("s3control").list_access_points`
+method.
 
 Boto3 documentation:
 [S3Control.Client.list_access_points](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.list_access_points)
@@ -1235,7 +1224,7 @@ Returns a list of the access points associated with the Object Lambda Access
 Point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").list_access_points_for_object_lambda`
+`session.create_client("s3control").list_access_points_for_object_lambda`
 method.
 
 Boto3 documentation:
@@ -1263,7 +1252,7 @@ Returns a `Coroutine` for
 Lists current S3 Batch Operations jobs and jobs that have ended within the last
 30 days for the Amazon Web Services account making the request.
 
-Type annotations for `aiobotocore.create_client("s3control").list_jobs` method.
+Type annotations for `session.create_client("s3control").list_jobs` method.
 
 Boto3 documentation:
 [S3Control.Client.list_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.list_jobs)
@@ -1291,8 +1280,7 @@ Returns a list of the Multi-Region Access Points currently associated with the
 specified Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("s3control").list_multi_region_access_points`
-method.
+`session.create_client("s3control").list_multi_region_access_points` method.
 
 Boto3 documentation:
 [S3Control.Client.list_multi_region_access_points](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.list_multi_region_access_points)
@@ -1319,8 +1307,8 @@ Returns a `Coroutine` for
 Returns a list of all Outposts buckets in an Outpost that are owned by the
 authenticated sender of the request.
 
-Type annotations for
-`aiobotocore.create_client("s3control").list_regional_buckets` method.
+Type annotations for `session.create_client("s3control").list_regional_buckets`
+method.
 
 Boto3 documentation:
 [S3Control.Client.list_regional_buckets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.list_regional_buckets)
@@ -1348,8 +1336,7 @@ Returns a `Coroutine` for
 Gets a list of Amazon S3 Storage Lens configurations.
 
 Type annotations for
-`aiobotocore.create_client("s3control").list_storage_lens_configurations`
-method.
+`session.create_client("s3control").list_storage_lens_configurations` method.
 
 Boto3 documentation:
 [S3Control.Client.list_storage_lens_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.list_storage_lens_configurations)
@@ -1375,7 +1362,7 @@ Returns a `Coroutine` for
 Replaces configuration for an Object Lambda Access Point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").put_access_point_configuration_for_object_lambda`
+`session.create_client("s3control").put_access_point_configuration_for_object_lambda`
 method.
 
 Boto3 documentation:
@@ -1403,7 +1390,7 @@ Keyword-only arguments:
 Associates an access policy with the specified access point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").put_access_point_policy` method.
+`session.create_client("s3control").put_access_point_policy` method.
 
 Boto3 documentation:
 [S3Control.Client.put_access_point_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.put_access_point_policy)
@@ -1427,7 +1414,7 @@ Keyword-only arguments:
 Creates or replaces resource policy for an Object Lambda Access Point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").put_access_point_policy_for_object_lambda`
+`session.create_client("s3control").put_access_point_policy_for_object_lambda`
 method.
 
 Boto3 documentation:
@@ -1452,8 +1439,7 @@ Keyword-only arguments:
 .
 
 Type annotations for
-`aiobotocore.create_client("s3control").put_bucket_lifecycle_configuration`
-method.
+`session.create_client("s3control").put_bucket_lifecycle_configuration` method.
 
 Boto3 documentation:
 [S3Control.Client.put_bucket_lifecycle_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.put_bucket_lifecycle_configuration)
@@ -1477,7 +1463,7 @@ Keyword-only arguments:
 
 .
 
-Type annotations for `aiobotocore.create_client("s3control").put_bucket_policy`
+Type annotations for `session.create_client("s3control").put_bucket_policy`
 method.
 
 Boto3 documentation:
@@ -1501,8 +1487,8 @@ Keyword-only arguments:
 
 .
 
-Type annotations for
-`aiobotocore.create_client("s3control").put_bucket_tagging` method.
+Type annotations for `session.create_client("s3control").put_bucket_tagging`
+method.
 
 Boto3 documentation:
 [S3Control.Client.put_bucket_tagging](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.put_bucket_tagging)
@@ -1525,7 +1511,7 @@ Keyword-only arguments:
 
 Sets the supplied tag-set on an S3 Batch Operations job.
 
-Type annotations for `aiobotocore.create_client("s3control").put_job_tagging`
+Type annotations for `session.create_client("s3control").put_job_tagging`
 method.
 
 Boto3 documentation:
@@ -1553,7 +1539,7 @@ Associates an access control policy with the specified Multi-Region Access
 Point.
 
 Type annotations for
-`aiobotocore.create_client("s3control").put_multi_region_access_point_policy`
+`session.create_client("s3control").put_multi_region_access_point_policy`
 method.
 
 Boto3 documentation:
@@ -1584,7 +1570,7 @@ Creates or modifies the `PublicAccessBlock` configuration for an Amazon Web
 Services account.
 
 Type annotations for
-`aiobotocore.create_client("s3control").put_public_access_block` method.
+`session.create_client("s3control").put_public_access_block` method.
 
 Boto3 documentation:
 [S3Control.Client.put_public_access_block](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.put_public_access_block)
@@ -1609,7 +1595,7 @@ Keyword-only arguments:
 Puts an Amazon S3 Storage Lens configuration.
 
 Type annotations for
-`aiobotocore.create_client("s3control").put_storage_lens_configuration` method.
+`session.create_client("s3control").put_storage_lens_configuration` method.
 
 Boto3 documentation:
 [S3Control.Client.put_storage_lens_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.put_storage_lens_configuration)
@@ -1637,7 +1623,7 @@ Keyword-only arguments:
 Put or replace tags on an existing Amazon S3 Storage Lens configuration.
 
 Type annotations for
-`aiobotocore.create_client("s3control").put_storage_lens_configuration_tagging`
+`session.create_client("s3control").put_storage_lens_configuration_tagging`
 method.
 
 Boto3 documentation:
@@ -1665,8 +1651,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an existing S3 Batch Operations job's priority.
 
-Type annotations for
-`aiobotocore.create_client("s3control").update_job_priority` method.
+Type annotations for `session.create_client("s3control").update_job_priority`
+method.
 
 Boto3 documentation:
 [S3Control.Client.update_job_priority](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.update_job_priority)
@@ -1692,7 +1678,7 @@ Returns a `Coroutine` for
 
 Updates the status for the specified job.
 
-Type annotations for `aiobotocore.create_client("s3control").update_job_status`
+Type annotations for `session.create_client("s3control").update_job_status`
 method.
 
 Boto3 documentation:
@@ -1714,12 +1700,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateJobStatusResultTypeDef](./type_defs.md#updatejobstatusresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("s3control").__aenter__` method.
+
+Boto3 documentation:
+[S3Control.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [S3ControlClient](#s3controlclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("s3control").__aexit__` method.
+
+Boto3 documentation:
+[S3Control.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3control.html#S3Control.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("s3control").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("s3control").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_access_points_for_object_lambda")` ->
   [ListAccessPointsForObjectLambdaPaginator](./paginators.md#listaccesspointsforobjectlambdapaginator)

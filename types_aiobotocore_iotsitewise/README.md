@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[iotsitewise]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[iotsitewise]'
+
+# standalone installation
 pip install types-aiobotocore-iotsitewise
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-iotsitewise
 
 ## IoTSiteWiseClient
 
-Type annotations for `aiobotocore.create_client("iotsitewise")` as
+Type annotations for `session.create_client("iotsitewise")` as
 [IoTSiteWiseClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_iotsitewise.client import IoTSiteWiseClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_assets](./client.md#associate_assets)
 - [associate_time_series_to_asset_property](./client.md#associate_time_series_to_asset_property)
 - [batch_associate_project_assets](./client.md#batch_associate_project_assets)
@@ -142,7 +148,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_iotsitewise.paginators import GetAssetPropertyAggregatesPaginator, ...
+from types_aiobotocore_iotsitewise.paginator import GetAssetPropertyAggregatesPaginator, ...
 ```
 
 - [GetAssetPropertyAggregatesPaginator](./paginators.md#getassetpropertyaggregatespaginator)
@@ -170,7 +176,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_iotsitewise.waiters import AssetActiveWaiter, ...
+from types_aiobotocore_iotsitewise.waiter import AssetActiveWaiter, ...
 ```
 
 - [AssetActiveWaiter](./waiters.md#assetactivewaiter)

@@ -38,21 +38,24 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_inference_scheduler](#update_inference_scheduler)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="lookoutequipmentclient"></a>
 
 ## LookoutEquipmentClient
 
-Type annotations for `aiobotocore.create_client("lookoutequipment")`
+Type annotations for `session.create_client("lookoutequipment")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_lookoutequipment.client import LookoutEquipmentClient
 
-def get_lookoutequipment_client() -> LookoutEquipmentClient:
-    return Session().client("lookoutequipment")
+session = get_session()
+async with session.create_client("lookoutequipment") as client:
+    client: LookoutEquipmentClient
 ```
 
 Boto3 documentation:
@@ -93,7 +96,7 @@ Exceptions:
 
 LookoutEquipmentClient exceptions.
 
-Type annotations for `aiobotocore.create_client("lookoutequipment").exceptions`
+Type annotations for `session.create_client("lookoutequipment").exceptions`
 method.
 
 Boto3 documentation:
@@ -107,19 +110,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("lookoutequipment").can_paginate` method.
+Type annotations for `session.create_client("lookoutequipment").can_paginate`
+method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_dataset"></a>
 
@@ -127,8 +128,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates a container for a collection of data being ingested for analysis.
 
-Type annotations for
-`aiobotocore.create_client("lookoutequipment").create_dataset` method.
+Type annotations for `session.create_client("lookoutequipment").create_dataset`
+method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.create_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.create_dataset)
@@ -157,8 +158,7 @@ Returns a `Coroutine` for
 Creates a scheduled inference.
 
 Type annotations for
-`aiobotocore.create_client("lookoutequipment").create_inference_scheduler`
-method.
+`session.create_client("lookoutequipment").create_inference_scheduler` method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.create_inference_scheduler](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.create_inference_scheduler)
@@ -196,8 +196,8 @@ Returns a `Coroutine` for
 
 Creates an ML model for data inference.
 
-Type annotations for
-`aiobotocore.create_client("lookoutequipment").create_model` method.
+Type annotations for `session.create_client("lookoutequipment").create_model`
+method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.create_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.create_model)
@@ -235,8 +235,8 @@ Returns a `Coroutine` for
 
 Deletes a dataset and associated artifacts.
 
-Type annotations for
-`aiobotocore.create_client("lookoutequipment").delete_dataset` method.
+Type annotations for `session.create_client("lookoutequipment").delete_dataset`
+method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.delete_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.delete_dataset)
@@ -257,8 +257,7 @@ Keyword-only arguments:
 Deletes an inference scheduler that has been set up.
 
 Type annotations for
-`aiobotocore.create_client("lookoutequipment").delete_inference_scheduler`
-method.
+`session.create_client("lookoutequipment").delete_inference_scheduler` method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.delete_inference_scheduler](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.delete_inference_scheduler)
@@ -279,8 +278,8 @@ Keyword-only arguments:
 
 Deletes an ML model currently available for Amazon Lookout for Equipment.
 
-Type annotations for
-`aiobotocore.create_client("lookoutequipment").delete_model` method.
+Type annotations for `session.create_client("lookoutequipment").delete_model`
+method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.delete_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.delete_model)
@@ -302,8 +301,7 @@ Provides information on a specific data ingestion job such as creation time,
 dataset ARN, status, and so on.
 
 Type annotations for
-`aiobotocore.create_client("lookoutequipment").describe_data_ingestion_job`
-method.
+`session.create_client("lookoutequipment").describe_data_ingestion_job` method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.describe_data_ingestion_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.describe_data_ingestion_job)
@@ -329,7 +327,7 @@ Provides a JSON description of the data that is in each time series dataset,
 including names, column names, and data types.
 
 Type annotations for
-`aiobotocore.create_client("lookoutequipment").describe_dataset` method.
+`session.create_client("lookoutequipment").describe_dataset` method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.describe_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.describe_dataset)
@@ -355,7 +353,7 @@ model, status, and associated metadata See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeInferenceScheduler).
 
 Type annotations for
-`aiobotocore.create_client("lookoutequipment").describe_inference_scheduler`
+`session.create_client("lookoutequipment").describe_inference_scheduler`
 method.
 
 Boto3 documentation:
@@ -382,8 +380,8 @@ Provides a JSON containing the overall information about a specific ML model,
 including model name and ARN, dataset, training and evaluation information,
 status, and so on.
 
-Type annotations for
-`aiobotocore.create_client("lookoutequipment").describe_model` method.
+Type annotations for `session.create_client("lookoutequipment").describe_model`
+method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.describe_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.describe_model)
@@ -407,7 +405,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("lookoutequipment").generate_presigned_url` method.
+`session.create_client("lookoutequipment").generate_presigned_url` method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.generate_presigned_url)
@@ -432,8 +430,7 @@ Provides a list of all data ingestion jobs, including dataset name and ARN, S3
 location of the input data, status, and so on.
 
 Type annotations for
-`aiobotocore.create_client("lookoutequipment").list_data_ingestion_jobs`
-method.
+`session.create_client("lookoutequipment").list_data_ingestion_jobs` method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.list_data_ingestion_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.list_data_ingestion_jobs)
@@ -461,8 +458,8 @@ Returns a `Coroutine` for
 Lists all datasets currently available in your account, filtering on the
 dataset name.
 
-Type annotations for
-`aiobotocore.create_client("lookoutequipment").list_datasets` method.
+Type annotations for `session.create_client("lookoutequipment").list_datasets`
+method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.list_datasets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.list_datasets)
@@ -489,8 +486,7 @@ Lists all inference executions that have been performed by the specified
 inference scheduler.
 
 Type annotations for
-`aiobotocore.create_client("lookoutequipment").list_inference_executions`
-method.
+`session.create_client("lookoutequipment").list_inference_executions` method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.list_inference_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.list_inference_executions)
@@ -522,8 +518,7 @@ Retrieves a list of all inference schedulers currently available for your
 account.
 
 Type annotations for
-`aiobotocore.create_client("lookoutequipment").list_inference_schedulers`
-method.
+`session.create_client("lookoutequipment").list_inference_schedulers` method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.list_inference_schedulers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.list_inference_schedulers)
@@ -551,8 +546,8 @@ Returns a `Coroutine` for
 Generates a list of all models in the account, including model name and ARN,
 dataset, and status.
 
-Type annotations for
-`aiobotocore.create_client("lookoutequipment").list_models` method.
+Type annotations for `session.create_client("lookoutequipment").list_models`
+method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.list_models](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.list_models)
@@ -580,7 +575,7 @@ Returns a `Coroutine` for
 Lists all the tags for a specified resource, including key and value.
 
 Type annotations for
-`aiobotocore.create_client("lookoutequipment").list_tags_for_resource` method.
+`session.create_client("lookoutequipment").list_tags_for_resource` method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.list_tags_for_resource)
@@ -605,8 +600,7 @@ Returns a `Coroutine` for
 Starts a data ingestion job.
 
 Type annotations for
-`aiobotocore.create_client("lookoutequipment").start_data_ingestion_job`
-method.
+`session.create_client("lookoutequipment").start_data_ingestion_job` method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.start_data_ingestion_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.start_data_ingestion_job)
@@ -636,8 +630,7 @@ Returns a `Coroutine` for
 Starts an inference scheduler.
 
 Type annotations for
-`aiobotocore.create_client("lookoutequipment").start_inference_scheduler`
-method.
+`session.create_client("lookoutequipment").start_inference_scheduler` method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.start_inference_scheduler](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.start_inference_scheduler)
@@ -662,8 +655,7 @@ Returns a `Coroutine` for
 Stops an inference scheduler.
 
 Type annotations for
-`aiobotocore.create_client("lookoutequipment").stop_inference_scheduler`
-method.
+`session.create_client("lookoutequipment").stop_inference_scheduler` method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.stop_inference_scheduler](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.stop_inference_scheduler)
@@ -687,8 +679,8 @@ Returns a `Coroutine` for
 
 Associates a given tag to a resource in your account.
 
-Type annotations for
-`aiobotocore.create_client("lookoutequipment").tag_resource` method.
+Type annotations for `session.create_client("lookoutequipment").tag_resource`
+method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.tag_resource)
@@ -711,8 +703,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes a specific tag from a given resource.
 
-Type annotations for
-`aiobotocore.create_client("lookoutequipment").untag_resource` method.
+Type annotations for `session.create_client("lookoutequipment").untag_resource`
+method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.untag_resource)
@@ -736,8 +728,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates an inference scheduler.
 
 Type annotations for
-`aiobotocore.create_client("lookoutequipment").update_inference_scheduler`
-method.
+`session.create_client("lookoutequipment").update_inference_scheduler` method.
 
 Boto3 documentation:
 [LookoutEquipment.Client.update_inference_scheduler](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.update_inference_scheduler)
@@ -759,3 +750,37 @@ Keyword-only arguments:
 - `DataOutputConfiguration`:
   [InferenceOutputConfigurationTypeDef](./type_defs.md#inferenceoutputconfigurationtypedef)
 - `RoleArn`: `str`
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("lookoutequipment").__aenter__`
+method.
+
+Boto3 documentation:
+[LookoutEquipment.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [LookoutEquipmentClient](#lookoutequipmentclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("lookoutequipment").__aexit__`
+method.
+
+Boto3 documentation:
+[LookoutEquipment.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

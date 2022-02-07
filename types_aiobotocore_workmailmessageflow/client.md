@@ -18,21 +18,24 @@ type annotations stubs module
     - [generate_presigned_url](#generate_presigned_url)
     - [get_raw_message_content](#get_raw_message_content)
     - [put_raw_message_content](#put_raw_message_content)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="workmailmessageflowclient"></a>
 
 ## WorkMailMessageFlowClient
 
-Type annotations for `aiobotocore.create_client("workmailmessageflow")`
+Type annotations for `session.create_client("workmailmessageflow")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_workmailmessageflow.client import WorkMailMessageFlowClient
 
-def get_workmailmessageflow_client() -> WorkMailMessageFlowClient:
-    return Session().client("workmailmessageflow")
+session = get_session()
+async with session.create_client("workmailmessageflow") as client:
+    client: WorkMailMessageFlowClient
 ```
 
 Boto3 documentation:
@@ -70,8 +73,8 @@ Exceptions:
 
 WorkMailMessageFlowClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("workmailmessageflow").exceptions` method.
+Type annotations for `session.create_client("workmailmessageflow").exceptions`
+method.
 
 Boto3 documentation:
 [WorkMailMessageFlow.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmailmessageflow.html#WorkMailMessageFlow.Client.exceptions)
@@ -85,18 +88,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("workmailmessageflow").can_paginate` method.
+`session.create_client("workmailmessageflow").can_paginate` method.
 
 Boto3 documentation:
 [WorkMailMessageFlow.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmailmessageflow.html#WorkMailMessageFlow.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -105,8 +106,7 @@ Returns a `Coroutine` for `bool`.
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("workmailmessageflow").generate_presigned_url`
-method.
+`session.create_client("workmailmessageflow").generate_presigned_url` method.
 
 Boto3 documentation:
 [WorkMailMessageFlow.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmailmessageflow.html#WorkMailMessageFlow.Client.generate_presigned_url)
@@ -130,8 +130,7 @@ Returns a `Coroutine` for `str`.
 Retrieves the raw content of an in-transit email message, in MIME format.
 
 Type annotations for
-`aiobotocore.create_client("workmailmessageflow").get_raw_message_content`
-method.
+`session.create_client("workmailmessageflow").get_raw_message_content` method.
 
 Boto3 documentation:
 [WorkMailMessageFlow.Client.get_raw_message_content](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmailmessageflow.html#WorkMailMessageFlow.Client.get_raw_message_content)
@@ -156,8 +155,7 @@ Returns a `Coroutine` for
 Updates the raw content of an in-transit email message, in MIME format.
 
 Type annotations for
-`aiobotocore.create_client("workmailmessageflow").put_raw_message_content`
-method.
+`session.create_client("workmailmessageflow").put_raw_message_content` method.
 
 Boto3 documentation:
 [WorkMailMessageFlow.Client.put_raw_message_content](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmailmessageflow.html#WorkMailMessageFlow.Client.put_raw_message_content)
@@ -176,3 +174,38 @@ Keyword-only arguments:
   *(required)*
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("workmailmessageflow").__aenter__`
+method.
+
+Boto3 documentation:
+[WorkMailMessageFlow.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmailmessageflow.html#WorkMailMessageFlow.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[WorkMailMessageFlowClient](#workmailmessageflowclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("workmailmessageflow").__aexit__`
+method.
+
+Boto3 documentation:
+[WorkMailMessageFlow.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmailmessageflow.html#WorkMailMessageFlow.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

@@ -29,21 +29,24 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_canary](#update_canary)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="syntheticsclient"></a>
 
 ## SyntheticsClient
 
-Type annotations for `aiobotocore.create_client("synthetics")`
+Type annotations for `session.create_client("synthetics")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_synthetics.client import SyntheticsClient
 
-def get_synthetics_client() -> SyntheticsClient:
-    return Session().client("synthetics")
+session = get_session()
+async with session.create_client("synthetics") as client:
+    client: SyntheticsClient
 ```
 
 Boto3 documentation:
@@ -81,8 +84,7 @@ Exceptions:
 
 SyntheticsClient exceptions.
 
-Type annotations for `aiobotocore.create_client("synthetics").exceptions`
-method.
+Type annotations for `session.create_client("synthetics").exceptions` method.
 
 Boto3 documentation:
 [Synthetics.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/synthetics.html#Synthetics.Client.exceptions)
@@ -95,19 +97,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("synthetics").can_paginate`
-method.
+Type annotations for `session.create_client("synthetics").can_paginate` method.
 
 Boto3 documentation:
 [Synthetics.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/synthetics.html#Synthetics.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_canary"></a>
 
@@ -115,7 +114,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a canary.
 
-Type annotations for `aiobotocore.create_client("synthetics").create_canary`
+Type annotations for `session.create_client("synthetics").create_canary`
 method.
 
 Boto3 documentation:
@@ -155,7 +154,7 @@ Returns a `Coroutine` for
 
 Permanently deletes the specified canary.
 
-Type annotations for `aiobotocore.create_client("synthetics").delete_canary`
+Type annotations for `session.create_client("synthetics").delete_canary`
 method.
 
 Boto3 documentation:
@@ -179,8 +178,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 This operation returns a list of the canaries in your account, along with full
 details about each canary.
 
-Type annotations for
-`aiobotocore.create_client("synthetics").describe_canaries` method.
+Type annotations for `session.create_client("synthetics").describe_canaries`
+method.
 
 Boto3 documentation:
 [Synthetics.Client.describe_canaries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/synthetics.html#Synthetics.Client.describe_canaries)
@@ -206,7 +205,7 @@ Use this operation to see information from the most recent run of each canary
 that you have created.
 
 Type annotations for
-`aiobotocore.create_client("synthetics").describe_canaries_last_run` method.
+`session.create_client("synthetics").describe_canaries_last_run` method.
 
 Boto3 documentation:
 [Synthetics.Client.describe_canaries_last_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/synthetics.html#Synthetics.Client.describe_canaries_last_run)
@@ -232,7 +231,7 @@ Returns a `Coroutine` for
 Returns a list of Synthetics canary runtime versions.
 
 Type annotations for
-`aiobotocore.create_client("synthetics").describe_runtime_versions` method.
+`session.create_client("synthetics").describe_runtime_versions` method.
 
 Boto3 documentation:
 [Synthetics.Client.describe_runtime_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/synthetics.html#Synthetics.Client.describe_runtime_versions)
@@ -258,7 +257,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("synthetics").generate_presigned_url` method.
+`session.create_client("synthetics").generate_presigned_url` method.
 
 Boto3 documentation:
 [Synthetics.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/synthetics.html#Synthetics.Client.generate_presigned_url)
@@ -281,8 +280,7 @@ Returns a `Coroutine` for `str`.
 
 Retrieves complete information about one canary.
 
-Type annotations for `aiobotocore.create_client("synthetics").get_canary`
-method.
+Type annotations for `session.create_client("synthetics").get_canary` method.
 
 Boto3 documentation:
 [Synthetics.Client.get_canary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/synthetics.html#Synthetics.Client.get_canary)
@@ -305,7 +303,7 @@ Returns a `Coroutine` for
 
 Retrieves a list of runs for a specified canary.
 
-Type annotations for `aiobotocore.create_client("synthetics").get_canary_runs`
+Type annotations for `session.create_client("synthetics").get_canary_runs`
 method.
 
 Boto3 documentation:
@@ -332,7 +330,7 @@ Returns a `Coroutine` for
 Displays the tags associated with a canary.
 
 Type annotations for
-`aiobotocore.create_client("synthetics").list_tags_for_resource` method.
+`session.create_client("synthetics").list_tags_for_resource` method.
 
 Boto3 documentation:
 [Synthetics.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/synthetics.html#Synthetics.Client.list_tags_for_resource)
@@ -356,8 +354,7 @@ Returns a `Coroutine` for
 
 Use this operation to run a canary that has already been created.
 
-Type annotations for `aiobotocore.create_client("synthetics").start_canary`
-method.
+Type annotations for `session.create_client("synthetics").start_canary` method.
 
 Boto3 documentation:
 [Synthetics.Client.start_canary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/synthetics.html#Synthetics.Client.start_canary)
@@ -379,8 +376,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Stops the canary to prevent all future runs.
 
-Type annotations for `aiobotocore.create_client("synthetics").stop_canary`
-method.
+Type annotations for `session.create_client("synthetics").stop_canary` method.
 
 Boto3 documentation:
 [Synthetics.Client.stop_canary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/synthetics.html#Synthetics.Client.stop_canary)
@@ -402,8 +398,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Assigns one or more tags (key-value pairs) to the specified canary.
 
-Type annotations for `aiobotocore.create_client("synthetics").tag_resource`
-method.
+Type annotations for `session.create_client("synthetics").tag_resource` method.
 
 Boto3 documentation:
 [Synthetics.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/synthetics.html#Synthetics.Client.tag_resource)
@@ -426,7 +421,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from the specified canary.
 
-Type annotations for `aiobotocore.create_client("synthetics").untag_resource`
+Type annotations for `session.create_client("synthetics").untag_resource`
 method.
 
 Boto3 documentation:
@@ -451,7 +446,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Use this operation to change the settings of a canary that has already been
 created.
 
-Type annotations for `aiobotocore.create_client("synthetics").update_canary`
+Type annotations for `session.create_client("synthetics").update_canary`
 method.
 
 Boto3 documentation:
@@ -482,3 +477,35 @@ Keyword-only arguments:
   [ArtifactConfigInputTypeDef](./type_defs.md#artifactconfiginputtypedef)
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("synthetics").__aenter__` method.
+
+Boto3 documentation:
+[Synthetics.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/synthetics.html#Synthetics.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SyntheticsClient](#syntheticsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("synthetics").__aexit__` method.
+
+Boto3 documentation:
+[Synthetics.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/synthetics.html#Synthetics.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

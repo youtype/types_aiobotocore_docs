@@ -32,17 +32,19 @@ type annotations stubs module
 ## GetRateBasedRuleManagedKeysPaginator
 
 Type annotations for
-`aiobotocore.create_client("waf").get_paginator("get_rate_based_rule_managed_keys")`.
+`session.create_client("waf").get_paginator("get_rate_based_rule_managed_keys")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_waf.paginator import GetRateBasedRuleManagedKeysPaginator
 
-def get_get_rate_based_rule_managed_keys_paginator() -> GetRateBasedRuleManagedKeysPaginator:
-    return Session().create_client("waf").get_paginator("get_rate_based_rule_managed_keys")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
+    paginator: GetRateBasedRuleManagedKeysPaginator = client.get_paginator("get_rate_based_rule_managed_keys")
 ```
 
 Boto3 documentation:
@@ -62,17 +64,19 @@ Arguments for `GetRateBasedRuleManagedKeysPaginator.paginate` method:
 ## ListActivatedRulesInRuleGroupPaginator
 
 Type annotations for
-`aiobotocore.create_client("waf").get_paginator("list_activated_rules_in_rule_group")`.
+`session.create_client("waf").get_paginator("list_activated_rules_in_rule_group")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_waf.paginator import ListActivatedRulesInRuleGroupPaginator
 
-def get_list_activated_rules_in_rule_group_paginator() -> ListActivatedRulesInRuleGroupPaginator:
-    return Session().create_client("waf").get_paginator("list_activated_rules_in_rule_group")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
+    paginator: ListActivatedRulesInRuleGroupPaginator = client.get_paginator("list_activated_rules_in_rule_group")
 ```
 
 Boto3 documentation:
@@ -92,17 +96,19 @@ Arguments for `ListActivatedRulesInRuleGroupPaginator.paginate` method:
 ## ListByteMatchSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("waf").get_paginator("list_byte_match_sets")`.
+`session.create_client("waf").get_paginator("list_byte_match_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_waf.paginator import ListByteMatchSetsPaginator
 
-def get_list_byte_match_sets_paginator() -> ListByteMatchSetsPaginator:
-    return Session().create_client("waf").get_paginator("list_byte_match_sets")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
+    paginator: ListByteMatchSetsPaginator = client.get_paginator("list_byte_match_sets")
 ```
 
 Boto3 documentation:
@@ -121,17 +127,19 @@ Arguments for `ListByteMatchSetsPaginator.paginate` method:
 ## ListGeoMatchSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("waf").get_paginator("list_geo_match_sets")`.
+`session.create_client("waf").get_paginator("list_geo_match_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_waf.paginator import ListGeoMatchSetsPaginator
 
-def get_list_geo_match_sets_paginator() -> ListGeoMatchSetsPaginator:
-    return Session().create_client("waf").get_paginator("list_geo_match_sets")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
+    paginator: ListGeoMatchSetsPaginator = client.get_paginator("list_geo_match_sets")
 ```
 
 Boto3 documentation:
@@ -150,17 +158,19 @@ Arguments for `ListGeoMatchSetsPaginator.paginate` method:
 ## ListIPSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("waf").get_paginator("list_ip_sets")`.
+`session.create_client("waf").get_paginator("list_ip_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_waf.paginator import ListIPSetsPaginator
 
-def get_list_ip_sets_paginator() -> ListIPSetsPaginator:
-    return Session().create_client("waf").get_paginator("list_ip_sets")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
+    paginator: ListIPSetsPaginator = client.get_paginator("list_ip_sets")
 ```
 
 Boto3 documentation:
@@ -179,17 +189,19 @@ Arguments for `ListIPSetsPaginator.paginate` method:
 ## ListLoggingConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("waf").get_paginator("list_logging_configurations")`.
+`session.create_client("waf").get_paginator("list_logging_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_waf.paginator import ListLoggingConfigurationsPaginator
 
-def get_list_logging_configurations_paginator() -> ListLoggingConfigurationsPaginator:
-    return Session().create_client("waf").get_paginator("list_logging_configurations")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
+    paginator: ListLoggingConfigurationsPaginator = client.get_paginator("list_logging_configurations")
 ```
 
 Boto3 documentation:
@@ -208,17 +220,19 @@ Arguments for `ListLoggingConfigurationsPaginator.paginate` method:
 ## ListRateBasedRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("waf").get_paginator("list_rate_based_rules")`.
+`session.create_client("waf").get_paginator("list_rate_based_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_waf.paginator import ListRateBasedRulesPaginator
 
-def get_list_rate_based_rules_paginator() -> ListRateBasedRulesPaginator:
-    return Session().create_client("waf").get_paginator("list_rate_based_rules")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
+    paginator: ListRateBasedRulesPaginator = client.get_paginator("list_rate_based_rules")
 ```
 
 Boto3 documentation:
@@ -237,17 +251,19 @@ Arguments for `ListRateBasedRulesPaginator.paginate` method:
 ## ListRegexMatchSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("waf").get_paginator("list_regex_match_sets")`.
+`session.create_client("waf").get_paginator("list_regex_match_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_waf.paginator import ListRegexMatchSetsPaginator
 
-def get_list_regex_match_sets_paginator() -> ListRegexMatchSetsPaginator:
-    return Session().create_client("waf").get_paginator("list_regex_match_sets")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
+    paginator: ListRegexMatchSetsPaginator = client.get_paginator("list_regex_match_sets")
 ```
 
 Boto3 documentation:
@@ -266,17 +282,19 @@ Arguments for `ListRegexMatchSetsPaginator.paginate` method:
 ## ListRegexPatternSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("waf").get_paginator("list_regex_pattern_sets")`.
+`session.create_client("waf").get_paginator("list_regex_pattern_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_waf.paginator import ListRegexPatternSetsPaginator
 
-def get_list_regex_pattern_sets_paginator() -> ListRegexPatternSetsPaginator:
-    return Session().create_client("waf").get_paginator("list_regex_pattern_sets")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
+    paginator: ListRegexPatternSetsPaginator = client.get_paginator("list_regex_pattern_sets")
 ```
 
 Boto3 documentation:
@@ -295,17 +313,19 @@ Arguments for `ListRegexPatternSetsPaginator.paginate` method:
 ## ListRuleGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("waf").get_paginator("list_rule_groups")`.
+`session.create_client("waf").get_paginator("list_rule_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_waf.paginator import ListRuleGroupsPaginator
 
-def get_list_rule_groups_paginator() -> ListRuleGroupsPaginator:
-    return Session().create_client("waf").get_paginator("list_rule_groups")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
+    paginator: ListRuleGroupsPaginator = client.get_paginator("list_rule_groups")
 ```
 
 Boto3 documentation:
@@ -324,17 +344,19 @@ Arguments for `ListRuleGroupsPaginator.paginate` method:
 ## ListRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("waf").get_paginator("list_rules")`.
+`session.create_client("waf").get_paginator("list_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_waf.paginator import ListRulesPaginator
 
-def get_list_rules_paginator() -> ListRulesPaginator:
-    return Session().create_client("waf").get_paginator("list_rules")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
+    paginator: ListRulesPaginator = client.get_paginator("list_rules")
 ```
 
 Boto3 documentation:
@@ -353,17 +375,19 @@ Arguments for `ListRulesPaginator.paginate` method:
 ## ListSizeConstraintSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("waf").get_paginator("list_size_constraint_sets")`.
+`session.create_client("waf").get_paginator("list_size_constraint_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_waf.paginator import ListSizeConstraintSetsPaginator
 
-def get_list_size_constraint_sets_paginator() -> ListSizeConstraintSetsPaginator:
-    return Session().create_client("waf").get_paginator("list_size_constraint_sets")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
+    paginator: ListSizeConstraintSetsPaginator = client.get_paginator("list_size_constraint_sets")
 ```
 
 Boto3 documentation:
@@ -382,17 +406,19 @@ Arguments for `ListSizeConstraintSetsPaginator.paginate` method:
 ## ListSqlInjectionMatchSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("waf").get_paginator("list_sql_injection_match_sets")`.
+`session.create_client("waf").get_paginator("list_sql_injection_match_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_waf.paginator import ListSqlInjectionMatchSetsPaginator
 
-def get_list_sql_injection_match_sets_paginator() -> ListSqlInjectionMatchSetsPaginator:
-    return Session().create_client("waf").get_paginator("list_sql_injection_match_sets")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
+    paginator: ListSqlInjectionMatchSetsPaginator = client.get_paginator("list_sql_injection_match_sets")
 ```
 
 Boto3 documentation:
@@ -411,17 +437,19 @@ Arguments for `ListSqlInjectionMatchSetsPaginator.paginate` method:
 ## ListSubscribedRuleGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("waf").get_paginator("list_subscribed_rule_groups")`.
+`session.create_client("waf").get_paginator("list_subscribed_rule_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_waf.paginator import ListSubscribedRuleGroupsPaginator
 
-def get_list_subscribed_rule_groups_paginator() -> ListSubscribedRuleGroupsPaginator:
-    return Session().create_client("waf").get_paginator("list_subscribed_rule_groups")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
+    paginator: ListSubscribedRuleGroupsPaginator = client.get_paginator("list_subscribed_rule_groups")
 ```
 
 Boto3 documentation:
@@ -440,17 +468,19 @@ Arguments for `ListSubscribedRuleGroupsPaginator.paginate` method:
 ## ListWebACLsPaginator
 
 Type annotations for
-`aiobotocore.create_client("waf").get_paginator("list_web_acls")`.
+`session.create_client("waf").get_paginator("list_web_acls")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_waf.paginator import ListWebACLsPaginator
 
-def get_list_web_acls_paginator() -> ListWebACLsPaginator:
-    return Session().create_client("waf").get_paginator("list_web_acls")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
+    paginator: ListWebACLsPaginator = client.get_paginator("list_web_acls")
 ```
 
 Boto3 documentation:
@@ -469,17 +499,19 @@ Arguments for `ListWebACLsPaginator.paginate` method:
 ## ListXssMatchSetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("waf").get_paginator("list_xss_match_sets")`.
+`session.create_client("waf").get_paginator("list_xss_match_sets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_waf.paginator import ListXssMatchSetsPaginator
 
-def get_list_xss_match_sets_paginator() -> ListXssMatchSetsPaginator:
-    return Session().create_client("waf").get_paginator("list_xss_match_sets")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
+    paginator: ListXssMatchSetsPaginator = client.get_paginator("list_xss_match_sets")
 ```
 
 Boto3 documentation:

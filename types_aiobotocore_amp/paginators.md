@@ -18,17 +18,19 @@ type annotations stubs module
 ## ListRuleGroupsNamespacesPaginator
 
 Type annotations for
-`aiobotocore.create_client("amp").get_paginator("list_rule_groups_namespaces")`.
+`session.create_client("amp").get_paginator("list_rule_groups_namespaces")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_amp.paginator import ListRuleGroupsNamespacesPaginator
 
-def get_list_rule_groups_namespaces_paginator() -> ListRuleGroupsNamespacesPaginator:
-    return Session().create_client("amp").get_paginator("list_rule_groups_namespaces")
+session = get_session()
+async with session.create_client("amp") as client:
+    client: PrometheusServiceClient
+    paginator: ListRuleGroupsNamespacesPaginator = client.get_paginator("list_rule_groups_namespaces")
 ```
 
 Boto3 documentation:
@@ -49,17 +51,19 @@ Arguments for `ListRuleGroupsNamespacesPaginator.paginate` method:
 ## ListWorkspacesPaginator
 
 Type annotations for
-`aiobotocore.create_client("amp").get_paginator("list_workspaces")`.
+`session.create_client("amp").get_paginator("list_workspaces")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_amp.paginator import ListWorkspacesPaginator
 
-def get_list_workspaces_paginator() -> ListWorkspacesPaginator:
-    return Session().create_client("amp").get_paginator("list_workspaces")
+session = get_session()
+async with session.create_client("amp") as client:
+    client: PrometheusServiceClient
+    paginator: ListWorkspacesPaginator = client.get_paginator("list_workspaces")
 ```
 
 Boto3 documentation:

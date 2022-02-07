@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[applicationcostprofiler]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[applicationcostprofiler]'
+
+# standalone installation
 pip install types-aiobotocore-applicationcostprofiler
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-applicationcostprofiler
 
 ## ApplicationCostProfilerClient
 
-Type annotations for `aiobotocore.create_client("applicationcostprofiler")` as
+Type annotations for `session.create_client("applicationcostprofiler")` as
 [ApplicationCostProfilerClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_applicationcostprofiler.client import ApplicationCostProf
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [delete_report_definition](./client.md#delete_report_definition)
 - [exceptions](./client.md#exceptions)
@@ -76,7 +82,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_applicationcostprofiler.paginators import ListReportDefinitionsPaginator, ...
+from types_aiobotocore_applicationcostprofiler.paginator import ListReportDefinitionsPaginator, ...
 ```
 
 - [ListReportDefinitionsPaginator](./paginators.md#listreportdefinitionspaginator)

@@ -21,22 +21,25 @@ type annotations stubs module
     - [generate_presigned_url](#generate_presigned_url)
     - [modify_report_definition](#modify_report_definition)
     - [put_report_definition](#put_report_definition)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="costandusagereportserviceclient"></a>
 
 ## CostandUsageReportServiceClient
 
-Type annotations for `aiobotocore.create_client("cur")`
+Type annotations for `session.create_client("cur")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_cur.client import CostandUsageReportServiceClient
 
-def get_cur_client() -> CostandUsageReportServiceClient:
-    return Session().client("cur")
+session = get_session()
+async with session.create_client("cur") as client:
+    client: CostandUsageReportServiceClient
 ```
 
 Boto3 documentation:
@@ -74,7 +77,7 @@ Exceptions:
 
 CostandUsageReportServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("cur").exceptions` method.
+Type annotations for `session.create_client("cur").exceptions` method.
 
 Boto3 documentation:
 [CostandUsageReportService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cur.html#CostandUsageReportService.Client.exceptions)
@@ -87,18 +90,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("cur").can_paginate` method.
+Type annotations for `session.create_client("cur").can_paginate` method.
 
 Boto3 documentation:
 [CostandUsageReportService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cur.html#CostandUsageReportService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="delete_report_definition"></a>
 
@@ -106,8 +107,8 @@ Returns a `Coroutine` for `bool`.
 
 Deletes the specified report.
 
-Type annotations for
-`aiobotocore.create_client("cur").delete_report_definition` method.
+Type annotations for `session.create_client("cur").delete_report_definition`
+method.
 
 Boto3 documentation:
 [CostandUsageReportService.Client.delete_report_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cur.html#CostandUsageReportService.Client.delete_report_definition)
@@ -131,8 +132,8 @@ Returns a `Coroutine` for
 
 Lists the AWS Cost and Usage reports available to this account.
 
-Type annotations for
-`aiobotocore.create_client("cur").describe_report_definitions` method.
+Type annotations for `session.create_client("cur").describe_report_definitions`
+method.
 
 Boto3 documentation:
 [CostandUsageReportService.Client.describe_report_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cur.html#CostandUsageReportService.Client.describe_report_definitions)
@@ -157,7 +158,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("cur").generate_presigned_url`
+Type annotations for `session.create_client("cur").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -181,8 +182,8 @@ Returns a `Coroutine` for `str`.
 
 Allows you to programatically update your report preferences.
 
-Type annotations for
-`aiobotocore.create_client("cur").modify_report_definition` method.
+Type annotations for `session.create_client("cur").modify_report_definition`
+method.
 
 Boto3 documentation:
 [CostandUsageReportService.Client.modify_report_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cur.html#CostandUsageReportService.Client.modify_report_definition)
@@ -208,7 +209,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a new report using the description that you provide.
 
-Type annotations for `aiobotocore.create_client("cur").put_report_definition`
+Type annotations for `session.create_client("cur").put_report_definition`
 method.
 
 Boto3 documentation:
@@ -228,12 +229,45 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("cur").__aenter__` method.
+
+Boto3 documentation:
+[CostandUsageReportService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cur.html#CostandUsageReportService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[CostandUsageReportServiceClient](#costandusagereportserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("cur").__aexit__` method.
+
+Boto3 documentation:
+[CostandUsageReportService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cur.html#CostandUsageReportService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("cur").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("cur").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_report_definitions")` ->
   [DescribeReportDefinitionsPaginator](./paginators.md#describereportdefinitionspaginator)

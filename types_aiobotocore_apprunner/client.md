@@ -38,21 +38,24 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_service](#update_service)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="apprunnerclient"></a>
 
 ## AppRunnerClient
 
-Type annotations for `aiobotocore.create_client("apprunner")`
+Type annotations for `session.create_client("apprunner")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_apprunner.client import AppRunnerClient
 
-def get_apprunner_client() -> AppRunnerClient:
-    return Session().client("apprunner")
+session = get_session()
+async with session.create_client("apprunner") as client:
+    client: AppRunnerClient
 ```
 
 Boto3 documentation:
@@ -91,8 +94,7 @@ Exceptions:
 
 AppRunnerClient exceptions.
 
-Type annotations for `aiobotocore.create_client("apprunner").exceptions`
-method.
+Type annotations for `session.create_client("apprunner").exceptions` method.
 
 Boto3 documentation:
 [AppRunner.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apprunner.html#AppRunner.Client.exceptions)
@@ -107,7 +109,7 @@ Associate your own domain name with the App Runner subdomain URL of your App
 Runner service.
 
 Type annotations for
-`aiobotocore.create_client("apprunner").associate_custom_domain` method.
+`session.create_client("apprunner").associate_custom_domain` method.
 
 Boto3 documentation:
 [AppRunner.Client.associate_custom_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apprunner.html#AppRunner.Client.associate_custom_domain)
@@ -133,19 +135,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("apprunner").can_paginate`
-method.
+Type annotations for `session.create_client("apprunner").can_paginate` method.
 
 Boto3 documentation:
 [AppRunner.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apprunner.html#AppRunner.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_auto_scaling_configuration"></a>
 
@@ -154,8 +153,7 @@ Returns a `Coroutine` for `bool`.
 Create an App Runner automatic scaling configuration resource.
 
 Type annotations for
-`aiobotocore.create_client("apprunner").create_auto_scaling_configuration`
-method.
+`session.create_client("apprunner").create_auto_scaling_configuration` method.
 
 Boto3 documentation:
 [AppRunner.Client.create_auto_scaling_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apprunner.html#AppRunner.Client.create_auto_scaling_configuration)
@@ -183,7 +181,7 @@ Returns a `Coroutine` for
 
 Create an App Runner connection resource.
 
-Type annotations for `aiobotocore.create_client("apprunner").create_connection`
+Type annotations for `session.create_client("apprunner").create_connection`
 method.
 
 Boto3 documentation:
@@ -210,7 +208,7 @@ Returns a `Coroutine` for
 
 Create an App Runner service.
 
-Type annotations for `aiobotocore.create_client("apprunner").create_service`
+Type annotations for `session.create_client("apprunner").create_service`
 method.
 
 Boto3 documentation:
@@ -246,8 +244,7 @@ Returns a `Coroutine` for
 Delete an App Runner automatic scaling configuration resource.
 
 Type annotations for
-`aiobotocore.create_client("apprunner").delete_auto_scaling_configuration`
-method.
+`session.create_client("apprunner").delete_auto_scaling_configuration` method.
 
 Boto3 documentation:
 [AppRunner.Client.delete_auto_scaling_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apprunner.html#AppRunner.Client.delete_auto_scaling_configuration)
@@ -271,7 +268,7 @@ Returns a `Coroutine` for
 
 Delete an App Runner connection.
 
-Type annotations for `aiobotocore.create_client("apprunner").delete_connection`
+Type annotations for `session.create_client("apprunner").delete_connection`
 method.
 
 Boto3 documentation:
@@ -295,7 +292,7 @@ Returns a `Coroutine` for
 
 Delete an App Runner service.
 
-Type annotations for `aiobotocore.create_client("apprunner").delete_service`
+Type annotations for `session.create_client("apprunner").delete_service`
 method.
 
 Boto3 documentation:
@@ -321,7 +318,7 @@ Return a full description of an App Runner automatic scaling configuration
 resource.
 
 Type annotations for
-`aiobotocore.create_client("apprunner").describe_auto_scaling_configuration`
+`session.create_client("apprunner").describe_auto_scaling_configuration`
 method.
 
 Boto3 documentation:
@@ -348,7 +345,7 @@ Return a description of custom domain names that are associated with an App
 Runner service.
 
 Type annotations for
-`aiobotocore.create_client("apprunner").describe_custom_domains` method.
+`session.create_client("apprunner").describe_custom_domains` method.
 
 Boto3 documentation:
 [AppRunner.Client.describe_custom_domains](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apprunner.html#AppRunner.Client.describe_custom_domains)
@@ -374,7 +371,7 @@ Returns a `Coroutine` for
 
 Return a full description of an App Runner service.
 
-Type annotations for `aiobotocore.create_client("apprunner").describe_service`
+Type annotations for `session.create_client("apprunner").describe_service`
 method.
 
 Boto3 documentation:
@@ -399,7 +396,7 @@ Returns a `Coroutine` for
 Disassociate a custom domain name from an App Runner service.
 
 Type annotations for
-`aiobotocore.create_client("apprunner").disassociate_custom_domain` method.
+`session.create_client("apprunner").disassociate_custom_domain` method.
 
 Boto3 documentation:
 [AppRunner.Client.disassociate_custom_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apprunner.html#AppRunner.Client.disassociate_custom_domain)
@@ -425,7 +422,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("apprunner").generate_presigned_url` method.
+`session.create_client("apprunner").generate_presigned_url` method.
 
 Boto3 documentation:
 [AppRunner.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apprunner.html#AppRunner.Client.generate_presigned_url)
@@ -450,8 +447,7 @@ Returns a list of App Runner automatic scaling configurations in your Amazon
 Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("apprunner").list_auto_scaling_configurations`
-method.
+`session.create_client("apprunner").list_auto_scaling_configurations` method.
 
 Boto3 documentation:
 [AppRunner.Client.list_auto_scaling_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apprunner.html#AppRunner.Client.list_auto_scaling_configurations)
@@ -479,7 +475,7 @@ Returns a `Coroutine` for
 Returns a list of App Runner connections that are associated with your Amazon
 Web Services account.
 
-Type annotations for `aiobotocore.create_client("apprunner").list_connections`
+Type annotations for `session.create_client("apprunner").list_connections`
 method.
 
 Boto3 documentation:
@@ -505,7 +501,7 @@ Returns a `Coroutine` for
 
 Return a list of operations that occurred on an App Runner service.
 
-Type annotations for `aiobotocore.create_client("apprunner").list_operations`
+Type annotations for `session.create_client("apprunner").list_operations`
 method.
 
 Boto3 documentation:
@@ -532,8 +528,7 @@ Returns a `Coroutine` for
 Returns a list of running App Runner services in your Amazon Web Services
 account.
 
-Type annotations for `aiobotocore.create_client("apprunner").list_services`
-method.
+Type annotations for `session.create_client("apprunner").list_services` method.
 
 Boto3 documentation:
 [AppRunner.Client.list_services](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apprunner.html#AppRunner.Client.list_services)
@@ -558,7 +553,7 @@ Returns a `Coroutine` for
 List tags that are associated with for an App Runner resource.
 
 Type annotations for
-`aiobotocore.create_client("apprunner").list_tags_for_resource` method.
+`session.create_client("apprunner").list_tags_for_resource` method.
 
 Boto3 documentation:
 [AppRunner.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apprunner.html#AppRunner.Client.list_tags_for_resource)
@@ -582,8 +577,7 @@ Returns a `Coroutine` for
 
 Pause an active App Runner service.
 
-Type annotations for `aiobotocore.create_client("apprunner").pause_service`
-method.
+Type annotations for `session.create_client("apprunner").pause_service` method.
 
 Boto3 documentation:
 [AppRunner.Client.pause_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apprunner.html#AppRunner.Client.pause_service)
@@ -606,7 +600,7 @@ Returns a `Coroutine` for
 
 Resume an active App Runner service.
 
-Type annotations for `aiobotocore.create_client("apprunner").resume_service`
+Type annotations for `session.create_client("apprunner").resume_service`
 method.
 
 Boto3 documentation:
@@ -631,7 +625,7 @@ Returns a `Coroutine` for
 Initiate a manual deployment of the latest commit in a source code repository
 or the latest image in a source image repository to an App Runner service.
 
-Type annotations for `aiobotocore.create_client("apprunner").start_deployment`
+Type annotations for `session.create_client("apprunner").start_deployment`
 method.
 
 Boto3 documentation:
@@ -655,8 +649,7 @@ Returns a `Coroutine` for
 
 Add tags to, or update the tag values of, an App Runner resource.
 
-Type annotations for `aiobotocore.create_client("apprunner").tag_resource`
-method.
+Type annotations for `session.create_client("apprunner").tag_resource` method.
 
 Boto3 documentation:
 [AppRunner.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apprunner.html#AppRunner.Client.tag_resource)
@@ -679,7 +672,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Remove tags from an App Runner resource.
 
-Type annotations for `aiobotocore.create_client("apprunner").untag_resource`
+Type annotations for `session.create_client("apprunner").untag_resource`
 method.
 
 Boto3 documentation:
@@ -703,7 +696,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Update an App Runner service.
 
-Type annotations for `aiobotocore.create_client("apprunner").update_service`
+Type annotations for `session.create_client("apprunner").update_service`
 method.
 
 Boto3 documentation:
@@ -727,3 +720,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateServiceResponseTypeDef](./type_defs.md#updateserviceresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("apprunner").__aenter__` method.
+
+Boto3 documentation:
+[AppRunner.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apprunner.html#AppRunner.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [AppRunnerClient](#apprunnerclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("apprunner").__aexit__` method.
+
+Boto3 documentation:
+[AppRunner.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apprunner.html#AppRunner.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

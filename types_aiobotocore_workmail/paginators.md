@@ -24,17 +24,19 @@ type annotations stubs module
 ## ListAliasesPaginator
 
 Type annotations for
-`aiobotocore.create_client("workmail").get_paginator("list_aliases")`.
+`session.create_client("workmail").get_paginator("list_aliases")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workmail.paginator import ListAliasesPaginator
 
-def get_list_aliases_paginator() -> ListAliasesPaginator:
-    return Session().create_client("workmail").get_paginator("list_aliases")
+session = get_session()
+async with session.create_client("workmail") as client:
+    client: WorkMailClient
+    paginator: ListAliasesPaginator = client.get_paginator("list_aliases")
 ```
 
 Boto3 documentation:
@@ -55,17 +57,19 @@ Arguments for `ListAliasesPaginator.paginate` method:
 ## ListGroupMembersPaginator
 
 Type annotations for
-`aiobotocore.create_client("workmail").get_paginator("list_group_members")`.
+`session.create_client("workmail").get_paginator("list_group_members")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workmail.paginator import ListGroupMembersPaginator
 
-def get_list_group_members_paginator() -> ListGroupMembersPaginator:
-    return Session().create_client("workmail").get_paginator("list_group_members")
+session = get_session()
+async with session.create_client("workmail") as client:
+    client: WorkMailClient
+    paginator: ListGroupMembersPaginator = client.get_paginator("list_group_members")
 ```
 
 Boto3 documentation:
@@ -86,17 +90,19 @@ Arguments for `ListGroupMembersPaginator.paginate` method:
 ## ListGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("workmail").get_paginator("list_groups")`.
+`session.create_client("workmail").get_paginator("list_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workmail.paginator import ListGroupsPaginator
 
-def get_list_groups_paginator() -> ListGroupsPaginator:
-    return Session().create_client("workmail").get_paginator("list_groups")
+session = get_session()
+async with session.create_client("workmail") as client:
+    client: WorkMailClient
+    paginator: ListGroupsPaginator = client.get_paginator("list_groups")
 ```
 
 Boto3 documentation:
@@ -116,17 +122,19 @@ Arguments for `ListGroupsPaginator.paginate` method:
 ## ListMailboxPermissionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("workmail").get_paginator("list_mailbox_permissions")`.
+`session.create_client("workmail").get_paginator("list_mailbox_permissions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workmail.paginator import ListMailboxPermissionsPaginator
 
-def get_list_mailbox_permissions_paginator() -> ListMailboxPermissionsPaginator:
-    return Session().create_client("workmail").get_paginator("list_mailbox_permissions")
+session = get_session()
+async with session.create_client("workmail") as client:
+    client: WorkMailClient
+    paginator: ListMailboxPermissionsPaginator = client.get_paginator("list_mailbox_permissions")
 ```
 
 Boto3 documentation:
@@ -147,17 +155,19 @@ Arguments for `ListMailboxPermissionsPaginator.paginate` method:
 ## ListOrganizationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("workmail").get_paginator("list_organizations")`.
+`session.create_client("workmail").get_paginator("list_organizations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workmail.paginator import ListOrganizationsPaginator
 
-def get_list_organizations_paginator() -> ListOrganizationsPaginator:
-    return Session().create_client("workmail").get_paginator("list_organizations")
+session = get_session()
+async with session.create_client("workmail") as client:
+    client: WorkMailClient
+    paginator: ListOrganizationsPaginator = client.get_paginator("list_organizations")
 ```
 
 Boto3 documentation:
@@ -176,17 +186,19 @@ Arguments for `ListOrganizationsPaginator.paginate` method:
 ## ListResourceDelegatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("workmail").get_paginator("list_resource_delegates")`.
+`session.create_client("workmail").get_paginator("list_resource_delegates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workmail.paginator import ListResourceDelegatesPaginator
 
-def get_list_resource_delegates_paginator() -> ListResourceDelegatesPaginator:
-    return Session().create_client("workmail").get_paginator("list_resource_delegates")
+session = get_session()
+async with session.create_client("workmail") as client:
+    client: WorkMailClient
+    paginator: ListResourceDelegatesPaginator = client.get_paginator("list_resource_delegates")
 ```
 
 Boto3 documentation:
@@ -207,17 +219,19 @@ Arguments for `ListResourceDelegatesPaginator.paginate` method:
 ## ListResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("workmail").get_paginator("list_resources")`.
+`session.create_client("workmail").get_paginator("list_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workmail.paginator import ListResourcesPaginator
 
-def get_list_resources_paginator() -> ListResourcesPaginator:
-    return Session().create_client("workmail").get_paginator("list_resources")
+session = get_session()
+async with session.create_client("workmail") as client:
+    client: WorkMailClient
+    paginator: ListResourcesPaginator = client.get_paginator("list_resources")
 ```
 
 Boto3 documentation:
@@ -237,17 +251,19 @@ Arguments for `ListResourcesPaginator.paginate` method:
 ## ListUsersPaginator
 
 Type annotations for
-`aiobotocore.create_client("workmail").get_paginator("list_users")`.
+`session.create_client("workmail").get_paginator("list_users")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_workmail.paginator import ListUsersPaginator
 
-def get_list_users_paginator() -> ListUsersPaginator:
-    return Session().create_client("workmail").get_paginator("list_users")
+session = get_session()
+async with session.create_client("workmail") as client:
+    client: WorkMailClient
+    paginator: ListUsersPaginator = client.get_paginator("list_users")
 ```
 
 Boto3 documentation:

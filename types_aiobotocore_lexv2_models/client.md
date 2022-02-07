@@ -80,22 +80,25 @@ type annotations stubs module
     - [update_resource_policy](#update_resource_policy)
     - [update_slot](#update_slot)
     - [update_slot_type](#update_slot_type)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_waiter](#get_waiter)
 
 <a id="lexmodelsv2client"></a>
 
 ## LexModelsV2Client
 
-Type annotations for `aiobotocore.create_client("lexv2-models")`
+Type annotations for `session.create_client("lexv2-models")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_lexv2_models.client import LexModelsV2Client
 
-def get_lexv2-models_client() -> LexModelsV2Client:
-    return Session().client("lexv2-models")
+session = get_session()
+async with session.create_client("lexv2-models") as client:
+    client: LexModelsV2Client
 ```
 
 Boto3 documentation:
@@ -136,8 +139,7 @@ Exceptions:
 
 LexModelsV2Client exceptions.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").exceptions`
-method.
+Type annotations for `session.create_client("lexv2-models").exceptions` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.exceptions)
@@ -150,8 +152,8 @@ Returns [Exceptions](#exceptions).
 
 Builds a bot, its intents, and its slot types into a specific locale.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").build_bot_locale` method.
+Type annotations for `session.create_client("lexv2-models").build_bot_locale`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.build_bot_locale](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.build_bot_locale)
@@ -176,19 +178,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").can_paginate`
+Type annotations for `session.create_client("lexv2-models").can_paginate`
 method.
 
 Boto3 documentation:
 [LexModelsV2.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_bot"></a>
 
@@ -196,8 +196,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates an Amazon Lex conversational bot.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").create_bot`
-method.
+Type annotations for `session.create_client("lexv2-models").create_bot` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.create_bot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.create_bot)
@@ -227,8 +226,8 @@ Returns a `Coroutine` for
 
 Creates an alias for the specified version of a bot.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").create_bot_alias` method.
+Type annotations for `session.create_client("lexv2-models").create_bot_alias`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.create_bot_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.create_bot_alias)
@@ -261,8 +260,8 @@ Returns a `Coroutine` for
 
 Creates a locale in the bot.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").create_bot_locale` method.
+Type annotations for `session.create_client("lexv2-models").create_bot_locale`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.create_bot_locale](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.create_bot_locale)
@@ -290,8 +289,8 @@ Returns a `Coroutine` for
 
 Creates a new version of the bot based on the `DRAFT` version.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").create_bot_version` method.
+Type annotations for `session.create_client("lexv2-models").create_bot_version`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.create_bot_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.create_bot_version)
@@ -319,7 +318,7 @@ Returns a `Coroutine` for
 
 Creates a zip archive containing the contents of a bot or a bot locale.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").create_export`
+Type annotations for `session.create_client("lexv2-models").create_export`
 method.
 
 Boto3 documentation:
@@ -349,7 +348,7 @@ Returns a `Coroutine` for
 
 Creates an intent.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").create_intent`
+Type annotations for `session.create_client("lexv2-models").create_intent`
 method.
 
 Boto3 documentation:
@@ -395,7 +394,7 @@ Returns a `Coroutine` for
 Creates a new resource policy with the specified policy statements.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").create_resource_policy` method.
+`session.create_client("lexv2-models").create_resource_policy` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.create_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.create_resource_policy)
@@ -421,7 +420,7 @@ Returns a `Coroutine` for
 Adds a new resource policy statement to a bot or bot alias.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").create_resource_policy_statement`
+`session.create_client("lexv2-models").create_resource_policy_statement`
 method.
 
 Boto3 documentation:
@@ -454,7 +453,7 @@ Returns a `Coroutine` for
 
 Creates a slot in an intent.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").create_slot`
+Type annotations for `session.create_client("lexv2-models").create_slot`
 method.
 
 Boto3 documentation:
@@ -493,8 +492,8 @@ Creates a custom slot type To create a custom slot type, specify a name for the
 slot type and a set of enumeration values, the values that a slot of this type
 can assume.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").create_slot_type` method.
+Type annotations for `session.create_client("lexv2-models").create_slot_type`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.create_slot_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.create_slot_type)
@@ -529,8 +528,8 @@ Returns a `Coroutine` for
 Gets a pre-signed S3 write URL that you use to upload the zip archive when
 importing a bot or a bot locale.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").create_upload_url` method.
+Type annotations for `session.create_client("lexv2-models").create_upload_url`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.create_upload_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.create_upload_url)
@@ -546,8 +545,7 @@ Returns a `Coroutine` for
 
 Deletes all versions of a bot, including the `Draft` version.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").delete_bot`
-method.
+Type annotations for `session.create_client("lexv2-models").delete_bot` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.delete_bot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.delete_bot)
@@ -571,8 +569,8 @@ Returns a `Coroutine` for
 
 Deletes the specified bot alias.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").delete_bot_alias` method.
+Type annotations for `session.create_client("lexv2-models").delete_bot_alias`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.delete_bot_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.delete_bot_alias)
@@ -597,8 +595,8 @@ Returns a `Coroutine` for
 
 Removes a locale from a bot.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").delete_bot_locale` method.
+Type annotations for `session.create_client("lexv2-models").delete_bot_locale`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.delete_bot_locale](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.delete_bot_locale)
@@ -623,8 +621,8 @@ Returns a `Coroutine` for
 
 Deletes a specific version of a bot.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").delete_bot_version` method.
+Type annotations for `session.create_client("lexv2-models").delete_bot_version`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.delete_bot_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.delete_bot_version)
@@ -650,7 +648,7 @@ Returns a `Coroutine` for
 
 Removes a previous export and the associated files stored in an S3 bucket.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").delete_export`
+Type annotations for `session.create_client("lexv2-models").delete_export`
 method.
 
 Boto3 documentation:
@@ -674,7 +672,7 @@ Returns a `Coroutine` for
 
 Removes a previous import and the associated file stored in an S3 bucket.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").delete_import`
+Type annotations for `session.create_client("lexv2-models").delete_import`
 method.
 
 Boto3 documentation:
@@ -698,7 +696,7 @@ Returns a `Coroutine` for
 
 Removes the specified intent.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").delete_intent`
+Type annotations for `session.create_client("lexv2-models").delete_intent`
 method.
 
 Boto3 documentation:
@@ -723,7 +721,7 @@ Keyword-only arguments:
 Removes an existing policy from a bot or bot alias.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").delete_resource_policy` method.
+`session.create_client("lexv2-models").delete_resource_policy` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.delete_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.delete_resource_policy)
@@ -749,7 +747,7 @@ Returns a `Coroutine` for
 Deletes a policy statement from a resource policy.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").delete_resource_policy_statement`
+`session.create_client("lexv2-models").delete_resource_policy_statement`
 method.
 
 Boto3 documentation:
@@ -776,7 +774,7 @@ Returns a `Coroutine` for
 
 Deletes the specified slot from an intent.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").delete_slot`
+Type annotations for `session.create_client("lexv2-models").delete_slot`
 method.
 
 Boto3 documentation:
@@ -801,8 +799,8 @@ Keyword-only arguments:
 
 Deletes a slot type from a bot locale.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").delete_slot_type` method.
+Type annotations for `session.create_client("lexv2-models").delete_slot_type`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.delete_slot_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.delete_slot_type)
@@ -826,8 +824,8 @@ Keyword-only arguments:
 
 Deletes stored utterances.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").delete_utterances` method.
+Type annotations for `session.create_client("lexv2-models").delete_utterances`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.delete_utterances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.delete_utterances)
@@ -851,7 +849,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Provides metadata information about a bot.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").describe_bot`
+Type annotations for `session.create_client("lexv2-models").describe_bot`
 method.
 
 Boto3 documentation:
@@ -875,8 +873,8 @@ Returns a `Coroutine` for
 
 Get information about a specific bot alias.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").describe_bot_alias` method.
+Type annotations for `session.create_client("lexv2-models").describe_bot_alias`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.describe_bot_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.describe_bot_alias)
@@ -902,7 +900,7 @@ Returns a `Coroutine` for
 Describes the settings that a bot has for a specific locale.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").describe_bot_locale` method.
+`session.create_client("lexv2-models").describe_bot_locale` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.describe_bot_locale](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.describe_bot_locale)
@@ -929,7 +927,7 @@ Returns a `Coroutine` for
 Provides metadata information about a bot recommendation.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").describe_bot_recommendation` method.
+`session.create_client("lexv2-models").describe_bot_recommendation` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.describe_bot_recommendation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.describe_bot_recommendation)
@@ -957,7 +955,7 @@ Returns a `Coroutine` for
 Provides metadata about a version of a bot.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").describe_bot_version` method.
+`session.create_client("lexv2-models").describe_bot_version` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.describe_bot_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.describe_bot_version)
@@ -982,8 +980,8 @@ Returns a `Coroutine` for
 
 Gets information about a specific export.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").describe_export` method.
+Type annotations for `session.create_client("lexv2-models").describe_export`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.describe_export](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.describe_export)
@@ -1006,8 +1004,8 @@ Returns a `Coroutine` for
 
 Gets information about a specific import.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").describe_import` method.
+Type annotations for `session.create_client("lexv2-models").describe_import`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.describe_import](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.describe_import)
@@ -1030,8 +1028,8 @@ Returns a `Coroutine` for
 
 Returns metadata about an intent.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").describe_intent` method.
+Type annotations for `session.create_client("lexv2-models").describe_intent`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.describe_intent](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.describe_intent)
@@ -1058,7 +1056,7 @@ Returns a `Coroutine` for
 Gets the resource policy and policy revision for a bot or bot alias.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").describe_resource_policy` method.
+`session.create_client("lexv2-models").describe_resource_policy` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.describe_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.describe_resource_policy)
@@ -1082,7 +1080,7 @@ Returns a `Coroutine` for
 
 Gets metadata information about a slot.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").describe_slot`
+Type annotations for `session.create_client("lexv2-models").describe_slot`
 method.
 
 Boto3 documentation:
@@ -1110,8 +1108,8 @@ Returns a `Coroutine` for
 
 Gets metadata information about a slot type.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").describe_slot_type` method.
+Type annotations for `session.create_client("lexv2-models").describe_slot_type`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.describe_slot_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.describe_slot_type)
@@ -1139,7 +1137,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").generate_presigned_url` method.
+`session.create_client("lexv2-models").generate_presigned_url` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.generate_presigned_url)
@@ -1163,7 +1161,7 @@ Returns a `Coroutine` for `str`.
 Provides a list of utterances that users have sent to the bot.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").list_aggregated_utterances` method.
+`session.create_client("lexv2-models").list_aggregated_utterances` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.list_aggregated_utterances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.list_aggregated_utterances)
@@ -1199,8 +1197,8 @@ Returns a `Coroutine` for
 
 Gets a list of aliases for the specified bot.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").list_bot_aliases` method.
+Type annotations for `session.create_client("lexv2-models").list_bot_aliases`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.list_bot_aliases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.list_bot_aliases)
@@ -1225,8 +1223,8 @@ Returns a `Coroutine` for
 
 Gets a list of locales for the specified bot.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").list_bot_locales` method.
+Type annotations for `session.create_client("lexv2-models").list_bot_locales`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.list_bot_locales](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.list_bot_locales)
@@ -1256,7 +1254,7 @@ Returns a `Coroutine` for
 Get a list of bot recommendations that meet the specified criteria.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").list_bot_recommendations` method.
+`session.create_client("lexv2-models").list_bot_recommendations` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.list_bot_recommendations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.list_bot_recommendations)
@@ -1284,8 +1282,8 @@ Returns a `Coroutine` for
 
 Gets information about all of the versions of a bot.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").list_bot_versions` method.
+Type annotations for `session.create_client("lexv2-models").list_bot_versions`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.list_bot_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.list_bot_versions)
@@ -1311,8 +1309,7 @@ Returns a `Coroutine` for
 
 Gets a list of available bots.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").list_bots`
-method.
+Type annotations for `session.create_client("lexv2-models").list_bots` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.list_bots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.list_bots)
@@ -1340,7 +1337,7 @@ Gets a list of built-in intents provided by Amazon Lex that you can use in your
 bot.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").list_built_in_intents` method.
+`session.create_client("lexv2-models").list_built_in_intents` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.list_built_in_intents](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.list_built_in_intents)
@@ -1369,7 +1366,7 @@ Returns a `Coroutine` for
 Gets a list of built-in slot types that meet the specified criteria.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").list_built_in_slot_types` method.
+`session.create_client("lexv2-models").list_built_in_slot_types` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.list_built_in_slot_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.list_built_in_slot_types)
@@ -1397,7 +1394,7 @@ Returns a `Coroutine` for
 
 Lists the exports for a bot or bot locale.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").list_exports`
+Type annotations for `session.create_client("lexv2-models").list_exports`
 method.
 
 Boto3 documentation:
@@ -1427,7 +1424,7 @@ Returns a `Coroutine` for
 
 Lists the imports for a bot or bot locale.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").list_imports`
+Type annotations for `session.create_client("lexv2-models").list_imports`
 method.
 
 Boto3 documentation:
@@ -1457,7 +1454,7 @@ Returns a `Coroutine` for
 
 Get a list of intents that meet the specified criteria.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").list_intents`
+Type annotations for `session.create_client("lexv2-models").list_intents`
 method.
 
 Boto3 documentation:
@@ -1490,7 +1487,7 @@ Gets a list of recommended intents provided by the bot recommendation that you
 can use in your bot.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").list_recommended_intents` method.
+`session.create_client("lexv2-models").list_recommended_intents` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.list_recommended_intents](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.list_recommended_intents)
@@ -1519,8 +1516,8 @@ Returns a `Coroutine` for
 
 Gets a list of slot types that match the specified criteria.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").list_slot_types` method.
+Type annotations for `session.create_client("lexv2-models").list_slot_types`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.list_slot_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.list_slot_types)
@@ -1550,8 +1547,7 @@ Returns a `Coroutine` for
 
 Gets a list of slots that match the specified criteria.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").list_slots`
-method.
+Type annotations for `session.create_client("lexv2-models").list_slots` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.list_slots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.list_slots)
@@ -1583,7 +1579,7 @@ Returns a `Coroutine` for
 Gets a list of tags associated with a resource.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").list_tags_for_resource` method.
+`session.create_client("lexv2-models").list_tags_for_resource` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.list_tags_for_resource)
@@ -1608,8 +1604,7 @@ Returns a `Coroutine` for
 Search for associated transcripts that meet the specified criteria.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").search_associated_transcripts`
-method.
+`session.create_client("lexv2-models").search_associated_transcripts` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.search_associated_transcripts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.search_associated_transcripts)
@@ -1644,7 +1639,7 @@ Use this to provide your transcript data, and to start the bot recommendation
 process.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").start_bot_recommendation` method.
+`session.create_client("lexv2-models").start_bot_recommendation` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.start_bot_recommendation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.start_bot_recommendation)
@@ -1676,7 +1671,7 @@ Returns a `Coroutine` for
 Starts importing a bot or bot locale from a zip archive that you uploaded to an
 S3 bucket.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").start_import`
+Type annotations for `session.create_client("lexv2-models").start_import`
 method.
 
 Boto3 documentation:
@@ -1706,7 +1701,7 @@ Returns a `Coroutine` for
 
 Adds the specified tags to the specified resource.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").tag_resource`
+Type annotations for `session.create_client("lexv2-models").tag_resource`
 method.
 
 Boto3 documentation:
@@ -1730,7 +1725,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from a bot, bot alias, or bot channel.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").untag_resource`
+Type annotations for `session.create_client("lexv2-models").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1754,8 +1749,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the configuration of an existing bot.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").update_bot`
-method.
+Type annotations for `session.create_client("lexv2-models").update_bot` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.update_bot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.update_bot)
@@ -1784,8 +1778,8 @@ Returns a `Coroutine` for
 
 Updates the configuration of an existing bot alias.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").update_bot_alias` method.
+Type annotations for `session.create_client("lexv2-models").update_bot_alias`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.update_bot_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.update_bot_alias)
@@ -1818,8 +1812,8 @@ Returns a `Coroutine` for
 
 Updates the settings that a bot has for a specific locale.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").update_bot_locale` method.
+Type annotations for `session.create_client("lexv2-models").update_bot_locale`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.update_bot_locale](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.update_bot_locale)
@@ -1848,7 +1842,7 @@ Returns a `Coroutine` for
 Updates an existing bot recommendation request.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").update_bot_recommendation` method.
+`session.create_client("lexv2-models").update_bot_recommendation` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.update_bot_recommendation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.update_bot_recommendation)
@@ -1878,7 +1872,7 @@ Returns a `Coroutine` for
 
 Updates the password used to protect an export zip archive.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").update_export`
+Type annotations for `session.create_client("lexv2-models").update_export`
 method.
 
 Boto3 documentation:
@@ -1903,7 +1897,7 @@ Returns a `Coroutine` for
 
 Updates the settings for an intent.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").update_intent`
+Type annotations for `session.create_client("lexv2-models").update_intent`
 method.
 
 Boto3 documentation:
@@ -1952,7 +1946,7 @@ Returns a `Coroutine` for
 Replaces the existing resource policy for a bot or bot alias with a new one.
 
 Type annotations for
-`aiobotocore.create_client("lexv2-models").update_resource_policy` method.
+`session.create_client("lexv2-models").update_resource_policy` method.
 
 Boto3 documentation:
 [LexModelsV2.Client.update_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.update_resource_policy)
@@ -1978,7 +1972,7 @@ Returns a `Coroutine` for
 
 Updates the settings for a slot.
 
-Type annotations for `aiobotocore.create_client("lexv2-models").update_slot`
+Type annotations for `session.create_client("lexv2-models").update_slot`
 method.
 
 Boto3 documentation:
@@ -2016,8 +2010,8 @@ Returns a `Coroutine` for
 
 Updates the configuration of an existing slot type.
 
-Type annotations for
-`aiobotocore.create_client("lexv2-models").update_slot_type` method.
+Type annotations for `session.create_client("lexv2-models").update_slot_type`
+method.
 
 Boto3 documentation:
 [LexModelsV2.Client.update_slot_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.update_slot_type)
@@ -2046,12 +2040,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateSlotTypeResponseTypeDef](./type_defs.md#updateslottyperesponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("lexv2-models").__aenter__` method.
+
+Boto3 documentation:
+[LexModelsV2.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [LexModelsV2Client](#lexmodelsv2client).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("lexv2-models").__aexit__` method.
+
+Boto3 documentation:
+[LexModelsV2.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html#LexModelsV2.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_waiter"></a>
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("lexv2-models").get_waiter`
-method with overloads.
+Type annotations for `session.create_client("lexv2-models").get_waiter` method
+with overloads.
 
 - `client.get_waiter("bot_alias_available")` ->
   [BotAliasAvailableWaiter](./waiters.md#botaliasavailablewaiter)

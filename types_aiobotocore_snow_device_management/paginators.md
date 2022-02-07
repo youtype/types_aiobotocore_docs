@@ -20,17 +20,19 @@ type annotations stubs module
 ## ListDeviceResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").get_paginator("list_device_resources")`.
+`session.create_client("snow-device-management").get_paginator("list_device_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_snow_device_management.paginator import ListDeviceResourcesPaginator
 
-def get_list_device_resources_paginator() -> ListDeviceResourcesPaginator:
-    return Session().create_client("snow-device-management").get_paginator("list_device_resources")
+session = get_session()
+async with session.create_client("snow-device-management") as client:
+    client: SnowDeviceManagementClient
+    paginator: ListDeviceResourcesPaginator = client.get_paginator("list_device_resources")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `ListDeviceResourcesPaginator.paginate` method:
 ## ListDevicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").get_paginator("list_devices")`.
+`session.create_client("snow-device-management").get_paginator("list_devices")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_snow_device_management.paginator import ListDevicesPaginator
 
-def get_list_devices_paginator() -> ListDevicesPaginator:
-    return Session().create_client("snow-device-management").get_paginator("list_devices")
+session = get_session()
+async with session.create_client("snow-device-management") as client:
+    client: SnowDeviceManagementClient
+    paginator: ListDevicesPaginator = client.get_paginator("list_devices")
 ```
 
 Boto3 documentation:
@@ -81,17 +85,19 @@ Arguments for `ListDevicesPaginator.paginate` method:
 ## ListExecutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").get_paginator("list_executions")`.
+`session.create_client("snow-device-management").get_paginator("list_executions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_snow_device_management.paginator import ListExecutionsPaginator
 
-def get_list_executions_paginator() -> ListExecutionsPaginator:
-    return Session().create_client("snow-device-management").get_paginator("list_executions")
+session = get_session()
+async with session.create_client("snow-device-management") as client:
+    client: SnowDeviceManagementClient
+    paginator: ListExecutionsPaginator = client.get_paginator("list_executions")
 ```
 
 Boto3 documentation:
@@ -112,17 +118,19 @@ Arguments for `ListExecutionsPaginator.paginate` method:
 ## ListTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").get_paginator("list_tasks")`.
+`session.create_client("snow-device-management").get_paginator("list_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_snow_device_management.paginator import ListTasksPaginator
 
-def get_list_tasks_paginator() -> ListTasksPaginator:
-    return Session().create_client("snow-device-management").get_paginator("list_tasks")
+session = get_session()
+async with session.create_client("snow-device-management") as client:
+    client: SnowDeviceManagementClient
+    paginator: ListTasksPaginator = client.get_paginator("list_tasks")
 ```
 
 Boto3 documentation:

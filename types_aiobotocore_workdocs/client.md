@@ -57,22 +57,25 @@ type annotations stubs module
     - [update_document_version](#update_document_version)
     - [update_folder](#update_folder)
     - [update_user](#update_user)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="workdocsclient"></a>
 
 ## WorkDocsClient
 
-Type annotations for `aiobotocore.create_client("workdocs")`
+Type annotations for `session.create_client("workdocs")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_workdocs.client import WorkDocsClient
 
-def get_workdocs_client() -> WorkDocsClient:
-    return Session().client("workdocs")
+session = get_session()
+async with session.create_client("workdocs") as client:
+    client: WorkDocsClient
 ```
 
 Boto3 documentation:
@@ -131,7 +134,7 @@ Exceptions:
 
 WorkDocsClient exceptions.
 
-Type annotations for `aiobotocore.create_client("workdocs").exceptions` method.
+Type annotations for `session.create_client("workdocs").exceptions` method.
 
 Boto3 documentation:
 [WorkDocs.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.exceptions)
@@ -146,7 +149,7 @@ Aborts the upload of the specified document version that was previously
 initiated by InitiateDocumentVersionUpload.
 
 Type annotations for
-`aiobotocore.create_client("workdocs").abort_document_version_upload` method.
+`session.create_client("workdocs").abort_document_version_upload` method.
 
 Boto3 documentation:
 [WorkDocs.Client.abort_document_version_upload](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.abort_document_version_upload)
@@ -169,8 +172,7 @@ Keyword-only arguments:
 
 Activates the specified user.
 
-Type annotations for `aiobotocore.create_client("workdocs").activate_user`
-method.
+Type annotations for `session.create_client("workdocs").activate_user` method.
 
 Boto3 documentation:
 [WorkDocs.Client.activate_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.activate_user)
@@ -195,7 +197,7 @@ Returns a `Coroutine` for
 Creates a set of permissions for the specified folder or document.
 
 Type annotations for
-`aiobotocore.create_client("workdocs").add_resource_permissions` method.
+`session.create_client("workdocs").add_resource_permissions` method.
 
 Boto3 documentation:
 [WorkDocs.Client.add_resource_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.add_resource_permissions)
@@ -225,19 +227,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("workdocs").can_paginate`
-method.
+Type annotations for `session.create_client("workdocs").can_paginate` method.
 
 Boto3 documentation:
 [WorkDocs.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_comment"></a>
 
@@ -245,8 +244,7 @@ Returns a `Coroutine` for `bool`.
 
 Adds a new comment to the specified document version.
 
-Type annotations for `aiobotocore.create_client("workdocs").create_comment`
-method.
+Type annotations for `session.create_client("workdocs").create_comment` method.
 
 Boto3 documentation:
 [WorkDocs.Client.create_comment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.create_comment)
@@ -278,8 +276,8 @@ Returns a `Coroutine` for
 Adds one or more custom properties to the specified resource (a folder,
 document, or version).
 
-Type annotations for
-`aiobotocore.create_client("workdocs").create_custom_metadata` method.
+Type annotations for `session.create_client("workdocs").create_custom_metadata`
+method.
 
 Boto3 documentation:
 [WorkDocs.Client.create_custom_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.create_custom_metadata)
@@ -305,8 +303,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a folder with the specified name and parent folder.
 
-Type annotations for `aiobotocore.create_client("workdocs").create_folder`
-method.
+Type annotations for `session.create_client("workdocs").create_folder` method.
 
 Boto3 documentation:
 [WorkDocs.Client.create_folder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.create_folder)
@@ -333,8 +330,7 @@ Adds the specified list of labels to the given resource (a document or folder)
 See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateLabels).
 
-Type annotations for `aiobotocore.create_client("workdocs").create_labels`
-method.
+Type annotations for `session.create_client("workdocs").create_labels` method.
 
 Boto3 documentation:
 [WorkDocs.Client.create_labels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.create_labels)
@@ -359,8 +355,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Configure Amazon WorkDocs to use Amazon SNS notifications.
 
 Type annotations for
-`aiobotocore.create_client("workdocs").create_notification_subscription`
-method.
+`session.create_client("workdocs").create_notification_subscription` method.
 
 Boto3 documentation:
 [WorkDocs.Client.create_notification_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.create_notification_subscription)
@@ -390,8 +385,7 @@ Returns a `Coroutine` for
 
 Creates a user in a Simple AD or Microsoft AD directory.
 
-Type annotations for `aiobotocore.create_client("workdocs").create_user`
-method.
+Type annotations for `session.create_client("workdocs").create_user` method.
 
 Boto3 documentation:
 [WorkDocs.Client.create_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.create_user)
@@ -424,7 +418,7 @@ Returns a `Coroutine` for
 Deactivates the specified user, which revokes the user's access to Amazon
 WorkDocs.
 
-Type annotations for `aiobotocore.create_client("workdocs").deactivate_user`
+Type annotations for `session.create_client("workdocs").deactivate_user`
 method.
 
 Boto3 documentation:
@@ -446,8 +440,7 @@ Keyword-only arguments:
 
 Deletes the specified comment from the document version.
 
-Type annotations for `aiobotocore.create_client("workdocs").delete_comment`
-method.
+Type annotations for `session.create_client("workdocs").delete_comment` method.
 
 Boto3 documentation:
 [WorkDocs.Client.delete_comment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.delete_comment)
@@ -470,8 +463,8 @@ Keyword-only arguments:
 
 Deletes custom metadata from the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("workdocs").delete_custom_metadata` method.
+Type annotations for `session.create_client("workdocs").delete_custom_metadata`
+method.
 
 Boto3 documentation:
 [WorkDocs.Client.delete_custom_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.delete_custom_metadata)
@@ -498,7 +491,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Permanently deletes the specified document and its associated metadata.
 
-Type annotations for `aiobotocore.create_client("workdocs").delete_document`
+Type annotations for `session.create_client("workdocs").delete_document`
 method.
 
 Boto3 documentation:
@@ -520,8 +513,7 @@ Keyword-only arguments:
 
 Permanently deletes the specified folder and its contents.
 
-Type annotations for `aiobotocore.create_client("workdocs").delete_folder`
-method.
+Type annotations for `session.create_client("workdocs").delete_folder` method.
 
 Boto3 documentation:
 [WorkDocs.Client.delete_folder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.delete_folder)
@@ -542,8 +534,8 @@ Keyword-only arguments:
 
 Deletes the contents of the specified folder.
 
-Type annotations for
-`aiobotocore.create_client("workdocs").delete_folder_contents` method.
+Type annotations for `session.create_client("workdocs").delete_folder_contents`
+method.
 
 Boto3 documentation:
 [WorkDocs.Client.delete_folder_contents](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.delete_folder_contents)
@@ -565,8 +557,7 @@ Keyword-only arguments:
 
 Deletes the specified list of labels from a resource.
 
-Type annotations for `aiobotocore.create_client("workdocs").delete_labels`
-method.
+Type annotations for `session.create_client("workdocs").delete_labels` method.
 
 Boto3 documentation:
 [WorkDocs.Client.delete_labels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.delete_labels)
@@ -592,8 +583,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified subscription from the specified organization.
 
 Type annotations for
-`aiobotocore.create_client("workdocs").delete_notification_subscription`
-method.
+`session.create_client("workdocs").delete_notification_subscription` method.
 
 Boto3 documentation:
 [WorkDocs.Client.delete_notification_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.delete_notification_subscription)
@@ -615,8 +605,7 @@ Keyword-only arguments:
 
 Deletes the specified user from a Simple AD or Microsoft AD directory.
 
-Type annotations for `aiobotocore.create_client("workdocs").delete_user`
-method.
+Type annotations for `session.create_client("workdocs").delete_user` method.
 
 Boto3 documentation:
 [WorkDocs.Client.delete_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.delete_user)
@@ -637,8 +626,8 @@ Keyword-only arguments:
 
 Describes the user activities in a specified time period.
 
-Type annotations for
-`aiobotocore.create_client("workdocs").describe_activities` method.
+Type annotations for `session.create_client("workdocs").describe_activities`
+method.
 
 Boto3 documentation:
 [WorkDocs.Client.describe_activities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.describe_activities)
@@ -671,7 +660,7 @@ Returns a `Coroutine` for
 
 List all the comments for the specified document version.
 
-Type annotations for `aiobotocore.create_client("workdocs").describe_comments`
+Type annotations for `session.create_client("workdocs").describe_comments`
 method.
 
 Boto3 documentation:
@@ -700,7 +689,7 @@ Returns a `Coroutine` for
 Retrieves the document versions for the specified document.
 
 Type annotations for
-`aiobotocore.create_client("workdocs").describe_document_versions` method.
+`session.create_client("workdocs").describe_document_versions` method.
 
 Boto3 documentation:
 [WorkDocs.Client.describe_document_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.describe_document_versions)
@@ -731,7 +720,7 @@ Describes the contents of the specified folder, including its documents and
 subfolders.
 
 Type annotations for
-`aiobotocore.create_client("workdocs").describe_folder_contents` method.
+`session.create_client("workdocs").describe_folder_contents` method.
 
 Boto3 documentation:
 [WorkDocs.Client.describe_folder_contents](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.describe_folder_contents)
@@ -762,7 +751,7 @@ Returns a `Coroutine` for
 
 Describes the groups specified by the query.
 
-Type annotations for `aiobotocore.create_client("workdocs").describe_groups`
+Type annotations for `session.create_client("workdocs").describe_groups`
 method.
 
 Boto3 documentation:
@@ -791,8 +780,7 @@ Returns a `Coroutine` for
 Lists the specified notification subscriptions.
 
 Type annotations for
-`aiobotocore.create_client("workdocs").describe_notification_subscriptions`
-method.
+`session.create_client("workdocs").describe_notification_subscriptions` method.
 
 Boto3 documentation:
 [WorkDocs.Client.describe_notification_subscriptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.describe_notification_subscriptions)
@@ -819,7 +807,7 @@ Returns a `Coroutine` for
 Describes the permissions of a specified resource.
 
 Type annotations for
-`aiobotocore.create_client("workdocs").describe_resource_permissions` method.
+`session.create_client("workdocs").describe_resource_permissions` method.
 
 Boto3 documentation:
 [WorkDocs.Client.describe_resource_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.describe_resource_permissions)
@@ -848,8 +836,8 @@ Returns a `Coroutine` for
 Describes the current user's special folders; the `RootFolder` and the
 `RecycleBin`.
 
-Type annotations for
-`aiobotocore.create_client("workdocs").describe_root_folders` method.
+Type annotations for `session.create_client("workdocs").describe_root_folders`
+method.
 
 Boto3 documentation:
 [WorkDocs.Client.describe_root_folders](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.describe_root_folders)
@@ -875,8 +863,7 @@ Returns a `Coroutine` for
 
 Describes the specified users.
 
-Type annotations for `aiobotocore.create_client("workdocs").describe_users`
-method.
+Type annotations for `session.create_client("workdocs").describe_users` method.
 
 Boto3 documentation:
 [WorkDocs.Client.describe_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.describe_users)
@@ -908,8 +895,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("workdocs").generate_presigned_url` method.
+Type annotations for `session.create_client("workdocs").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [WorkDocs.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.generate_presigned_url)
@@ -933,7 +920,7 @@ Returns a `Coroutine` for `str`.
 Retrieves details of the current user for whom the authentication token was
 generated.
 
-Type annotations for `aiobotocore.create_client("workdocs").get_current_user`
+Type annotations for `session.create_client("workdocs").get_current_user`
 method.
 
 Boto3 documentation:
@@ -957,8 +944,7 @@ Returns a `Coroutine` for
 
 Retrieves details of a document.
 
-Type annotations for `aiobotocore.create_client("workdocs").get_document`
-method.
+Type annotations for `session.create_client("workdocs").get_document` method.
 
 Boto3 documentation:
 [WorkDocs.Client.get_document](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.get_document)
@@ -984,7 +970,7 @@ Returns a `Coroutine` for
 Retrieves the path information (the hierarchy from the root folder) for the
 requested document.
 
-Type annotations for `aiobotocore.create_client("workdocs").get_document_path`
+Type annotations for `session.create_client("workdocs").get_document_path`
 method.
 
 Boto3 documentation:
@@ -1012,8 +998,8 @@ Returns a `Coroutine` for
 
 Retrieves version metadata for the specified document.
 
-Type annotations for
-`aiobotocore.create_client("workdocs").get_document_version` method.
+Type annotations for `session.create_client("workdocs").get_document_version`
+method.
 
 Boto3 documentation:
 [WorkDocs.Client.get_document_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.get_document_version)
@@ -1041,7 +1027,7 @@ Returns a `Coroutine` for
 
 Retrieves the metadata of the specified folder.
 
-Type annotations for `aiobotocore.create_client("workdocs").get_folder` method.
+Type annotations for `session.create_client("workdocs").get_folder` method.
 
 Boto3 documentation:
 [WorkDocs.Client.get_folder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.get_folder)
@@ -1067,7 +1053,7 @@ Returns a `Coroutine` for
 Retrieves the path information (the hierarchy from the root folder) for the
 specified folder.
 
-Type annotations for `aiobotocore.create_client("workdocs").get_folder_path`
+Type annotations for `session.create_client("workdocs").get_folder_path`
 method.
 
 Boto3 documentation:
@@ -1095,8 +1081,7 @@ Returns a `Coroutine` for
 
 Retrieves a collection of resources, including folders and documents.
 
-Type annotations for `aiobotocore.create_client("workdocs").get_resources`
-method.
+Type annotations for `session.create_client("workdocs").get_resources` method.
 
 Boto3 documentation:
 [WorkDocs.Client.get_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.get_resources)
@@ -1125,8 +1110,7 @@ Returns a `Coroutine` for
 Creates a new document object and version object.
 
 Type annotations for
-`aiobotocore.create_client("workdocs").initiate_document_version_upload`
-method.
+`session.create_client("workdocs").initiate_document_version_upload` method.
 
 Boto3 documentation:
 [WorkDocs.Client.initiate_document_version_upload](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.initiate_document_version_upload)
@@ -1158,7 +1142,7 @@ Returns a `Coroutine` for
 Removes all the permissions from the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("workdocs").remove_all_resource_permissions` method.
+`session.create_client("workdocs").remove_all_resource_permissions` method.
 
 Boto3 documentation:
 [WorkDocs.Client.remove_all_resource_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.remove_all_resource_permissions)
@@ -1181,7 +1165,7 @@ Keyword-only arguments:
 Removes the permission for the specified principal from the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("workdocs").remove_resource_permission` method.
+`session.create_client("workdocs").remove_resource_permission` method.
 
 Boto3 documentation:
 [WorkDocs.Client.remove_resource_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.remove_resource_permission)
@@ -1205,7 +1189,7 @@ Keyword-only arguments:
 
 Updates the specified attributes of a document.
 
-Type annotations for `aiobotocore.create_client("workdocs").update_document`
+Type annotations for `session.create_client("workdocs").update_document`
 method.
 
 Boto3 documentation:
@@ -1231,7 +1215,7 @@ Keyword-only arguments:
 Changes the status of the document version to ACTIVE.
 
 Type annotations for
-`aiobotocore.create_client("workdocs").update_document_version` method.
+`session.create_client("workdocs").update_document_version` method.
 
 Boto3 documentation:
 [WorkDocs.Client.update_document_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.update_document_version)
@@ -1256,8 +1240,7 @@ Keyword-only arguments:
 
 Updates the specified attributes of the specified folder.
 
-Type annotations for `aiobotocore.create_client("workdocs").update_folder`
-method.
+Type annotations for `session.create_client("workdocs").update_folder` method.
 
 Boto3 documentation:
 [WorkDocs.Client.update_folder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.update_folder)
@@ -1282,8 +1265,7 @@ Keyword-only arguments:
 Updates the specified attributes of the specified user, and grants or revokes
 administrative privileges to the Amazon WorkDocs site.
 
-Type annotations for `aiobotocore.create_client("workdocs").update_user`
-method.
+Type annotations for `session.create_client("workdocs").update_user` method.
 
 Boto3 documentation:
 [WorkDocs.Client.update_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.update_user)
@@ -1310,12 +1292,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateUserResponseTypeDef](./type_defs.md#updateuserresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("workdocs").__aenter__` method.
+
+Boto3 documentation:
+[WorkDocs.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [WorkDocsClient](#workdocsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("workdocs").__aexit__` method.
+
+Boto3 documentation:
+[WorkDocs.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workdocs.html#WorkDocs.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("workdocs").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("workdocs").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_activities")` ->
   [DescribeActivitiesPaginator](./paginators.md#describeactivitiespaginator)

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[workspaces]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[workspaces]'
+
+# standalone installation
 pip install types-aiobotocore-workspaces
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-workspaces
 
 ## WorkSpacesClient
 
-Type annotations for `aiobotocore.create_client("workspaces")` as
+Type annotations for `session.create_client("workspaces")` as
 [WorkSpacesClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_workspaces.client import WorkSpacesClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_connection_alias](./client.md#associate_connection_alias)
 - [associate_ip_groups](./client.md#associate_ip_groups)
 - [authorize_ip_rules](./client.md#authorize_ip_rules)
@@ -133,7 +139,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_workspaces.paginators import DescribeAccountModificationsPaginator, ...
+from types_aiobotocore_workspaces.paginator import DescribeAccountModificationsPaginator, ...
 ```
 
 - [DescribeAccountModificationsPaginator](./paginators.md#describeaccountmodificationspaginator)

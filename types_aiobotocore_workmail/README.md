@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[workmail]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[workmail]'
+
+# standalone installation
 pip install types-aiobotocore-workmail
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-workmail
 
 ## WorkMailClient
 
-Type annotations for `aiobotocore.create_client("workmail")` as
+Type annotations for `session.create_client("workmail")` as
 [WorkMailClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_workmail.client import WorkMailClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_delegate_to_resource](./client.md#associate_delegate_to_resource)
 - [associate_member_to_group](./client.md#associate_member_to_group)
 - [can_paginate](./client.md#can_paginate)
@@ -152,7 +158,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_workmail.paginators import ListAliasesPaginator, ...
+from types_aiobotocore_workmail.paginator import ListAliasesPaginator, ...
 ```
 
 - [ListAliasesPaginator](./paginators.md#listaliasespaginator)

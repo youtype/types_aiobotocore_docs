@@ -19,17 +19,19 @@ type annotations stubs module
 ## ListApplicationDependenciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").get_paginator("list_application_dependencies")`.
+`session.create_client("serverlessrepo").get_paginator("list_application_dependencies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_serverlessrepo.paginator import ListApplicationDependenciesPaginator
 
-def get_list_application_dependencies_paginator() -> ListApplicationDependenciesPaginator:
-    return Session().create_client("serverlessrepo").get_paginator("list_application_dependencies")
+session = get_session()
+async with session.create_client("serverlessrepo") as client:
+    client: ServerlessApplicationRepositoryClient
+    paginator: ListApplicationDependenciesPaginator = client.get_paginator("list_application_dependencies")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `ListApplicationDependenciesPaginator.paginate` method:
 ## ListApplicationVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").get_paginator("list_application_versions")`.
+`session.create_client("serverlessrepo").get_paginator("list_application_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_serverlessrepo.paginator import ListApplicationVersionsPaginator
 
-def get_list_application_versions_paginator() -> ListApplicationVersionsPaginator:
-    return Session().create_client("serverlessrepo").get_paginator("list_application_versions")
+session = get_session()
+async with session.create_client("serverlessrepo") as client:
+    client: ServerlessApplicationRepositoryClient
+    paginator: ListApplicationVersionsPaginator = client.get_paginator("list_application_versions")
 ```
 
 Boto3 documentation:
@@ -80,17 +84,19 @@ Arguments for `ListApplicationVersionsPaginator.paginate` method:
 ## ListApplicationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").get_paginator("list_applications")`.
+`session.create_client("serverlessrepo").get_paginator("list_applications")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_serverlessrepo.paginator import ListApplicationsPaginator
 
-def get_list_applications_paginator() -> ListApplicationsPaginator:
-    return Session().create_client("serverlessrepo").get_paginator("list_applications")
+session = get_session()
+async with session.create_client("serverlessrepo") as client:
+    client: ServerlessApplicationRepositoryClient
+    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")
 ```
 
 Boto3 documentation:

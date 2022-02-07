@@ -19,17 +19,19 @@ type annotations stubs module
 ## ListEventTypesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").get_paginator("list_event_types")`.
+`session.create_client("codestar-notifications").get_paginator("list_event_types")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codestar_notifications.paginator import ListEventTypesPaginator
 
-def get_list_event_types_paginator() -> ListEventTypesPaginator:
-    return Session().create_client("codestar-notifications").get_paginator("list_event_types")
+session = get_session()
+async with session.create_client("codestar-notifications") as client:
+    client: CodeStarNotificationsClient
+    paginator: ListEventTypesPaginator = client.get_paginator("list_event_types")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `ListEventTypesPaginator.paginate` method:
 ## ListNotificationRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").get_paginator("list_notification_rules")`.
+`session.create_client("codestar-notifications").get_paginator("list_notification_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codestar_notifications.paginator import ListNotificationRulesPaginator
 
-def get_list_notification_rules_paginator() -> ListNotificationRulesPaginator:
-    return Session().create_client("codestar-notifications").get_paginator("list_notification_rules")
+session = get_session()
+async with session.create_client("codestar-notifications") as client:
+    client: CodeStarNotificationsClient
+    paginator: ListNotificationRulesPaginator = client.get_paginator("list_notification_rules")
 ```
 
 Boto3 documentation:
@@ -81,17 +85,19 @@ Arguments for `ListNotificationRulesPaginator.paginate` method:
 ## ListTargetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codestar-notifications").get_paginator("list_targets")`.
+`session.create_client("codestar-notifications").get_paginator("list_targets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codestar_notifications.paginator import ListTargetsPaginator
 
-def get_list_targets_paginator() -> ListTargetsPaginator:
-    return Session().create_client("codestar-notifications").get_paginator("list_targets")
+session = get_session()
+async with session.create_client("codestar-notifications") as client:
+    client: CodeStarNotificationsClient
+    paginator: ListTargetsPaginator = client.get_paginator("list_targets")
 ```
 
 Boto3 documentation:

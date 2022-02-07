@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListApplicationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotfleethub").get_paginator("list_applications")`.
+`session.create_client("iotfleethub").get_paginator("list_applications")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotfleethub.paginator import ListApplicationsPaginator
 
-def get_list_applications_paginator() -> ListApplicationsPaginator:
-    return Session().create_client("iotfleethub").get_paginator("list_applications")
+session = get_session()
+async with session.create_client("iotfleethub") as client:
+    client: IoTFleetHubClient
+    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")
 ```
 
 Boto3 documentation:

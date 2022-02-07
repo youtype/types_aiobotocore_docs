@@ -81,22 +81,25 @@ type annotations stubs module
     - [update_mobile_device_access_rule](#update_mobile_device_access_rule)
     - [update_primary_email_address](#update_primary_email_address)
     - [update_resource](#update_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="workmailclient"></a>
 
 ## WorkMailClient
 
-Type annotations for `aiobotocore.create_client("workmail")`
+Type annotations for `session.create_client("workmail")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_workmail.client import WorkMailClient
 
-def get_workmail_client() -> WorkMailClient:
-    return Session().client("workmail")
+session = get_session()
+async with session.create_client("workmail") as client:
+    client: WorkMailClient
 ```
 
 Boto3 documentation:
@@ -152,7 +155,7 @@ Exceptions:
 
 WorkMailClient exceptions.
 
-Type annotations for `aiobotocore.create_client("workmail").exceptions` method.
+Type annotations for `session.create_client("workmail").exceptions` method.
 
 Boto3 documentation:
 [WorkMail.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.exceptions)
@@ -166,7 +169,7 @@ Returns [Exceptions](#exceptions).
 Adds a member (user or group) to the resource's set of delegates.
 
 Type annotations for
-`aiobotocore.create_client("workmail").associate_delegate_to_resource` method.
+`session.create_client("workmail").associate_delegate_to_resource` method.
 
 Boto3 documentation:
 [WorkMail.Client.associate_delegate_to_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.associate_delegate_to_resource)
@@ -192,7 +195,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds a member (user or group) to the group's set.
 
 Type annotations for
-`aiobotocore.create_client("workmail").associate_member_to_group` method.
+`session.create_client("workmail").associate_member_to_group` method.
 
 Boto3 documentation:
 [WorkMail.Client.associate_member_to_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.associate_member_to_group)
@@ -217,19 +220,16 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("workmail").can_paginate`
-method.
+Type annotations for `session.create_client("workmail").can_paginate` method.
 
 Boto3 documentation:
 [WorkMail.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_mailbox_export_job"></a>
 
@@ -238,7 +238,7 @@ Returns a `Coroutine` for `bool`.
 Cancels a mailbox export job.
 
 Type annotations for
-`aiobotocore.create_client("workmail").cancel_mailbox_export_job` method.
+`session.create_client("workmail").cancel_mailbox_export_job` method.
 
 Boto3 documentation:
 [WorkMail.Client.cancel_mailbox_export_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.cancel_mailbox_export_job)
@@ -263,8 +263,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds an alias to the set of a given member (user or group) of Amazon WorkMail.
 
-Type annotations for `aiobotocore.create_client("workmail").create_alias`
-method.
+Type annotations for `session.create_client("workmail").create_alias` method.
 
 Boto3 documentation:
 [WorkMail.Client.create_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.create_alias)
@@ -289,8 +288,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates a group that can be used in Amazon WorkMail by calling the
 RegisterToWorkMail operation.
 
-Type annotations for `aiobotocore.create_client("workmail").create_group`
-method.
+Type annotations for `session.create_client("workmail").create_group` method.
 
 Boto3 documentation:
 [WorkMail.Client.create_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.create_group)
@@ -316,8 +314,7 @@ Creates a new mobile device access rule for the specified Amazon WorkMail
 organization.
 
 Type annotations for
-`aiobotocore.create_client("workmail").create_mobile_device_access_rule`
-method.
+`session.create_client("workmail").create_mobile_device_access_rule` method.
 
 Boto3 documentation:
 [WorkMail.Client.create_mobile_device_access_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.create_mobile_device_access_rule)
@@ -355,8 +352,8 @@ Returns a `Coroutine` for
 
 Creates a new Amazon WorkMail organization.
 
-Type annotations for
-`aiobotocore.create_client("workmail").create_organization` method.
+Type annotations for `session.create_client("workmail").create_organization`
+method.
 
 Boto3 documentation:
 [WorkMail.Client.create_organization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.create_organization)
@@ -385,7 +382,7 @@ Returns a `Coroutine` for
 
 Creates a new Amazon WorkMail resource.
 
-Type annotations for `aiobotocore.create_client("workmail").create_resource`
+Type annotations for `session.create_client("workmail").create_resource`
 method.
 
 Boto3 documentation:
@@ -412,8 +409,7 @@ Returns a `Coroutine` for
 Creates a user who can be used in Amazon WorkMail by calling the
 RegisterToWorkMail operation.
 
-Type annotations for `aiobotocore.create_client("workmail").create_user`
-method.
+Type annotations for `session.create_client("workmail").create_user` method.
 
 Boto3 documentation:
 [WorkMail.Client.create_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.create_user)
@@ -440,7 +436,7 @@ Returns a `Coroutine` for
 Deletes an access control rule for the specified WorkMail organization.
 
 Type annotations for
-`aiobotocore.create_client("workmail").delete_access_control_rule` method.
+`session.create_client("workmail").delete_access_control_rule` method.
 
 Boto3 documentation:
 [WorkMail.Client.delete_access_control_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.delete_access_control_rule)
@@ -464,8 +460,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Remove one or more specified aliases from a set of aliases for a given user.
 
-Type annotations for `aiobotocore.create_client("workmail").delete_alias`
-method.
+Type annotations for `session.create_client("workmail").delete_alias` method.
 
 Boto3 documentation:
 [WorkMail.Client.delete_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.delete_alias)
@@ -489,8 +484,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a group from Amazon WorkMail.
 
-Type annotations for `aiobotocore.create_client("workmail").delete_group`
-method.
+Type annotations for `session.create_client("workmail").delete_group` method.
 
 Boto3 documentation:
 [WorkMail.Client.delete_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.delete_group)
@@ -514,7 +508,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes permissions granted to a member (user or group).
 
 Type annotations for
-`aiobotocore.create_client("workmail").delete_mailbox_permissions` method.
+`session.create_client("workmail").delete_mailbox_permissions` method.
 
 Boto3 documentation:
 [WorkMail.Client.delete_mailbox_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.delete_mailbox_permissions)
@@ -541,7 +535,7 @@ Deletes the mobile device access override for the given WorkMail organization,
 user, and device.
 
 Type annotations for
-`aiobotocore.create_client("workmail").delete_mobile_device_access_override`
+`session.create_client("workmail").delete_mobile_device_access_override`
 method.
 
 Boto3 documentation:
@@ -569,8 +563,7 @@ Deletes a mobile device access rule for the specified Amazon WorkMail
 organization.
 
 Type annotations for
-`aiobotocore.create_client("workmail").delete_mobile_device_access_rule`
-method.
+`session.create_client("workmail").delete_mobile_device_access_rule` method.
 
 Boto3 documentation:
 [WorkMail.Client.delete_mobile_device_access_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.delete_mobile_device_access_rule)
@@ -595,8 +588,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes an Amazon WorkMail organization and all underlying AWS resources
 managed by Amazon WorkMail as part of the organization.
 
-Type annotations for
-`aiobotocore.create_client("workmail").delete_organization` method.
+Type annotations for `session.create_client("workmail").delete_organization`
+method.
 
 Boto3 documentation:
 [WorkMail.Client.delete_organization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.delete_organization)
@@ -622,7 +615,7 @@ Returns a `Coroutine` for
 
 Deletes the specified resource.
 
-Type annotations for `aiobotocore.create_client("workmail").delete_resource`
+Type annotations for `session.create_client("workmail").delete_resource`
 method.
 
 Boto3 documentation:
@@ -647,7 +640,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified retention policy from the specified organization.
 
 Type annotations for
-`aiobotocore.create_client("workmail").delete_retention_policy` method.
+`session.create_client("workmail").delete_retention_policy` method.
 
 Boto3 documentation:
 [WorkMail.Client.delete_retention_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.delete_retention_policy)
@@ -671,8 +664,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a user from Amazon WorkMail and all subsequent systems.
 
-Type annotations for `aiobotocore.create_client("workmail").delete_user`
-method.
+Type annotations for `session.create_client("workmail").delete_user` method.
 
 Boto3 documentation:
 [WorkMail.Client.delete_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.delete_user)
@@ -696,7 +688,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Mark a user, group, or resource as no longer used in Amazon WorkMail.
 
 Type annotations for
-`aiobotocore.create_client("workmail").deregister_from_work_mail` method.
+`session.create_client("workmail").deregister_from_work_mail` method.
 
 Boto3 documentation:
 [WorkMail.Client.deregister_from_work_mail](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.deregister_from_work_mail)
@@ -721,8 +713,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and
 removes the authorization allowing WorkMail use.
 
-Type annotations for
-`aiobotocore.create_client("workmail").deregister_mail_domain` method.
+Type annotations for `session.create_client("workmail").deregister_mail_domain`
+method.
 
 Boto3 documentation:
 [WorkMail.Client.deregister_mail_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.deregister_mail_domain)
@@ -746,8 +738,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Returns the data available for the group.
 
-Type annotations for `aiobotocore.create_client("workmail").describe_group`
-method.
+Type annotations for `session.create_client("workmail").describe_group` method.
 
 Boto3 documentation:
 [WorkMail.Client.describe_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.describe_group)
@@ -772,7 +763,7 @@ Returns a `Coroutine` for
 Lists the settings in a DMARC policy for a specified organization.
 
 Type annotations for
-`aiobotocore.create_client("workmail").describe_inbound_dmarc_settings` method.
+`session.create_client("workmail").describe_inbound_dmarc_settings` method.
 
 Boto3 documentation:
 [WorkMail.Client.describe_inbound_dmarc_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.describe_inbound_dmarc_settings)
@@ -797,7 +788,7 @@ Returns a `Coroutine` for
 Describes the current status of a mailbox export job.
 
 Type annotations for
-`aiobotocore.create_client("workmail").describe_mailbox_export_job` method.
+`session.create_client("workmail").describe_mailbox_export_job` method.
 
 Boto3 documentation:
 [WorkMail.Client.describe_mailbox_export_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.describe_mailbox_export_job)
@@ -823,8 +814,8 @@ Returns a `Coroutine` for
 Provides more information regarding a given organization based on its
 identifier.
 
-Type annotations for
-`aiobotocore.create_client("workmail").describe_organization` method.
+Type annotations for `session.create_client("workmail").describe_organization`
+method.
 
 Boto3 documentation:
 [WorkMail.Client.describe_organization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.describe_organization)
@@ -848,7 +839,7 @@ Returns a `Coroutine` for
 
 Returns the data available for the resource.
 
-Type annotations for `aiobotocore.create_client("workmail").describe_resource`
+Type annotations for `session.create_client("workmail").describe_resource`
 method.
 
 Boto3 documentation:
@@ -873,8 +864,7 @@ Returns a `Coroutine` for
 
 Provides information regarding the user.
 
-Type annotations for `aiobotocore.create_client("workmail").describe_user`
-method.
+Type annotations for `session.create_client("workmail").describe_user` method.
 
 Boto3 documentation:
 [WorkMail.Client.describe_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.describe_user)
@@ -899,8 +889,7 @@ Returns a `Coroutine` for
 Removes a member from the resource's set of delegates.
 
 Type annotations for
-`aiobotocore.create_client("workmail").disassociate_delegate_from_resource`
-method.
+`session.create_client("workmail").disassociate_delegate_from_resource` method.
 
 Boto3 documentation:
 [WorkMail.Client.disassociate_delegate_from_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.disassociate_delegate_from_resource)
@@ -926,7 +915,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes a member from a group.
 
 Type annotations for
-`aiobotocore.create_client("workmail").disassociate_member_from_group` method.
+`session.create_client("workmail").disassociate_member_from_group` method.
 
 Boto3 documentation:
 [WorkMail.Client.disassociate_member_from_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.disassociate_member_from_group)
@@ -951,8 +940,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("workmail").generate_presigned_url` method.
+Type annotations for `session.create_client("workmail").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [WorkMail.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.generate_presigned_url)
@@ -977,7 +966,7 @@ Gets the effects of an organization's access control rules as they apply to a
 specified IPv4 address, access protocol action, or user ID.
 
 Type annotations for
-`aiobotocore.create_client("workmail").get_access_control_effect` method.
+`session.create_client("workmail").get_access_control_effect` method.
 
 Boto3 documentation:
 [WorkMail.Client.get_access_control_effect](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.get_access_control_effect)
@@ -1005,7 +994,7 @@ Returns a `Coroutine` for
 Gets the default retention policy details for the specified organization.
 
 Type annotations for
-`aiobotocore.create_client("workmail").get_default_retention_policy` method.
+`session.create_client("workmail").get_default_retention_policy` method.
 
 Boto3 documentation:
 [WorkMail.Client.get_default_retention_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.get_default_retention_policy)
@@ -1030,7 +1019,7 @@ Returns a `Coroutine` for
 Gets details for a mail domain, including domain records required to configure
 your domain with recommended security.
 
-Type annotations for `aiobotocore.create_client("workmail").get_mail_domain`
+Type annotations for `session.create_client("workmail").get_mail_domain`
 method.
 
 Boto3 documentation:
@@ -1055,8 +1044,8 @@ Returns a `Coroutine` for
 
 Requests a user's mailbox details for a specified organization and user.
 
-Type annotations for
-`aiobotocore.create_client("workmail").get_mailbox_details` method.
+Type annotations for `session.create_client("workmail").get_mailbox_details`
+method.
 
 Boto3 documentation:
 [WorkMail.Client.get_mailbox_details](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.get_mailbox_details)
@@ -1083,7 +1072,7 @@ Simulates the effect of the mobile device access rules for the given attributes
 of a sample access event.
 
 Type annotations for
-`aiobotocore.create_client("workmail").get_mobile_device_access_effect` method.
+`session.create_client("workmail").get_mobile_device_access_effect` method.
 
 Boto3 documentation:
 [WorkMail.Client.get_mobile_device_access_effect](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.get_mobile_device_access_effect)
@@ -1113,8 +1102,7 @@ Gets the mobile device access override for the given WorkMail organization,
 user, and device.
 
 Type annotations for
-`aiobotocore.create_client("workmail").get_mobile_device_access_override`
-method.
+`session.create_client("workmail").get_mobile_device_access_override` method.
 
 Boto3 documentation:
 [WorkMail.Client.get_mobile_device_access_override](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.get_mobile_device_access_override)
@@ -1141,7 +1129,7 @@ Returns a `Coroutine` for
 Lists the access control rules for the specified organization.
 
 Type annotations for
-`aiobotocore.create_client("workmail").list_access_control_rules` method.
+`session.create_client("workmail").list_access_control_rules` method.
 
 Boto3 documentation:
 [WorkMail.Client.list_access_control_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.list_access_control_rules)
@@ -1165,8 +1153,7 @@ Returns a `Coroutine` for
 
 Creates a paginated call to list the aliases associated with a given entity.
 
-Type annotations for `aiobotocore.create_client("workmail").list_aliases`
-method.
+Type annotations for `session.create_client("workmail").list_aliases` method.
 
 Boto3 documentation:
 [WorkMail.Client.list_aliases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.list_aliases)
@@ -1192,7 +1179,7 @@ Returns a `Coroutine` for
 
 Returns an overview of the members of a group.
 
-Type annotations for `aiobotocore.create_client("workmail").list_group_members`
+Type annotations for `session.create_client("workmail").list_group_members`
 method.
 
 Boto3 documentation:
@@ -1220,8 +1207,7 @@ Returns a `Coroutine` for
 
 Returns summaries of the organization's groups.
 
-Type annotations for `aiobotocore.create_client("workmail").list_groups`
-method.
+Type annotations for `session.create_client("workmail").list_groups` method.
 
 Boto3 documentation:
 [WorkMail.Client.list_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.list_groups)
@@ -1246,7 +1232,7 @@ Returns a `Coroutine` for
 
 Lists the mail domains in a given Amazon WorkMail organization.
 
-Type annotations for `aiobotocore.create_client("workmail").list_mail_domains`
+Type annotations for `session.create_client("workmail").list_mail_domains`
 method.
 
 Boto3 documentation:
@@ -1274,7 +1260,7 @@ Lists the mailbox export jobs started for the specified organization within the
 last seven days.
 
 Type annotations for
-`aiobotocore.create_client("workmail").list_mailbox_export_jobs` method.
+`session.create_client("workmail").list_mailbox_export_jobs` method.
 
 Boto3 documentation:
 [WorkMail.Client.list_mailbox_export_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.list_mailbox_export_jobs)
@@ -1302,7 +1288,7 @@ Lists the mailbox permissions associated with a user, group, or resource
 mailbox.
 
 Type annotations for
-`aiobotocore.create_client("workmail").list_mailbox_permissions` method.
+`session.create_client("workmail").list_mailbox_permissions` method.
 
 Boto3 documentation:
 [WorkMail.Client.list_mailbox_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.list_mailbox_permissions)
@@ -1331,8 +1317,7 @@ Lists all the mobile device access overrides for any given combination of
 WorkMail organization, user, or device.
 
 Type annotations for
-`aiobotocore.create_client("workmail").list_mobile_device_access_overrides`
-method.
+`session.create_client("workmail").list_mobile_device_access_overrides` method.
 
 Boto3 documentation:
 [WorkMail.Client.list_mobile_device_access_overrides](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.list_mobile_device_access_overrides)
@@ -1362,7 +1347,7 @@ Lists the mobile device access rules for the specified Amazon WorkMail
 organization.
 
 Type annotations for
-`aiobotocore.create_client("workmail").list_mobile_device_access_rules` method.
+`session.create_client("workmail").list_mobile_device_access_rules` method.
 
 Boto3 documentation:
 [WorkMail.Client.list_mobile_device_access_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.list_mobile_device_access_rules)
@@ -1386,7 +1371,7 @@ Returns a `Coroutine` for
 
 Returns summaries of the customer's organizations.
 
-Type annotations for `aiobotocore.create_client("workmail").list_organizations`
+Type annotations for `session.create_client("workmail").list_organizations`
 method.
 
 Boto3 documentation:
@@ -1413,7 +1398,7 @@ Returns a `Coroutine` for
 Lists the delegates associated with a resource.
 
 Type annotations for
-`aiobotocore.create_client("workmail").list_resource_delegates` method.
+`session.create_client("workmail").list_resource_delegates` method.
 
 Boto3 documentation:
 [WorkMail.Client.list_resource_delegates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.list_resource_delegates)
@@ -1440,8 +1425,7 @@ Returns a `Coroutine` for
 
 Returns summaries of the organization's resources.
 
-Type annotations for `aiobotocore.create_client("workmail").list_resources`
-method.
+Type annotations for `session.create_client("workmail").list_resources` method.
 
 Boto3 documentation:
 [WorkMail.Client.list_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.list_resources)
@@ -1466,8 +1450,8 @@ Returns a `Coroutine` for
 
 Lists the tags applied to an Amazon WorkMail organization resource.
 
-Type annotations for
-`aiobotocore.create_client("workmail").list_tags_for_resource` method.
+Type annotations for `session.create_client("workmail").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [WorkMail.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.list_tags_for_resource)
@@ -1491,7 +1475,7 @@ Returns a `Coroutine` for
 
 Returns summaries of the organization's users.
 
-Type annotations for `aiobotocore.create_client("workmail").list_users` method.
+Type annotations for `session.create_client("workmail").list_users` method.
 
 Boto3 documentation:
 [WorkMail.Client.list_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.list_users)
@@ -1517,7 +1501,7 @@ Returns a `Coroutine` for
 Adds a new access control rule for the specified organization.
 
 Type annotations for
-`aiobotocore.create_client("workmail").put_access_control_rule` method.
+`session.create_client("workmail").put_access_control_rule` method.
 
 Boto3 documentation:
 [WorkMail.Client.put_access_control_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.put_access_control_rule)
@@ -1552,7 +1536,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Enables or disables a DMARC policy for a given organization.
 
 Type annotations for
-`aiobotocore.create_client("workmail").put_inbound_dmarc_settings` method.
+`session.create_client("workmail").put_inbound_dmarc_settings` method.
 
 Boto3 documentation:
 [WorkMail.Client.put_inbound_dmarc_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.put_inbound_dmarc_settings)
@@ -1577,7 +1561,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Sets permissions for a user, group, or resource.
 
 Type annotations for
-`aiobotocore.create_client("workmail").put_mailbox_permissions` method.
+`session.create_client("workmail").put_mailbox_permissions` method.
 
 Boto3 documentation:
 [WorkMail.Client.put_mailbox_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.put_mailbox_permissions)
@@ -1607,8 +1591,7 @@ Creates or updates a mobile device access override for the given WorkMail
 organization, user, and device.
 
 Type annotations for
-`aiobotocore.create_client("workmail").put_mobile_device_access_override`
-method.
+`session.create_client("workmail").put_mobile_device_access_override` method.
 
 Boto3 documentation:
 [WorkMail.Client.put_mobile_device_access_override](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.put_mobile_device_access_override)
@@ -1637,8 +1620,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Puts a retention policy to the specified organization.
 
-Type annotations for
-`aiobotocore.create_client("workmail").put_retention_policy` method.
+Type annotations for `session.create_client("workmail").put_retention_policy`
+method.
 
 Boto3 documentation:
 [WorkMail.Client.put_retention_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.put_retention_policy)
@@ -1668,8 +1651,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Registers a new domain in Amazon WorkMail and SES, and configures it for use by
 WorkMail.
 
-Type annotations for
-`aiobotocore.create_client("workmail").register_mail_domain` method.
+Type annotations for `session.create_client("workmail").register_mail_domain`
+method.
 
 Boto3 documentation:
 [WorkMail.Client.register_mail_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.register_mail_domain)
@@ -1695,8 +1678,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Registers an existing and disabled user, group, or resource for Amazon WorkMail
 use by associating a mailbox and calendaring capabilities.
 
-Type annotations for
-`aiobotocore.create_client("workmail").register_to_work_mail` method.
+Type annotations for `session.create_client("workmail").register_to_work_mail`
+method.
 
 Boto3 documentation:
 [WorkMail.Client.register_to_work_mail](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.register_to_work_mail)
@@ -1721,8 +1704,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Allows the administrator to reset the password for a user.
 
-Type annotations for `aiobotocore.create_client("workmail").reset_password`
-method.
+Type annotations for `session.create_client("workmail").reset_password` method.
 
 Boto3 documentation:
 [WorkMail.Client.reset_password](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.reset_password)
@@ -1749,7 +1731,7 @@ items from the specified mailbox to the specified Amazon Simple Storage Service
 (Amazon S3) bucket.
 
 Type annotations for
-`aiobotocore.create_client("workmail").start_mailbox_export_job` method.
+`session.create_client("workmail").start_mailbox_export_job` method.
 
 Boto3 documentation:
 [WorkMail.Client.start_mailbox_export_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.start_mailbox_export_job)
@@ -1781,8 +1763,7 @@ Returns a `Coroutine` for
 Applies the specified tags to the specified Amazon WorkMail organization
 resource.
 
-Type annotations for `aiobotocore.create_client("workmail").tag_resource`
-method.
+Type annotations for `session.create_client("workmail").tag_resource` method.
 
 Boto3 documentation:
 [WorkMail.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.tag_resource)
@@ -1806,8 +1787,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Untags the specified tags from the specified Amazon WorkMail organization
 resource.
 
-Type annotations for `aiobotocore.create_client("workmail").untag_resource`
-method.
+Type annotations for `session.create_client("workmail").untag_resource` method.
 
 Boto3 documentation:
 [WorkMail.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.untag_resource)
@@ -1831,7 +1811,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the default mail domain for an organization.
 
 Type annotations for
-`aiobotocore.create_client("workmail").update_default_mail_domain` method.
+`session.create_client("workmail").update_default_mail_domain` method.
 
 Boto3 documentation:
 [WorkMail.Client.update_default_mail_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.update_default_mail_domain)
@@ -1855,8 +1835,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a user's current mailbox quota for a specified organization and user.
 
-Type annotations for
-`aiobotocore.create_client("workmail").update_mailbox_quota` method.
+Type annotations for `session.create_client("workmail").update_mailbox_quota`
+method.
 
 Boto3 documentation:
 [WorkMail.Client.update_mailbox_quota](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.update_mailbox_quota)
@@ -1883,8 +1863,7 @@ Updates a mobile device access rule for the specified Amazon WorkMail
 organization.
 
 Type annotations for
-`aiobotocore.create_client("workmail").update_mobile_device_access_rule`
-method.
+`session.create_client("workmail").update_mobile_device_access_rule` method.
 
 Boto3 documentation:
 [WorkMail.Client.update_mobile_device_access_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.update_mobile_device_access_rule)
@@ -1922,7 +1901,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the primary email for a user, group, or resource.
 
 Type annotations for
-`aiobotocore.create_client("workmail").update_primary_email_address` method.
+`session.create_client("workmail").update_primary_email_address` method.
 
 Boto3 documentation:
 [WorkMail.Client.update_primary_email_address](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.update_primary_email_address)
@@ -1947,7 +1926,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates data for the resource.
 
-Type annotations for `aiobotocore.create_client("workmail").update_resource`
+Type annotations for `session.create_client("workmail").update_resource`
 method.
 
 Boto3 documentation:
@@ -1968,12 +1947,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("workmail").__aenter__` method.
+
+Boto3 documentation:
+[WorkMail.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [WorkMailClient](#workmailclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("workmail").__aexit__` method.
+
+Boto3 documentation:
+[WorkMail.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workmail.html#WorkMail.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("workmail").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("workmail").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_aliases")` ->
   [ListAliasesPaginator](./paginators.md#listaliasespaginator)

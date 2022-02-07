@@ -17,17 +17,19 @@ type annotations stubs module
 ## DescribeEcsClustersPaginator
 
 Type annotations for
-`aiobotocore.create_client("opsworks").get_paginator("describe_ecs_clusters")`.
+`session.create_client("opsworks").get_paginator("describe_ecs_clusters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_opsworks.paginator import DescribeEcsClustersPaginator
 
-def get_describe_ecs_clusters_paginator() -> DescribeEcsClustersPaginator:
-    return Session().create_client("opsworks").get_paginator("describe_ecs_clusters")
+session = get_session()
+async with session.create_client("opsworks") as client:
+    client: OpsWorksClient
+    paginator: DescribeEcsClustersPaginator = client.get_paginator("describe_ecs_clusters")
 ```
 
 Boto3 documentation:

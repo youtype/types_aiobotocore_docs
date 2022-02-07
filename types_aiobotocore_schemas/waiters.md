@@ -17,7 +17,7 @@ type annotations stubs module
 ## CodeBindingExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("schemas").get_waiter("code_binding_exists")`.
+`session.create_client("schemas").get_waiter("code_binding_exists")`.
 
 Can be used directly:
 
@@ -27,7 +27,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_schemas.waiter import CodeBindingExistsWaiter
 
 def get_code_binding_exists_waiter() -> CodeBindingExistsWaiter:
-    return Session().create_client("schemas").get_waiter("code_binding_exists")
+    return Session().client("schemas").get_waiter("code_binding_exists")
 ```
 
 Boto3 documentation:

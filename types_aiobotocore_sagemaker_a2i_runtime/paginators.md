@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListHumanLoopsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker-a2i-runtime").get_paginator("list_human_loops")`.
+`session.create_client("sagemaker-a2i-runtime").get_paginator("list_human_loops")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker_a2i_runtime.paginator import ListHumanLoopsPaginator
 
-def get_list_human_loops_paginator() -> ListHumanLoopsPaginator:
-    return Session().create_client("sagemaker-a2i-runtime").get_paginator("list_human_loops")
+session = get_session()
+async with session.create_client("sagemaker-a2i-runtime") as client:
+    client: AugmentedAIRuntimeClient
+    paginator: ListHumanLoopsPaginator = client.get_paginator("list_human_loops")
 ```
 
 Boto3 documentation:

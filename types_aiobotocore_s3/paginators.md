@@ -21,17 +21,19 @@ type annotations stubs module
 ## ListMultipartUploadsPaginator
 
 Type annotations for
-`aiobotocore.create_client("s3").get_paginator("list_multipart_uploads")`.
+`session.create_client("s3").get_paginator("list_multipart_uploads")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_s3.paginator import ListMultipartUploadsPaginator
 
-def get_list_multipart_uploads_paginator() -> ListMultipartUploadsPaginator:
-    return Session().create_client("s3").get_paginator("list_multipart_uploads")
+session = get_session()
+async with session.create_client("s3") as client:
+    client: S3Client
+    paginator: ListMultipartUploadsPaginator = client.get_paginator("list_multipart_uploads")
 ```
 
 Boto3 documentation:
@@ -56,17 +58,19 @@ Arguments for `ListMultipartUploadsPaginator.paginate` method:
 ## ListObjectVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("s3").get_paginator("list_object_versions")`.
+`session.create_client("s3").get_paginator("list_object_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_s3.paginator import ListObjectVersionsPaginator
 
-def get_list_object_versions_paginator() -> ListObjectVersionsPaginator:
-    return Session().create_client("s3").get_paginator("list_object_versions")
+session = get_session()
+async with session.create_client("s3") as client:
+    client: S3Client
+    paginator: ListObjectVersionsPaginator = client.get_paginator("list_object_versions")
 ```
 
 Boto3 documentation:
@@ -91,17 +95,19 @@ Arguments for `ListObjectVersionsPaginator.paginate` method:
 ## ListObjectsPaginator
 
 Type annotations for
-`aiobotocore.create_client("s3").get_paginator("list_objects")`.
+`session.create_client("s3").get_paginator("list_objects")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_s3.paginator import ListObjectsPaginator
 
-def get_list_objects_paginator() -> ListObjectsPaginator:
-    return Session().create_client("s3").get_paginator("list_objects")
+session = get_session()
+async with session.create_client("s3") as client:
+    client: S3Client
+    paginator: ListObjectsPaginator = client.get_paginator("list_objects")
 ```
 
 Boto3 documentation:
@@ -128,17 +134,19 @@ Arguments for `ListObjectsPaginator.paginate` method:
 ## ListObjectsV2Paginator
 
 Type annotations for
-`aiobotocore.create_client("s3").get_paginator("list_objects_v2")`.
+`session.create_client("s3").get_paginator("list_objects_v2")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_s3.paginator import ListObjectsV2Paginator
 
-def get_list_objects_v2_paginator() -> ListObjectsV2Paginator:
-    return Session().create_client("s3").get_paginator("list_objects_v2")
+session = get_session()
+async with session.create_client("s3") as client:
+    client: S3Client
+    paginator: ListObjectsV2Paginator = client.get_paginator("list_objects_v2")
 ```
 
 Boto3 documentation:
@@ -166,18 +174,19 @@ Arguments for `ListObjectsV2Paginator.paginate` method:
 
 ## ListPartsPaginator
 
-Type annotations for
-`aiobotocore.create_client("s3").get_paginator("list_parts")`.
+Type annotations for `session.create_client("s3").get_paginator("list_parts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_s3.paginator import ListPartsPaginator
 
-def get_list_parts_paginator() -> ListPartsPaginator:
-    return Session().create_client("s3").get_paginator("list_parts")
+session = get_session()
+async with session.create_client("s3") as client:
+    client: S3Client
+    paginator: ListPartsPaginator = client.get_paginator("list_parts")
 ```
 
 Boto3 documentation:

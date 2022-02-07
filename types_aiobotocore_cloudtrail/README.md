@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[cloudtrail]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[cloudtrail]'
+
+# standalone installation
 pip install types-aiobotocore-cloudtrail
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-cloudtrail
 
 ## CloudTrailClient
 
-Type annotations for `aiobotocore.create_client("cloudtrail")` as
+Type annotations for `session.create_client("cloudtrail")` as
 [CloudTrailClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_cloudtrail.client import CloudTrailClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_tags](./client.md#add_tags)
 - [can_paginate](./client.md#can_paginate)
 - [create_trail](./client.md#create_trail)
@@ -127,7 +133,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_cloudtrail.paginators import ListPublicKeysPaginator, ...
+from types_aiobotocore_cloudtrail.paginator import ListPublicKeysPaginator, ...
 ```
 
 - [ListPublicKeysPaginator](./paginators.md#listpublickeyspaginator)

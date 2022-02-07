@@ -20,17 +20,19 @@ type annotations stubs module
 ## ListJobsByPipelinePaginator
 
 Type annotations for
-`aiobotocore.create_client("elastictranscoder").get_paginator("list_jobs_by_pipeline")`.
+`session.create_client("elastictranscoder").get_paginator("list_jobs_by_pipeline")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elastictranscoder.paginator import ListJobsByPipelinePaginator
 
-def get_list_jobs_by_pipeline_paginator() -> ListJobsByPipelinePaginator:
-    return Session().create_client("elastictranscoder").get_paginator("list_jobs_by_pipeline")
+session = get_session()
+async with session.create_client("elastictranscoder") as client:
+    client: ElasticTranscoderClient
+    paginator: ListJobsByPipelinePaginator = client.get_paginator("list_jobs_by_pipeline")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `ListJobsByPipelinePaginator.paginate` method:
 ## ListJobsByStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("elastictranscoder").get_paginator("list_jobs_by_status")`.
+`session.create_client("elastictranscoder").get_paginator("list_jobs_by_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elastictranscoder.paginator import ListJobsByStatusPaginator
 
-def get_list_jobs_by_status_paginator() -> ListJobsByStatusPaginator:
-    return Session().create_client("elastictranscoder").get_paginator("list_jobs_by_status")
+session = get_session()
+async with session.create_client("elastictranscoder") as client:
+    client: ElasticTranscoderClient
+    paginator: ListJobsByStatusPaginator = client.get_paginator("list_jobs_by_status")
 ```
 
 Boto3 documentation:
@@ -82,17 +86,19 @@ Arguments for `ListJobsByStatusPaginator.paginate` method:
 ## ListPipelinesPaginator
 
 Type annotations for
-`aiobotocore.create_client("elastictranscoder").get_paginator("list_pipelines")`.
+`session.create_client("elastictranscoder").get_paginator("list_pipelines")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elastictranscoder.paginator import ListPipelinesPaginator
 
-def get_list_pipelines_paginator() -> ListPipelinesPaginator:
-    return Session().create_client("elastictranscoder").get_paginator("list_pipelines")
+session = get_session()
+async with session.create_client("elastictranscoder") as client:
+    client: ElasticTranscoderClient
+    paginator: ListPipelinesPaginator = client.get_paginator("list_pipelines")
 ```
 
 Boto3 documentation:
@@ -112,17 +118,19 @@ Arguments for `ListPipelinesPaginator.paginate` method:
 ## ListPresetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("elastictranscoder").get_paginator("list_presets")`.
+`session.create_client("elastictranscoder").get_paginator("list_presets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_elastictranscoder.paginator import ListPresetsPaginator
 
-def get_list_presets_paginator() -> ListPresetsPaginator:
-    return Session().create_client("elastictranscoder").get_paginator("list_presets")
+session = get_session()
+async with session.create_client("elastictranscoder") as client:
+    client: ElasticTranscoderClient
+    paginator: ListPresetsPaginator = client.get_paginator("list_presets")
 ```
 
 Boto3 documentation:

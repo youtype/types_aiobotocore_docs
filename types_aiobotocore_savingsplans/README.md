@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[savingsplans]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[savingsplans]'
+
+# standalone installation
 pip install types-aiobotocore-savingsplans
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-savingsplans
 
 ## SavingsPlansClient
 
-Type annotations for `aiobotocore.create_client("savingsplans")` as
+Type annotations for `session.create_client("savingsplans")` as
 [SavingsPlansClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_savingsplans.client import SavingsPlansClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_savings_plan](./client.md#create_savings_plan)
 - [delete_queued_savings_plan](./client.md#delete_queued_savings_plan)

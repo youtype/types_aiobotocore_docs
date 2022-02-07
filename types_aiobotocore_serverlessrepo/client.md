@@ -31,22 +31,25 @@ type annotations stubs module
     - [put_application_policy](#put_application_policy)
     - [unshare_application](#unshare_application)
     - [update_application](#update_application)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="serverlessapplicationrepositoryclient"></a>
 
 ## ServerlessApplicationRepositoryClient
 
-Type annotations for `aiobotocore.create_client("serverlessrepo")`
+Type annotations for `session.create_client("serverlessrepo")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_serverlessrepo.client import ServerlessApplicationRepositoryClient
 
-def get_serverlessrepo_client() -> ServerlessApplicationRepositoryClient:
-    return Session().client("serverlessrepo")
+session = get_session()
+async with session.create_client("serverlessrepo") as client:
+    client: ServerlessApplicationRepositoryClient
 ```
 
 Boto3 documentation:
@@ -86,7 +89,7 @@ Exceptions:
 
 ServerlessApplicationRepositoryClient exceptions.
 
-Type annotations for `aiobotocore.create_client("serverlessrepo").exceptions`
+Type annotations for `session.create_client("serverlessrepo").exceptions`
 method.
 
 Boto3 documentation:
@@ -100,19 +103,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("serverlessrepo").can_paginate`
+Type annotations for `session.create_client("serverlessrepo").can_paginate`
 method.
 
 Boto3 documentation:
 [ServerlessApplicationRepository.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_application"></a>
 
@@ -122,7 +123,7 @@ Creates an application, optionally including an AWS SAM file to create the
 first application version in the same call.
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").create_application` method.
+`session.create_client("serverlessrepo").create_application` method.
 
 Boto3 documentation:
 [ServerlessApplicationRepository.Client.create_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Client.create_application)
@@ -161,8 +162,7 @@ Returns a `Coroutine` for
 Creates an application version.
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").create_application_version`
-method.
+`session.create_client("serverlessrepo").create_application_version` method.
 
 Boto3 documentation:
 [ServerlessApplicationRepository.Client.create_application_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Client.create_application_version)
@@ -192,7 +192,7 @@ Returns a `Coroutine` for
 Creates an AWS CloudFormation change set for the given application.
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").create_cloud_formation_change_set`
+`session.create_client("serverlessrepo").create_cloud_formation_change_set`
 method.
 
 Boto3 documentation:
@@ -232,7 +232,7 @@ Returns a `Coroutine` for
 Creates an AWS CloudFormation template.
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").create_cloud_formation_template`
+`session.create_client("serverlessrepo").create_cloud_formation_template`
 method.
 
 Boto3 documentation:
@@ -259,7 +259,7 @@ Returns a `Coroutine` for
 Deletes the specified application.
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").delete_application` method.
+`session.create_client("serverlessrepo").delete_application` method.
 
 Boto3 documentation:
 [ServerlessApplicationRepository.Client.delete_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Client.delete_application)
@@ -281,7 +281,7 @@ Keyword-only arguments:
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").generate_presigned_url` method.
+`session.create_client("serverlessrepo").generate_presigned_url` method.
 
 Boto3 documentation:
 [ServerlessApplicationRepository.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Client.generate_presigned_url)
@@ -304,8 +304,8 @@ Returns a `Coroutine` for `str`.
 
 Gets the specified application.
 
-Type annotations for
-`aiobotocore.create_client("serverlessrepo").get_application` method.
+Type annotations for `session.create_client("serverlessrepo").get_application`
+method.
 
 Boto3 documentation:
 [ServerlessApplicationRepository.Client.get_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Client.get_application)
@@ -330,7 +330,7 @@ Returns a `Coroutine` for
 Retrieves the policy for the application.
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").get_application_policy` method.
+`session.create_client("serverlessrepo").get_application_policy` method.
 
 Boto3 documentation:
 [ServerlessApplicationRepository.Client.get_application_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Client.get_application_policy)
@@ -355,8 +355,7 @@ Returns a `Coroutine` for
 Gets the specified AWS CloudFormation template.
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").get_cloud_formation_template`
-method.
+`session.create_client("serverlessrepo").get_cloud_formation_template` method.
 
 Boto3 documentation:
 [ServerlessApplicationRepository.Client.get_cloud_formation_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Client.get_cloud_formation_template)
@@ -382,8 +381,7 @@ Returns a `Coroutine` for
 Retrieves the list of applications nested in the containing application.
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").list_application_dependencies`
-method.
+`session.create_client("serverlessrepo").list_application_dependencies` method.
 
 Boto3 documentation:
 [ServerlessApplicationRepository.Client.list_application_dependencies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Client.list_application_dependencies)
@@ -411,7 +409,7 @@ Returns a `Coroutine` for
 Lists versions for the specified application.
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").list_application_versions` method.
+`session.create_client("serverlessrepo").list_application_versions` method.
 
 Boto3 documentation:
 [ServerlessApplicationRepository.Client.list_application_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Client.list_application_versions)
@@ -438,7 +436,7 @@ Returns a `Coroutine` for
 Lists applications owned by the requester.
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").list_applications` method.
+`session.create_client("serverlessrepo").list_applications` method.
 
 Boto3 documentation:
 [ServerlessApplicationRepository.Client.list_applications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Client.list_applications)
@@ -463,7 +461,7 @@ Returns a `Coroutine` for
 Sets the permission policy for an application.
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").put_application_policy` method.
+`session.create_client("serverlessrepo").put_application_policy` method.
 
 Boto3 documentation:
 [ServerlessApplicationRepository.Client.put_application_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Client.put_application_policy)
@@ -491,7 +489,7 @@ Returns a `Coroutine` for
 Unshares an application from an AWS Organization.
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").unshare_application` method.
+`session.create_client("serverlessrepo").unshare_application` method.
 
 Boto3 documentation:
 [ServerlessApplicationRepository.Client.unshare_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Client.unshare_application)
@@ -514,7 +512,7 @@ Keyword-only arguments:
 Updates the specified application.
 
 Type annotations for
-`aiobotocore.create_client("serverlessrepo").update_application` method.
+`session.create_client("serverlessrepo").update_application` method.
 
 Boto3 documentation:
 [ServerlessApplicationRepository.Client.update_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Client.update_application)
@@ -538,13 +536,47 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateApplicationResponseTypeDef](./type_defs.md#updateapplicationresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("serverlessrepo").__aenter__`
+method.
+
+Boto3 documentation:
+[ServerlessApplicationRepository.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[ServerlessApplicationRepositoryClient](#serverlessapplicationrepositoryclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("serverlessrepo").__aexit__`
+method.
+
+Boto3 documentation:
+[ServerlessApplicationRepository.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/serverlessrepo.html#ServerlessApplicationRepository.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("serverlessrepo").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("serverlessrepo").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_application_dependencies")` ->
   [ListApplicationDependenciesPaginator](./paginators.md#listapplicationdependenciespaginator)

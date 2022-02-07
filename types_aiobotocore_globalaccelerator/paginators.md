@@ -24,17 +24,19 @@ type annotations stubs module
 ## ListAcceleratorsPaginator
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").get_paginator("list_accelerators")`.
+`session.create_client("globalaccelerator").get_paginator("list_accelerators")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_globalaccelerator.paginator import ListAcceleratorsPaginator
 
-def get_list_accelerators_paginator() -> ListAcceleratorsPaginator:
-    return Session().create_client("globalaccelerator").get_paginator("list_accelerators")
+session = get_session()
+async with session.create_client("globalaccelerator") as client:
+    client: GlobalAcceleratorClient
+    paginator: ListAcceleratorsPaginator = client.get_paginator("list_accelerators")
 ```
 
 Boto3 documentation:
@@ -53,17 +55,19 @@ Arguments for `ListAcceleratorsPaginator.paginate` method:
 ## ListByoipCidrsPaginator
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").get_paginator("list_byoip_cidrs")`.
+`session.create_client("globalaccelerator").get_paginator("list_byoip_cidrs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_globalaccelerator.paginator import ListByoipCidrsPaginator
 
-def get_list_byoip_cidrs_paginator() -> ListByoipCidrsPaginator:
-    return Session().create_client("globalaccelerator").get_paginator("list_byoip_cidrs")
+session = get_session()
+async with session.create_client("globalaccelerator") as client:
+    client: GlobalAcceleratorClient
+    paginator: ListByoipCidrsPaginator = client.get_paginator("list_byoip_cidrs")
 ```
 
 Boto3 documentation:
@@ -82,17 +86,19 @@ Arguments for `ListByoipCidrsPaginator.paginate` method:
 ## ListCustomRoutingAcceleratorsPaginator
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").get_paginator("list_custom_routing_accelerators")`.
+`session.create_client("globalaccelerator").get_paginator("list_custom_routing_accelerators")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_globalaccelerator.paginator import ListCustomRoutingAcceleratorsPaginator
 
-def get_list_custom_routing_accelerators_paginator() -> ListCustomRoutingAcceleratorsPaginator:
-    return Session().create_client("globalaccelerator").get_paginator("list_custom_routing_accelerators")
+session = get_session()
+async with session.create_client("globalaccelerator") as client:
+    client: GlobalAcceleratorClient
+    paginator: ListCustomRoutingAcceleratorsPaginator = client.get_paginator("list_custom_routing_accelerators")
 ```
 
 Boto3 documentation:
@@ -111,17 +117,19 @@ Arguments for `ListCustomRoutingAcceleratorsPaginator.paginate` method:
 ## ListCustomRoutingListenersPaginator
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").get_paginator("list_custom_routing_listeners")`.
+`session.create_client("globalaccelerator").get_paginator("list_custom_routing_listeners")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_globalaccelerator.paginator import ListCustomRoutingListenersPaginator
 
-def get_list_custom_routing_listeners_paginator() -> ListCustomRoutingListenersPaginator:
-    return Session().create_client("globalaccelerator").get_paginator("list_custom_routing_listeners")
+session = get_session()
+async with session.create_client("globalaccelerator") as client:
+    client: GlobalAcceleratorClient
+    paginator: ListCustomRoutingListenersPaginator = client.get_paginator("list_custom_routing_listeners")
 ```
 
 Boto3 documentation:
@@ -141,17 +149,19 @@ Arguments for `ListCustomRoutingListenersPaginator.paginate` method:
 ## ListCustomRoutingPortMappingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").get_paginator("list_custom_routing_port_mappings")`.
+`session.create_client("globalaccelerator").get_paginator("list_custom_routing_port_mappings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_globalaccelerator.paginator import ListCustomRoutingPortMappingsPaginator
 
-def get_list_custom_routing_port_mappings_paginator() -> ListCustomRoutingPortMappingsPaginator:
-    return Session().create_client("globalaccelerator").get_paginator("list_custom_routing_port_mappings")
+session = get_session()
+async with session.create_client("globalaccelerator") as client:
+    client: GlobalAcceleratorClient
+    paginator: ListCustomRoutingPortMappingsPaginator = client.get_paginator("list_custom_routing_port_mappings")
 ```
 
 Boto3 documentation:
@@ -172,17 +182,19 @@ Arguments for `ListCustomRoutingPortMappingsPaginator.paginate` method:
 ## ListCustomRoutingPortMappingsByDestinationPaginator
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").get_paginator("list_custom_routing_port_mappings_by_destination")`.
+`session.create_client("globalaccelerator").get_paginator("list_custom_routing_port_mappings_by_destination")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_globalaccelerator.paginator import ListCustomRoutingPortMappingsByDestinationPaginator
 
-def get_list_custom_routing_port_mappings_by_destination_paginator() -> ListCustomRoutingPortMappingsByDestinationPaginator:
-    return Session().create_client("globalaccelerator").get_paginator("list_custom_routing_port_mappings_by_destination")
+session = get_session()
+async with session.create_client("globalaccelerator") as client:
+    client: GlobalAcceleratorClient
+    paginator: ListCustomRoutingPortMappingsByDestinationPaginator = client.get_paginator("list_custom_routing_port_mappings_by_destination")
 ```
 
 Boto3 documentation:
@@ -204,17 +216,19 @@ method:
 ## ListEndpointGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").get_paginator("list_endpoint_groups")`.
+`session.create_client("globalaccelerator").get_paginator("list_endpoint_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_globalaccelerator.paginator import ListEndpointGroupsPaginator
 
-def get_list_endpoint_groups_paginator() -> ListEndpointGroupsPaginator:
-    return Session().create_client("globalaccelerator").get_paginator("list_endpoint_groups")
+session = get_session()
+async with session.create_client("globalaccelerator") as client:
+    client: GlobalAcceleratorClient
+    paginator: ListEndpointGroupsPaginator = client.get_paginator("list_endpoint_groups")
 ```
 
 Boto3 documentation:
@@ -234,17 +248,19 @@ Arguments for `ListEndpointGroupsPaginator.paginate` method:
 ## ListListenersPaginator
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").get_paginator("list_listeners")`.
+`session.create_client("globalaccelerator").get_paginator("list_listeners")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_globalaccelerator.paginator import ListListenersPaginator
 
-def get_list_listeners_paginator() -> ListListenersPaginator:
-    return Session().create_client("globalaccelerator").get_paginator("list_listeners")
+session = get_session()
+async with session.create_client("globalaccelerator") as client:
+    client: GlobalAcceleratorClient
+    paginator: ListListenersPaginator = client.get_paginator("list_listeners")
 ```
 
 Boto3 documentation:

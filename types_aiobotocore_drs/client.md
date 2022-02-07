@@ -45,22 +45,25 @@ type annotations stubs module
     - [update_launch_configuration](#update_launch_configuration)
     - [update_replication_configuration](#update_replication_configuration)
     - [update_replication_configuration_template](#update_replication_configuration_template)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="drsclient"></a>
 
 ## drsClient
 
-Type annotations for `aiobotocore.create_client("drs")`
+Type annotations for `session.create_client("drs")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_drs.client import drsClient
 
-def get_drs_client() -> drsClient:
-    return Session().client("drs")
+session = get_session()
+async with session.create_client("drs") as client:
+    client: drsClient
 ```
 
 Boto3 documentation:
@@ -102,7 +105,7 @@ Exceptions:
 
 drsClient exceptions.
 
-Type annotations for `aiobotocore.create_client("drs").exceptions` method.
+Type annotations for `session.create_client("drs").exceptions` method.
 
 Boto3 documentation:
 [drs.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.exceptions)
@@ -115,18 +118,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("drs").can_paginate` method.
+Type annotations for `session.create_client("drs").can_paginate` method.
 
 Boto3 documentation:
 [drs.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_replication_configuration_template"></a>
 
@@ -135,7 +136,7 @@ Returns a `Coroutine` for `bool`.
 Creates a new ReplicationConfigurationTemplate.
 
 Type annotations for
-`aiobotocore.create_client("drs").create_replication_configuration_template`
+`session.create_client("drs").create_replication_configuration_template`
 method.
 
 Boto3 documentation:
@@ -181,7 +182,7 @@ Returns a `Coroutine` for
 
 Deletes a single Job by ID.
 
-Type annotations for `aiobotocore.create_client("drs").delete_job` method.
+Type annotations for `session.create_client("drs").delete_job` method.
 
 Boto3 documentation:
 [drs.Client.delete_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.delete_job)
@@ -203,8 +204,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a single Recovery Instance by ID.
 
-Type annotations for
-`aiobotocore.create_client("drs").delete_recovery_instance` method.
+Type annotations for `session.create_client("drs").delete_recovery_instance`
+method.
 
 Boto3 documentation:
 [drs.Client.delete_recovery_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.delete_recovery_instance)
@@ -227,7 +228,7 @@ Deletes a single Replication Configuration Template by ID See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteReplicationConfigurationTemplate).
 
 Type annotations for
-`aiobotocore.create_client("drs").delete_replication_configuration_template`
+`session.create_client("drs").delete_replication_configuration_template`
 method.
 
 Boto3 documentation:
@@ -251,7 +252,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a single Source Server by ID.
 
-Type annotations for `aiobotocore.create_client("drs").delete_source_server`
+Type annotations for `session.create_client("drs").delete_source_server`
 method.
 
 Boto3 documentation:
@@ -275,7 +276,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Retrieves a detailed Job log with pagination.
 
-Type annotations for `aiobotocore.create_client("drs").describe_job_log_items`
+Type annotations for `session.create_client("drs").describe_job_log_items`
 method.
 
 Boto3 documentation:
@@ -302,7 +303,7 @@ Returns a `Coroutine` for
 
 Returns a list of Jobs.
 
-Type annotations for `aiobotocore.create_client("drs").describe_jobs` method.
+Type annotations for `session.create_client("drs").describe_jobs` method.
 
 Boto3 documentation:
 [drs.Client.describe_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.describe_jobs)
@@ -329,8 +330,8 @@ Returns a `Coroutine` for
 
 Lists all Recovery Instances or multiple Recovery Instances by ID.
 
-Type annotations for
-`aiobotocore.create_client("drs").describe_recovery_instances` method.
+Type annotations for `session.create_client("drs").describe_recovery_instances`
+method.
 
 Boto3 documentation:
 [drs.Client.describe_recovery_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.describe_recovery_instances)
@@ -358,8 +359,8 @@ Returns a `Coroutine` for
 
 Lists all Recovery Snapshots for a single Source Server.
 
-Type annotations for
-`aiobotocore.create_client("drs").describe_recovery_snapshots` method.
+Type annotations for `session.create_client("drs").describe_recovery_snapshots`
+method.
 
 Boto3 documentation:
 [drs.Client.describe_recovery_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.describe_recovery_snapshots)
@@ -390,7 +391,7 @@ Returns a `Coroutine` for
 Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs.
 
 Type annotations for
-`aiobotocore.create_client("drs").describe_replication_configuration_templates`
+`session.create_client("drs").describe_replication_configuration_templates`
 method.
 
 Boto3 documentation:
@@ -418,7 +419,7 @@ Returns a `Coroutine` for
 
 Lists all Source Servers or multiple Source Servers filtered by ID.
 
-Type annotations for `aiobotocore.create_client("drs").describe_source_servers`
+Type annotations for `session.create_client("drs").describe_source_servers`
 method.
 
 Boto3 documentation:
@@ -448,7 +449,7 @@ Returns a `Coroutine` for
 Disconnect a Recovery Instance from Elastic Disaster Recovery.
 
 Type annotations for
-`aiobotocore.create_client("drs").disconnect_recovery_instance` method.
+`session.create_client("drs").disconnect_recovery_instance` method.
 
 Boto3 documentation:
 [drs.Client.disconnect_recovery_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.disconnect_recovery_instance)
@@ -469,8 +470,8 @@ Keyword-only arguments:
 
 Disconnects a specific Source Server from Elastic Disaster Recovery.
 
-Type annotations for
-`aiobotocore.create_client("drs").disconnect_source_server` method.
+Type annotations for `session.create_client("drs").disconnect_source_server`
+method.
 
 Boto3 documentation:
 [drs.Client.disconnect_source_server](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.disconnect_source_server)
@@ -494,7 +495,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("drs").generate_presigned_url`
+Type annotations for `session.create_client("drs").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -519,8 +520,7 @@ Returns a `Coroutine` for `str`.
 Lists all Failback ReplicationConfigurations, filtered by Recovery Instance ID.
 
 Type annotations for
-`aiobotocore.create_client("drs").get_failback_replication_configuration`
-method.
+`session.create_client("drs").get_failback_replication_configuration` method.
 
 Boto3 documentation:
 [drs.Client.get_failback_replication_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.get_failback_replication_configuration)
@@ -544,8 +544,8 @@ Returns a `Coroutine` for
 
 Gets a LaunchConfiguration, filtered by Source Server IDs.
 
-Type annotations for
-`aiobotocore.create_client("drs").get_launch_configuration` method.
+Type annotations for `session.create_client("drs").get_launch_configuration`
+method.
 
 Boto3 documentation:
 [drs.Client.get_launch_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.get_launch_configuration)
@@ -570,7 +570,7 @@ Returns a `Coroutine` for
 Gets a ReplicationConfiguration, filtered by Source Server ID.
 
 Type annotations for
-`aiobotocore.create_client("drs").get_replication_configuration` method.
+`session.create_client("drs").get_replication_configuration` method.
 
 Boto3 documentation:
 [drs.Client.get_replication_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.get_replication_configuration)
@@ -594,8 +594,7 @@ Returns a `Coroutine` for
 
 Initialize Elastic Disaster Recovery.
 
-Type annotations for `aiobotocore.create_client("drs").initialize_service`
-method.
+Type annotations for `session.create_client("drs").initialize_service` method.
 
 Boto3 documentation:
 [drs.Client.initialize_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.initialize_service)
@@ -611,7 +610,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 List all tags for your Elastic Disaster Recovery resources.
 
-Type annotations for `aiobotocore.create_client("drs").list_tags_for_resource`
+Type annotations for `session.create_client("drs").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -638,7 +637,7 @@ Causes the data replication initiation sequence to begin immediately upon next
 Handshake for the specified Source Server ID, regardless of when the previous
 initiation started.
 
-Type annotations for `aiobotocore.create_client("drs").retry_data_replication`
+Type annotations for `session.create_client("drs").retry_data_replication`
 method.
 
 Boto3 documentation:
@@ -664,7 +663,7 @@ Returns a `Coroutine` for
 Initiates a Job for launching the machine that is being failed back to from the
 specified Recovery Instance.
 
-Type annotations for `aiobotocore.create_client("drs").start_failback_launch`
+Type annotations for `session.create_client("drs").start_failback_launch`
 method.
 
 Boto3 documentation:
@@ -690,7 +689,7 @@ Returns a `Coroutine` for
 
 Launches Recovery Instances for the specified Source Servers.
 
-Type annotations for `aiobotocore.create_client("drs").start_recovery` method.
+Type annotations for `session.create_client("drs").start_recovery` method.
 
 Boto3 documentation:
 [drs.Client.start_recovery](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.start_recovery)
@@ -717,7 +716,7 @@ Returns a `Coroutine` for
 
 Stops the failback process for a specified Recovery Instance.
 
-Type annotations for `aiobotocore.create_client("drs").stop_failback` method.
+Type annotations for `session.create_client("drs").stop_failback` method.
 
 Boto3 documentation:
 [drs.Client.stop_failback](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.stop_failback)
@@ -738,7 +737,7 @@ Keyword-only arguments:
 Adds or overwrites only the specified tags for the specified Elastic Disaster
 Recovery resource or resources.
 
-Type annotations for `aiobotocore.create_client("drs").tag_resource` method.
+Type annotations for `session.create_client("drs").tag_resource` method.
 
 Boto3 documentation:
 [drs.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.tag_resource)
@@ -762,7 +761,7 @@ Recovery Instances, and then will delete the Recovery Instances from the
 Elastic Disaster Recovery service.
 
 Type annotations for
-`aiobotocore.create_client("drs").terminate_recovery_instances` method.
+`session.create_client("drs").terminate_recovery_instances` method.
 
 Boto3 documentation:
 [drs.Client.terminate_recovery_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.terminate_recovery_instances)
@@ -787,7 +786,7 @@ Returns a `Coroutine` for
 Deletes the specified set of tags from the specified set of Elastic Disaster
 Recovery resources.
 
-Type annotations for `aiobotocore.create_client("drs").untag_resource` method.
+Type annotations for `session.create_client("drs").untag_resource` method.
 
 Boto3 documentation:
 [drs.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.untag_resource)
@@ -810,7 +809,7 @@ Allows you to update the failback replication configuration of a Recovery
 Instance by ID.
 
 Type annotations for
-`aiobotocore.create_client("drs").update_failback_replication_configuration`
+`session.create_client("drs").update_failback_replication_configuration`
 method.
 
 Boto3 documentation:
@@ -835,8 +834,8 @@ Keyword-only arguments:
 
 Updates a LaunchConfiguration by Source Server ID.
 
-Type annotations for
-`aiobotocore.create_client("drs").update_launch_configuration` method.
+Type annotations for `session.create_client("drs").update_launch_configuration`
+method.
 
 Boto3 documentation:
 [drs.Client.update_launch_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.update_launch_configuration)
@@ -869,7 +868,7 @@ Returns a `Coroutine` for
 Allows you to update a ReplicationConfiguration by Source Server ID.
 
 Type annotations for
-`aiobotocore.create_client("drs").update_replication_configuration` method.
+`session.create_client("drs").update_replication_configuration` method.
 
 Boto3 documentation:
 [drs.Client.update_replication_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.update_replication_configuration)
@@ -914,7 +913,7 @@ Returns a `Coroutine` for
 Updates a ReplicationConfigurationTemplate by ID.
 
 Type annotations for
-`aiobotocore.create_client("drs").update_replication_configuration_template`
+`session.create_client("drs").update_replication_configuration_template`
 method.
 
 Boto3 documentation:
@@ -951,12 +950,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [ReplicationConfigurationTemplateResponseMetadataTypeDef](./type_defs.md#replicationconfigurationtemplateresponsemetadatatypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("drs").__aenter__` method.
+
+Boto3 documentation:
+[drs.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [drsClient](#drsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("drs").__aexit__` method.
+
+Boto3 documentation:
+[drs.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("drs").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("drs").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_job_log_items")` ->
   [DescribeJobLogItemsPaginator](./paginators.md#describejoblogitemspaginator)

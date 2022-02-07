@@ -19,17 +19,19 @@ type annotations stubs module
 ## DescribeObjectsPaginator
 
 Type annotations for
-`aiobotocore.create_client("datapipeline").get_paginator("describe_objects")`.
+`session.create_client("datapipeline").get_paginator("describe_objects")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_datapipeline.paginator import DescribeObjectsPaginator
 
-def get_describe_objects_paginator() -> DescribeObjectsPaginator:
-    return Session().create_client("datapipeline").get_paginator("describe_objects")
+session = get_session()
+async with session.create_client("datapipeline") as client:
+    client: DataPipelineClient
+    paginator: DescribeObjectsPaginator = client.get_paginator("describe_objects")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `DescribeObjectsPaginator.paginate` method:
 ## ListPipelinesPaginator
 
 Type annotations for
-`aiobotocore.create_client("datapipeline").get_paginator("list_pipelines")`.
+`session.create_client("datapipeline").get_paginator("list_pipelines")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_datapipeline.paginator import ListPipelinesPaginator
 
-def get_list_pipelines_paginator() -> ListPipelinesPaginator:
-    return Session().create_client("datapipeline").get_paginator("list_pipelines")
+session = get_session()
+async with session.create_client("datapipeline") as client:
+    client: DataPipelineClient
+    paginator: ListPipelinesPaginator = client.get_paginator("list_pipelines")
 ```
 
 Boto3 documentation:
@@ -80,17 +84,19 @@ Arguments for `ListPipelinesPaginator.paginate` method:
 ## QueryObjectsPaginator
 
 Type annotations for
-`aiobotocore.create_client("datapipeline").get_paginator("query_objects")`.
+`session.create_client("datapipeline").get_paginator("query_objects")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_datapipeline.paginator import QueryObjectsPaginator
 
-def get_query_objects_paginator() -> QueryObjectsPaginator:
-    return Session().create_client("datapipeline").get_paginator("query_objects")
+session = get_session()
+async with session.create_client("datapipeline") as client:
+    client: DataPipelineClient
+    paginator: QueryObjectsPaginator = client.get_paginator("query_objects")
 ```
 
 Boto3 documentation:

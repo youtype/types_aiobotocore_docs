@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[sqs]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[sqs]'
+
+# standalone installation
 pip install types-aiobotocore-sqs
 ```
 
@@ -32,8 +36,7 @@ pip install types-aiobotocore-sqs
 
 ## SQSClient
 
-Type annotations for `aiobotocore.create_client("sqs")` as
-[SQSClient](./client.md)
+Type annotations for `session.create_client("sqs")` as [SQSClient](./client.md)
 
 Can be used directly:
 
@@ -45,6 +48,8 @@ from types_aiobotocore_sqs.client import SQSClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_permission](./client.md#add_permission)
 - [can_paginate](./client.md#can_paginate)
 - [change_message_visibility](./client.md#change_message_visibility)
@@ -98,7 +103,7 @@ SQSClient [exceptions](./client.md#exceptions)
 
 ## SQSServiceResource
 
-Type annotations for `aiobotocore.resource("sqs")` as
+Type annotations for `session.resource("sqs")` as
 [SQSServiceResource](./service_resource.md#sqsserviceresource)
 
 Can be used directly:
@@ -125,7 +130,7 @@ from types_aiobotocore_sqs.service_resource import ServiceResourceQueuesCollecti
 
 ### Resources
 
-Type annotations for additional resources from `aiobotocore.resource("sqs").*`.
+Type annotations for additional resources from `session.resource("sqs").*`.
 
 Can be used directly:
 
@@ -146,7 +151,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_sqs.paginators import ListDeadLetterSourceQueuesPaginator, ...
+from types_aiobotocore_sqs.paginator import ListDeadLetterSourceQueuesPaginator, ...
 ```
 
 - [ListDeadLetterSourceQueuesPaginator](./paginators.md#listdeadlettersourcequeuespaginator)

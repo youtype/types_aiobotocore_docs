@@ -169,22 +169,25 @@ type annotations stubs module
     - [update_load_balancer_attribute](#update_load_balancer_attribute)
     - [update_relational_database](#update_relational_database)
     - [update_relational_database_parameters](#update_relational_database_parameters)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="lightsailclient"></a>
 
 ## LightsailClient
 
-Type annotations for `aiobotocore.create_client("lightsail")`
+Type annotations for `session.create_client("lightsail")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_lightsail.client import LightsailClient
 
-def get_lightsail_client() -> LightsailClient:
-    return Session().client("lightsail")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
 ```
 
 Boto3 documentation:
@@ -225,8 +228,7 @@ Exceptions:
 
 LightsailClient exceptions.
 
-Type annotations for `aiobotocore.create_client("lightsail").exceptions`
-method.
+Type annotations for `session.create_client("lightsail").exceptions` method.
 
 Boto3 documentation:
 [Lightsail.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.exceptions)
@@ -239,8 +241,8 @@ Returns [Exceptions](#exceptions).
 
 Allocates a static IP address.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").allocate_static_ip` method.
+Type annotations for `session.create_client("lightsail").allocate_static_ip`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.allocate_static_ip](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.allocate_static_ip)
@@ -266,8 +268,7 @@ Attaches an SSL/TLS certificate to your Amazon Lightsail content delivery
 network (CDN) distribution.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").attach_certificate_to_distribution`
-method.
+`session.create_client("lightsail").attach_certificate_to_distribution` method.
 
 Boto3 documentation:
 [Lightsail.Client.attach_certificate_to_distribution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.attach_certificate_to_distribution)
@@ -293,8 +294,7 @@ Returns a `Coroutine` for
 Attaches a block storage disk to a running or stopped Lightsail instance and
 exposes it to the instance with the specified disk name.
 
-Type annotations for `aiobotocore.create_client("lightsail").attach_disk`
-method.
+Type annotations for `session.create_client("lightsail").attach_disk` method.
 
 Boto3 documentation:
 [Lightsail.Client.attach_disk](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.attach_disk)
@@ -320,8 +320,7 @@ Returns a `Coroutine` for
 Attaches one or more Lightsail instances to a load balancer.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").attach_instances_to_load_balancer`
-method.
+`session.create_client("lightsail").attach_instances_to_load_balancer` method.
 
 Boto3 documentation:
 [Lightsail.Client.attach_instances_to_load_balancer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.attach_instances_to_load_balancer)
@@ -347,7 +346,7 @@ Returns a `Coroutine` for
 Attaches a Transport Layer Security (TLS) certificate to your load balancer.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").attach_load_balancer_tls_certificate`
+`session.create_client("lightsail").attach_load_balancer_tls_certificate`
 method.
 
 Boto3 documentation:
@@ -373,7 +372,7 @@ Returns a `Coroutine` for
 
 Attaches a static IP address to a specific Amazon Lightsail instance.
 
-Type annotations for `aiobotocore.create_client("lightsail").attach_static_ip`
+Type annotations for `session.create_client("lightsail").attach_static_ip`
 method.
 
 Boto3 documentation:
@@ -398,19 +397,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("lightsail").can_paginate`
-method.
+Type annotations for `session.create_client("lightsail").can_paginate` method.
 
 Boto3 documentation:
 [Lightsail.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="close_instance_public_ports"></a>
 
@@ -419,7 +415,7 @@ Returns a `Coroutine` for `bool`.
 Closes ports for a specific Amazon Lightsail instance.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").close_instance_public_ports` method.
+`session.create_client("lightsail").close_instance_public_ports` method.
 
 Boto3 documentation:
 [Lightsail.Client.close_instance_public_ports](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.close_instance_public_ports)
@@ -445,8 +441,7 @@ Returns a `Coroutine` for
 Copies a manual snapshot of an instance or disk as another manual snapshot, or
 copies an automatic snapshot of an instance or disk as a manual snapshot.
 
-Type annotations for `aiobotocore.create_client("lightsail").copy_snapshot`
-method.
+Type annotations for `session.create_client("lightsail").copy_snapshot` method.
 
 Boto3 documentation:
 [Lightsail.Client.copy_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.copy_snapshot)
@@ -474,8 +469,7 @@ Returns a `Coroutine` for
 
 Creates an Amazon Lightsail bucket.
 
-Type annotations for `aiobotocore.create_client("lightsail").create_bucket`
-method.
+Type annotations for `session.create_client("lightsail").create_bucket` method.
 
 Boto3 documentation:
 [Lightsail.Client.create_bucket](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.create_bucket)
@@ -502,7 +496,7 @@ Returns a `Coroutine` for
 Creates a new access key for the specified Amazon Lightsail bucket.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").create_bucket_access_key` method.
+`session.create_client("lightsail").create_bucket_access_key` method.
 
 Boto3 documentation:
 [Lightsail.Client.create_bucket_access_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.create_bucket_access_key)
@@ -527,8 +521,8 @@ Returns a `Coroutine` for
 Creates an SSL/TLS certificate for an Amazon Lightsail content delivery network
 (CDN) distribution and a container service.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").create_certificate` method.
+Type annotations for `session.create_client("lightsail").create_certificate`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.create_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.create_certificate)
@@ -557,7 +551,7 @@ Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance
 from an exported Amazon Lightsail snapshot.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").create_cloud_formation_stack` method.
+`session.create_client("lightsail").create_cloud_formation_stack` method.
 
 Boto3 documentation:
 [Lightsail.Client.create_cloud_formation_stack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.create_cloud_formation_stack)
@@ -583,8 +577,8 @@ Returns a `Coroutine` for
 
 Creates an email or SMS text message contact method.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").create_contact_method` method.
+Type annotations for `session.create_client("lightsail").create_contact_method`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.create_contact_method](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.create_contact_method)
@@ -611,7 +605,7 @@ Returns a `Coroutine` for
 Creates an Amazon Lightsail container service.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").create_container_service` method.
+`session.create_client("lightsail").create_container_service` method.
 
 Boto3 documentation:
 [Lightsail.Client.create_container_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.create_container_service)
@@ -644,7 +638,7 @@ Returns a `Coroutine` for
 Creates a deployment for your Amazon Lightsail container service.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").create_container_service_deployment`
+`session.create_client("lightsail").create_container_service_deployment`
 method.
 
 Boto3 documentation:
@@ -675,7 +669,7 @@ Creates a temporary set of log in credentials that you can use to log in to the
 Docker process on your local machine.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").create_container_service_registry_login`
+`session.create_client("lightsail").create_container_service_registry_login`
 method.
 
 Boto3 documentation:
@@ -694,8 +688,7 @@ Returns a `Coroutine` for
 Creates a block storage disk that can be attached to an Amazon Lightsail
 instance in the same Availability Zone (e.g., `us-east-2a` ).
 
-Type annotations for `aiobotocore.create_client("lightsail").create_disk`
-method.
+Type annotations for `session.create_client("lightsail").create_disk` method.
 
 Boto3 documentation:
 [Lightsail.Client.create_disk](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.create_disk)
@@ -724,7 +717,7 @@ Returns a `Coroutine` for
 Creates a block storage disk from a manual or automatic snapshot of a disk.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").create_disk_from_snapshot` method.
+`session.create_client("lightsail").create_disk_from_snapshot` method.
 
 Boto3 documentation:
 [Lightsail.Client.create_disk_from_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.create_disk_from_snapshot)
@@ -757,8 +750,8 @@ Returns a `Coroutine` for
 
 Creates a snapshot of a block storage disk.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").create_disk_snapshot` method.
+Type annotations for `session.create_client("lightsail").create_disk_snapshot`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.create_disk_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.create_disk_snapshot)
@@ -785,8 +778,8 @@ Returns a `Coroutine` for
 
 Creates an Amazon Lightsail content delivery network (CDN) distribution.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").create_distribution` method.
+Type annotations for `session.create_client("lightsail").create_distribution`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.create_distribution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.create_distribution)
@@ -821,8 +814,7 @@ Returns a `Coroutine` for
 
 Creates a domain resource for the specified domain (e.g., example.com).
 
-Type annotations for `aiobotocore.create_client("lightsail").create_domain`
-method.
+Type annotations for `session.create_client("lightsail").create_domain` method.
 
 Boto3 documentation:
 [Lightsail.Client.create_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.create_domain)
@@ -848,8 +840,8 @@ Creates one of the following domain name system (DNS) records in a domain DNS
 zone: Address (A), canonical name (CNAME), mail exchanger (MX), name server
 (NS), start of authority (SOA), service locator (SRV), or text (TXT).
 
-Type annotations for
-`aiobotocore.create_client("lightsail").create_domain_entry` method.
+Type annotations for `session.create_client("lightsail").create_domain_entry`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.create_domain_entry](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.create_domain_entry)
@@ -876,7 +868,7 @@ Returns a `Coroutine` for
 Creates a snapshot of a specific virtual private server, or *instance*.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").create_instance_snapshot` method.
+`session.create_client("lightsail").create_instance_snapshot` method.
 
 Boto3 documentation:
 [Lightsail.Client.create_instance_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.create_instance_snapshot)
@@ -902,7 +894,7 @@ Returns a `Coroutine` for
 
 Creates one or more Amazon Lightsail instances.
 
-Type annotations for `aiobotocore.create_client("lightsail").create_instances`
+Type annotations for `session.create_client("lightsail").create_instances`
 method.
 
 Boto3 documentation:
@@ -938,7 +930,7 @@ Creates one or more new instances from a manual or automatic snapshot of an
 instance.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").create_instances_from_snapshot` method.
+`session.create_client("lightsail").create_instances_from_snapshot` method.
 
 Boto3 documentation:
 [Lightsail.Client.create_instances_from_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.create_instances_from_snapshot)
@@ -976,7 +968,7 @@ Returns a `Coroutine` for
 
 Creates an SSH key pair.
 
-Type annotations for `aiobotocore.create_client("lightsail").create_key_pair`
+Type annotations for `session.create_client("lightsail").create_key_pair`
 method.
 
 Boto3 documentation:
@@ -1001,8 +993,8 @@ Returns a `Coroutine` for
 
 Creates a Lightsail load balancer.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").create_load_balancer` method.
+Type annotations for `session.create_client("lightsail").create_load_balancer`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.create_load_balancer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.create_load_balancer)
@@ -1034,7 +1026,7 @@ Returns a `Coroutine` for
 Creates an SSL/TLS certificate for an Amazon Lightsail load balancer.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").create_load_balancer_tls_certificate`
+`session.create_client("lightsail").create_load_balancer_tls_certificate`
 method.
 
 Boto3 documentation:
@@ -1064,7 +1056,7 @@ Returns a `Coroutine` for
 Creates a new database in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").create_relational_database` method.
+`session.create_client("lightsail").create_relational_database` method.
 
 Boto3 documentation:
 [Lightsail.Client.create_relational_database](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.create_relational_database)
@@ -1099,7 +1091,7 @@ Returns a `Coroutine` for
 Creates a new database from an existing database snapshot in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").create_relational_database_from_snapshot`
+`session.create_client("lightsail").create_relational_database_from_snapshot`
 method.
 
 Boto3 documentation:
@@ -1133,7 +1125,7 @@ Returns a `Coroutine` for
 Creates a snapshot of your database in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").create_relational_database_snapshot`
+`session.create_client("lightsail").create_relational_database_snapshot`
 method.
 
 Boto3 documentation:
@@ -1160,8 +1152,7 @@ Returns a `Coroutine` for
 
 Deletes an alarm.
 
-Type annotations for `aiobotocore.create_client("lightsail").delete_alarm`
-method.
+Type annotations for `session.create_client("lightsail").delete_alarm` method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_alarm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_alarm)
@@ -1184,8 +1175,8 @@ Returns a `Coroutine` for
 
 Deletes an automatic snapshot of an instance or disk.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").delete_auto_snapshot` method.
+Type annotations for `session.create_client("lightsail").delete_auto_snapshot`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_auto_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_auto_snapshot)
@@ -1210,8 +1201,7 @@ Returns a `Coroutine` for
 
 Deletes a Amazon Lightsail bucket.
 
-Type annotations for `aiobotocore.create_client("lightsail").delete_bucket`
-method.
+Type annotations for `session.create_client("lightsail").delete_bucket` method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_bucket](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_bucket)
@@ -1236,7 +1226,7 @@ Returns a `Coroutine` for
 Deletes an access key for the specified Amazon Lightsail bucket.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").delete_bucket_access_key` method.
+`session.create_client("lightsail").delete_bucket_access_key` method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_bucket_access_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_bucket_access_key)
@@ -1262,8 +1252,8 @@ Returns a `Coroutine` for
 Deletes an SSL/TLS certificate for your Amazon Lightsail content delivery
 network (CDN) distribution.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").delete_certificate` method.
+Type annotations for `session.create_client("lightsail").delete_certificate`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_certificate)
@@ -1287,8 +1277,8 @@ Returns a `Coroutine` for
 
 Deletes a contact method.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").delete_contact_method` method.
+Type annotations for `session.create_client("lightsail").delete_contact_method`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_contact_method](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_contact_method)
@@ -1315,7 +1305,7 @@ Deletes a container image that is registered to your Amazon Lightsail container
 service.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").delete_container_image` method.
+`session.create_client("lightsail").delete_container_image` method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_container_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_container_image)
@@ -1340,7 +1330,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes your Amazon Lightsail container service.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").delete_container_service` method.
+`session.create_client("lightsail").delete_container_service` method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_container_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_container_service)
@@ -1363,8 +1353,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified block storage disk.
 
-Type annotations for `aiobotocore.create_client("lightsail").delete_disk`
-method.
+Type annotations for `session.create_client("lightsail").delete_disk` method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_disk](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_disk)
@@ -1388,8 +1377,8 @@ Returns a `Coroutine` for
 
 Deletes the specified disk snapshot.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").delete_disk_snapshot` method.
+Type annotations for `session.create_client("lightsail").delete_disk_snapshot`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_disk_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_disk_snapshot)
@@ -1413,8 +1402,8 @@ Returns a `Coroutine` for
 
 Deletes your Amazon Lightsail content delivery network (CDN) distribution.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").delete_distribution` method.
+Type annotations for `session.create_client("lightsail").delete_distribution`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_distribution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_distribution)
@@ -1438,8 +1427,7 @@ Returns a `Coroutine` for
 
 Deletes the specified domain recordset and all of its domain records.
 
-Type annotations for `aiobotocore.create_client("lightsail").delete_domain`
-method.
+Type annotations for `session.create_client("lightsail").delete_domain` method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_domain)
@@ -1462,8 +1450,8 @@ Returns a `Coroutine` for
 
 Deletes a specific domain entry.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").delete_domain_entry` method.
+Type annotations for `session.create_client("lightsail").delete_domain_entry`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_domain_entry](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_domain_entry)
@@ -1489,7 +1477,7 @@ Returns a `Coroutine` for
 
 Deletes an Amazon Lightsail instance.
 
-Type annotations for `aiobotocore.create_client("lightsail").delete_instance`
+Type annotations for `session.create_client("lightsail").delete_instance`
 method.
 
 Boto3 documentation:
@@ -1515,7 +1503,7 @@ Returns a `Coroutine` for
 Deletes a specific snapshot of a virtual private server (or *instance* ).
 
 Type annotations for
-`aiobotocore.create_client("lightsail").delete_instance_snapshot` method.
+`session.create_client("lightsail").delete_instance_snapshot` method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_instance_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_instance_snapshot)
@@ -1539,7 +1527,7 @@ Returns a `Coroutine` for
 
 Deletes a specific SSH key pair.
 
-Type annotations for `aiobotocore.create_client("lightsail").delete_key_pair`
+Type annotations for `session.create_client("lightsail").delete_key_pair`
 method.
 
 Boto3 documentation:
@@ -1565,7 +1553,7 @@ Deletes the known host key or certificate used by the Amazon Lightsail browser-
 based SSH or RDP clients to authenticate an instance.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").delete_known_host_keys` method.
+`session.create_client("lightsail").delete_known_host_keys` method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_known_host_keys](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_known_host_keys)
@@ -1589,8 +1577,8 @@ Returns a `Coroutine` for
 
 Deletes a Lightsail load balancer and all its associated SSL/TLS certificates.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").delete_load_balancer` method.
+Type annotations for `session.create_client("lightsail").delete_load_balancer`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_load_balancer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_load_balancer)
@@ -1615,7 +1603,7 @@ Returns a `Coroutine` for
 Deletes an SSL/TLS certificate associated with a Lightsail load balancer.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").delete_load_balancer_tls_certificate`
+`session.create_client("lightsail").delete_load_balancer_tls_certificate`
 method.
 
 Boto3 documentation:
@@ -1643,7 +1631,7 @@ Returns a `Coroutine` for
 Deletes a database in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").delete_relational_database` method.
+`session.create_client("lightsail").delete_relational_database` method.
 
 Boto3 documentation:
 [Lightsail.Client.delete_relational_database](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.delete_relational_database)
@@ -1670,7 +1658,7 @@ Returns a `Coroutine` for
 Deletes a database snapshot in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").delete_relational_database_snapshot`
+`session.create_client("lightsail").delete_relational_database_snapshot`
 method.
 
 Boto3 documentation:
@@ -1697,7 +1685,7 @@ Detaches an SSL/TLS certificate from your Amazon Lightsail content delivery
 network (CDN) distribution.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").detach_certificate_from_distribution`
+`session.create_client("lightsail").detach_certificate_from_distribution`
 method.
 
 Boto3 documentation:
@@ -1722,8 +1710,7 @@ Returns a `Coroutine` for
 
 Detaches a stopped block storage disk from a Lightsail instance.
 
-Type annotations for `aiobotocore.create_client("lightsail").detach_disk`
-method.
+Type annotations for `session.create_client("lightsail").detach_disk` method.
 
 Boto3 documentation:
 [Lightsail.Client.detach_disk](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.detach_disk)
@@ -1747,7 +1734,7 @@ Returns a `Coroutine` for
 Detaches the specified instances from a Lightsail load balancer.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").detach_instances_from_load_balancer`
+`session.create_client("lightsail").detach_instances_from_load_balancer`
 method.
 
 Boto3 documentation:
@@ -1774,7 +1761,7 @@ Returns a `Coroutine` for
 Detaches a static IP from the Amazon Lightsail instance to which it is
 attached.
 
-Type annotations for `aiobotocore.create_client("lightsail").detach_static_ip`
+Type annotations for `session.create_client("lightsail").detach_static_ip`
 method.
 
 Boto3 documentation:
@@ -1798,7 +1785,7 @@ Returns a `Coroutine` for
 
 Disables an add-on for an Amazon Lightsail resource.
 
-Type annotations for `aiobotocore.create_client("lightsail").disable_add_on`
+Type annotations for `session.create_client("lightsail").disable_add_on`
 method.
 
 Boto3 documentation:
@@ -1825,7 +1812,7 @@ Returns a `Coroutine` for
 Downloads the default SSH key pair from the user's account.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").download_default_key_pair` method.
+`session.create_client("lightsail").download_default_key_pair` method.
 
 Boto3 documentation:
 [Lightsail.Client.download_default_key_pair](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.download_default_key_pair)
@@ -1842,8 +1829,7 @@ Returns a `Coroutine` for
 
 Enables or modifies an add-on for an Amazon Lightsail resource.
 
-Type annotations for `aiobotocore.create_client("lightsail").enable_add_on`
-method.
+Type annotations for `session.create_client("lightsail").enable_add_on` method.
 
 Boto3 documentation:
 [Lightsail.Client.enable_add_on](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.enable_add_on)
@@ -1869,7 +1855,7 @@ Returns a `Coroutine` for
 Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon
 Elastic Compute Cloud (Amazon EC2).
 
-Type annotations for `aiobotocore.create_client("lightsail").export_snapshot`
+Type annotations for `session.create_client("lightsail").export_snapshot`
 method.
 
 Boto3 documentation:
@@ -1894,7 +1880,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").generate_presigned_url` method.
+`session.create_client("lightsail").generate_presigned_url` method.
 
 Boto3 documentation:
 [Lightsail.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.generate_presigned_url)
@@ -1917,7 +1903,7 @@ Returns a `Coroutine` for `str`.
 
 Returns the names of all active (not deleted) resources.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_active_names`
+Type annotations for `session.create_client("lightsail").get_active_names`
 method.
 
 Boto3 documentation:
@@ -1941,8 +1927,7 @@ Returns a `Coroutine` for
 
 Returns information about the configured alarms.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_alarms`
-method.
+Type annotations for `session.create_client("lightsail").get_alarms` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_alarms](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_alarms)
@@ -1967,8 +1952,8 @@ Returns a `Coroutine` for
 
 Returns the available automatic snapshots for an instance or disk.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").get_auto_snapshots` method.
+Type annotations for `session.create_client("lightsail").get_auto_snapshots`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.get_auto_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_auto_snapshots)
@@ -1992,7 +1977,7 @@ Returns a `Coroutine` for
 
 Returns the list of available instance images, or *blueprints*.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_blueprints`
+Type annotations for `session.create_client("lightsail").get_blueprints`
 method.
 
 Boto3 documentation:
@@ -2018,7 +2003,7 @@ Returns a `Coroutine` for
 Returns the existing access key IDs for the specified Amazon Lightsail bucket.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_bucket_access_keys` method.
+`session.create_client("lightsail").get_bucket_access_keys` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_bucket_access_keys](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_bucket_access_keys)
@@ -2042,8 +2027,8 @@ Returns a `Coroutine` for
 
 Returns the bundles that you can apply to a Amazon Lightsail bucket.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").get_bucket_bundles` method.
+Type annotations for `session.create_client("lightsail").get_bucket_bundles`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.get_bucket_bundles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_bucket_bundles)
@@ -2068,7 +2053,7 @@ Returns a `Coroutine` for
 Returns the data points of a specific metric for an Amazon Lightsail bucket.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_bucket_metric_data` method.
+`session.create_client("lightsail").get_bucket_metric_data` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_bucket_metric_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_bucket_metric_data)
@@ -2101,8 +2086,7 @@ Returns a `Coroutine` for
 
 Returns information about one or more Amazon Lightsail buckets.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_buckets`
-method.
+Type annotations for `session.create_client("lightsail").get_buckets` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_buckets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_buckets)
@@ -2127,8 +2111,7 @@ Returns a `Coroutine` for
 
 Returns the list of bundles that are available for purchase.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_bundles`
-method.
+Type annotations for `session.create_client("lightsail").get_bundles` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_bundles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_bundles)
@@ -2152,7 +2135,7 @@ Returns a `Coroutine` for
 
 Returns information about one or more Amazon Lightsail SSL/TLS certificates.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_certificates`
+Type annotations for `session.create_client("lightsail").get_certificates`
 method.
 
 Boto3 documentation:
@@ -2181,8 +2164,7 @@ Returns the CloudFormation stack record created as a result of the
 `create cloud formation stack` operation.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_cloud_formation_stack_records`
-method.
+`session.create_client("lightsail").get_cloud_formation_stack_records` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_cloud_formation_stack_records](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_cloud_formation_stack_records)
@@ -2206,8 +2188,8 @@ Returns a `Coroutine` for
 
 Returns information about the configured contact methods.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").get_contact_methods` method.
+Type annotations for `session.create_client("lightsail").get_contact_methods`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.get_contact_methods](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_contact_methods)
@@ -2234,7 +2216,7 @@ Returns information about Amazon Lightsail containers, such as the current
 version of the Lightsail Control (lightsailctl) plugin.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_container_api_metadata` method.
+`session.create_client("lightsail").get_container_api_metadata` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_container_api_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_container_api_metadata)
@@ -2252,8 +2234,8 @@ Returns a `Coroutine` for
 Returns the container images that are registered to your Amazon Lightsail
 container service.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").get_container_images` method.
+Type annotations for `session.create_client("lightsail").get_container_images`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.get_container_images](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_container_images)
@@ -2278,7 +2260,7 @@ Returns a `Coroutine` for
 Returns the log events of a container of your Amazon Lightsail container
 service.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_container_log`
+Type annotations for `session.create_client("lightsail").get_container_log`
 method.
 
 Boto3 documentation:
@@ -2310,8 +2292,7 @@ deployment specifies the settings, such as the ports and launch command, of
 containers that are deployed to your container service.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_container_service_deployments`
-method.
+`session.create_client("lightsail").get_container_service_deployments` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_container_service_deployments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_container_service_deployments)
@@ -2337,8 +2318,7 @@ Returns the data points of a specific metric of your Amazon Lightsail container
 service.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_container_service_metric_data`
-method.
+`session.create_client("lightsail").get_container_service_metric_data` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_container_service_metric_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_container_service_metric_data)
@@ -2373,7 +2353,7 @@ Returns the list of powers that can be specified for your Amazon Lightsail
 container services.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_container_service_powers` method.
+`session.create_client("lightsail").get_container_service_powers` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_container_service_powers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_container_service_powers)
@@ -2392,7 +2372,7 @@ Returns information about one or more of your Amazon Lightsail container
 services.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_container_services` method.
+`session.create_client("lightsail").get_container_services` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_container_services](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_container_services)
@@ -2416,7 +2396,7 @@ Returns a `Coroutine` for
 
 Returns information about a specific block storage disk.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_disk` method.
+Type annotations for `session.create_client("lightsail").get_disk` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_disk](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_disk)
@@ -2439,7 +2419,7 @@ Returns a `Coroutine` for
 
 Returns information about a specific block storage disk snapshot.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_disk_snapshot`
+Type annotations for `session.create_client("lightsail").get_disk_snapshot`
 method.
 
 Boto3 documentation:
@@ -2464,8 +2444,8 @@ Returns a `Coroutine` for
 Returns information about all block storage disk snapshots in your AWS account
 and region.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").get_disk_snapshots` method.
+Type annotations for `session.create_client("lightsail").get_disk_snapshots`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.get_disk_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_disk_snapshots)
@@ -2490,7 +2470,7 @@ Returns a `Coroutine` for
 Returns information about all block storage disks in your AWS account and
 region.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_disks` method.
+Type annotations for `session.create_client("lightsail").get_disks` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_disks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_disks)
@@ -2515,7 +2495,7 @@ Returns the bundles that can be applied to your Amazon Lightsail content
 delivery network (CDN) distributions.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_distribution_bundles` method.
+`session.create_client("lightsail").get_distribution_bundles` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_distribution_bundles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_distribution_bundles)
@@ -2534,7 +2514,7 @@ Returns the timestamp and status of the last cache reset of a specific Amazon
 Lightsail content delivery network (CDN) distribution.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_distribution_latest_cache_reset`
+`session.create_client("lightsail").get_distribution_latest_cache_reset`
 method.
 
 Boto3 documentation:
@@ -2561,7 +2541,7 @@ Returns the data points of a specific metric for an Amazon Lightsail content
 delivery network (CDN) distribution.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_distribution_metric_data` method.
+`session.create_client("lightsail").get_distribution_metric_data` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_distribution_metric_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_distribution_metric_data)
@@ -2596,7 +2576,7 @@ Returns a `Coroutine` for
 Returns information about one or more of your Amazon Lightsail content delivery
 network (CDN) distributions.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_distributions`
+Type annotations for `session.create_client("lightsail").get_distributions`
 method.
 
 Boto3 documentation:
@@ -2621,8 +2601,7 @@ Returns a `Coroutine` for
 
 Returns information about a specific domain recordset.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_domain`
-method.
+Type annotations for `session.create_client("lightsail").get_domain` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_domain)
@@ -2645,8 +2624,7 @@ Returns a `Coroutine` for
 
 Returns a list of all domains in the user's account.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_domains`
-method.
+Type annotations for `session.create_client("lightsail").get_domains` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_domains](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_domains)
@@ -2671,7 +2649,7 @@ Returns all export snapshot records created as a result of the
 `export snapshot` operation.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_export_snapshot_records` method.
+`session.create_client("lightsail").get_export_snapshot_records` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_export_snapshot_records](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_export_snapshot_records)
@@ -2696,8 +2674,7 @@ Returns a `Coroutine` for
 Returns information about a specific Amazon Lightsail instance, which is a
 virtual private server.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_instance`
-method.
+Type annotations for `session.create_client("lightsail").get_instance` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_instance)
@@ -2722,7 +2699,7 @@ Returns temporary SSH keys you can use to connect to a specific virtual private
 server, or *instance* .
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_instance_access_details` method.
+`session.create_client("lightsail").get_instance_access_details` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_instance_access_details](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_instance_access_details)
@@ -2750,7 +2727,7 @@ Returns the data points for the specified Amazon Lightsail instance metric,
 given an instance name.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_instance_metric_data` method.
+`session.create_client("lightsail").get_instance_metric_data` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_instance_metric_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_instance_metric_data)
@@ -2786,7 +2763,7 @@ IP addresses allowed to connect to the instance through the ports, and the
 protocol.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_instance_port_states` method.
+`session.create_client("lightsail").get_instance_port_states` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_instance_port_states](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_instance_port_states)
@@ -2810,8 +2787,8 @@ Returns a `Coroutine` for
 
 Returns information about a specific instance snapshot.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").get_instance_snapshot` method.
+Type annotations for `session.create_client("lightsail").get_instance_snapshot`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.get_instance_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_instance_snapshot)
@@ -2836,7 +2813,7 @@ Returns a `Coroutine` for
 Returns all instance snapshots for the user's account.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_instance_snapshots` method.
+`session.create_client("lightsail").get_instance_snapshots` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_instance_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_instance_snapshots)
@@ -2860,8 +2837,8 @@ Returns a `Coroutine` for
 
 Returns the state of a specific instance.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").get_instance_state` method.
+Type annotations for `session.create_client("lightsail").get_instance_state`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.get_instance_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_instance_state)
@@ -2886,8 +2863,7 @@ Returns a `Coroutine` for
 Returns information about all Amazon Lightsail virtual private servers, or
 *instances* .
 
-Type annotations for `aiobotocore.create_client("lightsail").get_instances`
-method.
+Type annotations for `session.create_client("lightsail").get_instances` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_instances)
@@ -2910,8 +2886,7 @@ Returns a `Coroutine` for
 
 Returns information about a specific key pair.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_key_pair`
-method.
+Type annotations for `session.create_client("lightsail").get_key_pair` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_key_pair](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_key_pair)
@@ -2934,8 +2909,7 @@ Returns a `Coroutine` for
 
 Returns information about all key pairs in the user's account.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_key_pairs`
-method.
+Type annotations for `session.create_client("lightsail").get_key_pairs` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_key_pairs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_key_pairs)
@@ -2958,7 +2932,7 @@ Returns a `Coroutine` for
 
 Returns information about the specified Lightsail load balancer.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_load_balancer`
+Type annotations for `session.create_client("lightsail").get_load_balancer`
 method.
 
 Boto3 documentation:
@@ -2983,7 +2957,7 @@ Returns a `Coroutine` for
 Returns information about health metrics for your Lightsail load balancer.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_load_balancer_metric_data` method.
+`session.create_client("lightsail").get_load_balancer_metric_data` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_load_balancer_metric_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_load_balancer_metric_data)
@@ -3019,8 +2993,7 @@ Returns information about the TLS certificates that are associated with the
 specified Lightsail load balancer.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_load_balancer_tls_certificates`
-method.
+`session.create_client("lightsail").get_load_balancer_tls_certificates` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_load_balancer_tls_certificates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_load_balancer_tls_certificates)
@@ -3044,8 +3017,8 @@ Returns a `Coroutine` for
 
 Returns information about all load balancers in an account.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").get_load_balancers` method.
+Type annotations for `session.create_client("lightsail").get_load_balancers`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.get_load_balancers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_load_balancers)
@@ -3069,8 +3042,7 @@ Returns a `Coroutine` for
 
 Returns information about a specific operation.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_operation`
-method.
+Type annotations for `session.create_client("lightsail").get_operation` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_operation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_operation)
@@ -3093,7 +3065,7 @@ Returns a `Coroutine` for
 
 Returns information about all operations.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_operations`
+Type annotations for `session.create_client("lightsail").get_operations`
 method.
 
 Boto3 documentation:
@@ -3118,7 +3090,7 @@ Returns a `Coroutine` for
 Gets operations for a specific resource (e.g., an instance or a static IP).
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_operations_for_resource` method.
+`session.create_client("lightsail").get_operations_for_resource` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_operations_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_operations_for_resource)
@@ -3143,8 +3115,7 @@ Returns a `Coroutine` for
 
 Returns a list of all valid regions for Amazon Lightsail.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_regions`
-method.
+Type annotations for `session.create_client("lightsail").get_regions` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_regions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_regions)
@@ -3169,7 +3140,7 @@ Returns a `Coroutine` for
 Returns information about a specific database in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_relational_database` method.
+`session.create_client("lightsail").get_relational_database` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_relational_database](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_relational_database)
@@ -3194,8 +3165,7 @@ Returns a `Coroutine` for
 Returns a list of available database blueprints in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_relational_database_blueprints`
-method.
+`session.create_client("lightsail").get_relational_database_blueprints` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_relational_database_blueprints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_relational_database_blueprints)
@@ -3220,8 +3190,7 @@ Returns a `Coroutine` for
 Returns the list of bundles that are available in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_relational_database_bundles`
-method.
+`session.create_client("lightsail").get_relational_database_bundles` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_relational_database_bundles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_relational_database_bundles)
@@ -3246,7 +3215,7 @@ Returns a `Coroutine` for
 Returns a list of events for a specific database in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_relational_database_events` method.
+`session.create_client("lightsail").get_relational_database_events` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_relational_database_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_relational_database_events)
@@ -3273,8 +3242,7 @@ Returns a `Coroutine` for
 Returns a list of log events for a database in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_relational_database_log_events`
-method.
+`session.create_client("lightsail").get_relational_database_log_events` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_relational_database_log_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_relational_database_log_events)
@@ -3305,7 +3273,7 @@ Returns a list of available log streams for a specific database in Amazon
 Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_relational_database_log_streams`
+`session.create_client("lightsail").get_relational_database_log_streams`
 method.
 
 Boto3 documentation:
@@ -3332,7 +3300,7 @@ Returns the current, previous, or pending versions of the master user password
 for a Lightsail database.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_relational_database_master_user_password`
+`session.create_client("lightsail").get_relational_database_master_user_password`
 method.
 
 Boto3 documentation:
@@ -3362,7 +3330,7 @@ Returns the data points of the specified metric for a database in Amazon
 Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_relational_database_metric_data`
+`session.create_client("lightsail").get_relational_database_metric_data`
 method.
 
 Boto3 documentation:
@@ -3399,8 +3367,7 @@ Returns all of the runtime parameters offered by the underlying database
 software, or engine, for a specific database in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_relational_database_parameters`
-method.
+`session.create_client("lightsail").get_relational_database_parameters` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_relational_database_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_relational_database_parameters)
@@ -3426,8 +3393,7 @@ Returns a `Coroutine` for
 Returns information about a specific database snapshot in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_relational_database_snapshot`
-method.
+`session.create_client("lightsail").get_relational_database_snapshot` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_relational_database_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_relational_database_snapshot)
@@ -3452,8 +3418,7 @@ Returns a `Coroutine` for
 Returns information about all of your database snapshots in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_relational_database_snapshots`
-method.
+`session.create_client("lightsail").get_relational_database_snapshots` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_relational_database_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_relational_database_snapshots)
@@ -3478,7 +3443,7 @@ Returns a `Coroutine` for
 Returns information about all of your databases in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_relational_databases` method.
+`session.create_client("lightsail").get_relational_databases` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_relational_databases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_relational_databases)
@@ -3502,8 +3467,7 @@ Returns a `Coroutine` for
 
 Returns information about an Amazon Lightsail static IP.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_static_ip`
-method.
+Type annotations for `session.create_client("lightsail").get_static_ip` method.
 
 Boto3 documentation:
 [Lightsail.Client.get_static_ip](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.get_static_ip)
@@ -3526,7 +3490,7 @@ Returns a `Coroutine` for
 
 Returns information about all static IPs in the user's account.
 
-Type annotations for `aiobotocore.create_client("lightsail").get_static_ips`
+Type annotations for `session.create_client("lightsail").get_static_ips`
 method.
 
 Boto3 documentation:
@@ -3550,7 +3514,7 @@ Returns a `Coroutine` for
 
 Imports a public SSH key from a specific key pair.
 
-Type annotations for `aiobotocore.create_client("lightsail").import_key_pair`
+Type annotations for `session.create_client("lightsail").import_key_pair`
 method.
 
 Boto3 documentation:
@@ -3575,8 +3539,7 @@ Returns a `Coroutine` for
 
 Returns a Boolean value indicating whether your Lightsail VPC is peered.
 
-Type annotations for `aiobotocore.create_client("lightsail").is_vpc_peered`
-method.
+Type annotations for `session.create_client("lightsail").is_vpc_peered` method.
 
 Boto3 documentation:
 [Lightsail.Client.is_vpc_peered](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.is_vpc_peered)
@@ -3595,7 +3558,7 @@ addresses allowed to connect to the instance through the ports, and the
 protocol.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").open_instance_public_ports` method.
+`session.create_client("lightsail").open_instance_public_ports` method.
 
 Boto3 documentation:
 [Lightsail.Client.open_instance_public_ports](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.open_instance_public_ports)
@@ -3620,7 +3583,7 @@ Returns a `Coroutine` for
 
 Peers the Lightsail VPC with the user's default VPC.
 
-Type annotations for `aiobotocore.create_client("lightsail").peer_vpc` method.
+Type annotations for `session.create_client("lightsail").peer_vpc` method.
 
 Boto3 documentation:
 [Lightsail.Client.peer_vpc](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.peer_vpc)
@@ -3636,7 +3599,7 @@ Returns a `Coroutine` for
 
 Creates or updates an alarm, and associates it with the specified metric.
 
-Type annotations for `aiobotocore.create_client("lightsail").put_alarm` method.
+Type annotations for `session.create_client("lightsail").put_alarm` method.
 
 Boto3 documentation:
 [Lightsail.Client.put_alarm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.put_alarm)
@@ -3676,7 +3639,7 @@ addresses allowed to connect to the instance through the ports, and the
 protocol.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").put_instance_public_ports` method.
+`session.create_client("lightsail").put_instance_public_ports` method.
 
 Boto3 documentation:
 [Lightsail.Client.put_instance_public_ports](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.put_instance_public_ports)
@@ -3702,7 +3665,7 @@ Returns a `Coroutine` for
 
 Restarts a specific instance.
 
-Type annotations for `aiobotocore.create_client("lightsail").reboot_instance`
+Type annotations for `session.create_client("lightsail").reboot_instance`
 method.
 
 Boto3 documentation:
@@ -3727,7 +3690,7 @@ Returns a `Coroutine` for
 Restarts a specific database in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").reboot_relational_database` method.
+`session.create_client("lightsail").reboot_relational_database` method.
 
 Boto3 documentation:
 [Lightsail.Client.reboot_relational_database](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.reboot_relational_database)
@@ -3752,7 +3715,7 @@ Returns a `Coroutine` for
 Registers a container image to your Amazon Lightsail container service.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").register_container_image` method.
+`session.create_client("lightsail").register_container_image` method.
 
 Boto3 documentation:
 [Lightsail.Client.register_container_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.register_container_image)
@@ -3778,7 +3741,7 @@ Returns a `Coroutine` for
 
 Deletes a specific static IP from your account.
 
-Type annotations for `aiobotocore.create_client("lightsail").release_static_ip`
+Type annotations for `session.create_client("lightsail").release_static_ip`
 method.
 
 Boto3 documentation:
@@ -3804,7 +3767,7 @@ Deletes currently cached content from your Amazon Lightsail content delivery
 network (CDN) distribution.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").reset_distribution_cache` method.
+`session.create_client("lightsail").reset_distribution_cache` method.
 
 Boto3 documentation:
 [Lightsail.Client.reset_distribution_cache](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.reset_distribution_cache)
@@ -3830,8 +3793,7 @@ Sends a verification request to an email contact method to ensure it's owned by
 the requester.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").send_contact_method_verification`
-method.
+`session.create_client("lightsail").send_contact_method_verification` method.
 
 Boto3 documentation:
 [Lightsail.Client.send_contact_method_verification](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.send_contact_method_verification)
@@ -3857,8 +3819,8 @@ Returns a `Coroutine` for
 
 Sets the IP address type for an Amazon Lightsail resource.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").set_ip_address_type` method.
+Type annotations for `session.create_client("lightsail").set_ip_address_type`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.set_ip_address_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.set_ip_address_type)
@@ -3888,7 +3850,7 @@ Sets the Amazon Lightsail resources that can access the specified Lightsail
 bucket.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").set_resource_access_for_bucket` method.
+`session.create_client("lightsail").set_resource_access_for_bucket` method.
 
 Boto3 documentation:
 [Lightsail.Client.set_resource_access_for_bucket](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.set_resource_access_for_bucket)
@@ -3915,7 +3877,7 @@ Returns a `Coroutine` for
 
 Starts a specific Amazon Lightsail instance from a stopped state.
 
-Type annotations for `aiobotocore.create_client("lightsail").start_instance`
+Type annotations for `session.create_client("lightsail").start_instance`
 method.
 
 Boto3 documentation:
@@ -3940,7 +3902,7 @@ Returns a `Coroutine` for
 Starts a specific database from a stopped state in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").start_relational_database` method.
+`session.create_client("lightsail").start_relational_database` method.
 
 Boto3 documentation:
 [Lightsail.Client.start_relational_database](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.start_relational_database)
@@ -3964,8 +3926,7 @@ Returns a `Coroutine` for
 
 Stops a specific Amazon Lightsail instance that is currently running.
 
-Type annotations for `aiobotocore.create_client("lightsail").stop_instance`
-method.
+Type annotations for `session.create_client("lightsail").stop_instance` method.
 
 Boto3 documentation:
 [Lightsail.Client.stop_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.stop_instance)
@@ -3990,7 +3951,7 @@ Returns a `Coroutine` for
 Stops a specific database that is currently running in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").stop_relational_database` method.
+`session.create_client("lightsail").stop_relational_database` method.
 
 Boto3 documentation:
 [Lightsail.Client.stop_relational_database](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.stop_relational_database)
@@ -4015,8 +3976,7 @@ Returns a `Coroutine` for
 
 Adds one or more tags to the specified Amazon Lightsail resource.
 
-Type annotations for `aiobotocore.create_client("lightsail").tag_resource`
-method.
+Type annotations for `session.create_client("lightsail").tag_resource` method.
 
 Boto3 documentation:
 [Lightsail.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.tag_resource)
@@ -4041,8 +4001,7 @@ Returns a `Coroutine` for
 
 Tests an alarm by displaying a banner on the Amazon Lightsail console.
 
-Type annotations for `aiobotocore.create_client("lightsail").test_alarm`
-method.
+Type annotations for `session.create_client("lightsail").test_alarm` method.
 
 Boto3 documentation:
 [Lightsail.Client.test_alarm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.test_alarm)
@@ -4066,8 +4025,7 @@ Returns a `Coroutine` for
 
 Unpeers the Lightsail VPC from the user's default VPC.
 
-Type annotations for `aiobotocore.create_client("lightsail").unpeer_vpc`
-method.
+Type annotations for `session.create_client("lightsail").unpeer_vpc` method.
 
 Boto3 documentation:
 [Lightsail.Client.unpeer_vpc](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.unpeer_vpc)
@@ -4084,7 +4042,7 @@ Returns a `Coroutine` for
 Deletes the specified set of tag keys and their values from the specified
 Amazon Lightsail resource.
 
-Type annotations for `aiobotocore.create_client("lightsail").untag_resource`
+Type annotations for `session.create_client("lightsail").untag_resource`
 method.
 
 Boto3 documentation:
@@ -4110,8 +4068,7 @@ Returns a `Coroutine` for
 
 Updates an existing Amazon Lightsail bucket.
 
-Type annotations for `aiobotocore.create_client("lightsail").update_bucket`
-method.
+Type annotations for `session.create_client("lightsail").update_bucket` method.
 
 Boto3 documentation:
 [Lightsail.Client.update_bucket](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.update_bucket)
@@ -4139,8 +4096,8 @@ Returns a `Coroutine` for
 
 Updates the bundle, or storage plan, of an existing Amazon Lightsail bucket.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").update_bucket_bundle` method.
+Type annotations for `session.create_client("lightsail").update_bucket_bundle`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.update_bucket_bundle](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.update_bucket_bundle)
@@ -4167,7 +4124,7 @@ Updates the configuration of your Amazon Lightsail container service, such as
 its power, scale, and public domain names.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").update_container_service` method.
+`session.create_client("lightsail").update_container_service` method.
 
 Boto3 documentation:
 [Lightsail.Client.update_container_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.update_container_service)
@@ -4197,8 +4154,8 @@ Returns a `Coroutine` for
 Updates an existing Amazon Lightsail content delivery network (CDN)
 distribution.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").update_distribution` method.
+Type annotations for `session.create_client("lightsail").update_distribution`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.update_distribution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.update_distribution)
@@ -4232,7 +4189,7 @@ Updates the bundle of your Amazon Lightsail content delivery network (CDN)
 distribution.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").update_distribution_bundle` method.
+`session.create_client("lightsail").update_distribution_bundle` method.
 
 Boto3 documentation:
 [Lightsail.Client.update_distribution_bundle](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.update_distribution_bundle)
@@ -4257,8 +4214,8 @@ Returns a `Coroutine` for
 
 Updates a domain recordset after it is created.
 
-Type annotations for
-`aiobotocore.create_client("lightsail").update_domain_entry` method.
+Type annotations for `session.create_client("lightsail").update_domain_entry`
+method.
 
 Boto3 documentation:
 [Lightsail.Client.update_domain_entry](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.update_domain_entry)
@@ -4285,7 +4242,7 @@ Returns a `Coroutine` for
 Updates the specified attribute for a load balancer.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").update_load_balancer_attribute` method.
+`session.create_client("lightsail").update_load_balancer_attribute` method.
 
 Boto3 documentation:
 [Lightsail.Client.update_load_balancer_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.update_load_balancer_attribute)
@@ -4314,7 +4271,7 @@ Returns a `Coroutine` for
 Allows the update of one or more attributes of a database in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").update_relational_database` method.
+`session.create_client("lightsail").update_relational_database` method.
 
 Boto3 documentation:
 [Lightsail.Client.update_relational_database](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.update_relational_database)
@@ -4348,7 +4305,7 @@ Returns a `Coroutine` for
 Allows the update of one or more parameters of a database in Amazon Lightsail.
 
 Type annotations for
-`aiobotocore.create_client("lightsail").update_relational_database_parameters`
+`session.create_client("lightsail").update_relational_database_parameters`
 method.
 
 Boto3 documentation:
@@ -4370,12 +4327,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateRelationalDatabaseParametersResultTypeDef](./type_defs.md#updaterelationaldatabaseparametersresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("lightsail").__aenter__` method.
+
+Boto3 documentation:
+[Lightsail.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [LightsailClient](#lightsailclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("lightsail").__aexit__` method.
+
+Boto3 documentation:
+[Lightsail.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html#Lightsail.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("lightsail").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("lightsail").get_paginator` method
+with overloads.
 
 - `client.get_paginator("get_active_names")` ->
   [GetActiveNamesPaginator](./paginators.md#getactivenamespaginator)

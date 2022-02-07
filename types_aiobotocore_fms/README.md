@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[fms]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[fms]'
+
+# standalone installation
 pip install types-aiobotocore-fms
 ```
 
@@ -29,8 +33,7 @@ pip install types-aiobotocore-fms
 
 ## FMSClient
 
-Type annotations for `aiobotocore.create_client("fms")` as
-[FMSClient](./client.md)
+Type annotations for `session.create_client("fms")` as [FMSClient](./client.md)
 
 Can be used directly:
 
@@ -42,6 +45,8 @@ from types_aiobotocore_fms.client import FMSClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_admin_account](./client.md#associate_admin_account)
 - [can_paginate](./client.md#can_paginate)
 - [delete_apps_list](./client.md#delete_apps_list)
@@ -97,7 +102,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_fms.paginators import ListAppsListsPaginator, ...
+from types_aiobotocore_fms.paginator import ListAppsListsPaginator, ...
 ```
 
 - [ListAppsListsPaginator](./paginators.md#listappslistspaginator)

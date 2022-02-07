@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[kinesis]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[kinesis]'
+
+# standalone installation
 pip install types-aiobotocore-kinesis
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-kinesis
 
 ## KinesisClient
 
-Type annotations for `aiobotocore.create_client("kinesis")` as
+Type annotations for `session.create_client("kinesis")` as
 [KinesisClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_kinesis.client import KinesisClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_tags_to_stream](./client.md#add_tags_to_stream)
 - [can_paginate](./client.md#can_paginate)
 - [create_stream](./client.md#create_stream)
@@ -111,7 +117,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_kinesis.paginators import DescribeStreamPaginator, ...
+from types_aiobotocore_kinesis.paginator import DescribeStreamPaginator, ...
 ```
 
 - [DescribeStreamPaginator](./paginators.md#describestreampaginator)
@@ -129,7 +135,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_kinesis.waiters import StreamExistsWaiter, ...
+from types_aiobotocore_kinesis.waiter import StreamExistsWaiter, ...
 ```
 
 - [StreamExistsWaiter](./waiters.md#streamexistswaiter)

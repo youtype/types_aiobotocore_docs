@@ -18,17 +18,19 @@ type annotations stubs module
 ## ListAttacksPaginator
 
 Type annotations for
-`aiobotocore.create_client("shield").get_paginator("list_attacks")`.
+`session.create_client("shield").get_paginator("list_attacks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_shield.paginator import ListAttacksPaginator
 
-def get_list_attacks_paginator() -> ListAttacksPaginator:
-    return Session().create_client("shield").get_paginator("list_attacks")
+session = get_session()
+async with session.create_client("shield") as client:
+    client: ShieldClient
+    paginator: ListAttacksPaginator = client.get_paginator("list_attacks")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `ListAttacksPaginator.paginate` method:
 ## ListProtectionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("shield").get_paginator("list_protections")`.
+`session.create_client("shield").get_paginator("list_protections")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_shield.paginator import ListProtectionsPaginator
 
-def get_list_protections_paginator() -> ListProtectionsPaginator:
-    return Session().create_client("shield").get_paginator("list_protections")
+session = get_session()
+async with session.create_client("shield") as client:
+    client: ShieldClient
+    paginator: ListProtectionsPaginator = client.get_paginator("list_protections")
 ```
 
 Boto3 documentation:

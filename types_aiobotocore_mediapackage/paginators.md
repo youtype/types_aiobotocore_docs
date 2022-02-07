@@ -19,17 +19,19 @@ type annotations stubs module
 ## ListChannelsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediapackage").get_paginator("list_channels")`.
+`session.create_client("mediapackage").get_paginator("list_channels")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediapackage.paginator import ListChannelsPaginator
 
-def get_list_channels_paginator() -> ListChannelsPaginator:
-    return Session().create_client("mediapackage").get_paginator("list_channels")
+session = get_session()
+async with session.create_client("mediapackage") as client:
+    client: MediaPackageClient
+    paginator: ListChannelsPaginator = client.get_paginator("list_channels")
 ```
 
 Boto3 documentation:
@@ -48,17 +50,19 @@ Arguments for `ListChannelsPaginator.paginate` method:
 ## ListHarvestJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediapackage").get_paginator("list_harvest_jobs")`.
+`session.create_client("mediapackage").get_paginator("list_harvest_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediapackage.paginator import ListHarvestJobsPaginator
 
-def get_list_harvest_jobs_paginator() -> ListHarvestJobsPaginator:
-    return Session().create_client("mediapackage").get_paginator("list_harvest_jobs")
+session = get_session()
+async with session.create_client("mediapackage") as client:
+    client: MediaPackageClient
+    paginator: ListHarvestJobsPaginator = client.get_paginator("list_harvest_jobs")
 ```
 
 Boto3 documentation:
@@ -79,17 +83,19 @@ Arguments for `ListHarvestJobsPaginator.paginate` method:
 ## ListOriginEndpointsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediapackage").get_paginator("list_origin_endpoints")`.
+`session.create_client("mediapackage").get_paginator("list_origin_endpoints")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediapackage.paginator import ListOriginEndpointsPaginator
 
-def get_list_origin_endpoints_paginator() -> ListOriginEndpointsPaginator:
-    return Session().create_client("mediapackage").get_paginator("list_origin_endpoints")
+session = get_session()
+async with session.create_client("mediapackage") as client:
+    client: MediaPackageClient
+    paginator: ListOriginEndpointsPaginator = client.get_paginator("list_origin_endpoints")
 ```
 
 Boto3 documentation:

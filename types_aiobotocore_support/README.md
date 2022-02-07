@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[support]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[support]'
+
+# standalone installation
 pip install types-aiobotocore-support
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-support
 
 ## SupportClient
 
-Type annotations for `aiobotocore.create_client("support")` as
+Type annotations for `session.create_client("support")` as
 [SupportClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_support.client import SupportClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_attachments_to_set](./client.md#add_attachments_to_set)
 - [add_communication_to_case](./client.md#add_communication_to_case)
 - [can_paginate](./client.md#can_paginate)
@@ -88,7 +94,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_support.paginators import DescribeCasesPaginator, ...
+from types_aiobotocore_support.paginator import DescribeCasesPaginator, ...
 ```
 
 - [DescribeCasesPaginator](./paginators.md#describecasespaginator)

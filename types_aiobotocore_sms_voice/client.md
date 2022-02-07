@@ -24,21 +24,24 @@ type annotations stubs module
     - [list_configuration_sets](#list_configuration_sets)
     - [send_voice_message](#send_voice_message)
     - [update_configuration_set_event_destination](#update_configuration_set_event_destination)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="pinpointsmsvoiceclient"></a>
 
 ## PinpointSMSVoiceClient
 
-Type annotations for `aiobotocore.create_client("sms-voice")`
+Type annotations for `session.create_client("sms-voice")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_sms_voice.client import PinpointSMSVoiceClient
 
-def get_sms-voice_client() -> PinpointSMSVoiceClient:
-    return Session().client("sms-voice")
+session = get_session()
+async with session.create_client("sms-voice") as client:
+    client: PinpointSMSVoiceClient
 ```
 
 Boto3 documentation:
@@ -78,8 +81,7 @@ Exceptions:
 
 PinpointSMSVoiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("sms-voice").exceptions`
-method.
+Type annotations for `session.create_client("sms-voice").exceptions` method.
 
 Boto3 documentation:
 [PinpointSMSVoice.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms-voice.html#PinpointSMSVoice.Client.exceptions)
@@ -92,19 +94,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("sms-voice").can_paginate`
-method.
+Type annotations for `session.create_client("sms-voice").can_paginate` method.
 
 Boto3 documentation:
 [PinpointSMSVoice.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms-voice.html#PinpointSMSVoice.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_configuration_set"></a>
 
@@ -113,7 +112,7 @@ Returns a `Coroutine` for `bool`.
 Create a new configuration set.
 
 Type annotations for
-`aiobotocore.create_client("sms-voice").create_configuration_set` method.
+`session.create_client("sms-voice").create_configuration_set` method.
 
 Boto3 documentation:
 [PinpointSMSVoice.Client.create_configuration_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms-voice.html#PinpointSMSVoice.Client.create_configuration_set)
@@ -137,7 +136,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Create a new event destination in a configuration set.
 
 Type annotations for
-`aiobotocore.create_client("sms-voice").create_configuration_set_event_destination`
+`session.create_client("sms-voice").create_configuration_set_event_destination`
 method.
 
 Boto3 documentation:
@@ -165,7 +164,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes an existing configuration set.
 
 Type annotations for
-`aiobotocore.create_client("sms-voice").delete_configuration_set` method.
+`session.create_client("sms-voice").delete_configuration_set` method.
 
 Boto3 documentation:
 [PinpointSMSVoice.Client.delete_configuration_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms-voice.html#PinpointSMSVoice.Client.delete_configuration_set)
@@ -189,7 +188,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes an event destination in a configuration set.
 
 Type annotations for
-`aiobotocore.create_client("sms-voice").delete_configuration_set_event_destination`
+`session.create_client("sms-voice").delete_configuration_set_event_destination`
 method.
 
 Boto3 documentation:
@@ -215,7 +214,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("sms-voice").generate_presigned_url` method.
+`session.create_client("sms-voice").generate_presigned_url` method.
 
 Boto3 documentation:
 [PinpointSMSVoice.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms-voice.html#PinpointSMSVoice.Client.generate_presigned_url)
@@ -241,7 +240,7 @@ reports, the Amazon Resource Name (ARN) of the destination, and the name of the
 event destination.
 
 Type annotations for
-`aiobotocore.create_client("sms-voice").get_configuration_set_event_destinations`
+`session.create_client("sms-voice").get_configuration_set_event_destinations`
 method.
 
 Boto3 documentation:
@@ -268,7 +267,7 @@ List all of the configuration sets associated with your Amazon Pinpoint account
 in the current region.
 
 Type annotations for
-`aiobotocore.create_client("sms-voice").list_configuration_sets` method.
+`session.create_client("sms-voice").list_configuration_sets` method.
 
 Boto3 documentation:
 [PinpointSMSVoice.Client.list_configuration_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms-voice.html#PinpointSMSVoice.Client.list_configuration_sets)
@@ -293,8 +292,8 @@ Returns a `Coroutine` for
 
 Create a new voice message and send it to a recipient's phone number.
 
-Type annotations for
-`aiobotocore.create_client("sms-voice").send_voice_message` method.
+Type annotations for `session.create_client("sms-voice").send_voice_message`
+method.
 
 Boto3 documentation:
 [PinpointSMSVoice.Client.send_voice_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms-voice.html#PinpointSMSVoice.Client.send_voice_message)
@@ -324,7 +323,7 @@ Returns a `Coroutine` for
 Update an event destination in a configuration set.
 
 Type annotations for
-`aiobotocore.create_client("sms-voice").update_configuration_set_event_destination`
+`session.create_client("sms-voice").update_configuration_set_event_destination`
 method.
 
 Boto3 documentation:
@@ -344,3 +343,35 @@ Keyword-only arguments:
   [EventDestinationDefinitionTypeDef](./type_defs.md#eventdestinationdefinitiontypedef)
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("sms-voice").__aenter__` method.
+
+Boto3 documentation:
+[PinpointSMSVoice.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms-voice.html#PinpointSMSVoice.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [PinpointSMSVoiceClient](#pinpointsmsvoiceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("sms-voice").__aexit__` method.
+
+Boto3 documentation:
+[PinpointSMSVoice.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sms-voice.html#PinpointSMSVoice.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

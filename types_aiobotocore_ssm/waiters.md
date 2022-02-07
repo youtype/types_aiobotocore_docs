@@ -17,7 +17,7 @@ type annotations stubs module
 ## CommandExecutedWaiter
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_waiter("command_executed")`.
+`session.create_client("ssm").get_waiter("command_executed")`.
 
 Can be used directly:
 
@@ -27,7 +27,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ssm.waiter import CommandExecutedWaiter
 
 def get_command_executed_waiter() -> CommandExecutedWaiter:
-    return Session().create_client("ssm").get_waiter("command_executed")
+    return Session().client("ssm").get_waiter("command_executed")
 ```
 
 Boto3 documentation:

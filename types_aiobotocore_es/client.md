@@ -56,22 +56,25 @@ type annotations stubs module
     - [update_elasticsearch_domain_config](#update_elasticsearch_domain_config)
     - [update_package](#update_package)
     - [upgrade_elasticsearch_domain](#upgrade_elasticsearch_domain)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="elasticsearchserviceclient"></a>
 
 ## ElasticsearchServiceClient
 
-Type annotations for `aiobotocore.create_client("es")`
+Type annotations for `session.create_client("es")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_es.client import ElasticsearchServiceClient
 
-def get_es_client() -> ElasticsearchServiceClient:
-    return Session().client("es")
+session = get_session()
+async with session.create_client("es") as client:
+    client: ElasticsearchServiceClient
 ```
 
 Boto3 documentation:
@@ -116,7 +119,7 @@ Exceptions:
 
 ElasticsearchServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("es").exceptions` method.
+Type annotations for `session.create_client("es").exceptions` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.exceptions)
@@ -131,7 +134,7 @@ Allows the destination domain owner to accept an inbound cross-cluster search
 connection request.
 
 Type annotations for
-`aiobotocore.create_client("es").accept_inbound_cross_cluster_search_connection`
+`session.create_client("es").accept_inbound_cross_cluster_search_connection`
 method.
 
 Boto3 documentation:
@@ -157,7 +160,7 @@ Returns a `Coroutine` for
 
 Attaches tags to an existing Elasticsearch domain.
 
-Type annotations for `aiobotocore.create_client("es").add_tags` method.
+Type annotations for `session.create_client("es").add_tags` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.add_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.add_tags)
@@ -178,8 +181,7 @@ Keyword-only arguments:
 
 Associates a package with an Amazon ES domain.
 
-Type annotations for `aiobotocore.create_client("es").associate_package`
-method.
+Type annotations for `session.create_client("es").associate_package` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.associate_package](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.associate_package)
@@ -203,18 +205,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("es").can_paginate` method.
+Type annotations for `session.create_client("es").can_paginate` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_elasticsearch_service_software_update"></a>
 
@@ -223,7 +223,7 @@ Returns a `Coroutine` for `bool`.
 Cancels a scheduled service software update for an Amazon ES domain.
 
 Type annotations for
-`aiobotocore.create_client("es").cancel_elasticsearch_service_software_update`
+`session.create_client("es").cancel_elasticsearch_service_software_update`
 method.
 
 Boto3 documentation:
@@ -249,8 +249,8 @@ Returns a `Coroutine` for
 
 Creates a new Elasticsearch domain.
 
-Type annotations for
-`aiobotocore.create_client("es").create_elasticsearch_domain` method.
+Type annotations for `session.create_client("es").create_elasticsearch_domain`
+method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.create_elasticsearch_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.create_elasticsearch_domain)
@@ -300,7 +300,7 @@ Creates a new cross-cluster search connection from a source domain to a
 destination domain.
 
 Type annotations for
-`aiobotocore.create_client("es").create_outbound_cross_cluster_search_connection`
+`session.create_client("es").create_outbound_cross_cluster_search_connection`
 method.
 
 Boto3 documentation:
@@ -332,7 +332,7 @@ Returns a `Coroutine` for
 
 Create a package for use with Amazon ES domains.
 
-Type annotations for `aiobotocore.create_client("es").create_package` method.
+Type annotations for `session.create_client("es").create_package` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.create_package](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.create_package)
@@ -360,8 +360,8 @@ Returns a `Coroutine` for
 
 Permanently deletes the specified Elasticsearch domain and all of its data.
 
-Type annotations for
-`aiobotocore.create_client("es").delete_elasticsearch_domain` method.
+Type annotations for `session.create_client("es").delete_elasticsearch_domain`
+method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.delete_elasticsearch_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.delete_elasticsearch_domain)
@@ -387,7 +387,7 @@ Deletes the service-linked role that Elasticsearch Service uses to manage and
 maintain VPC domains.
 
 Type annotations for
-`aiobotocore.create_client("es").delete_elasticsearch_service_role` method.
+`session.create_client("es").delete_elasticsearch_service_role` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.delete_elasticsearch_service_role](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.delete_elasticsearch_service_role)
@@ -403,7 +403,7 @@ Allows the destination domain owner to delete an existing inbound cross-cluster
 search connection.
 
 Type annotations for
-`aiobotocore.create_client("es").delete_inbound_cross_cluster_search_connection`
+`session.create_client("es").delete_inbound_cross_cluster_search_connection`
 method.
 
 Boto3 documentation:
@@ -431,7 +431,7 @@ Allows the source domain owner to delete an existing outbound cross-cluster
 search connection.
 
 Type annotations for
-`aiobotocore.create_client("es").delete_outbound_cross_cluster_search_connection`
+`session.create_client("es").delete_outbound_cross_cluster_search_connection`
 method.
 
 Boto3 documentation:
@@ -457,7 +457,7 @@ Returns a `Coroutine` for
 
 Delete the package.
 
-Type annotations for `aiobotocore.create_client("es").delete_package` method.
+Type annotations for `session.create_client("es").delete_package` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.delete_package](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.delete_package)
@@ -481,8 +481,8 @@ Returns a `Coroutine` for
 Provides scheduled Auto-Tune action details for the Elasticsearch domain, such
 as Auto-Tune action type, description, severity, and scheduled date.
 
-Type annotations for
-`aiobotocore.create_client("es").describe_domain_auto_tunes` method.
+Type annotations for `session.create_client("es").describe_domain_auto_tunes`
+method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.describe_domain_auto_tunes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.describe_domain_auto_tunes)
@@ -510,7 +510,7 @@ Returns domain configuration information about the specified Elasticsearch
 domain, including the domain ID, domain endpoint, and domain ARN.
 
 Type annotations for
-`aiobotocore.create_client("es").describe_elasticsearch_domain` method.
+`session.create_client("es").describe_elasticsearch_domain` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.describe_elasticsearch_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.describe_elasticsearch_domain)
@@ -537,7 +537,7 @@ domain, such as the state, creation date, update version, and update date for
 cluster options.
 
 Type annotations for
-`aiobotocore.create_client("es").describe_elasticsearch_domain_config` method.
+`session.create_client("es").describe_elasticsearch_domain_config` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.describe_elasticsearch_domain_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.describe_elasticsearch_domain_config)
@@ -563,7 +563,7 @@ Returns domain configuration information about the specified Elasticsearch
 domains, including the domain ID, domain endpoint, and domain ARN.
 
 Type annotations for
-`aiobotocore.create_client("es").describe_elasticsearch_domains` method.
+`session.create_client("es").describe_elasticsearch_domains` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.describe_elasticsearch_domains](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.describe_elasticsearch_domains)
@@ -589,7 +589,7 @@ Describe Elasticsearch Limits for a given InstanceType and
 ElasticsearchVersion.
 
 Type annotations for
-`aiobotocore.create_client("es").describe_elasticsearch_instance_type_limits`
+`session.create_client("es").describe_elasticsearch_instance_type_limits`
 method.
 
 Boto3 documentation:
@@ -621,7 +621,7 @@ Lists all the inbound cross-cluster search connections for a destination
 domain.
 
 Type annotations for
-`aiobotocore.create_client("es").describe_inbound_cross_cluster_search_connections`
+`session.create_client("es").describe_inbound_cross_cluster_search_connections`
 method.
 
 Boto3 documentation:
@@ -650,7 +650,7 @@ Returns a `Coroutine` for
 Lists all the outbound cross-cluster search connections for a source domain.
 
 Type annotations for
-`aiobotocore.create_client("es").describe_outbound_cross_cluster_search_connections`
+`session.create_client("es").describe_outbound_cross_cluster_search_connections`
 method.
 
 Boto3 documentation:
@@ -678,8 +678,7 @@ Returns a `Coroutine` for
 
 Describes all packages available to Amazon ES.
 
-Type annotations for `aiobotocore.create_client("es").describe_packages`
-method.
+Type annotations for `session.create_client("es").describe_packages` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.describe_packages](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.describe_packages)
@@ -706,7 +705,7 @@ Returns a `Coroutine` for
 Lists available reserved Elasticsearch instance offerings.
 
 Type annotations for
-`aiobotocore.create_client("es").describe_reserved_elasticsearch_instance_offerings`
+`session.create_client("es").describe_reserved_elasticsearch_instance_offerings`
 method.
 
 Boto3 documentation:
@@ -735,8 +734,7 @@ Returns a `Coroutine` for
 Returns information about reserved Elasticsearch instances for this account.
 
 Type annotations for
-`aiobotocore.create_client("es").describe_reserved_elasticsearch_instances`
-method.
+`session.create_client("es").describe_reserved_elasticsearch_instances` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.describe_reserved_elasticsearch_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.describe_reserved_elasticsearch_instances)
@@ -762,8 +760,7 @@ Returns a `Coroutine` for
 
 Dissociates a package from the Amazon ES domain.
 
-Type annotations for `aiobotocore.create_client("es").dissociate_package`
-method.
+Type annotations for `session.create_client("es").dissociate_package` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.dissociate_package](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.dissociate_package)
@@ -788,7 +785,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("es").generate_presigned_url`
+Type annotations for `session.create_client("es").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -813,7 +810,7 @@ Returns a `Coroutine` for `str`.
 Returns a list of upgrade compatible Elastisearch versions.
 
 Type annotations for
-`aiobotocore.create_client("es").get_compatible_elasticsearch_versions` method.
+`session.create_client("es").get_compatible_elasticsearch_versions` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.get_compatible_elasticsearch_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.get_compatible_elasticsearch_versions)
@@ -838,8 +835,8 @@ Returns a `Coroutine` for
 Returns a list of versions of the package, along with their creation time and
 commit message.
 
-Type annotations for
-`aiobotocore.create_client("es").get_package_version_history` method.
+Type annotations for `session.create_client("es").get_package_version_history`
+method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.get_package_version_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.get_package_version_history)
@@ -866,8 +863,7 @@ Returns a `Coroutine` for
 Retrieves the complete history of the last 10 upgrades that were performed on
 the domain.
 
-Type annotations for `aiobotocore.create_client("es").get_upgrade_history`
-method.
+Type annotations for `session.create_client("es").get_upgrade_history` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.get_upgrade_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.get_upgrade_history)
@@ -894,8 +890,7 @@ Returns a `Coroutine` for
 Retrieves the latest status of the last upgrade or upgrade eligibility check
 that was performed on the domain.
 
-Type annotations for `aiobotocore.create_client("es").get_upgrade_status`
-method.
+Type annotations for `session.create_client("es").get_upgrade_status` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.get_upgrade_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.get_upgrade_status)
@@ -920,8 +915,7 @@ Returns a `Coroutine` for
 Returns the name of all Elasticsearch domains owned by the current user's
 account.
 
-Type annotations for `aiobotocore.create_client("es").list_domain_names`
-method.
+Type annotations for `session.create_client("es").list_domain_names` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.list_domain_names](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.list_domain_names)
@@ -944,7 +938,7 @@ Returns a `Coroutine` for
 
 Lists all Amazon ES domains associated with the package.
 
-Type annotations for `aiobotocore.create_client("es").list_domains_for_package`
+Type annotations for `session.create_client("es").list_domains_for_package`
 method.
 
 Boto3 documentation:
@@ -974,7 +968,7 @@ ElasticsearchVersion See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListElasticsearchInstanceTypes).
 
 Type annotations for
-`aiobotocore.create_client("es").list_elasticsearch_instance_types` method.
+`session.create_client("es").list_elasticsearch_instance_types` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.list_elasticsearch_instance_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.list_elasticsearch_instance_types)
@@ -1002,8 +996,8 @@ Returns a `Coroutine` for
 List all supported Elasticsearch versions See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/ListElasticsearchVersions).
 
-Type annotations for
-`aiobotocore.create_client("es").list_elasticsearch_versions` method.
+Type annotations for `session.create_client("es").list_elasticsearch_versions`
+method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.list_elasticsearch_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.list_elasticsearch_versions)
@@ -1028,7 +1022,7 @@ Returns a `Coroutine` for
 
 Lists all packages associated with the Amazon ES domain.
 
-Type annotations for `aiobotocore.create_client("es").list_packages_for_domain`
+Type annotations for `session.create_client("es").list_packages_for_domain`
 method.
 
 Boto3 documentation:
@@ -1055,7 +1049,7 @@ Returns a `Coroutine` for
 
 Returns all tags for the given Elasticsearch domain.
 
-Type annotations for `aiobotocore.create_client("es").list_tags` method.
+Type annotations for `session.create_client("es").list_tags` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.list_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.list_tags)
@@ -1079,7 +1073,7 @@ Returns a `Coroutine` for
 Allows you to purchase reserved Elasticsearch instances.
 
 Type annotations for
-`aiobotocore.create_client("es").purchase_reserved_elasticsearch_instance_offering`
+`session.create_client("es").purchase_reserved_elasticsearch_instance_offering`
 method.
 
 Boto3 documentation:
@@ -1109,7 +1103,7 @@ Allows the destination domain owner to reject an inbound cross-cluster search
 connection request.
 
 Type annotations for
-`aiobotocore.create_client("es").reject_inbound_cross_cluster_search_connection`
+`session.create_client("es").reject_inbound_cross_cluster_search_connection`
 method.
 
 Boto3 documentation:
@@ -1135,7 +1129,7 @@ Returns a `Coroutine` for
 
 Removes the specified set of tags from the specified Elasticsearch domain.
 
-Type annotations for `aiobotocore.create_client("es").remove_tags` method.
+Type annotations for `session.create_client("es").remove_tags` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.remove_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.remove_tags)
@@ -1157,7 +1151,7 @@ Keyword-only arguments:
 Schedules a service software update for an Amazon ES domain.
 
 Type annotations for
-`aiobotocore.create_client("es").start_elasticsearch_service_software_update`
+`session.create_client("es").start_elasticsearch_service_software_update`
 method.
 
 Boto3 documentation:
@@ -1185,7 +1179,7 @@ Modifies the cluster configuration of the specified Elasticsearch domain,
 setting as setting the instance type and the number of instances.
 
 Type annotations for
-`aiobotocore.create_client("es").update_elasticsearch_domain_config` method.
+`session.create_client("es").update_elasticsearch_domain_config` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.update_elasticsearch_domain_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.update_elasticsearch_domain_config)
@@ -1232,7 +1226,7 @@ Returns a `Coroutine` for
 
 Updates a package for use with Amazon ES domains.
 
-Type annotations for `aiobotocore.create_client("es").update_package` method.
+Type annotations for `session.create_client("es").update_package` method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.update_package](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.update_package)
@@ -1260,8 +1254,8 @@ Returns a `Coroutine` for
 Allows you to either upgrade your domain or perform an Upgrade eligibility
 check to a compatible Elasticsearch version.
 
-Type annotations for
-`aiobotocore.create_client("es").upgrade_elasticsearch_domain` method.
+Type annotations for `session.create_client("es").upgrade_elasticsearch_domain`
+method.
 
 Boto3 documentation:
 [ElasticsearchService.Client.upgrade_elasticsearch_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.upgrade_elasticsearch_domain)
@@ -1281,12 +1275,45 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpgradeElasticsearchDomainResponseTypeDef](./type_defs.md#upgradeelasticsearchdomainresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("es").__aenter__` method.
+
+Boto3 documentation:
+[ElasticsearchService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[ElasticsearchServiceClient](#elasticsearchserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("es").__aexit__` method.
+
+Boto3 documentation:
+[ElasticsearchService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("es").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("es").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_reserved_elasticsearch_instance_offerings")`
   ->

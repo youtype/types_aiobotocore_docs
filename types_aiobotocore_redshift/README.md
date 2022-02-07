@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[redshift]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[redshift]'
+
+# standalone installation
 pip install types-aiobotocore-redshift
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-redshift
 
 ## RedshiftClient
 
-Type annotations for `aiobotocore.create_client("redshift")` as
+Type annotations for `session.create_client("redshift")` as
 [RedshiftClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_redshift.client import RedshiftClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_reserved_node_exchange](./client.md#accept_reserved_node_exchange)
 - [add_partner](./client.md#add_partner)
 - [associate_data_share_consumer](./client.md#associate_data_share_consumer)
@@ -311,7 +317,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_redshift.paginators import DescribeClusterDbRevisionsPaginator, ...
+from types_aiobotocore_redshift.paginator import DescribeClusterDbRevisionsPaginator, ...
 ```
 
 - [DescribeClusterDbRevisionsPaginator](./paginators.md#describeclusterdbrevisionspaginator)
@@ -357,7 +363,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_redshift.waiters import ClusterAvailableWaiter, ...
+from types_aiobotocore_redshift.waiter import ClusterAvailableWaiter, ...
 ```
 
 - [ClusterAvailableWaiter](./waiters.md#clusteravailablewaiter)

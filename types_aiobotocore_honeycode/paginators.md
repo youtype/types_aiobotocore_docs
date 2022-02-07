@@ -20,17 +20,19 @@ type annotations stubs module
 ## ListTableColumnsPaginator
 
 Type annotations for
-`aiobotocore.create_client("honeycode").get_paginator("list_table_columns")`.
+`session.create_client("honeycode").get_paginator("list_table_columns")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_honeycode.paginator import ListTableColumnsPaginator
 
-def get_list_table_columns_paginator() -> ListTableColumnsPaginator:
-    return Session().create_client("honeycode").get_paginator("list_table_columns")
+session = get_session()
+async with session.create_client("honeycode") as client:
+    client: HoneycodeClient
+    paginator: ListTableColumnsPaginator = client.get_paginator("list_table_columns")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `ListTableColumnsPaginator.paginate` method:
 ## ListTableRowsPaginator
 
 Type annotations for
-`aiobotocore.create_client("honeycode").get_paginator("list_table_rows")`.
+`session.create_client("honeycode").get_paginator("list_table_rows")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_honeycode.paginator import ListTableRowsPaginator
 
-def get_list_table_rows_paginator() -> ListTableRowsPaginator:
-    return Session().create_client("honeycode").get_paginator("list_table_rows")
+session = get_session()
+async with session.create_client("honeycode") as client:
+    client: HoneycodeClient
+    paginator: ListTableRowsPaginator = client.get_paginator("list_table_rows")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `ListTableRowsPaginator.paginate` method:
 ## ListTablesPaginator
 
 Type annotations for
-`aiobotocore.create_client("honeycode").get_paginator("list_tables")`.
+`session.create_client("honeycode").get_paginator("list_tables")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_honeycode.paginator import ListTablesPaginator
 
-def get_list_tables_paginator() -> ListTablesPaginator:
-    return Session().create_client("honeycode").get_paginator("list_tables")
+session = get_session()
+async with session.create_client("honeycode") as client:
+    client: HoneycodeClient
+    paginator: ListTablesPaginator = client.get_paginator("list_tables")
 ```
 
 Boto3 documentation:
@@ -113,17 +119,19 @@ Arguments for `ListTablesPaginator.paginate` method:
 ## QueryTableRowsPaginator
 
 Type annotations for
-`aiobotocore.create_client("honeycode").get_paginator("query_table_rows")`.
+`session.create_client("honeycode").get_paginator("query_table_rows")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_honeycode.paginator import QueryTableRowsPaginator
 
-def get_query_table_rows_paginator() -> QueryTableRowsPaginator:
-    return Session().create_client("honeycode").get_paginator("query_table_rows")
+session = get_session()
+async with session.create_client("honeycode") as client:
+    client: HoneycodeClient
+    paginator: QueryTableRowsPaginator = client.get_paginator("query_table_rows")
 ```
 
 Boto3 documentation:

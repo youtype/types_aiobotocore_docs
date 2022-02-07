@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[shield]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[shield]'
+
+# standalone installation
 pip install types-aiobotocore-shield
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-shield
 
 ## ShieldClient
 
-Type annotations for `aiobotocore.create_client("shield")` as
+Type annotations for `session.create_client("shield")` as
 [ShieldClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_shield.client import ShieldClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_drt_log_bucket](./client.md#associate_drt_log_bucket)
 - [associate_drt_role](./client.md#associate_drt_role)
 - [associate_health_check](./client.md#associate_health_check)
@@ -114,7 +120,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_shield.paginators import ListAttacksPaginator, ...
+from types_aiobotocore_shield.paginator import ListAttacksPaginator, ...
 ```
 
 - [ListAttacksPaginator](./paginators.md#listattackspaginator)

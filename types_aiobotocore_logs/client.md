@@ -58,22 +58,25 @@ type annotations stubs module
     - [tag_log_group](#tag_log_group)
     - [test_metric_filter](#test_metric_filter)
     - [untag_log_group](#untag_log_group)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="cloudwatchlogsclient"></a>
 
 ## CloudWatchLogsClient
 
-Type annotations for `aiobotocore.create_client("logs")`
+Type annotations for `session.create_client("logs")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_logs.client import CloudWatchLogsClient
 
-def get_logs_client() -> CloudWatchLogsClient:
-    return Session().client("logs")
+session = get_session()
+async with session.create_client("logs") as client:
+    client: CloudWatchLogsClient
 ```
 
 Boto3 documentation:
@@ -118,7 +121,7 @@ Exceptions:
 
 CloudWatchLogsClient exceptions.
 
-Type annotations for `aiobotocore.create_client("logs").exceptions` method.
+Type annotations for `session.create_client("logs").exceptions` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.exceptions)
@@ -132,8 +135,7 @@ Returns [Exceptions](#exceptions).
 Associates the specified Key Management Service customer master key (CMK) with
 the specified log group.
 
-Type annotations for `aiobotocore.create_client("logs").associate_kms_key`
-method.
+Type annotations for `session.create_client("logs").associate_kms_key` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.associate_kms_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.associate_kms_key)
@@ -154,18 +156,16 @@ Keyword-only arguments:
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("logs").can_paginate` method.
+Type annotations for `session.create_client("logs").can_paginate` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_export_task"></a>
 
@@ -173,8 +173,7 @@ Returns a `Coroutine` for `bool`.
 
 Cancels the specified export task.
 
-Type annotations for `aiobotocore.create_client("logs").cancel_export_task`
-method.
+Type annotations for `session.create_client("logs").cancel_export_task` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.cancel_export_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.cancel_export_task)
@@ -196,8 +195,7 @@ Keyword-only arguments:
 Creates an export task, which allows you to efficiently export data from a log
 group to an Amazon S3 bucket.
 
-Type annotations for `aiobotocore.create_client("logs").create_export_task`
-method.
+Type annotations for `session.create_client("logs").create_export_task` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.create_export_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.create_export_task)
@@ -227,8 +225,7 @@ Returns a `Coroutine` for
 
 Creates a log group with the specified name.
 
-Type annotations for `aiobotocore.create_client("logs").create_log_group`
-method.
+Type annotations for `session.create_client("logs").create_log_group` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.create_log_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.create_log_group)
@@ -250,8 +247,7 @@ Keyword-only arguments:
 
 Creates a log stream for the specified log group.
 
-Type annotations for `aiobotocore.create_client("logs").create_log_stream`
-method.
+Type annotations for `session.create_client("logs").create_log_stream` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.create_log_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.create_log_stream)
@@ -273,8 +269,7 @@ Keyword-only arguments:
 Deletes the specified destination, and eventually disables all the subscription
 filters that publish to it.
 
-Type annotations for `aiobotocore.create_client("logs").delete_destination`
-method.
+Type annotations for `session.create_client("logs").delete_destination` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.delete_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.delete_destination)
@@ -296,8 +291,7 @@ Keyword-only arguments:
 Deletes the specified log group and permanently deletes all the archived log
 events associated with the log group.
 
-Type annotations for `aiobotocore.create_client("logs").delete_log_group`
-method.
+Type annotations for `session.create_client("logs").delete_log_group` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.delete_log_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.delete_log_group)
@@ -318,8 +312,7 @@ Keyword-only arguments:
 Deletes the specified log stream and permanently deletes all the archived log
 events associated with the log stream.
 
-Type annotations for `aiobotocore.create_client("logs").delete_log_stream`
-method.
+Type annotations for `session.create_client("logs").delete_log_stream` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.delete_log_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.delete_log_stream)
@@ -340,7 +333,7 @@ Keyword-only arguments:
 
 Deletes the specified metric filter.
 
-Type annotations for `aiobotocore.create_client("logs").delete_metric_filter`
+Type annotations for `session.create_client("logs").delete_metric_filter`
 method.
 
 Boto3 documentation:
@@ -363,8 +356,8 @@ Keyword-only arguments:
 
 Deletes a saved CloudWatch Logs Insights query definition.
 
-Type annotations for
-`aiobotocore.create_client("logs").delete_query_definition` method.
+Type annotations for `session.create_client("logs").delete_query_definition`
+method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.delete_query_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.delete_query_definition)
@@ -388,7 +381,7 @@ Returns a `Coroutine` for
 
 Deletes a resource policy from this account.
 
-Type annotations for `aiobotocore.create_client("logs").delete_resource_policy`
+Type annotations for `session.create_client("logs").delete_resource_policy`
 method.
 
 Boto3 documentation:
@@ -410,8 +403,8 @@ Keyword-only arguments:
 
 Deletes the specified retention policy.
 
-Type annotations for
-`aiobotocore.create_client("logs").delete_retention_policy` method.
+Type annotations for `session.create_client("logs").delete_retention_policy`
+method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.delete_retention_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.delete_retention_policy)
@@ -432,8 +425,8 @@ Keyword-only arguments:
 
 Deletes the specified subscription filter.
 
-Type annotations for
-`aiobotocore.create_client("logs").delete_subscription_filter` method.
+Type annotations for `session.create_client("logs").delete_subscription_filter`
+method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.delete_subscription_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.delete_subscription_filter)
@@ -455,7 +448,7 @@ Keyword-only arguments:
 
 Lists all your destinations.
 
-Type annotations for `aiobotocore.create_client("logs").describe_destinations`
+Type annotations for `session.create_client("logs").describe_destinations`
 method.
 
 Boto3 documentation:
@@ -482,7 +475,7 @@ Returns a `Coroutine` for
 
 Lists the specified export tasks.
 
-Type annotations for `aiobotocore.create_client("logs").describe_export_tasks`
+Type annotations for `session.create_client("logs").describe_export_tasks`
 method.
 
 Boto3 documentation:
@@ -511,7 +504,7 @@ Returns a `Coroutine` for
 
 Lists the specified log groups.
 
-Type annotations for `aiobotocore.create_client("logs").describe_log_groups`
+Type annotations for `session.create_client("logs").describe_log_groups`
 method.
 
 Boto3 documentation:
@@ -538,7 +531,7 @@ Returns a `Coroutine` for
 
 Lists the log streams for the specified log group.
 
-Type annotations for `aiobotocore.create_client("logs").describe_log_streams`
+Type annotations for `session.create_client("logs").describe_log_streams`
 method.
 
 Boto3 documentation:
@@ -568,8 +561,8 @@ Returns a `Coroutine` for
 
 Lists the specified metric filters.
 
-Type annotations for
-`aiobotocore.create_client("logs").describe_metric_filters` method.
+Type annotations for `session.create_client("logs").describe_metric_filters`
+method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.describe_metric_filters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.describe_metric_filters)
@@ -599,8 +592,7 @@ Returns a `Coroutine` for
 Returns a list of CloudWatch Logs Insights queries that are scheduled,
 executing, or have been executed recently in this account.
 
-Type annotations for `aiobotocore.create_client("logs").describe_queries`
-method.
+Type annotations for `session.create_client("logs").describe_queries` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.describe_queries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.describe_queries)
@@ -627,8 +619,8 @@ Returns a `Coroutine` for
 This operation returns a paginated list of your saved CloudWatch Logs Insights
 query definitions.
 
-Type annotations for
-`aiobotocore.create_client("logs").describe_query_definitions` method.
+Type annotations for `session.create_client("logs").describe_query_definitions`
+method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.describe_query_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.describe_query_definitions)
@@ -654,8 +646,8 @@ Returns a `Coroutine` for
 
 Lists the resource policies in this account.
 
-Type annotations for
-`aiobotocore.create_client("logs").describe_resource_policies` method.
+Type annotations for `session.create_client("logs").describe_resource_policies`
+method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.describe_resource_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.describe_resource_policies)
@@ -681,7 +673,7 @@ Returns a `Coroutine` for
 Lists the subscription filters for the specified log group.
 
 Type annotations for
-`aiobotocore.create_client("logs").describe_subscription_filters` method.
+`session.create_client("logs").describe_subscription_filters` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.describe_subscription_filters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.describe_subscription_filters)
@@ -709,7 +701,7 @@ Returns a `Coroutine` for
 Disassociates the associated Key Management Service customer master key (CMK)
 from the specified log group.
 
-Type annotations for `aiobotocore.create_client("logs").disassociate_kms_key`
+Type annotations for `session.create_client("logs").disassociate_kms_key`
 method.
 
 Boto3 documentation:
@@ -731,8 +723,7 @@ Keyword-only arguments:
 
 Lists log events from the specified log group.
 
-Type annotations for `aiobotocore.create_client("logs").filter_log_events`
-method.
+Type annotations for `session.create_client("logs").filter_log_events` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.filter_log_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.filter_log_events)
@@ -763,7 +754,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("logs").generate_presigned_url`
+Type annotations for `session.create_client("logs").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -787,7 +778,7 @@ Returns a `Coroutine` for `str`.
 
 Lists log events from the specified log stream.
 
-Type annotations for `aiobotocore.create_client("logs").get_log_events` method.
+Type annotations for `session.create_client("logs").get_log_events` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.get_log_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.get_log_events)
@@ -817,7 +808,7 @@ Returns a `Coroutine` for
 Returns a list of the fields that are included in log events in the specified
 log group, along with the percentage of log events that contain each field.
 
-Type annotations for `aiobotocore.create_client("logs").get_log_group_fields`
+Type annotations for `session.create_client("logs").get_log_group_fields`
 method.
 
 Boto3 documentation:
@@ -843,7 +834,7 @@ Returns a `Coroutine` for
 
 Retrieves all of the fields and values of a single log event.
 
-Type annotations for `aiobotocore.create_client("logs").get_log_record` method.
+Type annotations for `session.create_client("logs").get_log_record` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.get_log_record](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.get_log_record)
@@ -866,8 +857,7 @@ Returns a `Coroutine` for
 
 Returns the results from the specified query.
 
-Type annotations for `aiobotocore.create_client("logs").get_query_results`
-method.
+Type annotations for `session.create_client("logs").get_query_results` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.get_query_results](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.get_query_results)
@@ -890,7 +880,7 @@ Returns a `Coroutine` for
 
 Lists the tags for the specified log group.
 
-Type annotations for `aiobotocore.create_client("logs").list_tags_log_group`
+Type annotations for `session.create_client("logs").list_tags_log_group`
 method.
 
 Boto3 documentation:
@@ -915,8 +905,7 @@ Returns a `Coroutine` for
 
 Creates or updates a destination.
 
-Type annotations for `aiobotocore.create_client("logs").put_destination`
-method.
+Type annotations for `session.create_client("logs").put_destination` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.put_destination](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.put_destination)
@@ -941,7 +930,7 @@ Returns a `Coroutine` for
 
 Creates or updates an access policy associated with an existing destination.
 
-Type annotations for `aiobotocore.create_client("logs").put_destination_policy`
+Type annotations for `session.create_client("logs").put_destination_policy`
 method.
 
 Boto3 documentation:
@@ -965,7 +954,7 @@ Keyword-only arguments:
 
 Uploads a batch of log events to the specified log stream.
 
-Type annotations for `aiobotocore.create_client("logs").put_log_events` method.
+Type annotations for `session.create_client("logs").put_log_events` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.put_log_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.put_log_events)
@@ -994,8 +983,7 @@ Returns a `Coroutine` for
 Creates or updates a metric filter and associates it with the specified log
 group.
 
-Type annotations for `aiobotocore.create_client("logs").put_metric_filter`
-method.
+Type annotations for `session.create_client("logs").put_metric_filter` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.put_metric_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.put_metric_filter)
@@ -1020,7 +1008,7 @@ Keyword-only arguments:
 
 Creates or updates a query definition for CloudWatch Logs Insights.
 
-Type annotations for `aiobotocore.create_client("logs").put_query_definition`
+Type annotations for `session.create_client("logs").put_query_definition`
 method.
 
 Boto3 documentation:
@@ -1049,7 +1037,7 @@ Returns a `Coroutine` for
 Creates or updates a resource policy allowing other Amazon Web Services
 services to put log events to this account, such as Amazon Route 53.
 
-Type annotations for `aiobotocore.create_client("logs").put_resource_policy`
+Type annotations for `session.create_client("logs").put_resource_policy`
 method.
 
 Boto3 documentation:
@@ -1075,7 +1063,7 @@ Returns a `Coroutine` for
 
 Sets the retention of the specified log group.
 
-Type annotations for `aiobotocore.create_client("logs").put_retention_policy`
+Type annotations for `session.create_client("logs").put_retention_policy`
 method.
 
 Boto3 documentation:
@@ -1099,8 +1087,8 @@ Keyword-only arguments:
 Creates or updates a subscription filter and associates it with the specified
 log group.
 
-Type annotations for
-`aiobotocore.create_client("logs").put_subscription_filter` method.
+Type annotations for `session.create_client("logs").put_subscription_filter`
+method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.put_subscription_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.put_subscription_filter)
@@ -1126,7 +1114,7 @@ Keyword-only arguments:
 
 Schedules a query of a log group using CloudWatch Logs Insights.
 
-Type annotations for `aiobotocore.create_client("logs").start_query` method.
+Type annotations for `session.create_client("logs").start_query` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.start_query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.start_query)
@@ -1154,7 +1142,7 @@ Returns a `Coroutine` for
 
 Stops a CloudWatch Logs Insights query that is in progress.
 
-Type annotations for `aiobotocore.create_client("logs").stop_query` method.
+Type annotations for `session.create_client("logs").stop_query` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.stop_query](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.stop_query)
@@ -1177,7 +1165,7 @@ Returns a `Coroutine` for
 
 Adds or updates the specified tags for the specified log group.
 
-Type annotations for `aiobotocore.create_client("logs").tag_log_group` method.
+Type annotations for `session.create_client("logs").tag_log_group` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.tag_log_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.tag_log_group)
@@ -1199,8 +1187,7 @@ Keyword-only arguments:
 Tests the filter pattern of a metric filter against a sample of log event
 messages.
 
-Type annotations for `aiobotocore.create_client("logs").test_metric_filter`
-method.
+Type annotations for `session.create_client("logs").test_metric_filter` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.test_metric_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.test_metric_filter)
@@ -1225,8 +1212,7 @@ Returns a `Coroutine` for
 
 Removes the specified tags from the specified log group.
 
-Type annotations for `aiobotocore.create_client("logs").untag_log_group`
-method.
+Type annotations for `session.create_client("logs").untag_log_group` method.
 
 Boto3 documentation:
 [CloudWatchLogs.Client.untag_log_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.untag_log_group)
@@ -1241,12 +1227,44 @@ Keyword-only arguments:
 - `logGroupName`: `str` *(required)*
 - `tags`: `Sequence`\[`str`\] *(required)*
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("logs").__aenter__` method.
+
+Boto3 documentation:
+[CloudWatchLogs.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CloudWatchLogsClient](#cloudwatchlogsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("logs").__aexit__` method.
+
+Boto3 documentation:
+[CloudWatchLogs.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/logs.html#CloudWatchLogs.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("logs").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("logs").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_destinations")` ->
   [DescribeDestinationsPaginator](./paginators.md#describedestinationspaginator)

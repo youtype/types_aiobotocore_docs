@@ -61,21 +61,24 @@ type annotations stubs module
     - [update_regex_pattern_set](#update_regex_pattern_set)
     - [update_rule_group](#update_rule_group)
     - [update_web_acl](#update_web_acl)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="wafv2client"></a>
 
 ## WAFV2Client
 
-Type annotations for `aiobotocore.create_client("wafv2")`
+Type annotations for `session.create_client("wafv2")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_wafv2.client import WAFV2Client
 
-def get_wafv2_client() -> WAFV2Client:
-    return Session().client("wafv2")
+session = get_session()
+async with session.create_client("wafv2") as client:
+    client: WAFV2Client
 ```
 
 Boto3 documentation:
@@ -126,7 +129,7 @@ Exceptions:
 
 WAFV2Client exceptions.
 
-Type annotations for `aiobotocore.create_client("wafv2").exceptions` method.
+Type annotations for `session.create_client("wafv2").exceptions` method.
 
 Boto3 documentation:
 [WAFV2.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.exceptions)
@@ -140,8 +143,7 @@ Returns [Exceptions](#exceptions).
 Associates a web ACL with a regional application resource, to protect the
 resource.
 
-Type annotations for `aiobotocore.create_client("wafv2").associate_web_acl`
-method.
+Type annotations for `session.create_client("wafv2").associate_web_acl` method.
 
 Boto3 documentation:
 [WAFV2.Client.associate_web_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.associate_web_acl)
@@ -164,18 +166,16 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("wafv2").can_paginate` method.
+Type annotations for `session.create_client("wafv2").can_paginate` method.
 
 Boto3 documentation:
 [WAFV2.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="check_capacity"></a>
 
@@ -184,8 +184,7 @@ Returns a `Coroutine` for `bool`.
 Returns the web ACL capacity unit (WCU) requirements for a specified scope and
 set of rules.
 
-Type annotations for `aiobotocore.create_client("wafv2").check_capacity`
-method.
+Type annotations for `session.create_client("wafv2").check_capacity` method.
 
 Boto3 documentation:
 [WAFV2.Client.check_capacity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.check_capacity)
@@ -210,7 +209,7 @@ Returns a `Coroutine` for
 Creates an IPSet , which you use to identify web requests that originate from
 specific IP addresses or ranges of IP addresses.
 
-Type annotations for `aiobotocore.create_client("wafv2").create_ip_set` method.
+Type annotations for `session.create_client("wafv2").create_ip_set` method.
 
 Boto3 documentation:
 [WAFV2.Client.create_ip_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.create_ip_set)
@@ -241,8 +240,8 @@ Creates a RegexPatternSet , which you reference in a
 RegexPatternSetReferenceStatement , to have WAF inspect a web request component
 for the specified patterns.
 
-Type annotations for
-`aiobotocore.create_client("wafv2").create_regex_pattern_set` method.
+Type annotations for `session.create_client("wafv2").create_regex_pattern_set`
+method.
 
 Boto3 documentation:
 [WAFV2.Client.create_regex_pattern_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.create_regex_pattern_set)
@@ -271,8 +270,7 @@ Returns a `Coroutine` for
 
 Creates a RuleGroup per the specifications provided.
 
-Type annotations for `aiobotocore.create_client("wafv2").create_rule_group`
-method.
+Type annotations for `session.create_client("wafv2").create_rule_group` method.
 
 Boto3 documentation:
 [WAFV2.Client.create_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.create_rule_group)
@@ -305,8 +303,7 @@ Returns a `Coroutine` for
 
 Creates a WebACL per the specifications provided.
 
-Type annotations for `aiobotocore.create_client("wafv2").create_web_acl`
-method.
+Type annotations for `session.create_client("wafv2").create_web_acl` method.
 
 Boto3 documentation:
 [WAFV2.Client.create_web_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.create_web_acl)
@@ -343,8 +340,7 @@ Deletes all rule groups that are managed by Firewall Manager for the specified
 web ACL.
 
 Type annotations for
-`aiobotocore.create_client("wafv2").delete_firewall_manager_rule_groups`
-method.
+`session.create_client("wafv2").delete_firewall_manager_rule_groups` method.
 
 Boto3 documentation:
 [WAFV2.Client.delete_firewall_manager_rule_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.delete_firewall_manager_rule_groups)
@@ -369,7 +365,7 @@ Returns a `Coroutine` for
 
 Deletes the specified IPSet .
 
-Type annotations for `aiobotocore.create_client("wafv2").delete_ip_set` method.
+Type annotations for `session.create_client("wafv2").delete_ip_set` method.
 
 Boto3 documentation:
 [WAFV2.Client.delete_ip_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.delete_ip_set)
@@ -395,7 +391,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the LoggingConfiguration from the specified web ACL.
 
 Type annotations for
-`aiobotocore.create_client("wafv2").delete_logging_configuration` method.
+`session.create_client("wafv2").delete_logging_configuration` method.
 
 Boto3 documentation:
 [WAFV2.Client.delete_logging_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.delete_logging_configuration)
@@ -418,8 +414,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Permanently deletes an IAM policy from the specified rule group.
 
-Type annotations for
-`aiobotocore.create_client("wafv2").delete_permission_policy` method.
+Type annotations for `session.create_client("wafv2").delete_permission_policy`
+method.
 
 Boto3 documentation:
 [WAFV2.Client.delete_permission_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.delete_permission_policy)
@@ -442,8 +438,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified RegexPatternSet .
 
-Type annotations for
-`aiobotocore.create_client("wafv2").delete_regex_pattern_set` method.
+Type annotations for `session.create_client("wafv2").delete_regex_pattern_set`
+method.
 
 Boto3 documentation:
 [WAFV2.Client.delete_regex_pattern_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.delete_regex_pattern_set)
@@ -469,8 +465,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified RuleGroup .
 
-Type annotations for `aiobotocore.create_client("wafv2").delete_rule_group`
-method.
+Type annotations for `session.create_client("wafv2").delete_rule_group` method.
 
 Boto3 documentation:
 [WAFV2.Client.delete_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.delete_rule_group)
@@ -495,8 +490,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified WebACL .
 
-Type annotations for `aiobotocore.create_client("wafv2").delete_web_acl`
-method.
+Type annotations for `session.create_client("wafv2").delete_web_acl` method.
 
 Boto3 documentation:
 [WAFV2.Client.delete_web_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.delete_web_acl)
@@ -523,7 +517,7 @@ Provides high-level information for a managed rule group, including
 descriptions of the rules.
 
 Type annotations for
-`aiobotocore.create_client("wafv2").describe_managed_rule_group` method.
+`session.create_client("wafv2").describe_managed_rule_group` method.
 
 Boto3 documentation:
 [WAFV2.Client.describe_managed_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.describe_managed_rule_group)
@@ -550,7 +544,7 @@ Returns a `Coroutine` for
 
 Disassociates a web ACL from a regional application resource.
 
-Type annotations for `aiobotocore.create_client("wafv2").disassociate_web_acl`
+Type annotations for `session.create_client("wafv2").disassociate_web_acl`
 method.
 
 Boto3 documentation:
@@ -574,8 +568,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("wafv2").generate_presigned_url` method.
+Type annotations for `session.create_client("wafv2").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [WAFV2.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.generate_presigned_url)
@@ -598,7 +592,7 @@ Returns a `Coroutine` for `str`.
 
 Retrieves the specified IPSet .
 
-Type annotations for `aiobotocore.create_client("wafv2").get_ip_set` method.
+Type annotations for `session.create_client("wafv2").get_ip_set` method.
 
 Boto3 documentation:
 [WAFV2.Client.get_ip_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.get_ip_set)
@@ -623,8 +617,8 @@ Returns a `Coroutine` for
 
 Returns the LoggingConfiguration for the specified web ACL.
 
-Type annotations for
-`aiobotocore.create_client("wafv2").get_logging_configuration` method.
+Type annotations for `session.create_client("wafv2").get_logging_configuration`
+method.
 
 Boto3 documentation:
 [WAFV2.Client.get_logging_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.get_logging_configuration)
@@ -648,7 +642,7 @@ Returns a `Coroutine` for
 
 Retrieves the specified managed rule set.
 
-Type annotations for `aiobotocore.create_client("wafv2").get_managed_rule_set`
+Type annotations for `session.create_client("wafv2").get_managed_rule_set`
 method.
 
 Boto3 documentation:
@@ -675,7 +669,7 @@ Returns a `Coroutine` for
 
 Returns the IAM policy that is attached to the specified rule group.
 
-Type annotations for `aiobotocore.create_client("wafv2").get_permission_policy`
+Type annotations for `session.create_client("wafv2").get_permission_policy`
 method.
 
 Boto3 documentation:
@@ -701,8 +695,7 @@ Returns a `Coroutine` for
 Retrieves the keys that are currently blocked by a rate-based rule instance.
 
 Type annotations for
-`aiobotocore.create_client("wafv2").get_rate_based_statement_managed_keys`
-method.
+`session.create_client("wafv2").get_rate_based_statement_managed_keys` method.
 
 Boto3 documentation:
 [WAFV2.Client.get_rate_based_statement_managed_keys](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.get_rate_based_statement_managed_keys)
@@ -730,7 +723,7 @@ Returns a `Coroutine` for
 
 Retrieves the specified RegexPatternSet .
 
-Type annotations for `aiobotocore.create_client("wafv2").get_regex_pattern_set`
+Type annotations for `session.create_client("wafv2").get_regex_pattern_set`
 method.
 
 Boto3 documentation:
@@ -757,8 +750,7 @@ Returns a `Coroutine` for
 
 Retrieves the specified RuleGroup .
 
-Type annotations for `aiobotocore.create_client("wafv2").get_rule_group`
-method.
+Type annotations for `session.create_client("wafv2").get_rule_group` method.
 
 Boto3 documentation:
 [WAFV2.Client.get_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.get_rule_group)
@@ -786,7 +778,7 @@ Gets detailed information about a specified number of requests--a sample--that
 WAF randomly selects from among the first 5,000 requests that your Amazon Web
 Services resource received during a time range that you choose.
 
-Type annotations for `aiobotocore.create_client("wafv2").get_sampled_requests`
+Type annotations for `session.create_client("wafv2").get_sampled_requests`
 method.
 
 Boto3 documentation:
@@ -816,7 +808,7 @@ Returns a `Coroutine` for
 
 Retrieves the specified WebACL .
 
-Type annotations for `aiobotocore.create_client("wafv2").get_web_acl` method.
+Type annotations for `session.create_client("wafv2").get_web_acl` method.
 
 Boto3 documentation:
 [WAFV2.Client.get_web_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.get_web_acl)
@@ -841,8 +833,8 @@ Returns a `Coroutine` for
 
 Retrieves the WebACL for the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("wafv2").get_web_acl_for_resource` method.
+Type annotations for `session.create_client("wafv2").get_web_acl_for_resource`
+method.
 
 Boto3 documentation:
 [WAFV2.Client.get_web_acl_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.get_web_acl_for_resource)
@@ -867,7 +859,7 @@ Returns a `Coroutine` for
 Returns a list of the available versions for the specified managed rule group.
 
 Type annotations for
-`aiobotocore.create_client("wafv2").list_available_managed_rule_group_versions`
+`session.create_client("wafv2").list_available_managed_rule_group_versions`
 method.
 
 Boto3 documentation:
@@ -897,7 +889,7 @@ Returns a `Coroutine` for
 Retrieves an array of managed rule groups that are available for you to use.
 
 Type annotations for
-`aiobotocore.create_client("wafv2").list_available_managed_rule_groups` method.
+`session.create_client("wafv2").list_available_managed_rule_groups` method.
 
 Boto3 documentation:
 [WAFV2.Client.list_available_managed_rule_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.list_available_managed_rule_groups)
@@ -923,7 +915,7 @@ Returns a `Coroutine` for
 
 Retrieves an array of IPSetSummary objects for the IP sets that you manage.
 
-Type annotations for `aiobotocore.create_client("wafv2").list_ip_sets` method.
+Type annotations for `session.create_client("wafv2").list_ip_sets` method.
 
 Boto3 documentation:
 [WAFV2.Client.list_ip_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.list_ip_sets)
@@ -949,7 +941,7 @@ Returns a `Coroutine` for
 Retrieves an array of your LoggingConfiguration objects.
 
 Type annotations for
-`aiobotocore.create_client("wafv2").list_logging_configurations` method.
+`session.create_client("wafv2").list_logging_configurations` method.
 
 Boto3 documentation:
 [WAFV2.Client.list_logging_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.list_logging_configurations)
@@ -975,8 +967,8 @@ Returns a `Coroutine` for
 
 Retrieves the managed rule sets that you own.
 
-Type annotations for
-`aiobotocore.create_client("wafv2").list_managed_rule_sets` method.
+Type annotations for `session.create_client("wafv2").list_managed_rule_sets`
+method.
 
 Boto3 documentation:
 [WAFV2.Client.list_managed_rule_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.list_managed_rule_sets)
@@ -1003,8 +995,8 @@ Returns a `Coroutine` for
 Retrieves an array of RegexPatternSetSummary objects for the regex pattern sets
 that you manage.
 
-Type annotations for
-`aiobotocore.create_client("wafv2").list_regex_pattern_sets` method.
+Type annotations for `session.create_client("wafv2").list_regex_pattern_sets`
+method.
 
 Boto3 documentation:
 [WAFV2.Client.list_regex_pattern_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.list_regex_pattern_sets)
@@ -1032,7 +1024,7 @@ Retrieves an array of the Amazon Resource Names (ARNs) for the regional
 resources that are associated with the specified web ACL.
 
 Type annotations for
-`aiobotocore.create_client("wafv2").list_resources_for_web_acl` method.
+`session.create_client("wafv2").list_resources_for_web_acl` method.
 
 Boto3 documentation:
 [WAFV2.Client.list_resources_for_web_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.list_resources_for_web_acl)
@@ -1058,8 +1050,7 @@ Returns a `Coroutine` for
 Retrieves an array of RuleGroupSummary objects for the rule groups that you
 manage.
 
-Type annotations for `aiobotocore.create_client("wafv2").list_rule_groups`
-method.
+Type annotations for `session.create_client("wafv2").list_rule_groups` method.
 
 Boto3 documentation:
 [WAFV2.Client.list_rule_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.list_rule_groups)
@@ -1084,8 +1075,8 @@ Returns a `Coroutine` for
 
 Retrieves the TagInfoForResource for the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("wafv2").list_tags_for_resource` method.
+Type annotations for `session.create_client("wafv2").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [WAFV2.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.list_tags_for_resource)
@@ -1111,7 +1102,7 @@ Returns a `Coroutine` for
 
 Retrieves an array of WebACLSummary objects for the web ACLs that you manage.
 
-Type annotations for `aiobotocore.create_client("wafv2").list_web_acls` method.
+Type annotations for `session.create_client("wafv2").list_web_acls` method.
 
 Boto3 documentation:
 [WAFV2.Client.list_web_acls](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.list_web_acls)
@@ -1137,8 +1128,8 @@ Returns a `Coroutine` for
 Enables the specified LoggingConfiguration , to start logging from a web ACL,
 according to the configuration provided.
 
-Type annotations for
-`aiobotocore.create_client("wafv2").put_logging_configuration` method.
+Type annotations for `session.create_client("wafv2").put_logging_configuration`
+method.
 
 Boto3 documentation:
 [WAFV2.Client.put_logging_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.put_logging_configuration)
@@ -1166,7 +1157,7 @@ Defines the versions of your managed rule set that you are offering to the
 customers.
 
 Type annotations for
-`aiobotocore.create_client("wafv2").put_managed_rule_set_versions` method.
+`session.create_client("wafv2").put_managed_rule_set_versions` method.
 
 Boto3 documentation:
 [WAFV2.Client.put_managed_rule_set_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.put_managed_rule_set_versions)
@@ -1196,7 +1187,7 @@ Returns a `Coroutine` for
 
 Attaches an IAM policy to the specified resource.
 
-Type annotations for `aiobotocore.create_client("wafv2").put_permission_policy`
+Type annotations for `session.create_client("wafv2").put_permission_policy`
 method.
 
 Boto3 documentation:
@@ -1221,7 +1212,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Associates tags with the specified Amazon Web Services resource.
 
-Type annotations for `aiobotocore.create_client("wafv2").tag_resource` method.
+Type annotations for `session.create_client("wafv2").tag_resource` method.
 
 Boto3 documentation:
 [WAFV2.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.tag_resource)
@@ -1244,8 +1235,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Disassociates tags from an Amazon Web Services resource.
 
-Type annotations for `aiobotocore.create_client("wafv2").untag_resource`
-method.
+Type annotations for `session.create_client("wafv2").untag_resource` method.
 
 Boto3 documentation:
 [WAFV2.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.untag_resource)
@@ -1268,7 +1258,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the specified IPSet .
 
-Type annotations for `aiobotocore.create_client("wafv2").update_ip_set` method.
+Type annotations for `session.create_client("wafv2").update_ip_set` method.
 
 Boto3 documentation:
 [WAFV2.Client.update_ip_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.update_ip_set)
@@ -1297,7 +1287,7 @@ Returns a `Coroutine` for
 Updates the expiration information for your managed rule set.
 
 Type annotations for
-`aiobotocore.create_client("wafv2").update_managed_rule_set_version_expiry_date`
+`session.create_client("wafv2").update_managed_rule_set_version_expiry_date`
 method.
 
 Boto3 documentation:
@@ -1328,8 +1318,8 @@ Returns a `Coroutine` for
 
 Updates the specified RegexPatternSet .
 
-Type annotations for
-`aiobotocore.create_client("wafv2").update_regex_pattern_set` method.
+Type annotations for `session.create_client("wafv2").update_regex_pattern_set`
+method.
 
 Boto3 documentation:
 [WAFV2.Client.update_regex_pattern_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.update_regex_pattern_set)
@@ -1359,8 +1349,7 @@ Returns a `Coroutine` for
 
 Updates the specified RuleGroup .
 
-Type annotations for `aiobotocore.create_client("wafv2").update_rule_group`
-method.
+Type annotations for `session.create_client("wafv2").update_rule_group` method.
 
 Boto3 documentation:
 [WAFV2.Client.update_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.update_rule_group)
@@ -1393,8 +1382,7 @@ Returns a `Coroutine` for
 
 Updates the specified WebACL .
 
-Type annotations for `aiobotocore.create_client("wafv2").update_web_acl`
-method.
+Type annotations for `session.create_client("wafv2").update_web_acl` method.
 
 Boto3 documentation:
 [WAFV2.Client.update_web_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.update_web_acl)
@@ -1423,3 +1411,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateWebACLResponseTypeDef](./type_defs.md#updatewebaclresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("wafv2").__aenter__` method.
+
+Boto3 documentation:
+[WAFV2.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [WAFV2Client](#wafv2client).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("wafv2").__aexit__` method.
+
+Boto3 documentation:
+[WAFV2.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wafv2.html#WAFV2.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

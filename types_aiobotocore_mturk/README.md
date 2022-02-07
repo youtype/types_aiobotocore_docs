@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[mturk]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[mturk]'
+
+# standalone installation
 pip install types-aiobotocore-mturk
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-mturk
 
 ## MTurkClient
 
-Type annotations for `aiobotocore.create_client("mturk")` as
+Type annotations for `session.create_client("mturk")` as
 [MTurkClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_mturk.client import MTurkClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_qualification_request](./client.md#accept_qualification_request)
 - [approve_assignment](./client.md#approve_assignment)
 - [associate_qualification_with_worker](./client.md#associate_qualification_with_worker)
@@ -106,7 +112,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_mturk.paginators import ListAssignmentsForHITPaginator, ...
+from types_aiobotocore_mturk.paginator import ListAssignmentsForHITPaginator, ...
 ```
 
 - [ListAssignmentsForHITPaginator](./paginators.md#listassignmentsforhitpaginator)

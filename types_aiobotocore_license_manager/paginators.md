@@ -21,17 +21,19 @@ type annotations stubs module
 ## ListAssociationsForLicenseConfigurationPaginator
 
 Type annotations for
-`aiobotocore.create_client("license-manager").get_paginator("list_associations_for_license_configuration")`.
+`session.create_client("license-manager").get_paginator("list_associations_for_license_configuration")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_license_manager.paginator import ListAssociationsForLicenseConfigurationPaginator
 
-def get_list_associations_for_license_configuration_paginator() -> ListAssociationsForLicenseConfigurationPaginator:
-    return Session().create_client("license-manager").get_paginator("list_associations_for_license_configuration")
+session = get_session()
+async with session.create_client("license-manager") as client:
+    client: LicenseManagerClient
+    paginator: ListAssociationsForLicenseConfigurationPaginator = client.get_paginator("list_associations_for_license_configuration")
 ```
 
 Boto3 documentation:
@@ -52,17 +54,19 @@ method:
 ## ListLicenseConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("license-manager").get_paginator("list_license_configurations")`.
+`session.create_client("license-manager").get_paginator("list_license_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_license_manager.paginator import ListLicenseConfigurationsPaginator
 
-def get_list_license_configurations_paginator() -> ListLicenseConfigurationsPaginator:
-    return Session().create_client("license-manager").get_paginator("list_license_configurations")
+session = get_session()
+async with session.create_client("license-manager") as client:
+    client: LicenseManagerClient
+    paginator: ListLicenseConfigurationsPaginator = client.get_paginator("list_license_configurations")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `ListLicenseConfigurationsPaginator.paginate` method:
 ## ListLicenseSpecificationsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("license-manager").get_paginator("list_license_specifications_for_resource")`.
+`session.create_client("license-manager").get_paginator("list_license_specifications_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_license_manager.paginator import ListLicenseSpecificationsForResourcePaginator
 
-def get_list_license_specifications_for_resource_paginator() -> ListLicenseSpecificationsForResourcePaginator:
-    return Session().create_client("license-manager").get_paginator("list_license_specifications_for_resource")
+session = get_session()
+async with session.create_client("license-manager") as client:
+    client: LicenseManagerClient
+    paginator: ListLicenseSpecificationsForResourcePaginator = client.get_paginator("list_license_specifications_for_resource")
 ```
 
 Boto3 documentation:
@@ -113,17 +119,19 @@ Arguments for `ListLicenseSpecificationsForResourcePaginator.paginate` method:
 ## ListResourceInventoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("license-manager").get_paginator("list_resource_inventory")`.
+`session.create_client("license-manager").get_paginator("list_resource_inventory")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_license_manager.paginator import ListResourceInventoryPaginator
 
-def get_list_resource_inventory_paginator() -> ListResourceInventoryPaginator:
-    return Session().create_client("license-manager").get_paginator("list_resource_inventory")
+session = get_session()
+async with session.create_client("license-manager") as client:
+    client: LicenseManagerClient
+    paginator: ListResourceInventoryPaginator = client.get_paginator("list_resource_inventory")
 ```
 
 Boto3 documentation:
@@ -144,17 +152,19 @@ Arguments for `ListResourceInventoryPaginator.paginate` method:
 ## ListUsageForLicenseConfigurationPaginator
 
 Type annotations for
-`aiobotocore.create_client("license-manager").get_paginator("list_usage_for_license_configuration")`.
+`session.create_client("license-manager").get_paginator("list_usage_for_license_configuration")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_license_manager.paginator import ListUsageForLicenseConfigurationPaginator
 
-def get_list_usage_for_license_configuration_paginator() -> ListUsageForLicenseConfigurationPaginator:
-    return Session().create_client("license-manager").get_paginator("list_usage_for_license_configuration")
+session = get_session()
+async with session.create_client("license-manager") as client:
+    client: LicenseManagerClient
+    paginator: ListUsageForLicenseConfigurationPaginator = client.get_paginator("list_usage_for_license_configuration")
 ```
 
 Boto3 documentation:

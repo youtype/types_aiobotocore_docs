@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[inspector2]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[inspector2]'
+
+# standalone installation
 pip install types-aiobotocore-inspector2
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-inspector2
 
 ## Inspector2Client
 
-Type annotations for `aiobotocore.create_client("inspector2")` as
+Type annotations for `session.create_client("inspector2")` as
 [Inspector2Client](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_inspector2.client import Inspector2Client
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_member](./client.md#associate_member)
 - [batch_get_account_status](./client.md#batch_get_account_status)
 - [batch_get_free_trial_info](./client.md#batch_get_free_trial_info)
@@ -103,7 +109,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_inspector2.paginators import ListAccountPermissionsPaginator, ...
+from types_aiobotocore_inspector2.paginator import ListAccountPermissionsPaginator, ...
 ```
 
 - [ListAccountPermissionsPaginator](./paginators.md#listaccountpermissionspaginator)

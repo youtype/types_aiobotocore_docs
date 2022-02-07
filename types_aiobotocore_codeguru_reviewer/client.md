@@ -30,6 +30,8 @@ type annotations stubs module
     - [put_recommendation_feedback](#put_recommendation_feedback)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -37,16 +39,17 @@ type annotations stubs module
 
 ## CodeGuruReviewerClient
 
-Type annotations for `aiobotocore.create_client("codeguru-reviewer")`
+Type annotations for `session.create_client("codeguru-reviewer")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_codeguru_reviewer.client import CodeGuruReviewerClient
 
-def get_codeguru-reviewer_client() -> CodeGuruReviewerClient:
-    return Session().client("codeguru-reviewer")
+session = get_session()
+async with session.create_client("codeguru-reviewer") as client:
+    client: CodeGuruReviewerClient
 ```
 
 Boto3 documentation:
@@ -87,8 +90,8 @@ Exceptions:
 
 CodeGuruReviewerClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").exceptions` method.
+Type annotations for `session.create_client("codeguru-reviewer").exceptions`
+method.
 
 Boto3 documentation:
 [CodeGuruReviewer.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguru-reviewer.html#CodeGuruReviewer.Client.exceptions)
@@ -102,7 +105,7 @@ Returns [Exceptions](#exceptions).
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").associate_repository` method.
+`session.create_client("codeguru-reviewer").associate_repository` method.
 
 Boto3 documentation:
 [CodeGuruReviewer.Client.associate_repository](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguru-reviewer.html#CodeGuruReviewer.Client.associate_repository)
@@ -130,19 +133,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").can_paginate` method.
+Type annotations for `session.create_client("codeguru-reviewer").can_paginate`
+method.
 
 Boto3 documentation:
 [CodeGuruReviewer.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguru-reviewer.html#CodeGuruReviewer.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_code_review"></a>
 
@@ -151,7 +152,7 @@ Returns a `Coroutine` for `bool`.
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").create_code_review` method.
+`session.create_client("codeguru-reviewer").create_code_review` method.
 
 Boto3 documentation:
 [CodeGuruReviewer.Client.create_code_review](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguru-reviewer.html#CodeGuruReviewer.Client.create_code_review)
@@ -180,7 +181,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").describe_code_review` method.
+`session.create_client("codeguru-reviewer").describe_code_review` method.
 
 Boto3 documentation:
 [CodeGuruReviewer.Client.describe_code_review](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguru-reviewer.html#CodeGuruReviewer.Client.describe_code_review)
@@ -205,7 +206,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").describe_recommendation_feedback`
+`session.create_client("codeguru-reviewer").describe_recommendation_feedback`
 method.
 
 Boto3 documentation:
@@ -233,7 +234,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").describe_repository_association`
+`session.create_client("codeguru-reviewer").describe_repository_association`
 method.
 
 Boto3 documentation:
@@ -259,8 +260,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").disassociate_repository`
-method.
+`session.create_client("codeguru-reviewer").disassociate_repository` method.
 
 Boto3 documentation:
 [CodeGuruReviewer.Client.disassociate_repository](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguru-reviewer.html#CodeGuruReviewer.Client.disassociate_repository)
@@ -285,7 +285,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").generate_presigned_url` method.
+`session.create_client("codeguru-reviewer").generate_presigned_url` method.
 
 Boto3 documentation:
 [CodeGuruReviewer.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguru-reviewer.html#CodeGuruReviewer.Client.generate_presigned_url)
@@ -309,7 +309,7 @@ Returns a `Coroutine` for `str`.
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").list_code_reviews` method.
+`session.create_client("codeguru-reviewer").list_code_reviews` method.
 
 Boto3 documentation:
 [CodeGuruReviewer.Client.list_code_reviews](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguru-reviewer.html#CodeGuruReviewer.Client.list_code_reviews)
@@ -339,7 +339,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").list_recommendation_feedback`
+`session.create_client("codeguru-reviewer").list_recommendation_feedback`
 method.
 
 Boto3 documentation:
@@ -369,7 +369,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").list_recommendations` method.
+`session.create_client("codeguru-reviewer").list_recommendations` method.
 
 Boto3 documentation:
 [CodeGuruReviewer.Client.list_recommendations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguru-reviewer.html#CodeGuruReviewer.Client.list_recommendations)
@@ -396,7 +396,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").list_repository_associations`
+`session.create_client("codeguru-reviewer").list_repository_associations`
 method.
 
 Boto3 documentation:
@@ -429,7 +429,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").list_tags_for_resource` method.
+`session.create_client("codeguru-reviewer").list_tags_for_resource` method.
 
 Boto3 documentation:
 [CodeGuruReviewer.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguru-reviewer.html#CodeGuruReviewer.Client.list_tags_for_resource)
@@ -454,7 +454,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").put_recommendation_feedback`
+`session.create_client("codeguru-reviewer").put_recommendation_feedback`
 method.
 
 Boto3 documentation:
@@ -481,8 +481,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 .
 
-Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").tag_resource` method.
+Type annotations for `session.create_client("codeguru-reviewer").tag_resource`
+method.
 
 Boto3 documentation:
 [CodeGuruReviewer.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguru-reviewer.html#CodeGuruReviewer.Client.tag_resource)
@@ -506,7 +506,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").untag_resource` method.
+`session.create_client("codeguru-reviewer").untag_resource` method.
 
 Boto3 documentation:
 [CodeGuruReviewer.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguru-reviewer.html#CodeGuruReviewer.Client.untag_resource)
@@ -523,13 +523,46 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("codeguru-reviewer").__aenter__`
+method.
+
+Boto3 documentation:
+[CodeGuruReviewer.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguru-reviewer.html#CodeGuruReviewer.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CodeGuruReviewerClient](#codegurureviewerclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("codeguru-reviewer").__aexit__`
+method.
+
+Boto3 documentation:
+[CodeGuruReviewer.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguru-reviewer.html#CodeGuruReviewer.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("codeguru-reviewer").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_repository_associations")` ->
   [ListRepositoryAssociationsPaginator](./paginators.md#listrepositoryassociationspaginator)
@@ -538,9 +571,8 @@ overloads.
 
 ### get_waiter
 
-Type annotations for
-`aiobotocore.create_client("codeguru-reviewer").get_waiter` method with
-overloads.
+Type annotations for `session.create_client("codeguru-reviewer").get_waiter`
+method with overloads.
 
 - `client.get_waiter("code_review_completed")` ->
   [CodeReviewCompletedWaiter](./waiters.md#codereviewcompletedwaiter)

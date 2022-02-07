@@ -19,17 +19,19 @@ type annotations stubs module
 ## ListGroupResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("resource-groups").get_paginator("list_group_resources")`.
+`session.create_client("resource-groups").get_paginator("list_group_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_resource_groups.paginator import ListGroupResourcesPaginator
 
-def get_list_group_resources_paginator() -> ListGroupResourcesPaginator:
-    return Session().create_client("resource-groups").get_paginator("list_group_resources")
+session = get_session()
+async with session.create_client("resource-groups") as client:
+    client: ResourceGroupsClient
+    paginator: ListGroupResourcesPaginator = client.get_paginator("list_group_resources")
 ```
 
 Boto3 documentation:
@@ -52,17 +54,19 @@ Arguments for `ListGroupResourcesPaginator.paginate` method:
 ## ListGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("resource-groups").get_paginator("list_groups")`.
+`session.create_client("resource-groups").get_paginator("list_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_resource_groups.paginator import ListGroupsPaginator
 
-def get_list_groups_paginator() -> ListGroupsPaginator:
-    return Session().create_client("resource-groups").get_paginator("list_groups")
+session = get_session()
+async with session.create_client("resource-groups") as client:
+    client: ResourceGroupsClient
+    paginator: ListGroupsPaginator = client.get_paginator("list_groups")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `ListGroupsPaginator.paginate` method:
 ## SearchResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("resource-groups").get_paginator("search_resources")`.
+`session.create_client("resource-groups").get_paginator("search_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_resource_groups.paginator import SearchResourcesPaginator
 
-def get_search_resources_paginator() -> SearchResourcesPaginator:
-    return Session().create_client("resource-groups").get_paginator("search_resources")
+session = get_session()
+async with session.create_client("resource-groups") as client:
+    client: ResourceGroupsClient
+    paginator: SearchResourcesPaginator = client.get_paginator("search_resources")
 ```
 
 Boto3 documentation:

@@ -19,22 +19,25 @@ type annotations stubs module
     - [delete_endpoint](#delete_endpoint)
     - [generate_presigned_url](#generate_presigned_url)
     - [list_endpoints](#list_endpoints)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="s3outpostsclient"></a>
 
 ## S3OutpostsClient
 
-Type annotations for `aiobotocore.create_client("s3outposts")`
+Type annotations for `session.create_client("s3outposts")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_s3outposts.client import S3OutpostsClient
 
-def get_s3outposts_client() -> S3OutpostsClient:
-    return Session().client("s3outposts")
+session = get_session()
+async with session.create_client("s3outposts") as client:
+    client: S3OutpostsClient
 ```
 
 Boto3 documentation:
@@ -73,8 +76,7 @@ Exceptions:
 
 S3OutpostsClient exceptions.
 
-Type annotations for `aiobotocore.create_client("s3outposts").exceptions`
-method.
+Type annotations for `session.create_client("s3outposts").exceptions` method.
 
 Boto3 documentation:
 [S3Outposts.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3outposts.html#S3Outposts.Client.exceptions)
@@ -87,19 +89,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("s3outposts").can_paginate`
-method.
+Type annotations for `session.create_client("s3outposts").can_paginate` method.
 
 Boto3 documentation:
 [S3Outposts.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3outposts.html#S3Outposts.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_endpoint"></a>
 
@@ -108,7 +107,7 @@ Returns a `Coroutine` for `bool`.
 Amazon S3 on Outposts Access Points simplify managing data access at scale for
 shared datasets in S3 on Outposts.
 
-Type annotations for `aiobotocore.create_client("s3outposts").create_endpoint`
+Type annotations for `session.create_client("s3outposts").create_endpoint`
 method.
 
 Boto3 documentation:
@@ -137,7 +136,7 @@ Returns a `Coroutine` for
 Amazon S3 on Outposts Access Points simplify managing data access at scale for
 shared datasets in S3 on Outposts.
 
-Type annotations for `aiobotocore.create_client("s3outposts").delete_endpoint`
+Type annotations for `session.create_client("s3outposts").delete_endpoint`
 method.
 
 Boto3 documentation:
@@ -160,7 +159,7 @@ Keyword-only arguments:
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("s3outposts").generate_presigned_url` method.
+`session.create_client("s3outposts").generate_presigned_url` method.
 
 Boto3 documentation:
 [S3Outposts.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3outposts.html#S3Outposts.Client.generate_presigned_url)
@@ -184,7 +183,7 @@ Returns a `Coroutine` for `str`.
 Amazon S3 on Outposts Access Points simplify managing data access at scale for
 shared datasets in S3 on Outposts.
 
-Type annotations for `aiobotocore.create_client("s3outposts").list_endpoints`
+Type annotations for `session.create_client("s3outposts").list_endpoints`
 method.
 
 Boto3 documentation:
@@ -203,12 +202,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [ListEndpointsResultTypeDef](./type_defs.md#listendpointsresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("s3outposts").__aenter__` method.
+
+Boto3 documentation:
+[S3Outposts.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3outposts.html#S3Outposts.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [S3OutpostsClient](#s3outpostsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("s3outposts").__aexit__` method.
+
+Boto3 documentation:
+[S3Outposts.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3outposts.html#S3Outposts.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("s3outposts").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("s3outposts").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_endpoints")` ->
   [ListEndpointsPaginator](./paginators.md#listendpointspaginator)

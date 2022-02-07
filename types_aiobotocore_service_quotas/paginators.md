@@ -22,17 +22,19 @@ type annotations stubs module
 ## ListAWSDefaultServiceQuotasPaginator
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").get_paginator("list_aws_default_service_quotas")`.
+`session.create_client("service-quotas").get_paginator("list_aws_default_service_quotas")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_service_quotas.paginator import ListAWSDefaultServiceQuotasPaginator
 
-def get_list_aws_default_service_quotas_paginator() -> ListAWSDefaultServiceQuotasPaginator:
-    return Session().create_client("service-quotas").get_paginator("list_aws_default_service_quotas")
+session = get_session()
+async with session.create_client("service-quotas") as client:
+    client: ServiceQuotasClient
+    paginator: ListAWSDefaultServiceQuotasPaginator = client.get_paginator("list_aws_default_service_quotas")
 ```
 
 Boto3 documentation:
@@ -52,17 +54,19 @@ Arguments for `ListAWSDefaultServiceQuotasPaginator.paginate` method:
 ## ListRequestedServiceQuotaChangeHistoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").get_paginator("list_requested_service_quota_change_history")`.
+`session.create_client("service-quotas").get_paginator("list_requested_service_quota_change_history")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_service_quotas.paginator import ListRequestedServiceQuotaChangeHistoryPaginator
 
-def get_list_requested_service_quota_change_history_paginator() -> ListRequestedServiceQuotaChangeHistoryPaginator:
-    return Session().create_client("service-quotas").get_paginator("list_requested_service_quota_change_history")
+session = get_session()
+async with session.create_client("service-quotas") as client:
+    client: ServiceQuotasClient
+    paginator: ListRequestedServiceQuotaChangeHistoryPaginator = client.get_paginator("list_requested_service_quota_change_history")
 ```
 
 Boto3 documentation:
@@ -84,17 +88,19 @@ method:
 ## ListRequestedServiceQuotaChangeHistoryByQuotaPaginator
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").get_paginator("list_requested_service_quota_change_history_by_quota")`.
+`session.create_client("service-quotas").get_paginator("list_requested_service_quota_change_history_by_quota")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_service_quotas.paginator import ListRequestedServiceQuotaChangeHistoryByQuotaPaginator
 
-def get_list_requested_service_quota_change_history_by_quota_paginator() -> ListRequestedServiceQuotaChangeHistoryByQuotaPaginator:
-    return Session().create_client("service-quotas").get_paginator("list_requested_service_quota_change_history_by_quota")
+session = get_session()
+async with session.create_client("service-quotas") as client:
+    client: ServiceQuotasClient
+    paginator: ListRequestedServiceQuotaChangeHistoryByQuotaPaginator = client.get_paginator("list_requested_service_quota_change_history_by_quota")
 ```
 
 Boto3 documentation:
@@ -117,17 +123,19 @@ method:
 ## ListServiceQuotaIncreaseRequestsInTemplatePaginator
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").get_paginator("list_service_quota_increase_requests_in_template")`.
+`session.create_client("service-quotas").get_paginator("list_service_quota_increase_requests_in_template")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_service_quotas.paginator import ListServiceQuotaIncreaseRequestsInTemplatePaginator
 
-def get_list_service_quota_increase_requests_in_template_paginator() -> ListServiceQuotaIncreaseRequestsInTemplatePaginator:
-    return Session().create_client("service-quotas").get_paginator("list_service_quota_increase_requests_in_template")
+session = get_session()
+async with session.create_client("service-quotas") as client:
+    client: ServiceQuotasClient
+    paginator: ListServiceQuotaIncreaseRequestsInTemplatePaginator = client.get_paginator("list_service_quota_increase_requests_in_template")
 ```
 
 Boto3 documentation:
@@ -149,17 +157,19 @@ method:
 ## ListServiceQuotasPaginator
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").get_paginator("list_service_quotas")`.
+`session.create_client("service-quotas").get_paginator("list_service_quotas")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_service_quotas.paginator import ListServiceQuotasPaginator
 
-def get_list_service_quotas_paginator() -> ListServiceQuotasPaginator:
-    return Session().create_client("service-quotas").get_paginator("list_service_quotas")
+session = get_session()
+async with session.create_client("service-quotas") as client:
+    client: ServiceQuotasClient
+    paginator: ListServiceQuotasPaginator = client.get_paginator("list_service_quotas")
 ```
 
 Boto3 documentation:
@@ -179,17 +189,19 @@ Arguments for `ListServiceQuotasPaginator.paginate` method:
 ## ListServicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("service-quotas").get_paginator("list_services")`.
+`session.create_client("service-quotas").get_paginator("list_services")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_service_quotas.paginator import ListServicesPaginator
 
-def get_list_services_paginator() -> ListServicesPaginator:
-    return Session().create_client("service-quotas").get_paginator("list_services")
+session = get_session()
+async with session.create_client("service-quotas") as client:
+    client: ServiceQuotasClient
+    paginator: ListServicesPaginator = client.get_paginator("list_services")
 ```
 
 Boto3 documentation:

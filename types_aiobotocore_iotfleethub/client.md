@@ -24,22 +24,25 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_application](#update_application)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="iotfleethubclient"></a>
 
 ## IoTFleetHubClient
 
-Type annotations for `aiobotocore.create_client("iotfleethub")`
+Type annotations for `session.create_client("iotfleethub")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_iotfleethub.client import IoTFleetHubClient
 
-def get_iotfleethub_client() -> IoTFleetHubClient:
-    return Session().client("iotfleethub")
+session = get_session()
+async with session.create_client("iotfleethub") as client:
+    client: IoTFleetHubClient
 ```
 
 Boto3 documentation:
@@ -79,8 +82,7 @@ Exceptions:
 
 IoTFleetHubClient exceptions.
 
-Type annotations for `aiobotocore.create_client("iotfleethub").exceptions`
-method.
+Type annotations for `session.create_client("iotfleethub").exceptions` method.
 
 Boto3 documentation:
 [IoTFleetHub.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotfleethub.html#IoTFleetHub.Client.exceptions)
@@ -93,19 +95,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("iotfleethub").can_paginate`
+Type annotations for `session.create_client("iotfleethub").can_paginate`
 method.
 
 Boto3 documentation:
 [IoTFleetHub.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotfleethub.html#IoTFleetHub.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_application"></a>
 
@@ -113,8 +113,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates a Fleet Hub for AWS IoT Device Management web application.
 
-Type annotations for
-`aiobotocore.create_client("iotfleethub").create_application` method.
+Type annotations for `session.create_client("iotfleethub").create_application`
+method.
 
 Boto3 documentation:
 [IoTFleetHub.Client.create_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotfleethub.html#IoTFleetHub.Client.create_application)
@@ -142,8 +142,8 @@ Returns a `Coroutine` for
 
 Deletes a Fleet Hub for AWS IoT Device Management web application.
 
-Type annotations for
-`aiobotocore.create_client("iotfleethub").delete_application` method.
+Type annotations for `session.create_client("iotfleethub").delete_application`
+method.
 
 Boto3 documentation:
 [IoTFleetHub.Client.delete_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotfleethub.html#IoTFleetHub.Client.delete_application)
@@ -169,7 +169,7 @@ Gets information about a Fleet Hub for AWS IoT Device Management web
 application.
 
 Type annotations for
-`aiobotocore.create_client("iotfleethub").describe_application` method.
+`session.create_client("iotfleethub").describe_application` method.
 
 Boto3 documentation:
 [IoTFleetHub.Client.describe_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotfleethub.html#IoTFleetHub.Client.describe_application)
@@ -194,7 +194,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("iotfleethub").generate_presigned_url` method.
+`session.create_client("iotfleethub").generate_presigned_url` method.
 
 Boto3 documentation:
 [IoTFleetHub.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotfleethub.html#IoTFleetHub.Client.generate_presigned_url)
@@ -218,8 +218,8 @@ Returns a `Coroutine` for `str`.
 Gets a list of Fleet Hub for AWS IoT Device Management web applications for the
 current account.
 
-Type annotations for
-`aiobotocore.create_client("iotfleethub").list_applications` method.
+Type annotations for `session.create_client("iotfleethub").list_applications`
+method.
 
 Boto3 documentation:
 [IoTFleetHub.Client.list_applications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotfleethub.html#IoTFleetHub.Client.list_applications)
@@ -243,7 +243,7 @@ Returns a `Coroutine` for
 Lists the tags for the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("iotfleethub").list_tags_for_resource` method.
+`session.create_client("iotfleethub").list_tags_for_resource` method.
 
 Boto3 documentation:
 [IoTFleetHub.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotfleethub.html#IoTFleetHub.Client.list_tags_for_resource)
@@ -267,7 +267,7 @@ Returns a `Coroutine` for
 
 Adds to or modifies the tags of the specified resource.
 
-Type annotations for `aiobotocore.create_client("iotfleethub").tag_resource`
+Type annotations for `session.create_client("iotfleethub").tag_resource`
 method.
 
 Boto3 documentation:
@@ -291,7 +291,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the specified tags (metadata) from the resource.
 
-Type annotations for `aiobotocore.create_client("iotfleethub").untag_resource`
+Type annotations for `session.create_client("iotfleethub").untag_resource`
 method.
 
 Boto3 documentation:
@@ -316,8 +316,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates information about a Fleet Hub for a AWS IoT Device Management web
 application.
 
-Type annotations for
-`aiobotocore.create_client("iotfleethub").update_application` method.
+Type annotations for `session.create_client("iotfleethub").update_application`
+method.
 
 Boto3 documentation:
 [IoTFleetHub.Client.update_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotfleethub.html#IoTFleetHub.Client.update_application)
@@ -337,11 +337,43 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("iotfleethub").__aenter__` method.
+
+Boto3 documentation:
+[IoTFleetHub.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotfleethub.html#IoTFleetHub.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [IoTFleetHubClient](#iotfleethubclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("iotfleethub").__aexit__` method.
+
+Boto3 documentation:
+[IoTFleetHub.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotfleethub.html#IoTFleetHub.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("iotfleethub").get_paginator`
+Type annotations for `session.create_client("iotfleethub").get_paginator`
 method with overloads.
 
 - `client.get_paginator("list_applications")` ->

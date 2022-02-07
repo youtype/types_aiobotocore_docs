@@ -19,21 +19,24 @@ type annotations stubs module
     - [generate_presigned_url](#generate_presigned_url)
     - [get_alternate_contact](#get_alternate_contact)
     - [put_alternate_contact](#put_alternate_contact)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="accountclient"></a>
 
 ## AccountClient
 
-Type annotations for `aiobotocore.create_client("account")`
+Type annotations for `session.create_client("account")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_account.client import AccountClient
 
-def get_account_client() -> AccountClient:
-    return Session().client("account")
+session = get_session()
+async with session.create_client("account") as client:
+    client: AccountClient
 ```
 
 Boto3 documentation:
@@ -72,7 +75,7 @@ Exceptions:
 
 AccountClient exceptions.
 
-Type annotations for `aiobotocore.create_client("account").exceptions` method.
+Type annotations for `session.create_client("account").exceptions` method.
 
 Boto3 documentation:
 [Account.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/account.html#Account.Client.exceptions)
@@ -85,19 +88,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("account").can_paginate`
-method.
+Type annotations for `session.create_client("account").can_paginate` method.
 
 Boto3 documentation:
 [Account.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/account.html#Account.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="delete_alternate_contact"></a>
 
@@ -106,7 +106,7 @@ Returns a `Coroutine` for `bool`.
 Deletes the specified alternate contact from an Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("account").delete_alternate_contact` method.
+`session.create_client("account").delete_alternate_contact` method.
 
 Boto3 documentation:
 [Account.Client.delete_alternate_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/account.html#Account.Client.delete_alternate_contact)
@@ -130,8 +130,8 @@ Keyword-only arguments:
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("account").generate_presigned_url` method.
+Type annotations for `session.create_client("account").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Account.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/account.html#Account.Client.generate_presigned_url)
@@ -155,8 +155,8 @@ Returns a `Coroutine` for `str`.
 Retrieves the specified alternate contact attached to an Amazon Web Services
 account.
 
-Type annotations for
-`aiobotocore.create_client("account").get_alternate_contact` method.
+Type annotations for `session.create_client("account").get_alternate_contact`
+method.
 
 Boto3 documentation:
 [Account.Client.get_alternate_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/account.html#Account.Client.get_alternate_contact)
@@ -184,8 +184,8 @@ Returns a `Coroutine` for
 Modifies the specified alternate contact attached to an Amazon Web Services
 account.
 
-Type annotations for
-`aiobotocore.create_client("account").put_alternate_contact` method.
+Type annotations for `session.create_client("account").put_alternate_contact`
+method.
 
 Boto3 documentation:
 [Account.Client.put_alternate_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/account.html#Account.Client.put_alternate_contact)
@@ -206,3 +206,35 @@ Keyword-only arguments:
 - `PhoneNumber`: `str` *(required)*
 - `Title`: `str` *(required)*
 - `AccountId`: `str`
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("account").__aenter__` method.
+
+Boto3 documentation:
+[Account.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/account.html#Account.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [AccountClient](#accountclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("account").__aexit__` method.
+
+Boto3 documentation:
+[Account.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/account.html#Account.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

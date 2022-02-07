@@ -58,22 +58,25 @@ type annotations stubs module
     - [update_resource](#update_resource)
     - [update_table_objects](#update_table_objects)
     - [update_table_storage_optimizer](#update_table_storage_optimizer)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="lakeformationclient"></a>
 
 ## LakeFormationClient
 
-Type annotations for `aiobotocore.create_client("lakeformation")`
+Type annotations for `session.create_client("lakeformation")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_lakeformation.client import LakeFormationClient
 
-def get_lakeformation_client() -> LakeFormationClient:
-    return Session().client("lakeformation")
+session = get_session()
+async with session.create_client("lakeformation") as client:
+    client: LakeFormationClient
 ```
 
 Boto3 documentation:
@@ -124,7 +127,7 @@ Exceptions:
 
 LakeFormationClient exceptions.
 
-Type annotations for `aiobotocore.create_client("lakeformation").exceptions`
+Type annotations for `session.create_client("lakeformation").exceptions`
 method.
 
 Boto3 documentation:
@@ -139,7 +142,7 @@ Returns [Exceptions](#exceptions).
 Attaches one or more LF-tags to an existing resource.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").add_lf_tags_to_resource` method.
+`session.create_client("lakeformation").add_lf_tags_to_resource` method.
 
 Boto3 documentation:
 [LakeFormation.Client.add_lf_tags_to_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.add_lf_tags_to_resource)
@@ -167,7 +170,7 @@ Returns a `Coroutine` for
 Batch operation to grant permissions to the principal.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").batch_grant_permissions` method.
+`session.create_client("lakeformation").batch_grant_permissions` method.
 
 Boto3 documentation:
 [LakeFormation.Client.batch_grant_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.batch_grant_permissions)
@@ -195,7 +198,7 @@ Returns a `Coroutine` for
 Batch operation to revoke permissions from the principal.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").batch_revoke_permissions` method.
+`session.create_client("lakeformation").batch_revoke_permissions` method.
 
 Boto3 documentation:
 [LakeFormation.Client.batch_revoke_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.batch_revoke_permissions)
@@ -222,19 +225,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("lakeformation").can_paginate`
+Type annotations for `session.create_client("lakeformation").can_paginate`
 method.
 
 Boto3 documentation:
 [LakeFormation.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_transaction"></a>
 
@@ -243,7 +244,7 @@ Returns a `Coroutine` for `bool`.
 Attempts to cancel the specified transaction.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").cancel_transaction` method.
+`session.create_client("lakeformation").cancel_transaction` method.
 
 Boto3 documentation:
 [LakeFormation.Client.cancel_transaction](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.cancel_transaction)
@@ -267,7 +268,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Attempts to commit the specified transaction.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").commit_transaction` method.
+`session.create_client("lakeformation").commit_transaction` method.
 
 Boto3 documentation:
 [LakeFormation.Client.commit_transaction](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.commit_transaction)
@@ -293,7 +294,7 @@ Creates a data cell filter to allow one to grant access to certain columns on
 certain rows.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").create_data_cells_filter` method.
+`session.create_client("lakeformation").create_data_cells_filter` method.
 
 Boto3 documentation:
 [LakeFormation.Client.create_data_cells_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.create_data_cells_filter)
@@ -317,7 +318,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates an LF-tag with the specified name and values.
 
-Type annotations for `aiobotocore.create_client("lakeformation").create_lf_tag`
+Type annotations for `session.create_client("lakeformation").create_lf_tag`
 method.
 
 Boto3 documentation:
@@ -343,7 +344,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a data cell filter.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").delete_data_cells_filter` method.
+`session.create_client("lakeformation").delete_data_cells_filter` method.
 
 Boto3 documentation:
 [LakeFormation.Client.delete_data_cells_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.delete_data_cells_filter)
@@ -369,7 +370,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified LF-tag key name.
 
-Type annotations for `aiobotocore.create_client("lakeformation").delete_lf_tag`
+Type annotations for `session.create_client("lakeformation").delete_lf_tag`
 method.
 
 Boto3 documentation:
@@ -396,7 +397,7 @@ be written during the current transaction and that can be automatically deleted
 if the transaction is canceled.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").delete_objects_on_cancel` method.
+`session.create_client("lakeformation").delete_objects_on_cancel` method.
 
 Boto3 documentation:
 [LakeFormation.Client.delete_objects_on_cancel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.delete_objects_on_cancel)
@@ -426,7 +427,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deregisters the resource as managed by the Data Catalog.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").deregister_resource` method.
+`session.create_client("lakeformation").deregister_resource` method.
 
 Boto3 documentation:
 [LakeFormation.Client.deregister_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.deregister_resource)
@@ -450,8 +451,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Retrieves the current data access role for the given resource registered in
 Lake Formation.
 
-Type annotations for
-`aiobotocore.create_client("lakeformation").describe_resource` method.
+Type annotations for `session.create_client("lakeformation").describe_resource`
+method.
 
 Boto3 documentation:
 [LakeFormation.Client.describe_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.describe_resource)
@@ -475,7 +476,7 @@ Returns a `Coroutine` for
 Returns the details of a single transaction.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").describe_transaction` method.
+`session.create_client("lakeformation").describe_transaction` method.
 
 Boto3 documentation:
 [LakeFormation.Client.describe_transaction](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.describe_transaction)
@@ -501,7 +502,7 @@ Indicates to the service that the specified transaction is still active and
 should not be treated as idle and aborted.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").extend_transaction` method.
+`session.create_client("lakeformation").extend_transaction` method.
 
 Boto3 documentation:
 [LakeFormation.Client.extend_transaction](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.extend_transaction)
@@ -525,7 +526,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").generate_presigned_url` method.
+`session.create_client("lakeformation").generate_presigned_url` method.
 
 Boto3 documentation:
 [LakeFormation.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.generate_presigned_url)
@@ -550,7 +551,7 @@ Retrieves the list of the data lake administrators of a Lake Formation-managed
 data lake.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").get_data_lake_settings` method.
+`session.create_client("lakeformation").get_data_lake_settings` method.
 
 Boto3 documentation:
 [LakeFormation.Client.get_data_lake_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.get_data_lake_settings)
@@ -576,7 +577,7 @@ Returns the Lake Formation permissions for a specified table or database
 resource located at a path in Amazon S3.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").get_effective_permissions_for_path`
+`session.create_client("lakeformation").get_effective_permissions_for_path`
 method.
 
 Boto3 documentation:
@@ -604,7 +605,7 @@ Returns a `Coroutine` for
 
 Returns an LF-tag definition.
 
-Type annotations for `aiobotocore.create_client("lakeformation").get_lf_tag`
+Type annotations for `session.create_client("lakeformation").get_lf_tag`
 method.
 
 Boto3 documentation:
@@ -629,8 +630,8 @@ Returns a `Coroutine` for
 
 Returns the state of a query previously submitted.
 
-Type annotations for
-`aiobotocore.create_client("lakeformation").get_query_state` method.
+Type annotations for `session.create_client("lakeformation").get_query_state`
+method.
 
 Boto3 documentation:
 [LakeFormation.Client.get_query_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.get_query_state)
@@ -654,7 +655,7 @@ Returns a `Coroutine` for
 Retrieves statistics on the planning and execution of a query.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").get_query_statistics` method.
+`session.create_client("lakeformation").get_query_statistics` method.
 
 Boto3 documentation:
 [LakeFormation.Client.get_query_statistics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.get_query_statistics)
@@ -679,7 +680,7 @@ Returns a `Coroutine` for
 Returns the LF-tags applied to a resource.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").get_resource_lf_tags` method.
+`session.create_client("lakeformation").get_resource_lf_tags` method.
 
 Boto3 documentation:
 [LakeFormation.Client.get_resource_lf_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.get_resource_lf_tags)
@@ -705,8 +706,8 @@ Returns a `Coroutine` for
 
 Returns the set of Amazon S3 objects that make up the specified governed table.
 
-Type annotations for
-`aiobotocore.create_client("lakeformation").get_table_objects` method.
+Type annotations for `session.create_client("lakeformation").get_table_objects`
+method.
 
 Boto3 documentation:
 [LakeFormation.Client.get_table_objects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.get_table_objects)
@@ -737,7 +738,7 @@ Returns a `Coroutine` for
 Returns the work units resulting from the query.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").get_work_unit_results` method.
+`session.create_client("lakeformation").get_work_unit_results` method.
 
 Boto3 documentation:
 [LakeFormation.Client.get_work_unit_results](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.get_work_unit_results)
@@ -763,8 +764,8 @@ Returns a `Coroutine` for
 
 Retrieves the work units generated by the `StartQueryPlanning` operation.
 
-Type annotations for
-`aiobotocore.create_client("lakeformation").get_work_units` method.
+Type annotations for `session.create_client("lakeformation").get_work_units`
+method.
 
 Boto3 documentation:
 [LakeFormation.Client.get_work_units](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.get_work_units)
@@ -790,8 +791,8 @@ Returns a `Coroutine` for
 Grants permissions to the principal to access metadata in the Data Catalog and
 data organized in underlying data storage such as Amazon S3.
 
-Type annotations for
-`aiobotocore.create_client("lakeformation").grant_permissions` method.
+Type annotations for `session.create_client("lakeformation").grant_permissions`
+method.
 
 Boto3 documentation:
 [LakeFormation.Client.grant_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.grant_permissions)
@@ -822,7 +823,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Lists all the data cell filters on a table.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").list_data_cells_filter` method.
+`session.create_client("lakeformation").list_data_cells_filter` method.
 
 Boto3 documentation:
 [LakeFormation.Client.list_data_cells_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.list_data_cells_filter)
@@ -848,7 +849,7 @@ Returns a `Coroutine` for
 
 Lists LF-tags that the requester has permission to view.
 
-Type annotations for `aiobotocore.create_client("lakeformation").list_lf_tags`
+Type annotations for `session.create_client("lakeformation").list_lf_tags`
 method.
 
 Boto3 documentation:
@@ -877,8 +878,8 @@ Returns a `Coroutine` for
 Returns a list of the principal permissions on the resource, filtered by the
 permissions of the caller.
 
-Type annotations for
-`aiobotocore.create_client("lakeformation").list_permissions` method.
+Type annotations for `session.create_client("lakeformation").list_permissions`
+method.
 
 Boto3 documentation:
 [LakeFormation.Client.list_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.list_permissions)
@@ -909,8 +910,8 @@ Returns a `Coroutine` for
 
 Lists the resources registered to be managed by the Data Catalog.
 
-Type annotations for
-`aiobotocore.create_client("lakeformation").list_resources` method.
+Type annotations for `session.create_client("lakeformation").list_resources`
+method.
 
 Boto3 documentation:
 [LakeFormation.Client.list_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.list_resources)
@@ -938,8 +939,7 @@ Returns the configuration of all storage optimizers associated with a specified
 table.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").list_table_storage_optimizers`
-method.
+`session.create_client("lakeformation").list_table_storage_optimizers` method.
 
 Boto3 documentation:
 [LakeFormation.Client.list_table_storage_optimizers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.list_table_storage_optimizers)
@@ -968,8 +968,8 @@ Returns a `Coroutine` for
 
 Returns metadata about transactions and their status.
 
-Type annotations for
-`aiobotocore.create_client("lakeformation").list_transactions` method.
+Type annotations for `session.create_client("lakeformation").list_transactions`
+method.
 
 Boto3 documentation:
 [LakeFormation.Client.list_transactions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.list_transactions)
@@ -998,7 +998,7 @@ Sets the list of data lake administrators who have admin privileges on all
 resources managed by Lake Formation.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").put_data_lake_settings` method.
+`session.create_client("lakeformation").put_data_lake_settings` method.
 
 Boto3 documentation:
 [LakeFormation.Client.put_data_lake_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.put_data_lake_settings)
@@ -1024,8 +1024,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Registers the resource as managed by the Data Catalog.
 
-Type annotations for
-`aiobotocore.create_client("lakeformation").register_resource` method.
+Type annotations for `session.create_client("lakeformation").register_resource`
+method.
 
 Boto3 documentation:
 [LakeFormation.Client.register_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.register_resource)
@@ -1050,8 +1050,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes an LF-tag from the resource.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").remove_lf_tags_from_resource`
-method.
+`session.create_client("lakeformation").remove_lf_tags_from_resource` method.
 
 Boto3 documentation:
 [LakeFormation.Client.remove_lf_tags_from_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.remove_lf_tags_from_resource)
@@ -1080,7 +1079,7 @@ Revokes permissions to the principal to access metadata in the Data Catalog and
 data organized in underlying data storage such as Amazon S3.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").revoke_permissions` method.
+`session.create_client("lakeformation").revoke_permissions` method.
 
 Boto3 documentation:
 [LakeFormation.Client.revoke_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.revoke_permissions)
@@ -1112,8 +1111,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 This operation allows a search on `DATABASE` resources by `TagCondition`.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").search_databases_by_lf_tags`
-method.
+`session.create_client("lakeformation").search_databases_by_lf_tags` method.
 
 Boto3 documentation:
 [LakeFormation.Client.search_databases_by_lf_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.search_databases_by_lf_tags)
@@ -1142,7 +1140,7 @@ Returns a `Coroutine` for
 This operation allows a search on `TABLE` resources by `LFTag` s.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").search_tables_by_lf_tags` method.
+`session.create_client("lakeformation").search_tables_by_lf_tags` method.
 
 Boto3 documentation:
 [LakeFormation.Client.search_tables_by_lf_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.search_tables_by_lf_tags)
@@ -1171,7 +1169,7 @@ Returns a `Coroutine` for
 Submits a request to process a query statement.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").start_query_planning` method.
+`session.create_client("lakeformation").start_query_planning` method.
 
 Boto3 documentation:
 [LakeFormation.Client.start_query_planning](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.start_query_planning)
@@ -1198,8 +1196,8 @@ Returns a `Coroutine` for
 
 Starts a new transaction and returns its transaction ID.
 
-Type annotations for
-`aiobotocore.create_client("lakeformation").start_transaction` method.
+Type annotations for `session.create_client("lakeformation").start_transaction`
+method.
 
 Boto3 documentation:
 [LakeFormation.Client.start_transaction](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.start_transaction)
@@ -1222,7 +1220,7 @@ Returns a `Coroutine` for
 
 Updates the list of possible values for the specified LF-tag key.
 
-Type annotations for `aiobotocore.create_client("lakeformation").update_lf_tag`
+Type annotations for `session.create_client("lakeformation").update_lf_tag`
 method.
 
 Boto3 documentation:
@@ -1249,8 +1247,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the data access role used for vending access to the given (registered)
 resource in Lake Formation.
 
-Type annotations for
-`aiobotocore.create_client("lakeformation").update_resource` method.
+Type annotations for `session.create_client("lakeformation").update_resource`
+method.
 
 Boto3 documentation:
 [LakeFormation.Client.update_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.update_resource)
@@ -1275,7 +1273,7 @@ Updates the manifest of Amazon S3 objects that make up the specified governed
 table.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").update_table_objects` method.
+`session.create_client("lakeformation").update_table_objects` method.
 
 Boto3 documentation:
 [LakeFormation.Client.update_table_objects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.update_table_objects)
@@ -1305,8 +1303,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the configuration of the storage optimizers for a table.
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").update_table_storage_optimizer`
-method.
+`session.create_client("lakeformation").update_table_storage_optimizer` method.
 
 Boto3 documentation:
 [LakeFormation.Client.update_table_storage_optimizer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.update_table_storage_optimizer)
@@ -1329,11 +1326,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateTableStorageOptimizerResponseTypeDef](./type_defs.md#updatetablestorageoptimizerresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("lakeformation").__aenter__`
+method.
+
+Boto3 documentation:
+[LakeFormation.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [LakeFormationClient](#lakeformationclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("lakeformation").__aexit__` method.
+
+Boto3 documentation:
+[LakeFormation.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html#LakeFormation.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("lakeformation").get_paginator`
+Type annotations for `session.create_client("lakeformation").get_paginator`
 method with overloads.
 
 - `client.get_paginator("get_work_units")` ->

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[codedeploy]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[codedeploy]'
+
+# standalone installation
 pip install types-aiobotocore-codedeploy
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-codedeploy
 
 ## CodeDeployClient
 
-Type annotations for `aiobotocore.create_client("codedeploy")` as
+Type annotations for `session.create_client("codedeploy")` as
 [CodeDeployClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_codedeploy.client import CodeDeployClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_tags_to_on_premises_instances](./client.md#add_tags_to_on_premises_instances)
 - [batch_get_application_revisions](./client.md#batch_get_application_revisions)
 - [batch_get_applications](./client.md#batch_get_applications)
@@ -226,7 +232,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_codedeploy.paginators import ListApplicationRevisionsPaginator, ...
+from types_aiobotocore_codedeploy.paginator import ListApplicationRevisionsPaginator, ...
 ```
 
 - [ListApplicationRevisionsPaginator](./paginators.md#listapplicationrevisionspaginator)
@@ -249,7 +255,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_codedeploy.waiters import DeploymentSuccessfulWaiter, ...
+from types_aiobotocore_codedeploy.waiter import DeploymentSuccessfulWaiter, ...
 ```
 
 - [DeploymentSuccessfulWaiter](./waiters.md#deploymentsuccessfulwaiter)

@@ -82,21 +82,24 @@ type annotations stubs module
     - [update_recovery_point_lifecycle](#update_recovery_point_lifecycle)
     - [update_region_settings](#update_region_settings)
     - [update_report_plan](#update_report_plan)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="backupclient"></a>
 
 ## BackupClient
 
-Type annotations for `aiobotocore.create_client("backup")`
+Type annotations for `session.create_client("backup")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_backup.client import BackupClient
 
-def get_backup_client() -> BackupClient:
-    return Session().client("backup")
+session = get_session()
+async with session.create_client("backup") as client:
+    client: BackupClient
 ```
 
 Boto3 documentation:
@@ -140,7 +143,7 @@ Exceptions:
 
 BackupClient exceptions.
 
-Type annotations for `aiobotocore.create_client("backup").exceptions` method.
+Type annotations for `session.create_client("backup").exceptions` method.
 
 Boto3 documentation:
 [Backup.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.exceptions)
@@ -153,18 +156,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("backup").can_paginate` method.
+Type annotations for `session.create_client("backup").can_paginate` method.
 
 Boto3 documentation:
 [Backup.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_backup_plan"></a>
 
@@ -172,7 +173,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a backup plan using a backup plan name and backup rules.
 
-Type annotations for `aiobotocore.create_client("backup").create_backup_plan`
+Type annotations for `session.create_client("backup").create_backup_plan`
 method.
 
 Boto3 documentation:
@@ -200,8 +201,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("backup").create_backup_selection` method.
+Type annotations for `session.create_client("backup").create_backup_selection`
+method.
 
 Boto3 documentation:
 [Backup.Client.create_backup_selection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.create_backup_selection)
@@ -228,7 +229,7 @@ Returns a `Coroutine` for
 
 Creates a logical container where backups are stored.
 
-Type annotations for `aiobotocore.create_client("backup").create_backup_vault`
+Type annotations for `session.create_client("backup").create_backup_vault`
 method.
 
 Boto3 documentation:
@@ -256,8 +257,7 @@ Returns a `Coroutine` for
 
 Creates a framework with one or more controls.
 
-Type annotations for `aiobotocore.create_client("backup").create_framework`
-method.
+Type annotations for `session.create_client("backup").create_framework` method.
 
 Boto3 documentation:
 [Backup.Client.create_framework](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.create_framework)
@@ -286,7 +286,7 @@ Returns a `Coroutine` for
 
 Creates a report plan.
 
-Type annotations for `aiobotocore.create_client("backup").create_report_plan`
+Type annotations for `session.create_client("backup").create_report_plan`
 method.
 
 Boto3 documentation:
@@ -319,7 +319,7 @@ Returns a `Coroutine` for
 
 Deletes a backup plan.
 
-Type annotations for `aiobotocore.create_client("backup").delete_backup_plan`
+Type annotations for `session.create_client("backup").delete_backup_plan`
 method.
 
 Boto3 documentation:
@@ -345,8 +345,8 @@ Returns a `Coroutine` for
 Deletes the resource selection associated with a backup plan that is specified
 by the `SelectionId` .
 
-Type annotations for
-`aiobotocore.create_client("backup").delete_backup_selection` method.
+Type annotations for `session.create_client("backup").delete_backup_selection`
+method.
 
 Boto3 documentation:
 [Backup.Client.delete_backup_selection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.delete_backup_selection)
@@ -368,7 +368,7 @@ Keyword-only arguments:
 
 Deletes the backup vault identified by its name.
 
-Type annotations for `aiobotocore.create_client("backup").delete_backup_vault`
+Type annotations for `session.create_client("backup").delete_backup_vault`
 method.
 
 Boto3 documentation:
@@ -391,7 +391,7 @@ Keyword-only arguments:
 Deletes the policy document that manages permissions on a backup vault.
 
 Type annotations for
-`aiobotocore.create_client("backup").delete_backup_vault_access_policy` method.
+`session.create_client("backup").delete_backup_vault_access_policy` method.
 
 Boto3 documentation:
 [Backup.Client.delete_backup_vault_access_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.delete_backup_vault_access_policy)
@@ -413,7 +413,7 @@ Keyword-only arguments:
 Deletes Backup Vault Lock from a backup vault specified by a backup vault name.
 
 Type annotations for
-`aiobotocore.create_client("backup").delete_backup_vault_lock_configuration`
+`session.create_client("backup").delete_backup_vault_lock_configuration`
 method.
 
 Boto3 documentation:
@@ -436,7 +436,7 @@ Keyword-only arguments:
 Deletes event notifications for the specified backup vault.
 
 Type annotations for
-`aiobotocore.create_client("backup").delete_backup_vault_notifications` method.
+`session.create_client("backup").delete_backup_vault_notifications` method.
 
 Boto3 documentation:
 [Backup.Client.delete_backup_vault_notifications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.delete_backup_vault_notifications)
@@ -457,8 +457,7 @@ Keyword-only arguments:
 
 Deletes the framework specified by a framework name.
 
-Type annotations for `aiobotocore.create_client("backup").delete_framework`
-method.
+Type annotations for `session.create_client("backup").delete_framework` method.
 
 Boto3 documentation:
 [Backup.Client.delete_framework](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.delete_framework)
@@ -478,8 +477,8 @@ Keyword-only arguments:
 
 Deletes the recovery point specified by a recovery point ID.
 
-Type annotations for
-`aiobotocore.create_client("backup").delete_recovery_point` method.
+Type annotations for `session.create_client("backup").delete_recovery_point`
+method.
 
 Boto3 documentation:
 [Backup.Client.delete_recovery_point](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.delete_recovery_point)
@@ -501,7 +500,7 @@ Keyword-only arguments:
 
 Deletes the report plan specified by a report plan name.
 
-Type annotations for `aiobotocore.create_client("backup").delete_report_plan`
+Type annotations for `session.create_client("backup").delete_report_plan`
 method.
 
 Boto3 documentation:
@@ -523,7 +522,7 @@ Keyword-only arguments:
 
 Returns backup job details for the specified `BackupJobId` .
 
-Type annotations for `aiobotocore.create_client("backup").describe_backup_job`
+Type annotations for `session.create_client("backup").describe_backup_job`
 method.
 
 Boto3 documentation:
@@ -548,8 +547,8 @@ Returns a `Coroutine` for
 
 Returns metadata about a backup vault specified by its name.
 
-Type annotations for
-`aiobotocore.create_client("backup").describe_backup_vault` method.
+Type annotations for `session.create_client("backup").describe_backup_vault`
+method.
 
 Boto3 documentation:
 [Backup.Client.describe_backup_vault](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.describe_backup_vault)
@@ -573,7 +572,7 @@ Returns a `Coroutine` for
 
 Returns metadata associated with creating a copy of a resource.
 
-Type annotations for `aiobotocore.create_client("backup").describe_copy_job`
+Type annotations for `session.create_client("backup").describe_copy_job`
 method.
 
 Boto3 documentation:
@@ -597,7 +596,7 @@ Returns a `Coroutine` for
 
 Returns the framework details for the specified `FrameworkName` .
 
-Type annotations for `aiobotocore.create_client("backup").describe_framework`
+Type annotations for `session.create_client("backup").describe_framework`
 method.
 
 Boto3 documentation:
@@ -623,8 +622,8 @@ Returns a `Coroutine` for
 Describes whether the Amazon Web Services account is opted in to cross-account
 backup.
 
-Type annotations for
-`aiobotocore.create_client("backup").describe_global_settings` method.
+Type annotations for `session.create_client("backup").describe_global_settings`
+method.
 
 Boto3 documentation:
 [Backup.Client.describe_global_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.describe_global_settings)
@@ -644,7 +643,7 @@ backed up, its Amazon Resource Name (ARN), and the Amazon Web Services service
 type of the saved resource.
 
 Type annotations for
-`aiobotocore.create_client("backup").describe_protected_resource` method.
+`session.create_client("backup").describe_protected_resource` method.
 
 Boto3 documentation:
 [Backup.Client.describe_protected_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.describe_protected_resource)
@@ -669,8 +668,8 @@ Returns a `Coroutine` for
 Returns metadata associated with a recovery point, including ID, status,
 encryption, and lifecycle.
 
-Type annotations for
-`aiobotocore.create_client("backup").describe_recovery_point` method.
+Type annotations for `session.create_client("backup").describe_recovery_point`
+method.
 
 Boto3 documentation:
 [Backup.Client.describe_recovery_point](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.describe_recovery_point)
@@ -695,8 +694,8 @@ Returns a `Coroutine` for
 
 Returns the current service opt-in settings for the Region.
 
-Type annotations for
-`aiobotocore.create_client("backup").describe_region_settings` method.
+Type annotations for `session.create_client("backup").describe_region_settings`
+method.
 
 Boto3 documentation:
 [Backup.Client.describe_region_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.describe_region_settings)
@@ -714,7 +713,7 @@ Returns a `Coroutine` for
 Returns the details associated with creating a report as specified by its
 `ReportJobId` .
 
-Type annotations for `aiobotocore.create_client("backup").describe_report_job`
+Type annotations for `session.create_client("backup").describe_report_job`
 method.
 
 Boto3 documentation:
@@ -740,7 +739,7 @@ Returns a `Coroutine` for
 Returns a list of all report plans for an Amazon Web Services account and
 Amazon Web Services Region.
 
-Type annotations for `aiobotocore.create_client("backup").describe_report_plan`
+Type annotations for `session.create_client("backup").describe_report_plan`
 method.
 
 Boto3 documentation:
@@ -765,7 +764,7 @@ Returns a `Coroutine` for
 
 Returns metadata associated with a restore job that is specified by a job ID.
 
-Type annotations for `aiobotocore.create_client("backup").describe_restore_job`
+Type annotations for `session.create_client("backup").describe_restore_job`
 method.
 
 Boto3 documentation:
@@ -792,7 +791,7 @@ Deletes the specified continuous backup recovery point from Backup and releases
 control of that continuous backup to the source service, such as Amazon RDS.
 
 Type annotations for
-`aiobotocore.create_client("backup").disassociate_recovery_point` method.
+`session.create_client("backup").disassociate_recovery_point` method.
 
 Boto3 documentation:
 [Backup.Client.disassociate_recovery_point](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.disassociate_recovery_point)
@@ -815,7 +814,7 @@ Keyword-only arguments:
 Returns the backup plan that is specified by the plan ID as a backup template.
 
 Type annotations for
-`aiobotocore.create_client("backup").export_backup_plan_template` method.
+`session.create_client("backup").export_backup_plan_template` method.
 
 Boto3 documentation:
 [Backup.Client.export_backup_plan_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.export_backup_plan_template)
@@ -839,8 +838,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("backup").generate_presigned_url` method.
+Type annotations for `session.create_client("backup").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Backup.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.generate_presigned_url)
@@ -863,8 +862,7 @@ Returns a `Coroutine` for `str`.
 
 Returns `BackupPlan` details for the specified `BackupPlanId`.
 
-Type annotations for `aiobotocore.create_client("backup").get_backup_plan`
-method.
+Type annotations for `session.create_client("backup").get_backup_plan` method.
 
 Boto3 documentation:
 [Backup.Client.get_backup_plan](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.get_backup_plan)
@@ -889,7 +887,7 @@ Returns a `Coroutine` for
 Returns a valid JSON document specifying a backup plan or an error.
 
 Type annotations for
-`aiobotocore.create_client("backup").get_backup_plan_from_json` method.
+`session.create_client("backup").get_backup_plan_from_json` method.
 
 Boto3 documentation:
 [Backup.Client.get_backup_plan_from_json](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.get_backup_plan_from_json)
@@ -914,7 +912,7 @@ Returns a `Coroutine` for
 Returns the template specified by its `templateId` as a backup plan.
 
 Type annotations for
-`aiobotocore.create_client("backup").get_backup_plan_from_template` method.
+`session.create_client("backup").get_backup_plan_from_template` method.
 
 Boto3 documentation:
 [Backup.Client.get_backup_plan_from_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.get_backup_plan_from_template)
@@ -938,7 +936,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("backup").get_backup_selection`
+Type annotations for `session.create_client("backup").get_backup_selection`
 method.
 
 Boto3 documentation:
@@ -966,7 +964,7 @@ Returns the access policy document that is associated with the named backup
 vault.
 
 Type annotations for
-`aiobotocore.create_client("backup").get_backup_vault_access_policy` method.
+`session.create_client("backup").get_backup_vault_access_policy` method.
 
 Boto3 documentation:
 [Backup.Client.get_backup_vault_access_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.get_backup_vault_access_policy)
@@ -991,7 +989,7 @@ Returns a `Coroutine` for
 Returns event notifications for the specified backup vault.
 
 Type annotations for
-`aiobotocore.create_client("backup").get_backup_vault_notifications` method.
+`session.create_client("backup").get_backup_vault_notifications` method.
 
 Boto3 documentation:
 [Backup.Client.get_backup_vault_notifications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.get_backup_vault_notifications)
@@ -1016,8 +1014,7 @@ Returns a `Coroutine` for
 Returns a set of metadata key-value pairs that were used to create the backup.
 
 Type annotations for
-`aiobotocore.create_client("backup").get_recovery_point_restore_metadata`
-method.
+`session.create_client("backup").get_recovery_point_restore_metadata` method.
 
 Boto3 documentation:
 [Backup.Client.get_recovery_point_restore_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.get_recovery_point_restore_metadata)
@@ -1043,7 +1040,7 @@ Returns a `Coroutine` for
 Returns the Amazon Web Services resource types supported by Backup.
 
 Type annotations for
-`aiobotocore.create_client("backup").get_supported_resource_types` method.
+`session.create_client("backup").get_supported_resource_types` method.
 
 Boto3 documentation:
 [Backup.Client.get_supported_resource_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.get_supported_resource_types)
@@ -1061,8 +1058,7 @@ Returns a `Coroutine` for
 Returns a list of existing backup jobs for an authenticated account for the
 last 30 days.
 
-Type annotations for `aiobotocore.create_client("backup").list_backup_jobs`
-method.
+Type annotations for `session.create_client("backup").list_backup_jobs` method.
 
 Boto3 documentation:
 [Backup.Client.list_backup_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.list_backup_jobs)
@@ -1095,7 +1091,7 @@ Returns metadata of your saved backup plan templates, including the template
 ID, name, and the creation and deletion dates.
 
 Type annotations for
-`aiobotocore.create_client("backup").list_backup_plan_templates` method.
+`session.create_client("backup").list_backup_plan_templates` method.
 
 Boto3 documentation:
 [Backup.Client.list_backup_plan_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.list_backup_plan_templates)
@@ -1123,7 +1119,7 @@ Returns version metadata of your backup plans, including Amazon Resource Names
 IDs.
 
 Type annotations for
-`aiobotocore.create_client("backup").list_backup_plan_versions` method.
+`session.create_client("backup").list_backup_plan_versions` method.
 
 Boto3 documentation:
 [Backup.Client.list_backup_plan_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.list_backup_plan_versions)
@@ -1149,7 +1145,7 @@ Returns a `Coroutine` for
 
 Returns a list of all active backup plans for an authenticated account.
 
-Type annotations for `aiobotocore.create_client("backup").list_backup_plans`
+Type annotations for `session.create_client("backup").list_backup_plans`
 method.
 
 Boto3 documentation:
@@ -1176,8 +1172,8 @@ Returns a `Coroutine` for
 Returns an array containing metadata of the resources associated with the
 target backup plan.
 
-Type annotations for
-`aiobotocore.create_client("backup").list_backup_selections` method.
+Type annotations for `session.create_client("backup").list_backup_selections`
+method.
 
 Boto3 documentation:
 [Backup.Client.list_backup_selections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.list_backup_selections)
@@ -1204,7 +1200,7 @@ Returns a `Coroutine` for
 Returns a list of recovery point storage containers along with information
 about them.
 
-Type annotations for `aiobotocore.create_client("backup").list_backup_vaults`
+Type annotations for `session.create_client("backup").list_backup_vaults`
 method.
 
 Boto3 documentation:
@@ -1230,8 +1226,7 @@ Returns a `Coroutine` for
 
 Returns metadata about your copy jobs.
 
-Type annotations for `aiobotocore.create_client("backup").list_copy_jobs`
-method.
+Type annotations for `session.create_client("backup").list_copy_jobs` method.
 
 Boto3 documentation:
 [Backup.Client.list_copy_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.list_copy_jobs)
@@ -1263,8 +1258,7 @@ Returns a `Coroutine` for
 Returns a list of all frameworks for an Amazon Web Services account and Amazon
 Web Services Region.
 
-Type annotations for `aiobotocore.create_client("backup").list_frameworks`
-method.
+Type annotations for `session.create_client("backup").list_frameworks` method.
 
 Boto3 documentation:
 [Backup.Client.list_frameworks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.list_frameworks)
@@ -1290,8 +1284,8 @@ Returns an array of resources successfully backed up by Backup, including the
 time the resource was saved, an Amazon Resource Name (ARN) of the resource, and
 a resource type.
 
-Type annotations for
-`aiobotocore.create_client("backup").list_protected_resources` method.
+Type annotations for `session.create_client("backup").list_protected_resources`
+method.
 
 Boto3 documentation:
 [Backup.Client.list_protected_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.list_protected_resources)
@@ -1318,8 +1312,7 @@ Returns detailed information about the recovery points stored in a backup
 vault.
 
 Type annotations for
-`aiobotocore.create_client("backup").list_recovery_points_by_backup_vault`
-method.
+`session.create_client("backup").list_recovery_points_by_backup_vault` method.
 
 Boto3 documentation:
 [Backup.Client.list_recovery_points_by_backup_vault](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.list_recovery_points_by_backup_vault)
@@ -1352,7 +1345,7 @@ Returns detailed information about all the recovery points of the type
 specified by a resource Amazon Resource Name (ARN).
 
 Type annotations for
-`aiobotocore.create_client("backup").list_recovery_points_by_resource` method.
+`session.create_client("backup").list_recovery_points_by_resource` method.
 
 Boto3 documentation:
 [Backup.Client.list_recovery_points_by_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.list_recovery_points_by_resource)
@@ -1378,8 +1371,7 @@ Returns a `Coroutine` for
 
 Returns details about your report jobs.
 
-Type annotations for `aiobotocore.create_client("backup").list_report_jobs`
-method.
+Type annotations for `session.create_client("backup").list_report_jobs` method.
 
 Boto3 documentation:
 [Backup.Client.list_report_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.list_report_jobs)
@@ -1407,7 +1399,7 @@ Returns a `Coroutine` for
 
 Returns a list of your report plans.
 
-Type annotations for `aiobotocore.create_client("backup").list_report_plans`
+Type annotations for `session.create_client("backup").list_report_plans`
 method.
 
 Boto3 documentation:
@@ -1433,7 +1425,7 @@ Returns a `Coroutine` for
 Returns a list of jobs that Backup initiated to restore a saved resource,
 including details about the recovery process.
 
-Type annotations for `aiobotocore.create_client("backup").list_restore_jobs`
+Type annotations for `session.create_client("backup").list_restore_jobs`
 method.
 
 Boto3 documentation:
@@ -1463,7 +1455,7 @@ Returns a `Coroutine` for
 Returns a list of key-value pairs assigned to a target recovery point, backup
 plan, or backup vault.
 
-Type annotations for `aiobotocore.create_client("backup").list_tags` method.
+Type annotations for `session.create_client("backup").list_tags` method.
 
 Boto3 documentation:
 [Backup.Client.list_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.list_tags)
@@ -1490,7 +1482,7 @@ Sets a resource-based policy that is used to manage access permissions on the
 target backup vault.
 
 Type annotations for
-`aiobotocore.create_client("backup").put_backup_vault_access_policy` method.
+`session.create_client("backup").put_backup_vault_access_policy` method.
 
 Boto3 documentation:
 [Backup.Client.put_backup_vault_access_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.put_backup_vault_access_policy)
@@ -1514,8 +1506,7 @@ Applies Backup Vault Lock to a backup vault, preventing attempts to delete any
 recovery point stored in or created in a backup vault.
 
 Type annotations for
-`aiobotocore.create_client("backup").put_backup_vault_lock_configuration`
-method.
+`session.create_client("backup").put_backup_vault_lock_configuration` method.
 
 Boto3 documentation:
 [Backup.Client.put_backup_vault_lock_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.put_backup_vault_lock_configuration)
@@ -1540,7 +1531,7 @@ Keyword-only arguments:
 Turns on notifications on a backup vault for the specified topic and events.
 
 Type annotations for
-`aiobotocore.create_client("backup").put_backup_vault_notifications` method.
+`session.create_client("backup").put_backup_vault_notifications` method.
 
 Boto3 documentation:
 [Backup.Client.put_backup_vault_notifications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.put_backup_vault_notifications)
@@ -1565,8 +1556,7 @@ Keyword-only arguments:
 
 Starts an on-demand backup job for the specified resource.
 
-Type annotations for `aiobotocore.create_client("backup").start_backup_job`
-method.
+Type annotations for `session.create_client("backup").start_backup_job` method.
 
 Boto3 documentation:
 [Backup.Client.start_backup_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.start_backup_job)
@@ -1597,8 +1587,7 @@ Returns a `Coroutine` for
 
 Starts a job to create a one-time copy of the specified resource.
 
-Type annotations for `aiobotocore.create_client("backup").start_copy_job`
-method.
+Type annotations for `session.create_client("backup").start_copy_job` method.
 
 Boto3 documentation:
 [Backup.Client.start_copy_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.start_copy_job)
@@ -1626,8 +1615,7 @@ Returns a `Coroutine` for
 
 Starts an on-demand report job for the specified report plan.
 
-Type annotations for `aiobotocore.create_client("backup").start_report_job`
-method.
+Type annotations for `session.create_client("backup").start_report_job` method.
 
 Boto3 documentation:
 [Backup.Client.start_report_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.start_report_job)
@@ -1651,7 +1639,7 @@ Returns a `Coroutine` for
 
 Recovers the saved resource identified by an Amazon Resource Name (ARN).
 
-Type annotations for `aiobotocore.create_client("backup").start_restore_job`
+Type annotations for `session.create_client("backup").start_restore_job`
 method.
 
 Boto3 documentation:
@@ -1679,8 +1667,7 @@ Returns a `Coroutine` for
 
 Attempts to cancel a job to create a one-time backup of a resource.
 
-Type annotations for `aiobotocore.create_client("backup").stop_backup_job`
-method.
+Type annotations for `session.create_client("backup").stop_backup_job` method.
 
 Boto3 documentation:
 [Backup.Client.stop_backup_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.stop_backup_job)
@@ -1701,7 +1688,7 @@ Keyword-only arguments:
 Assigns a set of key-value pairs to a recovery point, backup plan, or backup
 vault identified by an Amazon Resource Name (ARN).
 
-Type annotations for `aiobotocore.create_client("backup").tag_resource` method.
+Type annotations for `session.create_client("backup").tag_resource` method.
 
 Boto3 documentation:
 [Backup.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.tag_resource)
@@ -1724,8 +1711,7 @@ Removes a set of key-value pairs from a recovery point, backup plan, or backup
 vault identified by an Amazon Resource Name (ARN) See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UntagResource).
 
-Type annotations for `aiobotocore.create_client("backup").untag_resource`
-method.
+Type annotations for `session.create_client("backup").untag_resource` method.
 
 Boto3 documentation:
 [Backup.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.untag_resource)
@@ -1747,7 +1733,7 @@ Keyword-only arguments:
 Updates an existing backup plan identified by its `backupPlanId` with the input
 document in JSON format.
 
-Type annotations for `aiobotocore.create_client("backup").update_backup_plan`
+Type annotations for `session.create_client("backup").update_backup_plan`
 method.
 
 Boto3 documentation:
@@ -1775,8 +1761,7 @@ Returns a `Coroutine` for
 Updates an existing framework identified by its `FrameworkName` with the input
 document in JSON format.
 
-Type annotations for `aiobotocore.create_client("backup").update_framework`
-method.
+Type annotations for `session.create_client("backup").update_framework` method.
 
 Boto3 documentation:
 [Backup.Client.update_framework](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.update_framework)
@@ -1804,8 +1789,8 @@ Returns a `Coroutine` for
 Updates whether the Amazon Web Services account is opted in to cross-account
 backup.
 
-Type annotations for
-`aiobotocore.create_client("backup").update_global_settings` method.
+Type annotations for `session.create_client("backup").update_global_settings`
+method.
 
 Boto3 documentation:
 [Backup.Client.update_global_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.update_global_settings)
@@ -1827,7 +1812,7 @@ Keyword-only arguments:
 Sets the transition lifecycle of a recovery point.
 
 Type annotations for
-`aiobotocore.create_client("backup").update_recovery_point_lifecycle` method.
+`session.create_client("backup").update_recovery_point_lifecycle` method.
 
 Boto3 documentation:
 [Backup.Client.update_recovery_point_lifecycle](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.update_recovery_point_lifecycle)
@@ -1853,8 +1838,8 @@ Returns a `Coroutine` for
 
 Updates the current service opt-in settings for the Region.
 
-Type annotations for
-`aiobotocore.create_client("backup").update_region_settings` method.
+Type annotations for `session.create_client("backup").update_region_settings`
+method.
 
 Boto3 documentation:
 [Backup.Client.update_region_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.update_region_settings)
@@ -1877,7 +1862,7 @@ Keyword-only arguments:
 Updates an existing report plan identified by its `ReportPlanName` with the
 input document in JSON format.
 
-Type annotations for `aiobotocore.create_client("backup").update_report_plan`
+Type annotations for `session.create_client("backup").update_report_plan`
 method.
 
 Boto3 documentation:
@@ -1900,3 +1885,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateReportPlanOutputTypeDef](./type_defs.md#updatereportplanoutputtypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("backup").__aenter__` method.
+
+Boto3 documentation:
+[Backup.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [BackupClient](#backupclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("backup").__aexit__` method.
+
+Boto3 documentation:
+[Backup.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/backup.html#Backup.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

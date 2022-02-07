@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[cur]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[cur]'
+
+# standalone installation
 pip install types-aiobotocore-cur
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-cur
 
 ## CostandUsageReportServiceClient
 
-Type annotations for `aiobotocore.create_client("cur")` as
+Type annotations for `session.create_client("cur")` as
 [CostandUsageReportServiceClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_cur.client import CostandUsageReportServiceClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [delete_report_definition](./client.md#delete_report_definition)
 - [describe_report_definitions](./client.md#describe_report_definitions)
@@ -73,7 +79,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_cur.paginators import DescribeReportDefinitionsPaginator, ...
+from types_aiobotocore_cur.paginator import DescribeReportDefinitionsPaginator, ...
 ```
 
 - [DescribeReportDefinitionsPaginator](./paginators.md#describereportdefinitionspaginator)

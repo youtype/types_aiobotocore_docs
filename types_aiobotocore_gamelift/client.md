@@ -111,22 +111,25 @@ type annotations stubs module
     - [update_runtime_configuration](#update_runtime_configuration)
     - [update_script](#update_script)
     - [validate_matchmaking_rule_set](#validate_matchmaking_rule_set)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="gameliftclient"></a>
 
 ## GameLiftClient
 
-Type annotations for `aiobotocore.create_client("gamelift")`
+Type annotations for `session.create_client("gamelift")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_gamelift.client import GameLiftClient
 
-def get_gamelift_client() -> GameLiftClient:
-    return Session().client("gamelift")
+session = get_session()
+async with session.create_client("gamelift") as client:
+    client: GameLiftClient
 ```
 
 Boto3 documentation:
@@ -175,7 +178,7 @@ Exceptions:
 
 GameLiftClient exceptions.
 
-Type annotations for `aiobotocore.create_client("gamelift").exceptions` method.
+Type annotations for `session.create_client("gamelift").exceptions` method.
 
 Boto3 documentation:
 [GameLift.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.exceptions)
@@ -188,8 +191,7 @@ Returns [Exceptions](#exceptions).
 
 Registers a player's acceptance or rejection of a proposed FlexMatch match.
 
-Type annotations for `aiobotocore.create_client("gamelift").accept_match`
-method.
+Type annotations for `session.create_client("gamelift").accept_match` method.
 
 Boto3 documentation:
 [GameLift.Client.accept_match](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.accept_match)
@@ -214,19 +216,16 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("gamelift").can_paginate`
-method.
+Type annotations for `session.create_client("gamelift").can_paginate` method.
 
 Boto3 documentation:
 [GameLift.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="claim_game_server"></a>
 
@@ -236,7 +235,7 @@ Returns a `Coroutine` for `bool`.
 groups.** Locates an available game server and temporarily reserves it to host
 gameplay and players.
 
-Type annotations for `aiobotocore.create_client("gamelift").claim_game_server`
+Type annotations for `session.create_client("gamelift").claim_game_server`
 method.
 
 Boto3 documentation:
@@ -262,8 +261,7 @@ Returns a `Coroutine` for
 
 Creates an alias for a fleet.
 
-Type annotations for `aiobotocore.create_client("gamelift").create_alias`
-method.
+Type annotations for `session.create_client("gamelift").create_alias` method.
 
 Boto3 documentation:
 [GameLift.Client.create_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.create_alias)
@@ -290,8 +288,7 @@ Returns a `Coroutine` for
 
 Creates a new Amazon GameLift build resource for your game server binary files.
 
-Type annotations for `aiobotocore.create_client("gamelift").create_build`
-method.
+Type annotations for `session.create_client("gamelift").create_build` method.
 
 Boto3 documentation:
 [GameLift.Client.create_build](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.create_build)
@@ -319,8 +316,7 @@ Returns a `Coroutine` for
 Creates a fleet of Amazon Elastic Compute Cloud (Amazon EC2) instances to host
 your custom game server or Realtime Servers.
 
-Type annotations for `aiobotocore.create_client("gamelift").create_fleet`
-method.
+Type annotations for `session.create_client("gamelift").create_fleet` method.
 
 Boto3 documentation:
 [GameLift.Client.create_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.create_fleet)
@@ -370,8 +366,8 @@ Returns a `Coroutine` for
 Adds remote locations to a fleet and begins populating the new locations with
 EC2 instances.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").create_fleet_locations` method.
+Type annotations for `session.create_client("gamelift").create_fleet_locations`
+method.
 
 Boto3 documentation:
 [GameLift.Client.create_fleet_locations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.create_fleet_locations)
@@ -401,7 +397,7 @@ groups.** Creates a GameLift FleetIQ game server group for managing game
 hosting on a collection of Amazon EC2 instances for game hosting.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").create_game_server_group` method.
+`session.create_client("gamelift").create_game_server_group` method.
 
 Boto3 documentation:
 [GameLift.Client.create_game_server_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.create_game_server_group)
@@ -442,8 +438,8 @@ Returns a `Coroutine` for
 
 Creates a multiplayer game session for players in a specific fleet location.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").create_game_session` method.
+Type annotations for `session.create_client("gamelift").create_game_session`
+method.
 
 Boto3 documentation:
 [GameLift.Client.create_game_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.create_game_session)
@@ -478,7 +474,7 @@ Returns a `Coroutine` for
 Creates a placement queue that processes requests for new game sessions.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").create_game_session_queue` method.
+`session.create_client("gamelift").create_game_session_queue` method.
 
 Boto3 documentation:
 [GameLift.Client.create_game_session_queue](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.create_game_session_queue)
@@ -515,8 +511,7 @@ Returns a `Coroutine` for
 Defines a new matchmaking configuration for use with FlexMatch.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").create_matchmaking_configuration`
-method.
+`session.create_client("gamelift").create_matchmaking_configuration` method.
 
 Boto3 documentation:
 [GameLift.Client.create_matchmaking_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.create_matchmaking_configuration)
@@ -556,7 +551,7 @@ Returns a `Coroutine` for
 Creates a new rule set for FlexMatch matchmaking.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").create_matchmaking_rule_set` method.
+`session.create_client("gamelift").create_matchmaking_rule_set` method.
 
 Boto3 documentation:
 [GameLift.Client.create_matchmaking_rule_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.create_matchmaking_rule_set)
@@ -582,8 +577,8 @@ Returns a `Coroutine` for
 
 Reserves an open player slot in a game session for a player.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").create_player_session` method.
+Type annotations for `session.create_client("gamelift").create_player_session`
+method.
 
 Boto3 documentation:
 [GameLift.Client.create_player_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.create_player_session)
@@ -609,8 +604,8 @@ Returns a `Coroutine` for
 
 Reserves open slots in a game session for a group of players.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").create_player_sessions` method.
+Type annotations for `session.create_client("gamelift").create_player_sessions`
+method.
 
 Boto3 documentation:
 [GameLift.Client.create_player_sessions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.create_player_sessions)
@@ -636,8 +631,7 @@ Returns a `Coroutine` for
 
 Creates a new script record for your Realtime Servers script.
 
-Type annotations for `aiobotocore.create_client("gamelift").create_script`
-method.
+Type annotations for `session.create_client("gamelift").create_script` method.
 
 Boto3 documentation:
 [GameLift.Client.create_script](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.create_script)
@@ -667,8 +661,7 @@ for your Amazon GameLift fleet and a virtual private cloud (VPC) in your AWS
 account.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").create_vpc_peering_authorization`
-method.
+`session.create_client("gamelift").create_vpc_peering_authorization` method.
 
 Boto3 documentation:
 [GameLift.Client.create_vpc_peering_authorization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.create_vpc_peering_authorization)
@@ -695,7 +688,7 @@ Establishes a VPC peering connection between a virtual private cloud (VPC) in
 an AWS account with the VPC for your Amazon GameLift fleet.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").create_vpc_peering_connection` method.
+`session.create_client("gamelift").create_vpc_peering_connection` method.
 
 Boto3 documentation:
 [GameLift.Client.create_vpc_peering_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.create_vpc_peering_connection)
@@ -720,8 +713,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an alias.
 
-Type annotations for `aiobotocore.create_client("gamelift").delete_alias`
-method.
+Type annotations for `session.create_client("gamelift").delete_alias` method.
 
 Boto3 documentation:
 [GameLift.Client.delete_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.delete_alias)
@@ -741,8 +733,7 @@ Keyword-only arguments:
 
 Deletes a build.
 
-Type annotations for `aiobotocore.create_client("gamelift").delete_build`
-method.
+Type annotations for `session.create_client("gamelift").delete_build` method.
 
 Boto3 documentation:
 [GameLift.Client.delete_build](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.delete_build)
@@ -762,8 +753,7 @@ Keyword-only arguments:
 
 Deletes all resources and information related a fleet.
 
-Type annotations for `aiobotocore.create_client("gamelift").delete_fleet`
-method.
+Type annotations for `session.create_client("gamelift").delete_fleet` method.
 
 Boto3 documentation:
 [GameLift.Client.delete_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.delete_fleet)
@@ -783,8 +773,8 @@ Keyword-only arguments:
 
 Removes locations from a multi-location fleet.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").delete_fleet_locations` method.
+Type annotations for `session.create_client("gamelift").delete_fleet_locations`
+method.
 
 Boto3 documentation:
 [GameLift.Client.delete_fleet_locations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.delete_fleet_locations)
@@ -812,7 +802,7 @@ groups.** Terminates a game server group and permanently deletes the game
 server group record.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").delete_game_server_group` method.
+`session.create_client("gamelift").delete_game_server_group` method.
 
 Boto3 documentation:
 [GameLift.Client.delete_game_server_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.delete_game_server_group)
@@ -839,7 +829,7 @@ Returns a `Coroutine` for
 Deletes a game session queue.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").delete_game_session_queue` method.
+`session.create_client("gamelift").delete_game_session_queue` method.
 
 Boto3 documentation:
 [GameLift.Client.delete_game_session_queue](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.delete_game_session_queue)
@@ -863,8 +853,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Permanently removes a FlexMatch matchmaking configuration.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").delete_matchmaking_configuration`
-method.
+`session.create_client("gamelift").delete_matchmaking_configuration` method.
 
 Boto3 documentation:
 [GameLift.Client.delete_matchmaking_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.delete_matchmaking_configuration)
@@ -888,7 +877,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes an existing matchmaking rule set.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").delete_matchmaking_rule_set` method.
+`session.create_client("gamelift").delete_matchmaking_rule_set` method.
 
 Boto3 documentation:
 [GameLift.Client.delete_matchmaking_rule_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.delete_matchmaking_rule_set)
@@ -911,8 +900,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a fleet scaling policy.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").delete_scaling_policy` method.
+Type annotations for `session.create_client("gamelift").delete_scaling_policy`
+method.
 
 Boto3 documentation:
 [GameLift.Client.delete_scaling_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.delete_scaling_policy)
@@ -934,8 +923,7 @@ Keyword-only arguments:
 
 Deletes a Realtime script.
 
-Type annotations for `aiobotocore.create_client("gamelift").delete_script`
-method.
+Type annotations for `session.create_client("gamelift").delete_script` method.
 
 Boto3 documentation:
 [GameLift.Client.delete_script](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.delete_script)
@@ -956,8 +944,7 @@ Keyword-only arguments:
 Cancels a pending VPC peering authorization for the specified VPC.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").delete_vpc_peering_authorization`
-method.
+`session.create_client("gamelift").delete_vpc_peering_authorization` method.
 
 Boto3 documentation:
 [GameLift.Client.delete_vpc_peering_authorization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.delete_vpc_peering_authorization)
@@ -982,7 +969,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes a VPC peering connection.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").delete_vpc_peering_connection` method.
+`session.create_client("gamelift").delete_vpc_peering_connection` method.
 
 Boto3 documentation:
 [GameLift.Client.delete_vpc_peering_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.delete_vpc_peering_connection)
@@ -1007,8 +994,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 **This operation is used with the GameLift FleetIQ solution and game server
 groups.** Removes the game server from a game server group.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").deregister_game_server` method.
+Type annotations for `session.create_client("gamelift").deregister_game_server`
+method.
 
 Boto3 documentation:
 [GameLift.Client.deregister_game_server](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.deregister_game_server)
@@ -1030,8 +1017,7 @@ Keyword-only arguments:
 
 Retrieves properties for an alias.
 
-Type annotations for `aiobotocore.create_client("gamelift").describe_alias`
-method.
+Type annotations for `session.create_client("gamelift").describe_alias` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_alias)
@@ -1054,8 +1040,7 @@ Returns a `Coroutine` for
 
 Retrieves properties for a custom game build.
 
-Type annotations for `aiobotocore.create_client("gamelift").describe_build`
-method.
+Type annotations for `session.create_client("gamelift").describe_build` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_build](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_build)
@@ -1080,7 +1065,7 @@ The GameLift service limits and current utilization for an AWS Region or
 location.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_ec2_instance_limits` method.
+`session.create_client("gamelift").describe_ec2_instance_limits` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_ec2_instance_limits](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_ec2_instance_limits)
@@ -1107,7 +1092,7 @@ Retrieves core fleet-wide properties, including the computing hardware and
 deployment configuration for all instances in the fleet.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_fleet_attributes` method.
+`session.create_client("gamelift").describe_fleet_attributes` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_fleet_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_fleet_attributes)
@@ -1134,7 +1119,7 @@ Returns a `Coroutine` for
 Retrieves the resource capacity settings for one or more fleets.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_fleet_capacity` method.
+`session.create_client("gamelift").describe_fleet_capacity` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_fleet_capacity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_fleet_capacity)
@@ -1160,8 +1145,8 @@ Returns a `Coroutine` for
 
 Retrieves entries from a fleet's event log.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").describe_fleet_events` method.
+Type annotations for `session.create_client("gamelift").describe_fleet_events`
+method.
 
 Boto3 documentation:
 [GameLift.Client.describe_fleet_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_fleet_events)
@@ -1191,8 +1176,7 @@ Retrieves information on a fleet's remote locations, including life-cycle
 status and any suspended fleet activity.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_fleet_location_attributes`
-method.
+`session.create_client("gamelift").describe_fleet_location_attributes` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_fleet_location_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_fleet_location_attributes)
@@ -1220,8 +1204,7 @@ Returns a `Coroutine` for
 Retrieves the resource capacity settings for a fleet location.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_fleet_location_capacity`
-method.
+`session.create_client("gamelift").describe_fleet_location_capacity` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_fleet_location_capacity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_fleet_location_capacity)
@@ -1247,8 +1230,7 @@ Returns a `Coroutine` for
 Retrieves current usage data for a fleet location.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_fleet_location_utilization`
-method.
+`session.create_client("gamelift").describe_fleet_location_utilization` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_fleet_location_utilization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_fleet_location_utilization)
@@ -1274,7 +1256,7 @@ Returns a `Coroutine` for
 Retrieves a fleet's inbound connection permissions.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_fleet_port_settings` method.
+`session.create_client("gamelift").describe_fleet_port_settings` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_fleet_port_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_fleet_port_settings)
@@ -1300,7 +1282,7 @@ Returns a `Coroutine` for
 Retrieves utilization statistics for one or more fleets.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_fleet_utilization` method.
+`session.create_client("gamelift").describe_fleet_utilization` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_fleet_utilization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_fleet_utilization)
@@ -1327,8 +1309,8 @@ Returns a `Coroutine` for
 **This operation is used with the GameLift FleetIQ solution and game server
 groups.** Retrieves information for a registered game server.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").describe_game_server` method.
+Type annotations for `session.create_client("gamelift").describe_game_server`
+method.
 
 Boto3 documentation:
 [GameLift.Client.describe_game_server](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_game_server)
@@ -1355,7 +1337,7 @@ Returns a `Coroutine` for
 groups.** Retrieves information on a game server group.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_game_server_group` method.
+`session.create_client("gamelift").describe_game_server_group` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_game_server_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_game_server_group)
@@ -1382,7 +1364,7 @@ groups.** Retrieves status information about the Amazon EC2 instances
 associated with a GameLift FleetIQ game server group.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_game_server_instances` method.
+`session.create_client("gamelift").describe_game_server_instances` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_game_server_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_game_server_instances)
@@ -1412,7 +1394,7 @@ protection policy in force, a set of one or more game sessions in a specific
 fleet location.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_game_session_details` method.
+`session.create_client("gamelift").describe_game_session_details` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_game_session_details](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_game_session_details)
@@ -1444,7 +1426,7 @@ Retrieves information, including current status, about a game session placement
 request.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_game_session_placement` method.
+`session.create_client("gamelift").describe_game_session_placement` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_game_session_placement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_game_session_placement)
@@ -1469,7 +1451,7 @@ Returns a `Coroutine` for
 Retrieves the properties for one or more game session queues.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_game_session_queues` method.
+`session.create_client("gamelift").describe_game_session_queues` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_game_session_queues](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_game_session_queues)
@@ -1495,8 +1477,8 @@ Returns a `Coroutine` for
 
 Retrieves a set of one or more game sessions in a specific fleet location.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").describe_game_sessions` method.
+Type annotations for `session.create_client("gamelift").describe_game_sessions`
+method.
 
 Boto3 documentation:
 [GameLift.Client.describe_game_sessions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_game_sessions)
@@ -1527,7 +1509,7 @@ Returns a `Coroutine` for
 Retrieves information about a fleet's instances, including instance IDs,
 connection data, and status.
 
-Type annotations for `aiobotocore.create_client("gamelift").describe_instances`
+Type annotations for `session.create_client("gamelift").describe_instances`
 method.
 
 Boto3 documentation:
@@ -1556,8 +1538,8 @@ Returns a `Coroutine` for
 
 Retrieves one or more matchmaking tickets.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").describe_matchmaking` method.
+Type annotations for `session.create_client("gamelift").describe_matchmaking`
+method.
 
 Boto3 documentation:
 [GameLift.Client.describe_matchmaking](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_matchmaking)
@@ -1582,8 +1564,7 @@ Returns a `Coroutine` for
 Retrieves the details of FlexMatch matchmaking configurations.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_matchmaking_configurations`
-method.
+`session.create_client("gamelift").describe_matchmaking_configurations` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_matchmaking_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_matchmaking_configurations)
@@ -1611,7 +1592,7 @@ Returns a `Coroutine` for
 Retrieves the details for FlexMatch matchmaking rule sets.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_matchmaking_rule_sets` method.
+`session.create_client("gamelift").describe_matchmaking_rule_sets` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_matchmaking_rule_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_matchmaking_rule_sets)
@@ -1638,7 +1619,7 @@ Returns a `Coroutine` for
 Retrieves properties for one or more player sessions.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_player_sessions` method.
+`session.create_client("gamelift").describe_player_sessions` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_player_sessions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_player_sessions)
@@ -1668,7 +1649,7 @@ Returns a `Coroutine` for
 Retrieves a fleet's runtime configuration settings.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_runtime_configuration` method.
+`session.create_client("gamelift").describe_runtime_configuration` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_runtime_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_runtime_configuration)
@@ -1693,7 +1674,7 @@ Returns a `Coroutine` for
 Retrieves all scaling policies applied to a fleet.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_scaling_policies` method.
+`session.create_client("gamelift").describe_scaling_policies` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_scaling_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_scaling_policies)
@@ -1721,7 +1702,7 @@ Returns a `Coroutine` for
 
 Retrieves properties for a Realtime script.
 
-Type annotations for `aiobotocore.create_client("gamelift").describe_script`
+Type annotations for `session.create_client("gamelift").describe_script`
 method.
 
 Boto3 documentation:
@@ -1747,8 +1728,7 @@ Retrieves valid VPC peering authorizations that are pending for the AWS
 account.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_vpc_peering_authorizations`
-method.
+`session.create_client("gamelift").describe_vpc_peering_authorizations` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_vpc_peering_authorizations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_vpc_peering_authorizations)
@@ -1766,8 +1746,7 @@ Returns a `Coroutine` for
 Retrieves information on VPC peering connections.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").describe_vpc_peering_connections`
-method.
+`session.create_client("gamelift").describe_vpc_peering_connections` method.
 
 Boto3 documentation:
 [GameLift.Client.describe_vpc_peering_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.describe_vpc_peering_connections)
@@ -1791,8 +1770,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").generate_presigned_url` method.
+Type annotations for `session.create_client("gamelift").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [GameLift.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.generate_presigned_url)
@@ -1817,7 +1796,7 @@ Retrieves the location of stored game session logs for a specified game
 session.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").get_game_session_log_url` method.
+`session.create_client("gamelift").get_game_session_log_url` method.
 
 Boto3 documentation:
 [GameLift.Client.get_game_session_log_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.get_game_session_log_url)
@@ -1841,8 +1820,8 @@ Returns a `Coroutine` for
 
 Requests remote access to a fleet instance.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").get_instance_access` method.
+Type annotations for `session.create_client("gamelift").get_instance_access`
+method.
 
 Boto3 documentation:
 [GameLift.Client.get_instance_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.get_instance_access)
@@ -1867,8 +1846,7 @@ Returns a `Coroutine` for
 
 Retrieves all aliases for this AWS account.
 
-Type annotations for `aiobotocore.create_client("gamelift").list_aliases`
-method.
+Type annotations for `session.create_client("gamelift").list_aliases` method.
 
 Boto3 documentation:
 [GameLift.Client.list_aliases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.list_aliases)
@@ -1896,8 +1874,7 @@ Returns a `Coroutine` for
 Retrieves build resources for all builds associated with the AWS account in
 use.
 
-Type annotations for `aiobotocore.create_client("gamelift").list_builds`
-method.
+Type annotations for `session.create_client("gamelift").list_builds` method.
 
 Boto3 documentation:
 [GameLift.Client.list_builds](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.list_builds)
@@ -1922,8 +1899,7 @@ Returns a `Coroutine` for
 
 Retrieves a collection of fleet resources in an AWS Region.
 
-Type annotations for `aiobotocore.create_client("gamelift").list_fleets`
-method.
+Type annotations for `session.create_client("gamelift").list_fleets` method.
 
 Boto3 documentation:
 [GameLift.Client.list_fleets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.list_fleets)
@@ -1952,7 +1928,7 @@ groups.** Retrieves information on all game servers groups that exist in the
 current AWS account for the selected Region.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").list_game_server_groups` method.
+`session.create_client("gamelift").list_game_server_groups` method.
 
 Boto3 documentation:
 [GameLift.Client.list_game_server_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.list_game_server_groups)
@@ -1979,7 +1955,7 @@ Returns a `Coroutine` for
 groups.** Retrieves information on all game servers that are currently active
 in a specified game server group.
 
-Type annotations for `aiobotocore.create_client("gamelift").list_game_servers`
+Type annotations for `session.create_client("gamelift").list_game_servers`
 method.
 
 Boto3 documentation:
@@ -2007,8 +1983,7 @@ Returns a `Coroutine` for
 Retrieves script records for all Realtime scripts that are associated with the
 AWS account in use.
 
-Type annotations for `aiobotocore.create_client("gamelift").list_scripts`
-method.
+Type annotations for `session.create_client("gamelift").list_scripts` method.
 
 Boto3 documentation:
 [GameLift.Client.list_scripts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.list_scripts)
@@ -2032,8 +2007,8 @@ Returns a `Coroutine` for
 
 Retrieves all tags that are assigned to a GameLift resource.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").list_tags_for_resource` method.
+Type annotations for `session.create_client("gamelift").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [GameLift.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.list_tags_for_resource)
@@ -2057,7 +2032,7 @@ Returns a `Coroutine` for
 
 Creates or updates a scaling policy for a fleet.
 
-Type annotations for `aiobotocore.create_client("gamelift").put_scaling_policy`
+Type annotations for `session.create_client("gamelift").put_scaling_policy`
 method.
 
 Boto3 documentation:
@@ -2096,8 +2071,8 @@ Returns a `Coroutine` for
 groups.** Creates a new game server resource and notifies GameLift FleetIQ that
 the game server is ready to host gameplay and players.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").register_game_server` method.
+Type annotations for `session.create_client("gamelift").register_game_server`
+method.
 
 Boto3 documentation:
 [GameLift.Client.register_game_server](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.register_game_server)
@@ -2127,7 +2102,7 @@ Retrieves a fresh set of credentials for use when uploading a new set of game
 build files to Amazon GameLift's Amazon S3.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").request_upload_credentials` method.
+`session.create_client("gamelift").request_upload_credentials` method.
 
 Boto3 documentation:
 [GameLift.Client.request_upload_credentials](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.request_upload_credentials)
@@ -2151,8 +2126,7 @@ Returns a `Coroutine` for
 
 Retrieves the fleet ID that an alias is currently pointing to.
 
-Type annotations for `aiobotocore.create_client("gamelift").resolve_alias`
-method.
+Type annotations for `session.create_client("gamelift").resolve_alias` method.
 
 Boto3 documentation:
 [GameLift.Client.resolve_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.resolve_alias)
@@ -2178,7 +2152,7 @@ groups.** Reinstates activity on a game server group after it has been
 suspended.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").resume_game_server_group` method.
+`session.create_client("gamelift").resume_game_server_group` method.
 
 Boto3 documentation:
 [GameLift.Client.resume_game_server_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.resume_game_server_group)
@@ -2206,8 +2180,8 @@ Returns a `Coroutine` for
 Retrieves all active game sessions that match a set of search criteria and
 sorts them into a specified order.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").search_game_sessions` method.
+Type annotations for `session.create_client("gamelift").search_game_sessions`
+method.
 
 Boto3 documentation:
 [GameLift.Client.search_game_sessions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.search_game_sessions)
@@ -2238,8 +2212,8 @@ Returns a `Coroutine` for
 Resumes certain types of activity on fleet instances that were suspended with
 StopFleetActions.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").start_fleet_actions` method.
+Type annotations for `session.create_client("gamelift").start_fleet_actions`
+method.
 
 Boto3 documentation:
 [GameLift.Client.start_fleet_actions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.start_fleet_actions)
@@ -2268,7 +2242,7 @@ Places a request for a new game session in a queue (see CreateGameSessionQueue
 ).
 
 Type annotations for
-`aiobotocore.create_client("gamelift").start_game_session_placement` method.
+`session.create_client("gamelift").start_game_session_placement` method.
 
 Boto3 documentation:
 [GameLift.Client.start_game_session_placement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.start_game_session_placement)
@@ -2302,8 +2276,8 @@ Returns a `Coroutine` for
 
 Finds new players to fill open slots in currently running game sessions.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").start_match_backfill` method.
+Type annotations for `session.create_client("gamelift").start_match_backfill`
+method.
 
 Boto3 documentation:
 [GameLift.Client.start_match_backfill](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.start_match_backfill)
@@ -2332,7 +2306,7 @@ Returns a `Coroutine` for
 Uses FlexMatch to create a game match for a group of players based on custom
 matchmaking rules.
 
-Type annotations for `aiobotocore.create_client("gamelift").start_matchmaking`
+Type annotations for `session.create_client("gamelift").start_matchmaking`
 method.
 
 Boto3 documentation:
@@ -2359,7 +2333,7 @@ Returns a `Coroutine` for
 
 Suspends certain types of activity in a fleet location.
 
-Type annotations for `aiobotocore.create_client("gamelift").stop_fleet_actions`
+Type annotations for `session.create_client("gamelift").stop_fleet_actions`
 method.
 
 Boto3 documentation:
@@ -2388,7 +2362,7 @@ Returns a `Coroutine` for
 Cancels a game session placement that is in `PENDING` status.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").stop_game_session_placement` method.
+`session.create_client("gamelift").stop_game_session_placement` method.
 
 Boto3 documentation:
 [GameLift.Client.stop_game_session_placement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.stop_game_session_placement)
@@ -2413,7 +2387,7 @@ Returns a `Coroutine` for
 Cancels a matchmaking ticket or match backfill ticket that is currently being
 processed.
 
-Type annotations for `aiobotocore.create_client("gamelift").stop_matchmaking`
+Type annotations for `session.create_client("gamelift").stop_matchmaking`
 method.
 
 Boto3 documentation:
@@ -2439,7 +2413,7 @@ groups.** Temporarily stops activity on a game server group without terminating
 instances or the game server group.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").suspend_game_server_group` method.
+`session.create_client("gamelift").suspend_game_server_group` method.
 
 Boto3 documentation:
 [GameLift.Client.suspend_game_server_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.suspend_game_server_group)
@@ -2466,8 +2440,7 @@ Returns a `Coroutine` for
 
 Assigns a tag to a GameLift resource.
 
-Type annotations for `aiobotocore.create_client("gamelift").tag_resource`
-method.
+Type annotations for `session.create_client("gamelift").tag_resource` method.
 
 Boto3 documentation:
 [GameLift.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.tag_resource)
@@ -2490,8 +2463,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes a tag that is assigned to a GameLift resource.
 
-Type annotations for `aiobotocore.create_client("gamelift").untag_resource`
-method.
+Type annotations for `session.create_client("gamelift").untag_resource` method.
 
 Boto3 documentation:
 [GameLift.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.untag_resource)
@@ -2514,8 +2486,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates properties for an alias.
 
-Type annotations for `aiobotocore.create_client("gamelift").update_alias`
-method.
+Type annotations for `session.create_client("gamelift").update_alias` method.
 
 Boto3 documentation:
 [GameLift.Client.update_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.update_alias)
@@ -2542,8 +2513,7 @@ Returns a `Coroutine` for
 
 Updates metadata in a build resource, including the build name and version.
 
-Type annotations for `aiobotocore.create_client("gamelift").update_build`
-method.
+Type annotations for `session.create_client("gamelift").update_build` method.
 
 Boto3 documentation:
 [GameLift.Client.update_build](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.update_build)
@@ -2570,7 +2540,7 @@ Updates a fleet's mutable attributes, including game session protection and
 resource creation limits.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").update_fleet_attributes` method.
+`session.create_client("gamelift").update_fleet_attributes` method.
 
 Boto3 documentation:
 [GameLift.Client.update_fleet_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.update_fleet_attributes)
@@ -2601,8 +2571,8 @@ Returns a `Coroutine` for
 
 Updates capacity settings for a fleet.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").update_fleet_capacity` method.
+Type annotations for `session.create_client("gamelift").update_fleet_capacity`
+method.
 
 Boto3 documentation:
 [GameLift.Client.update_fleet_capacity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.update_fleet_capacity)
@@ -2632,7 +2602,7 @@ Updates permissions that allow inbound traffic to connect to game sessions that
 are being hosted on instances in the fleet.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").update_fleet_port_settings` method.
+`session.create_client("gamelift").update_fleet_port_settings` method.
 
 Boto3 documentation:
 [GameLift.Client.update_fleet_port_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.update_fleet_port_settings)
@@ -2662,7 +2632,7 @@ Returns a `Coroutine` for
 groups.** Updates information about a registered game server to help GameLift
 FleetIQ to track game server availability.
 
-Type annotations for `aiobotocore.create_client("gamelift").update_game_server`
+Type annotations for `session.create_client("gamelift").update_game_server`
 method.
 
 Boto3 documentation:
@@ -2695,7 +2665,7 @@ Returns a `Coroutine` for
 groups.** Updates GameLift FleetIQ-specific properties for a game server group.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").update_game_server_group` method.
+`session.create_client("gamelift").update_game_server_group` method.
 
 Boto3 documentation:
 [GameLift.Client.update_game_server_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.update_game_server_group)
@@ -2726,8 +2696,8 @@ Returns a `Coroutine` for
 
 Updates the mutable properties of a game session.
 
-Type annotations for
-`aiobotocore.create_client("gamelift").update_game_session` method.
+Type annotations for `session.create_client("gamelift").update_game_session`
+method.
 
 Boto3 documentation:
 [GameLift.Client.update_game_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.update_game_session)
@@ -2759,7 +2729,7 @@ Updates the configuration of a game session queue, which determines how the
 queue processes new game session requests.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").update_game_session_queue` method.
+`session.create_client("gamelift").update_game_session_queue` method.
 
 Boto3 documentation:
 [GameLift.Client.update_game_session_queue](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.update_game_session_queue)
@@ -2795,8 +2765,7 @@ Returns a `Coroutine` for
 Updates settings for a FlexMatch matchmaking configuration.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").update_matchmaking_configuration`
-method.
+`session.create_client("gamelift").update_matchmaking_configuration` method.
 
 Boto3 documentation:
 [GameLift.Client.update_matchmaking_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.update_matchmaking_configuration)
@@ -2836,7 +2805,7 @@ Updates the current runtime configuration for the specified fleet, which tells
 GameLift how to launch server processes on all instances in the fleet.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").update_runtime_configuration` method.
+`session.create_client("gamelift").update_runtime_configuration` method.
 
 Boto3 documentation:
 [GameLift.Client.update_runtime_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.update_runtime_configuration)
@@ -2863,8 +2832,7 @@ Returns a `Coroutine` for
 
 Updates Realtime script metadata and content.
 
-Type annotations for `aiobotocore.create_client("gamelift").update_script`
-method.
+Type annotations for `session.create_client("gamelift").update_script` method.
 
 Boto3 documentation:
 [GameLift.Client.update_script](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.update_script)
@@ -2892,7 +2860,7 @@ Returns a `Coroutine` for
 Validates the syntax of a matchmaking rule or rule set.
 
 Type annotations for
-`aiobotocore.create_client("gamelift").validate_matchmaking_rule_set` method.
+`session.create_client("gamelift").validate_matchmaking_rule_set` method.
 
 Boto3 documentation:
 [GameLift.Client.validate_matchmaking_rule_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.validate_matchmaking_rule_set)
@@ -2910,12 +2878,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [ValidateMatchmakingRuleSetOutputTypeDef](./type_defs.md#validatematchmakingrulesetoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("gamelift").__aenter__` method.
+
+Boto3 documentation:
+[GameLift.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [GameLiftClient](#gameliftclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("gamelift").__aexit__` method.
+
+Boto3 documentation:
+[GameLift.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/gamelift.html#GameLift.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("gamelift").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("gamelift").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_fleet_attributes")` ->
   [DescribeFleetAttributesPaginator](./paginators.md#describefleetattributespaginator)

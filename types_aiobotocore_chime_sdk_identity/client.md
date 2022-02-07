@@ -40,21 +40,24 @@ type annotations stubs module
     - [update_app_instance](#update_app_instance)
     - [update_app_instance_user](#update_app_instance_user)
     - [update_app_instance_user_endpoint](#update_app_instance_user_endpoint)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="chimesdkidentityclient"></a>
 
 ## ChimeSDKIdentityClient
 
-Type annotations for `aiobotocore.create_client("chime-sdk-identity")`
+Type annotations for `session.create_client("chime-sdk-identity")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_chime_sdk_identity.client import ChimeSDKIdentityClient
 
-def get_chime-sdk-identity_client() -> ChimeSDKIdentityClient:
-    return Session().client("chime-sdk-identity")
+session = get_session()
+async with session.create_client("chime-sdk-identity") as client:
+    client: ChimeSDKIdentityClient
 ```
 
 Boto3 documentation:
@@ -96,8 +99,8 @@ Exceptions:
 
 ChimeSDKIdentityClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").exceptions` method.
+Type annotations for `session.create_client("chime-sdk-identity").exceptions`
+method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.exceptions)
@@ -110,19 +113,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").can_paginate` method.
+Type annotations for `session.create_client("chime-sdk-identity").can_paginate`
+method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_app_instance"></a>
 
@@ -131,7 +132,7 @@ Returns a `Coroutine` for `bool`.
 Creates an Amazon Chime SDK messaging `AppInstance` under an AWS account.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").create_app_instance` method.
+`session.create_client("chime-sdk-identity").create_app_instance` method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.create_app_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.create_app_instance)
@@ -159,8 +160,7 @@ Returns a `Coroutine` for
 Promotes an `AppInstanceUser` to an `AppInstanceAdmin`.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").create_app_instance_admin`
-method.
+`session.create_client("chime-sdk-identity").create_app_instance_admin` method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.create_app_instance_admin](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.create_app_instance_admin)
@@ -186,8 +186,7 @@ Returns a `Coroutine` for
 Creates a user under an Amazon Chime `AppInstance`.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").create_app_instance_user`
-method.
+`session.create_client("chime-sdk-identity").create_app_instance_user` method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.create_app_instance_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.create_app_instance_user)
@@ -217,7 +216,7 @@ Returns a `Coroutine` for
 Deletes an `AppInstance` and all associated data asynchronously.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").delete_app_instance` method.
+`session.create_client("chime-sdk-identity").delete_app_instance` method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.delete_app_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.delete_app_instance)
@@ -239,8 +238,7 @@ Keyword-only arguments:
 Demotes an `AppInstanceAdmin` to an `AppInstanceUser`.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").delete_app_instance_admin`
-method.
+`session.create_client("chime-sdk-identity").delete_app_instance_admin` method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.delete_app_instance_admin](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.delete_app_instance_admin)
@@ -263,8 +261,7 @@ Keyword-only arguments:
 Deletes an `AppInstanceUser` .
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").delete_app_instance_user`
-method.
+`session.create_client("chime-sdk-identity").delete_app_instance_user` method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.delete_app_instance_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.delete_app_instance_user)
@@ -286,7 +283,7 @@ Keyword-only arguments:
 Deregisters an `AppInstanceUserEndpoint` .
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").deregister_app_instance_user_endpoint`
+`session.create_client("chime-sdk-identity").deregister_app_instance_user_endpoint`
 method.
 
 Boto3 documentation:
@@ -310,7 +307,7 @@ Keyword-only arguments:
 Returns the full details of an `AppInstance` .
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").describe_app_instance` method.
+`session.create_client("chime-sdk-identity").describe_app_instance` method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.describe_app_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.describe_app_instance)
@@ -335,7 +332,7 @@ Returns a `Coroutine` for
 Returns the full details of an `AppInstanceAdmin` .
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").describe_app_instance_admin`
+`session.create_client("chime-sdk-identity").describe_app_instance_admin`
 method.
 
 Boto3 documentation:
@@ -362,7 +359,7 @@ Returns a `Coroutine` for
 Returns the full details of an `AppInstanceUser` .
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").describe_app_instance_user`
+`session.create_client("chime-sdk-identity").describe_app_instance_user`
 method.
 
 Boto3 documentation:
@@ -388,7 +385,7 @@ Returns a `Coroutine` for
 Returns the full details of an `AppInstanceUserEndpoint` .
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").describe_app_instance_user_endpoint`
+`session.create_client("chime-sdk-identity").describe_app_instance_user_endpoint`
 method.
 
 Boto3 documentation:
@@ -415,8 +412,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").generate_presigned_url`
-method.
+`session.create_client("chime-sdk-identity").generate_presigned_url` method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.generate_presigned_url)
@@ -440,7 +436,7 @@ Returns a `Coroutine` for `str`.
 Gets the retention settings for an `AppInstance` .
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").get_app_instance_retention_settings`
+`session.create_client("chime-sdk-identity").get_app_instance_retention_settings`
 method.
 
 Boto3 documentation:
@@ -466,8 +462,7 @@ Returns a `Coroutine` for
 Returns a list of the administrators in the `AppInstance` .
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").list_app_instance_admins`
-method.
+`session.create_client("chime-sdk-identity").list_app_instance_admins` method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.list_app_instance_admins](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.list_app_instance_admins)
@@ -495,7 +490,7 @@ Lists all the `AppInstanceUserEndpoints` created under a single
 `AppInstanceUser` .
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").list_app_instance_user_endpoints`
+`session.create_client("chime-sdk-identity").list_app_instance_user_endpoints`
 method.
 
 Boto3 documentation:
@@ -523,8 +518,7 @@ Returns a `Coroutine` for
 List all `AppInstanceUsers` created under a single `AppInstance` .
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").list_app_instance_users`
-method.
+`session.create_client("chime-sdk-identity").list_app_instance_users` method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.list_app_instance_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.list_app_instance_users)
@@ -551,7 +545,7 @@ Returns a `Coroutine` for
 Lists all Amazon Chime `AppInstance` s created under a single AWS account.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").list_app_instances` method.
+`session.create_client("chime-sdk-identity").list_app_instances` method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.list_app_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.list_app_instances)
@@ -577,8 +571,7 @@ Returns a `Coroutine` for
 Lists the tags applied to an Amazon Chime SDK identity resource.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").list_tags_for_resource`
-method.
+`session.create_client("chime-sdk-identity").list_tags_for_resource` method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.list_tags_for_resource)
@@ -603,7 +596,7 @@ Returns a `Coroutine` for
 Sets the amount of time in days that a given `AppInstance` retains data.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").put_app_instance_retention_settings`
+`session.create_client("chime-sdk-identity").put_app_instance_retention_settings`
 method.
 
 Boto3 documentation:
@@ -632,7 +625,7 @@ Returns a `Coroutine` for
 Registers an endpoint under an Amazon Chime `AppInstanceUser`.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").register_app_instance_user_endpoint`
+`session.create_client("chime-sdk-identity").register_app_instance_user_endpoint`
 method.
 
 Boto3 documentation:
@@ -667,8 +660,8 @@ Returns a `Coroutine` for
 
 Applies the specified tags to the specified Amazon Chime SDK identity resource.
 
-Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").tag_resource` method.
+Type annotations for `session.create_client("chime-sdk-identity").tag_resource`
+method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.tag_resource)
@@ -691,7 +684,7 @@ Removes the specified tags from the specified Amazon Chime SDK identity
 resource.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").untag_resource` method.
+`session.create_client("chime-sdk-identity").untag_resource` method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.untag_resource)
@@ -713,7 +706,7 @@ Keyword-only arguments:
 Updates `AppInstance` metadata.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").update_app_instance` method.
+`session.create_client("chime-sdk-identity").update_app_instance` method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.update_app_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.update_app_instance)
@@ -740,8 +733,7 @@ Returns a `Coroutine` for
 Updates the details of an `AppInstanceUser`.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").update_app_instance_user`
-method.
+`session.create_client("chime-sdk-identity").update_app_instance_user` method.
 
 Boto3 documentation:
 [ChimeSDKIdentity.Client.update_app_instance_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.update_app_instance_user)
@@ -768,7 +760,7 @@ Returns a `Coroutine` for
 Updates the details of an `AppInstanceUserEndpoint`.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-identity").update_app_instance_user_endpoint`
+`session.create_client("chime-sdk-identity").update_app_instance_user_endpoint`
 method.
 
 Boto3 documentation:
@@ -789,3 +781,37 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateAppInstanceUserEndpointResponseTypeDef](./type_defs.md#updateappinstanceuserendpointresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("chime-sdk-identity").__aenter__`
+method.
+
+Boto3 documentation:
+[ChimeSDKIdentity.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ChimeSDKIdentityClient](#chimesdkidentityclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("chime-sdk-identity").__aexit__`
+method.
+
+Boto3 documentation:
+[ChimeSDKIdentity.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-identity.html#ChimeSDKIdentity.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

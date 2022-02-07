@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListEndpointsPaginator
 
 Type annotations for
-`aiobotocore.create_client("s3outposts").get_paginator("list_endpoints")`.
+`session.create_client("s3outposts").get_paginator("list_endpoints")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_s3outposts.paginator import ListEndpointsPaginator
 
-def get_list_endpoints_paginator() -> ListEndpointsPaginator:
-    return Session().create_client("s3outposts").get_paginator("list_endpoints")
+session = get_session()
+async with session.create_client("s3outposts") as client:
+    client: S3OutpostsClient
+    paginator: ListEndpointsPaginator = client.get_paginator("list_endpoints")
 ```
 
 Boto3 documentation:

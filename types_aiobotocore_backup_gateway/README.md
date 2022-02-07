@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[backup-gateway]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[backup-gateway]'
+
+# standalone installation
 pip install types-aiobotocore-backup-gateway
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-backup-gateway
 
 ## BackupGatewayClient
 
-Type annotations for `aiobotocore.create_client("backup-gateway")` as
+Type annotations for `session.create_client("backup-gateway")` as
 [BackupGatewayClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_backup_gateway.client import BackupGatewayClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_gateway_to_server](./client.md#associate_gateway_to_server)
 - [can_paginate](./client.md#can_paginate)
 - [create_gateway](./client.md#create_gateway)
@@ -86,7 +92,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_backup_gateway.paginators import ListGatewaysPaginator, ...
+from types_aiobotocore_backup_gateway.paginator import ListGatewaysPaginator, ...
 ```
 
 - [ListGatewaysPaginator](./paginators.md#listgatewayspaginator)

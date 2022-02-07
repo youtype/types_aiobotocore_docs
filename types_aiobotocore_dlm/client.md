@@ -24,21 +24,24 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_lifecycle_policy](#update_lifecycle_policy)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="dlmclient"></a>
 
 ## DLMClient
 
-Type annotations for `aiobotocore.create_client("dlm")`
+Type annotations for `session.create_client("dlm")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_dlm.client import DLMClient
 
-def get_dlm_client() -> DLMClient:
-    return Session().client("dlm")
+session = get_session()
+async with session.create_client("dlm") as client:
+    client: DLMClient
 ```
 
 Boto3 documentation:
@@ -76,7 +79,7 @@ Exceptions:
 
 DLMClient exceptions.
 
-Type annotations for `aiobotocore.create_client("dlm").exceptions` method.
+Type annotations for `session.create_client("dlm").exceptions` method.
 
 Boto3 documentation:
 [DLM.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dlm.html#DLM.Client.exceptions)
@@ -89,18 +92,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("dlm").can_paginate` method.
+Type annotations for `session.create_client("dlm").can_paginate` method.
 
 Boto3 documentation:
 [DLM.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dlm.html#DLM.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_lifecycle_policy"></a>
 
@@ -109,7 +110,7 @@ Returns a `Coroutine` for `bool`.
 Creates a policy to manage the lifecycle of the specified Amazon Web Services
 resources.
 
-Type annotations for `aiobotocore.create_client("dlm").create_lifecycle_policy`
+Type annotations for `session.create_client("dlm").create_lifecycle_policy`
 method.
 
 Boto3 documentation:
@@ -142,7 +143,7 @@ Returns a `Coroutine` for
 Deletes the specified lifecycle policy and halts the automated operations that
 the policy specified.
 
-Type annotations for `aiobotocore.create_client("dlm").delete_lifecycle_policy`
+Type annotations for `session.create_client("dlm").delete_lifecycle_policy`
 method.
 
 Boto3 documentation:
@@ -166,7 +167,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("dlm").generate_presigned_url`
+Type annotations for `session.create_client("dlm").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -190,7 +191,7 @@ Returns a `Coroutine` for `str`.
 
 Gets summary information about all or the specified data lifecycle policies.
 
-Type annotations for `aiobotocore.create_client("dlm").get_lifecycle_policies`
+Type annotations for `session.create_client("dlm").get_lifecycle_policies`
 method.
 
 Boto3 documentation:
@@ -221,7 +222,7 @@ Returns a `Coroutine` for
 
 Gets detailed information about the specified lifecycle policy.
 
-Type annotations for `aiobotocore.create_client("dlm").get_lifecycle_policy`
+Type annotations for `session.create_client("dlm").get_lifecycle_policy`
 method.
 
 Boto3 documentation:
@@ -246,7 +247,7 @@ Returns a `Coroutine` for
 
 Lists the tags for the specified resource.
 
-Type annotations for `aiobotocore.create_client("dlm").list_tags_for_resource`
+Type annotations for `session.create_client("dlm").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -271,7 +272,7 @@ Returns a `Coroutine` for
 
 Adds the specified tags to the specified resource.
 
-Type annotations for `aiobotocore.create_client("dlm").tag_resource` method.
+Type annotations for `session.create_client("dlm").tag_resource` method.
 
 Boto3 documentation:
 [DLM.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dlm.html#DLM.Client.tag_resource)
@@ -294,7 +295,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the specified tags from the specified resource.
 
-Type annotations for `aiobotocore.create_client("dlm").untag_resource` method.
+Type annotations for `session.create_client("dlm").untag_resource` method.
 
 Boto3 documentation:
 [DLM.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dlm.html#DLM.Client.untag_resource)
@@ -317,7 +318,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the specified lifecycle policy.
 
-Type annotations for `aiobotocore.create_client("dlm").update_lifecycle_policy`
+Type annotations for `session.create_client("dlm").update_lifecycle_policy`
 method.
 
 Boto3 documentation:
@@ -339,3 +340,35 @@ Keyword-only arguments:
 - `PolicyDetails`: [PolicyDetailsTypeDef](./type_defs.md#policydetailstypedef)
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("dlm").__aenter__` method.
+
+Boto3 documentation:
+[DLM.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dlm.html#DLM.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [DLMClient](#dlmclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("dlm").__aexit__` method.
+
+Boto3 documentation:
+[DLM.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dlm.html#DLM.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

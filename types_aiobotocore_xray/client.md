@@ -43,22 +43,25 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_group](#update_group)
     - [update_sampling_rule](#update_sampling_rule)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="xrayclient"></a>
 
 ## XRayClient
 
-Type annotations for `aiobotocore.create_client("xray")`
+Type annotations for `session.create_client("xray")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_xray.client import XRayClient
 
-def get_xray_client() -> XRayClient:
-    return Session().client("xray")
+session = get_session()
+async with session.create_client("xray") as client:
+    client: XRayClient
 ```
 
 Boto3 documentation:
@@ -97,7 +100,7 @@ Exceptions:
 
 XRayClient exceptions.
 
-Type annotations for `aiobotocore.create_client("xray").exceptions` method.
+Type annotations for `session.create_client("xray").exceptions` method.
 
 Boto3 documentation:
 [XRay.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.exceptions)
@@ -110,8 +113,7 @@ Returns [Exceptions](#exceptions).
 
 Retrieves a list of traces specified by ID.
 
-Type annotations for `aiobotocore.create_client("xray").batch_get_traces`
-method.
+Type annotations for `session.create_client("xray").batch_get_traces` method.
 
 Boto3 documentation:
 [XRay.Client.batch_get_traces](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.batch_get_traces)
@@ -135,18 +137,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("xray").can_paginate` method.
+Type annotations for `session.create_client("xray").can_paginate` method.
 
 Boto3 documentation:
 [XRay.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_group"></a>
 
@@ -154,7 +154,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a group resource with a name and a filter expression.
 
-Type annotations for `aiobotocore.create_client("xray").create_group` method.
+Type annotations for `session.create_client("xray").create_group` method.
 
 Boto3 documentation:
 [XRay.Client.create_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.create_group)
@@ -181,7 +181,7 @@ Returns a `Coroutine` for
 
 Creates a rule to control sampling behavior for instrumented applications.
 
-Type annotations for `aiobotocore.create_client("xray").create_sampling_rule`
+Type annotations for `session.create_client("xray").create_sampling_rule`
 method.
 
 Boto3 documentation:
@@ -208,7 +208,7 @@ Returns a `Coroutine` for
 
 Deletes a group resource.
 
-Type annotations for `aiobotocore.create_client("xray").delete_group` method.
+Type annotations for `session.create_client("xray").delete_group` method.
 
 Boto3 documentation:
 [XRay.Client.delete_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.delete_group)
@@ -231,7 +231,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a sampling rule.
 
-Type annotations for `aiobotocore.create_client("xray").delete_sampling_rule`
+Type annotations for `session.create_client("xray").delete_sampling_rule`
 method.
 
 Boto3 documentation:
@@ -257,7 +257,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("xray").generate_presigned_url`
+Type annotations for `session.create_client("xray").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -281,7 +281,7 @@ Returns a `Coroutine` for `str`.
 
 Retrieves the current encryption configuration for X-Ray data.
 
-Type annotations for `aiobotocore.create_client("xray").get_encryption_config`
+Type annotations for `session.create_client("xray").get_encryption_config`
 method.
 
 Boto3 documentation:
@@ -299,7 +299,7 @@ Returns a `Coroutine` for
 
 Retrieves group resource details.
 
-Type annotations for `aiobotocore.create_client("xray").get_group` method.
+Type annotations for `session.create_client("xray").get_group` method.
 
 Boto3 documentation:
 [XRay.Client.get_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.get_group)
@@ -323,7 +323,7 @@ Returns a `Coroutine` for
 
 Retrieves all active group details.
 
-Type annotations for `aiobotocore.create_client("xray").get_groups` method.
+Type annotations for `session.create_client("xray").get_groups` method.
 
 Boto3 documentation:
 [XRay.Client.get_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.get_groups)
@@ -346,7 +346,7 @@ Returns a `Coroutine` for
 
 Retrieves the summary information of an insight.
 
-Type annotations for `aiobotocore.create_client("xray").get_insight` method.
+Type annotations for `session.create_client("xray").get_insight` method.
 
 Boto3 documentation:
 [XRay.Client.get_insight](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.get_insight)
@@ -370,8 +370,7 @@ Returns a `Coroutine` for
 X-Ray reevaluates insights periodically until they're resolved, and records
 each intermediate state as an event.
 
-Type annotations for `aiobotocore.create_client("xray").get_insight_events`
-method.
+Type annotations for `session.create_client("xray").get_insight_events` method.
 
 Boto3 documentation:
 [XRay.Client.get_insight_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.get_insight_events)
@@ -397,8 +396,8 @@ Returns a `Coroutine` for
 
 Retrieves a service graph structure filtered by the specified insight.
 
-Type annotations for
-`aiobotocore.create_client("xray").get_insight_impact_graph` method.
+Type annotations for `session.create_client("xray").get_insight_impact_graph`
+method.
 
 Boto3 documentation:
 [XRay.Client.get_insight_impact_graph](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.get_insight_impact_graph)
@@ -426,7 +425,7 @@ Returns a `Coroutine` for
 Retrieves the summaries of all insights in the specified group matching the
 provided filter values.
 
-Type annotations for `aiobotocore.create_client("xray").get_insight_summaries`
+Type annotations for `session.create_client("xray").get_insight_summaries`
 method.
 
 Boto3 documentation:
@@ -457,8 +456,7 @@ Returns a `Coroutine` for
 
 Retrieves all sampling rules.
 
-Type annotations for `aiobotocore.create_client("xray").get_sampling_rules`
-method.
+Type annotations for `session.create_client("xray").get_sampling_rules` method.
 
 Boto3 documentation:
 [XRay.Client.get_sampling_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.get_sampling_rules)
@@ -483,7 +481,7 @@ Returns a `Coroutine` for
 Retrieves information about recent sampling results for all sampling rules.
 
 Type annotations for
-`aiobotocore.create_client("xray").get_sampling_statistic_summaries` method.
+`session.create_client("xray").get_sampling_statistic_summaries` method.
 
 Boto3 documentation:
 [XRay.Client.get_sampling_statistic_summaries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.get_sampling_statistic_summaries)
@@ -508,7 +506,7 @@ Returns a `Coroutine` for
 Requests a sampling quota for rules that the service is using to sample
 requests.
 
-Type annotations for `aiobotocore.create_client("xray").get_sampling_targets`
+Type annotations for `session.create_client("xray").get_sampling_targets`
 method.
 
 Boto3 documentation:
@@ -536,8 +534,7 @@ Returns a `Coroutine` for
 Retrieves a document that describes services that process incoming requests,
 and downstream services that they call as a result.
 
-Type annotations for `aiobotocore.create_client("xray").get_service_graph`
-method.
+Type annotations for `session.create_client("xray").get_service_graph` method.
 
 Boto3 documentation:
 [XRay.Client.get_service_graph](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.get_service_graph)
@@ -565,7 +562,7 @@ Returns a `Coroutine` for
 Get an aggregation of service statistics defined by a specific time range.
 
 Type annotations for
-`aiobotocore.create_client("xray").get_time_series_service_statistics` method.
+`session.create_client("xray").get_time_series_service_statistics` method.
 
 Boto3 documentation:
 [XRay.Client.get_time_series_service_statistics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.get_time_series_service_statistics)
@@ -596,8 +593,7 @@ Returns a `Coroutine` for
 
 Retrieves a service graph for one or more specific trace IDs.
 
-Type annotations for `aiobotocore.create_client("xray").get_trace_graph`
-method.
+Type annotations for `session.create_client("xray").get_trace_graph` method.
 
 Boto3 documentation:
 [XRay.Client.get_trace_graph](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.get_trace_graph)
@@ -622,7 +618,7 @@ Returns a `Coroutine` for
 Retrieves IDs and annotations for traces available for a specified time frame
 using an optional filter.
 
-Type annotations for `aiobotocore.create_client("xray").get_trace_summaries`
+Type annotations for `session.create_client("xray").get_trace_summaries`
 method.
 
 Boto3 documentation:
@@ -655,7 +651,7 @@ Returns a `Coroutine` for
 Returns a list of tags that are applied to the specified Amazon Web Services
 X-Ray group or sampling rule.
 
-Type annotations for `aiobotocore.create_client("xray").list_tags_for_resource`
+Type annotations for `session.create_client("xray").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -681,7 +677,7 @@ Returns a `Coroutine` for
 
 Updates the encryption configuration for X-Ray data.
 
-Type annotations for `aiobotocore.create_client("xray").put_encryption_config`
+Type annotations for `session.create_client("xray").put_encryption_config`
 method.
 
 Boto3 documentation:
@@ -707,7 +703,7 @@ Returns a `Coroutine` for
 
 Used by the Amazon Web Services X-Ray daemon to upload telemetry.
 
-Type annotations for `aiobotocore.create_client("xray").put_telemetry_records`
+Type annotations for `session.create_client("xray").put_telemetry_records`
 method.
 
 Boto3 documentation:
@@ -736,8 +732,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Uploads segment documents to Amazon Web Services X-Ray.
 
-Type annotations for `aiobotocore.create_client("xray").put_trace_segments`
-method.
+Type annotations for `session.create_client("xray").put_trace_segments` method.
 
 Boto3 documentation:
 [XRay.Client.put_trace_segments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.put_trace_segments)
@@ -761,7 +756,7 @@ Returns a `Coroutine` for
 
 Applies tags to an existing Amazon Web Services X-Ray group or sampling rule.
 
-Type annotations for `aiobotocore.create_client("xray").tag_resource` method.
+Type annotations for `session.create_client("xray").tag_resource` method.
 
 Boto3 documentation:
 [XRay.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.tag_resource)
@@ -784,7 +779,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from an Amazon Web Services X-Ray group or sampling rule.
 
-Type annotations for `aiobotocore.create_client("xray").untag_resource` method.
+Type annotations for `session.create_client("xray").untag_resource` method.
 
 Boto3 documentation:
 [XRay.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.untag_resource)
@@ -807,7 +802,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates a group resource.
 
-Type annotations for `aiobotocore.create_client("xray").update_group` method.
+Type annotations for `session.create_client("xray").update_group` method.
 
 Boto3 documentation:
 [XRay.Client.update_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.update_group)
@@ -834,7 +829,7 @@ Returns a `Coroutine` for
 
 Modifies a sampling rule's configuration.
 
-Type annotations for `aiobotocore.create_client("xray").update_sampling_rule`
+Type annotations for `session.create_client("xray").update_sampling_rule`
 method.
 
 Boto3 documentation:
@@ -855,12 +850,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateSamplingRuleResultTypeDef](./type_defs.md#updatesamplingruleresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("xray").__aenter__` method.
+
+Boto3 documentation:
+[XRay.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [XRayClient](#xrayclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("xray").__aexit__` method.
+
+Boto3 documentation:
+[XRay.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html#XRay.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("xray").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("xray").get_paginator` method with
+overloads.
 
 - `client.get_paginator("batch_get_traces")` ->
   [BatchGetTracesPaginator](./paginators.md#batchgettracespaginator)

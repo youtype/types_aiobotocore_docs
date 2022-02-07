@@ -20,17 +20,19 @@ type annotations stubs module
 ## ListProjectsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codestar").get_paginator("list_projects")`.
+`session.create_client("codestar").get_paginator("list_projects")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codestar.paginator import ListProjectsPaginator
 
-def get_list_projects_paginator() -> ListProjectsPaginator:
-    return Session().create_client("codestar").get_paginator("list_projects")
+session = get_session()
+async with session.create_client("codestar") as client:
+    client: CodeStarClient
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
 ```
 
 Boto3 documentation:
@@ -49,17 +51,19 @@ Arguments for `ListProjectsPaginator.paginate` method:
 ## ListResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codestar").get_paginator("list_resources")`.
+`session.create_client("codestar").get_paginator("list_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codestar.paginator import ListResourcesPaginator
 
-def get_list_resources_paginator() -> ListResourcesPaginator:
-    return Session().create_client("codestar").get_paginator("list_resources")
+session = get_session()
+async with session.create_client("codestar") as client:
+    client: CodeStarClient
+    paginator: ListResourcesPaginator = client.get_paginator("list_resources")
 ```
 
 Boto3 documentation:
@@ -79,17 +83,19 @@ Arguments for `ListResourcesPaginator.paginate` method:
 ## ListTeamMembersPaginator
 
 Type annotations for
-`aiobotocore.create_client("codestar").get_paginator("list_team_members")`.
+`session.create_client("codestar").get_paginator("list_team_members")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codestar.paginator import ListTeamMembersPaginator
 
-def get_list_team_members_paginator() -> ListTeamMembersPaginator:
-    return Session().create_client("codestar").get_paginator("list_team_members")
+session = get_session()
+async with session.create_client("codestar") as client:
+    client: CodeStarClient
+    paginator: ListTeamMembersPaginator = client.get_paginator("list_team_members")
 ```
 
 Boto3 documentation:
@@ -109,17 +115,19 @@ Arguments for `ListTeamMembersPaginator.paginate` method:
 ## ListUserProfilesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codestar").get_paginator("list_user_profiles")`.
+`session.create_client("codestar").get_paginator("list_user_profiles")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codestar.paginator import ListUserProfilesPaginator
 
-def get_list_user_profiles_paginator() -> ListUserProfilesPaginator:
-    return Session().create_client("codestar").get_paginator("list_user_profiles")
+session = get_session()
+async with session.create_client("codestar") as client:
+    client: CodeStarClient
+    paginator: ListUserProfilesPaginator = client.get_paginator("list_user_profiles")
 ```
 
 Boto3 documentation:

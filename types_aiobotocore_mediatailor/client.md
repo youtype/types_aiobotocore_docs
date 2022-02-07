@@ -53,22 +53,25 @@ type annotations stubs module
     - [update_channel](#update_channel)
     - [update_source_location](#update_source_location)
     - [update_vod_source](#update_vod_source)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="mediatailorclient"></a>
 
 ## MediaTailorClient
 
-Type annotations for `aiobotocore.create_client("mediatailor")`
+Type annotations for `session.create_client("mediatailor")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_mediatailor.client import MediaTailorClient
 
-def get_mediatailor_client() -> MediaTailorClient:
-    return Session().client("mediatailor")
+session = get_session()
+async with session.create_client("mediatailor") as client:
+    client: MediaTailorClient
 ```
 
 Boto3 documentation:
@@ -103,8 +106,7 @@ Exceptions:
 
 MediaTailorClient exceptions.
 
-Type annotations for `aiobotocore.create_client("mediatailor").exceptions`
-method.
+Type annotations for `session.create_client("mediatailor").exceptions` method.
 
 Boto3 documentation:
 [MediaTailor.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.exceptions)
@@ -117,19 +119,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("mediatailor").can_paginate`
+Type annotations for `session.create_client("mediatailor").can_paginate`
 method.
 
 Boto3 documentation:
 [MediaTailor.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="configure_logs_for_playback_configuration"></a>
 
@@ -138,7 +138,7 @@ Returns a `Coroutine` for `bool`.
 Configures Amazon CloudWatch log settings for a playback configuration.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").configure_logs_for_playback_configuration`
+`session.create_client("mediatailor").configure_logs_for_playback_configuration`
 method.
 
 Boto3 documentation:
@@ -164,7 +164,7 @@ Returns a `Coroutine` for
 
 Creates a channel.
 
-Type annotations for `aiobotocore.create_client("mediatailor").create_channel`
+Type annotations for `session.create_client("mediatailor").create_channel`
 method.
 
 Boto3 documentation:
@@ -196,7 +196,7 @@ Returns a `Coroutine` for
 Creates a new prefetch schedule for the specified playback configuration.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").create_prefetch_schedule` method.
+`session.create_client("mediatailor").create_prefetch_schedule` method.
 
 Boto3 documentation:
 [MediaTailor.Client.create_prefetch_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.create_prefetch_schedule)
@@ -228,7 +228,7 @@ Returns a `Coroutine` for
 
 Creates a program.
 
-Type annotations for `aiobotocore.create_client("mediatailor").create_program`
+Type annotations for `session.create_client("mediatailor").create_program`
 method.
 
 Boto3 documentation:
@@ -260,7 +260,7 @@ Returns a `Coroutine` for
 Creates a source location on a specific channel.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").create_source_location` method.
+`session.create_client("mediatailor").create_source_location` method.
 
 Boto3 documentation:
 [MediaTailor.Client.create_source_location](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.create_source_location)
@@ -292,8 +292,8 @@ Returns a `Coroutine` for
 
 Creates name for a specific VOD source in a source location.
 
-Type annotations for
-`aiobotocore.create_client("mediatailor").create_vod_source` method.
+Type annotations for `session.create_client("mediatailor").create_vod_source`
+method.
 
 Boto3 documentation:
 [MediaTailor.Client.create_vod_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.create_vod_source)
@@ -321,7 +321,7 @@ Returns a `Coroutine` for
 
 Deletes a channel.
 
-Type annotations for `aiobotocore.create_client("mediatailor").delete_channel`
+Type annotations for `session.create_client("mediatailor").delete_channel`
 method.
 
 Boto3 documentation:
@@ -345,7 +345,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a channel's IAM policy.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").delete_channel_policy` method.
+`session.create_client("mediatailor").delete_channel_policy` method.
 
 Boto3 documentation:
 [MediaTailor.Client.delete_channel_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.delete_channel_policy)
@@ -369,8 +369,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the playback configuration for the specified name.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").delete_playback_configuration`
-method.
+`session.create_client("mediatailor").delete_playback_configuration` method.
 
 Boto3 documentation:
 [MediaTailor.Client.delete_playback_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.delete_playback_configuration)
@@ -394,7 +393,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a prefetch schedule for a specific playback configuration.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").delete_prefetch_schedule` method.
+`session.create_client("mediatailor").delete_prefetch_schedule` method.
 
 Boto3 documentation:
 [MediaTailor.Client.delete_prefetch_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.delete_prefetch_schedule)
@@ -418,7 +417,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a specific program on a specific channel.
 
-Type annotations for `aiobotocore.create_client("mediatailor").delete_program`
+Type annotations for `session.create_client("mediatailor").delete_program`
 method.
 
 Boto3 documentation:
@@ -443,7 +442,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a source location on a specific channel.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").delete_source_location` method.
+`session.create_client("mediatailor").delete_source_location` method.
 
 Boto3 documentation:
 [MediaTailor.Client.delete_source_location](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.delete_source_location)
@@ -466,8 +465,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a specific VOD source in a specific source location.
 
-Type annotations for
-`aiobotocore.create_client("mediatailor").delete_vod_source` method.
+Type annotations for `session.create_client("mediatailor").delete_vod_source`
+method.
 
 Boto3 documentation:
 [MediaTailor.Client.delete_vod_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.delete_vod_source)
@@ -490,8 +489,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Describes the properties of a specific channel.
 
-Type annotations for
-`aiobotocore.create_client("mediatailor").describe_channel` method.
+Type annotations for `session.create_client("mediatailor").describe_channel`
+method.
 
 Boto3 documentation:
 [MediaTailor.Client.describe_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.describe_channel)
@@ -514,8 +513,8 @@ Returns a `Coroutine` for
 
 Retrieves the properties of the requested program.
 
-Type annotations for
-`aiobotocore.create_client("mediatailor").describe_program` method.
+Type annotations for `session.create_client("mediatailor").describe_program`
+method.
 
 Boto3 documentation:
 [MediaTailor.Client.describe_program](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.describe_program)
@@ -540,7 +539,7 @@ Returns a `Coroutine` for
 Retrieves the properties of the requested source location.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").describe_source_location` method.
+`session.create_client("mediatailor").describe_source_location` method.
 
 Boto3 documentation:
 [MediaTailor.Client.describe_source_location](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.describe_source_location)
@@ -564,8 +563,8 @@ Returns a `Coroutine` for
 
 Provides details about a specific VOD source in a specific source location.
 
-Type annotations for
-`aiobotocore.create_client("mediatailor").describe_vod_source` method.
+Type annotations for `session.create_client("mediatailor").describe_vod_source`
+method.
 
 Boto3 documentation:
 [MediaTailor.Client.describe_vod_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.describe_vod_source)
@@ -591,7 +590,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").generate_presigned_url` method.
+`session.create_client("mediatailor").generate_presigned_url` method.
 
 Boto3 documentation:
 [MediaTailor.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.generate_presigned_url)
@@ -614,8 +613,8 @@ Returns a `Coroutine` for `str`.
 
 Retrieves information about a channel's IAM policy.
 
-Type annotations for
-`aiobotocore.create_client("mediatailor").get_channel_policy` method.
+Type annotations for `session.create_client("mediatailor").get_channel_policy`
+method.
 
 Boto3 documentation:
 [MediaTailor.Client.get_channel_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.get_channel_policy)
@@ -640,7 +639,7 @@ Returns a `Coroutine` for
 Retrieves information about your channel's schedule.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").get_channel_schedule` method.
+`session.create_client("mediatailor").get_channel_schedule` method.
 
 Boto3 documentation:
 [MediaTailor.Client.get_channel_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.get_channel_schedule)
@@ -668,7 +667,7 @@ Returns a `Coroutine` for
 Returns the playback configuration for the specified name.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").get_playback_configuration` method.
+`session.create_client("mediatailor").get_playback_configuration` method.
 
 Boto3 documentation:
 [MediaTailor.Client.get_playback_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.get_playback_configuration)
@@ -694,7 +693,7 @@ Returns information about the prefetch schedule for a specific playback
 configuration.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").get_prefetch_schedule` method.
+`session.create_client("mediatailor").get_prefetch_schedule` method.
 
 Boto3 documentation:
 [MediaTailor.Client.get_prefetch_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.get_prefetch_schedule)
@@ -719,8 +718,7 @@ Returns a `Coroutine` for
 
 Returns a list of alerts for the given resource.
 
-Type annotations for `aiobotocore.create_client("mediatailor").list_alerts`
-method.
+Type annotations for `session.create_client("mediatailor").list_alerts` method.
 
 Boto3 documentation:
 [MediaTailor.Client.list_alerts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.list_alerts)
@@ -745,7 +743,7 @@ Returns a `Coroutine` for
 
 Retrieves a list of channels that are associated with this account.
 
-Type annotations for `aiobotocore.create_client("mediatailor").list_channels`
+Type annotations for `session.create_client("mediatailor").list_channels`
 method.
 
 Boto3 documentation:
@@ -772,7 +770,7 @@ Returns a list of the playback configurations defined in AWS Elemental
 MediaTailor.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").list_playback_configurations` method.
+`session.create_client("mediatailor").list_playback_configurations` method.
 
 Boto3 documentation:
 [MediaTailor.Client.list_playback_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.list_playback_configurations)
@@ -798,7 +796,7 @@ Returns a `Coroutine` for
 Creates a new prefetch schedule.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").list_prefetch_schedules` method.
+`session.create_client("mediatailor").list_prefetch_schedules` method.
 
 Boto3 documentation:
 [MediaTailor.Client.list_prefetch_schedules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.list_prefetch_schedules)
@@ -826,7 +824,7 @@ Returns a `Coroutine` for
 Retrieves a list of source locations.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").list_source_locations` method.
+`session.create_client("mediatailor").list_source_locations` method.
 
 Boto3 documentation:
 [MediaTailor.Client.list_source_locations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.list_source_locations)
@@ -853,7 +851,7 @@ Returns a list of the tags assigned to the specified playback configuration
 resource.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").list_tags_for_resource` method.
+`session.create_client("mediatailor").list_tags_for_resource` method.
 
 Boto3 documentation:
 [MediaTailor.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.list_tags_for_resource)
@@ -877,8 +875,8 @@ Returns a `Coroutine` for
 
 Lists all the VOD sources in a source location.
 
-Type annotations for
-`aiobotocore.create_client("mediatailor").list_vod_sources` method.
+Type annotations for `session.create_client("mediatailor").list_vod_sources`
+method.
 
 Boto3 documentation:
 [MediaTailor.Client.list_vod_sources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.list_vod_sources)
@@ -903,8 +901,8 @@ Returns a `Coroutine` for
 
 Creates an IAM policy for the channel.
 
-Type annotations for
-`aiobotocore.create_client("mediatailor").put_channel_policy` method.
+Type annotations for `session.create_client("mediatailor").put_channel_policy`
+method.
 
 Boto3 documentation:
 [MediaTailor.Client.put_channel_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.put_channel_policy)
@@ -929,7 +927,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds a new playback configuration to AWS Elemental MediaTailor.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").put_playback_configuration` method.
+`session.create_client("mediatailor").put_playback_configuration` method.
 
 Boto3 documentation:
 [MediaTailor.Client.put_playback_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.put_playback_configuration)
@@ -971,7 +969,7 @@ Returns a `Coroutine` for
 
 Starts a specific channel.
 
-Type annotations for `aiobotocore.create_client("mediatailor").start_channel`
+Type annotations for `session.create_client("mediatailor").start_channel`
 method.
 
 Boto3 documentation:
@@ -994,7 +992,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Stops a specific channel.
 
-Type annotations for `aiobotocore.create_client("mediatailor").stop_channel`
+Type annotations for `session.create_client("mediatailor").stop_channel`
 method.
 
 Boto3 documentation:
@@ -1017,7 +1015,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds tags to the specified playback configuration resource.
 
-Type annotations for `aiobotocore.create_client("mediatailor").tag_resource`
+Type annotations for `session.create_client("mediatailor").tag_resource`
 method.
 
 Boto3 documentation:
@@ -1039,7 +1037,7 @@ Keyword-only arguments:
 
 Removes tags from the specified playback configuration resource.
 
-Type annotations for `aiobotocore.create_client("mediatailor").untag_resource`
+Type annotations for `session.create_client("mediatailor").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1061,7 +1059,7 @@ Keyword-only arguments:
 
 Updates an existing channel.
 
-Type annotations for `aiobotocore.create_client("mediatailor").update_channel`
+Type annotations for `session.create_client("mediatailor").update_channel`
 method.
 
 Boto3 documentation:
@@ -1089,7 +1087,7 @@ Returns a `Coroutine` for
 Updates a source location on a specific channel.
 
 Type annotations for
-`aiobotocore.create_client("mediatailor").update_source_location` method.
+`session.create_client("mediatailor").update_source_location` method.
 
 Boto3 documentation:
 [MediaTailor.Client.update_source_location](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.update_source_location)
@@ -1120,8 +1118,8 @@ Returns a `Coroutine` for
 
 Updates a specific VOD source in a specific source location.
 
-Type annotations for
-`aiobotocore.create_client("mediatailor").update_vod_source` method.
+Type annotations for `session.create_client("mediatailor").update_vod_source`
+method.
 
 Boto3 documentation:
 [MediaTailor.Client.update_vod_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.update_vod_source)
@@ -1142,11 +1140,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateVodSourceResponseTypeDef](./type_defs.md#updatevodsourceresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("mediatailor").__aenter__` method.
+
+Boto3 documentation:
+[MediaTailor.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [MediaTailorClient](#mediatailorclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("mediatailor").__aexit__` method.
+
+Boto3 documentation:
+[MediaTailor.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediatailor.html#MediaTailor.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("mediatailor").get_paginator`
+Type annotations for `session.create_client("mediatailor").get_paginator`
 method with overloads.
 
 - `client.get_paginator("get_channel_schedule")` ->

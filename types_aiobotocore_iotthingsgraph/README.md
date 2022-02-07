@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[iotthingsgraph]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[iotthingsgraph]'
+
+# standalone installation
 pip install types-aiobotocore-iotthingsgraph
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-iotthingsgraph
 
 ## IoTThingsGraphClient
 
-Type annotations for `aiobotocore.create_client("iotthingsgraph")` as
+Type annotations for `session.create_client("iotthingsgraph")` as
 [IoTThingsGraphClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_iotthingsgraph.client import IoTThingsGraphClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_entity_to_thing](./client.md#associate_entity_to_thing)
 - [can_paginate](./client.md#can_paginate)
 - [create_flow_template](./client.md#create_flow_template)
@@ -107,7 +113,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_iotthingsgraph.paginators import GetFlowTemplateRevisionsPaginator, ...
+from types_aiobotocore_iotthingsgraph.paginator import GetFlowTemplateRevisionsPaginator, ...
 ```
 
 - [GetFlowTemplateRevisionsPaginator](./paginators.md#getflowtemplaterevisionspaginator)

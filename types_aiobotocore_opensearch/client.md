@@ -55,21 +55,24 @@ type annotations stubs module
     - [update_domain_config](#update_domain_config)
     - [update_package](#update_package)
     - [upgrade_domain](#upgrade_domain)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="opensearchserviceclient"></a>
 
 ## OpenSearchServiceClient
 
-Type annotations for `aiobotocore.create_client("opensearch")`
+Type annotations for `session.create_client("opensearch")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_opensearch.client import OpenSearchServiceClient
 
-def get_opensearch_client() -> OpenSearchServiceClient:
-    return Session().client("opensearch")
+session = get_session()
+async with session.create_client("opensearch") as client:
+    client: OpenSearchServiceClient
 ```
 
 Boto3 documentation:
@@ -114,8 +117,7 @@ Exceptions:
 
 OpenSearchServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("opensearch").exceptions`
-method.
+Type annotations for `session.create_client("opensearch").exceptions` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.exceptions)
@@ -130,7 +132,7 @@ Allows the remote domain owner to accept an inbound cross-cluster connection
 request.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").accept_inbound_connection` method.
+`session.create_client("opensearch").accept_inbound_connection` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.accept_inbound_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.accept_inbound_connection)
@@ -154,7 +156,7 @@ Returns a `Coroutine` for
 
 Attaches tags to an existing domain.
 
-Type annotations for `aiobotocore.create_client("opensearch").add_tags` method.
+Type annotations for `session.create_client("opensearch").add_tags` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.add_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.add_tags)
@@ -175,8 +177,8 @@ Keyword-only arguments:
 
 Associates a package with an Amazon OpenSearch Service domain.
 
-Type annotations for
-`aiobotocore.create_client("opensearch").associate_package` method.
+Type annotations for `session.create_client("opensearch").associate_package`
+method.
 
 Boto3 documentation:
 [OpenSearchService.Client.associate_package](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.associate_package)
@@ -200,19 +202,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("opensearch").can_paginate`
-method.
+Type annotations for `session.create_client("opensearch").can_paginate` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_service_software_update"></a>
 
@@ -222,8 +221,7 @@ Cancels a scheduled service software update for an Amazon OpenSearch Service
 domain.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").cancel_service_software_update`
-method.
+`session.create_client("opensearch").cancel_service_software_update` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.cancel_service_software_update](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.cancel_service_software_update)
@@ -247,7 +245,7 @@ Returns a `Coroutine` for
 
 Creates a new Amazon OpenSearch Service domain.
 
-Type annotations for `aiobotocore.create_client("opensearch").create_domain`
+Type annotations for `session.create_client("opensearch").create_domain`
 method.
 
 Boto3 documentation:
@@ -296,7 +294,7 @@ Creates a new cross-cluster connection from a local OpenSearch domain to a
 remote OpenSearch domain.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").create_outbound_connection` method.
+`session.create_client("opensearch").create_outbound_connection` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.create_outbound_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.create_outbound_connection)
@@ -326,7 +324,7 @@ Returns a `Coroutine` for
 
 Create a package for use with Amazon OpenSearch Service domains.
 
-Type annotations for `aiobotocore.create_client("opensearch").create_package`
+Type annotations for `session.create_client("opensearch").create_package`
 method.
 
 Boto3 documentation:
@@ -355,7 +353,7 @@ Returns a `Coroutine` for
 
 Permanently deletes the specified domain and all of its data.
 
-Type annotations for `aiobotocore.create_client("opensearch").delete_domain`
+Type annotations for `session.create_client("opensearch").delete_domain`
 method.
 
 Boto3 documentation:
@@ -381,7 +379,7 @@ Allows the remote domain owner to delete an existing inbound cross-cluster
 connection.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").delete_inbound_connection` method.
+`session.create_client("opensearch").delete_inbound_connection` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.delete_inbound_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.delete_inbound_connection)
@@ -407,7 +405,7 @@ Allows the local domain owner to delete an existing outbound cross-cluster
 connection.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").delete_outbound_connection` method.
+`session.create_client("opensearch").delete_outbound_connection` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.delete_outbound_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.delete_outbound_connection)
@@ -431,7 +429,7 @@ Returns a `Coroutine` for
 
 Deletes the package.
 
-Type annotations for `aiobotocore.create_client("opensearch").delete_package`
+Type annotations for `session.create_client("opensearch").delete_package`
 method.
 
 Boto3 documentation:
@@ -456,7 +454,7 @@ Returns a `Coroutine` for
 Returns domain configuration information about the specified domain, including
 the domain ID, domain endpoint, and domain ARN.
 
-Type annotations for `aiobotocore.create_client("opensearch").describe_domain`
+Type annotations for `session.create_client("opensearch").describe_domain`
 method.
 
 Boto3 documentation:
@@ -482,7 +480,7 @@ Provides scheduled Auto-Tune action details for the domain, such as Auto-Tune
 action type, description, severity, and scheduled date.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").describe_domain_auto_tunes` method.
+`session.create_client("opensearch").describe_domain_auto_tunes` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.describe_domain_auto_tunes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.describe_domain_auto_tunes)
@@ -510,7 +508,7 @@ Provides cluster configuration information about the specified domain, such as
 the state, creation date, update version, and update date for cluster options.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").describe_domain_config` method.
+`session.create_client("opensearch").describe_domain_config` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.describe_domain_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.describe_domain_config)
@@ -535,7 +533,7 @@ Returns a `Coroutine` for
 Returns domain configuration information about the specified domains, including
 the domain ID, domain endpoint, and domain ARN.
 
-Type annotations for `aiobotocore.create_client("opensearch").describe_domains`
+Type annotations for `session.create_client("opensearch").describe_domains`
 method.
 
 Boto3 documentation:
@@ -560,7 +558,7 @@ Returns a `Coroutine` for
 Lists all the inbound cross-cluster connections for a remote domain.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").describe_inbound_connections` method.
+`session.create_client("opensearch").describe_inbound_connections` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.describe_inbound_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.describe_inbound_connections)
@@ -588,7 +586,7 @@ Describe the limits for a given instance type and OpenSearch or Elasticsearch
 version.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").describe_instance_type_limits` method.
+`session.create_client("opensearch").describe_instance_type_limits` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.describe_instance_type_limits](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.describe_instance_type_limits)
@@ -617,7 +615,7 @@ Returns a `Coroutine` for
 Lists all the outbound cross-cluster connections for a local domain.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").describe_outbound_connections` method.
+`session.create_client("opensearch").describe_outbound_connections` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.describe_outbound_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.describe_outbound_connections)
@@ -643,8 +641,8 @@ Returns a `Coroutine` for
 
 Describes all packages available to Amazon OpenSearch Service domains.
 
-Type annotations for
-`aiobotocore.create_client("opensearch").describe_packages` method.
+Type annotations for `session.create_client("opensearch").describe_packages`
+method.
 
 Boto3 documentation:
 [OpenSearchService.Client.describe_packages](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.describe_packages)
@@ -671,7 +669,7 @@ Returns a `Coroutine` for
 Lists available reserved OpenSearch instance offerings.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").describe_reserved_instance_offerings`
+`session.create_client("opensearch").describe_reserved_instance_offerings`
 method.
 
 Boto3 documentation:
@@ -699,7 +697,7 @@ Returns a `Coroutine` for
 Returns information about reserved OpenSearch instances for this account.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").describe_reserved_instances` method.
+`session.create_client("opensearch").describe_reserved_instances` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.describe_reserved_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.describe_reserved_instances)
@@ -725,8 +723,8 @@ Returns a `Coroutine` for
 
 Dissociates a package from the Amazon OpenSearch Service domain.
 
-Type annotations for
-`aiobotocore.create_client("opensearch").dissociate_package` method.
+Type annotations for `session.create_client("opensearch").dissociate_package`
+method.
 
 Boto3 documentation:
 [OpenSearchService.Client.dissociate_package](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.dissociate_package)
@@ -752,7 +750,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").generate_presigned_url` method.
+`session.create_client("opensearch").generate_presigned_url` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.generate_presigned_url)
@@ -776,7 +774,7 @@ Returns a `Coroutine` for `str`.
 Returns a list of upgrade-compatible versions of OpenSearch/Elasticsearch.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").get_compatible_versions` method.
+`session.create_client("opensearch").get_compatible_versions` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.get_compatible_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.get_compatible_versions)
@@ -802,7 +800,7 @@ Returns a list of package versions, along with their creation time and commit
 message.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").get_package_version_history` method.
+`session.create_client("opensearch").get_package_version_history` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.get_package_version_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.get_package_version_history)
@@ -828,8 +826,8 @@ Returns a `Coroutine` for
 
 Retrieves the complete history of the last 10 upgrades performed on the domain.
 
-Type annotations for
-`aiobotocore.create_client("opensearch").get_upgrade_history` method.
+Type annotations for `session.create_client("opensearch").get_upgrade_history`
+method.
 
 Boto3 documentation:
 [OpenSearchService.Client.get_upgrade_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.get_upgrade_history)
@@ -856,8 +854,8 @@ Returns a `Coroutine` for
 Retrieves the latest status of the last upgrade or upgrade eligibility check
 performed on the domain.
 
-Type annotations for
-`aiobotocore.create_client("opensearch").get_upgrade_status` method.
+Type annotations for `session.create_client("opensearch").get_upgrade_status`
+method.
 
 Boto3 documentation:
 [OpenSearchService.Client.get_upgrade_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.get_upgrade_status)
@@ -881,8 +879,8 @@ Returns a `Coroutine` for
 
 Returns the names of all domains owned by the current user's account.
 
-Type annotations for
-`aiobotocore.create_client("opensearch").list_domain_names` method.
+Type annotations for `session.create_client("opensearch").list_domain_names`
+method.
 
 Boto3 documentation:
 [OpenSearchService.Client.list_domain_names](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.list_domain_names)
@@ -906,7 +904,7 @@ Returns a `Coroutine` for
 Lists all Amazon OpenSearch Service domains associated with the package.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").list_domains_for_package` method.
+`session.create_client("opensearch").list_domains_for_package` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.list_domains_for_package](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.list_domains_for_package)
@@ -934,7 +932,7 @@ See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListInstanceTypeDetails).
 
 Type annotations for
-`aiobotocore.create_client("opensearch").list_instance_type_details` method.
+`session.create_client("opensearch").list_instance_type_details` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.list_instance_type_details](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.list_instance_type_details)
@@ -962,7 +960,7 @@ Returns a `Coroutine` for
 Lists all packages associated with the Amazon OpenSearch Service domain.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").list_packages_for_domain` method.
+`session.create_client("opensearch").list_packages_for_domain` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.list_packages_for_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.list_packages_for_domain)
@@ -988,8 +986,7 @@ Returns a `Coroutine` for
 
 Returns all tags for the given domain.
 
-Type annotations for `aiobotocore.create_client("opensearch").list_tags`
-method.
+Type annotations for `session.create_client("opensearch").list_tags` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.list_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.list_tags)
@@ -1012,7 +1009,7 @@ Returns a `Coroutine` for
 
 List all supported versions of OpenSearch and Elasticsearch.
 
-Type annotations for `aiobotocore.create_client("opensearch").list_versions`
+Type annotations for `session.create_client("opensearch").list_versions`
 method.
 
 Boto3 documentation:
@@ -1038,7 +1035,7 @@ Returns a `Coroutine` for
 Allows you to purchase reserved OpenSearch instances.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").purchase_reserved_instance_offering`
+`session.create_client("opensearch").purchase_reserved_instance_offering`
 method.
 
 Boto3 documentation:
@@ -1067,7 +1064,7 @@ Allows the remote domain owner to reject an inbound cross-cluster connection
 request.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").reject_inbound_connection` method.
+`session.create_client("opensearch").reject_inbound_connection` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.reject_inbound_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.reject_inbound_connection)
@@ -1091,8 +1088,7 @@ Returns a `Coroutine` for
 
 Removes the specified set of tags from the given domain.
 
-Type annotations for `aiobotocore.create_client("opensearch").remove_tags`
-method.
+Type annotations for `session.create_client("opensearch").remove_tags` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.remove_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.remove_tags)
@@ -1114,7 +1110,7 @@ Keyword-only arguments:
 Schedules a service software update for an Amazon OpenSearch Service domain.
 
 Type annotations for
-`aiobotocore.create_client("opensearch").start_service_software_update` method.
+`session.create_client("opensearch").start_service_software_update` method.
 
 Boto3 documentation:
 [OpenSearchService.Client.start_service_software_update](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.start_service_software_update)
@@ -1139,8 +1135,8 @@ Returns a `Coroutine` for
 Modifies the cluster configuration of the specified domain, such as setting the
 instance type and the number of instances.
 
-Type annotations for
-`aiobotocore.create_client("opensearch").update_domain_config` method.
+Type annotations for `session.create_client("opensearch").update_domain_config`
+method.
 
 Boto3 documentation:
 [OpenSearchService.Client.update_domain_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.update_domain_config)
@@ -1186,7 +1182,7 @@ Returns a `Coroutine` for
 
 Updates a package for use with Amazon OpenSearch Service domains.
 
-Type annotations for `aiobotocore.create_client("opensearch").update_package`
+Type annotations for `session.create_client("opensearch").update_package`
 method.
 
 Boto3 documentation:
@@ -1215,7 +1211,7 @@ Returns a `Coroutine` for
 Allows you to either upgrade your domain or perform an upgrade eligibility
 check to a compatible version of OpenSearch or Elasticsearch.
 
-Type annotations for `aiobotocore.create_client("opensearch").upgrade_domain`
+Type annotations for `session.create_client("opensearch").upgrade_domain`
 method.
 
 Boto3 documentation:
@@ -1235,3 +1231,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpgradeDomainResponseTypeDef](./type_defs.md#upgradedomainresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("opensearch").__aenter__` method.
+
+Boto3 documentation:
+[OpenSearchService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [OpenSearchServiceClient](#opensearchserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("opensearch").__aexit__` method.
+
+Boto3 documentation:
+[OpenSearchService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html#OpenSearchService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

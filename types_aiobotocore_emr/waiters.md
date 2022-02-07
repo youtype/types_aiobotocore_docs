@@ -19,7 +19,7 @@ type annotations stubs module
 ## ClusterRunningWaiter
 
 Type annotations for
-`aiobotocore.create_client("emr").get_waiter("cluster_running")`.
+`session.create_client("emr").get_waiter("cluster_running")`.
 
 Can be used directly:
 
@@ -29,7 +29,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_emr.waiter import ClusterRunningWaiter
 
 def get_cluster_running_waiter() -> ClusterRunningWaiter:
-    return Session().create_client("emr").get_waiter("cluster_running")
+    return Session().client("emr").get_waiter("cluster_running")
 ```
 
 Boto3 documentation:
@@ -45,7 +45,7 @@ Arguments for `ClusterRunningWaiter.wait` method:
 ## ClusterTerminatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("emr").get_waiter("cluster_terminated")`.
+`session.create_client("emr").get_waiter("cluster_terminated")`.
 
 Can be used directly:
 
@@ -55,7 +55,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_emr.waiter import ClusterTerminatedWaiter
 
 def get_cluster_terminated_waiter() -> ClusterTerminatedWaiter:
-    return Session().create_client("emr").get_waiter("cluster_terminated")
+    return Session().client("emr").get_waiter("cluster_terminated")
 ```
 
 Boto3 documentation:
@@ -71,7 +71,7 @@ Arguments for `ClusterTerminatedWaiter.wait` method:
 ## StepCompleteWaiter
 
 Type annotations for
-`aiobotocore.create_client("emr").get_waiter("step_complete")`.
+`session.create_client("emr").get_waiter("step_complete")`.
 
 Can be used directly:
 
@@ -81,7 +81,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_emr.waiter import StepCompleteWaiter
 
 def get_step_complete_waiter() -> StepCompleteWaiter:
-    return Session().create_client("emr").get_waiter("step_complete")
+    return Session().client("emr").get_waiter("step_complete")
 ```
 
 Boto3 documentation:

@@ -25,17 +25,19 @@ type annotations stubs module
 ## GetDevicePositionHistoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("location").get_paginator("get_device_position_history")`.
+`session.create_client("location").get_paginator("get_device_position_history")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_location.paginator import GetDevicePositionHistoryPaginator
 
-def get_get_device_position_history_paginator() -> GetDevicePositionHistoryPaginator:
-    return Session().create_client("location").get_paginator("get_device_position_history")
+session = get_session()
+async with session.create_client("location") as client:
+    client: LocationServiceClient
+    paginator: GetDevicePositionHistoryPaginator = client.get_paginator("get_device_position_history")
 ```
 
 Boto3 documentation:
@@ -58,17 +60,19 @@ Arguments for `GetDevicePositionHistoryPaginator.paginate` method:
 ## ListDevicePositionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("location").get_paginator("list_device_positions")`.
+`session.create_client("location").get_paginator("list_device_positions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_location.paginator import ListDevicePositionsPaginator
 
-def get_list_device_positions_paginator() -> ListDevicePositionsPaginator:
-    return Session().create_client("location").get_paginator("list_device_positions")
+session = get_session()
+async with session.create_client("location") as client:
+    client: LocationServiceClient
+    paginator: ListDevicePositionsPaginator = client.get_paginator("list_device_positions")
 ```
 
 Boto3 documentation:
@@ -88,17 +92,19 @@ Arguments for `ListDevicePositionsPaginator.paginate` method:
 ## ListGeofenceCollectionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("location").get_paginator("list_geofence_collections")`.
+`session.create_client("location").get_paginator("list_geofence_collections")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_location.paginator import ListGeofenceCollectionsPaginator
 
-def get_list_geofence_collections_paginator() -> ListGeofenceCollectionsPaginator:
-    return Session().create_client("location").get_paginator("list_geofence_collections")
+session = get_session()
+async with session.create_client("location") as client:
+    client: LocationServiceClient
+    paginator: ListGeofenceCollectionsPaginator = client.get_paginator("list_geofence_collections")
 ```
 
 Boto3 documentation:
@@ -117,17 +123,19 @@ Arguments for `ListGeofenceCollectionsPaginator.paginate` method:
 ## ListGeofencesPaginator
 
 Type annotations for
-`aiobotocore.create_client("location").get_paginator("list_geofences")`.
+`session.create_client("location").get_paginator("list_geofences")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_location.paginator import ListGeofencesPaginator
 
-def get_list_geofences_paginator() -> ListGeofencesPaginator:
-    return Session().create_client("location").get_paginator("list_geofences")
+session = get_session()
+async with session.create_client("location") as client:
+    client: LocationServiceClient
+    paginator: ListGeofencesPaginator = client.get_paginator("list_geofences")
 ```
 
 Boto3 documentation:
@@ -147,17 +155,19 @@ Arguments for `ListGeofencesPaginator.paginate` method:
 ## ListMapsPaginator
 
 Type annotations for
-`aiobotocore.create_client("location").get_paginator("list_maps")`.
+`session.create_client("location").get_paginator("list_maps")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_location.paginator import ListMapsPaginator
 
-def get_list_maps_paginator() -> ListMapsPaginator:
-    return Session().create_client("location").get_paginator("list_maps")
+session = get_session()
+async with session.create_client("location") as client:
+    client: LocationServiceClient
+    paginator: ListMapsPaginator = client.get_paginator("list_maps")
 ```
 
 Boto3 documentation:
@@ -176,17 +186,19 @@ Arguments for `ListMapsPaginator.paginate` method:
 ## ListPlaceIndexesPaginator
 
 Type annotations for
-`aiobotocore.create_client("location").get_paginator("list_place_indexes")`.
+`session.create_client("location").get_paginator("list_place_indexes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_location.paginator import ListPlaceIndexesPaginator
 
-def get_list_place_indexes_paginator() -> ListPlaceIndexesPaginator:
-    return Session().create_client("location").get_paginator("list_place_indexes")
+session = get_session()
+async with session.create_client("location") as client:
+    client: LocationServiceClient
+    paginator: ListPlaceIndexesPaginator = client.get_paginator("list_place_indexes")
 ```
 
 Boto3 documentation:
@@ -205,17 +217,19 @@ Arguments for `ListPlaceIndexesPaginator.paginate` method:
 ## ListRouteCalculatorsPaginator
 
 Type annotations for
-`aiobotocore.create_client("location").get_paginator("list_route_calculators")`.
+`session.create_client("location").get_paginator("list_route_calculators")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_location.paginator import ListRouteCalculatorsPaginator
 
-def get_list_route_calculators_paginator() -> ListRouteCalculatorsPaginator:
-    return Session().create_client("location").get_paginator("list_route_calculators")
+session = get_session()
+async with session.create_client("location") as client:
+    client: LocationServiceClient
+    paginator: ListRouteCalculatorsPaginator = client.get_paginator("list_route_calculators")
 ```
 
 Boto3 documentation:
@@ -234,17 +248,19 @@ Arguments for `ListRouteCalculatorsPaginator.paginate` method:
 ## ListTrackerConsumersPaginator
 
 Type annotations for
-`aiobotocore.create_client("location").get_paginator("list_tracker_consumers")`.
+`session.create_client("location").get_paginator("list_tracker_consumers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_location.paginator import ListTrackerConsumersPaginator
 
-def get_list_tracker_consumers_paginator() -> ListTrackerConsumersPaginator:
-    return Session().create_client("location").get_paginator("list_tracker_consumers")
+session = get_session()
+async with session.create_client("location") as client:
+    client: LocationServiceClient
+    paginator: ListTrackerConsumersPaginator = client.get_paginator("list_tracker_consumers")
 ```
 
 Boto3 documentation:
@@ -264,17 +280,19 @@ Arguments for `ListTrackerConsumersPaginator.paginate` method:
 ## ListTrackersPaginator
 
 Type annotations for
-`aiobotocore.create_client("location").get_paginator("list_trackers")`.
+`session.create_client("location").get_paginator("list_trackers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_location.paginator import ListTrackersPaginator
 
-def get_list_trackers_paginator() -> ListTrackersPaginator:
-    return Session().create_client("location").get_paginator("list_trackers")
+session = get_session()
+async with session.create_client("location") as client:
+    client: LocationServiceClient
+    paginator: ListTrackersPaginator = client.get_paginator("list_trackers")
 ```
 
 Boto3 documentation:

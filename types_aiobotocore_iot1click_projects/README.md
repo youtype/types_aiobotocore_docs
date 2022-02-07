@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[iot1click-projects]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[iot1click-projects]'
+
+# standalone installation
 pip install types-aiobotocore-iot1click-projects
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-iot1click-projects
 
 ## IoT1ClickProjectsClient
 
-Type annotations for `aiobotocore.create_client("iot1click-projects")` as
+Type annotations for `session.create_client("iot1click-projects")` as
 [IoT1ClickProjectsClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_iot1click_projects.client import IoT1ClickProjectsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_device_with_placement](./client.md#associate_device_with_placement)
 - [can_paginate](./client.md#can_paginate)
 - [create_placement](./client.md#create_placement)
@@ -86,7 +92,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_iot1click_projects.paginators import ListPlacementsPaginator, ...
+from types_aiobotocore_iot1click_projects.paginator import ListPlacementsPaginator, ...
 ```
 
 - [ListPlacementsPaginator](./paginators.md#listplacementspaginator)

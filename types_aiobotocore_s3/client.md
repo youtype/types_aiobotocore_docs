@@ -118,6 +118,8 @@ type annotations stubs module
     - [upload_part](#upload_part)
     - [upload_part_copy](#upload_part_copy)
     - [write_get_object_response](#write_get_object_response)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -125,16 +127,17 @@ type annotations stubs module
 
 ## S3Client
 
-Type annotations for `aiobotocore.create_client("s3")`
+Type annotations for `session.create_client("s3")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_s3.client import S3Client
 
-def get_s3_client() -> S3Client:
-    return Session().client("s3")
+session = get_session()
+async with session.create_client("s3") as client:
+    client: S3Client
 ```
 
 Boto3 documentation:
@@ -176,7 +179,7 @@ Exceptions:
 
 S3Client exceptions.
 
-Type annotations for `aiobotocore.create_client("s3").exceptions` method.
+Type annotations for `session.create_client("s3").exceptions` method.
 
 Boto3 documentation:
 [S3.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.exceptions)
@@ -189,7 +192,7 @@ Returns [Exceptions](#exceptions).
 
 This action aborts a multipart upload.
 
-Type annotations for `aiobotocore.create_client("s3").abort_multipart_upload`
+Type annotations for `session.create_client("s3").abort_multipart_upload`
 method.
 
 Boto3 documentation:
@@ -219,18 +222,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("s3").can_paginate` method.
+Type annotations for `session.create_client("s3").can_paginate` method.
 
 Boto3 documentation:
 [S3.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="complete_multipart_upload"></a>
 
@@ -238,8 +239,8 @@ Returns a `Coroutine` for `bool`.
 
 Completes a multipart upload by assembling previously uploaded parts.
 
-Type annotations for
-`aiobotocore.create_client("s3").complete_multipart_upload` method.
+Type annotations for `session.create_client("s3").complete_multipart_upload`
+method.
 
 Boto3 documentation:
 [S3.Client.complete_multipart_upload](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.complete_multipart_upload)
@@ -270,7 +271,7 @@ Returns a `Coroutine` for
 
 Copy an object from one S3 location to another.
 
-Type annotations for `aiobotocore.create_client("s3").copy` method.
+Type annotations for `session.create_client("s3").copy` method.
 
 Boto3 documentation:
 [S3.Client.copy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.copy)
@@ -297,7 +298,7 @@ Arguments:
 
 Creates a copy of an object that is already stored in Amazon S3.
 
-Type annotations for `aiobotocore.create_client("s3").copy_object` method.
+Type annotations for `session.create_client("s3").copy_object` method.
 
 Boto3 documentation:
 [S3.Client.copy_object](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.copy_object)
@@ -365,7 +366,7 @@ Returns a `Coroutine` for
 
 Creates a new S3 bucket.
 
-Type annotations for `aiobotocore.create_client("s3").create_bucket` method.
+Type annotations for `session.create_client("s3").create_bucket` method.
 
 Boto3 documentation:
 [S3.Client.create_bucket](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.create_bucket)
@@ -398,7 +399,7 @@ Returns a `Coroutine` for
 
 This action initiates a multipart upload and returns an upload ID.
 
-Type annotations for `aiobotocore.create_client("s3").create_multipart_upload`
+Type annotations for `session.create_client("s3").create_multipart_upload`
 method.
 
 Boto3 documentation:
@@ -454,7 +455,7 @@ Returns a `Coroutine` for
 
 Deletes the S3 bucket.
 
-Type annotations for `aiobotocore.create_client("s3").delete_bucket` method.
+Type annotations for `session.create_client("s3").delete_bucket` method.
 
 Boto3 documentation:
 [S3.Client.delete_bucket](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.delete_bucket)
@@ -477,7 +478,7 @@ Deletes an analytics configuration for the bucket (specified by the analytics
 configuration ID).
 
 Type annotations for
-`aiobotocore.create_client("s3").delete_bucket_analytics_configuration` method.
+`session.create_client("s3").delete_bucket_analytics_configuration` method.
 
 Boto3 documentation:
 [S3.Client.delete_bucket_analytics_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.delete_bucket_analytics_configuration)
@@ -500,8 +501,7 @@ Keyword-only arguments:
 
 Deletes the `cors` configuration information set for the bucket.
 
-Type annotations for `aiobotocore.create_client("s3").delete_bucket_cors`
-method.
+Type annotations for `session.create_client("s3").delete_bucket_cors` method.
 
 Boto3 documentation:
 [S3.Client.delete_bucket_cors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.delete_bucket_cors)
@@ -524,7 +524,7 @@ Keyword-only arguments:
 This implementation of the DELETE action removes default encryption from the
 bucket.
 
-Type annotations for `aiobotocore.create_client("s3").delete_bucket_encryption`
+Type annotations for `session.create_client("s3").delete_bucket_encryption`
 method.
 
 Boto3 documentation:
@@ -548,7 +548,7 @@ Keyword-only arguments:
 Deletes the S3 Intelligent-Tiering configuration from the specified bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").delete_bucket_intelligent_tiering_configuration`
+`session.create_client("s3").delete_bucket_intelligent_tiering_configuration`
 method.
 
 Boto3 documentation:
@@ -574,7 +574,7 @@ Deletes an inventory configuration (identified by the inventory ID) from the
 bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").delete_bucket_inventory_configuration` method.
+`session.create_client("s3").delete_bucket_inventory_configuration` method.
 
 Boto3 documentation:
 [S3.Client.delete_bucket_inventory_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.delete_bucket_inventory_configuration)
@@ -597,7 +597,7 @@ Keyword-only arguments:
 
 Deletes the lifecycle configuration from the specified bucket.
 
-Type annotations for `aiobotocore.create_client("s3").delete_bucket_lifecycle`
+Type annotations for `session.create_client("s3").delete_bucket_lifecycle`
 method.
 
 Boto3 documentation:
@@ -622,7 +622,7 @@ Deletes a metrics configuration for the Amazon CloudWatch request metrics
 (specified by the metrics configuration ID) from the bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").delete_bucket_metrics_configuration` method.
+`session.create_client("s3").delete_bucket_metrics_configuration` method.
 
 Boto3 documentation:
 [S3.Client.delete_bucket_metrics_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.delete_bucket_metrics_configuration)
@@ -646,7 +646,7 @@ Keyword-only arguments:
 Removes `OwnershipControls` for an Amazon S3 bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").delete_bucket_ownership_controls` method.
+`session.create_client("s3").delete_bucket_ownership_controls` method.
 
 Boto3 documentation:
 [S3.Client.delete_bucket_ownership_controls](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.delete_bucket_ownership_controls)
@@ -669,8 +669,7 @@ Keyword-only arguments:
 This implementation of the DELETE action uses the policy subresource to delete
 the policy of a specified bucket.
 
-Type annotations for `aiobotocore.create_client("s3").delete_bucket_policy`
-method.
+Type annotations for `session.create_client("s3").delete_bucket_policy` method.
 
 Boto3 documentation:
 [S3.Client.delete_bucket_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.delete_bucket_policy)
@@ -692,8 +691,8 @@ Keyword-only arguments:
 
 Deletes the replication configuration from the bucket.
 
-Type annotations for
-`aiobotocore.create_client("s3").delete_bucket_replication` method.
+Type annotations for `session.create_client("s3").delete_bucket_replication`
+method.
 
 Boto3 documentation:
 [S3.Client.delete_bucket_replication](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.delete_bucket_replication)
@@ -715,7 +714,7 @@ Keyword-only arguments:
 
 Deletes the tags from the bucket.
 
-Type annotations for `aiobotocore.create_client("s3").delete_bucket_tagging`
+Type annotations for `session.create_client("s3").delete_bucket_tagging`
 method.
 
 Boto3 documentation:
@@ -738,7 +737,7 @@ Keyword-only arguments:
 
 This action removes the website configuration for a bucket.
 
-Type annotations for `aiobotocore.create_client("s3").delete_bucket_website`
+Type annotations for `session.create_client("s3").delete_bucket_website`
 method.
 
 Boto3 documentation:
@@ -762,7 +761,7 @@ Keyword-only arguments:
 Removes the null version (if there is one) of an object and inserts a delete
 marker, which becomes the latest version of the object.
 
-Type annotations for `aiobotocore.create_client("s3").delete_object` method.
+Type annotations for `session.create_client("s3").delete_object` method.
 
 Boto3 documentation:
 [S3.Client.delete_object](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.delete_object)
@@ -792,7 +791,7 @@ Returns a `Coroutine` for
 
 Removes the entire tag set from the specified object.
 
-Type annotations for `aiobotocore.create_client("s3").delete_object_tagging`
+Type annotations for `session.create_client("s3").delete_object_tagging`
 method.
 
 Boto3 documentation:
@@ -821,7 +820,7 @@ Returns a `Coroutine` for
 This action enables you to delete multiple objects from a bucket using a single
 HTTP request.
 
-Type annotations for `aiobotocore.create_client("s3").delete_objects` method.
+Type annotations for `session.create_client("s3").delete_objects` method.
 
 Boto3 documentation:
 [S3.Client.delete_objects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.delete_objects)
@@ -850,8 +849,8 @@ Returns a `Coroutine` for
 
 Removes the `PublicAccessBlock` configuration for an Amazon S3 bucket.
 
-Type annotations for
-`aiobotocore.create_client("s3").delete_public_access_block` method.
+Type annotations for `session.create_client("s3").delete_public_access_block`
+method.
 
 Boto3 documentation:
 [S3.Client.delete_public_access_block](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.delete_public_access_block)
@@ -873,7 +872,7 @@ Keyword-only arguments:
 
 Download an S3 object to a file.
 
-Type annotations for `aiobotocore.create_client("s3").download_file` method.
+Type annotations for `session.create_client("s3").download_file` method.
 
 Boto3 documentation:
 [S3.Client.download_file](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.download_file)
@@ -898,7 +897,7 @@ Arguments:
 
 Download an object from S3 to a file-like object.
 
-Type annotations for `aiobotocore.create_client("s3").download_fileobj` method.
+Type annotations for `session.create_client("s3").download_fileobj` method.
 
 Boto3 documentation:
 [S3.Client.download_fileobj](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.download_fileobj)
@@ -923,7 +922,7 @@ Arguments:
 
 Builds the url and the form fields used for a presigned s3 post.
 
-Type annotations for `aiobotocore.create_client("s3").generate_presigned_post`
+Type annotations for `session.create_client("s3").generate_presigned_post`
 method.
 
 Boto3 documentation:
@@ -951,7 +950,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("s3").generate_presigned_url`
+Type annotations for `session.create_client("s3").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -978,7 +977,7 @@ return the Transfer Acceleration state of a bucket, which is either `Enabled`
 or `Suspended`.
 
 Type annotations for
-`aiobotocore.create_client("s3").get_bucket_accelerate_configuration` method.
+`session.create_client("s3").get_bucket_accelerate_configuration` method.
 
 Boto3 documentation:
 [S3.Client.get_bucket_accelerate_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_bucket_accelerate_configuration)
@@ -1004,7 +1003,7 @@ Returns a `Coroutine` for
 This implementation of the `GET` action uses the `acl` subresource to return
 the access control list (ACL) of a bucket.
 
-Type annotations for `aiobotocore.create_client("s3").get_bucket_acl` method.
+Type annotations for `session.create_client("s3").get_bucket_acl` method.
 
 Boto3 documentation:
 [S3.Client.get_bucket_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_bucket_acl)
@@ -1030,7 +1029,7 @@ This implementation of the GET action returns an analytics configuration
 (identified by the analytics configuration ID) from the bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").get_bucket_analytics_configuration` method.
+`session.create_client("s3").get_bucket_analytics_configuration` method.
 
 Boto3 documentation:
 [S3.Client.get_bucket_analytics_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_bucket_analytics_configuration)
@@ -1056,7 +1055,7 @@ Returns a `Coroutine` for
 
 Returns the cors configuration information set for the bucket.
 
-Type annotations for `aiobotocore.create_client("s3").get_bucket_cors` method.
+Type annotations for `session.create_client("s3").get_bucket_cors` method.
 
 Boto3 documentation:
 [S3.Client.get_bucket_cors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_bucket_cors)
@@ -1080,7 +1079,7 @@ Returns a `Coroutine` for
 
 Returns the default encryption configuration for an Amazon S3 bucket.
 
-Type annotations for `aiobotocore.create_client("s3").get_bucket_encryption`
+Type annotations for `session.create_client("s3").get_bucket_encryption`
 method.
 
 Boto3 documentation:
@@ -1107,7 +1106,7 @@ Returns a `Coroutine` for
 Gets the S3 Intelligent-Tiering configuration from the specified bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").get_bucket_intelligent_tiering_configuration`
+`session.create_client("s3").get_bucket_intelligent_tiering_configuration`
 method.
 
 Boto3 documentation:
@@ -1136,7 +1135,7 @@ Returns an inventory configuration (identified by the inventory configuration
 ID) from the bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").get_bucket_inventory_configuration` method.
+`session.create_client("s3").get_bucket_inventory_configuration` method.
 
 Boto3 documentation:
 [S3.Client.get_bucket_inventory_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_bucket_inventory_configuration)
@@ -1162,8 +1161,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("s3").get_bucket_lifecycle`
-method.
+Type annotations for `session.create_client("s3").get_bucket_lifecycle` method.
 
 Boto3 documentation:
 [S3.Client.get_bucket_lifecycle](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_bucket_lifecycle)
@@ -1189,7 +1187,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("s3").get_bucket_lifecycle_configuration` method.
+`session.create_client("s3").get_bucket_lifecycle_configuration` method.
 
 Boto3 documentation:
 [S3.Client.get_bucket_lifecycle_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_bucket_lifecycle_configuration)
@@ -1214,8 +1212,7 @@ Returns a `Coroutine` for
 
 Returns the Region the bucket resides in.
 
-Type annotations for `aiobotocore.create_client("s3").get_bucket_location`
-method.
+Type annotations for `session.create_client("s3").get_bucket_location` method.
 
 Boto3 documentation:
 [S3.Client.get_bucket_location](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_bucket_location)
@@ -1241,8 +1238,7 @@ Returns a `Coroutine` for
 Returns the logging status of a bucket and the permissions users have to view
 and modify that status.
 
-Type annotations for `aiobotocore.create_client("s3").get_bucket_logging`
-method.
+Type annotations for `session.create_client("s3").get_bucket_logging` method.
 
 Boto3 documentation:
 [S3.Client.get_bucket_logging](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_bucket_logging)
@@ -1269,7 +1265,7 @@ Gets a metrics configuration (specified by the metrics configuration ID) from
 the bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").get_bucket_metrics_configuration` method.
+`session.create_client("s3").get_bucket_metrics_configuration` method.
 
 Boto3 documentation:
 [S3.Client.get_bucket_metrics_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_bucket_metrics_configuration)
@@ -1297,7 +1293,7 @@ No longer used, see
 [GetBucketNotificationConfiguration](https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html)\_
 .
 
-Type annotations for `aiobotocore.create_client("s3").get_bucket_notification`
+Type annotations for `session.create_client("s3").get_bucket_notification`
 method.
 
 Boto3 documentation:
@@ -1324,7 +1320,7 @@ Returns a `Coroutine` for
 Returns the notification configuration of a bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").get_bucket_notification_configuration` method.
+`session.create_client("s3").get_bucket_notification_configuration` method.
 
 Boto3 documentation:
 [S3.Client.get_bucket_notification_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_bucket_notification_configuration)
@@ -1350,7 +1346,7 @@ Returns a `Coroutine` for
 Retrieves `OwnershipControls` for an Amazon S3 bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").get_bucket_ownership_controls` method.
+`session.create_client("s3").get_bucket_ownership_controls` method.
 
 Boto3 documentation:
 [S3.Client.get_bucket_ownership_controls](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_bucket_ownership_controls)
@@ -1375,8 +1371,7 @@ Returns a `Coroutine` for
 
 Returns the policy of a specified bucket.
 
-Type annotations for `aiobotocore.create_client("s3").get_bucket_policy`
-method.
+Type annotations for `session.create_client("s3").get_bucket_policy` method.
 
 Boto3 documentation:
 [S3.Client.get_bucket_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_bucket_policy)
@@ -1401,7 +1396,7 @@ Returns a `Coroutine` for
 Retrieves the policy status for an Amazon S3 bucket, indicating whether the
 bucket is public.
 
-Type annotations for `aiobotocore.create_client("s3").get_bucket_policy_status`
+Type annotations for `session.create_client("s3").get_bucket_policy_status`
 method.
 
 Boto3 documentation:
@@ -1427,7 +1422,7 @@ Returns a `Coroutine` for
 
 Returns the replication configuration of a bucket.
 
-Type annotations for `aiobotocore.create_client("s3").get_bucket_replication`
+Type annotations for `session.create_client("s3").get_bucket_replication`
 method.
 
 Boto3 documentation:
@@ -1453,8 +1448,8 @@ Returns a `Coroutine` for
 
 Returns the request payment configuration of a bucket.
 
-Type annotations for
-`aiobotocore.create_client("s3").get_bucket_request_payment` method.
+Type annotations for `session.create_client("s3").get_bucket_request_payment`
+method.
 
 Boto3 documentation:
 [S3.Client.get_bucket_request_payment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_bucket_request_payment)
@@ -1479,8 +1474,7 @@ Returns a `Coroutine` for
 
 Returns the tag set associated with the bucket.
 
-Type annotations for `aiobotocore.create_client("s3").get_bucket_tagging`
-method.
+Type annotations for `session.create_client("s3").get_bucket_tagging` method.
 
 Boto3 documentation:
 [S3.Client.get_bucket_tagging](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_bucket_tagging)
@@ -1505,7 +1499,7 @@ Returns a `Coroutine` for
 
 Returns the versioning state of a bucket.
 
-Type annotations for `aiobotocore.create_client("s3").get_bucket_versioning`
+Type annotations for `session.create_client("s3").get_bucket_versioning`
 method.
 
 Boto3 documentation:
@@ -1531,8 +1525,7 @@ Returns a `Coroutine` for
 
 Returns the website configuration for a bucket.
 
-Type annotations for `aiobotocore.create_client("s3").get_bucket_website`
-method.
+Type annotations for `session.create_client("s3").get_bucket_website` method.
 
 Boto3 documentation:
 [S3.Client.get_bucket_website](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_bucket_website)
@@ -1557,7 +1550,7 @@ Returns a `Coroutine` for
 
 Retrieves objects from Amazon S3.
 
-Type annotations for `aiobotocore.create_client("s3").get_object` method.
+Type annotations for `session.create_client("s3").get_object` method.
 
 Boto3 documentation:
 [S3.Client.get_object](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_object)
@@ -1600,7 +1593,7 @@ Returns a `Coroutine` for
 
 Returns the access control list (ACL) of an object.
 
-Type annotations for `aiobotocore.create_client("s3").get_object_acl` method.
+Type annotations for `session.create_client("s3").get_object_acl` method.
 
 Boto3 documentation:
 [S3.Client.get_object_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_object_acl)
@@ -1628,7 +1621,7 @@ Returns a `Coroutine` for
 
 Gets an object's current Legal Hold status.
 
-Type annotations for `aiobotocore.create_client("s3").get_object_legal_hold`
+Type annotations for `session.create_client("s3").get_object_legal_hold`
 method.
 
 Boto3 documentation:
@@ -1659,7 +1652,7 @@ Returns a `Coroutine` for
 Gets the Object Lock configuration for a bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").get_object_lock_configuration` method.
+`session.create_client("s3").get_object_lock_configuration` method.
 
 Boto3 documentation:
 [S3.Client.get_object_lock_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_object_lock_configuration)
@@ -1684,8 +1677,7 @@ Returns a `Coroutine` for
 
 Retrieves an object's retention settings.
 
-Type annotations for `aiobotocore.create_client("s3").get_object_retention`
-method.
+Type annotations for `session.create_client("s3").get_object_retention` method.
 
 Boto3 documentation:
 [S3.Client.get_object_retention](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_object_retention)
@@ -1714,8 +1706,7 @@ Returns a `Coroutine` for
 
 Returns the tag-set of an object.
 
-Type annotations for `aiobotocore.create_client("s3").get_object_tagging`
-method.
+Type annotations for `session.create_client("s3").get_object_tagging` method.
 
 Boto3 documentation:
 [S3.Client.get_object_tagging](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_object_tagging)
@@ -1744,8 +1735,7 @@ Returns a `Coroutine` for
 
 Returns torrent files from a bucket.
 
-Type annotations for `aiobotocore.create_client("s3").get_object_torrent`
-method.
+Type annotations for `session.create_client("s3").get_object_torrent` method.
 
 Boto3 documentation:
 [S3.Client.get_object_torrent](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.get_object_torrent)
@@ -1773,7 +1763,7 @@ Returns a `Coroutine` for
 
 Retrieves the `PublicAccessBlock` configuration for an Amazon S3 bucket.
 
-Type annotations for `aiobotocore.create_client("s3").get_public_access_block`
+Type annotations for `session.create_client("s3").get_public_access_block`
 method.
 
 Boto3 documentation:
@@ -1800,7 +1790,7 @@ Returns a `Coroutine` for
 This action is useful to determine if a bucket exists and you have permission
 to access it.
 
-Type annotations for `aiobotocore.create_client("s3").head_bucket` method.
+Type annotations for `session.create_client("s3").head_bucket` method.
 
 Boto3 documentation:
 [S3.Client.head_bucket](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.head_bucket)
@@ -1822,7 +1812,7 @@ Keyword-only arguments:
 The HEAD action retrieves metadata from an object without returning the object
 itself.
 
-Type annotations for `aiobotocore.create_client("s3").head_object` method.
+Type annotations for `session.create_client("s3").head_object` method.
 
 Boto3 documentation:
 [S3.Client.head_object](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.head_object)
@@ -1860,7 +1850,7 @@ Returns a `Coroutine` for
 Lists the analytics configurations for the bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").list_bucket_analytics_configurations` method.
+`session.create_client("s3").list_bucket_analytics_configurations` method.
 
 Boto3 documentation:
 [S3.Client.list_bucket_analytics_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.list_bucket_analytics_configurations)
@@ -1887,7 +1877,7 @@ Returns a `Coroutine` for
 Lists the S3 Intelligent-Tiering configuration from the specified bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").list_bucket_intelligent_tiering_configurations`
+`session.create_client("s3").list_bucket_intelligent_tiering_configurations`
 method.
 
 Boto3 documentation:
@@ -1915,7 +1905,7 @@ Returns a `Coroutine` for
 Returns a list of inventory configurations for the bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").list_bucket_inventory_configurations` method.
+`session.create_client("s3").list_bucket_inventory_configurations` method.
 
 Boto3 documentation:
 [S3.Client.list_bucket_inventory_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.list_bucket_inventory_configurations)
@@ -1942,7 +1932,7 @@ Returns a `Coroutine` for
 Lists the metrics configurations for the bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").list_bucket_metrics_configurations` method.
+`session.create_client("s3").list_bucket_metrics_configurations` method.
 
 Boto3 documentation:
 [S3.Client.list_bucket_metrics_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.list_bucket_metrics_configurations)
@@ -1968,7 +1958,7 @@ Returns a `Coroutine` for
 
 Returns a list of all buckets owned by the authenticated sender of the request.
 
-Type annotations for `aiobotocore.create_client("s3").list_buckets` method.
+Type annotations for `session.create_client("s3").list_buckets` method.
 
 Boto3 documentation:
 [S3.Client.list_buckets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.list_buckets)
@@ -1984,7 +1974,7 @@ Returns a `Coroutine` for
 
 This action lists in-progress multipart uploads.
 
-Type annotations for `aiobotocore.create_client("s3").list_multipart_uploads`
+Type annotations for `session.create_client("s3").list_multipart_uploads`
 method.
 
 Boto3 documentation:
@@ -2017,8 +2007,7 @@ Returns a `Coroutine` for
 
 Returns metadata about all versions of the objects in a bucket.
 
-Type annotations for `aiobotocore.create_client("s3").list_object_versions`
-method.
+Type annotations for `session.create_client("s3").list_object_versions` method.
 
 Boto3 documentation:
 [S3.Client.list_object_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.list_object_versions)
@@ -2050,7 +2039,7 @@ Returns a `Coroutine` for
 
 Returns some or all (up to 1,000) of the objects in a bucket.
 
-Type annotations for `aiobotocore.create_client("s3").list_objects` method.
+Type annotations for `session.create_client("s3").list_objects` method.
 
 Boto3 documentation:
 [S3.Client.list_objects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.list_objects)
@@ -2082,7 +2071,7 @@ Returns a `Coroutine` for
 
 Returns some or all (up to 1,000) of the objects in a bucket with each request.
 
-Type annotations for `aiobotocore.create_client("s3").list_objects_v2` method.
+Type annotations for `session.create_client("s3").list_objects_v2` method.
 
 Boto3 documentation:
 [S3.Client.list_objects_v2](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.list_objects_v2)
@@ -2116,7 +2105,7 @@ Returns a `Coroutine` for
 
 Lists the parts that have been uploaded for a specific multipart upload.
 
-Type annotations for `aiobotocore.create_client("s3").list_parts` method.
+Type annotations for `session.create_client("s3").list_parts` method.
 
 Boto3 documentation:
 [S3.Client.list_parts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.list_parts)
@@ -2147,7 +2136,7 @@ Returns a `Coroutine` for
 Sets the accelerate configuration of an existing bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").put_bucket_accelerate_configuration` method.
+`session.create_client("s3").put_bucket_accelerate_configuration` method.
 
 Boto3 documentation:
 [S3.Client.put_bucket_accelerate_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_bucket_accelerate_configuration)
@@ -2172,7 +2161,7 @@ Keyword-only arguments:
 
 Sets the permissions on an existing bucket using access control lists (ACL).
 
-Type annotations for `aiobotocore.create_client("s3").put_bucket_acl` method.
+Type annotations for `session.create_client("s3").put_bucket_acl` method.
 
 Boto3 documentation:
 [S3.Client.put_bucket_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_bucket_acl)
@@ -2203,7 +2192,7 @@ Sets an analytics configuration for the bucket (specified by the analytics
 configuration ID).
 
 Type annotations for
-`aiobotocore.create_client("s3").put_bucket_analytics_configuration` method.
+`session.create_client("s3").put_bucket_analytics_configuration` method.
 
 Boto3 documentation:
 [S3.Client.put_bucket_analytics_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_bucket_analytics_configuration)
@@ -2229,7 +2218,7 @@ Keyword-only arguments:
 
 Sets the `cors` configuration for your bucket.
 
-Type annotations for `aiobotocore.create_client("s3").put_bucket_cors` method.
+Type annotations for `session.create_client("s3").put_bucket_cors` method.
 
 Boto3 documentation:
 [S3.Client.put_bucket_cors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_bucket_cors)
@@ -2254,7 +2243,7 @@ Keyword-only arguments:
 This action uses the `encryption` subresource to configure default encryption
 and Amazon S3 Bucket Key for an existing bucket.
 
-Type annotations for `aiobotocore.create_client("s3").put_bucket_encryption`
+Type annotations for `session.create_client("s3").put_bucket_encryption`
 method.
 
 Boto3 documentation:
@@ -2282,7 +2271,7 @@ Keyword-only arguments:
 Puts a S3 Intelligent-Tiering configuration to the specified bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").put_bucket_intelligent_tiering_configuration`
+`session.create_client("s3").put_bucket_intelligent_tiering_configuration`
 method.
 
 Boto3 documentation:
@@ -2311,7 +2300,7 @@ This implementation of the `PUT` action adds an inventory configuration
 (identified by the inventory ID) to the bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").put_bucket_inventory_configuration` method.
+`session.create_client("s3").put_bucket_inventory_configuration` method.
 
 Boto3 documentation:
 [S3.Client.put_bucket_inventory_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_bucket_inventory_configuration)
@@ -2337,8 +2326,7 @@ Keyword-only arguments:
 
 .
 
-Type annotations for `aiobotocore.create_client("s3").put_bucket_lifecycle`
-method.
+Type annotations for `session.create_client("s3").put_bucket_lifecycle` method.
 
 Boto3 documentation:
 [S3.Client.put_bucket_lifecycle](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_bucket_lifecycle)
@@ -2364,7 +2352,7 @@ Creates a new lifecycle configuration for the bucket or replaces an existing
 lifecycle configuration.
 
 Type annotations for
-`aiobotocore.create_client("s3").put_bucket_lifecycle_configuration` method.
+`session.create_client("s3").put_bucket_lifecycle_configuration` method.
 
 Boto3 documentation:
 [S3.Client.put_bucket_lifecycle_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_bucket_lifecycle_configuration)
@@ -2389,8 +2377,7 @@ Keyword-only arguments:
 Set the logging parameters for a bucket and to specify permissions for who can
 view and modify the logging parameters.
 
-Type annotations for `aiobotocore.create_client("s3").put_bucket_logging`
-method.
+Type annotations for `session.create_client("s3").put_bucket_logging` method.
 
 Boto3 documentation:
 [S3.Client.put_bucket_logging](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_bucket_logging)
@@ -2417,7 +2404,7 @@ Sets a metrics configuration (specified by the metrics configuration ID) for
 the bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").put_bucket_metrics_configuration` method.
+`session.create_client("s3").put_bucket_metrics_configuration` method.
 
 Boto3 documentation:
 [S3.Client.put_bucket_metrics_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_bucket_metrics_configuration)
@@ -2445,7 +2432,7 @@ No longer used, see the
 [PutBucketNotificationConfiguration](https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketNotificationConfiguration.html)\_
 operation.
 
-Type annotations for `aiobotocore.create_client("s3").put_bucket_notification`
+Type annotations for `session.create_client("s3").put_bucket_notification`
 method.
 
 Boto3 documentation:
@@ -2472,7 +2459,7 @@ Keyword-only arguments:
 Enables notifications of specified events for a bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").put_bucket_notification_configuration` method.
+`session.create_client("s3").put_bucket_notification_configuration` method.
 
 Boto3 documentation:
 [S3.Client.put_bucket_notification_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_bucket_notification_configuration)
@@ -2499,7 +2486,7 @@ Keyword-only arguments:
 Creates or modifies `OwnershipControls` for an Amazon S3 bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").put_bucket_ownership_controls` method.
+`session.create_client("s3").put_bucket_ownership_controls` method.
 
 Boto3 documentation:
 [S3.Client.put_bucket_ownership_controls](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_bucket_ownership_controls)
@@ -2525,8 +2512,7 @@ Keyword-only arguments:
 
 Applies an Amazon S3 bucket policy to an Amazon S3 bucket.
 
-Type annotations for `aiobotocore.create_client("s3").put_bucket_policy`
-method.
+Type annotations for `session.create_client("s3").put_bucket_policy` method.
 
 Boto3 documentation:
 [S3.Client.put_bucket_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_bucket_policy)
@@ -2549,7 +2535,7 @@ Keyword-only arguments:
 
 Creates a replication configuration or replaces an existing one.
 
-Type annotations for `aiobotocore.create_client("s3").put_bucket_replication`
+Type annotations for `session.create_client("s3").put_bucket_replication`
 method.
 
 Boto3 documentation:
@@ -2576,8 +2562,8 @@ Keyword-only arguments:
 
 Sets the request payment configuration for a bucket.
 
-Type annotations for
-`aiobotocore.create_client("s3").put_bucket_request_payment` method.
+Type annotations for `session.create_client("s3").put_bucket_request_payment`
+method.
 
 Boto3 documentation:
 [S3.Client.put_bucket_request_payment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_bucket_request_payment)
@@ -2602,8 +2588,7 @@ Keyword-only arguments:
 
 Sets the tags for a bucket.
 
-Type annotations for `aiobotocore.create_client("s3").put_bucket_tagging`
-method.
+Type annotations for `session.create_client("s3").put_bucket_tagging` method.
 
 Boto3 documentation:
 [S3.Client.put_bucket_tagging](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_bucket_tagging)
@@ -2626,7 +2611,7 @@ Keyword-only arguments:
 
 Sets the versioning state of an existing bucket.
 
-Type annotations for `aiobotocore.create_client("s3").put_bucket_versioning`
+Type annotations for `session.create_client("s3").put_bucket_versioning`
 method.
 
 Boto3 documentation:
@@ -2654,8 +2639,7 @@ Keyword-only arguments:
 Sets the configuration of the website that is specified in the `website`
 subresource.
 
-Type annotations for `aiobotocore.create_client("s3").put_bucket_website`
-method.
+Type annotations for `session.create_client("s3").put_bucket_website` method.
 
 Boto3 documentation:
 [S3.Client.put_bucket_website](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_bucket_website)
@@ -2680,7 +2664,7 @@ Keyword-only arguments:
 
 Adds an object to a bucket.
 
-Type annotations for `aiobotocore.create_client("s3").put_object` method.
+Type annotations for `session.create_client("s3").put_object` method.
 
 Boto3 documentation:
 [S3.Client.put_object](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_object)
@@ -2738,7 +2722,7 @@ Returns a `Coroutine` for
 Uses the `acl` subresource to set the access control list (ACL) permissions for
 a new or existing object in an S3 bucket.
 
-Type annotations for `aiobotocore.create_client("s3").put_object_acl` method.
+Type annotations for `session.create_client("s3").put_object_acl` method.
 
 Boto3 documentation:
 [S3.Client.put_object_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_object_acl)
@@ -2774,7 +2758,7 @@ Returns a `Coroutine` for
 
 Applies a Legal Hold configuration to the specified object.
 
-Type annotations for `aiobotocore.create_client("s3").put_object_legal_hold`
+Type annotations for `session.create_client("s3").put_object_legal_hold`
 method.
 
 Boto3 documentation:
@@ -2808,7 +2792,7 @@ Returns a `Coroutine` for
 Places an Object Lock configuration on the specified bucket.
 
 Type annotations for
-`aiobotocore.create_client("s3").put_object_lock_configuration` method.
+`session.create_client("s3").put_object_lock_configuration` method.
 
 Boto3 documentation:
 [S3.Client.put_object_lock_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_object_lock_configuration)
@@ -2839,8 +2823,7 @@ Returns a `Coroutine` for
 
 Places an Object Retention configuration on an object.
 
-Type annotations for `aiobotocore.create_client("s3").put_object_retention`
-method.
+Type annotations for `session.create_client("s3").put_object_retention` method.
 
 Boto3 documentation:
 [S3.Client.put_object_retention](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_object_retention)
@@ -2873,8 +2856,7 @@ Returns a `Coroutine` for
 
 Sets the supplied tag-set to an object that already exists in a bucket.
 
-Type annotations for `aiobotocore.create_client("s3").put_object_tagging`
-method.
+Type annotations for `session.create_client("s3").put_object_tagging` method.
 
 Boto3 documentation:
 [S3.Client.put_object_tagging](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.put_object_tagging)
@@ -2906,7 +2888,7 @@ Returns a `Coroutine` for
 Creates or modifies the `PublicAccessBlock` configuration for an Amazon S3
 bucket.
 
-Type annotations for `aiobotocore.create_client("s3").put_public_access_block`
+Type annotations for `session.create_client("s3").put_public_access_block`
 method.
 
 Boto3 documentation:
@@ -2934,7 +2916,7 @@ Keyword-only arguments:
 Restores an archived copy of an object back into Amazon S3 This action is not
 supported by Amazon S3 on Outposts.
 
-Type annotations for `aiobotocore.create_client("s3").restore_object` method.
+Type annotations for `session.create_client("s3").restore_object` method.
 
 Boto3 documentation:
 [S3.Client.restore_object](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.restore_object)
@@ -2965,7 +2947,7 @@ Returns a `Coroutine` for
 This action filters the contents of an Amazon S3 object based on a simple
 structured query language (SQL) statement.
 
-Type annotations for `aiobotocore.create_client("s3").select_object_content`
+Type annotations for `session.create_client("s3").select_object_content`
 method.
 
 Boto3 documentation:
@@ -3007,7 +2989,7 @@ Returns a `Coroutine` for
 
 Upload a file to an S3 object.
 
-Type annotations for `aiobotocore.create_client("s3").upload_file` method.
+Type annotations for `session.create_client("s3").upload_file` method.
 
 Boto3 documentation:
 [S3.Client.upload_file](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.upload_file)
@@ -3032,7 +3014,7 @@ Arguments:
 
 Upload a file-like object to S3.
 
-Type annotations for `aiobotocore.create_client("s3").upload_fileobj` method.
+Type annotations for `session.create_client("s3").upload_fileobj` method.
 
 Boto3 documentation:
 [S3.Client.upload_fileobj](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.upload_fileobj)
@@ -3057,7 +3039,7 @@ Arguments:
 
 Uploads a part in a multipart upload.
 
-Type annotations for `aiobotocore.create_client("s3").upload_part` method.
+Type annotations for `session.create_client("s3").upload_part` method.
 
 Boto3 documentation:
 [S3.Client.upload_part](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.upload_part)
@@ -3092,7 +3074,7 @@ Returns a `Coroutine` for
 
 Uploads a part by copying data from an existing object as data source.
 
-Type annotations for `aiobotocore.create_client("s3").upload_part_copy` method.
+Type annotations for `session.create_client("s3").upload_part_copy` method.
 
 Boto3 documentation:
 [S3.Client.upload_part_copy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.upload_part_copy)
@@ -3136,8 +3118,8 @@ Returns a `Coroutine` for
 Passes transformed objects to a `GetObject` operation when using Object Lambda
 access points.
 
-Type annotations for
-`aiobotocore.create_client("s3").write_get_object_response` method.
+Type annotations for `session.create_client("s3").write_get_object_response`
+method.
 
 Boto3 documentation:
 [S3.Client.write_get_object_response](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.write_get_object_response)
@@ -3191,12 +3173,44 @@ Keyword-only arguments:
 - `VersionId`: `str`
 - `BucketKeyEnabled`: `bool`
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("s3").__aenter__` method.
+
+Boto3 documentation:
+[S3.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [S3Client](#s3client).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("s3").__aexit__` method.
+
+Boto3 documentation:
+[S3.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("s3").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("s3").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_multipart_uploads")` ->
   [ListMultipartUploadsPaginator](./paginators.md#listmultipartuploadspaginator)
@@ -3213,7 +3227,7 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("s3").get_waiter` method with
+Type annotations for `session.create_client("s3").get_waiter` method with
 overloads.
 
 - `client.get_waiter("bucket_exists")` ->

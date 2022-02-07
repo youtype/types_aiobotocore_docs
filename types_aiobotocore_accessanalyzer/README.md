@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[accessanalyzer]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[accessanalyzer]'
+
+# standalone installation
 pip install types-aiobotocore-accessanalyzer
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-accessanalyzer
 
 ## AccessAnalyzerClient
 
-Type annotations for `aiobotocore.create_client("accessanalyzer")` as
+Type annotations for `session.create_client("accessanalyzer")` as
 [AccessAnalyzerClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_accessanalyzer.client import AccessAnalyzerClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [apply_archive_rule](./client.md#apply_archive_rule)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_policy_generation](./client.md#cancel_policy_generation)
@@ -100,7 +106,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_accessanalyzer.paginators import ListAccessPreviewFindingsPaginator, ...
+from types_aiobotocore_accessanalyzer.paginator import ListAccessPreviewFindingsPaginator, ...
 ```
 
 - [ListAccessPreviewFindingsPaginator](./paginators.md#listaccesspreviewfindingspaginator)

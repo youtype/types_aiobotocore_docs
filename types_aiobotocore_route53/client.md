@@ -80,6 +80,8 @@ type annotations stubs module
     - [update_hosted_zone_comment](#update_hosted_zone_comment)
     - [update_traffic_policy_comment](#update_traffic_policy_comment)
     - [update_traffic_policy_instance](#update_traffic_policy_instance)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -87,16 +89,17 @@ type annotations stubs module
 
 ## Route53Client
 
-Type annotations for `aiobotocore.create_client("route53")`
+Type annotations for `session.create_client("route53")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_route53.client import Route53Client
 
-def get_route53_client() -> Route53Client:
-    return Session().client("route53")
+session = get_session()
+async with session.create_client("route53") as client:
+    client: Route53Client
 ```
 
 Boto3 documentation:
@@ -193,7 +196,7 @@ Exceptions:
 
 Route53Client exceptions.
 
-Type annotations for `aiobotocore.create_client("route53").exceptions` method.
+Type annotations for `session.create_client("route53").exceptions` method.
 
 Boto3 documentation:
 [Route53.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.exceptions)
@@ -207,7 +210,7 @@ Returns [Exceptions](#exceptions).
 Activates a key-signing key (KSK) so that it can be used for signing by DNSSEC.
 
 Type annotations for
-`aiobotocore.create_client("route53").activate_key_signing_key` method.
+`session.create_client("route53").activate_key_signing_key` method.
 
 Boto3 documentation:
 [Route53.Client.activate_key_signing_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.activate_key_signing_key)
@@ -233,7 +236,7 @@ Returns a `Coroutine` for
 Associates an Amazon VPC with a private hosted zone.
 
 Type annotations for
-`aiobotocore.create_client("route53").associate_vpc_with_hosted_zone` method.
+`session.create_client("route53").associate_vpc_with_hosted_zone` method.
 
 Boto3 documentation:
 [Route53.Client.associate_vpc_with_hosted_zone](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.associate_vpc_with_hosted_zone)
@@ -259,19 +262,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("route53").can_paginate`
-method.
+Type annotations for `session.create_client("route53").can_paginate` method.
 
 Boto3 documentation:
 [Route53.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="change_resource_record_sets"></a>
 
@@ -281,7 +281,7 @@ Creates, changes, or deletes a resource record set, which contains
 authoritative DNS information for a specified domain name or subdomain name.
 
 Type annotations for
-`aiobotocore.create_client("route53").change_resource_record_sets` method.
+`session.create_client("route53").change_resource_record_sets` method.
 
 Boto3 documentation:
 [Route53.Client.change_resource_record_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.change_resource_record_sets)
@@ -308,7 +308,7 @@ Returns a `Coroutine` for
 Adds, edits, or deletes tags for a health check or a hosted zone.
 
 Type annotations for
-`aiobotocore.create_client("route53").change_tags_for_resource` method.
+`session.create_client("route53").change_tags_for_resource` method.
 
 Boto3 documentation:
 [Route53.Client.change_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.change_tags_for_resource)
@@ -335,7 +335,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a new health check.
 
-Type annotations for `aiobotocore.create_client("route53").create_health_check`
+Type annotations for `session.create_client("route53").create_health_check`
 method.
 
 Boto3 documentation:
@@ -363,7 +363,7 @@ Returns a `Coroutine` for
 
 Creates a new public or private hosted zone.
 
-Type annotations for `aiobotocore.create_client("route53").create_hosted_zone`
+Type annotations for `session.create_client("route53").create_hosted_zone`
 method.
 
 Boto3 documentation:
@@ -393,8 +393,8 @@ Returns a `Coroutine` for
 
 Creates a new key-signing key (KSK) associated with a hosted zone.
 
-Type annotations for
-`aiobotocore.create_client("route53").create_key_signing_key` method.
+Type annotations for `session.create_client("route53").create_key_signing_key`
+method.
 
 Boto3 documentation:
 [Route53.Client.create_key_signing_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.create_key_signing_key)
@@ -423,7 +423,7 @@ Returns a `Coroutine` for
 Creates a configuration for DNS query logging.
 
 Type annotations for
-`aiobotocore.create_client("route53").create_query_logging_config` method.
+`session.create_client("route53").create_query_logging_config` method.
 
 Boto3 documentation:
 [Route53.Client.create_query_logging_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.create_query_logging_config)
@@ -451,7 +451,7 @@ multiple hosted zones that were created by the same Amazon Web Services
 account.
 
 Type annotations for
-`aiobotocore.create_client("route53").create_reusable_delegation_set` method.
+`session.create_client("route53").create_reusable_delegation_set` method.
 
 Boto3 documentation:
 [Route53.Client.create_reusable_delegation_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.create_reusable_delegation_set)
@@ -478,8 +478,8 @@ Creates a traffic policy, which you use to create multiple DNS resource record
 sets for one domain name (such as example.com) or one subdomain name (such as
 www.example.com).
 
-Type annotations for
-`aiobotocore.create_client("route53").create_traffic_policy` method.
+Type annotations for `session.create_client("route53").create_traffic_policy`
+method.
 
 Boto3 documentation:
 [Route53.Client.create_traffic_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.create_traffic_policy)
@@ -507,7 +507,7 @@ Creates resource record sets in a specified hosted zone based on the settings
 in a specified traffic policy version.
 
 Type annotations for
-`aiobotocore.create_client("route53").create_traffic_policy_instance` method.
+`session.create_client("route53").create_traffic_policy_instance` method.
 
 Boto3 documentation:
 [Route53.Client.create_traffic_policy_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.create_traffic_policy_instance)
@@ -536,7 +536,7 @@ Returns a `Coroutine` for
 Creates a new version of an existing traffic policy.
 
 Type annotations for
-`aiobotocore.create_client("route53").create_traffic_policy_version` method.
+`session.create_client("route53").create_traffic_policy_version` method.
 
 Boto3 documentation:
 [Route53.Client.create_traffic_policy_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.create_traffic_policy_version)
@@ -565,8 +565,7 @@ submit an `AssociateVPCWithHostedZone` request to associate the VPC with a
 specified hosted zone that was created by a different account.
 
 Type annotations for
-`aiobotocore.create_client("route53").create_vpc_association_authorization`
-method.
+`session.create_client("route53").create_vpc_association_authorization` method.
 
 Boto3 documentation:
 [Route53.Client.create_vpc_association_authorization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.create_vpc_association_authorization)
@@ -593,7 +592,7 @@ Deactivates a key-signing key (KSK) so that it will not be used for signing by
 DNSSEC.
 
 Type annotations for
-`aiobotocore.create_client("route53").deactivate_key_signing_key` method.
+`session.create_client("route53").deactivate_key_signing_key` method.
 
 Boto3 documentation:
 [Route53.Client.deactivate_key_signing_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.deactivate_key_signing_key)
@@ -618,7 +617,7 @@ Returns a `Coroutine` for
 
 Deletes a health check.
 
-Type annotations for `aiobotocore.create_client("route53").delete_health_check`
+Type annotations for `session.create_client("route53").delete_health_check`
 method.
 
 Boto3 documentation:
@@ -642,7 +641,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a hosted zone.
 
-Type annotations for `aiobotocore.create_client("route53").delete_hosted_zone`
+Type annotations for `session.create_client("route53").delete_hosted_zone`
 method.
 
 Boto3 documentation:
@@ -667,8 +666,8 @@ Returns a `Coroutine` for
 
 Deletes a key-signing key (KSK).
 
-Type annotations for
-`aiobotocore.create_client("route53").delete_key_signing_key` method.
+Type annotations for `session.create_client("route53").delete_key_signing_key`
+method.
 
 Boto3 documentation:
 [Route53.Client.delete_key_signing_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.delete_key_signing_key)
@@ -694,7 +693,7 @@ Returns a `Coroutine` for
 Deletes a configuration for DNS query logging.
 
 Type annotations for
-`aiobotocore.create_client("route53").delete_query_logging_config` method.
+`session.create_client("route53").delete_query_logging_config` method.
 
 Boto3 documentation:
 [Route53.Client.delete_query_logging_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.delete_query_logging_config)
@@ -718,7 +717,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a reusable delegation set.
 
 Type annotations for
-`aiobotocore.create_client("route53").delete_reusable_delegation_set` method.
+`session.create_client("route53").delete_reusable_delegation_set` method.
 
 Boto3 documentation:
 [Route53.Client.delete_reusable_delegation_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.delete_reusable_delegation_set)
@@ -741,8 +740,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a traffic policy.
 
-Type annotations for
-`aiobotocore.create_client("route53").delete_traffic_policy` method.
+Type annotations for `session.create_client("route53").delete_traffic_policy`
+method.
 
 Boto3 documentation:
 [Route53.Client.delete_traffic_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.delete_traffic_policy)
@@ -768,7 +767,7 @@ Deletes a traffic policy instance and all of the resource record sets that
 Amazon Route 53 created when you created the instance.
 
 Type annotations for
-`aiobotocore.create_client("route53").delete_traffic_policy_instance` method.
+`session.create_client("route53").delete_traffic_policy_instance` method.
 
 Boto3 documentation:
 [Route53.Client.delete_traffic_policy_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.delete_traffic_policy_instance)
@@ -794,8 +793,7 @@ associate a specified VPC with a hosted zone that was created by a different
 account.
 
 Type annotations for
-`aiobotocore.create_client("route53").delete_vpc_association_authorization`
-method.
+`session.create_client("route53").delete_vpc_association_authorization` method.
 
 Boto3 documentation:
 [Route53.Client.delete_vpc_association_authorization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.delete_vpc_association_authorization)
@@ -820,7 +818,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disables DNSSEC signing in a specific hosted zone.
 
 Type annotations for
-`aiobotocore.create_client("route53").disable_hosted_zone_dnssec` method.
+`session.create_client("route53").disable_hosted_zone_dnssec` method.
 
 Boto3 documentation:
 [Route53.Client.disable_hosted_zone_dnssec](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.disable_hosted_zone_dnssec)
@@ -846,8 +844,7 @@ Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon Route
 53 private hosted zone.
 
 Type annotations for
-`aiobotocore.create_client("route53").disassociate_vpc_from_hosted_zone`
-method.
+`session.create_client("route53").disassociate_vpc_from_hosted_zone` method.
 
 Boto3 documentation:
 [Route53.Client.disassociate_vpc_from_hosted_zone](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.disassociate_vpc_from_hosted_zone)
@@ -874,7 +871,7 @@ Returns a `Coroutine` for
 Enables DNSSEC signing in a specific hosted zone.
 
 Type annotations for
-`aiobotocore.create_client("route53").enable_hosted_zone_dnssec` method.
+`session.create_client("route53").enable_hosted_zone_dnssec` method.
 
 Boto3 documentation:
 [Route53.Client.enable_hosted_zone_dnssec](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.enable_hosted_zone_dnssec)
@@ -898,8 +895,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("route53").generate_presigned_url` method.
+Type annotations for `session.create_client("route53").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Route53.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.generate_presigned_url)
@@ -923,7 +920,7 @@ Returns a `Coroutine` for `str`.
 Gets the specified limit for the current account, for example, the maximum
 number of health checks that you can create using the account.
 
-Type annotations for `aiobotocore.create_client("route53").get_account_limit`
+Type annotations for `session.create_client("route53").get_account_limit`
 method.
 
 Boto3 documentation:
@@ -948,7 +945,7 @@ Returns a `Coroutine` for
 
 Returns the current status of a change batch request.
 
-Type annotations for `aiobotocore.create_client("route53").get_change` method.
+Type annotations for `session.create_client("route53").get_change` method.
 
 Boto3 documentation:
 [Route53.Client.get_change](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.get_change)
@@ -972,8 +969,8 @@ Returns a `Coroutine` for
 Route 53 does not perform authorization for this API because it retrieves
 information that is already available to the public.
 
-Type annotations for
-`aiobotocore.create_client("route53").get_checker_ip_ranges` method.
+Type annotations for `session.create_client("route53").get_checker_ip_ranges`
+method.
 
 Boto3 documentation:
 [Route53.Client.get_checker_ip_ranges](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.get_checker_ip_ranges)
@@ -991,7 +988,7 @@ Returns a `Coroutine` for
 Returns information about DNSSEC for a specific hosted zone, including the key-
 signing keys (KSKs) in the hosted zone.
 
-Type annotations for `aiobotocore.create_client("route53").get_dnssec` method.
+Type annotations for `session.create_client("route53").get_dnssec` method.
 
 Boto3 documentation:
 [Route53.Client.get_dnssec](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.get_dnssec)
@@ -1015,7 +1012,7 @@ Returns a `Coroutine` for
 Gets information about whether a specified geographic location is supported for
 Amazon Route 53 geolocation resource record sets.
 
-Type annotations for `aiobotocore.create_client("route53").get_geo_location`
+Type annotations for `session.create_client("route53").get_geo_location`
 method.
 
 Boto3 documentation:
@@ -1041,7 +1038,7 @@ Returns a `Coroutine` for
 
 Gets information about a specified health check.
 
-Type annotations for `aiobotocore.create_client("route53").get_health_check`
+Type annotations for `session.create_client("route53").get_health_check`
 method.
 
 Boto3 documentation:
@@ -1066,8 +1063,8 @@ Returns a `Coroutine` for
 Retrieves the number of health checks that are associated with the current
 Amazon Web Services account.
 
-Type annotations for
-`aiobotocore.create_client("route53").get_health_check_count` method.
+Type annotations for `session.create_client("route53").get_health_check_count`
+method.
 
 Boto3 documentation:
 [Route53.Client.get_health_check_count](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.get_health_check_count)
@@ -1085,8 +1082,7 @@ Returns a `Coroutine` for
 Gets the reason that a specified health check failed most recently.
 
 Type annotations for
-`aiobotocore.create_client("route53").get_health_check_last_failure_reason`
-method.
+`session.create_client("route53").get_health_check_last_failure_reason` method.
 
 Boto3 documentation:
 [Route53.Client.get_health_check_last_failure_reason](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.get_health_check_last_failure_reason)
@@ -1110,8 +1106,8 @@ Returns a `Coroutine` for
 
 Gets status of a specified health check.
 
-Type annotations for
-`aiobotocore.create_client("route53").get_health_check_status` method.
+Type annotations for `session.create_client("route53").get_health_check_status`
+method.
 
 Boto3 documentation:
 [Route53.Client.get_health_check_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.get_health_check_status)
@@ -1136,8 +1132,7 @@ Returns a `Coroutine` for
 Gets information about a specified hosted zone including the four name servers
 assigned to the hosted zone.
 
-Type annotations for `aiobotocore.create_client("route53").get_hosted_zone`
-method.
+Type annotations for `session.create_client("route53").get_hosted_zone` method.
 
 Boto3 documentation:
 [Route53.Client.get_hosted_zone](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.get_hosted_zone)
@@ -1161,8 +1156,8 @@ Returns a `Coroutine` for
 Retrieves the number of hosted zones that are associated with the current
 Amazon Web Services account.
 
-Type annotations for
-`aiobotocore.create_client("route53").get_hosted_zone_count` method.
+Type annotations for `session.create_client("route53").get_hosted_zone_count`
+method.
 
 Boto3 documentation:
 [Route53.Client.get_hosted_zone_count](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.get_hosted_zone_count)
@@ -1180,8 +1175,8 @@ Returns a `Coroutine` for
 Gets the specified limit for a specified hosted zone, for example, the maximum
 number of records that you can create in the hosted zone.
 
-Type annotations for
-`aiobotocore.create_client("route53").get_hosted_zone_limit` method.
+Type annotations for `session.create_client("route53").get_hosted_zone_limit`
+method.
 
 Boto3 documentation:
 [Route53.Client.get_hosted_zone_limit](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.get_hosted_zone_limit)
@@ -1208,7 +1203,7 @@ Returns a `Coroutine` for
 Gets information about a specified configuration for DNS query logging.
 
 Type annotations for
-`aiobotocore.create_client("route53").get_query_logging_config` method.
+`session.create_client("route53").get_query_logging_config` method.
 
 Boto3 documentation:
 [Route53.Client.get_query_logging_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.get_query_logging_config)
@@ -1234,7 +1229,7 @@ Retrieves information about a specified reusable delegation set, including the
 four name servers that are assigned to the delegation set.
 
 Type annotations for
-`aiobotocore.create_client("route53").get_reusable_delegation_set` method.
+`session.create_client("route53").get_reusable_delegation_set` method.
 
 Boto3 documentation:
 [Route53.Client.get_reusable_delegation_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.get_reusable_delegation_set)
@@ -1260,8 +1255,7 @@ Gets the maximum number of hosted zones that you can associate with the
 specified reusable delegation set.
 
 Type annotations for
-`aiobotocore.create_client("route53").get_reusable_delegation_set_limit`
-method.
+`session.create_client("route53").get_reusable_delegation_set_limit` method.
 
 Boto3 documentation:
 [Route53.Client.get_reusable_delegation_set_limit](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.get_reusable_delegation_set_limit)
@@ -1288,7 +1282,7 @@ Returns a `Coroutine` for
 
 Gets information about a specific traffic policy version.
 
-Type annotations for `aiobotocore.create_client("route53").get_traffic_policy`
+Type annotations for `session.create_client("route53").get_traffic_policy`
 method.
 
 Boto3 documentation:
@@ -1315,7 +1309,7 @@ Returns a `Coroutine` for
 Gets information about a specified traffic policy instance.
 
 Type annotations for
-`aiobotocore.create_client("route53").get_traffic_policy_instance` method.
+`session.create_client("route53").get_traffic_policy_instance` method.
 
 Boto3 documentation:
 [Route53.Client.get_traffic_policy_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.get_traffic_policy_instance)
@@ -1341,8 +1335,7 @@ Gets the number of traffic policy instances that are associated with the
 current Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("route53").get_traffic_policy_instance_count`
-method.
+`session.create_client("route53").get_traffic_policy_instance_count` method.
 
 Boto3 documentation:
 [Route53.Client.get_traffic_policy_instance_count](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.get_traffic_policy_instance_count)
@@ -1359,7 +1352,7 @@ Returns a `Coroutine` for
 
 Retrieves a list of supported geographic locations.
 
-Type annotations for `aiobotocore.create_client("route53").list_geo_locations`
+Type annotations for `session.create_client("route53").list_geo_locations`
 method.
 
 Boto3 documentation:
@@ -1388,7 +1381,7 @@ Returns a `Coroutine` for
 Retrieve a list of the health checks that are associated with the current
 Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("route53").list_health_checks`
+Type annotations for `session.create_client("route53").list_health_checks`
 method.
 
 Boto3 documentation:
@@ -1415,7 +1408,7 @@ Returns a `Coroutine` for
 Retrieves a list of the public and private hosted zones that are associated
 with the current Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("route53").list_hosted_zones`
+Type annotations for `session.create_client("route53").list_hosted_zones`
 method.
 
 Boto3 documentation:
@@ -1442,7 +1435,7 @@ Returns a `Coroutine` for
 Retrieves a list of your hosted zones in lexicographic order.
 
 Type annotations for
-`aiobotocore.create_client("route53").list_hosted_zones_by_name` method.
+`session.create_client("route53").list_hosted_zones_by_name` method.
 
 Boto3 documentation:
 [Route53.Client.list_hosted_zones_by_name](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.list_hosted_zones_by_name)
@@ -1471,7 +1464,7 @@ regardless of which Amazon Web Services account or Amazon Web Services service
 owns the hosted zones.
 
 Type annotations for
-`aiobotocore.create_client("route53").list_hosted_zones_by_vpc` method.
+`session.create_client("route53").list_hosted_zones_by_vpc` method.
 
 Boto3 documentation:
 [Route53.Client.list_hosted_zones_by_vpc](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.list_hosted_zones_by_vpc)
@@ -1501,7 +1494,7 @@ current Amazon Web Services account or the configuration that is associated
 with a specified hosted zone.
 
 Type annotations for
-`aiobotocore.create_client("route53").list_query_logging_configs` method.
+`session.create_client("route53").list_query_logging_configs` method.
 
 Boto3 documentation:
 [Route53.Client.list_query_logging_configs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.list_query_logging_configs)
@@ -1528,7 +1521,7 @@ Returns a `Coroutine` for
 Lists the resource record sets in a specified hosted zone.
 
 Type annotations for
-`aiobotocore.create_client("route53").list_resource_record_sets` method.
+`session.create_client("route53").list_resource_record_sets` method.
 
 Boto3 documentation:
 [Route53.Client.list_resource_record_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.list_resource_record_sets)
@@ -1558,7 +1551,7 @@ Retrieves a list of the reusable delegation sets that are associated with the
 current Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("route53").list_reusable_delegation_sets` method.
+`session.create_client("route53").list_reusable_delegation_sets` method.
 
 Boto3 documentation:
 [Route53.Client.list_reusable_delegation_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.list_reusable_delegation_sets)
@@ -1583,8 +1576,8 @@ Returns a `Coroutine` for
 
 Lists tags for one health check or hosted zone.
 
-Type annotations for
-`aiobotocore.create_client("route53").list_tags_for_resource` method.
+Type annotations for `session.create_client("route53").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Route53.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.list_tags_for_resource)
@@ -1610,8 +1603,8 @@ Returns a `Coroutine` for
 
 Lists tags for up to 10 health checks or hosted zones.
 
-Type annotations for
-`aiobotocore.create_client("route53").list_tags_for_resources` method.
+Type annotations for `session.create_client("route53").list_tags_for_resources`
+method.
 
 Boto3 documentation:
 [Route53.Client.list_tags_for_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.list_tags_for_resources)
@@ -1638,8 +1631,8 @@ Returns a `Coroutine` for
 Gets information about the latest version for every traffic policy that is
 associated with the current Amazon Web Services account.
 
-Type annotations for
-`aiobotocore.create_client("route53").list_traffic_policies` method.
+Type annotations for `session.create_client("route53").list_traffic_policies`
+method.
 
 Boto3 documentation:
 [Route53.Client.list_traffic_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.list_traffic_policies)
@@ -1666,7 +1659,7 @@ Gets information about the traffic policy instances that you created by using
 the current Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("route53").list_traffic_policy_instances` method.
+`session.create_client("route53").list_traffic_policy_instances` method.
 
 Boto3 documentation:
 [Route53.Client.list_traffic_policy_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.list_traffic_policy_instances)
@@ -1695,7 +1688,7 @@ Gets information about the traffic policy instances that you created in a
 specified hosted zone.
 
 Type annotations for
-`aiobotocore.create_client("route53").list_traffic_policy_instances_by_hosted_zone`
+`session.create_client("route53").list_traffic_policy_instances_by_hosted_zone`
 method.
 
 Boto3 documentation:
@@ -1726,7 +1719,7 @@ Gets information about the traffic policy instances that you created by using a
 specify traffic policy version.
 
 Type annotations for
-`aiobotocore.create_client("route53").list_traffic_policy_instances_by_policy`
+`session.create_client("route53").list_traffic_policy_instances_by_policy`
 method.
 
 Boto3 documentation:
@@ -1757,7 +1750,7 @@ Returns a `Coroutine` for
 Gets information about all of the versions for a specified traffic policy.
 
 Type annotations for
-`aiobotocore.create_client("route53").list_traffic_policy_versions` method.
+`session.create_client("route53").list_traffic_policy_versions` method.
 
 Boto3 documentation:
 [Route53.Client.list_traffic_policy_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.list_traffic_policy_versions)
@@ -1786,8 +1779,7 @@ associated with a specified hosted zone because you've submitted one or more
 `CreateVPCAssociationAuthorization` requests.
 
 Type annotations for
-`aiobotocore.create_client("route53").list_vpc_association_authorizations`
-method.
+`session.create_client("route53").list_vpc_association_authorizations` method.
 
 Boto3 documentation:
 [Route53.Client.list_vpc_association_authorizations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.list_vpc_association_authorizations)
@@ -1814,8 +1806,7 @@ Returns a `Coroutine` for
 Gets the value that Amazon Route 53 returns in response to a DNS request for a
 specified record name and type.
 
-Type annotations for `aiobotocore.create_client("route53").test_dns_answer`
-method.
+Type annotations for `session.create_client("route53").test_dns_answer` method.
 
 Boto3 documentation:
 [Route53.Client.test_dns_answer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.test_dns_answer)
@@ -1843,7 +1834,7 @@ Returns a `Coroutine` for
 
 Updates an existing health check.
 
-Type annotations for `aiobotocore.create_client("route53").update_health_check`
+Type annotations for `session.create_client("route53").update_health_check`
 method.
 
 Boto3 documentation:
@@ -1889,7 +1880,7 @@ Returns a `Coroutine` for
 Updates the comment for a specified hosted zone.
 
 Type annotations for
-`aiobotocore.create_client("route53").update_hosted_zone_comment` method.
+`session.create_client("route53").update_hosted_zone_comment` method.
 
 Boto3 documentation:
 [Route53.Client.update_hosted_zone_comment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.update_hosted_zone_comment)
@@ -1915,7 +1906,7 @@ Returns a `Coroutine` for
 Updates the comment for a specified traffic policy version.
 
 Type annotations for
-`aiobotocore.create_client("route53").update_traffic_policy_comment` method.
+`session.create_client("route53").update_traffic_policy_comment` method.
 
 Boto3 documentation:
 [Route53.Client.update_traffic_policy_comment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.update_traffic_policy_comment)
@@ -1943,7 +1934,7 @@ Updates the resource record sets in a specified hosted zone that were created
 based on the settings in a specified traffic policy version.
 
 Type annotations for
-`aiobotocore.create_client("route53").update_traffic_policy_instance` method.
+`session.create_client("route53").update_traffic_policy_instance` method.
 
 Boto3 documentation:
 [Route53.Client.update_traffic_policy_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.update_traffic_policy_instance)
@@ -1964,12 +1955,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateTrafficPolicyInstanceResponseTypeDef](./type_defs.md#updatetrafficpolicyinstanceresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("route53").__aenter__` method.
+
+Boto3 documentation:
+[Route53.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [Route53Client](#route53client).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("route53").__aexit__` method.
+
+Boto3 documentation:
+[Route53.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53.html#Route53.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("route53").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("route53").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_health_checks")` ->
   [ListHealthChecksPaginator](./paginators.md#listhealthcheckspaginator)
@@ -1986,8 +2009,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("route53").get_waiter` method
-with overloads.
+Type annotations for `session.create_client("route53").get_waiter` method with
+overloads.
 
 - `client.get_waiter("resource_record_sets_changed")` ->
   [ResourceRecordSetsChangedWaiter](./waiters.md#resourcerecordsetschangedwaiter)

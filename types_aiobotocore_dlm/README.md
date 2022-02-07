@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[dlm]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[dlm]'
+
+# standalone installation
 pip install types-aiobotocore-dlm
 ```
 
@@ -28,8 +32,7 @@ pip install types-aiobotocore-dlm
 
 ## DLMClient
 
-Type annotations for `aiobotocore.create_client("dlm")` as
-[DLMClient](./client.md)
+Type annotations for `session.create_client("dlm")` as [DLMClient](./client.md)
 
 Can be used directly:
 
@@ -41,6 +44,8 @@ from types_aiobotocore_dlm.client import DLMClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_lifecycle_policy](./client.md#create_lifecycle_policy)
 - [delete_lifecycle_policy](./client.md#delete_lifecycle_policy)

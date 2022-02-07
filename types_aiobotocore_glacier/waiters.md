@@ -18,7 +18,7 @@ type annotations stubs module
 ## VaultExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("glacier").get_waiter("vault_exists")`.
+`session.create_client("glacier").get_waiter("vault_exists")`.
 
 Can be used directly:
 
@@ -28,7 +28,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_glacier.waiter import VaultExistsWaiter
 
 def get_vault_exists_waiter() -> VaultExistsWaiter:
-    return Session().create_client("glacier").get_waiter("vault_exists")
+    return Session().client("glacier").get_waiter("vault_exists")
 ```
 
 Boto3 documentation:
@@ -45,7 +45,7 @@ Arguments for `VaultExistsWaiter.wait` method:
 ## VaultNotExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("glacier").get_waiter("vault_not_exists")`.
+`session.create_client("glacier").get_waiter("vault_not_exists")`.
 
 Can be used directly:
 
@@ -55,7 +55,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_glacier.waiter import VaultNotExistsWaiter
 
 def get_vault_not_exists_waiter() -> VaultNotExistsWaiter:
-    return Session().create_client("glacier").get_waiter("vault_not_exists")
+    return Session().client("glacier").get_waiter("vault_not_exists")
 ```
 
 Boto3 documentation:

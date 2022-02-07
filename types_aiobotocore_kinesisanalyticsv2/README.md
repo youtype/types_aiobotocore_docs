@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[kinesisanalyticsv2]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[kinesisanalyticsv2]'
+
+# standalone installation
 pip install types-aiobotocore-kinesisanalyticsv2
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-kinesisanalyticsv2
 
 ## KinesisAnalyticsV2Client
 
-Type annotations for `aiobotocore.create_client("kinesisanalyticsv2")` as
+Type annotations for `session.create_client("kinesisanalyticsv2")` as
 [KinesisAnalyticsV2Client](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_kinesisanalyticsv2.client import KinesisAnalyticsV2Client
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_application_cloud_watch_logging_option](./client.md#add_application_cloud_watch_logging_option)
 - [add_application_input](./client.md#add_application_input)
 - [add_application_input_processing_configuration](./client.md#add_application_input_processing_configuration)
@@ -109,7 +115,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_kinesisanalyticsv2.paginators import ListApplicationSnapshotsPaginator, ...
+from types_aiobotocore_kinesisanalyticsv2.paginator import ListApplicationSnapshotsPaginator, ...
 ```
 
 - [ListApplicationSnapshotsPaginator](./paginators.md#listapplicationsnapshotspaginator)

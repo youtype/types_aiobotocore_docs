@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[eks]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[eks]'
+
+# standalone installation
 pip install types-aiobotocore-eks
 ```
 
@@ -30,8 +34,7 @@ pip install types-aiobotocore-eks
 
 ## EKSClient
 
-Type annotations for `aiobotocore.create_client("eks")` as
-[EKSClient](./client.md)
+Type annotations for `session.create_client("eks")` as [EKSClient](./client.md)
 
 Can be used directly:
 
@@ -43,6 +46,8 @@ from types_aiobotocore_eks.client import EKSClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_encryption_config](./client.md#associate_encryption_config)
 - [associate_identity_provider_config](./client.md#associate_identity_provider_config)
 - [can_paginate](./client.md#can_paginate)
@@ -114,7 +119,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_eks.paginators import DescribeAddonVersionsPaginator, ...
+from types_aiobotocore_eks.paginator import DescribeAddonVersionsPaginator, ...
 ```
 
 - [DescribeAddonVersionsPaginator](./paginators.md#describeaddonversionspaginator)
@@ -135,7 +140,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_eks.waiters import AddonActiveWaiter, ...
+from types_aiobotocore_eks.waiter import AddonActiveWaiter, ...
 ```
 
 - [AddonActiveWaiter](./waiters.md#addonactivewaiter)

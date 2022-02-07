@@ -60,21 +60,24 @@ type annotations stubs module
     - [update_portal](#update_portal)
     - [update_trust_store](#update_trust_store)
     - [update_user_settings](#update_user_settings)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="workspaceswebclient"></a>
 
 ## WorkSpacesWebClient
 
-Type annotations for `aiobotocore.create_client("workspaces-web")`
+Type annotations for `session.create_client("workspaces-web")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_workspaces_web.client import WorkSpacesWebClient
 
-def get_workspaces-web_client() -> WorkSpacesWebClient:
-    return Session().client("workspaces-web")
+session = get_session()
+async with session.create_client("workspaces-web") as client:
+    client: WorkSpacesWebClient
 ```
 
 Boto3 documentation:
@@ -116,7 +119,7 @@ Exceptions:
 
 WorkSpacesWebClient exceptions.
 
-Type annotations for `aiobotocore.create_client("workspaces-web").exceptions`
+Type annotations for `session.create_client("workspaces-web").exceptions`
 method.
 
 Boto3 documentation:
@@ -131,8 +134,7 @@ Returns [Exceptions](#exceptions).
 Associates a browser settings resource with a web portal.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").associate_browser_settings`
-method.
+`session.create_client("workspaces-web").associate_browser_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.associate_browser_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.associate_browser_settings)
@@ -158,8 +160,7 @@ Returns a `Coroutine` for
 Associates a network settings resource with a web portal.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").associate_network_settings`
-method.
+`session.create_client("workspaces-web").associate_network_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.associate_network_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.associate_network_settings)
@@ -185,7 +186,7 @@ Returns a `Coroutine` for
 Associates a trust store with a web portal.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").associate_trust_store` method.
+`session.create_client("workspaces-web").associate_trust_store` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.associate_trust_store](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.associate_trust_store)
@@ -211,7 +212,7 @@ Returns a `Coroutine` for
 Associates a user settings resource with a web portal.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").associate_user_settings` method.
+`session.create_client("workspaces-web").associate_user_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.associate_user_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.associate_user_settings)
@@ -236,19 +237,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("workspaces-web").can_paginate`
+Type annotations for `session.create_client("workspaces-web").can_paginate`
 method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_browser_settings"></a>
 
@@ -257,7 +256,7 @@ Returns a `Coroutine` for `bool`.
 Creates a browser settings resource that can be associated with a web portal.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").create_browser_settings` method.
+`session.create_client("workspaces-web").create_browser_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.create_browser_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.create_browser_settings)
@@ -287,7 +286,7 @@ Creates an identity provider resource that is then associated with a web
 portal.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").create_identity_provider` method.
+`session.create_client("workspaces-web").create_identity_provider` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.create_identity_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.create_identity_provider)
@@ -318,7 +317,7 @@ Returns a `Coroutine` for
 Creates a network settings resource that can be associated with a web portal.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").create_network_settings` method.
+`session.create_client("workspaces-web").create_network_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.create_network_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.create_network_settings)
@@ -346,8 +345,8 @@ Returns a `Coroutine` for
 
 Creates a web portal.
 
-Type annotations for
-`aiobotocore.create_client("workspaces-web").create_portal` method.
+Type annotations for `session.create_client("workspaces-web").create_portal`
+method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.create_portal](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.create_portal)
@@ -375,7 +374,7 @@ Returns a `Coroutine` for
 Creates a trust store that can be associated with a web portal.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").create_trust_store` method.
+`session.create_client("workspaces-web").create_trust_store` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.create_trust_store](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.create_trust_store)
@@ -403,7 +402,7 @@ Returns a `Coroutine` for
 Creates a user settings resource that can be associated with a web portal.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").create_user_settings` method.
+`session.create_client("workspaces-web").create_user_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.create_user_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.create_user_settings)
@@ -436,7 +435,7 @@ Returns a `Coroutine` for
 Deletes browser settings.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").delete_browser_settings` method.
+`session.create_client("workspaces-web").delete_browser_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.delete_browser_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.delete_browser_settings)
@@ -460,7 +459,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the identity provider.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").delete_identity_provider` method.
+`session.create_client("workspaces-web").delete_identity_provider` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.delete_identity_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.delete_identity_provider)
@@ -484,7 +483,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes network settings.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").delete_network_settings` method.
+`session.create_client("workspaces-web").delete_network_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.delete_network_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.delete_network_settings)
@@ -507,8 +506,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a web portal.
 
-Type annotations for
-`aiobotocore.create_client("workspaces-web").delete_portal` method.
+Type annotations for `session.create_client("workspaces-web").delete_portal`
+method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.delete_portal](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.delete_portal)
@@ -531,7 +530,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the trust store.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").delete_trust_store` method.
+`session.create_client("workspaces-web").delete_trust_store` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.delete_trust_store](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.delete_trust_store)
@@ -555,7 +554,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes user settings.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").delete_user_settings` method.
+`session.create_client("workspaces-web").delete_user_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.delete_user_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.delete_user_settings)
@@ -579,8 +578,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates browser settings from a web portal.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").disassociate_browser_settings`
-method.
+`session.create_client("workspaces-web").disassociate_browser_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.disassociate_browser_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.disassociate_browser_settings)
@@ -604,8 +602,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates network settings from a web portal.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").disassociate_network_settings`
-method.
+`session.create_client("workspaces-web").disassociate_network_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.disassociate_network_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.disassociate_network_settings)
@@ -629,7 +626,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates a trust store from a web portal.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").disassociate_trust_store` method.
+`session.create_client("workspaces-web").disassociate_trust_store` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.disassociate_trust_store](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.disassociate_trust_store)
@@ -653,8 +650,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates user settings from a web portal.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").disassociate_user_settings`
-method.
+`session.create_client("workspaces-web").disassociate_user_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.disassociate_user_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.disassociate_user_settings)
@@ -678,7 +674,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").generate_presigned_url` method.
+`session.create_client("workspaces-web").generate_presigned_url` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.generate_presigned_url)
@@ -702,7 +698,7 @@ Returns a `Coroutine` for `str`.
 Gets browser settings.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").get_browser_settings` method.
+`session.create_client("workspaces-web").get_browser_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.get_browser_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.get_browser_settings)
@@ -727,7 +723,7 @@ Returns a `Coroutine` for
 Gets the identity provider.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").get_identity_provider` method.
+`session.create_client("workspaces-web").get_identity_provider` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.get_identity_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.get_identity_provider)
@@ -752,7 +748,7 @@ Returns a `Coroutine` for
 Gets the network settings.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").get_network_settings` method.
+`session.create_client("workspaces-web").get_network_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.get_network_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.get_network_settings)
@@ -776,7 +772,7 @@ Returns a `Coroutine` for
 
 Gets the web portal.
 
-Type annotations for `aiobotocore.create_client("workspaces-web").get_portal`
+Type annotations for `session.create_client("workspaces-web").get_portal`
 method.
 
 Boto3 documentation:
@@ -801,7 +797,7 @@ Returns a `Coroutine` for
 Gets the service provider metadata.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").get_portal_service_provider_metadata`
+`session.create_client("workspaces-web").get_portal_service_provider_metadata`
 method.
 
 Boto3 documentation:
@@ -826,8 +822,8 @@ Returns a `Coroutine` for
 
 Gets the trust store.
 
-Type annotations for
-`aiobotocore.create_client("workspaces-web").get_trust_store` method.
+Type annotations for `session.create_client("workspaces-web").get_trust_store`
+method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.get_trust_store](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.get_trust_store)
@@ -851,8 +847,7 @@ Returns a `Coroutine` for
 Gets the trust store certificate.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").get_trust_store_certificate`
-method.
+`session.create_client("workspaces-web").get_trust_store_certificate` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.get_trust_store_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.get_trust_store_certificate)
@@ -878,7 +873,7 @@ Returns a `Coroutine` for
 Gets user settings.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").get_user_settings` method.
+`session.create_client("workspaces-web").get_user_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.get_user_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.get_user_settings)
@@ -902,7 +897,7 @@ Returns a `Coroutine` for
 Retrieves a list of browser settings.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").list_browser_settings` method.
+`session.create_client("workspaces-web").list_browser_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.list_browser_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.list_browser_settings)
@@ -928,7 +923,7 @@ Returns a `Coroutine` for
 Retrieves a list of identity providers for a specific web portal.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").list_identity_providers` method.
+`session.create_client("workspaces-web").list_identity_providers` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.list_identity_providers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.list_identity_providers)
@@ -955,7 +950,7 @@ Returns a `Coroutine` for
 Retrieves a list of network settings.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").list_network_settings` method.
+`session.create_client("workspaces-web").list_network_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.list_network_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.list_network_settings)
@@ -980,7 +975,7 @@ Returns a `Coroutine` for
 
 Retrieves a list or web portals.
 
-Type annotations for `aiobotocore.create_client("workspaces-web").list_portals`
+Type annotations for `session.create_client("workspaces-web").list_portals`
 method.
 
 Boto3 documentation:
@@ -1006,7 +1001,7 @@ Returns a `Coroutine` for
 Retrieves a list of tags for a resource.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").list_tags_for_resource` method.
+`session.create_client("workspaces-web").list_tags_for_resource` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.list_tags_for_resource)
@@ -1031,8 +1026,7 @@ Returns a `Coroutine` for
 Retrieves a list of trust store certificates.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").list_trust_store_certificates`
-method.
+`session.create_client("workspaces-web").list_trust_store_certificates` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.list_trust_store_certificates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.list_trust_store_certificates)
@@ -1059,7 +1053,7 @@ Returns a `Coroutine` for
 Retrieves a list of trust stores.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").list_trust_stores` method.
+`session.create_client("workspaces-web").list_trust_stores` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.list_trust_stores](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.list_trust_stores)
@@ -1084,7 +1078,7 @@ Returns a `Coroutine` for
 Retrieves a list of user settings.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").list_user_settings` method.
+`session.create_client("workspaces-web").list_user_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.list_user_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.list_user_settings)
@@ -1109,7 +1103,7 @@ Returns a `Coroutine` for
 
 Adds or overwrites one or more tags for the specified resource.
 
-Type annotations for `aiobotocore.create_client("workspaces-web").tag_resource`
+Type annotations for `session.create_client("workspaces-web").tag_resource`
 method.
 
 Boto3 documentation:
@@ -1134,8 +1128,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("workspaces-web").untag_resource` method.
+Type annotations for `session.create_client("workspaces-web").untag_resource`
+method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.untag_resource)
@@ -1159,7 +1153,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates browser settings.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").update_browser_settings` method.
+`session.create_client("workspaces-web").update_browser_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.update_browser_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.update_browser_settings)
@@ -1186,7 +1180,7 @@ Returns a `Coroutine` for
 Updates the identity provider.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").update_identity_provider` method.
+`session.create_client("workspaces-web").update_identity_provider` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.update_identity_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.update_identity_provider)
@@ -1216,7 +1210,7 @@ Returns a `Coroutine` for
 Updates network settings.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").update_network_settings` method.
+`session.create_client("workspaces-web").update_network_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.update_network_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.update_network_settings)
@@ -1244,8 +1238,8 @@ Returns a `Coroutine` for
 
 Updates a web portal.
 
-Type annotations for
-`aiobotocore.create_client("workspaces-web").update_portal` method.
+Type annotations for `session.create_client("workspaces-web").update_portal`
+method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.update_portal](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.update_portal)
@@ -1270,7 +1264,7 @@ Returns a `Coroutine` for
 Updates the trust store.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").update_trust_store` method.
+`session.create_client("workspaces-web").update_trust_store` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.update_trust_store](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.update_trust_store)
@@ -1299,7 +1293,7 @@ Returns a `Coroutine` for
 Updates the user settings.
 
 Type annotations for
-`aiobotocore.create_client("workspaces-web").update_user_settings` method.
+`session.create_client("workspaces-web").update_user_settings` method.
 
 Boto3 documentation:
 [WorkSpacesWeb.Client.update_user_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.update_user_settings)
@@ -1322,3 +1316,37 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateUserSettingsResponseTypeDef](./type_defs.md#updateusersettingsresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("workspaces-web").__aenter__`
+method.
+
+Boto3 documentation:
+[WorkSpacesWeb.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [WorkSpacesWebClient](#workspaceswebclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("workspaces-web").__aexit__`
+method.
+
+Boto3 documentation:
+[WorkSpacesWeb.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces-web.html#WorkSpacesWeb.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

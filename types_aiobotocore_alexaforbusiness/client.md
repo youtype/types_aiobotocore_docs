@@ -109,22 +109,25 @@ type annotations stubs module
     - [update_profile](#update_profile)
     - [update_room](#update_room)
     - [update_skill_group](#update_skill_group)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="alexaforbusinessclient"></a>
 
 ## AlexaForBusinessClient
 
-Type annotations for `aiobotocore.create_client("alexaforbusiness")`
+Type annotations for `session.create_client("alexaforbusiness")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_alexaforbusiness.client import AlexaForBusinessClient
 
-def get_alexaforbusiness_client() -> AlexaForBusinessClient:
-    return Session().client("alexaforbusiness")
+session = get_session()
+async with session.create_client("alexaforbusiness") as client:
+    client: AlexaForBusinessClient
 ```
 
 Boto3 documentation:
@@ -173,7 +176,7 @@ Exceptions:
 
 AlexaForBusinessClient exceptions.
 
-Type annotations for `aiobotocore.create_client("alexaforbusiness").exceptions`
+Type annotations for `session.create_client("alexaforbusiness").exceptions`
 method.
 
 Boto3 documentation:
@@ -187,8 +190,8 @@ Returns [Exceptions](#exceptions).
 
 Associates a skill with the organization under the customer's AWS account.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").approve_skill` method.
+Type annotations for `session.create_client("alexaforbusiness").approve_skill`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.approve_skill](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.approve_skill)
@@ -211,7 +214,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates a contact with a given address book.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").associate_contact_with_address_book`
+`session.create_client("alexaforbusiness").associate_contact_with_address_book`
 method.
 
 Boto3 documentation:
@@ -237,7 +240,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates a device with the specified network profile.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").associate_device_with_network_profile`
+`session.create_client("alexaforbusiness").associate_device_with_network_profile`
 method.
 
 Boto3 documentation:
@@ -263,8 +266,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates a device with a given room.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").associate_device_with_room`
-method.
+`session.create_client("alexaforbusiness").associate_device_with_room` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.associate_device_with_room](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.associate_device_with_room)
@@ -289,7 +291,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates a skill group with a given room.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").associate_skill_group_with_room`
+`session.create_client("alexaforbusiness").associate_skill_group_with_room`
 method.
 
 Boto3 documentation:
@@ -315,7 +317,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates a skill with a skill group.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").associate_skill_with_skill_group`
+`session.create_client("alexaforbusiness").associate_skill_with_skill_group`
 method.
 
 Boto3 documentation:
@@ -341,8 +343,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Makes a private skill available for enrolled users to enable on their devices.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").associate_skill_with_users`
-method.
+`session.create_client("alexaforbusiness").associate_skill_with_users` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.associate_skill_with_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.associate_skill_with_users)
@@ -365,19 +366,17 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").can_paginate` method.
+Type annotations for `session.create_client("alexaforbusiness").can_paginate`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_address_book"></a>
 
@@ -386,7 +385,7 @@ Returns a `Coroutine` for `bool`.
 Creates an address book with the specified details.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").create_address_book` method.
+`session.create_client("alexaforbusiness").create_address_book` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.create_address_book](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.create_address_book)
@@ -415,7 +414,7 @@ Creates a recurring schedule for usage reports to deliver to the specified S3
 location with a specified daily or weekly interval.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").create_business_report_schedule`
+`session.create_client("alexaforbusiness").create_business_report_schedule`
 method.
 
 Boto3 documentation:
@@ -452,8 +451,7 @@ Returns a `Coroutine` for
 Adds a new conference provider under the user's AWS account.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").create_conference_provider`
-method.
+`session.create_client("alexaforbusiness").create_conference_provider` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.create_conference_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.create_conference_provider)
@@ -486,8 +484,8 @@ Returns a `Coroutine` for
 
 Creates a contact with the specified details.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").create_contact` method.
+Type annotations for `session.create_client("alexaforbusiness").create_contact`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.create_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.create_contact)
@@ -520,7 +518,7 @@ Returns a `Coroutine` for
 Creates a gateway group with the specified details.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").create_gateway_group` method.
+`session.create_client("alexaforbusiness").create_gateway_group` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.create_gateway_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.create_gateway_group)
@@ -548,7 +546,7 @@ Returns a `Coroutine` for
 Creates a network profile with the specified details.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").create_network_profile` method.
+`session.create_client("alexaforbusiness").create_network_profile` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.create_network_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.create_network_profile)
@@ -584,8 +582,8 @@ Returns a `Coroutine` for
 
 Creates a new room profile with the specified details.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").create_profile` method.
+Type annotations for `session.create_client("alexaforbusiness").create_profile`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.create_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.create_profile)
@@ -624,8 +622,8 @@ Returns a `Coroutine` for
 
 Creates a room with the specified details.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").create_room` method.
+Type annotations for `session.create_client("alexaforbusiness").create_room`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.create_room](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.create_room)
@@ -654,7 +652,7 @@ Returns a `Coroutine` for
 Creates a skill group with a specified name and description.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").create_skill_group` method.
+`session.create_client("alexaforbusiness").create_skill_group` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.create_skill_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.create_skill_group)
@@ -681,8 +679,8 @@ Returns a `Coroutine` for
 
 Creates a user.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").create_user` method.
+Type annotations for `session.create_client("alexaforbusiness").create_user`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.create_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.create_user)
@@ -711,7 +709,7 @@ Returns a `Coroutine` for
 Deletes an address book by the address book ARN.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").delete_address_book` method.
+`session.create_client("alexaforbusiness").delete_address_book` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.delete_address_book](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.delete_address_book)
@@ -735,7 +733,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the recurring report delivery schedule with the specified schedule ARN.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").delete_business_report_schedule`
+`session.create_client("alexaforbusiness").delete_business_report_schedule`
 method.
 
 Boto3 documentation:
@@ -760,8 +758,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a conference provider.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").delete_conference_provider`
-method.
+`session.create_client("alexaforbusiness").delete_conference_provider` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.delete_conference_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.delete_conference_provider)
@@ -784,8 +781,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a contact by the contact ARN.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").delete_contact` method.
+Type annotations for `session.create_client("alexaforbusiness").delete_contact`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.delete_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.delete_contact)
@@ -807,8 +804,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes a device from Alexa For Business.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").delete_device` method.
+Type annotations for `session.create_client("alexaforbusiness").delete_device`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.delete_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.delete_device)
@@ -833,8 +830,7 @@ users to delete the device's entire previous history of voice input data and
 associated response data.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").delete_device_usage_data`
-method.
+`session.create_client("alexaforbusiness").delete_device_usage_data` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.delete_device_usage_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.delete_device_usage_data)
@@ -860,7 +856,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a gateway group.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").delete_gateway_group` method.
+`session.create_client("alexaforbusiness").delete_gateway_group` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.delete_gateway_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.delete_gateway_group)
@@ -884,7 +880,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a network profile by the network profile ARN.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").delete_network_profile` method.
+`session.create_client("alexaforbusiness").delete_network_profile` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.delete_network_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.delete_network_profile)
@@ -907,8 +903,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a room profile by the profile ARN.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").delete_profile` method.
+Type annotations for `session.create_client("alexaforbusiness").delete_profile`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.delete_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.delete_profile)
@@ -930,8 +926,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a room by the room ARN.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").delete_room` method.
+Type annotations for `session.create_client("alexaforbusiness").delete_room`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.delete_room](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.delete_room)
@@ -954,8 +950,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes room skill parameter details by room, skill, and parameter key ID.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").delete_room_skill_parameter`
-method.
+`session.create_client("alexaforbusiness").delete_room_skill_parameter` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.delete_room_skill_parameter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.delete_room_skill_parameter)
@@ -981,8 +976,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Unlinks a third-party account from a skill.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").delete_skill_authorization`
-method.
+`session.create_client("alexaforbusiness").delete_skill_authorization` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.delete_skill_authorization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.delete_skill_authorization)
@@ -1007,7 +1001,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a skill group by skill group ARN.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").delete_skill_group` method.
+`session.create_client("alexaforbusiness").delete_skill_group` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.delete_skill_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.delete_skill_group)
@@ -1030,8 +1024,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a specified user by user ARN and enrollment ARN.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").delete_user` method.
+Type annotations for `session.create_client("alexaforbusiness").delete_user`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.delete_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.delete_user)
@@ -1055,7 +1049,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates a contact from a given address book.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").disassociate_contact_from_address_book`
+`session.create_client("alexaforbusiness").disassociate_contact_from_address_book`
 method.
 
 Boto3 documentation:
@@ -1081,7 +1075,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates a device from its current room.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").disassociate_device_from_room`
+`session.create_client("alexaforbusiness").disassociate_device_from_room`
 method.
 
 Boto3 documentation:
@@ -1106,7 +1100,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates a skill from a skill group.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").disassociate_skill_from_skill_group`
+`session.create_client("alexaforbusiness").disassociate_skill_from_skill_group`
 method.
 
 Boto3 documentation:
@@ -1133,7 +1127,7 @@ Makes a private skill unavailable for enrolled users and prevents them from
 enabling it on their devices.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").disassociate_skill_from_users`
+`session.create_client("alexaforbusiness").disassociate_skill_from_users`
 method.
 
 Boto3 documentation:
@@ -1158,7 +1152,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates a skill group from a specified room.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").disassociate_skill_group_from_room`
+`session.create_client("alexaforbusiness").disassociate_skill_group_from_room`
 method.
 
 Boto3 documentation:
@@ -1184,7 +1178,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Forgets smart home appliances associated to a room.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").forget_smart_home_appliances`
+`session.create_client("alexaforbusiness").forget_smart_home_appliances`
 method.
 
 Boto3 documentation:
@@ -1209,7 +1203,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").generate_presigned_url` method.
+`session.create_client("alexaforbusiness").generate_presigned_url` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.generate_presigned_url)
@@ -1233,7 +1227,7 @@ Returns a `Coroutine` for `str`.
 Gets address the book details by the address book ARN.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_address_book` method.
+`session.create_client("alexaforbusiness").get_address_book` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.get_address_book](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.get_address_book)
@@ -1257,8 +1251,7 @@ Returns a `Coroutine` for
 Retrieves the existing conference preferences.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_conference_preference`
-method.
+`session.create_client("alexaforbusiness").get_conference_preference` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.get_conference_preference](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.get_conference_preference)
@@ -1276,7 +1269,7 @@ Returns a `Coroutine` for
 Gets details about a specific conference provider.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_conference_provider` method.
+`session.create_client("alexaforbusiness").get_conference_provider` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.get_conference_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.get_conference_provider)
@@ -1300,8 +1293,8 @@ Returns a `Coroutine` for
 
 Gets the contact details by the contact ARN.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_contact` method.
+Type annotations for `session.create_client("alexaforbusiness").get_contact`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.get_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.get_contact)
@@ -1324,7 +1317,7 @@ Returns a `Coroutine` for
 
 Gets the details of a device by device ARN.
 
-Type annotations for `aiobotocore.create_client("alexaforbusiness").get_device`
+Type annotations for `session.create_client("alexaforbusiness").get_device`
 method.
 
 Boto3 documentation:
@@ -1348,8 +1341,8 @@ Returns a `Coroutine` for
 
 Retrieves the details of a gateway.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_gateway` method.
+Type annotations for `session.create_client("alexaforbusiness").get_gateway`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.get_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.get_gateway)
@@ -1373,7 +1366,7 @@ Returns a `Coroutine` for
 Retrieves the details of a gateway group.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_gateway_group` method.
+`session.create_client("alexaforbusiness").get_gateway_group` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.get_gateway_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.get_gateway_group)
@@ -1398,7 +1391,7 @@ Retrieves the configured values for the user enrollment invitation email
 template.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_invitation_configuration`
+`session.create_client("alexaforbusiness").get_invitation_configuration`
 method.
 
 Boto3 documentation:
@@ -1417,7 +1410,7 @@ Returns a `Coroutine` for
 Gets the network profile details by the network profile ARN.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_network_profile` method.
+`session.create_client("alexaforbusiness").get_network_profile` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.get_network_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.get_network_profile)
@@ -1441,8 +1434,8 @@ Returns a `Coroutine` for
 
 Gets the details of a room profile by profile ARN.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_profile` method.
+Type annotations for `session.create_client("alexaforbusiness").get_profile`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.get_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.get_profile)
@@ -1465,7 +1458,7 @@ Returns a `Coroutine` for
 
 Gets room details by room ARN.
 
-Type annotations for `aiobotocore.create_client("alexaforbusiness").get_room`
+Type annotations for `session.create_client("alexaforbusiness").get_room`
 method.
 
 Boto3 documentation:
@@ -1490,8 +1483,7 @@ Returns a `Coroutine` for
 Gets room skill parameter details by room, skill, and parameter key ARN.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_room_skill_parameter`
-method.
+`session.create_client("alexaforbusiness").get_room_skill_parameter` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.get_room_skill_parameter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.get_room_skill_parameter)
@@ -1518,7 +1510,7 @@ Returns a `Coroutine` for
 Gets skill group details by skill group ARN.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_skill_group` method.
+`session.create_client("alexaforbusiness").get_skill_group` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.get_skill_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.get_skill_group)
@@ -1542,7 +1534,7 @@ Returns a `Coroutine` for
 Lists the details of the schedules that a user configured.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").list_business_report_schedules`
+`session.create_client("alexaforbusiness").list_business_report_schedules`
 method.
 
 Boto3 documentation:
@@ -1569,8 +1561,7 @@ Returns a `Coroutine` for
 Lists conference providers under a specific AWS account.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").list_conference_providers`
-method.
+`session.create_client("alexaforbusiness").list_conference_providers` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.list_conference_providers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.list_conference_providers)
@@ -1597,7 +1588,7 @@ Lists the device event history, including device connection status, for up to
 30 days.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").list_device_events` method.
+`session.create_client("alexaforbusiness").list_device_events` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.list_device_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.list_device_events)
@@ -1625,7 +1616,7 @@ Returns a `Coroutine` for
 Retrieves a list of gateway group summaries.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").list_gateway_groups` method.
+`session.create_client("alexaforbusiness").list_gateway_groups` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.list_gateway_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.list_gateway_groups)
@@ -1650,8 +1641,8 @@ Returns a `Coroutine` for
 
 Retrieves a list of gateway summaries.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").list_gateways` method.
+Type annotations for `session.create_client("alexaforbusiness").list_gateways`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.list_gateways](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.list_gateways)
@@ -1676,8 +1667,8 @@ Returns a `Coroutine` for
 
 Lists all enabled skills in a specific skill group.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").list_skills` method.
+Type annotations for `session.create_client("alexaforbusiness").list_skills`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.list_skills](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.list_skills)
@@ -1706,7 +1697,7 @@ Returns a `Coroutine` for
 Lists all categories in the Alexa skill store.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").list_skills_store_categories`
+`session.create_client("alexaforbusiness").list_skills_store_categories`
 method.
 
 Boto3 documentation:
@@ -1733,7 +1724,7 @@ Returns a `Coroutine` for
 Lists all skills in the Alexa skill store by category.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").list_skills_store_skills_by_category`
+`session.create_client("alexaforbusiness").list_skills_store_skills_by_category`
 method.
 
 Boto3 documentation:
@@ -1761,8 +1752,7 @@ Returns a `Coroutine` for
 Lists all of the smart home appliances associated with a room.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").list_smart_home_appliances`
-method.
+`session.create_client("alexaforbusiness").list_smart_home_appliances` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.list_smart_home_appliances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.list_smart_home_appliances)
@@ -1788,7 +1778,7 @@ Returns a `Coroutine` for
 
 Lists all tags for the specified resource.
 
-Type annotations for `aiobotocore.create_client("alexaforbusiness").list_tags`
+Type annotations for `session.create_client("alexaforbusiness").list_tags`
 method.
 
 Boto3 documentation:
@@ -1816,8 +1806,7 @@ Sets the conference preferences on a specific conference provider at the
 account level.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").put_conference_preference`
-method.
+`session.create_client("alexaforbusiness").put_conference_preference` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.put_conference_preference](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.put_conference_preference)
@@ -1844,7 +1833,7 @@ Configures the email template for the user enrollment invitation with the
 specified attributes.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").put_invitation_configuration`
+`session.create_client("alexaforbusiness").put_invitation_configuration`
 method.
 
 Boto3 documentation:
@@ -1871,8 +1860,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates room skill parameter details by room, skill, and parameter key ID.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").put_room_skill_parameter`
-method.
+`session.create_client("alexaforbusiness").put_room_skill_parameter` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.put_room_skill_parameter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.put_room_skill_parameter)
@@ -1900,7 +1888,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Links a user's account to a third-party skill provider.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").put_skill_authorization` method.
+`session.create_client("alexaforbusiness").put_skill_authorization` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.put_skill_authorization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.put_skill_authorization)
@@ -1927,7 +1915,7 @@ Registers an Alexa-enabled device built by an Original Equipment Manufacturer
 (OEM) using Alexa Voice Service (AVS).
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").register_avs_device` method.
+`session.create_client("alexaforbusiness").register_avs_device` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.register_avs_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.register_avs_device)
@@ -1957,8 +1945,8 @@ Returns a `Coroutine` for
 
 Disassociates a skill from the organization under a user's AWS account.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").reject_skill` method.
+Type annotations for `session.create_client("alexaforbusiness").reject_skill`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.reject_skill](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.reject_skill)
@@ -1980,8 +1968,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Determines the details for the room from which a skill request was invoked.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").resolve_room` method.
+Type annotations for `session.create_client("alexaforbusiness").resolve_room`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.resolve_room](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.resolve_room)
@@ -2006,7 +1994,7 @@ Returns a `Coroutine` for
 Revokes an invitation and invalidates the enrollment URL.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").revoke_invitation` method.
+`session.create_client("alexaforbusiness").revoke_invitation` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.revoke_invitation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.revoke_invitation)
@@ -2031,7 +2019,7 @@ Searches address books and lists the ones that meet a set of filter and sort
 criteria.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").search_address_books` method.
+`session.create_client("alexaforbusiness").search_address_books` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.search_address_books](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.search_address_books)
@@ -2060,7 +2048,7 @@ Searches contacts and lists the ones that meet a set of filter and sort
 criteria.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").search_contacts` method.
+`session.create_client("alexaforbusiness").search_contacts` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.search_contacts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.search_contacts)
@@ -2086,8 +2074,8 @@ Returns a `Coroutine` for
 
 Searches devices and lists the ones that meet a set of filter criteria.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").search_devices` method.
+Type annotations for `session.create_client("alexaforbusiness").search_devices`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.search_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.search_devices)
@@ -2115,7 +2103,7 @@ Searches network profiles and lists the ones that meet a set of filter and sort
 criteria.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").search_network_profiles` method.
+`session.create_client("alexaforbusiness").search_network_profiles` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.search_network_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.search_network_profiles)
@@ -2143,7 +2131,7 @@ Returns a `Coroutine` for
 Searches room profiles and lists the ones that meet a set of filter criteria.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").search_profiles` method.
+`session.create_client("alexaforbusiness").search_profiles` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.search_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.search_profiles)
@@ -2169,8 +2157,8 @@ Returns a `Coroutine` for
 
 Searches rooms and lists the ones that meet a set of filter and sort criteria.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").search_rooms` method.
+Type annotations for `session.create_client("alexaforbusiness").search_rooms`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.search_rooms](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.search_rooms)
@@ -2198,7 +2186,7 @@ Searches skill groups and lists the ones that meet a set of filter and sort
 criteria.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").search_skill_groups` method.
+`session.create_client("alexaforbusiness").search_skill_groups` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.search_skill_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.search_skill_groups)
@@ -2225,8 +2213,8 @@ Returns a `Coroutine` for
 
 Searches users and lists the ones that meet a set of filter and sort criteria.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").search_users` method.
+Type annotations for `session.create_client("alexaforbusiness").search_users`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.search_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.search_users)
@@ -2254,7 +2242,7 @@ Triggers an asynchronous flow to send text, SSML, or audio announcements to
 rooms that are identified by a search or filter.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").send_announcement` method.
+`session.create_client("alexaforbusiness").send_announcement` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.send_announcement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.send_announcement)
@@ -2282,7 +2270,7 @@ Returns a `Coroutine` for
 Sends an enrollment invitation email with a URL to a user.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").send_invitation` method.
+`session.create_client("alexaforbusiness").send_invitation` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.send_invitation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.send_invitation)
@@ -2305,7 +2293,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Resets a device and its account to the known default settings.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").start_device_sync` method.
+`session.create_client("alexaforbusiness").start_device_sync` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.start_device_sync](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.start_device_sync)
@@ -2331,7 +2319,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Initiates the discovery of any smart home appliances associated with the room.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").start_smart_home_appliance_discovery`
+`session.create_client("alexaforbusiness").start_smart_home_appliance_discovery`
 method.
 
 Boto3 documentation:
@@ -2355,8 +2343,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds metadata tags to a specified resource.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").tag_resource` method.
+Type annotations for `session.create_client("alexaforbusiness").tag_resource`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.tag_resource)
@@ -2379,8 +2367,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes metadata tags from a specified resource.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").untag_resource` method.
+Type annotations for `session.create_client("alexaforbusiness").untag_resource`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.untag_resource)
@@ -2404,7 +2392,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates address book details by the address book ARN.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").update_address_book` method.
+`session.create_client("alexaforbusiness").update_address_book` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.update_address_book](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.update_address_book)
@@ -2431,7 +2419,7 @@ Updates the configuration of the report delivery schedule with the specified
 schedule ARN.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").update_business_report_schedule`
+`session.create_client("alexaforbusiness").update_business_report_schedule`
 method.
 
 Boto3 documentation:
@@ -2462,8 +2450,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates an existing conference provider's settings.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").update_conference_provider`
-method.
+`session.create_client("alexaforbusiness").update_conference_provider` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.update_conference_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.update_conference_provider)
@@ -2493,8 +2480,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the contact details by the contact ARN.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").update_contact` method.
+Type annotations for `session.create_client("alexaforbusiness").update_contact`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.update_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.update_contact)
@@ -2524,8 +2511,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the device name by device ARN.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").update_device` method.
+Type annotations for `session.create_client("alexaforbusiness").update_device`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.update_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.update_device)
@@ -2548,8 +2535,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the details of a gateway.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").update_gateway` method.
+Type annotations for `session.create_client("alexaforbusiness").update_gateway`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.update_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.update_gateway)
@@ -2575,7 +2562,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the details of a gateway group.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").update_gateway_group` method.
+`session.create_client("alexaforbusiness").update_gateway_group` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.update_gateway_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.update_gateway_group)
@@ -2601,7 +2588,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a network profile by the network profile ARN.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").update_network_profile` method.
+`session.create_client("alexaforbusiness").update_network_profile` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.update_network_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.update_network_profile)
@@ -2630,8 +2617,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an existing room profile by room profile ARN.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").update_profile` method.
+Type annotations for `session.create_client("alexaforbusiness").update_profile`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.update_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.update_profile)
@@ -2667,8 +2654,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates room details by room ARN.
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").update_room` method.
+Type annotations for `session.create_client("alexaforbusiness").update_room`
+method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.update_room](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.update_room)
@@ -2695,7 +2682,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates skill group details by skill group ARN.
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").update_skill_group` method.
+`session.create_client("alexaforbusiness").update_skill_group` method.
 
 Boto3 documentation:
 [AlexaForBusiness.Client.update_skill_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.update_skill_group)
@@ -2714,13 +2701,46 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("alexaforbusiness").__aenter__`
+method.
+
+Boto3 documentation:
+[AlexaForBusiness.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [AlexaForBusinessClient](#alexaforbusinessclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("alexaforbusiness").__aexit__`
+method.
+
+Boto3 documentation:
+[AlexaForBusiness.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/alexaforbusiness.html#AlexaForBusiness.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("alexaforbusiness").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_business_report_schedules")` ->
   [ListBusinessReportSchedulesPaginator](./paginators.md#listbusinessreportschedulespaginator)

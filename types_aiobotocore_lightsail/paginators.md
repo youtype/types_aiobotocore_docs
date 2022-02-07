@@ -36,17 +36,19 @@ type annotations stubs module
 ## GetActiveNamesPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_active_names")`.
+`session.create_client("lightsail").get_paginator("get_active_names")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetActiveNamesPaginator
 
-def get_get_active_names_paginator() -> GetActiveNamesPaginator:
-    return Session().create_client("lightsail").get_paginator("get_active_names")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetActiveNamesPaginator = client.get_paginator("get_active_names")
 ```
 
 Boto3 documentation:
@@ -65,17 +67,19 @@ Arguments for `GetActiveNamesPaginator.paginate` method:
 ## GetBlueprintsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_blueprints")`.
+`session.create_client("lightsail").get_paginator("get_blueprints")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetBlueprintsPaginator
 
-def get_get_blueprints_paginator() -> GetBlueprintsPaginator:
-    return Session().create_client("lightsail").get_paginator("get_blueprints")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetBlueprintsPaginator = client.get_paginator("get_blueprints")
 ```
 
 Boto3 documentation:
@@ -95,17 +99,19 @@ Arguments for `GetBlueprintsPaginator.paginate` method:
 ## GetBundlesPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_bundles")`.
+`session.create_client("lightsail").get_paginator("get_bundles")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetBundlesPaginator
 
-def get_get_bundles_paginator() -> GetBundlesPaginator:
-    return Session().create_client("lightsail").get_paginator("get_bundles")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetBundlesPaginator = client.get_paginator("get_bundles")
 ```
 
 Boto3 documentation:
@@ -125,17 +131,19 @@ Arguments for `GetBundlesPaginator.paginate` method:
 ## GetCloudFormationStackRecordsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_cloud_formation_stack_records")`.
+`session.create_client("lightsail").get_paginator("get_cloud_formation_stack_records")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetCloudFormationStackRecordsPaginator
 
-def get_get_cloud_formation_stack_records_paginator() -> GetCloudFormationStackRecordsPaginator:
-    return Session().create_client("lightsail").get_paginator("get_cloud_formation_stack_records")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetCloudFormationStackRecordsPaginator = client.get_paginator("get_cloud_formation_stack_records")
 ```
 
 Boto3 documentation:
@@ -154,17 +162,19 @@ Arguments for `GetCloudFormationStackRecordsPaginator.paginate` method:
 ## GetDiskSnapshotsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_disk_snapshots")`.
+`session.create_client("lightsail").get_paginator("get_disk_snapshots")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetDiskSnapshotsPaginator
 
-def get_get_disk_snapshots_paginator() -> GetDiskSnapshotsPaginator:
-    return Session().create_client("lightsail").get_paginator("get_disk_snapshots")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetDiskSnapshotsPaginator = client.get_paginator("get_disk_snapshots")
 ```
 
 Boto3 documentation:
@@ -183,17 +193,19 @@ Arguments for `GetDiskSnapshotsPaginator.paginate` method:
 ## GetDisksPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_disks")`.
+`session.create_client("lightsail").get_paginator("get_disks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetDisksPaginator
 
-def get_get_disks_paginator() -> GetDisksPaginator:
-    return Session().create_client("lightsail").get_paginator("get_disks")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetDisksPaginator = client.get_paginator("get_disks")
 ```
 
 Boto3 documentation:
@@ -212,17 +224,19 @@ Arguments for `GetDisksPaginator.paginate` method:
 ## GetDomainsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_domains")`.
+`session.create_client("lightsail").get_paginator("get_domains")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetDomainsPaginator
 
-def get_get_domains_paginator() -> GetDomainsPaginator:
-    return Session().create_client("lightsail").get_paginator("get_domains")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetDomainsPaginator = client.get_paginator("get_domains")
 ```
 
 Boto3 documentation:
@@ -241,17 +255,19 @@ Arguments for `GetDomainsPaginator.paginate` method:
 ## GetExportSnapshotRecordsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_export_snapshot_records")`.
+`session.create_client("lightsail").get_paginator("get_export_snapshot_records")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetExportSnapshotRecordsPaginator
 
-def get_get_export_snapshot_records_paginator() -> GetExportSnapshotRecordsPaginator:
-    return Session().create_client("lightsail").get_paginator("get_export_snapshot_records")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetExportSnapshotRecordsPaginator = client.get_paginator("get_export_snapshot_records")
 ```
 
 Boto3 documentation:
@@ -270,17 +286,19 @@ Arguments for `GetExportSnapshotRecordsPaginator.paginate` method:
 ## GetInstanceSnapshotsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_instance_snapshots")`.
+`session.create_client("lightsail").get_paginator("get_instance_snapshots")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetInstanceSnapshotsPaginator
 
-def get_get_instance_snapshots_paginator() -> GetInstanceSnapshotsPaginator:
-    return Session().create_client("lightsail").get_paginator("get_instance_snapshots")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetInstanceSnapshotsPaginator = client.get_paginator("get_instance_snapshots")
 ```
 
 Boto3 documentation:
@@ -299,17 +317,19 @@ Arguments for `GetInstanceSnapshotsPaginator.paginate` method:
 ## GetInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_instances")`.
+`session.create_client("lightsail").get_paginator("get_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetInstancesPaginator
 
-def get_get_instances_paginator() -> GetInstancesPaginator:
-    return Session().create_client("lightsail").get_paginator("get_instances")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetInstancesPaginator = client.get_paginator("get_instances")
 ```
 
 Boto3 documentation:
@@ -328,17 +348,19 @@ Arguments for `GetInstancesPaginator.paginate` method:
 ## GetKeyPairsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_key_pairs")`.
+`session.create_client("lightsail").get_paginator("get_key_pairs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetKeyPairsPaginator
 
-def get_get_key_pairs_paginator() -> GetKeyPairsPaginator:
-    return Session().create_client("lightsail").get_paginator("get_key_pairs")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetKeyPairsPaginator = client.get_paginator("get_key_pairs")
 ```
 
 Boto3 documentation:
@@ -357,17 +379,19 @@ Arguments for `GetKeyPairsPaginator.paginate` method:
 ## GetLoadBalancersPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_load_balancers")`.
+`session.create_client("lightsail").get_paginator("get_load_balancers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetLoadBalancersPaginator
 
-def get_get_load_balancers_paginator() -> GetLoadBalancersPaginator:
-    return Session().create_client("lightsail").get_paginator("get_load_balancers")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetLoadBalancersPaginator = client.get_paginator("get_load_balancers")
 ```
 
 Boto3 documentation:
@@ -386,17 +410,19 @@ Arguments for `GetLoadBalancersPaginator.paginate` method:
 ## GetOperationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_operations")`.
+`session.create_client("lightsail").get_paginator("get_operations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetOperationsPaginator
 
-def get_get_operations_paginator() -> GetOperationsPaginator:
-    return Session().create_client("lightsail").get_paginator("get_operations")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetOperationsPaginator = client.get_paginator("get_operations")
 ```
 
 Boto3 documentation:
@@ -415,17 +441,19 @@ Arguments for `GetOperationsPaginator.paginate` method:
 ## GetRelationalDatabaseBlueprintsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_relational_database_blueprints")`.
+`session.create_client("lightsail").get_paginator("get_relational_database_blueprints")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetRelationalDatabaseBlueprintsPaginator
 
-def get_get_relational_database_blueprints_paginator() -> GetRelationalDatabaseBlueprintsPaginator:
-    return Session().create_client("lightsail").get_paginator("get_relational_database_blueprints")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetRelationalDatabaseBlueprintsPaginator = client.get_paginator("get_relational_database_blueprints")
 ```
 
 Boto3 documentation:
@@ -444,17 +472,19 @@ Arguments for `GetRelationalDatabaseBlueprintsPaginator.paginate` method:
 ## GetRelationalDatabaseBundlesPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_relational_database_bundles")`.
+`session.create_client("lightsail").get_paginator("get_relational_database_bundles")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetRelationalDatabaseBundlesPaginator
 
-def get_get_relational_database_bundles_paginator() -> GetRelationalDatabaseBundlesPaginator:
-    return Session().create_client("lightsail").get_paginator("get_relational_database_bundles")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetRelationalDatabaseBundlesPaginator = client.get_paginator("get_relational_database_bundles")
 ```
 
 Boto3 documentation:
@@ -473,17 +503,19 @@ Arguments for `GetRelationalDatabaseBundlesPaginator.paginate` method:
 ## GetRelationalDatabaseEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_relational_database_events")`.
+`session.create_client("lightsail").get_paginator("get_relational_database_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetRelationalDatabaseEventsPaginator
 
-def get_get_relational_database_events_paginator() -> GetRelationalDatabaseEventsPaginator:
-    return Session().create_client("lightsail").get_paginator("get_relational_database_events")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetRelationalDatabaseEventsPaginator = client.get_paginator("get_relational_database_events")
 ```
 
 Boto3 documentation:
@@ -504,17 +536,19 @@ Arguments for `GetRelationalDatabaseEventsPaginator.paginate` method:
 ## GetRelationalDatabaseParametersPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_relational_database_parameters")`.
+`session.create_client("lightsail").get_paginator("get_relational_database_parameters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetRelationalDatabaseParametersPaginator
 
-def get_get_relational_database_parameters_paginator() -> GetRelationalDatabaseParametersPaginator:
-    return Session().create_client("lightsail").get_paginator("get_relational_database_parameters")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetRelationalDatabaseParametersPaginator = client.get_paginator("get_relational_database_parameters")
 ```
 
 Boto3 documentation:
@@ -534,17 +568,19 @@ Arguments for `GetRelationalDatabaseParametersPaginator.paginate` method:
 ## GetRelationalDatabaseSnapshotsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_relational_database_snapshots")`.
+`session.create_client("lightsail").get_paginator("get_relational_database_snapshots")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetRelationalDatabaseSnapshotsPaginator
 
-def get_get_relational_database_snapshots_paginator() -> GetRelationalDatabaseSnapshotsPaginator:
-    return Session().create_client("lightsail").get_paginator("get_relational_database_snapshots")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetRelationalDatabaseSnapshotsPaginator = client.get_paginator("get_relational_database_snapshots")
 ```
 
 Boto3 documentation:
@@ -563,17 +599,19 @@ Arguments for `GetRelationalDatabaseSnapshotsPaginator.paginate` method:
 ## GetRelationalDatabasesPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_relational_databases")`.
+`session.create_client("lightsail").get_paginator("get_relational_databases")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetRelationalDatabasesPaginator
 
-def get_get_relational_databases_paginator() -> GetRelationalDatabasesPaginator:
-    return Session().create_client("lightsail").get_paginator("get_relational_databases")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetRelationalDatabasesPaginator = client.get_paginator("get_relational_databases")
 ```
 
 Boto3 documentation:
@@ -592,17 +630,19 @@ Arguments for `GetRelationalDatabasesPaginator.paginate` method:
 ## GetStaticIpsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lightsail").get_paginator("get_static_ips")`.
+`session.create_client("lightsail").get_paginator("get_static_ips")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lightsail.paginator import GetStaticIpsPaginator
 
-def get_get_static_ips_paginator() -> GetStaticIpsPaginator:
-    return Session().create_client("lightsail").get_paginator("get_static_ips")
+session = get_session()
+async with session.create_client("lightsail") as client:
+    client: LightsailClient
+    paginator: GetStaticIpsPaginator = client.get_paginator("get_static_ips")
 ```
 
 Boto3 documentation:

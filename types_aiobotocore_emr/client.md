@@ -68,6 +68,8 @@ type annotations stubs module
     - [terminate_job_flows](#terminate_job_flows)
     - [update_studio](#update_studio)
     - [update_studio_session_mapping](#update_studio_session_mapping)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -75,16 +77,17 @@ type annotations stubs module
 
 ## EMRClient
 
-Type annotations for `aiobotocore.create_client("emr")`
+Type annotations for `session.create_client("emr")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_emr.client import EMRClient
 
-def get_emr_client() -> EMRClient:
-    return Session().client("emr")
+session = get_session()
+async with session.create_client("emr") as client:
+    client: EMRClient
 ```
 
 Boto3 documentation:
@@ -121,7 +124,7 @@ Exceptions:
 
 EMRClient exceptions.
 
-Type annotations for `aiobotocore.create_client("emr").exceptions` method.
+Type annotations for `session.create_client("emr").exceptions` method.
 
 Boto3 documentation:
 [EMR.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.exceptions)
@@ -134,8 +137,7 @@ Returns [Exceptions](#exceptions).
 
 Adds an instance fleet to a running cluster.
 
-Type annotations for `aiobotocore.create_client("emr").add_instance_fleet`
-method.
+Type annotations for `session.create_client("emr").add_instance_fleet` method.
 
 Boto3 documentation:
 [EMR.Client.add_instance_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.add_instance_fleet)
@@ -162,8 +164,7 @@ Returns a `Coroutine` for
 
 Adds one or more instance groups to a running cluster.
 
-Type annotations for `aiobotocore.create_client("emr").add_instance_groups`
-method.
+Type annotations for `session.create_client("emr").add_instance_groups` method.
 
 Boto3 documentation:
 [EMR.Client.add_instance_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.add_instance_groups)
@@ -190,8 +191,7 @@ Returns a `Coroutine` for
 
 AddJobFlowSteps adds new steps to a running cluster.
 
-Type annotations for `aiobotocore.create_client("emr").add_job_flow_steps`
-method.
+Type annotations for `session.create_client("emr").add_job_flow_steps` method.
 
 Boto3 documentation:
 [EMR.Client.add_job_flow_steps](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.add_job_flow_steps)
@@ -217,7 +217,7 @@ Returns a `Coroutine` for
 
 Adds tags to an Amazon EMR resource, such as a cluster or an Amazon EMR Studio.
 
-Type annotations for `aiobotocore.create_client("emr").add_tags` method.
+Type annotations for `session.create_client("emr").add_tags` method.
 
 Boto3 documentation:
 [EMR.Client.add_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.add_tags)
@@ -240,18 +240,16 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("emr").can_paginate` method.
+Type annotations for `session.create_client("emr").can_paginate` method.
 
 Boto3 documentation:
 [EMR.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_steps"></a>
 
@@ -259,7 +257,7 @@ Returns a `Coroutine` for `bool`.
 
 Cancels a pending step or steps in a running cluster.
 
-Type annotations for `aiobotocore.create_client("emr").cancel_steps` method.
+Type annotations for `session.create_client("emr").cancel_steps` method.
 
 Boto3 documentation:
 [EMR.Client.cancel_steps](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.cancel_steps)
@@ -287,7 +285,7 @@ Creates a security configuration, which is stored in the service and can be
 specified when a cluster is created.
 
 Type annotations for
-`aiobotocore.create_client("emr").create_security_configuration` method.
+`session.create_client("emr").create_security_configuration` method.
 
 Boto3 documentation:
 [EMR.Client.create_security_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.create_security_configuration)
@@ -312,7 +310,7 @@ Returns a `Coroutine` for
 
 Creates a new Amazon EMR Studio.
 
-Type annotations for `aiobotocore.create_client("emr").create_studio` method.
+Type annotations for `session.create_client("emr").create_studio` method.
 
 Boto3 documentation:
 [EMR.Client.create_studio](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.create_studio)
@@ -349,7 +347,7 @@ Maps a user or group to the Amazon EMR Studio specified by `StudioId` , and
 applies a session policy to refine Studio permissions for that user or group.
 
 Type annotations for
-`aiobotocore.create_client("emr").create_studio_session_mapping` method.
+`session.create_client("emr").create_studio_session_mapping` method.
 
 Boto3 documentation:
 [EMR.Client.create_studio_session_mapping](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.create_studio_session_mapping)
@@ -376,7 +374,7 @@ Keyword-only arguments:
 Deletes a security configuration.
 
 Type annotations for
-`aiobotocore.create_client("emr").delete_security_configuration` method.
+`session.create_client("emr").delete_security_configuration` method.
 
 Boto3 documentation:
 [EMR.Client.delete_security_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.delete_security_configuration)
@@ -399,7 +397,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes an Amazon EMR Studio from the Studio metadata store.
 
-Type annotations for `aiobotocore.create_client("emr").delete_studio` method.
+Type annotations for `session.create_client("emr").delete_studio` method.
 
 Boto3 documentation:
 [EMR.Client.delete_studio](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.delete_studio)
@@ -420,7 +418,7 @@ Keyword-only arguments:
 Removes a user or group from an Amazon EMR Studio.
 
 Type annotations for
-`aiobotocore.create_client("emr").delete_studio_session_mapping` method.
+`session.create_client("emr").delete_studio_session_mapping` method.
 
 Boto3 documentation:
 [EMR.Client.delete_studio_session_mapping](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.delete_studio_session_mapping)
@@ -446,8 +444,7 @@ Keyword-only arguments:
 Provides cluster-level details including status, hardware and software
 configuration, VPC settings, and so on.
 
-Type annotations for `aiobotocore.create_client("emr").describe_cluster`
-method.
+Type annotations for `session.create_client("emr").describe_cluster` method.
 
 Boto3 documentation:
 [EMR.Client.describe_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.describe_cluster)
@@ -470,8 +467,7 @@ Returns a `Coroutine` for
 
 This API is no longer supported and will eventually be removed.
 
-Type annotations for `aiobotocore.create_client("emr").describe_job_flows`
-method.
+Type annotations for `session.create_client("emr").describe_job_flows` method.
 
 Boto3 documentation:
 [EMR.Client.describe_job_flows](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.describe_job_flows)
@@ -499,8 +495,8 @@ Returns a `Coroutine` for
 
 Provides details of a notebook execution.
 
-Type annotations for
-`aiobotocore.create_client("emr").describe_notebook_execution` method.
+Type annotations for `session.create_client("emr").describe_notebook_execution`
+method.
 
 Boto3 documentation:
 [EMR.Client.describe_notebook_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.describe_notebook_execution)
@@ -526,7 +522,7 @@ Provides EMR release label details, such as releases available the region where
 the API request is run, and the available applications for a specific EMR
 release label.
 
-Type annotations for `aiobotocore.create_client("emr").describe_release_label`
+Type annotations for `session.create_client("emr").describe_release_label`
 method.
 
 Boto3 documentation:
@@ -555,7 +551,7 @@ Provides the details of a security configuration by returning the configuration
 JSON.
 
 Type annotations for
-`aiobotocore.create_client("emr").describe_security_configuration` method.
+`session.create_client("emr").describe_security_configuration` method.
 
 Boto3 documentation:
 [EMR.Client.describe_security_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.describe_security_configuration)
@@ -579,7 +575,7 @@ Returns a `Coroutine` for
 
 Provides more detail about the cluster step.
 
-Type annotations for `aiobotocore.create_client("emr").describe_step` method.
+Type annotations for `session.create_client("emr").describe_step` method.
 
 Boto3 documentation:
 [EMR.Client.describe_step](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.describe_step)
@@ -604,7 +600,7 @@ Returns a `Coroutine` for
 Returns details for the specified Amazon EMR Studio including ID, Name, VPC,
 Studio access URL, and so on.
 
-Type annotations for `aiobotocore.create_client("emr").describe_studio` method.
+Type annotations for `session.create_client("emr").describe_studio` method.
 
 Boto3 documentation:
 [EMR.Client.describe_studio](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.describe_studio)
@@ -627,7 +623,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("emr").generate_presigned_url`
+Type annotations for `session.create_client("emr").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -651,8 +647,8 @@ Returns a `Coroutine` for `str`.
 
 Returns the auto-termination policy for an Amazon EMR cluster.
 
-Type annotations for
-`aiobotocore.create_client("emr").get_auto_termination_policy` method.
+Type annotations for `session.create_client("emr").get_auto_termination_policy`
+method.
 
 Boto3 documentation:
 [EMR.Client.get_auto_termination_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.get_auto_termination_policy)
@@ -678,8 +674,7 @@ Returns the Amazon EMR block public access configuration for your Amazon Web
 Services account in the current Region.
 
 Type annotations for
-`aiobotocore.create_client("emr").get_block_public_access_configuration`
-method.
+`session.create_client("emr").get_block_public_access_configuration` method.
 
 Boto3 documentation:
 [EMR.Client.get_block_public_access_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.get_block_public_access_configuration)
@@ -696,8 +691,8 @@ Returns a `Coroutine` for
 
 Fetches the attached managed scaling policy for an Amazon EMR cluster.
 
-Type annotations for
-`aiobotocore.create_client("emr").get_managed_scaling_policy` method.
+Type annotations for `session.create_client("emr").get_managed_scaling_policy`
+method.
 
 Boto3 documentation:
 [EMR.Client.get_managed_scaling_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.get_managed_scaling_policy)
@@ -722,8 +717,8 @@ Returns a `Coroutine` for
 Fetches mapping details for the specified Amazon EMR Studio and identity (user
 or group).
 
-Type annotations for
-`aiobotocore.create_client("emr").get_studio_session_mapping` method.
+Type annotations for `session.create_client("emr").get_studio_session_mapping`
+method.
 
 Boto3 documentation:
 [EMR.Client.get_studio_session_mapping](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.get_studio_session_mapping)
@@ -751,7 +746,7 @@ Returns a `Coroutine` for
 
 Provides information about the bootstrap actions associated with a cluster.
 
-Type annotations for `aiobotocore.create_client("emr").list_bootstrap_actions`
+Type annotations for `session.create_client("emr").list_bootstrap_actions`
 method.
 
 Boto3 documentation:
@@ -778,7 +773,7 @@ Returns a `Coroutine` for
 Provides the status of all clusters visible to this Amazon Web Services
 account.
 
-Type annotations for `aiobotocore.create_client("emr").list_clusters` method.
+Type annotations for `session.create_client("emr").list_clusters` method.
 
 Boto3 documentation:
 [EMR.Client.list_clusters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.list_clusters)
@@ -805,7 +800,7 @@ Returns a `Coroutine` for
 
 Lists all available details about the instance fleets in a cluster.
 
-Type annotations for `aiobotocore.create_client("emr").list_instance_fleets`
+Type annotations for `session.create_client("emr").list_instance_fleets`
 method.
 
 Boto3 documentation:
@@ -831,7 +826,7 @@ Returns a `Coroutine` for
 
 Provides all available details about the instance groups in a cluster.
 
-Type annotations for `aiobotocore.create_client("emr").list_instance_groups`
+Type annotations for `session.create_client("emr").list_instance_groups`
 method.
 
 Boto3 documentation:
@@ -858,7 +853,7 @@ Returns a `Coroutine` for
 Provides information for all active EC2 instances and EC2 instances terminated
 in the last 30 days, up to a maximum of 2,000.
 
-Type annotations for `aiobotocore.create_client("emr").list_instances` method.
+Type annotations for `session.create_client("emr").list_instances` method.
 
 Boto3 documentation:
 [EMR.Client.list_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.list_instances)
@@ -890,8 +885,8 @@ Returns a `Coroutine` for
 
 Provides summaries of all notebook executions.
 
-Type annotations for
-`aiobotocore.create_client("emr").list_notebook_executions` method.
+Type annotations for `session.create_client("emr").list_notebook_executions`
+method.
 
 Boto3 documentation:
 [EMR.Client.list_notebook_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.list_notebook_executions)
@@ -920,8 +915,7 @@ Returns a `Coroutine` for
 
 Retrieves release labels of EMR services in the region where the API is called.
 
-Type annotations for `aiobotocore.create_client("emr").list_release_labels`
-method.
+Type annotations for `session.create_client("emr").list_release_labels` method.
 
 Boto3 documentation:
 [EMR.Client.list_release_labels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.list_release_labels)
@@ -950,7 +944,7 @@ Lists all the security configurations visible to this account, providing their
 creation dates and times, and their names.
 
 Type annotations for
-`aiobotocore.create_client("emr").list_security_configurations` method.
+`session.create_client("emr").list_security_configurations` method.
 
 Boto3 documentation:
 [EMR.Client.list_security_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.list_security_configurations)
@@ -975,7 +969,7 @@ Returns a `Coroutine` for
 Provides a list of steps for the cluster in reverse order unless you specify
 `stepIds` with the request or filter by `StepStates`.
 
-Type annotations for `aiobotocore.create_client("emr").list_steps` method.
+Type annotations for `session.create_client("emr").list_steps` method.
 
 Boto3 documentation:
 [EMR.Client.list_steps](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.list_steps)
@@ -1003,7 +997,7 @@ Returns a list of all user or group session mappings for the Amazon EMR Studio
 specified by `StudioId` .
 
 Type annotations for
-`aiobotocore.create_client("emr").list_studio_session_mappings` method.
+`session.create_client("emr").list_studio_session_mappings` method.
 
 Boto3 documentation:
 [EMR.Client.list_studio_session_mappings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.list_studio_session_mappings)
@@ -1030,7 +1024,7 @@ Returns a `Coroutine` for
 Returns a list of all Amazon EMR Studios associated with the Amazon Web
 Services account.
 
-Type annotations for `aiobotocore.create_client("emr").list_studios` method.
+Type annotations for `session.create_client("emr").list_studios` method.
 
 Boto3 documentation:
 [EMR.Client.list_studios](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.list_studios)
@@ -1054,7 +1048,7 @@ Returns a `Coroutine` for
 Modifies the number of steps that can be executed concurrently for the cluster
 specified using ClusterID.
 
-Type annotations for `aiobotocore.create_client("emr").modify_cluster` method.
+Type annotations for `session.create_client("emr").modify_cluster` method.
 
 Boto3 documentation:
 [EMR.Client.modify_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.modify_cluster)
@@ -1080,7 +1074,7 @@ Modifies the target On-Demand and target Spot capacities for the instance fleet
 with the specified InstanceFleetID within the cluster specified using
 ClusterID.
 
-Type annotations for `aiobotocore.create_client("emr").modify_instance_fleet`
+Type annotations for `session.create_client("emr").modify_instance_fleet`
 method.
 
 Boto3 documentation:
@@ -1106,7 +1100,7 @@ Keyword-only arguments:
 ModifyInstanceGroups modifies the number of nodes and configuration settings of
 an instance group.
 
-Type annotations for `aiobotocore.create_client("emr").modify_instance_groups`
+Type annotations for `session.create_client("emr").modify_instance_groups`
 method.
 
 Boto3 documentation:
@@ -1131,7 +1125,7 @@ Keyword-only arguments:
 Creates or updates an automatic scaling policy for a core instance group or
 task instance group in an Amazon EMR cluster.
 
-Type annotations for `aiobotocore.create_client("emr").put_auto_scaling_policy`
+Type annotations for `session.create_client("emr").put_auto_scaling_policy`
 method.
 
 Boto3 documentation:
@@ -1160,8 +1154,8 @@ Returns a `Coroutine` for
 
 Creates or updates an auto-termination policy for an Amazon EMR cluster.
 
-Type annotations for
-`aiobotocore.create_client("emr").put_auto_termination_policy` method.
+Type annotations for `session.create_client("emr").put_auto_termination_policy`
+method.
 
 Boto3 documentation:
 [EMR.Client.put_auto_termination_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.put_auto_termination_policy)
@@ -1188,8 +1182,7 @@ Creates or updates an Amazon EMR block public access configuration for your
 Amazon Web Services account in the current Region.
 
 Type annotations for
-`aiobotocore.create_client("emr").put_block_public_access_configuration`
-method.
+`session.create_client("emr").put_block_public_access_configuration` method.
 
 Boto3 documentation:
 [EMR.Client.put_block_public_access_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.put_block_public_access_configuration)
@@ -1214,8 +1207,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates or updates a managed scaling policy for an Amazon EMR cluster.
 
-Type annotations for
-`aiobotocore.create_client("emr").put_managed_scaling_policy` method.
+Type annotations for `session.create_client("emr").put_managed_scaling_policy`
+method.
 
 Boto3 documentation:
 [EMR.Client.put_managed_scaling_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.put_managed_scaling_policy)
@@ -1242,8 +1235,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes an automatic scaling policy from a specified instance group within an
 EMR cluster.
 
-Type annotations for
-`aiobotocore.create_client("emr").remove_auto_scaling_policy` method.
+Type annotations for `session.create_client("emr").remove_auto_scaling_policy`
+method.
 
 Boto3 documentation:
 [EMR.Client.remove_auto_scaling_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.remove_auto_scaling_policy)
@@ -1268,7 +1261,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes an auto-termination policy from an Amazon EMR cluster.
 
 Type annotations for
-`aiobotocore.create_client("emr").remove_auto_termination_policy` method.
+`session.create_client("emr").remove_auto_termination_policy` method.
 
 Boto3 documentation:
 [EMR.Client.remove_auto_termination_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.remove_auto_termination_policy)
@@ -1292,7 +1285,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes a managed scaling policy from a specified EMR cluster.
 
 Type annotations for
-`aiobotocore.create_client("emr").remove_managed_scaling_policy` method.
+`session.create_client("emr").remove_managed_scaling_policy` method.
 
 Boto3 documentation:
 [EMR.Client.remove_managed_scaling_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.remove_managed_scaling_policy)
@@ -1316,7 +1309,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes tags from an Amazon EMR resource, such as a cluster or Amazon EMR
 Studio.
 
-Type annotations for `aiobotocore.create_client("emr").remove_tags` method.
+Type annotations for `session.create_client("emr").remove_tags` method.
 
 Boto3 documentation:
 [EMR.Client.remove_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.remove_tags)
@@ -1339,7 +1332,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 RunJobFlow creates and starts running a new cluster (job flow).
 
-Type annotations for `aiobotocore.create_client("emr").run_job_flow` method.
+Type annotations for `session.create_client("emr").run_job_flow` method.
 
 Boto3 documentation:
 [EMR.Client.run_job_flow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.run_job_flow)
@@ -1403,8 +1396,8 @@ SetTerminationProtection locks a cluster (job flow) so the EC2 instances in the
 cluster cannot be terminated by user intervention, an API call, or in the event
 of a job-flow error.
 
-Type annotations for
-`aiobotocore.create_client("emr").set_termination_protection` method.
+Type annotations for `session.create_client("emr").set_termination_protection`
+method.
 
 Boto3 documentation:
 [EMR.Client.set_termination_protection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.set_termination_protection)
@@ -1426,8 +1419,8 @@ Keyword-only arguments:
 
 Sets the Cluster$VisibleToAllUsers value for an EMR cluster.
 
-Type annotations for
-`aiobotocore.create_client("emr").set_visible_to_all_users` method.
+Type annotations for `session.create_client("emr").set_visible_to_all_users`
+method.
 
 Boto3 documentation:
 [EMR.Client.set_visible_to_all_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.set_visible_to_all_users)
@@ -1449,8 +1442,8 @@ Keyword-only arguments:
 
 Starts a notebook execution.
 
-Type annotations for
-`aiobotocore.create_client("emr").start_notebook_execution` method.
+Type annotations for `session.create_client("emr").start_notebook_execution`
+method.
 
 Boto3 documentation:
 [EMR.Client.start_notebook_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.start_notebook_execution)
@@ -1483,7 +1476,7 @@ Returns a `Coroutine` for
 
 Stops a notebook execution.
 
-Type annotations for `aiobotocore.create_client("emr").stop_notebook_execution`
+Type annotations for `session.create_client("emr").stop_notebook_execution`
 method.
 
 Boto3 documentation:
@@ -1505,8 +1498,7 @@ Keyword-only arguments:
 
 TerminateJobFlows shuts a list of clusters (job flows) down.
 
-Type annotations for `aiobotocore.create_client("emr").terminate_job_flows`
-method.
+Type annotations for `session.create_client("emr").terminate_job_flows` method.
 
 Boto3 documentation:
 [EMR.Client.terminate_job_flows](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.terminate_job_flows)
@@ -1528,7 +1520,7 @@ Keyword-only arguments:
 Updates an Amazon EMR Studio configuration, including attributes such as name,
 description, and subnets.
 
-Type annotations for `aiobotocore.create_client("emr").update_studio` method.
+Type annotations for `session.create_client("emr").update_studio` method.
 
 Boto3 documentation:
 [EMR.Client.update_studio](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.update_studio)
@@ -1554,7 +1546,7 @@ Updates the session policy attached to the user or group for the specified
 Amazon EMR Studio.
 
 Type annotations for
-`aiobotocore.create_client("emr").update_studio_session_mapping` method.
+`session.create_client("emr").update_studio_session_mapping` method.
 
 Boto3 documentation:
 [EMR.Client.update_studio_session_mapping](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.update_studio_session_mapping)
@@ -1574,12 +1566,44 @@ Keyword-only arguments:
 - `IdentityId`: `str`
 - `IdentityName`: `str`
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("emr").__aenter__` method.
+
+Boto3 documentation:
+[EMR.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [EMRClient](#emrclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("emr").__aexit__` method.
+
+Boto3 documentation:
+[EMR.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("emr").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("emr").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_bootstrap_actions")` ->
   [ListBootstrapActionsPaginator](./paginators.md#listbootstrapactionspaginator)
@@ -1606,7 +1630,7 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("emr").get_waiter` method with
+Type annotations for `session.create_client("emr").get_waiter` method with
 overloads.
 
 - `client.get_waiter("cluster_running")` ->

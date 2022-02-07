@@ -20,22 +20,25 @@ type annotations stubs module
     - [list_account_roles](#list_account_roles)
     - [list_accounts](#list_accounts)
     - [logout](#logout)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="ssoclient"></a>
 
 ## SSOClient
 
-Type annotations for `aiobotocore.create_client("sso")`
+Type annotations for `session.create_client("sso")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_sso.client import SSOClient
 
-def get_sso_client() -> SSOClient:
-    return Session().client("sso")
+session = get_session()
+async with session.create_client("sso") as client:
+    client: SSOClient
 ```
 
 Boto3 documentation:
@@ -73,7 +76,7 @@ Exceptions:
 
 SSOClient exceptions.
 
-Type annotations for `aiobotocore.create_client("sso").exceptions` method.
+Type annotations for `session.create_client("sso").exceptions` method.
 
 Boto3 documentation:
 [SSO.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso.html#SSO.Client.exceptions)
@@ -86,18 +89,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("sso").can_paginate` method.
+Type annotations for `session.create_client("sso").can_paginate` method.
 
 Boto3 documentation:
 [SSO.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso.html#SSO.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -105,7 +106,7 @@ Returns a `Coroutine` for `bool`.
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("sso").generate_presigned_url`
+Type annotations for `session.create_client("sso").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -130,7 +131,7 @@ Returns a `Coroutine` for `str`.
 Returns the STS short-term credentials for a given role name that is assigned
 to the user.
 
-Type annotations for `aiobotocore.create_client("sso").get_role_credentials`
+Type annotations for `session.create_client("sso").get_role_credentials`
 method.
 
 Boto3 documentation:
@@ -157,8 +158,7 @@ Returns a `Coroutine` for
 
 Lists all roles that are assigned to the user for a given AWS account.
 
-Type annotations for `aiobotocore.create_client("sso").list_account_roles`
-method.
+Type annotations for `session.create_client("sso").list_account_roles` method.
 
 Boto3 documentation:
 [SSO.Client.list_account_roles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso.html#SSO.Client.list_account_roles)
@@ -185,7 +185,7 @@ Returns a `Coroutine` for
 
 Lists all AWS accounts assigned to the user.
 
-Type annotations for `aiobotocore.create_client("sso").list_accounts` method.
+Type annotations for `session.create_client("sso").list_accounts` method.
 
 Boto3 documentation:
 [SSO.Client.list_accounts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso.html#SSO.Client.list_accounts)
@@ -210,7 +210,7 @@ Returns a `Coroutine` for
 
 Removes the client- and server-side session that is associated with the user.
 
-Type annotations for `aiobotocore.create_client("sso").logout` method.
+Type annotations for `session.create_client("sso").logout` method.
 
 Boto3 documentation:
 [SSO.Client.logout](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso.html#SSO.Client.logout)
@@ -224,12 +224,44 @@ Keyword-only arguments:
 
 - `accessToken`: `str` *(required)*
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("sso").__aenter__` method.
+
+Boto3 documentation:
+[SSO.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso.html#SSO.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SSOClient](#ssoclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("sso").__aexit__` method.
+
+Boto3 documentation:
+[SSO.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sso.html#SSO.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("sso").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("sso").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_account_roles")` ->
   [ListAccountRolesPaginator](./paginators.md#listaccountrolespaginator)

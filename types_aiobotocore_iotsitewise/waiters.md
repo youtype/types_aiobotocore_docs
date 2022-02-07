@@ -22,7 +22,7 @@ type annotations stubs module
 ## AssetActiveWaiter
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_waiter("asset_active")`.
+`session.create_client("iotsitewise").get_waiter("asset_active")`.
 
 Can be used directly:
 
@@ -32,7 +32,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_iotsitewise.waiter import AssetActiveWaiter
 
 def get_asset_active_waiter() -> AssetActiveWaiter:
-    return Session().create_client("iotsitewise").get_waiter("asset_active")
+    return Session().client("iotsitewise").get_waiter("asset_active")
 ```
 
 Boto3 documentation:
@@ -48,7 +48,7 @@ Arguments for `AssetActiveWaiter.wait` method:
 ## AssetModelActiveWaiter
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_waiter("asset_model_active")`.
+`session.create_client("iotsitewise").get_waiter("asset_model_active")`.
 
 Can be used directly:
 
@@ -58,7 +58,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_iotsitewise.waiter import AssetModelActiveWaiter
 
 def get_asset_model_active_waiter() -> AssetModelActiveWaiter:
-    return Session().create_client("iotsitewise").get_waiter("asset_model_active")
+    return Session().client("iotsitewise").get_waiter("asset_model_active")
 ```
 
 Boto3 documentation:
@@ -74,7 +74,7 @@ Arguments for `AssetModelActiveWaiter.wait` method:
 ## AssetModelNotExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_waiter("asset_model_not_exists")`.
+`session.create_client("iotsitewise").get_waiter("asset_model_not_exists")`.
 
 Can be used directly:
 
@@ -84,7 +84,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_iotsitewise.waiter import AssetModelNotExistsWaiter
 
 def get_asset_model_not_exists_waiter() -> AssetModelNotExistsWaiter:
-    return Session().create_client("iotsitewise").get_waiter("asset_model_not_exists")
+    return Session().client("iotsitewise").get_waiter("asset_model_not_exists")
 ```
 
 Boto3 documentation:
@@ -100,7 +100,7 @@ Arguments for `AssetModelNotExistsWaiter.wait` method:
 ## AssetNotExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_waiter("asset_not_exists")`.
+`session.create_client("iotsitewise").get_waiter("asset_not_exists")`.
 
 Can be used directly:
 
@@ -110,7 +110,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_iotsitewise.waiter import AssetNotExistsWaiter
 
 def get_asset_not_exists_waiter() -> AssetNotExistsWaiter:
-    return Session().create_client("iotsitewise").get_waiter("asset_not_exists")
+    return Session().client("iotsitewise").get_waiter("asset_not_exists")
 ```
 
 Boto3 documentation:
@@ -126,7 +126,7 @@ Arguments for `AssetNotExistsWaiter.wait` method:
 ## PortalActiveWaiter
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_waiter("portal_active")`.
+`session.create_client("iotsitewise").get_waiter("portal_active")`.
 
 Can be used directly:
 
@@ -136,7 +136,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_iotsitewise.waiter import PortalActiveWaiter
 
 def get_portal_active_waiter() -> PortalActiveWaiter:
-    return Session().create_client("iotsitewise").get_waiter("portal_active")
+    return Session().client("iotsitewise").get_waiter("portal_active")
 ```
 
 Boto3 documentation:
@@ -152,7 +152,7 @@ Arguments for `PortalActiveWaiter.wait` method:
 ## PortalNotExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("iotsitewise").get_waiter("portal_not_exists")`.
+`session.create_client("iotsitewise").get_waiter("portal_not_exists")`.
 
 Can be used directly:
 
@@ -162,7 +162,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_iotsitewise.waiter import PortalNotExistsWaiter
 
 def get_portal_not_exists_waiter() -> PortalNotExistsWaiter:
-    return Session().create_client("iotsitewise").get_waiter("portal_not_exists")
+    return Session().client("iotsitewise").get_waiter("portal_not_exists")
 ```
 
 Boto3 documentation:

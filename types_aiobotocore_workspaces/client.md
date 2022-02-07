@@ -70,22 +70,25 @@ type annotations stubs module
     - [update_rules_of_ip_group](#update_rules_of_ip_group)
     - [update_workspace_bundle](#update_workspace_bundle)
     - [update_workspace_image_permission](#update_workspace_image_permission)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="workspacesclient"></a>
 
 ## WorkSpacesClient
 
-Type annotations for `aiobotocore.create_client("workspaces")`
+Type annotations for `session.create_client("workspaces")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_workspaces.client import WorkSpacesClient
 
-def get_workspaces_client() -> WorkSpacesClient:
-    return Session().client("workspaces")
+session = get_session()
+async with session.create_client("workspaces") as client:
+    client: WorkSpacesClient
 ```
 
 Boto3 documentation:
@@ -133,8 +136,7 @@ Exceptions:
 
 WorkSpacesClient exceptions.
 
-Type annotations for `aiobotocore.create_client("workspaces").exceptions`
-method.
+Type annotations for `session.create_client("workspaces").exceptions` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.exceptions)
@@ -149,7 +151,7 @@ Associates the specified connection alias with the specified directory to
 enable cross-Region redirection.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").associate_connection_alias` method.
+`session.create_client("workspaces").associate_connection_alias` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.associate_connection_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.associate_connection_alias)
@@ -174,8 +176,8 @@ Returns a `Coroutine` for
 
 Associates the specified IP access control group with the specified directory.
 
-Type annotations for
-`aiobotocore.create_client("workspaces").associate_ip_groups` method.
+Type annotations for `session.create_client("workspaces").associate_ip_groups`
+method.
 
 Boto3 documentation:
 [WorkSpaces.Client.associate_ip_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.associate_ip_groups)
@@ -199,8 +201,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds one or more rules to the specified IP access control group.
 
-Type annotations for
-`aiobotocore.create_client("workspaces").authorize_ip_rules` method.
+Type annotations for `session.create_client("workspaces").authorize_ip_rules`
+method.
 
 Boto3 documentation:
 [WorkSpaces.Client.authorize_ip_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.authorize_ip_rules)
@@ -226,19 +228,16 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("workspaces").can_paginate`
-method.
+Type annotations for `session.create_client("workspaces").can_paginate` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="copy_workspace_image"></a>
 
@@ -246,8 +245,8 @@ Returns a `Coroutine` for `bool`.
 
 Copies the specified image from the specified Region to the current Region.
 
-Type annotations for
-`aiobotocore.create_client("workspaces").copy_workspace_image` method.
+Type annotations for `session.create_client("workspaces").copy_workspace_image`
+method.
 
 Boto3 documentation:
 [WorkSpaces.Client.copy_workspace_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.copy_workspace_image)
@@ -276,7 +275,7 @@ Returns a `Coroutine` for
 Creates the specified connection alias for use with cross-Region redirection.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").create_connection_alias` method.
+`session.create_client("workspaces").create_connection_alias` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.create_connection_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.create_connection_alias)
@@ -301,7 +300,7 @@ Returns a `Coroutine` for
 
 Creates an IP access control group.
 
-Type annotations for `aiobotocore.create_client("workspaces").create_ip_group`
+Type annotations for `session.create_client("workspaces").create_ip_group`
 method.
 
 Boto3 documentation:
@@ -329,8 +328,7 @@ Returns a `Coroutine` for
 
 Creates the specified tags for the specified WorkSpaces resource.
 
-Type annotations for `aiobotocore.create_client("workspaces").create_tags`
-method.
+Type annotations for `session.create_client("workspaces").create_tags` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.create_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.create_tags)
@@ -354,8 +352,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates a new updated WorkSpace image based on the specified source image.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").create_updated_workspace_image`
-method.
+`session.create_client("workspaces").create_updated_workspace_image` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.create_updated_workspace_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.create_updated_workspace_image)
@@ -383,7 +380,7 @@ Returns a `Coroutine` for
 Creates the specified WorkSpace bundle.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").create_workspace_bundle` method.
+`session.create_client("workspaces").create_workspace_bundle` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.create_workspace_bundle](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.create_workspace_bundle)
@@ -415,8 +412,8 @@ Returns a `Coroutine` for
 
 Creates one or more WorkSpaces.
 
-Type annotations for
-`aiobotocore.create_client("workspaces").create_workspaces` method.
+Type annotations for `session.create_client("workspaces").create_workspaces`
+method.
 
 Boto3 documentation:
 [WorkSpaces.Client.create_workspaces](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.create_workspaces)
@@ -442,7 +439,7 @@ Returns a `Coroutine` for
 Deletes the specified connection alias.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").delete_connection_alias` method.
+`session.create_client("workspaces").delete_connection_alias` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.delete_connection_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.delete_connection_alias)
@@ -465,7 +462,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified IP access control group.
 
-Type annotations for `aiobotocore.create_client("workspaces").delete_ip_group`
+Type annotations for `session.create_client("workspaces").delete_ip_group`
 method.
 
 Boto3 documentation:
@@ -488,8 +485,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified tags from the specified WorkSpaces resource.
 
-Type annotations for `aiobotocore.create_client("workspaces").delete_tags`
-method.
+Type annotations for `session.create_client("workspaces").delete_tags` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.delete_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.delete_tags)
@@ -513,7 +509,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified WorkSpace bundle.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").delete_workspace_bundle` method.
+`session.create_client("workspaces").delete_workspace_bundle` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.delete_workspace_bundle](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.delete_workspace_bundle)
@@ -537,7 +533,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified image from your account.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").delete_workspace_image` method.
+`session.create_client("workspaces").delete_workspace_image` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.delete_workspace_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.delete_workspace_image)
@@ -561,8 +557,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deregisters the specified directory.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").deregister_workspace_directory`
-method.
+`session.create_client("workspaces").deregister_workspace_directory` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.deregister_workspace_directory](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.deregister_workspace_directory)
@@ -586,7 +581,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Retrieves a list that describes the configuration of Bring Your Own License
 (BYOL) for the specified account.
 
-Type annotations for `aiobotocore.create_client("workspaces").describe_account`
+Type annotations for `session.create_client("workspaces").describe_account`
 method.
 
 Boto3 documentation:
@@ -605,8 +600,7 @@ Retrieves a list that describes modifications to the configuration of Bring
 Your Own License (BYOL) for the specified account.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").describe_account_modifications`
-method.
+`session.create_client("workspaces").describe_account_modifications` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.describe_account_modifications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.describe_account_modifications)
@@ -632,7 +626,7 @@ Retrieves a list that describes one or more specified Amazon WorkSpaces
 clients.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").describe_client_properties` method.
+`session.create_client("workspaces").describe_client_properties` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.describe_client_properties](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.describe_client_properties)
@@ -658,7 +652,7 @@ Describes the permissions that the owner of a connection alias has granted to
 another Amazon Web Services account for the specified connection alias.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").describe_connection_alias_permissions`
+`session.create_client("workspaces").describe_connection_alias_permissions`
 method.
 
 Boto3 documentation:
@@ -687,7 +681,7 @@ Retrieves a list that describes the connection aliases used for cross-Region
 redirection.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").describe_connection_aliases` method.
+`session.create_client("workspaces").describe_connection_aliases` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.describe_connection_aliases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.describe_connection_aliases)
@@ -714,8 +708,8 @@ Returns a `Coroutine` for
 
 Describes one or more of your IP access control groups.
 
-Type annotations for
-`aiobotocore.create_client("workspaces").describe_ip_groups` method.
+Type annotations for `session.create_client("workspaces").describe_ip_groups`
+method.
 
 Boto3 documentation:
 [WorkSpaces.Client.describe_ip_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.describe_ip_groups)
@@ -741,7 +735,7 @@ Returns a `Coroutine` for
 
 Describes the specified tags for the specified WorkSpaces resource.
 
-Type annotations for `aiobotocore.create_client("workspaces").describe_tags`
+Type annotations for `session.create_client("workspaces").describe_tags`
 method.
 
 Boto3 documentation:
@@ -766,7 +760,7 @@ Returns a `Coroutine` for
 Retrieves a list that describes the available WorkSpace bundles.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").describe_workspace_bundles` method.
+`session.create_client("workspaces").describe_workspace_bundles` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.describe_workspace_bundles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.describe_workspace_bundles)
@@ -793,8 +787,7 @@ Returns a `Coroutine` for
 Describes the available directories that are registered with Amazon WorkSpaces.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").describe_workspace_directories`
-method.
+`session.create_client("workspaces").describe_workspace_directories` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.describe_workspace_directories](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.describe_workspace_directories)
@@ -822,7 +815,7 @@ Describes the permissions that the owner of an image has granted to other
 Amazon Web Services accounts for an image.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").describe_workspace_image_permissions`
+`session.create_client("workspaces").describe_workspace_image_permissions`
 method.
 
 Boto3 documentation:
@@ -851,7 +844,7 @@ Retrieves a list that describes one or more specified images, if the image
 identifiers are provided.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").describe_workspace_images` method.
+`session.create_client("workspaces").describe_workspace_images` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.describe_workspace_images](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.describe_workspace_images)
@@ -879,7 +872,7 @@ Returns a `Coroutine` for
 Describes the snapshots for the specified WorkSpace.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").describe_workspace_snapshots` method.
+`session.create_client("workspaces").describe_workspace_snapshots` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.describe_workspace_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.describe_workspace_snapshots)
@@ -903,8 +896,8 @@ Returns a `Coroutine` for
 
 Describes the specified WorkSpaces.
 
-Type annotations for
-`aiobotocore.create_client("workspaces").describe_workspaces` method.
+Type annotations for `session.create_client("workspaces").describe_workspaces`
+method.
 
 Boto3 documentation:
 [WorkSpaces.Client.describe_workspaces](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.describe_workspaces)
@@ -934,7 +927,7 @@ Returns a `Coroutine` for
 Describes the connection status of the specified WorkSpaces.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").describe_workspaces_connection_status`
+`session.create_client("workspaces").describe_workspaces_connection_status`
 method.
 
 Boto3 documentation:
@@ -961,7 +954,7 @@ Returns a `Coroutine` for
 Disassociates a connection alias from a directory.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").disassociate_connection_alias` method.
+`session.create_client("workspaces").disassociate_connection_alias` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.disassociate_connection_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.disassociate_connection_alias)
@@ -986,7 +979,7 @@ Disassociates the specified IP access control group from the specified
 directory.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").disassociate_ip_groups` method.
+`session.create_client("workspaces").disassociate_ip_groups` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.disassociate_ip_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.disassociate_ip_groups)
@@ -1011,7 +1004,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").generate_presigned_url` method.
+`session.create_client("workspaces").generate_presigned_url` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.generate_presigned_url)
@@ -1036,7 +1029,7 @@ Imports the specified Windows 10 Bring Your Own License (BYOL) image into
 Amazon WorkSpaces.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").import_workspace_image` method.
+`session.create_client("workspaces").import_workspace_image` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.import_workspace_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.import_workspace_image)
@@ -1071,7 +1064,7 @@ can use for the network management interface when you enable Bring Your Own
 License (BYOL).
 
 Type annotations for
-`aiobotocore.create_client("workspaces").list_available_management_cidr_ranges`
+`session.create_client("workspaces").list_available_management_cidr_ranges`
 method.
 
 Boto3 documentation:
@@ -1099,8 +1092,8 @@ Returns a `Coroutine` for
 Migrates a WorkSpace from one operating system or bundle type to another, while
 retaining the data on the user volume.
 
-Type annotations for
-`aiobotocore.create_client("workspaces").migrate_workspace` method.
+Type annotations for `session.create_client("workspaces").migrate_workspace`
+method.
 
 Boto3 documentation:
 [WorkSpaces.Client.migrate_workspace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.migrate_workspace)
@@ -1125,7 +1118,7 @@ Returns a `Coroutine` for
 Modifies the configuration of Bring Your Own License (BYOL) for the specified
 account.
 
-Type annotations for `aiobotocore.create_client("workspaces").modify_account`
+Type annotations for `session.create_client("workspaces").modify_account`
 method.
 
 Boto3 documentation:
@@ -1151,7 +1144,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Modifies the properties of the specified Amazon WorkSpaces clients.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").modify_client_properties` method.
+`session.create_client("workspaces").modify_client_properties` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.modify_client_properties](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.modify_client_properties)
@@ -1178,8 +1171,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Modifies the self-service WorkSpace management capabilities for your users.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").modify_selfservice_permissions`
-method.
+`session.create_client("workspaces").modify_selfservice_permissions` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.modify_selfservice_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.modify_selfservice_permissions)
@@ -1207,7 +1199,7 @@ Specifies which devices and operating systems users can use to access their
 WorkSpaces.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").modify_workspace_access_properties`
+`session.create_client("workspaces").modify_workspace_access_properties`
 method.
 
 Boto3 documentation:
@@ -1235,7 +1227,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Modify the default properties used to create WorkSpaces.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").modify_workspace_creation_properties`
+`session.create_client("workspaces").modify_workspace_creation_properties`
 method.
 
 Boto3 documentation:
@@ -1263,7 +1255,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Modifies the specified WorkSpace properties.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").modify_workspace_properties` method.
+`session.create_client("workspaces").modify_workspace_properties` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.modify_workspace_properties](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.modify_workspace_properties)
@@ -1290,7 +1282,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Sets the state of the specified WorkSpace.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").modify_workspace_state` method.
+`session.create_client("workspaces").modify_workspace_state` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.modify_workspace_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.modify_workspace_state)
@@ -1316,8 +1308,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Reboots the specified WorkSpaces.
 
-Type annotations for
-`aiobotocore.create_client("workspaces").reboot_workspaces` method.
+Type annotations for `session.create_client("workspaces").reboot_workspaces`
+method.
 
 Boto3 documentation:
 [WorkSpaces.Client.reboot_workspaces](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.reboot_workspaces)
@@ -1342,8 +1334,8 @@ Returns a `Coroutine` for
 
 Rebuilds the specified WorkSpace.
 
-Type annotations for
-`aiobotocore.create_client("workspaces").rebuild_workspaces` method.
+Type annotations for `session.create_client("workspaces").rebuild_workspaces`
+method.
 
 Boto3 documentation:
 [WorkSpaces.Client.rebuild_workspaces](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.rebuild_workspaces)
@@ -1370,7 +1362,7 @@ Returns a `Coroutine` for
 Registers the specified directory.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").register_workspace_directory` method.
+`session.create_client("workspaces").register_workspace_directory` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.register_workspace_directory](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.register_workspace_directory)
@@ -1398,8 +1390,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Restores the specified WorkSpace to its last known healthy state.
 
-Type annotations for
-`aiobotocore.create_client("workspaces").restore_workspace` method.
+Type annotations for `session.create_client("workspaces").restore_workspace`
+method.
 
 Boto3 documentation:
 [WorkSpaces.Client.restore_workspace](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.restore_workspace)
@@ -1421,7 +1413,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more rules from the specified IP access control group.
 
-Type annotations for `aiobotocore.create_client("workspaces").revoke_ip_rules`
+Type annotations for `session.create_client("workspaces").revoke_ip_rules`
 method.
 
 Boto3 documentation:
@@ -1445,7 +1437,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Starts the specified WorkSpaces.
 
-Type annotations for `aiobotocore.create_client("workspaces").start_workspaces`
+Type annotations for `session.create_client("workspaces").start_workspaces`
 method.
 
 Boto3 documentation:
@@ -1471,7 +1463,7 @@ Returns a `Coroutine` for
 
 Stops the specified WorkSpaces.
 
-Type annotations for `aiobotocore.create_client("workspaces").stop_workspaces`
+Type annotations for `session.create_client("workspaces").stop_workspaces`
 method.
 
 Boto3 documentation:
@@ -1497,8 +1489,8 @@ Returns a `Coroutine` for
 
 Terminates the specified WorkSpaces.
 
-Type annotations for
-`aiobotocore.create_client("workspaces").terminate_workspaces` method.
+Type annotations for `session.create_client("workspaces").terminate_workspaces`
+method.
 
 Boto3 documentation:
 [WorkSpaces.Client.terminate_workspaces](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.terminate_workspaces)
@@ -1526,7 +1518,7 @@ Shares or unshares a connection alias with one account by specifying whether
 that account has permission to associate the connection alias with a directory.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").update_connection_alias_permission`
+`session.create_client("workspaces").update_connection_alias_permission`
 method.
 
 Boto3 documentation:
@@ -1555,7 +1547,7 @@ Replaces the current rules of the specified IP access control group with the
 specified rules.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").update_rules_of_ip_group` method.
+`session.create_client("workspaces").update_rules_of_ip_group` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.update_rules_of_ip_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.update_rules_of_ip_group)
@@ -1582,7 +1574,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a WorkSpace bundle with a new image.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").update_workspace_bundle` method.
+`session.create_client("workspaces").update_workspace_bundle` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.update_workspace_bundle](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.update_workspace_bundle)
@@ -1608,8 +1600,7 @@ Shares or unshares an image with one account in the same Amazon Web Services
 Region by specifying whether that account has permission to copy the image.
 
 Type annotations for
-`aiobotocore.create_client("workspaces").update_workspace_image_permission`
-method.
+`session.create_client("workspaces").update_workspace_image_permission` method.
 
 Boto3 documentation:
 [WorkSpaces.Client.update_workspace_image_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.update_workspace_image_permission)
@@ -1628,12 +1619,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("workspaces").__aenter__` method.
+
+Boto3 documentation:
+[WorkSpaces.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [WorkSpacesClient](#workspacesclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("workspaces").__aexit__` method.
+
+Boto3 documentation:
+[WorkSpaces.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/workspaces.html#WorkSpaces.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("workspaces").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("workspaces").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_account_modifications")` ->
   [DescribeAccountModificationsPaginator](./paginators.md#describeaccountmodificationspaginator)

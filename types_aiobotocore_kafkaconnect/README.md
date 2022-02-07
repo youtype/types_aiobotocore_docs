@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[kafkaconnect]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[kafkaconnect]'
+
+# standalone installation
 pip install types-aiobotocore-kafkaconnect
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-kafkaconnect
 
 ## KafkaConnectClient
 
-Type annotations for `aiobotocore.create_client("kafkaconnect")` as
+Type annotations for `session.create_client("kafkaconnect")` as
 [KafkaConnectClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_kafkaconnect.client import KafkaConnectClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_connector](./client.md#create_connector)
 - [create_custom_plugin](./client.md#create_custom_plugin)
@@ -84,7 +90,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_kafkaconnect.paginators import ListConnectorsPaginator, ...
+from types_aiobotocore_kafkaconnect.paginator import ListConnectorsPaginator, ...
 ```
 
 - [ListConnectorsPaginator](./paginators.md#listconnectorspaginator)

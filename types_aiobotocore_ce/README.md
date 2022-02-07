@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[ce]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[ce]'
+
+# standalone installation
 pip install types-aiobotocore-ce
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-ce
 
 ## CostExplorerClient
 
-Type annotations for `aiobotocore.create_client("ce")` as
+Type annotations for `session.create_client("ce")` as
 [CostExplorerClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_ce.client import CostExplorerClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_anomaly_monitor](./client.md#create_anomaly_monitor)
 - [create_anomaly_subscription](./client.md#create_anomaly_subscription)

@@ -17,7 +17,7 @@ type annotations stubs module
 ## IdentityExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("ses").get_waiter("identity_exists")`.
+`session.create_client("ses").get_waiter("identity_exists")`.
 
 Can be used directly:
 
@@ -27,7 +27,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ses.waiter import IdentityExistsWaiter
 
 def get_identity_exists_waiter() -> IdentityExistsWaiter:
-    return Session().create_client("ses").get_waiter("identity_exists")
+    return Session().client("ses").get_waiter("identity_exists")
 ```
 
 Boto3 documentation:

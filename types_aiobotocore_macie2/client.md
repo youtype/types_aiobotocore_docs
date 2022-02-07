@@ -73,22 +73,25 @@ type annotations stubs module
     - [update_macie_session](#update_macie_session)
     - [update_member_session](#update_member_session)
     - [update_organization_configuration](#update_organization_configuration)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="macie2client"></a>
 
 ## Macie2Client
 
-Type annotations for `aiobotocore.create_client("macie2")`
+Type annotations for `session.create_client("macie2")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_macie2.client import Macie2Client
 
-def get_macie2_client() -> Macie2Client:
-    return Session().client("macie2")
+session = get_session()
+async with session.create_client("macie2") as client:
+    client: Macie2Client
 ```
 
 Boto3 documentation:
@@ -129,7 +132,7 @@ Exceptions:
 
 Macie2Client exceptions.
 
-Type annotations for `aiobotocore.create_client("macie2").exceptions` method.
+Type annotations for `session.create_client("macie2").exceptions` method.
 
 Boto3 documentation:
 [Macie2.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.exceptions)
@@ -143,7 +146,7 @@ Returns [Exceptions](#exceptions).
 Accepts an Amazon Macie membership invitation that was received from a specific
 account.
 
-Type annotations for `aiobotocore.create_client("macie2").accept_invitation`
+Type annotations for `session.create_client("macie2").accept_invitation`
 method.
 
 Boto3 documentation:
@@ -169,7 +172,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Retrieves information about one or more custom data identifiers.
 
 Type annotations for
-`aiobotocore.create_client("macie2").batch_get_custom_data_identifiers` method.
+`session.create_client("macie2").batch_get_custom_data_identifiers` method.
 
 Boto3 documentation:
 [Macie2.Client.batch_get_custom_data_identifiers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.batch_get_custom_data_identifiers)
@@ -193,18 +196,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("macie2").can_paginate` method.
+Type annotations for `session.create_client("macie2").can_paginate` method.
 
 Boto3 documentation:
 [Macie2.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_classification_job"></a>
 
@@ -213,7 +214,7 @@ Returns a `Coroutine` for `bool`.
 Creates and defines the settings for a classification job.
 
 Type annotations for
-`aiobotocore.create_client("macie2").create_classification_job` method.
+`session.create_client("macie2").create_classification_job` method.
 
 Boto3 documentation:
 [Macie2.Client.create_classification_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.create_classification_job)
@@ -253,7 +254,7 @@ Creates and defines the criteria and other settings for a custom data
 identifier.
 
 Type annotations for
-`aiobotocore.create_client("macie2").create_custom_data_identifier` method.
+`session.create_client("macie2").create_custom_data_identifier` method.
 
 Boto3 documentation:
 [Macie2.Client.create_custom_data_identifier](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.create_custom_data_identifier)
@@ -286,8 +287,8 @@ Returns a `Coroutine` for
 
 Creates and defines the criteria and other settings for a findings filter.
 
-Type annotations for
-`aiobotocore.create_client("macie2").create_findings_filter` method.
+Type annotations for `session.create_client("macie2").create_findings_filter`
+method.
 
 Boto3 documentation:
 [Macie2.Client.create_findings_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.create_findings_filter)
@@ -319,7 +320,7 @@ Returns a `Coroutine` for
 
 Sends an Amazon Macie membership invitation to one or more accounts.
 
-Type annotations for `aiobotocore.create_client("macie2").create_invitations`
+Type annotations for `session.create_client("macie2").create_invitations`
 method.
 
 Boto3 documentation:
@@ -346,8 +347,7 @@ Returns a `Coroutine` for
 
 Associates an account with an Amazon Macie administrator account.
 
-Type annotations for `aiobotocore.create_client("macie2").create_member`
-method.
+Type annotations for `session.create_client("macie2").create_member` method.
 
 Boto3 documentation:
 [Macie2.Client.create_member](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.create_member)
@@ -372,8 +372,8 @@ Returns a `Coroutine` for
 
 Creates sample findings.
 
-Type annotations for
-`aiobotocore.create_client("macie2").create_sample_findings` method.
+Type annotations for `session.create_client("macie2").create_sample_findings`
+method.
 
 Boto3 documentation:
 [Macie2.Client.create_sample_findings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.create_sample_findings)
@@ -398,7 +398,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Declines Amazon Macie membership invitations that were received from specific
 accounts.
 
-Type annotations for `aiobotocore.create_client("macie2").decline_invitations`
+Type annotations for `session.create_client("macie2").decline_invitations`
 method.
 
 Boto3 documentation:
@@ -424,7 +424,7 @@ Returns a `Coroutine` for
 Soft deletes a custom data identifier.
 
 Type annotations for
-`aiobotocore.create_client("macie2").delete_custom_data_identifier` method.
+`session.create_client("macie2").delete_custom_data_identifier` method.
 
 Boto3 documentation:
 [Macie2.Client.delete_custom_data_identifier](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.delete_custom_data_identifier)
@@ -447,8 +447,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a findings filter.
 
-Type annotations for
-`aiobotocore.create_client("macie2").delete_findings_filter` method.
+Type annotations for `session.create_client("macie2").delete_findings_filter`
+method.
 
 Boto3 documentation:
 [Macie2.Client.delete_findings_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.delete_findings_filter)
@@ -472,7 +472,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes Amazon Macie membership invitations that were received from specific
 accounts.
 
-Type annotations for `aiobotocore.create_client("macie2").delete_invitations`
+Type annotations for `session.create_client("macie2").delete_invitations`
 method.
 
 Boto3 documentation:
@@ -498,8 +498,7 @@ Returns a `Coroutine` for
 Deletes the association between an Amazon Macie administrator account and an
 account.
 
-Type annotations for `aiobotocore.create_client("macie2").delete_member`
-method.
+Type annotations for `session.create_client("macie2").delete_member` method.
 
 Boto3 documentation:
 [Macie2.Client.delete_member](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.delete_member)
@@ -522,8 +521,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Retrieves (queries) statistical data and other information about one or more S3
 buckets that Amazon Macie monitors and analyzes.
 
-Type annotations for `aiobotocore.create_client("macie2").describe_buckets`
-method.
+Type annotations for `session.create_client("macie2").describe_buckets` method.
 
 Boto3 documentation:
 [Macie2.Client.describe_buckets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.describe_buckets)
@@ -552,7 +550,7 @@ Returns a `Coroutine` for
 Retrieves the status and settings for a classification job.
 
 Type annotations for
-`aiobotocore.create_client("macie2").describe_classification_job` method.
+`session.create_client("macie2").describe_classification_job` method.
 
 Boto3 documentation:
 [Macie2.Client.describe_classification_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.describe_classification_job)
@@ -578,8 +576,7 @@ Retrieves the Amazon Macie configuration settings for an organization in
 Organizations.
 
 Type annotations for
-`aiobotocore.create_client("macie2").describe_organization_configuration`
-method.
+`session.create_client("macie2").describe_organization_configuration` method.
 
 Boto3 documentation:
 [Macie2.Client.describe_organization_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.describe_organization_configuration)
@@ -597,8 +594,7 @@ Returns a `Coroutine` for
 Disables Amazon Macie and deletes all settings and resources for a Macie
 account.
 
-Type annotations for `aiobotocore.create_client("macie2").disable_macie`
-method.
+Type annotations for `session.create_client("macie2").disable_macie` method.
 
 Boto3 documentation:
 [Macie2.Client.disable_macie](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.disable_macie)
@@ -615,8 +611,7 @@ Disables an account as the delegated Amazon Macie administrator account for an
 organization in Organizations.
 
 Type annotations for
-`aiobotocore.create_client("macie2").disable_organization_admin_account`
-method.
+`session.create_client("macie2").disable_organization_admin_account` method.
 
 Boto3 documentation:
 [Macie2.Client.disable_organization_admin_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.disable_organization_admin_account)
@@ -640,7 +635,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates a member account from its Amazon Macie administrator account.
 
 Type annotations for
-`aiobotocore.create_client("macie2").disassociate_from_administrator_account`
+`session.create_client("macie2").disassociate_from_administrator_account`
 method.
 
 Boto3 documentation:
@@ -659,7 +654,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 account.
 
 Type annotations for
-`aiobotocore.create_client("macie2").disassociate_from_master_account` method.
+`session.create_client("macie2").disassociate_from_master_account` method.
 
 Boto3 documentation:
 [Macie2.Client.disassociate_from_master_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.disassociate_from_master_account)
@@ -675,7 +670,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Disassociates an Amazon Macie administrator account from a member account.
 
-Type annotations for `aiobotocore.create_client("macie2").disassociate_member`
+Type annotations for `session.create_client("macie2").disassociate_member`
 method.
 
 Boto3 documentation:
@@ -700,7 +695,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Enables Amazon Macie and specifies the configuration settings for a Macie
 account.
 
-Type annotations for `aiobotocore.create_client("macie2").enable_macie` method.
+Type annotations for `session.create_client("macie2").enable_macie` method.
 
 Boto3 documentation:
 [Macie2.Client.enable_macie](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.enable_macie)
@@ -727,7 +722,7 @@ Designates an account as the delegated Amazon Macie administrator account for
 an organization in Organizations.
 
 Type annotations for
-`aiobotocore.create_client("macie2").enable_organization_admin_account` method.
+`session.create_client("macie2").enable_organization_admin_account` method.
 
 Boto3 documentation:
 [Macie2.Client.enable_organization_admin_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.enable_organization_admin_account)
@@ -751,8 +746,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("macie2").generate_presigned_url` method.
+Type annotations for `session.create_client("macie2").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Macie2.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.generate_presigned_url)
@@ -777,7 +772,7 @@ Retrieves information about the Amazon Macie administrator account for an
 account.
 
 Type annotations for
-`aiobotocore.create_client("macie2").get_administrator_account` method.
+`session.create_client("macie2").get_administrator_account` method.
 
 Boto3 documentation:
 [Macie2.Client.get_administrator_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.get_administrator_account)
@@ -795,8 +790,8 @@ Returns a `Coroutine` for
 Retrieves (queries) aggregated statistical data about S3 buckets that Amazon
 Macie monitors and analyzes.
 
-Type annotations for
-`aiobotocore.create_client("macie2").get_bucket_statistics` method.
+Type annotations for `session.create_client("macie2").get_bucket_statistics`
+method.
 
 Boto3 documentation:
 [Macie2.Client.get_bucket_statistics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.get_bucket_statistics)
@@ -821,7 +816,7 @@ Returns a `Coroutine` for
 Retrieves the configuration settings for storing data classification results.
 
 Type annotations for
-`aiobotocore.create_client("macie2").get_classification_export_configuration`
+`session.create_client("macie2").get_classification_export_configuration`
 method.
 
 Boto3 documentation:
@@ -840,7 +835,7 @@ Returns a `Coroutine` for
 Retrieves the criteria and other settings for a custom data identifier.
 
 Type annotations for
-`aiobotocore.create_client("macie2").get_custom_data_identifier` method.
+`session.create_client("macie2").get_custom_data_identifier` method.
 
 Boto3 documentation:
 [Macie2.Client.get_custom_data_identifier](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.get_custom_data_identifier)
@@ -864,8 +859,8 @@ Returns a `Coroutine` for
 
 Retrieves (queries) aggregated statistical data about findings.
 
-Type annotations for
-`aiobotocore.create_client("macie2").get_finding_statistics` method.
+Type annotations for `session.create_client("macie2").get_finding_statistics`
+method.
 
 Boto3 documentation:
 [Macie2.Client.get_finding_statistics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.get_finding_statistics)
@@ -894,7 +889,7 @@ Returns a `Coroutine` for
 
 Retrieves the details of one or more findings.
 
-Type annotations for `aiobotocore.create_client("macie2").get_findings` method.
+Type annotations for `session.create_client("macie2").get_findings` method.
 
 Boto3 documentation:
 [Macie2.Client.get_findings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.get_findings)
@@ -918,7 +913,7 @@ Returns a `Coroutine` for
 
 Retrieves the criteria and other settings for a findings filter.
 
-Type annotations for `aiobotocore.create_client("macie2").get_findings_filter`
+Type annotations for `session.create_client("macie2").get_findings_filter`
 method.
 
 Boto3 documentation:
@@ -944,7 +939,7 @@ Returns a `Coroutine` for
 Retrieves the configuration settings for publishing findings to Security Hub.
 
 Type annotations for
-`aiobotocore.create_client("macie2").get_findings_publication_configuration`
+`session.create_client("macie2").get_findings_publication_configuration`
 method.
 
 Boto3 documentation:
@@ -963,8 +958,8 @@ Returns a `Coroutine` for
 Retrieves the count of Amazon Macie membership invitations that were received
 by an account.
 
-Type annotations for
-`aiobotocore.create_client("macie2").get_invitations_count` method.
+Type annotations for `session.create_client("macie2").get_invitations_count`
+method.
 
 Boto3 documentation:
 [Macie2.Client.get_invitations_count](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.get_invitations_count)
@@ -982,7 +977,7 @@ Returns a `Coroutine` for
 Retrieves the current status and configuration settings for an Amazon Macie
 account.
 
-Type annotations for `aiobotocore.create_client("macie2").get_macie_session`
+Type annotations for `session.create_client("macie2").get_macie_session`
 method.
 
 Boto3 documentation:
@@ -1000,7 +995,7 @@ Returns a `Coroutine` for
 (Deprecated) Retrieves information about the Amazon Macie administrator account
 for an account.
 
-Type annotations for `aiobotocore.create_client("macie2").get_master_account`
+Type annotations for `session.create_client("macie2").get_master_account`
 method.
 
 Boto3 documentation:
@@ -1019,7 +1014,7 @@ Returns a `Coroutine` for
 Retrieves information about an account that's associated with an Amazon Macie
 administrator account.
 
-Type annotations for `aiobotocore.create_client("macie2").get_member` method.
+Type annotations for `session.create_client("macie2").get_member` method.
 
 Boto3 documentation:
 [Macie2.Client.get_member](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.get_member)
@@ -1042,7 +1037,7 @@ Returns a `Coroutine` for
 
 Retrieves (queries) quotas and aggregated usage data for one or more accounts.
 
-Type annotations for `aiobotocore.create_client("macie2").get_usage_statistics`
+Type annotations for `session.create_client("macie2").get_usage_statistics`
 method.
 
 Boto3 documentation:
@@ -1073,8 +1068,7 @@ Returns a `Coroutine` for
 
 Retrieves (queries) aggregated usage data for an account.
 
-Type annotations for `aiobotocore.create_client("macie2").get_usage_totals`
-method.
+Type annotations for `session.create_client("macie2").get_usage_totals` method.
 
 Boto3 documentation:
 [Macie2.Client.get_usage_totals](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.get_usage_totals)
@@ -1097,8 +1091,8 @@ Returns a `Coroutine` for
 
 Retrieves a subset of information about one or more classification jobs.
 
-Type annotations for
-`aiobotocore.create_client("macie2").list_classification_jobs` method.
+Type annotations for `session.create_client("macie2").list_classification_jobs`
+method.
 
 Boto3 documentation:
 [Macie2.Client.list_classification_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.list_classification_jobs)
@@ -1129,7 +1123,7 @@ Retrieves a subset of information about all the custom data identifiers for an
 account.
 
 Type annotations for
-`aiobotocore.create_client("macie2").list_custom_data_identifiers` method.
+`session.create_client("macie2").list_custom_data_identifiers` method.
 
 Boto3 documentation:
 [Macie2.Client.list_custom_data_identifiers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.list_custom_data_identifiers)
@@ -1154,8 +1148,7 @@ Returns a `Coroutine` for
 
 Retrieves a subset of information about one or more findings.
 
-Type annotations for `aiobotocore.create_client("macie2").list_findings`
-method.
+Type annotations for `session.create_client("macie2").list_findings` method.
 
 Boto3 documentation:
 [Macie2.Client.list_findings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.list_findings)
@@ -1183,8 +1176,8 @@ Returns a `Coroutine` for
 Retrieves a subset of information about all the findings filters for an
 account.
 
-Type annotations for
-`aiobotocore.create_client("macie2").list_findings_filters` method.
+Type annotations for `session.create_client("macie2").list_findings_filters`
+method.
 
 Boto3 documentation:
 [Macie2.Client.list_findings_filters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.list_findings_filters)
@@ -1210,8 +1203,7 @@ Returns a `Coroutine` for
 Retrieves information about the Amazon Macie membership invitations that were
 received by an account.
 
-Type annotations for `aiobotocore.create_client("macie2").list_invitations`
-method.
+Type annotations for `session.create_client("macie2").list_invitations` method.
 
 Boto3 documentation:
 [Macie2.Client.list_invitations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.list_invitations)
@@ -1237,7 +1229,7 @@ Retrieves information about all the managed data identifiers that Amazon Macie
 currently provides.
 
 Type annotations for
-`aiobotocore.create_client("macie2").list_managed_data_identifiers` method.
+`session.create_client("macie2").list_managed_data_identifiers` method.
 
 Boto3 documentation:
 [Macie2.Client.list_managed_data_identifiers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.list_managed_data_identifiers)
@@ -1262,7 +1254,7 @@ Returns a `Coroutine` for
 Retrieves information about the accounts that are associated with an Amazon
 Macie administrator account.
 
-Type annotations for `aiobotocore.create_client("macie2").list_members` method.
+Type annotations for `session.create_client("macie2").list_members` method.
 
 Boto3 documentation:
 [Macie2.Client.list_members](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.list_members)
@@ -1289,7 +1281,7 @@ Retrieves information about the delegated Amazon Macie administrator account
 for an organization in Organizations.
 
 Type annotations for
-`aiobotocore.create_client("macie2").list_organization_admin_accounts` method.
+`session.create_client("macie2").list_organization_admin_accounts` method.
 
 Boto3 documentation:
 [Macie2.Client.list_organization_admin_accounts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.list_organization_admin_accounts)
@@ -1315,8 +1307,8 @@ Returns a `Coroutine` for
 Retrieves the tags (keys and values) that are associated with a classification
 job, custom data identifier, findings filter, or member account.
 
-Type annotations for
-`aiobotocore.create_client("macie2").list_tags_for_resource` method.
+Type annotations for `session.create_client("macie2").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Macie2.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.list_tags_for_resource)
@@ -1342,7 +1334,7 @@ Creates or updates the configuration settings for storing data classification
 results.
 
 Type annotations for
-`aiobotocore.create_client("macie2").put_classification_export_configuration`
+`session.create_client("macie2").put_classification_export_configuration`
 method.
 
 Boto3 documentation:
@@ -1370,7 +1362,7 @@ Returns a `Coroutine` for
 Updates the configuration settings for publishing findings to Security Hub.
 
 Type annotations for
-`aiobotocore.create_client("macie2").put_findings_publication_configuration`
+`session.create_client("macie2").put_findings_publication_configuration`
 method.
 
 Boto3 documentation:
@@ -1397,8 +1389,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Retrieves (queries) statistical data and other information about Amazon Web
 Services resources that Amazon Macie monitors and analyzes.
 
-Type annotations for `aiobotocore.create_client("macie2").search_resources`
-method.
+Type annotations for `session.create_client("macie2").search_resources` method.
 
 Boto3 documentation:
 [Macie2.Client.search_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.search_resources)
@@ -1427,7 +1418,7 @@ Returns a `Coroutine` for
 Adds or updates one or more tags (keys and values) that are associated with a
 classification job, custom data identifier, findings filter, or member account.
 
-Type annotations for `aiobotocore.create_client("macie2").tag_resource` method.
+Type annotations for `session.create_client("macie2").tag_resource` method.
 
 Boto3 documentation:
 [Macie2.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.tag_resource)
@@ -1451,7 +1442,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Tests a custom data identifier.
 
 Type annotations for
-`aiobotocore.create_client("macie2").test_custom_data_identifier` method.
+`session.create_client("macie2").test_custom_data_identifier` method.
 
 Boto3 documentation:
 [Macie2.Client.test_custom_data_identifier](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.test_custom_data_identifier)
@@ -1480,8 +1471,7 @@ Returns a `Coroutine` for
 Removes one or more tags (keys and values) from a classification job, custom
 data identifier, findings filter, or member account.
 
-Type annotations for `aiobotocore.create_client("macie2").untag_resource`
-method.
+Type annotations for `session.create_client("macie2").untag_resource` method.
 
 Boto3 documentation:
 [Macie2.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.untag_resource)
@@ -1505,7 +1495,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Changes the status of a classification job.
 
 Type annotations for
-`aiobotocore.create_client("macie2").update_classification_job` method.
+`session.create_client("macie2").update_classification_job` method.
 
 Boto3 documentation:
 [Macie2.Client.update_classification_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.update_classification_job)
@@ -1529,8 +1519,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the criteria and other settings for a findings filter.
 
-Type annotations for
-`aiobotocore.create_client("macie2").update_findings_filter` method.
+Type annotations for `session.create_client("macie2").update_findings_filter`
+method.
 
 Boto3 documentation:
 [Macie2.Client.update_findings_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.update_findings_filter)
@@ -1562,7 +1552,7 @@ Returns a `Coroutine` for
 Suspends or re-enables Amazon Macie, or updates the configuration settings for
 a Macie account.
 
-Type annotations for `aiobotocore.create_client("macie2").update_macie_session`
+Type annotations for `session.create_client("macie2").update_macie_session`
 method.
 
 Boto3 documentation:
@@ -1589,8 +1579,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Enables an Amazon Macie administrator to suspend or re-enable Macie for a
 member account.
 
-Type annotations for
-`aiobotocore.create_client("macie2").update_member_session` method.
+Type annotations for `session.create_client("macie2").update_member_session`
+method.
 
 Boto3 documentation:
 [Macie2.Client.update_member_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.update_member_session)
@@ -1616,7 +1606,7 @@ Updates the Amazon Macie configuration settings for an organization in
 Organizations.
 
 Type annotations for
-`aiobotocore.create_client("macie2").update_organization_configuration` method.
+`session.create_client("macie2").update_organization_configuration` method.
 
 Boto3 documentation:
 [Macie2.Client.update_organization_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.update_organization_configuration)
@@ -1633,11 +1623,43 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("macie2").__aenter__` method.
+
+Boto3 documentation:
+[Macie2.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [Macie2Client](#macie2client).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("macie2").__aexit__` method.
+
+Boto3 documentation:
+[Macie2.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html#Macie2.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("macie2").get_paginator` method
+Type annotations for `session.create_client("macie2").get_paginator` method
 with overloads.
 
 - `client.get_paginator("describe_buckets")` ->

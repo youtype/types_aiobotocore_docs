@@ -23,7 +23,7 @@ type annotations stubs module
 ## DBClusterSnapshotAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("rds").get_waiter("db_cluster_snapshot_available")`.
+`session.create_client("rds").get_waiter("db_cluster_snapshot_available")`.
 
 Can be used directly:
 
@@ -33,7 +33,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_rds.waiter import DBClusterSnapshotAvailableWaiter
 
 def get_db_cluster_snapshot_available_waiter() -> DBClusterSnapshotAvailableWaiter:
-    return Session().create_client("rds").get_waiter("db_cluster_snapshot_available")
+    return Session().client("rds").get_waiter("db_cluster_snapshot_available")
 ```
 
 Boto3 documentation:
@@ -56,7 +56,7 @@ Arguments for `DBClusterSnapshotAvailableWaiter.wait` method:
 ## DBClusterSnapshotDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("rds").get_waiter("db_cluster_snapshot_deleted")`.
+`session.create_client("rds").get_waiter("db_cluster_snapshot_deleted")`.
 
 Can be used directly:
 
@@ -66,7 +66,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_rds.waiter import DBClusterSnapshotDeletedWaiter
 
 def get_db_cluster_snapshot_deleted_waiter() -> DBClusterSnapshotDeletedWaiter:
-    return Session().create_client("rds").get_waiter("db_cluster_snapshot_deleted")
+    return Session().client("rds").get_waiter("db_cluster_snapshot_deleted")
 ```
 
 Boto3 documentation:
@@ -89,7 +89,7 @@ Arguments for `DBClusterSnapshotDeletedWaiter.wait` method:
 ## DBInstanceAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("rds").get_waiter("db_instance_available")`.
+`session.create_client("rds").get_waiter("db_instance_available")`.
 
 Can be used directly:
 
@@ -99,7 +99,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_rds.waiter import DBInstanceAvailableWaiter
 
 def get_db_instance_available_waiter() -> DBInstanceAvailableWaiter:
-    return Session().create_client("rds").get_waiter("db_instance_available")
+    return Session().client("rds").get_waiter("db_instance_available")
 ```
 
 Boto3 documentation:
@@ -118,7 +118,7 @@ Arguments for `DBInstanceAvailableWaiter.wait` method:
 ## DBInstanceDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("rds").get_waiter("db_instance_deleted")`.
+`session.create_client("rds").get_waiter("db_instance_deleted")`.
 
 Can be used directly:
 
@@ -128,7 +128,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_rds.waiter import DBInstanceDeletedWaiter
 
 def get_db_instance_deleted_waiter() -> DBInstanceDeletedWaiter:
-    return Session().create_client("rds").get_waiter("db_instance_deleted")
+    return Session().client("rds").get_waiter("db_instance_deleted")
 ```
 
 Boto3 documentation:
@@ -147,7 +147,7 @@ Arguments for `DBInstanceDeletedWaiter.wait` method:
 ## DBSnapshotAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("rds").get_waiter("db_snapshot_available")`.
+`session.create_client("rds").get_waiter("db_snapshot_available")`.
 
 Can be used directly:
 
@@ -157,7 +157,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_rds.waiter import DBSnapshotAvailableWaiter
 
 def get_db_snapshot_available_waiter() -> DBSnapshotAvailableWaiter:
-    return Session().create_client("rds").get_waiter("db_snapshot_available")
+    return Session().client("rds").get_waiter("db_snapshot_available")
 ```
 
 Boto3 documentation:
@@ -181,7 +181,7 @@ Arguments for `DBSnapshotAvailableWaiter.wait` method:
 ## DBSnapshotCompletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("rds").get_waiter("db_snapshot_completed")`.
+`session.create_client("rds").get_waiter("db_snapshot_completed")`.
 
 Can be used directly:
 
@@ -191,7 +191,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_rds.waiter import DBSnapshotCompletedWaiter
 
 def get_db_snapshot_completed_waiter() -> DBSnapshotCompletedWaiter:
-    return Session().create_client("rds").get_waiter("db_snapshot_completed")
+    return Session().client("rds").get_waiter("db_snapshot_completed")
 ```
 
 Boto3 documentation:
@@ -215,7 +215,7 @@ Arguments for `DBSnapshotCompletedWaiter.wait` method:
 ## DBSnapshotDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("rds").get_waiter("db_snapshot_deleted")`.
+`session.create_client("rds").get_waiter("db_snapshot_deleted")`.
 
 Can be used directly:
 
@@ -225,7 +225,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_rds.waiter import DBSnapshotDeletedWaiter
 
 def get_db_snapshot_deleted_waiter() -> DBSnapshotDeletedWaiter:
-    return Session().create_client("rds").get_waiter("db_snapshot_deleted")
+    return Session().client("rds").get_waiter("db_snapshot_deleted")
 ```
 
 Boto3 documentation:

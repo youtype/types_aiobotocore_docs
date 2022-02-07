@@ -20,7 +20,7 @@ type annotations stubs module
 ## InstanceProfileExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("iam").get_waiter("instance_profile_exists")`.
+`session.create_client("iam").get_waiter("instance_profile_exists")`.
 
 Can be used directly:
 
@@ -30,7 +30,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_iam.waiter import InstanceProfileExistsWaiter
 
 def get_instance_profile_exists_waiter() -> InstanceProfileExistsWaiter:
-    return Session().create_client("iam").get_waiter("instance_profile_exists")
+    return Session().client("iam").get_waiter("instance_profile_exists")
 ```
 
 Boto3 documentation:
@@ -46,7 +46,7 @@ Arguments for `InstanceProfileExistsWaiter.wait` method:
 ## PolicyExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("iam").get_waiter("policy_exists")`.
+`session.create_client("iam").get_waiter("policy_exists")`.
 
 Can be used directly:
 
@@ -56,7 +56,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_iam.waiter import PolicyExistsWaiter
 
 def get_policy_exists_waiter() -> PolicyExistsWaiter:
-    return Session().create_client("iam").get_waiter("policy_exists")
+    return Session().client("iam").get_waiter("policy_exists")
 ```
 
 Boto3 documentation:
@@ -71,8 +71,7 @@ Arguments for `PolicyExistsWaiter.wait` method:
 
 ## RoleExistsWaiter
 
-Type annotations for
-`aiobotocore.create_client("iam").get_waiter("role_exists")`.
+Type annotations for `session.create_client("iam").get_waiter("role_exists")`.
 
 Can be used directly:
 
@@ -82,7 +81,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_iam.waiter import RoleExistsWaiter
 
 def get_role_exists_waiter() -> RoleExistsWaiter:
-    return Session().create_client("iam").get_waiter("role_exists")
+    return Session().client("iam").get_waiter("role_exists")
 ```
 
 Boto3 documentation:
@@ -97,8 +96,7 @@ Arguments for `RoleExistsWaiter.wait` method:
 
 ## UserExistsWaiter
 
-Type annotations for
-`aiobotocore.create_client("iam").get_waiter("user_exists")`.
+Type annotations for `session.create_client("iam").get_waiter("user_exists")`.
 
 Can be used directly:
 
@@ -108,7 +106,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_iam.waiter import UserExistsWaiter
 
 def get_user_exists_waiter() -> UserExistsWaiter:
-    return Session().create_client("iam").get_waiter("user_exists")
+    return Session().client("iam").get_waiter("user_exists")
 ```
 
 Boto3 documentation:

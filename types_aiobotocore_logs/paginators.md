@@ -25,17 +25,19 @@ type annotations stubs module
 ## DescribeDestinationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("logs").get_paginator("describe_destinations")`.
+`session.create_client("logs").get_paginator("describe_destinations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_logs.paginator import DescribeDestinationsPaginator
 
-def get_describe_destinations_paginator() -> DescribeDestinationsPaginator:
-    return Session().create_client("logs").get_paginator("describe_destinations")
+session = get_session()
+async with session.create_client("logs") as client:
+    client: CloudWatchLogsClient
+    paginator: DescribeDestinationsPaginator = client.get_paginator("describe_destinations")
 ```
 
 Boto3 documentation:
@@ -55,17 +57,19 @@ Arguments for `DescribeDestinationsPaginator.paginate` method:
 ## DescribeExportTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("logs").get_paginator("describe_export_tasks")`.
+`session.create_client("logs").get_paginator("describe_export_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_logs.paginator import DescribeExportTasksPaginator
 
-def get_describe_export_tasks_paginator() -> DescribeExportTasksPaginator:
-    return Session().create_client("logs").get_paginator("describe_export_tasks")
+session = get_session()
+async with session.create_client("logs") as client:
+    client: CloudWatchLogsClient
+    paginator: DescribeExportTasksPaginator = client.get_paginator("describe_export_tasks")
 ```
 
 Boto3 documentation:
@@ -87,17 +91,19 @@ Arguments for `DescribeExportTasksPaginator.paginate` method:
 ## DescribeLogGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("logs").get_paginator("describe_log_groups")`.
+`session.create_client("logs").get_paginator("describe_log_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_logs.paginator import DescribeLogGroupsPaginator
 
-def get_describe_log_groups_paginator() -> DescribeLogGroupsPaginator:
-    return Session().create_client("logs").get_paginator("describe_log_groups")
+session = get_session()
+async with session.create_client("logs") as client:
+    client: CloudWatchLogsClient
+    paginator: DescribeLogGroupsPaginator = client.get_paginator("describe_log_groups")
 ```
 
 Boto3 documentation:
@@ -117,17 +123,19 @@ Arguments for `DescribeLogGroupsPaginator.paginate` method:
 ## DescribeLogStreamsPaginator
 
 Type annotations for
-`aiobotocore.create_client("logs").get_paginator("describe_log_streams")`.
+`session.create_client("logs").get_paginator("describe_log_streams")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_logs.paginator import DescribeLogStreamsPaginator
 
-def get_describe_log_streams_paginator() -> DescribeLogStreamsPaginator:
-    return Session().create_client("logs").get_paginator("describe_log_streams")
+session = get_session()
+async with session.create_client("logs") as client:
+    client: CloudWatchLogsClient
+    paginator: DescribeLogStreamsPaginator = client.get_paginator("describe_log_streams")
 ```
 
 Boto3 documentation:
@@ -150,17 +158,19 @@ Arguments for `DescribeLogStreamsPaginator.paginate` method:
 ## DescribeMetricFiltersPaginator
 
 Type annotations for
-`aiobotocore.create_client("logs").get_paginator("describe_metric_filters")`.
+`session.create_client("logs").get_paginator("describe_metric_filters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_logs.paginator import DescribeMetricFiltersPaginator
 
-def get_describe_metric_filters_paginator() -> DescribeMetricFiltersPaginator:
-    return Session().create_client("logs").get_paginator("describe_metric_filters")
+session = get_session()
+async with session.create_client("logs") as client:
+    client: CloudWatchLogsClient
+    paginator: DescribeMetricFiltersPaginator = client.get_paginator("describe_metric_filters")
 ```
 
 Boto3 documentation:
@@ -183,17 +193,19 @@ Arguments for `DescribeMetricFiltersPaginator.paginate` method:
 ## DescribeQueriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("logs").get_paginator("describe_queries")`.
+`session.create_client("logs").get_paginator("describe_queries")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_logs.paginator import DescribeQueriesPaginator
 
-def get_describe_queries_paginator() -> DescribeQueriesPaginator:
-    return Session().create_client("logs").get_paginator("describe_queries")
+session = get_session()
+async with session.create_client("logs") as client:
+    client: CloudWatchLogsClient
+    paginator: DescribeQueriesPaginator = client.get_paginator("describe_queries")
 ```
 
 Boto3 documentation:
@@ -214,17 +226,19 @@ Arguments for `DescribeQueriesPaginator.paginate` method:
 ## DescribeResourcePoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("logs").get_paginator("describe_resource_policies")`.
+`session.create_client("logs").get_paginator("describe_resource_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_logs.paginator import DescribeResourcePoliciesPaginator
 
-def get_describe_resource_policies_paginator() -> DescribeResourcePoliciesPaginator:
-    return Session().create_client("logs").get_paginator("describe_resource_policies")
+session = get_session()
+async with session.create_client("logs") as client:
+    client: CloudWatchLogsClient
+    paginator: DescribeResourcePoliciesPaginator = client.get_paginator("describe_resource_policies")
 ```
 
 Boto3 documentation:
@@ -243,17 +257,19 @@ Arguments for `DescribeResourcePoliciesPaginator.paginate` method:
 ## DescribeSubscriptionFiltersPaginator
 
 Type annotations for
-`aiobotocore.create_client("logs").get_paginator("describe_subscription_filters")`.
+`session.create_client("logs").get_paginator("describe_subscription_filters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_logs.paginator import DescribeSubscriptionFiltersPaginator
 
-def get_describe_subscription_filters_paginator() -> DescribeSubscriptionFiltersPaginator:
-    return Session().create_client("logs").get_paginator("describe_subscription_filters")
+session = get_session()
+async with session.create_client("logs") as client:
+    client: CloudWatchLogsClient
+    paginator: DescribeSubscriptionFiltersPaginator = client.get_paginator("describe_subscription_filters")
 ```
 
 Boto3 documentation:
@@ -274,17 +290,19 @@ Arguments for `DescribeSubscriptionFiltersPaginator.paginate` method:
 ## FilterLogEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("logs").get_paginator("filter_log_events")`.
+`session.create_client("logs").get_paginator("filter_log_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_logs.paginator import FilterLogEventsPaginator
 
-def get_filter_log_events_paginator() -> FilterLogEventsPaginator:
-    return Session().create_client("logs").get_paginator("filter_log_events")
+session = get_session()
+async with session.create_client("logs") as client:
+    client: CloudWatchLogsClient
+    paginator: FilterLogEventsPaginator = client.get_paginator("filter_log_events")
 ```
 
 Boto3 documentation:

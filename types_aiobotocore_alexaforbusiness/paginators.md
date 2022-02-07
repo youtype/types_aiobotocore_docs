@@ -29,17 +29,19 @@ type annotations stubs module
 ## ListBusinessReportSchedulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_paginator("list_business_report_schedules")`.
+`session.create_client("alexaforbusiness").get_paginator("list_business_report_schedules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_alexaforbusiness.paginator import ListBusinessReportSchedulesPaginator
 
-def get_list_business_report_schedules_paginator() -> ListBusinessReportSchedulesPaginator:
-    return Session().create_client("alexaforbusiness").get_paginator("list_business_report_schedules")
+session = get_session()
+async with session.create_client("alexaforbusiness") as client:
+    client: AlexaForBusinessClient
+    paginator: ListBusinessReportSchedulesPaginator = client.get_paginator("list_business_report_schedules")
 ```
 
 Boto3 documentation:
@@ -58,17 +60,19 @@ Arguments for `ListBusinessReportSchedulesPaginator.paginate` method:
 ## ListConferenceProvidersPaginator
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_paginator("list_conference_providers")`.
+`session.create_client("alexaforbusiness").get_paginator("list_conference_providers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_alexaforbusiness.paginator import ListConferenceProvidersPaginator
 
-def get_list_conference_providers_paginator() -> ListConferenceProvidersPaginator:
-    return Session().create_client("alexaforbusiness").get_paginator("list_conference_providers")
+session = get_session()
+async with session.create_client("alexaforbusiness") as client:
+    client: AlexaForBusinessClient
+    paginator: ListConferenceProvidersPaginator = client.get_paginator("list_conference_providers")
 ```
 
 Boto3 documentation:
@@ -87,17 +91,19 @@ Arguments for `ListConferenceProvidersPaginator.paginate` method:
 ## ListDeviceEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_paginator("list_device_events")`.
+`session.create_client("alexaforbusiness").get_paginator("list_device_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_alexaforbusiness.paginator import ListDeviceEventsPaginator
 
-def get_list_device_events_paginator() -> ListDeviceEventsPaginator:
-    return Session().create_client("alexaforbusiness").get_paginator("list_device_events")
+session = get_session()
+async with session.create_client("alexaforbusiness") as client:
+    client: AlexaForBusinessClient
+    paginator: ListDeviceEventsPaginator = client.get_paginator("list_device_events")
 ```
 
 Boto3 documentation:
@@ -118,17 +124,19 @@ Arguments for `ListDeviceEventsPaginator.paginate` method:
 ## ListSkillsPaginator
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_paginator("list_skills")`.
+`session.create_client("alexaforbusiness").get_paginator("list_skills")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_alexaforbusiness.paginator import ListSkillsPaginator
 
-def get_list_skills_paginator() -> ListSkillsPaginator:
-    return Session().create_client("alexaforbusiness").get_paginator("list_skills")
+session = get_session()
+async with session.create_client("alexaforbusiness") as client:
+    client: AlexaForBusinessClient
+    paginator: ListSkillsPaginator = client.get_paginator("list_skills")
 ```
 
 Boto3 documentation:
@@ -151,17 +159,19 @@ Arguments for `ListSkillsPaginator.paginate` method:
 ## ListSkillsStoreCategoriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_paginator("list_skills_store_categories")`.
+`session.create_client("alexaforbusiness").get_paginator("list_skills_store_categories")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_alexaforbusiness.paginator import ListSkillsStoreCategoriesPaginator
 
-def get_list_skills_store_categories_paginator() -> ListSkillsStoreCategoriesPaginator:
-    return Session().create_client("alexaforbusiness").get_paginator("list_skills_store_categories")
+session = get_session()
+async with session.create_client("alexaforbusiness") as client:
+    client: AlexaForBusinessClient
+    paginator: ListSkillsStoreCategoriesPaginator = client.get_paginator("list_skills_store_categories")
 ```
 
 Boto3 documentation:
@@ -180,17 +190,19 @@ Arguments for `ListSkillsStoreCategoriesPaginator.paginate` method:
 ## ListSkillsStoreSkillsByCategoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_paginator("list_skills_store_skills_by_category")`.
+`session.create_client("alexaforbusiness").get_paginator("list_skills_store_skills_by_category")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_alexaforbusiness.paginator import ListSkillsStoreSkillsByCategoryPaginator
 
-def get_list_skills_store_skills_by_category_paginator() -> ListSkillsStoreSkillsByCategoryPaginator:
-    return Session().create_client("alexaforbusiness").get_paginator("list_skills_store_skills_by_category")
+session = get_session()
+async with session.create_client("alexaforbusiness") as client:
+    client: AlexaForBusinessClient
+    paginator: ListSkillsStoreSkillsByCategoryPaginator = client.get_paginator("list_skills_store_skills_by_category")
 ```
 
 Boto3 documentation:
@@ -210,17 +222,19 @@ Arguments for `ListSkillsStoreSkillsByCategoryPaginator.paginate` method:
 ## ListSmartHomeAppliancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_paginator("list_smart_home_appliances")`.
+`session.create_client("alexaforbusiness").get_paginator("list_smart_home_appliances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_alexaforbusiness.paginator import ListSmartHomeAppliancesPaginator
 
-def get_list_smart_home_appliances_paginator() -> ListSmartHomeAppliancesPaginator:
-    return Session().create_client("alexaforbusiness").get_paginator("list_smart_home_appliances")
+session = get_session()
+async with session.create_client("alexaforbusiness") as client:
+    client: AlexaForBusinessClient
+    paginator: ListSmartHomeAppliancesPaginator = client.get_paginator("list_smart_home_appliances")
 ```
 
 Boto3 documentation:
@@ -240,17 +254,19 @@ Arguments for `ListSmartHomeAppliancesPaginator.paginate` method:
 ## ListTagsPaginator
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_paginator("list_tags")`.
+`session.create_client("alexaforbusiness").get_paginator("list_tags")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_alexaforbusiness.paginator import ListTagsPaginator
 
-def get_list_tags_paginator() -> ListTagsPaginator:
-    return Session().create_client("alexaforbusiness").get_paginator("list_tags")
+session = get_session()
+async with session.create_client("alexaforbusiness") as client:
+    client: AlexaForBusinessClient
+    paginator: ListTagsPaginator = client.get_paginator("list_tags")
 ```
 
 Boto3 documentation:
@@ -270,17 +286,19 @@ Arguments for `ListTagsPaginator.paginate` method:
 ## SearchDevicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_paginator("search_devices")`.
+`session.create_client("alexaforbusiness").get_paginator("search_devices")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_alexaforbusiness.paginator import SearchDevicesPaginator
 
-def get_search_devices_paginator() -> SearchDevicesPaginator:
-    return Session().create_client("alexaforbusiness").get_paginator("search_devices")
+session = get_session()
+async with session.create_client("alexaforbusiness") as client:
+    client: AlexaForBusinessClient
+    paginator: SearchDevicesPaginator = client.get_paginator("search_devices")
 ```
 
 Boto3 documentation:
@@ -301,17 +319,19 @@ Arguments for `SearchDevicesPaginator.paginate` method:
 ## SearchProfilesPaginator
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_paginator("search_profiles")`.
+`session.create_client("alexaforbusiness").get_paginator("search_profiles")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_alexaforbusiness.paginator import SearchProfilesPaginator
 
-def get_search_profiles_paginator() -> SearchProfilesPaginator:
-    return Session().create_client("alexaforbusiness").get_paginator("search_profiles")
+session = get_session()
+async with session.create_client("alexaforbusiness") as client:
+    client: AlexaForBusinessClient
+    paginator: SearchProfilesPaginator = client.get_paginator("search_profiles")
 ```
 
 Boto3 documentation:
@@ -332,17 +352,19 @@ Arguments for `SearchProfilesPaginator.paginate` method:
 ## SearchRoomsPaginator
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_paginator("search_rooms")`.
+`session.create_client("alexaforbusiness").get_paginator("search_rooms")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_alexaforbusiness.paginator import SearchRoomsPaginator
 
-def get_search_rooms_paginator() -> SearchRoomsPaginator:
-    return Session().create_client("alexaforbusiness").get_paginator("search_rooms")
+session = get_session()
+async with session.create_client("alexaforbusiness") as client:
+    client: AlexaForBusinessClient
+    paginator: SearchRoomsPaginator = client.get_paginator("search_rooms")
 ```
 
 Boto3 documentation:
@@ -363,17 +385,19 @@ Arguments for `SearchRoomsPaginator.paginate` method:
 ## SearchSkillGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_paginator("search_skill_groups")`.
+`session.create_client("alexaforbusiness").get_paginator("search_skill_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_alexaforbusiness.paginator import SearchSkillGroupsPaginator
 
-def get_search_skill_groups_paginator() -> SearchSkillGroupsPaginator:
-    return Session().create_client("alexaforbusiness").get_paginator("search_skill_groups")
+session = get_session()
+async with session.create_client("alexaforbusiness") as client:
+    client: AlexaForBusinessClient
+    paginator: SearchSkillGroupsPaginator = client.get_paginator("search_skill_groups")
 ```
 
 Boto3 documentation:
@@ -394,17 +418,19 @@ Arguments for `SearchSkillGroupsPaginator.paginate` method:
 ## SearchUsersPaginator
 
 Type annotations for
-`aiobotocore.create_client("alexaforbusiness").get_paginator("search_users")`.
+`session.create_client("alexaforbusiness").get_paginator("search_users")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_alexaforbusiness.paginator import SearchUsersPaginator
 
-def get_search_users_paginator() -> SearchUsersPaginator:
-    return Session().create_client("alexaforbusiness").get_paginator("search_users")
+session = get_session()
+async with session.create_client("alexaforbusiness") as client:
+    client: AlexaForBusinessClient
+    paginator: SearchUsersPaginator = client.get_paginator("search_users")
 ```
 
 Boto3 documentation:

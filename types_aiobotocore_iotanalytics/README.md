@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[iotanalytics]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[iotanalytics]'
+
+# standalone installation
 pip install types-aiobotocore-iotanalytics
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-iotanalytics
 
 ## IoTAnalyticsClient
 
-Type annotations for `aiobotocore.create_client("iotanalytics")` as
+Type annotations for `session.create_client("iotanalytics")` as
 [IoTAnalyticsClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_iotanalytics.client import IoTAnalyticsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_put_message](./client.md#batch_put_message)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_pipeline_reprocessing](./client.md#cancel_pipeline_reprocessing)
@@ -106,7 +112,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_iotanalytics.paginators import ListChannelsPaginator, ...
+from types_aiobotocore_iotanalytics.paginator import ListChannelsPaginator, ...
 ```
 
 - [ListChannelsPaginator](./paginators.md#listchannelspaginator)

@@ -25,17 +25,19 @@ type annotations stubs module
 ## DescribeDirectoriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ds").get_paginator("describe_directories")`.
+`session.create_client("ds").get_paginator("describe_directories")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ds.paginator import DescribeDirectoriesPaginator
 
-def get_describe_directories_paginator() -> DescribeDirectoriesPaginator:
-    return Session().create_client("ds").get_paginator("describe_directories")
+session = get_session()
+async with session.create_client("ds") as client:
+    client: DirectoryServiceClient
+    paginator: DescribeDirectoriesPaginator = client.get_paginator("describe_directories")
 ```
 
 Boto3 documentation:
@@ -55,17 +57,19 @@ Arguments for `DescribeDirectoriesPaginator.paginate` method:
 ## DescribeDomainControllersPaginator
 
 Type annotations for
-`aiobotocore.create_client("ds").get_paginator("describe_domain_controllers")`.
+`session.create_client("ds").get_paginator("describe_domain_controllers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ds.paginator import DescribeDomainControllersPaginator
 
-def get_describe_domain_controllers_paginator() -> DescribeDomainControllersPaginator:
-    return Session().create_client("ds").get_paginator("describe_domain_controllers")
+session = get_session()
+async with session.create_client("ds") as client:
+    client: DirectoryServiceClient
+    paginator: DescribeDomainControllersPaginator = client.get_paginator("describe_domain_controllers")
 ```
 
 Boto3 documentation:
@@ -86,17 +90,19 @@ Arguments for `DescribeDomainControllersPaginator.paginate` method:
 ## DescribeSharedDirectoriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ds").get_paginator("describe_shared_directories")`.
+`session.create_client("ds").get_paginator("describe_shared_directories")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ds.paginator import DescribeSharedDirectoriesPaginator
 
-def get_describe_shared_directories_paginator() -> DescribeSharedDirectoriesPaginator:
-    return Session().create_client("ds").get_paginator("describe_shared_directories")
+session = get_session()
+async with session.create_client("ds") as client:
+    client: DirectoryServiceClient
+    paginator: DescribeSharedDirectoriesPaginator = client.get_paginator("describe_shared_directories")
 ```
 
 Boto3 documentation:
@@ -117,17 +123,19 @@ Arguments for `DescribeSharedDirectoriesPaginator.paginate` method:
 ## DescribeSnapshotsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ds").get_paginator("describe_snapshots")`.
+`session.create_client("ds").get_paginator("describe_snapshots")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ds.paginator import DescribeSnapshotsPaginator
 
-def get_describe_snapshots_paginator() -> DescribeSnapshotsPaginator:
-    return Session().create_client("ds").get_paginator("describe_snapshots")
+session = get_session()
+async with session.create_client("ds") as client:
+    client: DirectoryServiceClient
+    paginator: DescribeSnapshotsPaginator = client.get_paginator("describe_snapshots")
 ```
 
 Boto3 documentation:
@@ -148,17 +156,19 @@ Arguments for `DescribeSnapshotsPaginator.paginate` method:
 ## DescribeTrustsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ds").get_paginator("describe_trusts")`.
+`session.create_client("ds").get_paginator("describe_trusts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ds.paginator import DescribeTrustsPaginator
 
-def get_describe_trusts_paginator() -> DescribeTrustsPaginator:
-    return Session().create_client("ds").get_paginator("describe_trusts")
+session = get_session()
+async with session.create_client("ds") as client:
+    client: DirectoryServiceClient
+    paginator: DescribeTrustsPaginator = client.get_paginator("describe_trusts")
 ```
 
 Boto3 documentation:
@@ -179,17 +189,19 @@ Arguments for `DescribeTrustsPaginator.paginate` method:
 ## ListIpRoutesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ds").get_paginator("list_ip_routes")`.
+`session.create_client("ds").get_paginator("list_ip_routes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ds.paginator import ListIpRoutesPaginator
 
-def get_list_ip_routes_paginator() -> ListIpRoutesPaginator:
-    return Session().create_client("ds").get_paginator("list_ip_routes")
+session = get_session()
+async with session.create_client("ds") as client:
+    client: DirectoryServiceClient
+    paginator: ListIpRoutesPaginator = client.get_paginator("list_ip_routes")
 ```
 
 Boto3 documentation:
@@ -209,17 +221,19 @@ Arguments for `ListIpRoutesPaginator.paginate` method:
 ## ListLogSubscriptionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ds").get_paginator("list_log_subscriptions")`.
+`session.create_client("ds").get_paginator("list_log_subscriptions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ds.paginator import ListLogSubscriptionsPaginator
 
-def get_list_log_subscriptions_paginator() -> ListLogSubscriptionsPaginator:
-    return Session().create_client("ds").get_paginator("list_log_subscriptions")
+session = get_session()
+async with session.create_client("ds") as client:
+    client: DirectoryServiceClient
+    paginator: ListLogSubscriptionsPaginator = client.get_paginator("list_log_subscriptions")
 ```
 
 Boto3 documentation:
@@ -239,17 +253,19 @@ Arguments for `ListLogSubscriptionsPaginator.paginate` method:
 ## ListSchemaExtensionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ds").get_paginator("list_schema_extensions")`.
+`session.create_client("ds").get_paginator("list_schema_extensions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ds.paginator import ListSchemaExtensionsPaginator
 
-def get_list_schema_extensions_paginator() -> ListSchemaExtensionsPaginator:
-    return Session().create_client("ds").get_paginator("list_schema_extensions")
+session = get_session()
+async with session.create_client("ds") as client:
+    client: DirectoryServiceClient
+    paginator: ListSchemaExtensionsPaginator = client.get_paginator("list_schema_extensions")
 ```
 
 Boto3 documentation:
@@ -269,17 +285,19 @@ Arguments for `ListSchemaExtensionsPaginator.paginate` method:
 ## ListTagsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("ds").get_paginator("list_tags_for_resource")`.
+`session.create_client("ds").get_paginator("list_tags_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ds.paginator import ListTagsForResourcePaginator
 
-def get_list_tags_for_resource_paginator() -> ListTagsForResourcePaginator:
-    return Session().create_client("ds").get_paginator("list_tags_for_resource")
+session = get_session()
+async with session.create_client("ds") as client:
+    client: DirectoryServiceClient
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
 ```
 
 Boto3 documentation:

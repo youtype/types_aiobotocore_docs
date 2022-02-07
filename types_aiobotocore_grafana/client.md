@@ -27,22 +27,25 @@ type annotations stubs module
     - [update_permissions](#update_permissions)
     - [update_workspace](#update_workspace)
     - [update_workspace_authentication](#update_workspace_authentication)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="managedgrafanaclient"></a>
 
 ## ManagedGrafanaClient
 
-Type annotations for `aiobotocore.create_client("grafana")`
+Type annotations for `session.create_client("grafana")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_grafana.client import ManagedGrafanaClient
 
-def get_grafana_client() -> ManagedGrafanaClient:
-    return Session().client("grafana")
+session = get_session()
+async with session.create_client("grafana") as client:
+    client: ManagedGrafanaClient
 ```
 
 Boto3 documentation:
@@ -83,7 +86,7 @@ Exceptions:
 
 ManagedGrafanaClient exceptions.
 
-Type annotations for `aiobotocore.create_client("grafana").exceptions` method.
+Type annotations for `session.create_client("grafana").exceptions` method.
 
 Boto3 documentation:
 [ManagedGrafana.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana.Client.exceptions)
@@ -96,7 +99,7 @@ Returns [Exceptions](#exceptions).
 
 Assigns a Grafana Enterprise license to a workspace.
 
-Type annotations for `aiobotocore.create_client("grafana").associate_license`
+Type annotations for `session.create_client("grafana").associate_license`
 method.
 
 Boto3 documentation:
@@ -121,19 +124,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("grafana").can_paginate`
-method.
+Type annotations for `session.create_client("grafana").can_paginate` method.
 
 Boto3 documentation:
 [ManagedGrafana.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_workspace"></a>
 
@@ -141,7 +141,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a *workspace*.
 
-Type annotations for `aiobotocore.create_client("grafana").create_workspace`
+Type annotations for `session.create_client("grafana").create_workspace`
 method.
 
 Boto3 documentation:
@@ -182,7 +182,7 @@ Returns a `Coroutine` for
 
 Deletes an Amazon Managed Grafana workspace.
 
-Type annotations for `aiobotocore.create_client("grafana").delete_workspace`
+Type annotations for `session.create_client("grafana").delete_workspace`
 method.
 
 Boto3 documentation:
@@ -206,7 +206,7 @@ Returns a `Coroutine` for
 
 Displays information about one Amazon Managed Grafana workspace.
 
-Type annotations for `aiobotocore.create_client("grafana").describe_workspace`
+Type annotations for `session.create_client("grafana").describe_workspace`
 method.
 
 Boto3 documentation:
@@ -233,8 +233,7 @@ Displays information about the authentication methods used in one Amazon
 Managed Grafana workspace.
 
 Type annotations for
-`aiobotocore.create_client("grafana").describe_workspace_authentication`
-method.
+`session.create_client("grafana").describe_workspace_authentication` method.
 
 Boto3 documentation:
 [ManagedGrafana.Client.describe_workspace_authentication](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana.Client.describe_workspace_authentication)
@@ -258,8 +257,8 @@ Returns a `Coroutine` for
 
 Removes the Grafana Enterprise license from a workspace.
 
-Type annotations for
-`aiobotocore.create_client("grafana").disassociate_license` method.
+Type annotations for `session.create_client("grafana").disassociate_license`
+method.
 
 Boto3 documentation:
 [ManagedGrafana.Client.disassociate_license](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana.Client.disassociate_license)
@@ -284,8 +283,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("grafana").generate_presigned_url` method.
+Type annotations for `session.create_client("grafana").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [ManagedGrafana.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana.Client.generate_presigned_url)
@@ -309,7 +308,7 @@ Returns a `Coroutine` for `str`.
 Lists the users and groups who have the Grafana `Admin` and `Editor` roles in
 this workspace.
 
-Type annotations for `aiobotocore.create_client("grafana").list_permissions`
+Type annotations for `session.create_client("grafana").list_permissions`
 method.
 
 Boto3 documentation:
@@ -339,8 +338,7 @@ Returns a `Coroutine` for
 Returns a list of Amazon Managed Grafana workspaces in the account, with some
 information about each workspace.
 
-Type annotations for `aiobotocore.create_client("grafana").list_workspaces`
-method.
+Type annotations for `session.create_client("grafana").list_workspaces` method.
 
 Boto3 documentation:
 [ManagedGrafana.Client.list_workspaces](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana.Client.list_workspaces)
@@ -364,7 +362,7 @@ Returns a `Coroutine` for
 
 Updates which users in a workspace have the Grafana `Admin` or `Editor` roles.
 
-Type annotations for `aiobotocore.create_client("grafana").update_permissions`
+Type annotations for `session.create_client("grafana").update_permissions`
 method.
 
 Boto3 documentation:
@@ -392,7 +390,7 @@ Returns a `Coroutine` for
 
 Modifies an existing Amazon Managed Grafana workspace.
 
-Type annotations for `aiobotocore.create_client("grafana").update_workspace`
+Type annotations for `session.create_client("grafana").update_workspace`
 method.
 
 Boto3 documentation:
@@ -431,7 +429,7 @@ Use this operation to define the identity provider (IdP) that this workspace
 authenticates users from, using SAML.
 
 Type annotations for
-`aiobotocore.create_client("grafana").update_workspace_authentication` method.
+`session.create_client("grafana").update_workspace_authentication` method.
 
 Boto3 documentation:
 [ManagedGrafana.Client.update_workspace_authentication](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana.Client.update_workspace_authentication)
@@ -454,12 +452,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateWorkspaceAuthenticationResponseTypeDef](./type_defs.md#updateworkspaceauthenticationresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("grafana").__aenter__` method.
+
+Boto3 documentation:
+[ManagedGrafana.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ManagedGrafanaClient](#managedgrafanaclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("grafana").__aexit__` method.
+
+Boto3 documentation:
+[ManagedGrafana.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("grafana").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("grafana").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_permissions")` ->
   [ListPermissionsPaginator](./paginators.md#listpermissionspaginator)

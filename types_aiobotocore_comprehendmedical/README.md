@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[comprehendmedical]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[comprehendmedical]'
+
+# standalone installation
 pip install types-aiobotocore-comprehendmedical
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-comprehendmedical
 
 ## ComprehendMedicalClient
 
-Type annotations for `aiobotocore.create_client("comprehendmedical")` as
+Type annotations for `session.create_client("comprehendmedical")` as
 [ComprehendMedicalClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_comprehendmedical.client import ComprehendMedicalClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [describe_entities_detection_v2_job](./client.md#describe_entities_detection_v2_job)
 - [describe_icd10_cm_inference_job](./client.md#describe_icd10_cm_inference_job)

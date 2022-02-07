@@ -20,17 +20,19 @@ type annotations stubs module
 ## GetComplianceSummaryPaginator
 
 Type annotations for
-`aiobotocore.create_client("resourcegroupstaggingapi").get_paginator("get_compliance_summary")`.
+`session.create_client("resourcegroupstaggingapi").get_paginator("get_compliance_summary")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_resourcegroupstaggingapi.paginator import GetComplianceSummaryPaginator
 
-def get_get_compliance_summary_paginator() -> GetComplianceSummaryPaginator:
-    return Session().create_client("resourcegroupstaggingapi").get_paginator("get_compliance_summary")
+session = get_session()
+async with session.create_client("resourcegroupstaggingapi") as client:
+    client: ResourceGroupsTaggingAPIClient
+    paginator: GetComplianceSummaryPaginator = client.get_paginator("get_compliance_summary")
 ```
 
 Boto3 documentation:
@@ -55,17 +57,19 @@ Arguments for `GetComplianceSummaryPaginator.paginate` method:
 ## GetResourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("resourcegroupstaggingapi").get_paginator("get_resources")`.
+`session.create_client("resourcegroupstaggingapi").get_paginator("get_resources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_resourcegroupstaggingapi.paginator import GetResourcesPaginator
 
-def get_get_resources_paginator() -> GetResourcesPaginator:
-    return Session().create_client("resourcegroupstaggingapi").get_paginator("get_resources")
+session = get_session()
+async with session.create_client("resourcegroupstaggingapi") as client:
+    client: ResourceGroupsTaggingAPIClient
+    paginator: GetResourcesPaginator = client.get_paginator("get_resources")
 ```
 
 Boto3 documentation:
@@ -91,17 +95,19 @@ Arguments for `GetResourcesPaginator.paginate` method:
 ## GetTagKeysPaginator
 
 Type annotations for
-`aiobotocore.create_client("resourcegroupstaggingapi").get_paginator("get_tag_keys")`.
+`session.create_client("resourcegroupstaggingapi").get_paginator("get_tag_keys")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_resourcegroupstaggingapi.paginator import GetTagKeysPaginator
 
-def get_get_tag_keys_paginator() -> GetTagKeysPaginator:
-    return Session().create_client("resourcegroupstaggingapi").get_paginator("get_tag_keys")
+session = get_session()
+async with session.create_client("resourcegroupstaggingapi") as client:
+    client: ResourceGroupsTaggingAPIClient
+    paginator: GetTagKeysPaginator = client.get_paginator("get_tag_keys")
 ```
 
 Boto3 documentation:
@@ -120,17 +126,19 @@ Arguments for `GetTagKeysPaginator.paginate` method:
 ## GetTagValuesPaginator
 
 Type annotations for
-`aiobotocore.create_client("resourcegroupstaggingapi").get_paginator("get_tag_values")`.
+`session.create_client("resourcegroupstaggingapi").get_paginator("get_tag_values")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_resourcegroupstaggingapi.paginator import GetTagValuesPaginator
 
-def get_get_tag_values_paginator() -> GetTagValuesPaginator:
-    return Session().create_client("resourcegroupstaggingapi").get_paginator("get_tag_values")
+session = get_session()
+async with session.create_client("resourcegroupstaggingapi") as client:
+    client: ResourceGroupsTaggingAPIClient
+    paginator: GetTagValuesPaginator = client.get_paginator("get_tag_values")
 ```
 
 Boto3 documentation:

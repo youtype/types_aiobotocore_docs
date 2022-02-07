@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[importexport]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[importexport]'
+
+# standalone installation
 pip install types-aiobotocore-importexport
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-importexport
 
 ## ImportExportClient
 
-Type annotations for `aiobotocore.create_client("importexport")` as
+Type annotations for `session.create_client("importexport")` as
 [ImportExportClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_importexport.client import ImportExportClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_job](./client.md#cancel_job)
 - [create_job](./client.md#create_job)
@@ -91,7 +97,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_importexport.paginators import ListJobsPaginator, ...
+from types_aiobotocore_importexport.paginator import ListJobsPaginator, ...
 ```
 
 - [ListJobsPaginator](./paginators.md#listjobspaginator)

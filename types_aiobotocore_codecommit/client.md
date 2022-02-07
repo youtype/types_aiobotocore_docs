@@ -93,22 +93,25 @@ type annotations stubs module
     - [update_pull_request_title](#update_pull_request_title)
     - [update_repository_description](#update_repository_description)
     - [update_repository_name](#update_repository_name)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="codecommitclient"></a>
 
 ## CodeCommitClient
 
-Type annotations for `aiobotocore.create_client("codecommit")`
+Type annotations for `session.create_client("codecommit")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_codecommit.client import CodeCommitClient
 
-def get_codecommit_client() -> CodeCommitClient:
-    return Session().client("codecommit")
+session = get_session()
+async with session.create_client("codecommit") as client:
+    client: CodeCommitClient
 ```
 
 Boto3 documentation:
@@ -327,8 +330,7 @@ Exceptions:
 
 CodeCommitClient exceptions.
 
-Type annotations for `aiobotocore.create_client("codecommit").exceptions`
-method.
+Type annotations for `session.create_client("codecommit").exceptions` method.
 
 Boto3 documentation:
 [CodeCommit.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.exceptions)
@@ -343,7 +345,7 @@ Creates an association between an approval rule template and a specified
 repository.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").associate_approval_rule_template_with_repository`
+`session.create_client("codecommit").associate_approval_rule_template_with_repository`
 method.
 
 Boto3 documentation:
@@ -369,7 +371,7 @@ Creates an association between an approval rule template and one or more
 specified repositories.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").batch_associate_approval_rule_template_with_repositories`
+`session.create_client("codecommit").batch_associate_approval_rule_template_with_repositories`
 method.
 
 Boto3 documentation:
@@ -398,8 +400,7 @@ Returns information about one or more merge conflicts in the attempted merge of
 two commit specifiers using the squash or three-way merge strategy.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").batch_describe_merge_conflicts`
-method.
+`session.create_client("codecommit").batch_describe_merge_conflicts` method.
 
 Boto3 documentation:
 [CodeCommit.Client.batch_describe_merge_conflicts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.batch_describe_merge_conflicts)
@@ -437,7 +438,7 @@ Removes the association between an approval rule template and one or more
 specified repositories.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").batch_disassociate_approval_rule_template_from_repositories`
+`session.create_client("codecommit").batch_disassociate_approval_rule_template_from_repositories`
 method.
 
 Boto3 documentation:
@@ -464,8 +465,8 @@ Returns a `Coroutine` for
 
 Returns information about the contents of one or more commits in a repository.
 
-Type annotations for
-`aiobotocore.create_client("codecommit").batch_get_commits` method.
+Type annotations for `session.create_client("codecommit").batch_get_commits`
+method.
 
 Boto3 documentation:
 [CodeCommit.Client.batch_get_commits](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.batch_get_commits)
@@ -490,7 +491,7 @@ Returns a `Coroutine` for
 Returns information about one or more repositories.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").batch_get_repositories` method.
+`session.create_client("codecommit").batch_get_repositories` method.
 
 Boto3 documentation:
 [CodeCommit.Client.batch_get_repositories](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.batch_get_repositories)
@@ -514,19 +515,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("codecommit").can_paginate`
-method.
+Type annotations for `session.create_client("codecommit").can_paginate` method.
 
 Boto3 documentation:
 [CodeCommit.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_approval_rule_template"></a>
 
@@ -536,7 +534,7 @@ Creates a template for approval rules that can then be associated with one or
 more repositories in your AWS account.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").create_approval_rule_template` method.
+`session.create_client("codecommit").create_approval_rule_template` method.
 
 Boto3 documentation:
 [CodeCommit.Client.create_approval_rule_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.create_approval_rule_template)
@@ -562,7 +560,7 @@ Returns a `Coroutine` for
 
 Creates a branch in a repository and points the branch to a commit.
 
-Type annotations for `aiobotocore.create_client("codecommit").create_branch`
+Type annotations for `session.create_client("codecommit").create_branch`
 method.
 
 Boto3 documentation:
@@ -585,7 +583,7 @@ Keyword-only arguments:
 
 Creates a commit for a repository on the tip of a specified branch.
 
-Type annotations for `aiobotocore.create_client("codecommit").create_commit`
+Type annotations for `session.create_client("codecommit").create_commit`
 method.
 
 Boto3 documentation:
@@ -621,8 +619,8 @@ Returns a `Coroutine` for
 
 Creates a pull request in the specified repository.
 
-Type annotations for
-`aiobotocore.create_client("codecommit").create_pull_request` method.
+Type annotations for `session.create_client("codecommit").create_pull_request`
+method.
 
 Boto3 documentation:
 [CodeCommit.Client.create_pull_request](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.create_pull_request)
@@ -651,8 +649,7 @@ Returns a `Coroutine` for
 Creates an approval rule for a pull request.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").create_pull_request_approval_rule`
-method.
+`session.create_client("codecommit").create_pull_request_approval_rule` method.
 
 Boto3 documentation:
 [CodeCommit.Client.create_pull_request_approval_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.create_pull_request_approval_rule)
@@ -678,8 +675,8 @@ Returns a `Coroutine` for
 
 Creates a new, empty repository.
 
-Type annotations for
-`aiobotocore.create_client("codecommit").create_repository` method.
+Type annotations for `session.create_client("codecommit").create_repository`
+method.
 
 Boto3 documentation:
 [CodeCommit.Client.create_repository](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.create_repository)
@@ -706,8 +703,7 @@ Creates an unreferenced commit that represents the result of merging two
 branches using a specified merge strategy.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").create_unreferenced_merge_commit`
-method.
+`session.create_client("codecommit").create_unreferenced_merge_commit` method.
 
 Boto3 documentation:
 [CodeCommit.Client.create_unreferenced_merge_commit](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.create_unreferenced_merge_commit)
@@ -746,7 +742,7 @@ Returns a `Coroutine` for
 Deletes a specified approval rule template.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").delete_approval_rule_template` method.
+`session.create_client("codecommit").delete_approval_rule_template` method.
 
 Boto3 documentation:
 [CodeCommit.Client.delete_approval_rule_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.delete_approval_rule_template)
@@ -771,7 +767,7 @@ Returns a `Coroutine` for
 Deletes a branch from a repository, unless that branch is the default branch
 for the repository.
 
-Type annotations for `aiobotocore.create_client("codecommit").delete_branch`
+Type annotations for `session.create_client("codecommit").delete_branch`
 method.
 
 Boto3 documentation:
@@ -798,7 +794,7 @@ Deletes the content of a comment made on a change, file, or commit in a
 repository.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").delete_comment_content` method.
+`session.create_client("codecommit").delete_comment_content` method.
 
 Boto3 documentation:
 [CodeCommit.Client.delete_comment_content](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.delete_comment_content)
@@ -822,8 +818,7 @@ Returns a `Coroutine` for
 
 Deletes a specified file from a specified branch.
 
-Type annotations for `aiobotocore.create_client("codecommit").delete_file`
-method.
+Type annotations for `session.create_client("codecommit").delete_file` method.
 
 Boto3 documentation:
 [CodeCommit.Client.delete_file](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.delete_file)
@@ -854,8 +849,7 @@ Returns a `Coroutine` for
 Deletes an approval rule from a specified pull request.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").delete_pull_request_approval_rule`
-method.
+`session.create_client("codecommit").delete_pull_request_approval_rule` method.
 
 Boto3 documentation:
 [CodeCommit.Client.delete_pull_request_approval_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.delete_pull_request_approval_rule)
@@ -880,8 +874,8 @@ Returns a `Coroutine` for
 
 Deletes a repository.
 
-Type annotations for
-`aiobotocore.create_client("codecommit").delete_repository` method.
+Type annotations for `session.create_client("codecommit").delete_repository`
+method.
 
 Boto3 documentation:
 [CodeCommit.Client.delete_repository](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.delete_repository)
@@ -906,7 +900,7 @@ Returns information about one or more merge conflicts in the attempted merge of
 two commit specifiers using the squash or three-way merge strategy.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").describe_merge_conflicts` method.
+`session.create_client("codecommit").describe_merge_conflicts` method.
 
 Boto3 documentation:
 [CodeCommit.Client.describe_merge_conflicts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.describe_merge_conflicts)
@@ -942,7 +936,7 @@ Returns a `Coroutine` for
 Returns information about one or more pull request events.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").describe_pull_request_events` method.
+`session.create_client("codecommit").describe_pull_request_events` method.
 
 Boto3 documentation:
 [CodeCommit.Client.describe_pull_request_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.describe_pull_request_events)
@@ -974,7 +968,7 @@ rules based on the template are not automatically created when pull requests
 are created in the specified repository.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").disassociate_approval_rule_template_from_repository`
+`session.create_client("codecommit").disassociate_approval_rule_template_from_repository`
 method.
 
 Boto3 documentation:
@@ -1000,7 +994,7 @@ Evaluates whether a pull request has met all the conditions specified in its
 associated approval rules.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").evaluate_pull_request_approval_rules`
+`session.create_client("codecommit").evaluate_pull_request_approval_rules`
 method.
 
 Boto3 documentation:
@@ -1027,7 +1021,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").generate_presigned_url` method.
+`session.create_client("codecommit").generate_presigned_url` method.
 
 Boto3 documentation:
 [CodeCommit.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.generate_presigned_url)
@@ -1051,7 +1045,7 @@ Returns a `Coroutine` for `str`.
 Returns information about a specified approval rule template.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").get_approval_rule_template` method.
+`session.create_client("codecommit").get_approval_rule_template` method.
 
 Boto3 documentation:
 [CodeCommit.Client.get_approval_rule_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.get_approval_rule_template)
@@ -1075,7 +1069,7 @@ Returns a `Coroutine` for
 
 Returns the base-64 encoded content of an individual blob in a repository.
 
-Type annotations for `aiobotocore.create_client("codecommit").get_blob` method.
+Type annotations for `session.create_client("codecommit").get_blob` method.
 
 Boto3 documentation:
 [CodeCommit.Client.get_blob](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.get_blob)
@@ -1100,8 +1094,7 @@ Returns a `Coroutine` for
 Returns information about a repository branch, including its name and the last
 commit ID.
 
-Type annotations for `aiobotocore.create_client("codecommit").get_branch`
-method.
+Type annotations for `session.create_client("codecommit").get_branch` method.
 
 Boto3 documentation:
 [CodeCommit.Client.get_branch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.get_branch)
@@ -1126,8 +1119,7 @@ Returns a `Coroutine` for
 Returns the content of a comment made on a change, file, or commit in a
 repository.
 
-Type annotations for `aiobotocore.create_client("codecommit").get_comment`
-method.
+Type annotations for `session.create_client("codecommit").get_comment` method.
 
 Boto3 documentation:
 [CodeCommit.Client.get_comment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.get_comment)
@@ -1151,7 +1143,7 @@ Returns a `Coroutine` for
 Returns information about reactions to a specified comment ID.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").get_comment_reactions` method.
+`session.create_client("codecommit").get_comment_reactions` method.
 
 Boto3 documentation:
 [CodeCommit.Client.get_comment_reactions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.get_comment_reactions)
@@ -1179,8 +1171,7 @@ Returns a `Coroutine` for
 Returns information about comments made on the comparison between two commits.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").get_comments_for_compared_commit`
-method.
+`session.create_client("codecommit").get_comments_for_compared_commit` method.
 
 Boto3 documentation:
 [CodeCommit.Client.get_comments_for_compared_commit](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.get_comments_for_compared_commit)
@@ -1209,7 +1200,7 @@ Returns a `Coroutine` for
 Returns comments made on a pull request.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").get_comments_for_pull_request` method.
+`session.create_client("codecommit").get_comments_for_pull_request` method.
 
 Boto3 documentation:
 [CodeCommit.Client.get_comments_for_pull_request](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.get_comments_for_pull_request)
@@ -1239,8 +1230,7 @@ Returns a `Coroutine` for
 Returns information about a commit, including commit message and committer
 information.
 
-Type annotations for `aiobotocore.create_client("codecommit").get_commit`
-method.
+Type annotations for `session.create_client("codecommit").get_commit` method.
 
 Boto3 documentation:
 [CodeCommit.Client.get_commit](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.get_commit)
@@ -1265,7 +1255,7 @@ Returns a `Coroutine` for
 Returns information about the differences in a valid commit specifier (such as
 a branch, tag, HEAD, commit ID, or other fully qualified reference).
 
-Type annotations for `aiobotocore.create_client("codecommit").get_differences`
+Type annotations for `session.create_client("codecommit").get_differences`
 method.
 
 Boto3 documentation:
@@ -1295,7 +1285,7 @@ Returns a `Coroutine` for
 
 Returns the base-64 encoded contents of a specified file and its metadata.
 
-Type annotations for `aiobotocore.create_client("codecommit").get_file` method.
+Type annotations for `session.create_client("codecommit").get_file` method.
 
 Boto3 documentation:
 [CodeCommit.Client.get_file](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.get_file)
@@ -1320,8 +1310,7 @@ Returns a `Coroutine` for
 
 Returns the contents of a specified folder in a repository.
 
-Type annotations for `aiobotocore.create_client("codecommit").get_folder`
-method.
+Type annotations for `session.create_client("codecommit").get_folder` method.
 
 Boto3 documentation:
 [CodeCommit.Client.get_folder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.get_folder)
@@ -1346,7 +1335,7 @@ Returns a `Coroutine` for
 
 Returns information about a specified merge commit.
 
-Type annotations for `aiobotocore.create_client("codecommit").get_merge_commit`
+Type annotations for `session.create_client("codecommit").get_merge_commit`
 method.
 
 Boto3 documentation:
@@ -1377,8 +1366,8 @@ Returns a `Coroutine` for
 Returns information about merge conflicts between the before and after commit
 IDs for a pull request in a repository.
 
-Type annotations for
-`aiobotocore.create_client("codecommit").get_merge_conflicts` method.
+Type annotations for `session.create_client("codecommit").get_merge_conflicts`
+method.
 
 Boto3 documentation:
 [CodeCommit.Client.get_merge_conflicts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.get_merge_conflicts)
@@ -1413,8 +1402,8 @@ Returns a `Coroutine` for
 Returns information about the merge options available for merging two specified
 branches.
 
-Type annotations for
-`aiobotocore.create_client("codecommit").get_merge_options` method.
+Type annotations for `session.create_client("codecommit").get_merge_options`
+method.
 
 Boto3 documentation:
 [CodeCommit.Client.get_merge_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.get_merge_options)
@@ -1443,7 +1432,7 @@ Returns a `Coroutine` for
 
 Gets information about a pull request in a specified repository.
 
-Type annotations for `aiobotocore.create_client("codecommit").get_pull_request`
+Type annotations for `session.create_client("codecommit").get_pull_request`
 method.
 
 Boto3 documentation:
@@ -1468,8 +1457,7 @@ Returns a `Coroutine` for
 Gets information about the approval states for a specified pull request.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").get_pull_request_approval_states`
-method.
+`session.create_client("codecommit").get_pull_request_approval_states` method.
 
 Boto3 documentation:
 [CodeCommit.Client.get_pull_request_approval_states](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.get_pull_request_approval_states)
@@ -1498,8 +1486,7 @@ the user or identity that overrode the rules and their requirements for the
 pull request.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").get_pull_request_override_state`
-method.
+`session.create_client("codecommit").get_pull_request_override_state` method.
 
 Boto3 documentation:
 [CodeCommit.Client.get_pull_request_override_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.get_pull_request_override_state)
@@ -1524,7 +1511,7 @@ Returns a `Coroutine` for
 
 Returns information about a repository.
 
-Type annotations for `aiobotocore.create_client("codecommit").get_repository`
+Type annotations for `session.create_client("codecommit").get_repository`
 method.
 
 Boto3 documentation:
@@ -1549,7 +1536,7 @@ Returns a `Coroutine` for
 Gets information about triggers configured for a repository.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").get_repository_triggers` method.
+`session.create_client("codecommit").get_repository_triggers` method.
 
 Boto3 documentation:
 [CodeCommit.Client.get_repository_triggers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.get_repository_triggers)
@@ -1575,7 +1562,7 @@ Lists all approval rule templates in the specified AWS Region in your AWS
 account.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").list_approval_rule_templates` method.
+`session.create_client("codecommit").list_approval_rule_templates` method.
 
 Boto3 documentation:
 [CodeCommit.Client.list_approval_rule_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.list_approval_rule_templates)
@@ -1602,7 +1589,7 @@ Lists all approval rule templates that are associated with a specified
 repository.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").list_associated_approval_rule_templates_for_repository`
+`session.create_client("codecommit").list_associated_approval_rule_templates_for_repository`
 method.
 
 Boto3 documentation:
@@ -1630,7 +1617,7 @@ Returns a `Coroutine` for
 
 Gets information about one or more branches in a repository.
 
-Type annotations for `aiobotocore.create_client("codecommit").list_branches`
+Type annotations for `session.create_client("codecommit").list_branches`
 method.
 
 Boto3 documentation:
@@ -1655,8 +1642,8 @@ Returns a `Coroutine` for
 
 Returns a list of pull requests for a specified repository.
 
-Type annotations for
-`aiobotocore.create_client("codecommit").list_pull_requests` method.
+Type annotations for `session.create_client("codecommit").list_pull_requests`
+method.
 
 Boto3 documentation:
 [CodeCommit.Client.list_pull_requests](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.list_pull_requests)
@@ -1685,8 +1672,8 @@ Returns a `Coroutine` for
 
 Gets information about one or more repositories.
 
-Type annotations for
-`aiobotocore.create_client("codecommit").list_repositories` method.
+Type annotations for `session.create_client("codecommit").list_repositories`
+method.
 
 Boto3 documentation:
 [CodeCommit.Client.list_repositories](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.list_repositories)
@@ -1712,7 +1699,7 @@ Returns a `Coroutine` for
 Lists all repositories associated with the specified approval rule template.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").list_repositories_for_approval_rule_template`
+`session.create_client("codecommit").list_repositories_for_approval_rule_template`
 method.
 
 Boto3 documentation:
@@ -1742,7 +1729,7 @@ Gets information about AWS tags for a specified Amazon Resource Name (ARN) in
 AWS CodeCommit.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").list_tags_for_resource` method.
+`session.create_client("codecommit").list_tags_for_resource` method.
 
 Boto3 documentation:
 [CodeCommit.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.list_tags_for_resource)
@@ -1768,8 +1755,7 @@ Returns a `Coroutine` for
 Merges two branches using the fast-forward merge strategy.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").merge_branches_by_fast_forward`
-method.
+`session.create_client("codecommit").merge_branches_by_fast_forward` method.
 
 Boto3 documentation:
 [CodeCommit.Client.merge_branches_by_fast_forward](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.merge_branches_by_fast_forward)
@@ -1797,7 +1783,7 @@ Returns a `Coroutine` for
 Merges two branches using the squash merge strategy.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").merge_branches_by_squash` method.
+`session.create_client("codecommit").merge_branches_by_squash` method.
 
 Boto3 documentation:
 [CodeCommit.Client.merge_branches_by_squash](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.merge_branches_by_squash)
@@ -1835,7 +1821,7 @@ Returns a `Coroutine` for
 Merges two specified branches using the three-way merge strategy.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").merge_branches_by_three_way` method.
+`session.create_client("codecommit").merge_branches_by_three_way` method.
 
 Boto3 documentation:
 [CodeCommit.Client.merge_branches_by_three_way](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.merge_branches_by_three_way)
@@ -1875,7 +1861,7 @@ destination branch for that pull request at the specified commit using the
 fast- forward merge strategy.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").merge_pull_request_by_fast_forward`
+`session.create_client("codecommit").merge_pull_request_by_fast_forward`
 method.
 
 Boto3 documentation:
@@ -1905,7 +1891,7 @@ destination branch for that pull request at the specified commit using the
 squash merge strategy.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").merge_pull_request_by_squash` method.
+`session.create_client("codecommit").merge_pull_request_by_squash` method.
 
 Boto3 documentation:
 [CodeCommit.Client.merge_pull_request_by_squash](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.merge_pull_request_by_squash)
@@ -1944,8 +1930,7 @@ destination branch for that pull request at the specified commit using the
 three-way merge strategy.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").merge_pull_request_by_three_way`
-method.
+`session.create_client("codecommit").merge_pull_request_by_three_way` method.
 
 Boto3 documentation:
 [CodeCommit.Client.merge_pull_request_by_three_way](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.merge_pull_request_by_three_way)
@@ -1983,7 +1968,7 @@ Sets aside (overrides) all approval rule requirements for a specified pull
 request.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").override_pull_request_approval_rules`
+`session.create_client("codecommit").override_pull_request_approval_rules`
 method.
 
 Boto3 documentation:
@@ -2009,8 +1994,7 @@ Keyword-only arguments:
 Posts a comment on the comparison between two commits.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").post_comment_for_compared_commit`
-method.
+`session.create_client("codecommit").post_comment_for_compared_commit` method.
 
 Boto3 documentation:
 [CodeCommit.Client.post_comment_for_compared_commit](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.post_comment_for_compared_commit)
@@ -2040,7 +2024,7 @@ Returns a `Coroutine` for
 Posts a comment on a pull request.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").post_comment_for_pull_request` method.
+`session.create_client("codecommit").post_comment_for_pull_request` method.
 
 Boto3 documentation:
 [CodeCommit.Client.post_comment_for_pull_request](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.post_comment_for_pull_request)
@@ -2071,8 +2055,8 @@ Returns a `Coroutine` for
 Posts a comment in reply to an existing comment on a comparison between commits
 or a pull request.
 
-Type annotations for
-`aiobotocore.create_client("codecommit").post_comment_reply` method.
+Type annotations for `session.create_client("codecommit").post_comment_reply`
+method.
 
 Boto3 documentation:
 [CodeCommit.Client.post_comment_reply](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.post_comment_reply)
@@ -2099,8 +2083,8 @@ Returns a `Coroutine` for
 Adds or updates a reaction to a specified comment for the user whose identity
 is used to make the request.
 
-Type annotations for
-`aiobotocore.create_client("codecommit").put_comment_reaction` method.
+Type annotations for `session.create_client("codecommit").put_comment_reaction`
+method.
 
 Boto3 documentation:
 [CodeCommit.Client.put_comment_reaction](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.put_comment_reaction)
@@ -2123,7 +2107,7 @@ Keyword-only arguments:
 Adds or updates a file in a branch in an AWS CodeCommit repository, and
 generates a commit for the addition in the specified branch.
 
-Type annotations for `aiobotocore.create_client("codecommit").put_file` method.
+Type annotations for `session.create_client("codecommit").put_file` method.
 
 Boto3 documentation:
 [CodeCommit.Client.put_file](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.put_file)
@@ -2156,7 +2140,7 @@ Returns a `Coroutine` for
 Replaces all triggers for a repository.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").put_repository_triggers` method.
+`session.create_client("codecommit").put_repository_triggers` method.
 
 Boto3 documentation:
 [CodeCommit.Client.put_repository_triggers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.put_repository_triggers)
@@ -2183,8 +2167,7 @@ Returns a `Coroutine` for
 
 Adds or updates tags for a resource in AWS CodeCommit.
 
-Type annotations for `aiobotocore.create_client("codecommit").tag_resource`
-method.
+Type annotations for `session.create_client("codecommit").tag_resource` method.
 
 Boto3 documentation:
 [CodeCommit.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.tag_resource)
@@ -2207,7 +2190,7 @@ Tests the functionality of repository triggers by sending information to the
 trigger target.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").test_repository_triggers` method.
+`session.create_client("codecommit").test_repository_triggers` method.
 
 Boto3 documentation:
 [CodeCommit.Client.test_repository_triggers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.test_repository_triggers)
@@ -2234,7 +2217,7 @@ Returns a `Coroutine` for
 
 Removes tags for a resource in AWS CodeCommit.
 
-Type annotations for `aiobotocore.create_client("codecommit").untag_resource`
+Type annotations for `session.create_client("codecommit").untag_resource`
 method.
 
 Boto3 documentation:
@@ -2257,7 +2240,7 @@ Keyword-only arguments:
 Updates the content of an approval rule template.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").update_approval_rule_template_content`
+`session.create_client("codecommit").update_approval_rule_template_content`
 method.
 
 Boto3 documentation:
@@ -2285,7 +2268,7 @@ Returns a `Coroutine` for
 Updates the description for a specified approval rule template.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").update_approval_rule_template_description`
+`session.create_client("codecommit").update_approval_rule_template_description`
 method.
 
 Boto3 documentation:
@@ -2312,7 +2295,7 @@ Returns a `Coroutine` for
 Updates the name of a specified approval rule template.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").update_approval_rule_template_name`
+`session.create_client("codecommit").update_approval_rule_template_name`
 method.
 
 Boto3 documentation:
@@ -2338,7 +2321,7 @@ Returns a `Coroutine` for
 
 Replaces the contents of a comment.
 
-Type annotations for `aiobotocore.create_client("codecommit").update_comment`
+Type annotations for `session.create_client("codecommit").update_comment`
 method.
 
 Boto3 documentation:
@@ -2364,7 +2347,7 @@ Returns a `Coroutine` for
 Sets or changes the default branch name for the specified repository.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").update_default_branch` method.
+`session.create_client("codecommit").update_default_branch` method.
 
 Boto3 documentation:
 [CodeCommit.Client.update_default_branch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.update_default_branch)
@@ -2388,7 +2371,7 @@ Updates the structure of an approval rule created specifically for a pull
 request.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").update_pull_request_approval_rule_content`
+`session.create_client("codecommit").update_pull_request_approval_rule_content`
 method.
 
 Boto3 documentation:
@@ -2417,7 +2400,7 @@ Returns a `Coroutine` for
 Updates the state of a user's approval on a pull request.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").update_pull_request_approval_state`
+`session.create_client("codecommit").update_pull_request_approval_state`
 method.
 
 Boto3 documentation:
@@ -2443,8 +2426,7 @@ Keyword-only arguments:
 Replaces the contents of the description of a pull request.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").update_pull_request_description`
-method.
+`session.create_client("codecommit").update_pull_request_description` method.
 
 Boto3 documentation:
 [CodeCommit.Client.update_pull_request_description](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.update_pull_request_description)
@@ -2470,7 +2452,7 @@ Returns a `Coroutine` for
 Updates the status of a pull request.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").update_pull_request_status` method.
+`session.create_client("codecommit").update_pull_request_status` method.
 
 Boto3 documentation:
 [CodeCommit.Client.update_pull_request_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.update_pull_request_status)
@@ -2498,7 +2480,7 @@ Returns a `Coroutine` for
 Replaces the title of a pull request.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").update_pull_request_title` method.
+`session.create_client("codecommit").update_pull_request_title` method.
 
 Boto3 documentation:
 [CodeCommit.Client.update_pull_request_title](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.update_pull_request_title)
@@ -2524,7 +2506,7 @@ Returns a `Coroutine` for
 Sets or changes the comment or description for a repository.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").update_repository_description` method.
+`session.create_client("codecommit").update_repository_description` method.
 
 Boto3 documentation:
 [CodeCommit.Client.update_repository_description](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.update_repository_description)
@@ -2547,7 +2529,7 @@ Keyword-only arguments:
 Renames a repository.
 
 Type annotations for
-`aiobotocore.create_client("codecommit").update_repository_name` method.
+`session.create_client("codecommit").update_repository_name` method.
 
 Boto3 documentation:
 [CodeCommit.Client.update_repository_name](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.update_repository_name)
@@ -2563,12 +2545,44 @@ Keyword-only arguments:
 - `oldName`: `str` *(required)*
 - `newName`: `str` *(required)*
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("codecommit").__aenter__` method.
+
+Boto3 documentation:
+[CodeCommit.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CodeCommitClient](#codecommitclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("codecommit").__aexit__` method.
+
+Boto3 documentation:
+[CodeCommit.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html#CodeCommit.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("codecommit").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("codecommit").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_pull_request_events")` ->
   [DescribePullRequestEventsPaginator](./paginators.md#describepullrequesteventspaginator)

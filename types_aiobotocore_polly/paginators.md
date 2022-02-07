@@ -19,17 +19,19 @@ type annotations stubs module
 ## DescribeVoicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("polly").get_paginator("describe_voices")`.
+`session.create_client("polly").get_paginator("describe_voices")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_polly.paginator import DescribeVoicesPaginator
 
-def get_describe_voices_paginator() -> DescribeVoicesPaginator:
-    return Session().create_client("polly").get_paginator("describe_voices")
+session = get_session()
+async with session.create_client("polly") as client:
+    client: PollyClient
+    paginator: DescribeVoicesPaginator = client.get_paginator("describe_voices")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `DescribeVoicesPaginator.paginate` method:
 ## ListLexiconsPaginator
 
 Type annotations for
-`aiobotocore.create_client("polly").get_paginator("list_lexicons")`.
+`session.create_client("polly").get_paginator("list_lexicons")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_polly.paginator import ListLexiconsPaginator
 
-def get_list_lexicons_paginator() -> ListLexiconsPaginator:
-    return Session().create_client("polly").get_paginator("list_lexicons")
+session = get_session()
+async with session.create_client("polly") as client:
+    client: PollyClient
+    paginator: ListLexiconsPaginator = client.get_paginator("list_lexicons")
 ```
 
 Boto3 documentation:
@@ -80,17 +84,19 @@ Arguments for `ListLexiconsPaginator.paginate` method:
 ## ListSpeechSynthesisTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("polly").get_paginator("list_speech_synthesis_tasks")`.
+`session.create_client("polly").get_paginator("list_speech_synthesis_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_polly.paginator import ListSpeechSynthesisTasksPaginator
 
-def get_list_speech_synthesis_tasks_paginator() -> ListSpeechSynthesisTasksPaginator:
-    return Session().create_client("polly").get_paginator("list_speech_synthesis_tasks")
+session = get_session()
+async with session.create_client("polly") as client:
+    client: PollyClient
+    paginator: ListSpeechSynthesisTasksPaginator = client.get_paginator("list_speech_synthesis_tasks")
 ```
 
 Boto3 documentation:

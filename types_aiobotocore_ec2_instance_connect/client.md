@@ -18,21 +18,24 @@ type annotations stubs module
     - [generate_presigned_url](#generate_presigned_url)
     - [send_serial_console_ssh_public_key](#send_serial_console_ssh_public_key)
     - [send_ssh_public_key](#send_ssh_public_key)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="ec2instanceconnectclient"></a>
 
 ## EC2InstanceConnectClient
 
-Type annotations for `aiobotocore.create_client("ec2-instance-connect")`
+Type annotations for `session.create_client("ec2-instance-connect")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_ec2_instance_connect.client import EC2InstanceConnectClient
 
-def get_ec2-instance-connect_client() -> EC2InstanceConnectClient:
-    return Session().client("ec2-instance-connect")
+session = get_session()
+async with session.create_client("ec2-instance-connect") as client:
+    client: EC2InstanceConnectClient
 ```
 
 Boto3 documentation:
@@ -75,8 +78,8 @@ Exceptions:
 
 EC2InstanceConnectClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("ec2-instance-connect").exceptions` method.
+Type annotations for `session.create_client("ec2-instance-connect").exceptions`
+method.
 
 Boto3 documentation:
 [EC2InstanceConnect.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2-instance-connect.html#EC2InstanceConnect.Client.exceptions)
@@ -90,18 +93,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("ec2-instance-connect").can_paginate` method.
+`session.create_client("ec2-instance-connect").can_paginate` method.
 
 Boto3 documentation:
 [EC2InstanceConnect.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2-instance-connect.html#EC2InstanceConnect.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -110,8 +111,7 @@ Returns a `Coroutine` for `bool`.
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("ec2-instance-connect").generate_presigned_url`
-method.
+`session.create_client("ec2-instance-connect").generate_presigned_url` method.
 
 Boto3 documentation:
 [EC2InstanceConnect.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2-instance-connect.html#EC2InstanceConnect.Client.generate_presigned_url)
@@ -135,7 +135,7 @@ Returns a `Coroutine` for `str`.
 Pushes an SSH public key to the specified EC2 instance.
 
 Type annotations for
-`aiobotocore.create_client("ec2-instance-connect").send_serial_console_ssh_public_key`
+`session.create_client("ec2-instance-connect").send_serial_console_ssh_public_key`
 method.
 
 Boto3 documentation:
@@ -164,7 +164,7 @@ Pushes an SSH public key to the specified EC2 instance for use by the specified
 user.
 
 Type annotations for
-`aiobotocore.create_client("ec2-instance-connect").send_ssh_public_key` method.
+`session.create_client("ec2-instance-connect").send_ssh_public_key` method.
 
 Boto3 documentation:
 [EC2InstanceConnect.Client.send_ssh_public_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2-instance-connect.html#EC2InstanceConnect.Client.send_ssh_public_key)
@@ -184,3 +184,38 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [SendSSHPublicKeyResponseTypeDef](./type_defs.md#sendsshpublickeyresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("ec2-instance-connect").__aenter__`
+method.
+
+Boto3 documentation:
+[EC2InstanceConnect.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2-instance-connect.html#EC2InstanceConnect.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[EC2InstanceConnectClient](#ec2instanceconnectclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("ec2-instance-connect").__aexit__`
+method.
+
+Boto3 documentation:
+[EC2InstanceConnect.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2-instance-connect.html#EC2InstanceConnect.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

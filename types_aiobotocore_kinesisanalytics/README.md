@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[kinesisanalytics]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[kinesisanalytics]'
+
+# standalone installation
 pip install types-aiobotocore-kinesisanalytics
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-kinesisanalytics
 
 ## KinesisAnalyticsClient
 
-Type annotations for `aiobotocore.create_client("kinesisanalytics")` as
+Type annotations for `session.create_client("kinesisanalytics")` as
 [KinesisAnalyticsClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_kinesisanalytics.client import KinesisAnalyticsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_application_cloud_watch_logging_option](./client.md#add_application_cloud_watch_logging_option)
 - [add_application_input](./client.md#add_application_input)
 - [add_application_input_processing_configuration](./client.md#add_application_input_processing_configuration)

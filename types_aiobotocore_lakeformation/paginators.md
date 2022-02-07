@@ -21,17 +21,19 @@ type annotations stubs module
 ## GetWorkUnitsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").get_paginator("get_work_units")`.
+`session.create_client("lakeformation").get_paginator("get_work_units")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lakeformation.paginator import GetWorkUnitsPaginator
 
-def get_get_work_units_paginator() -> GetWorkUnitsPaginator:
-    return Session().create_client("lakeformation").get_paginator("get_work_units")
+session = get_session()
+async with session.create_client("lakeformation") as client:
+    client: LakeFormationClient
+    paginator: GetWorkUnitsPaginator = client.get_paginator("get_work_units")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `GetWorkUnitsPaginator.paginate` method:
 ## ListDataCellsFilterPaginator
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").get_paginator("list_data_cells_filter")`.
+`session.create_client("lakeformation").get_paginator("list_data_cells_filter")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lakeformation.paginator import ListDataCellsFilterPaginator
 
-def get_list_data_cells_filter_paginator() -> ListDataCellsFilterPaginator:
-    return Session().create_client("lakeformation").get_paginator("list_data_cells_filter")
+session = get_session()
+async with session.create_client("lakeformation") as client:
+    client: LakeFormationClient
+    paginator: ListDataCellsFilterPaginator = client.get_paginator("list_data_cells_filter")
 ```
 
 Boto3 documentation:
@@ -81,17 +85,19 @@ Arguments for `ListDataCellsFilterPaginator.paginate` method:
 ## ListLFTagsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").get_paginator("list_lf_tags")`.
+`session.create_client("lakeformation").get_paginator("list_lf_tags")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lakeformation.paginator import ListLFTagsPaginator
 
-def get_list_lf_tags_paginator() -> ListLFTagsPaginator:
-    return Session().create_client("lakeformation").get_paginator("list_lf_tags")
+session = get_session()
+async with session.create_client("lakeformation") as client:
+    client: LakeFormationClient
+    paginator: ListLFTagsPaginator = client.get_paginator("list_lf_tags")
 ```
 
 Boto3 documentation:
@@ -113,17 +119,19 @@ Arguments for `ListLFTagsPaginator.paginate` method:
 ## SearchDatabasesByLFTagsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").get_paginator("search_databases_by_lf_tags")`.
+`session.create_client("lakeformation").get_paginator("search_databases_by_lf_tags")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lakeformation.paginator import SearchDatabasesByLFTagsPaginator
 
-def get_search_databases_by_lf_tags_paginator() -> SearchDatabasesByLFTagsPaginator:
-    return Session().create_client("lakeformation").get_paginator("search_databases_by_lf_tags")
+session = get_session()
+async with session.create_client("lakeformation") as client:
+    client: LakeFormationClient
+    paginator: SearchDatabasesByLFTagsPaginator = client.get_paginator("search_databases_by_lf_tags")
 ```
 
 Boto3 documentation:
@@ -145,17 +153,19 @@ Arguments for `SearchDatabasesByLFTagsPaginator.paginate` method:
 ## SearchTablesByLFTagsPaginator
 
 Type annotations for
-`aiobotocore.create_client("lakeformation").get_paginator("search_tables_by_lf_tags")`.
+`session.create_client("lakeformation").get_paginator("search_tables_by_lf_tags")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_lakeformation.paginator import SearchTablesByLFTagsPaginator
 
-def get_search_tables_by_lf_tags_paginator() -> SearchTablesByLFTagsPaginator:
-    return Session().create_client("lakeformation").get_paginator("search_tables_by_lf_tags")
+session = get_session()
+async with session.create_client("lakeformation") as client:
+    client: LakeFormationClient
+    paginator: SearchTablesByLFTagsPaginator = client.get_paginator("search_tables_by_lf_tags")
 ```
 
 Boto3 documentation:

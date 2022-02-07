@@ -47,22 +47,25 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_content](#update_content)
     - [update_knowledge_base_template_uri](#update_knowledge_base_template_uri)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="connectwisdomserviceclient"></a>
 
 ## ConnectWisdomServiceClient
 
-Type annotations for `aiobotocore.create_client("wisdom")`
+Type annotations for `session.create_client("wisdom")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_wisdom.client import ConnectWisdomServiceClient
 
-def get_wisdom_client() -> ConnectWisdomServiceClient:
-    return Session().client("wisdom")
+session = get_session()
+async with session.create_client("wisdom") as client:
+    client: ConnectWisdomServiceClient
 ```
 
 Boto3 documentation:
@@ -103,7 +106,7 @@ Exceptions:
 
 ConnectWisdomServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("wisdom").exceptions` method.
+Type annotations for `session.create_client("wisdom").exceptions` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.exceptions)
@@ -116,18 +119,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("wisdom").can_paginate` method.
+Type annotations for `session.create_client("wisdom").can_paginate` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_assistant"></a>
 
@@ -135,8 +136,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates an Amazon Connect Wisdom assistant.
 
-Type annotations for `aiobotocore.create_client("wisdom").create_assistant`
-method.
+Type annotations for `session.create_client("wisdom").create_assistant` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.create_assistant](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.create_assistant)
@@ -168,7 +168,7 @@ Creates an association between an Amazon Connect Wisdom assistant and another
 resource.
 
 Type annotations for
-`aiobotocore.create_client("wisdom").create_assistant_association` method.
+`session.create_client("wisdom").create_assistant_association` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.create_assistant_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.create_assistant_association)
@@ -199,8 +199,7 @@ Returns a `Coroutine` for
 
 Creates Wisdom content.
 
-Type annotations for `aiobotocore.create_client("wisdom").create_content`
-method.
+Type annotations for `session.create_client("wisdom").create_content` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.create_content](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.create_content)
@@ -230,8 +229,8 @@ Returns a `Coroutine` for
 
 Creates a knowledge base.
 
-Type annotations for
-`aiobotocore.create_client("wisdom").create_knowledge_base` method.
+Type annotations for `session.create_client("wisdom").create_knowledge_base`
+method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.create_knowledge_base](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.create_knowledge_base)
@@ -266,8 +265,7 @@ Returns a `Coroutine` for
 
 Creates a session.
 
-Type annotations for `aiobotocore.create_client("wisdom").create_session`
-method.
+Type annotations for `session.create_client("wisdom").create_session` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.create_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.create_session)
@@ -294,8 +292,7 @@ Returns a `Coroutine` for
 
 Deletes an assistant.
 
-Type annotations for `aiobotocore.create_client("wisdom").delete_assistant`
-method.
+Type annotations for `session.create_client("wisdom").delete_assistant` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.delete_assistant](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.delete_assistant)
@@ -318,7 +315,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes an assistant association.
 
 Type annotations for
-`aiobotocore.create_client("wisdom").delete_assistant_association` method.
+`session.create_client("wisdom").delete_assistant_association` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.delete_assistant_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.delete_assistant_association)
@@ -342,8 +339,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the content.
 
-Type annotations for `aiobotocore.create_client("wisdom").delete_content`
-method.
+Type annotations for `session.create_client("wisdom").delete_content` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.delete_content](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.delete_content)
@@ -366,8 +362,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the knowledge base.
 
-Type annotations for
-`aiobotocore.create_client("wisdom").delete_knowledge_base` method.
+Type annotations for `session.create_client("wisdom").delete_knowledge_base`
+method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.delete_knowledge_base](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.delete_knowledge_base)
@@ -390,8 +386,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("wisdom").generate_presigned_url` method.
+Type annotations for `session.create_client("wisdom").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.generate_presigned_url)
@@ -414,8 +410,7 @@ Returns a `Coroutine` for `str`.
 
 Retrieves information about an assistant.
 
-Type annotations for `aiobotocore.create_client("wisdom").get_assistant`
-method.
+Type annotations for `session.create_client("wisdom").get_assistant` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.get_assistant](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.get_assistant)
@@ -439,7 +434,7 @@ Returns a `Coroutine` for
 Retrieves information about an assistant association.
 
 Type annotations for
-`aiobotocore.create_client("wisdom").get_assistant_association` method.
+`session.create_client("wisdom").get_assistant_association` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.get_assistant_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.get_assistant_association)
@@ -464,7 +459,7 @@ Returns a `Coroutine` for
 
 Retrieves content, including a pre-signed URL to download the content.
 
-Type annotations for `aiobotocore.create_client("wisdom").get_content` method.
+Type annotations for `session.create_client("wisdom").get_content` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.get_content](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.get_content)
@@ -488,7 +483,7 @@ Returns a `Coroutine` for
 
 Retrieves summary information about the content.
 
-Type annotations for `aiobotocore.create_client("wisdom").get_content_summary`
+Type annotations for `session.create_client("wisdom").get_content_summary`
 method.
 
 Boto3 documentation:
@@ -514,7 +509,7 @@ Returns a `Coroutine` for
 
 Retrieves information about the knowledge base.
 
-Type annotations for `aiobotocore.create_client("wisdom").get_knowledge_base`
+Type annotations for `session.create_client("wisdom").get_knowledge_base`
 method.
 
 Boto3 documentation:
@@ -539,7 +534,7 @@ Returns a `Coroutine` for
 
 Retrieves recommendations for the specified session.
 
-Type annotations for `aiobotocore.create_client("wisdom").get_recommendations`
+Type annotations for `session.create_client("wisdom").get_recommendations`
 method.
 
 Boto3 documentation:
@@ -567,7 +562,7 @@ Returns a `Coroutine` for
 
 Retrieves information for a specified session.
 
-Type annotations for `aiobotocore.create_client("wisdom").get_session` method.
+Type annotations for `session.create_client("wisdom").get_session` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.get_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.get_session)
@@ -592,7 +587,7 @@ Returns a `Coroutine` for
 Lists information about assistant associations.
 
 Type annotations for
-`aiobotocore.create_client("wisdom").list_assistant_associations` method.
+`session.create_client("wisdom").list_assistant_associations` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.list_assistant_associations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.list_assistant_associations)
@@ -618,8 +613,7 @@ Returns a `Coroutine` for
 
 Lists information about assistants.
 
-Type annotations for `aiobotocore.create_client("wisdom").list_assistants`
-method.
+Type annotations for `session.create_client("wisdom").list_assistants` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.list_assistants](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.list_assistants)
@@ -643,8 +637,7 @@ Returns a `Coroutine` for
 
 Lists the content.
 
-Type annotations for `aiobotocore.create_client("wisdom").list_contents`
-method.
+Type annotations for `session.create_client("wisdom").list_contents` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.list_contents](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.list_contents)
@@ -669,7 +662,7 @@ Returns a `Coroutine` for
 
 Lists the knowledge bases.
 
-Type annotations for `aiobotocore.create_client("wisdom").list_knowledge_bases`
+Type annotations for `session.create_client("wisdom").list_knowledge_bases`
 method.
 
 Boto3 documentation:
@@ -695,8 +688,8 @@ Returns a `Coroutine` for
 
 Lists the tags for the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("wisdom").list_tags_for_resource` method.
+Type annotations for `session.create_client("wisdom").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.list_tags_for_resource)
@@ -722,7 +715,7 @@ Removes the specified recommendations from the specified assistant's queue of
 newly available recommendations.
 
 Type annotations for
-`aiobotocore.create_client("wisdom").notify_recommendations_received` method.
+`session.create_client("wisdom").notify_recommendations_received` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.notify_recommendations_received](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.notify_recommendations_received)
@@ -748,8 +741,7 @@ Returns a `Coroutine` for
 
 Performs a manual search against the specified assistant.
 
-Type annotations for `aiobotocore.create_client("wisdom").query_assistant`
-method.
+Type annotations for `session.create_client("wisdom").query_assistant` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.query_assistant](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.query_assistant)
@@ -776,8 +768,7 @@ Returns a `Coroutine` for
 Removes a URI template from a knowledge base.
 
 Type annotations for
-`aiobotocore.create_client("wisdom").remove_knowledge_base_template_uri`
-method.
+`session.create_client("wisdom").remove_knowledge_base_template_uri` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.remove_knowledge_base_template_uri](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.remove_knowledge_base_template_uri)
@@ -800,8 +791,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Searches for content in a specified knowledge base.
 
-Type annotations for `aiobotocore.create_client("wisdom").search_content`
-method.
+Type annotations for `session.create_client("wisdom").search_content` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.search_content](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.search_content)
@@ -829,8 +819,7 @@ Returns a `Coroutine` for
 
 Searches for sessions.
 
-Type annotations for `aiobotocore.create_client("wisdom").search_sessions`
-method.
+Type annotations for `session.create_client("wisdom").search_sessions` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.search_sessions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.search_sessions)
@@ -858,7 +847,7 @@ Returns a `Coroutine` for
 
 Get a URL to upload content to a knowledge base.
 
-Type annotations for `aiobotocore.create_client("wisdom").start_content_upload`
+Type annotations for `session.create_client("wisdom").start_content_upload`
 method.
 
 Boto3 documentation:
@@ -884,7 +873,7 @@ Returns a `Coroutine` for
 
 Adds the specified tags to the specified resource.
 
-Type annotations for `aiobotocore.create_client("wisdom").tag_resource` method.
+Type annotations for `session.create_client("wisdom").tag_resource` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.tag_resource)
@@ -907,8 +896,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the specified tags from the specified resource.
 
-Type annotations for `aiobotocore.create_client("wisdom").untag_resource`
-method.
+Type annotations for `session.create_client("wisdom").untag_resource` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.untag_resource)
@@ -931,8 +919,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates information about the content.
 
-Type annotations for `aiobotocore.create_client("wisdom").update_content`
-method.
+Type annotations for `session.create_client("wisdom").update_content` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.update_content](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.update_content)
@@ -963,8 +950,7 @@ Returns a `Coroutine` for
 Updates the template URI of a knowledge base.
 
 Type annotations for
-`aiobotocore.create_client("wisdom").update_knowledge_base_template_uri`
-method.
+`session.create_client("wisdom").update_knowledge_base_template_uri` method.
 
 Boto3 documentation:
 [ConnectWisdomService.Client.update_knowledge_base_template_uri](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.update_knowledge_base_template_uri)
@@ -983,11 +969,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateKnowledgeBaseTemplateUriResponseTypeDef](./type_defs.md#updateknowledgebasetemplateuriresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("wisdom").__aenter__` method.
+
+Boto3 documentation:
+[ConnectWisdomService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[ConnectWisdomServiceClient](#connectwisdomserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("wisdom").__aexit__` method.
+
+Boto3 documentation:
+[ConnectWisdomService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wisdom.html#ConnectWisdomService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("wisdom").get_paginator` method
+Type annotations for `session.create_client("wisdom").get_paginator` method
 with overloads.
 
 - `client.get_paginator("list_assistant_associations")` ->

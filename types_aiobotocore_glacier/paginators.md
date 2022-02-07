@@ -20,17 +20,19 @@ type annotations stubs module
 ## ListJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("glacier").get_paginator("list_jobs")`.
+`session.create_client("glacier").get_paginator("list_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glacier.paginator import ListJobsPaginator
 
-def get_list_jobs_paginator() -> ListJobsPaginator:
-    return Session().create_client("glacier").get_paginator("list_jobs")
+session = get_session()
+async with session.create_client("glacier") as client:
+    client: GlacierClient
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
 ```
 
 Boto3 documentation:
@@ -53,17 +55,19 @@ Arguments for `ListJobsPaginator.paginate` method:
 ## ListMultipartUploadsPaginator
 
 Type annotations for
-`aiobotocore.create_client("glacier").get_paginator("list_multipart_uploads")`.
+`session.create_client("glacier").get_paginator("list_multipart_uploads")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glacier.paginator import ListMultipartUploadsPaginator
 
-def get_list_multipart_uploads_paginator() -> ListMultipartUploadsPaginator:
-    return Session().create_client("glacier").get_paginator("list_multipart_uploads")
+session = get_session()
+async with session.create_client("glacier") as client:
+    client: GlacierClient
+    paginator: ListMultipartUploadsPaginator = client.get_paginator("list_multipart_uploads")
 ```
 
 Boto3 documentation:
@@ -84,17 +88,19 @@ Arguments for `ListMultipartUploadsPaginator.paginate` method:
 ## ListPartsPaginator
 
 Type annotations for
-`aiobotocore.create_client("glacier").get_paginator("list_parts")`.
+`session.create_client("glacier").get_paginator("list_parts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glacier.paginator import ListPartsPaginator
 
-def get_list_parts_paginator() -> ListPartsPaginator:
-    return Session().create_client("glacier").get_paginator("list_parts")
+session = get_session()
+async with session.create_client("glacier") as client:
+    client: GlacierClient
+    paginator: ListPartsPaginator = client.get_paginator("list_parts")
 ```
 
 Boto3 documentation:
@@ -116,17 +122,19 @@ Arguments for `ListPartsPaginator.paginate` method:
 ## ListVaultsPaginator
 
 Type annotations for
-`aiobotocore.create_client("glacier").get_paginator("list_vaults")`.
+`session.create_client("glacier").get_paginator("list_vaults")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_glacier.paginator import ListVaultsPaginator
 
-def get_list_vaults_paginator() -> ListVaultsPaginator:
-    return Session().create_client("glacier").get_paginator("list_vaults")
+session = get_session()
+async with session.create_client("glacier") as client:
+    client: GlacierClient
+    paginator: ListVaultsPaginator = client.get_paginator("list_vaults")
 ```
 
 Boto3 documentation:

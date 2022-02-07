@@ -21,17 +21,19 @@ type annotations stubs module
 ## DescribeComputeEnvironmentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("batch").get_paginator("describe_compute_environments")`.
+`session.create_client("batch").get_paginator("describe_compute_environments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_batch.paginator import DescribeComputeEnvironmentsPaginator
 
-def get_describe_compute_environments_paginator() -> DescribeComputeEnvironmentsPaginator:
-    return Session().create_client("batch").get_paginator("describe_compute_environments")
+session = get_session()
+async with session.create_client("batch") as client:
+    client: BatchClient
+    paginator: DescribeComputeEnvironmentsPaginator = client.get_paginator("describe_compute_environments")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `DescribeComputeEnvironmentsPaginator.paginate` method:
 ## DescribeJobDefinitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("batch").get_paginator("describe_job_definitions")`.
+`session.create_client("batch").get_paginator("describe_job_definitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_batch.paginator import DescribeJobDefinitionsPaginator
 
-def get_describe_job_definitions_paginator() -> DescribeJobDefinitionsPaginator:
-    return Session().create_client("batch").get_paginator("describe_job_definitions")
+session = get_session()
+async with session.create_client("batch") as client:
+    client: BatchClient
+    paginator: DescribeJobDefinitionsPaginator = client.get_paginator("describe_job_definitions")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `DescribeJobDefinitionsPaginator.paginate` method:
 ## DescribeJobQueuesPaginator
 
 Type annotations for
-`aiobotocore.create_client("batch").get_paginator("describe_job_queues")`.
+`session.create_client("batch").get_paginator("describe_job_queues")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_batch.paginator import DescribeJobQueuesPaginator
 
-def get_describe_job_queues_paginator() -> DescribeJobQueuesPaginator:
-    return Session().create_client("batch").get_paginator("describe_job_queues")
+session = get_session()
+async with session.create_client("batch") as client:
+    client: BatchClient
+    paginator: DescribeJobQueuesPaginator = client.get_paginator("describe_job_queues")
 ```
 
 Boto3 documentation:
@@ -113,17 +119,19 @@ Arguments for `DescribeJobQueuesPaginator.paginate` method:
 ## ListJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("batch").get_paginator("list_jobs")`.
+`session.create_client("batch").get_paginator("list_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_batch.paginator import ListJobsPaginator
 
-def get_list_jobs_paginator() -> ListJobsPaginator:
-    return Session().create_client("batch").get_paginator("list_jobs")
+session = get_session()
+async with session.create_client("batch") as client:
+    client: BatchClient
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
 ```
 
 Boto3 documentation:
@@ -148,17 +156,19 @@ Arguments for `ListJobsPaginator.paginate` method:
 ## ListSchedulingPoliciesPaginator
 
 Type annotations for
-`aiobotocore.create_client("batch").get_paginator("list_scheduling_policies")`.
+`session.create_client("batch").get_paginator("list_scheduling_policies")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_batch.paginator import ListSchedulingPoliciesPaginator
 
-def get_list_scheduling_policies_paginator() -> ListSchedulingPoliciesPaginator:
-    return Session().create_client("batch").get_paginator("list_scheduling_policies")
+session = get_session()
+async with session.create_client("batch") as client:
+    client: BatchClient
+    paginator: ListSchedulingPoliciesPaginator = client.get_paginator("list_scheduling_policies")
 ```
 
 Boto3 documentation:

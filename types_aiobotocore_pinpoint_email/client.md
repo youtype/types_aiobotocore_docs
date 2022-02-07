@@ -58,22 +58,25 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_configuration_set_event_destination](#update_configuration_set_event_destination)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="pinpointemailclient"></a>
 
 ## PinpointEmailClient
 
-Type annotations for `aiobotocore.create_client("pinpoint-email")`
+Type annotations for `session.create_client("pinpoint-email")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint_email.client import PinpointEmailClient
 
-def get_pinpoint-email_client() -> PinpointEmailClient:
-    return Session().client("pinpoint-email")
+session = get_session()
+async with session.create_client("pinpoint-email") as client:
+    client: PinpointEmailClient
 ```
 
 Boto3 documentation:
@@ -117,7 +120,7 @@ Exceptions:
 
 PinpointEmailClient exceptions.
 
-Type annotations for `aiobotocore.create_client("pinpoint-email").exceptions`
+Type annotations for `session.create_client("pinpoint-email").exceptions`
 method.
 
 Boto3 documentation:
@@ -131,19 +134,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("pinpoint-email").can_paginate`
+Type annotations for `session.create_client("pinpoint-email").can_paginate`
 method.
 
 Boto3 documentation:
 [PinpointEmail.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_configuration_set"></a>
 
@@ -152,7 +153,7 @@ Returns a `Coroutine` for `bool`.
 Create a configuration set.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").create_configuration_set` method.
+`session.create_client("pinpoint-email").create_configuration_set` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.create_configuration_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.create_configuration_set)
@@ -185,7 +186,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Create an event destination.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").create_configuration_set_event_destination`
+`session.create_client("pinpoint-email").create_configuration_set_event_destination`
 method.
 
 Boto3 documentation:
@@ -214,7 +215,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Create a new pool of dedicated IP addresses.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").create_dedicated_ip_pool` method.
+`session.create_client("pinpoint-email").create_dedicated_ip_pool` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.create_dedicated_ip_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.create_dedicated_ip_pool)
@@ -239,7 +240,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Create a new predictive inbox placement test.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").create_deliverability_test_report`
+`session.create_client("pinpoint-email").create_deliverability_test_report`
 method.
 
 Boto3 documentation:
@@ -269,7 +270,7 @@ Returns a `Coroutine` for
 Verifies an email identity for use with Amazon Pinpoint.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").create_email_identity` method.
+`session.create_client("pinpoint-email").create_email_identity` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.create_email_identity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.create_email_identity)
@@ -295,7 +296,7 @@ Returns a `Coroutine` for
 Delete an existing configuration set.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").delete_configuration_set` method.
+`session.create_client("pinpoint-email").delete_configuration_set` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.delete_configuration_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.delete_configuration_set)
@@ -319,7 +320,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Delete an event destination.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").delete_configuration_set_event_destination`
+`session.create_client("pinpoint-email").delete_configuration_set_event_destination`
 method.
 
 Boto3 documentation:
@@ -345,7 +346,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Delete a dedicated IP pool.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").delete_dedicated_ip_pool` method.
+`session.create_client("pinpoint-email").delete_dedicated_ip_pool` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.delete_dedicated_ip_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.delete_dedicated_ip_pool)
@@ -370,7 +371,7 @@ Deletes an email identity that you previously verified for use with Amazon
 Pinpoint.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").delete_email_identity` method.
+`session.create_client("pinpoint-email").delete_email_identity` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.delete_email_identity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.delete_email_identity)
@@ -394,7 +395,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").generate_presigned_url` method.
+`session.create_client("pinpoint-email").generate_presigned_url` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.generate_presigned_url)
@@ -418,7 +419,7 @@ Returns a `Coroutine` for `str`.
 Obtain information about the email-sending status and capabilities of your
 Amazon Pinpoint account in the current AWS Region.
 
-Type annotations for `aiobotocore.create_client("pinpoint-email").get_account`
+Type annotations for `session.create_client("pinpoint-email").get_account`
 method.
 
 Boto3 documentation:
@@ -436,7 +437,7 @@ Returns a `Coroutine` for
 Retrieve a list of the blacklists that your dedicated IP addresses appear on.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").get_blacklist_reports` method.
+`session.create_client("pinpoint-email").get_blacklist_reports` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.get_blacklist_reports](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.get_blacklist_reports)
@@ -463,7 +464,7 @@ pool that it's associated with, whether or not it's enabled for sending email,
 and more.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").get_configuration_set` method.
+`session.create_client("pinpoint-email").get_configuration_set` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.get_configuration_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.get_configuration_set)
@@ -489,7 +490,7 @@ Retrieve a list of event destinations that are associated with a configuration
 set.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").get_configuration_set_event_destinations`
+`session.create_client("pinpoint-email").get_configuration_set_event_destinations`
 method.
 
 Boto3 documentation:
@@ -516,8 +517,8 @@ Get information about a dedicated IP address, including the name of the
 dedicated IP pool that it's associated with, as well information about the
 automatic warm-up process for the address.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint-email").get_dedicated_ip` method.
+Type annotations for `session.create_client("pinpoint-email").get_dedicated_ip`
+method.
 
 Boto3 documentation:
 [PinpointEmail.Client.get_dedicated_ip](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.get_dedicated_ip)
@@ -542,7 +543,7 @@ List the dedicated IP addresses that are associated with your Amazon Pinpoint
 account.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").get_dedicated_ips` method.
+`session.create_client("pinpoint-email").get_dedicated_ips` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.get_dedicated_ips](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.get_dedicated_ips)
@@ -569,7 +570,7 @@ Retrieve information about the status of the Deliverability dashboard for your
 Amazon Pinpoint account.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").get_deliverability_dashboard_options`
+`session.create_client("pinpoint-email").get_deliverability_dashboard_options`
 method.
 
 Boto3 documentation:
@@ -588,7 +589,7 @@ Returns a `Coroutine` for
 Retrieve the results of a predictive inbox placement test.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").get_deliverability_test_report`
+`session.create_client("pinpoint-email").get_deliverability_test_report`
 method.
 
 Boto3 documentation:
@@ -614,7 +615,7 @@ Returns a `Coroutine` for
 Retrieve all the deliverability data for a specific campaign.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").get_domain_deliverability_campaign`
+`session.create_client("pinpoint-email").get_domain_deliverability_campaign`
 method.
 
 Boto3 documentation:
@@ -641,8 +642,7 @@ Retrieve inbox placement and engagement rates for the domains that you use to
 send email.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").get_domain_statistics_report`
-method.
+`session.create_client("pinpoint-email").get_domain_statistics_report` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.get_domain_statistics_report](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.get_domain_statistics_report)
@@ -671,7 +671,7 @@ Pinpoint account, including the identity's verification status, its DKIM
 authentication status, and its custom Mail-From settings.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").get_email_identity` method.
+`session.create_client("pinpoint-email").get_email_identity` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.get_email_identity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.get_email_identity)
@@ -697,7 +697,7 @@ List all of the configuration sets associated with your Amazon Pinpoint account
 in the current region.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").list_configuration_sets` method.
+`session.create_client("pinpoint-email").list_configuration_sets` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.list_configuration_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.list_configuration_sets)
@@ -724,7 +724,7 @@ List all of the dedicated IP pools that exist in your Amazon Pinpoint account
 in the current AWS Region.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").list_dedicated_ip_pools` method.
+`session.create_client("pinpoint-email").list_dedicated_ip_pools` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.list_dedicated_ip_pools](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.list_dedicated_ip_pools)
@@ -751,7 +751,7 @@ Show a list of the predictive inbox placement tests that you've performed,
 regardless of their statuses.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").list_deliverability_test_reports`
+`session.create_client("pinpoint-email").list_deliverability_test_reports`
 method.
 
 Boto3 documentation:
@@ -779,7 +779,7 @@ Retrieve deliverability data for all the campaigns that used a specific domain
 to send email during a specified time range.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").list_domain_deliverability_campaigns`
+`session.create_client("pinpoint-email").list_domain_deliverability_campaigns`
 method.
 
 Boto3 documentation:
@@ -810,7 +810,7 @@ Returns a list of all of the email identities that are associated with your
 Amazon Pinpoint account.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").list_email_identities` method.
+`session.create_client("pinpoint-email").list_email_identities` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.list_email_identities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.list_email_identities)
@@ -837,7 +837,7 @@ Retrieve a list of the tags (keys and values) that are associated with a
 specified resource.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").list_tags_for_resource` method.
+`session.create_client("pinpoint-email").list_tags_for_resource` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.list_tags_for_resource)
@@ -862,7 +862,7 @@ Returns a `Coroutine` for
 Enable or disable the automatic warm-up feature for dedicated IP addresses.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").put_account_dedicated_ip_warmup_attributes`
+`session.create_client("pinpoint-email").put_account_dedicated_ip_warmup_attributes`
 method.
 
 Boto3 documentation:
@@ -887,7 +887,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Enable or disable the ability of your account to send email.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").put_account_sending_attributes`
+`session.create_client("pinpoint-email").put_account_sending_attributes`
 method.
 
 Boto3 documentation:
@@ -912,7 +912,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associate a configuration set with a dedicated IP pool.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").put_configuration_set_delivery_options`
+`session.create_client("pinpoint-email").put_configuration_set_delivery_options`
 method.
 
 Boto3 documentation:
@@ -940,7 +940,7 @@ Enable or disable collection of reputation metrics for emails that you send
 using a particular configuration set in a specific AWS Region.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").put_configuration_set_reputation_options`
+`session.create_client("pinpoint-email").put_configuration_set_reputation_options`
 method.
 
 Boto3 documentation:
@@ -967,7 +967,7 @@ Enable or disable email sending for messages that use a particular
 configuration set in a specific AWS Region.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").put_configuration_set_sending_options`
+`session.create_client("pinpoint-email").put_configuration_set_sending_options`
 method.
 
 Boto3 documentation:
@@ -994,7 +994,7 @@ Specify a custom domain to use for open and click tracking elements in email
 that you send using Amazon Pinpoint.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").put_configuration_set_tracking_options`
+`session.create_client("pinpoint-email").put_configuration_set_tracking_options`
 method.
 
 Boto3 documentation:
@@ -1020,7 +1020,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Move a dedicated IP address to an existing dedicated IP pool.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").put_dedicated_ip_in_pool` method.
+`session.create_client("pinpoint-email").put_dedicated_ip_in_pool` method.
 
 Boto3 documentation:
 [PinpointEmail.Client.put_dedicated_ip_in_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.put_dedicated_ip_in_pool)
@@ -1047,7 +1047,7 @@ Documentation\](https://docs.aws.amazon.com/goto/WebAPI/pinpoint-
 email-2018-07-26/PutDedicatedIpWarmupAttributes).
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").put_dedicated_ip_warmup_attributes`
+`session.create_client("pinpoint-email").put_dedicated_ip_warmup_attributes`
 method.
 
 Boto3 documentation:
@@ -1074,7 +1074,7 @@ Enable or disable the Deliverability dashboard for your Amazon Pinpoint
 account.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").put_deliverability_dashboard_option`
+`session.create_client("pinpoint-email").put_deliverability_dashboard_option`
 method.
 
 Boto3 documentation:
@@ -1101,7 +1101,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Used to enable or disable DKIM authentication for an email identity.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").put_email_identity_dkim_attributes`
+`session.create_client("pinpoint-email").put_email_identity_dkim_attributes`
 method.
 
 Boto3 documentation:
@@ -1127,7 +1127,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Used to enable or disable feedback forwarding for an identity.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").put_email_identity_feedback_attributes`
+`session.create_client("pinpoint-email").put_email_identity_feedback_attributes`
 method.
 
 Boto3 documentation:
@@ -1154,7 +1154,7 @@ Used to enable or disable the custom Mail-From domain configuration for an
 email identity.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").put_email_identity_mail_from_attributes`
+`session.create_client("pinpoint-email").put_email_identity_mail_from_attributes`
 method.
 
 Boto3 documentation:
@@ -1181,7 +1181,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Sends an email message.
 
-Type annotations for `aiobotocore.create_client("pinpoint-email").send_email`
+Type annotations for `session.create_client("pinpoint-email").send_email`
 method.
 
 Boto3 documentation:
@@ -1214,7 +1214,7 @@ Returns a `Coroutine` for
 
 Add one or more tags (keys and values) to a specified resource.
 
-Type annotations for `aiobotocore.create_client("pinpoint-email").tag_resource`
+Type annotations for `session.create_client("pinpoint-email").tag_resource`
 method.
 
 Boto3 documentation:
@@ -1238,8 +1238,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Remove one or more tags (keys and values) from a specified resource.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint-email").untag_resource` method.
+Type annotations for `session.create_client("pinpoint-email").untag_resource`
+method.
 
 Boto3 documentation:
 [PinpointEmail.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.untag_resource)
@@ -1263,7 +1263,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Update the configuration of an event destination for a configuration set.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint-email").update_configuration_set_event_destination`
+`session.create_client("pinpoint-email").update_configuration_set_event_destination`
 method.
 
 Boto3 documentation:
@@ -1285,13 +1285,46 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("pinpoint-email").__aenter__`
+method.
+
+Boto3 documentation:
+[PinpointEmail.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [PinpointEmailClient](#pinpointemailclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("pinpoint-email").__aexit__`
+method.
+
+Boto3 documentation:
+[PinpointEmail.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint-email.html#PinpointEmail.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("pinpoint-email").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("pinpoint-email").get_paginator`
+method with overloads.
 
 - `client.get_paginator("get_dedicated_ips")` ->
   [GetDedicatedIpsPaginator](./paginators.md#getdedicatedipspaginator)

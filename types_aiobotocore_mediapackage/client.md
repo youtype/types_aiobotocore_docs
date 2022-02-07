@@ -35,22 +35,25 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_channel](#update_channel)
     - [update_origin_endpoint](#update_origin_endpoint)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="mediapackageclient"></a>
 
 ## MediaPackageClient
 
-Type annotations for `aiobotocore.create_client("mediapackage")`
+Type annotations for `session.create_client("mediapackage")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_mediapackage.client import MediaPackageClient
 
-def get_mediapackage_client() -> MediaPackageClient:
-    return Session().client("mediapackage")
+session = get_session()
+async with session.create_client("mediapackage") as client:
+    client: MediaPackageClient
 ```
 
 Boto3 documentation:
@@ -90,8 +93,7 @@ Exceptions:
 
 MediaPackageClient exceptions.
 
-Type annotations for `aiobotocore.create_client("mediapackage").exceptions`
-method.
+Type annotations for `session.create_client("mediapackage").exceptions` method.
 
 Boto3 documentation:
 [MediaPackage.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage.html#MediaPackage.Client.exceptions)
@@ -104,19 +106,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("mediapackage").can_paginate`
+Type annotations for `session.create_client("mediapackage").can_paginate`
 method.
 
 Boto3 documentation:
 [MediaPackage.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage.html#MediaPackage.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="configure_logs"></a>
 
@@ -125,7 +125,7 @@ Returns a `Coroutine` for `bool`.
 Changes the Channel's properities to configure log subscription See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ConfigureLogs).
 
-Type annotations for `aiobotocore.create_client("mediapackage").configure_logs`
+Type annotations for `session.create_client("mediapackage").configure_logs`
 method.
 
 Boto3 documentation:
@@ -153,7 +153,7 @@ Returns a `Coroutine` for
 
 Creates a new Channel.
 
-Type annotations for `aiobotocore.create_client("mediapackage").create_channel`
+Type annotations for `session.create_client("mediapackage").create_channel`
 method.
 
 Boto3 documentation:
@@ -179,8 +179,8 @@ Returns a `Coroutine` for
 
 Creates a new HarvestJob record.
 
-Type annotations for
-`aiobotocore.create_client("mediapackage").create_harvest_job` method.
+Type annotations for `session.create_client("mediapackage").create_harvest_job`
+method.
 
 Boto3 documentation:
 [MediaPackage.Client.create_harvest_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage.html#MediaPackage.Client.create_harvest_job)
@@ -210,7 +210,7 @@ Returns a `Coroutine` for
 Creates a new OriginEndpoint record.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage").create_origin_endpoint` method.
+`session.create_client("mediapackage").create_origin_endpoint` method.
 
 Boto3 documentation:
 [MediaPackage.Client.create_origin_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage.html#MediaPackage.Client.create_origin_endpoint)
@@ -248,7 +248,7 @@ Returns a `Coroutine` for
 
 Deletes an existing Channel.
 
-Type annotations for `aiobotocore.create_client("mediapackage").delete_channel`
+Type annotations for `session.create_client("mediapackage").delete_channel`
 method.
 
 Boto3 documentation:
@@ -272,7 +272,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes an existing OriginEndpoint.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage").delete_origin_endpoint` method.
+`session.create_client("mediapackage").delete_origin_endpoint` method.
 
 Boto3 documentation:
 [MediaPackage.Client.delete_origin_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage.html#MediaPackage.Client.delete_origin_endpoint)
@@ -295,8 +295,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Gets details about a Channel.
 
-Type annotations for
-`aiobotocore.create_client("mediapackage").describe_channel` method.
+Type annotations for `session.create_client("mediapackage").describe_channel`
+method.
 
 Boto3 documentation:
 [MediaPackage.Client.describe_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage.html#MediaPackage.Client.describe_channel)
@@ -320,7 +320,7 @@ Returns a `Coroutine` for
 Gets details about an existing HarvestJob.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage").describe_harvest_job` method.
+`session.create_client("mediapackage").describe_harvest_job` method.
 
 Boto3 documentation:
 [MediaPackage.Client.describe_harvest_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage.html#MediaPackage.Client.describe_harvest_job)
@@ -345,7 +345,7 @@ Returns a `Coroutine` for
 Gets details about an existing OriginEndpoint.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage").describe_origin_endpoint` method.
+`session.create_client("mediapackage").describe_origin_endpoint` method.
 
 Boto3 documentation:
 [MediaPackage.Client.describe_origin_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage.html#MediaPackage.Client.describe_origin_endpoint)
@@ -370,7 +370,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage").generate_presigned_url` method.
+`session.create_client("mediapackage").generate_presigned_url` method.
 
 Boto3 documentation:
 [MediaPackage.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage.html#MediaPackage.Client.generate_presigned_url)
@@ -393,7 +393,7 @@ Returns a `Coroutine` for `str`.
 
 Returns a collection of Channels.
 
-Type annotations for `aiobotocore.create_client("mediapackage").list_channels`
+Type annotations for `session.create_client("mediapackage").list_channels`
 method.
 
 Boto3 documentation:
@@ -418,8 +418,8 @@ Returns a `Coroutine` for
 
 Returns a collection of HarvestJob records.
 
-Type annotations for
-`aiobotocore.create_client("mediapackage").list_harvest_jobs` method.
+Type annotations for `session.create_client("mediapackage").list_harvest_jobs`
+method.
 
 Boto3 documentation:
 [MediaPackage.Client.list_harvest_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage.html#MediaPackage.Client.list_harvest_jobs)
@@ -446,7 +446,7 @@ Returns a `Coroutine` for
 Returns a collection of OriginEndpoint records.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage").list_origin_endpoints` method.
+`session.create_client("mediapackage").list_origin_endpoints` method.
 
 Boto3 documentation:
 [MediaPackage.Client.list_origin_endpoints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage.html#MediaPackage.Client.list_origin_endpoints)
@@ -474,7 +474,7 @@ See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/ListTagsForResource).
 
 Type annotations for
-`aiobotocore.create_client("mediapackage").list_tags_for_resource` method.
+`session.create_client("mediapackage").list_tags_for_resource` method.
 
 Boto3 documentation:
 [MediaPackage.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage.html#MediaPackage.Client.list_tags_for_resource)
@@ -499,7 +499,7 @@ Returns a `Coroutine` for
 Changes the Channel's first IngestEndpoint's username and password.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage").rotate_channel_credentials` method.
+`session.create_client("mediapackage").rotate_channel_credentials` method.
 
 Boto3 documentation:
 [MediaPackage.Client.rotate_channel_credentials](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage.html#MediaPackage.Client.rotate_channel_credentials)
@@ -525,7 +525,7 @@ Rotate the IngestEndpoint's username and password, as specified by the
 IngestEndpoint's id.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage").rotate_ingest_endpoint_credentials`
+`session.create_client("mediapackage").rotate_ingest_endpoint_credentials`
 method.
 
 Boto3 documentation:
@@ -552,7 +552,7 @@ Returns a `Coroutine` for
 See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/TagResource).
 
-Type annotations for `aiobotocore.create_client("mediapackage").tag_resource`
+Type annotations for `session.create_client("mediapackage").tag_resource`
 method.
 
 Boto3 documentation:
@@ -575,7 +575,7 @@ Keyword-only arguments:
 See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/UntagResource).
 
-Type annotations for `aiobotocore.create_client("mediapackage").untag_resource`
+Type annotations for `session.create_client("mediapackage").untag_resource`
 method.
 
 Boto3 documentation:
@@ -597,7 +597,7 @@ Keyword-only arguments:
 
 Updates an existing Channel.
 
-Type annotations for `aiobotocore.create_client("mediapackage").update_channel`
+Type annotations for `session.create_client("mediapackage").update_channel`
 method.
 
 Boto3 documentation:
@@ -623,7 +623,7 @@ Returns a `Coroutine` for
 Updates an existing OriginEndpoint.
 
 Type annotations for
-`aiobotocore.create_client("mediapackage").update_origin_endpoint` method.
+`session.create_client("mediapackage").update_origin_endpoint` method.
 
 Boto3 documentation:
 [MediaPackage.Client.update_origin_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage.html#MediaPackage.Client.update_origin_endpoint)
@@ -653,11 +653,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateOriginEndpointResponseTypeDef](./type_defs.md#updateoriginendpointresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("mediapackage").__aenter__` method.
+
+Boto3 documentation:
+[MediaPackage.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage.html#MediaPackage.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [MediaPackageClient](#mediapackageclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("mediapackage").__aexit__` method.
+
+Boto3 documentation:
+[MediaPackage.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediapackage.html#MediaPackage.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("mediapackage").get_paginator`
+Type annotations for `session.create_client("mediapackage").get_paginator`
 method with overloads.
 
 - `client.get_paginator("list_channels")` ->

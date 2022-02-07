@@ -31,22 +31,25 @@ type annotations stubs module
     - [start_job_run](#start_job_run)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="emrcontainersclient"></a>
 
 ## EMRContainersClient
 
-Type annotations for `aiobotocore.create_client("emr-containers")`
+Type annotations for `session.create_client("emr-containers")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_emr_containers.client import EMRContainersClient
 
-def get_emr-containers_client() -> EMRContainersClient:
-    return Session().client("emr-containers")
+session = get_session()
+async with session.create_client("emr-containers") as client:
+    client: EMRContainersClient
 ```
 
 Boto3 documentation:
@@ -83,7 +86,7 @@ Exceptions:
 
 EMRContainersClient exceptions.
 
-Type annotations for `aiobotocore.create_client("emr-containers").exceptions`
+Type annotations for `session.create_client("emr-containers").exceptions`
 method.
 
 Boto3 documentation:
@@ -97,19 +100,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("emr-containers").can_paginate`
+Type annotations for `session.create_client("emr-containers").can_paginate`
 method.
 
 Boto3 documentation:
 [EMRContainers.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_job_run"></a>
 
@@ -117,8 +118,8 @@ Returns a `Coroutine` for `bool`.
 
 Cancels a job run.
 
-Type annotations for
-`aiobotocore.create_client("emr-containers").cancel_job_run` method.
+Type annotations for `session.create_client("emr-containers").cancel_job_run`
+method.
 
 Boto3 documentation:
 [EMRContainers.Client.cancel_job_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.cancel_job_run)
@@ -143,7 +144,7 @@ Returns a `Coroutine` for
 Creates a managed endpoint.
 
 Type annotations for
-`aiobotocore.create_client("emr-containers").create_managed_endpoint` method.
+`session.create_client("emr-containers").create_managed_endpoint` method.
 
 Boto3 documentation:
 [EMRContainers.Client.create_managed_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.create_managed_endpoint)
@@ -177,7 +178,7 @@ Returns a `Coroutine` for
 Creates a virtual cluster.
 
 Type annotations for
-`aiobotocore.create_client("emr-containers").create_virtual_cluster` method.
+`session.create_client("emr-containers").create_virtual_cluster` method.
 
 Boto3 documentation:
 [EMRContainers.Client.create_virtual_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.create_virtual_cluster)
@@ -207,7 +208,7 @@ Returns a `Coroutine` for
 Deletes a managed endpoint.
 
 Type annotations for
-`aiobotocore.create_client("emr-containers").delete_managed_endpoint` method.
+`session.create_client("emr-containers").delete_managed_endpoint` method.
 
 Boto3 documentation:
 [EMRContainers.Client.delete_managed_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.delete_managed_endpoint)
@@ -233,7 +234,7 @@ Returns a `Coroutine` for
 Deletes a virtual cluster.
 
 Type annotations for
-`aiobotocore.create_client("emr-containers").delete_virtual_cluster` method.
+`session.create_client("emr-containers").delete_virtual_cluster` method.
 
 Boto3 documentation:
 [EMRContainers.Client.delete_virtual_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.delete_virtual_cluster)
@@ -257,8 +258,8 @@ Returns a `Coroutine` for
 
 Displays detailed information about a job run.
 
-Type annotations for
-`aiobotocore.create_client("emr-containers").describe_job_run` method.
+Type annotations for `session.create_client("emr-containers").describe_job_run`
+method.
 
 Boto3 documentation:
 [EMRContainers.Client.describe_job_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.describe_job_run)
@@ -283,7 +284,7 @@ Returns a `Coroutine` for
 Displays detailed information about a managed endpoint.
 
 Type annotations for
-`aiobotocore.create_client("emr-containers").describe_managed_endpoint` method.
+`session.create_client("emr-containers").describe_managed_endpoint` method.
 
 Boto3 documentation:
 [EMRContainers.Client.describe_managed_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.describe_managed_endpoint)
@@ -309,7 +310,7 @@ Returns a `Coroutine` for
 Displays detailed information about a specified virtual cluster.
 
 Type annotations for
-`aiobotocore.create_client("emr-containers").describe_virtual_cluster` method.
+`session.create_client("emr-containers").describe_virtual_cluster` method.
 
 Boto3 documentation:
 [EMRContainers.Client.describe_virtual_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.describe_virtual_cluster)
@@ -334,7 +335,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("emr-containers").generate_presigned_url` method.
+`session.create_client("emr-containers").generate_presigned_url` method.
 
 Boto3 documentation:
 [EMRContainers.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.generate_presigned_url)
@@ -357,8 +358,8 @@ Returns a `Coroutine` for `str`.
 
 Lists job runs based on a set of parameters.
 
-Type annotations for
-`aiobotocore.create_client("emr-containers").list_job_runs` method.
+Type annotations for `session.create_client("emr-containers").list_job_runs`
+method.
 
 Boto3 documentation:
 [EMRContainers.Client.list_job_runs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.list_job_runs)
@@ -388,7 +389,7 @@ Returns a `Coroutine` for
 Lists managed endpoints based on a set of parameters.
 
 Type annotations for
-`aiobotocore.create_client("emr-containers").list_managed_endpoints` method.
+`session.create_client("emr-containers").list_managed_endpoints` method.
 
 Boto3 documentation:
 [EMRContainers.Client.list_managed_endpoints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.list_managed_endpoints)
@@ -419,7 +420,7 @@ Returns a `Coroutine` for
 Lists the tags assigned to the resources.
 
 Type annotations for
-`aiobotocore.create_client("emr-containers").list_tags_for_resource` method.
+`session.create_client("emr-containers").list_tags_for_resource` method.
 
 Boto3 documentation:
 [EMRContainers.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.list_tags_for_resource)
@@ -444,7 +445,7 @@ Returns a `Coroutine` for
 Lists information about the specified virtual cluster.
 
 Type annotations for
-`aiobotocore.create_client("emr-containers").list_virtual_clusters` method.
+`session.create_client("emr-containers").list_virtual_clusters` method.
 
 Boto3 documentation:
 [EMRContainers.Client.list_virtual_clusters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.list_virtual_clusters)
@@ -476,8 +477,8 @@ Returns a `Coroutine` for
 
 Starts a job run.
 
-Type annotations for
-`aiobotocore.create_client("emr-containers").start_job_run` method.
+Type annotations for `session.create_client("emr-containers").start_job_run`
+method.
 
 Boto3 documentation:
 [EMRContainers.Client.start_job_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.start_job_run)
@@ -508,7 +509,7 @@ Returns a `Coroutine` for
 
 Assigns tags to resources.
 
-Type annotations for `aiobotocore.create_client("emr-containers").tag_resource`
+Type annotations for `session.create_client("emr-containers").tag_resource`
 method.
 
 Boto3 documentation:
@@ -532,8 +533,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from resources.
 
-Type annotations for
-`aiobotocore.create_client("emr-containers").untag_resource` method.
+Type annotations for `session.create_client("emr-containers").untag_resource`
+method.
 
 Boto3 documentation:
 [EMRContainers.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.untag_resource)
@@ -550,13 +551,46 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("emr-containers").__aenter__`
+method.
+
+Boto3 documentation:
+[EMRContainers.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [EMRContainersClient](#emrcontainersclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("emr-containers").__aexit__`
+method.
+
+Boto3 documentation:
+[EMRContainers.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("emr-containers").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("emr-containers").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_job_runs")` ->
   [ListJobRunsPaginator](./paginators.md#listjobrunspaginator)

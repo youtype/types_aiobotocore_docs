@@ -21,21 +21,24 @@ type annotations stubs module
     - [post_content](#post_content)
     - [post_text](#post_text)
     - [put_session](#put_session)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="lexruntimeserviceclient"></a>
 
 ## LexRuntimeServiceClient
 
-Type annotations for `aiobotocore.create_client("lex-runtime")`
+Type annotations for `session.create_client("lex-runtime")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_lex_runtime.client import LexRuntimeServiceClient
 
-def get_lex-runtime_client() -> LexRuntimeServiceClient:
-    return Session().client("lex-runtime")
+session = get_session()
+async with session.create_client("lex-runtime") as client:
+    client: LexRuntimeServiceClient
 ```
 
 Boto3 documentation:
@@ -80,8 +83,7 @@ Exceptions:
 
 LexRuntimeServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("lex-runtime").exceptions`
-method.
+Type annotations for `session.create_client("lex-runtime").exceptions` method.
 
 Boto3 documentation:
 [LexRuntimeService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-runtime.html#LexRuntimeService.Client.exceptions)
@@ -94,19 +96,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("lex-runtime").can_paginate`
+Type annotations for `session.create_client("lex-runtime").can_paginate`
 method.
 
 Boto3 documentation:
 [LexRuntimeService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-runtime.html#LexRuntimeService.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="delete_session"></a>
 
@@ -114,7 +114,7 @@ Returns a `Coroutine` for `bool`.
 
 Removes session information for a specified bot, alias, and user ID.
 
-Type annotations for `aiobotocore.create_client("lex-runtime").delete_session`
+Type annotations for `session.create_client("lex-runtime").delete_session`
 method.
 
 Boto3 documentation:
@@ -141,7 +141,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("lex-runtime").generate_presigned_url` method.
+`session.create_client("lex-runtime").generate_presigned_url` method.
 
 Boto3 documentation:
 [LexRuntimeService.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-runtime.html#LexRuntimeService.Client.generate_presigned_url)
@@ -164,8 +164,7 @@ Returns a `Coroutine` for `str`.
 
 Returns session information for a specified bot, alias, and user ID.
 
-Type annotations for `aiobotocore.create_client("lex-runtime").get_session`
-method.
+Type annotations for `session.create_client("lex-runtime").get_session` method.
 
 Boto3 documentation:
 [LexRuntimeService.Client.get_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-runtime.html#LexRuntimeService.Client.get_session)
@@ -191,7 +190,7 @@ Returns a `Coroutine` for
 
 Sends user input (text or speech) to Amazon Lex.
 
-Type annotations for `aiobotocore.create_client("lex-runtime").post_content`
+Type annotations for `session.create_client("lex-runtime").post_content`
 method.
 
 Boto3 documentation:
@@ -224,8 +223,7 @@ Returns a `Coroutine` for
 
 Sends user input to Amazon Lex.
 
-Type annotations for `aiobotocore.create_client("lex-runtime").post_text`
-method.
+Type annotations for `session.create_client("lex-runtime").post_text` method.
 
 Boto3 documentation:
 [LexRuntimeService.Client.post_text](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-runtime.html#LexRuntimeService.Client.post_text)
@@ -255,8 +253,7 @@ Returns a `Coroutine` for
 
 Creates a new session or modifies an existing session with an Amazon Lex bot.
 
-Type annotations for `aiobotocore.create_client("lex-runtime").put_session`
-method.
+Type annotations for `session.create_client("lex-runtime").put_session` method.
 
 Boto3 documentation:
 [LexRuntimeService.Client.put_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-runtime.html#LexRuntimeService.Client.put_session)
@@ -281,3 +278,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [PutSessionResponseTypeDef](./type_defs.md#putsessionresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("lex-runtime").__aenter__` method.
+
+Boto3 documentation:
+[LexRuntimeService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-runtime.html#LexRuntimeService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [LexRuntimeServiceClient](#lexruntimeserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("lex-runtime").__aexit__` method.
+
+Boto3 documentation:
+[LexRuntimeService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lex-runtime.html#LexRuntimeService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

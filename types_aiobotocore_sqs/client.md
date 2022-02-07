@@ -36,22 +36,25 @@ type annotations stubs module
     - [set_queue_attributes](#set_queue_attributes)
     - [tag_queue](#tag_queue)
     - [untag_queue](#untag_queue)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="sqsclient"></a>
 
 ## SQSClient
 
-Type annotations for `aiobotocore.create_client("sqs")`
+Type annotations for `session.create_client("sqs")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_sqs.client import SQSClient
 
-def get_sqs_client() -> SQSClient:
-    return Session().client("sqs")
+session = get_session()
+async with session.create_client("sqs") as client:
+    client: SQSClient
 ```
 
 Boto3 documentation:
@@ -101,7 +104,7 @@ Exceptions:
 
 SQSClient exceptions.
 
-Type annotations for `aiobotocore.create_client("sqs").exceptions` method.
+Type annotations for `session.create_client("sqs").exceptions` method.
 
 Boto3 documentation:
 [SQS.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.exceptions)
@@ -115,7 +118,7 @@ Returns [Exceptions](#exceptions).
 Adds a permission to a queue for a specific
 [principal](https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P)\_.
 
-Type annotations for `aiobotocore.create_client("sqs").add_permission` method.
+Type annotations for `session.create_client("sqs").add_permission` method.
 
 Boto3 documentation:
 [SQS.Client.add_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.add_permission)
@@ -138,18 +141,16 @@ Keyword-only arguments:
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("sqs").can_paginate` method.
+Type annotations for `session.create_client("sqs").can_paginate` method.
 
 Boto3 documentation:
 [SQS.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="change_message_visibility"></a>
 
@@ -158,8 +159,8 @@ Returns a `Coroutine` for `bool`.
 Changes the visibility timeout of a specified message in a queue to a new
 value.
 
-Type annotations for
-`aiobotocore.create_client("sqs").change_message_visibility` method.
+Type annotations for `session.create_client("sqs").change_message_visibility`
+method.
 
 Boto3 documentation:
 [SQS.Client.change_message_visibility](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.change_message_visibility)
@@ -183,7 +184,7 @@ Keyword-only arguments:
 Changes the visibility timeout of multiple messages.
 
 Type annotations for
-`aiobotocore.create_client("sqs").change_message_visibility_batch` method.
+`session.create_client("sqs").change_message_visibility_batch` method.
 
 Boto3 documentation:
 [SQS.Client.change_message_visibility_batch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.change_message_visibility_batch)
@@ -210,7 +211,7 @@ Returns a `Coroutine` for
 
 Creates a new standard or FIFO queue.
 
-Type annotations for `aiobotocore.create_client("sqs").create_queue` method.
+Type annotations for `session.create_client("sqs").create_queue` method.
 
 Boto3 documentation:
 [SQS.Client.create_queue](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.create_queue)
@@ -237,7 +238,7 @@ Returns a `Coroutine` for
 
 Deletes the specified message from the specified queue.
 
-Type annotations for `aiobotocore.create_client("sqs").delete_message` method.
+Type annotations for `session.create_client("sqs").delete_message` method.
 
 Boto3 documentation:
 [SQS.Client.delete_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.delete_message)
@@ -258,7 +259,7 @@ Keyword-only arguments:
 
 Deletes up to ten messages from the specified queue.
 
-Type annotations for `aiobotocore.create_client("sqs").delete_message_batch`
+Type annotations for `session.create_client("sqs").delete_message_batch`
 method.
 
 Boto3 documentation:
@@ -287,7 +288,7 @@ Returns a `Coroutine` for
 Deletes the queue specified by the `QueueUrl` , regardless of the queue's
 contents.
 
-Type annotations for `aiobotocore.create_client("sqs").delete_queue` method.
+Type annotations for `session.create_client("sqs").delete_queue` method.
 
 Boto3 documentation:
 [SQS.Client.delete_queue](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.delete_queue)
@@ -307,7 +308,7 @@ Keyword-only arguments:
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("sqs").generate_presigned_url`
+Type annotations for `session.create_client("sqs").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -331,7 +332,7 @@ Returns a `Coroutine` for `str`.
 
 Gets attributes for the specified queue.
 
-Type annotations for `aiobotocore.create_client("sqs").get_queue_attributes`
+Type annotations for `session.create_client("sqs").get_queue_attributes`
 method.
 
 Boto3 documentation:
@@ -358,7 +359,7 @@ Returns a `Coroutine` for
 
 Returns the URL of an existing Amazon SQS queue.
 
-Type annotations for `aiobotocore.create_client("sqs").get_queue_url` method.
+Type annotations for `session.create_client("sqs").get_queue_url` method.
 
 Boto3 documentation:
 [SQS.Client.get_queue_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.get_queue_url)
@@ -384,7 +385,7 @@ Returns a list of your queues that have the `RedrivePolicy` queue attribute
 configured with a dead-letter queue.
 
 Type annotations for
-`aiobotocore.create_client("sqs").list_dead_letter_source_queues` method.
+`session.create_client("sqs").list_dead_letter_source_queues` method.
 
 Boto3 documentation:
 [SQS.Client.list_dead_letter_source_queues](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.list_dead_letter_source_queues)
@@ -410,7 +411,7 @@ Returns a `Coroutine` for
 
 List all cost allocation tags added to the specified Amazon SQS queue.
 
-Type annotations for `aiobotocore.create_client("sqs").list_queue_tags` method.
+Type annotations for `session.create_client("sqs").list_queue_tags` method.
 
 Boto3 documentation:
 [SQS.Client.list_queue_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.list_queue_tags)
@@ -433,7 +434,7 @@ Returns a `Coroutine` for
 
 Returns a list of your queues in the current region.
 
-Type annotations for `aiobotocore.create_client("sqs").list_queues` method.
+Type annotations for `session.create_client("sqs").list_queues` method.
 
 Boto3 documentation:
 [SQS.Client.list_queues](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.list_queues)
@@ -458,7 +459,7 @@ Returns a `Coroutine` for
 
 Deletes the messages in a queue specified by the `QueueURL` parameter.
 
-Type annotations for `aiobotocore.create_client("sqs").purge_queue` method.
+Type annotations for `session.create_client("sqs").purge_queue` method.
 
 Boto3 documentation:
 [SQS.Client.purge_queue](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.purge_queue)
@@ -478,7 +479,7 @@ Keyword-only arguments:
 
 Retrieves one or more messages (up to 10), from the specified queue.
 
-Type annotations for `aiobotocore.create_client("sqs").receive_message` method.
+Type annotations for `session.create_client("sqs").receive_message` method.
 
 Boto3 documentation:
 [SQS.Client.receive_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.receive_message)
@@ -509,8 +510,7 @@ Returns a `Coroutine` for
 Revokes any permissions in the queue policy that matches the specified `Label`
 parameter.
 
-Type annotations for `aiobotocore.create_client("sqs").remove_permission`
-method.
+Type annotations for `session.create_client("sqs").remove_permission` method.
 
 Boto3 documentation:
 [SQS.Client.remove_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.remove_permission)
@@ -531,7 +531,7 @@ Keyword-only arguments:
 
 Delivers a message to the specified queue.
 
-Type annotations for `aiobotocore.create_client("sqs").send_message` method.
+Type annotations for `session.create_client("sqs").send_message` method.
 
 Boto3 documentation:
 [SQS.Client.send_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.send_message)
@@ -563,8 +563,7 @@ Returns a `Coroutine` for
 
 Delivers up to ten messages to the specified queue.
 
-Type annotations for `aiobotocore.create_client("sqs").send_message_batch`
-method.
+Type annotations for `session.create_client("sqs").send_message_batch` method.
 
 Boto3 documentation:
 [SQS.Client.send_message_batch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.send_message_batch)
@@ -591,7 +590,7 @@ Returns a `Coroutine` for
 
 Sets the value of one or more queue attributes.
 
-Type annotations for `aiobotocore.create_client("sqs").set_queue_attributes`
+Type annotations for `session.create_client("sqs").set_queue_attributes`
 method.
 
 Boto3 documentation:
@@ -616,7 +615,7 @@ Keyword-only arguments:
 
 Add cost allocation tags to the specified Amazon SQS queue.
 
-Type annotations for `aiobotocore.create_client("sqs").tag_queue` method.
+Type annotations for `session.create_client("sqs").tag_queue` method.
 
 Boto3 documentation:
 [SQS.Client.tag_queue](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.tag_queue)
@@ -637,7 +636,7 @@ Keyword-only arguments:
 
 Remove cost allocation tags from the specified Amazon SQS queue.
 
-Type annotations for `aiobotocore.create_client("sqs").untag_queue` method.
+Type annotations for `session.create_client("sqs").untag_queue` method.
 
 Boto3 documentation:
 [SQS.Client.untag_queue](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.untag_queue)
@@ -652,12 +651,44 @@ Keyword-only arguments:
 - `QueueUrl`: `str` *(required)*
 - `TagKeys`: `Sequence`\[`str`\] *(required)*
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("sqs").__aenter__` method.
+
+Boto3 documentation:
+[SQS.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SQSClient](#sqsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("sqs").__aexit__` method.
+
+Boto3 documentation:
+[SQS.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html#SQS.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("sqs").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("sqs").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_dead_letter_source_queues")` ->
   [ListDeadLetterSourceQueuesPaginator](./paginators.md#listdeadlettersourcequeuespaginator)

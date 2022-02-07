@@ -20,7 +20,7 @@ type annotations stubs module
 ## ServicesInactiveWaiter
 
 Type annotations for
-`aiobotocore.create_client("ecs").get_waiter("services_inactive")`.
+`session.create_client("ecs").get_waiter("services_inactive")`.
 
 Can be used directly:
 
@@ -30,7 +30,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ecs.waiter import ServicesInactiveWaiter
 
 def get_services_inactive_waiter() -> ServicesInactiveWaiter:
-    return Session().create_client("ecs").get_waiter("services_inactive")
+    return Session().client("ecs").get_waiter("services_inactive")
 ```
 
 Boto3 documentation:
@@ -49,7 +49,7 @@ Arguments for `ServicesInactiveWaiter.wait` method:
 ## ServicesStableWaiter
 
 Type annotations for
-`aiobotocore.create_client("ecs").get_waiter("services_stable")`.
+`session.create_client("ecs").get_waiter("services_stable")`.
 
 Can be used directly:
 
@@ -59,7 +59,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ecs.waiter import ServicesStableWaiter
 
 def get_services_stable_waiter() -> ServicesStableWaiter:
-    return Session().create_client("ecs").get_waiter("services_stable")
+    return Session().client("ecs").get_waiter("services_stable")
 ```
 
 Boto3 documentation:
@@ -78,7 +78,7 @@ Arguments for `ServicesStableWaiter.wait` method:
 ## TasksRunningWaiter
 
 Type annotations for
-`aiobotocore.create_client("ecs").get_waiter("tasks_running")`.
+`session.create_client("ecs").get_waiter("tasks_running")`.
 
 Can be used directly:
 
@@ -88,7 +88,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ecs.waiter import TasksRunningWaiter
 
 def get_tasks_running_waiter() -> TasksRunningWaiter:
-    return Session().create_client("ecs").get_waiter("tasks_running")
+    return Session().client("ecs").get_waiter("tasks_running")
 ```
 
 Boto3 documentation:
@@ -107,7 +107,7 @@ Arguments for `TasksRunningWaiter.wait` method:
 ## TasksStoppedWaiter
 
 Type annotations for
-`aiobotocore.create_client("ecs").get_waiter("tasks_stopped")`.
+`session.create_client("ecs").get_waiter("tasks_stopped")`.
 
 Can be used directly:
 
@@ -117,7 +117,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ecs.waiter import TasksStoppedWaiter
 
 def get_tasks_stopped_waiter() -> TasksStoppedWaiter:
-    return Session().create_client("ecs").get_waiter("tasks_stopped")
+    return Session().client("ecs").get_waiter("tasks_stopped")
 ```
 
 Boto3 documentation:

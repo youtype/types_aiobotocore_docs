@@ -21,17 +21,19 @@ type annotations stubs module
 ## ListDiscoverersPaginator
 
 Type annotations for
-`aiobotocore.create_client("schemas").get_paginator("list_discoverers")`.
+`session.create_client("schemas").get_paginator("list_discoverers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_schemas.paginator import ListDiscoverersPaginator
 
-def get_list_discoverers_paginator() -> ListDiscoverersPaginator:
-    return Session().create_client("schemas").get_paginator("list_discoverers")
+session = get_session()
+async with session.create_client("schemas") as client:
+    client: SchemasClient
+    paginator: ListDiscoverersPaginator = client.get_paginator("list_discoverers")
 ```
 
 Boto3 documentation:
@@ -52,17 +54,19 @@ Arguments for `ListDiscoverersPaginator.paginate` method:
 ## ListRegistriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("schemas").get_paginator("list_registries")`.
+`session.create_client("schemas").get_paginator("list_registries")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_schemas.paginator import ListRegistriesPaginator
 
-def get_list_registries_paginator() -> ListRegistriesPaginator:
-    return Session().create_client("schemas").get_paginator("list_registries")
+session = get_session()
+async with session.create_client("schemas") as client:
+    client: SchemasClient
+    paginator: ListRegistriesPaginator = client.get_paginator("list_registries")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `ListRegistriesPaginator.paginate` method:
 ## ListSchemaVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("schemas").get_paginator("list_schema_versions")`.
+`session.create_client("schemas").get_paginator("list_schema_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_schemas.paginator import ListSchemaVersionsPaginator
 
-def get_list_schema_versions_paginator() -> ListSchemaVersionsPaginator:
-    return Session().create_client("schemas").get_paginator("list_schema_versions")
+session = get_session()
+async with session.create_client("schemas") as client:
+    client: SchemasClient
+    paginator: ListSchemaVersionsPaginator = client.get_paginator("list_schema_versions")
 ```
 
 Boto3 documentation:
@@ -114,17 +120,19 @@ Arguments for `ListSchemaVersionsPaginator.paginate` method:
 ## ListSchemasPaginator
 
 Type annotations for
-`aiobotocore.create_client("schemas").get_paginator("list_schemas")`.
+`session.create_client("schemas").get_paginator("list_schemas")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_schemas.paginator import ListSchemasPaginator
 
-def get_list_schemas_paginator() -> ListSchemasPaginator:
-    return Session().create_client("schemas").get_paginator("list_schemas")
+session = get_session()
+async with session.create_client("schemas") as client:
+    client: SchemasClient
+    paginator: ListSchemasPaginator = client.get_paginator("list_schemas")
 ```
 
 Boto3 documentation:
@@ -145,17 +153,19 @@ Arguments for `ListSchemasPaginator.paginate` method:
 ## SearchSchemasPaginator
 
 Type annotations for
-`aiobotocore.create_client("schemas").get_paginator("search_schemas")`.
+`session.create_client("schemas").get_paginator("search_schemas")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_schemas.paginator import SearchSchemasPaginator
 
-def get_search_schemas_paginator() -> SearchSchemasPaginator:
-    return Session().create_client("schemas").get_paginator("search_schemas")
+session = get_session()
+async with session.create_client("schemas") as client:
+    client: SchemasClient
+    paginator: SearchSchemasPaginator = client.get_paginator("search_schemas")
 ```
 
 Boto3 documentation:

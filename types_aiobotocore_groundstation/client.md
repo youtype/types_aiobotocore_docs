@@ -41,22 +41,25 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_config](#update_config)
     - [update_mission_profile](#update_mission_profile)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="groundstationclient"></a>
 
 ## GroundStationClient
 
-Type annotations for `aiobotocore.create_client("groundstation")`
+Type annotations for `session.create_client("groundstation")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_groundstation.client import GroundStationClient
 
-def get_groundstation_client() -> GroundStationClient:
-    return Session().client("groundstation")
+session = get_session()
+async with session.create_client("groundstation") as client:
+    client: GroundStationClient
 ```
 
 Boto3 documentation:
@@ -94,7 +97,7 @@ Exceptions:
 
 GroundStationClient exceptions.
 
-Type annotations for `aiobotocore.create_client("groundstation").exceptions`
+Type annotations for `session.create_client("groundstation").exceptions`
 method.
 
 Boto3 documentation:
@@ -108,19 +111,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("groundstation").can_paginate`
+Type annotations for `session.create_client("groundstation").can_paginate`
 method.
 
 Boto3 documentation:
 [GroundStation.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_contact"></a>
 
@@ -128,8 +129,8 @@ Returns a `Coroutine` for `bool`.
 
 Cancels a contact with a specified contact ID.
 
-Type annotations for
-`aiobotocore.create_client("groundstation").cancel_contact` method.
+Type annotations for `session.create_client("groundstation").cancel_contact`
+method.
 
 Boto3 documentation:
 [GroundStation.Client.cancel_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.cancel_contact)
@@ -152,7 +153,7 @@ Returns a `Coroutine` for
 
 Creates a `Config` with the specified `configData` parameters.
 
-Type annotations for `aiobotocore.create_client("groundstation").create_config`
+Type annotations for `session.create_client("groundstation").create_config`
 method.
 
 Boto3 documentation:
@@ -181,8 +182,7 @@ Creates a `DataflowEndpoint` group containing the specified list of
 `DataflowEndpoint` objects.
 
 Type annotations for
-`aiobotocore.create_client("groundstation").create_dataflow_endpoint_group`
-method.
+`session.create_client("groundstation").create_dataflow_endpoint_group` method.
 
 Boto3 documentation:
 [GroundStation.Client.create_dataflow_endpoint_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.create_dataflow_endpoint_group)
@@ -210,7 +210,7 @@ Returns a `Coroutine` for
 Creates a mission profile.
 
 Type annotations for
-`aiobotocore.create_client("groundstation").create_mission_profile` method.
+`session.create_client("groundstation").create_mission_profile` method.
 
 Boto3 documentation:
 [GroundStation.Client.create_mission_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.create_mission_profile)
@@ -240,7 +240,7 @@ Returns a `Coroutine` for
 
 Deletes a `Config` .
 
-Type annotations for `aiobotocore.create_client("groundstation").delete_config`
+Type annotations for `session.create_client("groundstation").delete_config`
 method.
 
 Boto3 documentation:
@@ -268,8 +268,7 @@ Returns a `Coroutine` for
 Deletes a dataflow endpoint group.
 
 Type annotations for
-`aiobotocore.create_client("groundstation").delete_dataflow_endpoint_group`
-method.
+`session.create_client("groundstation").delete_dataflow_endpoint_group` method.
 
 Boto3 documentation:
 [GroundStation.Client.delete_dataflow_endpoint_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.delete_dataflow_endpoint_group)
@@ -294,7 +293,7 @@ Returns a `Coroutine` for
 Deletes a mission profile.
 
 Type annotations for
-`aiobotocore.create_client("groundstation").delete_mission_profile` method.
+`session.create_client("groundstation").delete_mission_profile` method.
 
 Boto3 documentation:
 [GroundStation.Client.delete_mission_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.delete_mission_profile)
@@ -318,8 +317,8 @@ Returns a `Coroutine` for
 
 Describes an existing contact.
 
-Type annotations for
-`aiobotocore.create_client("groundstation").describe_contact` method.
+Type annotations for `session.create_client("groundstation").describe_contact`
+method.
 
 Boto3 documentation:
 [GroundStation.Client.describe_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.describe_contact)
@@ -343,7 +342,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("groundstation").generate_presigned_url` method.
+`session.create_client("groundstation").generate_presigned_url` method.
 
 Boto3 documentation:
 [GroundStation.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.generate_presigned_url)
@@ -366,7 +365,7 @@ Returns a `Coroutine` for `str`.
 
 Returns `Config` information.
 
-Type annotations for `aiobotocore.create_client("groundstation").get_config`
+Type annotations for `session.create_client("groundstation").get_config`
 method.
 
 Boto3 documentation:
@@ -394,8 +393,7 @@ Returns a `Coroutine` for
 Returns the dataflow endpoint group.
 
 Type annotations for
-`aiobotocore.create_client("groundstation").get_dataflow_endpoint_group`
-method.
+`session.create_client("groundstation").get_dataflow_endpoint_group` method.
 
 Boto3 documentation:
 [GroundStation.Client.get_dataflow_endpoint_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.get_dataflow_endpoint_group)
@@ -419,8 +417,8 @@ Returns a `Coroutine` for
 
 Returns the number of minutes used by account.
 
-Type annotations for
-`aiobotocore.create_client("groundstation").get_minute_usage` method.
+Type annotations for `session.create_client("groundstation").get_minute_usage`
+method.
 
 Boto3 documentation:
 [GroundStation.Client.get_minute_usage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.get_minute_usage)
@@ -445,7 +443,7 @@ Returns a `Coroutine` for
 Returns a mission profile.
 
 Type annotations for
-`aiobotocore.create_client("groundstation").get_mission_profile` method.
+`session.create_client("groundstation").get_mission_profile` method.
 
 Boto3 documentation:
 [GroundStation.Client.get_mission_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.get_mission_profile)
@@ -469,7 +467,7 @@ Returns a `Coroutine` for
 
 Returns a satellite.
 
-Type annotations for `aiobotocore.create_client("groundstation").get_satellite`
+Type annotations for `session.create_client("groundstation").get_satellite`
 method.
 
 Boto3 documentation:
@@ -493,7 +491,7 @@ Returns a `Coroutine` for
 
 Returns a list of `Config` objects.
 
-Type annotations for `aiobotocore.create_client("groundstation").list_configs`
+Type annotations for `session.create_client("groundstation").list_configs`
 method.
 
 Boto3 documentation:
@@ -518,7 +516,7 @@ Returns a `Coroutine` for
 
 Returns a list of contacts.
 
-Type annotations for `aiobotocore.create_client("groundstation").list_contacts`
+Type annotations for `session.create_client("groundstation").list_contacts`
 method.
 
 Boto3 documentation:
@@ -552,8 +550,7 @@ Returns a `Coroutine` for
 Returns a list of `DataflowEndpoint` groups.
 
 Type annotations for
-`aiobotocore.create_client("groundstation").list_dataflow_endpoint_groups`
-method.
+`session.create_client("groundstation").list_dataflow_endpoint_groups` method.
 
 Boto3 documentation:
 [GroundStation.Client.list_dataflow_endpoint_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.list_dataflow_endpoint_groups)
@@ -579,7 +576,7 @@ Returns a `Coroutine` for
 Returns a list of ground stations.
 
 Type annotations for
-`aiobotocore.create_client("groundstation").list_ground_stations` method.
+`session.create_client("groundstation").list_ground_stations` method.
 
 Boto3 documentation:
 [GroundStation.Client.list_ground_stations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.list_ground_stations)
@@ -606,7 +603,7 @@ Returns a `Coroutine` for
 Returns a list of mission profiles.
 
 Type annotations for
-`aiobotocore.create_client("groundstation").list_mission_profiles` method.
+`session.create_client("groundstation").list_mission_profiles` method.
 
 Boto3 documentation:
 [GroundStation.Client.list_mission_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.list_mission_profiles)
@@ -631,8 +628,8 @@ Returns a `Coroutine` for
 
 Returns a list of satellites.
 
-Type annotations for
-`aiobotocore.create_client("groundstation").list_satellites` method.
+Type annotations for `session.create_client("groundstation").list_satellites`
+method.
 
 Boto3 documentation:
 [GroundStation.Client.list_satellites](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.list_satellites)
@@ -657,7 +654,7 @@ Returns a `Coroutine` for
 Returns a list of tags for a specified resource.
 
 Type annotations for
-`aiobotocore.create_client("groundstation").list_tags_for_resource` method.
+`session.create_client("groundstation").list_tags_for_resource` method.
 
 Boto3 documentation:
 [GroundStation.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.list_tags_for_resource)
@@ -681,8 +678,8 @@ Returns a `Coroutine` for
 
 Reserves a contact using specified parameters.
 
-Type annotations for
-`aiobotocore.create_client("groundstation").reserve_contact` method.
+Type annotations for `session.create_client("groundstation").reserve_contact`
+method.
 
 Boto3 documentation:
 [GroundStation.Client.reserve_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.reserve_contact)
@@ -710,7 +707,7 @@ Returns a `Coroutine` for
 
 Assigns a tag to a resource.
 
-Type annotations for `aiobotocore.create_client("groundstation").tag_resource`
+Type annotations for `session.create_client("groundstation").tag_resource`
 method.
 
 Boto3 documentation:
@@ -734,8 +731,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deassigns a resource tag.
 
-Type annotations for
-`aiobotocore.create_client("groundstation").untag_resource` method.
+Type annotations for `session.create_client("groundstation").untag_resource`
+method.
 
 Boto3 documentation:
 [GroundStation.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.untag_resource)
@@ -758,7 +755,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the `Config` used when scheduling contacts.
 
-Type annotations for `aiobotocore.create_client("groundstation").update_config`
+Type annotations for `session.create_client("groundstation").update_config`
 method.
 
 Boto3 documentation:
@@ -789,7 +786,7 @@ Returns a `Coroutine` for
 Updates a mission profile.
 
 Type annotations for
-`aiobotocore.create_client("groundstation").update_mission_profile` method.
+`session.create_client("groundstation").update_mission_profile` method.
 
 Boto3 documentation:
 [GroundStation.Client.update_mission_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.update_mission_profile)
@@ -813,11 +810,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [MissionProfileIdResponseTypeDef](./type_defs.md#missionprofileidresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("groundstation").__aenter__`
+method.
+
+Boto3 documentation:
+[GroundStation.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [GroundStationClient](#groundstationclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("groundstation").__aexit__` method.
+
+Boto3 documentation:
+[GroundStation.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/groundstation.html#GroundStation.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("groundstation").get_paginator`
+Type annotations for `session.create_client("groundstation").get_paginator`
 method with overloads.
 
 - `client.get_paginator("list_configs")` ->

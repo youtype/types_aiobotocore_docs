@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[s3control]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[s3control]'
+
+# standalone installation
 pip install types-aiobotocore-s3control
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-s3control
 
 ## S3ControlClient
 
-Type annotations for `aiobotocore.create_client("s3control")` as
+Type annotations for `session.create_client("s3control")` as
 [S3ControlClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_s3control.client import S3ControlClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_access_point](./client.md#create_access_point)
 - [create_access_point_for_object_lambda](./client.md#create_access_point_for_object_lambda)
@@ -134,7 +140,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_s3control.paginators import ListAccessPointsForObjectLambdaPaginator, ...
+from types_aiobotocore_s3control.paginator import ListAccessPointsForObjectLambdaPaginator, ...
 ```
 
 - [ListAccessPointsForObjectLambdaPaginator](./paginators.md#listaccesspointsforobjectlambdapaginator)

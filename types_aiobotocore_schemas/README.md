@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[schemas]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[schemas]'
+
+# standalone installation
 pip install types-aiobotocore-schemas
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-schemas
 
 ## SchemasClient
 
-Type annotations for `aiobotocore.create_client("schemas")` as
+Type annotations for `session.create_client("schemas")` as
 [SchemasClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_schemas.client import SchemasClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_discoverer](./client.md#create_discoverer)
 - [create_registry](./client.md#create_registry)
@@ -108,7 +114,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_schemas.paginators import ListDiscoverersPaginator, ...
+from types_aiobotocore_schemas.paginator import ListDiscoverersPaginator, ...
 ```
 
 - [ListDiscoverersPaginator](./paginators.md#listdiscovererspaginator)
@@ -127,7 +133,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_schemas.waiters import CodeBindingExistsWaiter, ...
+from types_aiobotocore_schemas.waiter import CodeBindingExistsWaiter, ...
 ```
 
 - [CodeBindingExistsWaiter](./waiters.md#codebindingexistswaiter)

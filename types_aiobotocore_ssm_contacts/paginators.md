@@ -22,17 +22,19 @@ type annotations stubs module
 ## ListContactChannelsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").get_paginator("list_contact_channels")`.
+`session.create_client("ssm-contacts").get_paginator("list_contact_channels")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm_contacts.paginator import ListContactChannelsPaginator
 
-def get_list_contact_channels_paginator() -> ListContactChannelsPaginator:
-    return Session().create_client("ssm-contacts").get_paginator("list_contact_channels")
+session = get_session()
+async with session.create_client("ssm-contacts") as client:
+    client: SSMContactsClient
+    paginator: ListContactChannelsPaginator = client.get_paginator("list_contact_channels")
 ```
 
 Boto3 documentation:
@@ -52,17 +54,19 @@ Arguments for `ListContactChannelsPaginator.paginate` method:
 ## ListContactsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").get_paginator("list_contacts")`.
+`session.create_client("ssm-contacts").get_paginator("list_contacts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm_contacts.paginator import ListContactsPaginator
 
-def get_list_contacts_paginator() -> ListContactsPaginator:
-    return Session().create_client("ssm-contacts").get_paginator("list_contacts")
+session = get_session()
+async with session.create_client("ssm-contacts") as client:
+    client: SSMContactsClient
+    paginator: ListContactsPaginator = client.get_paginator("list_contacts")
 ```
 
 Boto3 documentation:
@@ -83,17 +87,19 @@ Arguments for `ListContactsPaginator.paginate` method:
 ## ListEngagementsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").get_paginator("list_engagements")`.
+`session.create_client("ssm-contacts").get_paginator("list_engagements")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm_contacts.paginator import ListEngagementsPaginator
 
-def get_list_engagements_paginator() -> ListEngagementsPaginator:
-    return Session().create_client("ssm-contacts").get_paginator("list_engagements")
+session = get_session()
+async with session.create_client("ssm-contacts") as client:
+    client: SSMContactsClient
+    paginator: ListEngagementsPaginator = client.get_paginator("list_engagements")
 ```
 
 Boto3 documentation:
@@ -114,17 +120,19 @@ Arguments for `ListEngagementsPaginator.paginate` method:
 ## ListPageReceiptsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").get_paginator("list_page_receipts")`.
+`session.create_client("ssm-contacts").get_paginator("list_page_receipts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm_contacts.paginator import ListPageReceiptsPaginator
 
-def get_list_page_receipts_paginator() -> ListPageReceiptsPaginator:
-    return Session().create_client("ssm-contacts").get_paginator("list_page_receipts")
+session = get_session()
+async with session.create_client("ssm-contacts") as client:
+    client: SSMContactsClient
+    paginator: ListPageReceiptsPaginator = client.get_paginator("list_page_receipts")
 ```
 
 Boto3 documentation:
@@ -144,17 +152,19 @@ Arguments for `ListPageReceiptsPaginator.paginate` method:
 ## ListPagesByContactPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").get_paginator("list_pages_by_contact")`.
+`session.create_client("ssm-contacts").get_paginator("list_pages_by_contact")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm_contacts.paginator import ListPagesByContactPaginator
 
-def get_list_pages_by_contact_paginator() -> ListPagesByContactPaginator:
-    return Session().create_client("ssm-contacts").get_paginator("list_pages_by_contact")
+session = get_session()
+async with session.create_client("ssm-contacts") as client:
+    client: SSMContactsClient
+    paginator: ListPagesByContactPaginator = client.get_paginator("list_pages_by_contact")
 ```
 
 Boto3 documentation:
@@ -174,17 +184,19 @@ Arguments for `ListPagesByContactPaginator.paginate` method:
 ## ListPagesByEngagementPaginator
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").get_paginator("list_pages_by_engagement")`.
+`session.create_client("ssm-contacts").get_paginator("list_pages_by_engagement")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ssm_contacts.paginator import ListPagesByEngagementPaginator
 
-def get_list_pages_by_engagement_paginator() -> ListPagesByEngagementPaginator:
-    return Session().create_client("ssm-contacts").get_paginator("list_pages_by_engagement")
+session = get_session()
+async with session.create_client("ssm-contacts") as client:
+    client: SSMContactsClient
+    paginator: ListPagesByEngagementPaginator = client.get_paginator("list_pages_by_engagement")
 ```
 
 Boto3 documentation:

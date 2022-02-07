@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[lookoutmetrics]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[lookoutmetrics]'
+
+# standalone installation
 pip install types-aiobotocore-lookoutmetrics
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-lookoutmetrics
 
 ## LookoutMetricsClient
 
-Type annotations for `aiobotocore.create_client("lookoutmetrics")` as
+Type annotations for `session.create_client("lookoutmetrics")` as
 [LookoutMetricsClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_lookoutmetrics.client import LookoutMetricsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [activate_anomaly_detector](./client.md#activate_anomaly_detector)
 - [back_test_anomaly_detector](./client.md#back_test_anomaly_detector)
 - [can_paginate](./client.md#can_paginate)

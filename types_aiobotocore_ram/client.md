@@ -40,22 +40,25 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_resource_share](#update_resource_share)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="ramclient"></a>
 
 ## RAMClient
 
-Type annotations for `aiobotocore.create_client("ram")`
+Type annotations for `session.create_client("ram")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_ram.client import RAMClient
 
-def get_ram_client() -> RAMClient:
-    return Session().client("ram")
+session = get_session()
+async with session.create_client("ram") as client:
+    client: RAMClient
 ```
 
 Boto3 documentation:
@@ -111,7 +114,7 @@ Exceptions:
 
 RAMClient exceptions.
 
-Type annotations for `aiobotocore.create_client("ram").exceptions` method.
+Type annotations for `session.create_client("ram").exceptions` method.
 
 Boto3 documentation:
 [RAM.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.exceptions)
@@ -126,7 +129,7 @@ Accepts an invitation to a resource share from another Amazon Web Services
 account.
 
 Type annotations for
-`aiobotocore.create_client("ram").accept_resource_share_invitation` method.
+`session.create_client("ram").accept_resource_share_invitation` method.
 
 Boto3 documentation:
 [RAM.Client.accept_resource_share_invitation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.accept_resource_share_invitation)
@@ -152,8 +155,8 @@ Returns a `Coroutine` for
 Adds the specified list of principals and list of resources to a resource
 share.
 
-Type annotations for
-`aiobotocore.create_client("ram").associate_resource_share` method.
+Type annotations for `session.create_client("ram").associate_resource_share`
+method.
 
 Boto3 documentation:
 [RAM.Client.associate_resource_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.associate_resource_share)
@@ -182,7 +185,7 @@ Adds or replaces the RAM permission for a resource type included in a resource
 share.
 
 Type annotations for
-`aiobotocore.create_client("ram").associate_resource_share_permission` method.
+`session.create_client("ram").associate_resource_share_permission` method.
 
 Boto3 documentation:
 [RAM.Client.associate_resource_share_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.associate_resource_share_permission)
@@ -210,18 +213,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("ram").can_paginate` method.
+Type annotations for `session.create_client("ram").can_paginate` method.
 
 Boto3 documentation:
 [RAM.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_resource_share"></a>
 
@@ -229,7 +230,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a resource share.
 
-Type annotations for `aiobotocore.create_client("ram").create_resource_share`
+Type annotations for `session.create_client("ram").create_resource_share`
 method.
 
 Boto3 documentation:
@@ -260,7 +261,7 @@ Returns a `Coroutine` for
 
 Deletes the specified resource share.
 
-Type annotations for `aiobotocore.create_client("ram").delete_resource_share`
+Type annotations for `session.create_client("ram").delete_resource_share`
 method.
 
 Boto3 documentation:
@@ -287,8 +288,8 @@ Returns a `Coroutine` for
 Disassociates the specified principals or resources from the specified resource
 share.
 
-Type annotations for
-`aiobotocore.create_client("ram").disassociate_resource_share` method.
+Type annotations for `session.create_client("ram").disassociate_resource_share`
+method.
 
 Boto3 documentation:
 [RAM.Client.disassociate_resource_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.disassociate_resource_share)
@@ -316,8 +317,7 @@ Returns a `Coroutine` for
 Disassociates an RAM permission from a resource share.
 
 Type annotations for
-`aiobotocore.create_client("ram").disassociate_resource_share_permission`
-method.
+`session.create_client("ram").disassociate_resource_share_permission` method.
 
 Boto3 documentation:
 [RAM.Client.disassociate_resource_share_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.disassociate_resource_share_permission)
@@ -344,7 +344,7 @@ Returns a `Coroutine` for
 Enables resource sharing within your organization in Organizations.
 
 Type annotations for
-`aiobotocore.create_client("ram").enable_sharing_with_aws_organization` method.
+`session.create_client("ram").enable_sharing_with_aws_organization` method.
 
 Boto3 documentation:
 [RAM.Client.enable_sharing_with_aws_organization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.enable_sharing_with_aws_organization)
@@ -361,7 +361,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("ram").generate_presigned_url`
+Type annotations for `session.create_client("ram").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -385,7 +385,7 @@ Returns a `Coroutine` for `str`.
 
 Gets the contents of an RAM permission in JSON format.
 
-Type annotations for `aiobotocore.create_client("ram").get_permission` method.
+Type annotations for `session.create_client("ram").get_permission` method.
 
 Boto3 documentation:
 [RAM.Client.get_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.get_permission)
@@ -410,7 +410,7 @@ Returns a `Coroutine` for
 Retrieves the resource policies for the specified resources that you own and
 have shared.
 
-Type annotations for `aiobotocore.create_client("ram").get_resource_policies`
+Type annotations for `session.create_client("ram").get_resource_policies`
 method.
 
 Boto3 documentation:
@@ -440,7 +440,7 @@ Retrieves the resource and principal associations for resource shares that you
 own.
 
 Type annotations for
-`aiobotocore.create_client("ram").get_resource_share_associations` method.
+`session.create_client("ram").get_resource_share_associations` method.
 
 Boto3 documentation:
 [RAM.Client.get_resource_share_associations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.get_resource_share_associations)
@@ -474,7 +474,7 @@ Returns a `Coroutine` for
 Retrieves details about invitations that you have received for resource shares.
 
 Type annotations for
-`aiobotocore.create_client("ram").get_resource_share_invitations` method.
+`session.create_client("ram").get_resource_share_invitations` method.
 
 Boto3 documentation:
 [RAM.Client.get_resource_share_invitations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.get_resource_share_invitations)
@@ -502,8 +502,7 @@ Returns a `Coroutine` for
 Retrieves details about the resource shares that you own or that are shared
 with you.
 
-Type annotations for `aiobotocore.create_client("ram").get_resource_shares`
-method.
+Type annotations for `session.create_client("ram").get_resource_shares` method.
 
 Boto3 documentation:
 [RAM.Client.get_resource_shares](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.get_resource_shares)
@@ -539,7 +538,7 @@ Lists the resources in a resource share that is shared with you but for which
 the invitation is still `PENDING`.
 
 Type annotations for
-`aiobotocore.create_client("ram").list_pending_invitation_resources` method.
+`session.create_client("ram").list_pending_invitation_resources` method.
 
 Boto3 documentation:
 [RAM.Client.list_pending_invitation_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.list_pending_invitation_resources)
@@ -568,8 +567,7 @@ Returns a `Coroutine` for
 Retrieves a list of available RAM permissions that you can use for the
 supported resource types.
 
-Type annotations for `aiobotocore.create_client("ram").list_permissions`
-method.
+Type annotations for `session.create_client("ram").list_permissions` method.
 
 Boto3 documentation:
 [RAM.Client.list_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.list_permissions)
@@ -595,7 +593,7 @@ Returns a `Coroutine` for
 Lists the principals that you are sharing resources with or that are sharing
 resources with you.
 
-Type annotations for `aiobotocore.create_client("ram").list_principals` method.
+Type annotations for `session.create_client("ram").list_principals` method.
 
 Boto3 documentation:
 [RAM.Client.list_principals](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.list_principals)
@@ -626,7 +624,7 @@ Returns a `Coroutine` for
 Lists the RAM permissions that are associated with a resource share.
 
 Type annotations for
-`aiobotocore.create_client("ram").list_resource_share_permissions` method.
+`session.create_client("ram").list_resource_share_permissions` method.
 
 Boto3 documentation:
 [RAM.Client.list_resource_share_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.list_resource_share_permissions)
@@ -652,8 +650,7 @@ Returns a `Coroutine` for
 
 Lists the resource types that can be shared by RAM.
 
-Type annotations for `aiobotocore.create_client("ram").list_resource_types`
-method.
+Type annotations for `session.create_client("ram").list_resource_types` method.
 
 Boto3 documentation:
 [RAM.Client.list_resource_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.list_resource_types)
@@ -681,7 +678,7 @@ Returns a `Coroutine` for
 Lists the resources that you added to a resource shares or the resources that
 are shared with you.
 
-Type annotations for `aiobotocore.create_client("ram").list_resources` method.
+Type annotations for `session.create_client("ram").list_resources` method.
 
 Boto3 documentation:
 [RAM.Client.list_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.list_resources)
@@ -715,7 +712,7 @@ When you attach a resource-based permission policy to a resource, it
 automatically creates a resource share.
 
 Type annotations for
-`aiobotocore.create_client("ram").promote_resource_share_created_from_policy`
+`session.create_client("ram").promote_resource_share_created_from_policy`
 method.
 
 Boto3 documentation:
@@ -742,7 +739,7 @@ Rejects an invitation to a resource share from another Amazon Web Services
 account.
 
 Type annotations for
-`aiobotocore.create_client("ram").reject_resource_share_invitation` method.
+`session.create_client("ram").reject_resource_share_invitation` method.
 
 Boto3 documentation:
 [RAM.Client.reject_resource_share_invitation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.reject_resource_share_invitation)
@@ -767,7 +764,7 @@ Returns a `Coroutine` for
 
 Adds the specified tag keys and values to the specified resource share.
 
-Type annotations for `aiobotocore.create_client("ram").tag_resource` method.
+Type annotations for `session.create_client("ram").tag_resource` method.
 
 Boto3 documentation:
 [RAM.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.tag_resource)
@@ -791,7 +788,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes the specified tag key and value pairs from the specified resource
 share.
 
-Type annotations for `aiobotocore.create_client("ram").untag_resource` method.
+Type annotations for `session.create_client("ram").untag_resource` method.
 
 Boto3 documentation:
 [RAM.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.untag_resource)
@@ -814,7 +811,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Modifies some of the properties of the specified resource share.
 
-Type annotations for `aiobotocore.create_client("ram").update_resource_share`
+Type annotations for `session.create_client("ram").update_resource_share`
 method.
 
 Boto3 documentation:
@@ -836,12 +833,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateResourceShareResponseTypeDef](./type_defs.md#updateresourceshareresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("ram").__aenter__` method.
+
+Boto3 documentation:
+[RAM.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [RAMClient](#ramclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("ram").__aexit__` method.
+
+Boto3 documentation:
+[RAM.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ram.html#RAM.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("ram").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("ram").get_paginator` method with
+overloads.
 
 - `client.get_paginator("get_resource_policies")` ->
   [GetResourcePoliciesPaginator](./paginators.md#getresourcepoliciespaginator)

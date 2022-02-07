@@ -42,21 +42,24 @@ type annotations stubs module
     - [update_domain_endpoint_options](#update_domain_endpoint_options)
     - [update_scaling_parameters](#update_scaling_parameters)
     - [update_service_access_policies](#update_service_access_policies)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="cloudsearchclient"></a>
 
 ## CloudSearchClient
 
-Type annotations for `aiobotocore.create_client("cloudsearch")`
+Type annotations for `session.create_client("cloudsearch")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_cloudsearch.client import CloudSearchClient
 
-def get_cloudsearch_client() -> CloudSearchClient:
-    return Session().client("cloudsearch")
+session = get_session()
+async with session.create_client("cloudsearch") as client:
+    client: CloudSearchClient
 ```
 
 Boto3 documentation:
@@ -98,8 +101,7 @@ Exceptions:
 
 CloudSearchClient exceptions.
 
-Type annotations for `aiobotocore.create_client("cloudsearch").exceptions`
-method.
+Type annotations for `session.create_client("cloudsearch").exceptions` method.
 
 Boto3 documentation:
 [CloudSearch.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.exceptions)
@@ -112,8 +114,8 @@ Returns [Exceptions](#exceptions).
 
 Indexes the search suggestions.
 
-Type annotations for
-`aiobotocore.create_client("cloudsearch").build_suggesters` method.
+Type annotations for `session.create_client("cloudsearch").build_suggesters`
+method.
 
 Boto3 documentation:
 [CloudSearch.Client.build_suggesters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.build_suggesters)
@@ -136,19 +138,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("cloudsearch").can_paginate`
+Type annotations for `session.create_client("cloudsearch").can_paginate`
 method.
 
 Boto3 documentation:
 [CloudSearch.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_domain"></a>
 
@@ -156,7 +156,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a new search domain.
 
-Type annotations for `aiobotocore.create_client("cloudsearch").create_domain`
+Type annotations for `session.create_client("cloudsearch").create_domain`
 method.
 
 Boto3 documentation:
@@ -182,7 +182,7 @@ Configures an analysis scheme that can be applied to a `text` or `text-array`
 field to define language-specific text processing options.
 
 Type annotations for
-`aiobotocore.create_client("cloudsearch").define_analysis_scheme` method.
+`session.create_client("cloudsearch").define_analysis_scheme` method.
 
 Boto3 documentation:
 [CloudSearch.Client.define_analysis_scheme](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.define_analysis_scheme)
@@ -208,8 +208,8 @@ Returns a `Coroutine` for
 
 Configures an ` Expression` for the search domain.
 
-Type annotations for
-`aiobotocore.create_client("cloudsearch").define_expression` method.
+Type annotations for `session.create_client("cloudsearch").define_expression`
+method.
 
 Boto3 documentation:
 [CloudSearch.Client.define_expression](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.define_expression)
@@ -234,8 +234,8 @@ Returns a `Coroutine` for
 
 Configures an ` IndexField` for the search domain.
 
-Type annotations for
-`aiobotocore.create_client("cloudsearch").define_index_field` method.
+Type annotations for `session.create_client("cloudsearch").define_index_field`
+method.
 
 Boto3 documentation:
 [CloudSearch.Client.define_index_field](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.define_index_field)
@@ -261,8 +261,8 @@ Returns a `Coroutine` for
 
 Configures a suggester for a domain.
 
-Type annotations for
-`aiobotocore.create_client("cloudsearch").define_suggester` method.
+Type annotations for `session.create_client("cloudsearch").define_suggester`
+method.
 
 Boto3 documentation:
 [CloudSearch.Client.define_suggester](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.define_suggester)
@@ -287,7 +287,7 @@ Returns a `Coroutine` for
 Deletes an analysis scheme.
 
 Type annotations for
-`aiobotocore.create_client("cloudsearch").delete_analysis_scheme` method.
+`session.create_client("cloudsearch").delete_analysis_scheme` method.
 
 Boto3 documentation:
 [CloudSearch.Client.delete_analysis_scheme](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.delete_analysis_scheme)
@@ -312,7 +312,7 @@ Returns a `Coroutine` for
 
 Permanently deletes a search domain and all of its data.
 
-Type annotations for `aiobotocore.create_client("cloudsearch").delete_domain`
+Type annotations for `session.create_client("cloudsearch").delete_domain`
 method.
 
 Boto3 documentation:
@@ -336,8 +336,8 @@ Returns a `Coroutine` for
 
 Removes an ` Expression` from the search domain.
 
-Type annotations for
-`aiobotocore.create_client("cloudsearch").delete_expression` method.
+Type annotations for `session.create_client("cloudsearch").delete_expression`
+method.
 
 Boto3 documentation:
 [CloudSearch.Client.delete_expression](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.delete_expression)
@@ -361,8 +361,8 @@ Returns a `Coroutine` for
 
 Removes an ` IndexField` from the search domain.
 
-Type annotations for
-`aiobotocore.create_client("cloudsearch").delete_index_field` method.
+Type annotations for `session.create_client("cloudsearch").delete_index_field`
+method.
 
 Boto3 documentation:
 [CloudSearch.Client.delete_index_field](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.delete_index_field)
@@ -387,8 +387,8 @@ Returns a `Coroutine` for
 
 Deletes a suggester.
 
-Type annotations for
-`aiobotocore.create_client("cloudsearch").delete_suggester` method.
+Type annotations for `session.create_client("cloudsearch").delete_suggester`
+method.
 
 Boto3 documentation:
 [CloudSearch.Client.delete_suggester](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.delete_suggester)
@@ -413,7 +413,7 @@ Returns a `Coroutine` for
 Gets the analysis schemes configured for a domain.
 
 Type annotations for
-`aiobotocore.create_client("cloudsearch").describe_analysis_schemes` method.
+`session.create_client("cloudsearch").describe_analysis_schemes` method.
 
 Boto3 documentation:
 [CloudSearch.Client.describe_analysis_schemes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.describe_analysis_schemes)
@@ -440,8 +440,7 @@ Returns a `Coroutine` for
 Gets the availability options configured for a domain.
 
 Type annotations for
-`aiobotocore.create_client("cloudsearch").describe_availability_options`
-method.
+`session.create_client("cloudsearch").describe_availability_options` method.
 
 Boto3 documentation:
 [CloudSearch.Client.describe_availability_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.describe_availability_options)
@@ -468,8 +467,7 @@ Returns the domain's endpoint options, specifically whether all requests to the
 domain must arrive over HTTPS.
 
 Type annotations for
-`aiobotocore.create_client("cloudsearch").describe_domain_endpoint_options`
-method.
+`session.create_client("cloudsearch").describe_domain_endpoint_options` method.
 
 Boto3 documentation:
 [CloudSearch.Client.describe_domain_endpoint_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.describe_domain_endpoint_options)
@@ -494,8 +492,8 @@ Returns a `Coroutine` for
 
 Gets information about the search domains owned by this account.
 
-Type annotations for
-`aiobotocore.create_client("cloudsearch").describe_domains` method.
+Type annotations for `session.create_client("cloudsearch").describe_domains`
+method.
 
 Boto3 documentation:
 [CloudSearch.Client.describe_domains](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.describe_domains)
@@ -519,7 +517,7 @@ Returns a `Coroutine` for
 Gets the expressions configured for the search domain.
 
 Type annotations for
-`aiobotocore.create_client("cloudsearch").describe_expressions` method.
+`session.create_client("cloudsearch").describe_expressions` method.
 
 Boto3 documentation:
 [CloudSearch.Client.describe_expressions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.describe_expressions)
@@ -546,7 +544,7 @@ Returns a `Coroutine` for
 Gets information about the index fields configured for the search domain.
 
 Type annotations for
-`aiobotocore.create_client("cloudsearch").describe_index_fields` method.
+`session.create_client("cloudsearch").describe_index_fields` method.
 
 Boto3 documentation:
 [CloudSearch.Client.describe_index_fields](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.describe_index_fields)
@@ -573,7 +571,7 @@ Returns a `Coroutine` for
 Gets the scaling parameters configured for a domain.
 
 Type annotations for
-`aiobotocore.create_client("cloudsearch").describe_scaling_parameters` method.
+`session.create_client("cloudsearch").describe_scaling_parameters` method.
 
 Boto3 documentation:
 [CloudSearch.Client.describe_scaling_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.describe_scaling_parameters)
@@ -599,8 +597,7 @@ Gets information about the access policies that control access to the domain's
 document and search endpoints.
 
 Type annotations for
-`aiobotocore.create_client("cloudsearch").describe_service_access_policies`
-method.
+`session.create_client("cloudsearch").describe_service_access_policies` method.
 
 Boto3 documentation:
 [CloudSearch.Client.describe_service_access_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.describe_service_access_policies)
@@ -625,8 +622,8 @@ Returns a `Coroutine` for
 
 Gets the suggesters configured for a domain.
 
-Type annotations for
-`aiobotocore.create_client("cloudsearch").describe_suggesters` method.
+Type annotations for `session.create_client("cloudsearch").describe_suggesters`
+method.
 
 Boto3 documentation:
 [CloudSearch.Client.describe_suggesters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.describe_suggesters)
@@ -653,7 +650,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("cloudsearch").generate_presigned_url` method.
+`session.create_client("cloudsearch").generate_presigned_url` method.
 
 Boto3 documentation:
 [CloudSearch.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.generate_presigned_url)
@@ -677,7 +674,7 @@ Returns a `Coroutine` for `str`.
 Tells the search domain to start indexing its documents using the latest
 indexing options.
 
-Type annotations for `aiobotocore.create_client("cloudsearch").index_documents`
+Type annotations for `session.create_client("cloudsearch").index_documents`
 method.
 
 Boto3 documentation:
@@ -701,8 +698,8 @@ Returns a `Coroutine` for
 
 Lists all search domains owned by an account.
 
-Type annotations for
-`aiobotocore.create_client("cloudsearch").list_domain_names` method.
+Type annotations for `session.create_client("cloudsearch").list_domain_names`
+method.
 
 Boto3 documentation:
 [CloudSearch.Client.list_domain_names](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.list_domain_names)
@@ -719,7 +716,7 @@ Returns a `Coroutine` for
 Configures the availability options for a domain.
 
 Type annotations for
-`aiobotocore.create_client("cloudsearch").update_availability_options` method.
+`session.create_client("cloudsearch").update_availability_options` method.
 
 Boto3 documentation:
 [CloudSearch.Client.update_availability_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.update_availability_options)
@@ -746,8 +743,7 @@ Updates the domain's endpoint options, specifically whether all requests to the
 domain must arrive over HTTPS.
 
 Type annotations for
-`aiobotocore.create_client("cloudsearch").update_domain_endpoint_options`
-method.
+`session.create_client("cloudsearch").update_domain_endpoint_options` method.
 
 Boto3 documentation:
 [CloudSearch.Client.update_domain_endpoint_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.update_domain_endpoint_options)
@@ -775,7 +771,7 @@ Returns a `Coroutine` for
 Configures scaling parameters for a domain.
 
 Type annotations for
-`aiobotocore.create_client("cloudsearch").update_scaling_parameters` method.
+`session.create_client("cloudsearch").update_scaling_parameters` method.
 
 Boto3 documentation:
 [CloudSearch.Client.update_scaling_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.update_scaling_parameters)
@@ -804,8 +800,7 @@ Configures the access rules that control access to the domain's document and
 search endpoints.
 
 Type annotations for
-`aiobotocore.create_client("cloudsearch").update_service_access_policies`
-method.
+`session.create_client("cloudsearch").update_service_access_policies` method.
 
 Boto3 documentation:
 [CloudSearch.Client.update_service_access_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.update_service_access_policies)
@@ -823,3 +818,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateServiceAccessPoliciesResponseTypeDef](./type_defs.md#updateserviceaccesspoliciesresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("cloudsearch").__aenter__` method.
+
+Boto3 documentation:
+[CloudSearch.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CloudSearchClient](#cloudsearchclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("cloudsearch").__aexit__` method.
+
+Boto3 documentation:
+[CloudSearch.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearch.html#CloudSearch.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

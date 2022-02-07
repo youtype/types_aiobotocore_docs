@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[sdb]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[sdb]'
+
+# standalone installation
 pip install types-aiobotocore-sdb
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-sdb
 
 ## SimpleDBClient
 
-Type annotations for `aiobotocore.create_client("sdb")` as
+Type annotations for `session.create_client("sdb")` as
 [SimpleDBClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_sdb.client import SimpleDBClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_delete_attributes](./client.md#batch_delete_attributes)
 - [batch_put_attributes](./client.md#batch_put_attributes)
 - [can_paginate](./client.md#can_paginate)
@@ -92,7 +98,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_sdb.paginators import ListDomainsPaginator, ...
+from types_aiobotocore_sdb.paginator import ListDomainsPaginator, ...
 ```
 
 - [ListDomainsPaginator](./paginators.md#listdomainspaginator)

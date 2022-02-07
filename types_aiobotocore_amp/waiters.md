@@ -18,7 +18,7 @@ type annotations stubs module
 ## WorkspaceActiveWaiter
 
 Type annotations for
-`aiobotocore.create_client("amp").get_waiter("workspace_active")`.
+`session.create_client("amp").get_waiter("workspace_active")`.
 
 Can be used directly:
 
@@ -28,7 +28,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_amp.waiter import WorkspaceActiveWaiter
 
 def get_workspace_active_waiter() -> WorkspaceActiveWaiter:
-    return Session().create_client("amp").get_waiter("workspace_active")
+    return Session().client("amp").get_waiter("workspace_active")
 ```
 
 Boto3 documentation:
@@ -44,7 +44,7 @@ Arguments for `WorkspaceActiveWaiter.wait` method:
 ## WorkspaceDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("amp").get_waiter("workspace_deleted")`.
+`session.create_client("amp").get_waiter("workspace_deleted")`.
 
 Can be used directly:
 
@@ -54,7 +54,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_amp.waiter import WorkspaceDeletedWaiter
 
 def get_workspace_deleted_waiter() -> WorkspaceDeletedWaiter:
-    return Session().create_client("amp").get_waiter("workspace_deleted")
+    return Session().client("amp").get_waiter("workspace_deleted")
 ```
 
 Boto3 documentation:

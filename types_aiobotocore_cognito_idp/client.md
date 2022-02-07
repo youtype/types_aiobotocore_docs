@@ -117,22 +117,25 @@ type annotations stubs module
     - [update_user_pool_domain](#update_user_pool_domain)
     - [verify_software_token](#verify_software_token)
     - [verify_user_attribute](#verify_user_attribute)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="cognitoidentityproviderclient"></a>
 
 ## CognitoIdentityProviderClient
 
-Type annotations for `aiobotocore.create_client("cognito-idp")`
+Type annotations for `session.create_client("cognito-idp")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_cognito_idp.client import CognitoIdentityProviderClient
 
-def get_cognito-idp_client() -> CognitoIdentityProviderClient:
-    return Session().client("cognito-idp")
+session = get_session()
+async with session.create_client("cognito-idp") as client:
+    client: CognitoIdentityProviderClient
 ```
 
 Boto3 documentation:
@@ -206,8 +209,7 @@ Exceptions:
 
 CognitoIdentityProviderClient exceptions.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").exceptions`
-method.
+Type annotations for `session.create_client("cognito-idp").exceptions` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.exceptions)
@@ -221,7 +223,7 @@ Returns [Exceptions](#exceptions).
 Adds additional user attributes to the user pool schema.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").add_custom_attributes` method.
+`session.create_client("cognito-idp").add_custom_attributes` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.add_custom_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.add_custom_attributes)
@@ -248,7 +250,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds the specified user to the specified group.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_add_user_to_group` method.
+`session.create_client("cognito-idp").admin_add_user_to_group` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_add_user_to_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_add_user_to_group)
@@ -272,7 +274,7 @@ Keyword-only arguments:
 Confirms user registration as an admin without using a confirmation code.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_confirm_sign_up` method.
+`session.create_client("cognito-idp").admin_confirm_sign_up` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_confirm_sign_up](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_confirm_sign_up)
@@ -297,8 +299,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a new user in the specified user pool.
 
-Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_create_user` method.
+Type annotations for `session.create_client("cognito-idp").admin_create_user`
+method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_create_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_create_user)
@@ -332,8 +334,8 @@ Returns a `Coroutine` for
 
 Deletes a user as an administrator.
 
-Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_delete_user` method.
+Type annotations for `session.create_client("cognito-idp").admin_delete_user`
+method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_delete_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_delete_user)
@@ -355,7 +357,7 @@ Keyword-only arguments:
 Deletes the user attributes in a user pool as an administrator.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_delete_user_attributes` method.
+`session.create_client("cognito-idp").admin_delete_user_attributes` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_delete_user_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_delete_user_attributes)
@@ -382,8 +384,7 @@ Disables the user from signing in with the specified external (SAML or social)
 identity provider.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_disable_provider_for_user`
-method.
+`session.create_client("cognito-idp").admin_disable_provider_for_user` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_disable_provider_for_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_disable_provider_for_user)
@@ -409,8 +410,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Disables the specified user.
 
-Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_disable_user` method.
+Type annotations for `session.create_client("cognito-idp").admin_disable_user`
+method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_disable_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_disable_user)
@@ -434,8 +435,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Enables the specified user as an administrator.
 
-Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_enable_user` method.
+Type annotations for `session.create_client("cognito-idp").admin_enable_user`
+method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_enable_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_enable_user)
@@ -458,8 +459,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Forgets the device, as an administrator.
 
-Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_forget_device` method.
+Type annotations for `session.create_client("cognito-idp").admin_forget_device`
+method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_forget_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_forget_device)
@@ -482,8 +483,8 @@ Keyword-only arguments:
 
 Gets the device, as an administrator.
 
-Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_get_device` method.
+Type annotations for `session.create_client("cognito-idp").admin_get_device`
+method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_get_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_get_device)
@@ -508,7 +509,7 @@ Returns a `Coroutine` for
 
 Gets the specified user by user name in a user pool as an administrator.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").admin_get_user`
+Type annotations for `session.create_client("cognito-idp").admin_get_user`
 method.
 
 Boto3 documentation:
@@ -533,8 +534,8 @@ Returns a `Coroutine` for
 
 Initiates the authentication flow, as an administrator.
 
-Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_initiate_auth` method.
+Type annotations for `session.create_client("cognito-idp").admin_initiate_auth`
+method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_initiate_auth](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_initiate_auth)
@@ -569,7 +570,7 @@ identity from an external identity provider (`SourceUser` ) based on a
 specified attribute name and value from the external identity provider.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_link_provider_for_user` method.
+`session.create_client("cognito-idp").admin_link_provider_for_user` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_link_provider_for_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_link_provider_for_user)
@@ -598,8 +599,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Lists devices, as an administrator.
 
-Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_list_devices` method.
+Type annotations for `session.create_client("cognito-idp").admin_list_devices`
+method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_list_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_list_devices)
@@ -627,7 +628,7 @@ Returns a `Coroutine` for
 Lists the groups that the user belongs to.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_list_groups_for_user` method.
+`session.create_client("cognito-idp").admin_list_groups_for_user` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_list_groups_for_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_list_groups_for_user)
@@ -656,7 +657,7 @@ Lists a history of user activity and any risks detected as part of Amazon
 Cognito advanced security.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_list_user_auth_events` method.
+`session.create_client("cognito-idp").admin_list_user_auth_events` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_list_user_auth_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_list_user_auth_events)
@@ -684,7 +685,7 @@ Returns a `Coroutine` for
 Removes the specified user from the specified group.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_remove_user_from_group` method.
+`session.create_client("cognito-idp").admin_remove_user_from_group` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_remove_user_from_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_remove_user_from_group)
@@ -708,7 +709,7 @@ Keyword-only arguments:
 Resets the specified user's password in a user pool as an administrator.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_reset_user_password` method.
+`session.create_client("cognito-idp").admin_reset_user_password` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_reset_user_password](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_reset_user_password)
@@ -734,8 +735,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Responds to an authentication challenge, as an administrator.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_respond_to_auth_challenge`
-method.
+`session.create_client("cognito-idp").admin_respond_to_auth_challenge` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_respond_to_auth_challenge](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_respond_to_auth_challenge)
@@ -771,8 +771,7 @@ Sets the user's multi-factor authentication (MFA) preference, including which
 MFA options are enabled and if any are preferred.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_set_user_mfa_preference`
-method.
+`session.create_client("cognito-idp").admin_set_user_mfa_preference` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_set_user_mfa_preference](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_set_user_mfa_preference)
@@ -801,7 +800,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Sets the specified user's password in a user pool as an administrator.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_set_user_password` method.
+`session.create_client("cognito-idp").admin_set_user_password` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_set_user_password](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_set_user_password)
@@ -828,7 +827,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 *This action is no longer supported.* You can use it to configure only SMS MFA.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_set_user_settings` method.
+`session.create_client("cognito-idp").admin_set_user_settings` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_set_user_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_set_user_settings)
@@ -857,8 +856,7 @@ Provides feedback for an authentication event as to whether it was from a valid
 user.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_update_auth_event_feedback`
-method.
+`session.create_client("cognito-idp").admin_update_auth_event_feedback` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_update_auth_event_feedback](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_update_auth_event_feedback)
@@ -886,7 +884,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the device status as an administrator.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_update_device_status` method.
+`session.create_client("cognito-idp").admin_update_device_status` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_update_device_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_update_device_status)
@@ -915,7 +913,7 @@ Updates the specified user's attributes, including developer attributes, as an
 administrator.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_update_user_attributes` method.
+`session.create_client("cognito-idp").admin_update_user_attributes` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_update_user_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_update_user_attributes)
@@ -944,7 +942,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Signs out users from all devices, as an administrator.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").admin_user_global_sign_out` method.
+`session.create_client("cognito-idp").admin_user_global_sign_out` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.admin_user_global_sign_out](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.admin_user_global_sign_out)
@@ -969,7 +967,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Returns a unique generated shared secret key code for the user account.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").associate_software_token` method.
+`session.create_client("cognito-idp").associate_software_token` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.associate_software_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.associate_software_token)
@@ -994,19 +992,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").can_paginate`
+Type annotations for `session.create_client("cognito-idp").can_paginate`
 method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="change_password"></a>
 
@@ -1014,7 +1010,7 @@ Returns a `Coroutine` for `bool`.
 
 Changes the password for a specified user in a user pool.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").change_password`
+Type annotations for `session.create_client("cognito-idp").change_password`
 method.
 
 Boto3 documentation:
@@ -1039,7 +1035,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Confirms tracking of the device.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").confirm_device`
+Type annotations for `session.create_client("cognito-idp").confirm_device`
 method.
 
 Boto3 documentation:
@@ -1068,7 +1064,7 @@ Returns a `Coroutine` for
 Allows a user to enter a confirmation code to reset a forgotten password.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").confirm_forgot_password` method.
+`session.create_client("cognito-idp").confirm_forgot_password` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.confirm_forgot_password](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.confirm_forgot_password)
@@ -1101,7 +1097,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Confirms registration of a user and handles the existing alias from a previous
 user.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").confirm_sign_up`
+Type annotations for `session.create_client("cognito-idp").confirm_sign_up`
 method.
 
 Boto3 documentation:
@@ -1133,7 +1129,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a new group in the specified user pool.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").create_group`
+Type annotations for `session.create_client("cognito-idp").create_group`
 method.
 
 Boto3 documentation:
@@ -1162,7 +1158,7 @@ Returns a `Coroutine` for
 Creates an identity provider for a user pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").create_identity_provider` method.
+`session.create_client("cognito-idp").create_identity_provider` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.create_identity_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.create_identity_provider)
@@ -1194,7 +1190,7 @@ Returns a `Coroutine` for
 Creates a new OAuth2.0 resource server and defines custom scopes in it.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").create_resource_server` method.
+`session.create_client("cognito-idp").create_resource_server` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.create_resource_server](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.create_resource_server)
@@ -1223,7 +1219,7 @@ Returns a `Coroutine` for
 Creates the user import job.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").create_user_import_job` method.
+`session.create_client("cognito-idp").create_user_import_job` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.create_user_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.create_user_import_job)
@@ -1250,8 +1246,8 @@ Returns a `Coroutine` for
 Creates a new Amazon Cognito user pool and sets the password policy for the
 pool.
 
-Type annotations for
-`aiobotocore.create_client("cognito-idp").create_user_pool` method.
+Type annotations for `session.create_client("cognito-idp").create_user_pool`
+method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.create_user_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.create_user_pool)
@@ -1309,7 +1305,7 @@ Returns a `Coroutine` for
 Creates the user pool client.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").create_user_pool_client` method.
+`session.create_client("cognito-idp").create_user_pool_client` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.create_user_pool_client](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.create_user_pool_client)
@@ -1358,7 +1354,7 @@ Returns a `Coroutine` for
 Creates a new domain for a user pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").create_user_pool_domain` method.
+`session.create_client("cognito-idp").create_user_pool_domain` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.create_user_pool_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.create_user_pool_domain)
@@ -1385,7 +1381,7 @@ Returns a `Coroutine` for
 
 Deletes a group.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").delete_group`
+Type annotations for `session.create_client("cognito-idp").delete_group`
 method.
 
 Boto3 documentation:
@@ -1408,7 +1404,7 @@ Keyword-only arguments:
 Deletes an identity provider for a user pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").delete_identity_provider` method.
+`session.create_client("cognito-idp").delete_identity_provider` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.delete_identity_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.delete_identity_provider)
@@ -1431,7 +1427,7 @@ Keyword-only arguments:
 Deletes a resource server.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").delete_resource_server` method.
+`session.create_client("cognito-idp").delete_resource_server` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.delete_resource_server](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.delete_resource_server)
@@ -1453,8 +1449,7 @@ Keyword-only arguments:
 
 Allows a user to delete himself or herself.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").delete_user`
-method.
+Type annotations for `session.create_client("cognito-idp").delete_user` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.delete_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.delete_user)
@@ -1475,7 +1470,7 @@ Keyword-only arguments:
 Deletes the attributes for a user.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").delete_user_attributes` method.
+`session.create_client("cognito-idp").delete_user_attributes` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.delete_user_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.delete_user_attributes)
@@ -1499,8 +1494,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified Amazon Cognito user pool.
 
-Type annotations for
-`aiobotocore.create_client("cognito-idp").delete_user_pool` method.
+Type annotations for `session.create_client("cognito-idp").delete_user_pool`
+method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.delete_user_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.delete_user_pool)
@@ -1521,7 +1516,7 @@ Keyword-only arguments:
 Allows the developer to delete the user pool client.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").delete_user_pool_client` method.
+`session.create_client("cognito-idp").delete_user_pool_client` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.delete_user_pool_client](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.delete_user_pool_client)
@@ -1544,7 +1539,7 @@ Keyword-only arguments:
 Deletes a domain for a user pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").delete_user_pool_domain` method.
+`session.create_client("cognito-idp").delete_user_pool_domain` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.delete_user_pool_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.delete_user_pool_domain)
@@ -1569,7 +1564,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Gets information about a specific identity provider.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").describe_identity_provider` method.
+`session.create_client("cognito-idp").describe_identity_provider` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.describe_identity_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.describe_identity_provider)
@@ -1595,7 +1590,7 @@ Returns a `Coroutine` for
 Describes a resource server.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").describe_resource_server` method.
+`session.create_client("cognito-idp").describe_resource_server` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.describe_resource_server](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.describe_resource_server)
@@ -1621,7 +1616,7 @@ Returns a `Coroutine` for
 Describes the risk configuration.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").describe_risk_configuration` method.
+`session.create_client("cognito-idp").describe_risk_configuration` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.describe_risk_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.describe_risk_configuration)
@@ -1647,7 +1642,7 @@ Returns a `Coroutine` for
 Describes the user import job.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").describe_user_import_job` method.
+`session.create_client("cognito-idp").describe_user_import_job` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.describe_user_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.describe_user_import_job)
@@ -1672,8 +1667,8 @@ Returns a `Coroutine` for
 
 Returns the configuration information and metadata of the specified user pool.
 
-Type annotations for
-`aiobotocore.create_client("cognito-idp").describe_user_pool` method.
+Type annotations for `session.create_client("cognito-idp").describe_user_pool`
+method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.describe_user_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.describe_user_pool)
@@ -1699,7 +1694,7 @@ Client method for returning the configuration information and metadata of the
 specified user pool app client.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").describe_user_pool_client` method.
+`session.create_client("cognito-idp").describe_user_pool_client` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.describe_user_pool_client](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.describe_user_pool_client)
@@ -1725,7 +1720,7 @@ Returns a `Coroutine` for
 Gets information about a domain.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").describe_user_pool_domain` method.
+`session.create_client("cognito-idp").describe_user_pool_domain` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.describe_user_pool_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.describe_user_pool_domain)
@@ -1749,7 +1744,7 @@ Returns a `Coroutine` for
 
 Forgets the specified device.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").forget_device`
+Type annotations for `session.create_client("cognito-idp").forget_device`
 method.
 
 Boto3 documentation:
@@ -1772,7 +1767,7 @@ Keyword-only arguments:
 Calling this API causes a message to be sent to the end user with a
 confirmation code that is required to change the user's password.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").forgot_password`
+Type annotations for `session.create_client("cognito-idp").forgot_password`
 method.
 
 Boto3 documentation:
@@ -1804,7 +1799,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").generate_presigned_url` method.
+`session.create_client("cognito-idp").generate_presigned_url` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.generate_presigned_url)
@@ -1828,7 +1823,7 @@ Returns a `Coroutine` for `str`.
 Gets the header information for the .csv file to be used as input for the user
 import job.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").get_csv_header`
+Type annotations for `session.create_client("cognito-idp").get_csv_header`
 method.
 
 Boto3 documentation:
@@ -1852,8 +1847,7 @@ Returns a `Coroutine` for
 
 Gets the device.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").get_device`
-method.
+Type annotations for `session.create_client("cognito-idp").get_device` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.get_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.get_device)
@@ -1877,8 +1871,7 @@ Returns a `Coroutine` for
 
 Gets a group.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").get_group`
-method.
+Type annotations for `session.create_client("cognito-idp").get_group` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.get_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.get_group)
@@ -1903,7 +1896,7 @@ Returns a `Coroutine` for
 Gets the specified identity provider.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").get_identity_provider_by_identifier`
+`session.create_client("cognito-idp").get_identity_provider_by_identifier`
 method.
 
 Boto3 documentation:
@@ -1930,7 +1923,7 @@ Returns a `Coroutine` for
 This method takes a user pool ID, and returns the signing certificate.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").get_signing_certificate` method.
+`session.create_client("cognito-idp").get_signing_certificate` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.get_signing_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.get_signing_certificate)
@@ -1956,7 +1949,7 @@ Gets the UI Customization information for a particular app client's app UI, if
 there is something set.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").get_ui_customization` method.
+`session.create_client("cognito-idp").get_ui_customization` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.get_ui_customization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.get_ui_customization)
@@ -1981,8 +1974,7 @@ Returns a `Coroutine` for
 
 Gets the user attributes and metadata for a user.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").get_user`
-method.
+Type annotations for `session.create_client("cognito-idp").get_user` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.get_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.get_user)
@@ -2006,7 +1998,7 @@ Returns a `Coroutine` for
 Gets the user attribute verification code for the specified attribute name.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").get_user_attribute_verification_code`
+`session.create_client("cognito-idp").get_user_attribute_verification_code`
 method.
 
 Boto3 documentation:
@@ -2034,7 +2026,7 @@ Returns a `Coroutine` for
 Gets the user pool multi-factor authentication (MFA) configuration.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").get_user_pool_mfa_config` method.
+`session.create_client("cognito-idp").get_user_pool_mfa_config` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.get_user_pool_mfa_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.get_user_pool_mfa_config)
@@ -2058,7 +2050,7 @@ Returns a `Coroutine` for
 
 Signs out users from all devices.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").global_sign_out`
+Type annotations for `session.create_client("cognito-idp").global_sign_out`
 method.
 
 Boto3 documentation:
@@ -2081,7 +2073,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Initiates the authentication flow.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").initiate_auth`
+Type annotations for `session.create_client("cognito-idp").initiate_auth`
 method.
 
 Boto3 documentation:
@@ -2112,7 +2104,7 @@ Returns a `Coroutine` for
 
 Lists the devices.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").list_devices`
+Type annotations for `session.create_client("cognito-idp").list_devices`
 method.
 
 Boto3 documentation:
@@ -2138,8 +2130,7 @@ Returns a `Coroutine` for
 
 Lists the groups associated with a user pool.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").list_groups`
-method.
+Type annotations for `session.create_client("cognito-idp").list_groups` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.list_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.list_groups)
@@ -2165,7 +2156,7 @@ Returns a `Coroutine` for
 Lists information about all identity providers for a user pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").list_identity_providers` method.
+`session.create_client("cognito-idp").list_identity_providers` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.list_identity_providers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.list_identity_providers)
@@ -2192,7 +2183,7 @@ Returns a `Coroutine` for
 Lists the resource servers for a user pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").list_resource_servers` method.
+`session.create_client("cognito-idp").list_resource_servers` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.list_resource_servers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.list_resource_servers)
@@ -2219,7 +2210,7 @@ Returns a `Coroutine` for
 Lists the tags that are assigned to an Amazon Cognito user pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").list_tags_for_resource` method.
+`session.create_client("cognito-idp").list_tags_for_resource` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.list_tags_for_resource)
@@ -2244,7 +2235,7 @@ Returns a `Coroutine` for
 Lists the user import jobs.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").list_user_import_jobs` method.
+`session.create_client("cognito-idp").list_user_import_jobs` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.list_user_import_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.list_user_import_jobs)
@@ -2271,7 +2262,7 @@ Returns a `Coroutine` for
 Lists the clients that have been created for the specified user pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").list_user_pool_clients` method.
+`session.create_client("cognito-idp").list_user_pool_clients` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.list_user_pool_clients](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.list_user_pool_clients)
@@ -2297,7 +2288,7 @@ Returns a `Coroutine` for
 
 Lists the user pools associated with an account.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").list_user_pools`
+Type annotations for `session.create_client("cognito-idp").list_user_pools`
 method.
 
 Boto3 documentation:
@@ -2322,8 +2313,7 @@ Returns a `Coroutine` for
 
 Lists the users in the Amazon Cognito user pool.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").list_users`
-method.
+Type annotations for `session.create_client("cognito-idp").list_users` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.list_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.list_users)
@@ -2350,8 +2340,8 @@ Returns a `Coroutine` for
 
 Lists the users in the specified group.
 
-Type annotations for
-`aiobotocore.create_client("cognito-idp").list_users_in_group` method.
+Type annotations for `session.create_client("cognito-idp").list_users_in_group`
+method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.list_users_in_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.list_users_in_group)
@@ -2380,7 +2370,7 @@ Resends the confirmation (for confirmation of registration) to a specific user
 in the user pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").resend_confirmation_code` method.
+`session.create_client("cognito-idp").resend_confirmation_code` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.resend_confirmation_code](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.resend_confirmation_code)
@@ -2412,7 +2402,7 @@ Returns a `Coroutine` for
 Responds to the authentication challenge.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").respond_to_auth_challenge` method.
+`session.create_client("cognito-idp").respond_to_auth_challenge` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.respond_to_auth_challenge](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.respond_to_auth_challenge)
@@ -2445,7 +2435,7 @@ Returns a `Coroutine` for
 
 Revokes all of the access tokens generated by the specified refresh token.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").revoke_token`
+Type annotations for `session.create_client("cognito-idp").revoke_token`
 method.
 
 Boto3 documentation:
@@ -2471,7 +2461,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Configures actions on detected risks.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").set_risk_configuration` method.
+`session.create_client("cognito-idp").set_risk_configuration` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.set_risk_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.set_risk_configuration)
@@ -2503,7 +2493,7 @@ Returns a `Coroutine` for
 Sets the UI customization information for a user pool's built-in app UI.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").set_ui_customization` method.
+`session.create_client("cognito-idp").set_ui_customization` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.set_ui_customization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.set_ui_customization)
@@ -2532,7 +2522,7 @@ Set the user's multi-factor authentication (MFA) method preference, including
 which MFA factors are enabled and if any are preferred.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").set_user_mfa_preference` method.
+`session.create_client("cognito-idp").set_user_mfa_preference` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.set_user_mfa_preference](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.set_user_mfa_preference)
@@ -2560,7 +2550,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Set the user pool multi-factor authentication (MFA) configuration.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").set_user_pool_mfa_config` method.
+`session.create_client("cognito-idp").set_user_pool_mfa_config` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.set_user_pool_mfa_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.set_user_pool_mfa_config)
@@ -2589,8 +2579,8 @@ Returns a `Coroutine` for
 
 *This action is no longer supported.* You can use it to configure only SMS MFA.
 
-Type annotations for
-`aiobotocore.create_client("cognito-idp").set_user_settings` method.
+Type annotations for `session.create_client("cognito-idp").set_user_settings`
+method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.set_user_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.set_user_settings)
@@ -2616,7 +2606,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Registers the user in the specified user pool and creates a user name,
 password, and user attributes.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").sign_up` method.
+Type annotations for `session.create_client("cognito-idp").sign_up` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.sign_up](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.sign_up)
@@ -2652,7 +2642,7 @@ Returns a `Coroutine` for
 Starts the user import.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").start_user_import_job` method.
+`session.create_client("cognito-idp").start_user_import_job` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.start_user_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.start_user_import_job)
@@ -2678,7 +2668,7 @@ Returns a `Coroutine` for
 Stops the user import job.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").stop_user_import_job` method.
+`session.create_client("cognito-idp").stop_user_import_job` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.stop_user_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.stop_user_import_job)
@@ -2703,7 +2693,7 @@ Returns a `Coroutine` for
 
 Assigns a set of tags to an Amazon Cognito user pool.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").tag_resource`
+Type annotations for `session.create_client("cognito-idp").tag_resource`
 method.
 
 Boto3 documentation:
@@ -2727,7 +2717,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the specified tags from an Amazon Cognito user pool.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").untag_resource`
+Type annotations for `session.create_client("cognito-idp").untag_resource`
 method.
 
 Boto3 documentation:
@@ -2753,7 +2743,7 @@ Provides the feedback for an authentication event whether it was from a valid
 user or not.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").update_auth_event_feedback` method.
+`session.create_client("cognito-idp").update_auth_event_feedback` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.update_auth_event_feedback](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.update_auth_event_feedback)
@@ -2782,7 +2772,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the device status.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").update_device_status` method.
+`session.create_client("cognito-idp").update_device_status` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.update_device_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.update_device_status)
@@ -2808,7 +2798,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the specified group with the specified attributes.
 
-Type annotations for `aiobotocore.create_client("cognito-idp").update_group`
+Type annotations for `session.create_client("cognito-idp").update_group`
 method.
 
 Boto3 documentation:
@@ -2837,7 +2827,7 @@ Returns a `Coroutine` for
 Updates identity provider information for a user pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").update_identity_provider` method.
+`session.create_client("cognito-idp").update_identity_provider` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.update_identity_provider](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.update_identity_provider)
@@ -2866,7 +2856,7 @@ Returns a `Coroutine` for
 Updates the name and scopes of resource server.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").update_resource_server` method.
+`session.create_client("cognito-idp").update_resource_server` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.update_resource_server](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.update_resource_server)
@@ -2895,7 +2885,7 @@ Returns a `Coroutine` for
 Allows a user to update a specific attribute (one at a time).
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").update_user_attributes` method.
+`session.create_client("cognito-idp").update_user_attributes` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.update_user_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.update_user_attributes)
@@ -2923,8 +2913,8 @@ Returns a `Coroutine` for
 
 Updates the specified user pool with the specified attributes.
 
-Type annotations for
-`aiobotocore.create_client("cognito-idp").update_user_pool` method.
+Type annotations for `session.create_client("cognito-idp").update_user_pool`
+method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.update_user_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.update_user_pool)
@@ -2973,7 +2963,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the specified user pool app client with the specified attributes.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").update_user_pool_client` method.
+`session.create_client("cognito-idp").update_user_pool_client` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.update_user_pool_client](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.update_user_pool_client)
@@ -3023,7 +3013,7 @@ Updates the Secure Sockets Layer (SSL) certificate for the custom domain for
 your user pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").update_user_pool_domain` method.
+`session.create_client("cognito-idp").update_user_pool_domain` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.update_user_pool_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.update_user_pool_domain)
@@ -3053,7 +3043,7 @@ Use this API to register a user's entered TOTP code and mark the user's
 software token MFA status as "verified" if successful.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").verify_software_token` method.
+`session.create_client("cognito-idp").verify_software_token` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.verify_software_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.verify_software_token)
@@ -3081,7 +3071,7 @@ Returns a `Coroutine` for
 Verifies the specified user attributes in the user pool.
 
 Type annotations for
-`aiobotocore.create_client("cognito-idp").verify_user_attribute` method.
+`session.create_client("cognito-idp").verify_user_attribute` method.
 
 Boto3 documentation:
 [CognitoIdentityProvider.Client.verify_user_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.verify_user_attribute)
@@ -3100,11 +3090,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("cognito-idp").__aenter__` method.
+
+Boto3 documentation:
+[CognitoIdentityProvider.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[CognitoIdentityProviderClient](#cognitoidentityproviderclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("cognito-idp").__aexit__` method.
+
+Boto3 documentation:
+[CognitoIdentityProvider.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cognito-idp.html#CognitoIdentityProvider.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("cognito-idp").get_paginator`
+Type annotations for `session.create_client("cognito-idp").get_paginator`
 method with overloads.
 
 - `client.get_paginator("admin_list_groups_for_user")` ->

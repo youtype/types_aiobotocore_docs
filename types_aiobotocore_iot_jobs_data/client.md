@@ -20,21 +20,24 @@ type annotations stubs module
     - [get_pending_job_executions](#get_pending_job_executions)
     - [start_next_pending_job_execution](#start_next_pending_job_execution)
     - [update_job_execution](#update_job_execution)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="iotjobsdataplaneclient"></a>
 
 ## IoTJobsDataPlaneClient
 
-Type annotations for `aiobotocore.create_client("iot-jobs-data")`
+Type annotations for `session.create_client("iot-jobs-data")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_iot_jobs_data.client import IoTJobsDataPlaneClient
 
-def get_iot-jobs-data_client() -> IoTJobsDataPlaneClient:
-    return Session().client("iot-jobs-data")
+session = get_session()
+async with session.create_client("iot-jobs-data") as client:
+    client: IoTJobsDataPlaneClient
 ```
 
 Boto3 documentation:
@@ -75,7 +78,7 @@ Exceptions:
 
 IoTJobsDataPlaneClient exceptions.
 
-Type annotations for `aiobotocore.create_client("iot-jobs-data").exceptions`
+Type annotations for `session.create_client("iot-jobs-data").exceptions`
 method.
 
 Boto3 documentation:
@@ -89,19 +92,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("iot-jobs-data").can_paginate`
+Type annotations for `session.create_client("iot-jobs-data").can_paginate`
 method.
 
 Boto3 documentation:
 [IoTJobsDataPlane.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-jobs-data.html#IoTJobsDataPlane.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="describe_job_execution"></a>
 
@@ -110,7 +111,7 @@ Returns a `Coroutine` for `bool`.
 Gets details of a job execution.
 
 Type annotations for
-`aiobotocore.create_client("iot-jobs-data").describe_job_execution` method.
+`session.create_client("iot-jobs-data").describe_job_execution` method.
 
 Boto3 documentation:
 [IoTJobsDataPlane.Client.describe_job_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-jobs-data.html#IoTJobsDataPlane.Client.describe_job_execution)
@@ -138,7 +139,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("iot-jobs-data").generate_presigned_url` method.
+`session.create_client("iot-jobs-data").generate_presigned_url` method.
 
 Boto3 documentation:
 [IoTJobsDataPlane.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-jobs-data.html#IoTJobsDataPlane.Client.generate_presigned_url)
@@ -162,7 +163,7 @@ Returns a `Coroutine` for `str`.
 Gets the list of all jobs for a thing that are not in a terminal status.
 
 Type annotations for
-`aiobotocore.create_client("iot-jobs-data").get_pending_job_executions` method.
+`session.create_client("iot-jobs-data").get_pending_job_executions` method.
 
 Boto3 documentation:
 [IoTJobsDataPlane.Client.get_pending_job_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-jobs-data.html#IoTJobsDataPlane.Client.get_pending_job_executions)
@@ -188,7 +189,7 @@ Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution
 for a thing.
 
 Type annotations for
-`aiobotocore.create_client("iot-jobs-data").start_next_pending_job_execution`
+`session.create_client("iot-jobs-data").start_next_pending_job_execution`
 method.
 
 Boto3 documentation:
@@ -216,7 +217,7 @@ Returns a `Coroutine` for
 Updates the status of a job execution.
 
 Type annotations for
-`aiobotocore.create_client("iot-jobs-data").update_job_execution` method.
+`session.create_client("iot-jobs-data").update_job_execution` method.
 
 Boto3 documentation:
 [IoTJobsDataPlane.Client.update_job_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-jobs-data.html#IoTJobsDataPlane.Client.update_job_execution)
@@ -242,3 +243,36 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateJobExecutionResponseTypeDef](./type_defs.md#updatejobexecutionresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("iot-jobs-data").__aenter__`
+method.
+
+Boto3 documentation:
+[IoTJobsDataPlane.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-jobs-data.html#IoTJobsDataPlane.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [IoTJobsDataPlaneClient](#iotjobsdataplaneclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("iot-jobs-data").__aexit__` method.
+
+Boto3 documentation:
+[IoTJobsDataPlane.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-jobs-data.html#IoTJobsDataPlane.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

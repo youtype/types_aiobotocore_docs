@@ -22,21 +22,24 @@ type annotations stubs module
     - [list_change_sets](#list_change_sets)
     - [list_entities](#list_entities)
     - [start_change_set](#start_change_set)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="marketplacecatalogclient"></a>
 
 ## MarketplaceCatalogClient
 
-Type annotations for `aiobotocore.create_client("marketplace-catalog")`
+Type annotations for `session.create_client("marketplace-catalog")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_marketplace_catalog.client import MarketplaceCatalogClient
 
-def get_marketplace-catalog_client() -> MarketplaceCatalogClient:
-    return Session().client("marketplace-catalog")
+session = get_session()
+async with session.create_client("marketplace-catalog") as client:
+    client: MarketplaceCatalogClient
 ```
 
 Boto3 documentation:
@@ -78,8 +81,8 @@ Exceptions:
 
 MarketplaceCatalogClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("marketplace-catalog").exceptions` method.
+Type annotations for `session.create_client("marketplace-catalog").exceptions`
+method.
 
 Boto3 documentation:
 [MarketplaceCatalog.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplace-catalog.html#MarketplaceCatalog.Client.exceptions)
@@ -93,18 +96,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("marketplace-catalog").can_paginate` method.
+`session.create_client("marketplace-catalog").can_paginate` method.
 
 Boto3 documentation:
 [MarketplaceCatalog.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplace-catalog.html#MarketplaceCatalog.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_change_set"></a>
 
@@ -113,7 +114,7 @@ Returns a `Coroutine` for `bool`.
 Used to cancel an open change request.
 
 Type annotations for
-`aiobotocore.create_client("marketplace-catalog").cancel_change_set` method.
+`session.create_client("marketplace-catalog").cancel_change_set` method.
 
 Boto3 documentation:
 [MarketplaceCatalog.Client.cancel_change_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplace-catalog.html#MarketplaceCatalog.Client.cancel_change_set)
@@ -138,7 +139,7 @@ Returns a `Coroutine` for
 Provides information about a given change set.
 
 Type annotations for
-`aiobotocore.create_client("marketplace-catalog").describe_change_set` method.
+`session.create_client("marketplace-catalog").describe_change_set` method.
 
 Boto3 documentation:
 [MarketplaceCatalog.Client.describe_change_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplace-catalog.html#MarketplaceCatalog.Client.describe_change_set)
@@ -164,7 +165,7 @@ Returns a `Coroutine` for
 Returns the metadata and content of the entity.
 
 Type annotations for
-`aiobotocore.create_client("marketplace-catalog").describe_entity` method.
+`session.create_client("marketplace-catalog").describe_entity` method.
 
 Boto3 documentation:
 [MarketplaceCatalog.Client.describe_entity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplace-catalog.html#MarketplaceCatalog.Client.describe_entity)
@@ -189,8 +190,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("marketplace-catalog").generate_presigned_url`
-method.
+`session.create_client("marketplace-catalog").generate_presigned_url` method.
 
 Boto3 documentation:
 [MarketplaceCatalog.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplace-catalog.html#MarketplaceCatalog.Client.generate_presigned_url)
@@ -215,7 +215,7 @@ Returns the list of change sets owned by the account being used to make the
 call.
 
 Type annotations for
-`aiobotocore.create_client("marketplace-catalog").list_change_sets` method.
+`session.create_client("marketplace-catalog").list_change_sets` method.
 
 Boto3 documentation:
 [MarketplaceCatalog.Client.list_change_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplace-catalog.html#MarketplaceCatalog.Client.list_change_sets)
@@ -243,7 +243,7 @@ Returns a `Coroutine` for
 Provides the list of entities of a given type.
 
 Type annotations for
-`aiobotocore.create_client("marketplace-catalog").list_entities` method.
+`session.create_client("marketplace-catalog").list_entities` method.
 
 Boto3 documentation:
 [MarketplaceCatalog.Client.list_entities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplace-catalog.html#MarketplaceCatalog.Client.list_entities)
@@ -272,7 +272,7 @@ Returns a `Coroutine` for
 This operation allows you to request changes for your entities.
 
 Type annotations for
-`aiobotocore.create_client("marketplace-catalog").start_change_set` method.
+`session.create_client("marketplace-catalog").start_change_set` method.
 
 Boto3 documentation:
 [MarketplaceCatalog.Client.start_change_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplace-catalog.html#MarketplaceCatalog.Client.start_change_set)
@@ -292,3 +292,38 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [StartChangeSetResponseTypeDef](./type_defs.md#startchangesetresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("marketplace-catalog").__aenter__`
+method.
+
+Boto3 documentation:
+[MarketplaceCatalog.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplace-catalog.html#MarketplaceCatalog.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[MarketplaceCatalogClient](#marketplacecatalogclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("marketplace-catalog").__aexit__`
+method.
+
+Boto3 documentation:
+[MarketplaceCatalog.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/marketplace-catalog.html#MarketplaceCatalog.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

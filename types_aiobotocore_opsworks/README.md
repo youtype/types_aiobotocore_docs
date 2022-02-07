@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[opsworks]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[opsworks]'
+
+# standalone installation
 pip install types-aiobotocore-opsworks
 ```
 
@@ -33,7 +37,7 @@ pip install types-aiobotocore-opsworks
 
 ## OpsWorksClient
 
-Type annotations for `aiobotocore.create_client("opsworks")` as
+Type annotations for `session.create_client("opsworks")` as
 [OpsWorksClient](./client.md)
 
 Can be used directly:
@@ -46,6 +50,8 @@ from types_aiobotocore_opsworks.client import OpsWorksClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [assign_instance](./client.md#assign_instance)
 - [assign_volume](./client.md#assign_volume)
 - [associate_elastic_ip](./client.md#associate_elastic_ip)
@@ -140,7 +146,7 @@ OpsWorksClient [exceptions](./client.md#exceptions)
 
 ## OpsWorksServiceResource
 
-Type annotations for `aiobotocore.resource("opsworks")` as
+Type annotations for `session.resource("opsworks")` as
 [OpsWorksServiceResource](./service_resource.md#opsworksserviceresource)
 
 Can be used directly:
@@ -168,7 +174,7 @@ from types_aiobotocore_opsworks.service_resource import ServiceResourceStacksCol
 ### Resources
 
 Type annotations for additional resources from
-`aiobotocore.resource("opsworks").*`.
+`session.resource("opsworks").*`.
 
 Can be used directly:
 
@@ -190,7 +196,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_opsworks.paginators import DescribeEcsClustersPaginator, ...
+from types_aiobotocore_opsworks.paginator import DescribeEcsClustersPaginator, ...
 ```
 
 - [DescribeEcsClustersPaginator](./paginators.md#describeecsclusterspaginator)
@@ -205,7 +211,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_opsworks.waiters import AppExistsWaiter, ...
+from types_aiobotocore_opsworks.waiter import AppExistsWaiter, ...
 ```
 
 - [AppExistsWaiter](./waiters.md#appexistswaiter)

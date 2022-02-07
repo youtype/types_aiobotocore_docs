@@ -46,6 +46,8 @@ type annotations stubs module
     - [update_flow_media_stream](#update_flow_media_stream)
     - [update_flow_output](#update_flow_output)
     - [update_flow_source](#update_flow_source)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -53,16 +55,17 @@ type annotations stubs module
 
 ## MediaConnectClient
 
-Type annotations for `aiobotocore.create_client("mediaconnect")`
+Type annotations for `session.create_client("mediaconnect")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_mediaconnect.client import MediaConnectClient
 
-def get_mediaconnect_client() -> MediaConnectClient:
-    return Session().client("mediaconnect")
+session = get_session()
+async with session.create_client("mediaconnect") as client:
+    client: MediaConnectClient
 ```
 
 Boto3 documentation:
@@ -105,8 +108,7 @@ Exceptions:
 
 MediaConnectClient exceptions.
 
-Type annotations for `aiobotocore.create_client("mediaconnect").exceptions`
-method.
+Type annotations for `session.create_client("mediaconnect").exceptions` method.
 
 Boto3 documentation:
 [MediaConnect.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.exceptions)
@@ -120,7 +122,7 @@ Returns [Exceptions](#exceptions).
 Adds media streams to an existing flow.
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").add_flow_media_streams` method.
+`session.create_client("mediaconnect").add_flow_media_streams` method.
 
 Boto3 documentation:
 [MediaConnect.Client.add_flow_media_streams](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.add_flow_media_streams)
@@ -147,8 +149,8 @@ Returns a `Coroutine` for
 
 Adds outputs to an existing flow.
 
-Type annotations for
-`aiobotocore.create_client("mediaconnect").add_flow_outputs` method.
+Type annotations for `session.create_client("mediaconnect").add_flow_outputs`
+method.
 
 Boto3 documentation:
 [MediaConnect.Client.add_flow_outputs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.add_flow_outputs)
@@ -175,8 +177,8 @@ Returns a `Coroutine` for
 Adds Sources to flow See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowSources).
 
-Type annotations for
-`aiobotocore.create_client("mediaconnect").add_flow_sources` method.
+Type annotations for `session.create_client("mediaconnect").add_flow_sources`
+method.
 
 Boto3 documentation:
 [MediaConnect.Client.add_flow_sources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.add_flow_sources)
@@ -204,7 +206,7 @@ Adds VPC interfaces to flow See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddFlowVpcInterfaces).
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").add_flow_vpc_interfaces` method.
+`session.create_client("mediaconnect").add_flow_vpc_interfaces` method.
 
 Boto3 documentation:
 [MediaConnect.Client.add_flow_vpc_interfaces](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.add_flow_vpc_interfaces)
@@ -231,19 +233,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("mediaconnect").can_paginate`
+Type annotations for `session.create_client("mediaconnect").can_paginate`
 method.
 
 Boto3 documentation:
 [MediaConnect.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_flow"></a>
 
@@ -251,7 +251,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a new flow.
 
-Type annotations for `aiobotocore.create_client("mediaconnect").create_flow`
+Type annotations for `session.create_client("mediaconnect").create_flow`
 method.
 
 Boto3 documentation:
@@ -289,7 +289,7 @@ Returns a `Coroutine` for
 
 Deletes a flow.
 
-Type annotations for `aiobotocore.create_client("mediaconnect").delete_flow`
+Type annotations for `session.create_client("mediaconnect").delete_flow`
 method.
 
 Boto3 documentation:
@@ -313,7 +313,7 @@ Returns a `Coroutine` for
 
 Displays the details of a flow.
 
-Type annotations for `aiobotocore.create_client("mediaconnect").describe_flow`
+Type annotations for `session.create_client("mediaconnect").describe_flow`
 method.
 
 Boto3 documentation:
@@ -337,8 +337,8 @@ Returns a `Coroutine` for
 
 Displays the details of an offering.
 
-Type annotations for
-`aiobotocore.create_client("mediaconnect").describe_offering` method.
+Type annotations for `session.create_client("mediaconnect").describe_offering`
+method.
 
 Boto3 documentation:
 [MediaConnect.Client.describe_offering](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.describe_offering)
@@ -362,7 +362,7 @@ Returns a `Coroutine` for
 Displays the details of a reservation.
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").describe_reservation` method.
+`session.create_client("mediaconnect").describe_reservation` method.
 
 Boto3 documentation:
 [MediaConnect.Client.describe_reservation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.describe_reservation)
@@ -387,7 +387,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").generate_presigned_url` method.
+`session.create_client("mediaconnect").generate_presigned_url` method.
 
 Boto3 documentation:
 [MediaConnect.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.generate_presigned_url)
@@ -411,7 +411,7 @@ Returns a `Coroutine` for `str`.
 Grants entitlements to an existing flow.
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").grant_flow_entitlements` method.
+`session.create_client("mediaconnect").grant_flow_entitlements` method.
 
 Boto3 documentation:
 [MediaConnect.Client.grant_flow_entitlements](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.grant_flow_entitlements)
@@ -438,8 +438,8 @@ Returns a `Coroutine` for
 
 Displays a list of all entitlements that have been granted to this account.
 
-Type annotations for
-`aiobotocore.create_client("mediaconnect").list_entitlements` method.
+Type annotations for `session.create_client("mediaconnect").list_entitlements`
+method.
 
 Boto3 documentation:
 [MediaConnect.Client.list_entitlements](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.list_entitlements)
@@ -463,8 +463,7 @@ Returns a `Coroutine` for
 
 Displays a list of flows that are associated with this account.
 
-Type annotations for `aiobotocore.create_client("mediaconnect").list_flows`
-method.
+Type annotations for `session.create_client("mediaconnect").list_flows` method.
 
 Boto3 documentation:
 [MediaConnect.Client.list_flows](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.list_flows)
@@ -489,7 +488,7 @@ Returns a `Coroutine` for
 Displays a list of all offerings that are available to this account in the
 current AWS Region.
 
-Type annotations for `aiobotocore.create_client("mediaconnect").list_offerings`
+Type annotations for `session.create_client("mediaconnect").list_offerings`
 method.
 
 Boto3 documentation:
@@ -515,8 +514,8 @@ Returns a `Coroutine` for
 Displays a list of all reservations that have been purchased by this account in
 the current AWS Region.
 
-Type annotations for
-`aiobotocore.create_client("mediaconnect").list_reservations` method.
+Type annotations for `session.create_client("mediaconnect").list_reservations`
+method.
 
 Boto3 documentation:
 [MediaConnect.Client.list_reservations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.list_reservations)
@@ -542,7 +541,7 @@ List all tags on an AWS Elemental MediaConnect resource See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListTagsForResource).
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").list_tags_for_resource` method.
+`session.create_client("mediaconnect").list_tags_for_resource` method.
 
 Boto3 documentation:
 [MediaConnect.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.list_tags_for_resource)
@@ -566,8 +565,8 @@ Returns a `Coroutine` for
 
 Submits a request to purchase an offering.
 
-Type annotations for
-`aiobotocore.create_client("mediaconnect").purchase_offering` method.
+Type annotations for `session.create_client("mediaconnect").purchase_offering`
+method.
 
 Boto3 documentation:
 [MediaConnect.Client.purchase_offering](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.purchase_offering)
@@ -593,7 +592,7 @@ Returns a `Coroutine` for
 Removes a media stream from a flow.
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").remove_flow_media_stream` method.
+`session.create_client("mediaconnect").remove_flow_media_stream` method.
 
 Boto3 documentation:
 [MediaConnect.Client.remove_flow_media_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.remove_flow_media_stream)
@@ -618,8 +617,8 @@ Returns a `Coroutine` for
 
 Removes an output from an existing flow.
 
-Type annotations for
-`aiobotocore.create_client("mediaconnect").remove_flow_output` method.
+Type annotations for `session.create_client("mediaconnect").remove_flow_output`
+method.
 
 Boto3 documentation:
 [MediaConnect.Client.remove_flow_output](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.remove_flow_output)
@@ -644,8 +643,8 @@ Returns a `Coroutine` for
 
 Removes a source from an existing flow.
 
-Type annotations for
-`aiobotocore.create_client("mediaconnect").remove_flow_source` method.
+Type annotations for `session.create_client("mediaconnect").remove_flow_source`
+method.
 
 Boto3 documentation:
 [MediaConnect.Client.remove_flow_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.remove_flow_source)
@@ -671,7 +670,7 @@ Returns a `Coroutine` for
 Removes a VPC Interface from an existing flow.
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").remove_flow_vpc_interface` method.
+`session.create_client("mediaconnect").remove_flow_vpc_interface` method.
 
 Boto3 documentation:
 [MediaConnect.Client.remove_flow_vpc_interface](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.remove_flow_vpc_interface)
@@ -697,7 +696,7 @@ Returns a `Coroutine` for
 Revokes an entitlement from a flow.
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").revoke_flow_entitlement` method.
+`session.create_client("mediaconnect").revoke_flow_entitlement` method.
 
 Boto3 documentation:
 [MediaConnect.Client.revoke_flow_entitlement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.revoke_flow_entitlement)
@@ -722,8 +721,7 @@ Returns a `Coroutine` for
 
 Starts a flow.
 
-Type annotations for `aiobotocore.create_client("mediaconnect").start_flow`
-method.
+Type annotations for `session.create_client("mediaconnect").start_flow` method.
 
 Boto3 documentation:
 [MediaConnect.Client.start_flow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.start_flow)
@@ -746,8 +744,7 @@ Returns a `Coroutine` for
 
 Stops a flow.
 
-Type annotations for `aiobotocore.create_client("mediaconnect").stop_flow`
-method.
+Type annotations for `session.create_client("mediaconnect").stop_flow` method.
 
 Boto3 documentation:
 [MediaConnect.Client.stop_flow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.stop_flow)
@@ -770,7 +767,7 @@ Returns a `Coroutine` for
 
 Associates the specified tags to a resource with the specified resourceArn.
 
-Type annotations for `aiobotocore.create_client("mediaconnect").tag_resource`
+Type annotations for `session.create_client("mediaconnect").tag_resource`
 method.
 
 Boto3 documentation:
@@ -792,7 +789,7 @@ Keyword-only arguments:
 
 Deletes specified tags from a resource.
 
-Type annotations for `aiobotocore.create_client("mediaconnect").untag_resource`
+Type annotations for `session.create_client("mediaconnect").untag_resource`
 method.
 
 Boto3 documentation:
@@ -815,7 +812,7 @@ Keyword-only arguments:
 Updates flow See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlow).
 
-Type annotations for `aiobotocore.create_client("mediaconnect").update_flow`
+Type annotations for `session.create_client("mediaconnect").update_flow`
 method.
 
 Boto3 documentation:
@@ -842,7 +839,7 @@ Returns a `Coroutine` for
 You can change an entitlement's description, subscribers, and encryption.
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").update_flow_entitlement` method.
+`session.create_client("mediaconnect").update_flow_entitlement` method.
 
 Boto3 documentation:
 [MediaConnect.Client.update_flow_entitlement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.update_flow_entitlement)
@@ -874,7 +871,7 @@ Returns a `Coroutine` for
 Updates an existing media stream.
 
 Type annotations for
-`aiobotocore.create_client("mediaconnect").update_flow_media_stream` method.
+`session.create_client("mediaconnect").update_flow_media_stream` method.
 
 Boto3 documentation:
 [MediaConnect.Client.update_flow_media_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.update_flow_media_stream)
@@ -905,8 +902,8 @@ Returns a `Coroutine` for
 
 Updates an existing flow output.
 
-Type annotations for
-`aiobotocore.create_client("mediaconnect").update_flow_output` method.
+Type annotations for `session.create_client("mediaconnect").update_flow_output`
+method.
 
 Boto3 documentation:
 [MediaConnect.Client.update_flow_output](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.update_flow_output)
@@ -947,8 +944,8 @@ Returns a `Coroutine` for
 
 Updates the source of a flow.
 
-Type annotations for
-`aiobotocore.create_client("mediaconnect").update_flow_source` method.
+Type annotations for `session.create_client("mediaconnect").update_flow_source`
+method.
 
 Boto3 documentation:
 [MediaConnect.Client.update_flow_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.update_flow_source)
@@ -982,11 +979,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateFlowSourceResponseTypeDef](./type_defs.md#updateflowsourceresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("mediaconnect").__aenter__` method.
+
+Boto3 documentation:
+[MediaConnect.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [MediaConnectClient](#mediaconnectclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("mediaconnect").__aexit__` method.
+
+Boto3 documentation:
+[MediaConnect.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mediaconnect.html#MediaConnect.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("mediaconnect").get_paginator`
+Type annotations for `session.create_client("mediaconnect").get_paginator`
 method with overloads.
 
 - `client.get_paginator("list_entitlements")` ->
@@ -1002,8 +1031,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("mediaconnect").get_waiter`
-method with overloads.
+Type annotations for `session.create_client("mediaconnect").get_waiter` method
+with overloads.
 
 - `client.get_waiter("flow_active")` ->
   [FlowActiveWaiter](./waiters.md#flowactivewaiter)

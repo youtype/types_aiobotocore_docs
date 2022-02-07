@@ -82,21 +82,24 @@ type annotations stubs module
     - [update_rule_metadata](#update_rule_metadata)
     - [update_rule_version](#update_rule_version)
     - [update_variable](#update_variable)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="frauddetectorclient"></a>
 
 ## FraudDetectorClient
 
-Type annotations for `aiobotocore.create_client("frauddetector")`
+Type annotations for `session.create_client("frauddetector")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_frauddetector.client import FraudDetectorClient
 
-def get_frauddetector_client() -> FraudDetectorClient:
-    return Session().client("frauddetector")
+session = get_session()
+async with session.create_client("frauddetector") as client:
+    client: FraudDetectorClient
 ```
 
 Boto3 documentation:
@@ -137,7 +140,7 @@ Exceptions:
 
 FraudDetectorClient exceptions.
 
-Type annotations for `aiobotocore.create_client("frauddetector").exceptions`
+Type annotations for `session.create_client("frauddetector").exceptions`
 method.
 
 Boto3 documentation:
@@ -152,7 +155,7 @@ Returns [Exceptions](#exceptions).
 Creates a batch of variables.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").batch_create_variable` method.
+`session.create_client("frauddetector").batch_create_variable` method.
 
 Boto3 documentation:
 [FraudDetector.Client.batch_create_variable](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.batch_create_variable)
@@ -180,7 +183,7 @@ Returns a `Coroutine` for
 Gets a batch of variables.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").batch_get_variable` method.
+`session.create_client("frauddetector").batch_get_variable` method.
 
 Boto3 documentation:
 [FraudDetector.Client.batch_get_variable](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.batch_get_variable)
@@ -204,19 +207,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("frauddetector").can_paginate`
+Type annotations for `session.create_client("frauddetector").can_paginate`
 method.
 
 Boto3 documentation:
 [FraudDetector.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_batch_import_job"></a>
 
@@ -225,7 +226,7 @@ Returns a `Coroutine` for `bool`.
 Cancels an in-progress batch import job.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").cancel_batch_import_job` method.
+`session.create_client("frauddetector").cancel_batch_import_job` method.
 
 Boto3 documentation:
 [FraudDetector.Client.cancel_batch_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.cancel_batch_import_job)
@@ -249,8 +250,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Cancels the specified batch prediction job.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").cancel_batch_prediction_job`
-method.
+`session.create_client("frauddetector").cancel_batch_prediction_job` method.
 
 Boto3 documentation:
 [FraudDetector.Client.cancel_batch_prediction_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.cancel_batch_prediction_job)
@@ -274,7 +274,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates a batch import job.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").create_batch_import_job` method.
+`session.create_client("frauddetector").create_batch_import_job` method.
 
 Boto3 documentation:
 [FraudDetector.Client.create_batch_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.create_batch_import_job)
@@ -303,8 +303,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates a batch prediction job.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").create_batch_prediction_job`
-method.
+`session.create_client("frauddetector").create_batch_prediction_job` method.
 
 Boto3 documentation:
 [FraudDetector.Client.create_batch_prediction_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.create_batch_prediction_job)
@@ -335,7 +334,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates a detector version.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").create_detector_version` method.
+`session.create_client("frauddetector").create_detector_version` method.
 
 Boto3 documentation:
 [FraudDetector.Client.create_detector_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.create_detector_version)
@@ -367,7 +366,7 @@ Returns a `Coroutine` for
 
 Creates a model using the specified model type.
 
-Type annotations for `aiobotocore.create_client("frauddetector").create_model`
+Type annotations for `session.create_client("frauddetector").create_model`
 method.
 
 Boto3 documentation:
@@ -396,7 +395,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates a version of the model using the specified model type and model id.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").create_model_version` method.
+`session.create_client("frauddetector").create_model_version` method.
 
 Boto3 documentation:
 [FraudDetector.Client.create_model_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.create_model_version)
@@ -433,7 +432,7 @@ Returns a `Coroutine` for
 
 Creates a rule for use with the specified detector.
 
-Type annotations for `aiobotocore.create_client("frauddetector").create_rule`
+Type annotations for `session.create_client("frauddetector").create_rule`
 method.
 
 Boto3 documentation:
@@ -464,8 +463,8 @@ Returns a `Coroutine` for
 
 Creates a variable.
 
-Type annotations for
-`aiobotocore.create_client("frauddetector").create_variable` method.
+Type annotations for `session.create_client("frauddetector").create_variable`
+method.
 
 Boto3 documentation:
 [FraudDetector.Client.create_variable](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.create_variable)
@@ -494,7 +493,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes data that was batch imported to Amazon Fraud Detector.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").delete_batch_import_job` method.
+`session.create_client("frauddetector").delete_batch_import_job` method.
 
 Boto3 documentation:
 [FraudDetector.Client.delete_batch_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.delete_batch_import_job)
@@ -518,8 +517,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a batch prediction job.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").delete_batch_prediction_job`
-method.
+`session.create_client("frauddetector").delete_batch_prediction_job` method.
 
 Boto3 documentation:
 [FraudDetector.Client.delete_batch_prediction_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.delete_batch_prediction_job)
@@ -542,8 +540,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the detector.
 
-Type annotations for
-`aiobotocore.create_client("frauddetector").delete_detector` method.
+Type annotations for `session.create_client("frauddetector").delete_detector`
+method.
 
 Boto3 documentation:
 [FraudDetector.Client.delete_detector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.delete_detector)
@@ -566,7 +564,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the detector version.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").delete_detector_version` method.
+`session.create_client("frauddetector").delete_detector_version` method.
 
 Boto3 documentation:
 [FraudDetector.Client.delete_detector_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.delete_detector_version)
@@ -591,7 +589,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes an entity type.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").delete_entity_type` method.
+`session.create_client("frauddetector").delete_entity_type` method.
 
 Boto3 documentation:
 [FraudDetector.Client.delete_entity_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.delete_entity_type)
@@ -614,7 +612,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified event.
 
-Type annotations for `aiobotocore.create_client("frauddetector").delete_event`
+Type annotations for `session.create_client("frauddetector").delete_event`
 method.
 
 Boto3 documentation:
@@ -639,8 +637,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an event type.
 
-Type annotations for
-`aiobotocore.create_client("frauddetector").delete_event_type` method.
+Type annotations for `session.create_client("frauddetector").delete_event_type`
+method.
 
 Boto3 documentation:
 [FraudDetector.Client.delete_event_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.delete_event_type)
@@ -663,8 +661,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes all events of a particular event type.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").delete_events_by_event_type`
-method.
+`session.create_client("frauddetector").delete_events_by_event_type` method.
 
 Boto3 documentation:
 [FraudDetector.Client.delete_events_by_event_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.delete_events_by_event_type)
@@ -689,7 +686,7 @@ Returns a `Coroutine` for
 Removes a SageMaker model from Amazon Fraud Detector.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").delete_external_model` method.
+`session.create_client("frauddetector").delete_external_model` method.
 
 Boto3 documentation:
 [FraudDetector.Client.delete_external_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.delete_external_model)
@@ -712,7 +709,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a label.
 
-Type annotations for `aiobotocore.create_client("frauddetector").delete_label`
+Type annotations for `session.create_client("frauddetector").delete_label`
 method.
 
 Boto3 documentation:
@@ -735,7 +732,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a model.
 
-Type annotations for `aiobotocore.create_client("frauddetector").delete_model`
+Type annotations for `session.create_client("frauddetector").delete_model`
 method.
 
 Boto3 documentation:
@@ -761,7 +758,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a model version.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").delete_model_version` method.
+`session.create_client("frauddetector").delete_model_version` method.
 
 Boto3 documentation:
 [FraudDetector.Client.delete_model_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.delete_model_version)
@@ -787,8 +784,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an outcome.
 
-Type annotations for
-`aiobotocore.create_client("frauddetector").delete_outcome` method.
+Type annotations for `session.create_client("frauddetector").delete_outcome`
+method.
 
 Boto3 documentation:
 [FraudDetector.Client.delete_outcome](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.delete_outcome)
@@ -810,7 +807,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the rule.
 
-Type annotations for `aiobotocore.create_client("frauddetector").delete_rule`
+Type annotations for `session.create_client("frauddetector").delete_rule`
 method.
 
 Boto3 documentation:
@@ -833,8 +830,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a variable.
 
-Type annotations for
-`aiobotocore.create_client("frauddetector").delete_variable` method.
+Type annotations for `session.create_client("frauddetector").delete_variable`
+method.
 
 Boto3 documentation:
 [FraudDetector.Client.delete_variable](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.delete_variable)
@@ -856,8 +853,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Gets all versions for a specified detector.
 
-Type annotations for
-`aiobotocore.create_client("frauddetector").describe_detector` method.
+Type annotations for `session.create_client("frauddetector").describe_detector`
+method.
 
 Boto3 documentation:
 [FraudDetector.Client.describe_detector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.describe_detector)
@@ -884,7 +881,7 @@ Gets all of the model versions for the specified model type or for the
 specified model type and model ID.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").describe_model_versions` method.
+`session.create_client("frauddetector").describe_model_versions` method.
 
 Boto3 documentation:
 [FraudDetector.Client.describe_model_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.describe_model_versions)
@@ -913,7 +910,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").generate_presigned_url` method.
+`session.create_client("frauddetector").generate_presigned_url` method.
 
 Boto3 documentation:
 [FraudDetector.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.generate_presigned_url)
@@ -937,7 +934,7 @@ Returns a `Coroutine` for `str`.
 Gets all batch import jobs or a specific job of the specified ID.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").get_batch_import_jobs` method.
+`session.create_client("frauddetector").get_batch_import_jobs` method.
 
 Boto3 documentation:
 [FraudDetector.Client.get_batch_import_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.get_batch_import_jobs)
@@ -964,7 +961,7 @@ Returns a `Coroutine` for
 Gets all batch prediction jobs or a specific job if you specify a job ID.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").get_batch_prediction_jobs` method.
+`session.create_client("frauddetector").get_batch_prediction_jobs` method.
 
 Boto3 documentation:
 [FraudDetector.Client.get_batch_prediction_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.get_batch_prediction_jobs)
@@ -991,7 +988,7 @@ Returns a `Coroutine` for
 Retrieves the status of a `DeleteEventsByEventType` action.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").get_delete_events_by_event_type_status`
+`session.create_client("frauddetector").get_delete_events_by_event_type_status`
 method.
 
 Boto3 documentation:
@@ -1017,7 +1014,7 @@ Returns a `Coroutine` for
 Gets a particular detector version.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").get_detector_version` method.
+`session.create_client("frauddetector").get_detector_version` method.
 
 Boto3 documentation:
 [FraudDetector.Client.get_detector_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.get_detector_version)
@@ -1042,7 +1039,7 @@ Returns a `Coroutine` for
 
 Gets all detectors or a single detector if a `detectorId` is specified.
 
-Type annotations for `aiobotocore.create_client("frauddetector").get_detectors`
+Type annotations for `session.create_client("frauddetector").get_detectors`
 method.
 
 Boto3 documentation:
@@ -1068,8 +1065,8 @@ Returns a `Coroutine` for
 
 Gets all entity types or a specific entity type if a name is specified.
 
-Type annotations for
-`aiobotocore.create_client("frauddetector").get_entity_types` method.
+Type annotations for `session.create_client("frauddetector").get_entity_types`
+method.
 
 Boto3 documentation:
 [FraudDetector.Client.get_entity_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.get_entity_types)
@@ -1094,8 +1091,7 @@ Returns a `Coroutine` for
 
 Retrieves details of events stored with Amazon Fraud Detector.
 
-Type annotations for `aiobotocore.create_client("frauddetector").get_event`
-method.
+Type annotations for `session.create_client("frauddetector").get_event` method.
 
 Boto3 documentation:
 [FraudDetector.Client.get_event](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.get_event)
@@ -1120,7 +1116,7 @@ Returns a `Coroutine` for
 Evaluates an event against a detector version.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").get_event_prediction` method.
+`session.create_client("frauddetector").get_event_prediction` method.
 
 Boto3 documentation:
 [FraudDetector.Client.get_event_prediction](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.get_event_prediction)
@@ -1153,8 +1149,8 @@ Returns a `Coroutine` for
 
 Gets all event types or a specific event type if name is provided.
 
-Type annotations for
-`aiobotocore.create_client("frauddetector").get_event_types` method.
+Type annotations for `session.create_client("frauddetector").get_event_types`
+method.
 
 Boto3 documentation:
 [FraudDetector.Client.get_event_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.get_event_types)
@@ -1181,7 +1177,7 @@ Gets the details for one or more Amazon SageMaker models that have been
 imported into the service.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").get_external_models` method.
+`session.create_client("frauddetector").get_external_models` method.
 
 Boto3 documentation:
 [FraudDetector.Client.get_external_models](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.get_external_models)
@@ -1209,7 +1205,7 @@ Gets the encryption key if a KMS key has been specified to be used to encrypt
 content in Amazon Fraud Detector.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").get_kms_encryption_key` method.
+`session.create_client("frauddetector").get_kms_encryption_key` method.
 
 Boto3 documentation:
 [FraudDetector.Client.get_kms_encryption_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.get_kms_encryption_key)
@@ -1226,7 +1222,7 @@ Returns a `Coroutine` for
 
 Gets all labels or a specific label if name is provided.
 
-Type annotations for `aiobotocore.create_client("frauddetector").get_labels`
+Type annotations for `session.create_client("frauddetector").get_labels`
 method.
 
 Boto3 documentation:
@@ -1252,8 +1248,8 @@ Returns a `Coroutine` for
 
 Gets the details of the specified model version.
 
-Type annotations for
-`aiobotocore.create_client("frauddetector").get_model_version` method.
+Type annotations for `session.create_client("frauddetector").get_model_version`
+method.
 
 Boto3 documentation:
 [FraudDetector.Client.get_model_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.get_model_version)
@@ -1279,7 +1275,7 @@ Returns a `Coroutine` for
 
 Gets one or more models.
 
-Type annotations for `aiobotocore.create_client("frauddetector").get_models`
+Type annotations for `session.create_client("frauddetector").get_models`
 method.
 
 Boto3 documentation:
@@ -1306,7 +1302,7 @@ Returns a `Coroutine` for
 
 Gets one or more outcomes.
 
-Type annotations for `aiobotocore.create_client("frauddetector").get_outcomes`
+Type annotations for `session.create_client("frauddetector").get_outcomes`
 method.
 
 Boto3 documentation:
@@ -1333,8 +1329,7 @@ Returns a `Coroutine` for
 Get all rules for a detector (paginated) if `ruleId` and `ruleVersion` are not
 specified.
 
-Type annotations for `aiobotocore.create_client("frauddetector").get_rules`
-method.
+Type annotations for `session.create_client("frauddetector").get_rules` method.
 
 Boto3 documentation:
 [FraudDetector.Client.get_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.get_rules)
@@ -1361,7 +1356,7 @@ Returns a `Coroutine` for
 
 Gets all of the variables or the specific variable.
 
-Type annotations for `aiobotocore.create_client("frauddetector").get_variables`
+Type annotations for `session.create_client("frauddetector").get_variables`
 method.
 
 Boto3 documentation:
@@ -1388,7 +1383,7 @@ Returns a `Coroutine` for
 Lists all tags associated with the resource.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").list_tags_for_resource` method.
+`session.create_client("frauddetector").list_tags_for_resource` method.
 
 Boto3 documentation:
 [FraudDetector.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.list_tags_for_resource)
@@ -1414,7 +1409,7 @@ Returns a `Coroutine` for
 
 Creates or updates a detector.
 
-Type annotations for `aiobotocore.create_client("frauddetector").put_detector`
+Type annotations for `session.create_client("frauddetector").put_detector`
 method.
 
 Boto3 documentation:
@@ -1440,8 +1435,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates or updates an entity type.
 
-Type annotations for
-`aiobotocore.create_client("frauddetector").put_entity_type` method.
+Type annotations for `session.create_client("frauddetector").put_entity_type`
+method.
 
 Boto3 documentation:
 [FraudDetector.Client.put_entity_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.put_entity_type)
@@ -1465,8 +1460,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates or updates an event type.
 
-Type annotations for
-`aiobotocore.create_client("frauddetector").put_event_type` method.
+Type annotations for `session.create_client("frauddetector").put_event_type`
+method.
 
 Boto3 documentation:
 [FraudDetector.Client.put_event_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.put_event_type)
@@ -1495,7 +1490,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates or updates an Amazon SageMaker model endpoint.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").put_external_model` method.
+`session.create_client("frauddetector").put_external_model` method.
 
 Boto3 documentation:
 [FraudDetector.Client.put_external_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.put_external_model)
@@ -1531,7 +1526,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Specifies the KMS key to be used to encrypt content in Amazon Fraud Detector.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").put_kms_encryption_key` method.
+`session.create_client("frauddetector").put_kms_encryption_key` method.
 
 Boto3 documentation:
 [FraudDetector.Client.put_kms_encryption_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.put_kms_encryption_key)
@@ -1554,8 +1549,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates or updates label.
 
-Type annotations for `aiobotocore.create_client("frauddetector").put_label`
-method.
+Type annotations for `session.create_client("frauddetector").put_label` method.
 
 Boto3 documentation:
 [FraudDetector.Client.put_label](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.put_label)
@@ -1579,7 +1573,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates or updates an outcome.
 
-Type annotations for `aiobotocore.create_client("frauddetector").put_outcome`
+Type annotations for `session.create_client("frauddetector").put_outcome`
 method.
 
 Boto3 documentation:
@@ -1605,7 +1599,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Stores events in Amazon Fraud Detector without generating fraud predictions for
 those events.
 
-Type annotations for `aiobotocore.create_client("frauddetector").send_event`
+Type annotations for `session.create_client("frauddetector").send_event`
 method.
 
 Boto3 documentation:
@@ -1635,7 +1629,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Assigns tags to a resource.
 
-Type annotations for `aiobotocore.create_client("frauddetector").tag_resource`
+Type annotations for `session.create_client("frauddetector").tag_resource`
 method.
 
 Boto3 documentation:
@@ -1659,8 +1653,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from a resource.
 
-Type annotations for
-`aiobotocore.create_client("frauddetector").untag_resource` method.
+Type annotations for `session.create_client("frauddetector").untag_resource`
+method.
 
 Boto3 documentation:
 [FraudDetector.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.untag_resource)
@@ -1684,7 +1678,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a detector version.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").update_detector_version` method.
+`session.create_client("frauddetector").update_detector_version` method.
 
 Boto3 documentation:
 [FraudDetector.Client.update_detector_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.update_detector_version)
@@ -1716,7 +1710,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the detector version's description.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").update_detector_version_metadata`
+`session.create_client("frauddetector").update_detector_version_metadata`
 method.
 
 Boto3 documentation:
@@ -1743,8 +1737,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the detector version’s status.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").update_detector_version_status`
-method.
+`session.create_client("frauddetector").update_detector_version_status` method.
 
 Boto3 documentation:
 [FraudDetector.Client.update_detector_version_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.update_detector_version_status)
@@ -1772,7 +1765,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the specified event with a new label.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").update_event_label` method.
+`session.create_client("frauddetector").update_event_label` method.
 
 Boto3 documentation:
 [FraudDetector.Client.update_event_label](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.update_event_label)
@@ -1798,7 +1791,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates model description.
 
-Type annotations for `aiobotocore.create_client("frauddetector").update_model`
+Type annotations for `session.create_client("frauddetector").update_model`
 method.
 
 Boto3 documentation:
@@ -1825,7 +1818,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a model version.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").update_model_version` method.
+`session.create_client("frauddetector").update_model_version` method.
 
 Boto3 documentation:
 [FraudDetector.Client.update_model_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.update_model_version)
@@ -1858,8 +1851,7 @@ Returns a `Coroutine` for
 Updates the status of a model version.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").update_model_version_status`
-method.
+`session.create_client("frauddetector").update_model_version_status` method.
 
 Boto3 documentation:
 [FraudDetector.Client.update_model_version_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.update_model_version_status)
@@ -1888,7 +1880,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a rule's metadata.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").update_rule_metadata` method.
+`session.create_client("frauddetector").update_rule_metadata` method.
 
 Boto3 documentation:
 [FraudDetector.Client.update_rule_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.update_rule_metadata)
@@ -1913,7 +1905,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a rule version resulting in a new rule version.
 
 Type annotations for
-`aiobotocore.create_client("frauddetector").update_rule_version` method.
+`session.create_client("frauddetector").update_rule_version` method.
 
 Boto3 documentation:
 [FraudDetector.Client.update_rule_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.update_rule_version)
@@ -1943,8 +1935,8 @@ Returns a `Coroutine` for
 
 Updates a variable.
 
-Type annotations for
-`aiobotocore.create_client("frauddetector").update_variable` method.
+Type annotations for `session.create_client("frauddetector").update_variable`
+method.
 
 Boto3 documentation:
 [FraudDetector.Client.update_variable](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.update_variable)
@@ -1962,3 +1954,36 @@ Keyword-only arguments:
 - `variableType`: `str`
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("frauddetector").__aenter__`
+method.
+
+Boto3 documentation:
+[FraudDetector.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [FraudDetectorClient](#frauddetectorclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("frauddetector").__aexit__` method.
+
+Boto3 documentation:
+[FraudDetector.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/frauddetector.html#FraudDetector.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

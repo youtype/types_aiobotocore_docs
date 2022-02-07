@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[storagegateway]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[storagegateway]'
+
+# standalone installation
 pip install types-aiobotocore-storagegateway
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-storagegateway
 
 ## StorageGatewayClient
 
-Type annotations for `aiobotocore.create_client("storagegateway")` as
+Type annotations for `session.create_client("storagegateway")` as
 [StorageGatewayClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_storagegateway.client import StorageGatewayClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [activate_gateway](./client.md#activate_gateway)
 - [add_cache](./client.md#add_cache)
 - [add_tags_to_resource](./client.md#add_tags_to_resource)
@@ -158,7 +164,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_storagegateway.paginators import DescribeTapeArchivesPaginator, ...
+from types_aiobotocore_storagegateway.paginator import DescribeTapeArchivesPaginator, ...
 ```
 
 - [DescribeTapeArchivesPaginator](./paginators.md#describetapearchivespaginator)

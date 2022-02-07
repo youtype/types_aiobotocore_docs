@@ -151,6 +151,8 @@ type annotations stubs module
     - [update_patch_baseline](#update_patch_baseline)
     - [update_resource_data_sync](#update_resource_data_sync)
     - [update_service_setting](#update_service_setting)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -158,16 +160,17 @@ type annotations stubs module
 
 ## SSMClient
 
-Type annotations for `aiobotocore.create_client("ssm")`
+Type annotations for `session.create_client("ssm")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_ssm.client import SSMClient
 
-def get_ssm_client() -> SSMClient:
-    return Session().client("ssm")
+session = get_session()
+async with session.create_client("ssm") as client:
+    client: SSMClient
 ```
 
 Boto3 documentation:
@@ -323,7 +326,7 @@ Exceptions:
 
 SSMClient exceptions.
 
-Type annotations for `aiobotocore.create_client("ssm").exceptions` method.
+Type annotations for `session.create_client("ssm").exceptions` method.
 
 Boto3 documentation:
 [SSM.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.exceptions)
@@ -336,7 +339,7 @@ Returns [Exceptions](#exceptions).
 
 Adds or overwrites one or more tags for the specified resource.
 
-Type annotations for `aiobotocore.create_client("ssm").add_tags_to_resource`
+Type annotations for `session.create_client("ssm").add_tags_to_resource`
 method.
 
 Boto3 documentation:
@@ -365,7 +368,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates a related item to a Systems Manager OpsCenter OpsItem.
 
 Type annotations for
-`aiobotocore.create_client("ssm").associate_ops_item_related_item` method.
+`session.create_client("ssm").associate_ops_item_related_item` method.
 
 Boto3 documentation:
 [SSM.Client.associate_ops_item_related_item](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.associate_ops_item_related_item)
@@ -392,18 +395,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("ssm").can_paginate` method.
+Type annotations for `session.create_client("ssm").can_paginate` method.
 
 Boto3 documentation:
 [SSM.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_command"></a>
 
@@ -411,7 +412,7 @@ Returns a `Coroutine` for `bool`.
 
 Attempts to cancel the command specified by the Command ID.
 
-Type annotations for `aiobotocore.create_client("ssm").cancel_command` method.
+Type annotations for `session.create_client("ssm").cancel_command` method.
 
 Boto3 documentation:
 [SSM.Client.cancel_command](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.cancel_command)
@@ -436,7 +437,7 @@ Stops a maintenance window execution that is already in progress and cancels
 any tasks in the window that haven't already starting running.
 
 Type annotations for
-`aiobotocore.create_client("ssm").cancel_maintenance_window_execution` method.
+`session.create_client("ssm").cancel_maintenance_window_execution` method.
 
 Boto3 documentation:
 [SSM.Client.cancel_maintenance_window_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.cancel_maintenance_window_execution)
@@ -462,8 +463,7 @@ Generates an activation code and activation ID you can use to register your on-
 premises servers, edge devices, or virtual machine (VM) with Amazon Web
 Services Systems Manager.
 
-Type annotations for `aiobotocore.create_client("ssm").create_activation`
-method.
+Type annotations for `session.create_client("ssm").create_activation` method.
 
 Boto3 documentation:
 [SSM.Client.create_activation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.create_activation)
@@ -494,8 +494,7 @@ Returns a `Coroutine` for
 A State Manager association defines the state that you want to maintain on your
 managed nodes.
 
-Type annotations for `aiobotocore.create_client("ssm").create_association`
-method.
+Type annotations for `session.create_client("ssm").create_association` method.
 
 Boto3 documentation:
 [SSM.Client.create_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.create_association)
@@ -539,8 +538,8 @@ Returns a `Coroutine` for
 Associates the specified Amazon Web Services Systems Manager document (SSM
 document) with the specified managed nodes or targets.
 
-Type annotations for
-`aiobotocore.create_client("ssm").create_association_batch` method.
+Type annotations for `session.create_client("ssm").create_association_batch`
+method.
 
 Boto3 documentation:
 [SSM.Client.create_association_batch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.create_association_batch)
@@ -566,7 +565,7 @@ Returns a `Coroutine` for
 
 Creates a Amazon Web Services Systems Manager (SSM document).
 
-Type annotations for `aiobotocore.create_client("ssm").create_document` method.
+Type annotations for `session.create_client("ssm").create_document` method.
 
 Boto3 documentation:
 [SSM.Client.create_document](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.create_document)
@@ -600,8 +599,8 @@ Returns a `Coroutine` for
 
 Creates a new maintenance window.
 
-Type annotations for
-`aiobotocore.create_client("ssm").create_maintenance_window` method.
+Type annotations for `session.create_client("ssm").create_maintenance_window`
+method.
 
 Boto3 documentation:
 [SSM.Client.create_maintenance_window](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.create_maintenance_window)
@@ -636,7 +635,7 @@ Returns a `Coroutine` for
 
 Creates a new OpsItem.
 
-Type annotations for `aiobotocore.create_client("ssm").create_ops_item` method.
+Type annotations for `session.create_client("ssm").create_ops_item` method.
 
 Boto3 documentation:
 [SSM.Client.create_ops_item](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.create_ops_item)
@@ -678,8 +677,7 @@ If you create a new application in Application Manager, Amazon Web Services
 Systems Manager calls this API operation to specify information about the new
 application, including the application type.
 
-Type annotations for `aiobotocore.create_client("ssm").create_ops_metadata`
-method.
+Type annotations for `session.create_client("ssm").create_ops_metadata` method.
 
 Boto3 documentation:
 [SSM.Client.create_ops_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.create_ops_metadata)
@@ -706,7 +704,7 @@ Returns a `Coroutine` for
 
 Creates a patch baseline.
 
-Type annotations for `aiobotocore.create_client("ssm").create_patch_baseline`
+Type annotations for `session.create_client("ssm").create_patch_baseline`
 method.
 
 Boto3 documentation:
@@ -748,8 +746,8 @@ Returns a `Coroutine` for
 A resource data sync helps you view data from multiple sources in a single
 location.
 
-Type annotations for
-`aiobotocore.create_client("ssm").create_resource_data_sync` method.
+Type annotations for `session.create_client("ssm").create_resource_data_sync`
+method.
 
 Boto3 documentation:
 [SSM.Client.create_resource_data_sync](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.create_resource_data_sync)
@@ -777,8 +775,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an activation.
 
-Type annotations for `aiobotocore.create_client("ssm").delete_activation`
-method.
+Type annotations for `session.create_client("ssm").delete_activation` method.
 
 Boto3 documentation:
 [SSM.Client.delete_activation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.delete_activation)
@@ -801,8 +798,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates the specified Amazon Web Services Systems Manager document (SSM
 document) from the specified managed node.
 
-Type annotations for `aiobotocore.create_client("ssm").delete_association`
-method.
+Type annotations for `session.create_client("ssm").delete_association` method.
 
 Boto3 documentation:
 [SSM.Client.delete_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.delete_association)
@@ -828,7 +824,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the Amazon Web Services Systems Manager document (SSM document) and all
 managed node associations to the document.
 
-Type annotations for `aiobotocore.create_client("ssm").delete_document` method.
+Type annotations for `session.create_client("ssm").delete_document` method.
 
 Boto3 documentation:
 [SSM.Client.delete_document](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.delete_document)
@@ -854,8 +850,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Delete a custom inventory type or the data associated with a custom Inventory
 type.
 
-Type annotations for `aiobotocore.create_client("ssm").delete_inventory`
-method.
+Type annotations for `session.create_client("ssm").delete_inventory` method.
 
 Boto3 documentation:
 [SSM.Client.delete_inventory](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.delete_inventory)
@@ -882,8 +877,8 @@ Returns a `Coroutine` for
 
 Deletes a maintenance window.
 
-Type annotations for
-`aiobotocore.create_client("ssm").delete_maintenance_window` method.
+Type annotations for `session.create_client("ssm").delete_maintenance_window`
+method.
 
 Boto3 documentation:
 [SSM.Client.delete_maintenance_window](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.delete_maintenance_window)
@@ -907,8 +902,7 @@ Returns a `Coroutine` for
 
 Delete OpsMetadata related to an application.
 
-Type annotations for `aiobotocore.create_client("ssm").delete_ops_metadata`
-method.
+Type annotations for `session.create_client("ssm").delete_ops_metadata` method.
 
 Boto3 documentation:
 [SSM.Client.delete_ops_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.delete_ops_metadata)
@@ -931,8 +925,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Delete a parameter from the system.
 
-Type annotations for `aiobotocore.create_client("ssm").delete_parameter`
-method.
+Type annotations for `session.create_client("ssm").delete_parameter` method.
 
 Boto3 documentation:
 [SSM.Client.delete_parameter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.delete_parameter)
@@ -954,8 +947,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Delete a list of parameters.
 
-Type annotations for `aiobotocore.create_client("ssm").delete_parameters`
-method.
+Type annotations for `session.create_client("ssm").delete_parameters` method.
 
 Boto3 documentation:
 [SSM.Client.delete_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.delete_parameters)
@@ -978,7 +970,7 @@ Returns a `Coroutine` for
 
 Deletes a patch baseline.
 
-Type annotations for `aiobotocore.create_client("ssm").delete_patch_baseline`
+Type annotations for `session.create_client("ssm").delete_patch_baseline`
 method.
 
 Boto3 documentation:
@@ -1003,8 +995,8 @@ Returns a `Coroutine` for
 
 Deletes a resource data sync configuration.
 
-Type annotations for
-`aiobotocore.create_client("ssm").delete_resource_data_sync` method.
+Type annotations for `session.create_client("ssm").delete_resource_data_sync`
+method.
 
 Boto3 documentation:
 [SSM.Client.delete_resource_data_sync](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.delete_resource_data_sync)
@@ -1028,8 +1020,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the server or virtual machine from the list of registered servers.
 
-Type annotations for
-`aiobotocore.create_client("ssm").deregister_managed_instance` method.
+Type annotations for `session.create_client("ssm").deregister_managed_instance`
+method.
 
 Boto3 documentation:
 [SSM.Client.deregister_managed_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.deregister_managed_instance)
@@ -1053,7 +1045,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes a patch group from a patch baseline.
 
 Type annotations for
-`aiobotocore.create_client("ssm").deregister_patch_baseline_for_patch_group`
+`session.create_client("ssm").deregister_patch_baseline_for_patch_group`
 method.
 
 Boto3 documentation:
@@ -1080,7 +1072,7 @@ Returns a `Coroutine` for
 Removes a target from a maintenance window.
 
 Type annotations for
-`aiobotocore.create_client("ssm").deregister_target_from_maintenance_window`
+`session.create_client("ssm").deregister_target_from_maintenance_window`
 method.
 
 Boto3 documentation:
@@ -1108,8 +1100,7 @@ Returns a `Coroutine` for
 Removes a task from a maintenance window.
 
 Type annotations for
-`aiobotocore.create_client("ssm").deregister_task_from_maintenance_window`
-method.
+`session.create_client("ssm").deregister_task_from_maintenance_window` method.
 
 Boto3 documentation:
 [SSM.Client.deregister_task_from_maintenance_window](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.deregister_task_from_maintenance_window)
@@ -1137,7 +1128,7 @@ activation was created, its expiration date, the Identity and Access Management
 (IAM) role assigned to the managed nodes in the activation, and the number of
 nodes registered by using this activation.
 
-Type annotations for `aiobotocore.create_client("ssm").describe_activations`
+Type annotations for `session.create_client("ssm").describe_activations`
 method.
 
 Boto3 documentation:
@@ -1165,7 +1156,7 @@ Returns a `Coroutine` for
 
 Describes the association for the specified target or managed node.
 
-Type annotations for `aiobotocore.create_client("ssm").describe_association`
+Type annotations for `session.create_client("ssm").describe_association`
 method.
 
 Boto3 documentation:
@@ -1194,8 +1185,7 @@ Returns a `Coroutine` for
 Views information about a specific execution of a specific association.
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_association_execution_targets`
-method.
+`session.create_client("ssm").describe_association_execution_targets` method.
 
 Boto3 documentation:
 [SSM.Client.describe_association_execution_targets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_association_execution_targets)
@@ -1225,7 +1215,7 @@ Returns a `Coroutine` for
 Views all executions for a specific association ID.
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_association_executions` method.
+`session.create_client("ssm").describe_association_executions` method.
 
 Boto3 documentation:
 [SSM.Client.describe_association_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_association_executions)
@@ -1254,7 +1244,7 @@ Returns a `Coroutine` for
 Provides details about all active and terminated Automation executions.
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_automation_executions` method.
+`session.create_client("ssm").describe_automation_executions` method.
 
 Boto3 documentation:
 [SSM.Client.describe_automation_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_automation_executions)
@@ -1283,7 +1273,7 @@ Information about all active and terminated step executions in an Automation
 workflow.
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_automation_step_executions` method.
+`session.create_client("ssm").describe_automation_step_executions` method.
 
 Boto3 documentation:
 [SSM.Client.describe_automation_step_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_automation_step_executions)
@@ -1312,8 +1302,8 @@ Returns a `Coroutine` for
 
 Lists all patches eligible to be included in a patch baseline.
 
-Type annotations for
-`aiobotocore.create_client("ssm").describe_available_patches` method.
+Type annotations for `session.create_client("ssm").describe_available_patches`
+method.
 
 Boto3 documentation:
 [SSM.Client.describe_available_patches](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_available_patches)
@@ -1341,8 +1331,7 @@ Returns a `Coroutine` for
 Describes the specified Amazon Web Services Systems Manager document (SSM
 document).
 
-Type annotations for `aiobotocore.create_client("ssm").describe_document`
-method.
+Type annotations for `session.create_client("ssm").describe_document` method.
 
 Boto3 documentation:
 [SSM.Client.describe_document](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_document)
@@ -1369,7 +1358,7 @@ Describes the permissions for a Amazon Web Services Systems Manager document
 (SSM document).
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_document_permission` method.
+`session.create_client("ssm").describe_document_permission` method.
 
 Boto3 documentation:
 [SSM.Client.describe_document_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_document_permission)
@@ -1399,8 +1388,7 @@ Returns a `Coroutine` for
 All associations for the managed node(s).
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_effective_instance_associations`
-method.
+`session.create_client("ssm").describe_effective_instance_associations` method.
 
 Boto3 documentation:
 [SSM.Client.describe_effective_instance_associations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_effective_instance_associations)
@@ -1428,7 +1416,7 @@ Retrieves the current effective patches (the patch and the approval state) for
 the specified patch baseline.
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_effective_patches_for_patch_baseline`
+`session.create_client("ssm").describe_effective_patches_for_patch_baseline`
 method.
 
 Boto3 documentation:
@@ -1457,8 +1445,7 @@ Returns a `Coroutine` for
 The status of the associations for the managed node(s).
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_instance_associations_status`
-method.
+`session.create_client("ssm").describe_instance_associations_status` method.
 
 Boto3 documentation:
 [SSM.Client.describe_instance_associations_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_instance_associations_status)
@@ -1487,7 +1474,7 @@ operating system platform, the version of SSM Agent installed on the managed
 node, node status, and so on.
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_instance_information` method.
+`session.create_client("ssm").describe_instance_information` method.
 
 Boto3 documentation:
 [SSM.Client.describe_instance_information](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_instance_information)
@@ -1517,7 +1504,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_instance_patch_states` method.
+`session.create_client("ssm").describe_instance_patch_states` method.
 
 Boto3 documentation:
 [SSM.Client.describe_instance_patch_states](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_instance_patch_states)
@@ -1544,7 +1531,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_instance_patch_states_for_patch_group`
+`session.create_client("ssm").describe_instance_patch_states_for_patch_group`
 method.
 
 Boto3 documentation:
@@ -1575,8 +1562,8 @@ Returns a `Coroutine` for
 Retrieves information about the patches on the specified managed node and their
 state relative to the patch baseline being used for the node.
 
-Type annotations for
-`aiobotocore.create_client("ssm").describe_instance_patches` method.
+Type annotations for `session.create_client("ssm").describe_instance_patches`
+method.
 
 Boto3 documentation:
 [SSM.Client.describe_instance_patches](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_instance_patches)
@@ -1605,7 +1592,7 @@ Returns a `Coroutine` for
 Describes a specific delete inventory operation.
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_inventory_deletions` method.
+`session.create_client("ssm").describe_inventory_deletions` method.
 
 Boto3 documentation:
 [SSM.Client.describe_inventory_deletions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_inventory_deletions)
@@ -1633,7 +1620,7 @@ Retrieves the individual task executions (one per target) for a particular task
 run as part of a maintenance window execution.
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_maintenance_window_execution_task_invocations`
+`session.create_client("ssm").describe_maintenance_window_execution_task_invocations`
 method.
 
 Boto3 documentation:
@@ -1665,7 +1652,7 @@ Returns a `Coroutine` for
 For a given maintenance window execution, lists the tasks that were run.
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_maintenance_window_execution_tasks`
+`session.create_client("ssm").describe_maintenance_window_execution_tasks`
 method.
 
 Boto3 documentation:
@@ -1696,8 +1683,7 @@ Returns a `Coroutine` for
 Lists the executions of a maintenance window.
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_maintenance_window_executions`
-method.
+`session.create_client("ssm").describe_maintenance_window_executions` method.
 
 Boto3 documentation:
 [SSM.Client.describe_maintenance_window_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_maintenance_window_executions)
@@ -1726,7 +1712,7 @@ Returns a `Coroutine` for
 Retrieves information about upcoming executions of a maintenance window.
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_maintenance_window_schedule` method.
+`session.create_client("ssm").describe_maintenance_window_schedule` method.
 
 Boto3 documentation:
 [SSM.Client.describe_maintenance_window_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_maintenance_window_schedule)
@@ -1758,7 +1744,7 @@ Returns a `Coroutine` for
 Lists the targets registered with the maintenance window.
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_maintenance_window_targets` method.
+`session.create_client("ssm").describe_maintenance_window_targets` method.
 
 Boto3 documentation:
 [SSM.Client.describe_maintenance_window_targets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_maintenance_window_targets)
@@ -1787,7 +1773,7 @@ Returns a `Coroutine` for
 Lists the tasks in a maintenance window.
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_maintenance_window_tasks` method.
+`session.create_client("ssm").describe_maintenance_window_tasks` method.
 
 Boto3 documentation:
 [SSM.Client.describe_maintenance_window_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_maintenance_window_tasks)
@@ -1816,7 +1802,7 @@ Returns a `Coroutine` for
 Retrieves the maintenance windows in an Amazon Web Services account.
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_maintenance_windows` method.
+`session.create_client("ssm").describe_maintenance_windows` method.
 
 Boto3 documentation:
 [SSM.Client.describe_maintenance_windows](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_maintenance_windows)
@@ -1845,8 +1831,7 @@ Retrieves information about the maintenance window targets or tasks that a
 managed node is associated with.
 
 Type annotations for
-`aiobotocore.create_client("ssm").describe_maintenance_windows_for_target`
-method.
+`session.create_client("ssm").describe_maintenance_windows_for_target` method.
 
 Boto3 documentation:
 [SSM.Client.describe_maintenance_windows_for_target](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_maintenance_windows_for_target)
@@ -1876,8 +1861,7 @@ Returns a `Coroutine` for
 
 Query a set of OpsItems.
 
-Type annotations for `aiobotocore.create_client("ssm").describe_ops_items`
-method.
+Type annotations for `session.create_client("ssm").describe_ops_items` method.
 
 Boto3 documentation:
 [SSM.Client.describe_ops_items](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_ops_items)
@@ -1904,8 +1888,7 @@ Returns a `Coroutine` for
 
 Get information about a parameter.
 
-Type annotations for `aiobotocore.create_client("ssm").describe_parameters`
-method.
+Type annotations for `session.create_client("ssm").describe_parameters` method.
 
 Boto3 documentation:
 [SSM.Client.describe_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_parameters)
@@ -1934,8 +1917,8 @@ Returns a `Coroutine` for
 
 Lists the patch baselines in your Amazon Web Services account.
 
-Type annotations for
-`aiobotocore.create_client("ssm").describe_patch_baselines` method.
+Type annotations for `session.create_client("ssm").describe_patch_baselines`
+method.
 
 Boto3 documentation:
 [SSM.Client.describe_patch_baselines](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_patch_baselines)
@@ -1963,8 +1946,8 @@ Returns a `Coroutine` for
 Returns high-level aggregated patch compliance state information for a patch
 group.
 
-Type annotations for
-`aiobotocore.create_client("ssm").describe_patch_group_state` method.
+Type annotations for `session.create_client("ssm").describe_patch_group_state`
+method.
 
 Boto3 documentation:
 [SSM.Client.describe_patch_group_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_patch_group_state)
@@ -1988,7 +1971,7 @@ Returns a `Coroutine` for
 
 Lists all patch groups that have been registered with patch baselines.
 
-Type annotations for `aiobotocore.create_client("ssm").describe_patch_groups`
+Type annotations for `session.create_client("ssm").describe_patch_groups`
 method.
 
 Boto3 documentation:
@@ -2017,8 +2000,8 @@ Returns a `Coroutine` for
 Lists the properties of available patches organized by product, product family,
 classification, severity, and other properties of available patches.
 
-Type annotations for
-`aiobotocore.create_client("ssm").describe_patch_properties` method.
+Type annotations for `session.create_client("ssm").describe_patch_properties`
+method.
 
 Boto3 documentation:
 [SSM.Client.describe_patch_properties](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_patch_properties)
@@ -2048,8 +2031,7 @@ Returns a `Coroutine` for
 Retrieves a list of all active sessions (both connected and disconnected) or
 terminated sessions from the past 30 days.
 
-Type annotations for `aiobotocore.create_client("ssm").describe_sessions`
-method.
+Type annotations for `session.create_client("ssm").describe_sessions` method.
 
 Boto3 documentation:
 [SSM.Client.describe_sessions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.describe_sessions)
@@ -2077,7 +2059,7 @@ Returns a `Coroutine` for
 Deletes the association between an OpsItem and a related item.
 
 Type annotations for
-`aiobotocore.create_client("ssm").disassociate_ops_item_related_item` method.
+`session.create_client("ssm").disassociate_ops_item_related_item` method.
 
 Boto3 documentation:
 [SSM.Client.disassociate_ops_item_related_item](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.disassociate_ops_item_related_item)
@@ -2101,7 +2083,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("ssm").generate_presigned_url`
+Type annotations for `session.create_client("ssm").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -2125,8 +2107,8 @@ Returns a `Coroutine` for `str`.
 
 Get detailed information about a particular Automation execution.
 
-Type annotations for
-`aiobotocore.create_client("ssm").get_automation_execution` method.
+Type annotations for `session.create_client("ssm").get_automation_execution`
+method.
 
 Boto3 documentation:
 [SSM.Client.get_automation_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_automation_execution)
@@ -2151,8 +2133,7 @@ Returns a `Coroutine` for
 Gets the state of a Amazon Web Services Systems Manager change calendar at the
 current time or a specified time.
 
-Type annotations for `aiobotocore.create_client("ssm").get_calendar_state`
-method.
+Type annotations for `session.create_client("ssm").get_calendar_state` method.
 
 Boto3 documentation:
 [SSM.Client.get_calendar_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_calendar_state)
@@ -2178,7 +2159,7 @@ Returns a `Coroutine` for
 Returns detailed information about command execution for an invocation or
 plugin.
 
-Type annotations for `aiobotocore.create_client("ssm").get_command_invocation`
+Type annotations for `session.create_client("ssm").get_command_invocation`
 method.
 
 Boto3 documentation:
@@ -2206,7 +2187,7 @@ Returns a `Coroutine` for
 Retrieves the Session Manager connection status for a managed node to determine
 whether it is running and ready to receive Session Manager connections.
 
-Type annotations for `aiobotocore.create_client("ssm").get_connection_status`
+Type annotations for `session.create_client("ssm").get_connection_status`
 method.
 
 Boto3 documentation:
@@ -2231,8 +2212,8 @@ Returns a `Coroutine` for
 
 Retrieves the default patch baseline.
 
-Type annotations for
-`aiobotocore.create_client("ssm").get_default_patch_baseline` method.
+Type annotations for `session.create_client("ssm").get_default_patch_baseline`
+method.
 
 Boto3 documentation:
 [SSM.Client.get_default_patch_baseline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_default_patch_baseline)
@@ -2257,7 +2238,7 @@ Returns a `Coroutine` for
 Retrieves the current snapshot for the patch baseline the managed node uses.
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_deployable_patch_snapshot_for_instance`
+`session.create_client("ssm").get_deployable_patch_snapshot_for_instance`
 method.
 
 Boto3 documentation:
@@ -2286,7 +2267,7 @@ Returns a `Coroutine` for
 Gets the contents of the specified Amazon Web Services Systems Manager document
 (SSM document).
 
-Type annotations for `aiobotocore.create_client("ssm").get_document` method.
+Type annotations for `session.create_client("ssm").get_document` method.
 
 Boto3 documentation:
 [SSM.Client.get_document](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_document)
@@ -2312,7 +2293,7 @@ Returns a `Coroutine` for
 
 Query inventory information.
 
-Type annotations for `aiobotocore.create_client("ssm").get_inventory` method.
+Type annotations for `session.create_client("ssm").get_inventory` method.
 
 Boto3 documentation:
 [SSM.Client.get_inventory](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_inventory)
@@ -2343,7 +2324,7 @@ Returns a `Coroutine` for
 Return a list of inventory type names for the account, or return a list of
 attribute names for a specific Inventory item type.
 
-Type annotations for `aiobotocore.create_client("ssm").get_inventory_schema`
+Type annotations for `session.create_client("ssm").get_inventory_schema`
 method.
 
 Boto3 documentation:
@@ -2372,7 +2353,7 @@ Returns a `Coroutine` for
 
 Retrieves a maintenance window.
 
-Type annotations for `aiobotocore.create_client("ssm").get_maintenance_window`
+Type annotations for `session.create_client("ssm").get_maintenance_window`
 method.
 
 Boto3 documentation:
@@ -2398,7 +2379,7 @@ Returns a `Coroutine` for
 Retrieves details about a specific a maintenance window execution.
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_maintenance_window_execution` method.
+`session.create_client("ssm").get_maintenance_window_execution` method.
 
 Boto3 documentation:
 [SSM.Client.get_maintenance_window_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_maintenance_window_execution)
@@ -2424,8 +2405,7 @@ Retrieves the details about a specific task run as part of a maintenance window
 execution.
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_maintenance_window_execution_task`
-method.
+`session.create_client("ssm").get_maintenance_window_execution_task` method.
 
 Boto3 documentation:
 [SSM.Client.get_maintenance_window_execution_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_maintenance_window_execution_task)
@@ -2451,7 +2431,7 @@ Returns a `Coroutine` for
 Retrieves information about a specific task running on a specific target.
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_maintenance_window_execution_task_invocation`
+`session.create_client("ssm").get_maintenance_window_execution_task_invocation`
 method.
 
 Boto3 documentation:
@@ -2479,8 +2459,8 @@ Returns a `Coroutine` for
 
 Lists the tasks in a maintenance window.
 
-Type annotations for
-`aiobotocore.create_client("ssm").get_maintenance_window_task` method.
+Type annotations for `session.create_client("ssm").get_maintenance_window_task`
+method.
 
 Boto3 documentation:
 [SSM.Client.get_maintenance_window_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_maintenance_window_task)
@@ -2505,7 +2485,7 @@ Returns a `Coroutine` for
 
 Get information about an OpsItem by using the ID.
 
-Type annotations for `aiobotocore.create_client("ssm").get_ops_item` method.
+Type annotations for `session.create_client("ssm").get_ops_item` method.
 
 Boto3 documentation:
 [SSM.Client.get_ops_item](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_ops_item)
@@ -2528,8 +2508,7 @@ Returns a `Coroutine` for
 
 View operational metadata related to an application in Application Manager.
 
-Type annotations for `aiobotocore.create_client("ssm").get_ops_metadata`
-method.
+Type annotations for `session.create_client("ssm").get_ops_metadata` method.
 
 Boto3 documentation:
 [SSM.Client.get_ops_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_ops_metadata)
@@ -2555,7 +2534,7 @@ Returns a `Coroutine` for
 View a summary of operations metadata (OpsData) based on specified filters and
 aggregators.
 
-Type annotations for `aiobotocore.create_client("ssm").get_ops_summary` method.
+Type annotations for `session.create_client("ssm").get_ops_summary` method.
 
 Boto3 documentation:
 [SSM.Client.get_ops_summary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_ops_summary)
@@ -2585,7 +2564,7 @@ Returns a `Coroutine` for
 
 Get information about a single parameter by specifying the parameter name.
 
-Type annotations for `aiobotocore.create_client("ssm").get_parameter` method.
+Type annotations for `session.create_client("ssm").get_parameter` method.
 
 Boto3 documentation:
 [SSM.Client.get_parameter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_parameter)
@@ -2609,7 +2588,7 @@ Returns a `Coroutine` for
 
 Retrieves the history of all changes to a parameter.
 
-Type annotations for `aiobotocore.create_client("ssm").get_parameter_history`
+Type annotations for `session.create_client("ssm").get_parameter_history`
 method.
 
 Boto3 documentation:
@@ -2638,7 +2617,7 @@ Returns a `Coroutine` for
 Get information about one or more parameters by specifying multiple parameter
 names.
 
-Type annotations for `aiobotocore.create_client("ssm").get_parameters` method.
+Type annotations for `session.create_client("ssm").get_parameters` method.
 
 Boto3 documentation:
 [SSM.Client.get_parameters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_parameters)
@@ -2662,7 +2641,7 @@ Returns a `Coroutine` for
 
 Retrieve information about one or more parameters in a specific hierarchy.
 
-Type annotations for `aiobotocore.create_client("ssm").get_parameters_by_path`
+Type annotations for `session.create_client("ssm").get_parameters_by_path`
 method.
 
 Boto3 documentation:
@@ -2693,8 +2672,7 @@ Returns a `Coroutine` for
 
 Retrieves information about a patch baseline.
 
-Type annotations for `aiobotocore.create_client("ssm").get_patch_baseline`
-method.
+Type annotations for `session.create_client("ssm").get_patch_baseline` method.
 
 Boto3 documentation:
 [SSM.Client.get_patch_baseline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_patch_baseline)
@@ -2719,7 +2697,7 @@ Returns a `Coroutine` for
 Retrieves the patch baseline that should be used for the specified patch group.
 
 Type annotations for
-`aiobotocore.create_client("ssm").get_patch_baseline_for_patch_group` method.
+`session.create_client("ssm").get_patch_baseline_for_patch_group` method.
 
 Boto3 documentation:
 [SSM.Client.get_patch_baseline_for_patch_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_patch_baseline_for_patch_group)
@@ -2745,8 +2723,7 @@ Returns a `Coroutine` for
 `ServiceSetting` is an account-level setting for an Amazon Web Services
 service.
 
-Type annotations for `aiobotocore.create_client("ssm").get_service_setting`
-method.
+Type annotations for `session.create_client("ssm").get_service_setting` method.
 
 Boto3 documentation:
 [SSM.Client.get_service_setting](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.get_service_setting)
@@ -2771,7 +2748,7 @@ Returns a `Coroutine` for
 A parameter label is a user-defined alias to help you manage different versions
 of a parameter.
 
-Type annotations for `aiobotocore.create_client("ssm").label_parameter_version`
+Type annotations for `session.create_client("ssm").label_parameter_version`
 method.
 
 Boto3 documentation:
@@ -2798,8 +2775,8 @@ Returns a `Coroutine` for
 
 Retrieves all versions of an association for a specific association ID.
 
-Type annotations for
-`aiobotocore.create_client("ssm").list_association_versions` method.
+Type annotations for `session.create_client("ssm").list_association_versions`
+method.
 
 Boto3 documentation:
 [SSM.Client.list_association_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.list_association_versions)
@@ -2826,8 +2803,7 @@ Returns a `Coroutine` for
 Returns all State Manager associations in the current Amazon Web Services
 account and Amazon Web Services Region.
 
-Type annotations for `aiobotocore.create_client("ssm").list_associations`
-method.
+Type annotations for `session.create_client("ssm").list_associations` method.
 
 Boto3 documentation:
 [SSM.Client.list_associations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.list_associations)
@@ -2853,8 +2829,8 @@ Returns a `Coroutine` for
 
 An invocation is copy of a command sent to a specific managed node.
 
-Type annotations for
-`aiobotocore.create_client("ssm").list_command_invocations` method.
+Type annotations for `session.create_client("ssm").list_command_invocations`
+method.
 
 Boto3 documentation:
 [SSM.Client.list_command_invocations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.list_command_invocations)
@@ -2884,7 +2860,7 @@ Returns a `Coroutine` for
 
 Lists the commands requested by users of the Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("ssm").list_commands` method.
+Type annotations for `session.create_client("ssm").list_commands` method.
 
 Boto3 documentation:
 [SSM.Client.list_commands](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.list_commands)
@@ -2913,7 +2889,7 @@ Returns a `Coroutine` for
 For a specified resource ID, this API operation returns a list of compliance
 statuses for different resource types.
 
-Type annotations for `aiobotocore.create_client("ssm").list_compliance_items`
+Type annotations for `session.create_client("ssm").list_compliance_items`
 method.
 
 Boto3 documentation:
@@ -2944,8 +2920,8 @@ Returns a `Coroutine` for
 Returns a summary count of compliant and non-compliant resources for a
 compliance type.
 
-Type annotations for
-`aiobotocore.create_client("ssm").list_compliance_summaries` method.
+Type annotations for `session.create_client("ssm").list_compliance_summaries`
+method.
 
 Boto3 documentation:
 [SSM.Client.list_compliance_summaries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.list_compliance_summaries)
@@ -2974,7 +2950,7 @@ Information about approval reviews for a version of a change template in Change
 Manager.
 
 Type annotations for
-`aiobotocore.create_client("ssm").list_document_metadata_history` method.
+`session.create_client("ssm").list_document_metadata_history` method.
 
 Boto3 documentation:
 [SSM.Client.list_document_metadata_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.list_document_metadata_history)
@@ -3004,7 +2980,7 @@ Returns a `Coroutine` for
 
 List all versions for a document.
 
-Type annotations for `aiobotocore.create_client("ssm").list_document_versions`
+Type annotations for `session.create_client("ssm").list_document_versions`
 method.
 
 Boto3 documentation:
@@ -3032,7 +3008,7 @@ Returns a `Coroutine` for
 Returns all Systems Manager (SSM) documents in the current Amazon Web Services
 account and Amazon Web Services Region.
 
-Type annotations for `aiobotocore.create_client("ssm").list_documents` method.
+Type annotations for `session.create_client("ssm").list_documents` method.
 
 Boto3 documentation:
 [SSM.Client.list_documents](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.list_documents)
@@ -3060,7 +3036,7 @@ Returns a `Coroutine` for
 
 A list of inventory items returned by the request.
 
-Type annotations for `aiobotocore.create_client("ssm").list_inventory_entries`
+Type annotations for `session.create_client("ssm").list_inventory_entries`
 method.
 
 Boto3 documentation:
@@ -3091,7 +3067,7 @@ Returns a `Coroutine` for
 Returns a list of all OpsItem events in the current Amazon Web Services Region
 and Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("ssm").list_ops_item_events`
+Type annotations for `session.create_client("ssm").list_ops_item_events`
 method.
 
 Boto3 documentation:
@@ -3120,8 +3096,8 @@ Returns a `Coroutine` for
 Lists all related-item resources associated with a Systems Manager OpsCenter
 OpsItem.
 
-Type annotations for
-`aiobotocore.create_client("ssm").list_ops_item_related_items` method.
+Type annotations for `session.create_client("ssm").list_ops_item_related_items`
+method.
 
 Boto3 documentation:
 [SSM.Client.list_ops_item_related_items](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.list_ops_item_related_items)
@@ -3150,8 +3126,7 @@ Returns a `Coroutine` for
 Amazon Web Services Systems Manager calls this API operation when displaying
 all Application Manager OpsMetadata objects or blobs.
 
-Type annotations for `aiobotocore.create_client("ssm").list_ops_metadata`
-method.
+Type annotations for `session.create_client("ssm").list_ops_metadata` method.
 
 Boto3 documentation:
 [SSM.Client.list_ops_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.list_ops_metadata)
@@ -3178,7 +3153,7 @@ Returns a `Coroutine` for
 Returns a resource-level summary count.
 
 Type annotations for
-`aiobotocore.create_client("ssm").list_resource_compliance_summaries` method.
+`session.create_client("ssm").list_resource_compliance_summaries` method.
 
 Boto3 documentation:
 [SSM.Client.list_resource_compliance_summaries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.list_resource_compliance_summaries)
@@ -3205,7 +3180,7 @@ Returns a `Coroutine` for
 
 Lists your resource data sync configurations.
 
-Type annotations for `aiobotocore.create_client("ssm").list_resource_data_sync`
+Type annotations for `session.create_client("ssm").list_resource_data_sync`
 method.
 
 Boto3 documentation:
@@ -3232,7 +3207,7 @@ Returns a `Coroutine` for
 
 Returns a list of the tags assigned to the specified resource.
 
-Type annotations for `aiobotocore.create_client("ssm").list_tags_for_resource`
+Type annotations for `session.create_client("ssm").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -3261,8 +3236,8 @@ Returns a `Coroutine` for
 Shares a Amazon Web Services Systems Manager document (SSM document)publicly or
 privately.
 
-Type annotations for
-`aiobotocore.create_client("ssm").modify_document_permission` method.
+Type annotations for `session.create_client("ssm").modify_document_permission`
+method.
 
 Boto3 documentation:
 [SSM.Client.modify_document_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.modify_document_permission)
@@ -3292,7 +3267,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Registers a compliance type and other compliance details on a designated
 resource.
 
-Type annotations for `aiobotocore.create_client("ssm").put_compliance_items`
+Type annotations for `session.create_client("ssm").put_compliance_items`
 method.
 
 Boto3 documentation:
@@ -3327,7 +3302,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Bulk update custom inventory items on one or more managed nodes.
 
-Type annotations for `aiobotocore.create_client("ssm").put_inventory` method.
+Type annotations for `session.create_client("ssm").put_inventory` method.
 
 Boto3 documentation:
 [SSM.Client.put_inventory](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.put_inventory)
@@ -3353,7 +3328,7 @@ Returns a `Coroutine` for
 
 Add a parameter to the system.
 
-Type annotations for `aiobotocore.create_client("ssm").put_parameter` method.
+Type annotations for `session.create_client("ssm").put_parameter` method.
 
 Boto3 documentation:
 [SSM.Client.put_parameter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.put_parameter)
@@ -3387,7 +3362,7 @@ Returns a `Coroutine` for
 Defines the default patch baseline for the relevant operating system.
 
 Type annotations for
-`aiobotocore.create_client("ssm").register_default_patch_baseline` method.
+`session.create_client("ssm").register_default_patch_baseline` method.
 
 Boto3 documentation:
 [SSM.Client.register_default_patch_baseline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.register_default_patch_baseline)
@@ -3412,8 +3387,7 @@ Returns a `Coroutine` for
 Registers a patch baseline for a patch group.
 
 Type annotations for
-`aiobotocore.create_client("ssm").register_patch_baseline_for_patch_group`
-method.
+`session.create_client("ssm").register_patch_baseline_for_patch_group` method.
 
 Boto3 documentation:
 [SSM.Client.register_patch_baseline_for_patch_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.register_patch_baseline_for_patch_group)
@@ -3439,8 +3413,7 @@ Returns a `Coroutine` for
 Registers a target with a maintenance window.
 
 Type annotations for
-`aiobotocore.create_client("ssm").register_target_with_maintenance_window`
-method.
+`session.create_client("ssm").register_target_with_maintenance_window` method.
 
 Boto3 documentation:
 [SSM.Client.register_target_with_maintenance_window](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.register_target_with_maintenance_window)
@@ -3474,8 +3447,7 @@ Returns a `Coroutine` for
 Adds a new task to a maintenance window.
 
 Type annotations for
-`aiobotocore.create_client("ssm").register_task_with_maintenance_window`
-method.
+`session.create_client("ssm").register_task_with_maintenance_window` method.
 
 Boto3 documentation:
 [SSM.Client.register_task_with_maintenance_window](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.register_task_with_maintenance_window)
@@ -3518,8 +3490,8 @@ Returns a `Coroutine` for
 
 Removes tag keys from the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("ssm").remove_tags_from_resource` method.
+Type annotations for `session.create_client("ssm").remove_tags_from_resource`
+method.
 
 Boto3 documentation:
 [SSM.Client.remove_tags_from_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.remove_tags_from_resource)
@@ -3547,7 +3519,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 `ServiceSetting` is an account-level setting for an Amazon Web Services
 service.
 
-Type annotations for `aiobotocore.create_client("ssm").reset_service_setting`
+Type annotations for `session.create_client("ssm").reset_service_setting`
 method.
 
 Boto3 documentation:
@@ -3572,7 +3544,7 @@ Returns a `Coroutine` for
 
 Reconnects a session to a managed node after it has been disconnected.
 
-Type annotations for `aiobotocore.create_client("ssm").resume_session` method.
+Type annotations for `session.create_client("ssm").resume_session` method.
 
 Boto3 documentation:
 [SSM.Client.resume_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.resume_session)
@@ -3596,7 +3568,7 @@ Returns a `Coroutine` for
 Sends a signal to an Automation execution to change the current behavior or
 status of the execution.
 
-Type annotations for `aiobotocore.create_client("ssm").send_automation_signal`
+Type annotations for `session.create_client("ssm").send_automation_signal`
 method.
 
 Boto3 documentation:
@@ -3622,7 +3594,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Runs commands on one or more managed nodes.
 
-Type annotations for `aiobotocore.create_client("ssm").send_command` method.
+Type annotations for `session.create_client("ssm").send_command` method.
 
 Boto3 documentation:
 [SSM.Client.send_command](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.send_command)
@@ -3664,7 +3636,7 @@ Returns a `Coroutine` for
 
 Runs an association immediately and only one time.
 
-Type annotations for `aiobotocore.create_client("ssm").start_associations_once`
+Type annotations for `session.create_client("ssm").start_associations_once`
 method.
 
 Boto3 documentation:
@@ -3688,8 +3660,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Initiates execution of an Automation runbook.
 
-Type annotations for
-`aiobotocore.create_client("ssm").start_automation_execution` method.
+Type annotations for `session.create_client("ssm").start_automation_execution`
+method.
 
 Boto3 documentation:
 [SSM.Client.start_automation_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.start_automation_execution)
@@ -3726,7 +3698,7 @@ Returns a `Coroutine` for
 Creates a change request for Change Manager.
 
 Type annotations for
-`aiobotocore.create_client("ssm").start_change_request_execution` method.
+`session.create_client("ssm").start_change_request_execution` method.
 
 Boto3 documentation:
 [SSM.Client.start_change_request_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.start_change_request_execution)
@@ -3762,7 +3734,7 @@ Returns a `Coroutine` for
 Initiates a connection to a target (for example, a managed node) for a Session
 Manager session.
 
-Type annotations for `aiobotocore.create_client("ssm").start_session` method.
+Type annotations for `session.create_client("ssm").start_session` method.
 
 Boto3 documentation:
 [SSM.Client.start_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.start_session)
@@ -3788,8 +3760,8 @@ Returns a `Coroutine` for
 
 Stop an Automation that is currently running.
 
-Type annotations for
-`aiobotocore.create_client("ssm").stop_automation_execution` method.
+Type annotations for `session.create_client("ssm").stop_automation_execution`
+method.
 
 Boto3 documentation:
 [SSM.Client.stop_automation_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.stop_automation_execution)
@@ -3814,8 +3786,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Permanently ends a session and closes the data connection between the Session
 Manager client and SSM Agent on the managed node.
 
-Type annotations for `aiobotocore.create_client("ssm").terminate_session`
-method.
+Type annotations for `session.create_client("ssm").terminate_session` method.
 
 Boto3 documentation:
 [SSM.Client.terminate_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.terminate_session)
@@ -3838,8 +3809,8 @@ Returns a `Coroutine` for
 
 Remove a label or labels from a parameter.
 
-Type annotations for
-`aiobotocore.create_client("ssm").unlabel_parameter_version` method.
+Type annotations for `session.create_client("ssm").unlabel_parameter_version`
+method.
 
 Boto3 documentation:
 [SSM.Client.unlabel_parameter_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.unlabel_parameter_version)
@@ -3865,8 +3836,7 @@ Returns a `Coroutine` for
 
 Updates an association.
 
-Type annotations for `aiobotocore.create_client("ssm").update_association`
-method.
+Type annotations for `session.create_client("ssm").update_association` method.
 
 Boto3 documentation:
 [SSM.Client.update_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.update_association)
@@ -3911,8 +3881,8 @@ Returns a `Coroutine` for
 Updates the status of the Amazon Web Services Systems Manager document (SSM
 document) associated with the specified managed node.
 
-Type annotations for
-`aiobotocore.create_client("ssm").update_association_status` method.
+Type annotations for `session.create_client("ssm").update_association_status`
+method.
 
 Boto3 documentation:
 [SSM.Client.update_association_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.update_association_status)
@@ -3940,7 +3910,7 @@ Returns a `Coroutine` for
 
 Updates one or more values for an SSM document.
 
-Type annotations for `aiobotocore.create_client("ssm").update_document` method.
+Type annotations for `session.create_client("ssm").update_document` method.
 
 Boto3 documentation:
 [SSM.Client.update_document](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.update_document)
@@ -3972,7 +3942,7 @@ Returns a `Coroutine` for
 Set the default version of a document.
 
 Type annotations for
-`aiobotocore.create_client("ssm").update_document_default_version` method.
+`session.create_client("ssm").update_document_default_version` method.
 
 Boto3 documentation:
 [SSM.Client.update_document_default_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.update_document_default_version)
@@ -3998,8 +3968,8 @@ Returns a `Coroutine` for
 Updates information related to approval reviews for a specific version of a
 change template in Change Manager.
 
-Type annotations for
-`aiobotocore.create_client("ssm").update_document_metadata` method.
+Type annotations for `session.create_client("ssm").update_document_metadata`
+method.
 
 Boto3 documentation:
 [SSM.Client.update_document_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.update_document_metadata)
@@ -4025,8 +3995,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an existing maintenance window.
 
-Type annotations for
-`aiobotocore.create_client("ssm").update_maintenance_window` method.
+Type annotations for `session.create_client("ssm").update_maintenance_window`
+method.
 
 Boto3 documentation:
 [SSM.Client.update_maintenance_window](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.update_maintenance_window)
@@ -4063,7 +4033,7 @@ Returns a `Coroutine` for
 Modifies the target of an existing maintenance window.
 
 Type annotations for
-`aiobotocore.create_client("ssm").update_maintenance_window_target` method.
+`session.create_client("ssm").update_maintenance_window_target` method.
 
 Boto3 documentation:
 [SSM.Client.update_maintenance_window_target](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.update_maintenance_window_target)
@@ -4094,7 +4064,7 @@ Returns a `Coroutine` for
 Modifies a task assigned to a maintenance window.
 
 Type annotations for
-`aiobotocore.create_client("ssm").update_maintenance_window_task` method.
+`session.create_client("ssm").update_maintenance_window_task` method.
 
 Boto3 documentation:
 [SSM.Client.update_maintenance_window_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.update_maintenance_window_task)
@@ -4137,7 +4107,7 @@ Changes the Identity and Access Management (IAM) role that is assigned to the
 on-premises server, edge device, or virtual machines (VM).
 
 Type annotations for
-`aiobotocore.create_client("ssm").update_managed_instance_role` method.
+`session.create_client("ssm").update_managed_instance_role` method.
 
 Boto3 documentation:
 [SSM.Client.update_managed_instance_role](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.update_managed_instance_role)
@@ -4161,7 +4131,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Edit or change an OpsItem.
 
-Type annotations for `aiobotocore.create_client("ssm").update_ops_item` method.
+Type annotations for `session.create_client("ssm").update_ops_item` method.
 
 Boto3 documentation:
 [SSM.Client.update_ops_item](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.update_ops_item)
@@ -4201,8 +4171,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Amazon Web Services Systems Manager calls this API operation when you edit
 OpsMetadata in Application Manager.
 
-Type annotations for `aiobotocore.create_client("ssm").update_ops_metadata`
-method.
+Type annotations for `session.create_client("ssm").update_ops_metadata` method.
 
 Boto3 documentation:
 [SSM.Client.update_ops_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.update_ops_metadata)
@@ -4229,7 +4198,7 @@ Returns a `Coroutine` for
 
 Modifies an existing patch baseline.
 
-Type annotations for `aiobotocore.create_client("ssm").update_patch_baseline`
+Type annotations for `session.create_client("ssm").update_patch_baseline`
 method.
 
 Boto3 documentation:
@@ -4269,8 +4238,8 @@ Returns a `Coroutine` for
 
 Update a resource data sync.
 
-Type annotations for
-`aiobotocore.create_client("ssm").update_resource_data_sync` method.
+Type annotations for `session.create_client("ssm").update_resource_data_sync`
+method.
 
 Boto3 documentation:
 [SSM.Client.update_resource_data_sync](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.update_resource_data_sync)
@@ -4298,7 +4267,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 `ServiceSetting` is an account-level setting for an Amazon Web Services
 service.
 
-Type annotations for `aiobotocore.create_client("ssm").update_service_setting`
+Type annotations for `session.create_client("ssm").update_service_setting`
 method.
 
 Boto3 documentation:
@@ -4317,12 +4286,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("ssm").__aenter__` method.
+
+Boto3 documentation:
+[SSM.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SSMClient](#ssmclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("ssm").__aexit__` method.
+
+Boto3 documentation:
+[SSM.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html#SSM.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("ssm").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("ssm").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_activations")` ->
   [DescribeActivationsPaginator](./paginators.md#describeactivationspaginator)
@@ -4422,7 +4423,7 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("ssm").get_waiter` method with
+Type annotations for `session.create_client("ssm").get_waiter` method with
 overloads.
 
 - `client.get_waiter("command_executed")` ->

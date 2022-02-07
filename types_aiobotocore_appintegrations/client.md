@@ -31,21 +31,24 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_data_integration](#update_data_integration)
     - [update_event_integration](#update_event_integration)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="appintegrationsserviceclient"></a>
 
 ## AppIntegrationsServiceClient
 
-Type annotations for `aiobotocore.create_client("appintegrations")`
+Type annotations for `session.create_client("appintegrations")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_appintegrations.client import AppIntegrationsServiceClient
 
-def get_appintegrations_client() -> AppIntegrationsServiceClient:
-    return Session().client("appintegrations")
+session = get_session()
+async with session.create_client("appintegrations") as client:
+    client: AppIntegrationsServiceClient
 ```
 
 Boto3 documentation:
@@ -86,7 +89,7 @@ Exceptions:
 
 AppIntegrationsServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("appintegrations").exceptions`
+Type annotations for `session.create_client("appintegrations").exceptions`
 method.
 
 Boto3 documentation:
@@ -100,19 +103,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("appintegrations").can_paginate` method.
+Type annotations for `session.create_client("appintegrations").can_paginate`
+method.
 
 Boto3 documentation:
 [AppIntegrationsService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_data_integration"></a>
 
@@ -121,7 +122,7 @@ Returns a `Coroutine` for `bool`.
 Creates and persists a DataIntegration resource.
 
 Type annotations for
-`aiobotocore.create_client("appintegrations").create_data_integration` method.
+`session.create_client("appintegrations").create_data_integration` method.
 
 Boto3 documentation:
 [AppIntegrationsService.Client.create_data_integration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.create_data_integration)
@@ -155,7 +156,7 @@ reference to an Amazon EventBridge bus in your account and a partner event
 source that pushes events to that bus.
 
 Type annotations for
-`aiobotocore.create_client("appintegrations").create_event_integration` method.
+`session.create_client("appintegrations").create_event_integration` method.
 
 Boto3 documentation:
 [AppIntegrationsService.Client.create_event_integration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.create_event_integration)
@@ -186,7 +187,7 @@ Returns a `Coroutine` for
 Deletes the DataIntegration.
 
 Type annotations for
-`aiobotocore.create_client("appintegrations").delete_data_integration` method.
+`session.create_client("appintegrations").delete_data_integration` method.
 
 Boto3 documentation:
 [AppIntegrationsService.Client.delete_data_integration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.delete_data_integration)
@@ -210,7 +211,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified existing event integration.
 
 Type annotations for
-`aiobotocore.create_client("appintegrations").delete_event_integration` method.
+`session.create_client("appintegrations").delete_event_integration` method.
 
 Boto3 documentation:
 [AppIntegrationsService.Client.delete_event_integration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.delete_event_integration)
@@ -234,7 +235,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("appintegrations").generate_presigned_url` method.
+`session.create_client("appintegrations").generate_presigned_url` method.
 
 Boto3 documentation:
 [AppIntegrationsService.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.generate_presigned_url)
@@ -258,7 +259,7 @@ Returns a `Coroutine` for `str`.
 Returns information about the DataIntegration.
 
 Type annotations for
-`aiobotocore.create_client("appintegrations").get_data_integration` method.
+`session.create_client("appintegrations").get_data_integration` method.
 
 Boto3 documentation:
 [AppIntegrationsService.Client.get_data_integration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.get_data_integration)
@@ -283,7 +284,7 @@ Returns a `Coroutine` for
 Returns information about the event integration.
 
 Type annotations for
-`aiobotocore.create_client("appintegrations").get_event_integration` method.
+`session.create_client("appintegrations").get_event_integration` method.
 
 Boto3 documentation:
 [AppIntegrationsService.Client.get_event_integration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.get_event_integration)
@@ -308,7 +309,7 @@ Returns a `Coroutine` for
 Returns a paginated list of DataIntegration associations in the account.
 
 Type annotations for
-`aiobotocore.create_client("appintegrations").list_data_integration_associations`
+`session.create_client("appintegrations").list_data_integration_associations`
 method.
 
 Boto3 documentation:
@@ -336,7 +337,7 @@ Returns a `Coroutine` for
 Returns a paginated list of DataIntegrations in the account.
 
 Type annotations for
-`aiobotocore.create_client("appintegrations").list_data_integrations` method.
+`session.create_client("appintegrations").list_data_integrations` method.
 
 Boto3 documentation:
 [AppIntegrationsService.Client.list_data_integrations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.list_data_integrations)
@@ -362,7 +363,7 @@ Returns a `Coroutine` for
 Returns a paginated list of event integration associations in the account.
 
 Type annotations for
-`aiobotocore.create_client("appintegrations").list_event_integration_associations`
+`session.create_client("appintegrations").list_event_integration_associations`
 method.
 
 Boto3 documentation:
@@ -390,7 +391,7 @@ Returns a `Coroutine` for
 Returns a paginated list of event integrations in the account.
 
 Type annotations for
-`aiobotocore.create_client("appintegrations").list_event_integrations` method.
+`session.create_client("appintegrations").list_event_integrations` method.
 
 Boto3 documentation:
 [AppIntegrationsService.Client.list_event_integrations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.list_event_integrations)
@@ -416,7 +417,7 @@ Returns a `Coroutine` for
 Lists the tags for the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("appintegrations").list_tags_for_resource` method.
+`session.create_client("appintegrations").list_tags_for_resource` method.
 
 Boto3 documentation:
 [AppIntegrationsService.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.list_tags_for_resource)
@@ -440,8 +441,8 @@ Returns a `Coroutine` for
 
 Adds the specified tags to the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("appintegrations").tag_resource` method.
+Type annotations for `session.create_client("appintegrations").tag_resource`
+method.
 
 Boto3 documentation:
 [AppIntegrationsService.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.tag_resource)
@@ -464,8 +465,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes the specified tags from the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("appintegrations").untag_resource` method.
+Type annotations for `session.create_client("appintegrations").untag_resource`
+method.
 
 Boto3 documentation:
 [AppIntegrationsService.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.untag_resource)
@@ -489,7 +490,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the description of a DataIntegration.
 
 Type annotations for
-`aiobotocore.create_client("appintegrations").update_data_integration` method.
+`session.create_client("appintegrations").update_data_integration` method.
 
 Boto3 documentation:
 [AppIntegrationsService.Client.update_data_integration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.update_data_integration)
@@ -515,7 +516,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the description of an event integration.
 
 Type annotations for
-`aiobotocore.create_client("appintegrations").update_event_integration` method.
+`session.create_client("appintegrations").update_event_integration` method.
 
 Boto3 documentation:
 [AppIntegrationsService.Client.update_event_integration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.update_event_integration)
@@ -532,3 +533,38 @@ Keyword-only arguments:
 - `Description`: `str`
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("appintegrations").__aenter__`
+method.
+
+Boto3 documentation:
+[AppIntegrationsService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[AppIntegrationsServiceClient](#appintegrationsserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("appintegrations").__aexit__`
+method.
+
+Boto3 documentation:
+[AppIntegrationsService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appintegrations.html#AppIntegrationsService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

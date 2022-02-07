@@ -35,17 +35,19 @@ type annotations stubs module
 ## ListBulkDeploymentDetailedReportsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_bulk_deployment_detailed_reports")`.
+`session.create_client("greengrass").get_paginator("list_bulk_deployment_detailed_reports")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListBulkDeploymentDetailedReportsPaginator
 
-def get_list_bulk_deployment_detailed_reports_paginator() -> ListBulkDeploymentDetailedReportsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_bulk_deployment_detailed_reports")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListBulkDeploymentDetailedReportsPaginator = client.get_paginator("list_bulk_deployment_detailed_reports")
 ```
 
 Boto3 documentation:
@@ -65,17 +67,19 @@ Arguments for `ListBulkDeploymentDetailedReportsPaginator.paginate` method:
 ## ListBulkDeploymentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_bulk_deployments")`.
+`session.create_client("greengrass").get_paginator("list_bulk_deployments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListBulkDeploymentsPaginator
 
-def get_list_bulk_deployments_paginator() -> ListBulkDeploymentsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_bulk_deployments")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListBulkDeploymentsPaginator = client.get_paginator("list_bulk_deployments")
 ```
 
 Boto3 documentation:
@@ -94,17 +98,19 @@ Arguments for `ListBulkDeploymentsPaginator.paginate` method:
 ## ListConnectorDefinitionVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_connector_definition_versions")`.
+`session.create_client("greengrass").get_paginator("list_connector_definition_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListConnectorDefinitionVersionsPaginator
 
-def get_list_connector_definition_versions_paginator() -> ListConnectorDefinitionVersionsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_connector_definition_versions")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListConnectorDefinitionVersionsPaginator = client.get_paginator("list_connector_definition_versions")
 ```
 
 Boto3 documentation:
@@ -124,17 +130,19 @@ Arguments for `ListConnectorDefinitionVersionsPaginator.paginate` method:
 ## ListConnectorDefinitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_connector_definitions")`.
+`session.create_client("greengrass").get_paginator("list_connector_definitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListConnectorDefinitionsPaginator
 
-def get_list_connector_definitions_paginator() -> ListConnectorDefinitionsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_connector_definitions")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListConnectorDefinitionsPaginator = client.get_paginator("list_connector_definitions")
 ```
 
 Boto3 documentation:
@@ -153,17 +161,19 @@ Arguments for `ListConnectorDefinitionsPaginator.paginate` method:
 ## ListCoreDefinitionVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_core_definition_versions")`.
+`session.create_client("greengrass").get_paginator("list_core_definition_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListCoreDefinitionVersionsPaginator
 
-def get_list_core_definition_versions_paginator() -> ListCoreDefinitionVersionsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_core_definition_versions")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListCoreDefinitionVersionsPaginator = client.get_paginator("list_core_definition_versions")
 ```
 
 Boto3 documentation:
@@ -183,17 +193,19 @@ Arguments for `ListCoreDefinitionVersionsPaginator.paginate` method:
 ## ListCoreDefinitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_core_definitions")`.
+`session.create_client("greengrass").get_paginator("list_core_definitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListCoreDefinitionsPaginator
 
-def get_list_core_definitions_paginator() -> ListCoreDefinitionsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_core_definitions")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListCoreDefinitionsPaginator = client.get_paginator("list_core_definitions")
 ```
 
 Boto3 documentation:
@@ -212,17 +224,19 @@ Arguments for `ListCoreDefinitionsPaginator.paginate` method:
 ## ListDeploymentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_deployments")`.
+`session.create_client("greengrass").get_paginator("list_deployments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListDeploymentsPaginator
 
-def get_list_deployments_paginator() -> ListDeploymentsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_deployments")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListDeploymentsPaginator = client.get_paginator("list_deployments")
 ```
 
 Boto3 documentation:
@@ -242,17 +256,19 @@ Arguments for `ListDeploymentsPaginator.paginate` method:
 ## ListDeviceDefinitionVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_device_definition_versions")`.
+`session.create_client("greengrass").get_paginator("list_device_definition_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListDeviceDefinitionVersionsPaginator
 
-def get_list_device_definition_versions_paginator() -> ListDeviceDefinitionVersionsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_device_definition_versions")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListDeviceDefinitionVersionsPaginator = client.get_paginator("list_device_definition_versions")
 ```
 
 Boto3 documentation:
@@ -272,17 +288,19 @@ Arguments for `ListDeviceDefinitionVersionsPaginator.paginate` method:
 ## ListDeviceDefinitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_device_definitions")`.
+`session.create_client("greengrass").get_paginator("list_device_definitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListDeviceDefinitionsPaginator
 
-def get_list_device_definitions_paginator() -> ListDeviceDefinitionsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_device_definitions")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListDeviceDefinitionsPaginator = client.get_paginator("list_device_definitions")
 ```
 
 Boto3 documentation:
@@ -301,17 +319,19 @@ Arguments for `ListDeviceDefinitionsPaginator.paginate` method:
 ## ListFunctionDefinitionVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_function_definition_versions")`.
+`session.create_client("greengrass").get_paginator("list_function_definition_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListFunctionDefinitionVersionsPaginator
 
-def get_list_function_definition_versions_paginator() -> ListFunctionDefinitionVersionsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_function_definition_versions")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListFunctionDefinitionVersionsPaginator = client.get_paginator("list_function_definition_versions")
 ```
 
 Boto3 documentation:
@@ -331,17 +351,19 @@ Arguments for `ListFunctionDefinitionVersionsPaginator.paginate` method:
 ## ListFunctionDefinitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_function_definitions")`.
+`session.create_client("greengrass").get_paginator("list_function_definitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListFunctionDefinitionsPaginator
 
-def get_list_function_definitions_paginator() -> ListFunctionDefinitionsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_function_definitions")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListFunctionDefinitionsPaginator = client.get_paginator("list_function_definitions")
 ```
 
 Boto3 documentation:
@@ -360,17 +382,19 @@ Arguments for `ListFunctionDefinitionsPaginator.paginate` method:
 ## ListGroupVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_group_versions")`.
+`session.create_client("greengrass").get_paginator("list_group_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListGroupVersionsPaginator
 
-def get_list_group_versions_paginator() -> ListGroupVersionsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_group_versions")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListGroupVersionsPaginator = client.get_paginator("list_group_versions")
 ```
 
 Boto3 documentation:
@@ -390,17 +414,19 @@ Arguments for `ListGroupVersionsPaginator.paginate` method:
 ## ListGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_groups")`.
+`session.create_client("greengrass").get_paginator("list_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListGroupsPaginator
 
-def get_list_groups_paginator() -> ListGroupsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_groups")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListGroupsPaginator = client.get_paginator("list_groups")
 ```
 
 Boto3 documentation:
@@ -419,17 +445,19 @@ Arguments for `ListGroupsPaginator.paginate` method:
 ## ListLoggerDefinitionVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_logger_definition_versions")`.
+`session.create_client("greengrass").get_paginator("list_logger_definition_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListLoggerDefinitionVersionsPaginator
 
-def get_list_logger_definition_versions_paginator() -> ListLoggerDefinitionVersionsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_logger_definition_versions")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListLoggerDefinitionVersionsPaginator = client.get_paginator("list_logger_definition_versions")
 ```
 
 Boto3 documentation:
@@ -449,17 +477,19 @@ Arguments for `ListLoggerDefinitionVersionsPaginator.paginate` method:
 ## ListLoggerDefinitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_logger_definitions")`.
+`session.create_client("greengrass").get_paginator("list_logger_definitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListLoggerDefinitionsPaginator
 
-def get_list_logger_definitions_paginator() -> ListLoggerDefinitionsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_logger_definitions")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListLoggerDefinitionsPaginator = client.get_paginator("list_logger_definitions")
 ```
 
 Boto3 documentation:
@@ -478,17 +508,19 @@ Arguments for `ListLoggerDefinitionsPaginator.paginate` method:
 ## ListResourceDefinitionVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_resource_definition_versions")`.
+`session.create_client("greengrass").get_paginator("list_resource_definition_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListResourceDefinitionVersionsPaginator
 
-def get_list_resource_definition_versions_paginator() -> ListResourceDefinitionVersionsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_resource_definition_versions")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListResourceDefinitionVersionsPaginator = client.get_paginator("list_resource_definition_versions")
 ```
 
 Boto3 documentation:
@@ -508,17 +540,19 @@ Arguments for `ListResourceDefinitionVersionsPaginator.paginate` method:
 ## ListResourceDefinitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_resource_definitions")`.
+`session.create_client("greengrass").get_paginator("list_resource_definitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListResourceDefinitionsPaginator
 
-def get_list_resource_definitions_paginator() -> ListResourceDefinitionsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_resource_definitions")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListResourceDefinitionsPaginator = client.get_paginator("list_resource_definitions")
 ```
 
 Boto3 documentation:
@@ -537,17 +571,19 @@ Arguments for `ListResourceDefinitionsPaginator.paginate` method:
 ## ListSubscriptionDefinitionVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_subscription_definition_versions")`.
+`session.create_client("greengrass").get_paginator("list_subscription_definition_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListSubscriptionDefinitionVersionsPaginator
 
-def get_list_subscription_definition_versions_paginator() -> ListSubscriptionDefinitionVersionsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_subscription_definition_versions")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListSubscriptionDefinitionVersionsPaginator = client.get_paginator("list_subscription_definition_versions")
 ```
 
 Boto3 documentation:
@@ -567,17 +603,19 @@ Arguments for `ListSubscriptionDefinitionVersionsPaginator.paginate` method:
 ## ListSubscriptionDefinitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("greengrass").get_paginator("list_subscription_definitions")`.
+`session.create_client("greengrass").get_paginator("list_subscription_definitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_greengrass.paginator import ListSubscriptionDefinitionsPaginator
 
-def get_list_subscription_definitions_paginator() -> ListSubscriptionDefinitionsPaginator:
-    return Session().create_client("greengrass").get_paginator("list_subscription_definitions")
+session = get_session()
+async with session.create_client("greengrass") as client:
+    client: GreengrassClient
+    paginator: ListSubscriptionDefinitionsPaginator = client.get_paginator("list_subscription_definitions")
 ```
 
 Boto3 documentation:

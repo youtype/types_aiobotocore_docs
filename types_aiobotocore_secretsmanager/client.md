@@ -38,22 +38,25 @@ type annotations stubs module
     - [update_secret](#update_secret)
     - [update_secret_version_stage](#update_secret_version_stage)
     - [validate_resource_policy](#validate_resource_policy)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="secretsmanagerclient"></a>
 
 ## SecretsManagerClient
 
-Type annotations for `aiobotocore.create_client("secretsmanager")`
+Type annotations for `session.create_client("secretsmanager")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_secretsmanager.client import SecretsManagerClient
 
-def get_secretsmanager_client() -> SecretsManagerClient:
-    return Session().client("secretsmanager")
+session = get_session()
+async with session.create_client("secretsmanager") as client:
+    client: SecretsManagerClient
 ```
 
 Boto3 documentation:
@@ -99,7 +102,7 @@ Exceptions:
 
 SecretsManagerClient exceptions.
 
-Type annotations for `aiobotocore.create_client("secretsmanager").exceptions`
+Type annotations for `session.create_client("secretsmanager").exceptions`
 method.
 
 Boto3 documentation:
@@ -113,19 +116,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("secretsmanager").can_paginate`
+Type annotations for `session.create_client("secretsmanager").can_paginate`
 method.
 
 Boto3 documentation:
 [SecretsManager.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_rotate_secret"></a>
 
@@ -135,7 +136,7 @@ Turns off automatic rotation, and if a rotation is currently in progress,
 cancels the rotation.
 
 Type annotations for
-`aiobotocore.create_client("secretsmanager").cancel_rotate_secret` method.
+`session.create_client("secretsmanager").cancel_rotate_secret` method.
 
 Boto3 documentation:
 [SecretsManager.Client.cancel_rotate_secret](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.cancel_rotate_secret)
@@ -159,8 +160,8 @@ Returns a `Coroutine` for
 
 Creates a new secret.
 
-Type annotations for
-`aiobotocore.create_client("secretsmanager").create_secret` method.
+Type annotations for `session.create_client("secretsmanager").create_secret`
+method.
 
 Boto3 documentation:
 [SecretsManager.Client.create_secret](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.create_secret)
@@ -193,7 +194,7 @@ Returns a `Coroutine` for
 Deletes the resource-based permission policy attached to the secret.
 
 Type annotations for
-`aiobotocore.create_client("secretsmanager").delete_resource_policy` method.
+`session.create_client("secretsmanager").delete_resource_policy` method.
 
 Boto3 documentation:
 [SecretsManager.Client.delete_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.delete_resource_policy)
@@ -217,8 +218,8 @@ Returns a `Coroutine` for
 
 Deletes a secret and all of its versions.
 
-Type annotations for
-`aiobotocore.create_client("secretsmanager").delete_secret` method.
+Type annotations for `session.create_client("secretsmanager").delete_secret`
+method.
 
 Boto3 documentation:
 [SecretsManager.Client.delete_secret](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.delete_secret)
@@ -243,8 +244,8 @@ Returns a `Coroutine` for
 
 Retrieves the details of a secret.
 
-Type annotations for
-`aiobotocore.create_client("secretsmanager").describe_secret` method.
+Type annotations for `session.create_client("secretsmanager").describe_secret`
+method.
 
 Boto3 documentation:
 [SecretsManager.Client.describe_secret](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.describe_secret)
@@ -268,7 +269,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("secretsmanager").generate_presigned_url` method.
+`session.create_client("secretsmanager").generate_presigned_url` method.
 
 Boto3 documentation:
 [SecretsManager.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.generate_presigned_url)
@@ -292,7 +293,7 @@ Returns a `Coroutine` for `str`.
 Generates a random password.
 
 Type annotations for
-`aiobotocore.create_client("secretsmanager").get_random_password` method.
+`session.create_client("secretsmanager").get_random_password` method.
 
 Boto3 documentation:
 [SecretsManager.Client.get_random_password](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.get_random_password)
@@ -325,7 +326,7 @@ Retrieves the JSON text of the resource-based policy document attached to the
 secret.
 
 Type annotations for
-`aiobotocore.create_client("secretsmanager").get_resource_policy` method.
+`session.create_client("secretsmanager").get_resource_policy` method.
 
 Boto3 documentation:
 [SecretsManager.Client.get_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.get_resource_policy)
@@ -350,8 +351,8 @@ Returns a `Coroutine` for
 Retrieves the contents of the encrypted fields `SecretString` or `SecretBinary`
 from the specified version of a secret, whichever contains content.
 
-Type annotations for
-`aiobotocore.create_client("secretsmanager").get_secret_value` method.
+Type annotations for `session.create_client("secretsmanager").get_secret_value`
+method.
 
 Boto3 documentation:
 [SecretsManager.Client.get_secret_value](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.get_secret_value)
@@ -377,7 +378,7 @@ Returns a `Coroutine` for
 Lists the versions for a secret.
 
 Type annotations for
-`aiobotocore.create_client("secretsmanager").list_secret_version_ids` method.
+`session.create_client("secretsmanager").list_secret_version_ids` method.
 
 Boto3 documentation:
 [SecretsManager.Client.list_secret_version_ids](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.list_secret_version_ids)
@@ -405,7 +406,7 @@ Returns a `Coroutine` for
 Lists the secrets that are stored by Secrets Manager in the Amazon Web Services
 account.
 
-Type annotations for `aiobotocore.create_client("secretsmanager").list_secrets`
+Type annotations for `session.create_client("secretsmanager").list_secrets`
 method.
 
 Boto3 documentation:
@@ -433,7 +434,7 @@ Returns a `Coroutine` for
 Attaches a resource-based permission policy to a secret.
 
 Type annotations for
-`aiobotocore.create_client("secretsmanager").put_resource_policy` method.
+`session.create_client("secretsmanager").put_resource_policy` method.
 
 Boto3 documentation:
 [SecretsManager.Client.put_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.put_resource_policy)
@@ -460,8 +461,8 @@ Returns a `Coroutine` for
 Creates a new version with a new encrypted secret value and attaches it to the
 secret.
 
-Type annotations for
-`aiobotocore.create_client("secretsmanager").put_secret_value` method.
+Type annotations for `session.create_client("secretsmanager").put_secret_value`
+method.
 
 Boto3 documentation:
 [SecretsManager.Client.put_secret_value](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.put_secret_value)
@@ -490,7 +491,7 @@ For a secret that is replicated to other Regions, deletes the secret replicas
 from the Regions you specify.
 
 Type annotations for
-`aiobotocore.create_client("secretsmanager").remove_regions_from_replication`
+`session.create_client("secretsmanager").remove_regions_from_replication`
 method.
 
 Boto3 documentation:
@@ -517,8 +518,7 @@ Returns a `Coroutine` for
 Replicates the secret to a new Regions.
 
 Type annotations for
-`aiobotocore.create_client("secretsmanager").replicate_secret_to_regions`
-method.
+`session.create_client("secretsmanager").replicate_secret_to_regions` method.
 
 Boto3 documentation:
 [SecretsManager.Client.replicate_secret_to_regions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.replicate_secret_to_regions)
@@ -547,8 +547,8 @@ Returns a `Coroutine` for
 Cancels the scheduled deletion of a secret by removing the `DeletedDate` time
 stamp.
 
-Type annotations for
-`aiobotocore.create_client("secretsmanager").restore_secret` method.
+Type annotations for `session.create_client("secretsmanager").restore_secret`
+method.
 
 Boto3 documentation:
 [SecretsManager.Client.restore_secret](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.restore_secret)
@@ -571,8 +571,8 @@ Returns a `Coroutine` for
 
 Configures and starts the asynchronous process of rotating the secret.
 
-Type annotations for
-`aiobotocore.create_client("secretsmanager").rotate_secret` method.
+Type annotations for `session.create_client("secretsmanager").rotate_secret`
+method.
 
 Boto3 documentation:
 [SecretsManager.Client.rotate_secret](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.rotate_secret)
@@ -601,8 +601,7 @@ Removes the link between the replica secret and the primary secret and promotes
 the replica to a primary secret in the replica Region.
 
 Type annotations for
-`aiobotocore.create_client("secretsmanager").stop_replication_to_replica`
-method.
+`session.create_client("secretsmanager").stop_replication_to_replica` method.
 
 Boto3 documentation:
 [SecretsManager.Client.stop_replication_to_replica](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.stop_replication_to_replica)
@@ -626,7 +625,7 @@ Returns a `Coroutine` for
 
 Attaches tags to a secret.
 
-Type annotations for `aiobotocore.create_client("secretsmanager").tag_resource`
+Type annotations for `session.create_client("secretsmanager").tag_resource`
 method.
 
 Boto3 documentation:
@@ -648,8 +647,8 @@ Keyword-only arguments:
 
 Removes specific tags from a secret.
 
-Type annotations for
-`aiobotocore.create_client("secretsmanager").untag_resource` method.
+Type annotations for `session.create_client("secretsmanager").untag_resource`
+method.
 
 Boto3 documentation:
 [SecretsManager.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.untag_resource)
@@ -670,8 +669,8 @@ Keyword-only arguments:
 
 Modifies the details of a secret, including metadata and the secret value.
 
-Type annotations for
-`aiobotocore.create_client("secretsmanager").update_secret` method.
+Type annotations for `session.create_client("secretsmanager").update_secret`
+method.
 
 Boto3 documentation:
 [SecretsManager.Client.update_secret](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.update_secret)
@@ -700,8 +699,7 @@ Returns a `Coroutine` for
 Modifies the staging labels attached to a version of a secret.
 
 Type annotations for
-`aiobotocore.create_client("secretsmanager").update_secret_version_stage`
-method.
+`session.create_client("secretsmanager").update_secret_version_stage` method.
 
 Boto3 documentation:
 [SecretsManager.Client.update_secret_version_stage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.update_secret_version_stage)
@@ -730,7 +728,7 @@ Validates that a resource policy does not grant a wide range of principals
 access to your secret.
 
 Type annotations for
-`aiobotocore.create_client("secretsmanager").validate_resource_policy` method.
+`session.create_client("secretsmanager").validate_resource_policy` method.
 
 Boto3 documentation:
 [SecretsManager.Client.validate_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.validate_resource_policy)
@@ -749,13 +747,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [ValidateResourcePolicyResponseTypeDef](./type_defs.md#validateresourcepolicyresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("secretsmanager").__aenter__`
+method.
+
+Boto3 documentation:
+[SecretsManager.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SecretsManagerClient](#secretsmanagerclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("secretsmanager").__aexit__`
+method.
+
+Boto3 documentation:
+[SecretsManager.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("secretsmanager").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("secretsmanager").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_secrets")` ->
   [ListSecretsPaginator](./paginators.md#listsecretspaginator)

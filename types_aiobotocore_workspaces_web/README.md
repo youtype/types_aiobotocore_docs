@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[workspaces-web]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[workspaces-web]'
+
+# standalone installation
 pip install types-aiobotocore-workspaces-web
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-workspaces-web
 
 ## WorkSpacesWebClient
 
-Type annotations for `aiobotocore.create_client("workspaces-web")` as
+Type annotations for `session.create_client("workspaces-web")` as
 [WorkSpacesWebClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_workspaces_web.client import WorkSpacesWebClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_browser_settings](./client.md#associate_browser_settings)
 - [associate_network_settings](./client.md#associate_network_settings)
 - [associate_trust_store](./client.md#associate_trust_store)

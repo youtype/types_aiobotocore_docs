@@ -19,17 +19,19 @@ type annotations stubs module
 ## ListRuleNamesByTargetPaginator
 
 Type annotations for
-`aiobotocore.create_client("events").get_paginator("list_rule_names_by_target")`.
+`session.create_client("events").get_paginator("list_rule_names_by_target")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_events.paginator import ListRuleNamesByTargetPaginator
 
-def get_list_rule_names_by_target_paginator() -> ListRuleNamesByTargetPaginator:
-    return Session().create_client("events").get_paginator("list_rule_names_by_target")
+session = get_session()
+async with session.create_client("events") as client:
+    client: EventBridgeClient
+    paginator: ListRuleNamesByTargetPaginator = client.get_paginator("list_rule_names_by_target")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `ListRuleNamesByTargetPaginator.paginate` method:
 ## ListRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("events").get_paginator("list_rules")`.
+`session.create_client("events").get_paginator("list_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_events.paginator import ListRulesPaginator
 
-def get_list_rules_paginator() -> ListRulesPaginator:
-    return Session().create_client("events").get_paginator("list_rules")
+session = get_session()
+async with session.create_client("events") as client:
+    client: EventBridgeClient
+    paginator: ListRulesPaginator = client.get_paginator("list_rules")
 ```
 
 Boto3 documentation:
@@ -81,17 +85,19 @@ Arguments for `ListRulesPaginator.paginate` method:
 ## ListTargetsByRulePaginator
 
 Type annotations for
-`aiobotocore.create_client("events").get_paginator("list_targets_by_rule")`.
+`session.create_client("events").get_paginator("list_targets_by_rule")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_events.paginator import ListTargetsByRulePaginator
 
-def get_list_targets_by_rule_paginator() -> ListTargetsByRulePaginator:
-    return Session().create_client("events").get_paginator("list_targets_by_rule")
+session = get_session()
+async with session.create_client("events") as client:
+    client: EventBridgeClient
+    paginator: ListTargetsByRulePaginator = client.get_paginator("list_targets_by_rule")
 ```
 
 Boto3 documentation:

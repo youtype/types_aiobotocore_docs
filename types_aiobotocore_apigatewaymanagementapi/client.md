@@ -19,21 +19,24 @@ type annotations stubs module
     - [generate_presigned_url](#generate_presigned_url)
     - [get_connection](#get_connection)
     - [post_to_connection](#post_to_connection)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="apigatewaymanagementapiclient"></a>
 
 ## ApiGatewayManagementApiClient
 
-Type annotations for `aiobotocore.create_client("apigatewaymanagementapi")`
+Type annotations for `session.create_client("apigatewaymanagementapi")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_apigatewaymanagementapi.client import ApiGatewayManagementApiClient
 
-def get_apigatewaymanagementapi_client() -> ApiGatewayManagementApiClient:
-    return Session().client("apigatewaymanagementapi")
+session = get_session()
+async with session.create_client("apigatewaymanagementapi") as client:
+    client: ApiGatewayManagementApiClient
 ```
 
 Boto3 documentation:
@@ -72,7 +75,7 @@ Exceptions:
 ApiGatewayManagementApiClient exceptions.
 
 Type annotations for
-`aiobotocore.create_client("apigatewaymanagementapi").exceptions` method.
+`session.create_client("apigatewaymanagementapi").exceptions` method.
 
 Boto3 documentation:
 [ApiGatewayManagementApi.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigatewaymanagementapi.html#ApiGatewayManagementApi.Client.exceptions)
@@ -86,18 +89,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("apigatewaymanagementapi").can_paginate` method.
+`session.create_client("apigatewaymanagementapi").can_paginate` method.
 
 Boto3 documentation:
 [ApiGatewayManagementApi.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigatewaymanagementapi.html#ApiGatewayManagementApi.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="delete_connection"></a>
 
@@ -106,8 +107,7 @@ Returns a `Coroutine` for `bool`.
 Delete the connection with the provided id.
 
 Type annotations for
-`aiobotocore.create_client("apigatewaymanagementapi").delete_connection`
-method.
+`session.create_client("apigatewaymanagementapi").delete_connection` method.
 
 Boto3 documentation:
 [ApiGatewayManagementApi.Client.delete_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigatewaymanagementapi.html#ApiGatewayManagementApi.Client.delete_connection)
@@ -128,7 +128,7 @@ Keyword-only arguments:
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("apigatewaymanagementapi").generate_presigned_url`
+`session.create_client("apigatewaymanagementapi").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -153,7 +153,7 @@ Returns a `Coroutine` for `str`.
 Get information about the connection with the provided id.
 
 Type annotations for
-`aiobotocore.create_client("apigatewaymanagementapi").get_connection` method.
+`session.create_client("apigatewaymanagementapi").get_connection` method.
 
 Boto3 documentation:
 [ApiGatewayManagementApi.Client.get_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigatewaymanagementapi.html#ApiGatewayManagementApi.Client.get_connection)
@@ -177,8 +177,7 @@ Returns a `Coroutine` for
 Sends the provided data to the specified connection.
 
 Type annotations for
-`aiobotocore.create_client("apigatewaymanagementapi").post_to_connection`
-method.
+`session.create_client("apigatewaymanagementapi").post_to_connection` method.
 
 Boto3 documentation:
 [ApiGatewayManagementApi.Client.post_to_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigatewaymanagementapi.html#ApiGatewayManagementApi.Client.post_to_connection)
@@ -193,3 +192,38 @@ Keyword-only arguments:
 
 - `Data`: `Union`\[`bytes`, `IO`\[`bytes`\], `StreamingBody`\] *(required)*
 - `ConnectionId`: `str` *(required)*
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for
+`session.create_client("apigatewaymanagementapi").__aenter__` method.
+
+Boto3 documentation:
+[ApiGatewayManagementApi.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigatewaymanagementapi.html#ApiGatewayManagementApi.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[ApiGatewayManagementApiClient](#apigatewaymanagementapiclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for
+`session.create_client("apigatewaymanagementapi").__aexit__` method.
+
+Boto3 documentation:
+[ApiGatewayManagementApi.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigatewaymanagementapi.html#ApiGatewayManagementApi.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

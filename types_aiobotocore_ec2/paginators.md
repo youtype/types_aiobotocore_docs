@@ -134,17 +134,19 @@ type annotations stubs module
 ## DescribeAddressesAttributePaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_addresses_attribute")`.
+`session.create_client("ec2").get_paginator("describe_addresses_attribute")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeAddressesAttributePaginator
 
-def get_describe_addresses_attribute_paginator() -> DescribeAddressesAttributePaginator:
-    return Session().create_client("ec2").get_paginator("describe_addresses_attribute")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeAddressesAttributePaginator = client.get_paginator("describe_addresses_attribute")
 ```
 
 Boto3 documentation:
@@ -167,17 +169,19 @@ Arguments for `DescribeAddressesAttributePaginator.paginate` method:
 ## DescribeByoipCidrsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_byoip_cidrs")`.
+`session.create_client("ec2").get_paginator("describe_byoip_cidrs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeByoipCidrsPaginator
 
-def get_describe_byoip_cidrs_paginator() -> DescribeByoipCidrsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_byoip_cidrs")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeByoipCidrsPaginator = client.get_paginator("describe_byoip_cidrs")
 ```
 
 Boto3 documentation:
@@ -197,17 +201,19 @@ Arguments for `DescribeByoipCidrsPaginator.paginate` method:
 ## DescribeCapacityReservationFleetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_capacity_reservation_fleets")`.
+`session.create_client("ec2").get_paginator("describe_capacity_reservation_fleets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeCapacityReservationFleetsPaginator
 
-def get_describe_capacity_reservation_fleets_paginator() -> DescribeCapacityReservationFleetsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_capacity_reservation_fleets")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeCapacityReservationFleetsPaginator = client.get_paginator("describe_capacity_reservation_fleets")
 ```
 
 Boto3 documentation:
@@ -229,17 +235,19 @@ Arguments for `DescribeCapacityReservationFleetsPaginator.paginate` method:
 ## DescribeCapacityReservationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_capacity_reservations")`.
+`session.create_client("ec2").get_paginator("describe_capacity_reservations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeCapacityReservationsPaginator
 
-def get_describe_capacity_reservations_paginator() -> DescribeCapacityReservationsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_capacity_reservations")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeCapacityReservationsPaginator = client.get_paginator("describe_capacity_reservations")
 ```
 
 Boto3 documentation:
@@ -261,17 +269,19 @@ Arguments for `DescribeCapacityReservationsPaginator.paginate` method:
 ## DescribeCarrierGatewaysPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_carrier_gateways")`.
+`session.create_client("ec2").get_paginator("describe_carrier_gateways")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeCarrierGatewaysPaginator
 
-def get_describe_carrier_gateways_paginator() -> DescribeCarrierGatewaysPaginator:
-    return Session().create_client("ec2").get_paginator("describe_carrier_gateways")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeCarrierGatewaysPaginator = client.get_paginator("describe_carrier_gateways")
 ```
 
 Boto3 documentation:
@@ -293,17 +303,19 @@ Arguments for `DescribeCarrierGatewaysPaginator.paginate` method:
 ## DescribeClassicLinkInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_classic_link_instances")`.
+`session.create_client("ec2").get_paginator("describe_classic_link_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeClassicLinkInstancesPaginator
 
-def get_describe_classic_link_instances_paginator() -> DescribeClassicLinkInstancesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_classic_link_instances")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeClassicLinkInstancesPaginator = client.get_paginator("describe_classic_link_instances")
 ```
 
 Boto3 documentation:
@@ -325,17 +337,19 @@ Arguments for `DescribeClassicLinkInstancesPaginator.paginate` method:
 ## DescribeClientVpnAuthorizationRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_client_vpn_authorization_rules")`.
+`session.create_client("ec2").get_paginator("describe_client_vpn_authorization_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeClientVpnAuthorizationRulesPaginator
 
-def get_describe_client_vpn_authorization_rules_paginator() -> DescribeClientVpnAuthorizationRulesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_client_vpn_authorization_rules")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeClientVpnAuthorizationRulesPaginator = client.get_paginator("describe_client_vpn_authorization_rules")
 ```
 
 Boto3 documentation:
@@ -357,17 +371,19 @@ Arguments for `DescribeClientVpnAuthorizationRulesPaginator.paginate` method:
 ## DescribeClientVpnConnectionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_client_vpn_connections")`.
+`session.create_client("ec2").get_paginator("describe_client_vpn_connections")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeClientVpnConnectionsPaginator
 
-def get_describe_client_vpn_connections_paginator() -> DescribeClientVpnConnectionsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_client_vpn_connections")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeClientVpnConnectionsPaginator = client.get_paginator("describe_client_vpn_connections")
 ```
 
 Boto3 documentation:
@@ -389,17 +405,19 @@ Arguments for `DescribeClientVpnConnectionsPaginator.paginate` method:
 ## DescribeClientVpnEndpointsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_client_vpn_endpoints")`.
+`session.create_client("ec2").get_paginator("describe_client_vpn_endpoints")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeClientVpnEndpointsPaginator
 
-def get_describe_client_vpn_endpoints_paginator() -> DescribeClientVpnEndpointsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_client_vpn_endpoints")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeClientVpnEndpointsPaginator = client.get_paginator("describe_client_vpn_endpoints")
 ```
 
 Boto3 documentation:
@@ -421,17 +439,19 @@ Arguments for `DescribeClientVpnEndpointsPaginator.paginate` method:
 ## DescribeClientVpnRoutesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_client_vpn_routes")`.
+`session.create_client("ec2").get_paginator("describe_client_vpn_routes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeClientVpnRoutesPaginator
 
-def get_describe_client_vpn_routes_paginator() -> DescribeClientVpnRoutesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_client_vpn_routes")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeClientVpnRoutesPaginator = client.get_paginator("describe_client_vpn_routes")
 ```
 
 Boto3 documentation:
@@ -453,17 +473,19 @@ Arguments for `DescribeClientVpnRoutesPaginator.paginate` method:
 ## DescribeClientVpnTargetNetworksPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_client_vpn_target_networks")`.
+`session.create_client("ec2").get_paginator("describe_client_vpn_target_networks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeClientVpnTargetNetworksPaginator
 
-def get_describe_client_vpn_target_networks_paginator() -> DescribeClientVpnTargetNetworksPaginator:
-    return Session().create_client("ec2").get_paginator("describe_client_vpn_target_networks")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeClientVpnTargetNetworksPaginator = client.get_paginator("describe_client_vpn_target_networks")
 ```
 
 Boto3 documentation:
@@ -486,17 +508,19 @@ Arguments for `DescribeClientVpnTargetNetworksPaginator.paginate` method:
 ## DescribeCoipPoolsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_coip_pools")`.
+`session.create_client("ec2").get_paginator("describe_coip_pools")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeCoipPoolsPaginator
 
-def get_describe_coip_pools_paginator() -> DescribeCoipPoolsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_coip_pools")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeCoipPoolsPaginator = client.get_paginator("describe_coip_pools")
 ```
 
 Boto3 documentation:
@@ -518,17 +542,19 @@ Arguments for `DescribeCoipPoolsPaginator.paginate` method:
 ## DescribeDhcpOptionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_dhcp_options")`.
+`session.create_client("ec2").get_paginator("describe_dhcp_options")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeDhcpOptionsPaginator
 
-def get_describe_dhcp_options_paginator() -> DescribeDhcpOptionsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_dhcp_options")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeDhcpOptionsPaginator = client.get_paginator("describe_dhcp_options")
 ```
 
 Boto3 documentation:
@@ -550,17 +576,19 @@ Arguments for `DescribeDhcpOptionsPaginator.paginate` method:
 ## DescribeEgressOnlyInternetGatewaysPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_egress_only_internet_gateways")`.
+`session.create_client("ec2").get_paginator("describe_egress_only_internet_gateways")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeEgressOnlyInternetGatewaysPaginator
 
-def get_describe_egress_only_internet_gateways_paginator() -> DescribeEgressOnlyInternetGatewaysPaginator:
-    return Session().create_client("ec2").get_paginator("describe_egress_only_internet_gateways")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeEgressOnlyInternetGatewaysPaginator = client.get_paginator("describe_egress_only_internet_gateways")
 ```
 
 Boto3 documentation:
@@ -582,17 +610,19 @@ Arguments for `DescribeEgressOnlyInternetGatewaysPaginator.paginate` method:
 ## DescribeExportImageTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_export_image_tasks")`.
+`session.create_client("ec2").get_paginator("describe_export_image_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeExportImageTasksPaginator
 
-def get_describe_export_image_tasks_paginator() -> DescribeExportImageTasksPaginator:
-    return Session().create_client("ec2").get_paginator("describe_export_image_tasks")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeExportImageTasksPaginator = client.get_paginator("describe_export_image_tasks")
 ```
 
 Boto3 documentation:
@@ -614,17 +644,19 @@ Arguments for `DescribeExportImageTasksPaginator.paginate` method:
 ## DescribeFastSnapshotRestoresPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_fast_snapshot_restores")`.
+`session.create_client("ec2").get_paginator("describe_fast_snapshot_restores")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeFastSnapshotRestoresPaginator
 
-def get_describe_fast_snapshot_restores_paginator() -> DescribeFastSnapshotRestoresPaginator:
-    return Session().create_client("ec2").get_paginator("describe_fast_snapshot_restores")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeFastSnapshotRestoresPaginator = client.get_paginator("describe_fast_snapshot_restores")
 ```
 
 Boto3 documentation:
@@ -645,17 +677,19 @@ Arguments for `DescribeFastSnapshotRestoresPaginator.paginate` method:
 ## DescribeFleetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_fleets")`.
+`session.create_client("ec2").get_paginator("describe_fleets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeFleetsPaginator
 
-def get_describe_fleets_paginator() -> DescribeFleetsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_fleets")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeFleetsPaginator = client.get_paginator("describe_fleets")
 ```
 
 Boto3 documentation:
@@ -677,17 +711,19 @@ Arguments for `DescribeFleetsPaginator.paginate` method:
 ## DescribeFlowLogsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_flow_logs")`.
+`session.create_client("ec2").get_paginator("describe_flow_logs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeFlowLogsPaginator
 
-def get_describe_flow_logs_paginator() -> DescribeFlowLogsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_flow_logs")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeFlowLogsPaginator = client.get_paginator("describe_flow_logs")
 ```
 
 Boto3 documentation:
@@ -709,17 +745,19 @@ Arguments for `DescribeFlowLogsPaginator.paginate` method:
 ## DescribeFpgaImagesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_fpga_images")`.
+`session.create_client("ec2").get_paginator("describe_fpga_images")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeFpgaImagesPaginator
 
-def get_describe_fpga_images_paginator() -> DescribeFpgaImagesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_fpga_images")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeFpgaImagesPaginator = client.get_paginator("describe_fpga_images")
 ```
 
 Boto3 documentation:
@@ -742,17 +780,19 @@ Arguments for `DescribeFpgaImagesPaginator.paginate` method:
 ## DescribeHostReservationOfferingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_host_reservation_offerings")`.
+`session.create_client("ec2").get_paginator("describe_host_reservation_offerings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeHostReservationOfferingsPaginator
 
-def get_describe_host_reservation_offerings_paginator() -> DescribeHostReservationOfferingsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_host_reservation_offerings")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeHostReservationOfferingsPaginator = client.get_paginator("describe_host_reservation_offerings")
 ```
 
 Boto3 documentation:
@@ -775,17 +815,19 @@ Arguments for `DescribeHostReservationOfferingsPaginator.paginate` method:
 ## DescribeHostReservationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_host_reservations")`.
+`session.create_client("ec2").get_paginator("describe_host_reservations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeHostReservationsPaginator
 
-def get_describe_host_reservations_paginator() -> DescribeHostReservationsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_host_reservations")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeHostReservationsPaginator = client.get_paginator("describe_host_reservations")
 ```
 
 Boto3 documentation:
@@ -806,17 +848,19 @@ Arguments for `DescribeHostReservationsPaginator.paginate` method:
 ## DescribeHostsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_hosts")`.
+`session.create_client("ec2").get_paginator("describe_hosts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeHostsPaginator
 
-def get_describe_hosts_paginator() -> DescribeHostsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_hosts")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeHostsPaginator = client.get_paginator("describe_hosts")
 ```
 
 Boto3 documentation:
@@ -837,17 +881,19 @@ Arguments for `DescribeHostsPaginator.paginate` method:
 ## DescribeIamInstanceProfileAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_iam_instance_profile_associations")`.
+`session.create_client("ec2").get_paginator("describe_iam_instance_profile_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeIamInstanceProfileAssociationsPaginator
 
-def get_describe_iam_instance_profile_associations_paginator() -> DescribeIamInstanceProfileAssociationsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_iam_instance_profile_associations")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeIamInstanceProfileAssociationsPaginator = client.get_paginator("describe_iam_instance_profile_associations")
 ```
 
 Boto3 documentation:
@@ -869,17 +915,19 @@ method:
 ## DescribeImportImageTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_import_image_tasks")`.
+`session.create_client("ec2").get_paginator("describe_import_image_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeImportImageTasksPaginator
 
-def get_describe_import_image_tasks_paginator() -> DescribeImportImageTasksPaginator:
-    return Session().create_client("ec2").get_paginator("describe_import_image_tasks")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeImportImageTasksPaginator = client.get_paginator("describe_import_image_tasks")
 ```
 
 Boto3 documentation:
@@ -901,17 +949,19 @@ Arguments for `DescribeImportImageTasksPaginator.paginate` method:
 ## DescribeImportSnapshotTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_import_snapshot_tasks")`.
+`session.create_client("ec2").get_paginator("describe_import_snapshot_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeImportSnapshotTasksPaginator
 
-def get_describe_import_snapshot_tasks_paginator() -> DescribeImportSnapshotTasksPaginator:
-    return Session().create_client("ec2").get_paginator("describe_import_snapshot_tasks")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeImportSnapshotTasksPaginator = client.get_paginator("describe_import_snapshot_tasks")
 ```
 
 Boto3 documentation:
@@ -933,17 +983,19 @@ Arguments for `DescribeImportSnapshotTasksPaginator.paginate` method:
 ## DescribeInstanceCreditSpecificationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_instance_credit_specifications")`.
+`session.create_client("ec2").get_paginator("describe_instance_credit_specifications")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeInstanceCreditSpecificationsPaginator
 
-def get_describe_instance_credit_specifications_paginator() -> DescribeInstanceCreditSpecificationsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_instance_credit_specifications")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeInstanceCreditSpecificationsPaginator = client.get_paginator("describe_instance_credit_specifications")
 ```
 
 Boto3 documentation:
@@ -965,17 +1017,19 @@ Arguments for `DescribeInstanceCreditSpecificationsPaginator.paginate` method:
 ## DescribeInstanceEventWindowsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_instance_event_windows")`.
+`session.create_client("ec2").get_paginator("describe_instance_event_windows")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeInstanceEventWindowsPaginator
 
-def get_describe_instance_event_windows_paginator() -> DescribeInstanceEventWindowsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_instance_event_windows")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeInstanceEventWindowsPaginator = client.get_paginator("describe_instance_event_windows")
 ```
 
 Boto3 documentation:
@@ -997,17 +1051,19 @@ Arguments for `DescribeInstanceEventWindowsPaginator.paginate` method:
 ## DescribeInstanceStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_instance_status")`.
+`session.create_client("ec2").get_paginator("describe_instance_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeInstanceStatusPaginator
 
-def get_describe_instance_status_paginator() -> DescribeInstanceStatusPaginator:
-    return Session().create_client("ec2").get_paginator("describe_instance_status")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeInstanceStatusPaginator = client.get_paginator("describe_instance_status")
 ```
 
 Boto3 documentation:
@@ -1030,17 +1086,19 @@ Arguments for `DescribeInstanceStatusPaginator.paginate` method:
 ## DescribeInstanceTypeOfferingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_instance_type_offerings")`.
+`session.create_client("ec2").get_paginator("describe_instance_type_offerings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeInstanceTypeOfferingsPaginator
 
-def get_describe_instance_type_offerings_paginator() -> DescribeInstanceTypeOfferingsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_instance_type_offerings")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeInstanceTypeOfferingsPaginator = client.get_paginator("describe_instance_type_offerings")
 ```
 
 Boto3 documentation:
@@ -1062,17 +1120,19 @@ Arguments for `DescribeInstanceTypeOfferingsPaginator.paginate` method:
 ## DescribeInstanceTypesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_instance_types")`.
+`session.create_client("ec2").get_paginator("describe_instance_types")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeInstanceTypesPaginator
 
-def get_describe_instance_types_paginator() -> DescribeInstanceTypesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_instance_types")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeInstanceTypesPaginator = client.get_paginator("describe_instance_types")
 ```
 
 Boto3 documentation:
@@ -1095,17 +1155,19 @@ Arguments for `DescribeInstanceTypesPaginator.paginate` method:
 ## DescribeInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_instances")`.
+`session.create_client("ec2").get_paginator("describe_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeInstancesPaginator
 
-def get_describe_instances_paginator() -> DescribeInstancesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_instances")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeInstancesPaginator = client.get_paginator("describe_instances")
 ```
 
 Boto3 documentation:
@@ -1127,17 +1189,19 @@ Arguments for `DescribeInstancesPaginator.paginate` method:
 ## DescribeInternetGatewaysPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_internet_gateways")`.
+`session.create_client("ec2").get_paginator("describe_internet_gateways")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeInternetGatewaysPaginator
 
-def get_describe_internet_gateways_paginator() -> DescribeInternetGatewaysPaginator:
-    return Session().create_client("ec2").get_paginator("describe_internet_gateways")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeInternetGatewaysPaginator = client.get_paginator("describe_internet_gateways")
 ```
 
 Boto3 documentation:
@@ -1159,17 +1223,19 @@ Arguments for `DescribeInternetGatewaysPaginator.paginate` method:
 ## DescribeIpamPoolsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_ipam_pools")`.
+`session.create_client("ec2").get_paginator("describe_ipam_pools")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeIpamPoolsPaginator
 
-def get_describe_ipam_pools_paginator() -> DescribeIpamPoolsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_ipam_pools")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeIpamPoolsPaginator = client.get_paginator("describe_ipam_pools")
 ```
 
 Boto3 documentation:
@@ -1191,17 +1257,19 @@ Arguments for `DescribeIpamPoolsPaginator.paginate` method:
 ## DescribeIpamScopesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_ipam_scopes")`.
+`session.create_client("ec2").get_paginator("describe_ipam_scopes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeIpamScopesPaginator
 
-def get_describe_ipam_scopes_paginator() -> DescribeIpamScopesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_ipam_scopes")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeIpamScopesPaginator = client.get_paginator("describe_ipam_scopes")
 ```
 
 Boto3 documentation:
@@ -1223,17 +1291,19 @@ Arguments for `DescribeIpamScopesPaginator.paginate` method:
 ## DescribeIpamsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_ipams")`.
+`session.create_client("ec2").get_paginator("describe_ipams")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeIpamsPaginator
 
-def get_describe_ipams_paginator() -> DescribeIpamsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_ipams")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeIpamsPaginator = client.get_paginator("describe_ipams")
 ```
 
 Boto3 documentation:
@@ -1255,17 +1325,19 @@ Arguments for `DescribeIpamsPaginator.paginate` method:
 ## DescribeIpv6PoolsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_ipv6_pools")`.
+`session.create_client("ec2").get_paginator("describe_ipv6_pools")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeIpv6PoolsPaginator
 
-def get_describe_ipv6_pools_paginator() -> DescribeIpv6PoolsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_ipv6_pools")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeIpv6PoolsPaginator = client.get_paginator("describe_ipv6_pools")
 ```
 
 Boto3 documentation:
@@ -1287,17 +1359,19 @@ Arguments for `DescribeIpv6PoolsPaginator.paginate` method:
 ## DescribeLaunchTemplateVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_launch_template_versions")`.
+`session.create_client("ec2").get_paginator("describe_launch_template_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeLaunchTemplateVersionsPaginator
 
-def get_describe_launch_template_versions_paginator() -> DescribeLaunchTemplateVersionsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_launch_template_versions")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeLaunchTemplateVersionsPaginator = client.get_paginator("describe_launch_template_versions")
 ```
 
 Boto3 documentation:
@@ -1323,17 +1397,19 @@ Arguments for `DescribeLaunchTemplateVersionsPaginator.paginate` method:
 ## DescribeLaunchTemplatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_launch_templates")`.
+`session.create_client("ec2").get_paginator("describe_launch_templates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeLaunchTemplatesPaginator
 
-def get_describe_launch_templates_paginator() -> DescribeLaunchTemplatesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_launch_templates")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeLaunchTemplatesPaginator = client.get_paginator("describe_launch_templates")
 ```
 
 Boto3 documentation:
@@ -1356,17 +1432,19 @@ Arguments for `DescribeLaunchTemplatesPaginator.paginate` method:
 ## DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_local_gateway_route_table_virtual_interface_group_associations")`.
+`session.create_client("ec2").get_paginator("describe_local_gateway_route_table_virtual_interface_group_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator
 
-def get_describe_local_gateway_route_table_virtual_interface_group_associations_paginator() -> DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_local_gateway_route_table_virtual_interface_group_associations")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator = client.get_paginator("describe_local_gateway_route_table_virtual_interface_group_associations")
 ```
 
 Boto3 documentation:
@@ -1392,17 +1470,19 @@ returns
 ## DescribeLocalGatewayRouteTableVpcAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_local_gateway_route_table_vpc_associations")`.
+`session.create_client("ec2").get_paginator("describe_local_gateway_route_table_vpc_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeLocalGatewayRouteTableVpcAssociationsPaginator
 
-def get_describe_local_gateway_route_table_vpc_associations_paginator() -> DescribeLocalGatewayRouteTableVpcAssociationsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_local_gateway_route_table_vpc_associations")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeLocalGatewayRouteTableVpcAssociationsPaginator = client.get_paginator("describe_local_gateway_route_table_vpc_associations")
 ```
 
 Boto3 documentation:
@@ -1425,17 +1505,19 @@ method:
 ## DescribeLocalGatewayRouteTablesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_local_gateway_route_tables")`.
+`session.create_client("ec2").get_paginator("describe_local_gateway_route_tables")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeLocalGatewayRouteTablesPaginator
 
-def get_describe_local_gateway_route_tables_paginator() -> DescribeLocalGatewayRouteTablesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_local_gateway_route_tables")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeLocalGatewayRouteTablesPaginator = client.get_paginator("describe_local_gateway_route_tables")
 ```
 
 Boto3 documentation:
@@ -1457,17 +1539,19 @@ Arguments for `DescribeLocalGatewayRouteTablesPaginator.paginate` method:
 ## DescribeLocalGatewayVirtualInterfaceGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_local_gateway_virtual_interface_groups")`.
+`session.create_client("ec2").get_paginator("describe_local_gateway_virtual_interface_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeLocalGatewayVirtualInterfaceGroupsPaginator
 
-def get_describe_local_gateway_virtual_interface_groups_paginator() -> DescribeLocalGatewayVirtualInterfaceGroupsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_local_gateway_virtual_interface_groups")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeLocalGatewayVirtualInterfaceGroupsPaginator = client.get_paginator("describe_local_gateway_virtual_interface_groups")
 ```
 
 Boto3 documentation:
@@ -1490,17 +1574,19 @@ method:
 ## DescribeLocalGatewayVirtualInterfacesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_local_gateway_virtual_interfaces")`.
+`session.create_client("ec2").get_paginator("describe_local_gateway_virtual_interfaces")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeLocalGatewayVirtualInterfacesPaginator
 
-def get_describe_local_gateway_virtual_interfaces_paginator() -> DescribeLocalGatewayVirtualInterfacesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_local_gateway_virtual_interfaces")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeLocalGatewayVirtualInterfacesPaginator = client.get_paginator("describe_local_gateway_virtual_interfaces")
 ```
 
 Boto3 documentation:
@@ -1522,17 +1608,19 @@ Arguments for `DescribeLocalGatewayVirtualInterfacesPaginator.paginate` method:
 ## DescribeLocalGatewaysPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_local_gateways")`.
+`session.create_client("ec2").get_paginator("describe_local_gateways")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeLocalGatewaysPaginator
 
-def get_describe_local_gateways_paginator() -> DescribeLocalGatewaysPaginator:
-    return Session().create_client("ec2").get_paginator("describe_local_gateways")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeLocalGatewaysPaginator = client.get_paginator("describe_local_gateways")
 ```
 
 Boto3 documentation:
@@ -1554,17 +1642,19 @@ Arguments for `DescribeLocalGatewaysPaginator.paginate` method:
 ## DescribeManagedPrefixListsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_managed_prefix_lists")`.
+`session.create_client("ec2").get_paginator("describe_managed_prefix_lists")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeManagedPrefixListsPaginator
 
-def get_describe_managed_prefix_lists_paginator() -> DescribeManagedPrefixListsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_managed_prefix_lists")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeManagedPrefixListsPaginator = client.get_paginator("describe_managed_prefix_lists")
 ```
 
 Boto3 documentation:
@@ -1586,17 +1676,19 @@ Arguments for `DescribeManagedPrefixListsPaginator.paginate` method:
 ## DescribeMovingAddressesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_moving_addresses")`.
+`session.create_client("ec2").get_paginator("describe_moving_addresses")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeMovingAddressesPaginator
 
-def get_describe_moving_addresses_paginator() -> DescribeMovingAddressesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_moving_addresses")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeMovingAddressesPaginator = client.get_paginator("describe_moving_addresses")
 ```
 
 Boto3 documentation:
@@ -1618,17 +1710,19 @@ Arguments for `DescribeMovingAddressesPaginator.paginate` method:
 ## DescribeNatGatewaysPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_nat_gateways")`.
+`session.create_client("ec2").get_paginator("describe_nat_gateways")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeNatGatewaysPaginator
 
-def get_describe_nat_gateways_paginator() -> DescribeNatGatewaysPaginator:
-    return Session().create_client("ec2").get_paginator("describe_nat_gateways")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeNatGatewaysPaginator = client.get_paginator("describe_nat_gateways")
 ```
 
 Boto3 documentation:
@@ -1650,17 +1744,19 @@ Arguments for `DescribeNatGatewaysPaginator.paginate` method:
 ## DescribeNetworkAclsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_network_acls")`.
+`session.create_client("ec2").get_paginator("describe_network_acls")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeNetworkAclsPaginator
 
-def get_describe_network_acls_paginator() -> DescribeNetworkAclsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_network_acls")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeNetworkAclsPaginator = client.get_paginator("describe_network_acls")
 ```
 
 Boto3 documentation:
@@ -1682,17 +1778,19 @@ Arguments for `DescribeNetworkAclsPaginator.paginate` method:
 ## DescribeNetworkInsightsAccessScopeAnalysesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_network_insights_access_scope_analyses")`.
+`session.create_client("ec2").get_paginator("describe_network_insights_access_scope_analyses")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeNetworkInsightsAccessScopeAnalysesPaginator
 
-def get_describe_network_insights_access_scope_analyses_paginator() -> DescribeNetworkInsightsAccessScopeAnalysesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_network_insights_access_scope_analyses")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeNetworkInsightsAccessScopeAnalysesPaginator = client.get_paginator("describe_network_insights_access_scope_analyses")
 ```
 
 Boto3 documentation:
@@ -1718,17 +1816,19 @@ method:
 ## DescribeNetworkInsightsAccessScopesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_network_insights_access_scopes")`.
+`session.create_client("ec2").get_paginator("describe_network_insights_access_scopes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeNetworkInsightsAccessScopesPaginator
 
-def get_describe_network_insights_access_scopes_paginator() -> DescribeNetworkInsightsAccessScopesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_network_insights_access_scopes")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeNetworkInsightsAccessScopesPaginator = client.get_paginator("describe_network_insights_access_scopes")
 ```
 
 Boto3 documentation:
@@ -1750,17 +1850,19 @@ Arguments for `DescribeNetworkInsightsAccessScopesPaginator.paginate` method:
 ## DescribeNetworkInsightsAnalysesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_network_insights_analyses")`.
+`session.create_client("ec2").get_paginator("describe_network_insights_analyses")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeNetworkInsightsAnalysesPaginator
 
-def get_describe_network_insights_analyses_paginator() -> DescribeNetworkInsightsAnalysesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_network_insights_analyses")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeNetworkInsightsAnalysesPaginator = client.get_paginator("describe_network_insights_analyses")
 ```
 
 Boto3 documentation:
@@ -1785,17 +1887,19 @@ Arguments for `DescribeNetworkInsightsAnalysesPaginator.paginate` method:
 ## DescribeNetworkInsightsPathsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_network_insights_paths")`.
+`session.create_client("ec2").get_paginator("describe_network_insights_paths")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeNetworkInsightsPathsPaginator
 
-def get_describe_network_insights_paths_paginator() -> DescribeNetworkInsightsPathsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_network_insights_paths")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeNetworkInsightsPathsPaginator = client.get_paginator("describe_network_insights_paths")
 ```
 
 Boto3 documentation:
@@ -1817,17 +1921,19 @@ Arguments for `DescribeNetworkInsightsPathsPaginator.paginate` method:
 ## DescribeNetworkInterfacePermissionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_network_interface_permissions")`.
+`session.create_client("ec2").get_paginator("describe_network_interface_permissions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeNetworkInterfacePermissionsPaginator
 
-def get_describe_network_interface_permissions_paginator() -> DescribeNetworkInterfacePermissionsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_network_interface_permissions")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeNetworkInterfacePermissionsPaginator = client.get_paginator("describe_network_interface_permissions")
 ```
 
 Boto3 documentation:
@@ -1848,17 +1954,19 @@ Arguments for `DescribeNetworkInterfacePermissionsPaginator.paginate` method:
 ## DescribeNetworkInterfacesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_network_interfaces")`.
+`session.create_client("ec2").get_paginator("describe_network_interfaces")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeNetworkInterfacesPaginator
 
-def get_describe_network_interfaces_paginator() -> DescribeNetworkInterfacesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_network_interfaces")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeNetworkInterfacesPaginator = client.get_paginator("describe_network_interfaces")
 ```
 
 Boto3 documentation:
@@ -1880,17 +1988,19 @@ Arguments for `DescribeNetworkInterfacesPaginator.paginate` method:
 ## DescribePrefixListsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_prefix_lists")`.
+`session.create_client("ec2").get_paginator("describe_prefix_lists")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribePrefixListsPaginator
 
-def get_describe_prefix_lists_paginator() -> DescribePrefixListsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_prefix_lists")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribePrefixListsPaginator = client.get_paginator("describe_prefix_lists")
 ```
 
 Boto3 documentation:
@@ -1912,17 +2022,19 @@ Arguments for `DescribePrefixListsPaginator.paginate` method:
 ## DescribePrincipalIdFormatPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_principal_id_format")`.
+`session.create_client("ec2").get_paginator("describe_principal_id_format")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribePrincipalIdFormatPaginator
 
-def get_describe_principal_id_format_paginator() -> DescribePrincipalIdFormatPaginator:
-    return Session().create_client("ec2").get_paginator("describe_principal_id_format")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribePrincipalIdFormatPaginator = client.get_paginator("describe_principal_id_format")
 ```
 
 Boto3 documentation:
@@ -1943,17 +2055,19 @@ Arguments for `DescribePrincipalIdFormatPaginator.paginate` method:
 ## DescribePublicIpv4PoolsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_public_ipv4_pools")`.
+`session.create_client("ec2").get_paginator("describe_public_ipv4_pools")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribePublicIpv4PoolsPaginator
 
-def get_describe_public_ipv4_pools_paginator() -> DescribePublicIpv4PoolsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_public_ipv4_pools")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribePublicIpv4PoolsPaginator = client.get_paginator("describe_public_ipv4_pools")
 ```
 
 Boto3 documentation:
@@ -1974,17 +2088,19 @@ Arguments for `DescribePublicIpv4PoolsPaginator.paginate` method:
 ## DescribeReplaceRootVolumeTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_replace_root_volume_tasks")`.
+`session.create_client("ec2").get_paginator("describe_replace_root_volume_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeReplaceRootVolumeTasksPaginator
 
-def get_describe_replace_root_volume_tasks_paginator() -> DescribeReplaceRootVolumeTasksPaginator:
-    return Session().create_client("ec2").get_paginator("describe_replace_root_volume_tasks")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeReplaceRootVolumeTasksPaginator = client.get_paginator("describe_replace_root_volume_tasks")
 ```
 
 Boto3 documentation:
@@ -2006,17 +2122,19 @@ Arguments for `DescribeReplaceRootVolumeTasksPaginator.paginate` method:
 ## DescribeReservedInstancesModificationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_reserved_instances_modifications")`.
+`session.create_client("ec2").get_paginator("describe_reserved_instances_modifications")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeReservedInstancesModificationsPaginator
 
-def get_describe_reserved_instances_modifications_paginator() -> DescribeReservedInstancesModificationsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_reserved_instances_modifications")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeReservedInstancesModificationsPaginator = client.get_paginator("describe_reserved_instances_modifications")
 ```
 
 Boto3 documentation:
@@ -2038,17 +2156,19 @@ method:
 ## DescribeReservedInstancesOfferingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_reserved_instances_offerings")`.
+`session.create_client("ec2").get_paginator("describe_reserved_instances_offerings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeReservedInstancesOfferingsPaginator
 
-def get_describe_reserved_instances_offerings_paginator() -> DescribeReservedInstancesOfferingsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_reserved_instances_offerings")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeReservedInstancesOfferingsPaginator = client.get_paginator("describe_reserved_instances_offerings")
 ```
 
 Boto3 documentation:
@@ -2082,17 +2202,19 @@ Arguments for `DescribeReservedInstancesOfferingsPaginator.paginate` method:
 ## DescribeRouteTablesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_route_tables")`.
+`session.create_client("ec2").get_paginator("describe_route_tables")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeRouteTablesPaginator
 
-def get_describe_route_tables_paginator() -> DescribeRouteTablesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_route_tables")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeRouteTablesPaginator = client.get_paginator("describe_route_tables")
 ```
 
 Boto3 documentation:
@@ -2114,17 +2236,19 @@ Arguments for `DescribeRouteTablesPaginator.paginate` method:
 ## DescribeScheduledInstanceAvailabilityPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_scheduled_instance_availability")`.
+`session.create_client("ec2").get_paginator("describe_scheduled_instance_availability")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeScheduledInstanceAvailabilityPaginator
 
-def get_describe_scheduled_instance_availability_paginator() -> DescribeScheduledInstanceAvailabilityPaginator:
-    return Session().create_client("ec2").get_paginator("describe_scheduled_instance_availability")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeScheduledInstanceAvailabilityPaginator = client.get_paginator("describe_scheduled_instance_availability")
 ```
 
 Boto3 documentation:
@@ -2153,17 +2277,19 @@ Arguments for `DescribeScheduledInstanceAvailabilityPaginator.paginate` method:
 ## DescribeScheduledInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_scheduled_instances")`.
+`session.create_client("ec2").get_paginator("describe_scheduled_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeScheduledInstancesPaginator
 
-def get_describe_scheduled_instances_paginator() -> DescribeScheduledInstancesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_scheduled_instances")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeScheduledInstancesPaginator = client.get_paginator("describe_scheduled_instances")
 ```
 
 Boto3 documentation:
@@ -2187,17 +2313,19 @@ Arguments for `DescribeScheduledInstancesPaginator.paginate` method:
 ## DescribeSecurityGroupRulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_security_group_rules")`.
+`session.create_client("ec2").get_paginator("describe_security_group_rules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeSecurityGroupRulesPaginator
 
-def get_describe_security_group_rules_paginator() -> DescribeSecurityGroupRulesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_security_group_rules")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeSecurityGroupRulesPaginator = client.get_paginator("describe_security_group_rules")
 ```
 
 Boto3 documentation:
@@ -2219,17 +2347,19 @@ Arguments for `DescribeSecurityGroupRulesPaginator.paginate` method:
 ## DescribeSecurityGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_security_groups")`.
+`session.create_client("ec2").get_paginator("describe_security_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeSecurityGroupsPaginator
 
-def get_describe_security_groups_paginator() -> DescribeSecurityGroupsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_security_groups")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeSecurityGroupsPaginator = client.get_paginator("describe_security_groups")
 ```
 
 Boto3 documentation:
@@ -2252,17 +2382,19 @@ Arguments for `DescribeSecurityGroupsPaginator.paginate` method:
 ## DescribeSnapshotTierStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_snapshot_tier_status")`.
+`session.create_client("ec2").get_paginator("describe_snapshot_tier_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeSnapshotTierStatusPaginator
 
-def get_describe_snapshot_tier_status_paginator() -> DescribeSnapshotTierStatusPaginator:
-    return Session().create_client("ec2").get_paginator("describe_snapshot_tier_status")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeSnapshotTierStatusPaginator = client.get_paginator("describe_snapshot_tier_status")
 ```
 
 Boto3 documentation:
@@ -2283,17 +2415,19 @@ Arguments for `DescribeSnapshotTierStatusPaginator.paginate` method:
 ## DescribeSnapshotsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_snapshots")`.
+`session.create_client("ec2").get_paginator("describe_snapshots")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeSnapshotsPaginator
 
-def get_describe_snapshots_paginator() -> DescribeSnapshotsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_snapshots")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeSnapshotsPaginator = client.get_paginator("describe_snapshots")
 ```
 
 Boto3 documentation:
@@ -2317,17 +2451,19 @@ Arguments for `DescribeSnapshotsPaginator.paginate` method:
 ## DescribeSpotFleetInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_spot_fleet_instances")`.
+`session.create_client("ec2").get_paginator("describe_spot_fleet_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeSpotFleetInstancesPaginator
 
-def get_describe_spot_fleet_instances_paginator() -> DescribeSpotFleetInstancesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_spot_fleet_instances")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeSpotFleetInstancesPaginator = client.get_paginator("describe_spot_fleet_instances")
 ```
 
 Boto3 documentation:
@@ -2348,17 +2484,19 @@ Arguments for `DescribeSpotFleetInstancesPaginator.paginate` method:
 ## DescribeSpotFleetRequestsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_spot_fleet_requests")`.
+`session.create_client("ec2").get_paginator("describe_spot_fleet_requests")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeSpotFleetRequestsPaginator
 
-def get_describe_spot_fleet_requests_paginator() -> DescribeSpotFleetRequestsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_spot_fleet_requests")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeSpotFleetRequestsPaginator = client.get_paginator("describe_spot_fleet_requests")
 ```
 
 Boto3 documentation:
@@ -2379,17 +2517,19 @@ Arguments for `DescribeSpotFleetRequestsPaginator.paginate` method:
 ## DescribeSpotInstanceRequestsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_spot_instance_requests")`.
+`session.create_client("ec2").get_paginator("describe_spot_instance_requests")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeSpotInstanceRequestsPaginator
 
-def get_describe_spot_instance_requests_paginator() -> DescribeSpotInstanceRequestsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_spot_instance_requests")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeSpotInstanceRequestsPaginator = client.get_paginator("describe_spot_instance_requests")
 ```
 
 Boto3 documentation:
@@ -2411,17 +2551,19 @@ Arguments for `DescribeSpotInstanceRequestsPaginator.paginate` method:
 ## DescribeSpotPriceHistoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_spot_price_history")`.
+`session.create_client("ec2").get_paginator("describe_spot_price_history")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeSpotPriceHistoryPaginator
 
-def get_describe_spot_price_history_paginator() -> DescribeSpotPriceHistoryPaginator:
-    return Session().create_client("ec2").get_paginator("describe_spot_price_history")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeSpotPriceHistoryPaginator = client.get_paginator("describe_spot_price_history")
 ```
 
 Boto3 documentation:
@@ -2448,17 +2590,19 @@ Arguments for `DescribeSpotPriceHistoryPaginator.paginate` method:
 ## DescribeStaleSecurityGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_stale_security_groups")`.
+`session.create_client("ec2").get_paginator("describe_stale_security_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeStaleSecurityGroupsPaginator
 
-def get_describe_stale_security_groups_paginator() -> DescribeStaleSecurityGroupsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_stale_security_groups")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeStaleSecurityGroupsPaginator = client.get_paginator("describe_stale_security_groups")
 ```
 
 Boto3 documentation:
@@ -2479,17 +2623,19 @@ Arguments for `DescribeStaleSecurityGroupsPaginator.paginate` method:
 ## DescribeStoreImageTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_store_image_tasks")`.
+`session.create_client("ec2").get_paginator("describe_store_image_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeStoreImageTasksPaginator
 
-def get_describe_store_image_tasks_paginator() -> DescribeStoreImageTasksPaginator:
-    return Session().create_client("ec2").get_paginator("describe_store_image_tasks")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeStoreImageTasksPaginator = client.get_paginator("describe_store_image_tasks")
 ```
 
 Boto3 documentation:
@@ -2511,17 +2657,19 @@ Arguments for `DescribeStoreImageTasksPaginator.paginate` method:
 ## DescribeSubnetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_subnets")`.
+`session.create_client("ec2").get_paginator("describe_subnets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeSubnetsPaginator
 
-def get_describe_subnets_paginator() -> DescribeSubnetsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_subnets")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeSubnetsPaginator = client.get_paginator("describe_subnets")
 ```
 
 Boto3 documentation:
@@ -2543,17 +2691,19 @@ Arguments for `DescribeSubnetsPaginator.paginate` method:
 ## DescribeTagsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_tags")`.
+`session.create_client("ec2").get_paginator("describe_tags")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeTagsPaginator
 
-def get_describe_tags_paginator() -> DescribeTagsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_tags")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeTagsPaginator = client.get_paginator("describe_tags")
 ```
 
 Boto3 documentation:
@@ -2574,17 +2724,19 @@ Arguments for `DescribeTagsPaginator.paginate` method:
 ## DescribeTrafficMirrorFiltersPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_traffic_mirror_filters")`.
+`session.create_client("ec2").get_paginator("describe_traffic_mirror_filters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeTrafficMirrorFiltersPaginator
 
-def get_describe_traffic_mirror_filters_paginator() -> DescribeTrafficMirrorFiltersPaginator:
-    return Session().create_client("ec2").get_paginator("describe_traffic_mirror_filters")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeTrafficMirrorFiltersPaginator = client.get_paginator("describe_traffic_mirror_filters")
 ```
 
 Boto3 documentation:
@@ -2606,17 +2758,19 @@ Arguments for `DescribeTrafficMirrorFiltersPaginator.paginate` method:
 ## DescribeTrafficMirrorSessionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_traffic_mirror_sessions")`.
+`session.create_client("ec2").get_paginator("describe_traffic_mirror_sessions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeTrafficMirrorSessionsPaginator
 
-def get_describe_traffic_mirror_sessions_paginator() -> DescribeTrafficMirrorSessionsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_traffic_mirror_sessions")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeTrafficMirrorSessionsPaginator = client.get_paginator("describe_traffic_mirror_sessions")
 ```
 
 Boto3 documentation:
@@ -2638,17 +2792,19 @@ Arguments for `DescribeTrafficMirrorSessionsPaginator.paginate` method:
 ## DescribeTrafficMirrorTargetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_traffic_mirror_targets")`.
+`session.create_client("ec2").get_paginator("describe_traffic_mirror_targets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeTrafficMirrorTargetsPaginator
 
-def get_describe_traffic_mirror_targets_paginator() -> DescribeTrafficMirrorTargetsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_traffic_mirror_targets")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeTrafficMirrorTargetsPaginator = client.get_paginator("describe_traffic_mirror_targets")
 ```
 
 Boto3 documentation:
@@ -2670,17 +2826,19 @@ Arguments for `DescribeTrafficMirrorTargetsPaginator.paginate` method:
 ## DescribeTransitGatewayAttachmentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_transit_gateway_attachments")`.
+`session.create_client("ec2").get_paginator("describe_transit_gateway_attachments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeTransitGatewayAttachmentsPaginator
 
-def get_describe_transit_gateway_attachments_paginator() -> DescribeTransitGatewayAttachmentsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_transit_gateway_attachments")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeTransitGatewayAttachmentsPaginator = client.get_paginator("describe_transit_gateway_attachments")
 ```
 
 Boto3 documentation:
@@ -2702,17 +2860,19 @@ Arguments for `DescribeTransitGatewayAttachmentsPaginator.paginate` method:
 ## DescribeTransitGatewayConnectPeersPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_transit_gateway_connect_peers")`.
+`session.create_client("ec2").get_paginator("describe_transit_gateway_connect_peers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeTransitGatewayConnectPeersPaginator
 
-def get_describe_transit_gateway_connect_peers_paginator() -> DescribeTransitGatewayConnectPeersPaginator:
-    return Session().create_client("ec2").get_paginator("describe_transit_gateway_connect_peers")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeTransitGatewayConnectPeersPaginator = client.get_paginator("describe_transit_gateway_connect_peers")
 ```
 
 Boto3 documentation:
@@ -2734,17 +2894,19 @@ Arguments for `DescribeTransitGatewayConnectPeersPaginator.paginate` method:
 ## DescribeTransitGatewayConnectsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_transit_gateway_connects")`.
+`session.create_client("ec2").get_paginator("describe_transit_gateway_connects")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeTransitGatewayConnectsPaginator
 
-def get_describe_transit_gateway_connects_paginator() -> DescribeTransitGatewayConnectsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_transit_gateway_connects")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeTransitGatewayConnectsPaginator = client.get_paginator("describe_transit_gateway_connects")
 ```
 
 Boto3 documentation:
@@ -2766,17 +2928,19 @@ Arguments for `DescribeTransitGatewayConnectsPaginator.paginate` method:
 ## DescribeTransitGatewayMulticastDomainsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_transit_gateway_multicast_domains")`.
+`session.create_client("ec2").get_paginator("describe_transit_gateway_multicast_domains")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeTransitGatewayMulticastDomainsPaginator
 
-def get_describe_transit_gateway_multicast_domains_paginator() -> DescribeTransitGatewayMulticastDomainsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_transit_gateway_multicast_domains")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeTransitGatewayMulticastDomainsPaginator = client.get_paginator("describe_transit_gateway_multicast_domains")
 ```
 
 Boto3 documentation:
@@ -2799,17 +2963,19 @@ method:
 ## DescribeTransitGatewayPeeringAttachmentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_transit_gateway_peering_attachments")`.
+`session.create_client("ec2").get_paginator("describe_transit_gateway_peering_attachments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeTransitGatewayPeeringAttachmentsPaginator
 
-def get_describe_transit_gateway_peering_attachments_paginator() -> DescribeTransitGatewayPeeringAttachmentsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_transit_gateway_peering_attachments")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeTransitGatewayPeeringAttachmentsPaginator = client.get_paginator("describe_transit_gateway_peering_attachments")
 ```
 
 Boto3 documentation:
@@ -2832,17 +2998,19 @@ method:
 ## DescribeTransitGatewayRouteTablesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_transit_gateway_route_tables")`.
+`session.create_client("ec2").get_paginator("describe_transit_gateway_route_tables")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeTransitGatewayRouteTablesPaginator
 
-def get_describe_transit_gateway_route_tables_paginator() -> DescribeTransitGatewayRouteTablesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_transit_gateway_route_tables")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeTransitGatewayRouteTablesPaginator = client.get_paginator("describe_transit_gateway_route_tables")
 ```
 
 Boto3 documentation:
@@ -2864,17 +3032,19 @@ Arguments for `DescribeTransitGatewayRouteTablesPaginator.paginate` method:
 ## DescribeTransitGatewayVpcAttachmentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_transit_gateway_vpc_attachments")`.
+`session.create_client("ec2").get_paginator("describe_transit_gateway_vpc_attachments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeTransitGatewayVpcAttachmentsPaginator
 
-def get_describe_transit_gateway_vpc_attachments_paginator() -> DescribeTransitGatewayVpcAttachmentsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_transit_gateway_vpc_attachments")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeTransitGatewayVpcAttachmentsPaginator = client.get_paginator("describe_transit_gateway_vpc_attachments")
 ```
 
 Boto3 documentation:
@@ -2896,17 +3066,19 @@ Arguments for `DescribeTransitGatewayVpcAttachmentsPaginator.paginate` method:
 ## DescribeTransitGatewaysPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_transit_gateways")`.
+`session.create_client("ec2").get_paginator("describe_transit_gateways")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeTransitGatewaysPaginator
 
-def get_describe_transit_gateways_paginator() -> DescribeTransitGatewaysPaginator:
-    return Session().create_client("ec2").get_paginator("describe_transit_gateways")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeTransitGatewaysPaginator = client.get_paginator("describe_transit_gateways")
 ```
 
 Boto3 documentation:
@@ -2928,17 +3100,19 @@ Arguments for `DescribeTransitGatewaysPaginator.paginate` method:
 ## DescribeTrunkInterfaceAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_trunk_interface_associations")`.
+`session.create_client("ec2").get_paginator("describe_trunk_interface_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeTrunkInterfaceAssociationsPaginator
 
-def get_describe_trunk_interface_associations_paginator() -> DescribeTrunkInterfaceAssociationsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_trunk_interface_associations")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeTrunkInterfaceAssociationsPaginator = client.get_paginator("describe_trunk_interface_associations")
 ```
 
 Boto3 documentation:
@@ -2960,17 +3134,19 @@ Arguments for `DescribeTrunkInterfaceAssociationsPaginator.paginate` method:
 ## DescribeVolumeStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_volume_status")`.
+`session.create_client("ec2").get_paginator("describe_volume_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeVolumeStatusPaginator
 
-def get_describe_volume_status_paginator() -> DescribeVolumeStatusPaginator:
-    return Session().create_client("ec2").get_paginator("describe_volume_status")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeVolumeStatusPaginator = client.get_paginator("describe_volume_status")
 ```
 
 Boto3 documentation:
@@ -2992,17 +3168,19 @@ Arguments for `DescribeVolumeStatusPaginator.paginate` method:
 ## DescribeVolumesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_volumes")`.
+`session.create_client("ec2").get_paginator("describe_volumes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeVolumesPaginator
 
-def get_describe_volumes_paginator() -> DescribeVolumesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_volumes")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeVolumesPaginator = client.get_paginator("describe_volumes")
 ```
 
 Boto3 documentation:
@@ -3024,17 +3202,19 @@ Arguments for `DescribeVolumesPaginator.paginate` method:
 ## DescribeVolumesModificationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_volumes_modifications")`.
+`session.create_client("ec2").get_paginator("describe_volumes_modifications")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeVolumesModificationsPaginator
 
-def get_describe_volumes_modifications_paginator() -> DescribeVolumesModificationsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_volumes_modifications")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeVolumesModificationsPaginator = client.get_paginator("describe_volumes_modifications")
 ```
 
 Boto3 documentation:
@@ -3056,17 +3236,19 @@ Arguments for `DescribeVolumesModificationsPaginator.paginate` method:
 ## DescribeVpcClassicLinkDnsSupportPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_vpc_classic_link_dns_support")`.
+`session.create_client("ec2").get_paginator("describe_vpc_classic_link_dns_support")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeVpcClassicLinkDnsSupportPaginator
 
-def get_describe_vpc_classic_link_dns_support_paginator() -> DescribeVpcClassicLinkDnsSupportPaginator:
-    return Session().create_client("ec2").get_paginator("describe_vpc_classic_link_dns_support")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeVpcClassicLinkDnsSupportPaginator = client.get_paginator("describe_vpc_classic_link_dns_support")
 ```
 
 Boto3 documentation:
@@ -3086,17 +3268,19 @@ Arguments for `DescribeVpcClassicLinkDnsSupportPaginator.paginate` method:
 ## DescribeVpcEndpointConnectionNotificationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_vpc_endpoint_connection_notifications")`.
+`session.create_client("ec2").get_paginator("describe_vpc_endpoint_connection_notifications")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeVpcEndpointConnectionNotificationsPaginator
 
-def get_describe_vpc_endpoint_connection_notifications_paginator() -> DescribeVpcEndpointConnectionNotificationsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_vpc_endpoint_connection_notifications")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeVpcEndpointConnectionNotificationsPaginator = client.get_paginator("describe_vpc_endpoint_connection_notifications")
 ```
 
 Boto3 documentation:
@@ -3119,17 +3303,19 @@ method:
 ## DescribeVpcEndpointConnectionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_vpc_endpoint_connections")`.
+`session.create_client("ec2").get_paginator("describe_vpc_endpoint_connections")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeVpcEndpointConnectionsPaginator
 
-def get_describe_vpc_endpoint_connections_paginator() -> DescribeVpcEndpointConnectionsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_vpc_endpoint_connections")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeVpcEndpointConnectionsPaginator = client.get_paginator("describe_vpc_endpoint_connections")
 ```
 
 Boto3 documentation:
@@ -3150,17 +3336,19 @@ Arguments for `DescribeVpcEndpointConnectionsPaginator.paginate` method:
 ## DescribeVpcEndpointServiceConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_vpc_endpoint_service_configurations")`.
+`session.create_client("ec2").get_paginator("describe_vpc_endpoint_service_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeVpcEndpointServiceConfigurationsPaginator
 
-def get_describe_vpc_endpoint_service_configurations_paginator() -> DescribeVpcEndpointServiceConfigurationsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_vpc_endpoint_service_configurations")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeVpcEndpointServiceConfigurationsPaginator = client.get_paginator("describe_vpc_endpoint_service_configurations")
 ```
 
 Boto3 documentation:
@@ -3183,17 +3371,19 @@ method:
 ## DescribeVpcEndpointServicePermissionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_vpc_endpoint_service_permissions")`.
+`session.create_client("ec2").get_paginator("describe_vpc_endpoint_service_permissions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeVpcEndpointServicePermissionsPaginator
 
-def get_describe_vpc_endpoint_service_permissions_paginator() -> DescribeVpcEndpointServicePermissionsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_vpc_endpoint_service_permissions")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeVpcEndpointServicePermissionsPaginator = client.get_paginator("describe_vpc_endpoint_service_permissions")
 ```
 
 Boto3 documentation:
@@ -3215,17 +3405,19 @@ Arguments for `DescribeVpcEndpointServicePermissionsPaginator.paginate` method:
 ## DescribeVpcEndpointServicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_vpc_endpoint_services")`.
+`session.create_client("ec2").get_paginator("describe_vpc_endpoint_services")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeVpcEndpointServicesPaginator
 
-def get_describe_vpc_endpoint_services_paginator() -> DescribeVpcEndpointServicesPaginator:
-    return Session().create_client("ec2").get_paginator("describe_vpc_endpoint_services")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeVpcEndpointServicesPaginator = client.get_paginator("describe_vpc_endpoint_services")
 ```
 
 Boto3 documentation:
@@ -3247,17 +3439,19 @@ Arguments for `DescribeVpcEndpointServicesPaginator.paginate` method:
 ## DescribeVpcEndpointsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_vpc_endpoints")`.
+`session.create_client("ec2").get_paginator("describe_vpc_endpoints")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeVpcEndpointsPaginator
 
-def get_describe_vpc_endpoints_paginator() -> DescribeVpcEndpointsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_vpc_endpoints")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeVpcEndpointsPaginator = client.get_paginator("describe_vpc_endpoints")
 ```
 
 Boto3 documentation:
@@ -3279,17 +3473,19 @@ Arguments for `DescribeVpcEndpointsPaginator.paginate` method:
 ## DescribeVpcPeeringConnectionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_vpc_peering_connections")`.
+`session.create_client("ec2").get_paginator("describe_vpc_peering_connections")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeVpcPeeringConnectionsPaginator
 
-def get_describe_vpc_peering_connections_paginator() -> DescribeVpcPeeringConnectionsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_vpc_peering_connections")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeVpcPeeringConnectionsPaginator = client.get_paginator("describe_vpc_peering_connections")
 ```
 
 Boto3 documentation:
@@ -3311,17 +3507,19 @@ Arguments for `DescribeVpcPeeringConnectionsPaginator.paginate` method:
 ## DescribeVpcsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("describe_vpcs")`.
+`session.create_client("ec2").get_paginator("describe_vpcs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import DescribeVpcsPaginator
 
-def get_describe_vpcs_paginator() -> DescribeVpcsPaginator:
-    return Session().create_client("ec2").get_paginator("describe_vpcs")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: DescribeVpcsPaginator = client.get_paginator("describe_vpcs")
 ```
 
 Boto3 documentation:
@@ -3343,17 +3541,19 @@ Arguments for `DescribeVpcsPaginator.paginate` method:
 ## GetAssociatedIpv6PoolCidrsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("get_associated_ipv6_pool_cidrs")`.
+`session.create_client("ec2").get_paginator("get_associated_ipv6_pool_cidrs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import GetAssociatedIpv6PoolCidrsPaginator
 
-def get_get_associated_ipv6_pool_cidrs_paginator() -> GetAssociatedIpv6PoolCidrsPaginator:
-    return Session().create_client("ec2").get_paginator("get_associated_ipv6_pool_cidrs")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: GetAssociatedIpv6PoolCidrsPaginator = client.get_paginator("get_associated_ipv6_pool_cidrs")
 ```
 
 Boto3 documentation:
@@ -3374,17 +3574,19 @@ Arguments for `GetAssociatedIpv6PoolCidrsPaginator.paginate` method:
 ## GetGroupsForCapacityReservationPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("get_groups_for_capacity_reservation")`.
+`session.create_client("ec2").get_paginator("get_groups_for_capacity_reservation")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import GetGroupsForCapacityReservationPaginator
 
-def get_get_groups_for_capacity_reservation_paginator() -> GetGroupsForCapacityReservationPaginator:
-    return Session().create_client("ec2").get_paginator("get_groups_for_capacity_reservation")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: GetGroupsForCapacityReservationPaginator = client.get_paginator("get_groups_for_capacity_reservation")
 ```
 
 Boto3 documentation:
@@ -3405,17 +3607,19 @@ Arguments for `GetGroupsForCapacityReservationPaginator.paginate` method:
 ## GetInstanceTypesFromInstanceRequirementsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("get_instance_types_from_instance_requirements")`.
+`session.create_client("ec2").get_paginator("get_instance_types_from_instance_requirements")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import GetInstanceTypesFromInstanceRequirementsPaginator
 
-def get_get_instance_types_from_instance_requirements_paginator() -> GetInstanceTypesFromInstanceRequirementsPaginator:
-    return Session().create_client("ec2").get_paginator("get_instance_types_from_instance_requirements")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: GetInstanceTypesFromInstanceRequirementsPaginator = client.get_paginator("get_instance_types_from_instance_requirements")
 ```
 
 Boto3 documentation:
@@ -3445,17 +3649,19 @@ method:
 ## GetIpamAddressHistoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("get_ipam_address_history")`.
+`session.create_client("ec2").get_paginator("get_ipam_address_history")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import GetIpamAddressHistoryPaginator
 
-def get_get_ipam_address_history_paginator() -> GetIpamAddressHistoryPaginator:
-    return Session().create_client("ec2").get_paginator("get_ipam_address_history")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: GetIpamAddressHistoryPaginator = client.get_paginator("get_ipam_address_history")
 ```
 
 Boto3 documentation:
@@ -3480,17 +3686,19 @@ Arguments for `GetIpamAddressHistoryPaginator.paginate` method:
 ## GetIpamPoolAllocationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("get_ipam_pool_allocations")`.
+`session.create_client("ec2").get_paginator("get_ipam_pool_allocations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import GetIpamPoolAllocationsPaginator
 
-def get_get_ipam_pool_allocations_paginator() -> GetIpamPoolAllocationsPaginator:
-    return Session().create_client("ec2").get_paginator("get_ipam_pool_allocations")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: GetIpamPoolAllocationsPaginator = client.get_paginator("get_ipam_pool_allocations")
 ```
 
 Boto3 documentation:
@@ -3513,17 +3721,19 @@ Arguments for `GetIpamPoolAllocationsPaginator.paginate` method:
 ## GetIpamPoolCidrsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("get_ipam_pool_cidrs")`.
+`session.create_client("ec2").get_paginator("get_ipam_pool_cidrs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import GetIpamPoolCidrsPaginator
 
-def get_get_ipam_pool_cidrs_paginator() -> GetIpamPoolCidrsPaginator:
-    return Session().create_client("ec2").get_paginator("get_ipam_pool_cidrs")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: GetIpamPoolCidrsPaginator = client.get_paginator("get_ipam_pool_cidrs")
 ```
 
 Boto3 documentation:
@@ -3545,17 +3755,19 @@ Arguments for `GetIpamPoolCidrsPaginator.paginate` method:
 ## GetIpamResourceCidrsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("get_ipam_resource_cidrs")`.
+`session.create_client("ec2").get_paginator("get_ipam_resource_cidrs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import GetIpamResourceCidrsPaginator
 
-def get_get_ipam_resource_cidrs_paginator() -> GetIpamResourceCidrsPaginator:
-    return Session().create_client("ec2").get_paginator("get_ipam_resource_cidrs")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: GetIpamResourceCidrsPaginator = client.get_paginator("get_ipam_resource_cidrs")
 ```
 
 Boto3 documentation:
@@ -3583,17 +3795,19 @@ Arguments for `GetIpamResourceCidrsPaginator.paginate` method:
 ## GetManagedPrefixListAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("get_managed_prefix_list_associations")`.
+`session.create_client("ec2").get_paginator("get_managed_prefix_list_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import GetManagedPrefixListAssociationsPaginator
 
-def get_get_managed_prefix_list_associations_paginator() -> GetManagedPrefixListAssociationsPaginator:
-    return Session().create_client("ec2").get_paginator("get_managed_prefix_list_associations")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: GetManagedPrefixListAssociationsPaginator = client.get_paginator("get_managed_prefix_list_associations")
 ```
 
 Boto3 documentation:
@@ -3614,17 +3828,19 @@ Arguments for `GetManagedPrefixListAssociationsPaginator.paginate` method:
 ## GetManagedPrefixListEntriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("get_managed_prefix_list_entries")`.
+`session.create_client("ec2").get_paginator("get_managed_prefix_list_entries")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import GetManagedPrefixListEntriesPaginator
 
-def get_get_managed_prefix_list_entries_paginator() -> GetManagedPrefixListEntriesPaginator:
-    return Session().create_client("ec2").get_paginator("get_managed_prefix_list_entries")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: GetManagedPrefixListEntriesPaginator = client.get_paginator("get_managed_prefix_list_entries")
 ```
 
 Boto3 documentation:
@@ -3646,17 +3862,19 @@ Arguments for `GetManagedPrefixListEntriesPaginator.paginate` method:
 ## GetSpotPlacementScoresPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("get_spot_placement_scores")`.
+`session.create_client("ec2").get_paginator("get_spot_placement_scores")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import GetSpotPlacementScoresPaginator
 
-def get_get_spot_placement_scores_paginator() -> GetSpotPlacementScoresPaginator:
-    return Session().create_client("ec2").get_paginator("get_spot_placement_scores")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: GetSpotPlacementScoresPaginator = client.get_paginator("get_spot_placement_scores")
 ```
 
 Boto3 documentation:
@@ -3684,17 +3902,19 @@ Arguments for `GetSpotPlacementScoresPaginator.paginate` method:
 ## GetTransitGatewayAttachmentPropagationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("get_transit_gateway_attachment_propagations")`.
+`session.create_client("ec2").get_paginator("get_transit_gateway_attachment_propagations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import GetTransitGatewayAttachmentPropagationsPaginator
 
-def get_get_transit_gateway_attachment_propagations_paginator() -> GetTransitGatewayAttachmentPropagationsPaginator:
-    return Session().create_client("ec2").get_paginator("get_transit_gateway_attachment_propagations")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: GetTransitGatewayAttachmentPropagationsPaginator = client.get_paginator("get_transit_gateway_attachment_propagations")
 ```
 
 Boto3 documentation:
@@ -3717,17 +3937,19 @@ method:
 ## GetTransitGatewayMulticastDomainAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("get_transit_gateway_multicast_domain_associations")`.
+`session.create_client("ec2").get_paginator("get_transit_gateway_multicast_domain_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import GetTransitGatewayMulticastDomainAssociationsPaginator
 
-def get_get_transit_gateway_multicast_domain_associations_paginator() -> GetTransitGatewayMulticastDomainAssociationsPaginator:
-    return Session().create_client("ec2").get_paginator("get_transit_gateway_multicast_domain_associations")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: GetTransitGatewayMulticastDomainAssociationsPaginator = client.get_paginator("get_transit_gateway_multicast_domain_associations")
 ```
 
 Boto3 documentation:
@@ -3750,17 +3972,19 @@ method:
 ## GetTransitGatewayPrefixListReferencesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("get_transit_gateway_prefix_list_references")`.
+`session.create_client("ec2").get_paginator("get_transit_gateway_prefix_list_references")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import GetTransitGatewayPrefixListReferencesPaginator
 
-def get_get_transit_gateway_prefix_list_references_paginator() -> GetTransitGatewayPrefixListReferencesPaginator:
-    return Session().create_client("ec2").get_paginator("get_transit_gateway_prefix_list_references")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: GetTransitGatewayPrefixListReferencesPaginator = client.get_paginator("get_transit_gateway_prefix_list_references")
 ```
 
 Boto3 documentation:
@@ -3782,17 +4006,19 @@ Arguments for `GetTransitGatewayPrefixListReferencesPaginator.paginate` method:
 ## GetTransitGatewayRouteTableAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("get_transit_gateway_route_table_associations")`.
+`session.create_client("ec2").get_paginator("get_transit_gateway_route_table_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import GetTransitGatewayRouteTableAssociationsPaginator
 
-def get_get_transit_gateway_route_table_associations_paginator() -> GetTransitGatewayRouteTableAssociationsPaginator:
-    return Session().create_client("ec2").get_paginator("get_transit_gateway_route_table_associations")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: GetTransitGatewayRouteTableAssociationsPaginator = client.get_paginator("get_transit_gateway_route_table_associations")
 ```
 
 Boto3 documentation:
@@ -3815,17 +4041,19 @@ method:
 ## GetTransitGatewayRouteTablePropagationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("get_transit_gateway_route_table_propagations")`.
+`session.create_client("ec2").get_paginator("get_transit_gateway_route_table_propagations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import GetTransitGatewayRouteTablePropagationsPaginator
 
-def get_get_transit_gateway_route_table_propagations_paginator() -> GetTransitGatewayRouteTablePropagationsPaginator:
-    return Session().create_client("ec2").get_paginator("get_transit_gateway_route_table_propagations")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: GetTransitGatewayRouteTablePropagationsPaginator = client.get_paginator("get_transit_gateway_route_table_propagations")
 ```
 
 Boto3 documentation:
@@ -3848,17 +4076,19 @@ method:
 ## GetVpnConnectionDeviceTypesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("get_vpn_connection_device_types")`.
+`session.create_client("ec2").get_paginator("get_vpn_connection_device_types")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import GetVpnConnectionDeviceTypesPaginator
 
-def get_get_vpn_connection_device_types_paginator() -> GetVpnConnectionDeviceTypesPaginator:
-    return Session().create_client("ec2").get_paginator("get_vpn_connection_device_types")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: GetVpnConnectionDeviceTypesPaginator = client.get_paginator("get_vpn_connection_device_types")
 ```
 
 Boto3 documentation:
@@ -3878,17 +4108,19 @@ Arguments for `GetVpnConnectionDeviceTypesPaginator.paginate` method:
 ## ListSnapshotsInRecycleBinPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("list_snapshots_in_recycle_bin")`.
+`session.create_client("ec2").get_paginator("list_snapshots_in_recycle_bin")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import ListSnapshotsInRecycleBinPaginator
 
-def get_list_snapshots_in_recycle_bin_paginator() -> ListSnapshotsInRecycleBinPaginator:
-    return Session().create_client("ec2").get_paginator("list_snapshots_in_recycle_bin")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: ListSnapshotsInRecycleBinPaginator = client.get_paginator("list_snapshots_in_recycle_bin")
 ```
 
 Boto3 documentation:
@@ -3909,17 +4141,19 @@ Arguments for `ListSnapshotsInRecycleBinPaginator.paginate` method:
 ## SearchLocalGatewayRoutesPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("search_local_gateway_routes")`.
+`session.create_client("ec2").get_paginator("search_local_gateway_routes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import SearchLocalGatewayRoutesPaginator
 
-def get_search_local_gateway_routes_paginator() -> SearchLocalGatewayRoutesPaginator:
-    return Session().create_client("ec2").get_paginator("search_local_gateway_routes")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: SearchLocalGatewayRoutesPaginator = client.get_paginator("search_local_gateway_routes")
 ```
 
 Boto3 documentation:
@@ -3941,17 +4175,19 @@ Arguments for `SearchLocalGatewayRoutesPaginator.paginate` method:
 ## SearchTransitGatewayMulticastGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_paginator("search_transit_gateway_multicast_groups")`.
+`session.create_client("ec2").get_paginator("search_transit_gateway_multicast_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_ec2.paginator import SearchTransitGatewayMulticastGroupsPaginator
 
-def get_search_transit_gateway_multicast_groups_paginator() -> SearchTransitGatewayMulticastGroupsPaginator:
-    return Session().create_client("ec2").get_paginator("search_transit_gateway_multicast_groups")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
+    paginator: SearchTransitGatewayMulticastGroupsPaginator = client.get_paginator("search_transit_gateway_multicast_groups")
 ```
 
 Boto3 documentation:

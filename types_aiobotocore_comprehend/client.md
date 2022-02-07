@@ -79,22 +79,25 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_endpoint](#update_endpoint)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="comprehendclient"></a>
 
 ## ComprehendClient
 
-Type annotations for `aiobotocore.create_client("comprehend")`
+Type annotations for `session.create_client("comprehend")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_comprehend.client import ComprehendClient
 
-def get_comprehend_client() -> ComprehendClient:
-    return Session().client("comprehend")
+session = get_session()
+async with session.create_client("comprehend") as client:
+    client: ComprehendClient
 ```
 
 Boto3 documentation:
@@ -144,8 +147,7 @@ Exceptions:
 
 ComprehendClient exceptions.
 
-Type annotations for `aiobotocore.create_client("comprehend").exceptions`
-method.
+Type annotations for `session.create_client("comprehend").exceptions` method.
 
 Boto3 documentation:
 [Comprehend.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.exceptions)
@@ -159,8 +161,7 @@ Returns [Exceptions](#exceptions).
 Determines the dominant language of the input text for a batch of documents.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").batch_detect_dominant_language`
-method.
+`session.create_client("comprehend").batch_detect_dominant_language` method.
 
 Boto3 documentation:
 [Comprehend.Client.batch_detect_dominant_language](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.batch_detect_dominant_language)
@@ -186,7 +187,7 @@ Inspects the text of a batch of documents for named entities and returns
 information about them.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").batch_detect_entities` method.
+`session.create_client("comprehend").batch_detect_entities` method.
 
 Boto3 documentation:
 [Comprehend.Client.batch_detect_entities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.batch_detect_entities)
@@ -213,7 +214,7 @@ Returns a `Coroutine` for
 Detects the key noun phrases found in a batch of documents.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").batch_detect_key_phrases` method.
+`session.create_client("comprehend").batch_detect_key_phrases` method.
 
 Boto3 documentation:
 [Comprehend.Client.batch_detect_key_phrases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.batch_detect_key_phrases)
@@ -241,7 +242,7 @@ Inspects a batch of documents and returns an inference of the prevailing
 sentiment, `POSITIVE` , `NEUTRAL` , `MIXED` , or `NEGATIVE` , in each one.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").batch_detect_sentiment` method.
+`session.create_client("comprehend").batch_detect_sentiment` method.
 
 Boto3 documentation:
 [Comprehend.Client.batch_detect_sentiment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.batch_detect_sentiment)
@@ -268,8 +269,8 @@ Returns a `Coroutine` for
 Inspects the text of a batch of documents for the syntax and part of speech of
 the words in the document and returns information about them.
 
-Type annotations for
-`aiobotocore.create_client("comprehend").batch_detect_syntax` method.
+Type annotations for `session.create_client("comprehend").batch_detect_syntax`
+method.
 
 Boto3 documentation:
 [Comprehend.Client.batch_detect_syntax](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.batch_detect_syntax)
@@ -295,19 +296,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("comprehend").can_paginate`
-method.
+Type annotations for `session.create_client("comprehend").can_paginate` method.
 
 Boto3 documentation:
 [Comprehend.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="classify_document"></a>
 
@@ -316,8 +314,8 @@ Returns a `Coroutine` for `bool`.
 Creates a new document classification request to analyze a single document in
 real-time, using a previously created and trained custom model and an endpoint.
 
-Type annotations for
-`aiobotocore.create_client("comprehend").classify_document` method.
+Type annotations for `session.create_client("comprehend").classify_document`
+method.
 
 Boto3 documentation:
 [Comprehend.Client.classify_document](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.classify_document)
@@ -344,7 +342,7 @@ Analyzes input text for the presence of personally identifiable information
 address, bank account number, or phone number.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").contains_pii_entities` method.
+`session.create_client("comprehend").contains_pii_entities` method.
 
 Boto3 documentation:
 [Comprehend.Client.contains_pii_entities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.contains_pii_entities)
@@ -371,7 +369,7 @@ Returns a `Coroutine` for
 Creates a new document classifier that you can use to categorize documents.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").create_document_classifier` method.
+`session.create_client("comprehend").create_document_classifier` method.
 
 Boto3 documentation:
 [Comprehend.Client.create_document_classifier](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.create_document_classifier)
@@ -413,7 +411,7 @@ Creates a model-specific endpoint for synchronous inference for a previously
 trained custom model See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateEndpoint).
 
-Type annotations for `aiobotocore.create_client("comprehend").create_endpoint`
+Type annotations for `session.create_client("comprehend").create_endpoint`
 method.
 
 Boto3 documentation:
@@ -443,7 +441,7 @@ Returns a `Coroutine` for
 Creates an entity recognizer using submitted files.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").create_entity_recognizer` method.
+`session.create_client("comprehend").create_entity_recognizer` method.
 
 Boto3 documentation:
 [Comprehend.Client.create_entity_recognizer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.create_entity_recognizer)
@@ -481,7 +479,7 @@ Deletes a previously created document classifier Only those classifiers that
 are in terminated states (IN_ERROR, TRAINED) will be deleted.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").delete_document_classifier` method.
+`session.create_client("comprehend").delete_document_classifier` method.
 
 Boto3 documentation:
 [Comprehend.Client.delete_document_classifier](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.delete_document_classifier)
@@ -504,7 +502,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a model-specific endpoint for a previously-trained custom model.
 
-Type annotations for `aiobotocore.create_client("comprehend").delete_endpoint`
+Type annotations for `session.create_client("comprehend").delete_endpoint`
 method.
 
 Boto3 documentation:
@@ -528,7 +526,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes an entity recognizer.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").delete_entity_recognizer` method.
+`session.create_client("comprehend").delete_entity_recognizer` method.
 
 Boto3 documentation:
 [Comprehend.Client.delete_entity_recognizer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.delete_entity_recognizer)
@@ -552,7 +550,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Gets the properties associated with a document classification job.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").describe_document_classification_job`
+`session.create_client("comprehend").describe_document_classification_job`
 method.
 
 Boto3 documentation:
@@ -578,7 +576,7 @@ Returns a `Coroutine` for
 Gets the properties associated with a document classifier.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").describe_document_classifier` method.
+`session.create_client("comprehend").describe_document_classifier` method.
 
 Boto3 documentation:
 [Comprehend.Client.describe_document_classifier](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.describe_document_classifier)
@@ -603,7 +601,7 @@ Returns a `Coroutine` for
 Gets the properties associated with a dominant language detection job.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").describe_dominant_language_detection_job`
+`session.create_client("comprehend").describe_dominant_language_detection_job`
 method.
 
 Boto3 documentation:
@@ -628,8 +626,8 @@ Returns a `Coroutine` for
 
 Gets the properties associated with a specific endpoint.
 
-Type annotations for
-`aiobotocore.create_client("comprehend").describe_endpoint` method.
+Type annotations for `session.create_client("comprehend").describe_endpoint`
+method.
 
 Boto3 documentation:
 [Comprehend.Client.describe_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.describe_endpoint)
@@ -653,8 +651,7 @@ Returns a `Coroutine` for
 Gets the properties associated with an entities detection job.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").describe_entities_detection_job`
-method.
+`session.create_client("comprehend").describe_entities_detection_job` method.
 
 Boto3 documentation:
 [Comprehend.Client.describe_entities_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.describe_entities_detection_job)
@@ -680,7 +677,7 @@ Provides details about an entity recognizer including status, S3 buckets
 containing training data, recognizer metadata, metrics, and so on.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").describe_entity_recognizer` method.
+`session.create_client("comprehend").describe_entity_recognizer` method.
 
 Boto3 documentation:
 [Comprehend.Client.describe_entity_recognizer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.describe_entity_recognizer)
@@ -705,7 +702,7 @@ Returns a `Coroutine` for
 Gets the status and details of an events detection job.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").describe_events_detection_job` method.
+`session.create_client("comprehend").describe_events_detection_job` method.
 
 Boto3 documentation:
 [Comprehend.Client.describe_events_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.describe_events_detection_job)
@@ -730,7 +727,7 @@ Returns a `Coroutine` for
 Gets the properties associated with a key phrases detection job.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").describe_key_phrases_detection_job`
+`session.create_client("comprehend").describe_key_phrases_detection_job`
 method.
 
 Boto3 documentation:
@@ -756,7 +753,7 @@ Returns a `Coroutine` for
 Gets the properties associated with a PII entities detection job.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").describe_pii_entities_detection_job`
+`session.create_client("comprehend").describe_pii_entities_detection_job`
 method.
 
 Boto3 documentation:
@@ -782,8 +779,7 @@ Returns a `Coroutine` for
 Gets the properties associated with a sentiment detection job.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").describe_sentiment_detection_job`
-method.
+`session.create_client("comprehend").describe_sentiment_detection_job` method.
 
 Boto3 documentation:
 [Comprehend.Client.describe_sentiment_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.describe_sentiment_detection_job)
@@ -808,7 +804,7 @@ Returns a `Coroutine` for
 Gets the properties associated with a topic detection job.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").describe_topics_detection_job` method.
+`session.create_client("comprehend").describe_topics_detection_job` method.
 
 Boto3 documentation:
 [Comprehend.Client.describe_topics_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.describe_topics_detection_job)
@@ -833,7 +829,7 @@ Returns a `Coroutine` for
 Determines the dominant language of the input text.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").detect_dominant_language` method.
+`session.create_client("comprehend").detect_dominant_language` method.
 
 Boto3 documentation:
 [Comprehend.Client.detect_dominant_language](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.detect_dominant_language)
@@ -857,7 +853,7 @@ Returns a `Coroutine` for
 
 Inspects text for named entities, and returns information about them.
 
-Type annotations for `aiobotocore.create_client("comprehend").detect_entities`
+Type annotations for `session.create_client("comprehend").detect_entities`
 method.
 
 Boto3 documentation:
@@ -883,8 +879,8 @@ Returns a `Coroutine` for
 
 Detects the key noun phrases found in the text.
 
-Type annotations for
-`aiobotocore.create_client("comprehend").detect_key_phrases` method.
+Type annotations for `session.create_client("comprehend").detect_key_phrases`
+method.
 
 Boto3 documentation:
 [Comprehend.Client.detect_key_phrases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.detect_key_phrases)
@@ -911,8 +907,8 @@ Returns a `Coroutine` for
 Inspects the input text for entities that contain personally identifiable
 information (PII) and returns information about them.
 
-Type annotations for
-`aiobotocore.create_client("comprehend").detect_pii_entities` method.
+Type annotations for `session.create_client("comprehend").detect_pii_entities`
+method.
 
 Boto3 documentation:
 [Comprehend.Client.detect_pii_entities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.detect_pii_entities)
@@ -939,7 +935,7 @@ Returns a `Coroutine` for
 Inspects text and returns an inference of the prevailing sentiment (`POSITIVE`
 , `NEUTRAL` , `MIXED` , or `NEGATIVE` ).
 
-Type annotations for `aiobotocore.create_client("comprehend").detect_sentiment`
+Type annotations for `session.create_client("comprehend").detect_sentiment`
 method.
 
 Boto3 documentation:
@@ -965,7 +961,7 @@ Returns a `Coroutine` for
 
 Inspects text for syntax and the part of speech of words in the document.
 
-Type annotations for `aiobotocore.create_client("comprehend").detect_syntax`
+Type annotations for `session.create_client("comprehend").detect_syntax`
 method.
 
 Boto3 documentation:
@@ -992,7 +988,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").generate_presigned_url` method.
+`session.create_client("comprehend").generate_presigned_url` method.
 
 Boto3 documentation:
 [Comprehend.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.generate_presigned_url)
@@ -1016,8 +1012,7 @@ Returns a `Coroutine` for `str`.
 Gets a list of the documentation classification jobs that you have submitted.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").list_document_classification_jobs`
-method.
+`session.create_client("comprehend").list_document_classification_jobs` method.
 
 Boto3 documentation:
 [Comprehend.Client.list_document_classification_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.list_document_classification_jobs)
@@ -1047,7 +1042,7 @@ also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDocumentClassifierSummaries).
 
 Type annotations for
-`aiobotocore.create_client("comprehend").list_document_classifier_summaries`
+`session.create_client("comprehend").list_document_classifier_summaries`
 method.
 
 Boto3 documentation:
@@ -1074,7 +1069,7 @@ Returns a `Coroutine` for
 Gets a list of the document classifiers that you have created.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").list_document_classifiers` method.
+`session.create_client("comprehend").list_document_classifiers` method.
 
 Boto3 documentation:
 [Comprehend.Client.list_document_classifiers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.list_document_classifiers)
@@ -1102,7 +1097,7 @@ Returns a `Coroutine` for
 Gets a list of the dominant language detection jobs that you have submitted.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").list_dominant_language_detection_jobs`
+`session.create_client("comprehend").list_dominant_language_detection_jobs`
 method.
 
 Boto3 documentation:
@@ -1130,7 +1125,7 @@ Returns a `Coroutine` for
 
 Gets a list of all existing endpoints that you've created.
 
-Type annotations for `aiobotocore.create_client("comprehend").list_endpoints`
+Type annotations for `session.create_client("comprehend").list_endpoints`
 method.
 
 Boto3 documentation:
@@ -1157,7 +1152,7 @@ Returns a `Coroutine` for
 Gets a list of the entity detection jobs that you have submitted.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").list_entities_detection_jobs` method.
+`session.create_client("comprehend").list_entities_detection_jobs` method.
 
 Boto3 documentation:
 [Comprehend.Client.list_entities_detection_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.list_entities_detection_jobs)
@@ -1185,8 +1180,7 @@ Returns a `Coroutine` for
 Gets a list of summaries for the entity recognizers that you have created.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").list_entity_recognizer_summaries`
-method.
+`session.create_client("comprehend").list_entity_recognizer_summaries` method.
 
 Boto3 documentation:
 [Comprehend.Client.list_entity_recognizer_summaries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.list_entity_recognizer_summaries)
@@ -1213,7 +1207,7 @@ Gets a list of the properties of all entity recognizers that you created,
 including recognizers currently in training.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").list_entity_recognizers` method.
+`session.create_client("comprehend").list_entity_recognizers` method.
 
 Boto3 documentation:
 [Comprehend.Client.list_entity_recognizers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.list_entity_recognizers)
@@ -1241,7 +1235,7 @@ Returns a `Coroutine` for
 Gets a list of the events detection jobs that you have submitted.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").list_events_detection_jobs` method.
+`session.create_client("comprehend").list_events_detection_jobs` method.
 
 Boto3 documentation:
 [Comprehend.Client.list_events_detection_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.list_events_detection_jobs)
@@ -1269,8 +1263,7 @@ Returns a `Coroutine` for
 Get a list of key phrase detection jobs that you have submitted.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").list_key_phrases_detection_jobs`
-method.
+`session.create_client("comprehend").list_key_phrases_detection_jobs` method.
 
 Boto3 documentation:
 [Comprehend.Client.list_key_phrases_detection_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.list_key_phrases_detection_jobs)
@@ -1298,8 +1291,7 @@ Returns a `Coroutine` for
 Gets a list of the PII entity detection jobs that you have submitted.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").list_pii_entities_detection_jobs`
-method.
+`session.create_client("comprehend").list_pii_entities_detection_jobs` method.
 
 Boto3 documentation:
 [Comprehend.Client.list_pii_entities_detection_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.list_pii_entities_detection_jobs)
@@ -1327,7 +1319,7 @@ Returns a `Coroutine` for
 Gets a list of sentiment detection jobs that you have submitted.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").list_sentiment_detection_jobs` method.
+`session.create_client("comprehend").list_sentiment_detection_jobs` method.
 
 Boto3 documentation:
 [Comprehend.Client.list_sentiment_detection_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.list_sentiment_detection_jobs)
@@ -1355,7 +1347,7 @@ Returns a `Coroutine` for
 Lists all tags associated with a given Amazon Comprehend resource.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").list_tags_for_resource` method.
+`session.create_client("comprehend").list_tags_for_resource` method.
 
 Boto3 documentation:
 [Comprehend.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.list_tags_for_resource)
@@ -1380,7 +1372,7 @@ Returns a `Coroutine` for
 Gets a list of the topic detection jobs that you have submitted.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").list_topics_detection_jobs` method.
+`session.create_client("comprehend").list_topics_detection_jobs` method.
 
 Boto3 documentation:
 [Comprehend.Client.list_topics_detection_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.list_topics_detection_jobs)
@@ -1408,8 +1400,7 @@ Returns a `Coroutine` for
 Starts an asynchronous document classification job.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").start_document_classification_job`
-method.
+`session.create_client("comprehend").start_document_classification_job` method.
 
 Boto3 documentation:
 [Comprehend.Client.start_document_classification_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.start_document_classification_job)
@@ -1446,7 +1437,7 @@ Starts an asynchronous dominant language detection job for a collection of
 documents.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").start_dominant_language_detection_job`
+`session.create_client("comprehend").start_dominant_language_detection_job`
 method.
 
 Boto3 documentation:
@@ -1482,7 +1473,7 @@ Returns a `Coroutine` for
 Starts an asynchronous entity detection job for a collection of documents.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").start_entities_detection_job` method.
+`session.create_client("comprehend").start_entities_detection_job` method.
 
 Boto3 documentation:
 [Comprehend.Client.start_entities_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.start_entities_detection_job)
@@ -1520,7 +1511,7 @@ Returns a `Coroutine` for
 Starts an asynchronous event detection job for a collection of documents.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").start_events_detection_job` method.
+`session.create_client("comprehend").start_events_detection_job` method.
 
 Boto3 documentation:
 [Comprehend.Client.start_events_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.start_events_detection_job)
@@ -1556,8 +1547,7 @@ Returns a `Coroutine` for
 Starts an asynchronous key phrase detection job for a collection of documents.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").start_key_phrases_detection_job`
-method.
+`session.create_client("comprehend").start_key_phrases_detection_job` method.
 
 Boto3 documentation:
 [Comprehend.Client.start_key_phrases_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.start_key_phrases_detection_job)
@@ -1594,8 +1584,7 @@ Returns a `Coroutine` for
 Starts an asynchronous PII entity detection job for a collection of documents.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").start_pii_entities_detection_job`
-method.
+`session.create_client("comprehend").start_pii_entities_detection_job` method.
 
 Boto3 documentation:
 [Comprehend.Client.start_pii_entities_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.start_pii_entities_detection_job)
@@ -1635,7 +1624,7 @@ Returns a `Coroutine` for
 Starts an asynchronous sentiment detection job for a collection of documents.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").start_sentiment_detection_job` method.
+`session.create_client("comprehend").start_sentiment_detection_job` method.
 
 Boto3 documentation:
 [Comprehend.Client.start_sentiment_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.start_sentiment_detection_job)
@@ -1672,7 +1661,7 @@ Returns a `Coroutine` for
 Starts an asynchronous topic detection job.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").start_topics_detection_job` method.
+`session.create_client("comprehend").start_topics_detection_job` method.
 
 Boto3 documentation:
 [Comprehend.Client.start_topics_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.start_topics_detection_job)
@@ -1708,7 +1697,7 @@ Returns a `Coroutine` for
 Stops a dominant language detection job in progress.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").stop_dominant_language_detection_job`
+`session.create_client("comprehend").stop_dominant_language_detection_job`
 method.
 
 Boto3 documentation:
@@ -1734,7 +1723,7 @@ Returns a `Coroutine` for
 Stops an entities detection job in progress.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").stop_entities_detection_job` method.
+`session.create_client("comprehend").stop_entities_detection_job` method.
 
 Boto3 documentation:
 [Comprehend.Client.stop_entities_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.stop_entities_detection_job)
@@ -1759,7 +1748,7 @@ Returns a `Coroutine` for
 Stops an events detection job in progress.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").stop_events_detection_job` method.
+`session.create_client("comprehend").stop_events_detection_job` method.
 
 Boto3 documentation:
 [Comprehend.Client.stop_events_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.stop_events_detection_job)
@@ -1784,8 +1773,7 @@ Returns a `Coroutine` for
 Stops a key phrases detection job in progress.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").stop_key_phrases_detection_job`
-method.
+`session.create_client("comprehend").stop_key_phrases_detection_job` method.
 
 Boto3 documentation:
 [Comprehend.Client.stop_key_phrases_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.stop_key_phrases_detection_job)
@@ -1810,8 +1798,7 @@ Returns a `Coroutine` for
 Stops a PII entities detection job in progress.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").stop_pii_entities_detection_job`
-method.
+`session.create_client("comprehend").stop_pii_entities_detection_job` method.
 
 Boto3 documentation:
 [Comprehend.Client.stop_pii_entities_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.stop_pii_entities_detection_job)
@@ -1836,7 +1823,7 @@ Returns a `Coroutine` for
 Stops a sentiment detection job in progress.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").stop_sentiment_detection_job` method.
+`session.create_client("comprehend").stop_sentiment_detection_job` method.
 
 Boto3 documentation:
 [Comprehend.Client.stop_sentiment_detection_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.stop_sentiment_detection_job)
@@ -1861,8 +1848,7 @@ Returns a `Coroutine` for
 Stops a document classifier training job while in progress.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").stop_training_document_classifier`
-method.
+`session.create_client("comprehend").stop_training_document_classifier` method.
 
 Boto3 documentation:
 [Comprehend.Client.stop_training_document_classifier](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.stop_training_document_classifier)
@@ -1886,8 +1872,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Stops an entity recognizer training job while in progress.
 
 Type annotations for
-`aiobotocore.create_client("comprehend").stop_training_entity_recognizer`
-method.
+`session.create_client("comprehend").stop_training_entity_recognizer` method.
 
 Boto3 documentation:
 [Comprehend.Client.stop_training_entity_recognizer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.stop_training_entity_recognizer)
@@ -1910,8 +1895,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Associates a specific tag with an Amazon Comprehend resource.
 
-Type annotations for `aiobotocore.create_client("comprehend").tag_resource`
-method.
+Type annotations for `session.create_client("comprehend").tag_resource` method.
 
 Boto3 documentation:
 [Comprehend.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.tag_resource)
@@ -1934,7 +1918,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes a specific tag associated with an Amazon Comprehend resource.
 
-Type annotations for `aiobotocore.create_client("comprehend").untag_resource`
+Type annotations for `session.create_client("comprehend").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1958,7 +1942,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates information about the specified endpoint.
 
-Type annotations for `aiobotocore.create_client("comprehend").update_endpoint`
+Type annotations for `session.create_client("comprehend").update_endpoint`
 method.
 
 Boto3 documentation:
@@ -1978,12 +1962,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("comprehend").__aenter__` method.
+
+Boto3 documentation:
+[Comprehend.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ComprehendClient](#comprehendclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("comprehend").__aexit__` method.
+
+Boto3 documentation:
+[Comprehend.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html#Comprehend.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("comprehend").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("comprehend").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_document_classification_jobs")` ->
   [ListDocumentClassificationJobsPaginator](./paginators.md#listdocumentclassificationjobspaginator)

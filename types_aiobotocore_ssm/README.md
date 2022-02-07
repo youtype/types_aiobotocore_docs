@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[ssm]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[ssm]'
+
+# standalone installation
 pip install types-aiobotocore-ssm
 ```
 
@@ -30,8 +34,7 @@ pip install types-aiobotocore-ssm
 
 ## SSMClient
 
-Type annotations for `aiobotocore.create_client("ssm")` as
-[SSMClient](./client.md)
+Type annotations for `session.create_client("ssm")` as [SSMClient](./client.md)
 
 Can be used directly:
 
@@ -43,6 +46,8 @@ from types_aiobotocore_ssm.client import SSMClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_tags_to_resource](./client.md#add_tags_to_resource)
 - [associate_ops_item_related_item](./client.md#associate_ops_item_related_item)
 - [can_paginate](./client.md#can_paginate)
@@ -324,7 +329,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_ssm.paginators import DescribeActivationsPaginator, ...
+from types_aiobotocore_ssm.paginator import DescribeActivationsPaginator, ...
 ```
 
 - [DescribeActivationsPaginator](./paginators.md#describeactivationspaginator)
@@ -384,7 +389,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_ssm.waiters import CommandExecutedWaiter, ...
+from types_aiobotocore_ssm.waiter import CommandExecutedWaiter, ...
 ```
 
 - [CommandExecutedWaiter](./waiters.md#commandexecutedwaiter)

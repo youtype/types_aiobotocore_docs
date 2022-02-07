@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[frauddetector]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[frauddetector]'
+
+# standalone installation
 pip install types-aiobotocore-frauddetector
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-frauddetector
 
 ## FraudDetectorClient
 
-Type annotations for `aiobotocore.create_client("frauddetector")` as
+Type annotations for `session.create_client("frauddetector")` as
 [FraudDetectorClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_frauddetector.client import FraudDetectorClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_create_variable](./client.md#batch_create_variable)
 - [batch_get_variable](./client.md#batch_get_variable)
 - [can_paginate](./client.md#can_paginate)

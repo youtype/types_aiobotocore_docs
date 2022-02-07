@@ -87,6 +87,8 @@ type annotations stubs module
     - [verify_domain_identity](#verify_domain_identity)
     - [verify_email_address](#verify_email_address)
     - [verify_email_identity](#verify_email_identity)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -94,16 +96,17 @@ type annotations stubs module
 
 ## SESClient
 
-Type annotations for `aiobotocore.create_client("ses")`
+Type annotations for `session.create_client("ses")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_ses.client import SESClient
 
-def get_ses_client() -> SESClient:
-    return Session().client("ses")
+session = get_session()
+async with session.create_client("ses") as client:
+    client: SESClient
 ```
 
 Boto3 documentation:
@@ -171,7 +174,7 @@ Exceptions:
 
 SESClient exceptions.
 
-Type annotations for `aiobotocore.create_client("ses").exceptions` method.
+Type annotations for `session.create_client("ses").exceptions` method.
 
 Boto3 documentation:
 [SES.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.exceptions)
@@ -184,18 +187,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("ses").can_paginate` method.
+Type annotations for `session.create_client("ses").can_paginate` method.
 
 Boto3 documentation:
 [SES.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="clone_receipt_rule_set"></a>
 
@@ -203,7 +204,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a receipt rule set by cloning an existing one.
 
-Type annotations for `aiobotocore.create_client("ses").clone_receipt_rule_set`
+Type annotations for `session.create_client("ses").clone_receipt_rule_set`
 method.
 
 Boto3 documentation:
@@ -228,8 +229,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a configuration set.
 
-Type annotations for
-`aiobotocore.create_client("ses").create_configuration_set` method.
+Type annotations for `session.create_client("ses").create_configuration_set`
+method.
 
 Boto3 documentation:
 [SES.Client.create_configuration_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.create_configuration_set)
@@ -255,7 +256,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates a configuration set event destination.
 
 Type annotations for
-`aiobotocore.create_client("ses").create_configuration_set_event_destination`
+`session.create_client("ses").create_configuration_set_event_destination`
 method.
 
 Boto3 documentation:
@@ -284,7 +285,7 @@ Creates an association between a configuration set and a custom domain for open
 and click event tracking.
 
 Type annotations for
-`aiobotocore.create_client("ses").create_configuration_set_tracking_options`
+`session.create_client("ses").create_configuration_set_tracking_options`
 method.
 
 Boto3 documentation:
@@ -311,7 +312,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates a new custom verification email template.
 
 Type annotations for
-`aiobotocore.create_client("ses").create_custom_verification_email_template`
+`session.create_client("ses").create_custom_verification_email_template`
 method.
 
 Boto3 documentation:
@@ -338,7 +339,7 @@ Keyword-only arguments:
 
 Creates a new IP address filter.
 
-Type annotations for `aiobotocore.create_client("ses").create_receipt_filter`
+Type annotations for `session.create_client("ses").create_receipt_filter`
 method.
 
 Boto3 documentation:
@@ -363,8 +364,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a receipt rule.
 
-Type annotations for `aiobotocore.create_client("ses").create_receipt_rule`
-method.
+Type annotations for `session.create_client("ses").create_receipt_rule` method.
 
 Boto3 documentation:
 [SES.Client.create_receipt_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.create_receipt_rule)
@@ -389,7 +389,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates an empty receipt rule set.
 
-Type annotations for `aiobotocore.create_client("ses").create_receipt_rule_set`
+Type annotations for `session.create_client("ses").create_receipt_rule_set`
 method.
 
 Boto3 documentation:
@@ -413,7 +413,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates an email template.
 
-Type annotations for `aiobotocore.create_client("ses").create_template` method.
+Type annotations for `session.create_client("ses").create_template` method.
 
 Boto3 documentation:
 [SES.Client.create_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.create_template)
@@ -435,8 +435,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a configuration set.
 
-Type annotations for
-`aiobotocore.create_client("ses").delete_configuration_set` method.
+Type annotations for `session.create_client("ses").delete_configuration_set`
+method.
 
 Boto3 documentation:
 [SES.Client.delete_configuration_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.delete_configuration_set)
@@ -460,7 +460,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a configuration set event destination.
 
 Type annotations for
-`aiobotocore.create_client("ses").delete_configuration_set_event_destination`
+`session.create_client("ses").delete_configuration_set_event_destination`
 method.
 
 Boto3 documentation:
@@ -487,7 +487,7 @@ Deletes an association between a configuration set and a custom domain for open
 and click event tracking.
 
 Type annotations for
-`aiobotocore.create_client("ses").delete_configuration_set_tracking_options`
+`session.create_client("ses").delete_configuration_set_tracking_options`
 method.
 
 Boto3 documentation:
@@ -512,7 +512,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes an existing custom verification email template.
 
 Type annotations for
-`aiobotocore.create_client("ses").delete_custom_verification_email_template`
+`session.create_client("ses").delete_custom_verification_email_template`
 method.
 
 Boto3 documentation:
@@ -535,7 +535,7 @@ Keyword-only arguments:
 Deletes the specified identity (an email address or a domain) from the list of
 verified identities.
 
-Type annotations for `aiobotocore.create_client("ses").delete_identity` method.
+Type annotations for `session.create_client("ses").delete_identity` method.
 
 Boto3 documentation:
 [SES.Client.delete_identity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.delete_identity)
@@ -558,7 +558,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified sending authorization policy for the given identity (an
 email address or a domain).
 
-Type annotations for `aiobotocore.create_client("ses").delete_identity_policy`
+Type annotations for `session.create_client("ses").delete_identity_policy`
 method.
 
 Boto3 documentation:
@@ -583,7 +583,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified IP address filter.
 
-Type annotations for `aiobotocore.create_client("ses").delete_receipt_filter`
+Type annotations for `session.create_client("ses").delete_receipt_filter`
 method.
 
 Boto3 documentation:
@@ -607,8 +607,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified receipt rule.
 
-Type annotations for `aiobotocore.create_client("ses").delete_receipt_rule`
-method.
+Type annotations for `session.create_client("ses").delete_receipt_rule` method.
 
 Boto3 documentation:
 [SES.Client.delete_receipt_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.delete_receipt_rule)
@@ -633,7 +632,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified receipt rule set and all of the receipt rules it
 contains.
 
-Type annotations for `aiobotocore.create_client("ses").delete_receipt_rule_set`
+Type annotations for `session.create_client("ses").delete_receipt_rule_set`
 method.
 
 Boto3 documentation:
@@ -657,7 +656,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an email template.
 
-Type annotations for `aiobotocore.create_client("ses").delete_template` method.
+Type annotations for `session.create_client("ses").delete_template` method.
 
 Boto3 documentation:
 [SES.Client.delete_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.delete_template)
@@ -680,7 +679,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deprecated.
 
 Type annotations for
-`aiobotocore.create_client("ses").delete_verified_email_address` method.
+`session.create_client("ses").delete_verified_email_address` method.
 
 Boto3 documentation:
 [SES.Client.delete_verified_email_address](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.delete_verified_email_address)
@@ -703,7 +702,7 @@ Returns the metadata and receipt rules for the receipt rule set that is
 currently active.
 
 Type annotations for
-`aiobotocore.create_client("ses").describe_active_receipt_rule_set` method.
+`session.create_client("ses").describe_active_receipt_rule_set` method.
 
 Boto3 documentation:
 [SES.Client.describe_active_receipt_rule_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.describe_active_receipt_rule_set)
@@ -720,8 +719,8 @@ Returns a `Coroutine` for
 
 Returns the details of the specified configuration set.
 
-Type annotations for
-`aiobotocore.create_client("ses").describe_configuration_set` method.
+Type annotations for `session.create_client("ses").describe_configuration_set`
+method.
 
 Boto3 documentation:
 [SES.Client.describe_configuration_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.describe_configuration_set)
@@ -747,7 +746,7 @@ Returns a `Coroutine` for
 
 Returns the details of the specified receipt rule.
 
-Type annotations for `aiobotocore.create_client("ses").describe_receipt_rule`
+Type annotations for `session.create_client("ses").describe_receipt_rule`
 method.
 
 Boto3 documentation:
@@ -773,8 +772,8 @@ Returns a `Coroutine` for
 
 Returns the details of the specified receipt rule set.
 
-Type annotations for
-`aiobotocore.create_client("ses").describe_receipt_rule_set` method.
+Type annotations for `session.create_client("ses").describe_receipt_rule_set`
+method.
 
 Boto3 documentation:
 [SES.Client.describe_receipt_rule_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.describe_receipt_rule_set)
@@ -798,7 +797,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("ses").generate_presigned_url`
+Type annotations for `session.create_client("ses").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -823,8 +822,8 @@ Returns a `Coroutine` for `str`.
 Returns the email sending status of the Amazon SES account for the current
 region.
 
-Type annotations for
-`aiobotocore.create_client("ses").get_account_sending_enabled` method.
+Type annotations for `session.create_client("ses").get_account_sending_enabled`
+method.
 
 Boto3 documentation:
 [SES.Client.get_account_sending_enabled](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.get_account_sending_enabled)
@@ -843,8 +842,7 @@ Returns the custom email verification template for the template name you
 specify.
 
 Type annotations for
-`aiobotocore.create_client("ses").get_custom_verification_email_template`
-method.
+`session.create_client("ses").get_custom_verification_email_template` method.
 
 Boto3 documentation:
 [SES.Client.get_custom_verification_email_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.get_custom_verification_email_template)
@@ -869,7 +867,7 @@ Returns a `Coroutine` for
 Returns the current status of Easy DKIM signing for an entity.
 
 Type annotations for
-`aiobotocore.create_client("ses").get_identity_dkim_attributes` method.
+`session.create_client("ses").get_identity_dkim_attributes` method.
 
 Boto3 documentation:
 [SES.Client.get_identity_dkim_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.get_identity_dkim_attributes)
@@ -895,8 +893,7 @@ Returns the custom MAIL FROM attributes for a list of identities (email
 addresses : domains).
 
 Type annotations for
-`aiobotocore.create_client("ses").get_identity_mail_from_domain_attributes`
-method.
+`session.create_client("ses").get_identity_mail_from_domain_attributes` method.
 
 Boto3 documentation:
 [SES.Client.get_identity_mail_from_domain_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.get_identity_mail_from_domain_attributes)
@@ -922,7 +919,7 @@ Given a list of verified identities (email addresses and/or domains), returns a
 structure describing identity notification attributes.
 
 Type annotations for
-`aiobotocore.create_client("ses").get_identity_notification_attributes` method.
+`session.create_client("ses").get_identity_notification_attributes` method.
 
 Boto3 documentation:
 [SES.Client.get_identity_notification_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.get_identity_notification_attributes)
@@ -947,7 +944,7 @@ Returns a `Coroutine` for
 Returns the requested sending authorization policies for the given identity (an
 email address or a domain).
 
-Type annotations for `aiobotocore.create_client("ses").get_identity_policies`
+Type annotations for `session.create_client("ses").get_identity_policies`
 method.
 
 Boto3 documentation:
@@ -976,7 +973,7 @@ verification status and (for domain identities) the verification token for each
 identity.
 
 Type annotations for
-`aiobotocore.create_client("ses").get_identity_verification_attributes` method.
+`session.create_client("ses").get_identity_verification_attributes` method.
 
 Boto3 documentation:
 [SES.Client.get_identity_verification_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.get_identity_verification_attributes)
@@ -1000,7 +997,7 @@ Returns a `Coroutine` for
 
 Provides the sending limits for the Amazon SES account.
 
-Type annotations for `aiobotocore.create_client("ses").get_send_quota` method.
+Type annotations for `session.create_client("ses").get_send_quota` method.
 
 Boto3 documentation:
 [SES.Client.get_send_quota](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.get_send_quota)
@@ -1016,8 +1013,7 @@ Returns a `Coroutine` for
 
 Provides sending statistics for the current AWS Region.
 
-Type annotations for `aiobotocore.create_client("ses").get_send_statistics`
-method.
+Type annotations for `session.create_client("ses").get_send_statistics` method.
 
 Boto3 documentation:
 [SES.Client.get_send_statistics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.get_send_statistics)
@@ -1035,7 +1031,7 @@ Returns a `Coroutine` for
 Displays the template object (which includes the Subject line, HTML part and
 text part) for the template you specify.
 
-Type annotations for `aiobotocore.create_client("ses").get_template` method.
+Type annotations for `session.create_client("ses").get_template` method.
 
 Boto3 documentation:
 [SES.Client.get_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.get_template)
@@ -1059,7 +1055,7 @@ Returns a `Coroutine` for
 Provides a list of the configuration sets associated with your Amazon SES
 account in the current AWS Region.
 
-Type annotations for `aiobotocore.create_client("ses").list_configuration_sets`
+Type annotations for `session.create_client("ses").list_configuration_sets`
 method.
 
 Boto3 documentation:
@@ -1087,8 +1083,7 @@ Lists the existing custom verification email templates for your account in the
 current AWS Region.
 
 Type annotations for
-`aiobotocore.create_client("ses").list_custom_verification_email_templates`
-method.
+`session.create_client("ses").list_custom_verification_email_templates` method.
 
 Boto3 documentation:
 [SES.Client.list_custom_verification_email_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.list_custom_verification_email_templates)
@@ -1115,7 +1110,7 @@ Returns a list containing all of the identities (email addresses and domains)
 for your AWS account in the current AWS Region, regardless of verification
 status.
 
-Type annotations for `aiobotocore.create_client("ses").list_identities` method.
+Type annotations for `session.create_client("ses").list_identities` method.
 
 Boto3 documentation:
 [SES.Client.list_identities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.list_identities)
@@ -1141,7 +1136,7 @@ Returns a `Coroutine` for
 Returns a list of sending authorization policies that are attached to the given
 identity (an email address or a domain).
 
-Type annotations for `aiobotocore.create_client("ses").list_identity_policies`
+Type annotations for `session.create_client("ses").list_identity_policies`
 method.
 
 Boto3 documentation:
@@ -1167,7 +1162,7 @@ Returns a `Coroutine` for
 Lists the IP address filters associated with your AWS account in the current
 AWS Region.
 
-Type annotations for `aiobotocore.create_client("ses").list_receipt_filters`
+Type annotations for `session.create_client("ses").list_receipt_filters`
 method.
 
 Boto3 documentation:
@@ -1186,7 +1181,7 @@ Returns a `Coroutine` for
 Lists the receipt rule sets that exist under your AWS account in the current
 AWS Region.
 
-Type annotations for `aiobotocore.create_client("ses").list_receipt_rule_sets`
+Type annotations for `session.create_client("ses").list_receipt_rule_sets`
 method.
 
 Boto3 documentation:
@@ -1212,7 +1207,7 @@ Returns a `Coroutine` for
 Lists the email templates present in your Amazon SES account in the current AWS
 Region.
 
-Type annotations for `aiobotocore.create_client("ses").list_templates` method.
+Type annotations for `session.create_client("ses").list_templates` method.
 
 Boto3 documentation:
 [SES.Client.list_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.list_templates)
@@ -1237,7 +1232,7 @@ Returns a `Coroutine` for
 Deprecated.
 
 Type annotations for
-`aiobotocore.create_client("ses").list_verified_email_addresses` method.
+`session.create_client("ses").list_verified_email_addresses` method.
 
 Boto3 documentation:
 [SES.Client.list_verified_email_addresses](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.list_verified_email_addresses)
@@ -1255,8 +1250,7 @@ Returns a `Coroutine` for
 Adds or updates the delivery options for a configuration set.
 
 Type annotations for
-`aiobotocore.create_client("ses").put_configuration_set_delivery_options`
-method.
+`session.create_client("ses").put_configuration_set_delivery_options` method.
 
 Boto3 documentation:
 [SES.Client.put_configuration_set_delivery_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.put_configuration_set_delivery_options)
@@ -1282,8 +1276,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds or updates a sending authorization policy for the specified identity (an
 email address or a domain).
 
-Type annotations for `aiobotocore.create_client("ses").put_identity_policy`
-method.
+Type annotations for `session.create_client("ses").put_identity_policy` method.
 
 Boto3 documentation:
 [SES.Client.put_identity_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.put_identity_policy)
@@ -1308,8 +1301,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Reorders the receipt rules within a receipt rule set.
 
-Type annotations for
-`aiobotocore.create_client("ses").reorder_receipt_rule_set` method.
+Type annotations for `session.create_client("ses").reorder_receipt_rule_set`
+method.
 
 Boto3 documentation:
 [SES.Client.reorder_receipt_rule_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.reorder_receipt_rule_set)
@@ -1334,7 +1327,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generates and sends a bounce message to the sender of an email you received
 through Amazon SES.
 
-Type annotations for `aiobotocore.create_client("ses").send_bounce` method.
+Type annotations for `session.create_client("ses").send_bounce` method.
 
 Boto3 documentation:
 [SES.Client.send_bounce](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.send_bounce)
@@ -1364,8 +1357,8 @@ Returns a `Coroutine` for
 
 Composes an email message to multiple destinations.
 
-Type annotations for
-`aiobotocore.create_client("ses").send_bulk_templated_email` method.
+Type annotations for `session.create_client("ses").send_bulk_templated_email`
+method.
 
 Boto3 documentation:
 [SES.Client.send_bulk_templated_email](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.send_bulk_templated_email)
@@ -1404,7 +1397,7 @@ Adds an email address to the list of identities for your Amazon SES account in
 the current AWS Region and attempts to verify it.
 
 Type annotations for
-`aiobotocore.create_client("ses").send_custom_verification_email` method.
+`session.create_client("ses").send_custom_verification_email` method.
 
 Boto3 documentation:
 [SES.Client.send_custom_verification_email](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.send_custom_verification_email)
@@ -1430,7 +1423,7 @@ Returns a `Coroutine` for
 
 Composes an email message and immediately queues it for sending.
 
-Type annotations for `aiobotocore.create_client("ses").send_email` method.
+Type annotations for `session.create_client("ses").send_email` method.
 
 Boto3 documentation:
 [SES.Client.send_email](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.send_email)
@@ -1462,7 +1455,7 @@ Returns a `Coroutine` for
 
 Composes an email message and immediately queues it for sending.
 
-Type annotations for `aiobotocore.create_client("ses").send_raw_email` method.
+Type annotations for `session.create_client("ses").send_raw_email` method.
 
 Boto3 documentation:
 [SES.Client.send_raw_email](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.send_raw_email)
@@ -1494,7 +1487,7 @@ Returns a `Coroutine` for
 Composes an email message using an email template and immediately queues it for
 sending.
 
-Type annotations for `aiobotocore.create_client("ses").send_templated_email`
+Type annotations for `session.create_client("ses").send_templated_email`
 method.
 
 Boto3 documentation:
@@ -1530,8 +1523,8 @@ Returns a `Coroutine` for
 
 Sets the specified receipt rule set as the active receipt rule set.
 
-Type annotations for
-`aiobotocore.create_client("ses").set_active_receipt_rule_set` method.
+Type annotations for `session.create_client("ses").set_active_receipt_rule_set`
+method.
 
 Boto3 documentation:
 [SES.Client.set_active_receipt_rule_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.set_active_receipt_rule_set)
@@ -1554,8 +1547,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Enables or disables Easy DKIM signing of email sent from an identity.
 
-Type annotations for
-`aiobotocore.create_client("ses").set_identity_dkim_enabled` method.
+Type annotations for `session.create_client("ses").set_identity_dkim_enabled`
+method.
 
 Boto3 documentation:
 [SES.Client.set_identity_dkim_enabled](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.set_identity_dkim_enabled)
@@ -1581,8 +1574,7 @@ Given an identity (an email address or a domain), enables or disables whether
 Amazon SES forwards bounce and complaint notifications as email.
 
 Type annotations for
-`aiobotocore.create_client("ses").set_identity_feedback_forwarding_enabled`
-method.
+`session.create_client("ses").set_identity_feedback_forwarding_enabled` method.
 
 Boto3 documentation:
 [SES.Client.set_identity_feedback_forwarding_enabled](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.set_identity_feedback_forwarding_enabled)
@@ -1609,7 +1601,7 @@ includes the original email headers in the Amazon Simple Notification Service
 (Amazon SNS) notifications of a specified type.
 
 Type annotations for
-`aiobotocore.create_client("ses").set_identity_headers_in_notifications_enabled`
+`session.create_client("ses").set_identity_headers_in_notifications_enabled`
 method.
 
 Boto3 documentation:
@@ -1639,7 +1631,7 @@ Enables or disables the custom MAIL FROM domain setup for a verified identity
 (an email address or a domain).
 
 Type annotations for
-`aiobotocore.create_client("ses").set_identity_mail_from_domain` method.
+`session.create_client("ses").set_identity_mail_from_domain` method.
 
 Boto3 documentation:
 [SES.Client.set_identity_mail_from_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.set_identity_mail_from_domain)
@@ -1667,7 +1659,7 @@ Sets an Amazon Simple Notification Service (Amazon SNS) topic to use when
 delivering notifications.
 
 Type annotations for
-`aiobotocore.create_client("ses").set_identity_notification_topic` method.
+`session.create_client("ses").set_identity_notification_topic` method.
 
 Boto3 documentation:
 [SES.Client.set_identity_notification_topic](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.set_identity_notification_topic)
@@ -1693,8 +1685,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Sets the position of the specified receipt rule in the receipt rule set.
 
-Type annotations for
-`aiobotocore.create_client("ses").set_receipt_rule_position` method.
+Type annotations for `session.create_client("ses").set_receipt_rule_position`
+method.
 
 Boto3 documentation:
 [SES.Client.set_receipt_rule_position](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.set_receipt_rule_position)
@@ -1720,7 +1712,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates a preview of the MIME content of an email when provided with a template
 and a set of replacement data.
 
-Type annotations for `aiobotocore.create_client("ses").test_render_template`
+Type annotations for `session.create_client("ses").test_render_template`
 method.
 
 Boto3 documentation:
@@ -1748,7 +1740,7 @@ Enables or disables email sending across your entire Amazon SES account in the
 current AWS Region.
 
 Type annotations for
-`aiobotocore.create_client("ses").update_account_sending_enabled` method.
+`session.create_client("ses").update_account_sending_enabled` method.
 
 Boto3 documentation:
 [SES.Client.update_account_sending_enabled](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.update_account_sending_enabled)
@@ -1770,7 +1762,7 @@ Keyword-only arguments:
 Updates the event destination of a configuration set.
 
 Type annotations for
-`aiobotocore.create_client("ses").update_configuration_set_event_destination`
+`session.create_client("ses").update_configuration_set_event_destination`
 method.
 
 Boto3 documentation:
@@ -1799,7 +1791,7 @@ Enables or disables the publishing of reputation metrics for emails sent using
 a specific configuration set in a given AWS Region.
 
 Type annotations for
-`aiobotocore.create_client("ses").update_configuration_set_reputation_metrics_enabled`
+`session.create_client("ses").update_configuration_set_reputation_metrics_enabled`
 method.
 
 Boto3 documentation:
@@ -1825,8 +1817,7 @@ Enables or disables email sending for messages sent using a specific
 configuration set in a given AWS Region.
 
 Type annotations for
-`aiobotocore.create_client("ses").update_configuration_set_sending_enabled`
-method.
+`session.create_client("ses").update_configuration_set_sending_enabled` method.
 
 Boto3 documentation:
 [SES.Client.update_configuration_set_sending_enabled](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.update_configuration_set_sending_enabled)
@@ -1850,7 +1841,7 @@ Modifies an association between a configuration set and a custom domain for
 open and click event tracking.
 
 Type annotations for
-`aiobotocore.create_client("ses").update_configuration_set_tracking_options`
+`session.create_client("ses").update_configuration_set_tracking_options`
 method.
 
 Boto3 documentation:
@@ -1877,7 +1868,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates an existing custom verification email template.
 
 Type annotations for
-`aiobotocore.create_client("ses").update_custom_verification_email_template`
+`session.create_client("ses").update_custom_verification_email_template`
 method.
 
 Boto3 documentation:
@@ -1904,8 +1895,7 @@ Keyword-only arguments:
 
 Updates a receipt rule.
 
-Type annotations for `aiobotocore.create_client("ses").update_receipt_rule`
-method.
+Type annotations for `session.create_client("ses").update_receipt_rule` method.
 
 Boto3 documentation:
 [SES.Client.update_receipt_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.update_receipt_rule)
@@ -1929,7 +1919,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates an email template.
 
-Type annotations for `aiobotocore.create_client("ses").update_template` method.
+Type annotations for `session.create_client("ses").update_template` method.
 
 Boto3 documentation:
 [SES.Client.update_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.update_template)
@@ -1951,8 +1941,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Returns a set of DKIM tokens for a domain identity.
 
-Type annotations for `aiobotocore.create_client("ses").verify_domain_dkim`
-method.
+Type annotations for `session.create_client("ses").verify_domain_dkim` method.
 
 Boto3 documentation:
 [SES.Client.verify_domain_dkim](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.verify_domain_dkim)
@@ -1977,7 +1966,7 @@ Returns a `Coroutine` for
 Adds a domain to the list of identities for your Amazon SES account in the
 current AWS Region and attempts to verify it.
 
-Type annotations for `aiobotocore.create_client("ses").verify_domain_identity`
+Type annotations for `session.create_client("ses").verify_domain_identity`
 method.
 
 Boto3 documentation:
@@ -2002,7 +1991,7 @@ Returns a `Coroutine` for
 
 Deprecated.
 
-Type annotations for `aiobotocore.create_client("ses").verify_email_address`
+Type annotations for `session.create_client("ses").verify_email_address`
 method.
 
 Boto3 documentation:
@@ -2025,7 +2014,7 @@ Keyword-only arguments:
 Adds an email address to the list of identities for your Amazon SES account in
 the current AWS region and attempts to verify it.
 
-Type annotations for `aiobotocore.create_client("ses").verify_email_identity`
+Type annotations for `session.create_client("ses").verify_email_identity`
 method.
 
 Boto3 documentation:
@@ -2043,12 +2032,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("ses").__aenter__` method.
+
+Boto3 documentation:
+[SES.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SESClient](#sesclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("ses").__aexit__` method.
+
+Boto3 documentation:
+[SES.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ses.html#SES.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("ses").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("ses").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_configuration_sets")` ->
   [ListConfigurationSetsPaginator](./paginators.md#listconfigurationsetspaginator)
@@ -2065,7 +2086,7 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("ses").get_waiter` method with
+Type annotations for `session.create_client("ses").get_waiter` method with
 overloads.
 
 - `client.get_waiter("identity_exists")` ->

@@ -24,21 +24,24 @@ type annotations stubs module
     - [get_caller_identity](#get_caller_identity)
     - [get_federation_token](#get_federation_token)
     - [get_session_token](#get_session_token)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="stsclient"></a>
 
 ## STSClient
 
-Type annotations for `aiobotocore.create_client("sts")`
+Type annotations for `session.create_client("sts")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_sts.client import STSClient
 
-def get_sts_client() -> STSClient:
-    return Session().client("sts")
+session = get_session()
+async with session.create_client("sts") as client:
+    client: STSClient
 ```
 
 Boto3 documentation:
@@ -80,7 +83,7 @@ Exceptions:
 
 STSClient exceptions.
 
-Type annotations for `aiobotocore.create_client("sts").exceptions` method.
+Type annotations for `session.create_client("sts").exceptions` method.
 
 Boto3 documentation:
 [STS.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sts.html#STS.Client.exceptions)
@@ -94,7 +97,7 @@ Returns [Exceptions](#exceptions).
 Returns a set of temporary security credentials that you can use to access
 Amazon Web Services resources that you might not normally have access to.
 
-Type annotations for `aiobotocore.create_client("sts").assume_role` method.
+Type annotations for `session.create_client("sts").assume_role` method.
 
 Boto3 documentation:
 [STS.Client.assume_role](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sts.html#STS.Client.assume_role)
@@ -129,7 +132,7 @@ Returns a `Coroutine` for
 Returns a set of temporary security credentials for users who have been
 authenticated via a SAML authentication response.
 
-Type annotations for `aiobotocore.create_client("sts").assume_role_with_saml`
+Type annotations for `session.create_client("sts").assume_role_with_saml`
 method.
 
 Boto3 documentation:
@@ -162,7 +165,7 @@ Returns a set of temporary security credentials for users who have been
 authenticated in a mobile or web application with a web identity provider.
 
 Type annotations for
-`aiobotocore.create_client("sts").assume_role_with_web_identity` method.
+`session.create_client("sts").assume_role_with_web_identity` method.
 
 Boto3 documentation:
 [STS.Client.assume_role_with_web_identity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sts.html#STS.Client.assume_role_with_web_identity)
@@ -193,18 +196,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("sts").can_paginate` method.
+Type annotations for `session.create_client("sts").can_paginate` method.
 
 Boto3 documentation:
 [STS.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sts.html#STS.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="decode_authorization_message"></a>
 
@@ -214,7 +215,7 @@ Decodes additional information about the authorization status of a request from
 an encoded message returned in response to an Amazon Web Services request.
 
 Type annotations for
-`aiobotocore.create_client("sts").decode_authorization_message` method.
+`session.create_client("sts").decode_authorization_message` method.
 
 Boto3 documentation:
 [STS.Client.decode_authorization_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sts.html#STS.Client.decode_authorization_message)
@@ -238,7 +239,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("sts").generate_presigned_url`
+Type annotations for `session.create_client("sts").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -262,8 +263,7 @@ Returns a `Coroutine` for `str`.
 
 Returns the account identifier for the specified access key ID.
 
-Type annotations for `aiobotocore.create_client("sts").get_access_key_info`
-method.
+Type annotations for `session.create_client("sts").get_access_key_info` method.
 
 Boto3 documentation:
 [STS.Client.get_access_key_info](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sts.html#STS.Client.get_access_key_info)
@@ -288,8 +288,7 @@ Returns a `Coroutine` for
 Returns details about the IAM user or role whose credentials are used to call
 the operation.
 
-Type annotations for `aiobotocore.create_client("sts").get_caller_identity`
-method.
+Type annotations for `session.create_client("sts").get_caller_identity` method.
 
 Boto3 documentation:
 [STS.Client.get_caller_identity](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sts.html#STS.Client.get_caller_identity)
@@ -307,7 +306,7 @@ Returns a `Coroutine` for
 Returns a set of temporary security credentials (consisting of an access key
 ID, a secret access key, and a security token) for a federated user.
 
-Type annotations for `aiobotocore.create_client("sts").get_federation_token`
+Type annotations for `session.create_client("sts").get_federation_token`
 method.
 
 Boto3 documentation:
@@ -338,8 +337,7 @@ Returns a `Coroutine` for
 Returns a set of temporary credentials for an Amazon Web Services account or
 IAM user.
 
-Type annotations for `aiobotocore.create_client("sts").get_session_token`
-method.
+Type annotations for `session.create_client("sts").get_session_token` method.
 
 Boto3 documentation:
 [STS.Client.get_session_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sts.html#STS.Client.get_session_token)
@@ -357,3 +355,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [GetSessionTokenResponseTypeDef](./type_defs.md#getsessiontokenresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("sts").__aenter__` method.
+
+Boto3 documentation:
+[STS.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sts.html#STS.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [STSClient](#stsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("sts").__aexit__` method.
+
+Boto3 documentation:
+[STS.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sts.html#STS.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

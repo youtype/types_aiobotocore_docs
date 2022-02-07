@@ -24,21 +24,24 @@ type annotations stubs module
     - [send_event](#send_event)
     - [send_message](#send_message)
     - [start_attachment_upload](#start_attachment_upload)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="connectparticipantclient"></a>
 
 ## ConnectParticipantClient
 
-Type annotations for `aiobotocore.create_client("connectparticipant")`
+Type annotations for `session.create_client("connectparticipant")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_connectparticipant.client import ConnectParticipantClient
 
-def get_connectparticipant_client() -> ConnectParticipantClient:
-    return Session().client("connectparticipant")
+session = get_session()
+async with session.create_client("connectparticipant") as client:
+    client: ConnectParticipantClient
 ```
 
 Boto3 documentation:
@@ -78,8 +81,8 @@ Exceptions:
 
 ConnectParticipantClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("connectparticipant").exceptions` method.
+Type annotations for `session.create_client("connectparticipant").exceptions`
+method.
 
 Boto3 documentation:
 [ConnectParticipant.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connectparticipant.html#ConnectParticipant.Client.exceptions)
@@ -92,19 +95,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("connectparticipant").can_paginate` method.
+Type annotations for `session.create_client("connectparticipant").can_paginate`
+method.
 
 Boto3 documentation:
 [ConnectParticipant.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connectparticipant.html#ConnectParticipant.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="complete_attachment_upload"></a>
 
@@ -114,7 +115,7 @@ Allows you to confirm that the attachment has been uploaded using the
 pre-signed URL provided in StartAttachmentUpload API.
 
 Type annotations for
-`aiobotocore.create_client("connectparticipant").complete_attachment_upload`
+`session.create_client("connectparticipant").complete_attachment_upload`
 method.
 
 Boto3 documentation:
@@ -141,7 +142,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates the participant's connection.
 
 Type annotations for
-`aiobotocore.create_client("connectparticipant").create_participant_connection`
+`session.create_client("connectparticipant").create_participant_connection`
 method.
 
 Boto3 documentation:
@@ -170,8 +171,7 @@ Returns a `Coroutine` for
 Disconnects a participant.
 
 Type annotations for
-`aiobotocore.create_client("connectparticipant").disconnect_participant`
-method.
+`session.create_client("connectparticipant").disconnect_participant` method.
 
 Boto3 documentation:
 [ConnectParticipant.Client.disconnect_participant](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connectparticipant.html#ConnectParticipant.Client.disconnect_participant)
@@ -196,8 +196,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("connectparticipant").generate_presigned_url`
-method.
+`session.create_client("connectparticipant").generate_presigned_url` method.
 
 Boto3 documentation:
 [ConnectParticipant.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connectparticipant.html#ConnectParticipant.Client.generate_presigned_url)
@@ -221,7 +220,7 @@ Returns a `Coroutine` for `str`.
 Provides a pre-signed URL for download of a completed attachment.
 
 Type annotations for
-`aiobotocore.create_client("connectparticipant").get_attachment` method.
+`session.create_client("connectparticipant").get_attachment` method.
 
 Boto3 documentation:
 [ConnectParticipant.Client.get_attachment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connectparticipant.html#ConnectParticipant.Client.get_attachment)
@@ -246,7 +245,7 @@ Returns a `Coroutine` for
 Retrieves a transcript of the session, including details about any attachments.
 
 Type annotations for
-`aiobotocore.create_client("connectparticipant").get_transcript` method.
+`session.create_client("connectparticipant").get_transcript` method.
 
 Boto3 documentation:
 [ConnectParticipant.Client.get_transcript](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connectparticipant.html#ConnectParticipant.Client.get_transcript)
@@ -275,8 +274,8 @@ Returns a `Coroutine` for
 
 Sends an event.
 
-Type annotations for
-`aiobotocore.create_client("connectparticipant").send_event` method.
+Type annotations for `session.create_client("connectparticipant").send_event`
+method.
 
 Boto3 documentation:
 [ConnectParticipant.Client.send_event](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connectparticipant.html#ConnectParticipant.Client.send_event)
@@ -302,8 +301,8 @@ Returns a `Coroutine` for
 
 Sends a message.
 
-Type annotations for
-`aiobotocore.create_client("connectparticipant").send_message` method.
+Type annotations for `session.create_client("connectparticipant").send_message`
+method.
 
 Boto3 documentation:
 [ConnectParticipant.Client.send_message](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connectparticipant.html#ConnectParticipant.Client.send_message)
@@ -331,8 +330,7 @@ Provides a pre-signed Amazon S3 URL in response for uploading the file directly
 to S3.
 
 Type annotations for
-`aiobotocore.create_client("connectparticipant").start_attachment_upload`
-method.
+`session.create_client("connectparticipant").start_attachment_upload` method.
 
 Boto3 documentation:
 [ConnectParticipant.Client.start_attachment_upload](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connectparticipant.html#ConnectParticipant.Client.start_attachment_upload)
@@ -353,3 +351,38 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [StartAttachmentUploadResponseTypeDef](./type_defs.md#startattachmentuploadresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("connectparticipant").__aenter__`
+method.
+
+Boto3 documentation:
+[ConnectParticipant.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connectparticipant.html#ConnectParticipant.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[ConnectParticipantClient](#connectparticipantclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("connectparticipant").__aexit__`
+method.
+
+Boto3 documentation:
+[ConnectParticipant.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connectparticipant.html#ConnectParticipant.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[ecr]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[ecr]'
+
+# standalone installation
 pip install types-aiobotocore-ecr
 ```
 
@@ -30,8 +34,7 @@ pip install types-aiobotocore-ecr
 
 ## ECRClient
 
-Type annotations for `aiobotocore.create_client("ecr")` as
-[ECRClient](./client.md)
+Type annotations for `session.create_client("ecr")` as [ECRClient](./client.md)
 
 Can be used directly:
 
@@ -43,6 +46,8 @@ from types_aiobotocore_ecr.client import ECRClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_check_layer_availability](./client.md#batch_check_layer_availability)
 - [batch_delete_image](./client.md#batch_delete_image)
 - [batch_get_image](./client.md#batch_get_image)
@@ -141,7 +146,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_ecr.paginators import DescribeImageScanFindingsPaginator, ...
+from types_aiobotocore_ecr.paginator import DescribeImageScanFindingsPaginator, ...
 ```
 
 - [DescribeImageScanFindingsPaginator](./paginators.md#describeimagescanfindingspaginator)
@@ -161,7 +166,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_ecr.waiters import ImageScanCompleteWaiter, ...
+from types_aiobotocore_ecr.waiter import ImageScanCompleteWaiter, ...
 ```
 
 - [ImageScanCompleteWaiter](./waiters.md#imagescancompletewaiter)

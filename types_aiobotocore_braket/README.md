@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[braket]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[braket]'
+
+# standalone installation
 pip install types-aiobotocore-braket
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-braket
 
 ## BraketClient
 
-Type annotations for `aiobotocore.create_client("braket")` as
+Type annotations for `session.create_client("braket")` as
 [BraketClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_braket.client import BraketClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_job](./client.md#cancel_job)
 - [cancel_quantum_task](./client.md#cancel_quantum_task)
@@ -87,7 +93,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_braket.paginators import SearchDevicesPaginator, ...
+from types_aiobotocore_braket.paginator import SearchDevicesPaginator, ...
 ```
 
 - [SearchDevicesPaginator](./paginators.md#searchdevicespaginator)

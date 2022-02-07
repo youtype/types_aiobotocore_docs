@@ -24,17 +24,19 @@ type annotations stubs module
 ## ListDocumentClassificationJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("comprehend").get_paginator("list_document_classification_jobs")`.
+`session.create_client("comprehend").get_paginator("list_document_classification_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_comprehend.paginator import ListDocumentClassificationJobsPaginator
 
-def get_list_document_classification_jobs_paginator() -> ListDocumentClassificationJobsPaginator:
-    return Session().create_client("comprehend").get_paginator("list_document_classification_jobs")
+session = get_session()
+async with session.create_client("comprehend") as client:
+    client: ComprehendClient
+    paginator: ListDocumentClassificationJobsPaginator = client.get_paginator("list_document_classification_jobs")
 ```
 
 Boto3 documentation:
@@ -55,17 +57,19 @@ Arguments for `ListDocumentClassificationJobsPaginator.paginate` method:
 ## ListDocumentClassifiersPaginator
 
 Type annotations for
-`aiobotocore.create_client("comprehend").get_paginator("list_document_classifiers")`.
+`session.create_client("comprehend").get_paginator("list_document_classifiers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_comprehend.paginator import ListDocumentClassifiersPaginator
 
-def get_list_document_classifiers_paginator() -> ListDocumentClassifiersPaginator:
-    return Session().create_client("comprehend").get_paginator("list_document_classifiers")
+session = get_session()
+async with session.create_client("comprehend") as client:
+    client: ComprehendClient
+    paginator: ListDocumentClassifiersPaginator = client.get_paginator("list_document_classifiers")
 ```
 
 Boto3 documentation:
@@ -86,17 +90,19 @@ Arguments for `ListDocumentClassifiersPaginator.paginate` method:
 ## ListDominantLanguageDetectionJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("comprehend").get_paginator("list_dominant_language_detection_jobs")`.
+`session.create_client("comprehend").get_paginator("list_dominant_language_detection_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_comprehend.paginator import ListDominantLanguageDetectionJobsPaginator
 
-def get_list_dominant_language_detection_jobs_paginator() -> ListDominantLanguageDetectionJobsPaginator:
-    return Session().create_client("comprehend").get_paginator("list_dominant_language_detection_jobs")
+session = get_session()
+async with session.create_client("comprehend") as client:
+    client: ComprehendClient
+    paginator: ListDominantLanguageDetectionJobsPaginator = client.get_paginator("list_dominant_language_detection_jobs")
 ```
 
 Boto3 documentation:
@@ -117,17 +123,19 @@ Arguments for `ListDominantLanguageDetectionJobsPaginator.paginate` method:
 ## ListEntitiesDetectionJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("comprehend").get_paginator("list_entities_detection_jobs")`.
+`session.create_client("comprehend").get_paginator("list_entities_detection_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_comprehend.paginator import ListEntitiesDetectionJobsPaginator
 
-def get_list_entities_detection_jobs_paginator() -> ListEntitiesDetectionJobsPaginator:
-    return Session().create_client("comprehend").get_paginator("list_entities_detection_jobs")
+session = get_session()
+async with session.create_client("comprehend") as client:
+    client: ComprehendClient
+    paginator: ListEntitiesDetectionJobsPaginator = client.get_paginator("list_entities_detection_jobs")
 ```
 
 Boto3 documentation:
@@ -148,17 +156,19 @@ Arguments for `ListEntitiesDetectionJobsPaginator.paginate` method:
 ## ListEntityRecognizersPaginator
 
 Type annotations for
-`aiobotocore.create_client("comprehend").get_paginator("list_entity_recognizers")`.
+`session.create_client("comprehend").get_paginator("list_entity_recognizers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_comprehend.paginator import ListEntityRecognizersPaginator
 
-def get_list_entity_recognizers_paginator() -> ListEntityRecognizersPaginator:
-    return Session().create_client("comprehend").get_paginator("list_entity_recognizers")
+session = get_session()
+async with session.create_client("comprehend") as client:
+    client: ComprehendClient
+    paginator: ListEntityRecognizersPaginator = client.get_paginator("list_entity_recognizers")
 ```
 
 Boto3 documentation:
@@ -179,17 +189,19 @@ Arguments for `ListEntityRecognizersPaginator.paginate` method:
 ## ListKeyPhrasesDetectionJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("comprehend").get_paginator("list_key_phrases_detection_jobs")`.
+`session.create_client("comprehend").get_paginator("list_key_phrases_detection_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_comprehend.paginator import ListKeyPhrasesDetectionJobsPaginator
 
-def get_list_key_phrases_detection_jobs_paginator() -> ListKeyPhrasesDetectionJobsPaginator:
-    return Session().create_client("comprehend").get_paginator("list_key_phrases_detection_jobs")
+session = get_session()
+async with session.create_client("comprehend") as client:
+    client: ComprehendClient
+    paginator: ListKeyPhrasesDetectionJobsPaginator = client.get_paginator("list_key_phrases_detection_jobs")
 ```
 
 Boto3 documentation:
@@ -210,17 +222,19 @@ Arguments for `ListKeyPhrasesDetectionJobsPaginator.paginate` method:
 ## ListSentimentDetectionJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("comprehend").get_paginator("list_sentiment_detection_jobs")`.
+`session.create_client("comprehend").get_paginator("list_sentiment_detection_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_comprehend.paginator import ListSentimentDetectionJobsPaginator
 
-def get_list_sentiment_detection_jobs_paginator() -> ListSentimentDetectionJobsPaginator:
-    return Session().create_client("comprehend").get_paginator("list_sentiment_detection_jobs")
+session = get_session()
+async with session.create_client("comprehend") as client:
+    client: ComprehendClient
+    paginator: ListSentimentDetectionJobsPaginator = client.get_paginator("list_sentiment_detection_jobs")
 ```
 
 Boto3 documentation:
@@ -241,17 +255,19 @@ Arguments for `ListSentimentDetectionJobsPaginator.paginate` method:
 ## ListTopicsDetectionJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("comprehend").get_paginator("list_topics_detection_jobs")`.
+`session.create_client("comprehend").get_paginator("list_topics_detection_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_comprehend.paginator import ListTopicsDetectionJobsPaginator
 
-def get_list_topics_detection_jobs_paginator() -> ListTopicsDetectionJobsPaginator:
-    return Session().create_client("comprehend").get_paginator("list_topics_detection_jobs")
+session = get_session()
+async with session.create_client("comprehend") as client:
+    client: ComprehendClient
+    paginator: ListTopicsDetectionJobsPaginator = client.get_paginator("list_topics_detection_jobs")
 ```
 
 Boto3 documentation:

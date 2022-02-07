@@ -27,17 +27,19 @@ type annotations stubs module
 ## DescribeTapeArchivesPaginator
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").get_paginator("describe_tape_archives")`.
+`session.create_client("storagegateway").get_paginator("describe_tape_archives")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_storagegateway.paginator import DescribeTapeArchivesPaginator
 
-def get_describe_tape_archives_paginator() -> DescribeTapeArchivesPaginator:
-    return Session().create_client("storagegateway").get_paginator("describe_tape_archives")
+session = get_session()
+async with session.create_client("storagegateway") as client:
+    client: StorageGatewayClient
+    paginator: DescribeTapeArchivesPaginator = client.get_paginator("describe_tape_archives")
 ```
 
 Boto3 documentation:
@@ -57,17 +59,19 @@ Arguments for `DescribeTapeArchivesPaginator.paginate` method:
 ## DescribeTapeRecoveryPointsPaginator
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").get_paginator("describe_tape_recovery_points")`.
+`session.create_client("storagegateway").get_paginator("describe_tape_recovery_points")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_storagegateway.paginator import DescribeTapeRecoveryPointsPaginator
 
-def get_describe_tape_recovery_points_paginator() -> DescribeTapeRecoveryPointsPaginator:
-    return Session().create_client("storagegateway").get_paginator("describe_tape_recovery_points")
+session = get_session()
+async with session.create_client("storagegateway") as client:
+    client: StorageGatewayClient
+    paginator: DescribeTapeRecoveryPointsPaginator = client.get_paginator("describe_tape_recovery_points")
 ```
 
 Boto3 documentation:
@@ -87,17 +91,19 @@ Arguments for `DescribeTapeRecoveryPointsPaginator.paginate` method:
 ## DescribeTapesPaginator
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").get_paginator("describe_tapes")`.
+`session.create_client("storagegateway").get_paginator("describe_tapes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_storagegateway.paginator import DescribeTapesPaginator
 
-def get_describe_tapes_paginator() -> DescribeTapesPaginator:
-    return Session().create_client("storagegateway").get_paginator("describe_tapes")
+session = get_session()
+async with session.create_client("storagegateway") as client:
+    client: StorageGatewayClient
+    paginator: DescribeTapesPaginator = client.get_paginator("describe_tapes")
 ```
 
 Boto3 documentation:
@@ -118,17 +124,19 @@ Arguments for `DescribeTapesPaginator.paginate` method:
 ## DescribeVTLDevicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").get_paginator("describe_vtl_devices")`.
+`session.create_client("storagegateway").get_paginator("describe_vtl_devices")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_storagegateway.paginator import DescribeVTLDevicesPaginator
 
-def get_describe_vtl_devices_paginator() -> DescribeVTLDevicesPaginator:
-    return Session().create_client("storagegateway").get_paginator("describe_vtl_devices")
+session = get_session()
+async with session.create_client("storagegateway") as client:
+    client: StorageGatewayClient
+    paginator: DescribeVTLDevicesPaginator = client.get_paginator("describe_vtl_devices")
 ```
 
 Boto3 documentation:
@@ -149,17 +157,19 @@ Arguments for `DescribeVTLDevicesPaginator.paginate` method:
 ## ListFileSharesPaginator
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").get_paginator("list_file_shares")`.
+`session.create_client("storagegateway").get_paginator("list_file_shares")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_storagegateway.paginator import ListFileSharesPaginator
 
-def get_list_file_shares_paginator() -> ListFileSharesPaginator:
-    return Session().create_client("storagegateway").get_paginator("list_file_shares")
+session = get_session()
+async with session.create_client("storagegateway") as client:
+    client: StorageGatewayClient
+    paginator: ListFileSharesPaginator = client.get_paginator("list_file_shares")
 ```
 
 Boto3 documentation:
@@ -179,17 +189,19 @@ Arguments for `ListFileSharesPaginator.paginate` method:
 ## ListFileSystemAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").get_paginator("list_file_system_associations")`.
+`session.create_client("storagegateway").get_paginator("list_file_system_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_storagegateway.paginator import ListFileSystemAssociationsPaginator
 
-def get_list_file_system_associations_paginator() -> ListFileSystemAssociationsPaginator:
-    return Session().create_client("storagegateway").get_paginator("list_file_system_associations")
+session = get_session()
+async with session.create_client("storagegateway") as client:
+    client: StorageGatewayClient
+    paginator: ListFileSystemAssociationsPaginator = client.get_paginator("list_file_system_associations")
 ```
 
 Boto3 documentation:
@@ -209,17 +221,19 @@ Arguments for `ListFileSystemAssociationsPaginator.paginate` method:
 ## ListGatewaysPaginator
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").get_paginator("list_gateways")`.
+`session.create_client("storagegateway").get_paginator("list_gateways")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_storagegateway.paginator import ListGatewaysPaginator
 
-def get_list_gateways_paginator() -> ListGatewaysPaginator:
-    return Session().create_client("storagegateway").get_paginator("list_gateways")
+session = get_session()
+async with session.create_client("storagegateway") as client:
+    client: StorageGatewayClient
+    paginator: ListGatewaysPaginator = client.get_paginator("list_gateways")
 ```
 
 Boto3 documentation:
@@ -238,17 +252,19 @@ Arguments for `ListGatewaysPaginator.paginate` method:
 ## ListTagsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").get_paginator("list_tags_for_resource")`.
+`session.create_client("storagegateway").get_paginator("list_tags_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_storagegateway.paginator import ListTagsForResourcePaginator
 
-def get_list_tags_for_resource_paginator() -> ListTagsForResourcePaginator:
-    return Session().create_client("storagegateway").get_paginator("list_tags_for_resource")
+session = get_session()
+async with session.create_client("storagegateway") as client:
+    client: StorageGatewayClient
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
 ```
 
 Boto3 documentation:
@@ -268,17 +284,19 @@ Arguments for `ListTagsForResourcePaginator.paginate` method:
 ## ListTapePoolsPaginator
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").get_paginator("list_tape_pools")`.
+`session.create_client("storagegateway").get_paginator("list_tape_pools")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_storagegateway.paginator import ListTapePoolsPaginator
 
-def get_list_tape_pools_paginator() -> ListTapePoolsPaginator:
-    return Session().create_client("storagegateway").get_paginator("list_tape_pools")
+session = get_session()
+async with session.create_client("storagegateway") as client:
+    client: StorageGatewayClient
+    paginator: ListTapePoolsPaginator = client.get_paginator("list_tape_pools")
 ```
 
 Boto3 documentation:
@@ -298,17 +316,19 @@ Arguments for `ListTapePoolsPaginator.paginate` method:
 ## ListTapesPaginator
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").get_paginator("list_tapes")`.
+`session.create_client("storagegateway").get_paginator("list_tapes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_storagegateway.paginator import ListTapesPaginator
 
-def get_list_tapes_paginator() -> ListTapesPaginator:
-    return Session().create_client("storagegateway").get_paginator("list_tapes")
+session = get_session()
+async with session.create_client("storagegateway") as client:
+    client: StorageGatewayClient
+    paginator: ListTapesPaginator = client.get_paginator("list_tapes")
 ```
 
 Boto3 documentation:
@@ -328,17 +348,19 @@ Arguments for `ListTapesPaginator.paginate` method:
 ## ListVolumesPaginator
 
 Type annotations for
-`aiobotocore.create_client("storagegateway").get_paginator("list_volumes")`.
+`session.create_client("storagegateway").get_paginator("list_volumes")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_storagegateway.paginator import ListVolumesPaginator
 
-def get_list_volumes_paginator() -> ListVolumesPaginator:
-    return Session().create_client("storagegateway").get_paginator("list_volumes")
+session = get_session()
+async with session.create_client("storagegateway") as client:
+    client: StorageGatewayClient
+    paginator: ListVolumesPaginator = client.get_paginator("list_volumes")
 ```
 
 Boto3 documentation:

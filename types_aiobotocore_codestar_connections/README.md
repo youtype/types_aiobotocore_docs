@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[codestar-connections]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[codestar-connections]'
+
+# standalone installation
 pip install types-aiobotocore-codestar-connections
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-codestar-connections
 
 ## CodeStarconnectionsClient
 
-Type annotations for `aiobotocore.create_client("codestar-connections")` as
+Type annotations for `session.create_client("codestar-connections")` as
 [CodeStarconnectionsClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_codestar_connections.client import CodeStarconnectionsCli
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_connection](./client.md#create_connection)
 - [create_host](./client.md#create_host)

@@ -22,22 +22,25 @@ type annotations stubs module
     - [generate_presigned_url](#generate_presigned_url)
     - [get_scaling_plan_resource_forecast_data](#get_scaling_plan_resource_forecast_data)
     - [update_scaling_plan](#update_scaling_plan)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="autoscalingplansclient"></a>
 
 ## AutoScalingPlansClient
 
-Type annotations for `aiobotocore.create_client("autoscaling-plans")`
+Type annotations for `session.create_client("autoscaling-plans")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_autoscaling_plans.client import AutoScalingPlansClient
 
-def get_autoscaling-plans_client() -> AutoScalingPlansClient:
-    return Session().client("autoscaling-plans")
+session = get_session()
+async with session.create_client("autoscaling-plans") as client:
+    client: AutoScalingPlansClient
 ```
 
 Boto3 documentation:
@@ -77,8 +80,8 @@ Exceptions:
 
 AutoScalingPlansClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("autoscaling-plans").exceptions` method.
+Type annotations for `session.create_client("autoscaling-plans").exceptions`
+method.
 
 Boto3 documentation:
 [AutoScalingPlans.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling-plans.html#AutoScalingPlans.Client.exceptions)
@@ -91,19 +94,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("autoscaling-plans").can_paginate` method.
+Type annotations for `session.create_client("autoscaling-plans").can_paginate`
+method.
 
 Boto3 documentation:
 [AutoScalingPlans.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling-plans.html#AutoScalingPlans.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_scaling_plan"></a>
 
@@ -112,7 +113,7 @@ Returns a `Coroutine` for `bool`.
 Creates a scaling plan.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling-plans").create_scaling_plan` method.
+`session.create_client("autoscaling-plans").create_scaling_plan` method.
 
 Boto3 documentation:
 [AutoScalingPlans.Client.create_scaling_plan](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling-plans.html#AutoScalingPlans.Client.create_scaling_plan)
@@ -143,7 +144,7 @@ Returns a `Coroutine` for
 Deletes the specified scaling plan.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling-plans").delete_scaling_plan` method.
+`session.create_client("autoscaling-plans").delete_scaling_plan` method.
 
 Boto3 documentation:
 [AutoScalingPlans.Client.delete_scaling_plan](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling-plans.html#AutoScalingPlans.Client.delete_scaling_plan)
@@ -168,7 +169,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Describes the scalable resources in the specified scaling plan.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling-plans").describe_scaling_plan_resources`
+`session.create_client("autoscaling-plans").describe_scaling_plan_resources`
 method.
 
 Boto3 documentation:
@@ -197,7 +198,7 @@ Returns a `Coroutine` for
 Describes one or more of your scaling plans.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling-plans").describe_scaling_plans` method.
+`session.create_client("autoscaling-plans").describe_scaling_plans` method.
 
 Boto3 documentation:
 [AutoScalingPlans.Client.describe_scaling_plans](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling-plans.html#AutoScalingPlans.Client.describe_scaling_plans)
@@ -227,7 +228,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling-plans").generate_presigned_url` method.
+`session.create_client("autoscaling-plans").generate_presigned_url` method.
 
 Boto3 documentation:
 [AutoScalingPlans.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling-plans.html#AutoScalingPlans.Client.generate_presigned_url)
@@ -251,7 +252,7 @@ Returns a `Coroutine` for `str`.
 Retrieves the forecast data for a scalable resource.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling-plans").get_scaling_plan_resource_forecast_data`
+`session.create_client("autoscaling-plans").get_scaling_plan_resource_forecast_data`
 method.
 
 Boto3 documentation:
@@ -287,7 +288,7 @@ Returns a `Coroutine` for
 Updates the specified scaling plan.
 
 Type annotations for
-`aiobotocore.create_client("autoscaling-plans").update_scaling_plan` method.
+`session.create_client("autoscaling-plans").update_scaling_plan` method.
 
 Boto3 documentation:
 [AutoScalingPlans.Client.update_scaling_plan](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling-plans.html#AutoScalingPlans.Client.update_scaling_plan)
@@ -309,13 +310,46 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("autoscaling-plans").__aenter__`
+method.
+
+Boto3 documentation:
+[AutoScalingPlans.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling-plans.html#AutoScalingPlans.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [AutoScalingPlansClient](#autoscalingplansclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("autoscaling-plans").__aexit__`
+method.
+
+Boto3 documentation:
+[AutoScalingPlans.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling-plans.html#AutoScalingPlans.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("autoscaling-plans").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("autoscaling-plans").get_paginator`
+method with overloads.
 
 - `client.get_paginator("describe_scaling_plan_resources")` ->
   [DescribeScalingPlanResourcesPaginator](./paginators.md#describescalingplanresourcespaginator)

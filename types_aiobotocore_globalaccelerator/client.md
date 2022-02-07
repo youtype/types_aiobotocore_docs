@@ -63,22 +63,25 @@ type annotations stubs module
     - [update_endpoint_group](#update_endpoint_group)
     - [update_listener](#update_listener)
     - [withdraw_byoip_cidr](#withdraw_byoip_cidr)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="globalacceleratorclient"></a>
 
 ## GlobalAcceleratorClient
 
-Type annotations for `aiobotocore.create_client("globalaccelerator")`
+Type annotations for `session.create_client("globalaccelerator")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_globalaccelerator.client import GlobalAcceleratorClient
 
-def get_globalaccelerator_client() -> GlobalAcceleratorClient:
-    return Session().client("globalaccelerator")
+session = get_session()
+async with session.create_client("globalaccelerator") as client:
+    client: GlobalAcceleratorClient
 ```
 
 Boto3 documentation:
@@ -130,8 +133,8 @@ Exceptions:
 
 GlobalAcceleratorClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("globalaccelerator").exceptions` method.
+Type annotations for `session.create_client("globalaccelerator").exceptions`
+method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.exceptions)
@@ -146,7 +149,7 @@ Associate a virtual private cloud (VPC) subnet endpoint with your custom
 routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").add_custom_routing_endpoints`
+`session.create_client("globalaccelerator").add_custom_routing_endpoints`
 method.
 
 Boto3 documentation:
@@ -176,7 +179,7 @@ Advertises an IPv4 address range that is provisioned for use with your AWS
 resources through bring your own IP addresses (BYOIP).
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").advertise_byoip_cidr` method.
+`session.create_client("globalaccelerator").advertise_byoip_cidr` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.advertise_byoip_cidr](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.advertise_byoip_cidr)
@@ -202,7 +205,7 @@ Specify the Amazon EC2 instance (destination) IP addresses and ports for a VPC
 subnet endpoint that can receive traffic for a custom routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").allow_custom_routing_traffic`
+`session.create_client("globalaccelerator").allow_custom_routing_traffic`
 method.
 
 Boto3 documentation:
@@ -228,19 +231,17 @@ Keyword-only arguments:
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("globalaccelerator").can_paginate` method.
+Type annotations for `session.create_client("globalaccelerator").can_paginate`
+method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_accelerator"></a>
 
@@ -249,7 +250,7 @@ Returns a `Coroutine` for `bool`.
 Create an accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").create_accelerator` method.
+`session.create_client("globalaccelerator").create_accelerator` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.create_accelerator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.create_accelerator)
@@ -280,7 +281,7 @@ Returns a `Coroutine` for
 Create a custom routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").create_custom_routing_accelerator`
+`session.create_client("globalaccelerator").create_custom_routing_accelerator`
 method.
 
 Boto3 documentation:
@@ -313,7 +314,7 @@ Create an endpoint group for the specified listener for a custom routing
 accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").create_custom_routing_endpoint_group`
+`session.create_client("globalaccelerator").create_custom_routing_endpoint_group`
 method.
 
 Boto3 documentation:
@@ -345,7 +346,7 @@ Create a listener to process inbound connections from clients to a custom
 routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").create_custom_routing_listener`
+`session.create_client("globalaccelerator").create_custom_routing_listener`
 method.
 
 Boto3 documentation:
@@ -375,7 +376,7 @@ Returns a `Coroutine` for
 Create an endpoint group for the specified listener.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").create_endpoint_group` method.
+`session.create_client("globalaccelerator").create_endpoint_group` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.create_endpoint_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.create_endpoint_group)
@@ -414,7 +415,7 @@ Create a listener to process inbound connections from clients to an
 accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").create_listener` method.
+`session.create_client("globalaccelerator").create_listener` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.create_listener](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.create_listener)
@@ -444,7 +445,7 @@ Returns a `Coroutine` for
 Delete an accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").delete_accelerator` method.
+`session.create_client("globalaccelerator").delete_accelerator` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.delete_accelerator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.delete_accelerator)
@@ -466,7 +467,7 @@ Keyword-only arguments:
 Delete a custom routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").delete_custom_routing_accelerator`
+`session.create_client("globalaccelerator").delete_custom_routing_accelerator`
 method.
 
 Boto3 documentation:
@@ -489,7 +490,7 @@ Keyword-only arguments:
 Delete an endpoint group from a listener for a custom routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").delete_custom_routing_endpoint_group`
+`session.create_client("globalaccelerator").delete_custom_routing_endpoint_group`
 method.
 
 Boto3 documentation:
@@ -512,7 +513,7 @@ Keyword-only arguments:
 Delete a listener for a custom routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").delete_custom_routing_listener`
+`session.create_client("globalaccelerator").delete_custom_routing_listener`
 method.
 
 Boto3 documentation:
@@ -535,7 +536,7 @@ Keyword-only arguments:
 Delete an endpoint group from a listener.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").delete_endpoint_group` method.
+`session.create_client("globalaccelerator").delete_endpoint_group` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.delete_endpoint_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.delete_endpoint_group)
@@ -557,7 +558,7 @@ Keyword-only arguments:
 Delete a listener from an accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").delete_listener` method.
+`session.create_client("globalaccelerator").delete_listener` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.delete_listener](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.delete_listener)
@@ -579,7 +580,7 @@ Specify the Amazon EC2 instance (destination) IP addresses and ports for a VPC
 subnet endpoint that cannot receive traffic for a custom routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").deny_custom_routing_traffic`
+`session.create_client("globalaccelerator").deny_custom_routing_traffic`
 method.
 
 Boto3 documentation:
@@ -608,7 +609,7 @@ resources through bring your own IP addresses (BYOIP) and deletes the
 corresponding address pool.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").deprovision_byoip_cidr` method.
+`session.create_client("globalaccelerator").deprovision_byoip_cidr` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.deprovision_byoip_cidr](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.deprovision_byoip_cidr)
@@ -633,7 +634,7 @@ Returns a `Coroutine` for
 Describe an accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").describe_accelerator` method.
+`session.create_client("globalaccelerator").describe_accelerator` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.describe_accelerator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.describe_accelerator)
@@ -658,7 +659,7 @@ Returns a `Coroutine` for
 Describe the attributes of an accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").describe_accelerator_attributes`
+`session.create_client("globalaccelerator").describe_accelerator_attributes`
 method.
 
 Boto3 documentation:
@@ -684,7 +685,7 @@ Returns a `Coroutine` for
 Describe a custom routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").describe_custom_routing_accelerator`
+`session.create_client("globalaccelerator").describe_custom_routing_accelerator`
 method.
 
 Boto3 documentation:
@@ -710,7 +711,7 @@ Returns a `Coroutine` for
 Describe the attributes of a custom routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").describe_custom_routing_accelerator_attributes`
+`session.create_client("globalaccelerator").describe_custom_routing_accelerator_attributes`
 method.
 
 Boto3 documentation:
@@ -737,7 +738,7 @@ Returns a `Coroutine` for
 Describe an endpoint group for a custom routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").describe_custom_routing_endpoint_group`
+`session.create_client("globalaccelerator").describe_custom_routing_endpoint_group`
 method.
 
 Boto3 documentation:
@@ -763,7 +764,7 @@ Returns a `Coroutine` for
 The description of a listener for a custom routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").describe_custom_routing_listener`
+`session.create_client("globalaccelerator").describe_custom_routing_listener`
 method.
 
 Boto3 documentation:
@@ -789,8 +790,7 @@ Returns a `Coroutine` for
 Describe an endpoint group.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").describe_endpoint_group`
-method.
+`session.create_client("globalaccelerator").describe_endpoint_group` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.describe_endpoint_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.describe_endpoint_group)
@@ -815,7 +815,7 @@ Returns a `Coroutine` for
 Describe a listener.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").describe_listener` method.
+`session.create_client("globalaccelerator").describe_listener` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.describe_listener](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.describe_listener)
@@ -839,7 +839,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").generate_presigned_url` method.
+`session.create_client("globalaccelerator").generate_presigned_url` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.generate_presigned_url)
@@ -863,7 +863,7 @@ Returns a `Coroutine` for `str`.
 List the accelerators for an AWS account.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").list_accelerators` method.
+`session.create_client("globalaccelerator").list_accelerators` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.list_accelerators](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.list_accelerators)
@@ -891,7 +891,7 @@ accelerator/latest/api/ProvisionByoipCidr.html)\_ , including the current state
 and a history of state changes.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").list_byoip_cidrs` method.
+`session.create_client("globalaccelerator").list_byoip_cidrs` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.list_byoip_cidrs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.list_byoip_cidrs)
@@ -916,7 +916,7 @@ Returns a `Coroutine` for
 List the custom routing accelerators for an AWS account.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").list_custom_routing_accelerators`
+`session.create_client("globalaccelerator").list_custom_routing_accelerators`
 method.
 
 Boto3 documentation:
@@ -944,7 +944,7 @@ List the endpoint groups that are associated with a listener for a custom
 routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").list_custom_routing_endpoint_groups`
+`session.create_client("globalaccelerator").list_custom_routing_endpoint_groups`
 method.
 
 Boto3 documentation:
@@ -972,7 +972,7 @@ Returns a `Coroutine` for
 List the listeners for a custom routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").list_custom_routing_listeners`
+`session.create_client("globalaccelerator").list_custom_routing_listeners`
 method.
 
 Boto3 documentation:
@@ -1002,7 +1002,7 @@ destination EC2 instance IP addresses and ports in the virtual public cloud
 (VPC) subnet endpoint for a custom routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").list_custom_routing_port_mappings`
+`session.create_client("globalaccelerator").list_custom_routing_port_mappings`
 method.
 
 Boto3 documentation:
@@ -1032,7 +1032,7 @@ List the port mappings for a specific EC2 instance (destination) in a VPC
 subnet endpoint.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").list_custom_routing_port_mappings_by_destination`
+`session.create_client("globalaccelerator").list_custom_routing_port_mappings_by_destination`
 method.
 
 Boto3 documentation:
@@ -1062,7 +1062,7 @@ Returns a `Coroutine` for
 List the endpoint groups that are associated with a listener.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").list_endpoint_groups` method.
+`session.create_client("globalaccelerator").list_endpoint_groups` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.list_endpoint_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.list_endpoint_groups)
@@ -1089,7 +1089,7 @@ Returns a `Coroutine` for
 List the listeners for an accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").list_listeners` method.
+`session.create_client("globalaccelerator").list_listeners` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.list_listeners](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.list_listeners)
@@ -1115,7 +1115,7 @@ Returns a `Coroutine` for
 List all tags for an accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").list_tags_for_resource` method.
+`session.create_client("globalaccelerator").list_tags_for_resource` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.list_tags_for_resource)
@@ -1141,7 +1141,7 @@ Provisions an IP address range to use with your AWS resources through bring
 your own IP addresses (BYOIP) and creates a corresponding address pool.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").provision_byoip_cidr` method.
+`session.create_client("globalaccelerator").provision_byoip_cidr` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.provision_byoip_cidr](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.provision_byoip_cidr)
@@ -1169,7 +1169,7 @@ Returns a `Coroutine` for
 Remove endpoints from a custom routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").remove_custom_routing_endpoints`
+`session.create_client("globalaccelerator").remove_custom_routing_endpoints`
 method.
 
 Boto3 documentation:
@@ -1192,8 +1192,8 @@ Keyword-only arguments:
 
 Add tags to an accelerator resource.
 
-Type annotations for
-`aiobotocore.create_client("globalaccelerator").tag_resource` method.
+Type annotations for `session.create_client("globalaccelerator").tag_resource`
+method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.tag_resource)
@@ -1217,7 +1217,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Remove tags from a Global Accelerator resource.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").untag_resource` method.
+`session.create_client("globalaccelerator").untag_resource` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.untag_resource)
@@ -1241,7 +1241,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Update an accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").update_accelerator` method.
+`session.create_client("globalaccelerator").update_accelerator` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.update_accelerator](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.update_accelerator)
@@ -1270,7 +1270,7 @@ Returns a `Coroutine` for
 Update the attributes for an accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").update_accelerator_attributes`
+`session.create_client("globalaccelerator").update_accelerator_attributes`
 method.
 
 Boto3 documentation:
@@ -1299,7 +1299,7 @@ Returns a `Coroutine` for
 Update a custom routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").update_custom_routing_accelerator`
+`session.create_client("globalaccelerator").update_custom_routing_accelerator`
 method.
 
 Boto3 documentation:
@@ -1329,7 +1329,7 @@ Returns a `Coroutine` for
 Update the attributes for a custom routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").update_custom_routing_accelerator_attributes`
+`session.create_client("globalaccelerator").update_custom_routing_accelerator_attributes`
 method.
 
 Boto3 documentation:
@@ -1359,7 +1359,7 @@ Returns a `Coroutine` for
 Update a listener for a custom routing accelerator.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").update_custom_routing_listener`
+`session.create_client("globalaccelerator").update_custom_routing_listener`
 method.
 
 Boto3 documentation:
@@ -1388,7 +1388,7 @@ Returns a `Coroutine` for
 Update an endpoint group.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").update_endpoint_group` method.
+`session.create_client("globalaccelerator").update_endpoint_group` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.update_endpoint_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.update_endpoint_group)
@@ -1424,7 +1424,7 @@ Returns a `Coroutine` for
 Update a listener.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").update_listener` method.
+`session.create_client("globalaccelerator").update_listener` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.update_listener](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.update_listener)
@@ -1452,7 +1452,7 @@ Returns a `Coroutine` for
 Stops advertising an address range that is provisioned as an address pool.
 
 Type annotations for
-`aiobotocore.create_client("globalaccelerator").withdraw_byoip_cidr` method.
+`session.create_client("globalaccelerator").withdraw_byoip_cidr` method.
 
 Boto3 documentation:
 [GlobalAccelerator.Client.withdraw_byoip_cidr](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.withdraw_byoip_cidr)
@@ -1470,13 +1470,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [WithdrawByoipCidrResponseTypeDef](./type_defs.md#withdrawbyoipcidrresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("globalaccelerator").__aenter__`
+method.
+
+Boto3 documentation:
+[GlobalAccelerator.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [GlobalAcceleratorClient](#globalacceleratorclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("globalaccelerator").__aexit__`
+method.
+
+Boto3 documentation:
+[GlobalAccelerator.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/globalaccelerator.html#GlobalAccelerator.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("globalaccelerator").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("globalaccelerator").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_accelerators")` ->
   [ListAcceleratorsPaginator](./paginators.md#listacceleratorspaginator)

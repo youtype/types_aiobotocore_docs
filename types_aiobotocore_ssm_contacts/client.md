@@ -43,22 +43,25 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_contact](#update_contact)
     - [update_contact_channel](#update_contact_channel)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="ssmcontactsclient"></a>
 
 ## SSMContactsClient
 
-Type annotations for `aiobotocore.create_client("ssm-contacts")`
+Type annotations for `session.create_client("ssm-contacts")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_ssm_contacts.client import SSMContactsClient
 
-def get_ssm-contacts_client() -> SSMContactsClient:
-    return Session().client("ssm-contacts")
+session = get_session()
+async with session.create_client("ssm-contacts") as client:
+    client: SSMContactsClient
 ```
 
 Boto3 documentation:
@@ -100,8 +103,7 @@ Exceptions:
 
 SSMContactsClient exceptions.
 
-Type annotations for `aiobotocore.create_client("ssm-contacts").exceptions`
-method.
+Type annotations for `session.create_client("ssm-contacts").exceptions` method.
 
 Boto3 documentation:
 [SSMContacts.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.exceptions)
@@ -114,7 +116,7 @@ Returns [Exceptions](#exceptions).
 
 Used to acknowledge an engagement to a contact channel during an incident.
 
-Type annotations for `aiobotocore.create_client("ssm-contacts").accept_page`
+Type annotations for `session.create_client("ssm-contacts").accept_page`
 method.
 
 Boto3 documentation:
@@ -144,7 +146,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Activates a contact's contact channel.
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").activate_contact_channel` method.
+`session.create_client("ssm-contacts").activate_contact_channel` method.
 
 Boto3 documentation:
 [SSMContacts.Client.activate_contact_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.activate_contact_channel)
@@ -168,19 +170,17 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("ssm-contacts").can_paginate`
+Type annotations for `session.create_client("ssm-contacts").can_paginate`
 method.
 
 Boto3 documentation:
 [SSMContacts.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_contact"></a>
 
@@ -190,7 +190,7 @@ Contacts are either the contacts that Incident Manager engages during an
 incident or the escalation plans that Incident Manager uses to engage contacts
 in phases during an incident.
 
-Type annotations for `aiobotocore.create_client("ssm-contacts").create_contact`
+Type annotations for `session.create_client("ssm-contacts").create_contact`
 method.
 
 Boto3 documentation:
@@ -221,7 +221,7 @@ A contact channel is the method that Incident Manager uses to engage your
 contact.
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").create_contact_channel` method.
+`session.create_client("ssm-contacts").create_contact_channel` method.
 
 Boto3 documentation:
 [SSMContacts.Client.create_contact_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.create_contact_channel)
@@ -254,7 +254,7 @@ To no longer receive Incident Manager engagements to a contact channel, you can
 deactivate the channel.
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").deactivate_contact_channel` method.
+`session.create_client("ssm-contacts").deactivate_contact_channel` method.
 
 Boto3 documentation:
 [SSMContacts.Client.deactivate_contact_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.deactivate_contact_channel)
@@ -277,7 +277,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 To remove a contact from Incident Manager, you can delete the contact.
 
-Type annotations for `aiobotocore.create_client("ssm-contacts").delete_contact`
+Type annotations for `session.create_client("ssm-contacts").delete_contact`
 method.
 
 Boto3 documentation:
@@ -302,7 +302,7 @@ To no longer receive engagements on a contact channel, you can delete the
 channel from a contact.
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").delete_contact_channel` method.
+`session.create_client("ssm-contacts").delete_contact_channel` method.
 
 Boto3 documentation:
 [SSMContacts.Client.delete_contact_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.delete_contact_channel)
@@ -327,7 +327,7 @@ Incident Manager uses engagements to engage contacts and escalation plans
 during an incident.
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").describe_engagement` method.
+`session.create_client("ssm-contacts").describe_engagement` method.
 
 Boto3 documentation:
 [SSMContacts.Client.describe_engagement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.describe_engagement)
@@ -351,7 +351,7 @@ Returns a `Coroutine` for
 
 Lists details of the engagement to a contact channel.
 
-Type annotations for `aiobotocore.create_client("ssm-contacts").describe_page`
+Type annotations for `session.create_client("ssm-contacts").describe_page`
 method.
 
 Boto3 documentation:
@@ -376,7 +376,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").generate_presigned_url` method.
+`session.create_client("ssm-contacts").generate_presigned_url` method.
 
 Boto3 documentation:
 [SSMContacts.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.generate_presigned_url)
@@ -399,7 +399,7 @@ Returns a `Coroutine` for `str`.
 
 Retrieves information about the specified contact or escalation plan.
 
-Type annotations for `aiobotocore.create_client("ssm-contacts").get_contact`
+Type annotations for `session.create_client("ssm-contacts").get_contact`
 method.
 
 Boto3 documentation:
@@ -424,7 +424,7 @@ Returns a `Coroutine` for
 List details about a specific contact channel.
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").get_contact_channel` method.
+`session.create_client("ssm-contacts").get_contact_channel` method.
 
 Boto3 documentation:
 [SSMContacts.Client.get_contact_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.get_contact_channel)
@@ -449,8 +449,8 @@ Returns a `Coroutine` for
 Retrieves the resource policies attached to the specified contact or escalation
 plan.
 
-Type annotations for
-`aiobotocore.create_client("ssm-contacts").get_contact_policy` method.
+Type annotations for `session.create_client("ssm-contacts").get_contact_policy`
+method.
 
 Boto3 documentation:
 [SSMContacts.Client.get_contact_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.get_contact_policy)
@@ -475,7 +475,7 @@ Returns a `Coroutine` for
 Lists all contact channels for the specified contact.
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").list_contact_channels` method.
+`session.create_client("ssm-contacts").list_contact_channels` method.
 
 Boto3 documentation:
 [SSMContacts.Client.list_contact_channels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.list_contact_channels)
@@ -501,7 +501,7 @@ Returns a `Coroutine` for
 
 Lists all contacts and escalation plans in Incident Manager.
 
-Type annotations for `aiobotocore.create_client("ssm-contacts").list_contacts`
+Type annotations for `session.create_client("ssm-contacts").list_contacts`
 method.
 
 Boto3 documentation:
@@ -528,8 +528,8 @@ Returns a `Coroutine` for
 
 Lists all engagements that have happened in an incident.
 
-Type annotations for
-`aiobotocore.create_client("ssm-contacts").list_engagements` method.
+Type annotations for `session.create_client("ssm-contacts").list_engagements`
+method.
 
 Boto3 documentation:
 [SSMContacts.Client.list_engagements](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.list_engagements)
@@ -555,8 +555,8 @@ Returns a `Coroutine` for
 
 Lists all of the engagements to contact channels that have been acknowledged.
 
-Type annotations for
-`aiobotocore.create_client("ssm-contacts").list_page_receipts` method.
+Type annotations for `session.create_client("ssm-contacts").list_page_receipts`
+method.
 
 Boto3 documentation:
 [SSMContacts.Client.list_page_receipts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.list_page_receipts)
@@ -583,7 +583,7 @@ Returns a `Coroutine` for
 Lists the engagements to a contact's contact channels.
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").list_pages_by_contact` method.
+`session.create_client("ssm-contacts").list_pages_by_contact` method.
 
 Boto3 documentation:
 [SSMContacts.Client.list_pages_by_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.list_pages_by_contact)
@@ -610,7 +610,7 @@ Returns a `Coroutine` for
 Lists the engagements to contact channels that occurred by engaging a contact.
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").list_pages_by_engagement` method.
+`session.create_client("ssm-contacts").list_pages_by_engagement` method.
 
 Boto3 documentation:
 [SSMContacts.Client.list_pages_by_engagement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.list_pages_by_engagement)
@@ -637,7 +637,7 @@ Returns a `Coroutine` for
 Lists the tags of an escalation plan or contact.
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").list_tags_for_resource` method.
+`session.create_client("ssm-contacts").list_tags_for_resource` method.
 
 Boto3 documentation:
 [SSMContacts.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.list_tags_for_resource)
@@ -661,8 +661,8 @@ Returns a `Coroutine` for
 
 Adds a resource to the specified contact or escalation plan.
 
-Type annotations for
-`aiobotocore.create_client("ssm-contacts").put_contact_policy` method.
+Type annotations for `session.create_client("ssm-contacts").put_contact_policy`
+method.
 
 Boto3 documentation:
 [SSMContacts.Client.put_contact_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.put_contact_policy)
@@ -687,7 +687,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Sends an activation code to a contact channel.
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").send_activation_code` method.
+`session.create_client("ssm-contacts").send_activation_code` method.
 
 Boto3 documentation:
 [SSMContacts.Client.send_activation_code](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.send_activation_code)
@@ -710,8 +710,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Starts an engagement to a contact or escalation plan.
 
-Type annotations for
-`aiobotocore.create_client("ssm-contacts").start_engagement` method.
+Type annotations for `session.create_client("ssm-contacts").start_engagement`
+method.
 
 Boto3 documentation:
 [SSMContacts.Client.start_engagement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.start_engagement)
@@ -742,8 +742,8 @@ Returns a `Coroutine` for
 Stops an engagement before it finishes the final stage of the escalation plan
 or engagement plan.
 
-Type annotations for
-`aiobotocore.create_client("ssm-contacts").stop_engagement` method.
+Type annotations for `session.create_client("ssm-contacts").stop_engagement`
+method.
 
 Boto3 documentation:
 [SSMContacts.Client.stop_engagement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.stop_engagement)
@@ -766,7 +766,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Tags a contact or escalation plan.
 
-Type annotations for `aiobotocore.create_client("ssm-contacts").tag_resource`
+Type annotations for `session.create_client("ssm-contacts").tag_resource`
 method.
 
 Boto3 documentation:
@@ -790,7 +790,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from the specified resource.
 
-Type annotations for `aiobotocore.create_client("ssm-contacts").untag_resource`
+Type annotations for `session.create_client("ssm-contacts").untag_resource`
 method.
 
 Boto3 documentation:
@@ -814,7 +814,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the contact or escalation plan specified.
 
-Type annotations for `aiobotocore.create_client("ssm-contacts").update_contact`
+Type annotations for `session.create_client("ssm-contacts").update_contact`
 method.
 
 Boto3 documentation:
@@ -840,7 +840,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a contact's contact channel.
 
 Type annotations for
-`aiobotocore.create_client("ssm-contacts").update_contact_channel` method.
+`session.create_client("ssm-contacts").update_contact_channel` method.
 
 Boto3 documentation:
 [SSMContacts.Client.update_contact_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.update_contact_channel)
@@ -860,11 +860,43 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("ssm-contacts").__aenter__` method.
+
+Boto3 documentation:
+[SSMContacts.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SSMContactsClient](#ssmcontactsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("ssm-contacts").__aexit__` method.
+
+Boto3 documentation:
+[SSMContacts.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm-contacts.html#SSMContacts.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("ssm-contacts").get_paginator`
+Type annotations for `session.create_client("ssm-contacts").get_paginator`
 method with overloads.
 
 - `client.get_paginator("list_contact_channels")` ->

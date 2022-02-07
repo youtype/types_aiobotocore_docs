@@ -19,17 +19,19 @@ type annotations stubs module
 ## ListChangesetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("finspace-data").get_paginator("list_changesets")`.
+`session.create_client("finspace-data").get_paginator("list_changesets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_finspace_data.paginator import ListChangesetsPaginator
 
-def get_list_changesets_paginator() -> ListChangesetsPaginator:
-    return Session().create_client("finspace-data").get_paginator("list_changesets")
+session = get_session()
+async with session.create_client("finspace-data") as client:
+    client: FinSpaceDataClient
+    paginator: ListChangesetsPaginator = client.get_paginator("list_changesets")
 ```
 
 Boto3 documentation:
@@ -49,17 +51,19 @@ Arguments for `ListChangesetsPaginator.paginate` method:
 ## ListDataViewsPaginator
 
 Type annotations for
-`aiobotocore.create_client("finspace-data").get_paginator("list_data_views")`.
+`session.create_client("finspace-data").get_paginator("list_data_views")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_finspace_data.paginator import ListDataViewsPaginator
 
-def get_list_data_views_paginator() -> ListDataViewsPaginator:
-    return Session().create_client("finspace-data").get_paginator("list_data_views")
+session = get_session()
+async with session.create_client("finspace-data") as client:
+    client: FinSpaceDataClient
+    paginator: ListDataViewsPaginator = client.get_paginator("list_data_views")
 ```
 
 Boto3 documentation:
@@ -79,17 +83,19 @@ Arguments for `ListDataViewsPaginator.paginate` method:
 ## ListDatasetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("finspace-data").get_paginator("list_datasets")`.
+`session.create_client("finspace-data").get_paginator("list_datasets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_finspace_data.paginator import ListDatasetsPaginator
 
-def get_list_datasets_paginator() -> ListDatasetsPaginator:
-    return Session().create_client("finspace-data").get_paginator("list_datasets")
+session = get_session()
+async with session.create_client("finspace-data") as client:
+    client: FinSpaceDataClient
+    paginator: ListDatasetsPaginator = client.get_paginator("list_datasets")
 ```
 
 Boto3 documentation:

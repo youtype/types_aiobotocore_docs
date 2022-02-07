@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[rbin]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[rbin]'
+
+# standalone installation
 pip install types-aiobotocore-rbin
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-rbin
 
 ## RecycleBinClient
 
-Type annotations for `aiobotocore.create_client("rbin")` as
+Type annotations for `session.create_client("rbin")` as
 [RecycleBinClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_rbin.client import RecycleBinClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_rule](./client.md#create_rule)
 - [delete_rule](./client.md#delete_rule)
@@ -77,7 +83,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_rbin.paginators import ListRulesPaginator, ...
+from types_aiobotocore_rbin.paginator import ListRulesPaginator, ...
 ```
 
 - [ListRulesPaginator](./paginators.md#listrulespaginator)

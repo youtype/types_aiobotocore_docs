@@ -46,21 +46,24 @@ type annotations stubs module
     - [update_anomaly_monitor](#update_anomaly_monitor)
     - [update_anomaly_subscription](#update_anomaly_subscription)
     - [update_cost_category_definition](#update_cost_category_definition)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="costexplorerclient"></a>
 
 ## CostExplorerClient
 
-Type annotations for `aiobotocore.create_client("ce")`
+Type annotations for `session.create_client("ce")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_ce.client import CostExplorerClient
 
-def get_ce_client() -> CostExplorerClient:
-    return Session().client("ce")
+session = get_session()
+async with session.create_client("ce") as client:
+    client: CostExplorerClient
 ```
 
 Boto3 documentation:
@@ -104,7 +107,7 @@ Exceptions:
 
 CostExplorerClient exceptions.
 
-Type annotations for `aiobotocore.create_client("ce").exceptions` method.
+Type annotations for `session.create_client("ce").exceptions` method.
 
 Boto3 documentation:
 [CostExplorer.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.exceptions)
@@ -117,18 +120,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("ce").can_paginate` method.
+Type annotations for `session.create_client("ce").can_paginate` method.
 
 Boto3 documentation:
 [CostExplorer.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_anomaly_monitor"></a>
 
@@ -137,7 +138,7 @@ Returns a `Coroutine` for `bool`.
 Creates a new cost anomaly detection monitor with the requested type and
 monitor specification.
 
-Type annotations for `aiobotocore.create_client("ce").create_anomaly_monitor`
+Type annotations for `session.create_client("ce").create_anomaly_monitor`
 method.
 
 Boto3 documentation:
@@ -163,8 +164,8 @@ Returns a `Coroutine` for
 
 Adds a subscription to a cost anomaly detection monitor.
 
-Type annotations for
-`aiobotocore.create_client("ce").create_anomaly_subscription` method.
+Type annotations for `session.create_client("ce").create_anomaly_subscription`
+method.
 
 Boto3 documentation:
 [CostExplorer.Client.create_anomaly_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.create_anomaly_subscription)
@@ -191,7 +192,7 @@ Returns a `Coroutine` for
 Creates a new Cost Category with the requested name and rules.
 
 Type annotations for
-`aiobotocore.create_client("ce").create_cost_category_definition` method.
+`session.create_client("ce").create_cost_category_definition` method.
 
 Boto3 documentation:
 [CostExplorer.Client.create_cost_category_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.create_cost_category_definition)
@@ -224,7 +225,7 @@ Returns a `Coroutine` for
 
 Deletes a cost anomaly monitor.
 
-Type annotations for `aiobotocore.create_client("ce").delete_anomaly_monitor`
+Type annotations for `session.create_client("ce").delete_anomaly_monitor`
 method.
 
 Boto3 documentation:
@@ -248,8 +249,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a cost anomaly subscription.
 
-Type annotations for
-`aiobotocore.create_client("ce").delete_anomaly_subscription` method.
+Type annotations for `session.create_client("ce").delete_anomaly_subscription`
+method.
 
 Boto3 documentation:
 [CostExplorer.Client.delete_anomaly_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.delete_anomaly_subscription)
@@ -273,7 +274,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a Cost Category.
 
 Type annotations for
-`aiobotocore.create_client("ce").delete_cost_category_definition` method.
+`session.create_client("ce").delete_cost_category_definition` method.
 
 Boto3 documentation:
 [CostExplorer.Client.delete_cost_category_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.delete_cost_category_definition)
@@ -299,7 +300,7 @@ Returns the name, ARN, rules, definition, and effective dates of a Cost
 Category that's defined in the account.
 
 Type annotations for
-`aiobotocore.create_client("ce").describe_cost_category_definition` method.
+`session.create_client("ce").describe_cost_category_definition` method.
 
 Boto3 documentation:
 [CostExplorer.Client.describe_cost_category_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.describe_cost_category_definition)
@@ -324,7 +325,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("ce").generate_presigned_url`
+Type annotations for `session.create_client("ce").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -349,7 +350,7 @@ Returns a `Coroutine` for `str`.
 Retrieves all of the cost anomalies detected on your account during the time
 period that's specified by the `DateInterval` object.
 
-Type annotations for `aiobotocore.create_client("ce").get_anomalies` method.
+Type annotations for `session.create_client("ce").get_anomalies` method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_anomalies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_anomalies)
@@ -380,8 +381,7 @@ Returns a `Coroutine` for
 
 Retrieves the cost anomaly monitor definitions for your account.
 
-Type annotations for `aiobotocore.create_client("ce").get_anomaly_monitors`
-method.
+Type annotations for `session.create_client("ce").get_anomaly_monitors` method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_anomaly_monitors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_anomaly_monitors)
@@ -407,8 +407,8 @@ Returns a `Coroutine` for
 
 Retrieves the cost anomaly subscription objects for your account.
 
-Type annotations for
-`aiobotocore.create_client("ce").get_anomaly_subscriptions` method.
+Type annotations for `session.create_client("ce").get_anomaly_subscriptions`
+method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_anomaly_subscriptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_anomaly_subscriptions)
@@ -435,8 +435,7 @@ Returns a `Coroutine` for
 
 Retrieves cost and usage metrics for your account.
 
-Type annotations for `aiobotocore.create_client("ce").get_cost_and_usage`
-method.
+Type annotations for `session.create_client("ce").get_cost_and_usage` method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_cost_and_usage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_cost_and_usage)
@@ -468,7 +467,7 @@ Returns a `Coroutine` for
 Retrieves cost and usage metrics with resources for your account.
 
 Type annotations for
-`aiobotocore.create_client("ce").get_cost_and_usage_with_resources` method.
+`session.create_client("ce").get_cost_and_usage_with_resources` method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_cost_and_usage_with_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_cost_and_usage_with_resources)
@@ -499,8 +498,7 @@ Returns a `Coroutine` for
 
 Retrieves an array of Cost Category names and values incurred cost.
 
-Type annotations for `aiobotocore.create_client("ce").get_cost_categories`
-method.
+Type annotations for `session.create_client("ce").get_cost_categories` method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_cost_categories](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_cost_categories)
@@ -533,8 +531,7 @@ Returns a `Coroutine` for
 Retrieves a forecast for how much Amazon Web Services predicts that you will
 spend over the forecast time period that you select, based on your past costs.
 
-Type annotations for `aiobotocore.create_client("ce").get_cost_forecast`
-method.
+Type annotations for `session.create_client("ce").get_cost_forecast` method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_cost_forecast](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_cost_forecast)
@@ -563,8 +560,7 @@ Returns a `Coroutine` for
 Retrieves all available filter values for a specified filter over a period of
 time.
 
-Type annotations for `aiobotocore.create_client("ce").get_dimension_values`
-method.
+Type annotations for `session.create_client("ce").get_dimension_values` method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_dimension_values](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_dimension_values)
@@ -597,7 +593,7 @@ Returns a `Coroutine` for
 
 Retrieves the reservation coverage for your account.
 
-Type annotations for `aiobotocore.create_client("ce").get_reservation_coverage`
+Type annotations for `session.create_client("ce").get_reservation_coverage`
 method.
 
 Boto3 documentation:
@@ -632,8 +628,7 @@ Returns a `Coroutine` for
 Gets recommendations for which reservations to purchase.
 
 Type annotations for
-`aiobotocore.create_client("ce").get_reservation_purchase_recommendation`
-method.
+`session.create_client("ce").get_reservation_purchase_recommendation` method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_reservation_purchase_recommendation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_reservation_purchase_recommendation)
@@ -668,8 +663,8 @@ Returns a `Coroutine` for
 
 Retrieves the reservation utilization for your account.
 
-Type annotations for
-`aiobotocore.create_client("ce").get_reservation_utilization` method.
+Type annotations for `session.create_client("ce").get_reservation_utilization`
+method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_reservation_utilization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_reservation_utilization)
@@ -703,7 +698,7 @@ Creates recommendations that help you save cost by identifying idle and
 underutilized Amazon EC2 instances.
 
 Type annotations for
-`aiobotocore.create_client("ce").get_rightsizing_recommendation` method.
+`session.create_client("ce").get_rightsizing_recommendation` method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_rightsizing_recommendation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_rightsizing_recommendation)
@@ -732,8 +727,8 @@ Returns a `Coroutine` for
 
 Retrieves the Savings Plans covered for your account.
 
-Type annotations for
-`aiobotocore.create_client("ce").get_savings_plans_coverage` method.
+Type annotations for `session.create_client("ce").get_savings_plans_coverage`
+method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_savings_plans_coverage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_savings_plans_coverage)
@@ -768,8 +763,7 @@ Retrieves your request parameters, Savings Plan Recommendations Summary and
 Details.
 
 Type annotations for
-`aiobotocore.create_client("ce").get_savings_plans_purchase_recommendation`
-method.
+`session.create_client("ce").get_savings_plans_purchase_recommendation` method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_savings_plans_purchase_recommendation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_savings_plans_purchase_recommendation)
@@ -807,7 +801,7 @@ Retrieves the Savings Plans utilization for your account across date ranges
 with daily or monthly granularity.
 
 Type annotations for
-`aiobotocore.create_client("ce").get_savings_plans_utilization` method.
+`session.create_client("ce").get_savings_plans_utilization` method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_savings_plans_utilization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_savings_plans_utilization)
@@ -837,7 +831,7 @@ Retrieves attribute data along with aggregate utilization and savings data for
 a given time period.
 
 Type annotations for
-`aiobotocore.create_client("ce").get_savings_plans_utilization_details` method.
+`session.create_client("ce").get_savings_plans_utilization_details` method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_savings_plans_utilization_details](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_savings_plans_utilization_details)
@@ -868,7 +862,7 @@ Returns a `Coroutine` for
 
 Queries for available tag keys and tag values for a specified period.
 
-Type annotations for `aiobotocore.create_client("ce").get_tags` method.
+Type annotations for `session.create_client("ce").get_tags` method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_tags)
@@ -900,8 +894,7 @@ Returns a `Coroutine` for
 Retrieves a forecast for how much Amazon Web Services predicts that you will
 use over the forecast time period that you select, based on your past usage.
 
-Type annotations for `aiobotocore.create_client("ce").get_usage_forecast`
-method.
+Type annotations for `session.create_client("ce").get_usage_forecast` method.
 
 Boto3 documentation:
 [CostExplorer.Client.get_usage_forecast](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.get_usage_forecast)
@@ -932,7 +925,7 @@ Returns the name, ARN, `NumberOfRules` and effective dates of all Cost
 Categories defined in the account.
 
 Type annotations for
-`aiobotocore.create_client("ce").list_cost_category_definitions` method.
+`session.create_client("ce").list_cost_category_definitions` method.
 
 Boto3 documentation:
 [CostExplorer.Client.list_cost_category_definitions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.list_cost_category_definitions)
@@ -958,7 +951,7 @@ Returns a `Coroutine` for
 
 Modifies the feedback property of a given cost anomaly.
 
-Type annotations for `aiobotocore.create_client("ce").provide_anomaly_feedback`
+Type annotations for `session.create_client("ce").provide_anomaly_feedback`
 method.
 
 Boto3 documentation:
@@ -985,7 +978,7 @@ Returns a `Coroutine` for
 
 Updates an existing cost anomaly monitor.
 
-Type annotations for `aiobotocore.create_client("ce").update_anomaly_monitor`
+Type annotations for `session.create_client("ce").update_anomaly_monitor`
 method.
 
 Boto3 documentation:
@@ -1011,8 +1004,8 @@ Returns a `Coroutine` for
 
 Updates an existing cost anomaly monitor subscription.
 
-Type annotations for
-`aiobotocore.create_client("ce").update_anomaly_subscription` method.
+Type annotations for `session.create_client("ce").update_anomaly_subscription`
+method.
 
 Boto3 documentation:
 [CostExplorer.Client.update_anomaly_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.update_anomaly_subscription)
@@ -1044,7 +1037,7 @@ Returns a `Coroutine` for
 Updates an existing Cost Category.
 
 Type annotations for
-`aiobotocore.create_client("ce").update_cost_category_definition` method.
+`session.create_client("ce").update_cost_category_definition` method.
 
 Boto3 documentation:
 [CostExplorer.Client.update_cost_category_definition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.update_cost_category_definition)
@@ -1070,3 +1063,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateCostCategoryDefinitionResponseTypeDef](./type_defs.md#updatecostcategorydefinitionresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("ce").__aenter__` method.
+
+Boto3 documentation:
+[CostExplorer.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CostExplorerClient](#costexplorerclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("ce").__aexit__` method.
+
+Boto3 documentation:
+[CostExplorer.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html#CostExplorer.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

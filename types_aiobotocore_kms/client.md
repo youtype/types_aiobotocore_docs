@@ -64,22 +64,25 @@ type annotations stubs module
     - [update_key_description](#update_key_description)
     - [update_primary_region](#update_primary_region)
     - [verify](#verify)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="kmsclient"></a>
 
 ## KMSClient
 
-Type annotations for `aiobotocore.create_client("kms")`
+Type annotations for `session.create_client("kms")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_kms.client import KMSClient
 
-def get_kms_client() -> KMSClient:
-    return Session().client("kms")
+session = get_session()
+async with session.create_client("kms") as client:
+    client: KMSClient
 ```
 
 Boto3 documentation:
@@ -146,7 +149,7 @@ Exceptions:
 
 KMSClient exceptions.
 
-Type annotations for `aiobotocore.create_client("kms").exceptions` method.
+Type annotations for `session.create_client("kms").exceptions` method.
 
 Boto3 documentation:
 [KMS.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.exceptions)
@@ -159,18 +162,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("kms").can_paginate` method.
+Type annotations for `session.create_client("kms").can_paginate` method.
 
 Boto3 documentation:
 [KMS.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_key_deletion"></a>
 
@@ -178,8 +179,7 @@ Returns a `Coroutine` for `bool`.
 
 Cancels the deletion of a KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").cancel_key_deletion`
-method.
+Type annotations for `session.create_client("kms").cancel_key_deletion` method.
 
 Boto3 documentation:
 [KMS.Client.cancel_key_deletion](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.cancel_key_deletion)
@@ -205,8 +205,8 @@ Connects or reconnects a \[custom key
 store\](https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-
 overview.html)\_ to its associated CloudHSM cluster.
 
-Type annotations for
-`aiobotocore.create_client("kms").connect_custom_key_store` method.
+Type annotations for `session.create_client("kms").connect_custom_key_store`
+method.
 
 Boto3 documentation:
 [KMS.Client.connect_custom_key_store](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.connect_custom_key_store)
@@ -229,7 +229,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a friendly name for a KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").create_alias` method.
+Type annotations for `session.create_client("kms").create_alias` method.
 
 Boto3 documentation:
 [KMS.Client.create_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.create_alias)
@@ -254,7 +254,7 @@ overview.html)\_ that is associated with an
 [CloudHSM cluster](https://docs.aws.amazon.com/cloudhsm/latest/userguide/clusters.html)\_
 that you own and manage.
 
-Type annotations for `aiobotocore.create_client("kms").create_custom_key_store`
+Type annotations for `session.create_client("kms").create_custom_key_store`
 method.
 
 Boto3 documentation:
@@ -282,7 +282,7 @@ Returns a `Coroutine` for
 
 Adds a grant to a KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").create_grant` method.
+Type annotations for `session.create_client("kms").create_grant` method.
 
 Boto3 documentation:
 [KMS.Client.create_grant](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.create_grant)
@@ -316,7 +316,7 @@ Creates a unique customer managed \[KMS
 key\](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms-
 keys)\_ in your Amazon Web Services account and Region.
 
-Type annotations for `aiobotocore.create_client("kms").create_key` method.
+Type annotations for `session.create_client("kms").create_key` method.
 
 Boto3 documentation:
 [KMS.Client.create_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.create_key)
@@ -352,7 +352,7 @@ operations * Encrypt * GenerateDataKey * GenerateDataKeyPair \*
 GenerateDataKeyWithoutPlaintext * GenerateDataKeyPairWithoutPlaintext You can
 use this operation to decrypt cipher...
 
-Type annotations for `aiobotocore.create_client("kms").decrypt` method.
+Type annotations for `session.create_client("kms").decrypt` method.
 
 Boto3 documentation:
 [KMS.Client.decrypt](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.decrypt)
@@ -381,7 +381,7 @@ Returns a `Coroutine` for
 
 Deletes the specified alias.
 
-Type annotations for `aiobotocore.create_client("kms").delete_alias` method.
+Type annotations for `session.create_client("kms").delete_alias` method.
 
 Boto3 documentation:
 [KMS.Client.delete_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.delete_alias)
@@ -403,7 +403,7 @@ Deletes a \[custom key
 store\](https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-
 overview.html)\_.
 
-Type annotations for `aiobotocore.create_client("kms").delete_custom_key_store`
+Type annotations for `session.create_client("kms").delete_custom_key_store`
 method.
 
 Boto3 documentation:
@@ -428,7 +428,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes key material that you previously imported.
 
 Type annotations for
-`aiobotocore.create_client("kms").delete_imported_key_material` method.
+`session.create_client("kms").delete_imported_key_material` method.
 
 Boto3 documentation:
 [KMS.Client.delete_imported_key_material](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.delete_imported_key_material)
@@ -451,8 +451,8 @@ Gets information about \[custom key
 stores\](https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-
 overview.html)\_ in the account and Region.
 
-Type annotations for
-`aiobotocore.create_client("kms").describe_custom_key_stores` method.
+Type annotations for `session.create_client("kms").describe_custom_key_stores`
+method.
 
 Boto3 documentation:
 [KMS.Client.describe_custom_key_stores](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.describe_custom_key_stores)
@@ -479,7 +479,7 @@ Returns a `Coroutine` for
 
 Provides detailed information about a KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").describe_key` method.
+Type annotations for `session.create_client("kms").describe_key` method.
 
 Boto3 documentation:
 [KMS.Client.describe_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.describe_key)
@@ -503,7 +503,7 @@ Returns a `Coroutine` for
 
 Sets the state of a KMS key to disabled.
 
-Type annotations for `aiobotocore.create_client("kms").disable_key` method.
+Type annotations for `session.create_client("kms").disable_key` method.
 
 Boto3 documentation:
 [KMS.Client.disable_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.disable_key)
@@ -525,7 +525,7 @@ Disables \[automatic rotation of the key
 material\](https://docs.aws.amazon.com/kms/latest/developerguide/rotate-
 keys.html)\_ for the specified symmetric KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").disable_key_rotation`
+Type annotations for `session.create_client("kms").disable_key_rotation`
 method.
 
 Boto3 documentation:
@@ -549,8 +549,8 @@ Disconnects the \[custom key
 store\](https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-
 overview.html)\_ from its associated CloudHSM cluster.
 
-Type annotations for
-`aiobotocore.create_client("kms").disconnect_custom_key_store` method.
+Type annotations for `session.create_client("kms").disconnect_custom_key_store`
+method.
 
 Boto3 documentation:
 [KMS.Client.disconnect_custom_key_store](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.disconnect_custom_key_store)
@@ -573,7 +573,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Sets the key state of a KMS key to enabled.
 
-Type annotations for `aiobotocore.create_client("kms").enable_key` method.
+Type annotations for `session.create_client("kms").enable_key` method.
 
 Boto3 documentation:
 [KMS.Client.enable_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.enable_key)
@@ -595,8 +595,7 @@ Enables \[automatic rotation of the key
 material\](https://docs.aws.amazon.com/kms/latest/developerguide/rotate-
 keys.html)\_ for the specified symmetric KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").enable_key_rotation`
-method.
+Type annotations for `session.create_client("kms").enable_key_rotation` method.
 
 Boto3 documentation:
 [KMS.Client.enable_key_rotation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.enable_key_rotation)
@@ -617,7 +616,7 @@ Keyword-only arguments:
 
 Encrypts plaintext into ciphertext by using a KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").encrypt` method.
+Type annotations for `session.create_client("kms").encrypt` method.
 
 Boto3 documentation:
 [KMS.Client.encrypt](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.encrypt)
@@ -646,8 +645,7 @@ Returns a `Coroutine` for
 
 Generates a unique symmetric data key for client-side encryption.
 
-Type annotations for `aiobotocore.create_client("kms").generate_data_key`
-method.
+Type annotations for `session.create_client("kms").generate_data_key` method.
 
 Boto3 documentation:
 [KMS.Client.generate_data_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.generate_data_key)
@@ -674,7 +672,7 @@ Returns a `Coroutine` for
 
 Generates a unique asymmetric data key pair.
 
-Type annotations for `aiobotocore.create_client("kms").generate_data_key_pair`
+Type annotations for `session.create_client("kms").generate_data_key_pair`
 method.
 
 Boto3 documentation:
@@ -704,8 +702,7 @@ Returns a `Coroutine` for
 Generates a unique asymmetric data key pair.
 
 Type annotations for
-`aiobotocore.create_client("kms").generate_data_key_pair_without_plaintext`
-method.
+`session.create_client("kms").generate_data_key_pair_without_plaintext` method.
 
 Boto3 documentation:
 [KMS.Client.generate_data_key_pair_without_plaintext](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.generate_data_key_pair_without_plaintext)
@@ -734,7 +731,7 @@ Returns a `Coroutine` for
 Generates a unique symmetric data key.
 
 Type annotations for
-`aiobotocore.create_client("kms").generate_data_key_without_plaintext` method.
+`session.create_client("kms").generate_data_key_without_plaintext` method.
 
 Boto3 documentation:
 [KMS.Client.generate_data_key_without_plaintext](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.generate_data_key_without_plaintext)
@@ -762,7 +759,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("kms").generate_presigned_url`
+Type annotations for `session.create_client("kms").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -786,7 +783,7 @@ Returns a `Coroutine` for `str`.
 
 Returns a random byte string that is cryptographically secure.
 
-Type annotations for `aiobotocore.create_client("kms").generate_random` method.
+Type annotations for `session.create_client("kms").generate_random` method.
 
 Boto3 documentation:
 [KMS.Client.generate_random](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.generate_random)
@@ -810,7 +807,7 @@ Returns a `Coroutine` for
 
 Gets a key policy attached to the specified KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").get_key_policy` method.
+Type annotations for `session.create_client("kms").get_key_policy` method.
 
 Boto3 documentation:
 [KMS.Client.get_key_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.get_key_policy)
@@ -836,7 +833,7 @@ Gets a Boolean value that indicates whether \[automatic rotation of the key
 material\](https://docs.aws.amazon.com/kms/latest/developerguide/rotate-
 keys.html)\_ is enabled for the specified KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").get_key_rotation_status`
+Type annotations for `session.create_client("kms").get_key_rotation_status`
 method.
 
 Boto3 documentation:
@@ -862,8 +859,8 @@ Returns a `Coroutine` for
 Returns the items you need to import key material into a symmetric, customer
 managed KMS key.
 
-Type annotations for
-`aiobotocore.create_client("kms").get_parameters_for_import` method.
+Type annotations for `session.create_client("kms").get_parameters_for_import`
+method.
 
 Boto3 documentation:
 [KMS.Client.get_parameters_for_import](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.get_parameters_for_import)
@@ -891,7 +888,7 @@ Returns a `Coroutine` for
 
 Returns the public key of an asymmetric KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").get_public_key` method.
+Type annotations for `session.create_client("kms").get_public_key` method.
 
 Boto3 documentation:
 [KMS.Client.get_public_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.get_public_key)
@@ -916,8 +913,7 @@ Returns a `Coroutine` for
 Imports key material into an existing symmetric KMS KMS key that was created
 without key material.
 
-Type annotations for `aiobotocore.create_client("kms").import_key_material`
-method.
+Type annotations for `session.create_client("kms").import_key_material` method.
 
 Boto3 documentation:
 [KMS.Client.import_key_material](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.import_key_material)
@@ -947,7 +943,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Gets a list of aliases in the caller's Amazon Web Services account and region.
 
-Type annotations for `aiobotocore.create_client("kms").list_aliases` method.
+Type annotations for `session.create_client("kms").list_aliases` method.
 
 Boto3 documentation:
 [KMS.Client.list_aliases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.list_aliases)
@@ -972,7 +968,7 @@ Returns a `Coroutine` for
 
 Gets a list of all grants for the specified KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").list_grants` method.
+Type annotations for `session.create_client("kms").list_grants` method.
 
 Boto3 documentation:
 [KMS.Client.list_grants](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.list_grants)
@@ -999,8 +995,7 @@ Returns a `Coroutine` for
 
 Gets the names of the key policies that are attached to a KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").list_key_policies`
-method.
+Type annotations for `session.create_client("kms").list_key_policies` method.
 
 Boto3 documentation:
 [KMS.Client.list_key_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.list_key_policies)
@@ -1026,7 +1021,7 @@ Returns a `Coroutine` for
 Gets a list of all KMS keys in the caller's Amazon Web Services account and
 Region.
 
-Type annotations for `aiobotocore.create_client("kms").list_keys` method.
+Type annotations for `session.create_client("kms").list_keys` method.
 
 Boto3 documentation:
 [KMS.Client.list_keys](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.list_keys)
@@ -1050,8 +1045,7 @@ Returns a `Coroutine` for
 
 Returns all tags on the specified KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").list_resource_tags`
-method.
+Type annotations for `session.create_client("kms").list_resource_tags` method.
 
 Boto3 documentation:
 [KMS.Client.list_resource_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.list_resource_tags)
@@ -1078,7 +1072,7 @@ Returns a `Coroutine` for
 Returns information about all grants in the Amazon Web Services account and
 Region that have the specified retiring principal.
 
-Type annotations for `aiobotocore.create_client("kms").list_retirable_grants`
+Type annotations for `session.create_client("kms").list_retirable_grants`
 method.
 
 Boto3 documentation:
@@ -1105,7 +1099,7 @@ Returns a `Coroutine` for
 
 Attaches a key policy to the specified KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").put_key_policy` method.
+Type annotations for `session.create_client("kms").put_key_policy` method.
 
 Boto3 documentation:
 [KMS.Client.put_key_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.put_key_policy)
@@ -1128,7 +1122,7 @@ Keyword-only arguments:
 
 Decrypts ciphertext and then reencrypts it entirely within KMS.
 
-Type annotations for `aiobotocore.create_client("kms").re_encrypt` method.
+Type annotations for `session.create_client("kms").re_encrypt` method.
 
 Boto3 documentation:
 [KMS.Client.re_encrypt](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.re_encrypt)
@@ -1161,7 +1155,7 @@ Returns a `Coroutine` for
 
 Replicates a multi-Region key into the specified Region.
 
-Type annotations for `aiobotocore.create_client("kms").replicate_key` method.
+Type annotations for `session.create_client("kms").replicate_key` method.
 
 Boto3 documentation:
 [KMS.Client.replicate_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.replicate_key)
@@ -1189,7 +1183,7 @@ Returns a `Coroutine` for
 
 Deletes a grant.
 
-Type annotations for `aiobotocore.create_client("kms").retire_grant` method.
+Type annotations for `session.create_client("kms").retire_grant` method.
 
 Boto3 documentation:
 [KMS.Client.retire_grant](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.retire_grant)
@@ -1211,7 +1205,7 @@ Keyword-only arguments:
 
 Deletes the specified grant.
 
-Type annotations for `aiobotocore.create_client("kms").revoke_grant` method.
+Type annotations for `session.create_client("kms").revoke_grant` method.
 
 Boto3 documentation:
 [KMS.Client.revoke_grant](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.revoke_grant)
@@ -1232,7 +1226,7 @@ Keyword-only arguments:
 
 Schedules the deletion of a KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").schedule_key_deletion`
+Type annotations for `session.create_client("kms").schedule_key_deletion`
 method.
 
 Boto3 documentation:
@@ -1260,7 +1254,7 @@ Creates a
 [digital signature](https://en.wikipedia.org/wiki/Digital_signature)\_ for a
 message or message digest by using the private key in an asymmetric KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").sign` method.
+Type annotations for `session.create_client("kms").sign` method.
 
 Boto3 documentation:
 [KMS.Client.sign](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.sign)
@@ -1291,7 +1285,7 @@ Adds or edits tags on a \[customer managed
 key\](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-
 cmk)\_ .
 
-Type annotations for `aiobotocore.create_client("kms").tag_resource` method.
+Type annotations for `session.create_client("kms").tag_resource` method.
 
 Boto3 documentation:
 [KMS.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.tag_resource)
@@ -1314,7 +1308,7 @@ Deletes tags from a \[customer managed
 key\](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-
 cmk)\_.
 
-Type annotations for `aiobotocore.create_client("kms").untag_resource` method.
+Type annotations for `session.create_client("kms").untag_resource` method.
 
 Boto3 documentation:
 [KMS.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.untag_resource)
@@ -1335,7 +1329,7 @@ Keyword-only arguments:
 
 Associates an existing KMS alias with a different KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").update_alias` method.
+Type annotations for `session.create_client("kms").update_alias` method.
 
 Boto3 documentation:
 [KMS.Client.update_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.update_alias)
@@ -1356,7 +1350,7 @@ Keyword-only arguments:
 
 Changes the properties of a custom key store.
 
-Type annotations for `aiobotocore.create_client("kms").update_custom_key_store`
+Type annotations for `session.create_client("kms").update_custom_key_store`
 method.
 
 Boto3 documentation:
@@ -1383,7 +1377,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the description of a KMS key.
 
-Type annotations for `aiobotocore.create_client("kms").update_key_description`
+Type annotations for `session.create_client("kms").update_key_description`
 method.
 
 Boto3 documentation:
@@ -1406,7 +1400,7 @@ Keyword-only arguments:
 
 Changes the primary key of a multi-Region key.
 
-Type annotations for `aiobotocore.create_client("kms").update_primary_region`
+Type annotations for `session.create_client("kms").update_primary_region`
 method.
 
 Boto3 documentation:
@@ -1429,7 +1423,7 @@ Keyword-only arguments:
 
 Verifies a digital signature that was generated by the Sign operation.
 
-Type annotations for `aiobotocore.create_client("kms").verify` method.
+Type annotations for `session.create_client("kms").verify` method.
 
 Boto3 documentation:
 [KMS.Client.verify](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.verify)
@@ -1454,12 +1448,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [VerifyResponseTypeDef](./type_defs.md#verifyresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("kms").__aenter__` method.
+
+Boto3 documentation:
+[KMS.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [KMSClient](#kmsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("kms").__aexit__` method.
+
+Boto3 documentation:
+[KMS.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html#KMS.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("kms").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("kms").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_aliases")` ->
   [ListAliasesPaginator](./paginators.md#listaliasespaginator)

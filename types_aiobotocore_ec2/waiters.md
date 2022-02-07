@@ -49,7 +49,7 @@ type annotations stubs module
 ## BundleTaskCompleteWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("bundle_task_complete")`.
+`session.create_client("ec2").get_waiter("bundle_task_complete")`.
 
 Can be used directly:
 
@@ -59,7 +59,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import BundleTaskCompleteWaiter
 
 def get_bundle_task_complete_waiter() -> BundleTaskCompleteWaiter:
-    return Session().create_client("ec2").get_waiter("bundle_task_complete")
+    return Session().client("ec2").get_waiter("bundle_task_complete")
 ```
 
 Boto3 documentation:
@@ -77,7 +77,7 @@ Arguments for `BundleTaskCompleteWaiter.wait` method:
 ## ConversionTaskCancelledWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("conversion_task_cancelled")`.
+`session.create_client("ec2").get_waiter("conversion_task_cancelled")`.
 
 Can be used directly:
 
@@ -87,7 +87,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import ConversionTaskCancelledWaiter
 
 def get_conversion_task_cancelled_waiter() -> ConversionTaskCancelledWaiter:
-    return Session().create_client("ec2").get_waiter("conversion_task_cancelled")
+    return Session().client("ec2").get_waiter("conversion_task_cancelled")
 ```
 
 Boto3 documentation:
@@ -104,7 +104,7 @@ Arguments for `ConversionTaskCancelledWaiter.wait` method:
 ## ConversionTaskCompletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("conversion_task_completed")`.
+`session.create_client("ec2").get_waiter("conversion_task_completed")`.
 
 Can be used directly:
 
@@ -114,7 +114,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import ConversionTaskCompletedWaiter
 
 def get_conversion_task_completed_waiter() -> ConversionTaskCompletedWaiter:
-    return Session().create_client("ec2").get_waiter("conversion_task_completed")
+    return Session().client("ec2").get_waiter("conversion_task_completed")
 ```
 
 Boto3 documentation:
@@ -131,7 +131,7 @@ Arguments for `ConversionTaskCompletedWaiter.wait` method:
 ## ConversionTaskDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("conversion_task_deleted")`.
+`session.create_client("ec2").get_waiter("conversion_task_deleted")`.
 
 Can be used directly:
 
@@ -141,7 +141,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import ConversionTaskDeletedWaiter
 
 def get_conversion_task_deleted_waiter() -> ConversionTaskDeletedWaiter:
-    return Session().create_client("ec2").get_waiter("conversion_task_deleted")
+    return Session().client("ec2").get_waiter("conversion_task_deleted")
 ```
 
 Boto3 documentation:
@@ -158,7 +158,7 @@ Arguments for `ConversionTaskDeletedWaiter.wait` method:
 ## CustomerGatewayAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("customer_gateway_available")`.
+`session.create_client("ec2").get_waiter("customer_gateway_available")`.
 
 Can be used directly:
 
@@ -168,7 +168,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import CustomerGatewayAvailableWaiter
 
 def get_customer_gateway_available_waiter() -> CustomerGatewayAvailableWaiter:
-    return Session().create_client("ec2").get_waiter("customer_gateway_available")
+    return Session().client("ec2").get_waiter("customer_gateway_available")
 ```
 
 Boto3 documentation:
@@ -186,7 +186,7 @@ Arguments for `CustomerGatewayAvailableWaiter.wait` method:
 ## ExportTaskCancelledWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("export_task_cancelled")`.
+`session.create_client("ec2").get_waiter("export_task_cancelled")`.
 
 Can be used directly:
 
@@ -196,7 +196,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import ExportTaskCancelledWaiter
 
 def get_export_task_cancelled_waiter() -> ExportTaskCancelledWaiter:
-    return Session().create_client("ec2").get_waiter("export_task_cancelled")
+    return Session().client("ec2").get_waiter("export_task_cancelled")
 ```
 
 Boto3 documentation:
@@ -213,7 +213,7 @@ Arguments for `ExportTaskCancelledWaiter.wait` method:
 ## ExportTaskCompletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("export_task_completed")`.
+`session.create_client("ec2").get_waiter("export_task_completed")`.
 
 Can be used directly:
 
@@ -223,7 +223,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import ExportTaskCompletedWaiter
 
 def get_export_task_completed_waiter() -> ExportTaskCompletedWaiter:
-    return Session().create_client("ec2").get_waiter("export_task_completed")
+    return Session().client("ec2").get_waiter("export_task_completed")
 ```
 
 Boto3 documentation:
@@ -240,7 +240,7 @@ Arguments for `ExportTaskCompletedWaiter.wait` method:
 ## ImageAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("image_available")`.
+`session.create_client("ec2").get_waiter("image_available")`.
 
 Can be used directly:
 
@@ -250,7 +250,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import ImageAvailableWaiter
 
 def get_image_available_waiter() -> ImageAvailableWaiter:
-    return Session().create_client("ec2").get_waiter("image_available")
+    return Session().client("ec2").get_waiter("image_available")
 ```
 
 Boto3 documentation:
@@ -270,8 +270,7 @@ Arguments for `ImageAvailableWaiter.wait` method:
 
 ## ImageExistsWaiter
 
-Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("image_exists")`.
+Type annotations for `session.create_client("ec2").get_waiter("image_exists")`.
 
 Can be used directly:
 
@@ -281,7 +280,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import ImageExistsWaiter
 
 def get_image_exists_waiter() -> ImageExistsWaiter:
-    return Session().create_client("ec2").get_waiter("image_exists")
+    return Session().client("ec2").get_waiter("image_exists")
 ```
 
 Boto3 documentation:
@@ -302,7 +301,7 @@ Arguments for `ImageExistsWaiter.wait` method:
 ## InstanceExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("instance_exists")`.
+`session.create_client("ec2").get_waiter("instance_exists")`.
 
 Can be used directly:
 
@@ -312,7 +311,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import InstanceExistsWaiter
 
 def get_instance_exists_waiter() -> InstanceExistsWaiter:
-    return Session().create_client("ec2").get_waiter("instance_exists")
+    return Session().client("ec2").get_waiter("instance_exists")
 ```
 
 Boto3 documentation:
@@ -332,7 +331,7 @@ Arguments for `InstanceExistsWaiter.wait` method:
 ## InstanceRunningWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("instance_running")`.
+`session.create_client("ec2").get_waiter("instance_running")`.
 
 Can be used directly:
 
@@ -342,7 +341,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import InstanceRunningWaiter
 
 def get_instance_running_waiter() -> InstanceRunningWaiter:
-    return Session().create_client("ec2").get_waiter("instance_running")
+    return Session().client("ec2").get_waiter("instance_running")
 ```
 
 Boto3 documentation:
@@ -362,7 +361,7 @@ Arguments for `InstanceRunningWaiter.wait` method:
 ## InstanceStatusOkWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("instance_status_ok")`.
+`session.create_client("ec2").get_waiter("instance_status_ok")`.
 
 Can be used directly:
 
@@ -372,7 +371,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import InstanceStatusOkWaiter
 
 def get_instance_status_ok_waiter() -> InstanceStatusOkWaiter:
-    return Session().create_client("ec2").get_waiter("instance_status_ok")
+    return Session().client("ec2").get_waiter("instance_status_ok")
 ```
 
 Boto3 documentation:
@@ -393,7 +392,7 @@ Arguments for `InstanceStatusOkWaiter.wait` method:
 ## InstanceStoppedWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("instance_stopped")`.
+`session.create_client("ec2").get_waiter("instance_stopped")`.
 
 Can be used directly:
 
@@ -403,7 +402,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import InstanceStoppedWaiter
 
 def get_instance_stopped_waiter() -> InstanceStoppedWaiter:
-    return Session().create_client("ec2").get_waiter("instance_stopped")
+    return Session().client("ec2").get_waiter("instance_stopped")
 ```
 
 Boto3 documentation:
@@ -423,7 +422,7 @@ Arguments for `InstanceStoppedWaiter.wait` method:
 ## InstanceTerminatedWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("instance_terminated")`.
+`session.create_client("ec2").get_waiter("instance_terminated")`.
 
 Can be used directly:
 
@@ -433,7 +432,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import InstanceTerminatedWaiter
 
 def get_instance_terminated_waiter() -> InstanceTerminatedWaiter:
-    return Session().create_client("ec2").get_waiter("instance_terminated")
+    return Session().client("ec2").get_waiter("instance_terminated")
 ```
 
 Boto3 documentation:
@@ -453,7 +452,7 @@ Arguments for `InstanceTerminatedWaiter.wait` method:
 ## InternetGatewayExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("internet_gateway_exists")`.
+`session.create_client("ec2").get_waiter("internet_gateway_exists")`.
 
 Can be used directly:
 
@@ -463,7 +462,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import InternetGatewayExistsWaiter
 
 def get_internet_gateway_exists_waiter() -> InternetGatewayExistsWaiter:
-    return Session().create_client("ec2").get_waiter("internet_gateway_exists")
+    return Session().client("ec2").get_waiter("internet_gateway_exists")
 ```
 
 Boto3 documentation:
@@ -483,7 +482,7 @@ Arguments for `InternetGatewayExistsWaiter.wait` method:
 ## KeyPairExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("key_pair_exists")`.
+`session.create_client("ec2").get_waiter("key_pair_exists")`.
 
 Can be used directly:
 
@@ -493,7 +492,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import KeyPairExistsWaiter
 
 def get_key_pair_exists_waiter() -> KeyPairExistsWaiter:
-    return Session().create_client("ec2").get_waiter("key_pair_exists")
+    return Session().client("ec2").get_waiter("key_pair_exists")
 ```
 
 Boto3 documentation:
@@ -512,7 +511,7 @@ Arguments for `KeyPairExistsWaiter.wait` method:
 ## NatGatewayAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("nat_gateway_available")`.
+`session.create_client("ec2").get_waiter("nat_gateway_available")`.
 
 Can be used directly:
 
@@ -522,7 +521,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import NatGatewayAvailableWaiter
 
 def get_nat_gateway_available_waiter() -> NatGatewayAvailableWaiter:
-    return Session().create_client("ec2").get_waiter("nat_gateway_available")
+    return Session().client("ec2").get_waiter("nat_gateway_available")
 ```
 
 Boto3 documentation:
@@ -542,7 +541,7 @@ Arguments for `NatGatewayAvailableWaiter.wait` method:
 ## NetworkInterfaceAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("network_interface_available")`.
+`session.create_client("ec2").get_waiter("network_interface_available")`.
 
 Can be used directly:
 
@@ -552,7 +551,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import NetworkInterfaceAvailableWaiter
 
 def get_network_interface_available_waiter() -> NetworkInterfaceAvailableWaiter:
-    return Session().create_client("ec2").get_waiter("network_interface_available")
+    return Session().client("ec2").get_waiter("network_interface_available")
 ```
 
 Boto3 documentation:
@@ -572,7 +571,7 @@ Arguments for `NetworkInterfaceAvailableWaiter.wait` method:
 ## PasswordDataAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("password_data_available")`.
+`session.create_client("ec2").get_waiter("password_data_available")`.
 
 Can be used directly:
 
@@ -582,7 +581,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import PasswordDataAvailableWaiter
 
 def get_password_data_available_waiter() -> PasswordDataAvailableWaiter:
-    return Session().create_client("ec2").get_waiter("password_data_available")
+    return Session().client("ec2").get_waiter("password_data_available")
 ```
 
 Boto3 documentation:
@@ -599,7 +598,7 @@ Arguments for `PasswordDataAvailableWaiter.wait` method:
 ## SecurityGroupExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("security_group_exists")`.
+`session.create_client("ec2").get_waiter("security_group_exists")`.
 
 Can be used directly:
 
@@ -609,7 +608,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import SecurityGroupExistsWaiter
 
 def get_security_group_exists_waiter() -> SecurityGroupExistsWaiter:
-    return Session().create_client("ec2").get_waiter("security_group_exists")
+    return Session().client("ec2").get_waiter("security_group_exists")
 ```
 
 Boto3 documentation:
@@ -630,7 +629,7 @@ Arguments for `SecurityGroupExistsWaiter.wait` method:
 ## SnapshotCompletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("snapshot_completed")`.
+`session.create_client("ec2").get_waiter("snapshot_completed")`.
 
 Can be used directly:
 
@@ -640,7 +639,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import SnapshotCompletedWaiter
 
 def get_snapshot_completed_waiter() -> SnapshotCompletedWaiter:
-    return Session().create_client("ec2").get_waiter("snapshot_completed")
+    return Session().client("ec2").get_waiter("snapshot_completed")
 ```
 
 Boto3 documentation:
@@ -662,7 +661,7 @@ Arguments for `SnapshotCompletedWaiter.wait` method:
 ## SpotInstanceRequestFulfilledWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("spot_instance_request_fulfilled")`.
+`session.create_client("ec2").get_waiter("spot_instance_request_fulfilled")`.
 
 Can be used directly:
 
@@ -672,7 +671,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import SpotInstanceRequestFulfilledWaiter
 
 def get_spot_instance_request_fulfilled_waiter() -> SpotInstanceRequestFulfilledWaiter:
-    return Session().create_client("ec2").get_waiter("spot_instance_request_fulfilled")
+    return Session().client("ec2").get_waiter("spot_instance_request_fulfilled")
 ```
 
 Boto3 documentation:
@@ -692,7 +691,7 @@ Arguments for `SpotInstanceRequestFulfilledWaiter.wait` method:
 ## SubnetAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("subnet_available")`.
+`session.create_client("ec2").get_waiter("subnet_available")`.
 
 Can be used directly:
 
@@ -702,7 +701,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import SubnetAvailableWaiter
 
 def get_subnet_available_waiter() -> SubnetAvailableWaiter:
-    return Session().create_client("ec2").get_waiter("subnet_available")
+    return Session().client("ec2").get_waiter("subnet_available")
 ```
 
 Boto3 documentation:
@@ -722,7 +721,7 @@ Arguments for `SubnetAvailableWaiter.wait` method:
 ## SystemStatusOkWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("system_status_ok")`.
+`session.create_client("ec2").get_waiter("system_status_ok")`.
 
 Can be used directly:
 
@@ -732,7 +731,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import SystemStatusOkWaiter
 
 def get_system_status_ok_waiter() -> SystemStatusOkWaiter:
-    return Session().create_client("ec2").get_waiter("system_status_ok")
+    return Session().client("ec2").get_waiter("system_status_ok")
 ```
 
 Boto3 documentation:
@@ -753,7 +752,7 @@ Arguments for `SystemStatusOkWaiter.wait` method:
 ## VolumeAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("volume_available")`.
+`session.create_client("ec2").get_waiter("volume_available")`.
 
 Can be used directly:
 
@@ -763,7 +762,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import VolumeAvailableWaiter
 
 def get_volume_available_waiter() -> VolumeAvailableWaiter:
-    return Session().create_client("ec2").get_waiter("volume_available")
+    return Session().client("ec2").get_waiter("volume_available")
 ```
 
 Boto3 documentation:
@@ -783,7 +782,7 @@ Arguments for `VolumeAvailableWaiter.wait` method:
 ## VolumeDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("volume_deleted")`.
+`session.create_client("ec2").get_waiter("volume_deleted")`.
 
 Can be used directly:
 
@@ -793,7 +792,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import VolumeDeletedWaiter
 
 def get_volume_deleted_waiter() -> VolumeDeletedWaiter:
-    return Session().create_client("ec2").get_waiter("volume_deleted")
+    return Session().client("ec2").get_waiter("volume_deleted")
 ```
 
 Boto3 documentation:
@@ -813,7 +812,7 @@ Arguments for `VolumeDeletedWaiter.wait` method:
 ## VolumeInUseWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("volume_in_use")`.
+`session.create_client("ec2").get_waiter("volume_in_use")`.
 
 Can be used directly:
 
@@ -823,7 +822,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import VolumeInUseWaiter
 
 def get_volume_in_use_waiter() -> VolumeInUseWaiter:
-    return Session().create_client("ec2").get_waiter("volume_in_use")
+    return Session().client("ec2").get_waiter("volume_in_use")
 ```
 
 Boto3 documentation:
@@ -843,7 +842,7 @@ Arguments for `VolumeInUseWaiter.wait` method:
 ## VpcAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("vpc_available")`.
+`session.create_client("ec2").get_waiter("vpc_available")`.
 
 Can be used directly:
 
@@ -853,7 +852,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import VpcAvailableWaiter
 
 def get_vpc_available_waiter() -> VpcAvailableWaiter:
-    return Session().create_client("ec2").get_waiter("vpc_available")
+    return Session().client("ec2").get_waiter("vpc_available")
 ```
 
 Boto3 documentation:
@@ -872,8 +871,7 @@ Arguments for `VpcAvailableWaiter.wait` method:
 
 ## VpcExistsWaiter
 
-Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("vpc_exists")`.
+Type annotations for `session.create_client("ec2").get_waiter("vpc_exists")`.
 
 Can be used directly:
 
@@ -883,7 +881,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import VpcExistsWaiter
 
 def get_vpc_exists_waiter() -> VpcExistsWaiter:
-    return Session().create_client("ec2").get_waiter("vpc_exists")
+    return Session().client("ec2").get_waiter("vpc_exists")
 ```
 
 Boto3 documentation:
@@ -903,7 +901,7 @@ Arguments for `VpcExistsWaiter.wait` method:
 ## VpcPeeringConnectionDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("vpc_peering_connection_deleted")`.
+`session.create_client("ec2").get_waiter("vpc_peering_connection_deleted")`.
 
 Can be used directly:
 
@@ -913,7 +911,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import VpcPeeringConnectionDeletedWaiter
 
 def get_vpc_peering_connection_deleted_waiter() -> VpcPeeringConnectionDeletedWaiter:
-    return Session().create_client("ec2").get_waiter("vpc_peering_connection_deleted")
+    return Session().client("ec2").get_waiter("vpc_peering_connection_deleted")
 ```
 
 Boto3 documentation:
@@ -933,7 +931,7 @@ Arguments for `VpcPeeringConnectionDeletedWaiter.wait` method:
 ## VpcPeeringConnectionExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("vpc_peering_connection_exists")`.
+`session.create_client("ec2").get_waiter("vpc_peering_connection_exists")`.
 
 Can be used directly:
 
@@ -943,7 +941,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import VpcPeeringConnectionExistsWaiter
 
 def get_vpc_peering_connection_exists_waiter() -> VpcPeeringConnectionExistsWaiter:
-    return Session().create_client("ec2").get_waiter("vpc_peering_connection_exists")
+    return Session().client("ec2").get_waiter("vpc_peering_connection_exists")
 ```
 
 Boto3 documentation:
@@ -963,7 +961,7 @@ Arguments for `VpcPeeringConnectionExistsWaiter.wait` method:
 ## VpnConnectionAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("vpn_connection_available")`.
+`session.create_client("ec2").get_waiter("vpn_connection_available")`.
 
 Can be used directly:
 
@@ -973,7 +971,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import VpnConnectionAvailableWaiter
 
 def get_vpn_connection_available_waiter() -> VpnConnectionAvailableWaiter:
-    return Session().create_client("ec2").get_waiter("vpn_connection_available")
+    return Session().client("ec2").get_waiter("vpn_connection_available")
 ```
 
 Boto3 documentation:
@@ -991,7 +989,7 @@ Arguments for `VpnConnectionAvailableWaiter.wait` method:
 ## VpnConnectionDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_waiter("vpn_connection_deleted")`.
+`session.create_client("ec2").get_waiter("vpn_connection_deleted")`.
 
 Can be used directly:
 
@@ -1001,7 +999,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_ec2.waiter import VpnConnectionDeletedWaiter
 
 def get_vpn_connection_deleted_waiter() -> VpnConnectionDeletedWaiter:
-    return Session().create_client("ec2").get_waiter("vpn_connection_deleted")
+    return Session().client("ec2").get_waiter("vpn_connection_deleted")
 ```
 
 Boto3 documentation:

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[dataexchange]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[dataexchange]'
+
+# standalone installation
 pip install types-aiobotocore-dataexchange
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-dataexchange
 
 ## DataExchangeClient
 
-Type annotations for `aiobotocore.create_client("dataexchange")` as
+Type annotations for `session.create_client("dataexchange")` as
 [DataExchangeClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_dataexchange.client import DataExchangeClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_job](./client.md#cancel_job)
 - [create_data_set](./client.md#create_data_set)
@@ -100,7 +106,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_dataexchange.paginators import ListDataSetRevisionsPaginator, ...
+from types_aiobotocore_dataexchange.paginator import ListDataSetRevisionsPaginator, ...
 ```
 
 - [ListDataSetRevisionsPaginator](./paginators.md#listdatasetrevisionspaginator)

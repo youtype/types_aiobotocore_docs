@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[synthetics]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[synthetics]'
+
+# standalone installation
 pip install types-aiobotocore-synthetics
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-synthetics
 
 ## SyntheticsClient
 
-Type annotations for `aiobotocore.create_client("synthetics")` as
+Type annotations for `session.create_client("synthetics")` as
 [SyntheticsClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_synthetics.client import SyntheticsClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_canary](./client.md#create_canary)
 - [delete_canary](./client.md#delete_canary)

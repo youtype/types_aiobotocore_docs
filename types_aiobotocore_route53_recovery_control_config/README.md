@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[route53-recovery-control-config]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[route53-recovery-control-config]'
+
+# standalone installation
 pip install types-aiobotocore-route53-recovery-control-config
 ```
 
@@ -29,9 +33,8 @@ pip install types-aiobotocore-route53-recovery-control-config
 
 ## Route53RecoveryControlConfigClient
 
-Type annotations for
-`aiobotocore.create_client("route53-recovery-control-config")` as
-[Route53RecoveryControlConfigClient](./client.md)
+Type annotations for `session.create_client("route53-recovery-control-config")`
+as [Route53RecoveryControlConfigClient](./client.md)
 
 Can be used directly:
 
@@ -43,6 +46,8 @@ from types_aiobotocore_route53_recovery_control_config.client import Route53Reco
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_cluster](./client.md#create_cluster)
 - [create_control_panel](./client.md#create_control_panel)
@@ -96,7 +101,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_route53_recovery_control_config.waiters import ClusterCreatedWaiter, ...
+from types_aiobotocore_route53_recovery_control_config.waiter import ClusterCreatedWaiter, ...
 ```
 
 - [ClusterCreatedWaiter](./waiters.md#clustercreatedwaiter)

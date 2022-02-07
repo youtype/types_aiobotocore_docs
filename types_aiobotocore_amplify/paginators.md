@@ -20,17 +20,19 @@ type annotations stubs module
 ## ListAppsPaginator
 
 Type annotations for
-`aiobotocore.create_client("amplify").get_paginator("list_apps")`.
+`session.create_client("amplify").get_paginator("list_apps")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_amplify.paginator import ListAppsPaginator
 
-def get_list_apps_paginator() -> ListAppsPaginator:
-    return Session().create_client("amplify").get_paginator("list_apps")
+session = get_session()
+async with session.create_client("amplify") as client:
+    client: AmplifyClient
+    paginator: ListAppsPaginator = client.get_paginator("list_apps")
 ```
 
 Boto3 documentation:
@@ -49,17 +51,19 @@ Arguments for `ListAppsPaginator.paginate` method:
 ## ListBranchesPaginator
 
 Type annotations for
-`aiobotocore.create_client("amplify").get_paginator("list_branches")`.
+`session.create_client("amplify").get_paginator("list_branches")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_amplify.paginator import ListBranchesPaginator
 
-def get_list_branches_paginator() -> ListBranchesPaginator:
-    return Session().create_client("amplify").get_paginator("list_branches")
+session = get_session()
+async with session.create_client("amplify") as client:
+    client: AmplifyClient
+    paginator: ListBranchesPaginator = client.get_paginator("list_branches")
 ```
 
 Boto3 documentation:
@@ -79,17 +83,19 @@ Arguments for `ListBranchesPaginator.paginate` method:
 ## ListDomainAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("amplify").get_paginator("list_domain_associations")`.
+`session.create_client("amplify").get_paginator("list_domain_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_amplify.paginator import ListDomainAssociationsPaginator
 
-def get_list_domain_associations_paginator() -> ListDomainAssociationsPaginator:
-    return Session().create_client("amplify").get_paginator("list_domain_associations")
+session = get_session()
+async with session.create_client("amplify") as client:
+    client: AmplifyClient
+    paginator: ListDomainAssociationsPaginator = client.get_paginator("list_domain_associations")
 ```
 
 Boto3 documentation:
@@ -109,17 +115,19 @@ Arguments for `ListDomainAssociationsPaginator.paginate` method:
 ## ListJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("amplify").get_paginator("list_jobs")`.
+`session.create_client("amplify").get_paginator("list_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_amplify.paginator import ListJobsPaginator
 
-def get_list_jobs_paginator() -> ListJobsPaginator:
-    return Session().create_client("amplify").get_paginator("list_jobs")
+session = get_session()
+async with session.create_client("amplify") as client:
+    client: AmplifyClient
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
 ```
 
 Boto3 documentation:

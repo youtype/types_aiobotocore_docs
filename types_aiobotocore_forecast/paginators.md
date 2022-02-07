@@ -23,17 +23,19 @@ type annotations stubs module
 ## ListDatasetGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("forecast").get_paginator("list_dataset_groups")`.
+`session.create_client("forecast").get_paginator("list_dataset_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_forecast.paginator import ListDatasetGroupsPaginator
 
-def get_list_dataset_groups_paginator() -> ListDatasetGroupsPaginator:
-    return Session().create_client("forecast").get_paginator("list_dataset_groups")
+session = get_session()
+async with session.create_client("forecast") as client:
+    client: ForecastServiceClient
+    paginator: ListDatasetGroupsPaginator = client.get_paginator("list_dataset_groups")
 ```
 
 Boto3 documentation:
@@ -52,17 +54,19 @@ Arguments for `ListDatasetGroupsPaginator.paginate` method:
 ## ListDatasetImportJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("forecast").get_paginator("list_dataset_import_jobs")`.
+`session.create_client("forecast").get_paginator("list_dataset_import_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_forecast.paginator import ListDatasetImportJobsPaginator
 
-def get_list_dataset_import_jobs_paginator() -> ListDatasetImportJobsPaginator:
-    return Session().create_client("forecast").get_paginator("list_dataset_import_jobs")
+session = get_session()
+async with session.create_client("forecast") as client:
+    client: ForecastServiceClient
+    paginator: ListDatasetImportJobsPaginator = client.get_paginator("list_dataset_import_jobs")
 ```
 
 Boto3 documentation:
@@ -82,17 +86,19 @@ Arguments for `ListDatasetImportJobsPaginator.paginate` method:
 ## ListDatasetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("forecast").get_paginator("list_datasets")`.
+`session.create_client("forecast").get_paginator("list_datasets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_forecast.paginator import ListDatasetsPaginator
 
-def get_list_datasets_paginator() -> ListDatasetsPaginator:
-    return Session().create_client("forecast").get_paginator("list_datasets")
+session = get_session()
+async with session.create_client("forecast") as client:
+    client: ForecastServiceClient
+    paginator: ListDatasetsPaginator = client.get_paginator("list_datasets")
 ```
 
 Boto3 documentation:
@@ -111,17 +117,19 @@ Arguments for `ListDatasetsPaginator.paginate` method:
 ## ListForecastExportJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("forecast").get_paginator("list_forecast_export_jobs")`.
+`session.create_client("forecast").get_paginator("list_forecast_export_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_forecast.paginator import ListForecastExportJobsPaginator
 
-def get_list_forecast_export_jobs_paginator() -> ListForecastExportJobsPaginator:
-    return Session().create_client("forecast").get_paginator("list_forecast_export_jobs")
+session = get_session()
+async with session.create_client("forecast") as client:
+    client: ForecastServiceClient
+    paginator: ListForecastExportJobsPaginator = client.get_paginator("list_forecast_export_jobs")
 ```
 
 Boto3 documentation:
@@ -141,17 +149,19 @@ Arguments for `ListForecastExportJobsPaginator.paginate` method:
 ## ListForecastsPaginator
 
 Type annotations for
-`aiobotocore.create_client("forecast").get_paginator("list_forecasts")`.
+`session.create_client("forecast").get_paginator("list_forecasts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_forecast.paginator import ListForecastsPaginator
 
-def get_list_forecasts_paginator() -> ListForecastsPaginator:
-    return Session().create_client("forecast").get_paginator("list_forecasts")
+session = get_session()
+async with session.create_client("forecast") as client:
+    client: ForecastServiceClient
+    paginator: ListForecastsPaginator = client.get_paginator("list_forecasts")
 ```
 
 Boto3 documentation:
@@ -171,17 +181,19 @@ Arguments for `ListForecastsPaginator.paginate` method:
 ## ListPredictorBacktestExportJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("forecast").get_paginator("list_predictor_backtest_export_jobs")`.
+`session.create_client("forecast").get_paginator("list_predictor_backtest_export_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_forecast.paginator import ListPredictorBacktestExportJobsPaginator
 
-def get_list_predictor_backtest_export_jobs_paginator() -> ListPredictorBacktestExportJobsPaginator:
-    return Session().create_client("forecast").get_paginator("list_predictor_backtest_export_jobs")
+session = get_session()
+async with session.create_client("forecast") as client:
+    client: ForecastServiceClient
+    paginator: ListPredictorBacktestExportJobsPaginator = client.get_paginator("list_predictor_backtest_export_jobs")
 ```
 
 Boto3 documentation:
@@ -201,17 +213,19 @@ Arguments for `ListPredictorBacktestExportJobsPaginator.paginate` method:
 ## ListPredictorsPaginator
 
 Type annotations for
-`aiobotocore.create_client("forecast").get_paginator("list_predictors")`.
+`session.create_client("forecast").get_paginator("list_predictors")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_forecast.paginator import ListPredictorsPaginator
 
-def get_list_predictors_paginator() -> ListPredictorsPaginator:
-    return Session().create_client("forecast").get_paginator("list_predictors")
+session = get_session()
+async with session.create_client("forecast") as client:
+    client: ForecastServiceClient
+    paginator: ListPredictorsPaginator = client.get_paginator("list_predictors")
 ```
 
 Boto3 documentation:

@@ -48,22 +48,25 @@ type annotations stubs module
     - [update_readiness_check](#update_readiness_check)
     - [update_recovery_group](#update_recovery_group)
     - [update_resource_set](#update_resource_set)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="route53recoveryreadinessclient"></a>
 
 ## Route53RecoveryReadinessClient
 
-Type annotations for `aiobotocore.create_client("route53-recovery-readiness")`
+Type annotations for `session.create_client("route53-recovery-readiness")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_route53_recovery_readiness.client import Route53RecoveryReadinessClient
 
-def get_route53-recovery-readiness_client() -> Route53RecoveryReadinessClient:
-    return Session().client("route53-recovery-readiness")
+session = get_session()
+async with session.create_client("route53-recovery-readiness") as client:
+    client: Route53RecoveryReadinessClient
 ```
 
 Boto3 documentation:
@@ -104,7 +107,7 @@ Exceptions:
 Route53RecoveryReadinessClient exceptions.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").exceptions` method.
+`session.create_client("route53-recovery-readiness").exceptions` method.
 
 Boto3 documentation:
 [Route53RecoveryReadiness.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-readiness.html#Route53RecoveryReadiness.Client.exceptions)
@@ -118,18 +121,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").can_paginate` method.
+`session.create_client("route53-recovery-readiness").can_paginate` method.
 
 Boto3 documentation:
 [Route53RecoveryReadiness.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-readiness.html#Route53RecoveryReadiness.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_cell"></a>
 
@@ -138,7 +139,7 @@ Returns a `Coroutine` for `bool`.
 Creates a new Cell.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").create_cell` method.
+`session.create_client("route53-recovery-readiness").create_cell` method.
 
 Boto3 documentation:
 [Route53RecoveryReadiness.Client.create_cell](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-readiness.html#Route53RecoveryReadiness.Client.create_cell)
@@ -164,7 +165,7 @@ Returns a `Coroutine` for
 Create a new cross account readiness authorization.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").create_cross_account_authorization`
+`session.create_client("route53-recovery-readiness").create_cross_account_authorization`
 method.
 
 Boto3 documentation:
@@ -190,7 +191,7 @@ Returns a `Coroutine` for
 Creates a new Readiness Check.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").create_readiness_check`
+`session.create_client("route53-recovery-readiness").create_readiness_check`
 method.
 
 Boto3 documentation:
@@ -218,7 +219,7 @@ Returns a `Coroutine` for
 Creates a new Recovery Group.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").create_recovery_group`
+`session.create_client("route53-recovery-readiness").create_recovery_group`
 method.
 
 Boto3 documentation:
@@ -246,7 +247,7 @@ Returns a `Coroutine` for
 Creates a new Resource Set.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").create_resource_set`
+`session.create_client("route53-recovery-readiness").create_resource_set`
 method.
 
 Boto3 documentation:
@@ -276,7 +277,7 @@ Returns a `Coroutine` for
 Deletes an existing Cell.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").delete_cell` method.
+`session.create_client("route53-recovery-readiness").delete_cell` method.
 
 Boto3 documentation:
 [Route53RecoveryReadiness.Client.delete_cell](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-readiness.html#Route53RecoveryReadiness.Client.delete_cell)
@@ -299,7 +300,7 @@ Documentation\](https://docs.aws.amazon.com/goto/WebAPI/route53-recovery-
 readiness-2019-12-02/DeleteCrossAccountAuthorization).
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").delete_cross_account_authorization`
+`session.create_client("route53-recovery-readiness").delete_cross_account_authorization`
 method.
 
 Boto3 documentation:
@@ -324,7 +325,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes an existing Readiness Check.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").delete_readiness_check`
+`session.create_client("route53-recovery-readiness").delete_readiness_check`
 method.
 
 Boto3 documentation:
@@ -347,7 +348,7 @@ Keyword-only arguments:
 Deletes an existing Recovery Group.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").delete_recovery_group`
+`session.create_client("route53-recovery-readiness").delete_recovery_group`
 method.
 
 Boto3 documentation:
@@ -370,7 +371,7 @@ Keyword-only arguments:
 Deletes an existing Resource Set.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").delete_resource_set`
+`session.create_client("route53-recovery-readiness").delete_resource_set`
 method.
 
 Boto3 documentation:
@@ -393,7 +394,7 @@ Keyword-only arguments:
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").generate_presigned_url`
+`session.create_client("route53-recovery-readiness").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -419,7 +420,7 @@ Returns a collection of recommendations to improve resilliance and readiness
 check quality for a Recovery Group.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_architecture_recommendations`
+`session.create_client("route53-recovery-readiness").get_architecture_recommendations`
 method.
 
 Boto3 documentation:
@@ -447,7 +448,7 @@ Returns a `Coroutine` for
 Returns information about a Cell.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_cell` method.
+`session.create_client("route53-recovery-readiness").get_cell` method.
 
 Boto3 documentation:
 [Route53RecoveryReadiness.Client.get_cell](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-readiness.html#Route53RecoveryReadiness.Client.get_cell)
@@ -471,7 +472,7 @@ Returns a `Coroutine` for
 Returns information about readiness of a Cell.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_cell_readiness_summary`
+`session.create_client("route53-recovery-readiness").get_cell_readiness_summary`
 method.
 
 Boto3 documentation:
@@ -499,7 +500,7 @@ Returns a `Coroutine` for
 Returns information about a ReadinessCheck.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_readiness_check`
+`session.create_client("route53-recovery-readiness").get_readiness_check`
 method.
 
 Boto3 documentation:
@@ -526,7 +527,7 @@ Returns detailed information about the status of an individual resource within
 a Readiness Check's Resource Set.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_readiness_check_resource_status`
+`session.create_client("route53-recovery-readiness").get_readiness_check_resource_status`
 method.
 
 Boto3 documentation:
@@ -555,7 +556,7 @@ Returns a `Coroutine` for
 Returns information about the status of a Readiness Check.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_readiness_check_status`
+`session.create_client("route53-recovery-readiness").get_readiness_check_status`
 method.
 
 Boto3 documentation:
@@ -583,7 +584,7 @@ Returns a `Coroutine` for
 Returns information about a Recovery Group.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_recovery_group`
+`session.create_client("route53-recovery-readiness").get_recovery_group`
 method.
 
 Boto3 documentation:
@@ -609,7 +610,7 @@ Returns a `Coroutine` for
 Returns information about a Recovery Group.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_recovery_group_readiness_summary`
+`session.create_client("route53-recovery-readiness").get_recovery_group_readiness_summary`
 method.
 
 Boto3 documentation:
@@ -637,8 +638,7 @@ Returns a `Coroutine` for
 Returns information about a Resource Set.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_resource_set`
-method.
+`session.create_client("route53-recovery-readiness").get_resource_set` method.
 
 Boto3 documentation:
 [Route53RecoveryReadiness.Client.get_resource_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-readiness.html#Route53RecoveryReadiness.Client.get_resource_set)
@@ -662,7 +662,7 @@ Returns a `Coroutine` for
 Returns a collection of Cells.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").list_cells` method.
+`session.create_client("route53-recovery-readiness").list_cells` method.
 
 Boto3 documentation:
 [Route53RecoveryReadiness.Client.list_cells](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-readiness.html#Route53RecoveryReadiness.Client.list_cells)
@@ -687,7 +687,7 @@ Returns a `Coroutine` for
 Returns a collection of cross account readiness authorizations.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").list_cross_account_authorizations`
+`session.create_client("route53-recovery-readiness").list_cross_account_authorizations`
 method.
 
 Boto3 documentation:
@@ -714,7 +714,7 @@ Returns a `Coroutine` for
 Returns a collection of Readiness Checks.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").list_readiness_checks`
+`session.create_client("route53-recovery-readiness").list_readiness_checks`
 method.
 
 Boto3 documentation:
@@ -741,7 +741,7 @@ Returns a `Coroutine` for
 Returns a collection of Recovery Groups.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").list_recovery_groups`
+`session.create_client("route53-recovery-readiness").list_recovery_groups`
 method.
 
 Boto3 documentation:
@@ -768,7 +768,7 @@ Returns a `Coroutine` for
 Returns a collection of Resource Sets.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").list_resource_sets`
+`session.create_client("route53-recovery-readiness").list_resource_sets`
 method.
 
 Boto3 documentation:
@@ -795,7 +795,7 @@ Returns a `Coroutine` for
 Returns a collection of rules that are applied as part of Readiness Checks.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").list_rules` method.
+`session.create_client("route53-recovery-readiness").list_rules` method.
 
 Boto3 documentation:
 [Route53RecoveryReadiness.Client.list_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-readiness.html#Route53RecoveryReadiness.Client.list_rules)
@@ -821,7 +821,7 @@ Returns a `Coroutine` for
 Returns a list of the tags assigned to the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").list_tags_for_resources`
+`session.create_client("route53-recovery-readiness").list_tags_for_resources`
 method.
 
 Boto3 documentation:
@@ -847,7 +847,7 @@ Returns a `Coroutine` for
 Adds tags to the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").tag_resource` method.
+`session.create_client("route53-recovery-readiness").tag_resource` method.
 
 Boto3 documentation:
 [Route53RecoveryReadiness.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-readiness.html#Route53RecoveryReadiness.Client.tag_resource)
@@ -871,8 +871,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes tags from the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").untag_resource`
-method.
+`session.create_client("route53-recovery-readiness").untag_resource` method.
 
 Boto3 documentation:
 [Route53RecoveryReadiness.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-readiness.html#Route53RecoveryReadiness.Client.untag_resource)
@@ -894,7 +893,7 @@ Keyword-only arguments:
 Updates an existing Cell.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").update_cell` method.
+`session.create_client("route53-recovery-readiness").update_cell` method.
 
 Boto3 documentation:
 [Route53RecoveryReadiness.Client.update_cell](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-readiness.html#Route53RecoveryReadiness.Client.update_cell)
@@ -919,7 +918,7 @@ Returns a `Coroutine` for
 Updates an exisiting Readiness Check.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").update_readiness_check`
+`session.create_client("route53-recovery-readiness").update_readiness_check`
 method.
 
 Boto3 documentation:
@@ -946,7 +945,7 @@ Returns a `Coroutine` for
 Updates an existing Recovery Group.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").update_recovery_group`
+`session.create_client("route53-recovery-readiness").update_recovery_group`
 method.
 
 Boto3 documentation:
@@ -973,7 +972,7 @@ Returns a `Coroutine` for
 Updates an existing Resource Set.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").update_resource_set`
+`session.create_client("route53-recovery-readiness").update_resource_set`
 method.
 
 Boto3 documentation:
@@ -995,13 +994,48 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateResourceSetResponseTypeDef](./type_defs.md#updateresourcesetresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for
+`session.create_client("route53-recovery-readiness").__aenter__` method.
+
+Boto3 documentation:
+[Route53RecoveryReadiness.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-readiness.html#Route53RecoveryReadiness.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[Route53RecoveryReadinessClient](#route53recoveryreadinessclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for
+`session.create_client("route53-recovery-readiness").__aexit__` method.
+
+Boto3 documentation:
+[Route53RecoveryReadiness.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-readiness.html#Route53RecoveryReadiness.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-readiness").get_paginator` method
-with overloads.
+`session.create_client("route53-recovery-readiness").get_paginator` method with
+overloads.
 
 - `client.get_paginator("get_cell_readiness_summary")` ->
   [GetCellReadinessSummaryPaginator](./paginators.md#getcellreadinesssummarypaginator)

@@ -19,21 +19,24 @@ type annotations stubs module
     - [get_routing_control_state](#get_routing_control_state)
     - [update_routing_control_state](#update_routing_control_state)
     - [update_routing_control_states](#update_routing_control_states)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="route53recoveryclusterclient"></a>
 
 ## Route53RecoveryClusterClient
 
-Type annotations for `aiobotocore.create_client("route53-recovery-cluster")`
+Type annotations for `session.create_client("route53-recovery-cluster")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_route53_recovery_cluster.client import Route53RecoveryClusterClient
 
-def get_route53-recovery-cluster_client() -> Route53RecoveryClusterClient:
-    return Session().client("route53-recovery-cluster")
+session = get_session()
+async with session.create_client("route53-recovery-cluster") as client:
+    client: Route53RecoveryClusterClient
 ```
 
 Boto3 documentation:
@@ -75,7 +78,7 @@ Exceptions:
 Route53RecoveryClusterClient exceptions.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-cluster").exceptions` method.
+`session.create_client("route53-recovery-cluster").exceptions` method.
 
 Boto3 documentation:
 [Route53RecoveryCluster.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-cluster.html#Route53RecoveryCluster.Client.exceptions)
@@ -89,18 +92,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-cluster").can_paginate` method.
+`session.create_client("route53-recovery-cluster").can_paginate` method.
 
 Boto3 documentation:
 [Route53RecoveryCluster.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-cluster.html#Route53RecoveryCluster.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -109,7 +110,7 @@ Returns a `Coroutine` for `bool`.
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-cluster").generate_presigned_url`
+`session.create_client("route53-recovery-cluster").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -134,7 +135,7 @@ Returns a `Coroutine` for `str`.
 Get the state for a routing control.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-cluster").get_routing_control_state`
+`session.create_client("route53-recovery-cluster").get_routing_control_state`
 method.
 
 Boto3 documentation:
@@ -160,7 +161,7 @@ Returns a `Coroutine` for
 Set the state of the routing control to reroute traffic.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-cluster").update_routing_control_state`
+`session.create_client("route53-recovery-cluster").update_routing_control_state`
 method.
 
 Boto3 documentation:
@@ -187,7 +188,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Set multiple routing control states.
 
 Type annotations for
-`aiobotocore.create_client("route53-recovery-cluster").update_routing_control_states`
+`session.create_client("route53-recovery-cluster").update_routing_control_states`
 method.
 
 Boto3 documentation:
@@ -206,3 +207,38 @@ Keyword-only arguments:
   *(required)*
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for
+`session.create_client("route53-recovery-cluster").__aenter__` method.
+
+Boto3 documentation:
+[Route53RecoveryCluster.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-cluster.html#Route53RecoveryCluster.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[Route53RecoveryClusterClient](#route53recoveryclusterclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for
+`session.create_client("route53-recovery-cluster").__aexit__` method.
+
+Boto3 documentation:
+[Route53RecoveryCluster.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-cluster.html#Route53RecoveryCluster.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

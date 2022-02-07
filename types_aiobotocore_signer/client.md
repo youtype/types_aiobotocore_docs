@@ -33,6 +33,8 @@ type annotations stubs module
     - [start_signing_job](#start_signing_job)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -40,16 +42,17 @@ type annotations stubs module
 
 ## signerClient
 
-Type annotations for `aiobotocore.create_client("signer")`
+Type annotations for `session.create_client("signer")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_signer.client import signerClient
 
-def get_signer_client() -> signerClient:
-    return Session().client("signer")
+session = get_session()
+async with session.create_client("signer") as client:
+    client: signerClient
 ```
 
 Boto3 documentation:
@@ -93,7 +96,7 @@ Exceptions:
 
 signerClient exceptions.
 
-Type annotations for `aiobotocore.create_client("signer").exceptions` method.
+Type annotations for `session.create_client("signer").exceptions` method.
 
 Boto3 documentation:
 [signer.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/signer.html#signer.Client.exceptions)
@@ -106,8 +109,8 @@ Returns [Exceptions](#exceptions).
 
 Adds cross-account permissions to a signing profile.
 
-Type annotations for
-`aiobotocore.create_client("signer").add_profile_permission` method.
+Type annotations for `session.create_client("signer").add_profile_permission`
+method.
 
 Boto3 documentation:
 [signer.Client.add_profile_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/signer.html#signer.Client.add_profile_permission)
@@ -136,18 +139,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("signer").can_paginate` method.
+Type annotations for `session.create_client("signer").can_paginate` method.
 
 Boto3 documentation:
 [signer.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/signer.html#signer.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_signing_profile"></a>
 
@@ -155,8 +156,8 @@ Returns a `Coroutine` for `bool`.
 
 Changes the state of an `ACTIVE` signing profile to `CANCELED`.
 
-Type annotations for
-`aiobotocore.create_client("signer").cancel_signing_profile` method.
+Type annotations for `session.create_client("signer").cancel_signing_profile`
+method.
 
 Boto3 documentation:
 [signer.Client.cancel_signing_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/signer.html#signer.Client.cancel_signing_profile)
@@ -177,7 +178,7 @@ Keyword-only arguments:
 
 Returns information about a specific code signing job.
 
-Type annotations for `aiobotocore.create_client("signer").describe_signing_job`
+Type annotations for `session.create_client("signer").describe_signing_job`
 method.
 
 Boto3 documentation:
@@ -202,8 +203,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("signer").generate_presigned_url` method.
+Type annotations for `session.create_client("signer").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [signer.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/signer.html#signer.Client.generate_presigned_url)
@@ -226,7 +227,7 @@ Returns a `Coroutine` for `str`.
 
 Returns information on a specific signing platform.
 
-Type annotations for `aiobotocore.create_client("signer").get_signing_platform`
+Type annotations for `session.create_client("signer").get_signing_platform`
 method.
 
 Boto3 documentation:
@@ -251,7 +252,7 @@ Returns a `Coroutine` for
 
 Returns information on a specific signing profile.
 
-Type annotations for `aiobotocore.create_client("signer").get_signing_profile`
+Type annotations for `session.create_client("signer").get_signing_profile`
 method.
 
 Boto3 documentation:
@@ -277,8 +278,8 @@ Returns a `Coroutine` for
 
 Lists the cross-account permissions associated with a signing profile.
 
-Type annotations for
-`aiobotocore.create_client("signer").list_profile_permissions` method.
+Type annotations for `session.create_client("signer").list_profile_permissions`
+method.
 
 Boto3 documentation:
 [signer.Client.list_profile_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/signer.html#signer.Client.list_profile_permissions)
@@ -303,7 +304,7 @@ Returns a `Coroutine` for
 
 Lists all your signing jobs.
 
-Type annotations for `aiobotocore.create_client("signer").list_signing_jobs`
+Type annotations for `session.create_client("signer").list_signing_jobs`
 method.
 
 Boto3 documentation:
@@ -336,8 +337,8 @@ Returns a `Coroutine` for
 Lists all signing platforms available in code signing that match the request
 parameters.
 
-Type annotations for
-`aiobotocore.create_client("signer").list_signing_platforms` method.
+Type annotations for `session.create_client("signer").list_signing_platforms`
+method.
 
 Boto3 documentation:
 [signer.Client.list_signing_platforms](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/signer.html#signer.Client.list_signing_platforms)
@@ -365,8 +366,8 @@ Returns a `Coroutine` for
 
 Lists all available signing profiles in your AWS account.
 
-Type annotations for
-`aiobotocore.create_client("signer").list_signing_profiles` method.
+Type annotations for `session.create_client("signer").list_signing_profiles`
+method.
 
 Boto3 documentation:
 [signer.Client.list_signing_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/signer.html#signer.Client.list_signing_profiles)
@@ -395,8 +396,8 @@ Returns a `Coroutine` for
 
 Returns a list of the tags associated with a signing profile resource.
 
-Type annotations for
-`aiobotocore.create_client("signer").list_tags_for_resource` method.
+Type annotations for `session.create_client("signer").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [signer.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/signer.html#signer.Client.list_tags_for_resource)
@@ -420,7 +421,7 @@ Returns a `Coroutine` for
 
 Creates a signing profile.
 
-Type annotations for `aiobotocore.create_client("signer").put_signing_profile`
+Type annotations for `session.create_client("signer").put_signing_profile`
 method.
 
 Boto3 documentation:
@@ -455,7 +456,7 @@ Returns a `Coroutine` for
 Removes cross-account permissions from a signing profile.
 
 Type annotations for
-`aiobotocore.create_client("signer").remove_profile_permission` method.
+`session.create_client("signer").remove_profile_permission` method.
 
 Boto3 documentation:
 [signer.Client.remove_profile_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/signer.html#signer.Client.remove_profile_permission)
@@ -481,8 +482,7 @@ Returns a `Coroutine` for
 
 Changes the state of a signing job to REVOKED.
 
-Type annotations for `aiobotocore.create_client("signer").revoke_signature`
-method.
+Type annotations for `session.create_client("signer").revoke_signature` method.
 
 Boto3 documentation:
 [signer.Client.revoke_signature](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/signer.html#signer.Client.revoke_signature)
@@ -504,8 +504,8 @@ Keyword-only arguments:
 
 Changes the state of a signing profile to REVOKED.
 
-Type annotations for
-`aiobotocore.create_client("signer").revoke_signing_profile` method.
+Type annotations for `session.create_client("signer").revoke_signing_profile`
+method.
 
 Boto3 documentation:
 [signer.Client.revoke_signing_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/signer.html#signer.Client.revoke_signing_profile)
@@ -529,7 +529,7 @@ Keyword-only arguments:
 
 Initiates a signing job to be performed on the code provided.
 
-Type annotations for `aiobotocore.create_client("signer").start_signing_job`
+Type annotations for `session.create_client("signer").start_signing_job`
 method.
 
 Boto3 documentation:
@@ -558,7 +558,7 @@ Returns a `Coroutine` for
 
 Adds one or more tags to a signing profile.
 
-Type annotations for `aiobotocore.create_client("signer").tag_resource` method.
+Type annotations for `session.create_client("signer").tag_resource` method.
 
 Boto3 documentation:
 [signer.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/signer.html#signer.Client.tag_resource)
@@ -581,8 +581,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from a signing profile.
 
-Type annotations for `aiobotocore.create_client("signer").untag_resource`
-method.
+Type annotations for `session.create_client("signer").untag_resource` method.
 
 Boto3 documentation:
 [signer.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/signer.html#signer.Client.untag_resource)
@@ -599,11 +598,43 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("signer").__aenter__` method.
+
+Boto3 documentation:
+[signer.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/signer.html#signer.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [signerClient](#signerclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("signer").__aexit__` method.
+
+Boto3 documentation:
+[signer.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/signer.html#signer.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("signer").get_paginator` method
+Type annotations for `session.create_client("signer").get_paginator` method
 with overloads.
 
 - `client.get_paginator("list_signing_jobs")` ->
@@ -617,8 +648,8 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("signer").get_waiter` method
-with overloads.
+Type annotations for `session.create_client("signer").get_waiter` method with
+overloads.
 
 - `client.get_waiter("successful_signing_job")` ->
   [SuccessfulSigningJobWaiter](./waiters.md#successfulsigningjobwaiter)

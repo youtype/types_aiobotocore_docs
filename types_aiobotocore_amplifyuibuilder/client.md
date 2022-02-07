@@ -30,22 +30,25 @@ type annotations stubs module
     - [refresh_token](#refresh_token)
     - [update_component](#update_component)
     - [update_theme](#update_theme)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="amplifyuibuilderclient"></a>
 
 ## AmplifyUIBuilderClient
 
-Type annotations for `aiobotocore.create_client("amplifyuibuilder")`
+Type annotations for `session.create_client("amplifyuibuilder")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_amplifyuibuilder.client import AmplifyUIBuilderClient
 
-def get_amplifyuibuilder_client() -> AmplifyUIBuilderClient:
-    return Session().client("amplifyuibuilder")
+session = get_session()
+async with session.create_client("amplifyuibuilder") as client:
+    client: AmplifyUIBuilderClient
 ```
 
 Boto3 documentation:
@@ -84,7 +87,7 @@ Exceptions:
 
 AmplifyUIBuilderClient exceptions.
 
-Type annotations for `aiobotocore.create_client("amplifyuibuilder").exceptions`
+Type annotations for `session.create_client("amplifyuibuilder").exceptions`
 method.
 
 Boto3 documentation:
@@ -98,19 +101,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").can_paginate` method.
+Type annotations for `session.create_client("amplifyuibuilder").can_paginate`
+method.
 
 Boto3 documentation:
 [AmplifyUIBuilder.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_component"></a>
 
@@ -119,7 +120,7 @@ Returns a `Coroutine` for `bool`.
 Creates a new component for an Amplify app.
 
 Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").create_component` method.
+`session.create_client("amplifyuibuilder").create_component` method.
 
 Boto3 documentation:
 [AmplifyUIBuilder.Client.create_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.create_component)
@@ -147,8 +148,8 @@ Returns a `Coroutine` for
 
 Creates a theme to apply to the components in an Amplify app.
 
-Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").create_theme` method.
+Type annotations for `session.create_client("amplifyuibuilder").create_theme`
+method.
 
 Boto3 documentation:
 [AmplifyUIBuilder.Client.create_theme](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.create_theme)
@@ -176,7 +177,7 @@ Returns a `Coroutine` for
 Deletes a component from an Amplify app.
 
 Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").delete_component` method.
+`session.create_client("amplifyuibuilder").delete_component` method.
 
 Boto3 documentation:
 [AmplifyUIBuilder.Client.delete_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.delete_component)
@@ -198,8 +199,8 @@ Keyword-only arguments:
 
 Deletes a theme from an Amplify app.
 
-Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").delete_theme` method.
+Type annotations for `session.create_client("amplifyuibuilder").delete_theme`
+method.
 
 Boto3 documentation:
 [AmplifyUIBuilder.Client.delete_theme](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.delete_theme)
@@ -222,7 +223,7 @@ Keyword-only arguments:
 Exchanges an access code for a token.
 
 Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").exchange_code_for_token` method.
+`session.create_client("amplifyuibuilder").exchange_code_for_token` method.
 
 Boto3 documentation:
 [AmplifyUIBuilder.Client.exchange_code_for_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.exchange_code_for_token)
@@ -252,7 +253,7 @@ Exports component configurations to code that is ready to integrate into an
 Amplify app.
 
 Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").export_components` method.
+`session.create_client("amplifyuibuilder").export_components` method.
 
 Boto3 documentation:
 [AmplifyUIBuilder.Client.export_components](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.export_components)
@@ -277,8 +278,8 @@ Returns a `Coroutine` for
 Exports theme configurations to code that is ready to integrate into an Amplify
 app.
 
-Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").export_themes` method.
+Type annotations for `session.create_client("amplifyuibuilder").export_themes`
+method.
 
 Boto3 documentation:
 [AmplifyUIBuilder.Client.export_themes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.export_themes)
@@ -303,7 +304,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").generate_presigned_url` method.
+`session.create_client("amplifyuibuilder").generate_presigned_url` method.
 
 Boto3 documentation:
 [AmplifyUIBuilder.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.generate_presigned_url)
@@ -326,8 +327,8 @@ Returns a `Coroutine` for `str`.
 
 Returns an existing component for an Amplify app.
 
-Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").get_component` method.
+Type annotations for `session.create_client("amplifyuibuilder").get_component`
+method.
 
 Boto3 documentation:
 [AmplifyUIBuilder.Client.get_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.get_component)
@@ -352,7 +353,7 @@ Returns a `Coroutine` for
 
 Returns an existing theme for an Amplify app.
 
-Type annotations for `aiobotocore.create_client("amplifyuibuilder").get_theme`
+Type annotations for `session.create_client("amplifyuibuilder").get_theme`
 method.
 
 Boto3 documentation:
@@ -380,7 +381,7 @@ Retrieves a list of components for a specified Amplify app and backend
 environment.
 
 Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").list_components` method.
+`session.create_client("amplifyuibuilder").list_components` method.
 
 Boto3 documentation:
 [AmplifyUIBuilder.Client.list_components](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.list_components)
@@ -406,8 +407,8 @@ Returns a `Coroutine` for
 
 Retrieves a list of themes for a specified Amplify app and backend environment.
 
-Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").list_themes` method.
+Type annotations for `session.create_client("amplifyuibuilder").list_themes`
+method.
 
 Boto3 documentation:
 [AmplifyUIBuilder.Client.list_themes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.list_themes)
@@ -433,8 +434,8 @@ Returns a `Coroutine` for
 
 Refreshes a previously issued access token that might have expired.
 
-Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").refresh_token` method.
+Type annotations for `session.create_client("amplifyuibuilder").refresh_token`
+method.
 
 Boto3 documentation:
 [AmplifyUIBuilder.Client.refresh_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.refresh_token)
@@ -462,7 +463,7 @@ Returns a `Coroutine` for
 Updates an existing component.
 
 Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").update_component` method.
+`session.create_client("amplifyuibuilder").update_component` method.
 
 Boto3 documentation:
 [AmplifyUIBuilder.Client.update_component](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.update_component)
@@ -491,8 +492,8 @@ Returns a `Coroutine` for
 
 Updates an existing theme.
 
-Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").update_theme` method.
+Type annotations for `session.create_client("amplifyuibuilder").update_theme`
+method.
 
 Boto3 documentation:
 [AmplifyUIBuilder.Client.update_theme](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.update_theme)
@@ -514,13 +515,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateThemeResponseTypeDef](./type_defs.md#updatethemeresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("amplifyuibuilder").__aenter__`
+method.
+
+Boto3 documentation:
+[AmplifyUIBuilder.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [AmplifyUIBuilderClient](#amplifyuibuilderclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("amplifyuibuilder").__aexit__`
+method.
+
+Boto3 documentation:
+[AmplifyUIBuilder.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/amplifyuibuilder.html#AmplifyUIBuilder.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("amplifyuibuilder").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("amplifyuibuilder").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_components")` ->
   [ListComponentsPaginator](./paginators.md#listcomponentspaginator)

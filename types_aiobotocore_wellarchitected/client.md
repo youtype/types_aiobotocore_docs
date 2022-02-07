@@ -55,21 +55,24 @@ type annotations stubs module
     - [update_workload](#update_workload)
     - [update_workload_share](#update_workload_share)
     - [upgrade_lens_review](#upgrade_lens_review)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="wellarchitectedclient"></a>
 
 ## WellArchitectedClient
 
-Type annotations for `aiobotocore.create_client("wellarchitected")`
+Type annotations for `session.create_client("wellarchitected")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_wellarchitected.client import WellArchitectedClient
 
-def get_wellarchitected_client() -> WellArchitectedClient:
-    return Session().client("wellarchitected")
+session = get_session()
+async with session.create_client("wellarchitected") as client:
+    client: WellArchitectedClient
 ```
 
 Boto3 documentation:
@@ -110,7 +113,7 @@ Exceptions:
 
 WellArchitectedClient exceptions.
 
-Type annotations for `aiobotocore.create_client("wellarchitected").exceptions`
+Type annotations for `session.create_client("wellarchitected").exceptions`
 method.
 
 Boto3 documentation:
@@ -125,7 +128,7 @@ Returns [Exceptions](#exceptions).
 Associate a lens to a workload.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").associate_lenses` method.
+`session.create_client("wellarchitected").associate_lenses` method.
 
 Boto3 documentation:
 [WellArchitected.Client.associate_lenses](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.associate_lenses)
@@ -146,19 +149,17 @@ Keyword-only arguments:
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("wellarchitected").can_paginate` method.
+Type annotations for `session.create_client("wellarchitected").can_paginate`
+method.
 
 Boto3 documentation:
 [WellArchitected.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_lens_share"></a>
 
@@ -167,7 +168,7 @@ Returns a `Coroutine` for `bool`.
 Create a lens share.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").create_lens_share` method.
+`session.create_client("wellarchitected").create_lens_share` method.
 
 Boto3 documentation:
 [WellArchitected.Client.create_lens_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.create_lens_share)
@@ -193,7 +194,7 @@ Returns a `Coroutine` for
 Create a new lens version.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").create_lens_version` method.
+`session.create_client("wellarchitected").create_lens_version` method.
 
 Boto3 documentation:
 [WellArchitected.Client.create_lens_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.create_lens_version)
@@ -221,7 +222,7 @@ Returns a `Coroutine` for
 Create a milestone for an existing workload.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").create_milestone` method.
+`session.create_client("wellarchitected").create_milestone` method.
 
 Boto3 documentation:
 [WellArchitected.Client.create_milestone](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.create_milestone)
@@ -246,8 +247,8 @@ Returns a `Coroutine` for
 
 Create a new workload.
 
-Type annotations for
-`aiobotocore.create_client("wellarchitected").create_workload` method.
+Type annotations for `session.create_client("wellarchitected").create_workload`
+method.
 
 Boto3 documentation:
 [WellArchitected.Client.create_workload](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.create_workload)
@@ -286,7 +287,7 @@ Returns a `Coroutine` for
 Create a workload share.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").create_workload_share` method.
+`session.create_client("wellarchitected").create_workload_share` method.
 
 Boto3 documentation:
 [WellArchitected.Client.create_workload_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.create_workload_share)
@@ -314,7 +315,7 @@ Returns a `Coroutine` for
 
 Delete an existing lens.
 
-Type annotations for `aiobotocore.create_client("wellarchitected").delete_lens`
+Type annotations for `session.create_client("wellarchitected").delete_lens`
 method.
 
 Boto3 documentation:
@@ -339,7 +340,7 @@ Keyword-only arguments:
 Delete a lens share.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").delete_lens_share` method.
+`session.create_client("wellarchitected").delete_lens_share` method.
 
 Boto3 documentation:
 [WellArchitected.Client.delete_lens_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.delete_lens_share)
@@ -361,8 +362,8 @@ Keyword-only arguments:
 
 Delete an existing workload.
 
-Type annotations for
-`aiobotocore.create_client("wellarchitected").delete_workload` method.
+Type annotations for `session.create_client("wellarchitected").delete_workload`
+method.
 
 Boto3 documentation:
 [WellArchitected.Client.delete_workload](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.delete_workload)
@@ -384,7 +385,7 @@ Keyword-only arguments:
 Delete a workload share.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").delete_workload_share` method.
+`session.create_client("wellarchitected").delete_workload_share` method.
 
 Boto3 documentation:
 [WellArchitected.Client.delete_workload_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.delete_workload_share)
@@ -408,7 +409,7 @@ Keyword-only arguments:
 Disassociate a lens from a workload.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").disassociate_lenses` method.
+`session.create_client("wellarchitected").disassociate_lenses` method.
 
 Boto3 documentation:
 [WellArchitected.Client.disassociate_lenses](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.disassociate_lenses)
@@ -430,7 +431,7 @@ Keyword-only arguments:
 
 Export an existing lens.
 
-Type annotations for `aiobotocore.create_client("wellarchitected").export_lens`
+Type annotations for `session.create_client("wellarchitected").export_lens`
 method.
 
 Boto3 documentation:
@@ -456,7 +457,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").generate_presigned_url` method.
+`session.create_client("wellarchitected").generate_presigned_url` method.
 
 Boto3 documentation:
 [WellArchitected.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.generate_presigned_url)
@@ -479,7 +480,7 @@ Returns a `Coroutine` for `str`.
 
 Get the answer to a specific question in a workload review.
 
-Type annotations for `aiobotocore.create_client("wellarchitected").get_answer`
+Type annotations for `session.create_client("wellarchitected").get_answer`
 method.
 
 Boto3 documentation:
@@ -506,7 +507,7 @@ Returns a `Coroutine` for
 
 Get an existing lens.
 
-Type annotations for `aiobotocore.create_client("wellarchitected").get_lens`
+Type annotations for `session.create_client("wellarchitected").get_lens`
 method.
 
 Boto3 documentation:
@@ -531,8 +532,8 @@ Returns a `Coroutine` for
 
 Get lens review.
 
-Type annotations for
-`aiobotocore.create_client("wellarchitected").get_lens_review` method.
+Type annotations for `session.create_client("wellarchitected").get_lens_review`
+method.
 
 Boto3 documentation:
 [WellArchitected.Client.get_lens_review](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.get_lens_review)
@@ -558,7 +559,7 @@ Returns a `Coroutine` for
 Get lens review report.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").get_lens_review_report` method.
+`session.create_client("wellarchitected").get_lens_review_report` method.
 
 Boto3 documentation:
 [WellArchitected.Client.get_lens_review_report](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.get_lens_review_report)
@@ -585,8 +586,7 @@ Returns a `Coroutine` for
 Get lens version differences.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").get_lens_version_difference`
-method.
+`session.create_client("wellarchitected").get_lens_version_difference` method.
 
 Boto3 documentation:
 [WellArchitected.Client.get_lens_version_difference](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.get_lens_version_difference)
@@ -612,8 +612,8 @@ Returns a `Coroutine` for
 
 Get a milestone for an existing workload.
 
-Type annotations for
-`aiobotocore.create_client("wellarchitected").get_milestone` method.
+Type annotations for `session.create_client("wellarchitected").get_milestone`
+method.
 
 Boto3 documentation:
 [WellArchitected.Client.get_milestone](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.get_milestone)
@@ -637,8 +637,8 @@ Returns a `Coroutine` for
 
 Get an existing workload.
 
-Type annotations for
-`aiobotocore.create_client("wellarchitected").get_workload` method.
+Type annotations for `session.create_client("wellarchitected").get_workload`
+method.
 
 Boto3 documentation:
 [WellArchitected.Client.get_workload](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.get_workload)
@@ -661,7 +661,7 @@ Returns a `Coroutine` for
 
 Import a new lens.
 
-Type annotations for `aiobotocore.create_client("wellarchitected").import_lens`
+Type annotations for `session.create_client("wellarchitected").import_lens`
 method.
 
 Boto3 documentation:
@@ -688,8 +688,8 @@ Returns a `Coroutine` for
 
 List of answers.
 
-Type annotations for
-`aiobotocore.create_client("wellarchitected").list_answers` method.
+Type annotations for `session.create_client("wellarchitected").list_answers`
+method.
 
 Boto3 documentation:
 [WellArchitected.Client.list_answers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.list_answers)
@@ -718,7 +718,7 @@ Returns a `Coroutine` for
 List lens review improvements.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").list_lens_review_improvements`
+`session.create_client("wellarchitected").list_lens_review_improvements`
 method.
 
 Boto3 documentation:
@@ -749,7 +749,7 @@ Returns a `Coroutine` for
 List lens reviews.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").list_lens_reviews` method.
+`session.create_client("wellarchitected").list_lens_reviews` method.
 
 Boto3 documentation:
 [WellArchitected.Client.list_lens_reviews](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.list_lens_reviews)
@@ -776,7 +776,7 @@ Returns a `Coroutine` for
 List the lens shares associated with the lens.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").list_lens_shares` method.
+`session.create_client("wellarchitected").list_lens_shares` method.
 
 Boto3 documentation:
 [WellArchitected.Client.list_lens_shares](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.list_lens_shares)
@@ -802,7 +802,7 @@ Returns a `Coroutine` for
 
 List the available lenses.
 
-Type annotations for `aiobotocore.create_client("wellarchitected").list_lenses`
+Type annotations for `session.create_client("wellarchitected").list_lenses`
 method.
 
 Boto3 documentation:
@@ -830,8 +830,8 @@ Returns a `Coroutine` for
 
 List all milestones for an existing workload.
 
-Type annotations for
-`aiobotocore.create_client("wellarchitected").list_milestones` method.
+Type annotations for `session.create_client("wellarchitected").list_milestones`
+method.
 
 Boto3 documentation:
 [WellArchitected.Client.list_milestones](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.list_milestones)
@@ -857,7 +857,7 @@ Returns a `Coroutine` for
 List lens notifications.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").list_notifications` method.
+`session.create_client("wellarchitected").list_notifications` method.
 
 Boto3 documentation:
 [WellArchitected.Client.list_notifications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.list_notifications)
@@ -884,7 +884,7 @@ Returns a `Coroutine` for
 List the workload invitations.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").list_share_invitations` method.
+`session.create_client("wellarchitected").list_share_invitations` method.
 
 Boto3 documentation:
 [WellArchitected.Client.list_share_invitations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.list_share_invitations)
@@ -914,7 +914,7 @@ Returns a `Coroutine` for
 List the tags for a resource.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").list_tags_for_resource` method.
+`session.create_client("wellarchitected").list_tags_for_resource` method.
 
 Boto3 documentation:
 [WellArchitected.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.list_tags_for_resource)
@@ -939,7 +939,7 @@ Returns a `Coroutine` for
 List the workload shares associated with the workload.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").list_workload_shares` method.
+`session.create_client("wellarchitected").list_workload_shares` method.
 
 Boto3 documentation:
 [WellArchitected.Client.list_workload_shares](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.list_workload_shares)
@@ -966,8 +966,8 @@ Returns a `Coroutine` for
 
 List workloads.
 
-Type annotations for
-`aiobotocore.create_client("wellarchitected").list_workloads` method.
+Type annotations for `session.create_client("wellarchitected").list_workloads`
+method.
 
 Boto3 documentation:
 [WellArchitected.Client.list_workloads](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.list_workloads)
@@ -992,8 +992,8 @@ Returns a `Coroutine` for
 
 Adds one or more tags to the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("wellarchitected").tag_resource` method.
+Type annotations for `session.create_client("wellarchitected").tag_resource`
+method.
 
 Boto3 documentation:
 [WellArchitected.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.tag_resource)
@@ -1016,8 +1016,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes specified tags from a resource.
 
-Type annotations for
-`aiobotocore.create_client("wellarchitected").untag_resource` method.
+Type annotations for `session.create_client("wellarchitected").untag_resource`
+method.
 
 Boto3 documentation:
 [WellArchitected.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.untag_resource)
@@ -1040,8 +1040,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Update the answer to a specific question in a workload review.
 
-Type annotations for
-`aiobotocore.create_client("wellarchitected").update_answer` method.
+Type annotations for `session.create_client("wellarchitected").update_answer`
+method.
 
 Boto3 documentation:
 [WellArchitected.Client.update_answer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.update_answer)
@@ -1073,7 +1073,7 @@ Returns a `Coroutine` for
 Update lens review.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").update_lens_review` method.
+`session.create_client("wellarchitected").update_lens_review` method.
 
 Boto3 documentation:
 [WellArchitected.Client.update_lens_review](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.update_lens_review)
@@ -1101,7 +1101,7 @@ Returns a `Coroutine` for
 Update a workload invitation.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").update_share_invitation` method.
+`session.create_client("wellarchitected").update_share_invitation` method.
 
 Boto3 documentation:
 [WellArchitected.Client.update_share_invitation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.update_share_invitation)
@@ -1128,8 +1128,8 @@ Returns a `Coroutine` for
 
 Update an existing workload.
 
-Type annotations for
-`aiobotocore.create_client("wellarchitected").update_workload` method.
+Type annotations for `session.create_client("wellarchitected").update_workload`
+method.
 
 Boto3 documentation:
 [WellArchitected.Client.update_workload](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.update_workload)
@@ -1169,7 +1169,7 @@ Returns a `Coroutine` for
 Update a workload share.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").update_workload_share` method.
+`session.create_client("wellarchitected").update_workload_share` method.
 
 Boto3 documentation:
 [WellArchitected.Client.update_workload_share](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.update_workload_share)
@@ -1197,7 +1197,7 @@ Returns a `Coroutine` for
 Upgrade lens review.
 
 Type annotations for
-`aiobotocore.create_client("wellarchitected").upgrade_lens_review` method.
+`session.create_client("wellarchitected").upgrade_lens_review` method.
 
 Boto3 documentation:
 [WellArchitected.Client.upgrade_lens_review](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.upgrade_lens_review)
@@ -1214,3 +1214,37 @@ Keyword-only arguments:
 - `LensAlias`: `str` *(required)*
 - `MilestoneName`: `str` *(required)*
 - `ClientRequestToken`: `str`
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("wellarchitected").__aenter__`
+method.
+
+Boto3 documentation:
+[WellArchitected.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [WellArchitectedClient](#wellarchitectedclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("wellarchitected").__aexit__`
+method.
+
+Boto3 documentation:
+[WellArchitected.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

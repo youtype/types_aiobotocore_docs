@@ -77,21 +77,24 @@ type annotations stubs module
     - [update_control](#update_control)
     - [update_settings](#update_settings)
     - [validate_assessment_report_integrity](#validate_assessment_report_integrity)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="auditmanagerclient"></a>
 
 ## AuditManagerClient
 
-Type annotations for `aiobotocore.create_client("auditmanager")`
+Type annotations for `session.create_client("auditmanager")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_auditmanager.client import AuditManagerClient
 
-def get_auditmanager_client() -> AuditManagerClient:
-    return Session().client("auditmanager")
+session = get_session()
+async with session.create_client("auditmanager") as client:
+    client: AuditManagerClient
 ```
 
 Boto3 documentation:
@@ -129,8 +132,7 @@ Exceptions:
 
 AuditManagerClient exceptions.
 
-Type annotations for `aiobotocore.create_client("auditmanager").exceptions`
-method.
+Type annotations for `session.create_client("auditmanager").exceptions` method.
 
 Boto3 documentation:
 [AuditManager.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.exceptions)
@@ -145,7 +147,7 @@ Associates an evidence folder to an assessment report in a Audit Manager
 assessment.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").associate_assessment_report_evidence_folder`
+`session.create_client("auditmanager").associate_assessment_report_evidence_folder`
 method.
 
 Boto3 documentation:
@@ -173,7 +175,7 @@ Associates a list of evidence to an assessment report in an Audit Manager
 assessment.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").batch_associate_assessment_report_evidence`
+`session.create_client("auditmanager").batch_associate_assessment_report_evidence`
 method.
 
 Boto3 documentation:
@@ -201,7 +203,7 @@ Returns a `Coroutine` for
 Creates a batch of delegations for an assessment in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").batch_create_delegation_by_assessment`
+`session.create_client("auditmanager").batch_create_delegation_by_assessment`
 method.
 
 Boto3 documentation:
@@ -230,7 +232,7 @@ Returns a `Coroutine` for
 Deletes a batch of delegations for an assessment in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").batch_delete_delegation_by_assessment`
+`session.create_client("auditmanager").batch_delete_delegation_by_assessment`
 method.
 
 Boto3 documentation:
@@ -257,7 +259,7 @@ Returns a `Coroutine` for
 Disassociates a list of evidence from an assessment report in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").batch_disassociate_assessment_report_evidence`
+`session.create_client("auditmanager").batch_disassociate_assessment_report_evidence`
 method.
 
 Boto3 documentation:
@@ -287,7 +289,7 @@ Uploads one or more pieces of evidence to a control in an Audit Manager
 assessment.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").batch_import_evidence_to_assessment_control`
+`session.create_client("auditmanager").batch_import_evidence_to_assessment_control`
 method.
 
 Boto3 documentation:
@@ -318,19 +320,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("auditmanager").can_paginate`
+Type annotations for `session.create_client("auditmanager").can_paginate`
 method.
 
 Boto3 documentation:
 [AuditManager.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_assessment"></a>
 
@@ -338,8 +338,8 @@ Returns a `Coroutine` for `bool`.
 
 Creates an assessment in Audit Manager.
 
-Type annotations for
-`aiobotocore.create_client("auditmanager").create_assessment` method.
+Type annotations for `session.create_client("auditmanager").create_assessment`
+method.
 
 Boto3 documentation:
 [AuditManager.Client.create_assessment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.create_assessment)
@@ -371,7 +371,7 @@ Returns a `Coroutine` for
 Creates a custom framework in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").create_assessment_framework` method.
+`session.create_client("auditmanager").create_assessment_framework` method.
 
 Boto3 documentation:
 [AuditManager.Client.create_assessment_framework](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.create_assessment_framework)
@@ -402,7 +402,7 @@ Returns a `Coroutine` for
 Creates an assessment report for the specified assessment.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").create_assessment_report` method.
+`session.create_client("auditmanager").create_assessment_report` method.
 
 Boto3 documentation:
 [AuditManager.Client.create_assessment_report](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.create_assessment_report)
@@ -428,7 +428,7 @@ Returns a `Coroutine` for
 
 Creates a new custom control in Audit Manager.
 
-Type annotations for `aiobotocore.create_client("auditmanager").create_control`
+Type annotations for `session.create_client("auditmanager").create_control`
 method.
 
 Boto3 documentation:
@@ -460,8 +460,8 @@ Returns a `Coroutine` for
 
 Deletes an assessment in Audit Manager.
 
-Type annotations for
-`aiobotocore.create_client("auditmanager").delete_assessment` method.
+Type annotations for `session.create_client("auditmanager").delete_assessment`
+method.
 
 Boto3 documentation:
 [AuditManager.Client.delete_assessment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.delete_assessment)
@@ -484,7 +484,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a custom framework in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").delete_assessment_framework` method.
+`session.create_client("auditmanager").delete_assessment_framework` method.
 
 Boto3 documentation:
 [AuditManager.Client.delete_assessment_framework](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.delete_assessment_framework)
@@ -508,7 +508,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a share request for a custom framework in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").delete_assessment_framework_share`
+`session.create_client("auditmanager").delete_assessment_framework_share`
 method.
 
 Boto3 documentation:
@@ -535,7 +535,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes an assessment report from an assessment in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").delete_assessment_report` method.
+`session.create_client("auditmanager").delete_assessment_report` method.
 
 Boto3 documentation:
 [AuditManager.Client.delete_assessment_report](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.delete_assessment_report)
@@ -559,7 +559,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a custom control in Audit Manager.
 
-Type annotations for `aiobotocore.create_client("auditmanager").delete_control`
+Type annotations for `session.create_client("auditmanager").delete_control`
 method.
 
 Boto3 documentation:
@@ -582,8 +582,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deregisters an account in Audit Manager.
 
-Type annotations for
-`aiobotocore.create_client("auditmanager").deregister_account` method.
+Type annotations for `session.create_client("auditmanager").deregister_account`
+method.
 
 Boto3 documentation:
 [AuditManager.Client.deregister_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.deregister_account)
@@ -602,7 +602,7 @@ Removes the specified member Amazon Web Services account as a delegated
 administrator for Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").deregister_organization_admin_account`
+`session.create_client("auditmanager").deregister_organization_admin_account`
 method.
 
 Boto3 documentation:
@@ -628,7 +628,7 @@ Disassociates an evidence folder from the specified assessment report in Audit
 Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").disassociate_assessment_report_evidence_folder`
+`session.create_client("auditmanager").disassociate_assessment_report_evidence_folder`
 method.
 
 Boto3 documentation:
@@ -655,7 +655,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").generate_presigned_url` method.
+`session.create_client("auditmanager").generate_presigned_url` method.
 
 Boto3 documentation:
 [AuditManager.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.generate_presigned_url)
@@ -678,8 +678,8 @@ Returns a `Coroutine` for `str`.
 
 Returns the registration status of an account in Audit Manager.
 
-Type annotations for
-`aiobotocore.create_client("auditmanager").get_account_status` method.
+Type annotations for `session.create_client("auditmanager").get_account_status`
+method.
 
 Boto3 documentation:
 [AuditManager.Client.get_account_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.get_account_status)
@@ -696,7 +696,7 @@ Returns a `Coroutine` for
 
 Returns an assessment from Audit Manager.
 
-Type annotations for `aiobotocore.create_client("auditmanager").get_assessment`
+Type annotations for `session.create_client("auditmanager").get_assessment`
 method.
 
 Boto3 documentation:
@@ -721,7 +721,7 @@ Returns a `Coroutine` for
 Returns a framework from Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").get_assessment_framework` method.
+`session.create_client("auditmanager").get_assessment_framework` method.
 
 Boto3 documentation:
 [AuditManager.Client.get_assessment_framework](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.get_assessment_framework)
@@ -746,7 +746,7 @@ Returns a `Coroutine` for
 Returns the URL of an assessment report in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").get_assessment_report_url` method.
+`session.create_client("auditmanager").get_assessment_report_url` method.
 
 Boto3 documentation:
 [AuditManager.Client.get_assessment_report_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.get_assessment_report_url)
@@ -771,8 +771,8 @@ Returns a `Coroutine` for
 
 Returns a list of changelogs from Audit Manager.
 
-Type annotations for
-`aiobotocore.create_client("auditmanager").get_change_logs` method.
+Type annotations for `session.create_client("auditmanager").get_change_logs`
+method.
 
 Boto3 documentation:
 [AuditManager.Client.get_change_logs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.get_change_logs)
@@ -799,7 +799,7 @@ Returns a `Coroutine` for
 
 Returns a control from Audit Manager.
 
-Type annotations for `aiobotocore.create_client("auditmanager").get_control`
+Type annotations for `session.create_client("auditmanager").get_control`
 method.
 
 Boto3 documentation:
@@ -823,8 +823,8 @@ Returns a `Coroutine` for
 
 Returns a list of delegations from an audit owner to a delegate.
 
-Type annotations for
-`aiobotocore.create_client("auditmanager").get_delegations` method.
+Type annotations for `session.create_client("auditmanager").get_delegations`
+method.
 
 Boto3 documentation:
 [AuditManager.Client.get_delegations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.get_delegations)
@@ -848,7 +848,7 @@ Returns a `Coroutine` for
 
 Returns evidence from Audit Manager.
 
-Type annotations for `aiobotocore.create_client("auditmanager").get_evidence`
+Type annotations for `session.create_client("auditmanager").get_evidence`
 method.
 
 Boto3 documentation:
@@ -876,8 +876,7 @@ Returns a `Coroutine` for
 Returns all evidence from a specified evidence folder in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").get_evidence_by_evidence_folder`
-method.
+`session.create_client("auditmanager").get_evidence_by_evidence_folder` method.
 
 Boto3 documentation:
 [AuditManager.Client.get_evidence_by_evidence_folder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.get_evidence_by_evidence_folder)
@@ -906,7 +905,7 @@ Returns a `Coroutine` for
 Returns an evidence folder from the specified assessment in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").get_evidence_folder` method.
+`session.create_client("auditmanager").get_evidence_folder` method.
 
 Boto3 documentation:
 [AuditManager.Client.get_evidence_folder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.get_evidence_folder)
@@ -933,7 +932,7 @@ Returns a `Coroutine` for
 Returns the evidence folders from a specified assessment in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").get_evidence_folders_by_assessment`
+`session.create_client("auditmanager").get_evidence_folders_by_assessment`
 method.
 
 Boto3 documentation:
@@ -962,7 +961,7 @@ Returns a list of evidence folders that are associated with a specified control
 of an assessment in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").get_evidence_folders_by_assessment_control`
+`session.create_client("auditmanager").get_evidence_folders_by_assessment_control`
 method.
 
 Boto3 documentation:
@@ -991,7 +990,7 @@ Returns a `Coroutine` for
 
 Gets the latest analytics data for all your current active assessments.
 
-Type annotations for `aiobotocore.create_client("auditmanager").get_insights`
+Type annotations for `session.create_client("auditmanager").get_insights`
 method.
 
 Boto3 documentation:
@@ -1009,7 +1008,7 @@ Returns a `Coroutine` for
 Gets the latest analytics data for a specific active assessment.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").get_insights_by_assessment` method.
+`session.create_client("auditmanager").get_insights_by_assessment` method.
 
 Boto3 documentation:
 [AuditManager.Client.get_insights_by_assessment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.get_insights_by_assessment)
@@ -1035,8 +1034,7 @@ Returns the name of the delegated Amazon Web Services administrator account for
 the organization.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").get_organization_admin_account`
-method.
+`session.create_client("auditmanager").get_organization_admin_account` method.
 
 Boto3 documentation:
 [AuditManager.Client.get_organization_admin_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.get_organization_admin_account)
@@ -1055,7 +1053,7 @@ Returns a list of the in-scope Amazon Web Services services for the specified
 assessment.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").get_services_in_scope` method.
+`session.create_client("auditmanager").get_services_in_scope` method.
 
 Boto3 documentation:
 [AuditManager.Client.get_services_in_scope](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.get_services_in_scope)
@@ -1072,7 +1070,7 @@ Returns a `Coroutine` for
 
 Returns the settings for the specified Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("auditmanager").get_settings`
+Type annotations for `session.create_client("auditmanager").get_settings`
 method.
 
 Boto3 documentation:
@@ -1099,7 +1097,7 @@ Lists the latest analytics data for controls within a specific control domain
 and a specific active assessment.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").list_assessment_control_insights_by_control_domain`
+`session.create_client("auditmanager").list_assessment_control_insights_by_control_domain`
 method.
 
 Boto3 documentation:
@@ -1130,7 +1128,7 @@ Returns a list of sent or received share requests for custom frameworks in
 Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").list_assessment_framework_share_requests`
+`session.create_client("auditmanager").list_assessment_framework_share_requests`
 method.
 
 Boto3 documentation:
@@ -1160,7 +1158,7 @@ Returns a list of the frameworks that are available in the Audit Manager
 framework library.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").list_assessment_frameworks` method.
+`session.create_client("auditmanager").list_assessment_frameworks` method.
 
 Boto3 documentation:
 [AuditManager.Client.list_assessment_frameworks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.list_assessment_frameworks)
@@ -1188,7 +1186,7 @@ Returns a `Coroutine` for
 Returns a list of assessment reports created in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").list_assessment_reports` method.
+`session.create_client("auditmanager").list_assessment_reports` method.
 
 Boto3 documentation:
 [AuditManager.Client.list_assessment_reports](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.list_assessment_reports)
@@ -1213,8 +1211,8 @@ Returns a `Coroutine` for
 
 Returns a list of current and past assessments from Audit Manager.
 
-Type annotations for
-`aiobotocore.create_client("auditmanager").list_assessments` method.
+Type annotations for `session.create_client("auditmanager").list_assessments`
+method.
 
 Boto3 documentation:
 [AuditManager.Client.list_assessments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.list_assessments)
@@ -1241,8 +1239,7 @@ Lists the latest analytics data for control domains across all of your active
 assessments.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").list_control_domain_insights`
-method.
+`session.create_client("auditmanager").list_control_domain_insights` method.
 
 Boto3 documentation:
 [AuditManager.Client.list_control_domain_insights](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.list_control_domain_insights)
@@ -1268,7 +1265,7 @@ Returns a `Coroutine` for
 Lists analytics data for control domains within a specified active assessment.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").list_control_domain_insights_by_assessment`
+`session.create_client("auditmanager").list_control_domain_insights_by_assessment`
 method.
 
 Boto3 documentation:
@@ -1297,7 +1294,7 @@ Lists the latest analytics data for controls within a specific control domain
 across all active assessments.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").list_control_insights_by_control_domain`
+`session.create_client("auditmanager").list_control_insights_by_control_domain`
 method.
 
 Boto3 documentation:
@@ -1324,7 +1321,7 @@ Returns a `Coroutine` for
 
 Returns a list of controls from Audit Manager.
 
-Type annotations for `aiobotocore.create_client("auditmanager").list_controls`
+Type annotations for `session.create_client("auditmanager").list_controls`
 method.
 
 Boto3 documentation:
@@ -1352,8 +1349,7 @@ Returns a list of keywords that are pre-mapped to the specified control data
 source.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").list_keywords_for_data_source`
-method.
+`session.create_client("auditmanager").list_keywords_for_data_source` method.
 
 Boto3 documentation:
 [AuditManager.Client.list_keywords_for_data_source](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.list_keywords_for_data_source)
@@ -1379,8 +1375,8 @@ Returns a `Coroutine` for
 
 Returns a list of all Audit Manager notifications.
 
-Type annotations for
-`aiobotocore.create_client("auditmanager").list_notifications` method.
+Type annotations for `session.create_client("auditmanager").list_notifications`
+method.
 
 Boto3 documentation:
 [AuditManager.Client.list_notifications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.list_notifications)
@@ -1406,7 +1402,7 @@ Returns a `Coroutine` for
 Returns a list of tags for the specified resource in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").list_tags_for_resource` method.
+`session.create_client("auditmanager").list_tags_for_resource` method.
 
 Boto3 documentation:
 [AuditManager.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.list_tags_for_resource)
@@ -1430,8 +1426,8 @@ Returns a `Coroutine` for
 
 Enables Audit Manager for the specified Amazon Web Services account.
 
-Type annotations for
-`aiobotocore.create_client("auditmanager").register_account` method.
+Type annotations for `session.create_client("auditmanager").register_account`
+method.
 
 Boto3 documentation:
 [AuditManager.Client.register_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.register_account)
@@ -1457,7 +1453,7 @@ Enables an Amazon Web Services account within the organization as the delegated
 administrator for Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").register_organization_admin_account`
+`session.create_client("auditmanager").register_organization_admin_account`
 method.
 
 Boto3 documentation:
@@ -1483,7 +1479,7 @@ Returns a `Coroutine` for
 Creates a share request for a custom framework in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").start_assessment_framework_share`
+`session.create_client("auditmanager").start_assessment_framework_share`
 method.
 
 Boto3 documentation:
@@ -1511,7 +1507,7 @@ Returns a `Coroutine` for
 
 Tags the specified resource in Audit Manager.
 
-Type annotations for `aiobotocore.create_client("auditmanager").tag_resource`
+Type annotations for `session.create_client("auditmanager").tag_resource`
 method.
 
 Boto3 documentation:
@@ -1535,7 +1531,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes a tag from a resource in Audit Manager.
 
-Type annotations for `aiobotocore.create_client("auditmanager").untag_resource`
+Type annotations for `session.create_client("auditmanager").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1559,8 +1555,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Edits an Audit Manager assessment.
 
-Type annotations for
-`aiobotocore.create_client("auditmanager").update_assessment` method.
+Type annotations for `session.create_client("auditmanager").update_assessment`
+method.
 
 Boto3 documentation:
 [AuditManager.Client.update_assessment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.update_assessment)
@@ -1590,7 +1586,7 @@ Returns a `Coroutine` for
 Updates a control within an assessment in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").update_assessment_control` method.
+`session.create_client("auditmanager").update_assessment_control` method.
 
 Boto3 documentation:
 [AuditManager.Client.update_assessment_control](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.update_assessment_control)
@@ -1619,7 +1615,7 @@ Returns a `Coroutine` for
 Updates the status of a control set in an Audit Manager assessment.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").update_assessment_control_set_status`
+`session.create_client("auditmanager").update_assessment_control_set_status`
 method.
 
 Boto3 documentation:
@@ -1649,7 +1645,7 @@ Returns a `Coroutine` for
 Updates a custom framework in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").update_assessment_framework` method.
+`session.create_client("auditmanager").update_assessment_framework` method.
 
 Boto3 documentation:
 [AuditManager.Client.update_assessment_framework](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.update_assessment_framework)
@@ -1680,7 +1676,7 @@ Returns a `Coroutine` for
 Updates a share request for a custom framework in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").update_assessment_framework_share`
+`session.create_client("auditmanager").update_assessment_framework_share`
 method.
 
 Boto3 documentation:
@@ -1710,7 +1706,7 @@ Returns a `Coroutine` for
 Updates the status of an assessment in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").update_assessment_status` method.
+`session.create_client("auditmanager").update_assessment_status` method.
 
 Boto3 documentation:
 [AuditManager.Client.update_assessment_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.update_assessment_status)
@@ -1736,7 +1732,7 @@ Returns a `Coroutine` for
 
 Updates a custom control in Audit Manager.
 
-Type annotations for `aiobotocore.create_client("auditmanager").update_control`
+Type annotations for `session.create_client("auditmanager").update_control`
 method.
 
 Boto3 documentation:
@@ -1768,8 +1764,8 @@ Returns a `Coroutine` for
 
 Updates Audit Manager settings for the current user account.
 
-Type annotations for
-`aiobotocore.create_client("auditmanager").update_settings` method.
+Type annotations for `session.create_client("auditmanager").update_settings`
+method.
 
 Boto3 documentation:
 [AuditManager.Client.update_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.update_settings)
@@ -1798,7 +1794,7 @@ Returns a `Coroutine` for
 Validates the integrity of an assessment report in Audit Manager.
 
 Type annotations for
-`aiobotocore.create_client("auditmanager").validate_assessment_report_integrity`
+`session.create_client("auditmanager").validate_assessment_report_integrity`
 method.
 
 Boto3 documentation:
@@ -1816,3 +1812,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [ValidateAssessmentReportIntegrityResponseTypeDef](./type_defs.md#validateassessmentreportintegrityresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("auditmanager").__aenter__` method.
+
+Boto3 documentation:
+[AuditManager.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [AuditManagerClient](#auditmanagerclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("auditmanager").__aexit__` method.
+
+Boto3 documentation:
+[AuditManager.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

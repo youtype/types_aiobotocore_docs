@@ -36,21 +36,24 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_ledger](#update_ledger)
     - [update_ledger_permissions_mode](#update_ledger_permissions_mode)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="qldbclient"></a>
 
 ## QLDBClient
 
-Type annotations for `aiobotocore.create_client("qldb")`
+Type annotations for `session.create_client("qldb")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_qldb.client import QLDBClient
 
-def get_qldb_client() -> QLDBClient:
-    return Session().client("qldb")
+session = get_session()
+async with session.create_client("qldb") as client:
+    client: QLDBClient
 ```
 
 Boto3 documentation:
@@ -90,7 +93,7 @@ Exceptions:
 
 QLDBClient exceptions.
 
-Type annotations for `aiobotocore.create_client("qldb").exceptions` method.
+Type annotations for `session.create_client("qldb").exceptions` method.
 
 Boto3 documentation:
 [QLDB.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.exceptions)
@@ -103,18 +106,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("qldb").can_paginate` method.
+Type annotations for `session.create_client("qldb").can_paginate` method.
 
 Boto3 documentation:
 [QLDB.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_journal_kinesis_stream"></a>
 
@@ -123,7 +124,7 @@ Returns a `Coroutine` for `bool`.
 Ends a given Amazon QLDB journal stream.
 
 Type annotations for
-`aiobotocore.create_client("qldb").cancel_journal_kinesis_stream` method.
+`session.create_client("qldb").cancel_journal_kinesis_stream` method.
 
 Boto3 documentation:
 [QLDB.Client.cancel_journal_kinesis_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.cancel_journal_kinesis_stream)
@@ -148,7 +149,7 @@ Returns a `Coroutine` for
 
 Creates a new ledger in your account in the current Region.
 
-Type annotations for `aiobotocore.create_client("qldb").create_ledger` method.
+Type annotations for `session.create_client("qldb").create_ledger` method.
 
 Boto3 documentation:
 [QLDB.Client.create_ledger](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.create_ledger)
@@ -176,7 +177,7 @@ Returns a `Coroutine` for
 
 Deletes a ledger and all of its contents.
 
-Type annotations for `aiobotocore.create_client("qldb").delete_ledger` method.
+Type annotations for `session.create_client("qldb").delete_ledger` method.
 
 Boto3 documentation:
 [QLDB.Client.delete_ledger](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.delete_ledger)
@@ -197,7 +198,7 @@ Keyword-only arguments:
 Returns detailed information about a given Amazon QLDB journal stream.
 
 Type annotations for
-`aiobotocore.create_client("qldb").describe_journal_kinesis_stream` method.
+`session.create_client("qldb").describe_journal_kinesis_stream` method.
 
 Boto3 documentation:
 [QLDB.Client.describe_journal_kinesis_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.describe_journal_kinesis_stream)
@@ -224,8 +225,8 @@ Returns information about a journal export job, including the ledger name,
 export ID, creation time, current status, and the parameters of the original
 export creation request.
 
-Type annotations for
-`aiobotocore.create_client("qldb").describe_journal_s3_export` method.
+Type annotations for `session.create_client("qldb").describe_journal_s3_export`
+method.
 
 Boto3 documentation:
 [QLDB.Client.describe_journal_s3_export](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.describe_journal_s3_export)
@@ -251,8 +252,7 @@ Returns a `Coroutine` for
 Returns information about a ledger, including its state, permissions mode,
 encryption at rest settings, and when it was created.
 
-Type annotations for `aiobotocore.create_client("qldb").describe_ledger`
-method.
+Type annotations for `session.create_client("qldb").describe_ledger` method.
 
 Boto3 documentation:
 [QLDB.Client.describe_ledger](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.describe_ledger)
@@ -276,7 +276,7 @@ Returns a `Coroutine` for
 Exports journal contents within a date and time range from a ledger into a
 specified Amazon Simple Storage Service (Amazon S3) bucket.
 
-Type annotations for `aiobotocore.create_client("qldb").export_journal_to_s3`
+Type annotations for `session.create_client("qldb").export_journal_to_s3`
 method.
 
 Boto3 documentation:
@@ -307,7 +307,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("qldb").generate_presigned_url`
+Type annotations for `session.create_client("qldb").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -331,7 +331,7 @@ Returns a `Coroutine` for `str`.
 
 Returns a block object at a specified address in a journal.
 
-Type annotations for `aiobotocore.create_client("qldb").get_block` method.
+Type annotations for `session.create_client("qldb").get_block` method.
 
 Boto3 documentation:
 [QLDB.Client.get_block](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.get_block)
@@ -357,7 +357,7 @@ Returns a `Coroutine` for
 
 Returns the digest of a ledger at the latest committed block in the journal.
 
-Type annotations for `aiobotocore.create_client("qldb").get_digest` method.
+Type annotations for `session.create_client("qldb").get_digest` method.
 
 Boto3 documentation:
 [QLDB.Client.get_digest](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.get_digest)
@@ -380,7 +380,7 @@ Returns a `Coroutine` for
 
 Returns a revision data object for a specified document ID and block address.
 
-Type annotations for `aiobotocore.create_client("qldb").get_revision` method.
+Type annotations for `session.create_client("qldb").get_revision` method.
 
 Boto3 documentation:
 [QLDB.Client.get_revision](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.get_revision)
@@ -409,8 +409,7 @@ Returns an array of all Amazon QLDB journal stream descriptors for a given
 ledger.
 
 Type annotations for
-`aiobotocore.create_client("qldb").list_journal_kinesis_streams_for_ledger`
-method.
+`session.create_client("qldb").list_journal_kinesis_streams_for_ledger` method.
 
 Boto3 documentation:
 [QLDB.Client.list_journal_kinesis_streams_for_ledger](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.list_journal_kinesis_streams_for_ledger)
@@ -437,8 +436,8 @@ Returns a `Coroutine` for
 Returns an array of journal export job descriptions for all ledgers that are
 associated with the current account and Region.
 
-Type annotations for
-`aiobotocore.create_client("qldb").list_journal_s3_exports` method.
+Type annotations for `session.create_client("qldb").list_journal_s3_exports`
+method.
 
 Boto3 documentation:
 [QLDB.Client.list_journal_s3_exports](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.list_journal_s3_exports)
@@ -464,7 +463,7 @@ Returns a `Coroutine` for
 Returns an array of journal export job descriptions for a specified ledger.
 
 Type annotations for
-`aiobotocore.create_client("qldb").list_journal_s3_exports_for_ledger` method.
+`session.create_client("qldb").list_journal_s3_exports_for_ledger` method.
 
 Boto3 documentation:
 [QLDB.Client.list_journal_s3_exports_for_ledger](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.list_journal_s3_exports_for_ledger)
@@ -491,7 +490,7 @@ Returns a `Coroutine` for
 Returns an array of ledger summaries that are associated with the current
 account and Region.
 
-Type annotations for `aiobotocore.create_client("qldb").list_ledgers` method.
+Type annotations for `session.create_client("qldb").list_ledgers` method.
 
 Boto3 documentation:
 [QLDB.Client.list_ledgers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.list_ledgers)
@@ -515,7 +514,7 @@ Returns a `Coroutine` for
 
 Returns all tags for a specified Amazon QLDB resource.
 
-Type annotations for `aiobotocore.create_client("qldb").list_tags_for_resource`
+Type annotations for `session.create_client("qldb").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -540,8 +539,8 @@ Returns a `Coroutine` for
 
 Creates a journal stream for a given Amazon QLDB ledger.
 
-Type annotations for
-`aiobotocore.create_client("qldb").stream_journal_to_kinesis` method.
+Type annotations for `session.create_client("qldb").stream_journal_to_kinesis`
+method.
 
 Boto3 documentation:
 [QLDB.Client.stream_journal_to_kinesis](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.stream_journal_to_kinesis)
@@ -573,7 +572,7 @@ Returns a `Coroutine` for
 
 Adds one or more tags to a specified Amazon QLDB resource.
 
-Type annotations for `aiobotocore.create_client("qldb").tag_resource` method.
+Type annotations for `session.create_client("qldb").tag_resource` method.
 
 Boto3 documentation:
 [QLDB.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.tag_resource)
@@ -596,7 +595,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from a specified Amazon QLDB resource.
 
-Type annotations for `aiobotocore.create_client("qldb").untag_resource` method.
+Type annotations for `session.create_client("qldb").untag_resource` method.
 
 Boto3 documentation:
 [QLDB.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.untag_resource)
@@ -619,7 +618,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates properties on a ledger.
 
-Type annotations for `aiobotocore.create_client("qldb").update_ledger` method.
+Type annotations for `session.create_client("qldb").update_ledger` method.
 
 Boto3 documentation:
 [QLDB.Client.update_ledger](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.update_ledger)
@@ -645,7 +644,7 @@ Returns a `Coroutine` for
 Updates the permissions mode of a ledger.
 
 Type annotations for
-`aiobotocore.create_client("qldb").update_ledger_permissions_mode` method.
+`session.create_client("qldb").update_ledger_permissions_mode` method.
 
 Boto3 documentation:
 [QLDB.Client.update_ledger_permissions_mode](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.update_ledger_permissions_mode)
@@ -664,3 +663,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateLedgerPermissionsModeResponseTypeDef](./type_defs.md#updateledgerpermissionsmoderesponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("qldb").__aenter__` method.
+
+Boto3 documentation:
+[QLDB.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [QLDBClient](#qldbclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("qldb").__aexit__` method.
+
+Boto3 documentation:
+[QLDB.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/qldb.html#QLDB.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

@@ -28,21 +28,24 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_host](#update_host)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="codestarconnectionsclient"></a>
 
 ## CodeStarconnectionsClient
 
-Type annotations for `aiobotocore.create_client("codestar-connections")`
+Type annotations for `session.create_client("codestar-connections")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_codestar_connections.client import CodeStarconnectionsClient
 
-def get_codestar-connections_client() -> CodeStarconnectionsClient:
-    return Session().client("codestar-connections")
+session = get_session()
+async with session.create_client("codestar-connections") as client:
+    client: CodeStarconnectionsClient
 ```
 
 Boto3 documentation:
@@ -81,8 +84,8 @@ Exceptions:
 
 CodeStarconnectionsClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("codestar-connections").exceptions` method.
+Type annotations for `session.create_client("codestar-connections").exceptions`
+method.
 
 Boto3 documentation:
 [CodeStarconnections.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.exceptions)
@@ -96,18 +99,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("codestar-connections").can_paginate` method.
+`session.create_client("codestar-connections").can_paginate` method.
 
 Boto3 documentation:
 [CodeStarconnections.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_connection"></a>
 
@@ -117,7 +118,7 @@ Creates a connection that can then be given to other AWS services like
 CodePipeline so that it can access third-party code repositories.
 
 Type annotations for
-`aiobotocore.create_client("codestar-connections").create_connection` method.
+`session.create_client("codestar-connections").create_connection` method.
 
 Boto3 documentation:
 [CodeStarconnections.Client.create_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.create_connection)
@@ -145,7 +146,7 @@ Creates a resource that represents the infrastructure where a third-party
 provider is installed.
 
 Type annotations for
-`aiobotocore.create_client("codestar-connections").create_host` method.
+`session.create_client("codestar-connections").create_host` method.
 
 Boto3 documentation:
 [CodeStarconnections.Client.create_host](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.create_host)
@@ -175,7 +176,7 @@ Returns a `Coroutine` for
 The connection to be deleted.
 
 Type annotations for
-`aiobotocore.create_client("codestar-connections").delete_connection` method.
+`session.create_client("codestar-connections").delete_connection` method.
 
 Boto3 documentation:
 [CodeStarconnections.Client.delete_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.delete_connection)
@@ -198,7 +199,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 The host to be deleted.
 
 Type annotations for
-`aiobotocore.create_client("codestar-connections").delete_host` method.
+`session.create_client("codestar-connections").delete_host` method.
 
 Boto3 documentation:
 [CodeStarconnections.Client.delete_host](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.delete_host)
@@ -221,8 +222,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("codestar-connections").generate_presigned_url`
-method.
+`session.create_client("codestar-connections").generate_presigned_url` method.
 
 Boto3 documentation:
 [CodeStarconnections.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.generate_presigned_url)
@@ -247,7 +247,7 @@ Returns the connection ARN and details such as status, owner, and provider
 type.
 
 Type annotations for
-`aiobotocore.create_client("codestar-connections").get_connection` method.
+`session.create_client("codestar-connections").get_connection` method.
 
 Boto3 documentation:
 [CodeStarconnections.Client.get_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.get_connection)
@@ -271,8 +271,8 @@ Returns a `Coroutine` for
 Returns the host ARN and details such as status, provider type, endpoint, and,
 if applicable, the VPC configuration.
 
-Type annotations for
-`aiobotocore.create_client("codestar-connections").get_host` method.
+Type annotations for `session.create_client("codestar-connections").get_host`
+method.
 
 Boto3 documentation:
 [CodeStarconnections.Client.get_host](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.get_host)
@@ -296,7 +296,7 @@ Returns a `Coroutine` for
 Lists the connections associated with your account.
 
 Type annotations for
-`aiobotocore.create_client("codestar-connections").list_connections` method.
+`session.create_client("codestar-connections").list_connections` method.
 
 Boto3 documentation:
 [CodeStarconnections.Client.list_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.list_connections)
@@ -322,8 +322,8 @@ Returns a `Coroutine` for
 
 Lists the hosts associated with your account.
 
-Type annotations for
-`aiobotocore.create_client("codestar-connections").list_hosts` method.
+Type annotations for `session.create_client("codestar-connections").list_hosts`
+method.
 
 Boto3 documentation:
 [CodeStarconnections.Client.list_hosts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.list_hosts)
@@ -349,8 +349,7 @@ Gets the set of key-value pairs (metadata) that are used to manage the
 resource.
 
 Type annotations for
-`aiobotocore.create_client("codestar-connections").list_tags_for_resource`
-method.
+`session.create_client("codestar-connections").list_tags_for_resource` method.
 
 Boto3 documentation:
 [CodeStarconnections.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.list_tags_for_resource)
@@ -375,7 +374,7 @@ Returns a `Coroutine` for
 Adds to or modifies the tags of the given resource.
 
 Type annotations for
-`aiobotocore.create_client("codestar-connections").tag_resource` method.
+`session.create_client("codestar-connections").tag_resource` method.
 
 Boto3 documentation:
 [CodeStarconnections.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.tag_resource)
@@ -399,7 +398,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes tags from an AWS resource.
 
 Type annotations for
-`aiobotocore.create_client("codestar-connections").untag_resource` method.
+`session.create_client("codestar-connections").untag_resource` method.
 
 Boto3 documentation:
 [CodeStarconnections.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.untag_resource)
@@ -423,7 +422,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a specified host with the provided configurations.
 
 Type annotations for
-`aiobotocore.create_client("codestar-connections").update_host` method.
+`session.create_client("codestar-connections").update_host` method.
 
 Boto3 documentation:
 [CodeStarconnections.Client.update_host](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.update_host)
@@ -441,3 +440,38 @@ Keyword-only arguments:
   [VpcConfigurationTypeDef](./type_defs.md#vpcconfigurationtypedef)
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("codestar-connections").__aenter__`
+method.
+
+Boto3 documentation:
+[CodeStarconnections.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[CodeStarconnectionsClient](#codestarconnectionsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("codestar-connections").__aexit__`
+method.
+
+Boto3 documentation:
+[CodeStarconnections.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codestar-connections.html#CodeStarconnections.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

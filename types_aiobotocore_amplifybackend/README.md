@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[amplifybackend]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[amplifybackend]'
+
+# standalone installation
 pip install types-aiobotocore-amplifybackend
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-amplifybackend
 
 ## AmplifyBackendClient
 
-Type annotations for `aiobotocore.create_client("amplifybackend")` as
+Type annotations for `session.create_client("amplifybackend")` as
 [AmplifyBackendClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_amplifybackend.client import AmplifyBackendClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [clone_backend](./client.md#clone_backend)
 - [create_backend](./client.md#create_backend)
@@ -100,7 +106,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_amplifybackend.paginators import ListBackendJobsPaginator, ...
+from types_aiobotocore_amplifybackend.paginator import ListBackendJobsPaginator, ...
 ```
 
 - [ListBackendJobsPaginator](./paginators.md#listbackendjobspaginator)

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[swf]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[swf]'
+
+# standalone installation
 pip install types-aiobotocore-swf
 ```
 
@@ -29,8 +33,7 @@ pip install types-aiobotocore-swf
 
 ## SWFClient
 
-Type annotations for `aiobotocore.create_client("swf")` as
-[SWFClient](./client.md)
+Type annotations for `session.create_client("swf")` as [SWFClient](./client.md)
 
 Can be used directly:
 
@@ -42,6 +45,8 @@ from types_aiobotocore_swf.client import SWFClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [count_closed_workflow_executions](./client.md#count_closed_workflow_executions)
 - [count_open_workflow_executions](./client.md#count_open_workflow_executions)
@@ -112,7 +117,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_swf.paginators import GetWorkflowExecutionHistoryPaginator, ...
+from types_aiobotocore_swf.paginator import GetWorkflowExecutionHistoryPaginator, ...
 ```
 
 - [GetWorkflowExecutionHistoryPaginator](./paginators.md#getworkflowexecutionhistorypaginator)

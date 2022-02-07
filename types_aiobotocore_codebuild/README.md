@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[codebuild]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[codebuild]'
+
+# standalone installation
 pip install types-aiobotocore-codebuild
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-codebuild
 
 ## CodeBuildClient
 
-Type annotations for `aiobotocore.create_client("codebuild")` as
+Type annotations for `session.create_client("codebuild")` as
 [CodeBuildClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_codebuild.client import CodeBuildClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_delete_builds](./client.md#batch_delete_builds)
 - [batch_get_build_batches](./client.md#batch_get_build_batches)
 - [batch_get_builds](./client.md#batch_get_builds)
@@ -115,7 +121,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_codebuild.paginators import DescribeCodeCoveragesPaginator, ...
+from types_aiobotocore_codebuild.paginator import DescribeCodeCoveragesPaginator, ...
 ```
 
 - [DescribeCodeCoveragesPaginator](./paginators.md#describecodecoveragespaginator)

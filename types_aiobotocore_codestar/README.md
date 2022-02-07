@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[codestar]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[codestar]'
+
+# standalone installation
 pip install types-aiobotocore-codestar
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-codestar
 
 ## CodeStarClient
 
-Type annotations for `aiobotocore.create_client("codestar")` as
+Type annotations for `session.create_client("codestar")` as
 [CodeStarClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_codestar.client import CodeStarClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_team_member](./client.md#associate_team_member)
 - [can_paginate](./client.md#can_paginate)
 - [create_project](./client.md#create_project)
@@ -96,7 +102,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_codestar.paginators import ListProjectsPaginator, ...
+from types_aiobotocore_codestar.paginator import ListProjectsPaginator, ...
 ```
 
 - [ListProjectsPaginator](./paginators.md#listprojectspaginator)

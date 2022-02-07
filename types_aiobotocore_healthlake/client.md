@@ -29,21 +29,24 @@ type annotations stubs module
     - [start_fhir_import_job](#start_fhir_import_job)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="healthlakeclient"></a>
 
 ## HealthLakeClient
 
-Type annotations for `aiobotocore.create_client("healthlake")`
+Type annotations for `session.create_client("healthlake")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_healthlake.client import HealthLakeClient
 
-def get_healthlake_client() -> HealthLakeClient:
-    return Session().client("healthlake")
+session = get_session()
+async with session.create_client("healthlake") as client:
+    client: HealthLakeClient
 ```
 
 Boto3 documentation:
@@ -83,8 +86,7 @@ Exceptions:
 
 HealthLakeClient exceptions.
 
-Type annotations for `aiobotocore.create_client("healthlake").exceptions`
-method.
+Type annotations for `session.create_client("healthlake").exceptions` method.
 
 Boto3 documentation:
 [HealthLake.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.exceptions)
@@ -97,19 +99,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("healthlake").can_paginate`
-method.
+Type annotations for `session.create_client("healthlake").can_paginate` method.
 
 Boto3 documentation:
 [HealthLake.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_fhir_datastore"></a>
 
@@ -118,7 +117,7 @@ Returns a `Coroutine` for `bool`.
 Creates a Data Store that can ingest and export FHIR formatted data.
 
 Type annotations for
-`aiobotocore.create_client("healthlake").create_fhir_datastore` method.
+`session.create_client("healthlake").create_fhir_datastore` method.
 
 Boto3 documentation:
 [HealthLake.Client.create_fhir_datastore](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.create_fhir_datastore)
@@ -151,7 +150,7 @@ Returns a `Coroutine` for
 Deletes a Data Store.
 
 Type annotations for
-`aiobotocore.create_client("healthlake").delete_fhir_datastore` method.
+`session.create_client("healthlake").delete_fhir_datastore` method.
 
 Boto3 documentation:
 [HealthLake.Client.delete_fhir_datastore](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.delete_fhir_datastore)
@@ -178,7 +177,7 @@ Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data
 Store type version, and Data Store endpoint.
 
 Type annotations for
-`aiobotocore.create_client("healthlake").describe_fhir_datastore` method.
+`session.create_client("healthlake").describe_fhir_datastore` method.
 
 Boto3 documentation:
 [HealthLake.Client.describe_fhir_datastore](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.describe_fhir_datastore)
@@ -204,7 +203,7 @@ Displays the properties of a FHIR export job, including the ID, ARN, name, and
 the status of the job.
 
 Type annotations for
-`aiobotocore.create_client("healthlake").describe_fhir_export_job` method.
+`session.create_client("healthlake").describe_fhir_export_job` method.
 
 Boto3 documentation:
 [HealthLake.Client.describe_fhir_export_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.describe_fhir_export_job)
@@ -231,7 +230,7 @@ Displays the properties of a FHIR import job, including the ID, ARN, name, and
 the status of the job.
 
 Type annotations for
-`aiobotocore.create_client("healthlake").describe_fhir_import_job` method.
+`session.create_client("healthlake").describe_fhir_import_job` method.
 
 Boto3 documentation:
 [HealthLake.Client.describe_fhir_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.describe_fhir_import_job)
@@ -257,7 +256,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("healthlake").generate_presigned_url` method.
+`session.create_client("healthlake").generate_presigned_url` method.
 
 Boto3 documentation:
 [HealthLake.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.generate_presigned_url)
@@ -281,8 +280,8 @@ Returns a `Coroutine` for `str`.
 Lists all FHIR Data Stores that are in the user’s account, regardless of Data
 Store status.
 
-Type annotations for
-`aiobotocore.create_client("healthlake").list_fhir_datastores` method.
+Type annotations for `session.create_client("healthlake").list_fhir_datastores`
+method.
 
 Boto3 documentation:
 [HealthLake.Client.list_fhir_datastores](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.list_fhir_datastores)
@@ -309,7 +308,7 @@ Returns a `Coroutine` for
 Lists all FHIR export jobs associated with an account and their statuses.
 
 Type annotations for
-`aiobotocore.create_client("healthlake").list_fhir_export_jobs` method.
+`session.create_client("healthlake").list_fhir_export_jobs` method.
 
 Boto3 documentation:
 [HealthLake.Client.list_fhir_export_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.list_fhir_export_jobs)
@@ -340,7 +339,7 @@ Returns a `Coroutine` for
 Lists all FHIR import jobs associated with an account and their statuses.
 
 Type annotations for
-`aiobotocore.create_client("healthlake").list_fhir_import_jobs` method.
+`session.create_client("healthlake").list_fhir_import_jobs` method.
 
 Boto3 documentation:
 [HealthLake.Client.list_fhir_import_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.list_fhir_import_jobs)
@@ -371,7 +370,7 @@ Returns a `Coroutine` for
 Returns a list of all existing tags associated with a Data Store.
 
 Type annotations for
-`aiobotocore.create_client("healthlake").list_tags_for_resource` method.
+`session.create_client("healthlake").list_tags_for_resource` method.
 
 Boto3 documentation:
 [HealthLake.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.list_tags_for_resource)
@@ -396,7 +395,7 @@ Returns a `Coroutine` for
 Begins a FHIR export job.
 
 Type annotations for
-`aiobotocore.create_client("healthlake").start_fhir_export_job` method.
+`session.create_client("healthlake").start_fhir_export_job` method.
 
 Boto3 documentation:
 [HealthLake.Client.start_fhir_export_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.start_fhir_export_job)
@@ -427,7 +426,7 @@ Returns a `Coroutine` for
 Begins a FHIR Import job.
 
 Type annotations for
-`aiobotocore.create_client("healthlake").start_fhir_import_job` method.
+`session.create_client("healthlake").start_fhir_import_job` method.
 
 Boto3 documentation:
 [HealthLake.Client.start_fhir_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.start_fhir_import_job)
@@ -459,8 +458,7 @@ Returns a `Coroutine` for
 
 Adds a user specifed key and value tag to a Data Store.
 
-Type annotations for `aiobotocore.create_client("healthlake").tag_resource`
-method.
+Type annotations for `session.create_client("healthlake").tag_resource` method.
 
 Boto3 documentation:
 [HealthLake.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.tag_resource)
@@ -483,7 +481,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from a Data Store.
 
-Type annotations for `aiobotocore.create_client("healthlake").untag_resource`
+Type annotations for `session.create_client("healthlake").untag_resource`
 method.
 
 Boto3 documentation:
@@ -500,3 +498,35 @@ Keyword-only arguments:
 - `TagKeys`: `Sequence`\[`str`\] *(required)*
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("healthlake").__aenter__` method.
+
+Boto3 documentation:
+[HealthLake.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [HealthLakeClient](#healthlakeclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("healthlake").__aexit__` method.
+
+Boto3 documentation:
+[HealthLake.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html#HealthLake.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

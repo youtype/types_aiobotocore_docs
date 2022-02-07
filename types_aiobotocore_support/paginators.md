@@ -18,17 +18,19 @@ type annotations stubs module
 ## DescribeCasesPaginator
 
 Type annotations for
-`aiobotocore.create_client("support").get_paginator("describe_cases")`.
+`session.create_client("support").get_paginator("describe_cases")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_support.paginator import DescribeCasesPaginator
 
-def get_describe_cases_paginator() -> DescribeCasesPaginator:
-    return Session().create_client("support").get_paginator("describe_cases")
+session = get_session()
+async with session.create_client("support") as client:
+    client: SupportClient
+    paginator: DescribeCasesPaginator = client.get_paginator("describe_cases")
 ```
 
 Boto3 documentation:
@@ -54,17 +56,19 @@ Arguments for `DescribeCasesPaginator.paginate` method:
 ## DescribeCommunicationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("support").get_paginator("describe_communications")`.
+`session.create_client("support").get_paginator("describe_communications")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_support.paginator import DescribeCommunicationsPaginator
 
-def get_describe_communications_paginator() -> DescribeCommunicationsPaginator:
-    return Session().create_client("support").get_paginator("describe_communications")
+session = get_session()
+async with session.create_client("support") as client:
+    client: SupportClient
+    paginator: DescribeCommunicationsPaginator = client.get_paginator("describe_communications")
 ```
 
 Boto3 documentation:

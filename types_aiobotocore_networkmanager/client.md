@@ -92,22 +92,25 @@ type annotations stubs module
     - [update_network_resource_metadata](#update_network_resource_metadata)
     - [update_site](#update_site)
     - [update_vpc_attachment](#update_vpc_attachment)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="networkmanagerclient"></a>
 
 ## NetworkManagerClient
 
-Type annotations for `aiobotocore.create_client("networkmanager")`
+Type annotations for `session.create_client("networkmanager")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_networkmanager.client import NetworkManagerClient
 
-def get_networkmanager_client() -> NetworkManagerClient:
-    return Session().client("networkmanager")
+session = get_session()
+async with session.create_client("networkmanager") as client:
+    client: NetworkManagerClient
 ```
 
 Boto3 documentation:
@@ -149,7 +152,7 @@ Exceptions:
 
 NetworkManagerClient exceptions.
 
-Type annotations for `aiobotocore.create_client("networkmanager").exceptions`
+Type annotations for `session.create_client("networkmanager").exceptions`
 method.
 
 Boto3 documentation:
@@ -164,7 +167,7 @@ Returns [Exceptions](#exceptions).
 Accepts a core network attachment request.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").accept_attachment` method.
+`session.create_client("networkmanager").accept_attachment` method.
 
 Boto3 documentation:
 [NetworkManager.Client.accept_attachment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.accept_attachment)
@@ -189,7 +192,7 @@ Associates a core network Connect peer with a device and optionally, with a
 link.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").associate_connect_peer` method.
+`session.create_client("networkmanager").associate_connect_peer` method.
 
 Boto3 documentation:
 [NetworkManager.Client.associate_connect_peer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.associate_connect_peer)
@@ -217,8 +220,7 @@ Returns a `Coroutine` for
 Associates a customer gateway with a device and optionally, with a link.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").associate_customer_gateway`
-method.
+`session.create_client("networkmanager").associate_customer_gateway` method.
 
 Boto3 documentation:
 [NetworkManager.Client.associate_customer_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.associate_customer_gateway)
@@ -245,8 +247,8 @@ Returns a `Coroutine` for
 
 Associates a link to a device.
 
-Type annotations for
-`aiobotocore.create_client("networkmanager").associate_link` method.
+Type annotations for `session.create_client("networkmanager").associate_link`
+method.
 
 Boto3 documentation:
 [NetworkManager.Client.associate_link](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.associate_link)
@@ -273,7 +275,7 @@ Associates a transit gateway Connect peer with a device, and optionally, with a
 link.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").associate_transit_gateway_connect_peer`
+`session.create_client("networkmanager").associate_transit_gateway_connect_peer`
 method.
 
 Boto3 documentation:
@@ -301,19 +303,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("networkmanager").can_paginate`
+Type annotations for `session.create_client("networkmanager").can_paginate`
 method.
 
 Boto3 documentation:
 [NetworkManager.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.can_paginate)
 
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
-
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_connect_attachment"></a>
 
@@ -323,7 +323,7 @@ Creates a core network Connect attachment from a specified core network
 attachment.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").create_connect_attachment` method.
+`session.create_client("networkmanager").create_connect_attachment` method.
 
 Boto3 documentation:
 [NetworkManager.Client.create_connect_attachment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.create_connect_attachment)
@@ -356,7 +356,7 @@ Creates a core network connect peer for a specified core network connect
 attachment between a core network and an appliance.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").create_connect_peer` method.
+`session.create_client("networkmanager").create_connect_peer` method.
 
 Boto3 documentation:
 [NetworkManager.Client.create_connect_peer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.create_connect_peer)
@@ -387,7 +387,7 @@ Returns a `Coroutine` for
 Creates a connection between two devices.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").create_connection` method.
+`session.create_client("networkmanager").create_connection` method.
 
 Boto3 documentation:
 [NetworkManager.Client.create_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.create_connection)
@@ -418,7 +418,7 @@ Creates a core network as part of your global network, and optionally, with a
 core network policy.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").create_core_network` method.
+`session.create_client("networkmanager").create_core_network` method.
 
 Boto3 documentation:
 [NetworkManager.Client.create_core_network](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.create_core_network)
@@ -446,8 +446,8 @@ Returns a `Coroutine` for
 
 Creates a new device in a global network.
 
-Type annotations for
-`aiobotocore.create_client("networkmanager").create_device` method.
+Type annotations for `session.create_client("networkmanager").create_device`
+method.
 
 Boto3 documentation:
 [NetworkManager.Client.create_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.create_device)
@@ -480,7 +480,7 @@ Returns a `Coroutine` for
 Creates a new, empty global network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").create_global_network` method.
+`session.create_client("networkmanager").create_global_network` method.
 
 Boto3 documentation:
 [NetworkManager.Client.create_global_network](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.create_global_network)
@@ -505,7 +505,7 @@ Returns a `Coroutine` for
 
 Creates a new link for a specified site.
 
-Type annotations for `aiobotocore.create_client("networkmanager").create_link`
+Type annotations for `session.create_client("networkmanager").create_link`
 method.
 
 Boto3 documentation:
@@ -535,7 +535,7 @@ Returns a `Coroutine` for
 
 Creates a new site in a global network.
 
-Type annotations for `aiobotocore.create_client("networkmanager").create_site`
+Type annotations for `session.create_client("networkmanager").create_site`
 method.
 
 Boto3 documentation:
@@ -563,7 +563,7 @@ Returns a `Coroutine` for
 Creates a site-to-site VPN attachment on an edge location of a core network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").create_site_to_site_vpn_attachment`
+`session.create_client("networkmanager").create_site_to_site_vpn_attachment`
 method.
 
 Boto3 documentation:
@@ -592,7 +592,7 @@ Returns a `Coroutine` for
 Creates a VPC attachment on an edge location of a core network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").create_vpc_attachment` method.
+`session.create_client("networkmanager").create_vpc_attachment` method.
 
 Boto3 documentation:
 [NetworkManager.Client.create_vpc_attachment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.create_vpc_attachment)
@@ -622,7 +622,7 @@ Returns a `Coroutine` for
 Deletes an attachment.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").delete_attachment` method.
+`session.create_client("networkmanager").delete_attachment` method.
 
 Boto3 documentation:
 [NetworkManager.Client.delete_attachment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.delete_attachment)
@@ -646,7 +646,7 @@ Returns a `Coroutine` for
 Deletes a Connect peer.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").delete_connect_peer` method.
+`session.create_client("networkmanager").delete_connect_peer` method.
 
 Boto3 documentation:
 [NetworkManager.Client.delete_connect_peer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.delete_connect_peer)
@@ -671,7 +671,7 @@ Returns a `Coroutine` for
 Deletes the specified connection in your global network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").delete_connection` method.
+`session.create_client("networkmanager").delete_connection` method.
 
 Boto3 documentation:
 [NetworkManager.Client.delete_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.delete_connection)
@@ -696,7 +696,7 @@ Returns a `Coroutine` for
 Deletes a core network along with all core network policies.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").delete_core_network` method.
+`session.create_client("networkmanager").delete_core_network` method.
 
 Boto3 documentation:
 [NetworkManager.Client.delete_core_network](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.delete_core_network)
@@ -721,7 +721,7 @@ Returns a `Coroutine` for
 Deletes a policy version from a core network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").delete_core_network_policy_version`
+`session.create_client("networkmanager").delete_core_network_policy_version`
 method.
 
 Boto3 documentation:
@@ -747,8 +747,8 @@ Returns a `Coroutine` for
 
 Deletes an existing device.
 
-Type annotations for
-`aiobotocore.create_client("networkmanager").delete_device` method.
+Type annotations for `session.create_client("networkmanager").delete_device`
+method.
 
 Boto3 documentation:
 [NetworkManager.Client.delete_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.delete_device)
@@ -773,7 +773,7 @@ Returns a `Coroutine` for
 Deletes an existing global network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").delete_global_network` method.
+`session.create_client("networkmanager").delete_global_network` method.
 
 Boto3 documentation:
 [NetworkManager.Client.delete_global_network](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.delete_global_network)
@@ -797,7 +797,7 @@ Returns a `Coroutine` for
 
 Deletes an existing link.
 
-Type annotations for `aiobotocore.create_client("networkmanager").delete_link`
+Type annotations for `session.create_client("networkmanager").delete_link`
 method.
 
 Boto3 documentation:
@@ -823,7 +823,7 @@ Returns a `Coroutine` for
 Deletes a resource policy for the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").delete_resource_policy` method.
+`session.create_client("networkmanager").delete_resource_policy` method.
 
 Boto3 documentation:
 [NetworkManager.Client.delete_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.delete_resource_policy)
@@ -846,7 +846,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an existing site.
 
-Type annotations for `aiobotocore.create_client("networkmanager").delete_site`
+Type annotations for `session.create_client("networkmanager").delete_site`
 method.
 
 Boto3 documentation:
@@ -872,8 +872,7 @@ Returns a `Coroutine` for
 Deregisters a transit gateway from your global network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").deregister_transit_gateway`
-method.
+`session.create_client("networkmanager").deregister_transit_gateway` method.
 
 Boto3 documentation:
 [NetworkManager.Client.deregister_transit_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.deregister_transit_gateway)
@@ -899,7 +898,7 @@ Returns a `Coroutine` for
 Describes one or more global networks.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").describe_global_networks` method.
+`session.create_client("networkmanager").describe_global_networks` method.
 
 Boto3 documentation:
 [NetworkManager.Client.describe_global_networks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.describe_global_networks)
@@ -926,7 +925,7 @@ Returns a `Coroutine` for
 Disassociates a core network Connect peer from a device and a link.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").disassociate_connect_peer` method.
+`session.create_client("networkmanager").disassociate_connect_peer` method.
 
 Boto3 documentation:
 [NetworkManager.Client.disassociate_connect_peer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.disassociate_connect_peer)
@@ -952,8 +951,7 @@ Returns a `Coroutine` for
 Disassociates a customer gateway from a device and a link.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").disassociate_customer_gateway`
-method.
+`session.create_client("networkmanager").disassociate_customer_gateway` method.
 
 Boto3 documentation:
 [NetworkManager.Client.disassociate_customer_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.disassociate_customer_gateway)
@@ -979,7 +977,7 @@ Returns a `Coroutine` for
 Disassociates an existing device from a link.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").disassociate_link` method.
+`session.create_client("networkmanager").disassociate_link` method.
 
 Boto3 documentation:
 [NetworkManager.Client.disassociate_link](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.disassociate_link)
@@ -1005,7 +1003,7 @@ Returns a `Coroutine` for
 Disassociates a transit gateway Connect peer from a device and link.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").disassociate_transit_gateway_connect_peer`
+`session.create_client("networkmanager").disassociate_transit_gateway_connect_peer`
 method.
 
 Boto3 documentation:
@@ -1032,7 +1030,7 @@ Returns a `Coroutine` for
 Executes a change set on your core network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").execute_core_network_change_set`
+`session.create_client("networkmanager").execute_core_network_change_set`
 method.
 
 Boto3 documentation:
@@ -1058,7 +1056,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").generate_presigned_url` method.
+`session.create_client("networkmanager").generate_presigned_url` method.
 
 Boto3 documentation:
 [NetworkManager.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.generate_presigned_url)
@@ -1082,7 +1080,7 @@ Returns a `Coroutine` for `str`.
 Returns information about a core network Connect attachment.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_connect_attachment` method.
+`session.create_client("networkmanager").get_connect_attachment` method.
 
 Boto3 documentation:
 [NetworkManager.Client.get_connect_attachment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.get_connect_attachment)
@@ -1106,8 +1104,8 @@ Returns a `Coroutine` for
 
 Returns information about a core network Connect peer.
 
-Type annotations for
-`aiobotocore.create_client("networkmanager").get_connect_peer` method.
+Type annotations for `session.create_client("networkmanager").get_connect_peer`
+method.
 
 Boto3 documentation:
 [NetworkManager.Client.get_connect_peer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.get_connect_peer)
@@ -1131,8 +1129,7 @@ Returns a `Coroutine` for
 Returns information about a core network Connect peer associations.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_connect_peer_associations`
-method.
+`session.create_client("networkmanager").get_connect_peer_associations` method.
 
 Boto3 documentation:
 [NetworkManager.Client.get_connect_peer_associations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.get_connect_peer_associations)
@@ -1159,8 +1156,8 @@ Returns a `Coroutine` for
 
 Gets information about one or more of your connections in a global network.
 
-Type annotations for
-`aiobotocore.create_client("networkmanager").get_connections` method.
+Type annotations for `session.create_client("networkmanager").get_connections`
+method.
 
 Boto3 documentation:
 [NetworkManager.Client.get_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.get_connections)
@@ -1187,8 +1184,8 @@ Returns a `Coroutine` for
 
 Returns information about a core network.
 
-Type annotations for
-`aiobotocore.create_client("networkmanager").get_core_network` method.
+Type annotations for `session.create_client("networkmanager").get_core_network`
+method.
 
 Boto3 documentation:
 [NetworkManager.Client.get_core_network](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.get_core_network)
@@ -1213,8 +1210,7 @@ Returns a change set between the LIVE core network policy and a submitted
 policy.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_core_network_change_set`
-method.
+`session.create_client("networkmanager").get_core_network_change_set` method.
 
 Boto3 documentation:
 [NetworkManager.Client.get_core_network_change_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.get_core_network_change_set)
@@ -1242,7 +1238,7 @@ Returns a `Coroutine` for
 Gets details about a core network policy.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_core_network_policy` method.
+`session.create_client("networkmanager").get_core_network_policy` method.
 
 Boto3 documentation:
 [NetworkManager.Client.get_core_network_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.get_core_network_policy)
@@ -1271,7 +1267,7 @@ Gets the association information for customer gateways that are associated with
 devices and links in your global network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_customer_gateway_associations`
+`session.create_client("networkmanager").get_customer_gateway_associations`
 method.
 
 Boto3 documentation:
@@ -1299,7 +1295,7 @@ Returns a `Coroutine` for
 
 Gets information about one or more of your devices in a global network.
 
-Type annotations for `aiobotocore.create_client("networkmanager").get_devices`
+Type annotations for `session.create_client("networkmanager").get_devices`
 method.
 
 Boto3 documentation:
@@ -1328,7 +1324,7 @@ Returns a `Coroutine` for
 Gets the link associations for a device or a link.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_link_associations` method.
+`session.create_client("networkmanager").get_link_associations` method.
 
 Boto3 documentation:
 [NetworkManager.Client.get_link_associations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.get_link_associations)
@@ -1356,7 +1352,7 @@ Returns a `Coroutine` for
 
 Gets information about one or more links in a specified global network.
 
-Type annotations for `aiobotocore.create_client("networkmanager").get_links`
+Type annotations for `session.create_client("networkmanager").get_links`
 method.
 
 Boto3 documentation:
@@ -1388,8 +1384,7 @@ Gets the count of network resources, by resource type, for the specified global
 network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_network_resource_counts`
-method.
+`session.create_client("networkmanager").get_network_resource_counts` method.
 
 Boto3 documentation:
 [NetworkManager.Client.get_network_resource_counts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.get_network_resource_counts)
@@ -1417,7 +1412,7 @@ Returns a `Coroutine` for
 Gets the network resource relationships for the specified global network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_network_resource_relationships`
+`session.create_client("networkmanager").get_network_resource_relationships`
 method.
 
 Boto3 documentation:
@@ -1451,7 +1446,7 @@ Returns a `Coroutine` for
 Describes the network resources for the specified global network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_network_resources` method.
+`session.create_client("networkmanager").get_network_resources` method.
 
 Boto3 documentation:
 [NetworkManager.Client.get_network_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.get_network_resources)
@@ -1484,7 +1479,7 @@ Returns a `Coroutine` for
 Gets the network routes of the specified global network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_network_routes` method.
+`session.create_client("networkmanager").get_network_routes` method.
 
 Boto3 documentation:
 [NetworkManager.Client.get_network_routes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.get_network_routes)
@@ -1520,7 +1515,7 @@ Returns a `Coroutine` for
 Gets the network telemetry of the specified global network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_network_telemetry` method.
+`session.create_client("networkmanager").get_network_telemetry` method.
 
 Boto3 documentation:
 [NetworkManager.Client.get_network_telemetry](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.get_network_telemetry)
@@ -1553,7 +1548,7 @@ Returns a `Coroutine` for
 Returns information about a resource policy.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_resource_policy` method.
+`session.create_client("networkmanager").get_resource_policy` method.
 
 Boto3 documentation:
 [NetworkManager.Client.get_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.get_resource_policy)
@@ -1578,7 +1573,7 @@ Returns a `Coroutine` for
 Gets information about the specified route analysis.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_route_analysis` method.
+`session.create_client("networkmanager").get_route_analysis` method.
 
 Boto3 documentation:
 [NetworkManager.Client.get_route_analysis](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.get_route_analysis)
@@ -1604,7 +1599,7 @@ Returns a `Coroutine` for
 Returns information about a site-to-site VPN attachment.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_site_to_site_vpn_attachment`
+`session.create_client("networkmanager").get_site_to_site_vpn_attachment`
 method.
 
 Boto3 documentation:
@@ -1629,7 +1624,7 @@ Returns a `Coroutine` for
 
 Gets information about one or more of your sites in a global network.
 
-Type annotations for `aiobotocore.create_client("networkmanager").get_sites`
+Type annotations for `session.create_client("networkmanager").get_sites`
 method.
 
 Boto3 documentation:
@@ -1658,7 +1653,7 @@ Gets information about one or more of your transit gateway Connect peer
 associations in a global network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_transit_gateway_connect_peer_associations`
+`session.create_client("networkmanager").get_transit_gateway_connect_peer_associations`
 method.
 
 Boto3 documentation:
@@ -1689,7 +1684,7 @@ Gets information about the transit gateway registrations in a specified global
 network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_transit_gateway_registrations`
+`session.create_client("networkmanager").get_transit_gateway_registrations`
 method.
 
 Boto3 documentation:
@@ -1718,7 +1713,7 @@ Returns a `Coroutine` for
 Returns information about a VPC attachment.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").get_vpc_attachment` method.
+`session.create_client("networkmanager").get_vpc_attachment` method.
 
 Boto3 documentation:
 [NetworkManager.Client.get_vpc_attachment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.get_vpc_attachment)
@@ -1742,8 +1737,8 @@ Returns a `Coroutine` for
 
 Returns a list of core network attachments.
 
-Type annotations for
-`aiobotocore.create_client("networkmanager").list_attachments` method.
+Type annotations for `session.create_client("networkmanager").list_attachments`
+method.
 
 Boto3 documentation:
 [NetworkManager.Client.list_attachments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.list_attachments)
@@ -1772,7 +1767,7 @@ Returns a `Coroutine` for
 Returns a list of core network Connect peers.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").list_connect_peers` method.
+`session.create_client("networkmanager").list_connect_peers` method.
 
 Boto3 documentation:
 [NetworkManager.Client.list_connect_peers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.list_connect_peers)
@@ -1800,7 +1795,7 @@ Returns a `Coroutine` for
 Returns a list of core network policy versions.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").list_core_network_policy_versions`
+`session.create_client("networkmanager").list_core_network_policy_versions`
 method.
 
 Boto3 documentation:
@@ -1828,7 +1823,7 @@ Returns a `Coroutine` for
 Returns a list of owned and shared core networks.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").list_core_networks` method.
+`session.create_client("networkmanager").list_core_networks` method.
 
 Boto3 documentation:
 [NetworkManager.Client.list_core_networks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.list_core_networks)
@@ -1854,7 +1849,7 @@ Returns a `Coroutine` for
 Lists the tags for a specified resource.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").list_tags_for_resource` method.
+`session.create_client("networkmanager").list_tags_for_resource` method.
 
 Boto3 documentation:
 [NetworkManager.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.list_tags_for_resource)
@@ -1879,7 +1874,7 @@ Returns a `Coroutine` for
 Creates a new, immutable version of a core network policy.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").put_core_network_policy` method.
+`session.create_client("networkmanager").put_core_network_policy` method.
 
 Boto3 documentation:
 [NetworkManager.Client.put_core_network_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.put_core_network_policy)
@@ -1908,7 +1903,7 @@ Returns a `Coroutine` for
 Creates or updates a resource policy.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").put_resource_policy` method.
+`session.create_client("networkmanager").put_resource_policy` method.
 
 Boto3 documentation:
 [NetworkManager.Client.put_resource_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.put_resource_policy)
@@ -1933,7 +1928,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Registers a transit gateway in your global network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").register_transit_gateway` method.
+`session.create_client("networkmanager").register_transit_gateway` method.
 
 Boto3 documentation:
 [NetworkManager.Client.register_transit_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.register_transit_gateway)
@@ -1959,7 +1954,7 @@ Returns a `Coroutine` for
 Rejects a core network attachment request.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").reject_attachment` method.
+`session.create_client("networkmanager").reject_attachment` method.
 
 Boto3 documentation:
 [NetworkManager.Client.reject_attachment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.reject_attachment)
@@ -1984,7 +1979,7 @@ Restores a previous policy version as a new, immutable version of a core
 network policy.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").restore_core_network_policy_version`
+`session.create_client("networkmanager").restore_core_network_policy_version`
 method.
 
 Boto3 documentation:
@@ -2011,7 +2006,7 @@ Returns a `Coroutine` for
 Starts analyzing the routing path between the specified source and destination.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").start_route_analysis` method.
+`session.create_client("networkmanager").start_route_analysis` method.
 
 Boto3 documentation:
 [NetworkManager.Client.start_route_analysis](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.start_route_analysis)
@@ -2043,7 +2038,7 @@ Returns a `Coroutine` for
 
 Tags a specified resource.
 
-Type annotations for `aiobotocore.create_client("networkmanager").tag_resource`
+Type annotations for `session.create_client("networkmanager").tag_resource`
 method.
 
 Boto3 documentation:
@@ -2067,8 +2062,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from a specified resource.
 
-Type annotations for
-`aiobotocore.create_client("networkmanager").untag_resource` method.
+Type annotations for `session.create_client("networkmanager").untag_resource`
+method.
 
 Boto3 documentation:
 [NetworkManager.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.untag_resource)
@@ -2092,7 +2087,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the information for an existing connection.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").update_connection` method.
+`session.create_client("networkmanager").update_connection` method.
 
 Boto3 documentation:
 [NetworkManager.Client.update_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.update_connection)
@@ -2120,7 +2115,7 @@ Returns a `Coroutine` for
 Updates the description of a core network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").update_core_network` method.
+`session.create_client("networkmanager").update_core_network` method.
 
 Boto3 documentation:
 [NetworkManager.Client.update_core_network](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.update_core_network)
@@ -2145,8 +2140,8 @@ Returns a `Coroutine` for
 
 Updates the details for an existing device.
 
-Type annotations for
-`aiobotocore.create_client("networkmanager").update_device` method.
+Type annotations for `session.create_client("networkmanager").update_device`
+method.
 
 Boto3 documentation:
 [NetworkManager.Client.update_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.update_device)
@@ -2179,7 +2174,7 @@ Returns a `Coroutine` for
 Updates an existing global network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").update_global_network` method.
+`session.create_client("networkmanager").update_global_network` method.
 
 Boto3 documentation:
 [NetworkManager.Client.update_global_network](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.update_global_network)
@@ -2204,7 +2199,7 @@ Returns a `Coroutine` for
 
 Updates the details for an existing link.
 
-Type annotations for `aiobotocore.create_client("networkmanager").update_link`
+Type annotations for `session.create_client("networkmanager").update_link`
 method.
 
 Boto3 documentation:
@@ -2234,7 +2229,7 @@ Returns a `Coroutine` for
 Updates the resource metadata for the specified global network.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").update_network_resource_metadata`
+`session.create_client("networkmanager").update_network_resource_metadata`
 method.
 
 Boto3 documentation:
@@ -2261,7 +2256,7 @@ Returns a `Coroutine` for
 
 Updates the information for an existing site.
 
-Type annotations for `aiobotocore.create_client("networkmanager").update_site`
+Type annotations for `session.create_client("networkmanager").update_site`
 method.
 
 Boto3 documentation:
@@ -2289,7 +2284,7 @@ Returns a `Coroutine` for
 Updates a VPC attachment.
 
 Type annotations for
-`aiobotocore.create_client("networkmanager").update_vpc_attachment` method.
+`session.create_client("networkmanager").update_vpc_attachment` method.
 
 Boto3 documentation:
 [NetworkManager.Client.update_vpc_attachment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.update_vpc_attachment)
@@ -2310,13 +2305,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateVpcAttachmentResponseTypeDef](./type_defs.md#updatevpcattachmentresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("networkmanager").__aenter__`
+method.
+
+Boto3 documentation:
+[NetworkManager.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [NetworkManagerClient](#networkmanagerclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("networkmanager").__aexit__`
+method.
+
+Boto3 documentation:
+[NetworkManager.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/networkmanager.html#NetworkManager.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("networkmanager").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("networkmanager").get_paginator`
+method with overloads.
 
 - `client.get_paginator("describe_global_networks")` ->
   [DescribeGlobalNetworksPaginator](./paginators.md#describeglobalnetworkspaginator)

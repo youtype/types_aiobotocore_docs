@@ -19,17 +19,19 @@ type annotations stubs module
 ## ListAssetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediapackage-vod").get_paginator("list_assets")`.
+`session.create_client("mediapackage-vod").get_paginator("list_assets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediapackage_vod.paginator import ListAssetsPaginator
 
-def get_list_assets_paginator() -> ListAssetsPaginator:
-    return Session().create_client("mediapackage-vod").get_paginator("list_assets")
+session = get_session()
+async with session.create_client("mediapackage-vod") as client:
+    client: MediaPackageVodClient
+    paginator: ListAssetsPaginator = client.get_paginator("list_assets")
 ```
 
 Boto3 documentation:
@@ -49,17 +51,19 @@ Arguments for `ListAssetsPaginator.paginate` method:
 ## ListPackagingConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediapackage-vod").get_paginator("list_packaging_configurations")`.
+`session.create_client("mediapackage-vod").get_paginator("list_packaging_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediapackage_vod.paginator import ListPackagingConfigurationsPaginator
 
-def get_list_packaging_configurations_paginator() -> ListPackagingConfigurationsPaginator:
-    return Session().create_client("mediapackage-vod").get_paginator("list_packaging_configurations")
+session = get_session()
+async with session.create_client("mediapackage-vod") as client:
+    client: MediaPackageVodClient
+    paginator: ListPackagingConfigurationsPaginator = client.get_paginator("list_packaging_configurations")
 ```
 
 Boto3 documentation:
@@ -79,17 +83,19 @@ Arguments for `ListPackagingConfigurationsPaginator.paginate` method:
 ## ListPackagingGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediapackage-vod").get_paginator("list_packaging_groups")`.
+`session.create_client("mediapackage-vod").get_paginator("list_packaging_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediapackage_vod.paginator import ListPackagingGroupsPaginator
 
-def get_list_packaging_groups_paginator() -> ListPackagingGroupsPaginator:
-    return Session().create_client("mediapackage-vod").get_paginator("list_packaging_groups")
+session = get_session()
+async with session.create_client("mediapackage-vod") as client:
+    client: MediaPackageVodClient
+    paginator: ListPackagingGroupsPaginator = client.get_paginator("list_packaging_groups")
 ```
 
 Boto3 documentation:

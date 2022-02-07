@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[sns]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[sns]'
+
+# standalone installation
 pip install types-aiobotocore-sns
 ```
 
@@ -32,8 +36,7 @@ pip install types-aiobotocore-sns
 
 ## SNSClient
 
-Type annotations for `aiobotocore.create_client("sns")` as
-[SNSClient](./client.md)
+Type annotations for `session.create_client("sns")` as [SNSClient](./client.md)
 
 Can be used directly:
 
@@ -45,6 +48,8 @@ from types_aiobotocore_sns.client import SNSClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_permission](./client.md#add_permission)
 - [can_paginate](./client.md#can_paginate)
 - [check_if_phone_number_is_opted_out](./client.md#check_if_phone_number_is_opted_out)
@@ -134,7 +139,7 @@ SNSClient [exceptions](./client.md#exceptions)
 
 ## SNSServiceResource
 
-Type annotations for `aiobotocore.resource("sns")` as
+Type annotations for `session.resource("sns")` as
 [SNSServiceResource](./service_resource.md#snsserviceresource)
 
 Can be used directly:
@@ -163,7 +168,7 @@ from types_aiobotocore_sns.service_resource import ServiceResourcePlatformApplic
 
 ### Resources
 
-Type annotations for additional resources from `aiobotocore.resource("sns").*`.
+Type annotations for additional resources from `session.resource("sns").*`.
 
 Can be used directly:
 
@@ -186,7 +191,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_sns.paginators import ListEndpointsByPlatformApplicationPaginator, ...
+from types_aiobotocore_sns.paginator import ListEndpointsByPlatformApplicationPaginator, ...
 ```
 
 - [ListEndpointsByPlatformApplicationPaginator](./paginators.md#listendpointsbyplatformapplicationpaginator)

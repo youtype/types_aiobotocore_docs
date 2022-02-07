@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListProfileTimesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codeguruprofiler").get_paginator("list_profile_times")`.
+`session.create_client("codeguruprofiler").get_paginator("list_profile_times")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codeguruprofiler.paginator import ListProfileTimesPaginator
 
-def get_list_profile_times_paginator() -> ListProfileTimesPaginator:
-    return Session().create_client("codeguruprofiler").get_paginator("list_profile_times")
+session = get_session()
+async with session.create_client("codeguruprofiler") as client:
+    client: CodeGuruProfilerClient
+    paginator: ListProfileTimesPaginator = client.get_paginator("list_profile_times")
 ```
 
 Boto3 documentation:

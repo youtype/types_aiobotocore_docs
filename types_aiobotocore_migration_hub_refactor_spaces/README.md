@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[migration-hub-refactor-spaces]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[migration-hub-refactor-spaces]'
+
+# standalone installation
 pip install types-aiobotocore-migration-hub-refactor-spaces
 ```
 
@@ -29,9 +33,8 @@ pip install types-aiobotocore-migration-hub-refactor-spaces
 
 ## MigrationHubRefactorSpacesClient
 
-Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces")` as
-[MigrationHubRefactorSpacesClient](./client.md)
+Type annotations for `session.create_client("migration-hub-refactor-spaces")`
+as [MigrationHubRefactorSpacesClient](./client.md)
 
 Can be used directly:
 
@@ -43,6 +46,8 @@ from types_aiobotocore_migration_hub_refactor_spaces.client import MigrationHubR
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_application](./client.md#create_application)
 - [create_environment](./client.md#create_environment)
@@ -97,7 +102,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_migration_hub_refactor_spaces.paginators import ListApplicationsPaginator, ...
+from types_aiobotocore_migration_hub_refactor_spaces.paginator import ListApplicationsPaginator, ...
 ```
 
 - [ListApplicationsPaginator](./paginators.md#listapplicationspaginator)

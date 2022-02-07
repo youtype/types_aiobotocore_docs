@@ -28,17 +28,19 @@ type annotations stubs module
 ## DescribeOrganizationResourceCollectionHealthPaginator
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").get_paginator("describe_organization_resource_collection_health")`.
+`session.create_client("devops-guru").get_paginator("describe_organization_resource_collection_health")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devops_guru.paginator import DescribeOrganizationResourceCollectionHealthPaginator
 
-def get_describe_organization_resource_collection_health_paginator() -> DescribeOrganizationResourceCollectionHealthPaginator:
-    return Session().create_client("devops-guru").get_paginator("describe_organization_resource_collection_health")
+session = get_session()
+async with session.create_client("devops-guru") as client:
+    client: DevOpsGuruClient
+    paginator: DescribeOrganizationResourceCollectionHealthPaginator = client.get_paginator("describe_organization_resource_collection_health")
 ```
 
 Boto3 documentation:
@@ -64,17 +66,19 @@ method:
 ## DescribeResourceCollectionHealthPaginator
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").get_paginator("describe_resource_collection_health")`.
+`session.create_client("devops-guru").get_paginator("describe_resource_collection_health")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devops_guru.paginator import DescribeResourceCollectionHealthPaginator
 
-def get_describe_resource_collection_health_paginator() -> DescribeResourceCollectionHealthPaginator:
-    return Session().create_client("devops-guru").get_paginator("describe_resource_collection_health")
+session = get_session()
+async with session.create_client("devops-guru") as client:
+    client: DevOpsGuruClient
+    paginator: DescribeResourceCollectionHealthPaginator = client.get_paginator("describe_resource_collection_health")
 ```
 
 Boto3 documentation:
@@ -96,17 +100,19 @@ Arguments for `DescribeResourceCollectionHealthPaginator.paginate` method:
 ## GetCostEstimationPaginator
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").get_paginator("get_cost_estimation")`.
+`session.create_client("devops-guru").get_paginator("get_cost_estimation")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devops_guru.paginator import GetCostEstimationPaginator
 
-def get_get_cost_estimation_paginator() -> GetCostEstimationPaginator:
-    return Session().create_client("devops-guru").get_paginator("get_cost_estimation")
+session = get_session()
+async with session.create_client("devops-guru") as client:
+    client: DevOpsGuruClient
+    paginator: GetCostEstimationPaginator = client.get_paginator("get_cost_estimation")
 ```
 
 Boto3 documentation:
@@ -125,17 +131,19 @@ Arguments for `GetCostEstimationPaginator.paginate` method:
 ## GetResourceCollectionPaginator
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").get_paginator("get_resource_collection")`.
+`session.create_client("devops-guru").get_paginator("get_resource_collection")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devops_guru.paginator import GetResourceCollectionPaginator
 
-def get_get_resource_collection_paginator() -> GetResourceCollectionPaginator:
-    return Session().create_client("devops-guru").get_paginator("get_resource_collection")
+session = get_session()
+async with session.create_client("devops-guru") as client:
+    client: DevOpsGuruClient
+    paginator: GetResourceCollectionPaginator = client.get_paginator("get_resource_collection")
 ```
 
 Boto3 documentation:
@@ -157,17 +165,19 @@ Arguments for `GetResourceCollectionPaginator.paginate` method:
 ## ListAnomaliesForInsightPaginator
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").get_paginator("list_anomalies_for_insight")`.
+`session.create_client("devops-guru").get_paginator("list_anomalies_for_insight")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devops_guru.paginator import ListAnomaliesForInsightPaginator
 
-def get_list_anomalies_for_insight_paginator() -> ListAnomaliesForInsightPaginator:
-    return Session().create_client("devops-guru").get_paginator("list_anomalies_for_insight")
+session = get_session()
+async with session.create_client("devops-guru") as client:
+    client: DevOpsGuruClient
+    paginator: ListAnomaliesForInsightPaginator = client.get_paginator("list_anomalies_for_insight")
 ```
 
 Boto3 documentation:
@@ -190,17 +200,19 @@ Arguments for `ListAnomaliesForInsightPaginator.paginate` method:
 ## ListEventsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").get_paginator("list_events")`.
+`session.create_client("devops-guru").get_paginator("list_events")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devops_guru.paginator import ListEventsPaginator
 
-def get_list_events_paginator() -> ListEventsPaginator:
-    return Session().create_client("devops-guru").get_paginator("list_events")
+session = get_session()
+async with session.create_client("devops-guru") as client:
+    client: DevOpsGuruClient
+    paginator: ListEventsPaginator = client.get_paginator("list_events")
 ```
 
 Boto3 documentation:
@@ -223,17 +235,19 @@ Arguments for `ListEventsPaginator.paginate` method:
 ## ListInsightsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").get_paginator("list_insights")`.
+`session.create_client("devops-guru").get_paginator("list_insights")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devops_guru.paginator import ListInsightsPaginator
 
-def get_list_insights_paginator() -> ListInsightsPaginator:
-    return Session().create_client("devops-guru").get_paginator("list_insights")
+session = get_session()
+async with session.create_client("devops-guru") as client:
+    client: DevOpsGuruClient
+    paginator: ListInsightsPaginator = client.get_paginator("list_insights")
 ```
 
 Boto3 documentation:
@@ -255,17 +269,19 @@ Arguments for `ListInsightsPaginator.paginate` method:
 ## ListNotificationChannelsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").get_paginator("list_notification_channels")`.
+`session.create_client("devops-guru").get_paginator("list_notification_channels")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devops_guru.paginator import ListNotificationChannelsPaginator
 
-def get_list_notification_channels_paginator() -> ListNotificationChannelsPaginator:
-    return Session().create_client("devops-guru").get_paginator("list_notification_channels")
+session = get_session()
+async with session.create_client("devops-guru") as client:
+    client: DevOpsGuruClient
+    paginator: ListNotificationChannelsPaginator = client.get_paginator("list_notification_channels")
 ```
 
 Boto3 documentation:
@@ -284,17 +300,19 @@ Arguments for `ListNotificationChannelsPaginator.paginate` method:
 ## ListOrganizationInsightsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").get_paginator("list_organization_insights")`.
+`session.create_client("devops-guru").get_paginator("list_organization_insights")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devops_guru.paginator import ListOrganizationInsightsPaginator
 
-def get_list_organization_insights_paginator() -> ListOrganizationInsightsPaginator:
-    return Session().create_client("devops-guru").get_paginator("list_organization_insights")
+session = get_session()
+async with session.create_client("devops-guru") as client:
+    client: DevOpsGuruClient
+    paginator: ListOrganizationInsightsPaginator = client.get_paginator("list_organization_insights")
 ```
 
 Boto3 documentation:
@@ -318,17 +336,19 @@ Arguments for `ListOrganizationInsightsPaginator.paginate` method:
 ## ListRecommendationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").get_paginator("list_recommendations")`.
+`session.create_client("devops-guru").get_paginator("list_recommendations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devops_guru.paginator import ListRecommendationsPaginator
 
-def get_list_recommendations_paginator() -> ListRecommendationsPaginator:
-    return Session().create_client("devops-guru").get_paginator("list_recommendations")
+session = get_session()
+async with session.create_client("devops-guru") as client:
+    client: DevOpsGuruClient
+    paginator: ListRecommendationsPaginator = client.get_paginator("list_recommendations")
 ```
 
 Boto3 documentation:
@@ -350,17 +370,19 @@ Arguments for `ListRecommendationsPaginator.paginate` method:
 ## SearchInsightsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").get_paginator("search_insights")`.
+`session.create_client("devops-guru").get_paginator("search_insights")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devops_guru.paginator import SearchInsightsPaginator
 
-def get_search_insights_paginator() -> SearchInsightsPaginator:
-    return Session().create_client("devops-guru").get_paginator("search_insights")
+session = get_session()
+async with session.create_client("devops-guru") as client:
+    client: DevOpsGuruClient
+    paginator: SearchInsightsPaginator = client.get_paginator("search_insights")
 ```
 
 Boto3 documentation:
@@ -384,17 +406,19 @@ Arguments for `SearchInsightsPaginator.paginate` method:
 ## SearchOrganizationInsightsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devops-guru").get_paginator("search_organization_insights")`.
+`session.create_client("devops-guru").get_paginator("search_organization_insights")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devops_guru.paginator import SearchOrganizationInsightsPaginator
 
-def get_search_organization_insights_paginator() -> SearchOrganizationInsightsPaginator:
-    return Session().create_client("devops-guru").get_paginator("search_organization_insights")
+session = get_session()
+async with session.create_client("devops-guru") as client:
+    client: DevOpsGuruClient
+    paginator: SearchOrganizationInsightsPaginator = client.get_paginator("search_organization_insights")
 ```
 
 Boto3 documentation:

@@ -36,17 +36,19 @@ type annotations stubs module
 ## GetOfferingStatusPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("get_offering_status")`.
+`session.create_client("devicefarm").get_paginator("get_offering_status")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import GetOfferingStatusPaginator
 
-def get_get_offering_status_paginator() -> GetOfferingStatusPaginator:
-    return Session().create_client("devicefarm").get_paginator("get_offering_status")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: GetOfferingStatusPaginator = client.get_paginator("get_offering_status")
 ```
 
 Boto3 documentation:
@@ -65,17 +67,19 @@ Arguments for `GetOfferingStatusPaginator.paginate` method:
 ## ListArtifactsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_artifacts")`.
+`session.create_client("devicefarm").get_paginator("list_artifacts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListArtifactsPaginator
 
-def get_list_artifacts_paginator() -> ListArtifactsPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_artifacts")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListArtifactsPaginator = client.get_paginator("list_artifacts")
 ```
 
 Boto3 documentation:
@@ -97,17 +101,19 @@ Arguments for `ListArtifactsPaginator.paginate` method:
 ## ListDeviceInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_device_instances")`.
+`session.create_client("devicefarm").get_paginator("list_device_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListDeviceInstancesPaginator
 
-def get_list_device_instances_paginator() -> ListDeviceInstancesPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_device_instances")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListDeviceInstancesPaginator = client.get_paginator("list_device_instances")
 ```
 
 Boto3 documentation:
@@ -126,17 +132,19 @@ Arguments for `ListDeviceInstancesPaginator.paginate` method:
 ## ListDevicePoolsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_device_pools")`.
+`session.create_client("devicefarm").get_paginator("list_device_pools")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListDevicePoolsPaginator
 
-def get_list_device_pools_paginator() -> ListDevicePoolsPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_device_pools")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListDevicePoolsPaginator = client.get_paginator("list_device_pools")
 ```
 
 Boto3 documentation:
@@ -157,17 +165,19 @@ Arguments for `ListDevicePoolsPaginator.paginate` method:
 ## ListDevicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_devices")`.
+`session.create_client("devicefarm").get_paginator("list_devices")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListDevicesPaginator
 
-def get_list_devices_paginator() -> ListDevicesPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_devices")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListDevicesPaginator = client.get_paginator("list_devices")
 ```
 
 Boto3 documentation:
@@ -189,17 +199,19 @@ Arguments for `ListDevicesPaginator.paginate` method:
 ## ListInstanceProfilesPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_instance_profiles")`.
+`session.create_client("devicefarm").get_paginator("list_instance_profiles")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListInstanceProfilesPaginator
 
-def get_list_instance_profiles_paginator() -> ListInstanceProfilesPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_instance_profiles")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListInstanceProfilesPaginator = client.get_paginator("list_instance_profiles")
 ```
 
 Boto3 documentation:
@@ -218,17 +230,19 @@ Arguments for `ListInstanceProfilesPaginator.paginate` method:
 ## ListJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_jobs")`.
+`session.create_client("devicefarm").get_paginator("list_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListJobsPaginator
 
-def get_list_jobs_paginator() -> ListJobsPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_jobs")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListJobsPaginator = client.get_paginator("list_jobs")
 ```
 
 Boto3 documentation:
@@ -248,17 +262,19 @@ Arguments for `ListJobsPaginator.paginate` method:
 ## ListNetworkProfilesPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_network_profiles")`.
+`session.create_client("devicefarm").get_paginator("list_network_profiles")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListNetworkProfilesPaginator
 
-def get_list_network_profiles_paginator() -> ListNetworkProfilesPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_network_profiles")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListNetworkProfilesPaginator = client.get_paginator("list_network_profiles")
 ```
 
 Boto3 documentation:
@@ -279,17 +295,19 @@ Arguments for `ListNetworkProfilesPaginator.paginate` method:
 ## ListOfferingPromotionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_offering_promotions")`.
+`session.create_client("devicefarm").get_paginator("list_offering_promotions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListOfferingPromotionsPaginator
 
-def get_list_offering_promotions_paginator() -> ListOfferingPromotionsPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_offering_promotions")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListOfferingPromotionsPaginator = client.get_paginator("list_offering_promotions")
 ```
 
 Boto3 documentation:
@@ -308,17 +326,19 @@ Arguments for `ListOfferingPromotionsPaginator.paginate` method:
 ## ListOfferingTransactionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_offering_transactions")`.
+`session.create_client("devicefarm").get_paginator("list_offering_transactions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListOfferingTransactionsPaginator
 
-def get_list_offering_transactions_paginator() -> ListOfferingTransactionsPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_offering_transactions")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListOfferingTransactionsPaginator = client.get_paginator("list_offering_transactions")
 ```
 
 Boto3 documentation:
@@ -337,17 +357,19 @@ Arguments for `ListOfferingTransactionsPaginator.paginate` method:
 ## ListOfferingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_offerings")`.
+`session.create_client("devicefarm").get_paginator("list_offerings")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListOfferingsPaginator
 
-def get_list_offerings_paginator() -> ListOfferingsPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_offerings")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListOfferingsPaginator = client.get_paginator("list_offerings")
 ```
 
 Boto3 documentation:
@@ -366,17 +388,19 @@ Arguments for `ListOfferingsPaginator.paginate` method:
 ## ListProjectsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_projects")`.
+`session.create_client("devicefarm").get_paginator("list_projects")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListProjectsPaginator
 
-def get_list_projects_paginator() -> ListProjectsPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_projects")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
 ```
 
 Boto3 documentation:
@@ -396,17 +420,19 @@ Arguments for `ListProjectsPaginator.paginate` method:
 ## ListRemoteAccessSessionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_remote_access_sessions")`.
+`session.create_client("devicefarm").get_paginator("list_remote_access_sessions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListRemoteAccessSessionsPaginator
 
-def get_list_remote_access_sessions_paginator() -> ListRemoteAccessSessionsPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_remote_access_sessions")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListRemoteAccessSessionsPaginator = client.get_paginator("list_remote_access_sessions")
 ```
 
 Boto3 documentation:
@@ -426,17 +452,19 @@ Arguments for `ListRemoteAccessSessionsPaginator.paginate` method:
 ## ListRunsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_runs")`.
+`session.create_client("devicefarm").get_paginator("list_runs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListRunsPaginator
 
-def get_list_runs_paginator() -> ListRunsPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_runs")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListRunsPaginator = client.get_paginator("list_runs")
 ```
 
 Boto3 documentation:
@@ -456,17 +484,19 @@ Arguments for `ListRunsPaginator.paginate` method:
 ## ListSamplesPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_samples")`.
+`session.create_client("devicefarm").get_paginator("list_samples")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListSamplesPaginator
 
-def get_list_samples_paginator() -> ListSamplesPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_samples")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListSamplesPaginator = client.get_paginator("list_samples")
 ```
 
 Boto3 documentation:
@@ -486,17 +516,19 @@ Arguments for `ListSamplesPaginator.paginate` method:
 ## ListSuitesPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_suites")`.
+`session.create_client("devicefarm").get_paginator("list_suites")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListSuitesPaginator
 
-def get_list_suites_paginator() -> ListSuitesPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_suites")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListSuitesPaginator = client.get_paginator("list_suites")
 ```
 
 Boto3 documentation:
@@ -516,17 +548,19 @@ Arguments for `ListSuitesPaginator.paginate` method:
 ## ListTestsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_tests")`.
+`session.create_client("devicefarm").get_paginator("list_tests")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListTestsPaginator
 
-def get_list_tests_paginator() -> ListTestsPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_tests")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListTestsPaginator = client.get_paginator("list_tests")
 ```
 
 Boto3 documentation:
@@ -546,17 +580,19 @@ Arguments for `ListTestsPaginator.paginate` method:
 ## ListUniqueProblemsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_unique_problems")`.
+`session.create_client("devicefarm").get_paginator("list_unique_problems")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListUniqueProblemsPaginator
 
-def get_list_unique_problems_paginator() -> ListUniqueProblemsPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_unique_problems")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListUniqueProblemsPaginator = client.get_paginator("list_unique_problems")
 ```
 
 Boto3 documentation:
@@ -576,17 +612,19 @@ Arguments for `ListUniqueProblemsPaginator.paginate` method:
 ## ListUploadsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_uploads")`.
+`session.create_client("devicefarm").get_paginator("list_uploads")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListUploadsPaginator
 
-def get_list_uploads_paginator() -> ListUploadsPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_uploads")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListUploadsPaginator = client.get_paginator("list_uploads")
 ```
 
 Boto3 documentation:
@@ -607,17 +645,19 @@ Arguments for `ListUploadsPaginator.paginate` method:
 ## ListVPCEConfigurationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("devicefarm").get_paginator("list_vpce_configurations")`.
+`session.create_client("devicefarm").get_paginator("list_vpce_configurations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_devicefarm.paginator import ListVPCEConfigurationsPaginator
 
-def get_list_vpce_configurations_paginator() -> ListVPCEConfigurationsPaginator:
-    return Session().create_client("devicefarm").get_paginator("list_vpce_configurations")
+session = get_session()
+async with session.create_client("devicefarm") as client:
+    client: DeviceFarmClient
+    paginator: ListVPCEConfigurationsPaginator = client.get_paginator("list_vpce_configurations")
 ```
 
 Boto3 documentation:

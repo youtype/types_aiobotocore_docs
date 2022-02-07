@@ -74,6 +74,8 @@ type annotations stubs module
     - [update_fleet](#update_fleet)
     - [update_image_permissions](#update_image_permissions)
     - [update_stack](#update_stack)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -81,16 +83,17 @@ type annotations stubs module
 
 ## AppStreamClient
 
-Type annotations for `aiobotocore.create_client("appstream")`
+Type annotations for `session.create_client("appstream")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_appstream.client import AppStreamClient
 
-def get_appstream_client() -> AppStreamClient:
-    return Session().client("appstream")
+session = get_session()
+async with session.create_client("appstream") as client:
+    client: AppStreamClient
 ```
 
 Boto3 documentation:
@@ -136,8 +139,7 @@ Exceptions:
 
 AppStreamClient exceptions.
 
-Type annotations for `aiobotocore.create_client("appstream").exceptions`
-method.
+Type annotations for `session.create_client("appstream").exceptions` method.
 
 Boto3 documentation:
 [AppStream.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.exceptions)
@@ -151,7 +153,7 @@ Returns [Exceptions](#exceptions).
 Associates the specified application with the specified fleet.
 
 Type annotations for
-`aiobotocore.create_client("appstream").associate_application_fleet` method.
+`session.create_client("appstream").associate_application_fleet` method.
 
 Boto3 documentation:
 [AppStream.Client.associate_application_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.associate_application_fleet)
@@ -176,7 +178,7 @@ Returns a `Coroutine` for
 
 Associates the specified fleet with the specified stack.
 
-Type annotations for `aiobotocore.create_client("appstream").associate_fleet`
+Type annotations for `session.create_client("appstream").associate_fleet`
 method.
 
 Boto3 documentation:
@@ -201,7 +203,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Associates the specified users with the specified stacks.
 
 Type annotations for
-`aiobotocore.create_client("appstream").batch_associate_user_stack` method.
+`session.create_client("appstream").batch_associate_user_stack` method.
 
 Boto3 documentation:
 [AppStream.Client.batch_associate_user_stack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.batch_associate_user_stack)
@@ -228,7 +230,7 @@ Returns a `Coroutine` for
 Disassociates the specified users from the specified stacks.
 
 Type annotations for
-`aiobotocore.create_client("appstream").batch_disassociate_user_stack` method.
+`session.create_client("appstream").batch_disassociate_user_stack` method.
 
 Boto3 documentation:
 [AppStream.Client.batch_disassociate_user_stack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.batch_disassociate_user_stack)
@@ -254,19 +256,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("appstream").can_paginate`
-method.
+Type annotations for `session.create_client("appstream").can_paginate` method.
 
 Boto3 documentation:
 [AppStream.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="copy_image"></a>
 
@@ -275,8 +274,7 @@ Returns a `Coroutine` for `bool`.
 Copies the image within the same region or to a new region within the same AWS
 account.
 
-Type annotations for `aiobotocore.create_client("appstream").copy_image`
-method.
+Type annotations for `session.create_client("appstream").copy_image` method.
 
 Boto3 documentation:
 [AppStream.Client.copy_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.copy_image)
@@ -302,7 +300,7 @@ Returns a `Coroutine` for
 
 Creates an app block.
 
-Type annotations for `aiobotocore.create_client("appstream").create_app_block`
+Type annotations for `session.create_client("appstream").create_app_block`
 method.
 
 Boto3 documentation:
@@ -333,8 +331,8 @@ Returns a `Coroutine` for
 
 Creates an application.
 
-Type annotations for
-`aiobotocore.create_client("appstream").create_application` method.
+Type annotations for `session.create_client("appstream").create_application`
+method.
 
 Boto3 documentation:
 [AppStream.Client.create_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.create_application)
@@ -371,7 +369,7 @@ Returns a `Coroutine` for
 Creates a Directory Config object in AppStream 2.0.
 
 Type annotations for
-`aiobotocore.create_client("appstream").create_directory_config` method.
+`session.create_client("appstream").create_directory_config` method.
 
 Boto3 documentation:
 [AppStream.Client.create_directory_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.create_directory_config)
@@ -398,8 +396,7 @@ Returns a `Coroutine` for
 
 Creates a fleet.
 
-Type annotations for `aiobotocore.create_client("appstream").create_fleet`
-method.
+Type annotations for `session.create_client("appstream").create_fleet` method.
 
 Boto3 documentation:
 [AppStream.Client.create_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.create_fleet)
@@ -443,8 +440,8 @@ Returns a `Coroutine` for
 
 Creates an image builder.
 
-Type annotations for
-`aiobotocore.create_client("appstream").create_image_builder` method.
+Type annotations for `session.create_client("appstream").create_image_builder`
+method.
 
 Boto3 documentation:
 [AppStream.Client.create_image_builder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.create_image_builder)
@@ -483,8 +480,7 @@ Returns a `Coroutine` for
 Creates a URL to start an image builder streaming session.
 
 Type annotations for
-`aiobotocore.create_client("appstream").create_image_builder_streaming_url`
-method.
+`session.create_client("appstream").create_image_builder_streaming_url` method.
 
 Boto3 documentation:
 [AppStream.Client.create_image_builder_streaming_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.create_image_builder_streaming_url)
@@ -509,8 +505,7 @@ Returns a `Coroutine` for
 
 Creates a stack to start streaming applications to users.
 
-Type annotations for `aiobotocore.create_client("appstream").create_stack`
-method.
+Type annotations for `session.create_client("appstream").create_stack` method.
 
 Boto3 documentation:
 [AppStream.Client.create_stack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.create_stack)
@@ -548,8 +543,8 @@ Returns a `Coroutine` for
 Creates a temporary URL to start an AppStream 2.0 streaming session for the
 specified user.
 
-Type annotations for
-`aiobotocore.create_client("appstream").create_streaming_url` method.
+Type annotations for `session.create_client("appstream").create_streaming_url`
+method.
 
 Boto3 documentation:
 [AppStream.Client.create_streaming_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.create_streaming_url)
@@ -579,8 +574,8 @@ Returns a `Coroutine` for
 Creates a new image with the latest Windows operating system updates, driver
 updates, and AppStream 2.0 agent software.
 
-Type annotations for
-`aiobotocore.create_client("appstream").create_updated_image` method.
+Type annotations for `session.create_client("appstream").create_updated_image`
+method.
 
 Boto3 documentation:
 [AppStream.Client.create_updated_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.create_updated_image)
@@ -610,8 +605,7 @@ Returns a `Coroutine` for
 Creates a usage report subscription.
 
 Type annotations for
-`aiobotocore.create_client("appstream").create_usage_report_subscription`
-method.
+`session.create_client("appstream").create_usage_report_subscription` method.
 
 Boto3 documentation:
 [AppStream.Client.create_usage_report_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.create_usage_report_subscription)
@@ -628,8 +622,7 @@ Returns a `Coroutine` for
 
 Creates a new user in the user pool.
 
-Type annotations for `aiobotocore.create_client("appstream").create_user`
-method.
+Type annotations for `session.create_client("appstream").create_user` method.
 
 Boto3 documentation:
 [AppStream.Client.create_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.create_user)
@@ -656,7 +649,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an app block.
 
-Type annotations for `aiobotocore.create_client("appstream").delete_app_block`
+Type annotations for `session.create_client("appstream").delete_app_block`
 method.
 
 Boto3 documentation:
@@ -679,8 +672,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an application.
 
-Type annotations for
-`aiobotocore.create_client("appstream").delete_application` method.
+Type annotations for `session.create_client("appstream").delete_application`
+method.
 
 Boto3 documentation:
 [AppStream.Client.delete_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.delete_application)
@@ -704,7 +697,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified Directory Config object from AppStream 2.0.
 
 Type annotations for
-`aiobotocore.create_client("appstream").delete_directory_config` method.
+`session.create_client("appstream").delete_directory_config` method.
 
 Boto3 documentation:
 [AppStream.Client.delete_directory_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.delete_directory_config)
@@ -727,8 +720,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified fleet.
 
-Type annotations for `aiobotocore.create_client("appstream").delete_fleet`
-method.
+Type annotations for `session.create_client("appstream").delete_fleet` method.
 
 Boto3 documentation:
 [AppStream.Client.delete_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.delete_fleet)
@@ -750,8 +742,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified image.
 
-Type annotations for `aiobotocore.create_client("appstream").delete_image`
-method.
+Type annotations for `session.create_client("appstream").delete_image` method.
 
 Boto3 documentation:
 [AppStream.Client.delete_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.delete_image)
@@ -774,8 +765,8 @@ Returns a `Coroutine` for
 
 Deletes the specified image builder and releases the capacity.
 
-Type annotations for
-`aiobotocore.create_client("appstream").delete_image_builder` method.
+Type annotations for `session.create_client("appstream").delete_image_builder`
+method.
 
 Boto3 documentation:
 [AppStream.Client.delete_image_builder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.delete_image_builder)
@@ -800,7 +791,7 @@ Returns a `Coroutine` for
 Deletes permissions for the specified private image.
 
 Type annotations for
-`aiobotocore.create_client("appstream").delete_image_permissions` method.
+`session.create_client("appstream").delete_image_permissions` method.
 
 Boto3 documentation:
 [AppStream.Client.delete_image_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.delete_image_permissions)
@@ -824,8 +815,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified stack.
 
-Type annotations for `aiobotocore.create_client("appstream").delete_stack`
-method.
+Type annotations for `session.create_client("appstream").delete_stack` method.
 
 Boto3 documentation:
 [AppStream.Client.delete_stack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.delete_stack)
@@ -848,8 +838,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disables usage report generation.
 
 Type annotations for
-`aiobotocore.create_client("appstream").delete_usage_report_subscription`
-method.
+`session.create_client("appstream").delete_usage_report_subscription` method.
 
 Boto3 documentation:
 [AppStream.Client.delete_usage_report_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.delete_usage_report_subscription)
@@ -865,8 +854,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a user from the user pool.
 
-Type annotations for `aiobotocore.create_client("appstream").delete_user`
-method.
+Type annotations for `session.create_client("appstream").delete_user` method.
 
 Boto3 documentation:
 [AppStream.Client.delete_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.delete_user)
@@ -890,8 +878,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Retrieves a list that describes one or more app blocks.
 
-Type annotations for
-`aiobotocore.create_client("appstream").describe_app_blocks` method.
+Type annotations for `session.create_client("appstream").describe_app_blocks`
+method.
 
 Boto3 documentation:
 [AppStream.Client.describe_app_blocks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.describe_app_blocks)
@@ -918,7 +906,7 @@ Returns a `Coroutine` for
 Retrieves a list that describes one or more application fleet associations.
 
 Type annotations for
-`aiobotocore.create_client("appstream").describe_application_fleet_associations`
+`session.create_client("appstream").describe_application_fleet_associations`
 method.
 
 Boto3 documentation:
@@ -946,8 +934,8 @@ Returns a `Coroutine` for
 
 Retrieves a list that describes one or more applications.
 
-Type annotations for
-`aiobotocore.create_client("appstream").describe_applications` method.
+Type annotations for `session.create_client("appstream").describe_applications`
+method.
 
 Boto3 documentation:
 [AppStream.Client.describe_applications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.describe_applications)
@@ -975,7 +963,7 @@ Retrieves a list that describes one or more specified Directory Config objects
 for AppStream 2.0, if the names for these objects are provided.
 
 Type annotations for
-`aiobotocore.create_client("appstream").describe_directory_configs` method.
+`session.create_client("appstream").describe_directory_configs` method.
 
 Boto3 documentation:
 [AppStream.Client.describe_directory_configs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.describe_directory_configs)
@@ -1002,7 +990,7 @@ Returns a `Coroutine` for
 Retrieves a list that describes one or more specified fleets, if the fleet
 names are provided.
 
-Type annotations for `aiobotocore.create_client("appstream").describe_fleets`
+Type annotations for `session.create_client("appstream").describe_fleets`
 method.
 
 Boto3 documentation:
@@ -1029,7 +1017,7 @@ Retrieves a list that describes one or more specified image builders, if the
 image builder names are provided.
 
 Type annotations for
-`aiobotocore.create_client("appstream").describe_image_builders` method.
+`session.create_client("appstream").describe_image_builders` method.
 
 Boto3 documentation:
 [AppStream.Client.describe_image_builders](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.describe_image_builders)
@@ -1057,7 +1045,7 @@ Retrieves a list that describes the permissions for shared AWS account IDs on a
 private image that you own.
 
 Type annotations for
-`aiobotocore.create_client("appstream").describe_image_permissions` method.
+`session.create_client("appstream").describe_image_permissions` method.
 
 Boto3 documentation:
 [AppStream.Client.describe_image_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.describe_image_permissions)
@@ -1085,7 +1073,7 @@ Returns a `Coroutine` for
 Retrieves a list that describes one or more specified images, if the image
 names or image ARNs are provided.
 
-Type annotations for `aiobotocore.create_client("appstream").describe_images`
+Type annotations for `session.create_client("appstream").describe_images`
 method.
 
 Boto3 documentation:
@@ -1114,7 +1102,7 @@ Returns a `Coroutine` for
 Retrieves a list that describes the streaming sessions for a specified stack
 and fleet.
 
-Type annotations for `aiobotocore.create_client("appstream").describe_sessions`
+Type annotations for `session.create_client("appstream").describe_sessions`
 method.
 
 Boto3 documentation:
@@ -1145,7 +1133,7 @@ Returns a `Coroutine` for
 Retrieves a list that describes one or more specified stacks, if the stack
 names are provided.
 
-Type annotations for `aiobotocore.create_client("appstream").describe_stacks`
+Type annotations for `session.create_client("appstream").describe_stacks`
 method.
 
 Boto3 documentation:
@@ -1171,7 +1159,7 @@ Returns a `Coroutine` for
 Retrieves a list that describes one or more usage report subscriptions.
 
 Type annotations for
-`aiobotocore.create_client("appstream").describe_usage_report_subscriptions`
+`session.create_client("appstream").describe_usage_report_subscriptions`
 method.
 
 Boto3 documentation:
@@ -1198,8 +1186,7 @@ Returns a `Coroutine` for
 Retrieves a list that describes the UserStackAssociation objects.
 
 Type annotations for
-`aiobotocore.create_client("appstream").describe_user_stack_associations`
-method.
+`session.create_client("appstream").describe_user_stack_associations` method.
 
 Boto3 documentation:
 [AppStream.Client.describe_user_stack_associations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.describe_user_stack_associations)
@@ -1228,7 +1215,7 @@ Returns a `Coroutine` for
 
 Retrieves a list that describes one or more specified users in the user pool.
 
-Type annotations for `aiobotocore.create_client("appstream").describe_users`
+Type annotations for `session.create_client("appstream").describe_users`
 method.
 
 Boto3 documentation:
@@ -1255,8 +1242,7 @@ Returns a `Coroutine` for
 
 Disables the specified user in the user pool.
 
-Type annotations for `aiobotocore.create_client("appstream").disable_user`
-method.
+Type annotations for `session.create_client("appstream").disable_user` method.
 
 Boto3 documentation:
 [AppStream.Client.disable_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.disable_user)
@@ -1281,7 +1267,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates the specified application from the fleet.
 
 Type annotations for
-`aiobotocore.create_client("appstream").disassociate_application_fleet` method.
+`session.create_client("appstream").disassociate_application_fleet` method.
 
 Boto3 documentation:
 [AppStream.Client.disassociate_application_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.disassociate_application_fleet)
@@ -1305,8 +1291,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Disassociates the specified fleet from the specified stack.
 
-Type annotations for
-`aiobotocore.create_client("appstream").disassociate_fleet` method.
+Type annotations for `session.create_client("appstream").disassociate_fleet`
+method.
 
 Boto3 documentation:
 [AppStream.Client.disassociate_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.disassociate_fleet)
@@ -1330,8 +1316,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Enables a user in the user pool.
 
-Type annotations for `aiobotocore.create_client("appstream").enable_user`
-method.
+Type annotations for `session.create_client("appstream").enable_user` method.
 
 Boto3 documentation:
 [AppStream.Client.enable_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.enable_user)
@@ -1355,7 +1340,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Immediately stops the specified streaming session.
 
-Type annotations for `aiobotocore.create_client("appstream").expire_session`
+Type annotations for `session.create_client("appstream").expire_session`
 method.
 
 Boto3 documentation:
@@ -1379,7 +1364,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("appstream").generate_presigned_url` method.
+`session.create_client("appstream").generate_presigned_url` method.
 
 Boto3 documentation:
 [AppStream.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.generate_presigned_url)
@@ -1403,7 +1388,7 @@ Returns a `Coroutine` for `str`.
 Retrieves the name of the fleet that is associated with the specified stack.
 
 Type annotations for
-`aiobotocore.create_client("appstream").list_associated_fleets` method.
+`session.create_client("appstream").list_associated_fleets` method.
 
 Boto3 documentation:
 [AppStream.Client.list_associated_fleets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.list_associated_fleets)
@@ -1429,7 +1414,7 @@ Returns a `Coroutine` for
 Retrieves the name of the stack with which the specified fleet is associated.
 
 Type annotations for
-`aiobotocore.create_client("appstream").list_associated_stacks` method.
+`session.create_client("appstream").list_associated_stacks` method.
 
 Boto3 documentation:
 [AppStream.Client.list_associated_stacks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.list_associated_stacks)
@@ -1455,7 +1440,7 @@ Returns a `Coroutine` for
 Retrieves a list of all tags for the specified AppStream 2.0 resource.
 
 Type annotations for
-`aiobotocore.create_client("appstream").list_tags_for_resource` method.
+`session.create_client("appstream").list_tags_for_resource` method.
 
 Boto3 documentation:
 [AppStream.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.list_tags_for_resource)
@@ -1479,8 +1464,7 @@ Returns a `Coroutine` for
 
 Starts the specified fleet.
 
-Type annotations for `aiobotocore.create_client("appstream").start_fleet`
-method.
+Type annotations for `session.create_client("appstream").start_fleet` method.
 
 Boto3 documentation:
 [AppStream.Client.start_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.start_fleet)
@@ -1502,8 +1486,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Starts the specified image builder.
 
-Type annotations for
-`aiobotocore.create_client("appstream").start_image_builder` method.
+Type annotations for `session.create_client("appstream").start_image_builder`
+method.
 
 Boto3 documentation:
 [AppStream.Client.start_image_builder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.start_image_builder)
@@ -1528,8 +1512,7 @@ Returns a `Coroutine` for
 
 Stops the specified fleet.
 
-Type annotations for `aiobotocore.create_client("appstream").stop_fleet`
-method.
+Type annotations for `session.create_client("appstream").stop_fleet` method.
 
 Boto3 documentation:
 [AppStream.Client.stop_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.stop_fleet)
@@ -1551,8 +1534,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Stops the specified image builder.
 
-Type annotations for
-`aiobotocore.create_client("appstream").stop_image_builder` method.
+Type annotations for `session.create_client("appstream").stop_image_builder`
+method.
 
 Boto3 documentation:
 [AppStream.Client.stop_image_builder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.stop_image_builder)
@@ -1576,8 +1559,7 @@ Returns a `Coroutine` for
 
 Adds or overwrites one or more tags for the specified AppStream 2.0 resource.
 
-Type annotations for `aiobotocore.create_client("appstream").tag_resource`
-method.
+Type annotations for `session.create_client("appstream").tag_resource` method.
 
 Boto3 documentation:
 [AppStream.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.tag_resource)
@@ -1601,7 +1583,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disassociates one or more specified tags from the specified AppStream 2.0
 resource.
 
-Type annotations for `aiobotocore.create_client("appstream").untag_resource`
+Type annotations for `session.create_client("appstream").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1625,8 +1607,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the specified application.
 
-Type annotations for
-`aiobotocore.create_client("appstream").update_application` method.
+Type annotations for `session.create_client("appstream").update_application`
+method.
 
 Boto3 documentation:
 [AppStream.Client.update_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.update_application)
@@ -1660,7 +1642,7 @@ Returns a `Coroutine` for
 Updates the specified Directory Config object in AppStream 2.0.
 
 Type annotations for
-`aiobotocore.create_client("appstream").update_directory_config` method.
+`session.create_client("appstream").update_directory_config` method.
 
 Boto3 documentation:
 [AppStream.Client.update_directory_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.update_directory_config)
@@ -1687,8 +1669,7 @@ Returns a `Coroutine` for
 
 Updates the specified fleet.
 
-Type annotations for `aiobotocore.create_client("appstream").update_fleet`
-method.
+Type annotations for `session.create_client("appstream").update_fleet` method.
 
 Boto3 documentation:
 [AppStream.Client.update_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.update_fleet)
@@ -1734,7 +1715,7 @@ Returns a `Coroutine` for
 Adds or updates permissions for the specified private image.
 
 Type annotations for
-`aiobotocore.create_client("appstream").update_image_permissions` method.
+`session.create_client("appstream").update_image_permissions` method.
 
 Boto3 documentation:
 [AppStream.Client.update_image_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.update_image_permissions)
@@ -1761,8 +1742,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Updates the specified fields for the specified stack.
 
-Type annotations for `aiobotocore.create_client("appstream").update_stack`
-method.
+Type annotations for `session.create_client("appstream").update_stack` method.
 
 Boto3 documentation:
 [AppStream.Client.update_stack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.update_stack)
@@ -1795,12 +1775,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateStackResultTypeDef](./type_defs.md#updatestackresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("appstream").__aenter__` method.
+
+Boto3 documentation:
+[AppStream.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [AppStreamClient](#appstreamclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("appstream").__aexit__` method.
+
+Boto3 documentation:
+[AppStream.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/appstream.html#AppStream.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("appstream").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("appstream").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_directory_configs")` ->
   [DescribeDirectoryConfigsPaginator](./paginators.md#describedirectoryconfigspaginator)
@@ -1827,7 +1839,7 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("appstream").get_waiter` method
+Type annotations for `session.create_client("appstream").get_waiter` method
 with overloads.
 
 - `client.get_waiter("fleet_started")` ->

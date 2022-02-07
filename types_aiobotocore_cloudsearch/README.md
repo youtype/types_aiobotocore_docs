@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[cloudsearch]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[cloudsearch]'
+
+# standalone installation
 pip install types-aiobotocore-cloudsearch
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-cloudsearch
 
 ## CloudSearchClient
 
-Type annotations for `aiobotocore.create_client("cloudsearch")` as
+Type annotations for `session.create_client("cloudsearch")` as
 [CloudSearchClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_cloudsearch.client import CloudSearchClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [build_suggesters](./client.md#build_suggesters)
 - [can_paginate](./client.md#can_paginate)
 - [create_domain](./client.md#create_domain)

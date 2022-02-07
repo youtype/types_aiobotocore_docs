@@ -73,17 +73,19 @@ type annotations stubs module
 ## ListActionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_actions")`.
+`session.create_client("sagemaker").get_paginator("list_actions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListActionsPaginator
 
-def get_list_actions_paginator() -> ListActionsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_actions")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListActionsPaginator = client.get_paginator("list_actions")
 ```
 
 Boto3 documentation:
@@ -108,17 +110,19 @@ Arguments for `ListActionsPaginator.paginate` method:
 ## ListAlgorithmsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_algorithms")`.
+`session.create_client("sagemaker").get_paginator("list_algorithms")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListAlgorithmsPaginator
 
-def get_list_algorithms_paginator() -> ListAlgorithmsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_algorithms")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListAlgorithmsPaginator = client.get_paginator("list_algorithms")
 ```
 
 Boto3 documentation:
@@ -142,17 +146,19 @@ Arguments for `ListAlgorithmsPaginator.paginate` method:
 ## ListAppImageConfigsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_app_image_configs")`.
+`session.create_client("sagemaker").get_paginator("list_app_image_configs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListAppImageConfigsPaginator
 
-def get_list_app_image_configs_paginator() -> ListAppImageConfigsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_app_image_configs")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListAppImageConfigsPaginator = client.get_paginator("list_app_image_configs")
 ```
 
 Boto3 documentation:
@@ -179,17 +185,19 @@ Arguments for `ListAppImageConfigsPaginator.paginate` method:
 ## ListAppsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_apps")`.
+`session.create_client("sagemaker").get_paginator("list_apps")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListAppsPaginator
 
-def get_list_apps_paginator() -> ListAppsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_apps")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListAppsPaginator = client.get_paginator("list_apps")
 ```
 
 Boto3 documentation:
@@ -213,17 +221,19 @@ Arguments for `ListAppsPaginator.paginate` method:
 ## ListArtifactsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_artifacts")`.
+`session.create_client("sagemaker").get_paginator("list_artifacts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListArtifactsPaginator
 
-def get_list_artifacts_paginator() -> ListArtifactsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_artifacts")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListArtifactsPaginator = client.get_paginator("list_artifacts")
 ```
 
 Boto3 documentation:
@@ -249,17 +259,19 @@ Arguments for `ListArtifactsPaginator.paginate` method:
 ## ListAssociationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_associations")`.
+`session.create_client("sagemaker").get_paginator("list_associations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListAssociationsPaginator
 
-def get_list_associations_paginator() -> ListAssociationsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_associations")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListAssociationsPaginator = client.get_paginator("list_associations")
 ```
 
 Boto3 documentation:
@@ -288,17 +300,19 @@ Arguments for `ListAssociationsPaginator.paginate` method:
 ## ListAutoMLJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_auto_ml_jobs")`.
+`session.create_client("sagemaker").get_paginator("list_auto_ml_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListAutoMLJobsPaginator
 
-def get_list_auto_ml_jobs_paginator() -> ListAutoMLJobsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_auto_ml_jobs")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListAutoMLJobsPaginator = client.get_paginator("list_auto_ml_jobs")
 ```
 
 Boto3 documentation:
@@ -325,17 +339,19 @@ Arguments for `ListAutoMLJobsPaginator.paginate` method:
 ## ListCandidatesForAutoMLJobPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_candidates_for_auto_ml_job")`.
+`session.create_client("sagemaker").get_paginator("list_candidates_for_auto_ml_job")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListCandidatesForAutoMLJobPaginator
 
-def get_list_candidates_for_auto_ml_job_paginator() -> ListCandidatesForAutoMLJobPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_candidates_for_auto_ml_job")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListCandidatesForAutoMLJobPaginator = client.get_paginator("list_candidates_for_auto_ml_job")
 ```
 
 Boto3 documentation:
@@ -359,17 +375,19 @@ Arguments for `ListCandidatesForAutoMLJobPaginator.paginate` method:
 ## ListCodeRepositoriesPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_code_repositories")`.
+`session.create_client("sagemaker").get_paginator("list_code_repositories")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListCodeRepositoriesPaginator
 
-def get_list_code_repositories_paginator() -> ListCodeRepositoriesPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_code_repositories")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListCodeRepositoriesPaginator = client.get_paginator("list_code_repositories")
 ```
 
 Boto3 documentation:
@@ -396,17 +414,19 @@ Arguments for `ListCodeRepositoriesPaginator.paginate` method:
 ## ListCompilationJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_compilation_jobs")`.
+`session.create_client("sagemaker").get_paginator("list_compilation_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListCompilationJobsPaginator
 
-def get_list_compilation_jobs_paginator() -> ListCompilationJobsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_compilation_jobs")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListCompilationJobsPaginator = client.get_paginator("list_compilation_jobs")
 ```
 
 Boto3 documentation:
@@ -435,17 +455,19 @@ Arguments for `ListCompilationJobsPaginator.paginate` method:
 ## ListContextsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_contexts")`.
+`session.create_client("sagemaker").get_paginator("list_contexts")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListContextsPaginator
 
-def get_list_contexts_paginator() -> ListContextsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_contexts")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListContextsPaginator = client.get_paginator("list_contexts")
 ```
 
 Boto3 documentation:
@@ -470,17 +492,19 @@ Arguments for `ListContextsPaginator.paginate` method:
 ## ListDataQualityJobDefinitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_data_quality_job_definitions")`.
+`session.create_client("sagemaker").get_paginator("list_data_quality_job_definitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListDataQualityJobDefinitionsPaginator
 
-def get_list_data_quality_job_definitions_paginator() -> ListDataQualityJobDefinitionsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_data_quality_job_definitions")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListDataQualityJobDefinitionsPaginator = client.get_paginator("list_data_quality_job_definitions")
 ```
 
 Boto3 documentation:
@@ -506,17 +530,19 @@ Arguments for `ListDataQualityJobDefinitionsPaginator.paginate` method:
 ## ListDeviceFleetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_device_fleets")`.
+`session.create_client("sagemaker").get_paginator("list_device_fleets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListDeviceFleetsPaginator
 
-def get_list_device_fleets_paginator() -> ListDeviceFleetsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_device_fleets")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListDeviceFleetsPaginator = client.get_paginator("list_device_fleets")
 ```
 
 Boto3 documentation:
@@ -543,17 +569,19 @@ Arguments for `ListDeviceFleetsPaginator.paginate` method:
 ## ListDevicesPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_devices")`.
+`session.create_client("sagemaker").get_paginator("list_devices")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListDevicesPaginator
 
-def get_list_devices_paginator() -> ListDevicesPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_devices")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListDevicesPaginator = client.get_paginator("list_devices")
 ```
 
 Boto3 documentation:
@@ -575,17 +603,19 @@ Arguments for `ListDevicesPaginator.paginate` method:
 ## ListDomainsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_domains")`.
+`session.create_client("sagemaker").get_paginator("list_domains")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListDomainsPaginator
 
-def get_list_domains_paginator() -> ListDomainsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_domains")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListDomainsPaginator = client.get_paginator("list_domains")
 ```
 
 Boto3 documentation:
@@ -604,17 +634,19 @@ Arguments for `ListDomainsPaginator.paginate` method:
 ## ListEdgePackagingJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_edge_packaging_jobs")`.
+`session.create_client("sagemaker").get_paginator("list_edge_packaging_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListEdgePackagingJobsPaginator
 
-def get_list_edge_packaging_jobs_paginator() -> ListEdgePackagingJobsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_edge_packaging_jobs")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListEdgePackagingJobsPaginator = client.get_paginator("list_edge_packaging_jobs")
 ```
 
 Boto3 documentation:
@@ -644,17 +676,19 @@ Arguments for `ListEdgePackagingJobsPaginator.paginate` method:
 ## ListEndpointConfigsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_endpoint_configs")`.
+`session.create_client("sagemaker").get_paginator("list_endpoint_configs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListEndpointConfigsPaginator
 
-def get_list_endpoint_configs_paginator() -> ListEndpointConfigsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_endpoint_configs")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListEndpointConfigsPaginator = client.get_paginator("list_endpoint_configs")
 ```
 
 Boto3 documentation:
@@ -679,17 +713,19 @@ Arguments for `ListEndpointConfigsPaginator.paginate` method:
 ## ListEndpointsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_endpoints")`.
+`session.create_client("sagemaker").get_paginator("list_endpoints")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListEndpointsPaginator
 
-def get_list_endpoints_paginator() -> ListEndpointsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_endpoints")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListEndpointsPaginator = client.get_paginator("list_endpoints")
 ```
 
 Boto3 documentation:
@@ -716,17 +752,19 @@ Arguments for `ListEndpointsPaginator.paginate` method:
 ## ListExperimentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_experiments")`.
+`session.create_client("sagemaker").get_paginator("list_experiments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListExperimentsPaginator
 
-def get_list_experiments_paginator() -> ListExperimentsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_experiments")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListExperimentsPaginator = client.get_paginator("list_experiments")
 ```
 
 Boto3 documentation:
@@ -749,17 +787,19 @@ Arguments for `ListExperimentsPaginator.paginate` method:
 ## ListFeatureGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_feature_groups")`.
+`session.create_client("sagemaker").get_paginator("list_feature_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListFeatureGroupsPaginator
 
-def get_list_feature_groups_paginator() -> ListFeatureGroupsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_feature_groups")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListFeatureGroupsPaginator = client.get_paginator("list_feature_groups")
 ```
 
 Boto3 documentation:
@@ -788,17 +828,19 @@ Arguments for `ListFeatureGroupsPaginator.paginate` method:
 ## ListFlowDefinitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_flow_definitions")`.
+`session.create_client("sagemaker").get_paginator("list_flow_definitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListFlowDefinitionsPaginator
 
-def get_list_flow_definitions_paginator() -> ListFlowDefinitionsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_flow_definitions")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListFlowDefinitionsPaginator = client.get_paginator("list_flow_definitions")
 ```
 
 Boto3 documentation:
@@ -820,17 +862,19 @@ Arguments for `ListFlowDefinitionsPaginator.paginate` method:
 ## ListHumanTaskUisPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_human_task_uis")`.
+`session.create_client("sagemaker").get_paginator("list_human_task_uis")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListHumanTaskUisPaginator
 
-def get_list_human_task_uis_paginator() -> ListHumanTaskUisPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_human_task_uis")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListHumanTaskUisPaginator = client.get_paginator("list_human_task_uis")
 ```
 
 Boto3 documentation:
@@ -852,17 +896,19 @@ Arguments for `ListHumanTaskUisPaginator.paginate` method:
 ## ListHyperParameterTuningJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_hyper_parameter_tuning_jobs")`.
+`session.create_client("sagemaker").get_paginator("list_hyper_parameter_tuning_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListHyperParameterTuningJobsPaginator
 
-def get_list_hyper_parameter_tuning_jobs_paginator() -> ListHyperParameterTuningJobsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_hyper_parameter_tuning_jobs")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListHyperParameterTuningJobsPaginator = client.get_paginator("list_hyper_parameter_tuning_jobs")
 ```
 
 Boto3 documentation:
@@ -891,17 +937,19 @@ Arguments for `ListHyperParameterTuningJobsPaginator.paginate` method:
 ## ListImageVersionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_image_versions")`.
+`session.create_client("sagemaker").get_paginator("list_image_versions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListImageVersionsPaginator
 
-def get_list_image_versions_paginator() -> ListImageVersionsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_image_versions")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListImageVersionsPaginator = client.get_paginator("list_image_versions")
 ```
 
 Boto3 documentation:
@@ -928,17 +976,19 @@ Arguments for `ListImageVersionsPaginator.paginate` method:
 ## ListImagesPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_images")`.
+`session.create_client("sagemaker").get_paginator("list_images")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListImagesPaginator
 
-def get_list_images_paginator() -> ListImagesPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_images")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListImagesPaginator = client.get_paginator("list_images")
 ```
 
 Boto3 documentation:
@@ -964,17 +1014,19 @@ Arguments for `ListImagesPaginator.paginate` method:
 ## ListInferenceRecommendationsJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_inference_recommendations_jobs")`.
+`session.create_client("sagemaker").get_paginator("list_inference_recommendations_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListInferenceRecommendationsJobsPaginator
 
-def get_list_inference_recommendations_jobs_paginator() -> ListInferenceRecommendationsJobsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_inference_recommendations_jobs")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListInferenceRecommendationsJobsPaginator = client.get_paginator("list_inference_recommendations_jobs")
 ```
 
 Boto3 documentation:
@@ -1003,17 +1055,19 @@ Arguments for `ListInferenceRecommendationsJobsPaginator.paginate` method:
 ## ListLabelingJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_labeling_jobs")`.
+`session.create_client("sagemaker").get_paginator("list_labeling_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListLabelingJobsPaginator
 
-def get_list_labeling_jobs_paginator() -> ListLabelingJobsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_labeling_jobs")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListLabelingJobsPaginator = client.get_paginator("list_labeling_jobs")
 ```
 
 Boto3 documentation:
@@ -1040,17 +1094,19 @@ Arguments for `ListLabelingJobsPaginator.paginate` method:
 ## ListLabelingJobsForWorkteamPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_labeling_jobs_for_workteam")`.
+`session.create_client("sagemaker").get_paginator("list_labeling_jobs_for_workteam")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListLabelingJobsForWorkteamPaginator
 
-def get_list_labeling_jobs_for_workteam_paginator() -> ListLabelingJobsForWorkteamPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_labeling_jobs_for_workteam")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListLabelingJobsForWorkteamPaginator = client.get_paginator("list_labeling_jobs_for_workteam")
 ```
 
 Boto3 documentation:
@@ -1076,17 +1132,19 @@ Arguments for `ListLabelingJobsForWorkteamPaginator.paginate` method:
 ## ListLineageGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_lineage_groups")`.
+`session.create_client("sagemaker").get_paginator("list_lineage_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListLineageGroupsPaginator
 
-def get_list_lineage_groups_paginator() -> ListLineageGroupsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_lineage_groups")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListLineageGroupsPaginator = client.get_paginator("list_lineage_groups")
 ```
 
 Boto3 documentation:
@@ -1109,17 +1167,19 @@ Arguments for `ListLineageGroupsPaginator.paginate` method:
 ## ListModelBiasJobDefinitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_model_bias_job_definitions")`.
+`session.create_client("sagemaker").get_paginator("list_model_bias_job_definitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListModelBiasJobDefinitionsPaginator
 
-def get_list_model_bias_job_definitions_paginator() -> ListModelBiasJobDefinitionsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_model_bias_job_definitions")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListModelBiasJobDefinitionsPaginator = client.get_paginator("list_model_bias_job_definitions")
 ```
 
 Boto3 documentation:
@@ -1145,17 +1205,19 @@ Arguments for `ListModelBiasJobDefinitionsPaginator.paginate` method:
 ## ListModelExplainabilityJobDefinitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_model_explainability_job_definitions")`.
+`session.create_client("sagemaker").get_paginator("list_model_explainability_job_definitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListModelExplainabilityJobDefinitionsPaginator
 
-def get_list_model_explainability_job_definitions_paginator() -> ListModelExplainabilityJobDefinitionsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_model_explainability_job_definitions")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListModelExplainabilityJobDefinitionsPaginator = client.get_paginator("list_model_explainability_job_definitions")
 ```
 
 Boto3 documentation:
@@ -1181,17 +1243,19 @@ Arguments for `ListModelExplainabilityJobDefinitionsPaginator.paginate` method:
 ## ListModelMetadataPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_model_metadata")`.
+`session.create_client("sagemaker").get_paginator("list_model_metadata")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListModelMetadataPaginator
 
-def get_list_model_metadata_paginator() -> ListModelMetadataPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_model_metadata")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListModelMetadataPaginator = client.get_paginator("list_model_metadata")
 ```
 
 Boto3 documentation:
@@ -1212,17 +1276,19 @@ Arguments for `ListModelMetadataPaginator.paginate` method:
 ## ListModelPackageGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_model_package_groups")`.
+`session.create_client("sagemaker").get_paginator("list_model_package_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListModelPackageGroupsPaginator
 
-def get_list_model_package_groups_paginator() -> ListModelPackageGroupsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_model_package_groups")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListModelPackageGroupsPaginator = client.get_paginator("list_model_package_groups")
 ```
 
 Boto3 documentation:
@@ -1247,17 +1313,19 @@ Arguments for `ListModelPackageGroupsPaginator.paginate` method:
 ## ListModelPackagesPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_model_packages")`.
+`session.create_client("sagemaker").get_paginator("list_model_packages")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListModelPackagesPaginator
 
-def get_list_model_packages_paginator() -> ListModelPackagesPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_model_packages")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListModelPackagesPaginator = client.get_paginator("list_model_packages")
 ```
 
 Boto3 documentation:
@@ -1286,17 +1354,19 @@ Arguments for `ListModelPackagesPaginator.paginate` method:
 ## ListModelQualityJobDefinitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_model_quality_job_definitions")`.
+`session.create_client("sagemaker").get_paginator("list_model_quality_job_definitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListModelQualityJobDefinitionsPaginator
 
-def get_list_model_quality_job_definitions_paginator() -> ListModelQualityJobDefinitionsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_model_quality_job_definitions")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListModelQualityJobDefinitionsPaginator = client.get_paginator("list_model_quality_job_definitions")
 ```
 
 Boto3 documentation:
@@ -1322,17 +1392,19 @@ Arguments for `ListModelQualityJobDefinitionsPaginator.paginate` method:
 ## ListModelsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_models")`.
+`session.create_client("sagemaker").get_paginator("list_models")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListModelsPaginator
 
-def get_list_models_paginator() -> ListModelsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_models")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListModelsPaginator = client.get_paginator("list_models")
 ```
 
 Boto3 documentation:
@@ -1356,17 +1428,19 @@ Arguments for `ListModelsPaginator.paginate` method:
 ## ListMonitoringExecutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_monitoring_executions")`.
+`session.create_client("sagemaker").get_paginator("list_monitoring_executions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListMonitoringExecutionsPaginator
 
-def get_list_monitoring_executions_paginator() -> ListMonitoringExecutionsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_monitoring_executions")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListMonitoringExecutionsPaginator = client.get_paginator("list_monitoring_executions")
 ```
 
 Boto3 documentation:
@@ -1400,17 +1474,19 @@ Arguments for `ListMonitoringExecutionsPaginator.paginate` method:
 ## ListMonitoringSchedulesPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_monitoring_schedules")`.
+`session.create_client("sagemaker").get_paginator("list_monitoring_schedules")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListMonitoringSchedulesPaginator
 
-def get_list_monitoring_schedules_paginator() -> ListMonitoringSchedulesPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_monitoring_schedules")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListMonitoringSchedulesPaginator = client.get_paginator("list_monitoring_schedules")
 ```
 
 Boto3 documentation:
@@ -1442,17 +1518,19 @@ Arguments for `ListMonitoringSchedulesPaginator.paginate` method:
 ## ListNotebookInstanceLifecycleConfigsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_notebook_instance_lifecycle_configs")`.
+`session.create_client("sagemaker").get_paginator("list_notebook_instance_lifecycle_configs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListNotebookInstanceLifecycleConfigsPaginator
 
-def get_list_notebook_instance_lifecycle_configs_paginator() -> ListNotebookInstanceLifecycleConfigsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_notebook_instance_lifecycle_configs")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListNotebookInstanceLifecycleConfigsPaginator = client.get_paginator("list_notebook_instance_lifecycle_configs")
 ```
 
 Boto3 documentation:
@@ -1480,17 +1558,19 @@ Arguments for `ListNotebookInstanceLifecycleConfigsPaginator.paginate` method:
 ## ListNotebookInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_notebook_instances")`.
+`session.create_client("sagemaker").get_paginator("list_notebook_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListNotebookInstancesPaginator
 
-def get_list_notebook_instances_paginator() -> ListNotebookInstancesPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_notebook_instances")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListNotebookInstancesPaginator = client.get_paginator("list_notebook_instances")
 ```
 
 Boto3 documentation:
@@ -1523,17 +1603,19 @@ Arguments for `ListNotebookInstancesPaginator.paginate` method:
 ## ListPipelineExecutionStepsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_pipeline_execution_steps")`.
+`session.create_client("sagemaker").get_paginator("list_pipeline_execution_steps")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListPipelineExecutionStepsPaginator
 
-def get_list_pipeline_execution_steps_paginator() -> ListPipelineExecutionStepsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_pipeline_execution_steps")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListPipelineExecutionStepsPaginator = client.get_paginator("list_pipeline_execution_steps")
 ```
 
 Boto3 documentation:
@@ -1554,17 +1636,19 @@ Arguments for `ListPipelineExecutionStepsPaginator.paginate` method:
 ## ListPipelineExecutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_pipeline_executions")`.
+`session.create_client("sagemaker").get_paginator("list_pipeline_executions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListPipelineExecutionsPaginator
 
-def get_list_pipeline_executions_paginator() -> ListPipelineExecutionsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_pipeline_executions")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListPipelineExecutionsPaginator = client.get_paginator("list_pipeline_executions")
 ```
 
 Boto3 documentation:
@@ -1589,17 +1673,19 @@ Arguments for `ListPipelineExecutionsPaginator.paginate` method:
 ## ListPipelineParametersForExecutionPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_pipeline_parameters_for_execution")`.
+`session.create_client("sagemaker").get_paginator("list_pipeline_parameters_for_execution")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListPipelineParametersForExecutionPaginator
 
-def get_list_pipeline_parameters_for_execution_paginator() -> ListPipelineParametersForExecutionPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_pipeline_parameters_for_execution")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListPipelineParametersForExecutionPaginator = client.get_paginator("list_pipeline_parameters_for_execution")
 ```
 
 Boto3 documentation:
@@ -1619,17 +1705,19 @@ Arguments for `ListPipelineParametersForExecutionPaginator.paginate` method:
 ## ListPipelinesPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_pipelines")`.
+`session.create_client("sagemaker").get_paginator("list_pipelines")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListPipelinesPaginator
 
-def get_list_pipelines_paginator() -> ListPipelinesPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_pipelines")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListPipelinesPaginator = client.get_paginator("list_pipelines")
 ```
 
 Boto3 documentation:
@@ -1653,17 +1741,19 @@ Arguments for `ListPipelinesPaginator.paginate` method:
 ## ListProcessingJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_processing_jobs")`.
+`session.create_client("sagemaker").get_paginator("list_processing_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListProcessingJobsPaginator
 
-def get_list_processing_jobs_paginator() -> ListProcessingJobsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_processing_jobs")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListProcessingJobsPaginator = client.get_paginator("list_processing_jobs")
 ```
 
 Boto3 documentation:
@@ -1691,17 +1781,19 @@ Arguments for `ListProcessingJobsPaginator.paginate` method:
 ## ListStudioLifecycleConfigsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_studio_lifecycle_configs")`.
+`session.create_client("sagemaker").get_paginator("list_studio_lifecycle_configs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListStudioLifecycleConfigsPaginator
 
-def get_list_studio_lifecycle_configs_paginator() -> ListStudioLifecycleConfigsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_studio_lifecycle_configs")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListStudioLifecycleConfigsPaginator = client.get_paginator("list_studio_lifecycle_configs")
 ```
 
 Boto3 documentation:
@@ -1730,17 +1822,19 @@ Arguments for `ListStudioLifecycleConfigsPaginator.paginate` method:
 ## ListSubscribedWorkteamsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_subscribed_workteams")`.
+`session.create_client("sagemaker").get_paginator("list_subscribed_workteams")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListSubscribedWorkteamsPaginator
 
-def get_list_subscribed_workteams_paginator() -> ListSubscribedWorkteamsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_subscribed_workteams")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListSubscribedWorkteamsPaginator = client.get_paginator("list_subscribed_workteams")
 ```
 
 Boto3 documentation:
@@ -1760,17 +1854,19 @@ Arguments for `ListSubscribedWorkteamsPaginator.paginate` method:
 ## ListTagsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_tags")`.
+`session.create_client("sagemaker").get_paginator("list_tags")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListTagsPaginator
 
-def get_list_tags_paginator() -> ListTagsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_tags")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListTagsPaginator = client.get_paginator("list_tags")
 ```
 
 Boto3 documentation:
@@ -1790,17 +1886,19 @@ Arguments for `ListTagsPaginator.paginate` method:
 ## ListTrainingJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_training_jobs")`.
+`session.create_client("sagemaker").get_paginator("list_training_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListTrainingJobsPaginator
 
-def get_list_training_jobs_paginator() -> ListTrainingJobsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_training_jobs")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListTrainingJobsPaginator = client.get_paginator("list_training_jobs")
 ```
 
 Boto3 documentation:
@@ -1827,17 +1925,19 @@ Arguments for `ListTrainingJobsPaginator.paginate` method:
 ## ListTrainingJobsForHyperParameterTuningJobPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_training_jobs_for_hyper_parameter_tuning_job")`.
+`session.create_client("sagemaker").get_paginator("list_training_jobs_for_hyper_parameter_tuning_job")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListTrainingJobsForHyperParameterTuningJobPaginator
 
-def get_list_training_jobs_for_hyper_parameter_tuning_job_paginator() -> ListTrainingJobsForHyperParameterTuningJobPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_training_jobs_for_hyper_parameter_tuning_job")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListTrainingJobsForHyperParameterTuningJobPaginator = client.get_paginator("list_training_jobs_for_hyper_parameter_tuning_job")
 ```
 
 Boto3 documentation:
@@ -1862,17 +1962,19 @@ method:
 ## ListTransformJobsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_transform_jobs")`.
+`session.create_client("sagemaker").get_paginator("list_transform_jobs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListTransformJobsPaginator
 
-def get_list_transform_jobs_paginator() -> ListTransformJobsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_transform_jobs")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListTransformJobsPaginator = client.get_paginator("list_transform_jobs")
 ```
 
 Boto3 documentation:
@@ -1900,17 +2002,19 @@ Arguments for `ListTransformJobsPaginator.paginate` method:
 ## ListTrialComponentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_trial_components")`.
+`session.create_client("sagemaker").get_paginator("list_trial_components")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListTrialComponentsPaginator
 
-def get_list_trial_components_paginator() -> ListTrialComponentsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_trial_components")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListTrialComponentsPaginator = client.get_paginator("list_trial_components")
 ```
 
 Boto3 documentation:
@@ -1937,17 +2041,19 @@ Arguments for `ListTrialComponentsPaginator.paginate` method:
 ## ListTrialsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_trials")`.
+`session.create_client("sagemaker").get_paginator("list_trials")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListTrialsPaginator
 
-def get_list_trials_paginator() -> ListTrialsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_trials")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListTrialsPaginator = client.get_paginator("list_trials")
 ```
 
 Boto3 documentation:
@@ -1972,17 +2078,19 @@ Arguments for `ListTrialsPaginator.paginate` method:
 ## ListUserProfilesPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_user_profiles")`.
+`session.create_client("sagemaker").get_paginator("list_user_profiles")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListUserProfilesPaginator
 
-def get_list_user_profiles_paginator() -> ListUserProfilesPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_user_profiles")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListUserProfilesPaginator = client.get_paginator("list_user_profiles")
 ```
 
 Boto3 documentation:
@@ -2005,17 +2113,19 @@ Arguments for `ListUserProfilesPaginator.paginate` method:
 ## ListWorkforcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_workforces")`.
+`session.create_client("sagemaker").get_paginator("list_workforces")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListWorkforcesPaginator
 
-def get_list_workforces_paginator() -> ListWorkforcesPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_workforces")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListWorkforcesPaginator = client.get_paginator("list_workforces")
 ```
 
 Boto3 documentation:
@@ -2038,17 +2148,19 @@ Arguments for `ListWorkforcesPaginator.paginate` method:
 ## ListWorkteamsPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("list_workteams")`.
+`session.create_client("sagemaker").get_paginator("list_workteams")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import ListWorkteamsPaginator
 
-def get_list_workteams_paginator() -> ListWorkteamsPaginator:
-    return Session().create_client("sagemaker").get_paginator("list_workteams")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: ListWorkteamsPaginator = client.get_paginator("list_workteams")
 ```
 
 Boto3 documentation:
@@ -2071,17 +2183,19 @@ Arguments for `ListWorkteamsPaginator.paginate` method:
 ## SearchPaginator
 
 Type annotations for
-`aiobotocore.create_client("sagemaker").get_paginator("search")`.
+`session.create_client("sagemaker").get_paginator("search")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_sagemaker.paginator import SearchPaginator
 
-def get_search_paginator() -> SearchPaginator:
-    return Session().create_client("sagemaker").get_paginator("search")
+session = get_session()
+async with session.create_client("sagemaker") as client:
+    client: SageMakerClient
+    paginator: SearchPaginator = client.get_paginator("search")
 ```
 
 Boto3 documentation:

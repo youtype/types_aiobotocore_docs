@@ -26,17 +26,19 @@ type annotations stubs module
 ## GetFlowTemplateRevisionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_paginator("get_flow_template_revisions")`.
+`session.create_client("iotthingsgraph").get_paginator("get_flow_template_revisions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotthingsgraph.paginator import GetFlowTemplateRevisionsPaginator
 
-def get_get_flow_template_revisions_paginator() -> GetFlowTemplateRevisionsPaginator:
-    return Session().create_client("iotthingsgraph").get_paginator("get_flow_template_revisions")
+session = get_session()
+async with session.create_client("iotthingsgraph") as client:
+    client: IoTThingsGraphClient
+    paginator: GetFlowTemplateRevisionsPaginator = client.get_paginator("get_flow_template_revisions")
 ```
 
 Boto3 documentation:
@@ -56,17 +58,19 @@ Arguments for `GetFlowTemplateRevisionsPaginator.paginate` method:
 ## GetSystemTemplateRevisionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_paginator("get_system_template_revisions")`.
+`session.create_client("iotthingsgraph").get_paginator("get_system_template_revisions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotthingsgraph.paginator import GetSystemTemplateRevisionsPaginator
 
-def get_get_system_template_revisions_paginator() -> GetSystemTemplateRevisionsPaginator:
-    return Session().create_client("iotthingsgraph").get_paginator("get_system_template_revisions")
+session = get_session()
+async with session.create_client("iotthingsgraph") as client:
+    client: IoTThingsGraphClient
+    paginator: GetSystemTemplateRevisionsPaginator = client.get_paginator("get_system_template_revisions")
 ```
 
 Boto3 documentation:
@@ -86,17 +90,19 @@ Arguments for `GetSystemTemplateRevisionsPaginator.paginate` method:
 ## ListFlowExecutionMessagesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_paginator("list_flow_execution_messages")`.
+`session.create_client("iotthingsgraph").get_paginator("list_flow_execution_messages")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotthingsgraph.paginator import ListFlowExecutionMessagesPaginator
 
-def get_list_flow_execution_messages_paginator() -> ListFlowExecutionMessagesPaginator:
-    return Session().create_client("iotthingsgraph").get_paginator("list_flow_execution_messages")
+session = get_session()
+async with session.create_client("iotthingsgraph") as client:
+    client: IoTThingsGraphClient
+    paginator: ListFlowExecutionMessagesPaginator = client.get_paginator("list_flow_execution_messages")
 ```
 
 Boto3 documentation:
@@ -116,17 +122,19 @@ Arguments for `ListFlowExecutionMessagesPaginator.paginate` method:
 ## ListTagsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_paginator("list_tags_for_resource")`.
+`session.create_client("iotthingsgraph").get_paginator("list_tags_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotthingsgraph.paginator import ListTagsForResourcePaginator
 
-def get_list_tags_for_resource_paginator() -> ListTagsForResourcePaginator:
-    return Session().create_client("iotthingsgraph").get_paginator("list_tags_for_resource")
+session = get_session()
+async with session.create_client("iotthingsgraph") as client:
+    client: IoTThingsGraphClient
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
 ```
 
 Boto3 documentation:
@@ -146,17 +154,19 @@ Arguments for `ListTagsForResourcePaginator.paginate` method:
 ## SearchEntitiesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_paginator("search_entities")`.
+`session.create_client("iotthingsgraph").get_paginator("search_entities")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotthingsgraph.paginator import SearchEntitiesPaginator
 
-def get_search_entities_paginator() -> SearchEntitiesPaginator:
-    return Session().create_client("iotthingsgraph").get_paginator("search_entities")
+session = get_session()
+async with session.create_client("iotthingsgraph") as client:
+    client: IoTThingsGraphClient
+    paginator: SearchEntitiesPaginator = client.get_paginator("search_entities")
 ```
 
 Boto3 documentation:
@@ -180,17 +190,19 @@ Arguments for `SearchEntitiesPaginator.paginate` method:
 ## SearchFlowExecutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_paginator("search_flow_executions")`.
+`session.create_client("iotthingsgraph").get_paginator("search_flow_executions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotthingsgraph.paginator import SearchFlowExecutionsPaginator
 
-def get_search_flow_executions_paginator() -> SearchFlowExecutionsPaginator:
-    return Session().create_client("iotthingsgraph").get_paginator("search_flow_executions")
+session = get_session()
+async with session.create_client("iotthingsgraph") as client:
+    client: IoTThingsGraphClient
+    paginator: SearchFlowExecutionsPaginator = client.get_paginator("search_flow_executions")
 ```
 
 Boto3 documentation:
@@ -213,17 +225,19 @@ Arguments for `SearchFlowExecutionsPaginator.paginate` method:
 ## SearchFlowTemplatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_paginator("search_flow_templates")`.
+`session.create_client("iotthingsgraph").get_paginator("search_flow_templates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotthingsgraph.paginator import SearchFlowTemplatesPaginator
 
-def get_search_flow_templates_paginator() -> SearchFlowTemplatesPaginator:
-    return Session().create_client("iotthingsgraph").get_paginator("search_flow_templates")
+session = get_session()
+async with session.create_client("iotthingsgraph") as client:
+    client: IoTThingsGraphClient
+    paginator: SearchFlowTemplatesPaginator = client.get_paginator("search_flow_templates")
 ```
 
 Boto3 documentation:
@@ -244,17 +258,19 @@ Arguments for `SearchFlowTemplatesPaginator.paginate` method:
 ## SearchSystemInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_paginator("search_system_instances")`.
+`session.create_client("iotthingsgraph").get_paginator("search_system_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotthingsgraph.paginator import SearchSystemInstancesPaginator
 
-def get_search_system_instances_paginator() -> SearchSystemInstancesPaginator:
-    return Session().create_client("iotthingsgraph").get_paginator("search_system_instances")
+session = get_session()
+async with session.create_client("iotthingsgraph") as client:
+    client: IoTThingsGraphClient
+    paginator: SearchSystemInstancesPaginator = client.get_paginator("search_system_instances")
 ```
 
 Boto3 documentation:
@@ -275,17 +291,19 @@ Arguments for `SearchSystemInstancesPaginator.paginate` method:
 ## SearchSystemTemplatesPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_paginator("search_system_templates")`.
+`session.create_client("iotthingsgraph").get_paginator("search_system_templates")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotthingsgraph.paginator import SearchSystemTemplatesPaginator
 
-def get_search_system_templates_paginator() -> SearchSystemTemplatesPaginator:
-    return Session().create_client("iotthingsgraph").get_paginator("search_system_templates")
+session = get_session()
+async with session.create_client("iotthingsgraph") as client:
+    client: IoTThingsGraphClient
+    paginator: SearchSystemTemplatesPaginator = client.get_paginator("search_system_templates")
 ```
 
 Boto3 documentation:
@@ -306,17 +324,19 @@ Arguments for `SearchSystemTemplatesPaginator.paginate` method:
 ## SearchThingsPaginator
 
 Type annotations for
-`aiobotocore.create_client("iotthingsgraph").get_paginator("search_things")`.
+`session.create_client("iotthingsgraph").get_paginator("search_things")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_iotthingsgraph.paginator import SearchThingsPaginator
 
-def get_search_things_paginator() -> SearchThingsPaginator:
-    return Session().create_client("iotthingsgraph").get_paginator("search_things")
+session = get_session()
+async with session.create_client("iotthingsgraph") as client:
+    client: IoTThingsGraphClient
+    paginator: SearchThingsPaginator = client.get_paginator("search_things")
 ```
 
 Boto3 documentation:

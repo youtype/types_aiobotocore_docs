@@ -46,22 +46,25 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_filter](#update_filter)
     - [update_organization_configuration](#update_organization_configuration)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="inspector2client"></a>
 
 ## Inspector2Client
 
-Type annotations for `aiobotocore.create_client("inspector2")`
+Type annotations for `session.create_client("inspector2")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_inspector2.client import Inspector2Client
 
-def get_inspector2_client() -> Inspector2Client:
-    return Session().client("inspector2")
+session = get_session()
+async with session.create_client("inspector2") as client:
+    client: Inspector2Client
 ```
 
 Boto3 documentation:
@@ -103,8 +106,7 @@ Exceptions:
 
 Inspector2Client exceptions.
 
-Type annotations for `aiobotocore.create_client("inspector2").exceptions`
-method.
+Type annotations for `session.create_client("inspector2").exceptions` method.
 
 Boto3 documentation:
 [Inspector2.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.exceptions)
@@ -118,7 +120,7 @@ Returns [Exceptions](#exceptions).
 Associates an Amazon Web Services account with an Amazon Inspector delegated
 administrator.
 
-Type annotations for `aiobotocore.create_client("inspector2").associate_member`
+Type annotations for `session.create_client("inspector2").associate_member`
 method.
 
 Boto3 documentation:
@@ -144,7 +146,7 @@ Retrieves the Amazon Inspector status of multiple Amazon Web Services accounts
 within your environment.
 
 Type annotations for
-`aiobotocore.create_client("inspector2").batch_get_account_status` method.
+`session.create_client("inspector2").batch_get_account_status` method.
 
 Boto3 documentation:
 [Inspector2.Client.batch_get_account_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.batch_get_account_status)
@@ -169,7 +171,7 @@ Returns a `Coroutine` for
 Gets free trial status for multiple Amazon Web Services accounts.
 
 Type annotations for
-`aiobotocore.create_client("inspector2").batch_get_free_trial_info` method.
+`session.create_client("inspector2").batch_get_free_trial_info` method.
 
 Boto3 documentation:
 [Inspector2.Client.batch_get_free_trial_info](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.batch_get_free_trial_info)
@@ -193,19 +195,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("inspector2").can_paginate`
-method.
+Type annotations for `session.create_client("inspector2").can_paginate` method.
 
 Boto3 documentation:
 [Inspector2.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_findings_report"></a>
 
@@ -214,7 +213,7 @@ Returns a `Coroutine` for `bool`.
 Cancels the given findings report.
 
 Type annotations for
-`aiobotocore.create_client("inspector2").cancel_findings_report` method.
+`session.create_client("inspector2").cancel_findings_report` method.
 
 Boto3 documentation:
 [Inspector2.Client.cancel_findings_report](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.cancel_findings_report)
@@ -238,7 +237,7 @@ Returns a `Coroutine` for
 
 Creates a filter resource using specified filter criteria.
 
-Type annotations for `aiobotocore.create_client("inspector2").create_filter`
+Type annotations for `session.create_client("inspector2").create_filter`
 method.
 
 Boto3 documentation:
@@ -268,7 +267,7 @@ Returns a `Coroutine` for
 Creates a finding report.
 
 Type annotations for
-`aiobotocore.create_client("inspector2").create_findings_report` method.
+`session.create_client("inspector2").create_findings_report` method.
 
 Boto3 documentation:
 [Inspector2.Client.create_findings_report](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.create_findings_report)
@@ -297,7 +296,7 @@ Returns a `Coroutine` for
 
 Deletes a filter resource.
 
-Type annotations for `aiobotocore.create_client("inspector2").delete_filter`
+Type annotations for `session.create_client("inspector2").delete_filter`
 method.
 
 Boto3 documentation:
@@ -324,7 +323,7 @@ organization See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DescribeOrganizationConfiguration).
 
 Type annotations for
-`aiobotocore.create_client("inspector2").describe_organization_configuration`
+`session.create_client("inspector2").describe_organization_configuration`
 method.
 
 Boto3 documentation:
@@ -342,7 +341,7 @@ Returns a `Coroutine` for
 
 Disables Amazon Inspector scans for one or more Amazon Web Services accounts.
 
-Type annotations for `aiobotocore.create_client("inspector2").disable` method.
+Type annotations for `session.create_client("inspector2").disable` method.
 
 Boto3 documentation:
 [Inspector2.Client.disable](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.disable)
@@ -368,8 +367,7 @@ Returns a `Coroutine` for
 Disables the Amazon Inspector delegated administrator for your organization.
 
 Type annotations for
-`aiobotocore.create_client("inspector2").disable_delegated_admin_account`
-method.
+`session.create_client("inspector2").disable_delegated_admin_account` method.
 
 Boto3 documentation:
 [Inspector2.Client.disable_delegated_admin_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.disable_delegated_admin_account)
@@ -394,8 +392,8 @@ Returns a `Coroutine` for
 Disassociates a member account from an Amazon Inspector delegated
 administrator.
 
-Type annotations for
-`aiobotocore.create_client("inspector2").disassociate_member` method.
+Type annotations for `session.create_client("inspector2").disassociate_member`
+method.
 
 Boto3 documentation:
 [Inspector2.Client.disassociate_member](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.disassociate_member)
@@ -419,7 +417,7 @@ Returns a `Coroutine` for
 
 Enables Amazon Inspector scans for one or more Amazon Web Services accounts.
 
-Type annotations for `aiobotocore.create_client("inspector2").enable` method.
+Type annotations for `session.create_client("inspector2").enable` method.
 
 Boto3 documentation:
 [Inspector2.Client.enable](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.enable)
@@ -448,8 +446,7 @@ Enables the Amazon Inspector delegated administrator for your Organizations
 organization.
 
 Type annotations for
-`aiobotocore.create_client("inspector2").enable_delegated_admin_account`
-method.
+`session.create_client("inspector2").enable_delegated_admin_account` method.
 
 Boto3 documentation:
 [Inspector2.Client.enable_delegated_admin_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.enable_delegated_admin_account)
@@ -475,7 +472,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("inspector2").generate_presigned_url` method.
+`session.create_client("inspector2").generate_presigned_url` method.
 
 Boto3 documentation:
 [Inspector2.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.generate_presigned_url)
@@ -500,7 +497,7 @@ Retrieves information about the Amazon Inspector delegated administrator for
 your organization.
 
 Type annotations for
-`aiobotocore.create_client("inspector2").get_delegated_admin_account` method.
+`session.create_client("inspector2").get_delegated_admin_account` method.
 
 Boto3 documentation:
 [Inspector2.Client.get_delegated_admin_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.get_delegated_admin_account)
@@ -518,7 +515,7 @@ Returns a `Coroutine` for
 Gets the status of a findings report.
 
 Type annotations for
-`aiobotocore.create_client("inspector2").get_findings_report_status` method.
+`session.create_client("inspector2").get_findings_report_status` method.
 
 Boto3 documentation:
 [Inspector2.Client.get_findings_report_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.get_findings_report_status)
@@ -542,8 +539,7 @@ Returns a `Coroutine` for
 
 Gets member information for your organization.
 
-Type annotations for `aiobotocore.create_client("inspector2").get_member`
-method.
+Type annotations for `session.create_client("inspector2").get_member` method.
 
 Boto3 documentation:
 [Inspector2.Client.get_member](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.get_member)
@@ -567,7 +563,7 @@ Returns a `Coroutine` for
 Lists the permissions an account has to configure Amazon Inspector.
 
 Type annotations for
-`aiobotocore.create_client("inspector2").list_account_permissions` method.
+`session.create_client("inspector2").list_account_permissions` method.
 
 Boto3 documentation:
 [Inspector2.Client.list_account_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.list_account_permissions)
@@ -593,7 +589,7 @@ Returns a `Coroutine` for
 
 Lists coverage details for you environment.
 
-Type annotations for `aiobotocore.create_client("inspector2").list_coverage`
+Type annotations for `session.create_client("inspector2").list_coverage`
 method.
 
 Boto3 documentation:
@@ -621,7 +617,7 @@ Returns a `Coroutine` for
 Lists Amazon Inspector coverage statistics for your environment.
 
 Type annotations for
-`aiobotocore.create_client("inspector2").list_coverage_statistics` method.
+`session.create_client("inspector2").list_coverage_statistics` method.
 
 Boto3 documentation:
 [Inspector2.Client.list_coverage_statistics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.list_coverage_statistics)
@@ -650,7 +646,7 @@ Lists information about the Amazon Inspector delegated administrator of your
 organization.
 
 Type annotations for
-`aiobotocore.create_client("inspector2").list_delegated_admin_accounts` method.
+`session.create_client("inspector2").list_delegated_admin_accounts` method.
 
 Boto3 documentation:
 [Inspector2.Client.list_delegated_admin_accounts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.list_delegated_admin_accounts)
@@ -675,8 +671,7 @@ Returns a `Coroutine` for
 
 Lists the filters associated with your account.
 
-Type annotations for `aiobotocore.create_client("inspector2").list_filters`
-method.
+Type annotations for `session.create_client("inspector2").list_filters` method.
 
 Boto3 documentation:
 [Inspector2.Client.list_filters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.list_filters)
@@ -703,7 +698,7 @@ Returns a `Coroutine` for
 Lists aggregated finding data for your environment based on specific criteria.
 
 Type annotations for
-`aiobotocore.create_client("inspector2").list_finding_aggregations` method.
+`session.create_client("inspector2").list_finding_aggregations` method.
 
 Boto3 documentation:
 [Inspector2.Client.list_finding_aggregations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.list_finding_aggregations)
@@ -734,7 +729,7 @@ Returns a `Coroutine` for
 
 Lists findings for your environment.
 
-Type annotations for `aiobotocore.create_client("inspector2").list_findings`
+Type annotations for `session.create_client("inspector2").list_findings`
 method.
 
 Boto3 documentation:
@@ -763,8 +758,7 @@ Returns a `Coroutine` for
 List members associated with the Amazon Inspector delegated administrator for
 your organization.
 
-Type annotations for `aiobotocore.create_client("inspector2").list_members`
-method.
+Type annotations for `session.create_client("inspector2").list_members` method.
 
 Boto3 documentation:
 [Inspector2.Client.list_members](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.list_members)
@@ -790,7 +784,7 @@ Returns a `Coroutine` for
 Lists all tags attached to a given resource.
 
 Type annotations for
-`aiobotocore.create_client("inspector2").list_tags_for_resource` method.
+`session.create_client("inspector2").list_tags_for_resource` method.
 
 Boto3 documentation:
 [Inspector2.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.list_tags_for_resource)
@@ -814,8 +808,8 @@ Returns a `Coroutine` for
 
 Lists the Amazon Inspector usage totals over the last 30 days.
 
-Type annotations for
-`aiobotocore.create_client("inspector2").list_usage_totals` method.
+Type annotations for `session.create_client("inspector2").list_usage_totals`
+method.
 
 Boto3 documentation:
 [Inspector2.Client.list_usage_totals](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.list_usage_totals)
@@ -840,8 +834,7 @@ Returns a `Coroutine` for
 
 Adds tags to a resource.
 
-Type annotations for `aiobotocore.create_client("inspector2").tag_resource`
-method.
+Type annotations for `session.create_client("inspector2").tag_resource` method.
 
 Boto3 documentation:
 [Inspector2.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.tag_resource)
@@ -864,7 +857,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from a resource.
 
-Type annotations for `aiobotocore.create_client("inspector2").untag_resource`
+Type annotations for `session.create_client("inspector2").untag_resource`
 method.
 
 Boto3 documentation:
@@ -889,7 +882,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Specifies the action that is to be applied to the findings that match the
 filter.
 
-Type annotations for `aiobotocore.create_client("inspector2").update_filter`
+Type annotations for `session.create_client("inspector2").update_filter`
 method.
 
 Boto3 documentation:
@@ -919,8 +912,7 @@ Returns a `Coroutine` for
 Updates the configurations for your Amazon Inspector organization.
 
 Type annotations for
-`aiobotocore.create_client("inspector2").update_organization_configuration`
-method.
+`session.create_client("inspector2").update_organization_configuration` method.
 
 Boto3 documentation:
 [Inspector2.Client.update_organization_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.update_organization_configuration)
@@ -939,12 +931,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateOrganizationConfigurationResponseTypeDef](./type_defs.md#updateorganizationconfigurationresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("inspector2").__aenter__` method.
+
+Boto3 documentation:
+[Inspector2.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [Inspector2Client](#inspector2client).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("inspector2").__aexit__` method.
+
+Boto3 documentation:
+[Inspector2.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html#Inspector2.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("inspector2").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("inspector2").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_account_permissions")` ->
   [ListAccountPermissionsPaginator](./paginators.md#listaccountpermissionspaginator)

@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListContainersPaginator
 
 Type annotations for
-`aiobotocore.create_client("mediastore").get_paginator("list_containers")`.
+`session.create_client("mediastore").get_paginator("list_containers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_mediastore.paginator import ListContainersPaginator
 
-def get_list_containers_paginator() -> ListContainersPaginator:
-    return Session().create_client("mediastore").get_paginator("list_containers")
+session = get_session()
+async with session.create_client("mediastore") as client:
+    client: MediaStoreClient
+    paginator: ListContainersPaginator = client.get_paginator("list_containers")
 ```
 
 Boto3 documentation:

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[acm-pca]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[acm-pca]'
+
+# standalone installation
 pip install types-aiobotocore-acm-pca
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-acm-pca
 
 ## ACMPCAClient
 
-Type annotations for `aiobotocore.create_client("acm-pca")` as
+Type annotations for `session.create_client("acm-pca")` as
 [ACMPCAClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_acm_pca.client import ACMPCAClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_certificate_authority](./client.md#create_certificate_authority)
 - [create_certificate_authority_audit_report](./client.md#create_certificate_authority_audit_report)
@@ -109,7 +115,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_acm_pca.paginators import ListCertificateAuthoritiesPaginator, ...
+from types_aiobotocore_acm_pca.paginator import ListCertificateAuthoritiesPaginator, ...
 ```
 
 - [ListCertificateAuthoritiesPaginator](./paginators.md#listcertificateauthoritiespaginator)
@@ -126,7 +132,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_acm_pca.waiters import AuditReportCreatedWaiter, ...
+from types_aiobotocore_acm_pca.waiter import AuditReportCreatedWaiter, ...
 ```
 
 - [AuditReportCreatedWaiter](./waiters.md#auditreportcreatedwaiter)

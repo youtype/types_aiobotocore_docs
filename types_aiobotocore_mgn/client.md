@@ -45,22 +45,25 @@ type annotations stubs module
     - [update_replication_configuration](#update_replication_configuration)
     - [update_replication_configuration_template](#update_replication_configuration_template)
     - [update_source_server_replication_type](#update_source_server_replication_type)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="mgnclient"></a>
 
 ## mgnClient
 
-Type annotations for `aiobotocore.create_client("mgn")`
+Type annotations for `session.create_client("mgn")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_mgn.client import mgnClient
 
-def get_mgn_client() -> mgnClient:
-    return Session().client("mgn")
+session = get_session()
+async with session.create_client("mgn") as client:
+    client: mgnClient
 ```
 
 Boto3 documentation:
@@ -102,7 +105,7 @@ Exceptions:
 
 mgnClient exceptions.
 
-Type annotations for `aiobotocore.create_client("mgn").exceptions` method.
+Type annotations for `session.create_client("mgn").exceptions` method.
 
 Boto3 documentation:
 [mgn.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.exceptions)
@@ -115,18 +118,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("mgn").can_paginate` method.
+Type annotations for `session.create_client("mgn").can_paginate` method.
 
 Boto3 documentation:
 [mgn.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="change_server_life_cycle_state"></a>
 
@@ -136,7 +137,7 @@ Allows the user to set the SourceServer.LifeCycle.state property for specific
 Source Server IDs to one of the following: READY_FOR_TEST or READY_FOR_CUTOVER.
 
 Type annotations for
-`aiobotocore.create_client("mgn").change_server_life_cycle_state` method.
+`session.create_client("mgn").change_server_life_cycle_state` method.
 
 Boto3 documentation:
 [mgn.Client.change_server_life_cycle_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.change_server_life_cycle_state)
@@ -164,7 +165,7 @@ Returns a `Coroutine` for
 Creates a new ReplicationConfigurationTemplate.
 
 Type annotations for
-`aiobotocore.create_client("mgn").create_replication_configuration_template`
+`session.create_client("mgn").create_replication_configuration_template`
 method.
 
 Boto3 documentation:
@@ -207,7 +208,7 @@ Returns a `Coroutine` for
 
 Deletes a single Job by ID.
 
-Type annotations for `aiobotocore.create_client("mgn").delete_job` method.
+Type annotations for `session.create_client("mgn").delete_job` method.
 
 Boto3 documentation:
 [mgn.Client.delete_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.delete_job)
@@ -231,7 +232,7 @@ Deletes a single Replication Configuration Template by ID See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteReplicationConfigurationTemplate).
 
 Type annotations for
-`aiobotocore.create_client("mgn").delete_replication_configuration_template`
+`session.create_client("mgn").delete_replication_configuration_template`
 method.
 
 Boto3 documentation:
@@ -255,7 +256,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a single source server by ID.
 
-Type annotations for `aiobotocore.create_client("mgn").delete_source_server`
+Type annotations for `session.create_client("mgn").delete_source_server`
 method.
 
 Boto3 documentation:
@@ -279,7 +280,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a single vCenter client by ID.
 
-Type annotations for `aiobotocore.create_client("mgn").delete_vcenter_client`
+Type annotations for `session.create_client("mgn").delete_vcenter_client`
 method.
 
 Boto3 documentation:
@@ -301,7 +302,7 @@ Keyword-only arguments:
 
 Retrieves detailed Job log with paging.
 
-Type annotations for `aiobotocore.create_client("mgn").describe_job_log_items`
+Type annotations for `session.create_client("mgn").describe_job_log_items`
 method.
 
 Boto3 documentation:
@@ -328,7 +329,7 @@ Returns a `Coroutine` for
 
 Returns a list of Jobs.
 
-Type annotations for `aiobotocore.create_client("mgn").describe_jobs` method.
+Type annotations for `session.create_client("mgn").describe_jobs` method.
 
 Boto3 documentation:
 [mgn.Client.describe_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.describe_jobs)
@@ -356,7 +357,7 @@ Returns a `Coroutine` for
 Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs.
 
 Type annotations for
-`aiobotocore.create_client("mgn").describe_replication_configuration_templates`
+`session.create_client("mgn").describe_replication_configuration_templates`
 method.
 
 Boto3 documentation:
@@ -384,7 +385,7 @@ Returns a `Coroutine` for
 
 Retrieves all SourceServers or multiple SourceServers by ID.
 
-Type annotations for `aiobotocore.create_client("mgn").describe_source_servers`
+Type annotations for `session.create_client("mgn").describe_source_servers`
 method.
 
 Boto3 documentation:
@@ -413,8 +414,8 @@ Returns a `Coroutine` for
 
 Lists all vCenter clients.
 
-Type annotations for
-`aiobotocore.create_client("mgn").describe_vcenter_clients` method.
+Type annotations for `session.create_client("mgn").describe_vcenter_clients`
+method.
 
 Boto3 documentation:
 [mgn.Client.describe_vcenter_clients](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.describe_vcenter_clients)
@@ -439,7 +440,7 @@ Returns a `Coroutine` for
 
 Disconnects specific Source Servers from Application Migration Service.
 
-Type annotations for `aiobotocore.create_client("mgn").disconnect_from_service`
+Type annotations for `session.create_client("mgn").disconnect_from_service`
 method.
 
 Boto3 documentation:
@@ -464,8 +465,7 @@ Returns a `Coroutine` for
 
 Finalizes the cutover immediately for specific Source Servers.
 
-Type annotations for `aiobotocore.create_client("mgn").finalize_cutover`
-method.
+Type annotations for `session.create_client("mgn").finalize_cutover` method.
 
 Boto3 documentation:
 [mgn.Client.finalize_cutover](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.finalize_cutover)
@@ -488,7 +488,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("mgn").generate_presigned_url`
+Type annotations for `session.create_client("mgn").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -512,8 +512,8 @@ Returns a `Coroutine` for `str`.
 
 Lists all LaunchConfigurations available, filtered by Source Server IDs.
 
-Type annotations for
-`aiobotocore.create_client("mgn").get_launch_configuration` method.
+Type annotations for `session.create_client("mgn").get_launch_configuration`
+method.
 
 Boto3 documentation:
 [mgn.Client.get_launch_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.get_launch_configuration)
@@ -538,7 +538,7 @@ Returns a `Coroutine` for
 Lists all ReplicationConfigurations, filtered by Source Server ID.
 
 Type annotations for
-`aiobotocore.create_client("mgn").get_replication_configuration` method.
+`session.create_client("mgn").get_replication_configuration` method.
 
 Boto3 documentation:
 [mgn.Client.get_replication_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.get_replication_configuration)
@@ -562,8 +562,7 @@ Returns a `Coroutine` for
 
 Initialize Application Migration Service.
 
-Type annotations for `aiobotocore.create_client("mgn").initialize_service`
-method.
+Type annotations for `session.create_client("mgn").initialize_service` method.
 
 Boto3 documentation:
 [mgn.Client.initialize_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.initialize_service)
@@ -579,7 +578,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 List all tags for your Application Migration Service resources.
 
-Type annotations for `aiobotocore.create_client("mgn").list_tags_for_resource`
+Type annotations for `session.create_client("mgn").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -605,8 +604,7 @@ Returns a `Coroutine` for
 Archives specific Source Servers by setting the SourceServer.isArchived
 property to true for specified SourceServers by ID.
 
-Type annotations for `aiobotocore.create_client("mgn").mark_as_archived`
-method.
+Type annotations for `session.create_client("mgn").mark_as_archived` method.
 
 Boto3 documentation:
 [mgn.Client.mark_as_archived](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.mark_as_archived)
@@ -631,7 +629,7 @@ Causes the data replication initiation sequence to begin immediately upon next
 Handshake for specified SourceServer IDs, regardless of when the previous
 initiation started.
 
-Type annotations for `aiobotocore.create_client("mgn").retry_data_replication`
+Type annotations for `session.create_client("mgn").retry_data_replication`
 method.
 
 Boto3 documentation:
@@ -656,7 +654,7 @@ Returns a `Coroutine` for
 
 Launches a Cutover Instance for specific Source Servers.
 
-Type annotations for `aiobotocore.create_client("mgn").start_cutover` method.
+Type annotations for `session.create_client("mgn").start_cutover` method.
 
 Boto3 documentation:
 [mgn.Client.start_cutover](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.start_cutover)
@@ -680,8 +678,7 @@ Returns a `Coroutine` for
 
 Starts replication on source server by ID.
 
-Type annotations for `aiobotocore.create_client("mgn").start_replication`
-method.
+Type annotations for `session.create_client("mgn").start_replication` method.
 
 Boto3 documentation:
 [mgn.Client.start_replication](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.start_replication)
@@ -704,7 +701,7 @@ Returns a `Coroutine` for
 
 Lauches a Test Instance for specific Source Servers.
 
-Type annotations for `aiobotocore.create_client("mgn").start_test` method.
+Type annotations for `session.create_client("mgn").start_test` method.
 
 Boto3 documentation:
 [mgn.Client.start_test](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.start_test)
@@ -729,7 +726,7 @@ Returns a `Coroutine` for
 Adds or overwrites only the specified tags for the specified Application
 Migration Service resource or resources.
 
-Type annotations for `aiobotocore.create_client("mgn").tag_resource` method.
+Type annotations for `session.create_client("mgn").tag_resource` method.
 
 Boto3 documentation:
 [mgn.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.tag_resource)
@@ -750,8 +747,8 @@ Keyword-only arguments:
 
 Starts a job that terminates specific launched EC2 Test and Cutover instances.
 
-Type annotations for
-`aiobotocore.create_client("mgn").terminate_target_instances` method.
+Type annotations for `session.create_client("mgn").terminate_target_instances`
+method.
 
 Boto3 documentation:
 [mgn.Client.terminate_target_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.terminate_target_instances)
@@ -777,7 +774,7 @@ Returns a `Coroutine` for
 Deletes the specified set of tags from the specified set of Application
 Migration Service resources.
 
-Type annotations for `aiobotocore.create_client("mgn").untag_resource` method.
+Type annotations for `session.create_client("mgn").untag_resource` method.
 
 Boto3 documentation:
 [mgn.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.untag_resource)
@@ -798,8 +795,8 @@ Keyword-only arguments:
 
 Updates multiple LaunchConfigurations by Source Server ID.
 
-Type annotations for
-`aiobotocore.create_client("mgn").update_launch_configuration` method.
+Type annotations for `session.create_client("mgn").update_launch_configuration`
+method.
 
 Boto3 documentation:
 [mgn.Client.update_launch_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.update_launch_configuration)
@@ -832,7 +829,7 @@ Returns a `Coroutine` for
 Allows you to update multiple ReplicationConfigurations by Source Server ID.
 
 Type annotations for
-`aiobotocore.create_client("mgn").update_replication_configuration` method.
+`session.create_client("mgn").update_replication_configuration` method.
 
 Boto3 documentation:
 [mgn.Client.update_replication_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.update_replication_configuration)
@@ -875,7 +872,7 @@ Returns a `Coroutine` for
 Updates multiple ReplicationConfigurationTemplates by ID.
 
 Type annotations for
-`aiobotocore.create_client("mgn").update_replication_configuration_template`
+`session.create_client("mgn").update_replication_configuration_template`
 method.
 
 Boto3 documentation:
@@ -917,8 +914,7 @@ Returns a `Coroutine` for
 Updates source server Replication Type by ID.
 
 Type annotations for
-`aiobotocore.create_client("mgn").update_source_server_replication_type`
-method.
+`session.create_client("mgn").update_source_server_replication_type` method.
 
 Boto3 documentation:
 [mgn.Client.update_source_server_replication_type](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.update_source_server_replication_type)
@@ -938,12 +934,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [SourceServerResponseMetadataTypeDef](./type_defs.md#sourceserverresponsemetadatatypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("mgn").__aenter__` method.
+
+Boto3 documentation:
+[mgn.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [mgnClient](#mgnclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("mgn").__aexit__` method.
+
+Boto3 documentation:
+[mgn.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("mgn").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("mgn").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_job_log_items")` ->
   [DescribeJobLogItemsPaginator](./paginators.md#describejoblogitemspaginator)

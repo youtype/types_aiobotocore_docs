@@ -531,6 +531,8 @@ type annotations stubs module
     - [update_security_group_rule_descriptions_egress](#update_security_group_rule_descriptions_egress)
     - [update_security_group_rule_descriptions_ingress](#update_security_group_rule_descriptions_ingress)
     - [withdraw_byoip_cidr](#withdraw_byoip_cidr)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -538,16 +540,17 @@ type annotations stubs module
 
 ## EC2Client
 
-Type annotations for `aiobotocore.create_client("ec2")`
+Type annotations for `session.create_client("ec2")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_ec2.client import EC2Client
 
-def get_ec2_client() -> EC2Client:
-    return Session().client("ec2")
+session = get_session()
+async with session.create_client("ec2") as client:
+    client: EC2Client
 ```
 
 Boto3 documentation:
@@ -581,7 +584,7 @@ Exceptions:
 
 EC2Client exceptions.
 
-Type annotations for `aiobotocore.create_client("ec2").exceptions` method.
+Type annotations for `session.create_client("ec2").exceptions` method.
 
 Boto3 documentation:
 [EC2.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.exceptions)
@@ -596,8 +599,7 @@ Accepts the Convertible Reserved Instance exchange quote described in the
 GetReservedInstancesExchangeQuote call.
 
 Type annotations for
-`aiobotocore.create_client("ec2").accept_reserved_instances_exchange_quote`
-method.
+`session.create_client("ec2").accept_reserved_instances_exchange_quote` method.
 
 Boto3 documentation:
 [EC2.Client.accept_reserved_instances_exchange_quote](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.accept_reserved_instances_exchange_quote)
@@ -625,7 +627,7 @@ Returns a `Coroutine` for
 Accepts a request to associate subnets with a transit gateway multicast domain.
 
 Type annotations for
-`aiobotocore.create_client("ec2").accept_transit_gateway_multicast_domain_associations`
+`session.create_client("ec2").accept_transit_gateway_multicast_domain_associations`
 method.
 
 Boto3 documentation:
@@ -655,7 +657,7 @@ Returns a `Coroutine` for
 Accepts a transit gateway peering attachment request.
 
 Type annotations for
-`aiobotocore.create_client("ec2").accept_transit_gateway_peering_attachment`
+`session.create_client("ec2").accept_transit_gateway_peering_attachment`
 method.
 
 Boto3 documentation:
@@ -682,8 +684,7 @@ Returns a `Coroutine` for
 Accepts a request to attach a VPC to a transit gateway.
 
 Type annotations for
-`aiobotocore.create_client("ec2").accept_transit_gateway_vpc_attachment`
-method.
+`session.create_client("ec2").accept_transit_gateway_vpc_attachment` method.
 
 Boto3 documentation:
 [EC2.Client.accept_transit_gateway_vpc_attachment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.accept_transit_gateway_vpc_attachment)
@@ -710,7 +711,7 @@ Accepts one or more interface VPC endpoint connection requests to your VPC
 endpoint service.
 
 Type annotations for
-`aiobotocore.create_client("ec2").accept_vpc_endpoint_connections` method.
+`session.create_client("ec2").accept_vpc_endpoint_connections` method.
 
 Boto3 documentation:
 [EC2.Client.accept_vpc_endpoint_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.accept_vpc_endpoint_connections)
@@ -737,7 +738,7 @@ Returns a `Coroutine` for
 Accept a VPC peering connection request.
 
 Type annotations for
-`aiobotocore.create_client("ec2").accept_vpc_peering_connection` method.
+`session.create_client("ec2").accept_vpc_peering_connection` method.
 
 Boto3 documentation:
 [EC2.Client.accept_vpc_peering_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.accept_vpc_peering_connection)
@@ -763,7 +764,7 @@ Returns a `Coroutine` for
 Advertises an IPv4 or IPv6 address range that is provisioned for use with your
 Amazon Web Services resources through bring your own IP addresses (BYOIP).
 
-Type annotations for `aiobotocore.create_client("ec2").advertise_byoip_cidr`
+Type annotations for `session.create_client("ec2").advertise_byoip_cidr`
 method.
 
 Boto3 documentation:
@@ -789,8 +790,7 @@ Returns a `Coroutine` for
 
 Allocates an Elastic IP address to your Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("ec2").allocate_address`
-method.
+Type annotations for `session.create_client("ec2").allocate_address` method.
 
 Boto3 documentation:
 [EC2.Client.allocate_address](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.allocate_address)
@@ -820,7 +820,7 @@ Returns a `Coroutine` for
 
 Allocates a Dedicated Host to your account.
 
-Type annotations for `aiobotocore.create_client("ec2").allocate_hosts` method.
+Type annotations for `session.create_client("ec2").allocate_hosts` method.
 
 Boto3 documentation:
 [EC2.Client.allocate_hosts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.allocate_hosts)
@@ -851,7 +851,7 @@ Returns a `Coroutine` for
 
 Allocate a CIDR from an IPAM pool.
 
-Type annotations for `aiobotocore.create_client("ec2").allocate_ipam_pool_cidr`
+Type annotations for `session.create_client("ec2").allocate_ipam_pool_cidr`
 method.
 
 Boto3 documentation:
@@ -885,7 +885,7 @@ Applies a security group to the association between the target network and the
 Client VPN endpoint.
 
 Type annotations for
-`aiobotocore.create_client("ec2").apply_security_groups_to_client_vpn_target_network`
+`session.create_client("ec2").apply_security_groups_to_client_vpn_target_network`
 method.
 
 Boto3 documentation:
@@ -914,7 +914,7 @@ Returns a `Coroutine` for
 
 Assigns one or more IPv6 addresses to the specified network interface.
 
-Type annotations for `aiobotocore.create_client("ec2").assign_ipv6_addresses`
+Type annotations for `session.create_client("ec2").assign_ipv6_addresses`
 method.
 
 Boto3 documentation:
@@ -944,8 +944,8 @@ Returns a `Coroutine` for
 Assigns one or more secondary private IP addresses to the specified network
 interface.
 
-Type annotations for
-`aiobotocore.create_client("ec2").assign_private_ip_addresses` method.
+Type annotations for `session.create_client("ec2").assign_private_ip_addresses`
+method.
 
 Boto3 documentation:
 [EC2.Client.assign_private_ip_addresses](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.assign_private_ip_addresses)
@@ -975,8 +975,7 @@ Returns a `Coroutine` for
 Associates an Elastic IP address, or carrier IP address (for instances that are
 in subnets in Wavelength Zones) with an instance or a network interface.
 
-Type annotations for `aiobotocore.create_client("ec2").associate_address`
-method.
+Type annotations for `session.create_client("ec2").associate_address` method.
 
 Boto3 documentation:
 [EC2.Client.associate_address](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.associate_address)
@@ -1006,7 +1005,7 @@ Returns a `Coroutine` for
 Associates a target network with a Client VPN endpoint.
 
 Type annotations for
-`aiobotocore.create_client("ec2").associate_client_vpn_target_network` method.
+`session.create_client("ec2").associate_client_vpn_target_network` method.
 
 Boto3 documentation:
 [EC2.Client.associate_client_vpn_target_network](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.associate_client_vpn_target_network)
@@ -1034,7 +1033,7 @@ Returns a `Coroutine` for
 Associates a set of DHCP options (that you've previously created) with the
 specified VPC, or associates no DHCP options with the VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").associate_dhcp_options`
+Type annotations for `session.create_client("ec2").associate_dhcp_options`
 method.
 
 Boto3 documentation:
@@ -1060,8 +1059,7 @@ Associates an Identity and Access Management (IAM) role with an Certificate
 Manager (ACM) certificate.
 
 Type annotations for
-`aiobotocore.create_client("ec2").associate_enclave_certificate_iam_role`
-method.
+`session.create_client("ec2").associate_enclave_certificate_iam_role` method.
 
 Boto3 documentation:
 [EC2.Client.associate_enclave_certificate_iam_role](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.associate_enclave_certificate_iam_role)
@@ -1088,7 +1086,7 @@ Returns a `Coroutine` for
 Associates an IAM instance profile with a running or stopped instance.
 
 Type annotations for
-`aiobotocore.create_client("ec2").associate_iam_instance_profile` method.
+`session.create_client("ec2").associate_iam_instance_profile` method.
 
 Boto3 documentation:
 [EC2.Client.associate_iam_instance_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.associate_iam_instance_profile)
@@ -1116,7 +1114,7 @@ Returns a `Coroutine` for
 Associates one or more targets with an event window.
 
 Type annotations for
-`aiobotocore.create_client("ec2").associate_instance_event_window` method.
+`session.create_client("ec2").associate_instance_event_window` method.
 
 Boto3 documentation:
 [EC2.Client.associate_instance_event_window](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.associate_instance_event_window)
@@ -1145,7 +1143,7 @@ Returns a `Coroutine` for
 Associates a subnet in your VPC or an internet gateway or virtual private
 gateway attached to your VPC with a route table in your VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").associate_route_table`
+Type annotations for `session.create_client("ec2").associate_route_table`
 method.
 
 Boto3 documentation:
@@ -1173,8 +1171,8 @@ Returns a `Coroutine` for
 
 Associates a CIDR block with your subnet.
 
-Type annotations for
-`aiobotocore.create_client("ec2").associate_subnet_cidr_block` method.
+Type annotations for `session.create_client("ec2").associate_subnet_cidr_block`
+method.
 
 Boto3 documentation:
 [EC2.Client.associate_subnet_cidr_block](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.associate_subnet_cidr_block)
@@ -1201,7 +1199,7 @@ Associates the specified subnets and transit gateway attachments with the
 specified transit gateway multicast domain.
 
 Type annotations for
-`aiobotocore.create_client("ec2").associate_transit_gateway_multicast_domain`
+`session.create_client("ec2").associate_transit_gateway_multicast_domain`
 method.
 
 Boto3 documentation:
@@ -1231,8 +1229,7 @@ Associates the specified attachment with the specified transit gateway route
 table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").associate_transit_gateway_route_table`
-method.
+`session.create_client("ec2").associate_transit_gateway_route_table` method.
 
 Boto3 documentation:
 [EC2.Client.associate_transit_gateway_route_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.associate_transit_gateway_route_table)
@@ -1258,8 +1255,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("ec2").associate_trunk_interface` method.
+Type annotations for `session.create_client("ec2").associate_trunk_interface`
+method.
 
 Boto3 documentation:
 [EC2.Client.associate_trunk_interface](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.associate_trunk_interface)
@@ -1288,8 +1285,8 @@ Returns a `Coroutine` for
 
 Associates a CIDR block with your VPC.
 
-Type annotations for
-`aiobotocore.create_client("ec2").associate_vpc_cidr_block` method.
+Type annotations for `session.create_client("ec2").associate_vpc_cidr_block`
+method.
 
 Boto3 documentation:
 [EC2.Client.associate_vpc_cidr_block](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.associate_vpc_cidr_block)
@@ -1323,7 +1320,7 @@ Returns a `Coroutine` for
 Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or more
 of the VPC's security groups.
 
-Type annotations for `aiobotocore.create_client("ec2").attach_classic_link_vpc`
+Type annotations for `session.create_client("ec2").attach_classic_link_vpc`
 method.
 
 Boto3 documentation:
@@ -1352,7 +1349,7 @@ Returns a `Coroutine` for
 Attaches an internet gateway or a virtual private gateway to a VPC, enabling
 connectivity between the internet and the VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").attach_internet_gateway`
+Type annotations for `session.create_client("ec2").attach_internet_gateway`
 method.
 
 Boto3 documentation:
@@ -1376,8 +1373,8 @@ Keyword-only arguments:
 
 Attaches a network interface to an instance.
 
-Type annotations for
-`aiobotocore.create_client("ec2").attach_network_interface` method.
+Type annotations for `session.create_client("ec2").attach_network_interface`
+method.
 
 Boto3 documentation:
 [EC2.Client.attach_network_interface](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.attach_network_interface)
@@ -1406,7 +1403,7 @@ Returns a `Coroutine` for
 Attaches an EBS volume to a running or stopped instance and exposes it to the
 instance with the specified device name.
 
-Type annotations for `aiobotocore.create_client("ec2").attach_volume` method.
+Type annotations for `session.create_client("ec2").attach_volume` method.
 
 Boto3 documentation:
 [EC2.Client.attach_volume](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.attach_volume)
@@ -1432,8 +1429,7 @@ Returns a `Coroutine` for
 
 Attaches a virtual private gateway to a VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").attach_vpn_gateway`
-method.
+Type annotations for `session.create_client("ec2").attach_vpn_gateway` method.
 
 Boto3 documentation:
 [EC2.Client.attach_vpn_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.attach_vpn_gateway)
@@ -1460,7 +1456,7 @@ Returns a `Coroutine` for
 Adds an ingress authorization rule to a Client VPN endpoint.
 
 Type annotations for
-`aiobotocore.create_client("ec2").authorize_client_vpn_ingress` method.
+`session.create_client("ec2").authorize_client_vpn_ingress` method.
 
 Boto3 documentation:
 [EC2.Client.authorize_client_vpn_ingress](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.authorize_client_vpn_ingress)
@@ -1489,7 +1485,7 @@ Returns a `Coroutine` for
 ### authorize_security_group_egress
 
 Type annotations for
-`aiobotocore.create_client("ec2").authorize_security_group_egress` method.
+`session.create_client("ec2").authorize_security_group_egress` method.
 
 Boto3 documentation:
 [EC2.Client.authorize_security_group_egress](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.authorize_security_group_egress)
@@ -1525,7 +1521,7 @@ Returns a `Coroutine` for
 Adds the specified inbound (ingress) rules to a security group.
 
 Type annotations for
-`aiobotocore.create_client("ec2").authorize_security_group_ingress` method.
+`session.create_client("ec2").authorize_security_group_ingress` method.
 
 Boto3 documentation:
 [EC2.Client.authorize_security_group_ingress](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.authorize_security_group_ingress)
@@ -1561,7 +1557,7 @@ Returns a `Coroutine` for
 
 Bundles an Amazon instance store-backed Windows instance.
 
-Type annotations for `aiobotocore.create_client("ec2").bundle_instance` method.
+Type annotations for `session.create_client("ec2").bundle_instance` method.
 
 Boto3 documentation:
 [EC2.Client.bundle_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.bundle_instance)
@@ -1586,18 +1582,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("ec2").can_paginate` method.
+Type annotations for `session.create_client("ec2").can_paginate` method.
 
 Boto3 documentation:
 [EC2.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_bundle_task"></a>
 
@@ -1605,8 +1599,7 @@ Returns a `Coroutine` for `bool`.
 
 Cancels a bundling operation for an instance store-backed Windows instance.
 
-Type annotations for `aiobotocore.create_client("ec2").cancel_bundle_task`
-method.
+Type annotations for `session.create_client("ec2").cancel_bundle_task` method.
 
 Boto3 documentation:
 [EC2.Client.cancel_bundle_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.cancel_bundle_task)
@@ -1632,8 +1625,8 @@ Returns a `Coroutine` for
 Cancels the specified Capacity Reservation, releases the reserved capacity, and
 changes the Capacity Reservation's state to `cancelled` .
 
-Type annotations for
-`aiobotocore.create_client("ec2").cancel_capacity_reservation` method.
+Type annotations for `session.create_client("ec2").cancel_capacity_reservation`
+method.
 
 Boto3 documentation:
 [EC2.Client.cancel_capacity_reservation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.cancel_capacity_reservation)
@@ -1659,7 +1652,7 @@ Returns a `Coroutine` for
 Cancels one or more Capacity Reservation Fleets.
 
 Type annotations for
-`aiobotocore.create_client("ec2").cancel_capacity_reservation_fleets` method.
+`session.create_client("ec2").cancel_capacity_reservation_fleets` method.
 
 Boto3 documentation:
 [EC2.Client.cancel_capacity_reservation_fleets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.cancel_capacity_reservation_fleets)
@@ -1684,7 +1677,7 @@ Returns a `Coroutine` for
 
 Cancels an active conversion task.
 
-Type annotations for `aiobotocore.create_client("ec2").cancel_conversion_task`
+Type annotations for `session.create_client("ec2").cancel_conversion_task`
 method.
 
 Boto3 documentation:
@@ -1708,8 +1701,7 @@ Keyword-only arguments:
 
 Cancels an active export task.
 
-Type annotations for `aiobotocore.create_client("ec2").cancel_export_task`
-method.
+Type annotations for `session.create_client("ec2").cancel_export_task` method.
 
 Boto3 documentation:
 [EC2.Client.cancel_export_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.cancel_export_task)
@@ -1730,8 +1722,7 @@ Keyword-only arguments:
 
 Cancels an in-process import virtual machine or import snapshot task.
 
-Type annotations for `aiobotocore.create_client("ec2").cancel_import_task`
-method.
+Type annotations for `session.create_client("ec2").cancel_import_task` method.
 
 Boto3 documentation:
 [EC2.Client.cancel_import_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.cancel_import_task)
@@ -1759,7 +1750,7 @@ Cancels the specified Reserved Instance listing in the Reserved Instance
 Marketplace.
 
 Type annotations for
-`aiobotocore.create_client("ec2").cancel_reserved_instances_listing` method.
+`session.create_client("ec2").cancel_reserved_instances_listing` method.
 
 Boto3 documentation:
 [EC2.Client.cancel_reserved_instances_listing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.cancel_reserved_instances_listing)
@@ -1783,8 +1774,8 @@ Returns a `Coroutine` for
 
 Cancels the specified Spot Fleet requests.
 
-Type annotations for
-`aiobotocore.create_client("ec2").cancel_spot_fleet_requests` method.
+Type annotations for `session.create_client("ec2").cancel_spot_fleet_requests`
+method.
 
 Boto3 documentation:
 [EC2.Client.cancel_spot_fleet_requests](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.cancel_spot_fleet_requests)
@@ -1811,7 +1802,7 @@ Returns a `Coroutine` for
 Cancels one or more Spot Instance requests.
 
 Type annotations for
-`aiobotocore.create_client("ec2").cancel_spot_instance_requests` method.
+`session.create_client("ec2").cancel_spot_instance_requests` method.
 
 Boto3 documentation:
 [EC2.Client.cancel_spot_instance_requests](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.cancel_spot_instance_requests)
@@ -1836,8 +1827,8 @@ Returns a `Coroutine` for
 
 Determines whether a product code is associated with an instance.
 
-Type annotations for
-`aiobotocore.create_client("ec2").confirm_product_instance` method.
+Type annotations for `session.create_client("ec2").confirm_product_instance`
+method.
 
 Boto3 documentation:
 [EC2.Client.confirm_product_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.confirm_product_instance)
@@ -1863,7 +1854,7 @@ Returns a `Coroutine` for
 
 Copies the specified Amazon FPGA Image (AFI) to the current Region.
 
-Type annotations for `aiobotocore.create_client("ec2").copy_fpga_image` method.
+Type annotations for `session.create_client("ec2").copy_fpga_image` method.
 
 Boto3 documentation:
 [EC2.Client.copy_fpga_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.copy_fpga_image)
@@ -1891,7 +1882,7 @@ Returns a `Coroutine` for
 
 Initiates the copy of an AMI.
 
-Type annotations for `aiobotocore.create_client("ec2").copy_image` method.
+Type annotations for `session.create_client("ec2").copy_image` method.
 
 Boto3 documentation:
 [EC2.Client.copy_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.copy_image)
@@ -1922,7 +1913,7 @@ Returns a `Coroutine` for
 
 Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3.
 
-Type annotations for `aiobotocore.create_client("ec2").copy_snapshot` method.
+Type annotations for `session.create_client("ec2").copy_snapshot` method.
 
 Boto3 documentation:
 [EC2.Client.copy_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.copy_snapshot)
@@ -1955,8 +1946,8 @@ Returns a `Coroutine` for
 
 Creates a new Capacity Reservation with the specified attributes.
 
-Type annotations for
-`aiobotocore.create_client("ec2").create_capacity_reservation` method.
+Type annotations for `session.create_client("ec2").create_capacity_reservation`
+method.
 
 Boto3 documentation:
 [EC2.Client.create_capacity_reservation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_capacity_reservation)
@@ -2000,7 +1991,7 @@ Returns a `Coroutine` for
 Creates a Capacity Reservation Fleet.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_capacity_reservation_fleet` method.
+`session.create_client("ec2").create_capacity_reservation_fleet` method.
 
 Boto3 documentation:
 [EC2.Client.create_capacity_reservation_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_capacity_reservation_fleet)
@@ -2037,7 +2028,7 @@ Returns a `Coroutine` for
 
 Creates a carrier gateway.
 
-Type annotations for `aiobotocore.create_client("ec2").create_carrier_gateway`
+Type annotations for `session.create_client("ec2").create_carrier_gateway`
 method.
 
 Boto3 documentation:
@@ -2066,8 +2057,8 @@ Returns a `Coroutine` for
 
 Creates a Client VPN endpoint.
 
-Type annotations for
-`aiobotocore.create_client("ec2").create_client_vpn_endpoint` method.
+Type annotations for `session.create_client("ec2").create_client_vpn_endpoint`
+method.
 
 Boto3 documentation:
 [EC2.Client.create_client_vpn_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_client_vpn_endpoint)
@@ -2114,7 +2105,7 @@ Returns a `Coroutine` for
 
 Adds a route to a network to a Client VPN endpoint.
 
-Type annotations for `aiobotocore.create_client("ec2").create_client_vpn_route`
+Type annotations for `session.create_client("ec2").create_client_vpn_route`
 method.
 
 Boto3 documentation:
@@ -2145,7 +2136,7 @@ Returns a `Coroutine` for
 Provides information to Amazon Web Services about your VPN customer gateway
 device.
 
-Type annotations for `aiobotocore.create_client("ec2").create_customer_gateway`
+Type annotations for `session.create_client("ec2").create_customer_gateway`
 method.
 
 Boto3 documentation:
@@ -2179,7 +2170,7 @@ Returns a `Coroutine` for
 Creates a default subnet with a size `/20` IPv4 CIDR block in the specified
 Availability Zone in your default VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").create_default_subnet`
+Type annotations for `session.create_client("ec2").create_default_subnet`
 method.
 
 Boto3 documentation:
@@ -2207,8 +2198,7 @@ Returns a `Coroutine` for
 Creates a default VPC with a size `/16` IPv4 CIDR block and a default subnet in
 each Availability Zone.
 
-Type annotations for `aiobotocore.create_client("ec2").create_default_vpc`
-method.
+Type annotations for `session.create_client("ec2").create_default_vpc` method.
 
 Boto3 documentation:
 [EC2.Client.create_default_vpc](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_default_vpc)
@@ -2232,8 +2222,7 @@ Returns a `Coroutine` for
 
 Creates a set of DHCP options for your VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").create_dhcp_options`
-method.
+Type annotations for `session.create_client("ec2").create_dhcp_options` method.
 
 Boto3 documentation:
 [EC2.Client.create_dhcp_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_dhcp_options)
@@ -2261,7 +2250,7 @@ Returns a `Coroutine` for
 ### create_egress_only_internet_gateway
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_egress_only_internet_gateway` method.
+`session.create_client("ec2").create_egress_only_internet_gateway` method.
 
 Boto3 documentation:
 [EC2.Client.create_egress_only_internet_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_egress_only_internet_gateway)
@@ -2289,7 +2278,7 @@ Returns a `Coroutine` for
 
 Launches an EC2 Fleet.
 
-Type annotations for `aiobotocore.create_client("ec2").create_fleet` method.
+Type annotations for `session.create_client("ec2").create_fleet` method.
 
 Boto3 documentation:
 [EC2.Client.create_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_fleet)
@@ -2334,8 +2323,7 @@ Returns a `Coroutine` for
 Creates one or more flow logs to capture information about IP traffic for a
 specific network interface, subnet, or VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").create_flow_logs`
-method.
+Type annotations for `session.create_client("ec2").create_flow_logs` method.
 
 Boto3 documentation:
 [EC2.Client.create_flow_logs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_flow_logs)
@@ -2375,8 +2363,7 @@ Returns a `Coroutine` for
 
 Creates an Amazon FPGA Image (AFI) from the specified design checkpoint (DCP).
 
-Type annotations for `aiobotocore.create_client("ec2").create_fpga_image`
-method.
+Type annotations for `session.create_client("ec2").create_fpga_image` method.
 
 Boto3 documentation:
 [EC2.Client.create_fpga_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_fpga_image)
@@ -2409,7 +2396,7 @@ Returns a `Coroutine` for
 Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is
 either running or stopped.
 
-Type annotations for `aiobotocore.create_client("ec2").create_image` method.
+Type annotations for `session.create_client("ec2").create_image` method.
 
 Boto3 documentation:
 [EC2.Client.create_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_image)
@@ -2442,7 +2429,7 @@ Creates an event window in which scheduled events for the associated Amazon EC2
 instances can run.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_instance_event_window` method.
+`session.create_client("ec2").create_instance_event_window` method.
 
 Boto3 documentation:
 [EC2.Client.create_instance_event_window](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_instance_event_window)
@@ -2472,8 +2459,8 @@ Returns a `Coroutine` for
 
 Exports a running or stopped instance to an Amazon S3 bucket.
 
-Type annotations for
-`aiobotocore.create_client("ec2").create_instance_export_task` method.
+Type annotations for `session.create_client("ec2").create_instance_export_task`
+method.
 
 Boto3 documentation:
 [EC2.Client.create_instance_export_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_instance_export_task)
@@ -2505,7 +2492,7 @@ Returns a `Coroutine` for
 
 Creates an internet gateway for use with a VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").create_internet_gateway`
+Type annotations for `session.create_client("ec2").create_internet_gateway`
 method.
 
 Boto3 documentation:
@@ -2532,7 +2519,7 @@ Returns a `Coroutine` for
 
 Create an IPAM.
 
-Type annotations for `aiobotocore.create_client("ec2").create_ipam` method.
+Type annotations for `session.create_client("ec2").create_ipam` method.
 
 Boto3 documentation:
 [EC2.Client.create_ipam](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_ipam)
@@ -2561,8 +2548,7 @@ Returns a `Coroutine` for
 
 Create an IP address pool for Amazon VPC IP Address Manager (IPAM).
 
-Type annotations for `aiobotocore.create_client("ec2").create_ipam_pool`
-method.
+Type annotations for `session.create_client("ec2").create_ipam_pool` method.
 
 Boto3 documentation:
 [EC2.Client.create_ipam_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_ipam_pool)
@@ -2602,8 +2588,7 @@ Returns a `Coroutine` for
 
 Create an IPAM scope.
 
-Type annotations for `aiobotocore.create_client("ec2").create_ipam_scope`
-method.
+Type annotations for `session.create_client("ec2").create_ipam_scope` method.
 
 Boto3 documentation:
 [EC2.Client.create_ipam_scope](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_ipam_scope)
@@ -2631,7 +2616,7 @@ Returns a `Coroutine` for
 
 Creates an ED25519 or 2048-bit RSA key pair with the specified name.
 
-Type annotations for `aiobotocore.create_client("ec2").create_key_pair` method.
+Type annotations for `session.create_client("ec2").create_key_pair` method.
 
 Boto3 documentation:
 [EC2.Client.create_key_pair](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_key_pair)
@@ -2657,7 +2642,7 @@ Returns a `Coroutine` for [KeyPairTypeDef](./type_defs.md#keypairtypedef).
 
 Creates a launch template.
 
-Type annotations for `aiobotocore.create_client("ec2").create_launch_template`
+Type annotations for `session.create_client("ec2").create_launch_template`
 method.
 
 Boto3 documentation:
@@ -2691,7 +2676,7 @@ Returns a `Coroutine` for
 Creates a new version for a launch template.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_launch_template_version` method.
+`session.create_client("ec2").create_launch_template_version` method.
 
 Boto3 documentation:
 [EC2.Client.create_launch_template_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_launch_template_version)
@@ -2723,8 +2708,8 @@ Returns a `Coroutine` for
 
 Creates a static route for the specified local gateway route table.
 
-Type annotations for
-`aiobotocore.create_client("ec2").create_local_gateway_route` method.
+Type annotations for `session.create_client("ec2").create_local_gateway_route`
+method.
 
 Boto3 documentation:
 [EC2.Client.create_local_gateway_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_local_gateway_route)
@@ -2752,7 +2737,7 @@ Returns a `Coroutine` for
 Associates the specified VPC with the specified local gateway route table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_local_gateway_route_table_vpc_association`
+`session.create_client("ec2").create_local_gateway_route_table_vpc_association`
 method.
 
 Boto3 documentation:
@@ -2782,8 +2767,8 @@ Returns a `Coroutine` for
 
 Creates a managed prefix list.
 
-Type annotations for
-`aiobotocore.create_client("ec2").create_managed_prefix_list` method.
+Type annotations for `session.create_client("ec2").create_managed_prefix_list`
+method.
 
 Boto3 documentation:
 [EC2.Client.create_managed_prefix_list](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_managed_prefix_list)
@@ -2815,8 +2800,7 @@ Returns a `Coroutine` for
 
 Creates a NAT gateway in the specified subnet.
 
-Type annotations for `aiobotocore.create_client("ec2").create_nat_gateway`
-method.
+Type annotations for `session.create_client("ec2").create_nat_gateway` method.
 
 Boto3 documentation:
 [EC2.Client.create_nat_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_nat_gateway)
@@ -2847,8 +2831,7 @@ Returns a `Coroutine` for
 
 Creates a network ACL in a VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").create_network_acl`
-method.
+Type annotations for `session.create_client("ec2").create_network_acl` method.
 
 Boto3 documentation:
 [EC2.Client.create_network_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_network_acl)
@@ -2875,8 +2858,8 @@ Returns a `Coroutine` for
 
 Creates an entry (a rule) in a network ACL with the specified rule number.
 
-Type annotations for
-`aiobotocore.create_client("ec2").create_network_acl_entry` method.
+Type annotations for `session.create_client("ec2").create_network_acl_entry`
+method.
 
 Boto3 documentation:
 [EC2.Client.create_network_acl_entry](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_network_acl_entry)
@@ -2907,7 +2890,7 @@ Keyword-only arguments:
 Creates a Network Access Scope.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_network_insights_access_scope` method.
+`session.create_client("ec2").create_network_insights_access_scope` method.
 
 Boto3 documentation:
 [EC2.Client.create_network_insights_access_scope](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_network_insights_access_scope)
@@ -2939,7 +2922,7 @@ Returns a `Coroutine` for
 Creates a path to analyze for reachability.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_network_insights_path` method.
+`session.create_client("ec2").create_network_insights_path` method.
 
 Boto3 documentation:
 [EC2.Client.create_network_insights_path](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_network_insights_path)
@@ -2972,8 +2955,8 @@ Returns a `Coroutine` for
 
 Creates a network interface in the specified subnet.
 
-Type annotations for
-`aiobotocore.create_client("ec2").create_network_interface` method.
+Type annotations for `session.create_client("ec2").create_network_interface`
+method.
 
 Boto3 documentation:
 [EC2.Client.create_network_interface](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_network_interface)
@@ -3020,7 +3003,7 @@ Grants an Amazon Web Services-authorized account permission to attach the
 specified network interface to an instance in their account.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_network_interface_permission` method.
+`session.create_client("ec2").create_network_interface_permission` method.
 
 Boto3 documentation:
 [EC2.Client.create_network_interface_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_network_interface_permission)
@@ -3050,7 +3033,7 @@ Returns a `Coroutine` for
 
 Creates a placement group in which to launch instances.
 
-Type annotations for `aiobotocore.create_client("ec2").create_placement_group`
+Type annotations for `session.create_client("ec2").create_placement_group`
 method.
 
 Boto3 documentation:
@@ -3080,7 +3063,7 @@ Returns a `Coroutine` for
 
 Creates a public IPv4 address pool.
 
-Type annotations for `aiobotocore.create_client("ec2").create_public_ipv4_pool`
+Type annotations for `session.create_client("ec2").create_public_ipv4_pool`
 method.
 
 Boto3 documentation:
@@ -3108,7 +3091,7 @@ Returns a `Coroutine` for
 Creates a root volume replacement task for an Amazon EC2 instance.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_replace_root_volume_task` method.
+`session.create_client("ec2").create_replace_root_volume_task` method.
 
 Boto3 documentation:
 [EC2.Client.create_replace_root_volume_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_replace_root_volume_task)
@@ -3139,7 +3122,7 @@ Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in the
 Reserved Instance Marketplace.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_reserved_instances_listing` method.
+`session.create_client("ec2").create_reserved_instances_listing` method.
 
 Boto3 documentation:
 [EC2.Client.create_reserved_instances_listing](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_reserved_instances_listing)
@@ -3171,8 +3154,8 @@ created by using
 [CreateStoreImageTask](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html)\_
 .
 
-Type annotations for
-`aiobotocore.create_client("ec2").create_restore_image_task` method.
+Type annotations for `session.create_client("ec2").create_restore_image_task`
+method.
 
 Boto3 documentation:
 [EC2.Client.create_restore_image_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_restore_image_task)
@@ -3201,7 +3184,7 @@ Returns a `Coroutine` for
 
 Creates a route in a route table within a VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").create_route` method.
+Type annotations for `session.create_client("ec2").create_route` method.
 
 Boto3 documentation:
 [EC2.Client.create_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_route)
@@ -3239,8 +3222,7 @@ Returns a `Coroutine` for
 
 Creates a route table for the specified VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").create_route_table`
-method.
+Type annotations for `session.create_client("ec2").create_route_table` method.
 
 Boto3 documentation:
 [EC2.Client.create_route_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_route_table)
@@ -3267,7 +3249,7 @@ Returns a `Coroutine` for
 
 Creates a security group.
 
-Type annotations for `aiobotocore.create_client("ec2").create_security_group`
+Type annotations for `session.create_client("ec2").create_security_group`
 method.
 
 Boto3 documentation:
@@ -3297,7 +3279,7 @@ Returns a `Coroutine` for
 
 Creates a snapshot of an EBS volume and stores it in Amazon S3.
 
-Type annotations for `aiobotocore.create_client("ec2").create_snapshot` method.
+Type annotations for `session.create_client("ec2").create_snapshot` method.
 
 Boto3 documentation:
 [EC2.Client.create_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_snapshot)
@@ -3326,8 +3308,7 @@ Returns a `Coroutine` for
 Creates crash-consistent snapshots of multiple EBS volumes and stores the data
 in S3.
 
-Type annotations for `aiobotocore.create_client("ec2").create_snapshots`
-method.
+Type annotations for `session.create_client("ec2").create_snapshots` method.
 
 Boto3 documentation:
 [EC2.Client.create_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_snapshots)
@@ -3361,7 +3342,7 @@ Creates a data feed for Spot Instances, enabling you to view Spot Instance
 usage logs.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_spot_datafeed_subscription` method.
+`session.create_client("ec2").create_spot_datafeed_subscription` method.
 
 Boto3 documentation:
 [EC2.Client.create_spot_datafeed_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_spot_datafeed_subscription)
@@ -3387,7 +3368,7 @@ Returns a `Coroutine` for
 
 Stores an AMI as a single object in an Amazon S3 bucket.
 
-Type annotations for `aiobotocore.create_client("ec2").create_store_image_task`
+Type annotations for `session.create_client("ec2").create_store_image_task`
 method.
 
 Boto3 documentation:
@@ -3416,7 +3397,7 @@ Returns a `Coroutine` for
 
 Creates a subnet in a specified VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").create_subnet` method.
+Type annotations for `session.create_client("ec2").create_subnet` method.
 
 Boto3 documentation:
 [EC2.Client.create_subnet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_subnet)
@@ -3449,7 +3430,7 @@ Returns a `Coroutine` for
 Creates a subnet CIDR reservation.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_subnet_cidr_reservation` method.
+`session.create_client("ec2").create_subnet_cidr_reservation` method.
 
 Boto3 documentation:
 [EC2.Client.create_subnet_cidr_reservation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_subnet_cidr_reservation)
@@ -3482,7 +3463,7 @@ Returns a `Coroutine` for
 Adds or overwrites only the specified tags for the specified Amazon EC2
 resource or resources.
 
-Type annotations for `aiobotocore.create_client("ec2").create_tags` method.
+Type annotations for `session.create_client("ec2").create_tags` method.
 
 Boto3 documentation:
 [EC2.Client.create_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_tags)
@@ -3506,7 +3487,7 @@ Keyword-only arguments:
 Creates a Traffic Mirror filter.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_traffic_mirror_filter` method.
+`session.create_client("ec2").create_traffic_mirror_filter` method.
 
 Boto3 documentation:
 [EC2.Client.create_traffic_mirror_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_traffic_mirror_filter)
@@ -3535,7 +3516,7 @@ Returns a `Coroutine` for
 Creates a Traffic Mirror filter rule.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_traffic_mirror_filter_rule` method.
+`session.create_client("ec2").create_traffic_mirror_filter_rule` method.
 
 Boto3 documentation:
 [EC2.Client.create_traffic_mirror_filter_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_traffic_mirror_filter_rule)
@@ -3576,7 +3557,7 @@ Returns a `Coroutine` for
 Creates a Traffic Mirror session.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_traffic_mirror_session` method.
+`session.create_client("ec2").create_traffic_mirror_session` method.
 
 Boto3 documentation:
 [EC2.Client.create_traffic_mirror_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_traffic_mirror_session)
@@ -3611,7 +3592,7 @@ Returns a `Coroutine` for
 Creates a target for your Traffic Mirror session.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_traffic_mirror_target` method.
+`session.create_client("ec2").create_traffic_mirror_target` method.
 
 Boto3 documentation:
 [EC2.Client.create_traffic_mirror_target](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_traffic_mirror_target)
@@ -3641,7 +3622,7 @@ Returns a `Coroutine` for
 
 Creates a transit gateway.
 
-Type annotations for `aiobotocore.create_client("ec2").create_transit_gateway`
+Type annotations for `session.create_client("ec2").create_transit_gateway`
 method.
 
 Boto3 documentation:
@@ -3672,7 +3653,7 @@ Returns a `Coroutine` for
 Creates a Connect attachment from a specified transit gateway attachment.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_transit_gateway_connect` method.
+`session.create_client("ec2").create_transit_gateway_connect` method.
 
 Boto3 documentation:
 [EC2.Client.create_transit_gateway_connect](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_transit_gateway_connect)
@@ -3704,7 +3685,7 @@ Creates a Connect peer for a specified transit gateway Connect attachment
 between a transit gateway and an appliance.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_transit_gateway_connect_peer` method.
+`session.create_client("ec2").create_transit_gateway_connect_peer` method.
 
 Boto3 documentation:
 [EC2.Client.create_transit_gateway_connect_peer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_transit_gateway_connect_peer)
@@ -3737,8 +3718,7 @@ Returns a `Coroutine` for
 Creates a multicast domain using the specified transit gateway.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_transit_gateway_multicast_domain`
-method.
+`session.create_client("ec2").create_transit_gateway_multicast_domain` method.
 
 Boto3 documentation:
 [EC2.Client.create_transit_gateway_multicast_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_transit_gateway_multicast_domain)
@@ -3769,7 +3749,7 @@ Requests a transit gateway peering attachment between the specified transit
 gateway (requester) and a peer transit gateway (accepter).
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_transit_gateway_peering_attachment`
+`session.create_client("ec2").create_transit_gateway_peering_attachment`
 method.
 
 Boto3 documentation:
@@ -3802,7 +3782,7 @@ Creates a reference (route) to a prefix list in a specified transit gateway
 route table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_transit_gateway_prefix_list_reference`
+`session.create_client("ec2").create_transit_gateway_prefix_list_reference`
 method.
 
 Boto3 documentation:
@@ -3833,7 +3813,7 @@ Returns a `Coroutine` for
 Creates a static route for the specified transit gateway route table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_transit_gateway_route` method.
+`session.create_client("ec2").create_transit_gateway_route` method.
 
 Boto3 documentation:
 [EC2.Client.create_transit_gateway_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_transit_gateway_route)
@@ -3862,7 +3842,7 @@ Returns a `Coroutine` for
 Creates a route table for the specified transit gateway.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_transit_gateway_route_table` method.
+`session.create_client("ec2").create_transit_gateway_route_table` method.
 
 Boto3 documentation:
 [EC2.Client.create_transit_gateway_route_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_transit_gateway_route_table)
@@ -3890,8 +3870,7 @@ Returns a `Coroutine` for
 Attaches the specified VPC to the specified transit gateway.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_transit_gateway_vpc_attachment`
-method.
+`session.create_client("ec2").create_transit_gateway_vpc_attachment` method.
 
 Boto3 documentation:
 [EC2.Client.create_transit_gateway_vpc_attachment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_transit_gateway_vpc_attachment)
@@ -3923,7 +3902,7 @@ Returns a `Coroutine` for
 Creates an EBS volume that can be attached to an instance in the same
 Availability Zone.
 
-Type annotations for `aiobotocore.create_client("ec2").create_volume` method.
+Type annotations for `session.create_client("ec2").create_volume` method.
 
 Boto3 documentation:
 [EC2.Client.create_volume](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_volume)
@@ -3959,7 +3938,7 @@ Returns a `Coroutine` for
 
 Creates a VPC with the specified IPv4 CIDR block.
 
-Type annotations for `aiobotocore.create_client("ec2").create_vpc` method.
+Type annotations for `session.create_client("ec2").create_vpc` method.
 
 Boto3 documentation:
 [EC2.Client.create_vpc](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_vpc)
@@ -3994,8 +3973,7 @@ Returns a `Coroutine` for
 
 Creates a VPC endpoint for a specified service.
 
-Type annotations for `aiobotocore.create_client("ec2").create_vpc_endpoint`
-method.
+Type annotations for `session.create_client("ec2").create_vpc_endpoint` method.
 
 Boto3 documentation:
 [EC2.Client.create_vpc_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_vpc_endpoint)
@@ -4032,7 +4010,7 @@ Creates a connection notification for a specified VPC endpoint or VPC endpoint
 service.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_vpc_endpoint_connection_notification`
+`session.create_client("ec2").create_vpc_endpoint_connection_notification`
 method.
 
 Boto3 documentation:
@@ -4065,7 +4043,7 @@ Creates a VPC endpoint service configuration to which service consumers (Amazon
 Web Services accounts, IAM users, and IAM roles) can connect.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_vpc_endpoint_service_configuration`
+`session.create_client("ec2").create_vpc_endpoint_service_configuration`
 method.
 
 Boto3 documentation:
@@ -4099,7 +4077,7 @@ Requests a VPC peering connection between two VPCs: a requester VPC that you
 own and an accepter VPC with which to create the connection.
 
 Type annotations for
-`aiobotocore.create_client("ec2").create_vpc_peering_connection` method.
+`session.create_client("ec2").create_vpc_peering_connection` method.
 
 Boto3 documentation:
 [EC2.Client.create_vpc_peering_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_vpc_peering_connection)
@@ -4130,7 +4108,7 @@ Returns a `Coroutine` for
 Creates a VPN connection between an existing virtual private gateway or transit
 gateway and a customer gateway.
 
-Type annotations for `aiobotocore.create_client("ec2").create_vpn_connection`
+Type annotations for `session.create_client("ec2").create_vpn_connection`
 method.
 
 Boto3 documentation:
@@ -4164,8 +4142,8 @@ Returns a `Coroutine` for
 Creates a static route associated with a VPN connection between an existing
 virtual private gateway and a VPN customer gateway.
 
-Type annotations for
-`aiobotocore.create_client("ec2").create_vpn_connection_route` method.
+Type annotations for `session.create_client("ec2").create_vpn_connection_route`
+method.
 
 Boto3 documentation:
 [EC2.Client.create_vpn_connection_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_vpn_connection_route)
@@ -4187,8 +4165,7 @@ Keyword-only arguments:
 
 Creates a virtual private gateway.
 
-Type annotations for `aiobotocore.create_client("ec2").create_vpn_gateway`
-method.
+Type annotations for `session.create_client("ec2").create_vpn_gateway` method.
 
 Boto3 documentation:
 [EC2.Client.create_vpn_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_vpn_gateway)
@@ -4218,7 +4195,7 @@ Returns a `Coroutine` for
 
 Deletes a carrier gateway.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_carrier_gateway`
+Type annotations for `session.create_client("ec2").delete_carrier_gateway`
 method.
 
 Boto3 documentation:
@@ -4244,8 +4221,8 @@ Returns a `Coroutine` for
 
 Deletes the specified Client VPN endpoint.
 
-Type annotations for
-`aiobotocore.create_client("ec2").delete_client_vpn_endpoint` method.
+Type annotations for `session.create_client("ec2").delete_client_vpn_endpoint`
+method.
 
 Boto3 documentation:
 [EC2.Client.delete_client_vpn_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_client_vpn_endpoint)
@@ -4270,7 +4247,7 @@ Returns a `Coroutine` for
 
 Deletes a route from a Client VPN endpoint.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_client_vpn_route`
+Type annotations for `session.create_client("ec2").delete_client_vpn_route`
 method.
 
 Boto3 documentation:
@@ -4298,7 +4275,7 @@ Returns a `Coroutine` for
 
 Deletes the specified customer gateway.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_customer_gateway`
+Type annotations for `session.create_client("ec2").delete_customer_gateway`
 method.
 
 Boto3 documentation:
@@ -4321,8 +4298,7 @@ Keyword-only arguments:
 
 Deletes the specified set of DHCP options.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_dhcp_options`
-method.
+Type annotations for `session.create_client("ec2").delete_dhcp_options` method.
 
 Boto3 documentation:
 [EC2.Client.delete_dhcp_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_dhcp_options)
@@ -4345,7 +4321,7 @@ Keyword-only arguments:
 Deletes an egress-only internet gateway.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_egress_only_internet_gateway` method.
+`session.create_client("ec2").delete_egress_only_internet_gateway` method.
 
 Boto3 documentation:
 [EC2.Client.delete_egress_only_internet_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_egress_only_internet_gateway)
@@ -4370,7 +4346,7 @@ Returns a `Coroutine` for
 
 Deletes the specified EC2 Fleet.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_fleets` method.
+Type annotations for `session.create_client("ec2").delete_fleets` method.
 
 Boto3 documentation:
 [EC2.Client.delete_fleets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_fleets)
@@ -4395,8 +4371,7 @@ Returns a `Coroutine` for
 
 Deletes one or more flow logs.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_flow_logs`
-method.
+Type annotations for `session.create_client("ec2").delete_flow_logs` method.
 
 Boto3 documentation:
 [EC2.Client.delete_flow_logs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_flow_logs)
@@ -4420,8 +4395,7 @@ Returns a `Coroutine` for
 
 Deletes the specified Amazon FPGA Image (AFI).
 
-Type annotations for `aiobotocore.create_client("ec2").delete_fpga_image`
-method.
+Type annotations for `session.create_client("ec2").delete_fpga_image` method.
 
 Boto3 documentation:
 [EC2.Client.delete_fpga_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_fpga_image)
@@ -4446,7 +4420,7 @@ Returns a `Coroutine` for
 Deletes the specified event window.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_instance_event_window` method.
+`session.create_client("ec2").delete_instance_event_window` method.
 
 Boto3 documentation:
 [EC2.Client.delete_instance_event_window](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_instance_event_window)
@@ -4472,7 +4446,7 @@ Returns a `Coroutine` for
 
 Deletes the specified internet gateway.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_internet_gateway`
+Type annotations for `session.create_client("ec2").delete_internet_gateway`
 method.
 
 Boto3 documentation:
@@ -4495,7 +4469,7 @@ Keyword-only arguments:
 
 Delete an IPAM.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_ipam` method.
+Type annotations for `session.create_client("ec2").delete_ipam` method.
 
 Boto3 documentation:
 [EC2.Client.delete_ipam](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_ipam)
@@ -4519,8 +4493,7 @@ Returns a `Coroutine` for
 
 Delete an IPAM pool.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_ipam_pool`
-method.
+Type annotations for `session.create_client("ec2").delete_ipam_pool` method.
 
 Boto3 documentation:
 [EC2.Client.delete_ipam_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_ipam_pool)
@@ -4544,8 +4517,7 @@ Returns a `Coroutine` for
 
 Delete the scope for an IPAM.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_ipam_scope`
-method.
+Type annotations for `session.create_client("ec2").delete_ipam_scope` method.
 
 Boto3 documentation:
 [EC2.Client.delete_ipam_scope](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_ipam_scope)
@@ -4569,7 +4541,7 @@ Returns a `Coroutine` for
 
 Deletes the specified key pair, by removing the public key from Amazon EC2.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_key_pair` method.
+Type annotations for `session.create_client("ec2").delete_key_pair` method.
 
 Boto3 documentation:
 [EC2.Client.delete_key_pair](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_key_pair)
@@ -4591,7 +4563,7 @@ Keyword-only arguments:
 
 Deletes a launch template.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_launch_template`
+Type annotations for `session.create_client("ec2").delete_launch_template`
 method.
 
 Boto3 documentation:
@@ -4619,7 +4591,7 @@ Returns a `Coroutine` for
 Deletes one or more versions of a launch template.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_launch_template_versions` method.
+`session.create_client("ec2").delete_launch_template_versions` method.
 
 Boto3 documentation:
 [EC2.Client.delete_launch_template_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_launch_template_versions)
@@ -4646,8 +4618,8 @@ Returns a `Coroutine` for
 
 Deletes the specified route from the specified local gateway route table.
 
-Type annotations for
-`aiobotocore.create_client("ec2").delete_local_gateway_route` method.
+Type annotations for `session.create_client("ec2").delete_local_gateway_route`
+method.
 
 Boto3 documentation:
 [EC2.Client.delete_local_gateway_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_local_gateway_route)
@@ -4674,7 +4646,7 @@ Returns a `Coroutine` for
 Deletes the specified association between a VPC and local gateway route table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_local_gateway_route_table_vpc_association`
+`session.create_client("ec2").delete_local_gateway_route_table_vpc_association`
 method.
 
 Boto3 documentation:
@@ -4701,8 +4673,8 @@ Returns a `Coroutine` for
 
 Deletes the specified managed prefix list.
 
-Type annotations for
-`aiobotocore.create_client("ec2").delete_managed_prefix_list` method.
+Type annotations for `session.create_client("ec2").delete_managed_prefix_list`
+method.
 
 Boto3 documentation:
 [EC2.Client.delete_managed_prefix_list](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_managed_prefix_list)
@@ -4727,8 +4699,7 @@ Returns a `Coroutine` for
 
 Deletes the specified NAT gateway.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_nat_gateway`
-method.
+Type annotations for `session.create_client("ec2").delete_nat_gateway` method.
 
 Boto3 documentation:
 [EC2.Client.delete_nat_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_nat_gateway)
@@ -4753,8 +4724,7 @@ Returns a `Coroutine` for
 
 Deletes the specified network ACL.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_network_acl`
-method.
+Type annotations for `session.create_client("ec2").delete_network_acl` method.
 
 Boto3 documentation:
 [EC2.Client.delete_network_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_network_acl)
@@ -4777,8 +4747,8 @@ Keyword-only arguments:
 Deletes the specified ingress or egress entry (rule) from the specified network
 ACL.
 
-Type annotations for
-`aiobotocore.create_client("ec2").delete_network_acl_entry` method.
+Type annotations for `session.create_client("ec2").delete_network_acl_entry`
+method.
 
 Boto3 documentation:
 [EC2.Client.delete_network_acl_entry](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_network_acl_entry)
@@ -4803,7 +4773,7 @@ Keyword-only arguments:
 Deletes the specified Network Access Scope.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_network_insights_access_scope` method.
+`session.create_client("ec2").delete_network_insights_access_scope` method.
 
 Boto3 documentation:
 [EC2.Client.delete_network_insights_access_scope](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_network_insights_access_scope)
@@ -4829,7 +4799,7 @@ Returns a `Coroutine` for
 Deletes the specified Network Access Scope analysis.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_network_insights_access_scope_analysis`
+`session.create_client("ec2").delete_network_insights_access_scope_analysis`
 method.
 
 Boto3 documentation:
@@ -4857,7 +4827,7 @@ Returns a `Coroutine` for
 Deletes the specified network insights analysis.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_network_insights_analysis` method.
+`session.create_client("ec2").delete_network_insights_analysis` method.
 
 Boto3 documentation:
 [EC2.Client.delete_network_insights_analysis](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_network_insights_analysis)
@@ -4883,7 +4853,7 @@ Returns a `Coroutine` for
 Deletes the specified path.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_network_insights_path` method.
+`session.create_client("ec2").delete_network_insights_path` method.
 
 Boto3 documentation:
 [EC2.Client.delete_network_insights_path](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_network_insights_path)
@@ -4908,8 +4878,8 @@ Returns a `Coroutine` for
 
 Deletes the specified network interface.
 
-Type annotations for
-`aiobotocore.create_client("ec2").delete_network_interface` method.
+Type annotations for `session.create_client("ec2").delete_network_interface`
+method.
 
 Boto3 documentation:
 [EC2.Client.delete_network_interface](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_network_interface)
@@ -4932,7 +4902,7 @@ Keyword-only arguments:
 Deletes a permission for a network interface.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_network_interface_permission` method.
+`session.create_client("ec2").delete_network_interface_permission` method.
 
 Boto3 documentation:
 [EC2.Client.delete_network_interface_permission](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_network_interface_permission)
@@ -4958,7 +4928,7 @@ Returns a `Coroutine` for
 
 Deletes the specified placement group.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_placement_group`
+Type annotations for `session.create_client("ec2").delete_placement_group`
 method.
 
 Boto3 documentation:
@@ -4981,7 +4951,7 @@ Keyword-only arguments:
 
 Delete a public IPv4 pool.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_public_ipv4_pool`
+Type annotations for `session.create_client("ec2").delete_public_ipv4_pool`
 method.
 
 Boto3 documentation:
@@ -5008,7 +4978,7 @@ Returns a `Coroutine` for
 Deletes the queued purchases for the specified Reserved Instances.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_queued_reserved_instances` method.
+`session.create_client("ec2").delete_queued_reserved_instances` method.
 
 Boto3 documentation:
 [EC2.Client.delete_queued_reserved_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_queued_reserved_instances)
@@ -5033,7 +5003,7 @@ Returns a `Coroutine` for
 
 Deletes the specified route from the specified route table.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_route` method.
+Type annotations for `session.create_client("ec2").delete_route` method.
 
 Boto3 documentation:
 [EC2.Client.delete_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_route)
@@ -5057,8 +5027,7 @@ Keyword-only arguments:
 
 Deletes the specified route table.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_route_table`
-method.
+Type annotations for `session.create_client("ec2").delete_route_table` method.
 
 Boto3 documentation:
 [EC2.Client.delete_route_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_route_table)
@@ -5080,7 +5049,7 @@ Keyword-only arguments:
 
 Deletes a security group.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_security_group`
+Type annotations for `session.create_client("ec2").delete_security_group`
 method.
 
 Boto3 documentation:
@@ -5104,7 +5073,7 @@ Keyword-only arguments:
 
 Deletes the specified snapshot.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_snapshot` method.
+Type annotations for `session.create_client("ec2").delete_snapshot` method.
 
 Boto3 documentation:
 [EC2.Client.delete_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_snapshot)
@@ -5126,7 +5095,7 @@ Keyword-only arguments:
 Deletes the data feed for Spot Instances.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_spot_datafeed_subscription` method.
+`session.create_client("ec2").delete_spot_datafeed_subscription` method.
 
 Boto3 documentation:
 [EC2.Client.delete_spot_datafeed_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_spot_datafeed_subscription)
@@ -5147,7 +5116,7 @@ Keyword-only arguments:
 
 Deletes the specified subnet.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_subnet` method.
+Type annotations for `session.create_client("ec2").delete_subnet` method.
 
 Boto3 documentation:
 [EC2.Client.delete_subnet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_subnet)
@@ -5169,7 +5138,7 @@ Keyword-only arguments:
 Deletes a subnet CIDR reservation.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_subnet_cidr_reservation` method.
+`session.create_client("ec2").delete_subnet_cidr_reservation` method.
 
 Boto3 documentation:
 [EC2.Client.delete_subnet_cidr_reservation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_subnet_cidr_reservation)
@@ -5194,7 +5163,7 @@ Returns a `Coroutine` for
 
 Deletes the specified set of tags from the specified set of resources.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_tags` method.
+Type annotations for `session.create_client("ec2").delete_tags` method.
 
 Boto3 documentation:
 [EC2.Client.delete_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_tags)
@@ -5217,7 +5186,7 @@ Keyword-only arguments:
 Deletes the specified Traffic Mirror filter.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_traffic_mirror_filter` method.
+`session.create_client("ec2").delete_traffic_mirror_filter` method.
 
 Boto3 documentation:
 [EC2.Client.delete_traffic_mirror_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_traffic_mirror_filter)
@@ -5243,7 +5212,7 @@ Returns a `Coroutine` for
 Deletes the specified Traffic Mirror rule.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_traffic_mirror_filter_rule` method.
+`session.create_client("ec2").delete_traffic_mirror_filter_rule` method.
 
 Boto3 documentation:
 [EC2.Client.delete_traffic_mirror_filter_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_traffic_mirror_filter_rule)
@@ -5269,7 +5238,7 @@ Returns a `Coroutine` for
 Deletes the specified Traffic Mirror session.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_traffic_mirror_session` method.
+`session.create_client("ec2").delete_traffic_mirror_session` method.
 
 Boto3 documentation:
 [EC2.Client.delete_traffic_mirror_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_traffic_mirror_session)
@@ -5295,7 +5264,7 @@ Returns a `Coroutine` for
 Deletes the specified Traffic Mirror target.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_traffic_mirror_target` method.
+`session.create_client("ec2").delete_traffic_mirror_target` method.
 
 Boto3 documentation:
 [EC2.Client.delete_traffic_mirror_target](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_traffic_mirror_target)
@@ -5320,7 +5289,7 @@ Returns a `Coroutine` for
 
 Deletes the specified transit gateway.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_transit_gateway`
+Type annotations for `session.create_client("ec2").delete_transit_gateway`
 method.
 
 Boto3 documentation:
@@ -5347,7 +5316,7 @@ Returns a `Coroutine` for
 Deletes the specified Connect attachment.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_transit_gateway_connect` method.
+`session.create_client("ec2").delete_transit_gateway_connect` method.
 
 Boto3 documentation:
 [EC2.Client.delete_transit_gateway_connect](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_transit_gateway_connect)
@@ -5373,7 +5342,7 @@ Returns a `Coroutine` for
 Deletes the specified Connect peer.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_transit_gateway_connect_peer` method.
+`session.create_client("ec2").delete_transit_gateway_connect_peer` method.
 
 Boto3 documentation:
 [EC2.Client.delete_transit_gateway_connect_peer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_transit_gateway_connect_peer)
@@ -5399,8 +5368,7 @@ Returns a `Coroutine` for
 Deletes the specified transit gateway multicast domain.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_transit_gateway_multicast_domain`
-method.
+`session.create_client("ec2").delete_transit_gateway_multicast_domain` method.
 
 Boto3 documentation:
 [EC2.Client.delete_transit_gateway_multicast_domain](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_transit_gateway_multicast_domain)
@@ -5426,7 +5394,7 @@ Returns a `Coroutine` for
 Deletes a transit gateway peering attachment.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_transit_gateway_peering_attachment`
+`session.create_client("ec2").delete_transit_gateway_peering_attachment`
 method.
 
 Boto3 documentation:
@@ -5454,7 +5422,7 @@ Deletes a reference (route) to a prefix list in a specified transit gateway
 route table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_transit_gateway_prefix_list_reference`
+`session.create_client("ec2").delete_transit_gateway_prefix_list_reference`
 method.
 
 Boto3 documentation:
@@ -5483,7 +5451,7 @@ Returns a `Coroutine` for
 Deletes the specified route from the specified transit gateway route table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_transit_gateway_route` method.
+`session.create_client("ec2").delete_transit_gateway_route` method.
 
 Boto3 documentation:
 [EC2.Client.delete_transit_gateway_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_transit_gateway_route)
@@ -5510,7 +5478,7 @@ Returns a `Coroutine` for
 Deletes the specified transit gateway route table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_transit_gateway_route_table` method.
+`session.create_client("ec2").delete_transit_gateway_route_table` method.
 
 Boto3 documentation:
 [EC2.Client.delete_transit_gateway_route_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_transit_gateway_route_table)
@@ -5536,8 +5504,7 @@ Returns a `Coroutine` for
 Deletes the specified VPC attachment.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_transit_gateway_vpc_attachment`
-method.
+`session.create_client("ec2").delete_transit_gateway_vpc_attachment` method.
 
 Boto3 documentation:
 [EC2.Client.delete_transit_gateway_vpc_attachment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_transit_gateway_vpc_attachment)
@@ -5562,7 +5529,7 @@ Returns a `Coroutine` for
 
 Deletes the specified EBS volume.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_volume` method.
+Type annotations for `session.create_client("ec2").delete_volume` method.
 
 Boto3 documentation:
 [EC2.Client.delete_volume](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_volume)
@@ -5583,7 +5550,7 @@ Keyword-only arguments:
 
 Deletes the specified VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_vpc` method.
+Type annotations for `session.create_client("ec2").delete_vpc` method.
 
 Boto3 documentation:
 [EC2.Client.delete_vpc](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_vpc)
@@ -5605,7 +5572,7 @@ Keyword-only arguments:
 Deletes one or more VPC endpoint connection notifications.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_vpc_endpoint_connection_notifications`
+`session.create_client("ec2").delete_vpc_endpoint_connection_notifications`
 method.
 
 Boto3 documentation:
@@ -5633,7 +5600,7 @@ Returns a `Coroutine` for
 Deletes one or more VPC endpoint service configurations in your account.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_vpc_endpoint_service_configurations`
+`session.create_client("ec2").delete_vpc_endpoint_service_configurations`
 method.
 
 Boto3 documentation:
@@ -5659,7 +5626,7 @@ Returns a `Coroutine` for
 
 Deletes one or more specified VPC endpoints.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_vpc_endpoints`
+Type annotations for `session.create_client("ec2").delete_vpc_endpoints`
 method.
 
 Boto3 documentation:
@@ -5686,7 +5653,7 @@ Returns a `Coroutine` for
 Deletes a VPC peering connection.
 
 Type annotations for
-`aiobotocore.create_client("ec2").delete_vpc_peering_connection` method.
+`session.create_client("ec2").delete_vpc_peering_connection` method.
 
 Boto3 documentation:
 [EC2.Client.delete_vpc_peering_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_vpc_peering_connection)
@@ -5711,7 +5678,7 @@ Returns a `Coroutine` for
 
 Deletes the specified VPN connection.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_vpn_connection`
+Type annotations for `session.create_client("ec2").delete_vpn_connection`
 method.
 
 Boto3 documentation:
@@ -5735,8 +5702,8 @@ Keyword-only arguments:
 Deletes the specified static route associated with a VPN connection between an
 existing virtual private gateway and a VPN customer gateway.
 
-Type annotations for
-`aiobotocore.create_client("ec2").delete_vpn_connection_route` method.
+Type annotations for `session.create_client("ec2").delete_vpn_connection_route`
+method.
 
 Boto3 documentation:
 [EC2.Client.delete_vpn_connection_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_vpn_connection_route)
@@ -5758,8 +5725,7 @@ Keyword-only arguments:
 
 Deletes the specified virtual private gateway.
 
-Type annotations for `aiobotocore.create_client("ec2").delete_vpn_gateway`
-method.
+Type annotations for `session.create_client("ec2").delete_vpn_gateway` method.
 
 Boto3 documentation:
 [EC2.Client.delete_vpn_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.delete_vpn_gateway)
@@ -5783,7 +5749,7 @@ Releases the specified address range that you provisioned for use with your
 Amazon Web Services resources through bring your own IP addresses (BYOIP) and
 deletes the corresponding address pool.
 
-Type annotations for `aiobotocore.create_client("ec2").deprovision_byoip_cidr`
+Type annotations for `session.create_client("ec2").deprovision_byoip_cidr`
 method.
 
 Boto3 documentation:
@@ -5809,8 +5775,8 @@ Returns a `Coroutine` for
 
 Deprovision a CIDR provisioned from an IPAM pool.
 
-Type annotations for
-`aiobotocore.create_client("ec2").deprovision_ipam_pool_cidr` method.
+Type annotations for `session.create_client("ec2").deprovision_ipam_pool_cidr`
+method.
 
 Boto3 documentation:
 [EC2.Client.deprovision_ipam_pool_cidr](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.deprovision_ipam_pool_cidr)
@@ -5837,7 +5803,7 @@ Returns a `Coroutine` for
 Deprovision a CIDR from a public IPv4 pool.
 
 Type annotations for
-`aiobotocore.create_client("ec2").deprovision_public_ipv4_pool_cidr` method.
+`session.create_client("ec2").deprovision_public_ipv4_pool_cidr` method.
 
 Boto3 documentation:
 [EC2.Client.deprovision_public_ipv4_pool_cidr](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.deprovision_public_ipv4_pool_cidr)
@@ -5863,8 +5829,7 @@ Returns a `Coroutine` for
 
 Deregisters the specified AMI.
 
-Type annotations for `aiobotocore.create_client("ec2").deregister_image`
-method.
+Type annotations for `session.create_client("ec2").deregister_image` method.
 
 Boto3 documentation:
 [EC2.Client.deregister_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.deregister_image)
@@ -5887,7 +5852,7 @@ c Deregisters tag keys to prevent tags that have the specified tag keys from
 being included in scheduled event notifications for resources in the Region.
 
 Type annotations for
-`aiobotocore.create_client("ec2").deregister_instance_event_notification_attributes`
+`session.create_client("ec2").deregister_instance_event_notification_attributes`
 method.
 
 Boto3 documentation:
@@ -5917,7 +5882,7 @@ Deregisters the specified members (network interfaces) from the transit gateway
 multicast group.
 
 Type annotations for
-`aiobotocore.create_client("ec2").deregister_transit_gateway_multicast_group_members`
+`session.create_client("ec2").deregister_transit_gateway_multicast_group_members`
 method.
 
 Boto3 documentation:
@@ -5948,7 +5913,7 @@ Deregisters the specified sources (network interfaces) from the transit gateway
 multicast group.
 
 Type annotations for
-`aiobotocore.create_client("ec2").deregister_transit_gateway_multicast_group_sources`
+`session.create_client("ec2").deregister_transit_gateway_multicast_group_sources`
 method.
 
 Boto3 documentation:
@@ -5977,8 +5942,8 @@ Returns a `Coroutine` for
 
 Describes attributes of your AWS account.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_account_attributes` method.
+Type annotations for `session.create_client("ec2").describe_account_attributes`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_account_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_account_attributes)
@@ -6005,8 +5970,7 @@ Returns a `Coroutine` for
 Describes the specified Elastic IP addresses or all of your Elastic IP
 addresses.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_addresses`
-method.
+Type annotations for `session.create_client("ec2").describe_addresses` method.
 
 Boto3 documentation:
 [EC2.Client.describe_addresses](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_addresses)
@@ -6034,7 +5998,7 @@ Returns a `Coroutine` for
 Describes the attributes of the specified Elastic IP addresses.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_addresses_attribute` method.
+`session.create_client("ec2").describe_addresses_attribute` method.
 
 Boto3 documentation:
 [EC2.Client.describe_addresses_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_addresses_attribute)
@@ -6065,7 +6029,7 @@ Describes the longer ID format settings for all resource types in a specific
 Region.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_aggregate_id_format` method.
+`session.create_client("ec2").describe_aggregate_id_format` method.
 
 Boto3 documentation:
 [EC2.Client.describe_aggregate_id_format](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_aggregate_id_format)
@@ -6090,8 +6054,8 @@ Returns a `Coroutine` for
 Describes the Availability Zones, Local Zones, and Wavelength Zones that are
 available to you.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_availability_zones` method.
+Type annotations for `session.create_client("ec2").describe_availability_zones`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_availability_zones](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_availability_zones)
@@ -6119,7 +6083,7 @@ Returns a `Coroutine` for
 
 Describes the specified bundle tasks or all of your bundle tasks.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_bundle_tasks`
+Type annotations for `session.create_client("ec2").describe_bundle_tasks`
 method.
 
 Boto3 documentation:
@@ -6147,7 +6111,7 @@ Returns a `Coroutine` for
 Describes the IP address ranges that were specified in calls to
 ProvisionByoipCidr .
 
-Type annotations for `aiobotocore.create_client("ec2").describe_byoip_cidrs`
+Type annotations for `session.create_client("ec2").describe_byoip_cidrs`
 method.
 
 Boto3 documentation:
@@ -6175,7 +6139,7 @@ Returns a `Coroutine` for
 Describes one or more Capacity Reservation Fleets.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_capacity_reservation_fleets` method.
+`session.create_client("ec2").describe_capacity_reservation_fleets` method.
 
 Boto3 documentation:
 [EC2.Client.describe_capacity_reservation_fleets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_capacity_reservation_fleets)
@@ -6204,7 +6168,7 @@ Returns a `Coroutine` for
 Describes one or more of your Capacity Reservations.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_capacity_reservations` method.
+`session.create_client("ec2").describe_capacity_reservations` method.
 
 Boto3 documentation:
 [EC2.Client.describe_capacity_reservations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_capacity_reservations)
@@ -6232,8 +6196,8 @@ Returns a `Coroutine` for
 
 Describes one or more of your carrier gateways.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_carrier_gateways` method.
+Type annotations for `session.create_client("ec2").describe_carrier_gateways`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_carrier_gateways](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_carrier_gateways)
@@ -6262,7 +6226,7 @@ Returns a `Coroutine` for
 Describes one or more of your linked EC2-Classic instances.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_classic_link_instances` method.
+`session.create_client("ec2").describe_classic_link_instances` method.
 
 Boto3 documentation:
 [EC2.Client.describe_classic_link_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_classic_link_instances)
@@ -6291,8 +6255,7 @@ Returns a `Coroutine` for
 Describes the authorization rules for a specified Client VPN endpoint.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_client_vpn_authorization_rules`
-method.
+`session.create_client("ec2").describe_client_vpn_authorization_rules` method.
 
 Boto3 documentation:
 [EC2.Client.describe_client_vpn_authorization_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_client_vpn_authorization_rules)
@@ -6322,7 +6285,7 @@ Describes active client connections and connections that have been terminated
 within the last 60 minutes for the specified Client VPN endpoint.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_client_vpn_connections` method.
+`session.create_client("ec2").describe_client_vpn_connections` method.
 
 Boto3 documentation:
 [EC2.Client.describe_client_vpn_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_client_vpn_connections)
@@ -6351,7 +6314,7 @@ Returns a `Coroutine` for
 Describes one or more Client VPN endpoints in the account.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_client_vpn_endpoints` method.
+`session.create_client("ec2").describe_client_vpn_endpoints` method.
 
 Boto3 documentation:
 [EC2.Client.describe_client_vpn_endpoints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_client_vpn_endpoints)
@@ -6379,8 +6342,8 @@ Returns a `Coroutine` for
 
 Describes the routes for the specified Client VPN endpoint.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_client_vpn_routes` method.
+Type annotations for `session.create_client("ec2").describe_client_vpn_routes`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_client_vpn_routes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_client_vpn_routes)
@@ -6410,7 +6373,7 @@ Describes the target networks associated with the specified Client VPN
 endpoint.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_client_vpn_target_networks` method.
+`session.create_client("ec2").describe_client_vpn_target_networks` method.
 
 Boto3 documentation:
 [EC2.Client.describe_client_vpn_target_networks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_client_vpn_target_networks)
@@ -6440,8 +6403,7 @@ Returns a `Coroutine` for
 Describes the specified customer-owned address pools or all of your customer-
 owned address pools.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_coip_pools`
-method.
+Type annotations for `session.create_client("ec2").describe_coip_pools` method.
 
 Boto3 documentation:
 [EC2.Client.describe_coip_pools](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_coip_pools)
@@ -6469,8 +6431,8 @@ Returns a `Coroutine` for
 
 Describes the specified conversion tasks or all your conversion tasks.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_conversion_tasks` method.
+Type annotations for `session.create_client("ec2").describe_conversion_tasks`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_conversion_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_conversion_tasks)
@@ -6495,8 +6457,8 @@ Returns a `Coroutine` for
 
 Describes one or more of your VPN customer gateways.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_customer_gateways` method.
+Type annotations for `session.create_client("ec2").describe_customer_gateways`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_customer_gateways](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_customer_gateways)
@@ -6522,7 +6484,7 @@ Returns a `Coroutine` for
 
 Describes one or more of your DHCP options sets.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_dhcp_options`
+Type annotations for `session.create_client("ec2").describe_dhcp_options`
 method.
 
 Boto3 documentation:
@@ -6552,8 +6514,7 @@ Returns a `Coroutine` for
 Describes one or more of your egress-only internet gateways.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_egress_only_internet_gateways`
-method.
+`session.create_client("ec2").describe_egress_only_internet_gateways` method.
 
 Boto3 documentation:
 [EC2.Client.describe_egress_only_internet_gateways](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_egress_only_internet_gateways)
@@ -6581,7 +6542,7 @@ Returns a `Coroutine` for
 
 Describes the Elastic Graphics accelerator associated with your instances.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_elastic_gpus`
+Type annotations for `session.create_client("ec2").describe_elastic_gpus`
 method.
 
 Boto3 documentation:
@@ -6610,8 +6571,8 @@ Returns a `Coroutine` for
 
 Describes the specified export image tasks or all of your export image tasks.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_export_image_tasks` method.
+Type annotations for `session.create_client("ec2").describe_export_image_tasks`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_export_image_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_export_image_tasks)
@@ -6640,7 +6601,7 @@ Returns a `Coroutine` for
 Describes the specified export instance tasks or all of your export instance
 tasks.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_export_tasks`
+Type annotations for `session.create_client("ec2").describe_export_tasks`
 method.
 
 Boto3 documentation:
@@ -6667,7 +6628,7 @@ Returns a `Coroutine` for
 Describes the state of fast snapshot restores for your snapshots.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_fast_snapshot_restores` method.
+`session.create_client("ec2").describe_fast_snapshot_restores` method.
 
 Boto3 documentation:
 [EC2.Client.describe_fast_snapshot_restores](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_fast_snapshot_restores)
@@ -6694,7 +6655,7 @@ Returns a `Coroutine` for
 
 Describes the events for the specified EC2 Fleet during the specified time.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_fleet_history`
+Type annotations for `session.create_client("ec2").describe_fleet_history`
 method.
 
 Boto3 documentation:
@@ -6724,8 +6685,8 @@ Returns a `Coroutine` for
 
 Describes the running instances for the specified EC2 Fleet.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_fleet_instances` method.
+Type annotations for `session.create_client("ec2").describe_fleet_instances`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_fleet_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_fleet_instances)
@@ -6753,7 +6714,7 @@ Returns a `Coroutine` for
 
 Describes the specified EC2 Fleets or all of your EC2 Fleets.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_fleets` method.
+Type annotations for `session.create_client("ec2").describe_fleets` method.
 
 Boto3 documentation:
 [EC2.Client.describe_fleets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_fleets)
@@ -6780,8 +6741,7 @@ Returns a `Coroutine` for
 
 Describes one or more flow logs.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_flow_logs`
-method.
+Type annotations for `session.create_client("ec2").describe_flow_logs` method.
 
 Boto3 documentation:
 [EC2.Client.describe_flow_logs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_flow_logs)
@@ -6810,7 +6770,7 @@ Returns a `Coroutine` for
 Describes the specified attribute of the specified Amazon FPGA Image (AFI).
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_fpga_image_attribute` method.
+`session.create_client("ec2").describe_fpga_image_attribute` method.
 
 Boto3 documentation:
 [EC2.Client.describe_fpga_image_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_fpga_image_attribute)
@@ -6838,7 +6798,7 @@ Returns a `Coroutine` for
 
 Describes the Amazon FPGA Images (AFIs) available to you.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_fpga_images`
+Type annotations for `session.create_client("ec2").describe_fpga_images`
 method.
 
 Boto3 documentation:
@@ -6869,7 +6829,7 @@ Returns a `Coroutine` for
 Describes the Dedicated Host reservations that are available to purchase.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_host_reservation_offerings` method.
+`session.create_client("ec2").describe_host_reservation_offerings` method.
 
 Boto3 documentation:
 [EC2.Client.describe_host_reservation_offerings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_host_reservation_offerings)
@@ -6899,8 +6859,8 @@ Returns a `Coroutine` for
 Describes reservations that are associated with Dedicated Hosts in your
 account.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_host_reservations` method.
+Type annotations for `session.create_client("ec2").describe_host_reservations`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_host_reservations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_host_reservations)
@@ -6927,7 +6887,7 @@ Returns a `Coroutine` for
 
 Describes the specified Dedicated Hosts or all your Dedicated Hosts.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_hosts` method.
+Type annotations for `session.create_client("ec2").describe_hosts` method.
 
 Boto3 documentation:
 [EC2.Client.describe_hosts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_hosts)
@@ -6954,7 +6914,7 @@ Returns a `Coroutine` for
 Describes your IAM instance profile associations.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_iam_instance_profile_associations`
+`session.create_client("ec2").describe_iam_instance_profile_associations`
 method.
 
 Boto3 documentation:
@@ -6983,8 +6943,7 @@ Returns a `Coroutine` for
 Describes the ID format settings for your resources on a per-Region basis, for
 example, to view which resource types are enabled for longer IDs.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_id_format`
-method.
+Type annotations for `session.create_client("ec2").describe_id_format` method.
 
 Boto3 documentation:
 [EC2.Client.describe_id_format](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_id_format)
@@ -7009,8 +6968,8 @@ Returns a `Coroutine` for
 Describes the ID format settings for resources for the specified IAM user, IAM
 role, or root user.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_identity_id_format` method.
+Type annotations for `session.create_client("ec2").describe_identity_id_format`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_identity_id_format](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_identity_id_format)
@@ -7035,8 +6994,8 @@ Returns a `Coroutine` for
 
 Describes the specified attribute of the specified AMI.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_image_attribute` method.
+Type annotations for `session.create_client("ec2").describe_image_attribute`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_image_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_image_attribute)
@@ -7064,7 +7023,7 @@ Returns a `Coroutine` for
 Describes the specified images (AMIs, AKIs, and ARIs) available to you or all
 of the images available to you.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_images` method.
+Type annotations for `session.create_client("ec2").describe_images` method.
 
 Boto3 documentation:
 [EC2.Client.describe_images](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_images)
@@ -7093,8 +7052,8 @@ Returns a `Coroutine` for
 Displays details about an import virtual machine or import snapshot tasks that
 are already created.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_import_image_tasks` method.
+Type annotations for `session.create_client("ec2").describe_import_image_tasks`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_import_image_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_import_image_tasks)
@@ -7123,7 +7082,7 @@ Returns a `Coroutine` for
 Describes your import snapshot tasks.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_import_snapshot_tasks` method.
+`session.create_client("ec2").describe_import_snapshot_tasks` method.
 
 Boto3 documentation:
 [EC2.Client.describe_import_snapshot_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_import_snapshot_tasks)
@@ -7151,8 +7110,8 @@ Returns a `Coroutine` for
 
 Describes the specified attribute of the specified instance.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_instance_attribute` method.
+Type annotations for `session.create_client("ec2").describe_instance_attribute`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_instance_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_instance_attribute)
@@ -7182,8 +7141,7 @@ Describes the credit option for CPU usage of the specified burstable
 performance instances.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_instance_credit_specifications`
-method.
+`session.create_client("ec2").describe_instance_credit_specifications` method.
 
 Boto3 documentation:
 [EC2.Client.describe_instance_credit_specifications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_instance_credit_specifications)
@@ -7213,7 +7171,7 @@ Describes the tag keys that are registered to appear in scheduled event
 notifications for resources in the current Region.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_instance_event_notification_attributes`
+`session.create_client("ec2").describe_instance_event_notification_attributes`
 method.
 
 Boto3 documentation:
@@ -7240,7 +7198,7 @@ Returns a `Coroutine` for
 Describes the specified event windows or all event windows.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_instance_event_windows` method.
+`session.create_client("ec2").describe_instance_event_windows` method.
 
 Boto3 documentation:
 [EC2.Client.describe_instance_event_windows](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_instance_event_windows)
@@ -7268,8 +7226,8 @@ Returns a `Coroutine` for
 
 Describes the status of the specified instances or all of your instances.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_instance_status` method.
+Type annotations for `session.create_client("ec2").describe_instance_status`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_instance_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_instance_status)
@@ -7299,7 +7257,7 @@ Returns a `Coroutine` for
 Returns a list of all instance types offered.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_instance_type_offerings` method.
+`session.create_client("ec2").describe_instance_type_offerings` method.
 
 Boto3 documentation:
 [EC2.Client.describe_instance_type_offerings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_instance_type_offerings)
@@ -7327,7 +7285,7 @@ Returns a `Coroutine` for
 
 Describes the details of the instance types that are offered in a location.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_instance_types`
+Type annotations for `session.create_client("ec2").describe_instance_types`
 method.
 
 Boto3 documentation:
@@ -7357,8 +7315,7 @@ Returns a `Coroutine` for
 
 Describes the specified instances or all instances.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_instances`
-method.
+Type annotations for `session.create_client("ec2").describe_instances` method.
 
 Boto3 documentation:
 [EC2.Client.describe_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_instances)
@@ -7386,8 +7343,8 @@ Returns a `Coroutine` for
 
 Describes one or more of your internet gateways.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_internet_gateways` method.
+Type annotations for `session.create_client("ec2").describe_internet_gateways`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_internet_gateways](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_internet_gateways)
@@ -7415,8 +7372,7 @@ Returns a `Coroutine` for
 
 Get information about your IPAM pools.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_ipam_pools`
-method.
+Type annotations for `session.create_client("ec2").describe_ipam_pools` method.
 
 Boto3 documentation:
 [EC2.Client.describe_ipam_pools](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_ipam_pools)
@@ -7444,7 +7400,7 @@ Returns a `Coroutine` for
 
 Get information about your IPAM scopes.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_ipam_scopes`
+Type annotations for `session.create_client("ec2").describe_ipam_scopes`
 method.
 
 Boto3 documentation:
@@ -7473,7 +7429,7 @@ Returns a `Coroutine` for
 
 Get information about your IPAM pools.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_ipams` method.
+Type annotations for `session.create_client("ec2").describe_ipams` method.
 
 Boto3 documentation:
 [EC2.Client.describe_ipams](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_ipams)
@@ -7500,8 +7456,7 @@ Returns a `Coroutine` for
 
 Describes your IPv6 address pools.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_ipv6_pools`
-method.
+Type annotations for `session.create_client("ec2").describe_ipv6_pools` method.
 
 Boto3 documentation:
 [EC2.Client.describe_ipv6_pools](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_ipv6_pools)
@@ -7529,8 +7484,7 @@ Returns a `Coroutine` for
 
 Describes the specified key pairs or all of your key pairs.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_key_pairs`
-method.
+Type annotations for `session.create_client("ec2").describe_key_pairs` method.
 
 Boto3 documentation:
 [EC2.Client.describe_key_pairs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_key_pairs)
@@ -7558,7 +7512,7 @@ Returns a `Coroutine` for
 Describes one or more versions of a specified launch template.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_launch_template_versions` method.
+`session.create_client("ec2").describe_launch_template_versions` method.
 
 Boto3 documentation:
 [EC2.Client.describe_launch_template_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_launch_template_versions)
@@ -7590,8 +7544,8 @@ Returns a `Coroutine` for
 
 Describes one or more launch templates.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_launch_templates` method.
+Type annotations for `session.create_client("ec2").describe_launch_templates`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_launch_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_launch_templates)
@@ -7622,7 +7576,7 @@ Describes the associations between virtual interface groups and local gateway
 route tables.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_local_gateway_route_table_virtual_interface_group_associations`
+`session.create_client("ec2").describe_local_gateway_route_table_virtual_interface_group_associations`
 method.
 
 Boto3 documentation:
@@ -7655,7 +7609,7 @@ Describes the specified associations between VPCs and local gateway route
 tables.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_local_gateway_route_table_vpc_associations`
+`session.create_client("ec2").describe_local_gateway_route_table_vpc_associations`
 method.
 
 Boto3 documentation:
@@ -7686,7 +7640,7 @@ Returns a `Coroutine` for
 Describes one or more local gateway route tables.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_local_gateway_route_tables` method.
+`session.create_client("ec2").describe_local_gateway_route_tables` method.
 
 Boto3 documentation:
 [EC2.Client.describe_local_gateway_route_tables](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_local_gateway_route_tables)
@@ -7715,7 +7669,7 @@ Returns a `Coroutine` for
 Describes the specified local gateway virtual interface groups.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_local_gateway_virtual_interface_groups`
+`session.create_client("ec2").describe_local_gateway_virtual_interface_groups`
 method.
 
 Boto3 documentation:
@@ -7746,7 +7700,7 @@ Returns a `Coroutine` for
 Describes the specified local gateway virtual interfaces.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_local_gateway_virtual_interfaces`
+`session.create_client("ec2").describe_local_gateway_virtual_interfaces`
 method.
 
 Boto3 documentation:
@@ -7775,7 +7729,7 @@ Returns a `Coroutine` for
 
 Describes one or more local gateways.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_local_gateways`
+Type annotations for `session.create_client("ec2").describe_local_gateways`
 method.
 
 Boto3 documentation:
@@ -7806,7 +7760,7 @@ Describes your managed prefix lists and any Amazon Web Services-managed prefix
 lists.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_managed_prefix_lists` method.
+`session.create_client("ec2").describe_managed_prefix_lists` method.
 
 Boto3 documentation:
 [EC2.Client.describe_managed_prefix_lists](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_managed_prefix_lists)
@@ -7835,8 +7789,8 @@ Returns a `Coroutine` for
 Describes your Elastic IP addresses that are being moved to the EC2-VPC
 platform, or that are being restored to the EC2-Classic platform.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_moving_addresses` method.
+Type annotations for `session.create_client("ec2").describe_moving_addresses`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_moving_addresses](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_moving_addresses)
@@ -7864,7 +7818,7 @@ Returns a `Coroutine` for
 
 Describes one or more of your NAT gateways.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_nat_gateways`
+Type annotations for `session.create_client("ec2").describe_nat_gateways`
 method.
 
 Boto3 documentation:
@@ -7893,7 +7847,7 @@ Returns a `Coroutine` for
 
 Describes one or more of your network ACLs.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_network_acls`
+Type annotations for `session.create_client("ec2").describe_network_acls`
 method.
 
 Boto3 documentation:
@@ -7923,7 +7877,7 @@ Returns a `Coroutine` for
 Describes the specified Network Access Scope analyses.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_network_insights_access_scope_analyses`
+`session.create_client("ec2").describe_network_insights_access_scope_analyses`
 method.
 
 Boto3 documentation:
@@ -7957,8 +7911,7 @@ Returns a `Coroutine` for
 Describes the specified Network Access Scopes.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_network_insights_access_scopes`
-method.
+`session.create_client("ec2").describe_network_insights_access_scopes` method.
 
 Boto3 documentation:
 [EC2.Client.describe_network_insights_access_scopes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_network_insights_access_scopes)
@@ -7987,7 +7940,7 @@ Returns a `Coroutine` for
 Describes one or more of your network insights analyses.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_network_insights_analyses` method.
+`session.create_client("ec2").describe_network_insights_analyses` method.
 
 Boto3 documentation:
 [EC2.Client.describe_network_insights_analyses](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_network_insights_analyses)
@@ -8019,7 +7972,7 @@ Returns a `Coroutine` for
 Describes one or more of your paths.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_network_insights_paths` method.
+`session.create_client("ec2").describe_network_insights_paths` method.
 
 Boto3 documentation:
 [EC2.Client.describe_network_insights_paths](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_network_insights_paths)
@@ -8048,7 +8001,7 @@ Returns a `Coroutine` for
 Describes a network interface attribute.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_network_interface_attribute` method.
+`session.create_client("ec2").describe_network_interface_attribute` method.
 
 Boto3 documentation:
 [EC2.Client.describe_network_interface_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_network_interface_attribute)
@@ -8076,8 +8029,7 @@ Returns a `Coroutine` for
 Describes the permissions for your network interfaces.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_network_interface_permissions`
-method.
+`session.create_client("ec2").describe_network_interface_permissions` method.
 
 Boto3 documentation:
 [EC2.Client.describe_network_interface_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_network_interface_permissions)
@@ -8104,8 +8056,8 @@ Returns a `Coroutine` for
 
 Describes one or more of your network interfaces.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_network_interfaces` method.
+Type annotations for `session.create_client("ec2").describe_network_interfaces`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_network_interfaces](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_network_interfaces)
@@ -8133,8 +8085,8 @@ Returns a `Coroutine` for
 
 Describes the specified placement groups or all of your placement groups.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_placement_groups` method.
+Type annotations for `session.create_client("ec2").describe_placement_groups`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_placement_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_placement_groups)
@@ -8163,7 +8115,7 @@ Describes available Amazon Web Services services in a prefix list format, which
 includes the prefix list name and prefix list ID of the service and the IP
 address range for the service.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_prefix_lists`
+Type annotations for `session.create_client("ec2").describe_prefix_lists`
 method.
 
 Boto3 documentation:
@@ -8194,7 +8146,7 @@ Describes the ID format settings for the root user and all IAM roles and IAM
 users that have explicitly specified a longer ID (17-character ID) preference.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_principal_id_format` method.
+`session.create_client("ec2").describe_principal_id_format` method.
 
 Boto3 documentation:
 [EC2.Client.describe_principal_id_format](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_principal_id_format)
@@ -8221,8 +8173,8 @@ Returns a `Coroutine` for
 
 Describes the specified IPv4 address pools.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_public_ipv4_pools` method.
+Type annotations for `session.create_client("ec2").describe_public_ipv4_pools`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_public_ipv4_pools](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_public_ipv4_pools)
@@ -8249,8 +8201,7 @@ Returns a `Coroutine` for
 
 Describes the Regions that are enabled for your account, or all Regions.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_regions`
-method.
+Type annotations for `session.create_client("ec2").describe_regions` method.
 
 Boto3 documentation:
 [EC2.Client.describe_regions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_regions)
@@ -8277,7 +8228,7 @@ Returns a `Coroutine` for
 Describes a root volume replacement task.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_replace_root_volume_tasks` method.
+`session.create_client("ec2").describe_replace_root_volume_tasks` method.
 
 Boto3 documentation:
 [EC2.Client.describe_replace_root_volume_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_replace_root_volume_tasks)
@@ -8305,8 +8256,8 @@ Returns a `Coroutine` for
 
 Describes one or more of the Reserved Instances that you purchased.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_reserved_instances` method.
+Type annotations for `session.create_client("ec2").describe_reserved_instances`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_reserved_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_reserved_instances)
@@ -8337,7 +8288,7 @@ Describes your account's Reserved Instance listings in the Reserved Instance
 Marketplace.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_reserved_instances_listings` method.
+`session.create_client("ec2").describe_reserved_instances_listings` method.
 
 Boto3 documentation:
 [EC2.Client.describe_reserved_instances_listings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_reserved_instances_listings)
@@ -8364,7 +8315,7 @@ Returns a `Coroutine` for
 Describes the modifications made to your Reserved Instances.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_reserved_instances_modifications`
+`session.create_client("ec2").describe_reserved_instances_modifications`
 method.
 
 Boto3 documentation:
@@ -8392,8 +8343,7 @@ Returns a `Coroutine` for
 Describes Reserved Instance offerings that are available for purchase.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_reserved_instances_offerings`
-method.
+`session.create_client("ec2").describe_reserved_instances_offerings` method.
 
 Boto3 documentation:
 [EC2.Client.describe_reserved_instances_offerings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_reserved_instances_offerings)
@@ -8433,7 +8383,7 @@ Returns a `Coroutine` for
 
 Describes one or more of your route tables.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_route_tables`
+Type annotations for `session.create_client("ec2").describe_route_tables`
 method.
 
 Boto3 documentation:
@@ -8463,8 +8413,7 @@ Returns a `Coroutine` for
 Finds available schedules that meet the specified criteria.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_scheduled_instance_availability`
-method.
+`session.create_client("ec2").describe_scheduled_instance_availability` method.
 
 Boto3 documentation:
 [EC2.Client.describe_scheduled_instance_availability](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_scheduled_instance_availability)
@@ -8500,7 +8449,7 @@ Returns a `Coroutine` for
 Describes the specified Scheduled Instances or all your Scheduled Instances.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_scheduled_instances` method.
+`session.create_client("ec2").describe_scheduled_instances` method.
 
 Boto3 documentation:
 [EC2.Client.describe_scheduled_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_scheduled_instances)
@@ -8529,7 +8478,7 @@ Returns a `Coroutine` for
 ### describe_security_group_references
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_security_group_references` method.
+`session.create_client("ec2").describe_security_group_references` method.
 
 Boto3 documentation:
 [EC2.Client.describe_security_group_references](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_security_group_references)
@@ -8555,7 +8504,7 @@ Returns a `Coroutine` for
 Describes one or more of your security group rules.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_security_group_rules` method.
+`session.create_client("ec2").describe_security_group_rules` method.
 
 Boto3 documentation:
 [EC2.Client.describe_security_group_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_security_group_rules)
@@ -8583,8 +8532,8 @@ Returns a `Coroutine` for
 
 Describes the specified security groups or all of your security groups.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_security_groups` method.
+Type annotations for `session.create_client("ec2").describe_security_groups`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_security_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_security_groups)
@@ -8613,8 +8562,8 @@ Returns a `Coroutine` for
 
 Describes the specified attribute of the specified snapshot.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_snapshot_attribute` method.
+Type annotations for `session.create_client("ec2").describe_snapshot_attribute`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_snapshot_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_snapshot_attribute)
@@ -8643,7 +8592,7 @@ Returns a `Coroutine` for
 Describes the storage tier status of one or more Amazon EBS snapshots.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_snapshot_tier_status` method.
+`session.create_client("ec2").describe_snapshot_tier_status` method.
 
 Boto3 documentation:
 [EC2.Client.describe_snapshot_tier_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_snapshot_tier_status)
@@ -8671,8 +8620,7 @@ Returns a `Coroutine` for
 Describes the specified EBS snapshots available to you or all of the EBS
 snapshots available to you.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_snapshots`
-method.
+Type annotations for `session.create_client("ec2").describe_snapshots` method.
 
 Boto3 documentation:
 [EC2.Client.describe_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_snapshots)
@@ -8703,7 +8651,7 @@ Returns a `Coroutine` for
 Describes the data feed for Spot Instances.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_spot_datafeed_subscription` method.
+`session.create_client("ec2").describe_spot_datafeed_subscription` method.
 
 Boto3 documentation:
 [EC2.Client.describe_spot_datafeed_subscription](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_spot_datafeed_subscription)
@@ -8728,7 +8676,7 @@ Returns a `Coroutine` for
 Describes the running instances for the specified Spot Fleet.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_spot_fleet_instances` method.
+`session.create_client("ec2").describe_spot_fleet_instances` method.
 
 Boto3 documentation:
 [EC2.Client.describe_spot_fleet_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_spot_fleet_instances)
@@ -8757,7 +8705,7 @@ Describes the events for the specified Spot Fleet request during the specified
 time.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_spot_fleet_request_history` method.
+`session.create_client("ec2").describe_spot_fleet_request_history` method.
 
 Boto3 documentation:
 [EC2.Client.describe_spot_fleet_request_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_spot_fleet_request_history)
@@ -8787,7 +8735,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_spot_fleet_requests` method.
+`session.create_client("ec2").describe_spot_fleet_requests` method.
 
 Boto3 documentation:
 [EC2.Client.describe_spot_fleet_requests](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_spot_fleet_requests)
@@ -8815,7 +8763,7 @@ Returns a `Coroutine` for
 Describes the specified Spot Instance requests.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_spot_instance_requests` method.
+`session.create_client("ec2").describe_spot_instance_requests` method.
 
 Boto3 documentation:
 [EC2.Client.describe_spot_instance_requests](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_spot_instance_requests)
@@ -8843,8 +8791,8 @@ Returns a `Coroutine` for
 
 Describes the Spot price history.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_spot_price_history` method.
+Type annotations for `session.create_client("ec2").describe_spot_price_history`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_spot_price_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_spot_price_history)
@@ -8876,7 +8824,7 @@ Returns a `Coroutine` for
 ### describe_stale_security_groups
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_stale_security_groups` method.
+`session.create_client("ec2").describe_stale_security_groups` method.
 
 Boto3 documentation:
 [EC2.Client.describe_stale_security_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_stale_security_groups)
@@ -8903,8 +8851,8 @@ Returns a `Coroutine` for
 
 Describes the progress of the AMI store tasks.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_store_image_tasks` method.
+Type annotations for `session.create_client("ec2").describe_store_image_tasks`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_store_image_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_store_image_tasks)
@@ -8932,8 +8880,7 @@ Returns a `Coroutine` for
 
 Describes one or more of your subnets.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_subnets`
-method.
+Type annotations for `session.create_client("ec2").describe_subnets` method.
 
 Boto3 documentation:
 [EC2.Client.describe_subnets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_subnets)
@@ -8960,7 +8907,7 @@ Returns a `Coroutine` for
 
 Describes the specified tags for your EC2 resources.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_tags` method.
+Type annotations for `session.create_client("ec2").describe_tags` method.
 
 Boto3 documentation:
 [EC2.Client.describe_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_tags)
@@ -8987,7 +8934,7 @@ Returns a `Coroutine` for
 Describes one or more Traffic Mirror filters.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_traffic_mirror_filters` method.
+`session.create_client("ec2").describe_traffic_mirror_filters` method.
 
 Boto3 documentation:
 [EC2.Client.describe_traffic_mirror_filters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_traffic_mirror_filters)
@@ -9016,7 +8963,7 @@ Returns a `Coroutine` for
 Describes one or more Traffic Mirror sessions.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_traffic_mirror_sessions` method.
+`session.create_client("ec2").describe_traffic_mirror_sessions` method.
 
 Boto3 documentation:
 [EC2.Client.describe_traffic_mirror_sessions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_traffic_mirror_sessions)
@@ -9045,7 +8992,7 @@ Returns a `Coroutine` for
 Information about one or more Traffic Mirror targets.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_traffic_mirror_targets` method.
+`session.create_client("ec2").describe_traffic_mirror_targets` method.
 
 Boto3 documentation:
 [EC2.Client.describe_traffic_mirror_targets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_traffic_mirror_targets)
@@ -9074,7 +9021,7 @@ Returns a `Coroutine` for
 Describes one or more attachments between resources and transit gateways.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_transit_gateway_attachments` method.
+`session.create_client("ec2").describe_transit_gateway_attachments` method.
 
 Boto3 documentation:
 [EC2.Client.describe_transit_gateway_attachments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_transit_gateway_attachments)
@@ -9103,8 +9050,7 @@ Returns a `Coroutine` for
 Describes one or more Connect peers.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_transit_gateway_connect_peers`
-method.
+`session.create_client("ec2").describe_transit_gateway_connect_peers` method.
 
 Boto3 documentation:
 [EC2.Client.describe_transit_gateway_connect_peers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_transit_gateway_connect_peers)
@@ -9133,7 +9079,7 @@ Returns a `Coroutine` for
 Describes one or more Connect attachments.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_transit_gateway_connects` method.
+`session.create_client("ec2").describe_transit_gateway_connects` method.
 
 Boto3 documentation:
 [EC2.Client.describe_transit_gateway_connects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_transit_gateway_connects)
@@ -9162,7 +9108,7 @@ Returns a `Coroutine` for
 Describes one or more transit gateway multicast domains.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_transit_gateway_multicast_domains`
+`session.create_client("ec2").describe_transit_gateway_multicast_domains`
 method.
 
 Boto3 documentation:
@@ -9192,7 +9138,7 @@ Returns a `Coroutine` for
 Describes your transit gateway peering attachments.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_transit_gateway_peering_attachments`
+`session.create_client("ec2").describe_transit_gateway_peering_attachments`
 method.
 
 Boto3 documentation:
@@ -9223,8 +9169,7 @@ Returns a `Coroutine` for
 Describes one or more transit gateway route tables.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_transit_gateway_route_tables`
-method.
+`session.create_client("ec2").describe_transit_gateway_route_tables` method.
 
 Boto3 documentation:
 [EC2.Client.describe_transit_gateway_route_tables](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_transit_gateway_route_tables)
@@ -9253,8 +9198,7 @@ Returns a `Coroutine` for
 Describes one or more VPC attachments.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_transit_gateway_vpc_attachments`
-method.
+`session.create_client("ec2").describe_transit_gateway_vpc_attachments` method.
 
 Boto3 documentation:
 [EC2.Client.describe_transit_gateway_vpc_attachments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_transit_gateway_vpc_attachments)
@@ -9282,8 +9226,8 @@ Returns a `Coroutine` for
 
 Describes one or more transit gateways.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_transit_gateways` method.
+Type annotations for `session.create_client("ec2").describe_transit_gateways`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_transit_gateways](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_transit_gateways)
@@ -9312,8 +9256,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_trunk_interface_associations`
-method.
+`session.create_client("ec2").describe_trunk_interface_associations` method.
 
 Boto3 documentation:
 [EC2.Client.describe_trunk_interface_associations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_trunk_interface_associations)
@@ -9341,8 +9284,8 @@ Returns a `Coroutine` for
 
 Describes the specified attribute of the specified volume.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_volume_attribute` method.
+Type annotations for `session.create_client("ec2").describe_volume_attribute`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_volume_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_volume_attribute)
@@ -9369,7 +9312,7 @@ Returns a `Coroutine` for
 
 Describes the status of the specified volumes.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_volume_status`
+Type annotations for `session.create_client("ec2").describe_volume_status`
 method.
 
 Boto3 documentation:
@@ -9398,8 +9341,7 @@ Returns a `Coroutine` for
 
 Describes the specified EBS volumes or all of your EBS volumes.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_volumes`
-method.
+Type annotations for `session.create_client("ec2").describe_volumes` method.
 
 Boto3 documentation:
 [EC2.Client.describe_volumes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_volumes)
@@ -9428,7 +9370,7 @@ Describes the most recent volume modification request for the specified EBS
 volumes.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_volumes_modifications` method.
+`session.create_client("ec2").describe_volumes_modifications` method.
 
 Boto3 documentation:
 [EC2.Client.describe_volumes_modifications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_volumes_modifications)
@@ -9456,7 +9398,7 @@ Returns a `Coroutine` for
 
 Describes the specified attribute of the specified VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_vpc_attribute`
+Type annotations for `session.create_client("ec2").describe_vpc_attribute`
 method.
 
 Boto3 documentation:
@@ -9484,8 +9426,8 @@ Returns a `Coroutine` for
 
 Describes the ClassicLink status of one or more VPCs.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_vpc_classic_link` method.
+Type annotations for `session.create_client("ec2").describe_vpc_classic_link`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_vpc_classic_link](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_vpc_classic_link)
@@ -9512,8 +9454,7 @@ Returns a `Coroutine` for
 Describes the ClassicLink DNS support status of one or more VPCs.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_vpc_classic_link_dns_support`
-method.
+`session.create_client("ec2").describe_vpc_classic_link_dns_support` method.
 
 Boto3 documentation:
 [EC2.Client.describe_vpc_classic_link_dns_support](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_vpc_classic_link_dns_support)
@@ -9541,7 +9482,7 @@ Describes the connection notifications for VPC endpoints and VPC endpoint
 services.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_vpc_endpoint_connection_notifications`
+`session.create_client("ec2").describe_vpc_endpoint_connection_notifications`
 method.
 
 Boto3 documentation:
@@ -9573,7 +9514,7 @@ Describes the VPC endpoint connections to your VPC endpoint services, including
 any endpoints that are pending your acceptance.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_vpc_endpoint_connections` method.
+`session.create_client("ec2").describe_vpc_endpoint_connections` method.
 
 Boto3 documentation:
 [EC2.Client.describe_vpc_endpoint_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_vpc_endpoint_connections)
@@ -9602,7 +9543,7 @@ Describes the VPC endpoint service configurations in your account (your
 services).
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_vpc_endpoint_service_configurations`
+`session.create_client("ec2").describe_vpc_endpoint_service_configurations`
 method.
 
 Boto3 documentation:
@@ -9634,7 +9575,7 @@ Describes the principals (service consumers) that are permitted to discover
 your VPC endpoint service.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_vpc_endpoint_service_permissions`
+`session.create_client("ec2").describe_vpc_endpoint_service_permissions`
 method.
 
 Boto3 documentation:
@@ -9664,7 +9605,7 @@ Returns a `Coroutine` for
 Describes available services to which you can create a VPC endpoint.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_vpc_endpoint_services` method.
+`session.create_client("ec2").describe_vpc_endpoint_services` method.
 
 Boto3 documentation:
 [EC2.Client.describe_vpc_endpoint_services](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_vpc_endpoint_services)
@@ -9692,7 +9633,7 @@ Returns a `Coroutine` for
 
 Describes one or more of your VPC endpoints.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_vpc_endpoints`
+Type annotations for `session.create_client("ec2").describe_vpc_endpoints`
 method.
 
 Boto3 documentation:
@@ -9722,7 +9663,7 @@ Returns a `Coroutine` for
 Describes one or more of your VPC peering connections.
 
 Type annotations for
-`aiobotocore.create_client("ec2").describe_vpc_peering_connections` method.
+`session.create_client("ec2").describe_vpc_peering_connections` method.
 
 Boto3 documentation:
 [EC2.Client.describe_vpc_peering_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_vpc_peering_connections)
@@ -9750,7 +9691,7 @@ Returns a `Coroutine` for
 
 Describes one or more of your VPCs.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_vpcs` method.
+Type annotations for `session.create_client("ec2").describe_vpcs` method.
 
 Boto3 documentation:
 [EC2.Client.describe_vpcs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_vpcs)
@@ -9777,8 +9718,8 @@ Returns a `Coroutine` for
 
 Describes one or more of your VPN connections.
 
-Type annotations for
-`aiobotocore.create_client("ec2").describe_vpn_connections` method.
+Type annotations for `session.create_client("ec2").describe_vpn_connections`
+method.
 
 Boto3 documentation:
 [EC2.Client.describe_vpn_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.describe_vpn_connections)
@@ -9804,7 +9745,7 @@ Returns a `Coroutine` for
 
 Describes one or more of your virtual private gateways.
 
-Type annotations for `aiobotocore.create_client("ec2").describe_vpn_gateways`
+Type annotations for `session.create_client("ec2").describe_vpn_gateways`
 method.
 
 Boto3 documentation:
@@ -9831,7 +9772,7 @@ Returns a `Coroutine` for
 
 Unlinks (detaches) a linked EC2-Classic instance from a VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").detach_classic_link_vpc`
+Type annotations for `session.create_client("ec2").detach_classic_link_vpc`
 method.
 
 Boto3 documentation:
@@ -9859,7 +9800,7 @@ Returns a `Coroutine` for
 Detaches an internet gateway from a VPC, disabling connectivity between the
 internet and the VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").detach_internet_gateway`
+Type annotations for `session.create_client("ec2").detach_internet_gateway`
 method.
 
 Boto3 documentation:
@@ -9883,8 +9824,8 @@ Keyword-only arguments:
 
 Detaches a network interface from an instance.
 
-Type annotations for
-`aiobotocore.create_client("ec2").detach_network_interface` method.
+Type annotations for `session.create_client("ec2").detach_network_interface`
+method.
 
 Boto3 documentation:
 [EC2.Client.detach_network_interface](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.detach_network_interface)
@@ -9907,7 +9848,7 @@ Keyword-only arguments:
 
 Detaches an EBS volume from an instance.
 
-Type annotations for `aiobotocore.create_client("ec2").detach_volume` method.
+Type annotations for `session.create_client("ec2").detach_volume` method.
 
 Boto3 documentation:
 [EC2.Client.detach_volume](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.detach_volume)
@@ -9934,8 +9875,7 @@ Returns a `Coroutine` for
 
 Detaches a virtual private gateway from a VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").detach_vpn_gateway`
-method.
+Type annotations for `session.create_client("ec2").detach_vpn_gateway` method.
 
 Boto3 documentation:
 [EC2.Client.detach_vpn_gateway](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.detach_vpn_gateway)
@@ -9959,7 +9899,7 @@ Keyword-only arguments:
 Disables EBS encryption by default for your account in the current Region.
 
 Type annotations for
-`aiobotocore.create_client("ec2").disable_ebs_encryption_by_default` method.
+`session.create_client("ec2").disable_ebs_encryption_by_default` method.
 
 Boto3 documentation:
 [EC2.Client.disable_ebs_encryption_by_default](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disable_ebs_encryption_by_default)
@@ -9985,7 +9925,7 @@ Disables fast snapshot restores for the specified snapshots in the specified
 Availability Zones.
 
 Type annotations for
-`aiobotocore.create_client("ec2").disable_fast_snapshot_restores` method.
+`session.create_client("ec2").disable_fast_snapshot_restores` method.
 
 Boto3 documentation:
 [EC2.Client.disable_fast_snapshot_restores](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disable_fast_snapshot_restores)
@@ -10011,8 +9951,8 @@ Returns a `Coroutine` for
 
 Cancels the deprecation of the specified AMI.
 
-Type annotations for
-`aiobotocore.create_client("ec2").disable_image_deprecation` method.
+Type annotations for `session.create_client("ec2").disable_image_deprecation`
+method.
 
 Boto3 documentation:
 [EC2.Client.disable_image_deprecation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disable_image_deprecation)
@@ -10038,8 +9978,7 @@ Returns a `Coroutine` for
 Disable the IPAM account.
 
 Type annotations for
-`aiobotocore.create_client("ec2").disable_ipam_organization_admin_account`
-method.
+`session.create_client("ec2").disable_ipam_organization_admin_account` method.
 
 Boto3 documentation:
 [EC2.Client.disable_ipam_organization_admin_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disable_ipam_organization_admin_account)
@@ -10065,7 +10004,7 @@ Returns a `Coroutine` for
 Disables access to the EC2 serial console of all instances for your account.
 
 Type annotations for
-`aiobotocore.create_client("ec2").disable_serial_console_access` method.
+`session.create_client("ec2").disable_serial_console_access` method.
 
 Boto3 documentation:
 [EC2.Client.disable_serial_console_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disable_serial_console_access)
@@ -10091,7 +10030,7 @@ Disables the specified resource attachment from propagating routes to the
 specified propagation route table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").disable_transit_gateway_route_table_propagation`
+`session.create_client("ec2").disable_transit_gateway_route_table_propagation`
 method.
 
 Boto3 documentation:
@@ -10121,7 +10060,7 @@ Disables a virtual private gateway (VGW) from propagating routes to a specified
 route table of a VPC.
 
 Type annotations for
-`aiobotocore.create_client("ec2").disable_vgw_route_propagation` method.
+`session.create_client("ec2").disable_vgw_route_propagation` method.
 
 Boto3 documentation:
 [EC2.Client.disable_vgw_route_propagation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disable_vgw_route_propagation)
@@ -10144,8 +10083,8 @@ Keyword-only arguments:
 
 Disables ClassicLink for a VPC.
 
-Type annotations for
-`aiobotocore.create_client("ec2").disable_vpc_classic_link` method.
+Type annotations for `session.create_client("ec2").disable_vpc_classic_link`
+method.
 
 Boto3 documentation:
 [EC2.Client.disable_vpc_classic_link](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disable_vpc_classic_link)
@@ -10171,7 +10110,7 @@ Returns a `Coroutine` for
 Disables ClassicLink DNS support for a VPC.
 
 Type annotations for
-`aiobotocore.create_client("ec2").disable_vpc_classic_link_dns_support` method.
+`session.create_client("ec2").disable_vpc_classic_link_dns_support` method.
 
 Boto3 documentation:
 [EC2.Client.disable_vpc_classic_link_dns_support](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disable_vpc_classic_link_dns_support)
@@ -10196,7 +10135,7 @@ Returns a `Coroutine` for
 Disassociates an Elastic IP address from the instance or network interface it's
 associated with.
 
-Type annotations for `aiobotocore.create_client("ec2").disassociate_address`
+Type annotations for `session.create_client("ec2").disassociate_address`
 method.
 
 Boto3 documentation:
@@ -10221,8 +10160,7 @@ Keyword-only arguments:
 Disassociates a target network from the specified Client VPN endpoint.
 
 Type annotations for
-`aiobotocore.create_client("ec2").disassociate_client_vpn_target_network`
-method.
+`session.create_client("ec2").disassociate_client_vpn_target_network` method.
 
 Boto3 documentation:
 [EC2.Client.disassociate_client_vpn_target_network](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disassociate_client_vpn_target_network)
@@ -10249,7 +10187,7 @@ Returns a `Coroutine` for
 Disassociates an IAM role from an Certificate Manager (ACM) certificate.
 
 Type annotations for
-`aiobotocore.create_client("ec2").disassociate_enclave_certificate_iam_role`
+`session.create_client("ec2").disassociate_enclave_certificate_iam_role`
 method.
 
 Boto3 documentation:
@@ -10277,7 +10215,7 @@ Returns a `Coroutine` for
 Disassociates an IAM instance profile from a running or stopped instance.
 
 Type annotations for
-`aiobotocore.create_client("ec2").disassociate_iam_instance_profile` method.
+`session.create_client("ec2").disassociate_iam_instance_profile` method.
 
 Boto3 documentation:
 [EC2.Client.disassociate_iam_instance_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disassociate_iam_instance_profile)
@@ -10302,7 +10240,7 @@ Returns a `Coroutine` for
 Disassociates one or more targets from an event window.
 
 Type annotations for
-`aiobotocore.create_client("ec2").disassociate_instance_event_window` method.
+`session.create_client("ec2").disassociate_instance_event_window` method.
 
 Boto3 documentation:
 [EC2.Client.disassociate_instance_event_window](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disassociate_instance_event_window)
@@ -10330,8 +10268,8 @@ Returns a `Coroutine` for
 
 Disassociates a subnet or gateway from a route table.
 
-Type annotations for
-`aiobotocore.create_client("ec2").disassociate_route_table` method.
+Type annotations for `session.create_client("ec2").disassociate_route_table`
+method.
 
 Boto3 documentation:
 [EC2.Client.disassociate_route_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disassociate_route_table)
@@ -10354,7 +10292,7 @@ Keyword-only arguments:
 Disassociates a CIDR block from a subnet.
 
 Type annotations for
-`aiobotocore.create_client("ec2").disassociate_subnet_cidr_block` method.
+`session.create_client("ec2").disassociate_subnet_cidr_block` method.
 
 Boto3 documentation:
 [EC2.Client.disassociate_subnet_cidr_block](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disassociate_subnet_cidr_block)
@@ -10379,7 +10317,7 @@ Returns a `Coroutine` for
 Disassociates the specified subnets from the transit gateway multicast domain.
 
 Type annotations for
-`aiobotocore.create_client("ec2").disassociate_transit_gateway_multicast_domain`
+`session.create_client("ec2").disassociate_transit_gateway_multicast_domain`
 method.
 
 Boto3 documentation:
@@ -10409,8 +10347,7 @@ Returns a `Coroutine` for
 Disassociates a resource attachment from a transit gateway route table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").disassociate_transit_gateway_route_table`
-method.
+`session.create_client("ec2").disassociate_transit_gateway_route_table` method.
 
 Boto3 documentation:
 [EC2.Client.disassociate_transit_gateway_route_table](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disassociate_transit_gateway_route_table)
@@ -10437,7 +10374,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("ec2").disassociate_trunk_interface` method.
+`session.create_client("ec2").disassociate_trunk_interface` method.
 
 Boto3 documentation:
 [EC2.Client.disassociate_trunk_interface](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disassociate_trunk_interface)
@@ -10463,8 +10400,8 @@ Returns a `Coroutine` for
 
 Disassociates a CIDR block from a VPC.
 
-Type annotations for
-`aiobotocore.create_client("ec2").disassociate_vpc_cidr_block` method.
+Type annotations for `session.create_client("ec2").disassociate_vpc_cidr_block`
+method.
 
 Boto3 documentation:
 [EC2.Client.disassociate_vpc_cidr_block](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.disassociate_vpc_cidr_block)
@@ -10489,7 +10426,7 @@ Returns a `Coroutine` for
 Enables EBS encryption by default for your account in the current Region.
 
 Type annotations for
-`aiobotocore.create_client("ec2").enable_ebs_encryption_by_default` method.
+`session.create_client("ec2").enable_ebs_encryption_by_default` method.
 
 Boto3 documentation:
 [EC2.Client.enable_ebs_encryption_by_default](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.enable_ebs_encryption_by_default)
@@ -10515,7 +10452,7 @@ Enables fast snapshot restores for the specified snapshots in the specified
 Availability Zones.
 
 Type annotations for
-`aiobotocore.create_client("ec2").enable_fast_snapshot_restores` method.
+`session.create_client("ec2").enable_fast_snapshot_restores` method.
 
 Boto3 documentation:
 [EC2.Client.enable_fast_snapshot_restores](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.enable_fast_snapshot_restores)
@@ -10541,8 +10478,8 @@ Returns a `Coroutine` for
 
 Enables deprecation of the specified AMI at the specified date and time.
 
-Type annotations for
-`aiobotocore.create_client("ec2").enable_image_deprecation` method.
+Type annotations for `session.create_client("ec2").enable_image_deprecation`
+method.
 
 Boto3 documentation:
 [EC2.Client.enable_image_deprecation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.enable_image_deprecation)
@@ -10569,8 +10506,7 @@ Returns a `Coroutine` for
 Enable an Organizations member account as the IPAM admin account.
 
 Type annotations for
-`aiobotocore.create_client("ec2").enable_ipam_organization_admin_account`
-method.
+`session.create_client("ec2").enable_ipam_organization_admin_account` method.
 
 Boto3 documentation:
 [EC2.Client.enable_ipam_organization_admin_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.enable_ipam_organization_admin_account)
@@ -10596,7 +10532,7 @@ Returns a `Coroutine` for
 Enables access to the EC2 serial console of all instances for your account.
 
 Type annotations for
-`aiobotocore.create_client("ec2").enable_serial_console_access` method.
+`session.create_client("ec2").enable_serial_console_access` method.
 
 Boto3 documentation:
 [EC2.Client.enable_serial_console_access](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.enable_serial_console_access)
@@ -10622,7 +10558,7 @@ Enables the specified attachment to propagate routes to the specified
 propagation route table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").enable_transit_gateway_route_table_propagation`
+`session.create_client("ec2").enable_transit_gateway_route_table_propagation`
 method.
 
 Boto3 documentation:
@@ -10652,7 +10588,7 @@ Enables a virtual private gateway (VGW) to propagate routes to the specified
 route table of a VPC.
 
 Type annotations for
-`aiobotocore.create_client("ec2").enable_vgw_route_propagation` method.
+`session.create_client("ec2").enable_vgw_route_propagation` method.
 
 Boto3 documentation:
 [EC2.Client.enable_vgw_route_propagation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.enable_vgw_route_propagation)
@@ -10676,8 +10612,7 @@ Keyword-only arguments:
 Enables I/O operations for a volume that had I/O operations disabled because
 the data on the volume was potentially inconsistent.
 
-Type annotations for `aiobotocore.create_client("ec2").enable_volume_io`
-method.
+Type annotations for `session.create_client("ec2").enable_volume_io` method.
 
 Boto3 documentation:
 [EC2.Client.enable_volume_io](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.enable_volume_io)
@@ -10698,7 +10633,7 @@ Keyword-only arguments:
 
 Enables a VPC for ClassicLink.
 
-Type annotations for `aiobotocore.create_client("ec2").enable_vpc_classic_link`
+Type annotations for `session.create_client("ec2").enable_vpc_classic_link`
 method.
 
 Boto3 documentation:
@@ -10725,7 +10660,7 @@ Returns a `Coroutine` for
 Enables a VPC to support DNS hostname resolution for ClassicLink.
 
 Type annotations for
-`aiobotocore.create_client("ec2").enable_vpc_classic_link_dns_support` method.
+`session.create_client("ec2").enable_vpc_classic_link_dns_support` method.
 
 Boto3 documentation:
 [EC2.Client.enable_vpc_classic_link_dns_support](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.enable_vpc_classic_link_dns_support)
@@ -10751,7 +10686,7 @@ Downloads the client certificate revocation list for the specified Client VPN
 endpoint.
 
 Type annotations for
-`aiobotocore.create_client("ec2").export_client_vpn_client_certificate_revocation_list`
+`session.create_client("ec2").export_client_vpn_client_certificate_revocation_list`
 method.
 
 Boto3 documentation:
@@ -10780,8 +10715,7 @@ Downloads the contents of the Client VPN endpoint configuration file for the
 specified Client VPN endpoint.
 
 Type annotations for
-`aiobotocore.create_client("ec2").export_client_vpn_client_configuration`
-method.
+`session.create_client("ec2").export_client_vpn_client_configuration` method.
 
 Boto3 documentation:
 [EC2.Client.export_client_vpn_client_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.export_client_vpn_client_configuration)
@@ -10806,7 +10740,7 @@ Returns a `Coroutine` for
 
 Exports an Amazon Machine Image (AMI) to a VM file.
 
-Type annotations for `aiobotocore.create_client("ec2").export_image` method.
+Type annotations for `session.create_client("ec2").export_image` method.
 
 Boto3 documentation:
 [EC2.Client.export_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.export_image)
@@ -10842,7 +10776,7 @@ Exports routes from the specified transit gateway route table to the specified
 S3 bucket.
 
 Type annotations for
-`aiobotocore.create_client("ec2").export_transit_gateway_routes` method.
+`session.create_client("ec2").export_transit_gateway_routes` method.
 
 Boto3 documentation:
 [EC2.Client.export_transit_gateway_routes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.export_transit_gateway_routes)
@@ -10869,7 +10803,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("ec2").generate_presigned_url`
+Type annotations for `session.create_client("ec2").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -10895,7 +10829,7 @@ Returns the IAM roles that are associated with the specified ACM (ACM)
 certificate.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_associated_enclave_certificate_iam_roles`
+`session.create_client("ec2").get_associated_enclave_certificate_iam_roles`
 method.
 
 Boto3 documentation:
@@ -10924,7 +10858,7 @@ Gets information about the IPv6 CIDR block associations for a specified IPv6
 address pool.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_associated_ipv6_pool_cidrs` method.
+`session.create_client("ec2").get_associated_ipv6_pool_cidrs` method.
 
 Boto3 documentation:
 [EC2.Client.get_associated_ipv6_pool_cidrs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_associated_ipv6_pool_cidrs)
@@ -10952,7 +10886,7 @@ Returns a `Coroutine` for
 Gets usage information about a Capacity Reservation.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_capacity_reservation_usage` method.
+`session.create_client("ec2").get_capacity_reservation_usage` method.
 
 Boto3 documentation:
 [EC2.Client.get_capacity_reservation_usage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_capacity_reservation_usage)
@@ -10979,8 +10913,7 @@ Returns a `Coroutine` for
 
 Describes the allocations from the specified customer-owned address pool.
 
-Type annotations for `aiobotocore.create_client("ec2").get_coip_pool_usage`
-method.
+Type annotations for `session.create_client("ec2").get_coip_pool_usage` method.
 
 Boto3 documentation:
 [EC2.Client.get_coip_pool_usage](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_coip_pool_usage)
@@ -11008,8 +10941,7 @@ Returns a `Coroutine` for
 
 Gets the console output for the specified instance.
 
-Type annotations for `aiobotocore.create_client("ec2").get_console_output`
-method.
+Type annotations for `session.create_client("ec2").get_console_output` method.
 
 Boto3 documentation:
 [EC2.Client.get_console_output](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_console_output)
@@ -11036,7 +10968,7 @@ Returns a `Coroutine` for
 Retrieve a JPG-format screenshot of a running instance to help with
 troubleshooting.
 
-Type annotations for `aiobotocore.create_client("ec2").get_console_screenshot`
+Type annotations for `session.create_client("ec2").get_console_screenshot`
 method.
 
 Boto3 documentation:
@@ -11065,7 +10997,7 @@ Describes the default credit option for CPU usage of a burstable performance
 instance family.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_default_credit_specification` method.
+`session.create_client("ec2").get_default_credit_specification` method.
 
 Boto3 documentation:
 [EC2.Client.get_default_credit_specification](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_default_credit_specification)
@@ -11093,8 +11025,8 @@ Returns a `Coroutine` for
 Describes the default KMS key for EBS encryption by default for your account in
 this Region.
 
-Type annotations for
-`aiobotocore.create_client("ec2").get_ebs_default_kms_key_id` method.
+Type annotations for `session.create_client("ec2").get_ebs_default_kms_key_id`
+method.
 
 Boto3 documentation:
 [EC2.Client.get_ebs_default_kms_key_id](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_ebs_default_kms_key_id)
@@ -11120,7 +11052,7 @@ Describes whether EBS encryption by default is enabled for your account in the
 current Region.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_ebs_encryption_by_default` method.
+`session.create_client("ec2").get_ebs_encryption_by_default` method.
 
 Boto3 documentation:
 [EC2.Client.get_ebs_encryption_by_default](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_ebs_encryption_by_default)
@@ -11146,7 +11078,7 @@ Generates a CloudFormation template that streamlines and automates the
 integration of VPC flow logs with Amazon Athena.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_flow_logs_integration_template` method.
+`session.create_client("ec2").get_flow_logs_integration_template` method.
 
 Boto3 documentation:
 [EC2.Client.get_flow_logs_integration_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_flow_logs_integration_template)
@@ -11176,7 +11108,7 @@ Returns a `Coroutine` for
 Lists the resource groups to which a Capacity Reservation has been added.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_groups_for_capacity_reservation` method.
+`session.create_client("ec2").get_groups_for_capacity_reservation` method.
 
 Boto3 documentation:
 [EC2.Client.get_groups_for_capacity_reservation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_groups_for_capacity_reservation)
@@ -11205,8 +11137,7 @@ Preview a reservation purchase with configurations that match those of your
 Dedicated Host.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_host_reservation_purchase_preview`
-method.
+`session.create_client("ec2").get_host_reservation_purchase_preview` method.
 
 Boto3 documentation:
 [EC2.Client.get_host_reservation_purchase_preview](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_host_reservation_purchase_preview)
@@ -11232,7 +11163,7 @@ Returns a `Coroutine` for
 Returns a list of instance types with the specified instance attributes.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_instance_types_from_instance_requirements`
+`session.create_client("ec2").get_instance_types_from_instance_requirements`
 method.
 
 Boto3 documentation:
@@ -11269,8 +11200,8 @@ Returns a `Coroutine` for
 
 Retrieve historical information about a CIDR within an IPAM scope.
 
-Type annotations for
-`aiobotocore.create_client("ec2").get_ipam_address_history` method.
+Type annotations for `session.create_client("ec2").get_ipam_address_history`
+method.
 
 Boto3 documentation:
 [EC2.Client.get_ipam_address_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_ipam_address_history)
@@ -11301,8 +11232,8 @@ Returns a `Coroutine` for
 
 Get a list of all the CIDR allocations in an IPAM pool.
 
-Type annotations for
-`aiobotocore.create_client("ec2").get_ipam_pool_allocations` method.
+Type annotations for `session.create_client("ec2").get_ipam_pool_allocations`
+method.
 
 Boto3 documentation:
 [EC2.Client.get_ipam_pool_allocations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_ipam_pool_allocations)
@@ -11331,8 +11262,7 @@ Returns a `Coroutine` for
 
 Get the CIDRs provisioned to an IPAM pool.
 
-Type annotations for `aiobotocore.create_client("ec2").get_ipam_pool_cidrs`
-method.
+Type annotations for `session.create_client("ec2").get_ipam_pool_cidrs` method.
 
 Boto3 documentation:
 [EC2.Client.get_ipam_pool_cidrs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_ipam_pool_cidrs)
@@ -11360,7 +11290,7 @@ Returns a `Coroutine` for
 
 Get information about the resources in a scope.
 
-Type annotations for `aiobotocore.create_client("ec2").get_ipam_resource_cidrs`
+Type annotations for `session.create_client("ec2").get_ipam_resource_cidrs`
 method.
 
 Boto3 documentation:
@@ -11395,8 +11325,8 @@ Returns a `Coroutine` for
 
 Retrieves the configuration data of the specified instance.
 
-Type annotations for
-`aiobotocore.create_client("ec2").get_launch_template_data` method.
+Type annotations for `session.create_client("ec2").get_launch_template_data`
+method.
 
 Boto3 documentation:
 [EC2.Client.get_launch_template_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_launch_template_data)
@@ -11423,7 +11353,7 @@ Gets information about the resources that are associated with the specified
 managed prefix list.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_managed_prefix_list_associations` method.
+`session.create_client("ec2").get_managed_prefix_list_associations` method.
 
 Boto3 documentation:
 [EC2.Client.get_managed_prefix_list_associations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_managed_prefix_list_associations)
@@ -11451,7 +11381,7 @@ Returns a `Coroutine` for
 Gets information about the entries for a specified managed prefix list.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_managed_prefix_list_entries` method.
+`session.create_client("ec2").get_managed_prefix_list_entries` method.
 
 Boto3 documentation:
 [EC2.Client.get_managed_prefix_list_entries](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_managed_prefix_list_entries)
@@ -11480,7 +11410,7 @@ Returns a `Coroutine` for
 Gets the findings for the specified Network Access Scope analysis.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_network_insights_access_scope_analysis_findings`
+`session.create_client("ec2").get_network_insights_access_scope_analysis_findings`
 method.
 
 Boto3 documentation:
@@ -11510,7 +11440,7 @@ Returns a `Coroutine` for
 Gets the content for the specified Network Access Scope.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_network_insights_access_scope_content`
+`session.create_client("ec2").get_network_insights_access_scope_content`
 method.
 
 Boto3 documentation:
@@ -11536,8 +11466,7 @@ Returns a `Coroutine` for
 
 Retrieves the encrypted administrator password for a running Windows instance.
 
-Type annotations for `aiobotocore.create_client("ec2").get_password_data`
-method.
+Type annotations for `session.create_client("ec2").get_password_data` method.
 
 Boto3 documentation:
 [EC2.Client.get_password_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_password_data)
@@ -11563,8 +11492,7 @@ Returns a quote and exchange information for exchanging one or more specified
 Convertible Reserved Instances for a new Convertible Reserved Instance.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_reserved_instances_exchange_quote`
-method.
+`session.create_client("ec2").get_reserved_instances_exchange_quote` method.
 
 Boto3 documentation:
 [EC2.Client.get_reserved_instances_exchange_quote](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_reserved_instances_exchange_quote)
@@ -11593,7 +11521,7 @@ Retrieves the access status of your account to the EC2 serial console of all
 instances.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_serial_console_access_status` method.
+`session.create_client("ec2").get_serial_console_access_status` method.
 
 Boto3 documentation:
 [EC2.Client.get_serial_console_access_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_serial_console_access_status)
@@ -11618,8 +11546,8 @@ Returns a `Coroutine` for
 Calculates the Spot placement score for a Region or Availability Zone based on
 the specified target capacity and compute requirements.
 
-Type annotations for
-`aiobotocore.create_client("ec2").get_spot_placement_scores` method.
+Type annotations for `session.create_client("ec2").get_spot_placement_scores`
+method.
 
 Boto3 documentation:
 [EC2.Client.get_spot_placement_scores](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_spot_placement_scores)
@@ -11654,7 +11582,7 @@ Returns a `Coroutine` for
 Gets information about the subnet CIDR reservations.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_subnet_cidr_reservations` method.
+`session.create_client("ec2").get_subnet_cidr_reservations` method.
 
 Boto3 documentation:
 [EC2.Client.get_subnet_cidr_reservations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_subnet_cidr_reservations)
@@ -11684,7 +11612,7 @@ Lists the route tables to which the specified resource attachment propagates
 routes.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_transit_gateway_attachment_propagations`
+`session.create_client("ec2").get_transit_gateway_attachment_propagations`
 method.
 
 Boto3 documentation:
@@ -11716,7 +11644,7 @@ Gets information about the associations for the transit gateway multicast
 domain.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_transit_gateway_multicast_domain_associations`
+`session.create_client("ec2").get_transit_gateway_multicast_domain_associations`
 method.
 
 Boto3 documentation:
@@ -11748,7 +11676,7 @@ Gets information about the prefix list references in a specified transit
 gateway route table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_transit_gateway_prefix_list_references`
+`session.create_client("ec2").get_transit_gateway_prefix_list_references`
 method.
 
 Boto3 documentation:
@@ -11779,7 +11707,7 @@ Gets information about the associations for the specified transit gateway route
 table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_transit_gateway_route_table_associations`
+`session.create_client("ec2").get_transit_gateway_route_table_associations`
 method.
 
 Boto3 documentation:
@@ -11811,7 +11739,7 @@ Gets information about the route table propagations for the specified transit
 gateway route table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_transit_gateway_route_table_propagations`
+`session.create_client("ec2").get_transit_gateway_route_table_propagations`
 method.
 
 Boto3 documentation:
@@ -11844,7 +11772,7 @@ with the customer gateway device specified for your Site-to-Site VPN
 connection.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_vpn_connection_device_sample_configuration`
+`session.create_client("ec2").get_vpn_connection_device_sample_configuration`
 method.
 
 Boto3 documentation:
@@ -11875,7 +11803,7 @@ Obtain a list of customer gateway devices for which sample configuration files
 can be provided.
 
 Type annotations for
-`aiobotocore.create_client("ec2").get_vpn_connection_device_types` method.
+`session.create_client("ec2").get_vpn_connection_device_types` method.
 
 Boto3 documentation:
 [EC2.Client.get_vpn_connection_device_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.get_vpn_connection_device_types)
@@ -11903,7 +11831,7 @@ Uploads a client certificate revocation list to the specified Client VPN
 endpoint.
 
 Type annotations for
-`aiobotocore.create_client("ec2").import_client_vpn_client_certificate_revocation_list`
+`session.create_client("ec2").import_client_vpn_client_certificate_revocation_list`
 method.
 
 Boto3 documentation:
@@ -11932,7 +11860,7 @@ Returns a `Coroutine` for
 Import single or multi-volume disk images or EBS snapshots into an Amazon
 Machine Image (AMI).
 
-Type annotations for `aiobotocore.create_client("ec2").import_image` method.
+Type annotations for `session.create_client("ec2").import_image` method.
 
 Boto3 documentation:
 [EC2.Client.import_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.import_image)
@@ -11973,7 +11901,7 @@ Returns a `Coroutine` for
 
 Creates an import instance task using metadata from the specified disk image.
 
-Type annotations for `aiobotocore.create_client("ec2").import_instance` method.
+Type annotations for `session.create_client("ec2").import_instance` method.
 
 Boto3 documentation:
 [EC2.Client.import_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.import_instance)
@@ -12004,7 +11932,7 @@ Returns a `Coroutine` for
 Imports the public key from an RSA or ED25519 key pair that you created with a
 third-party tool.
 
-Type annotations for `aiobotocore.create_client("ec2").import_key_pair` method.
+Type annotations for `session.create_client("ec2").import_key_pair` method.
 
 Boto3 documentation:
 [EC2.Client.import_key_pair](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.import_key_pair)
@@ -12032,7 +11960,7 @@ Returns a `Coroutine` for
 
 Imports a disk into an EBS snapshot.
 
-Type annotations for `aiobotocore.create_client("ec2").import_snapshot` method.
+Type annotations for `session.create_client("ec2").import_snapshot` method.
 
 Boto3 documentation:
 [EC2.Client.import_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.import_snapshot)
@@ -12065,7 +11993,7 @@ Returns a `Coroutine` for
 
 Creates an import volume task using metadata from the specified disk image.
 
-Type annotations for `aiobotocore.create_client("ec2").import_volume` method.
+Type annotations for `session.create_client("ec2").import_volume` method.
 
 Boto3 documentation:
 [EC2.Client.import_volume](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.import_volume)
@@ -12095,7 +12023,7 @@ Returns a `Coroutine` for
 Lists one or more snapshots that are currently in the Recycle Bin.
 
 Type annotations for
-`aiobotocore.create_client("ec2").list_snapshots_in_recycle_bin` method.
+`session.create_client("ec2").list_snapshots_in_recycle_bin` method.
 
 Boto3 documentation:
 [EC2.Client.list_snapshots_in_recycle_bin](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.list_snapshots_in_recycle_bin)
@@ -12122,8 +12050,8 @@ Returns a `Coroutine` for
 
 Modifies an attribute of the specified Elastic IP address.
 
-Type annotations for
-`aiobotocore.create_client("ec2").modify_address_attribute` method.
+Type annotations for `session.create_client("ec2").modify_address_attribute`
+method.
 
 Boto3 documentation:
 [EC2.Client.modify_address_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_address_attribute)
@@ -12151,7 +12079,7 @@ Changes the opt-in status of the Local Zone and Wavelength Zone group for your
 account.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_availability_zone_group` method.
+`session.create_client("ec2").modify_availability_zone_group` method.
 
 Boto3 documentation:
 [EC2.Client.modify_availability_zone_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_availability_zone_group)
@@ -12180,8 +12108,8 @@ Returns a `Coroutine` for
 Modifies a Capacity Reservation's capacity and the conditions under which it is
 to be released.
 
-Type annotations for
-`aiobotocore.create_client("ec2").modify_capacity_reservation` method.
+Type annotations for `session.create_client("ec2").modify_capacity_reservation`
+method.
 
 Boto3 documentation:
 [EC2.Client.modify_capacity_reservation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_capacity_reservation)
@@ -12212,7 +12140,7 @@ Returns a `Coroutine` for
 Modifies a Capacity Reservation Fleet.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_capacity_reservation_fleet` method.
+`session.create_client("ec2").modify_capacity_reservation_fleet` method.
 
 Boto3 documentation:
 [EC2.Client.modify_capacity_reservation_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_capacity_reservation_fleet)
@@ -12240,8 +12168,8 @@ Returns a `Coroutine` for
 
 Modifies the specified Client VPN endpoint.
 
-Type annotations for
-`aiobotocore.create_client("ec2").modify_client_vpn_endpoint` method.
+Type annotations for `session.create_client("ec2").modify_client_vpn_endpoint`
+method.
 
 Boto3 documentation:
 [EC2.Client.modify_client_vpn_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_client_vpn_endpoint)
@@ -12282,7 +12210,7 @@ Modifies the default credit option for CPU usage of burstable performance
 instances.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_default_credit_specification` method.
+`session.create_client("ec2").modify_default_credit_specification` method.
 
 Boto3 documentation:
 [EC2.Client.modify_default_credit_specification](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_default_credit_specification)
@@ -12312,7 +12240,7 @@ Changes the default KMS key for EBS encryption by default for your account in
 this Region.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_ebs_default_kms_key_id` method.
+`session.create_client("ec2").modify_ebs_default_kms_key_id` method.
 
 Boto3 documentation:
 [EC2.Client.modify_ebs_default_kms_key_id](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_ebs_default_kms_key_id)
@@ -12337,7 +12265,7 @@ Returns a `Coroutine` for
 
 Modifies the specified EC2 Fleet.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_fleet` method.
+Type annotations for `session.create_client("ec2").modify_fleet` method.
 
 Boto3 documentation:
 [EC2.Client.modify_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_fleet)
@@ -12368,8 +12296,8 @@ Returns a `Coroutine` for
 
 Modifies the specified attribute of the specified Amazon FPGA Image (AFI).
 
-Type annotations for
-`aiobotocore.create_client("ec2").modify_fpga_image_attribute` method.
+Type annotations for `session.create_client("ec2").modify_fpga_image_attribute`
+method.
 
 Boto3 documentation:
 [EC2.Client.modify_fpga_image_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_fpga_image_attribute)
@@ -12404,7 +12332,7 @@ Returns a `Coroutine` for
 
 Modify the auto-placement setting of a Dedicated Host.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_hosts` method.
+Type annotations for `session.create_client("ec2").modify_hosts` method.
 
 Boto3 documentation:
 [EC2.Client.modify_hosts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_hosts)
@@ -12431,8 +12359,7 @@ Returns a `Coroutine` for
 
 Modifies the ID format for the specified resource on a per-Region basis.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_id_format`
-method.
+Type annotations for `session.create_client("ec2").modify_id_format` method.
 
 Boto3 documentation:
 [EC2.Client.modify_id_format](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_id_format)
@@ -12455,8 +12382,8 @@ Modifies the ID format of a resource for a specified IAM user, IAM role, or the
 root user for an account; or all IAM users, IAM roles, and the root user for an
 account.
 
-Type annotations for
-`aiobotocore.create_client("ec2").modify_identity_id_format` method.
+Type annotations for `session.create_client("ec2").modify_identity_id_format`
+method.
 
 Boto3 documentation:
 [EC2.Client.modify_identity_id_format](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_identity_id_format)
@@ -12479,7 +12406,7 @@ Keyword-only arguments:
 
 Modifies the specified attribute of the specified AMI.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_image_attribute`
+Type annotations for `session.create_client("ec2").modify_image_attribute`
 method.
 
 Boto3 documentation:
@@ -12513,8 +12440,8 @@ Keyword-only arguments:
 
 Modifies the specified attribute of the specified instance.
 
-Type annotations for
-`aiobotocore.create_client("ec2").modify_instance_attribute` method.
+Type annotations for `session.create_client("ec2").modify_instance_attribute`
+method.
 
 Boto3 documentation:
 [EC2.Client.modify_instance_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_instance_attribute)
@@ -12560,7 +12487,7 @@ Keyword-only arguments:
 Modifies the Capacity Reservation settings for a stopped instance.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_instance_capacity_reservation_attributes`
+`session.create_client("ec2").modify_instance_capacity_reservation_attributes`
 method.
 
 Boto3 documentation:
@@ -12592,7 +12519,7 @@ Modifies the credit option for CPU usage on a running or stopped burstable
 performance instance.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_instance_credit_specification` method.
+`session.create_client("ec2").modify_instance_credit_specification` method.
 
 Boto3 documentation:
 [EC2.Client.modify_instance_credit_specification](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_instance_credit_specification)
@@ -12621,7 +12548,7 @@ Returns a `Coroutine` for
 Modifies the start time for a scheduled Amazon EC2 instance event.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_instance_event_start_time` method.
+`session.create_client("ec2").modify_instance_event_start_time` method.
 
 Boto3 documentation:
 [EC2.Client.modify_instance_event_start_time](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_instance_event_start_time)
@@ -12649,7 +12576,7 @@ Returns a `Coroutine` for
 Modifies the specified event window.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_instance_event_window` method.
+`session.create_client("ec2").modify_instance_event_window` method.
 
 Boto3 documentation:
 [EC2.Client.modify_instance_event_window](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_instance_event_window)
@@ -12679,7 +12606,7 @@ Returns a `Coroutine` for
 Modify the instance metadata parameters on a running or stopped instance.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_instance_metadata_options` method.
+`session.create_client("ec2").modify_instance_metadata_options` method.
 
 Boto3 documentation:
 [EC2.Client.modify_instance_metadata_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_instance_metadata_options)
@@ -12710,8 +12637,8 @@ Returns a `Coroutine` for
 
 Modifies the placement attributes for a specified instance.
 
-Type annotations for
-`aiobotocore.create_client("ec2").modify_instance_placement` method.
+Type annotations for `session.create_client("ec2").modify_instance_placement`
+method.
 
 Boto3 documentation:
 [EC2.Client.modify_instance_placement](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_instance_placement)
@@ -12741,7 +12668,7 @@ Returns a `Coroutine` for
 
 Modify the configurations of an IPAM.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_ipam` method.
+Type annotations for `session.create_client("ec2").modify_ipam` method.
 
 Boto3 documentation:
 [EC2.Client.modify_ipam](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_ipam)
@@ -12770,8 +12697,7 @@ Returns a `Coroutine` for
 
 Modify the configurations of an IPAM pool.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_ipam_pool`
-method.
+Type annotations for `session.create_client("ec2").modify_ipam_pool` method.
 
 Boto3 documentation:
 [EC2.Client.modify_ipam_pool](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_ipam_pool)
@@ -12805,8 +12731,8 @@ Returns a `Coroutine` for
 
 Modify a resource CIDR.
 
-Type annotations for
-`aiobotocore.create_client("ec2").modify_ipam_resource_cidr` method.
+Type annotations for `session.create_client("ec2").modify_ipam_resource_cidr`
+method.
 
 Boto3 documentation:
 [EC2.Client.modify_ipam_resource_cidr](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_ipam_resource_cidr)
@@ -12836,8 +12762,7 @@ Returns a `Coroutine` for
 
 Modify an IPAM scope.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_ipam_scope`
-method.
+Type annotations for `session.create_client("ec2").modify_ipam_scope` method.
 
 Boto3 documentation:
 [EC2.Client.modify_ipam_scope](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_ipam_scope)
@@ -12862,7 +12787,7 @@ Returns a `Coroutine` for
 
 Modifies a launch template.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_launch_template`
+Type annotations for `session.create_client("ec2").modify_launch_template`
 method.
 
 Boto3 documentation:
@@ -12891,8 +12816,8 @@ Returns a `Coroutine` for
 
 Modifies the specified managed prefix list.
 
-Type annotations for
-`aiobotocore.create_client("ec2").modify_managed_prefix_list` method.
+Type annotations for `session.create_client("ec2").modify_managed_prefix_list`
+method.
 
 Boto3 documentation:
 [EC2.Client.modify_managed_prefix_list](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_managed_prefix_list)
@@ -12925,7 +12850,7 @@ Returns a `Coroutine` for
 Modifies the specified network interface attribute.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_network_interface_attribute` method.
+`session.create_client("ec2").modify_network_interface_attribute` method.
 
 Boto3 documentation:
 [EC2.Client.modify_network_interface_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_network_interface_attribute)
@@ -12954,7 +12879,7 @@ Keyword-only arguments:
 Modifies the options for instance hostnames for the specified instance.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_private_dns_name_options` method.
+`session.create_client("ec2").modify_private_dns_name_options` method.
 
 Boto3 documentation:
 [EC2.Client.modify_private_dns_name_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_private_dns_name_options)
@@ -12983,8 +12908,8 @@ Returns a `Coroutine` for
 Modifies the Availability Zone, instance count, instance type, or network
 platform (EC2-Classic or EC2-VPC) of your Reserved Instances.
 
-Type annotations for
-`aiobotocore.create_client("ec2").modify_reserved_instances` method.
+Type annotations for `session.create_client("ec2").modify_reserved_instances`
+method.
 
 Boto3 documentation:
 [EC2.Client.modify_reserved_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_reserved_instances)
@@ -13012,8 +12937,8 @@ Returns a `Coroutine` for
 
 Modifies the rules of a security group.
 
-Type annotations for
-`aiobotocore.create_client("ec2").modify_security_group_rules` method.
+Type annotations for `session.create_client("ec2").modify_security_group_rules`
+method.
 
 Boto3 documentation:
 [EC2.Client.modify_security_group_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_security_group_rules)
@@ -13041,8 +12966,8 @@ Returns a `Coroutine` for
 
 Adds or removes permission settings for the specified snapshot.
 
-Type annotations for
-`aiobotocore.create_client("ec2").modify_snapshot_attribute` method.
+Type annotations for `session.create_client("ec2").modify_snapshot_attribute`
+method.
 
 Boto3 documentation:
 [EC2.Client.modify_snapshot_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_snapshot_attribute)
@@ -13071,7 +12996,7 @@ Keyword-only arguments:
 
 Archives an Amazon EBS snapshot.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_snapshot_tier`
+Type annotations for `session.create_client("ec2").modify_snapshot_tier`
 method.
 
 Boto3 documentation:
@@ -13099,8 +13024,8 @@ Returns a `Coroutine` for
 
 Modifies the specified Spot Fleet request.
 
-Type annotations for
-`aiobotocore.create_client("ec2").modify_spot_fleet_request` method.
+Type annotations for `session.create_client("ec2").modify_spot_fleet_request`
+method.
 
 Boto3 documentation:
 [EC2.Client.modify_spot_fleet_request](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_spot_fleet_request)
@@ -13131,7 +13056,7 @@ Returns a `Coroutine` for
 
 Modifies a subnet attribute.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_subnet_attribute`
+Type annotations for `session.create_client("ec2").modify_subnet_attribute`
 method.
 
 Boto3 documentation:
@@ -13172,7 +13097,7 @@ Keyword-only arguments:
 Allows or restricts mirroring network services.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_traffic_mirror_filter_network_services`
+`session.create_client("ec2").modify_traffic_mirror_filter_network_services`
 method.
 
 Boto3 documentation:
@@ -13204,7 +13129,7 @@ Returns a `Coroutine` for
 Modifies the specified Traffic Mirror rule.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_traffic_mirror_filter_rule` method.
+`session.create_client("ec2").modify_traffic_mirror_filter_rule` method.
 
 Boto3 documentation:
 [EC2.Client.modify_traffic_mirror_filter_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_traffic_mirror_filter_rule)
@@ -13245,7 +13170,7 @@ Returns a `Coroutine` for
 Modifies a Traffic Mirror session.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_traffic_mirror_session` method.
+`session.create_client("ec2").modify_traffic_mirror_session` method.
 
 Boto3 documentation:
 [EC2.Client.modify_traffic_mirror_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_traffic_mirror_session)
@@ -13278,7 +13203,7 @@ Returns a `Coroutine` for
 
 Modifies the specified transit gateway.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_transit_gateway`
+Type annotations for `session.create_client("ec2").modify_transit_gateway`
 method.
 
 Boto3 documentation:
@@ -13309,7 +13234,7 @@ Modifies a reference (route) to a prefix list in a specified transit gateway
 route table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_transit_gateway_prefix_list_reference`
+`session.create_client("ec2").modify_transit_gateway_prefix_list_reference`
 method.
 
 Boto3 documentation:
@@ -13340,8 +13265,7 @@ Returns a `Coroutine` for
 Modifies the specified VPC attachment.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_transit_gateway_vpc_attachment`
-method.
+`session.create_client("ec2").modify_transit_gateway_vpc_attachment` method.
 
 Boto3 documentation:
 [EC2.Client.modify_transit_gateway_vpc_attachment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_transit_gateway_vpc_attachment)
@@ -13371,7 +13295,7 @@ Returns a `Coroutine` for
 You can modify several parameters of an existing EBS volume, including volume
 size, volume type, and IOPS capacity.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_volume` method.
+Type annotations for `session.create_client("ec2").modify_volume` method.
 
 Boto3 documentation:
 [EC2.Client.modify_volume](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_volume)
@@ -13400,7 +13324,7 @@ Returns a `Coroutine` for
 
 Modifies a volume attribute.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_volume_attribute`
+Type annotations for `session.create_client("ec2").modify_volume_attribute`
 method.
 
 Boto3 documentation:
@@ -13425,7 +13349,7 @@ Keyword-only arguments:
 
 Modifies the specified attribute of the specified VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_vpc_attribute`
+Type annotations for `session.create_client("ec2").modify_vpc_attribute`
 method.
 
 Boto3 documentation:
@@ -13451,8 +13375,7 @@ Keyword-only arguments:
 
 Modifies attributes of a specified VPC endpoint.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_vpc_endpoint`
-method.
+Type annotations for `session.create_client("ec2").modify_vpc_endpoint` method.
 
 Boto3 documentation:
 [EC2.Client.modify_vpc_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_vpc_endpoint)
@@ -13487,7 +13410,7 @@ Returns a `Coroutine` for
 Modifies a connection notification for VPC endpoint or VPC endpoint service.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_vpc_endpoint_connection_notification`
+`session.create_client("ec2").modify_vpc_endpoint_connection_notification`
 method.
 
 Boto3 documentation:
@@ -13517,7 +13440,7 @@ Returns a `Coroutine` for
 Modifies the attributes of your VPC endpoint service configuration.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_vpc_endpoint_service_configuration`
+`session.create_client("ec2").modify_vpc_endpoint_service_configuration`
 method.
 
 Boto3 documentation:
@@ -13553,8 +13476,7 @@ service\](https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-
 service.html)\_.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_vpc_endpoint_service_permissions`
-method.
+`session.create_client("ec2").modify_vpc_endpoint_service_permissions` method.
 
 Boto3 documentation:
 [EC2.Client.modify_vpc_endpoint_service_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_vpc_endpoint_service_permissions)
@@ -13583,8 +13505,7 @@ Modifies the VPC peering connection options on one side of a VPC peering
 connection.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_vpc_peering_connection_options`
-method.
+`session.create_client("ec2").modify_vpc_peering_connection_options` method.
 
 Boto3 documentation:
 [EC2.Client.modify_vpc_peering_connection_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_vpc_peering_connection_options)
@@ -13613,8 +13534,7 @@ Returns a `Coroutine` for
 
 Modifies the instance tenancy attribute of the specified VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_vpc_tenancy`
-method.
+Type annotations for `session.create_client("ec2").modify_vpc_tenancy` method.
 
 Boto3 documentation:
 [EC2.Client.modify_vpc_tenancy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_vpc_tenancy)
@@ -13642,7 +13562,7 @@ Returns a `Coroutine` for
 Modifies the customer gateway or the target gateway of an Amazon Web Services
 Site-to-Site VPN connection.
 
-Type annotations for `aiobotocore.create_client("ec2").modify_vpn_connection`
+Type annotations for `session.create_client("ec2").modify_vpn_connection`
 method.
 
 Boto3 documentation:
@@ -13672,7 +13592,7 @@ Returns a `Coroutine` for
 Modifies the connection options for your Site-to-Site VPN connection.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_vpn_connection_options` method.
+`session.create_client("ec2").modify_vpn_connection_options` method.
 
 Boto3 documentation:
 [EC2.Client.modify_vpn_connection_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_vpn_connection_options)
@@ -13702,7 +13622,7 @@ Returns a `Coroutine` for
 Modifies the VPN tunnel endpoint certificate.
 
 Type annotations for
-`aiobotocore.create_client("ec2").modify_vpn_tunnel_certificate` method.
+`session.create_client("ec2").modify_vpn_tunnel_certificate` method.
 
 Boto3 documentation:
 [EC2.Client.modify_vpn_tunnel_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_vpn_tunnel_certificate)
@@ -13729,8 +13649,8 @@ Returns a `Coroutine` for
 Modifies the options for a VPN tunnel in an Amazon Web Services Site-to-Site
 VPN connection.
 
-Type annotations for
-`aiobotocore.create_client("ec2").modify_vpn_tunnel_options` method.
+Type annotations for `session.create_client("ec2").modify_vpn_tunnel_options`
+method.
 
 Boto3 documentation:
 [EC2.Client.modify_vpn_tunnel_options](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_vpn_tunnel_options)
@@ -13759,8 +13679,7 @@ Returns a `Coroutine` for
 
 Enables detailed monitoring for a running instance.
 
-Type annotations for `aiobotocore.create_client("ec2").monitor_instances`
-method.
+Type annotations for `session.create_client("ec2").monitor_instances` method.
 
 Boto3 documentation:
 [EC2.Client.monitor_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.monitor_instances)
@@ -13785,8 +13704,7 @@ Returns a `Coroutine` for
 Moves an Elastic IP address from the EC2-Classic platform to the EC2-VPC
 platform.
 
-Type annotations for `aiobotocore.create_client("ec2").move_address_to_vpc`
-method.
+Type annotations for `session.create_client("ec2").move_address_to_vpc` method.
 
 Boto3 documentation:
 [EC2.Client.move_address_to_vpc](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.move_address_to_vpc)
@@ -13811,7 +13729,7 @@ Returns a `Coroutine` for
 
 Move an BYOIP IPv4 CIDR to IPAM from a public IPv4 pool.
 
-Type annotations for `aiobotocore.create_client("ec2").move_byoip_cidr_to_ipam`
+Type annotations for `session.create_client("ec2").move_byoip_cidr_to_ipam`
 method.
 
 Boto3 documentation:
@@ -13841,7 +13759,7 @@ Provisions an IPv4 or IPv6 address range for use with your Amazon Web Services
 resources through bring your own IP addresses (BYOIP) and creates a
 corresponding address pool.
 
-Type annotations for `aiobotocore.create_client("ec2").provision_byoip_cidr`
+Type annotations for `session.create_client("ec2").provision_byoip_cidr`
 method.
 
 Boto3 documentation:
@@ -13874,8 +13792,8 @@ Returns a `Coroutine` for
 
 Provision a CIDR to an IPAM pool.
 
-Type annotations for
-`aiobotocore.create_client("ec2").provision_ipam_pool_cidr` method.
+Type annotations for `session.create_client("ec2").provision_ipam_pool_cidr`
+method.
 
 Boto3 documentation:
 [EC2.Client.provision_ipam_pool_cidr](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.provision_ipam_pool_cidr)
@@ -13904,7 +13822,7 @@ Returns a `Coroutine` for
 Provision a CIDR to a public IPv4 pool.
 
 Type annotations for
-`aiobotocore.create_client("ec2").provision_public_ipv4_pool_cidr` method.
+`session.create_client("ec2").provision_public_ipv4_pool_cidr` method.
 
 Boto3 documentation:
 [EC2.Client.provision_public_ipv4_pool_cidr](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.provision_public_ipv4_pool_cidr)
@@ -13932,8 +13850,8 @@ Returns a `Coroutine` for
 Purchase a reservation with configurations that match those of your Dedicated
 Host.
 
-Type annotations for
-`aiobotocore.create_client("ec2").purchase_host_reservation` method.
+Type annotations for `session.create_client("ec2").purchase_host_reservation`
+method.
 
 Boto3 documentation:
 [EC2.Client.purchase_host_reservation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.purchase_host_reservation)
@@ -13965,7 +13883,7 @@ Returns a `Coroutine` for
 Purchases a Reserved Instance for use with your account.
 
 Type annotations for
-`aiobotocore.create_client("ec2").purchase_reserved_instances_offering` method.
+`session.create_client("ec2").purchase_reserved_instances_offering` method.
 
 Boto3 documentation:
 [EC2.Client.purchase_reserved_instances_offering](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.purchase_reserved_instances_offering)
@@ -13995,7 +13913,7 @@ Returns a `Coroutine` for
 Purchases the Scheduled Instances with the specified schedule.
 
 Type annotations for
-`aiobotocore.create_client("ec2").purchase_scheduled_instances` method.
+`session.create_client("ec2").purchase_scheduled_instances` method.
 
 Boto3 documentation:
 [EC2.Client.purchase_scheduled_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.purchase_scheduled_instances)
@@ -14023,8 +13941,7 @@ Returns a `Coroutine` for
 
 Requests a reboot of the specified instances.
 
-Type annotations for `aiobotocore.create_client("ec2").reboot_instances`
-method.
+Type annotations for `session.create_client("ec2").reboot_instances` method.
 
 Boto3 documentation:
 [EC2.Client.reboot_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.reboot_instances)
@@ -14045,7 +13962,7 @@ Keyword-only arguments:
 
 Registers an AMI.
 
-Type annotations for `aiobotocore.create_client("ec2").register_image` method.
+Type annotations for `session.create_client("ec2").register_image` method.
 
 Boto3 documentation:
 [EC2.Client.register_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.register_image)
@@ -14085,7 +14002,7 @@ Registers a set of tag keys to include in scheduled event notifications for
 your resources.
 
 Type annotations for
-`aiobotocore.create_client("ec2").register_instance_event_notification_attributes`
+`session.create_client("ec2").register_instance_event_notification_attributes`
 method.
 
 Boto3 documentation:
@@ -14115,7 +14032,7 @@ Registers members (network interfaces) with the transit gateway multicast
 group.
 
 Type annotations for
-`aiobotocore.create_client("ec2").register_transit_gateway_multicast_group_members`
+`session.create_client("ec2").register_transit_gateway_multicast_group_members`
 method.
 
 Boto3 documentation:
@@ -14146,7 +14063,7 @@ Registers sources (network interfaces) with the specified transit gateway
 multicast group.
 
 Type annotations for
-`aiobotocore.create_client("ec2").register_transit_gateway_multicast_group_sources`
+`session.create_client("ec2").register_transit_gateway_multicast_group_sources`
 method.
 
 Boto3 documentation:
@@ -14177,7 +14094,7 @@ Rejects a request to associate cross-account subnets with a transit gateway
 multicast domain.
 
 Type annotations for
-`aiobotocore.create_client("ec2").reject_transit_gateway_multicast_domain_associations`
+`session.create_client("ec2").reject_transit_gateway_multicast_domain_associations`
 method.
 
 Boto3 documentation:
@@ -14207,7 +14124,7 @@ Returns a `Coroutine` for
 Rejects a transit gateway peering attachment request.
 
 Type annotations for
-`aiobotocore.create_client("ec2").reject_transit_gateway_peering_attachment`
+`session.create_client("ec2").reject_transit_gateway_peering_attachment`
 method.
 
 Boto3 documentation:
@@ -14234,8 +14151,7 @@ Returns a `Coroutine` for
 Rejects a request to attach a VPC to a transit gateway.
 
 Type annotations for
-`aiobotocore.create_client("ec2").reject_transit_gateway_vpc_attachment`
-method.
+`session.create_client("ec2").reject_transit_gateway_vpc_attachment` method.
 
 Boto3 documentation:
 [EC2.Client.reject_transit_gateway_vpc_attachment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.reject_transit_gateway_vpc_attachment)
@@ -14262,7 +14178,7 @@ Rejects one or more VPC endpoint connection requests to your VPC endpoint
 service.
 
 Type annotations for
-`aiobotocore.create_client("ec2").reject_vpc_endpoint_connections` method.
+`session.create_client("ec2").reject_vpc_endpoint_connections` method.
 
 Boto3 documentation:
 [EC2.Client.reject_vpc_endpoint_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.reject_vpc_endpoint_connections)
@@ -14289,7 +14205,7 @@ Returns a `Coroutine` for
 Rejects a VPC peering connection request.
 
 Type annotations for
-`aiobotocore.create_client("ec2").reject_vpc_peering_connection` method.
+`session.create_client("ec2").reject_vpc_peering_connection` method.
 
 Boto3 documentation:
 [EC2.Client.reject_vpc_peering_connection](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.reject_vpc_peering_connection)
@@ -14314,7 +14230,7 @@ Returns a `Coroutine` for
 
 Releases the specified Elastic IP address.
 
-Type annotations for `aiobotocore.create_client("ec2").release_address` method.
+Type annotations for `session.create_client("ec2").release_address` method.
 
 Boto3 documentation:
 [EC2.Client.release_address](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.release_address)
@@ -14337,7 +14253,7 @@ Keyword-only arguments:
 
 When you no longer want to use an On-Demand Dedicated Host it can be released.
 
-Type annotations for `aiobotocore.create_client("ec2").release_hosts` method.
+Type annotations for `session.create_client("ec2").release_hosts` method.
 
 Boto3 documentation:
 [EC2.Client.release_hosts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.release_hosts)
@@ -14361,7 +14277,7 @@ Returns a `Coroutine` for
 Release an allocation within an IPAM pool.
 
 Type annotations for
-`aiobotocore.create_client("ec2").release_ipam_pool_allocation` method.
+`session.create_client("ec2").release_ipam_pool_allocation` method.
 
 Boto3 documentation:
 [EC2.Client.release_ipam_pool_allocation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.release_ipam_pool_allocation)
@@ -14389,8 +14305,7 @@ Returns a `Coroutine` for
 Replaces an IAM instance profile for the specified running instance.
 
 Type annotations for
-`aiobotocore.create_client("ec2").replace_iam_instance_profile_association`
-method.
+`session.create_client("ec2").replace_iam_instance_profile_association` method.
 
 Boto3 documentation:
 [EC2.Client.replace_iam_instance_profile_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.replace_iam_instance_profile_association)
@@ -14418,7 +14333,7 @@ Returns a `Coroutine` for
 Changes which network ACL a subnet is associated with.
 
 Type annotations for
-`aiobotocore.create_client("ec2").replace_network_acl_association` method.
+`session.create_client("ec2").replace_network_acl_association` method.
 
 Boto3 documentation:
 [EC2.Client.replace_network_acl_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.replace_network_acl_association)
@@ -14444,8 +14359,8 @@ Returns a `Coroutine` for
 
 Replaces an entry (rule) in a network ACL.
 
-Type annotations for
-`aiobotocore.create_client("ec2").replace_network_acl_entry` method.
+Type annotations for `session.create_client("ec2").replace_network_acl_entry`
+method.
 
 Boto3 documentation:
 [EC2.Client.replace_network_acl_entry](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.replace_network_acl_entry)
@@ -14475,7 +14390,7 @@ Keyword-only arguments:
 
 Replaces an existing route within a route table in a VPC.
 
-Type annotations for `aiobotocore.create_client("ec2").replace_route` method.
+Type annotations for `session.create_client("ec2").replace_route` method.
 
 Boto3 documentation:
 [EC2.Client.replace_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.replace_route)
@@ -14513,7 +14428,7 @@ Changes the route table associated with a given subnet, internet gateway, or
 virtual private gateway in a VPC.
 
 Type annotations for
-`aiobotocore.create_client("ec2").replace_route_table_association` method.
+`session.create_client("ec2").replace_route_table_association` method.
 
 Boto3 documentation:
 [EC2.Client.replace_route_table_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.replace_route_table_association)
@@ -14540,7 +14455,7 @@ Returns a `Coroutine` for
 Replaces the specified route in the specified transit gateway route table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").replace_transit_gateway_route` method.
+`session.create_client("ec2").replace_transit_gateway_route` method.
 
 Boto3 documentation:
 [EC2.Client.replace_transit_gateway_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.replace_transit_gateway_route)
@@ -14568,7 +14483,7 @@ Returns a `Coroutine` for
 
 Submits feedback about the status of an instance.
 
-Type annotations for `aiobotocore.create_client("ec2").report_instance_status`
+Type annotations for `session.create_client("ec2").report_instance_status`
 method.
 
 Boto3 documentation:
@@ -14599,8 +14514,7 @@ Keyword-only arguments:
 
 .
 
-Type annotations for `aiobotocore.create_client("ec2").request_spot_fleet`
-method.
+Type annotations for `session.create_client("ec2").request_spot_fleet` method.
 
 Boto3 documentation:
 [EC2.Client.request_spot_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.request_spot_fleet)
@@ -14627,7 +14541,7 @@ Returns a `Coroutine` for
 
 Creates a Spot Instance request.
 
-Type annotations for `aiobotocore.create_client("ec2").request_spot_instances`
+Type annotations for `session.create_client("ec2").request_spot_instances`
 method.
 
 Boto3 documentation:
@@ -14667,7 +14581,7 @@ Returns a `Coroutine` for
 
 Resets the attribute of the specified IP address.
 
-Type annotations for `aiobotocore.create_client("ec2").reset_address_attribute`
+Type annotations for `session.create_client("ec2").reset_address_attribute`
 method.
 
 Boto3 documentation:
@@ -14698,7 +14612,7 @@ Resets the default KMS key for EBS encryption for your account in this Region
 to the Amazon Web Services managed KMS key for EBS.
 
 Type annotations for
-`aiobotocore.create_client("ec2").reset_ebs_default_kms_key_id` method.
+`session.create_client("ec2").reset_ebs_default_kms_key_id` method.
 
 Boto3 documentation:
 [EC2.Client.reset_ebs_default_kms_key_id](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.reset_ebs_default_kms_key_id)
@@ -14723,8 +14637,8 @@ Returns a `Coroutine` for
 Resets the specified attribute of the specified Amazon FPGA Image (AFI) to its
 default value.
 
-Type annotations for
-`aiobotocore.create_client("ec2").reset_fpga_image_attribute` method.
+Type annotations for `session.create_client("ec2").reset_fpga_image_attribute`
+method.
 
 Boto3 documentation:
 [EC2.Client.reset_fpga_image_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.reset_fpga_image_attribute)
@@ -14751,7 +14665,7 @@ Returns a `Coroutine` for
 
 Resets an attribute of an AMI to its default value.
 
-Type annotations for `aiobotocore.create_client("ec2").reset_image_attribute`
+Type annotations for `session.create_client("ec2").reset_image_attribute`
 method.
 
 Boto3 documentation:
@@ -14777,8 +14691,8 @@ Keyword-only arguments:
 
 Resets an attribute of an instance to its default value.
 
-Type annotations for
-`aiobotocore.create_client("ec2").reset_instance_attribute` method.
+Type annotations for `session.create_client("ec2").reset_instance_attribute`
+method.
 
 Boto3 documentation:
 [EC2.Client.reset_instance_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.reset_instance_attribute)
@@ -14804,7 +14718,7 @@ Keyword-only arguments:
 Resets a network interface attribute.
 
 Type annotations for
-`aiobotocore.create_client("ec2").reset_network_interface_attribute` method.
+`session.create_client("ec2").reset_network_interface_attribute` method.
 
 Boto3 documentation:
 [EC2.Client.reset_network_interface_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.reset_network_interface_attribute)
@@ -14827,8 +14741,8 @@ Keyword-only arguments:
 
 Resets permission settings for the specified snapshot.
 
-Type annotations for
-`aiobotocore.create_client("ec2").reset_snapshot_attribute` method.
+Type annotations for `session.create_client("ec2").reset_snapshot_attribute`
+method.
 
 Boto3 documentation:
 [EC2.Client.reset_snapshot_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.reset_snapshot_attribute)
@@ -14854,8 +14768,8 @@ Keyword-only arguments:
 Restores an Elastic IP address that was previously moved to the EC2-VPC
 platform back to the EC2-Classic platform.
 
-Type annotations for
-`aiobotocore.create_client("ec2").restore_address_to_classic` method.
+Type annotations for `session.create_client("ec2").restore_address_to_classic`
+method.
 
 Boto3 documentation:
 [EC2.Client.restore_address_to_classic](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.restore_address_to_classic)
@@ -14882,7 +14796,7 @@ Restores the entries from a previous version of a managed prefix list to a new
 version of the prefix list.
 
 Type annotations for
-`aiobotocore.create_client("ec2").restore_managed_prefix_list_version` method.
+`session.create_client("ec2").restore_managed_prefix_list_version` method.
 
 Boto3 documentation:
 [EC2.Client.restore_managed_prefix_list_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.restore_managed_prefix_list_version)
@@ -14910,7 +14824,7 @@ Returns a `Coroutine` for
 Restores a snapshot from the Recycle Bin.
 
 Type annotations for
-`aiobotocore.create_client("ec2").restore_snapshot_from_recycle_bin` method.
+`session.create_client("ec2").restore_snapshot_from_recycle_bin` method.
 
 Boto3 documentation:
 [EC2.Client.restore_snapshot_from_recycle_bin](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.restore_snapshot_from_recycle_bin)
@@ -14937,7 +14851,7 @@ Restores an archived Amazon EBS snapshot for use temporarily or permanently, or
 modifies the restore period or restore type for a snapshot that was previously
 temporarily restored.
 
-Type annotations for `aiobotocore.create_client("ec2").restore_snapshot_tier`
+Type annotations for `session.create_client("ec2").restore_snapshot_tier`
 method.
 
 Boto3 documentation:
@@ -14965,8 +14879,8 @@ Returns a `Coroutine` for
 
 Removes an ingress authorization rule from a Client VPN endpoint.
 
-Type annotations for
-`aiobotocore.create_client("ec2").revoke_client_vpn_ingress` method.
+Type annotations for `session.create_client("ec2").revoke_client_vpn_ingress`
+method.
 
 Boto3 documentation:
 [EC2.Client.revoke_client_vpn_ingress](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.revoke_client_vpn_ingress)
@@ -14993,7 +14907,7 @@ Returns a `Coroutine` for
 ### revoke_security_group_egress
 
 Type annotations for
-`aiobotocore.create_client("ec2").revoke_security_group_egress` method.
+`session.create_client("ec2").revoke_security_group_egress` method.
 
 Boto3 documentation:
 [EC2.Client.revoke_security_group_egress](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.revoke_security_group_egress)
@@ -15028,7 +14942,7 @@ Returns a `Coroutine` for
 Removes the specified inbound (ingress) rules from a security group.
 
 Type annotations for
-`aiobotocore.create_client("ec2").revoke_security_group_ingress` method.
+`session.create_client("ec2").revoke_security_group_ingress` method.
 
 Boto3 documentation:
 [EC2.Client.revoke_security_group_ingress](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.revoke_security_group_ingress)
@@ -15064,7 +14978,7 @@ Returns a `Coroutine` for
 Launches the specified number of instances using an AMI for which you have
 permissions.
 
-Type annotations for `aiobotocore.create_client("ec2").run_instances` method.
+Type annotations for `session.create_client("ec2").run_instances` method.
 
 Boto3 documentation:
 [EC2.Client.run_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.run_instances)
@@ -15143,7 +15057,7 @@ Returns a `Coroutine` for
 
 Launches the specified Scheduled Instances.
 
-Type annotations for `aiobotocore.create_client("ec2").run_scheduled_instances`
+Type annotations for `session.create_client("ec2").run_scheduled_instances`
 method.
 
 Boto3 documentation:
@@ -15174,8 +15088,8 @@ Returns a `Coroutine` for
 
 Searches for routes in the specified local gateway route table.
 
-Type annotations for
-`aiobotocore.create_client("ec2").search_local_gateway_routes` method.
+Type annotations for `session.create_client("ec2").search_local_gateway_routes`
+method.
 
 Boto3 documentation:
 [EC2.Client.search_local_gateway_routes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.search_local_gateway_routes)
@@ -15205,8 +15119,7 @@ Searches one or more transit gateway multicast groups and returns the group
 membership information.
 
 Type annotations for
-`aiobotocore.create_client("ec2").search_transit_gateway_multicast_groups`
-method.
+`session.create_client("ec2").search_transit_gateway_multicast_groups` method.
 
 Boto3 documentation:
 [EC2.Client.search_transit_gateway_multicast_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.search_transit_gateway_multicast_groups)
@@ -15235,7 +15148,7 @@ Returns a `Coroutine` for
 Searches for routes in the specified transit gateway route table.
 
 Type annotations for
-`aiobotocore.create_client("ec2").search_transit_gateway_routes` method.
+`session.create_client("ec2").search_transit_gateway_routes` method.
 
 Boto3 documentation:
 [EC2.Client.search_transit_gateway_routes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.search_transit_gateway_routes)
@@ -15265,8 +15178,8 @@ Sends a diagnostic interrupt to the specified Amazon EC2 instance to trigger a
 *kernel panic* (on Linux instances), or a *blue screen* /*stop error* (on
 Windows instances).
 
-Type annotations for
-`aiobotocore.create_client("ec2").send_diagnostic_interrupt` method.
+Type annotations for `session.create_client("ec2").send_diagnostic_interrupt`
+method.
 
 Boto3 documentation:
 [EC2.Client.send_diagnostic_interrupt](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.send_diagnostic_interrupt)
@@ -15288,7 +15201,7 @@ Keyword-only arguments:
 
 Starts an Amazon EBS-backed instance that you've previously stopped.
 
-Type annotations for `aiobotocore.create_client("ec2").start_instances` method.
+Type annotations for `session.create_client("ec2").start_instances` method.
 
 Boto3 documentation:
 [EC2.Client.start_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.start_instances)
@@ -15314,7 +15227,7 @@ Returns a `Coroutine` for
 Starts analyzing the specified Network Access Scope.
 
 Type annotations for
-`aiobotocore.create_client("ec2").start_network_insights_access_scope_analysis`
+`session.create_client("ec2").start_network_insights_access_scope_analysis`
 method.
 
 Boto3 documentation:
@@ -15345,7 +15258,7 @@ Returns a `Coroutine` for
 Starts analyzing the specified path.
 
 Type annotations for
-`aiobotocore.create_client("ec2").start_network_insights_analysis` method.
+`session.create_client("ec2").start_network_insights_analysis` method.
 
 Boto3 documentation:
 [EC2.Client.start_network_insights_analysis](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.start_network_insights_analysis)
@@ -15376,7 +15289,7 @@ Initiates the verification process to prove that the service provider owns the
 private DNS name domain for the endpoint service.
 
 Type annotations for
-`aiobotocore.create_client("ec2").start_vpc_endpoint_service_private_dns_verification`
+`session.create_client("ec2").start_vpc_endpoint_service_private_dns_verification`
 method.
 
 Boto3 documentation:
@@ -15403,7 +15316,7 @@ Returns a `Coroutine` for
 
 Stops an Amazon EBS-backed instance.
 
-Type annotations for `aiobotocore.create_client("ec2").stop_instances` method.
+Type annotations for `session.create_client("ec2").stop_instances` method.
 
 Boto3 documentation:
 [EC2.Client.stop_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.stop_instances)
@@ -15430,7 +15343,7 @@ Returns a `Coroutine` for
 Terminates active Client VPN endpoint connections.
 
 Type annotations for
-`aiobotocore.create_client("ec2").terminate_client_vpn_connections` method.
+`session.create_client("ec2").terminate_client_vpn_connections` method.
 
 Boto3 documentation:
 [EC2.Client.terminate_client_vpn_connections](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.terminate_client_vpn_connections)
@@ -15457,8 +15370,7 @@ Returns a `Coroutine` for
 
 Shuts down the specified instances.
 
-Type annotations for `aiobotocore.create_client("ec2").terminate_instances`
-method.
+Type annotations for `session.create_client("ec2").terminate_instances` method.
 
 Boto3 documentation:
 [EC2.Client.terminate_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.terminate_instances)
@@ -15484,7 +15396,7 @@ Returns a `Coroutine` for
 Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a
 network interface.
 
-Type annotations for `aiobotocore.create_client("ec2").unassign_ipv6_addresses`
+Type annotations for `session.create_client("ec2").unassign_ipv6_addresses`
 method.
 
 Boto3 documentation:
@@ -15513,7 +15425,7 @@ Unassigns one or more secondary private IP addresses, or IPv4 Prefix Delegation
 prefixes from a network interface.
 
 Type annotations for
-`aiobotocore.create_client("ec2").unassign_private_ip_addresses` method.
+`session.create_client("ec2").unassign_private_ip_addresses` method.
 
 Boto3 documentation:
 [EC2.Client.unassign_private_ip_addresses](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.unassign_private_ip_addresses)
@@ -15536,8 +15448,7 @@ Keyword-only arguments:
 
 Disables detailed monitoring for a running instance.
 
-Type annotations for `aiobotocore.create_client("ec2").unmonitor_instances`
-method.
+Type annotations for `session.create_client("ec2").unmonitor_instances` method.
 
 Boto3 documentation:
 [EC2.Client.unmonitor_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.unmonitor_instances)
@@ -15561,7 +15472,7 @@ Returns a `Coroutine` for
 ### update_security_group_rule_descriptions_egress
 
 Type annotations for
-`aiobotocore.create_client("ec2").update_security_group_rule_descriptions_egress`
+`session.create_client("ec2").update_security_group_rule_descriptions_egress`
 method.
 
 Boto3 documentation:
@@ -15594,7 +15505,7 @@ Returns a `Coroutine` for
 Updates the description of an ingress (inbound) security group rule.
 
 Type annotations for
-`aiobotocore.create_client("ec2").update_security_group_rule_descriptions_ingress`
+`session.create_client("ec2").update_security_group_rule_descriptions_ingress`
 method.
 
 Boto3 documentation:
@@ -15626,8 +15537,7 @@ Returns a `Coroutine` for
 
 Stops advertising an address range that is provisioned as an address pool.
 
-Type annotations for `aiobotocore.create_client("ec2").withdraw_byoip_cidr`
-method.
+Type annotations for `session.create_client("ec2").withdraw_byoip_cidr` method.
 
 Boto3 documentation:
 [EC2.Client.withdraw_byoip_cidr](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.withdraw_byoip_cidr)
@@ -15646,12 +15556,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [WithdrawByoipCidrResultTypeDef](./type_defs.md#withdrawbyoipcidrresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("ec2").__aenter__` method.
+
+Boto3 documentation:
+[EC2.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [EC2Client](#ec2client).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("ec2").__aexit__` method.
+
+Boto3 documentation:
+[EC2.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("ec2").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("ec2").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_addresses_attribute")` ->
   [DescribeAddressesAttributePaginator](./paginators.md#describeaddressesattributepaginator)
@@ -15897,7 +15839,7 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("ec2").get_waiter` method with
+Type annotations for `session.create_client("ec2").get_waiter` method with
 overloads.
 
 - `client.get_waiter("bundle_task_complete")` ->

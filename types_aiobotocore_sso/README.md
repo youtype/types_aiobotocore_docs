@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[sso]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[sso]'
+
+# standalone installation
 pip install types-aiobotocore-sso
 ```
 
@@ -29,8 +33,7 @@ pip install types-aiobotocore-sso
 
 ## SSOClient
 
-Type annotations for `aiobotocore.create_client("sso")` as
-[SSOClient](./client.md)
+Type annotations for `session.create_client("sso")` as [SSOClient](./client.md)
 
 Can be used directly:
 
@@ -42,6 +45,8 @@ from types_aiobotocore_sso.client import SSOClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [exceptions](./client.md#exceptions)
 - [generate_presigned_url](./client.md#generate_presigned_url)
@@ -73,7 +78,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_sso.paginators import ListAccountRolesPaginator, ...
+from types_aiobotocore_sso.paginator import ListAccountRolesPaginator, ...
 ```
 
 - [ListAccountRolesPaginator](./paginators.md#listaccountrolespaginator)

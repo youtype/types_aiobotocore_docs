@@ -17,17 +17,19 @@ type annotations stubs module
 ## ListReportDefinitionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("applicationcostprofiler").get_paginator("list_report_definitions")`.
+`session.create_client("applicationcostprofiler").get_paginator("list_report_definitions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_applicationcostprofiler.paginator import ListReportDefinitionsPaginator
 
-def get_list_report_definitions_paginator() -> ListReportDefinitionsPaginator:
-    return Session().create_client("applicationcostprofiler").get_paginator("list_report_definitions")
+session = get_session()
+async with session.create_client("applicationcostprofiler") as client:
+    client: ApplicationCostProfilerClient
+    paginator: ListReportDefinitionsPaginator = client.get_paginator("list_report_definitions")
 ```
 
 Boto3 documentation:

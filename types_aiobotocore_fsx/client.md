@@ -53,22 +53,25 @@ type annotations stubs module
     - [update_snapshot](#update_snapshot)
     - [update_storage_virtual_machine](#update_storage_virtual_machine)
     - [update_volume](#update_volume)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="fsxclient"></a>
 
 ## FSxClient
 
-Type annotations for `aiobotocore.create_client("fsx")`
+Type annotations for `session.create_client("fsx")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_fsx.client import FSxClient
 
-def get_fsx_client() -> FSxClient:
-    return Session().client("fsx")
+session = get_session()
+async with session.create_client("fsx") as client:
+    client: FSxClient
 ```
 
 Boto3 documentation:
@@ -135,7 +138,7 @@ Exceptions:
 
 FSxClient exceptions.
 
-Type annotations for `aiobotocore.create_client("fsx").exceptions` method.
+Type annotations for `session.create_client("fsx").exceptions` method.
 
 Boto3 documentation:
 [FSx.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.exceptions)
@@ -150,7 +153,7 @@ Use this action to associate one or more Domain Name Server (DNS) aliases with
 an existing Amazon FSx for Windows File Server file system.
 
 Type annotations for
-`aiobotocore.create_client("fsx").associate_file_system_aliases` method.
+`session.create_client("fsx").associate_file_system_aliases` method.
 
 Boto3 documentation:
 [FSx.Client.associate_file_system_aliases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.associate_file_system_aliases)
@@ -176,18 +179,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("fsx").can_paginate` method.
+Type annotations for `session.create_client("fsx").can_paginate` method.
 
 Boto3 documentation:
 [FSx.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_data_repository_task"></a>
 
@@ -196,8 +197,8 @@ Returns a `Coroutine` for `bool`.
 Cancels an existing Amazon FSx for Lustre data repository task if that task is
 in either the `PENDING` or `EXECUTING` state.
 
-Type annotations for
-`aiobotocore.create_client("fsx").cancel_data_repository_task` method.
+Type annotations for `session.create_client("fsx").cancel_data_repository_task`
+method.
 
 Boto3 documentation:
 [FSx.Client.cancel_data_repository_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.cancel_data_repository_task)
@@ -223,7 +224,7 @@ Copies an existing backup within the same Amazon Web Services account to
 another Amazon Web Services Region (cross-Region copy) or within the same
 Amazon Web Services Region (in-Region copy).
 
-Type annotations for `aiobotocore.create_client("fsx").copy_backup` method.
+Type annotations for `session.create_client("fsx").copy_backup` method.
 
 Boto3 documentation:
 [FSx.Client.copy_backup](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.copy_backup)
@@ -253,7 +254,7 @@ Creates a backup of an existing Amazon FSx for Windows File Server file system,
 Amazon FSx for Lustre file system, Amazon FSx for NetApp ONTAP volume, or
 Amazon FSx for OpenZFS file system.
 
-Type annotations for `aiobotocore.create_client("fsx").create_backup` method.
+Type annotations for `session.create_client("fsx").create_backup` method.
 
 Boto3 documentation:
 [FSx.Client.create_backup](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.create_backup)
@@ -280,7 +281,7 @@ Returns a `Coroutine` for
 Creates an Amazon FSx for Lustre data repository association (DRA).
 
 Type annotations for
-`aiobotocore.create_client("fsx").create_data_repository_association` method.
+`session.create_client("fsx").create_data_repository_association` method.
 
 Boto3 documentation:
 [FSx.Client.create_data_repository_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.create_data_repository_association)
@@ -312,8 +313,8 @@ Returns a `Coroutine` for
 
 Creates an Amazon FSx for Lustre data repository task.
 
-Type annotations for
-`aiobotocore.create_client("fsx").create_data_repository_task` method.
+Type annotations for `session.create_client("fsx").create_data_repository_task`
+method.
 
 Boto3 documentation:
 [FSx.Client.create_data_repository_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.create_data_repository_task)
@@ -345,8 +346,7 @@ Returns a `Coroutine` for
 
 Creates a new, empty Amazon FSx file system.
 
-Type annotations for `aiobotocore.create_client("fsx").create_file_system`
-method.
+Type annotations for `session.create_client("fsx").create_file_system` method.
 
 Boto3 documentation:
 [FSx.Client.create_file_system](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.create_file_system)
@@ -389,7 +389,7 @@ Creates a new Amazon FSx for Lustre, Amazon FSx for Windows File Server, or
 Amazon FSx for OpenZFS file system from an existing Amazon FSx backup.
 
 Type annotations for
-`aiobotocore.create_client("fsx").create_file_system_from_backup` method.
+`session.create_client("fsx").create_file_system_from_backup` method.
 
 Boto3 documentation:
 [FSx.Client.create_file_system_from_backup](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.create_file_system_from_backup)
@@ -426,7 +426,7 @@ Returns a `Coroutine` for
 
 Creates a snapshot of an existing Amazon FSx for OpenZFS file system.
 
-Type annotations for `aiobotocore.create_client("fsx").create_snapshot` method.
+Type annotations for `session.create_client("fsx").create_snapshot` method.
 
 Boto3 documentation:
 [FSx.Client.create_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.create_snapshot)
@@ -454,7 +454,7 @@ Creates a storage virtual machine (SVM) for an Amazon FSx for ONTAP file
 system.
 
 Type annotations for
-`aiobotocore.create_client("fsx").create_storage_virtual_machine` method.
+`session.create_client("fsx").create_storage_virtual_machine` method.
 
 Boto3 documentation:
 [FSx.Client.create_storage_virtual_machine](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.create_storage_virtual_machine)
@@ -487,7 +487,7 @@ Returns a `Coroutine` for
 Creates an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS storage
 volume.
 
-Type annotations for `aiobotocore.create_client("fsx").create_volume` method.
+Type annotations for `session.create_client("fsx").create_volume` method.
 
 Boto3 documentation:
 [FSx.Client.create_volume](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.create_volume)
@@ -518,8 +518,8 @@ Returns a `Coroutine` for
 Creates a new Amazon FSx for NetApp ONTAP volume from an existing Amazon FSx
 volume backup.
 
-Type annotations for
-`aiobotocore.create_client("fsx").create_volume_from_backup` method.
+Type annotations for `session.create_client("fsx").create_volume_from_backup`
+method.
 
 Boto3 documentation:
 [FSx.Client.create_volume_from_backup](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.create_volume_from_backup)
@@ -548,7 +548,7 @@ Returns a `Coroutine` for
 
 Deletes an Amazon FSx backup.
 
-Type annotations for `aiobotocore.create_client("fsx").delete_backup` method.
+Type annotations for `session.create_client("fsx").delete_backup` method.
 
 Boto3 documentation:
 [FSx.Client.delete_backup](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.delete_backup)
@@ -573,7 +573,7 @@ Returns a `Coroutine` for
 Deletes a data repository association on an Amazon FSx for Lustre file system.
 
 Type annotations for
-`aiobotocore.create_client("fsx").delete_data_repository_association` method.
+`session.create_client("fsx").delete_data_repository_association` method.
 
 Boto3 documentation:
 [FSx.Client.delete_data_repository_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.delete_data_repository_association)
@@ -599,8 +599,7 @@ Returns a `Coroutine` for
 
 Deletes a file system.
 
-Type annotations for `aiobotocore.create_client("fsx").delete_file_system`
-method.
+Type annotations for `session.create_client("fsx").delete_file_system` method.
 
 Boto3 documentation:
 [FSx.Client.delete_file_system](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.delete_file_system)
@@ -631,7 +630,7 @@ Returns a `Coroutine` for
 
 Deletes the Amazon FSx snapshot.
 
-Type annotations for `aiobotocore.create_client("fsx").delete_snapshot` method.
+Type annotations for `session.create_client("fsx").delete_snapshot` method.
 
 Boto3 documentation:
 [FSx.Client.delete_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.delete_snapshot)
@@ -656,7 +655,7 @@ Returns a `Coroutine` for
 Deletes an existing Amazon FSx for ONTAP storage virtual machine (SVM).
 
 Type annotations for
-`aiobotocore.create_client("fsx").delete_storage_virtual_machine` method.
+`session.create_client("fsx").delete_storage_virtual_machine` method.
 
 Boto3 documentation:
 [FSx.Client.delete_storage_virtual_machine](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.delete_storage_virtual_machine)
@@ -681,7 +680,7 @@ Returns a `Coroutine` for
 
 Deletes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.
 
-Type annotations for `aiobotocore.create_client("fsx").delete_volume` method.
+Type annotations for `session.create_client("fsx").delete_volume` method.
 
 Boto3 documentation:
 [FSx.Client.delete_volume](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.delete_volume)
@@ -710,8 +709,7 @@ Returns a `Coroutine` for
 Returns the description of a specific Amazon FSx backup, if a `BackupIds` value
 is provided for that backup.
 
-Type annotations for `aiobotocore.create_client("fsx").describe_backups`
-method.
+Type annotations for `session.create_client("fsx").describe_backups` method.
 
 Boto3 documentation:
 [FSx.Client.describe_backups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.describe_backups)
@@ -740,8 +738,7 @@ associations, if one or more `AssociationIds` values are provided in the
 request, or if filters are used in the request.
 
 Type annotations for
-`aiobotocore.create_client("fsx").describe_data_repository_associations`
-method.
+`session.create_client("fsx").describe_data_repository_associations` method.
 
 Boto3 documentation:
 [FSx.Client.describe_data_repository_associations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.describe_data_repository_associations)
@@ -771,7 +768,7 @@ tasks, if one or more `TaskIds` values are provided in the request, or if
 filters are used in the request.
 
 Type annotations for
-`aiobotocore.create_client("fsx").describe_data_repository_tasks` method.
+`session.create_client("fsx").describe_data_repository_tasks` method.
 
 Boto3 documentation:
 [FSx.Client.describe_data_repository_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.describe_data_repository_tasks)
@@ -801,7 +798,7 @@ Returns the DNS aliases that are associated with the specified Amazon FSx for
 Windows File Server file system.
 
 Type annotations for
-`aiobotocore.create_client("fsx").describe_file_system_aliases` method.
+`session.create_client("fsx").describe_file_system_aliases` method.
 
 Boto3 documentation:
 [FSx.Client.describe_file_system_aliases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.describe_file_system_aliases)
@@ -829,7 +826,7 @@ Returns a `Coroutine` for
 Returns the description of specific Amazon FSx file systems, if a
 `FileSystemIds` value is provided for that file system.
 
-Type annotations for `aiobotocore.create_client("fsx").describe_file_systems`
+Type annotations for `session.create_client("fsx").describe_file_systems`
 method.
 
 Boto3 documentation:
@@ -857,8 +854,7 @@ Returns a `Coroutine` for
 Returns the description of specific Amazon FSx snapshots, if a `SnapshotIds`
 value is provided.
 
-Type annotations for `aiobotocore.create_client("fsx").describe_snapshots`
-method.
+Type annotations for `session.create_client("fsx").describe_snapshots` method.
 
 Boto3 documentation:
 [FSx.Client.describe_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.describe_snapshots)
@@ -888,7 +884,7 @@ Describes one or more Amazon FSx for NetApp ONTAP storage virtual machines
 (SVMs).
 
 Type annotations for
-`aiobotocore.create_client("fsx").describe_storage_virtual_machines` method.
+`session.create_client("fsx").describe_storage_virtual_machines` method.
 
 Boto3 documentation:
 [FSx.Client.describe_storage_virtual_machines](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.describe_storage_virtual_machines)
@@ -917,8 +913,7 @@ Returns a `Coroutine` for
 Describes one or more Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS
 volumes.
 
-Type annotations for `aiobotocore.create_client("fsx").describe_volumes`
-method.
+Type annotations for `session.create_client("fsx").describe_volumes` method.
 
 Boto3 documentation:
 [FSx.Client.describe_volumes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.describe_volumes)
@@ -947,7 +942,7 @@ Use this action to disassociate, or remove, one or more Domain Name Service
 (DNS) aliases from an Amazon FSx for Windows File Server file system.
 
 Type annotations for
-`aiobotocore.create_client("fsx").disassociate_file_system_aliases` method.
+`session.create_client("fsx").disassociate_file_system_aliases` method.
 
 Boto3 documentation:
 [FSx.Client.disassociate_file_system_aliases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.disassociate_file_system_aliases)
@@ -973,7 +968,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("fsx").generate_presigned_url`
+Type annotations for `session.create_client("fsx").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -998,7 +993,7 @@ Returns a `Coroutine` for `str`.
 Lists tags for an Amazon FSx file systems and backups in the case of Amazon FSx
 for Windows File Server.
 
-Type annotations for `aiobotocore.create_client("fsx").list_tags_for_resource`
+Type annotations for `session.create_client("fsx").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -1026,7 +1021,7 @@ Returns a `Coroutine` for
 Releases the file system lock from an Amazon FSx for OpenZFS file system.
 
 Type annotations for
-`aiobotocore.create_client("fsx").release_file_system_nfs_v3_locks` method.
+`session.create_client("fsx").release_file_system_nfs_v3_locks` method.
 
 Boto3 documentation:
 [FSx.Client.release_file_system_nfs_v3_locks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.release_file_system_nfs_v3_locks)
@@ -1053,7 +1048,7 @@ Returns an Amazon FSx for OpenZFS volume to the state saved by the specified
 snapshot.
 
 Type annotations for
-`aiobotocore.create_client("fsx").restore_volume_from_snapshot` method.
+`session.create_client("fsx").restore_volume_from_snapshot` method.
 
 Boto3 documentation:
 [FSx.Client.restore_volume_from_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.restore_volume_from_snapshot)
@@ -1081,7 +1076,7 @@ Returns a `Coroutine` for
 
 Tags an Amazon FSx resource.
 
-Type annotations for `aiobotocore.create_client("fsx").tag_resource` method.
+Type annotations for `session.create_client("fsx").tag_resource` method.
 
 Boto3 documentation:
 [FSx.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.tag_resource)
@@ -1104,7 +1099,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 This action removes a tag from an Amazon FSx resource.
 
-Type annotations for `aiobotocore.create_client("fsx").untag_resource` method.
+Type annotations for `session.create_client("fsx").untag_resource` method.
 
 Boto3 documentation:
 [FSx.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.untag_resource)
@@ -1129,7 +1124,7 @@ Updates the configuration of an existing data repository association on an
 Amazon FSx for Lustre file system.
 
 Type annotations for
-`aiobotocore.create_client("fsx").update_data_repository_association` method.
+`session.create_client("fsx").update_data_repository_association` method.
 
 Boto3 documentation:
 [FSx.Client.update_data_repository_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.update_data_repository_association)
@@ -1158,8 +1153,7 @@ Returns a `Coroutine` for
 Use this operation to update the configuration of an existing Amazon FSx file
 system.
 
-Type annotations for `aiobotocore.create_client("fsx").update_file_system`
-method.
+Type annotations for `session.create_client("fsx").update_file_system` method.
 
 Boto3 documentation:
 [FSx.Client.update_file_system](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.update_file_system)
@@ -1193,7 +1187,7 @@ Returns a `Coroutine` for
 
 Updates the name of a snapshot.
 
-Type annotations for `aiobotocore.create_client("fsx").update_snapshot` method.
+Type annotations for `session.create_client("fsx").update_snapshot` method.
 
 Boto3 documentation:
 [FSx.Client.update_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.update_snapshot)
@@ -1219,7 +1213,7 @@ Returns a `Coroutine` for
 Updates an Amazon FSx for ONTAP storage virtual machine (SVM).
 
 Type annotations for
-`aiobotocore.create_client("fsx").update_storage_virtual_machine` method.
+`session.create_client("fsx").update_storage_virtual_machine` method.
 
 Boto3 documentation:
 [FSx.Client.update_storage_virtual_machine](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.update_storage_virtual_machine)
@@ -1248,7 +1242,7 @@ Returns a `Coroutine` for
 Updates the configuration of an Amazon FSx for NetApp ONTAP or Amazon FSx for
 OpenZFS volume.
 
-Type annotations for `aiobotocore.create_client("fsx").update_volume` method.
+Type annotations for `session.create_client("fsx").update_volume` method.
 
 Boto3 documentation:
 [FSx.Client.update_volume](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.update_volume)
@@ -1271,12 +1265,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateVolumeResponseTypeDef](./type_defs.md#updatevolumeresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("fsx").__aenter__` method.
+
+Boto3 documentation:
+[FSx.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [FSxClient](#fsxclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("fsx").__aexit__` method.
+
+Boto3 documentation:
+[FSx.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html#FSx.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("fsx").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("fsx").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_backups")` ->
   [DescribeBackupsPaginator](./paginators.md#describebackupspaginator)

@@ -32,17 +32,19 @@ type annotations stubs module
 ## ListAcceptedPortfolioSharesPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator("list_accepted_portfolio_shares")`.
+`session.create_client("servicecatalog").get_paginator("list_accepted_portfolio_shares")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog.paginator import ListAcceptedPortfolioSharesPaginator
 
-def get_list_accepted_portfolio_shares_paginator() -> ListAcceptedPortfolioSharesPaginator:
-    return Session().create_client("servicecatalog").get_paginator("list_accepted_portfolio_shares")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
+    paginator: ListAcceptedPortfolioSharesPaginator = client.get_paginator("list_accepted_portfolio_shares")
 ```
 
 Boto3 documentation:
@@ -64,17 +66,19 @@ Arguments for `ListAcceptedPortfolioSharesPaginator.paginate` method:
 ## ListConstraintsForPortfolioPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator("list_constraints_for_portfolio")`.
+`session.create_client("servicecatalog").get_paginator("list_constraints_for_portfolio")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog.paginator import ListConstraintsForPortfolioPaginator
 
-def get_list_constraints_for_portfolio_paginator() -> ListConstraintsForPortfolioPaginator:
-    return Session().create_client("servicecatalog").get_paginator("list_constraints_for_portfolio")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
+    paginator: ListConstraintsForPortfolioPaginator = client.get_paginator("list_constraints_for_portfolio")
 ```
 
 Boto3 documentation:
@@ -96,17 +100,19 @@ Arguments for `ListConstraintsForPortfolioPaginator.paginate` method:
 ## ListLaunchPathsPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator("list_launch_paths")`.
+`session.create_client("servicecatalog").get_paginator("list_launch_paths")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog.paginator import ListLaunchPathsPaginator
 
-def get_list_launch_paths_paginator() -> ListLaunchPathsPaginator:
-    return Session().create_client("servicecatalog").get_paginator("list_launch_paths")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
+    paginator: ListLaunchPathsPaginator = client.get_paginator("list_launch_paths")
 ```
 
 Boto3 documentation:
@@ -127,17 +133,19 @@ Arguments for `ListLaunchPathsPaginator.paginate` method:
 ## ListOrganizationPortfolioAccessPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator("list_organization_portfolio_access")`.
+`session.create_client("servicecatalog").get_paginator("list_organization_portfolio_access")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog.paginator import ListOrganizationPortfolioAccessPaginator
 
-def get_list_organization_portfolio_access_paginator() -> ListOrganizationPortfolioAccessPaginator:
-    return Session().create_client("servicecatalog").get_paginator("list_organization_portfolio_access")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
+    paginator: ListOrganizationPortfolioAccessPaginator = client.get_paginator("list_organization_portfolio_access")
 ```
 
 Boto3 documentation:
@@ -161,17 +169,19 @@ Arguments for `ListOrganizationPortfolioAccessPaginator.paginate` method:
 ## ListPortfoliosPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator("list_portfolios")`.
+`session.create_client("servicecatalog").get_paginator("list_portfolios")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog.paginator import ListPortfoliosPaginator
 
-def get_list_portfolios_paginator() -> ListPortfoliosPaginator:
-    return Session().create_client("servicecatalog").get_paginator("list_portfolios")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
+    paginator: ListPortfoliosPaginator = client.get_paginator("list_portfolios")
 ```
 
 Boto3 documentation:
@@ -191,17 +201,19 @@ Arguments for `ListPortfoliosPaginator.paginate` method:
 ## ListPortfoliosForProductPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator("list_portfolios_for_product")`.
+`session.create_client("servicecatalog").get_paginator("list_portfolios_for_product")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog.paginator import ListPortfoliosForProductPaginator
 
-def get_list_portfolios_for_product_paginator() -> ListPortfoliosForProductPaginator:
-    return Session().create_client("servicecatalog").get_paginator("list_portfolios_for_product")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
+    paginator: ListPortfoliosForProductPaginator = client.get_paginator("list_portfolios_for_product")
 ```
 
 Boto3 documentation:
@@ -222,17 +234,19 @@ Arguments for `ListPortfoliosForProductPaginator.paginate` method:
 ## ListPrincipalsForPortfolioPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator("list_principals_for_portfolio")`.
+`session.create_client("servicecatalog").get_paginator("list_principals_for_portfolio")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog.paginator import ListPrincipalsForPortfolioPaginator
 
-def get_list_principals_for_portfolio_paginator() -> ListPrincipalsForPortfolioPaginator:
-    return Session().create_client("servicecatalog").get_paginator("list_principals_for_portfolio")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
+    paginator: ListPrincipalsForPortfolioPaginator = client.get_paginator("list_principals_for_portfolio")
 ```
 
 Boto3 documentation:
@@ -253,17 +267,19 @@ Arguments for `ListPrincipalsForPortfolioPaginator.paginate` method:
 ## ListProvisionedProductPlansPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator("list_provisioned_product_plans")`.
+`session.create_client("servicecatalog").get_paginator("list_provisioned_product_plans")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog.paginator import ListProvisionedProductPlansPaginator
 
-def get_list_provisioned_product_plans_paginator() -> ListProvisionedProductPlansPaginator:
-    return Session().create_client("servicecatalog").get_paginator("list_provisioned_product_plans")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
+    paginator: ListProvisionedProductPlansPaginator = client.get_paginator("list_provisioned_product_plans")
 ```
 
 Boto3 documentation:
@@ -286,17 +302,19 @@ Arguments for `ListProvisionedProductPlansPaginator.paginate` method:
 ## ListProvisioningArtifactsForServiceActionPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator("list_provisioning_artifacts_for_service_action")`.
+`session.create_client("servicecatalog").get_paginator("list_provisioning_artifacts_for_service_action")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog.paginator import ListProvisioningArtifactsForServiceActionPaginator
 
-def get_list_provisioning_artifacts_for_service_action_paginator() -> ListProvisioningArtifactsForServiceActionPaginator:
-    return Session().create_client("servicecatalog").get_paginator("list_provisioning_artifacts_for_service_action")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
+    paginator: ListProvisioningArtifactsForServiceActionPaginator = client.get_paginator("list_provisioning_artifacts_for_service_action")
 ```
 
 Boto3 documentation:
@@ -318,17 +336,19 @@ method:
 ## ListRecordHistoryPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator("list_record_history")`.
+`session.create_client("servicecatalog").get_paginator("list_record_history")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog.paginator import ListRecordHistoryPaginator
 
-def get_list_record_history_paginator() -> ListRecordHistoryPaginator:
-    return Session().create_client("servicecatalog").get_paginator("list_record_history")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
+    paginator: ListRecordHistoryPaginator = client.get_paginator("list_record_history")
 ```
 
 Boto3 documentation:
@@ -352,17 +372,19 @@ Arguments for `ListRecordHistoryPaginator.paginate` method:
 ## ListResourcesForTagOptionPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator("list_resources_for_tag_option")`.
+`session.create_client("servicecatalog").get_paginator("list_resources_for_tag_option")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog.paginator import ListResourcesForTagOptionPaginator
 
-def get_list_resources_for_tag_option_paginator() -> ListResourcesForTagOptionPaginator:
-    return Session().create_client("servicecatalog").get_paginator("list_resources_for_tag_option")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
+    paginator: ListResourcesForTagOptionPaginator = client.get_paginator("list_resources_for_tag_option")
 ```
 
 Boto3 documentation:
@@ -383,17 +405,19 @@ Arguments for `ListResourcesForTagOptionPaginator.paginate` method:
 ## ListServiceActionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator("list_service_actions")`.
+`session.create_client("servicecatalog").get_paginator("list_service_actions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog.paginator import ListServiceActionsPaginator
 
-def get_list_service_actions_paginator() -> ListServiceActionsPaginator:
-    return Session().create_client("servicecatalog").get_paginator("list_service_actions")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
+    paginator: ListServiceActionsPaginator = client.get_paginator("list_service_actions")
 ```
 
 Boto3 documentation:
@@ -413,17 +437,19 @@ Arguments for `ListServiceActionsPaginator.paginate` method:
 ## ListServiceActionsForProvisioningArtifactPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator("list_service_actions_for_provisioning_artifact")`.
+`session.create_client("servicecatalog").get_paginator("list_service_actions_for_provisioning_artifact")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog.paginator import ListServiceActionsForProvisioningArtifactPaginator
 
-def get_list_service_actions_for_provisioning_artifact_paginator() -> ListServiceActionsForProvisioningArtifactPaginator:
-    return Session().create_client("servicecatalog").get_paginator("list_service_actions_for_provisioning_artifact")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
+    paginator: ListServiceActionsForProvisioningArtifactPaginator = client.get_paginator("list_service_actions_for_provisioning_artifact")
 ```
 
 Boto3 documentation:
@@ -446,17 +472,19 @@ method:
 ## ListTagOptionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator("list_tag_options")`.
+`session.create_client("servicecatalog").get_paginator("list_tag_options")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog.paginator import ListTagOptionsPaginator
 
-def get_list_tag_options_paginator() -> ListTagOptionsPaginator:
-    return Session().create_client("servicecatalog").get_paginator("list_tag_options")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
+    paginator: ListTagOptionsPaginator = client.get_paginator("list_tag_options")
 ```
 
 Boto3 documentation:
@@ -477,17 +505,19 @@ Arguments for `ListTagOptionsPaginator.paginate` method:
 ## ScanProvisionedProductsPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator("scan_provisioned_products")`.
+`session.create_client("servicecatalog").get_paginator("scan_provisioned_products")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog.paginator import ScanProvisionedProductsPaginator
 
-def get_scan_provisioned_products_paginator() -> ScanProvisionedProductsPaginator:
-    return Session().create_client("servicecatalog").get_paginator("scan_provisioned_products")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
+    paginator: ScanProvisionedProductsPaginator = client.get_paginator("scan_provisioned_products")
 ```
 
 Boto3 documentation:
@@ -509,17 +539,19 @@ Arguments for `ScanProvisionedProductsPaginator.paginate` method:
 ## SearchProductsAsAdminPaginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog").get_paginator("search_products_as_admin")`.
+`session.create_client("servicecatalog").get_paginator("search_products_as_admin")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_servicecatalog.paginator import SearchProductsAsAdminPaginator
 
-def get_search_products_as_admin_paginator() -> SearchProductsAsAdminPaginator:
-    return Session().create_client("servicecatalog").get_paginator("search_products_as_admin")
+session = get_session()
+async with session.create_client("servicecatalog") as client:
+    client: ServiceCatalogClient
+    paginator: SearchProductsAsAdminPaginator = client.get_paginator("search_products_as_admin")
 ```
 
 Boto3 documentation:

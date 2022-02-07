@@ -45,6 +45,8 @@ type annotations stubs module
     - [set_load_balancer_listener_ssl_certificate](#set_load_balancer_listener_ssl_certificate)
     - [set_load_balancer_policies_for_backend_server](#set_load_balancer_policies_for_backend_server)
     - [set_load_balancer_policies_of_listener](#set_load_balancer_policies_of_listener)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -52,16 +54,17 @@ type annotations stubs module
 
 ## ElasticLoadBalancingClient
 
-Type annotations for `aiobotocore.create_client("elb")`
+Type annotations for `session.create_client("elb")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_elb.client import ElasticLoadBalancingClient
 
-def get_elb_client() -> ElasticLoadBalancingClient:
-    return Session().client("elb")
+session = get_session()
+async with session.create_client("elb") as client:
+    client: ElasticLoadBalancingClient
 ```
 
 Boto3 documentation:
@@ -117,7 +120,7 @@ Exceptions:
 
 ElasticLoadBalancingClient exceptions.
 
-Type annotations for `aiobotocore.create_client("elb").exceptions` method.
+Type annotations for `session.create_client("elb").exceptions` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.exceptions)
@@ -130,7 +133,7 @@ Returns [Exceptions](#exceptions).
 
 Adds the specified tags to the specified load balancer.
 
-Type annotations for `aiobotocore.create_client("elb").add_tags` method.
+Type annotations for `session.create_client("elb").add_tags` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.add_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.add_tags)
@@ -155,8 +158,7 @@ Associates one or more security groups with your load balancer in a virtual
 private cloud (VPC).
 
 Type annotations for
-`aiobotocore.create_client("elb").apply_security_groups_to_load_balancer`
-method.
+`session.create_client("elb").apply_security_groups_to_load_balancer` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.apply_security_groups_to_load_balancer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.apply_security_groups_to_load_balancer)
@@ -183,7 +185,7 @@ Adds one or more subnets to the set of configured subnets for the specified
 load balancer.
 
 Type annotations for
-`aiobotocore.create_client("elb").attach_load_balancer_to_subnets` method.
+`session.create_client("elb").attach_load_balancer_to_subnets` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.attach_load_balancer_to_subnets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.attach_load_balancer_to_subnets)
@@ -208,18 +210,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("elb").can_paginate` method.
+Type annotations for `session.create_client("elb").can_paginate` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="configure_health_check"></a>
 
@@ -228,7 +228,7 @@ Returns a `Coroutine` for `bool`.
 Specifies the health check settings to use when evaluating the health state of
 your EC2 instances.
 
-Type annotations for `aiobotocore.create_client("elb").configure_health_check`
+Type annotations for `session.create_client("elb").configure_health_check`
 method.
 
 Boto3 documentation:
@@ -257,7 +257,7 @@ Generates a stickiness policy with sticky session lifetimes that follow that of
 an application-generated cookie.
 
 Type annotations for
-`aiobotocore.create_client("elb").create_app_cookie_stickiness_policy` method.
+`session.create_client("elb").create_app_cookie_stickiness_policy` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.create_app_cookie_stickiness_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.create_app_cookie_stickiness_policy)
@@ -284,7 +284,7 @@ Generates a stickiness policy with sticky session lifetimes controlled by the
 lifetime of the browser (user-agent) or a specified expiration period.
 
 Type annotations for
-`aiobotocore.create_client("elb").create_lb_cookie_stickiness_policy` method.
+`session.create_client("elb").create_lb_cookie_stickiness_policy` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.create_lb_cookie_stickiness_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.create_lb_cookie_stickiness_policy)
@@ -309,7 +309,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a Classic Load Balancer.
 
-Type annotations for `aiobotocore.create_client("elb").create_load_balancer`
+Type annotations for `session.create_client("elb").create_load_balancer`
 method.
 
 Boto3 documentation:
@@ -342,7 +342,7 @@ Returns a `Coroutine` for
 Creates one or more listeners for the specified load balancer.
 
 Type annotations for
-`aiobotocore.create_client("elb").create_load_balancer_listeners` method.
+`session.create_client("elb").create_load_balancer_listeners` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.create_load_balancer_listeners](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.create_load_balancer_listeners)
@@ -367,8 +367,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a policy with the specified attributes for the specified load balancer.
 
-Type annotations for
-`aiobotocore.create_client("elb").create_load_balancer_policy` method.
+Type annotations for `session.create_client("elb").create_load_balancer_policy`
+method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.create_load_balancer_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.create_load_balancer_policy)
@@ -395,7 +395,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified load balancer.
 
-Type annotations for `aiobotocore.create_client("elb").delete_load_balancer`
+Type annotations for `session.create_client("elb").delete_load_balancer`
 method.
 
 Boto3 documentation:
@@ -420,7 +420,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes the specified listeners from the specified load balancer.
 
 Type annotations for
-`aiobotocore.create_client("elb").delete_load_balancer_listeners` method.
+`session.create_client("elb").delete_load_balancer_listeners` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.delete_load_balancer_listeners](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.delete_load_balancer_listeners)
@@ -444,8 +444,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes the specified policy from the specified load balancer.
 
-Type annotations for
-`aiobotocore.create_client("elb").delete_load_balancer_policy` method.
+Type annotations for `session.create_client("elb").delete_load_balancer_policy`
+method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.delete_load_balancer_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.delete_load_balancer_policy)
@@ -470,8 +470,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deregisters the specified instances from the specified load balancer.
 
 Type annotations for
-`aiobotocore.create_client("elb").deregister_instances_from_load_balancer`
-method.
+`session.create_client("elb").deregister_instances_from_load_balancer` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.deregister_instances_from_load_balancer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.deregister_instances_from_load_balancer)
@@ -498,7 +497,7 @@ Returns a `Coroutine` for
 Describes the current Elastic Load Balancing resource limits for your AWS
 account.
 
-Type annotations for `aiobotocore.create_client("elb").describe_account_limits`
+Type annotations for `session.create_client("elb").describe_account_limits`
 method.
 
 Boto3 documentation:
@@ -525,8 +524,8 @@ Returns a `Coroutine` for
 Describes the state of the specified instances with respect to the specified
 load balancer.
 
-Type annotations for
-`aiobotocore.create_client("elb").describe_instance_health` method.
+Type annotations for `session.create_client("elb").describe_instance_health`
+method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.describe_instance_health](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.describe_instance_health)
@@ -552,7 +551,7 @@ Returns a `Coroutine` for
 Describes the attributes for the specified load balancer.
 
 Type annotations for
-`aiobotocore.create_client("elb").describe_load_balancer_attributes` method.
+`session.create_client("elb").describe_load_balancer_attributes` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.describe_load_balancer_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.describe_load_balancer_attributes)
@@ -577,7 +576,7 @@ Returns a `Coroutine` for
 Describes the specified policies.
 
 Type annotations for
-`aiobotocore.create_client("elb").describe_load_balancer_policies` method.
+`session.create_client("elb").describe_load_balancer_policies` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.describe_load_balancer_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.describe_load_balancer_policies)
@@ -604,7 +603,7 @@ Describes the specified load balancer policy types or all load balancer policy
 types.
 
 Type annotations for
-`aiobotocore.create_client("elb").describe_load_balancer_policy_types` method.
+`session.create_client("elb").describe_load_balancer_policy_types` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.describe_load_balancer_policy_types](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.describe_load_balancer_policy_types)
@@ -628,7 +627,7 @@ Returns a `Coroutine` for
 
 Describes the specified the load balancers.
 
-Type annotations for `aiobotocore.create_client("elb").describe_load_balancers`
+Type annotations for `session.create_client("elb").describe_load_balancers`
 method.
 
 Boto3 documentation:
@@ -655,7 +654,7 @@ Returns a `Coroutine` for
 
 Describes the tags associated with the specified load balancers.
 
-Type annotations for `aiobotocore.create_client("elb").describe_tags` method.
+Type annotations for `session.create_client("elb").describe_tags` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.describe_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.describe_tags)
@@ -680,7 +679,7 @@ Removes the specified subnets from the set of configured subnets for the load
 balancer.
 
 Type annotations for
-`aiobotocore.create_client("elb").detach_load_balancer_from_subnets` method.
+`session.create_client("elb").detach_load_balancer_from_subnets` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.detach_load_balancer_from_subnets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.detach_load_balancer_from_subnets)
@@ -707,7 +706,7 @@ Removes the specified Availability Zones from the set of Availability Zones for
 the specified load balancer in EC2-Classic or a default VPC.
 
 Type annotations for
-`aiobotocore.create_client("elb").disable_availability_zones_for_load_balancer`
+`session.create_client("elb").disable_availability_zones_for_load_balancer`
 method.
 
 Boto3 documentation:
@@ -736,7 +735,7 @@ Adds the specified Availability Zones to the set of Availability Zones for the
 specified load balancer in EC2-Classic or a default VPC.
 
 Type annotations for
-`aiobotocore.create_client("elb").enable_availability_zones_for_load_balancer`
+`session.create_client("elb").enable_availability_zones_for_load_balancer`
 method.
 
 Boto3 documentation:
@@ -763,7 +762,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("elb").generate_presigned_url`
+Type annotations for `session.create_client("elb").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -788,7 +787,7 @@ Returns a `Coroutine` for `str`.
 Modifies the attributes of the specified load balancer.
 
 Type annotations for
-`aiobotocore.create_client("elb").modify_load_balancer_attributes` method.
+`session.create_client("elb").modify_load_balancer_attributes` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.modify_load_balancer_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.modify_load_balancer_attributes)
@@ -816,8 +815,7 @@ Returns a `Coroutine` for
 Adds the specified instances to the specified load balancer.
 
 Type annotations for
-`aiobotocore.create_client("elb").register_instances_with_load_balancer`
-method.
+`session.create_client("elb").register_instances_with_load_balancer` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.register_instances_with_load_balancer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.register_instances_with_load_balancer)
@@ -843,7 +841,7 @@ Returns a `Coroutine` for
 
 Removes one or more tags from the specified load balancer.
 
-Type annotations for `aiobotocore.create_client("elb").remove_tags` method.
+Type annotations for `session.create_client("elb").remove_tags` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.remove_tags](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.remove_tags)
@@ -868,7 +866,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Sets the certificate that terminates the specified listener's SSL connections.
 
 Type annotations for
-`aiobotocore.create_client("elb").set_load_balancer_listener_ssl_certificate`
+`session.create_client("elb").set_load_balancer_listener_ssl_certificate`
 method.
 
 Boto3 documentation:
@@ -896,7 +894,7 @@ Replaces the set of policies associated with the specified port on which the
 EC2 instance is listening with a new set of policies.
 
 Type annotations for
-`aiobotocore.create_client("elb").set_load_balancer_policies_for_backend_server`
+`session.create_client("elb").set_load_balancer_policies_for_backend_server`
 method.
 
 Boto3 documentation:
@@ -925,8 +923,7 @@ Replaces the current set of policies for the specified load balancer port with
 the specified set of policies.
 
 Type annotations for
-`aiobotocore.create_client("elb").set_load_balancer_policies_of_listener`
-method.
+`session.create_client("elb").set_load_balancer_policies_of_listener` method.
 
 Boto3 documentation:
 [ElasticLoadBalancing.Client.set_load_balancer_policies_of_listener](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.set_load_balancer_policies_of_listener)
@@ -945,12 +942,45 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("elb").__aenter__` method.
+
+Boto3 documentation:
+[ElasticLoadBalancing.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[ElasticLoadBalancingClient](#elasticloadbalancingclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("elb").__aexit__` method.
+
+Boto3 documentation:
+[ElasticLoadBalancing.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elb.html#ElasticLoadBalancing.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("elb").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("elb").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_account_limits")` ->
   [DescribeAccountLimitsPaginator](./paginators.md#describeaccountlimitspaginator)
@@ -961,7 +991,7 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("elb").get_waiter` method with
+Type annotations for `session.create_client("elb").get_waiter` method with
 overloads.
 
 - `client.get_waiter("any_instance_in_service")` ->

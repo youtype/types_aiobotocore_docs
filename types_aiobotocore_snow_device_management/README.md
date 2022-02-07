@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[snow-device-management]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[snow-device-management]'
+
+# standalone installation
 pip install types-aiobotocore-snow-device-management
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-snow-device-management
 
 ## SnowDeviceManagementClient
 
-Type annotations for `aiobotocore.create_client("snow-device-management")` as
+Type annotations for `session.create_client("snow-device-management")` as
 [SnowDeviceManagementClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_snow_device_management.client import SnowDeviceManagement
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_task](./client.md#cancel_task)
 - [create_task](./client.md#create_task)
@@ -84,7 +90,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_snow_device_management.paginators import ListDeviceResourcesPaginator, ...
+from types_aiobotocore_snow_device_management.paginator import ListDeviceResourcesPaginator, ...
 ```
 
 - [ListDeviceResourcesPaginator](./paginators.md#listdeviceresourcespaginator)

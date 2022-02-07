@@ -144,22 +144,25 @@ type annotations stubs module
     - [update_user_phone_config](#update_user_phone_config)
     - [update_user_routing_profile](#update_user_routing_profile)
     - [update_user_security_profiles](#update_user_security_profiles)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="connectclient"></a>
 
 ## ConnectClient
 
-Type annotations for `aiobotocore.create_client("connect")`
+Type annotations for `session.create_client("connect")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_connect.client import ConnectClient
 
-def get_connect_client() -> ConnectClient:
-    return Session().client("connect")
+session = get_session()
+async with session.create_client("connect") as client:
+    client: ConnectClient
 ```
 
 Boto3 documentation:
@@ -212,7 +215,7 @@ Exceptions:
 
 ConnectClient exceptions.
 
-Type annotations for `aiobotocore.create_client("connect").exceptions` method.
+Type annotations for `session.create_client("connect").exceptions` method.
 
 Boto3 documentation:
 [Connect.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.exceptions)
@@ -226,7 +229,7 @@ Returns [Exceptions](#exceptions).
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").associate_approved_origin` method.
+`session.create_client("connect").associate_approved_origin` method.
 
 Boto3 documentation:
 [Connect.Client.associate_approved_origin](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.associate_approved_origin)
@@ -248,8 +251,7 @@ Keyword-only arguments:
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").associate_bot`
-method.
+Type annotations for `session.create_client("connect").associate_bot` method.
 
 Boto3 documentation:
 [Connect.Client.associate_bot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.associate_bot)
@@ -272,8 +274,7 @@ Keyword-only arguments:
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").associate_instance_storage_config`
-method.
+`session.create_client("connect").associate_instance_storage_config` method.
 
 Boto3 documentation:
 [Connect.Client.associate_instance_storage_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.associate_instance_storage_config)
@@ -304,7 +305,7 @@ Returns a `Coroutine` for
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").associate_lambda_function` method.
+`session.create_client("connect").associate_lambda_function` method.
 
 Boto3 documentation:
 [Connect.Client.associate_lambda_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.associate_lambda_function)
@@ -326,7 +327,7 @@ Keyword-only arguments:
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").associate_lex_bot`
+Type annotations for `session.create_client("connect").associate_lex_bot`
 method.
 
 Boto3 documentation:
@@ -349,7 +350,7 @@ Keyword-only arguments:
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").associate_queue_quick_connects` method.
+`session.create_client("connect").associate_queue_quick_connects` method.
 
 Boto3 documentation:
 [Connect.Client.associate_queue_quick_connects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.associate_queue_quick_connects)
@@ -373,7 +374,7 @@ Keyword-only arguments:
 Associates a set of queues with a routing profile.
 
 Type annotations for
-`aiobotocore.create_client("connect").associate_routing_profile_queues` method.
+`session.create_client("connect").associate_routing_profile_queues` method.
 
 Boto3 documentation:
 [Connect.Client.associate_routing_profile_queues](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.associate_routing_profile_queues)
@@ -398,8 +399,8 @@ Keyword-only arguments:
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for
-`aiobotocore.create_client("connect").associate_security_key` method.
+Type annotations for `session.create_client("connect").associate_security_key`
+method.
 
 Boto3 documentation:
 [Connect.Client.associate_security_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.associate_security_key)
@@ -424,19 +425,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("connect").can_paginate`
-method.
+Type annotations for `session.create_client("connect").can_paginate` method.
 
 Boto3 documentation:
 [Connect.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_agent_status"></a>
 
@@ -444,7 +442,7 @@ Returns a `Coroutine` for `bool`.
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").create_agent_status`
+Type annotations for `session.create_client("connect").create_agent_status`
 method.
 
 Boto3 documentation:
@@ -475,7 +473,7 @@ Returns a `Coroutine` for
 
 Creates a contact flow for the specified Amazon Connect instance.
 
-Type annotations for `aiobotocore.create_client("connect").create_contact_flow`
+Type annotations for `session.create_client("connect").create_contact_flow`
 method.
 
 Boto3 documentation:
@@ -506,7 +504,7 @@ Returns a `Coroutine` for
 Creates a contact flow module for the specified Amazon Connect instance.
 
 Type annotations for
-`aiobotocore.create_client("connect").create_contact_flow_module` method.
+`session.create_client("connect").create_contact_flow_module` method.
 
 Boto3 documentation:
 [Connect.Client.create_contact_flow_module](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.create_contact_flow_module)
@@ -536,7 +534,7 @@ Returns a `Coroutine` for
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").create_hours_of_operation` method.
+`session.create_client("connect").create_hours_of_operation` method.
 
 Boto3 documentation:
 [Connect.Client.create_hours_of_operation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.create_hours_of_operation)
@@ -567,8 +565,7 @@ Returns a `Coroutine` for
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").create_instance`
-method.
+Type annotations for `session.create_client("connect").create_instance` method.
 
 Boto3 documentation:
 [Connect.Client.create_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.create_instance)
@@ -598,7 +595,7 @@ Returns a `Coroutine` for
 Creates an AWS resource association with an Amazon Connect instance.
 
 Type annotations for
-`aiobotocore.create_client("connect").create_integration_association` method.
+`session.create_client("connect").create_integration_association` method.
 
 Boto3 documentation:
 [Connect.Client.create_integration_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.create_integration_association)
@@ -629,8 +626,7 @@ Returns a `Coroutine` for
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").create_queue`
-method.
+Type annotations for `session.create_client("connect").create_queue` method.
 
 Boto3 documentation:
 [Connect.Client.create_queue](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.create_queue)
@@ -661,8 +657,8 @@ Returns a `Coroutine` for
 
 Creates a quick connect for the specified Amazon Connect instance.
 
-Type annotations for
-`aiobotocore.create_client("connect").create_quick_connect` method.
+Type annotations for `session.create_client("connect").create_quick_connect`
+method.
 
 Boto3 documentation:
 [Connect.Client.create_quick_connect](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.create_quick_connect)
@@ -692,8 +688,8 @@ Returns a `Coroutine` for
 
 Creates a new routing profile.
 
-Type annotations for
-`aiobotocore.create_client("connect").create_routing_profile` method.
+Type annotations for `session.create_client("connect").create_routing_profile`
+method.
 
 Boto3 documentation:
 [Connect.Client.create_routing_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.create_routing_profile)
@@ -726,8 +722,8 @@ Returns a `Coroutine` for
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for
-`aiobotocore.create_client("connect").create_security_profile` method.
+Type annotations for `session.create_client("connect").create_security_profile`
+method.
 
 Boto3 documentation:
 [Connect.Client.create_security_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.create_security_profile)
@@ -755,8 +751,7 @@ Returns a `Coroutine` for
 
 Creates a use case for an integration association.
 
-Type annotations for `aiobotocore.create_client("connect").create_use_case`
-method.
+Type annotations for `session.create_client("connect").create_use_case` method.
 
 Boto3 documentation:
 [Connect.Client.create_use_case](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.create_use_case)
@@ -782,7 +777,7 @@ Returns a `Coroutine` for
 
 Creates a user account for the specified Amazon Connect instance.
 
-Type annotations for `aiobotocore.create_client("connect").create_user` method.
+Type annotations for `session.create_client("connect").create_user` method.
 
 Boto3 documentation:
 [Connect.Client.create_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.create_user)
@@ -817,7 +812,7 @@ Returns a `Coroutine` for
 Creates a new user hierarchy group.
 
 Type annotations for
-`aiobotocore.create_client("connect").create_user_hierarchy_group` method.
+`session.create_client("connect").create_user_hierarchy_group` method.
 
 Boto3 documentation:
 [Connect.Client.create_user_hierarchy_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.create_user_hierarchy_group)
@@ -843,7 +838,7 @@ Returns a `Coroutine` for
 
 Deletes a contact flow for the specified Amazon Connect instance.
 
-Type annotations for `aiobotocore.create_client("connect").delete_contact_flow`
+Type annotations for `session.create_client("connect").delete_contact_flow`
 method.
 
 Boto3 documentation:
@@ -867,7 +862,7 @@ Keyword-only arguments:
 Deletes the specified contact flow module.
 
 Type annotations for
-`aiobotocore.create_client("connect").delete_contact_flow_module` method.
+`session.create_client("connect").delete_contact_flow_module` method.
 
 Boto3 documentation:
 [Connect.Client.delete_contact_flow_module](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.delete_contact_flow_module)
@@ -892,7 +887,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").delete_hours_of_operation` method.
+`session.create_client("connect").delete_hours_of_operation` method.
 
 Boto3 documentation:
 [Connect.Client.delete_hours_of_operation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.delete_hours_of_operation)
@@ -914,8 +909,7 @@ Keyword-only arguments:
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").delete_instance`
-method.
+Type annotations for `session.create_client("connect").delete_instance` method.
 
 Boto3 documentation:
 [Connect.Client.delete_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.delete_instance)
@@ -936,7 +930,7 @@ Keyword-only arguments:
 Deletes an AWS resource association from an Amazon Connect instance.
 
 Type annotations for
-`aiobotocore.create_client("connect").delete_integration_association` method.
+`session.create_client("connect").delete_integration_association` method.
 
 Boto3 documentation:
 [Connect.Client.delete_integration_association](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.delete_integration_association)
@@ -958,8 +952,8 @@ Keyword-only arguments:
 
 Deletes a quick connect.
 
-Type annotations for
-`aiobotocore.create_client("connect").delete_quick_connect` method.
+Type annotations for `session.create_client("connect").delete_quick_connect`
+method.
 
 Boto3 documentation:
 [Connect.Client.delete_quick_connect](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.delete_quick_connect)
@@ -981,8 +975,8 @@ Keyword-only arguments:
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for
-`aiobotocore.create_client("connect").delete_security_profile` method.
+Type annotations for `session.create_client("connect").delete_security_profile`
+method.
 
 Boto3 documentation:
 [Connect.Client.delete_security_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.delete_security_profile)
@@ -1004,8 +998,7 @@ Keyword-only arguments:
 
 Deletes a use case from an integration association.
 
-Type annotations for `aiobotocore.create_client("connect").delete_use_case`
-method.
+Type annotations for `session.create_client("connect").delete_use_case` method.
 
 Boto3 documentation:
 [Connect.Client.delete_use_case](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.delete_use_case)
@@ -1027,7 +1020,7 @@ Keyword-only arguments:
 
 Deletes a user account from the specified Amazon Connect instance.
 
-Type annotations for `aiobotocore.create_client("connect").delete_user` method.
+Type annotations for `session.create_client("connect").delete_user` method.
 
 Boto3 documentation:
 [Connect.Client.delete_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.delete_user)
@@ -1049,7 +1042,7 @@ Keyword-only arguments:
 Deletes an existing user hierarchy group.
 
 Type annotations for
-`aiobotocore.create_client("connect").delete_user_hierarchy_group` method.
+`session.create_client("connect").delete_user_hierarchy_group` method.
 
 Boto3 documentation:
 [Connect.Client.delete_user_hierarchy_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.delete_user_hierarchy_group)
@@ -1071,8 +1064,8 @@ Keyword-only arguments:
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for
-`aiobotocore.create_client("connect").describe_agent_status` method.
+Type annotations for `session.create_client("connect").describe_agent_status`
+method.
 
 Boto3 documentation:
 [Connect.Client.describe_agent_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.describe_agent_status)
@@ -1097,7 +1090,7 @@ Returns a `Coroutine` for
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").describe_contact`
+Type annotations for `session.create_client("connect").describe_contact`
 method.
 
 Boto3 documentation:
@@ -1122,8 +1115,8 @@ Returns a `Coroutine` for
 
 Describes the specified contact flow.
 
-Type annotations for
-`aiobotocore.create_client("connect").describe_contact_flow` method.
+Type annotations for `session.create_client("connect").describe_contact_flow`
+method.
 
 Boto3 documentation:
 [Connect.Client.describe_contact_flow](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.describe_contact_flow)
@@ -1149,7 +1142,7 @@ Returns a `Coroutine` for
 Describes the specified contact flow module.
 
 Type annotations for
-`aiobotocore.create_client("connect").describe_contact_flow_module` method.
+`session.create_client("connect").describe_contact_flow_module` method.
 
 Boto3 documentation:
 [Connect.Client.describe_contact_flow_module](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.describe_contact_flow_module)
@@ -1175,7 +1168,7 @@ Returns a `Coroutine` for
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").describe_hours_of_operation` method.
+`session.create_client("connect").describe_hours_of_operation` method.
 
 Boto3 documentation:
 [Connect.Client.describe_hours_of_operation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.describe_hours_of_operation)
@@ -1200,7 +1193,7 @@ Returns a `Coroutine` for
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").describe_instance`
+Type annotations for `session.create_client("connect").describe_instance`
 method.
 
 Boto3 documentation:
@@ -1225,7 +1218,7 @@ Returns a `Coroutine` for
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").describe_instance_attribute` method.
+`session.create_client("connect").describe_instance_attribute` method.
 
 Boto3 documentation:
 [Connect.Client.describe_instance_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.describe_instance_attribute)
@@ -1253,7 +1246,7 @@ Returns a `Coroutine` for
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").describe_instance_storage_config` method.
+`session.create_client("connect").describe_instance_storage_config` method.
 
 Boto3 documentation:
 [Connect.Client.describe_instance_storage_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.describe_instance_storage_config)
@@ -1281,8 +1274,7 @@ Returns a `Coroutine` for
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").describe_queue`
-method.
+Type annotations for `session.create_client("connect").describe_queue` method.
 
 Boto3 documentation:
 [Connect.Client.describe_queue](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.describe_queue)
@@ -1306,8 +1298,8 @@ Returns a `Coroutine` for
 
 Describes the quick connect.
 
-Type annotations for
-`aiobotocore.create_client("connect").describe_quick_connect` method.
+Type annotations for `session.create_client("connect").describe_quick_connect`
+method.
 
 Boto3 documentation:
 [Connect.Client.describe_quick_connect](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.describe_quick_connect)
@@ -1333,7 +1325,7 @@ Returns a `Coroutine` for
 Describes the specified routing profile.
 
 Type annotations for
-`aiobotocore.create_client("connect").describe_routing_profile` method.
+`session.create_client("connect").describe_routing_profile` method.
 
 Boto3 documentation:
 [Connect.Client.describe_routing_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.describe_routing_profile)
@@ -1359,7 +1351,7 @@ Returns a `Coroutine` for
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").describe_security_profile` method.
+`session.create_client("connect").describe_security_profile` method.
 
 Boto3 documentation:
 [Connect.Client.describe_security_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.describe_security_profile)
@@ -1384,8 +1376,7 @@ Returns a `Coroutine` for
 
 Describes the specified user account.
 
-Type annotations for `aiobotocore.create_client("connect").describe_user`
-method.
+Type annotations for `session.create_client("connect").describe_user` method.
 
 Boto3 documentation:
 [Connect.Client.describe_user](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.describe_user)
@@ -1410,7 +1401,7 @@ Returns a `Coroutine` for
 Describes the specified hierarchy group.
 
 Type annotations for
-`aiobotocore.create_client("connect").describe_user_hierarchy_group` method.
+`session.create_client("connect").describe_user_hierarchy_group` method.
 
 Boto3 documentation:
 [Connect.Client.describe_user_hierarchy_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.describe_user_hierarchy_group)
@@ -1436,8 +1427,7 @@ Returns a `Coroutine` for
 Describes the hierarchy structure of the specified Amazon Connect instance.
 
 Type annotations for
-`aiobotocore.create_client("connect").describe_user_hierarchy_structure`
-method.
+`session.create_client("connect").describe_user_hierarchy_structure` method.
 
 Boto3 documentation:
 [Connect.Client.describe_user_hierarchy_structure](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.describe_user_hierarchy_structure)
@@ -1462,7 +1452,7 @@ Returns a `Coroutine` for
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").disassociate_approved_origin` method.
+`session.create_client("connect").disassociate_approved_origin` method.
 
 Boto3 documentation:
 [Connect.Client.disassociate_approved_origin](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.disassociate_approved_origin)
@@ -1484,7 +1474,7 @@ Keyword-only arguments:
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").disassociate_bot`
+Type annotations for `session.create_client("connect").disassociate_bot`
 method.
 
 Boto3 documentation:
@@ -1508,8 +1498,7 @@ Keyword-only arguments:
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").disassociate_instance_storage_config`
-method.
+`session.create_client("connect").disassociate_instance_storage_config` method.
 
 Boto3 documentation:
 [Connect.Client.disassociate_instance_storage_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.disassociate_instance_storage_config)
@@ -1535,7 +1524,7 @@ Keyword-only arguments:
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").disassociate_lambda_function` method.
+`session.create_client("connect").disassociate_lambda_function` method.
 
 Boto3 documentation:
 [Connect.Client.disassociate_lambda_function](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.disassociate_lambda_function)
@@ -1557,8 +1546,8 @@ Keyword-only arguments:
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for
-`aiobotocore.create_client("connect").disassociate_lex_bot` method.
+Type annotations for `session.create_client("connect").disassociate_lex_bot`
+method.
 
 Boto3 documentation:
 [Connect.Client.disassociate_lex_bot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.disassociate_lex_bot)
@@ -1582,8 +1571,7 @@ Keyword-only arguments:
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").disassociate_queue_quick_connects`
-method.
+`session.create_client("connect").disassociate_queue_quick_connects` method.
 
 Boto3 documentation:
 [Connect.Client.disassociate_queue_quick_connects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.disassociate_queue_quick_connects)
@@ -1607,8 +1595,7 @@ Keyword-only arguments:
 Disassociates a set of queues from a routing profile.
 
 Type annotations for
-`aiobotocore.create_client("connect").disassociate_routing_profile_queues`
-method.
+`session.create_client("connect").disassociate_routing_profile_queues` method.
 
 Boto3 documentation:
 [Connect.Client.disassociate_routing_profile_queues](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.disassociate_routing_profile_queues)
@@ -1634,7 +1621,7 @@ Keyword-only arguments:
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").disassociate_security_key` method.
+`session.create_client("connect").disassociate_security_key` method.
 
 Boto3 documentation:
 [Connect.Client.disassociate_security_key](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.disassociate_security_key)
@@ -1656,8 +1643,8 @@ Keyword-only arguments:
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("connect").generate_presigned_url` method.
+Type annotations for `session.create_client("connect").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Connect.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.generate_presigned_url)
@@ -1680,8 +1667,8 @@ Returns a `Coroutine` for `str`.
 
 Retrieves the contact attributes for the specified contact.
 
-Type annotations for
-`aiobotocore.create_client("connect").get_contact_attributes` method.
+Type annotations for `session.create_client("connect").get_contact_attributes`
+method.
 
 Boto3 documentation:
 [Connect.Client.get_contact_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.get_contact_attributes)
@@ -1706,8 +1693,8 @@ Returns a `Coroutine` for
 
 Gets the real-time metric data from the specified Amazon Connect instance.
 
-Type annotations for
-`aiobotocore.create_client("connect").get_current_metric_data` method.
+Type annotations for `session.create_client("connect").get_current_metric_data`
+method.
 
 Boto3 documentation:
 [Connect.Client.get_current_metric_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.get_current_metric_data)
@@ -1738,8 +1725,8 @@ Returns a `Coroutine` for
 
 Retrieves a token for federation.
 
-Type annotations for
-`aiobotocore.create_client("connect").get_federation_token` method.
+Type annotations for `session.create_client("connect").get_federation_token`
+method.
 
 Boto3 documentation:
 [Connect.Client.get_federation_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.get_federation_token)
@@ -1763,8 +1750,7 @@ Returns a `Coroutine` for
 
 Gets historical metric data from the specified Amazon Connect instance.
 
-Type annotations for `aiobotocore.create_client("connect").get_metric_data`
-method.
+Type annotations for `session.create_client("connect").get_metric_data` method.
 
 Boto3 documentation:
 [Connect.Client.get_metric_data](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.get_metric_data)
@@ -1796,7 +1782,7 @@ Returns a `Coroutine` for
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").list_agent_statuses`
+Type annotations for `session.create_client("connect").list_agent_statuses`
 method.
 
 Boto3 documentation:
@@ -1825,8 +1811,8 @@ Returns a `Coroutine` for
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for
-`aiobotocore.create_client("connect").list_approved_origins` method.
+Type annotations for `session.create_client("connect").list_approved_origins`
+method.
 
 Boto3 documentation:
 [Connect.Client.list_approved_origins](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_approved_origins)
@@ -1852,7 +1838,7 @@ Returns a `Coroutine` for
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").list_bots` method.
+Type annotations for `session.create_client("connect").list_bots` method.
 
 Boto3 documentation:
 [Connect.Client.list_bots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_bots)
@@ -1880,7 +1866,7 @@ Provides information about the contact flow modules for the specified Amazon
 Connect instance.
 
 Type annotations for
-`aiobotocore.create_client("connect").list_contact_flow_modules` method.
+`session.create_client("connect").list_contact_flow_modules` method.
 
 Boto3 documentation:
 [Connect.Client.list_contact_flow_modules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_contact_flow_modules)
@@ -1909,7 +1895,7 @@ Returns a `Coroutine` for
 Provides information about the contact flows for the specified Amazon Connect
 instance.
 
-Type annotations for `aiobotocore.create_client("connect").list_contact_flows`
+Type annotations for `session.create_client("connect").list_contact_flows`
 method.
 
 Boto3 documentation:
@@ -1938,8 +1924,8 @@ Returns a `Coroutine` for
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for
-`aiobotocore.create_client("connect").list_contact_references` method.
+Type annotations for `session.create_client("connect").list_contact_references`
+method.
 
 Boto3 documentation:
 [Connect.Client.list_contact_references](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_contact_references)
@@ -1970,7 +1956,7 @@ Provides information about the hours of operation for the specified Amazon
 Connect instance.
 
 Type annotations for
-`aiobotocore.create_client("connect").list_hours_of_operations` method.
+`session.create_client("connect").list_hours_of_operations` method.
 
 Boto3 documentation:
 [Connect.Client.list_hours_of_operations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_hours_of_operations)
@@ -1997,7 +1983,7 @@ Returns a `Coroutine` for
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").list_instance_attributes` method.
+`session.create_client("connect").list_instance_attributes` method.
 
 Boto3 documentation:
 [Connect.Client.list_instance_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_instance_attributes)
@@ -2024,7 +2010,7 @@ Returns a `Coroutine` for
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").list_instance_storage_configs` method.
+`session.create_client("connect").list_instance_storage_configs` method.
 
 Boto3 documentation:
 [Connect.Client.list_instance_storage_configs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_instance_storage_configs)
@@ -2053,8 +2039,7 @@ Returns a `Coroutine` for
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").list_instances`
-method.
+Type annotations for `session.create_client("connect").list_instances` method.
 
 Boto3 documentation:
 [Connect.Client.list_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_instances)
@@ -2080,7 +2065,7 @@ Provides summary information about the AWS resource associations for the
 specified Amazon Connect instance.
 
 Type annotations for
-`aiobotocore.create_client("connect").list_integration_associations` method.
+`session.create_client("connect").list_integration_associations` method.
 
 Boto3 documentation:
 [Connect.Client.list_integration_associations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_integration_associations)
@@ -2107,8 +2092,8 @@ Returns a `Coroutine` for
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for
-`aiobotocore.create_client("connect").list_lambda_functions` method.
+Type annotations for `session.create_client("connect").list_lambda_functions`
+method.
 
 Boto3 documentation:
 [Connect.Client.list_lambda_functions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_lambda_functions)
@@ -2134,8 +2119,7 @@ Returns a `Coroutine` for
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").list_lex_bots`
-method.
+Type annotations for `session.create_client("connect").list_lex_bots` method.
 
 Boto3 documentation:
 [Connect.Client.list_lex_bots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_lex_bots)
@@ -2161,7 +2145,7 @@ Returns a `Coroutine` for
 Provides information about the phone numbers for the specified Amazon Connect
 instance.
 
-Type annotations for `aiobotocore.create_client("connect").list_phone_numbers`
+Type annotations for `session.create_client("connect").list_phone_numbers`
 method.
 
 Boto3 documentation:
@@ -2193,8 +2177,7 @@ Returns a `Coroutine` for
 Provides information about the prompts for the specified Amazon Connect
 instance.
 
-Type annotations for `aiobotocore.create_client("connect").list_prompts`
-method.
+Type annotations for `session.create_client("connect").list_prompts` method.
 
 Boto3 documentation:
 [Connect.Client.list_prompts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_prompts)
@@ -2220,7 +2203,7 @@ Returns a `Coroutine` for
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").list_queue_quick_connects` method.
+`session.create_client("connect").list_queue_quick_connects` method.
 
 Boto3 documentation:
 [Connect.Client.list_queue_quick_connects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_queue_quick_connects)
@@ -2248,7 +2231,7 @@ Returns a `Coroutine` for
 Provides information about the queues for the specified Amazon Connect
 instance.
 
-Type annotations for `aiobotocore.create_client("connect").list_queues` method.
+Type annotations for `session.create_client("connect").list_queues` method.
 
 Boto3 documentation:
 [Connect.Client.list_queues](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_queues)
@@ -2275,7 +2258,7 @@ Returns a `Coroutine` for
 Provides information about the quick connects for the specified Amazon Connect
 instance.
 
-Type annotations for `aiobotocore.create_client("connect").list_quick_connects`
+Type annotations for `session.create_client("connect").list_quick_connects`
 method.
 
 Boto3 documentation:
@@ -2305,7 +2288,7 @@ Returns a `Coroutine` for
 Lists the queues associated with a routing profile.
 
 Type annotations for
-`aiobotocore.create_client("connect").list_routing_profile_queues` method.
+`session.create_client("connect").list_routing_profile_queues` method.
 
 Boto3 documentation:
 [Connect.Client.list_routing_profile_queues](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_routing_profile_queues)
@@ -2333,8 +2316,8 @@ Returns a `Coroutine` for
 Provides summary information about the routing profiles for the specified
 Amazon Connect instance.
 
-Type annotations for
-`aiobotocore.create_client("connect").list_routing_profiles` method.
+Type annotations for `session.create_client("connect").list_routing_profiles`
+method.
 
 Boto3 documentation:
 [Connect.Client.list_routing_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_routing_profiles)
@@ -2360,7 +2343,7 @@ Returns a `Coroutine` for
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").list_security_keys`
+Type annotations for `session.create_client("connect").list_security_keys`
 method.
 
 Boto3 documentation:
@@ -2388,8 +2371,7 @@ Returns a `Coroutine` for
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").list_security_profile_permissions`
-method.
+`session.create_client("connect").list_security_profile_permissions` method.
 
 Boto3 documentation:
 [Connect.Client.list_security_profile_permissions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_security_profile_permissions)
@@ -2417,8 +2399,8 @@ Returns a `Coroutine` for
 Provides summary information about the security profiles for the specified
 Amazon Connect instance.
 
-Type annotations for
-`aiobotocore.create_client("connect").list_security_profiles` method.
+Type annotations for `session.create_client("connect").list_security_profiles`
+method.
 
 Boto3 documentation:
 [Connect.Client.list_security_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_security_profiles)
@@ -2444,8 +2426,8 @@ Returns a `Coroutine` for
 
 Lists the tags for the specified resource.
 
-Type annotations for
-`aiobotocore.create_client("connect").list_tags_for_resource` method.
+Type annotations for `session.create_client("connect").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Connect.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_tags_for_resource)
@@ -2469,8 +2451,7 @@ Returns a `Coroutine` for
 
 Lists the use cases for the integration association.
 
-Type annotations for `aiobotocore.create_client("connect").list_use_cases`
-method.
+Type annotations for `session.create_client("connect").list_use_cases` method.
 
 Boto3 documentation:
 [Connect.Client.list_use_cases](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_use_cases)
@@ -2498,7 +2479,7 @@ Provides summary information about the hierarchy groups for the specified
 Amazon Connect instance.
 
 Type annotations for
-`aiobotocore.create_client("connect").list_user_hierarchy_groups` method.
+`session.create_client("connect").list_user_hierarchy_groups` method.
 
 Boto3 documentation:
 [Connect.Client.list_user_hierarchy_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_user_hierarchy_groups)
@@ -2525,7 +2506,7 @@ Returns a `Coroutine` for
 Provides summary information about the users for the specified Amazon Connect
 instance.
 
-Type annotations for `aiobotocore.create_client("connect").list_users` method.
+Type annotations for `session.create_client("connect").list_users` method.
 
 Boto3 documentation:
 [Connect.Client.list_users](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.list_users)
@@ -2552,7 +2533,7 @@ When a contact is being recorded, and the recording has been suspended using
 SuspendContactRecording, this API resumes recording the call.
 
 Type annotations for
-`aiobotocore.create_client("connect").resume_contact_recording` method.
+`session.create_client("connect").resume_contact_recording` method.
 
 Boto3 documentation:
 [Connect.Client.resume_contact_recording](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.resume_contact_recording)
@@ -2577,7 +2558,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Initiates a contact flow to start a new chat for the customer.
 
-Type annotations for `aiobotocore.create_client("connect").start_chat_contact`
+Type annotations for `session.create_client("connect").start_chat_contact`
 method.
 
 Boto3 documentation:
@@ -2609,8 +2590,8 @@ Returns a `Coroutine` for
 
 Starts recording the contact when the agent joins the call.
 
-Type annotations for
-`aiobotocore.create_client("connect").start_contact_recording` method.
+Type annotations for `session.create_client("connect").start_contact_recording`
+method.
 
 Boto3 documentation:
 [Connect.Client.start_contact_recording](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.start_contact_recording)
@@ -2638,8 +2619,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Initiates real-time message streaming for a new chat contact.
 
-Type annotations for
-`aiobotocore.create_client("connect").start_contact_streaming` method.
+Type annotations for `session.create_client("connect").start_contact_streaming`
+method.
 
 Boto3 documentation:
 [Connect.Client.start_contact_streaming](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.start_contact_streaming)
@@ -2669,7 +2650,7 @@ Returns a `Coroutine` for
 Places an outbound call to a contact, and then initiates the contact flow.
 
 Type annotations for
-`aiobotocore.create_client("connect").start_outbound_voice_contact` method.
+`session.create_client("connect").start_outbound_voice_contact` method.
 
 Boto3 documentation:
 [Connect.Client.start_outbound_voice_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.start_outbound_voice_contact)
@@ -2703,7 +2684,7 @@ Returns a `Coroutine` for
 
 Initiates a contact flow to start a new task.
 
-Type annotations for `aiobotocore.create_client("connect").start_task_contact`
+Type annotations for `session.create_client("connect").start_task_contact`
 method.
 
 Boto3 documentation:
@@ -2737,8 +2718,7 @@ Returns a `Coroutine` for
 
 Ends the specified contact.
 
-Type annotations for `aiobotocore.create_client("connect").stop_contact`
-method.
+Type annotations for `session.create_client("connect").stop_contact` method.
 
 Boto3 documentation:
 [Connect.Client.stop_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.stop_contact)
@@ -2761,8 +2741,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Stops recording a call when a contact is being recorded.
 
-Type annotations for
-`aiobotocore.create_client("connect").stop_contact_recording` method.
+Type annotations for `session.create_client("connect").stop_contact_recording`
+method.
 
 Boto3 documentation:
 [Connect.Client.stop_contact_recording](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.stop_contact_recording)
@@ -2787,8 +2767,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Ends message streaming on a specified contact.
 
-Type annotations for
-`aiobotocore.create_client("connect").stop_contact_streaming` method.
+Type annotations for `session.create_client("connect").stop_contact_streaming`
+method.
 
 Boto3 documentation:
 [Connect.Client.stop_contact_streaming](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.stop_contact_streaming)
@@ -2814,7 +2794,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 When a contact is being recorded, this API suspends recording the call.
 
 Type annotations for
-`aiobotocore.create_client("connect").suspend_contact_recording` method.
+`session.create_client("connect").suspend_contact_recording` method.
 
 Boto3 documentation:
 [Connect.Client.suspend_contact_recording](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.suspend_contact_recording)
@@ -2839,8 +2819,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds the specified tags to the specified resource.
 
-Type annotations for `aiobotocore.create_client("connect").tag_resource`
-method.
+Type annotations for `session.create_client("connect").tag_resource` method.
 
 Boto3 documentation:
 [Connect.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.tag_resource)
@@ -2861,8 +2840,7 @@ Keyword-only arguments:
 
 Removes the specified tags from the specified resource.
 
-Type annotations for `aiobotocore.create_client("connect").untag_resource`
-method.
+Type annotations for `session.create_client("connect").untag_resource` method.
 
 Boto3 documentation:
 [Connect.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.untag_resource)
@@ -2883,7 +2861,7 @@ Keyword-only arguments:
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").update_agent_status`
+Type annotations for `session.create_client("connect").update_agent_status`
 method.
 
 Boto3 documentation:
@@ -2911,8 +2889,7 @@ Keyword-only arguments:
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").update_contact`
-method.
+Type annotations for `session.create_client("connect").update_contact` method.
 
 Boto3 documentation:
 [Connect.Client.update_contact](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_contact)
@@ -2941,7 +2918,7 @@ Creates or updates user-defined contact attributes associated with the
 specified contact.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_contact_attributes` method.
+`session.create_client("connect").update_contact_attributes` method.
 
 Boto3 documentation:
 [Connect.Client.update_contact_attributes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_contact_attributes)
@@ -2967,7 +2944,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the specified contact flow.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_contact_flow_content` method.
+`session.create_client("connect").update_contact_flow_content` method.
 
 Boto3 documentation:
 [Connect.Client.update_contact_flow_content](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_contact_flow_content)
@@ -2991,7 +2968,7 @@ Keyword-only arguments:
 Updates metadata about specified contact flow.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_contact_flow_metadata` method.
+`session.create_client("connect").update_contact_flow_metadata` method.
 
 Boto3 documentation:
 [Connect.Client.update_contact_flow_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_contact_flow_metadata)
@@ -3019,8 +2996,7 @@ Updates specified contact flow module for the specified Amazon Connect
 instance.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_contact_flow_module_content`
-method.
+`session.create_client("connect").update_contact_flow_module_content` method.
 
 Boto3 documentation:
 [Connect.Client.update_contact_flow_module_content](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_contact_flow_module_content)
@@ -3046,8 +3022,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates metadata about specified contact flow module.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_contact_flow_module_metadata`
-method.
+`session.create_client("connect").update_contact_flow_module_metadata` method.
 
 Boto3 documentation:
 [Connect.Client.update_contact_flow_module_metadata](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_contact_flow_module_metadata)
@@ -3076,7 +3051,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 The name of the contact flow.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_contact_flow_name` method.
+`session.create_client("connect").update_contact_flow_name` method.
 
 Boto3 documentation:
 [Connect.Client.update_contact_flow_name](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_contact_flow_name)
@@ -3100,8 +3075,8 @@ Keyword-only arguments:
 
 Updates the scheduled time of a task contact that is already scheduled.
 
-Type annotations for
-`aiobotocore.create_client("connect").update_contact_schedule` method.
+Type annotations for `session.create_client("connect").update_contact_schedule`
+method.
 
 Boto3 documentation:
 [Connect.Client.update_contact_schedule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_contact_schedule)
@@ -3127,7 +3102,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_hours_of_operation` method.
+`session.create_client("connect").update_hours_of_operation` method.
 
 Boto3 documentation:
 [Connect.Client.update_hours_of_operation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_hours_of_operation)
@@ -3155,7 +3130,7 @@ Keyword-only arguments:
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_instance_attribute` method.
+`session.create_client("connect").update_instance_attribute` method.
 
 Boto3 documentation:
 [Connect.Client.update_instance_attribute](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_instance_attribute)
@@ -3181,7 +3156,7 @@ Keyword-only arguments:
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_instance_storage_config` method.
+`session.create_client("connect").update_instance_storage_config` method.
 
 Boto3 documentation:
 [Connect.Client.update_instance_storage_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_instance_storage_config)
@@ -3210,7 +3185,7 @@ Keyword-only arguments:
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_queue_hours_of_operation` method.
+`session.create_client("connect").update_queue_hours_of_operation` method.
 
 Boto3 documentation:
 [Connect.Client.update_queue_hours_of_operation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_queue_hours_of_operation)
@@ -3234,7 +3209,7 @@ Keyword-only arguments:
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_queue_max_contacts` method.
+`session.create_client("connect").update_queue_max_contacts` method.
 
 Boto3 documentation:
 [Connect.Client.update_queue_max_contacts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_queue_max_contacts)
@@ -3257,7 +3232,7 @@ Keyword-only arguments:
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").update_queue_name`
+Type annotations for `session.create_client("connect").update_queue_name`
 method.
 
 Boto3 documentation:
@@ -3282,8 +3257,7 @@ Keyword-only arguments:
 This API is in preview release for Amazon Connect and is subject to change.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_queue_outbound_caller_config`
-method.
+`session.create_client("connect").update_queue_outbound_caller_config` method.
 
 Boto3 documentation:
 [Connect.Client.update_queue_outbound_caller_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_queue_outbound_caller_config)
@@ -3308,7 +3282,7 @@ Keyword-only arguments:
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for `aiobotocore.create_client("connect").update_queue_status`
+Type annotations for `session.create_client("connect").update_queue_status`
 method.
 
 Boto3 documentation:
@@ -3333,7 +3307,7 @@ Keyword-only arguments:
 Updates the configuration settings for the specified quick connect.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_quick_connect_config` method.
+`session.create_client("connect").update_quick_connect_config` method.
 
 Boto3 documentation:
 [Connect.Client.update_quick_connect_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_quick_connect_config)
@@ -3359,7 +3333,7 @@ Keyword-only arguments:
 Updates the name and description of a quick connect.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_quick_connect_name` method.
+`session.create_client("connect").update_quick_connect_name` method.
 
 Boto3 documentation:
 [Connect.Client.update_quick_connect_name](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_quick_connect_name)
@@ -3385,8 +3359,7 @@ Updates the channels that agents can handle in the Contact Control Panel (CCP)
 for a routing profile.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_routing_profile_concurrency`
-method.
+`session.create_client("connect").update_routing_profile_concurrency` method.
 
 Boto3 documentation:
 [Connect.Client.update_routing_profile_concurrency](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_routing_profile_concurrency)
@@ -3412,7 +3385,7 @@ Keyword-only arguments:
 Updates the default outbound queue of a routing profile.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_routing_profile_default_outbound_queue`
+`session.create_client("connect").update_routing_profile_default_outbound_queue`
 method.
 
 Boto3 documentation:
@@ -3438,7 +3411,7 @@ Keyword-only arguments:
 Updates the name and description of a routing profile.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_routing_profile_name` method.
+`session.create_client("connect").update_routing_profile_name` method.
 
 Boto3 documentation:
 [Connect.Client.update_routing_profile_name](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_routing_profile_name)
@@ -3463,7 +3436,7 @@ Keyword-only arguments:
 Updates the properties associated with a set of queues for a routing profile.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_routing_profile_queues` method.
+`session.create_client("connect").update_routing_profile_queues` method.
 
 Boto3 documentation:
 [Connect.Client.update_routing_profile_queues](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_routing_profile_queues)
@@ -3488,8 +3461,8 @@ Keyword-only arguments:
 
 This API is in preview release for Amazon Connect and is subject to change.
 
-Type annotations for
-`aiobotocore.create_client("connect").update_security_profile` method.
+Type annotations for `session.create_client("connect").update_security_profile`
+method.
 
 Boto3 documentation:
 [Connect.Client.update_security_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_security_profile)
@@ -3513,8 +3486,8 @@ Keyword-only arguments:
 
 Assigns the specified hierarchy group to the specified user.
 
-Type annotations for
-`aiobotocore.create_client("connect").update_user_hierarchy` method.
+Type annotations for `session.create_client("connect").update_user_hierarchy`
+method.
 
 Boto3 documentation:
 [Connect.Client.update_user_hierarchy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_user_hierarchy)
@@ -3538,7 +3511,7 @@ Keyword-only arguments:
 Updates the name of the user hierarchy group.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_user_hierarchy_group_name` method.
+`session.create_client("connect").update_user_hierarchy_group_name` method.
 
 Boto3 documentation:
 [Connect.Client.update_user_hierarchy_group_name](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_user_hierarchy_group_name)
@@ -3563,7 +3536,7 @@ Updates the user hierarchy structure: add, remove, and rename user hierarchy
 levels.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_user_hierarchy_structure` method.
+`session.create_client("connect").update_user_hierarchy_structure` method.
 
 Boto3 documentation:
 [Connect.Client.update_user_hierarchy_structure](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_user_hierarchy_structure)
@@ -3588,7 +3561,7 @@ Keyword-only arguments:
 Updates the identity information for the specified user.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_user_identity_info` method.
+`session.create_client("connect").update_user_identity_info` method.
 
 Boto3 documentation:
 [Connect.Client.update_user_identity_info](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_user_identity_info)
@@ -3614,7 +3587,7 @@ Keyword-only arguments:
 Updates the phone configuration settings for the specified user.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_user_phone_config` method.
+`session.create_client("connect").update_user_phone_config` method.
 
 Boto3 documentation:
 [Connect.Client.update_user_phone_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_user_phone_config)
@@ -3639,7 +3612,7 @@ Keyword-only arguments:
 Assigns the specified routing profile to the specified user.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_user_routing_profile` method.
+`session.create_client("connect").update_user_routing_profile` method.
 
 Boto3 documentation:
 [Connect.Client.update_user_routing_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_user_routing_profile)
@@ -3663,7 +3636,7 @@ Keyword-only arguments:
 Assigns the specified security profiles to the specified user.
 
 Type annotations for
-`aiobotocore.create_client("connect").update_user_security_profiles` method.
+`session.create_client("connect").update_user_security_profiles` method.
 
 Boto3 documentation:
 [Connect.Client.update_user_security_profiles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.update_user_security_profiles)
@@ -3680,12 +3653,44 @@ Keyword-only arguments:
 - `UserId`: `str` *(required)*
 - `InstanceId`: `str` *(required)*
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("connect").__aenter__` method.
+
+Boto3 documentation:
+[Connect.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ConnectClient](#connectclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("connect").__aexit__` method.
+
+Boto3 documentation:
+[Connect.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("connect").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("connect").get_paginator` method
+with overloads.
 
 - `client.get_paginator("get_metric_data")` ->
   [GetMetricDataPaginator](./paginators.md#getmetricdatapaginator)

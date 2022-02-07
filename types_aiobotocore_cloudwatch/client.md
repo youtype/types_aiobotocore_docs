@@ -52,6 +52,8 @@ type annotations stubs module
     - [stop_metric_streams](#stop_metric_streams)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -59,16 +61,17 @@ type annotations stubs module
 
 ## CloudWatchClient
 
-Type annotations for `aiobotocore.create_client("cloudwatch")`
+Type annotations for `session.create_client("cloudwatch")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_cloudwatch.client import CloudWatchClient
 
-def get_cloudwatch_client() -> CloudWatchClient:
-    return Session().client("cloudwatch")
+session = get_session()
+async with session.create_client("cloudwatch") as client:
+    client: CloudWatchClient
 ```
 
 Boto3 documentation:
@@ -115,8 +118,7 @@ Exceptions:
 
 CloudWatchClient exceptions.
 
-Type annotations for `aiobotocore.create_client("cloudwatch").exceptions`
-method.
+Type annotations for `session.create_client("cloudwatch").exceptions` method.
 
 Boto3 documentation:
 [CloudWatch.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.exceptions)
@@ -129,19 +131,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("cloudwatch").can_paginate`
-method.
+Type annotations for `session.create_client("cloudwatch").can_paginate` method.
 
 Boto3 documentation:
 [CloudWatch.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="delete_alarms"></a>
 
@@ -149,7 +148,7 @@ Returns a `Coroutine` for `bool`.
 
 Deletes the specified alarms.
 
-Type annotations for `aiobotocore.create_client("cloudwatch").delete_alarms`
+Type annotations for `session.create_client("cloudwatch").delete_alarms`
 method.
 
 Boto3 documentation:
@@ -171,7 +170,7 @@ Keyword-only arguments:
 Deletes the specified anomaly detection model from your account.
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").delete_anomaly_detector` method.
+`session.create_client("cloudwatch").delete_anomaly_detector` method.
 
 Boto3 documentation:
 [CloudWatch.Client.delete_anomaly_detector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.delete_anomaly_detector)
@@ -202,8 +201,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes all dashboards that you specify.
 
-Type annotations for
-`aiobotocore.create_client("cloudwatch").delete_dashboards` method.
+Type annotations for `session.create_client("cloudwatch").delete_dashboards`
+method.
 
 Boto3 documentation:
 [CloudWatch.Client.delete_dashboards](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.delete_dashboards)
@@ -225,8 +224,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Permanently deletes the specified Contributor Insights rules.
 
-Type annotations for
-`aiobotocore.create_client("cloudwatch").delete_insight_rules` method.
+Type annotations for `session.create_client("cloudwatch").delete_insight_rules`
+method.
 
 Boto3 documentation:
 [CloudWatch.Client.delete_insight_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.delete_insight_rules)
@@ -250,8 +249,8 @@ Returns a `Coroutine` for
 
 Permanently deletes the metric stream that you specify.
 
-Type annotations for
-`aiobotocore.create_client("cloudwatch").delete_metric_stream` method.
+Type annotations for `session.create_client("cloudwatch").delete_metric_stream`
+method.
 
 Boto3 documentation:
 [CloudWatch.Client.delete_metric_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.delete_metric_stream)
@@ -275,7 +274,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Retrieves the history for the specified alarm.
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").describe_alarm_history` method.
+`session.create_client("cloudwatch").describe_alarm_history` method.
 
 Boto3 documentation:
 [CloudWatch.Client.describe_alarm_history](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.describe_alarm_history)
@@ -306,7 +305,7 @@ Returns a `Coroutine` for
 
 Retrieves the specified alarms.
 
-Type annotations for `aiobotocore.create_client("cloudwatch").describe_alarms`
+Type annotations for `session.create_client("cloudwatch").describe_alarms`
 method.
 
 Boto3 documentation:
@@ -339,7 +338,7 @@ Returns a `Coroutine` for
 Retrieves the alarms for the specified metric.
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").describe_alarms_for_metric` method.
+`session.create_client("cloudwatch").describe_alarms_for_metric` method.
 
 Boto3 documentation:
 [CloudWatch.Client.describe_alarms_for_metric](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.describe_alarms_for_metric)
@@ -371,7 +370,7 @@ Returns a `Coroutine` for
 Lists the anomaly detection models that you have created in your account.
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").describe_anomaly_detectors` method.
+`session.create_client("cloudwatch").describe_anomaly_detectors` method.
 
 Boto3 documentation:
 [CloudWatch.Client.describe_anomaly_detectors](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.describe_anomaly_detectors)
@@ -403,7 +402,7 @@ Returns a `Coroutine` for
 Returns a list of all the Contributor Insights rules in your account.
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").describe_insight_rules` method.
+`session.create_client("cloudwatch").describe_insight_rules` method.
 
 Boto3 documentation:
 [CloudWatch.Client.describe_insight_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.describe_insight_rules)
@@ -429,7 +428,7 @@ Returns a `Coroutine` for
 Disables the actions for the specified alarms.
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").disable_alarm_actions` method.
+`session.create_client("cloudwatch").disable_alarm_actions` method.
 
 Boto3 documentation:
 [CloudWatch.Client.disable_alarm_actions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.disable_alarm_actions)
@@ -451,7 +450,7 @@ Keyword-only arguments:
 Disables the specified Contributor Insights rules.
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").disable_insight_rules` method.
+`session.create_client("cloudwatch").disable_insight_rules` method.
 
 Boto3 documentation:
 [CloudWatch.Client.disable_insight_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.disable_insight_rules)
@@ -475,8 +474,8 @@ Returns a `Coroutine` for
 
 Enables the actions for the specified alarms.
 
-Type annotations for
-`aiobotocore.create_client("cloudwatch").enable_alarm_actions` method.
+Type annotations for `session.create_client("cloudwatch").enable_alarm_actions`
+method.
 
 Boto3 documentation:
 [CloudWatch.Client.enable_alarm_actions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.enable_alarm_actions)
@@ -497,8 +496,8 @@ Keyword-only arguments:
 
 Enables the specified Contributor Insights rules.
 
-Type annotations for
-`aiobotocore.create_client("cloudwatch").enable_insight_rules` method.
+Type annotations for `session.create_client("cloudwatch").enable_insight_rules`
+method.
 
 Boto3 documentation:
 [CloudWatch.Client.enable_insight_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.enable_insight_rules)
@@ -523,7 +522,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").generate_presigned_url` method.
+`session.create_client("cloudwatch").generate_presigned_url` method.
 
 Boto3 documentation:
 [CloudWatch.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.generate_presigned_url)
@@ -546,7 +545,7 @@ Returns a `Coroutine` for `str`.
 
 Displays the details of the dashboard that you specify.
 
-Type annotations for `aiobotocore.create_client("cloudwatch").get_dashboard`
+Type annotations for `session.create_client("cloudwatch").get_dashboard`
 method.
 
 Boto3 documentation:
@@ -572,7 +571,7 @@ This operation returns the time series data collected by a Contributor Insights
 rule.
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").get_insight_rule_report` method.
+`session.create_client("cloudwatch").get_insight_rule_report` method.
 
 Boto3 documentation:
 [CloudWatch.Client.get_insight_rule_report](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.get_insight_rule_report)
@@ -603,7 +602,7 @@ Returns a `Coroutine` for
 You can use the `GetMetricData` API to retrieve as many as 500 different
 metrics in a single request, with a total of as many as 100,800 data points.
 
-Type annotations for `aiobotocore.create_client("cloudwatch").get_metric_data`
+Type annotations for `session.create_client("cloudwatch").get_metric_data`
 method.
 
 Boto3 documentation:
@@ -636,7 +635,7 @@ Returns a `Coroutine` for
 Gets statistics for the specified metric.
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").get_metric_statistics` method.
+`session.create_client("cloudwatch").get_metric_statistics` method.
 
 Boto3 documentation:
 [CloudWatch.Client.get_metric_statistics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.get_metric_statistics)
@@ -669,8 +668,8 @@ Returns a `Coroutine` for
 
 Returns information about the metric stream that you specify.
 
-Type annotations for
-`aiobotocore.create_client("cloudwatch").get_metric_stream` method.
+Type annotations for `session.create_client("cloudwatch").get_metric_stream`
+method.
 
 Boto3 documentation:
 [CloudWatch.Client.get_metric_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.get_metric_stream)
@@ -695,7 +694,7 @@ You can use the `GetMetricWidgetImage` API to retrieve a snapshot graph of one
 or more Amazon CloudWatch metrics as a bitmap image.
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").get_metric_widget_image` method.
+`session.create_client("cloudwatch").get_metric_widget_image` method.
 
 Boto3 documentation:
 [CloudWatch.Client.get_metric_widget_image](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.get_metric_widget_image)
@@ -720,7 +719,7 @@ Returns a `Coroutine` for
 
 Returns a list of the dashboards for your account.
 
-Type annotations for `aiobotocore.create_client("cloudwatch").list_dashboards`
+Type annotations for `session.create_client("cloudwatch").list_dashboards`
 method.
 
 Boto3 documentation:
@@ -745,8 +744,8 @@ Returns a `Coroutine` for
 
 Returns a list of metric streams in this account.
 
-Type annotations for
-`aiobotocore.create_client("cloudwatch").list_metric_streams` method.
+Type annotations for `session.create_client("cloudwatch").list_metric_streams`
+method.
 
 Boto3 documentation:
 [CloudWatch.Client.list_metric_streams](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.list_metric_streams)
@@ -771,8 +770,7 @@ Returns a `Coroutine` for
 
 List the specified metrics.
 
-Type annotations for `aiobotocore.create_client("cloudwatch").list_metrics`
-method.
+Type annotations for `session.create_client("cloudwatch").list_metrics` method.
 
 Boto3 documentation:
 [CloudWatch.Client.list_metrics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.list_metrics)
@@ -802,7 +800,7 @@ Returns a `Coroutine` for
 Displays the tags associated with a CloudWatch resource.
 
 Type annotations for
-`aiobotocore.create_client("cloudwatch").list_tags_for_resource` method.
+`session.create_client("cloudwatch").list_tags_for_resource` method.
 
 Boto3 documentation:
 [CloudWatch.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.list_tags_for_resource)
@@ -826,8 +824,8 @@ Returns a `Coroutine` for
 
 Creates an anomaly detection model for a CloudWatch metric.
 
-Type annotations for
-`aiobotocore.create_client("cloudwatch").put_anomaly_detector` method.
+Type annotations for `session.create_client("cloudwatch").put_anomaly_detector`
+method.
 
 Boto3 documentation:
 [CloudWatch.Client.put_anomaly_detector](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.put_anomaly_detector)
@@ -860,8 +858,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates or updates a *composite alarm*.
 
-Type annotations for
-`aiobotocore.create_client("cloudwatch").put_composite_alarm` method.
+Type annotations for `session.create_client("cloudwatch").put_composite_alarm`
+method.
 
 Boto3 documentation:
 [CloudWatch.Client.put_composite_alarm](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.put_composite_alarm)
@@ -890,7 +888,7 @@ Keyword-only arguments:
 Creates a dashboard if it does not already exist, or updates an existing
 dashboard.
 
-Type annotations for `aiobotocore.create_client("cloudwatch").put_dashboard`
+Type annotations for `session.create_client("cloudwatch").put_dashboard`
 method.
 
 Boto3 documentation:
@@ -915,7 +913,7 @@ Returns a `Coroutine` for
 
 Creates a Contributor Insights rule.
 
-Type annotations for `aiobotocore.create_client("cloudwatch").put_insight_rule`
+Type annotations for `session.create_client("cloudwatch").put_insight_rule`
 method.
 
 Boto3 documentation:
@@ -942,7 +940,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Creates or updates an alarm and associates it with the specified metric, metric
 math expression, or anomaly detection model.
 
-Type annotations for `aiobotocore.create_client("cloudwatch").put_metric_alarm`
+Type annotations for `session.create_client("cloudwatch").put_metric_alarm`
 method.
 
 Boto3 documentation:
@@ -987,7 +985,7 @@ Keyword-only arguments:
 
 Publishes metric data points to Amazon CloudWatch.
 
-Type annotations for `aiobotocore.create_client("cloudwatch").put_metric_data`
+Type annotations for `session.create_client("cloudwatch").put_metric_data`
 method.
 
 Boto3 documentation:
@@ -1011,8 +1009,8 @@ Keyword-only arguments:
 
 Creates or updates a metric stream.
 
-Type annotations for
-`aiobotocore.create_client("cloudwatch").put_metric_stream` method.
+Type annotations for `session.create_client("cloudwatch").put_metric_stream`
+method.
 
 Boto3 documentation:
 [CloudWatch.Client.put_metric_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.put_metric_stream)
@@ -1045,7 +1043,7 @@ Returns a `Coroutine` for
 
 Temporarily sets the state of an alarm for testing purposes.
 
-Type annotations for `aiobotocore.create_client("cloudwatch").set_alarm_state`
+Type annotations for `session.create_client("cloudwatch").set_alarm_state`
 method.
 
 Boto3 documentation:
@@ -1069,8 +1067,8 @@ Keyword-only arguments:
 
 Starts the streaming of metrics for one or more of your metric streams.
 
-Type annotations for
-`aiobotocore.create_client("cloudwatch").start_metric_streams` method.
+Type annotations for `session.create_client("cloudwatch").start_metric_streams`
+method.
 
 Boto3 documentation:
 [CloudWatch.Client.start_metric_streams](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.start_metric_streams)
@@ -1093,8 +1091,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Stops the streaming of metrics for one or more of your metric streams.
 
-Type annotations for
-`aiobotocore.create_client("cloudwatch").stop_metric_streams` method.
+Type annotations for `session.create_client("cloudwatch").stop_metric_streams`
+method.
 
 Boto3 documentation:
 [CloudWatch.Client.stop_metric_streams](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.stop_metric_streams)
@@ -1118,8 +1116,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Assigns one or more tags (key-value pairs) to the specified CloudWatch
 resource.
 
-Type annotations for `aiobotocore.create_client("cloudwatch").tag_resource`
-method.
+Type annotations for `session.create_client("cloudwatch").tag_resource` method.
 
 Boto3 documentation:
 [CloudWatch.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.tag_resource)
@@ -1142,7 +1139,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from the specified resource.
 
-Type annotations for `aiobotocore.create_client("cloudwatch").untag_resource`
+Type annotations for `session.create_client("cloudwatch").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1160,12 +1157,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("cloudwatch").__aenter__` method.
+
+Boto3 documentation:
+[CloudWatch.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CloudWatchClient](#cloudwatchclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("cloudwatch").__aexit__` method.
+
+Boto3 documentation:
+[CloudWatch.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html#CloudWatch.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("cloudwatch").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("cloudwatch").get_paginator` method
+with overloads.
 
 - `client.get_paginator("describe_alarm_history")` ->
   [DescribeAlarmHistoryPaginator](./paginators.md#describealarmhistorypaginator)
@@ -1182,8 +1211,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("cloudwatch").get_waiter`
-method with overloads.
+Type annotations for `session.create_client("cloudwatch").get_waiter` method
+with overloads.
 
 - `client.get_waiter("alarm_exists")` ->
   [AlarmExistsWaiter](./waiters.md#alarmexistswaiter)

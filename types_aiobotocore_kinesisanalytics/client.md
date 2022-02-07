@@ -36,21 +36,24 @@ type annotations stubs module
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
     - [update_application](#update_application)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="kinesisanalyticsclient"></a>
 
 ## KinesisAnalyticsClient
 
-Type annotations for `aiobotocore.create_client("kinesisanalytics")`
+Type annotations for `session.create_client("kinesisanalytics")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_kinesisanalytics.client import KinesisAnalyticsClient
 
-def get_kinesisanalytics_client() -> KinesisAnalyticsClient:
-    return Session().client("kinesisanalytics")
+session = get_session()
+async with session.create_client("kinesisanalytics") as client:
+    client: KinesisAnalyticsClient
 ```
 
 Boto3 documentation:
@@ -96,7 +99,7 @@ Exceptions:
 
 KinesisAnalyticsClient exceptions.
 
-Type annotations for `aiobotocore.create_client("kinesisanalytics").exceptions`
+Type annotations for `session.create_client("kinesisanalytics").exceptions`
 method.
 
 Boto3 documentation:
@@ -111,7 +114,7 @@ Returns [Exceptions](#exceptions).
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").add_application_cloud_watch_logging_option`
+`session.create_client("kinesisanalytics").add_application_cloud_watch_logging_option`
 method.
 
 Boto3 documentation:
@@ -140,7 +143,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").add_application_input` method.
+`session.create_client("kinesisanalytics").add_application_input` method.
 
 Boto3 documentation:
 [KinesisAnalytics.Client.add_application_input](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.add_application_input)
@@ -166,7 +169,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").add_application_input_processing_configuration`
+`session.create_client("kinesisanalytics").add_application_input_processing_configuration`
 method.
 
 Boto3 documentation:
@@ -197,7 +200,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").add_application_output` method.
+`session.create_client("kinesisanalytics").add_application_output` method.
 
 Boto3 documentation:
 [KinesisAnalytics.Client.add_application_output](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.add_application_output)
@@ -223,7 +226,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").add_application_reference_data_source`
+`session.create_client("kinesisanalytics").add_application_reference_data_source`
 method.
 
 Boto3 documentation:
@@ -251,19 +254,17 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("kinesisanalytics").can_paginate` method.
+Type annotations for `session.create_client("kinesisanalytics").can_paginate`
+method.
 
 Boto3 documentation:
 [KinesisAnalytics.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_application"></a>
 
@@ -272,7 +273,7 @@ Returns a `Coroutine` for `bool`.
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").create_application` method.
+`session.create_client("kinesisanalytics").create_application` method.
 
 Boto3 documentation:
 [KinesisAnalytics.Client.create_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.create_application)
@@ -304,7 +305,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").delete_application` method.
+`session.create_client("kinesisanalytics").delete_application` method.
 
 Boto3 documentation:
 [KinesisAnalytics.Client.delete_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.delete_application)
@@ -329,7 +330,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").delete_application_cloud_watch_logging_option`
+`session.create_client("kinesisanalytics").delete_application_cloud_watch_logging_option`
 method.
 
 Boto3 documentation:
@@ -357,7 +358,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").delete_application_input_processing_configuration`
+`session.create_client("kinesisanalytics").delete_application_input_processing_configuration`
 method.
 
 Boto3 documentation:
@@ -385,8 +386,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").delete_application_output`
-method.
+`session.create_client("kinesisanalytics").delete_application_output` method.
 
 Boto3 documentation:
 [KinesisAnalytics.Client.delete_application_output](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.delete_application_output)
@@ -412,7 +412,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").delete_application_reference_data_source`
+`session.create_client("kinesisanalytics").delete_application_reference_data_source`
 method.
 
 Boto3 documentation:
@@ -439,7 +439,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").describe_application` method.
+`session.create_client("kinesisanalytics").describe_application` method.
 
 Boto3 documentation:
 [KinesisAnalytics.Client.describe_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.describe_application)
@@ -464,7 +464,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").discover_input_schema` method.
+`session.create_client("kinesisanalytics").discover_input_schema` method.
 
 Boto3 documentation:
 [KinesisAnalytics.Client.discover_input_schema](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.discover_input_schema)
@@ -496,7 +496,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").generate_presigned_url` method.
+`session.create_client("kinesisanalytics").generate_presigned_url` method.
 
 Boto3 documentation:
 [KinesisAnalytics.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.generate_presigned_url)
@@ -520,7 +520,7 @@ Returns a `Coroutine` for `str`.
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").list_applications` method.
+`session.create_client("kinesisanalytics").list_applications` method.
 
 Boto3 documentation:
 [KinesisAnalytics.Client.list_applications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.list_applications)
@@ -545,7 +545,7 @@ Returns a `Coroutine` for
 Retrieves the list of key-value tags assigned to the application.
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").list_tags_for_resource` method.
+`session.create_client("kinesisanalytics").list_tags_for_resource` method.
 
 Boto3 documentation:
 [KinesisAnalytics.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.list_tags_for_resource)
@@ -570,7 +570,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").start_application` method.
+`session.create_client("kinesisanalytics").start_application` method.
 
 Boto3 documentation:
 [KinesisAnalytics.Client.start_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.start_application)
@@ -596,7 +596,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").stop_application` method.
+`session.create_client("kinesisanalytics").stop_application` method.
 
 Boto3 documentation:
 [KinesisAnalytics.Client.stop_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.stop_application)
@@ -618,8 +618,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds one or more key-value tags to a Kinesis Analytics application.
 
-Type annotations for
-`aiobotocore.create_client("kinesisanalytics").tag_resource` method.
+Type annotations for `session.create_client("kinesisanalytics").tag_resource`
+method.
 
 Boto3 documentation:
 [KinesisAnalytics.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.tag_resource)
@@ -642,8 +642,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from a Kinesis Analytics application.
 
-Type annotations for
-`aiobotocore.create_client("kinesisanalytics").untag_resource` method.
+Type annotations for `session.create_client("kinesisanalytics").untag_resource`
+method.
 
 Boto3 documentation:
 [KinesisAnalytics.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.untag_resource)
@@ -667,7 +667,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 .
 
 Type annotations for
-`aiobotocore.create_client("kinesisanalytics").update_application` method.
+`session.create_client("kinesisanalytics").update_application` method.
 
 Boto3 documentation:
 [KinesisAnalytics.Client.update_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.update_application)
@@ -687,3 +687,37 @@ Keyword-only arguments:
   *(required)*
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("kinesisanalytics").__aenter__`
+method.
+
+Boto3 documentation:
+[KinesisAnalytics.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [KinesisAnalyticsClient](#kinesisanalyticsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("kinesisanalytics").__aexit__`
+method.
+
+Boto3 documentation:
+[KinesisAnalytics.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalytics.html#KinesisAnalytics.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[medialive]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[medialive]'
+
+# standalone installation
 pip install types-aiobotocore-medialive
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-medialive
 
 ## MediaLiveClient
 
-Type annotations for `aiobotocore.create_client("medialive")` as
+Type annotations for `session.create_client("medialive")` as
 [MediaLiveClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_medialive.client import MediaLiveClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [accept_input_device_transfer](./client.md#accept_input_device_transfer)
 - [batch_delete](./client.md#batch_delete)
 - [batch_start](./client.md#batch_start)
@@ -133,7 +139,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_medialive.paginators import DescribeSchedulePaginator, ...
+from types_aiobotocore_medialive.paginator import DescribeSchedulePaginator, ...
 ```
 
 - [DescribeSchedulePaginator](./paginators.md#describeschedulepaginator)
@@ -157,7 +163,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_medialive.waiters import ChannelCreatedWaiter, ...
+from types_aiobotocore_medialive.waiter import ChannelCreatedWaiter, ...
 ```
 
 - [ChannelCreatedWaiter](./waiters.md#channelcreatedwaiter)

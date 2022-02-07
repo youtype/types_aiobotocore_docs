@@ -28,22 +28,25 @@ type annotations stubs module
     - [list_tables](#list_tables)
     - [query_table_rows](#query_table_rows)
     - [start_table_data_import_job](#start_table_data_import_job)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="honeycodeclient"></a>
 
 ## HoneycodeClient
 
-Type annotations for `aiobotocore.create_client("honeycode")`
+Type annotations for `session.create_client("honeycode")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_honeycode.client import HoneycodeClient
 
-def get_honeycode_client() -> HoneycodeClient:
-    return Session().client("honeycode")
+session = get_session()
+async with session.create_client("honeycode") as client:
+    client: HoneycodeClient
 ```
 
 Boto3 documentation:
@@ -87,8 +90,7 @@ Exceptions:
 
 HoneycodeClient exceptions.
 
-Type annotations for `aiobotocore.create_client("honeycode").exceptions`
-method.
+Type annotations for `session.create_client("honeycode").exceptions` method.
 
 Boto3 documentation:
 [Honeycode.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/honeycode.html#Honeycode.Client.exceptions)
@@ -103,7 +105,7 @@ The BatchCreateTableRows API allows you to create one or more rows at the end
 of a table in a workbook.
 
 Type annotations for
-`aiobotocore.create_client("honeycode").batch_create_table_rows` method.
+`session.create_client("honeycode").batch_create_table_rows` method.
 
 Boto3 documentation:
 [Honeycode.Client.batch_create_table_rows](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/honeycode.html#Honeycode.Client.batch_create_table_rows)
@@ -134,7 +136,7 @@ The BatchDeleteTableRows API allows you to delete one or more rows from a table
 in a workbook.
 
 Type annotations for
-`aiobotocore.create_client("honeycode").batch_delete_table_rows` method.
+`session.create_client("honeycode").batch_delete_table_rows` method.
 
 Boto3 documentation:
 [Honeycode.Client.batch_delete_table_rows](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/honeycode.html#Honeycode.Client.batch_delete_table_rows)
@@ -163,7 +165,7 @@ The BatchUpdateTableRows API allows you to update one or more rows in a table
 in a workbook.
 
 Type annotations for
-`aiobotocore.create_client("honeycode").batch_update_table_rows` method.
+`session.create_client("honeycode").batch_update_table_rows` method.
 
 Boto3 documentation:
 [Honeycode.Client.batch_update_table_rows](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/honeycode.html#Honeycode.Client.batch_update_table_rows)
@@ -193,7 +195,7 @@ Returns a `Coroutine` for
 The BatchUpsertTableRows API allows you to upsert one or more rows in a table.
 
 Type annotations for
-`aiobotocore.create_client("honeycode").batch_upsert_table_rows` method.
+`session.create_client("honeycode").batch_upsert_table_rows` method.
 
 Boto3 documentation:
 [Honeycode.Client.batch_upsert_table_rows](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/honeycode.html#Honeycode.Client.batch_upsert_table_rows)
@@ -222,19 +224,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("honeycode").can_paginate`
-method.
+Type annotations for `session.create_client("honeycode").can_paginate` method.
 
 Boto3 documentation:
 [Honeycode.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/honeycode.html#Honeycode.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="describe_table_data_import_job"></a>
 
@@ -244,7 +243,7 @@ The DescribeTableDataImportJob API allows you to retrieve the status and
 details of a table data import job.
 
 Type annotations for
-`aiobotocore.create_client("honeycode").describe_table_data_import_job` method.
+`session.create_client("honeycode").describe_table_data_import_job` method.
 
 Boto3 documentation:
 [Honeycode.Client.describe_table_data_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/honeycode.html#Honeycode.Client.describe_table_data_import_job)
@@ -271,7 +270,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("honeycode").generate_presigned_url` method.
+`session.create_client("honeycode").generate_presigned_url` method.
 
 Boto3 documentation:
 [Honeycode.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/honeycode.html#Honeycode.Client.generate_presigned_url)
@@ -295,7 +294,7 @@ Returns a `Coroutine` for `str`.
 The GetScreenData API allows retrieval of data from a screen in a Honeycode
 app.
 
-Type annotations for `aiobotocore.create_client("honeycode").get_screen_data`
+Type annotations for `session.create_client("honeycode").get_screen_data`
 method.
 
 Boto3 documentation:
@@ -327,7 +326,7 @@ The InvokeScreenAutomation API allows invoking an action defined in a screen in
 a Honeycode app.
 
 Type annotations for
-`aiobotocore.create_client("honeycode").invoke_screen_automation` method.
+`session.create_client("honeycode").invoke_screen_automation` method.
 
 Boto3 documentation:
 [Honeycode.Client.invoke_screen_automation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/honeycode.html#Honeycode.Client.invoke_screen_automation)
@@ -359,8 +358,8 @@ Returns a `Coroutine` for
 The ListTableColumns API allows you to retrieve a list of all the columns in a
 table in a workbook.
 
-Type annotations for
-`aiobotocore.create_client("honeycode").list_table_columns` method.
+Type annotations for `session.create_client("honeycode").list_table_columns`
+method.
 
 Boto3 documentation:
 [Honeycode.Client.list_table_columns](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/honeycode.html#Honeycode.Client.list_table_columns)
@@ -387,7 +386,7 @@ Returns a `Coroutine` for
 The ListTableRows API allows you to retrieve a list of all the rows in a table
 in a workbook.
 
-Type annotations for `aiobotocore.create_client("honeycode").list_table_rows`
+Type annotations for `session.create_client("honeycode").list_table_rows`
 method.
 
 Boto3 documentation:
@@ -416,8 +415,7 @@ Returns a `Coroutine` for
 The ListTables API allows you to retrieve a list of all the tables in a
 workbook.
 
-Type annotations for `aiobotocore.create_client("honeycode").list_tables`
-method.
+Type annotations for `session.create_client("honeycode").list_tables` method.
 
 Boto3 documentation:
 [Honeycode.Client.list_tables](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/honeycode.html#Honeycode.Client.list_tables)
@@ -443,7 +441,7 @@ Returns a `Coroutine` for
 The QueryTableRows API allows you to use a filter formula to query for specific
 rows in a table.
 
-Type annotations for `aiobotocore.create_client("honeycode").query_table_rows`
+Type annotations for `session.create_client("honeycode").query_table_rows`
 method.
 
 Boto3 documentation:
@@ -472,7 +470,7 @@ Returns a `Coroutine` for
 The StartTableDataImportJob API allows you to start an import job on a table.
 
 Type annotations for
-`aiobotocore.create_client("honeycode").start_table_data_import_job` method.
+`session.create_client("honeycode").start_table_data_import_job` method.
 
 Boto3 documentation:
 [Honeycode.Client.start_table_data_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/honeycode.html#Honeycode.Client.start_table_data_import_job)
@@ -500,12 +498,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [StartTableDataImportJobResultTypeDef](./type_defs.md#starttabledataimportjobresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("honeycode").__aenter__` method.
+
+Boto3 documentation:
+[Honeycode.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/honeycode.html#Honeycode.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [HoneycodeClient](#honeycodeclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("honeycode").__aexit__` method.
+
+Boto3 documentation:
+[Honeycode.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/honeycode.html#Honeycode.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("honeycode").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("honeycode").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_table_columns")` ->
   [ListTableColumnsPaginator](./paginators.md#listtablecolumnspaginator)

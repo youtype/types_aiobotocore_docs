@@ -20,17 +20,19 @@ type annotations stubs module
 ## DescribeBatchPredictionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").get_paginator("describe_batch_predictions")`.
+`session.create_client("machinelearning").get_paginator("describe_batch_predictions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_machinelearning.paginator import DescribeBatchPredictionsPaginator
 
-def get_describe_batch_predictions_paginator() -> DescribeBatchPredictionsPaginator:
-    return Session().create_client("machinelearning").get_paginator("describe_batch_predictions")
+session = get_session()
+async with session.create_client("machinelearning") as client:
+    client: MachineLearningClient
+    paginator: DescribeBatchPredictionsPaginator = client.get_paginator("describe_batch_predictions")
 ```
 
 Boto3 documentation:
@@ -59,17 +61,19 @@ Arguments for `DescribeBatchPredictionsPaginator.paginate` method:
 ## DescribeDataSourcesPaginator
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").get_paginator("describe_data_sources")`.
+`session.create_client("machinelearning").get_paginator("describe_data_sources")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_machinelearning.paginator import DescribeDataSourcesPaginator
 
-def get_describe_data_sources_paginator() -> DescribeDataSourcesPaginator:
-    return Session().create_client("machinelearning").get_paginator("describe_data_sources")
+session = get_session()
+async with session.create_client("machinelearning") as client:
+    client: MachineLearningClient
+    paginator: DescribeDataSourcesPaginator = client.get_paginator("describe_data_sources")
 ```
 
 Boto3 documentation:
@@ -98,17 +102,19 @@ Arguments for `DescribeDataSourcesPaginator.paginate` method:
 ## DescribeEvaluationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").get_paginator("describe_evaluations")`.
+`session.create_client("machinelearning").get_paginator("describe_evaluations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_machinelearning.paginator import DescribeEvaluationsPaginator
 
-def get_describe_evaluations_paginator() -> DescribeEvaluationsPaginator:
-    return Session().create_client("machinelearning").get_paginator("describe_evaluations")
+session = get_session()
+async with session.create_client("machinelearning") as client:
+    client: MachineLearningClient
+    paginator: DescribeEvaluationsPaginator = client.get_paginator("describe_evaluations")
 ```
 
 Boto3 documentation:
@@ -137,17 +143,19 @@ Arguments for `DescribeEvaluationsPaginator.paginate` method:
 ## DescribeMLModelsPaginator
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").get_paginator("describe_ml_models")`.
+`session.create_client("machinelearning").get_paginator("describe_ml_models")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_machinelearning.paginator import DescribeMLModelsPaginator
 
-def get_describe_ml_models_paginator() -> DescribeMLModelsPaginator:
-    return Session().create_client("machinelearning").get_paginator("describe_ml_models")
+session = get_session()
+async with session.create_client("machinelearning") as client:
+    client: MachineLearningClient
+    paginator: DescribeMLModelsPaginator = client.get_paginator("describe_ml_models")
 ```
 
 Boto3 documentation:

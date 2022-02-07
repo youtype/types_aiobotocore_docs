@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[sagemaker]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[sagemaker]'
+
+# standalone installation
 pip install types-aiobotocore-sagemaker
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-sagemaker
 
 ## SageMakerClient
 
-Type annotations for `aiobotocore.create_client("sagemaker")` as
+Type annotations for `session.create_client("sagemaker")` as
 [SageMakerClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_sagemaker.client import SageMakerClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_association](./client.md#add_association)
 - [add_tags](./client.md#add_tags)
 - [associate_trial_component](./client.md#associate_trial_component)
@@ -322,7 +328,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_sagemaker.paginators import ListActionsPaginator, ...
+from types_aiobotocore_sagemaker.paginator import ListActionsPaginator, ...
 ```
 
 - [ListActionsPaginator](./paginators.md#listactionspaginator)
@@ -393,7 +399,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_sagemaker.waiters import EndpointDeletedWaiter, ...
+from types_aiobotocore_sagemaker.waiter import EndpointDeletedWaiter, ...
 ```
 
 - [EndpointDeletedWaiter](./waiters.md#endpointdeletedwaiter)

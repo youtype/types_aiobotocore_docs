@@ -20,7 +20,7 @@ type annotations stubs module
 ## BatchPredictionAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").get_waiter("batch_prediction_available")`.
+`session.create_client("machinelearning").get_waiter("batch_prediction_available")`.
 
 Can be used directly:
 
@@ -30,7 +30,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_machinelearning.waiter import BatchPredictionAvailableWaiter
 
 def get_batch_prediction_available_waiter() -> BatchPredictionAvailableWaiter:
-    return Session().create_client("machinelearning").get_waiter("batch_prediction_available")
+    return Session().client("machinelearning").get_waiter("batch_prediction_available")
 ```
 
 Boto3 documentation:
@@ -57,7 +57,7 @@ Arguments for `BatchPredictionAvailableWaiter.wait` method:
 ## DataSourceAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").get_waiter("data_source_available")`.
+`session.create_client("machinelearning").get_waiter("data_source_available")`.
 
 Can be used directly:
 
@@ -67,7 +67,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_machinelearning.waiter import DataSourceAvailableWaiter
 
 def get_data_source_available_waiter() -> DataSourceAvailableWaiter:
-    return Session().create_client("machinelearning").get_waiter("data_source_available")
+    return Session().client("machinelearning").get_waiter("data_source_available")
 ```
 
 Boto3 documentation:
@@ -94,7 +94,7 @@ Arguments for `DataSourceAvailableWaiter.wait` method:
 ## EvaluationAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").get_waiter("evaluation_available")`.
+`session.create_client("machinelearning").get_waiter("evaluation_available")`.
 
 Can be used directly:
 
@@ -104,7 +104,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_machinelearning.waiter import EvaluationAvailableWaiter
 
 def get_evaluation_available_waiter() -> EvaluationAvailableWaiter:
-    return Session().create_client("machinelearning").get_waiter("evaluation_available")
+    return Session().client("machinelearning").get_waiter("evaluation_available")
 ```
 
 Boto3 documentation:
@@ -131,7 +131,7 @@ Arguments for `EvaluationAvailableWaiter.wait` method:
 ## MLModelAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("machinelearning").get_waiter("ml_model_available")`.
+`session.create_client("machinelearning").get_waiter("ml_model_available")`.
 
 Can be used directly:
 
@@ -141,7 +141,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_machinelearning.waiter import MLModelAvailableWaiter
 
 def get_ml_model_available_waiter() -> MLModelAvailableWaiter:
-    return Session().create_client("machinelearning").get_waiter("ml_model_available")
+    return Session().client("machinelearning").get_waiter("ml_model_available")
 ```
 
 Boto3 documentation:

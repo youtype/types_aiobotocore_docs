@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[lexv2-models]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[lexv2-models]'
+
+# standalone installation
 pip install types-aiobotocore-lexv2-models
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-lexv2-models
 
 ## LexModelsV2Client
 
-Type annotations for `aiobotocore.create_client("lexv2-models")` as
+Type annotations for `session.create_client("lexv2-models")` as
 [LexModelsV2Client](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_lexv2_models.client import LexModelsV2Client
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [build_bot_locale](./client.md#build_bot_locale)
 - [can_paginate](./client.md#can_paginate)
 - [create_bot](./client.md#create_bot)
@@ -136,7 +142,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_lexv2_models.waiters import BotAliasAvailableWaiter, ...
+from types_aiobotocore_lexv2_models.waiter import BotAliasAvailableWaiter, ...
 ```
 
 - [BotAliasAvailableWaiter](./waiters.md#botaliasavailablewaiter)

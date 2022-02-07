@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[mgh]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[mgh]'
+
+# standalone installation
 pip install types-aiobotocore-mgh
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-mgh
 
 ## MigrationHubClient
 
-Type annotations for `aiobotocore.create_client("mgh")` as
+Type annotations for `session.create_client("mgh")` as
 [MigrationHubClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_mgh.client import MigrationHubClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_created_artifact](./client.md#associate_created_artifact)
 - [associate_discovered_resource](./client.md#associate_discovered_resource)
 - [can_paginate](./client.md#can_paginate)
@@ -92,7 +98,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_mgh.paginators import ListApplicationStatesPaginator, ...
+from types_aiobotocore_mgh.paginator import ListApplicationStatesPaginator, ...
 ```
 
 - [ListApplicationStatesPaginator](./paginators.md#listapplicationstatespaginator)

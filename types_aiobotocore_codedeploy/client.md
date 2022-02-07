@@ -63,6 +63,8 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_application](#update_application)
     - [update_deployment_group](#update_deployment_group)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -70,16 +72,17 @@ type annotations stubs module
 
 ## CodeDeployClient
 
-Type annotations for `aiobotocore.create_client("codedeploy")`
+Type annotations for `session.create_client("codedeploy")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_codedeploy.client import CodeDeployClient
 
-def get_codedeploy_client() -> CodeDeployClient:
-    return Session().client("codedeploy")
+session = get_session()
+async with session.create_client("codedeploy") as client:
+    client: CodeDeployClient
 ```
 
 Boto3 documentation:
@@ -225,8 +228,7 @@ Exceptions:
 
 CodeDeployClient exceptions.
 
-Type annotations for `aiobotocore.create_client("codedeploy").exceptions`
-method.
+Type annotations for `session.create_client("codedeploy").exceptions` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.exceptions)
@@ -240,8 +242,7 @@ Returns [Exceptions](#exceptions).
 Adds tags to on-premises instances.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").add_tags_to_on_premises_instances`
-method.
+`session.create_client("codedeploy").add_tags_to_on_premises_instances` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.add_tags_to_on_premises_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.add_tags_to_on_premises_instances)
@@ -264,8 +265,7 @@ Keyword-only arguments:
 Gets information about one or more application revisions.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").batch_get_application_revisions`
-method.
+`session.create_client("codedeploy").batch_get_application_revisions` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.batch_get_application_revisions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.batch_get_application_revisions)
@@ -293,7 +293,7 @@ Returns a `Coroutine` for
 Gets information about one or more applications.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").batch_get_applications` method.
+`session.create_client("codedeploy").batch_get_applications` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.batch_get_applications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.batch_get_applications)
@@ -318,7 +318,7 @@ Returns a `Coroutine` for
 Gets information about one or more deployment groups.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").batch_get_deployment_groups` method.
+`session.create_client("codedeploy").batch_get_deployment_groups` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.batch_get_deployment_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.batch_get_deployment_groups)
@@ -344,8 +344,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").batch_get_deployment_instances`
-method.
+`session.create_client("codedeploy").batch_get_deployment_instances` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.batch_get_deployment_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.batch_get_deployment_instances)
@@ -371,7 +370,7 @@ Returns a `Coroutine` for
 Returns an array of one or more targets associated with a deployment.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").batch_get_deployment_targets` method.
+`session.create_client("codedeploy").batch_get_deployment_targets` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.batch_get_deployment_targets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.batch_get_deployment_targets)
@@ -397,7 +396,7 @@ Returns a `Coroutine` for
 Gets information about one or more deployments.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").batch_get_deployments` method.
+`session.create_client("codedeploy").batch_get_deployments` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.batch_get_deployments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.batch_get_deployments)
@@ -422,8 +421,7 @@ Returns a `Coroutine` for
 Gets information about one or more on-premises instances.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").batch_get_on_premises_instances`
-method.
+`session.create_client("codedeploy").batch_get_on_premises_instances` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.batch_get_on_premises_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.batch_get_on_premises_instances)
@@ -447,19 +445,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("codedeploy").can_paginate`
-method.
+Type annotations for `session.create_client("codedeploy").can_paginate` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="continue_deployment"></a>
 
@@ -469,8 +464,8 @@ For a blue/green deployment, starts the process of rerouting traffic from
 instances in the original environment to instances in the replacement
 environment without waiting for a specified wait time to elapse.
 
-Type annotations for
-`aiobotocore.create_client("codedeploy").continue_deployment` method.
+Type annotations for `session.create_client("codedeploy").continue_deployment`
+method.
 
 Boto3 documentation:
 [CodeDeploy.Client.continue_deployment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.continue_deployment)
@@ -493,8 +488,8 @@ Keyword-only arguments:
 
 Creates an application.
 
-Type annotations for
-`aiobotocore.create_client("codedeploy").create_application` method.
+Type annotations for `session.create_client("codedeploy").create_application`
+method.
 
 Boto3 documentation:
 [CodeDeploy.Client.create_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.create_application)
@@ -520,8 +515,8 @@ Returns a `Coroutine` for
 
 Deploys an application revision through the specified deployment group.
 
-Type annotations for
-`aiobotocore.create_client("codedeploy").create_deployment` method.
+Type annotations for `session.create_client("codedeploy").create_deployment`
+method.
 
 Boto3 documentation:
 [CodeDeploy.Client.create_deployment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.create_deployment)
@@ -557,7 +552,7 @@ Returns a `Coroutine` for
 Creates a deployment configuration.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").create_deployment_config` method.
+`session.create_client("codedeploy").create_deployment_config` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.create_deployment_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.create_deployment_config)
@@ -587,7 +582,7 @@ Returns a `Coroutine` for
 Creates a deployment group to which application revisions are deployed.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").create_deployment_group` method.
+`session.create_client("codedeploy").create_deployment_group` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.create_deployment_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.create_deployment_group)
@@ -639,8 +634,8 @@ Returns a `Coroutine` for
 
 Deletes an application.
 
-Type annotations for
-`aiobotocore.create_client("codedeploy").delete_application` method.
+Type annotations for `session.create_client("codedeploy").delete_application`
+method.
 
 Boto3 documentation:
 [CodeDeploy.Client.delete_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.delete_application)
@@ -662,7 +657,7 @@ Keyword-only arguments:
 Deletes a deployment configuration.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").delete_deployment_config` method.
+`session.create_client("codedeploy").delete_deployment_config` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.delete_deployment_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.delete_deployment_config)
@@ -684,7 +679,7 @@ Keyword-only arguments:
 Deletes a deployment group.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").delete_deployment_group` method.
+`session.create_client("codedeploy").delete_deployment_group` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.delete_deployment_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.delete_deployment_group)
@@ -710,7 +705,7 @@ Returns a `Coroutine` for
 Deletes a GitHub account connection.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").delete_git_hub_account_token` method.
+`session.create_client("codedeploy").delete_git_hub_account_token` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.delete_git_hub_account_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.delete_git_hub_account_token)
@@ -735,8 +730,7 @@ Returns a `Coroutine` for
 Deletes resources linked to an external ID.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").delete_resources_by_external_id`
-method.
+`session.create_client("codedeploy").delete_resources_by_external_id` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.delete_resources_by_external_id](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.delete_resources_by_external_id)
@@ -760,8 +754,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deregisters an on-premises instance.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").deregister_on_premises_instance`
-method.
+`session.create_client("codedeploy").deregister_on_premises_instance` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.deregister_on_premises_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.deregister_on_premises_instance)
@@ -783,7 +776,7 @@ Keyword-only arguments:
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").generate_presigned_url` method.
+`session.create_client("codedeploy").generate_presigned_url` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.generate_presigned_url)
@@ -806,7 +799,7 @@ Returns a `Coroutine` for `str`.
 
 Gets information about an application.
 
-Type annotations for `aiobotocore.create_client("codedeploy").get_application`
+Type annotations for `session.create_client("codedeploy").get_application`
 method.
 
 Boto3 documentation:
@@ -831,7 +824,7 @@ Returns a `Coroutine` for
 Gets information about an application revision.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").get_application_revision` method.
+`session.create_client("codedeploy").get_application_revision` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.get_application_revision](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.get_application_revision)
@@ -857,7 +850,7 @@ Returns a `Coroutine` for
 
 Gets information about a deployment.
 
-Type annotations for `aiobotocore.create_client("codedeploy").get_deployment`
+Type annotations for `session.create_client("codedeploy").get_deployment`
 method.
 
 Boto3 documentation:
@@ -882,7 +875,7 @@ Returns a `Coroutine` for
 Gets information about a deployment configuration.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").get_deployment_config` method.
+`session.create_client("codedeploy").get_deployment_config` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.get_deployment_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.get_deployment_config)
@@ -906,8 +899,8 @@ Returns a `Coroutine` for
 
 Gets information about a deployment group.
 
-Type annotations for
-`aiobotocore.create_client("codedeploy").get_deployment_group` method.
+Type annotations for `session.create_client("codedeploy").get_deployment_group`
+method.
 
 Boto3 documentation:
 [CodeDeploy.Client.get_deployment_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.get_deployment_group)
@@ -933,7 +926,7 @@ Returns a `Coroutine` for
 Gets information about an instance as part of a deployment.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").get_deployment_instance` method.
+`session.create_client("codedeploy").get_deployment_instance` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.get_deployment_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.get_deployment_instance)
@@ -959,7 +952,7 @@ Returns a `Coroutine` for
 Returns information about a deployment target.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").get_deployment_target` method.
+`session.create_client("codedeploy").get_deployment_target` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.get_deployment_target](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.get_deployment_target)
@@ -985,7 +978,7 @@ Returns a `Coroutine` for
 Gets information about an on-premises instance.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").get_on_premises_instance` method.
+`session.create_client("codedeploy").get_on_premises_instance` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.get_on_premises_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.get_on_premises_instance)
@@ -1010,7 +1003,7 @@ Returns a `Coroutine` for
 Lists information about revisions for an application.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").list_application_revisions` method.
+`session.create_client("codedeploy").list_application_revisions` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.list_application_revisions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.list_application_revisions)
@@ -1042,8 +1035,8 @@ Returns a `Coroutine` for
 
 Lists the applications registered with the IAM user or AWS account.
 
-Type annotations for
-`aiobotocore.create_client("codedeploy").list_applications` method.
+Type annotations for `session.create_client("codedeploy").list_applications`
+method.
 
 Boto3 documentation:
 [CodeDeploy.Client.list_applications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.list_applications)
@@ -1067,7 +1060,7 @@ Returns a `Coroutine` for
 Lists the deployment configurations with the IAM user or AWS account.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").list_deployment_configs` method.
+`session.create_client("codedeploy").list_deployment_configs` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.list_deployment_configs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.list_deployment_configs)
@@ -1093,7 +1086,7 @@ Lists the deployment groups for an application registered with the IAM user or
 AWS account.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").list_deployment_groups` method.
+`session.create_client("codedeploy").list_deployment_groups` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.list_deployment_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.list_deployment_groups)
@@ -1119,7 +1112,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").list_deployment_instances` method.
+`session.create_client("codedeploy").list_deployment_instances` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.list_deployment_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.list_deployment_instances)
@@ -1149,7 +1142,7 @@ Returns a `Coroutine` for
 Returns an array of target IDs that are associated a deployment.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").list_deployment_targets` method.
+`session.create_client("codedeploy").list_deployment_targets` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.list_deployment_targets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.list_deployment_targets)
@@ -1178,7 +1171,7 @@ Returns a `Coroutine` for
 Lists the deployments in a deployment group for an application registered with
 the IAM user or AWS account.
 
-Type annotations for `aiobotocore.create_client("codedeploy").list_deployments`
+Type annotations for `session.create_client("codedeploy").list_deployments`
 method.
 
 Boto3 documentation:
@@ -1209,8 +1202,7 @@ Returns a `Coroutine` for
 Lists the names of stored connections to GitHub accounts.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").list_git_hub_account_token_names`
-method.
+`session.create_client("codedeploy").list_git_hub_account_token_names` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.list_git_hub_account_token_names](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.list_git_hub_account_token_names)
@@ -1235,7 +1227,7 @@ Returns a `Coroutine` for
 Gets a list of names for one or more on-premises instances.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").list_on_premises_instances` method.
+`session.create_client("codedeploy").list_on_premises_instances` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.list_on_premises_instances](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.list_on_premises_instances)
@@ -1265,7 +1257,7 @@ Returns a list of tags for the resource identified by a specified Amazon
 Resource Name (ARN).
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").list_tags_for_resource` method.
+`session.create_client("codedeploy").list_tags_for_resource` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.list_tags_for_resource)
@@ -1291,7 +1283,7 @@ Returns a `Coroutine` for
 Sets the result of a Lambda validation function.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").put_lifecycle_event_hook_execution_status`
+`session.create_client("codedeploy").put_lifecycle_event_hook_execution_status`
 method.
 
 Boto3 documentation:
@@ -1319,7 +1311,7 @@ Returns a `Coroutine` for
 Registers with AWS CodeDeploy a revision for the specified application.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").register_application_revision` method.
+`session.create_client("codedeploy").register_application_revision` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.register_application_revision](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.register_application_revision)
@@ -1344,7 +1336,7 @@ Keyword-only arguments:
 Registers an on-premises instance.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").register_on_premises_instance` method.
+`session.create_client("codedeploy").register_on_premises_instance` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.register_on_premises_instance](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.register_on_premises_instance)
@@ -1368,7 +1360,7 @@ Keyword-only arguments:
 Removes one or more tags from one or more on-premises instances.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").remove_tags_from_on_premises_instances`
+`session.create_client("codedeploy").remove_tags_from_on_premises_instances`
 method.
 
 Boto3 documentation:
@@ -1393,7 +1385,7 @@ In a blue/green deployment, overrides any specified wait time and starts
 terminating instances immediately after the traffic routing is complete.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").skip_wait_time_for_instance_termination`
+`session.create_client("codedeploy").skip_wait_time_for_instance_termination`
 method.
 
 Boto3 documentation:
@@ -1415,7 +1407,7 @@ Keyword-only arguments:
 
 Attempts to stop an ongoing deployment.
 
-Type annotations for `aiobotocore.create_client("codedeploy").stop_deployment`
+Type annotations for `session.create_client("codedeploy").stop_deployment`
 method.
 
 Boto3 documentation:
@@ -1441,8 +1433,7 @@ Returns a `Coroutine` for
 Associates the list of tags in the input `Tags` parameter with the resource
 identified by the `ResourceArn` input parameter.
 
-Type annotations for `aiobotocore.create_client("codedeploy").tag_resource`
-method.
+Type annotations for `session.create_client("codedeploy").tag_resource` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.tag_resource)
@@ -1465,7 +1456,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Disassociates a resource from a list of tags.
 
-Type annotations for `aiobotocore.create_client("codedeploy").untag_resource`
+Type annotations for `session.create_client("codedeploy").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1489,8 +1480,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Changes the name of an application.
 
-Type annotations for
-`aiobotocore.create_client("codedeploy").update_application` method.
+Type annotations for `session.create_client("codedeploy").update_application`
+method.
 
 Boto3 documentation:
 [CodeDeploy.Client.update_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.update_application)
@@ -1513,7 +1504,7 @@ Keyword-only arguments:
 Changes information about a deployment group.
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").update_deployment_group` method.
+`session.create_client("codedeploy").update_deployment_group` method.
 
 Boto3 documentation:
 [CodeDeploy.Client.update_deployment_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.update_deployment_group)
@@ -1559,12 +1550,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateDeploymentGroupOutputTypeDef](./type_defs.md#updatedeploymentgroupoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("codedeploy").__aenter__` method.
+
+Boto3 documentation:
+[CodeDeploy.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CodeDeployClient](#codedeployclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("codedeploy").__aexit__` method.
+
+Boto3 documentation:
+[CodeDeploy.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html#CodeDeploy.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("codedeploy").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("codedeploy").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_application_revisions")` ->
   [ListApplicationRevisionsPaginator](./paginators.md#listapplicationrevisionspaginator)
@@ -1589,8 +1612,8 @@ method with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("codedeploy").get_waiter`
-method with overloads.
+Type annotations for `session.create_client("codedeploy").get_waiter` method
+with overloads.
 
 - `client.get_waiter("deployment_successful")` ->
   [DeploymentSuccessfulWaiter](./waiters.md#deploymentsuccessfulwaiter)

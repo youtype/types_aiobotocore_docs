@@ -42,22 +42,25 @@ type annotations stubs module
     - [put_protocols_list](#put_protocols_list)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="fmsclient"></a>
 
 ## FMSClient
 
-Type annotations for `aiobotocore.create_client("fms")`
+Type annotations for `session.create_client("fms")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_fms.client import FMSClient
 
-def get_fms_client() -> FMSClient:
-    return Session().client("fms")
+session = get_session()
+async with session.create_client("fms") as client:
+    client: FMSClient
 ```
 
 Boto3 documentation:
@@ -97,7 +100,7 @@ Exceptions:
 
 FMSClient exceptions.
 
-Type annotations for `aiobotocore.create_client("fms").exceptions` method.
+Type annotations for `session.create_client("fms").exceptions` method.
 
 Boto3 documentation:
 [FMS.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.exceptions)
@@ -110,7 +113,7 @@ Returns [Exceptions](#exceptions).
 
 Sets the Firewall Manager administrator account.
 
-Type annotations for `aiobotocore.create_client("fms").associate_admin_account`
+Type annotations for `session.create_client("fms").associate_admin_account`
 method.
 
 Boto3 documentation:
@@ -132,18 +135,16 @@ Keyword-only arguments:
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("fms").can_paginate` method.
+Type annotations for `session.create_client("fms").can_paginate` method.
 
 Boto3 documentation:
 [FMS.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="delete_apps_list"></a>
 
@@ -151,8 +152,7 @@ Returns a `Coroutine` for `bool`.
 
 Permanently deletes an Firewall Manager applications list.
 
-Type annotations for `aiobotocore.create_client("fms").delete_apps_list`
-method.
+Type annotations for `session.create_client("fms").delete_apps_list` method.
 
 Boto3 documentation:
 [FMS.Client.delete_apps_list](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.delete_apps_list)
@@ -174,8 +174,8 @@ Deletes an Firewall Manager association with the IAM role and the Amazon Simple
 Notification Service (SNS) topic that is used to record Firewall Manager SNS
 logs.
 
-Type annotations for
-`aiobotocore.create_client("fms").delete_notification_channel` method.
+Type annotations for `session.create_client("fms").delete_notification_channel`
+method.
 
 Boto3 documentation:
 [FMS.Client.delete_notification_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.delete_notification_channel)
@@ -189,7 +189,7 @@ synchronous call.
 
 Permanently deletes an Firewall Manager policy.
 
-Type annotations for `aiobotocore.create_client("fms").delete_policy` method.
+Type annotations for `session.create_client("fms").delete_policy` method.
 
 Boto3 documentation:
 [FMS.Client.delete_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.delete_policy)
@@ -210,7 +210,7 @@ Keyword-only arguments:
 
 Permanently deletes an Firewall Manager protocols list.
 
-Type annotations for `aiobotocore.create_client("fms").delete_protocols_list`
+Type annotations for `session.create_client("fms").delete_protocols_list`
 method.
 
 Boto3 documentation:
@@ -233,8 +233,8 @@ Keyword-only arguments:
 Disassociates the account that has been set as the Firewall Manager
 administrator account.
 
-Type annotations for
-`aiobotocore.create_client("fms").disassociate_admin_account` method.
+Type annotations for `session.create_client("fms").disassociate_admin_account`
+method.
 
 Boto3 documentation:
 [FMS.Client.disassociate_admin_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.disassociate_admin_account)
@@ -248,7 +248,7 @@ synchronous call.
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("fms").generate_presigned_url`
+Type annotations for `session.create_client("fms").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -273,8 +273,7 @@ Returns a `Coroutine` for `str`.
 Returns the Organizations account that is associated with Firewall Manager as
 the Firewall Manager administrator.
 
-Type annotations for `aiobotocore.create_client("fms").get_admin_account`
-method.
+Type annotations for `session.create_client("fms").get_admin_account` method.
 
 Boto3 documentation:
 [FMS.Client.get_admin_account](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.get_admin_account)
@@ -290,7 +289,7 @@ Returns a `Coroutine` for
 
 Returns information about the specified Firewall Manager applications list.
 
-Type annotations for `aiobotocore.create_client("fms").get_apps_list` method.
+Type annotations for `session.create_client("fms").get_apps_list` method.
 
 Boto3 documentation:
 [FMS.Client.get_apps_list](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.get_apps_list)
@@ -314,7 +313,7 @@ Returns a `Coroutine` for
 
 Returns detailed compliance information about the specified member account.
 
-Type annotations for `aiobotocore.create_client("fms").get_compliance_detail`
+Type annotations for `session.create_client("fms").get_compliance_detail`
 method.
 
 Boto3 documentation:
@@ -341,8 +340,8 @@ Returns a `Coroutine` for
 Information about the Amazon Simple Notification Service (SNS) topic that is
 used to record Firewall Manager SNS logs.
 
-Type annotations for
-`aiobotocore.create_client("fms").get_notification_channel` method.
+Type annotations for `session.create_client("fms").get_notification_channel`
+method.
 
 Boto3 documentation:
 [FMS.Client.get_notification_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.get_notification_channel)
@@ -359,7 +358,7 @@ Returns a `Coroutine` for
 
 Returns information about the specified Firewall Manager policy.
 
-Type annotations for `aiobotocore.create_client("fms").get_policy` method.
+Type annotations for `session.create_client("fms").get_policy` method.
 
 Boto3 documentation:
 [FMS.Client.get_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.get_policy)
@@ -383,7 +382,7 @@ Returns a `Coroutine` for
 If you created a Shield Advanced policy, returns policy-level attack summary
 information in the event of a potential DDoS attack.
 
-Type annotations for `aiobotocore.create_client("fms").get_protection_status`
+Type annotations for `session.create_client("fms").get_protection_status`
 method.
 
 Boto3 documentation:
@@ -413,8 +412,7 @@ Returns a `Coroutine` for
 
 Returns information about the specified Firewall Manager protocols list.
 
-Type annotations for `aiobotocore.create_client("fms").get_protocols_list`
-method.
+Type annotations for `session.create_client("fms").get_protocols_list` method.
 
 Boto3 documentation:
 [FMS.Client.get_protocols_list](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.get_protocols_list)
@@ -440,7 +438,7 @@ Returns a `Coroutine` for
 Retrieves violations for a resource based on the specified Firewall Manager
 policy and Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("fms").get_violation_details`
+Type annotations for `session.create_client("fms").get_violation_details`
 method.
 
 Boto3 documentation:
@@ -468,7 +466,7 @@ Returns a `Coroutine` for
 
 Returns an array of `AppsListDataSummary` objects.
 
-Type annotations for `aiobotocore.create_client("fms").list_apps_lists` method.
+Type annotations for `session.create_client("fms").list_apps_lists` method.
 
 Boto3 documentation:
 [FMS.Client.list_apps_lists](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.list_apps_lists)
@@ -493,7 +491,7 @@ Returns a `Coroutine` for
 
 Returns an array of `PolicyComplianceStatus` objects.
 
-Type annotations for `aiobotocore.create_client("fms").list_compliance_status`
+Type annotations for `session.create_client("fms").list_compliance_status`
 method.
 
 Boto3 documentation:
@@ -521,7 +519,7 @@ Returns a `Coroutine` for
 Returns a `MemberAccounts` object that lists the member accounts in the
 administrator's Amazon Web Services organization.
 
-Type annotations for `aiobotocore.create_client("fms").list_member_accounts`
+Type annotations for `session.create_client("fms").list_member_accounts`
 method.
 
 Boto3 documentation:
@@ -547,7 +545,7 @@ Returns a `Coroutine` for
 
 Returns an array of `PolicySummary` objects.
 
-Type annotations for `aiobotocore.create_client("fms").list_policies` method.
+Type annotations for `session.create_client("fms").list_policies` method.
 
 Boto3 documentation:
 [FMS.Client.list_policies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.list_policies)
@@ -571,7 +569,7 @@ Returns a `Coroutine` for
 
 Returns an array of `ProtocolsListDataSummary` objects.
 
-Type annotations for `aiobotocore.create_client("fms").list_protocols_lists`
+Type annotations for `session.create_client("fms").list_protocols_lists`
 method.
 
 Boto3 documentation:
@@ -598,7 +596,7 @@ Returns a `Coroutine` for
 
 Retrieves the list of tags for the specified Amazon Web Services resource.
 
-Type annotations for `aiobotocore.create_client("fms").list_tags_for_resource`
+Type annotations for `session.create_client("fms").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -623,7 +621,7 @@ Returns a `Coroutine` for
 
 Creates an Firewall Manager applications list.
 
-Type annotations for `aiobotocore.create_client("fms").put_apps_list` method.
+Type annotations for `session.create_client("fms").put_apps_list` method.
 
 Boto3 documentation:
 [FMS.Client.put_apps_list](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.put_apps_list)
@@ -649,8 +647,8 @@ Returns a `Coroutine` for
 Designates the IAM role and Amazon Simple Notification Service (SNS) topic that
 Firewall Manager uses to record SNS logs.
 
-Type annotations for
-`aiobotocore.create_client("fms").put_notification_channel` method.
+Type annotations for `session.create_client("fms").put_notification_channel`
+method.
 
 Boto3 documentation:
 [FMS.Client.put_notification_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.put_notification_channel)
@@ -672,7 +670,7 @@ Keyword-only arguments:
 
 Creates an Firewall Manager policy.
 
-Type annotations for `aiobotocore.create_client("fms").put_policy` method.
+Type annotations for `session.create_client("fms").put_policy` method.
 
 Boto3 documentation:
 [FMS.Client.put_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.put_policy)
@@ -696,8 +694,7 @@ Returns a `Coroutine` for
 
 Creates an Firewall Manager protocols list.
 
-Type annotations for `aiobotocore.create_client("fms").put_protocols_list`
-method.
+Type annotations for `session.create_client("fms").put_protocols_list` method.
 
 Boto3 documentation:
 [FMS.Client.put_protocols_list](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.put_protocols_list)
@@ -724,7 +721,7 @@ Returns a `Coroutine` for
 
 Adds one or more tags to an Amazon Web Services resource.
 
-Type annotations for `aiobotocore.create_client("fms").tag_resource` method.
+Type annotations for `session.create_client("fms").tag_resource` method.
 
 Boto3 documentation:
 [FMS.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.tag_resource)
@@ -747,7 +744,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes one or more tags from an Amazon Web Services resource.
 
-Type annotations for `aiobotocore.create_client("fms").untag_resource` method.
+Type annotations for `session.create_client("fms").untag_resource` method.
 
 Boto3 documentation:
 [FMS.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.untag_resource)
@@ -764,12 +761,44 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("fms").__aenter__` method.
+
+Boto3 documentation:
+[FMS.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [FMSClient](#fmsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("fms").__aexit__` method.
+
+Boto3 documentation:
+[FMS.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fms.html#FMS.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("fms").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("fms").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_apps_lists")` ->
   [ListAppsListsPaginator](./paginators.md#listappslistspaginator)

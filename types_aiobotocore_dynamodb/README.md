@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[dynamodb]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[dynamodb]'
+
+# standalone installation
 pip install types-aiobotocore-dynamodb
 ```
 
@@ -33,7 +37,7 @@ pip install types-aiobotocore-dynamodb
 
 ## DynamoDBClient
 
-Type annotations for `aiobotocore.create_client("dynamodb")` as
+Type annotations for `session.create_client("dynamodb")` as
 [DynamoDBClient](./client.md)
 
 Can be used directly:
@@ -46,6 +50,8 @@ from types_aiobotocore_dynamodb.client import DynamoDBClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_execute_statement](./client.md#batch_execute_statement)
 - [batch_get_item](./client.md#batch_get_item)
 - [batch_write_item](./client.md#batch_write_item)
@@ -143,7 +149,7 @@ DynamoDBClient [exceptions](./client.md#exceptions)
 
 ## DynamoDBServiceResource
 
-Type annotations for `aiobotocore.resource("dynamodb")` as
+Type annotations for `session.resource("dynamodb")` as
 [DynamoDBServiceResource](./service_resource.md#dynamodbserviceresource)
 
 Can be used directly:
@@ -171,7 +177,7 @@ from types_aiobotocore_dynamodb.service_resource import ServiceResourceTablesCol
 ### Resources
 
 Type annotations for additional resources from
-`aiobotocore.resource("dynamodb").*`.
+`session.resource("dynamodb").*`.
 
 Can be used directly:
 
@@ -191,7 +197,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_dynamodb.paginators import ListBackupsPaginator, ...
+from types_aiobotocore_dynamodb.paginator import ListBackupsPaginator, ...
 ```
 
 - [ListBackupsPaginator](./paginators.md#listbackupspaginator)
@@ -210,7 +216,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_dynamodb.waiters import TableExistsWaiter, ...
+from types_aiobotocore_dynamodb.waiter import TableExistsWaiter, ...
 ```
 
 - [TableExistsWaiter](./waiters.md#tableexistswaiter)

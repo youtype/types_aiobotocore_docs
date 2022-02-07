@@ -24,7 +24,7 @@ type annotations stubs module
 ## ChangeSetCreateCompleteWaiter
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_waiter("change_set_create_complete")`.
+`session.create_client("cloudformation").get_waiter("change_set_create_complete")`.
 
 Can be used directly:
 
@@ -34,7 +34,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_cloudformation.waiter import ChangeSetCreateCompleteWaiter
 
 def get_change_set_create_complete_waiter() -> ChangeSetCreateCompleteWaiter:
-    return Session().create_client("cloudformation").get_waiter("change_set_create_complete")
+    return Session().client("cloudformation").get_waiter("change_set_create_complete")
 ```
 
 Boto3 documentation:
@@ -52,7 +52,7 @@ Arguments for `ChangeSetCreateCompleteWaiter.wait` method:
 ## StackCreateCompleteWaiter
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_waiter("stack_create_complete")`.
+`session.create_client("cloudformation").get_waiter("stack_create_complete")`.
 
 Can be used directly:
 
@@ -62,7 +62,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_cloudformation.waiter import StackCreateCompleteWaiter
 
 def get_stack_create_complete_waiter() -> StackCreateCompleteWaiter:
-    return Session().create_client("cloudformation").get_waiter("stack_create_complete")
+    return Session().client("cloudformation").get_waiter("stack_create_complete")
 ```
 
 Boto3 documentation:
@@ -79,7 +79,7 @@ Arguments for `StackCreateCompleteWaiter.wait` method:
 ## StackDeleteCompleteWaiter
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_waiter("stack_delete_complete")`.
+`session.create_client("cloudformation").get_waiter("stack_delete_complete")`.
 
 Can be used directly:
 
@@ -89,7 +89,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_cloudformation.waiter import StackDeleteCompleteWaiter
 
 def get_stack_delete_complete_waiter() -> StackDeleteCompleteWaiter:
-    return Session().create_client("cloudformation").get_waiter("stack_delete_complete")
+    return Session().client("cloudformation").get_waiter("stack_delete_complete")
 ```
 
 Boto3 documentation:
@@ -106,7 +106,7 @@ Arguments for `StackDeleteCompleteWaiter.wait` method:
 ## StackExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_waiter("stack_exists")`.
+`session.create_client("cloudformation").get_waiter("stack_exists")`.
 
 Can be used directly:
 
@@ -116,7 +116,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_cloudformation.waiter import StackExistsWaiter
 
 def get_stack_exists_waiter() -> StackExistsWaiter:
-    return Session().create_client("cloudformation").get_waiter("stack_exists")
+    return Session().client("cloudformation").get_waiter("stack_exists")
 ```
 
 Boto3 documentation:
@@ -133,7 +133,7 @@ Arguments for `StackExistsWaiter.wait` method:
 ## StackImportCompleteWaiter
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_waiter("stack_import_complete")`.
+`session.create_client("cloudformation").get_waiter("stack_import_complete")`.
 
 Can be used directly:
 
@@ -143,7 +143,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_cloudformation.waiter import StackImportCompleteWaiter
 
 def get_stack_import_complete_waiter() -> StackImportCompleteWaiter:
-    return Session().create_client("cloudformation").get_waiter("stack_import_complete")
+    return Session().client("cloudformation").get_waiter("stack_import_complete")
 ```
 
 Boto3 documentation:
@@ -160,7 +160,7 @@ Arguments for `StackImportCompleteWaiter.wait` method:
 ## StackRollbackCompleteWaiter
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_waiter("stack_rollback_complete")`.
+`session.create_client("cloudformation").get_waiter("stack_rollback_complete")`.
 
 Can be used directly:
 
@@ -170,7 +170,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_cloudformation.waiter import StackRollbackCompleteWaiter
 
 def get_stack_rollback_complete_waiter() -> StackRollbackCompleteWaiter:
-    return Session().create_client("cloudformation").get_waiter("stack_rollback_complete")
+    return Session().client("cloudformation").get_waiter("stack_rollback_complete")
 ```
 
 Boto3 documentation:
@@ -187,7 +187,7 @@ Arguments for `StackRollbackCompleteWaiter.wait` method:
 ## StackUpdateCompleteWaiter
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_waiter("stack_update_complete")`.
+`session.create_client("cloudformation").get_waiter("stack_update_complete")`.
 
 Can be used directly:
 
@@ -197,7 +197,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_cloudformation.waiter import StackUpdateCompleteWaiter
 
 def get_stack_update_complete_waiter() -> StackUpdateCompleteWaiter:
-    return Session().create_client("cloudformation").get_waiter("stack_update_complete")
+    return Session().client("cloudformation").get_waiter("stack_update_complete")
 ```
 
 Boto3 documentation:
@@ -214,7 +214,7 @@ Arguments for `StackUpdateCompleteWaiter.wait` method:
 ## TypeRegistrationCompleteWaiter
 
 Type annotations for
-`aiobotocore.create_client("cloudformation").get_waiter("type_registration_complete")`.
+`session.create_client("cloudformation").get_waiter("type_registration_complete")`.
 
 Can be used directly:
 
@@ -224,7 +224,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_cloudformation.waiter import TypeRegistrationCompleteWaiter
 
 def get_type_registration_complete_waiter() -> TypeRegistrationCompleteWaiter:
-    return Session().create_client("cloudformation").get_waiter("type_registration_complete")
+    return Session().client("cloudformation").get_waiter("type_registration_complete")
 ```
 
 Boto3 documentation:

@@ -25,22 +25,25 @@ type annotations stubs module
     - [list_bundles](#list_bundles)
     - [list_projects](#list_projects)
     - [update_project](#update_project)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="mobileclient"></a>
 
 ## MobileClient
 
-Type annotations for `aiobotocore.create_client("mobile")`
+Type annotations for `session.create_client("mobile")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_mobile.client import MobileClient
 
-def get_mobile_client() -> MobileClient:
-    return Session().client("mobile")
+session = get_session()
+async with session.create_client("mobile") as client:
+    client: MobileClient
 ```
 
 Boto3 documentation:
@@ -82,7 +85,7 @@ Exceptions:
 
 MobileClient exceptions.
 
-Type annotations for `aiobotocore.create_client("mobile").exceptions` method.
+Type annotations for `session.create_client("mobile").exceptions` method.
 
 Boto3 documentation:
 [Mobile.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mobile.html#Mobile.Client.exceptions)
@@ -95,18 +98,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("mobile").can_paginate` method.
+Type annotations for `session.create_client("mobile").can_paginate` method.
 
 Boto3 documentation:
 [Mobile.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mobile.html#Mobile.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_project"></a>
 
@@ -114,8 +115,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates an AWS Mobile Hub project.
 
-Type annotations for `aiobotocore.create_client("mobile").create_project`
-method.
+Type annotations for `session.create_client("mobile").create_project` method.
 
 Boto3 documentation:
 [Mobile.Client.create_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mobile.html#Mobile.Client.create_project)
@@ -141,8 +141,7 @@ Returns a `Coroutine` for
 
 Delets a project in AWS Mobile Hub.
 
-Type annotations for `aiobotocore.create_client("mobile").delete_project`
-method.
+Type annotations for `session.create_client("mobile").delete_project` method.
 
 Boto3 documentation:
 [Mobile.Client.delete_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mobile.html#Mobile.Client.delete_project)
@@ -165,8 +164,7 @@ Returns a `Coroutine` for
 
 Get the bundle details for the requested bundle id.
 
-Type annotations for `aiobotocore.create_client("mobile").describe_bundle`
-method.
+Type annotations for `session.create_client("mobile").describe_bundle` method.
 
 Boto3 documentation:
 [Mobile.Client.describe_bundle](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mobile.html#Mobile.Client.describe_bundle)
@@ -189,8 +187,7 @@ Returns a `Coroutine` for
 
 Gets details about a project in AWS Mobile Hub.
 
-Type annotations for `aiobotocore.create_client("mobile").describe_project`
-method.
+Type annotations for `session.create_client("mobile").describe_project` method.
 
 Boto3 documentation:
 [Mobile.Client.describe_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mobile.html#Mobile.Client.describe_project)
@@ -215,8 +212,7 @@ Returns a `Coroutine` for
 Generates customized software development kit (SDK) and or tool packages used
 to integrate mobile web or mobile app clients with backend AWS resources.
 
-Type annotations for `aiobotocore.create_client("mobile").export_bundle`
-method.
+Type annotations for `session.create_client("mobile").export_bundle` method.
 
 Boto3 documentation:
 [Mobile.Client.export_bundle](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mobile.html#Mobile.Client.export_bundle)
@@ -241,8 +237,7 @@ Returns a `Coroutine` for
 
 Exports project configuration to a snapshot which can be downloaded and shared.
 
-Type annotations for `aiobotocore.create_client("mobile").export_project`
-method.
+Type annotations for `session.create_client("mobile").export_project` method.
 
 Boto3 documentation:
 [Mobile.Client.export_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mobile.html#Mobile.Client.export_project)
@@ -265,8 +260,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("mobile").generate_presigned_url` method.
+Type annotations for `session.create_client("mobile").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Mobile.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mobile.html#Mobile.Client.generate_presigned_url)
@@ -289,7 +284,7 @@ Returns a `Coroutine` for `str`.
 
 List all available bundles.
 
-Type annotations for `aiobotocore.create_client("mobile").list_bundles` method.
+Type annotations for `session.create_client("mobile").list_bundles` method.
 
 Boto3 documentation:
 [Mobile.Client.list_bundles](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mobile.html#Mobile.Client.list_bundles)
@@ -313,8 +308,7 @@ Returns a `Coroutine` for
 
 Lists projects in AWS Mobile Hub.
 
-Type annotations for `aiobotocore.create_client("mobile").list_projects`
-method.
+Type annotations for `session.create_client("mobile").list_projects` method.
 
 Boto3 documentation:
 [Mobile.Client.list_projects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mobile.html#Mobile.Client.list_projects)
@@ -338,8 +332,7 @@ Returns a `Coroutine` for
 
 Update an existing project.
 
-Type annotations for `aiobotocore.create_client("mobile").update_project`
-method.
+Type annotations for `session.create_client("mobile").update_project` method.
 
 Boto3 documentation:
 [Mobile.Client.update_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mobile.html#Mobile.Client.update_project)
@@ -357,11 +350,43 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateProjectResultTypeDef](./type_defs.md#updateprojectresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("mobile").__aenter__` method.
+
+Boto3 documentation:
+[Mobile.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mobile.html#Mobile.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [MobileClient](#mobileclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("mobile").__aexit__` method.
+
+Boto3 documentation:
+[Mobile.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mobile.html#Mobile.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("mobile").get_paginator` method
+Type annotations for `session.create_client("mobile").get_paginator` method
 with overloads.
 
 - `client.get_paginator("list_bundles")` ->

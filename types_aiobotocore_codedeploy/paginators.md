@@ -25,17 +25,19 @@ type annotations stubs module
 ## ListApplicationRevisionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").get_paginator("list_application_revisions")`.
+`session.create_client("codedeploy").get_paginator("list_application_revisions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codedeploy.paginator import ListApplicationRevisionsPaginator
 
-def get_list_application_revisions_paginator() -> ListApplicationRevisionsPaginator:
-    return Session().create_client("codedeploy").get_paginator("list_application_revisions")
+session = get_session()
+async with session.create_client("codedeploy") as client:
+    client: CodeDeployClient
+    paginator: ListApplicationRevisionsPaginator = client.get_paginator("list_application_revisions")
 ```
 
 Boto3 documentation:
@@ -62,17 +64,19 @@ Arguments for `ListApplicationRevisionsPaginator.paginate` method:
 ## ListApplicationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").get_paginator("list_applications")`.
+`session.create_client("codedeploy").get_paginator("list_applications")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codedeploy.paginator import ListApplicationsPaginator
 
-def get_list_applications_paginator() -> ListApplicationsPaginator:
-    return Session().create_client("codedeploy").get_paginator("list_applications")
+session = get_session()
+async with session.create_client("codedeploy") as client:
+    client: CodeDeployClient
+    paginator: ListApplicationsPaginator = client.get_paginator("list_applications")
 ```
 
 Boto3 documentation:
@@ -91,17 +95,19 @@ Arguments for `ListApplicationsPaginator.paginate` method:
 ## ListDeploymentConfigsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").get_paginator("list_deployment_configs")`.
+`session.create_client("codedeploy").get_paginator("list_deployment_configs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codedeploy.paginator import ListDeploymentConfigsPaginator
 
-def get_list_deployment_configs_paginator() -> ListDeploymentConfigsPaginator:
-    return Session().create_client("codedeploy").get_paginator("list_deployment_configs")
+session = get_session()
+async with session.create_client("codedeploy") as client:
+    client: CodeDeployClient
+    paginator: ListDeploymentConfigsPaginator = client.get_paginator("list_deployment_configs")
 ```
 
 Boto3 documentation:
@@ -120,17 +126,19 @@ Arguments for `ListDeploymentConfigsPaginator.paginate` method:
 ## ListDeploymentGroupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").get_paginator("list_deployment_groups")`.
+`session.create_client("codedeploy").get_paginator("list_deployment_groups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codedeploy.paginator import ListDeploymentGroupsPaginator
 
-def get_list_deployment_groups_paginator() -> ListDeploymentGroupsPaginator:
-    return Session().create_client("codedeploy").get_paginator("list_deployment_groups")
+session = get_session()
+async with session.create_client("codedeploy") as client:
+    client: CodeDeployClient
+    paginator: ListDeploymentGroupsPaginator = client.get_paginator("list_deployment_groups")
 ```
 
 Boto3 documentation:
@@ -150,17 +158,19 @@ Arguments for `ListDeploymentGroupsPaginator.paginate` method:
 ## ListDeploymentInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").get_paginator("list_deployment_instances")`.
+`session.create_client("codedeploy").get_paginator("list_deployment_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codedeploy.paginator import ListDeploymentInstancesPaginator
 
-def get_list_deployment_instances_paginator() -> ListDeploymentInstancesPaginator:
-    return Session().create_client("codedeploy").get_paginator("list_deployment_instances")
+session = get_session()
+async with session.create_client("codedeploy") as client:
+    client: CodeDeployClient
+    paginator: ListDeploymentInstancesPaginator = client.get_paginator("list_deployment_instances")
 ```
 
 Boto3 documentation:
@@ -184,17 +194,19 @@ Arguments for `ListDeploymentInstancesPaginator.paginate` method:
 ## ListDeploymentTargetsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").get_paginator("list_deployment_targets")`.
+`session.create_client("codedeploy").get_paginator("list_deployment_targets")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codedeploy.paginator import ListDeploymentTargetsPaginator
 
-def get_list_deployment_targets_paginator() -> ListDeploymentTargetsPaginator:
-    return Session().create_client("codedeploy").get_paginator("list_deployment_targets")
+session = get_session()
+async with session.create_client("codedeploy") as client:
+    client: CodeDeployClient
+    paginator: ListDeploymentTargetsPaginator = client.get_paginator("list_deployment_targets")
 ```
 
 Boto3 documentation:
@@ -217,17 +229,19 @@ Arguments for `ListDeploymentTargetsPaginator.paginate` method:
 ## ListDeploymentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").get_paginator("list_deployments")`.
+`session.create_client("codedeploy").get_paginator("list_deployments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codedeploy.paginator import ListDeploymentsPaginator
 
-def get_list_deployments_paginator() -> ListDeploymentsPaginator:
-    return Session().create_client("codedeploy").get_paginator("list_deployments")
+session = get_session()
+async with session.create_client("codedeploy") as client:
+    client: CodeDeployClient
+    paginator: ListDeploymentsPaginator = client.get_paginator("list_deployments")
 ```
 
 Boto3 documentation:
@@ -252,17 +266,19 @@ Arguments for `ListDeploymentsPaginator.paginate` method:
 ## ListGitHubAccountTokenNamesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").get_paginator("list_git_hub_account_token_names")`.
+`session.create_client("codedeploy").get_paginator("list_git_hub_account_token_names")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codedeploy.paginator import ListGitHubAccountTokenNamesPaginator
 
-def get_list_git_hub_account_token_names_paginator() -> ListGitHubAccountTokenNamesPaginator:
-    return Session().create_client("codedeploy").get_paginator("list_git_hub_account_token_names")
+session = get_session()
+async with session.create_client("codedeploy") as client:
+    client: CodeDeployClient
+    paginator: ListGitHubAccountTokenNamesPaginator = client.get_paginator("list_git_hub_account_token_names")
 ```
 
 Boto3 documentation:
@@ -281,17 +297,19 @@ Arguments for `ListGitHubAccountTokenNamesPaginator.paginate` method:
 ## ListOnPremisesInstancesPaginator
 
 Type annotations for
-`aiobotocore.create_client("codedeploy").get_paginator("list_on_premises_instances")`.
+`session.create_client("codedeploy").get_paginator("list_on_premises_instances")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_codedeploy.paginator import ListOnPremisesInstancesPaginator
 
-def get_list_on_premises_instances_paginator() -> ListOnPremisesInstancesPaginator:
-    return Session().create_client("codedeploy").get_paginator("list_on_premises_instances")
+session = get_session()
+async with session.create_client("codedeploy") as client:
+    client: CodeDeployClient
+    paginator: ListOnPremisesInstancesPaginator = client.get_paginator("list_on_premises_instances")
 ```
 
 Boto3 documentation:

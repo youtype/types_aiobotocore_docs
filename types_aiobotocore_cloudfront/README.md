@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[cloudfront]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[cloudfront]'
+
+# standalone installation
 pip install types-aiobotocore-cloudfront
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-cloudfront
 
 ## CloudFrontClient
 
-Type annotations for `aiobotocore.create_client("cloudfront")` as
+Type annotations for `session.create_client("cloudfront")` as
 [CloudFrontClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_cloudfront.client import CloudFrontClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_alias](./client.md#associate_alias)
 - [can_paginate](./client.md#can_paginate)
 - [create_cache_policy](./client.md#create_cache_policy)
@@ -286,7 +292,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_cloudfront.paginators import ListCloudFrontOriginAccessIdentitiesPaginator, ...
+from types_aiobotocore_cloudfront.paginator import ListCloudFrontOriginAccessIdentitiesPaginator, ...
 ```
 
 - [ListCloudFrontOriginAccessIdentitiesPaginator](./paginators.md#listcloudfrontoriginaccessidentitiespaginator)
@@ -304,7 +310,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_cloudfront.waiters import DistributionDeployedWaiter, ...
+from types_aiobotocore_cloudfront.waiter import DistributionDeployedWaiter, ...
 ```
 
 - [DistributionDeployedWaiter](./waiters.md#distributiondeployedwaiter)

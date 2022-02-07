@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[lex-runtime]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[lex-runtime]'
+
+# standalone installation
 pip install types-aiobotocore-lex-runtime
 ```
 
@@ -28,7 +32,7 @@ pip install types-aiobotocore-lex-runtime
 
 ## LexRuntimeServiceClient
 
-Type annotations for `aiobotocore.create_client("lex-runtime")` as
+Type annotations for `session.create_client("lex-runtime")` as
 [LexRuntimeServiceClient](./client.md)
 
 Can be used directly:
@@ -41,6 +45,8 @@ from types_aiobotocore_lex_runtime.client import LexRuntimeServiceClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [delete_session](./client.md#delete_session)
 - [exceptions](./client.md#exceptions)

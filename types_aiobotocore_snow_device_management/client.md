@@ -29,22 +29,25 @@ type annotations stubs module
     - [list_tasks](#list_tasks)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="snowdevicemanagementclient"></a>
 
 ## SnowDeviceManagementClient
 
-Type annotations for `aiobotocore.create_client("snow-device-management")`
+Type annotations for `session.create_client("snow-device-management")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_snow_device_management.client import SnowDeviceManagementClient
 
-def get_snow-device-management_client() -> SnowDeviceManagementClient:
-    return Session().client("snow-device-management")
+session = get_session()
+async with session.create_client("snow-device-management") as client:
+    client: SnowDeviceManagementClient
 ```
 
 Boto3 documentation:
@@ -85,7 +88,7 @@ Exceptions:
 SnowDeviceManagementClient exceptions.
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").exceptions` method.
+`session.create_client("snow-device-management").exceptions` method.
 
 Boto3 documentation:
 [SnowDeviceManagement.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snow-device-management.html#SnowDeviceManagement.Client.exceptions)
@@ -99,18 +102,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").can_paginate` method.
+`session.create_client("snow-device-management").can_paginate` method.
 
 Boto3 documentation:
 [SnowDeviceManagement.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snow-device-management.html#SnowDeviceManagement.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_task"></a>
 
@@ -119,7 +120,7 @@ Returns a `Coroutine` for `bool`.
 Sends a cancel request for a specified task.
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").cancel_task` method.
+`session.create_client("snow-device-management").cancel_task` method.
 
 Boto3 documentation:
 [SnowDeviceManagement.Client.cancel_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snow-device-management.html#SnowDeviceManagement.Client.cancel_task)
@@ -143,7 +144,7 @@ Returns a `Coroutine` for
 Instructs one or more devices to start a task, such as unlocking or rebooting.
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").create_task` method.
+`session.create_client("snow-device-management").create_task` method.
 
 Boto3 documentation:
 [SnowDeviceManagement.Client.create_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snow-device-management.html#SnowDeviceManagement.Client.create_task)
@@ -172,7 +173,7 @@ Checks device-specific information, such as the device type, software version,
 IP addresses, and lock status.
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").describe_device` method.
+`session.create_client("snow-device-management").describe_device` method.
 
 Boto3 documentation:
 [SnowDeviceManagement.Client.describe_device](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snow-device-management.html#SnowDeviceManagement.Client.describe_device)
@@ -196,7 +197,7 @@ Returns a `Coroutine` for
 Checks the current state of the Amazon EC2 instances.
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").describe_device_ec2_instances`
+`session.create_client("snow-device-management").describe_device_ec2_instances`
 method.
 
 Boto3 documentation:
@@ -223,8 +224,7 @@ Returns a `Coroutine` for
 Checks the status of a remote task running on one or more target devices.
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").describe_execution`
-method.
+`session.create_client("snow-device-management").describe_execution` method.
 
 Boto3 documentation:
 [SnowDeviceManagement.Client.describe_execution](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snow-device-management.html#SnowDeviceManagement.Client.describe_execution)
@@ -250,7 +250,7 @@ Returns a `Coroutine` for
 Checks the metadata for a given task on a device.
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").describe_task` method.
+`session.create_client("snow-device-management").describe_task` method.
 
 Boto3 documentation:
 [SnowDeviceManagement.Client.describe_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snow-device-management.html#SnowDeviceManagement.Client.describe_task)
@@ -274,7 +274,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").generate_presigned_url`
+`session.create_client("snow-device-management").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -299,8 +299,7 @@ Returns a `Coroutine` for `str`.
 Returns a list of the Amazon Web Services resources available for a device.
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").list_device_resources`
-method.
+`session.create_client("snow-device-management").list_device_resources` method.
 
 Boto3 documentation:
 [SnowDeviceManagement.Client.list_device_resources](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snow-device-management.html#SnowDeviceManagement.Client.list_device_resources)
@@ -330,7 +329,7 @@ Amazon Web Services Snow Device Management enabled in the Amazon Web Services
 Region where the command is run.
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").list_devices` method.
+`session.create_client("snow-device-management").list_devices` method.
 
 Boto3 documentation:
 [SnowDeviceManagement.Client.list_devices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snow-device-management.html#SnowDeviceManagement.Client.list_devices)
@@ -356,7 +355,7 @@ Returns a `Coroutine` for
 Returns the status of tasks for one or more target devices.
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").list_executions` method.
+`session.create_client("snow-device-management").list_executions` method.
 
 Boto3 documentation:
 [SnowDeviceManagement.Client.list_executions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snow-device-management.html#SnowDeviceManagement.Client.list_executions)
@@ -383,7 +382,7 @@ Returns a `Coroutine` for
 Returns a list of tags for a managed device or task.
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").list_tags_for_resource`
+`session.create_client("snow-device-management").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -409,7 +408,7 @@ Returns a `Coroutine` for
 Returns a list of tasks that can be filtered by state.
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").list_tasks` method.
+`session.create_client("snow-device-management").list_tasks` method.
 
 Boto3 documentation:
 [SnowDeviceManagement.Client.list_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snow-device-management.html#SnowDeviceManagement.Client.list_tasks)
@@ -435,7 +434,7 @@ Returns a `Coroutine` for
 Adds or replaces tags on a device or task.
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").tag_resource` method.
+`session.create_client("snow-device-management").tag_resource` method.
 
 Boto3 documentation:
 [SnowDeviceManagement.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snow-device-management.html#SnowDeviceManagement.Client.tag_resource)
@@ -457,7 +456,7 @@ Keyword-only arguments:
 Removes a tag from a device or task.
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").untag_resource` method.
+`session.create_client("snow-device-management").untag_resource` method.
 
 Boto3 documentation:
 [SnowDeviceManagement.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snow-device-management.html#SnowDeviceManagement.Client.untag_resource)
@@ -472,12 +471,47 @@ Keyword-only arguments:
 - `resourceArn`: `str` *(required)*
 - `tagKeys`: `Sequence`\[`str`\] *(required)*
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for
+`session.create_client("snow-device-management").__aenter__` method.
+
+Boto3 documentation:
+[SnowDeviceManagement.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snow-device-management.html#SnowDeviceManagement.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[SnowDeviceManagementClient](#snowdevicemanagementclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for
+`session.create_client("snow-device-management").__aexit__` method.
+
+Boto3 documentation:
+[SnowDeviceManagement.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/snow-device-management.html#SnowDeviceManagement.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
 Type annotations for
-`aiobotocore.create_client("snow-device-management").get_paginator` method with
+`session.create_client("snow-device-management").get_paginator` method with
 overloads.
 
 - `client.get_paginator("list_device_resources")` ->

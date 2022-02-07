@@ -20,7 +20,7 @@ type annotations stubs module
 ## ClusterAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_waiter("cluster_available")`.
+`session.create_client("redshift").get_waiter("cluster_available")`.
 
 Can be used directly:
 
@@ -30,7 +30,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_redshift.waiter import ClusterAvailableWaiter
 
 def get_cluster_available_waiter() -> ClusterAvailableWaiter:
-    return Session().create_client("redshift").get_waiter("cluster_available")
+    return Session().client("redshift").get_waiter("cluster_available")
 ```
 
 Boto3 documentation:
@@ -50,7 +50,7 @@ Arguments for `ClusterAvailableWaiter.wait` method:
 ## ClusterDeletedWaiter
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_waiter("cluster_deleted")`.
+`session.create_client("redshift").get_waiter("cluster_deleted")`.
 
 Can be used directly:
 
@@ -60,7 +60,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_redshift.waiter import ClusterDeletedWaiter
 
 def get_cluster_deleted_waiter() -> ClusterDeletedWaiter:
-    return Session().create_client("redshift").get_waiter("cluster_deleted")
+    return Session().client("redshift").get_waiter("cluster_deleted")
 ```
 
 Boto3 documentation:
@@ -80,7 +80,7 @@ Arguments for `ClusterDeletedWaiter.wait` method:
 ## ClusterRestoredWaiter
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_waiter("cluster_restored")`.
+`session.create_client("redshift").get_waiter("cluster_restored")`.
 
 Can be used directly:
 
@@ -90,7 +90,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_redshift.waiter import ClusterRestoredWaiter
 
 def get_cluster_restored_waiter() -> ClusterRestoredWaiter:
-    return Session().create_client("redshift").get_waiter("cluster_restored")
+    return Session().client("redshift").get_waiter("cluster_restored")
 ```
 
 Boto3 documentation:
@@ -110,7 +110,7 @@ Arguments for `ClusterRestoredWaiter.wait` method:
 ## SnapshotAvailableWaiter
 
 Type annotations for
-`aiobotocore.create_client("redshift").get_waiter("snapshot_available")`.
+`session.create_client("redshift").get_waiter("snapshot_available")`.
 
 Can be used directly:
 
@@ -120,7 +120,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_redshift.waiter import SnapshotAvailableWaiter
 
 def get_snapshot_available_waiter() -> SnapshotAvailableWaiter:
-    return Session().create_client("redshift").get_waiter("snapshot_available")
+    return Session().client("redshift").get_waiter("snapshot_available")
 ```
 
 Boto3 documentation:

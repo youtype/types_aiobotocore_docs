@@ -19,21 +19,24 @@ type annotations stubs module
     - [search](#search)
     - [suggest](#suggest)
     - [upload_documents](#upload_documents)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="cloudsearchdomainclient"></a>
 
 ## CloudSearchDomainClient
 
-Type annotations for `aiobotocore.create_client("cloudsearchdomain")`
+Type annotations for `session.create_client("cloudsearchdomain")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_cloudsearchdomain.client import CloudSearchDomainClient
 
-def get_cloudsearchdomain_client() -> CloudSearchDomainClient:
-    return Session().client("cloudsearchdomain")
+session = get_session()
+async with session.create_client("cloudsearchdomain") as client:
+    client: CloudSearchDomainClient
 ```
 
 Boto3 documentation:
@@ -69,8 +72,8 @@ Exceptions:
 
 CloudSearchDomainClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("cloudsearchdomain").exceptions` method.
+Type annotations for `session.create_client("cloudsearchdomain").exceptions`
+method.
 
 Boto3 documentation:
 [CloudSearchDomain.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearchdomain.html#CloudSearchDomain.Client.exceptions)
@@ -83,19 +86,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("cloudsearchdomain").can_paginate` method.
+Type annotations for `session.create_client("cloudsearchdomain").can_paginate`
+method.
 
 Boto3 documentation:
 [CloudSearchDomain.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearchdomain.html#CloudSearchDomain.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -104,7 +105,7 @@ Returns a `Coroutine` for `bool`.
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("cloudsearchdomain").generate_presigned_url` method.
+`session.create_client("cloudsearchdomain").generate_presigned_url` method.
 
 Boto3 documentation:
 [CloudSearchDomain.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearchdomain.html#CloudSearchDomain.Client.generate_presigned_url)
@@ -127,7 +128,7 @@ Returns a `Coroutine` for `str`.
 
 Retrieves a list of documents that match the specified search criteria.
 
-Type annotations for `aiobotocore.create_client("cloudsearchdomain").search`
+Type annotations for `session.create_client("cloudsearchdomain").search`
 method.
 
 Boto3 documentation:
@@ -164,7 +165,7 @@ Returns a `Coroutine` for
 
 Retrieves autocomplete suggestions for a partial query string.
 
-Type annotations for `aiobotocore.create_client("cloudsearchdomain").suggest`
+Type annotations for `session.create_client("cloudsearchdomain").suggest`
 method.
 
 Boto3 documentation:
@@ -191,7 +192,7 @@ Returns a `Coroutine` for
 Posts a batch of documents to a search domain for indexing.
 
 Type annotations for
-`aiobotocore.create_client("cloudsearchdomain").upload_documents` method.
+`session.create_client("cloudsearchdomain").upload_documents` method.
 
 Boto3 documentation:
 [CloudSearchDomain.Client.upload_documents](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearchdomain.html#CloudSearchDomain.Client.upload_documents)
@@ -209,3 +210,37 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UploadDocumentsResponseTypeDef](./type_defs.md#uploaddocumentsresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("cloudsearchdomain").__aenter__`
+method.
+
+Boto3 documentation:
+[CloudSearchDomain.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearchdomain.html#CloudSearchDomain.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [CloudSearchDomainClient](#cloudsearchdomainclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("cloudsearchdomain").__aexit__`
+method.
+
+Boto3 documentation:
+[CloudSearchDomain.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudsearchdomain.html#CloudSearchDomain.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

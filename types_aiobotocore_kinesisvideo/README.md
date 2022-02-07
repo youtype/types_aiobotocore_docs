@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[kinesisvideo]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[kinesisvideo]'
+
+# standalone installation
 pip install types-aiobotocore-kinesisvideo
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-kinesisvideo
 
 ## KinesisVideoClient
 
-Type annotations for `aiobotocore.create_client("kinesisvideo")` as
+Type annotations for `session.create_client("kinesisvideo")` as
 [KinesisVideoClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_kinesisvideo.client import KinesisVideoClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [create_signaling_channel](./client.md#create_signaling_channel)
 - [create_stream](./client.md#create_stream)
@@ -97,7 +103,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_kinesisvideo.paginators import ListSignalingChannelsPaginator, ...
+from types_aiobotocore_kinesisvideo.paginator import ListSignalingChannelsPaginator, ...
 ```
 
 - [ListSignalingChannelsPaginator](./paginators.md#listsignalingchannelspaginator)

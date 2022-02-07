@@ -33,6 +33,8 @@ type annotations stubs module
     - [update_pipeline](#update_pipeline)
     - [update_pipeline_notifications](#update_pipeline_notifications)
     - [update_pipeline_status](#update_pipeline_status)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -40,16 +42,17 @@ type annotations stubs module
 
 ## ElasticTranscoderClient
 
-Type annotations for `aiobotocore.create_client("elastictranscoder")`
+Type annotations for `session.create_client("elastictranscoder")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_elastictranscoder.client import ElasticTranscoderClient
 
-def get_elastictranscoder_client() -> ElasticTranscoderClient:
-    return Session().client("elastictranscoder")
+session = get_session()
+async with session.create_client("elastictranscoder") as client:
+    client: ElasticTranscoderClient
 ```
 
 Boto3 documentation:
@@ -90,8 +93,8 @@ Exceptions:
 
 ElasticTranscoderClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("elastictranscoder").exceptions` method.
+Type annotations for `session.create_client("elastictranscoder").exceptions`
+method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.exceptions)
@@ -104,19 +107,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("elastictranscoder").can_paginate` method.
+Type annotations for `session.create_client("elastictranscoder").can_paginate`
+method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_job"></a>
 
@@ -124,8 +125,8 @@ Returns a `Coroutine` for `bool`.
 
 The CancelJob operation cancels an unfinished job.
 
-Type annotations for
-`aiobotocore.create_client("elastictranscoder").cancel_job` method.
+Type annotations for `session.create_client("elastictranscoder").cancel_job`
+method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.cancel_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.cancel_job)
@@ -148,8 +149,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 When you create a job, Elastic Transcoder returns JSON data that includes the
 values that you specified plus information about the job that is created.
 
-Type annotations for
-`aiobotocore.create_client("elastictranscoder").create_job` method.
+Type annotations for `session.create_client("elastictranscoder").create_job`
+method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.create_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.create_job)
@@ -182,7 +183,7 @@ Returns a `Coroutine` for
 The CreatePipeline operation creates a pipeline with settings that you specify.
 
 Type annotations for
-`aiobotocore.create_client("elastictranscoder").create_pipeline` method.
+`session.create_client("elastictranscoder").create_pipeline` method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.create_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.create_pipeline)
@@ -214,8 +215,8 @@ Returns a `Coroutine` for
 
 The CreatePreset operation creates a preset with settings that you specify.
 
-Type annotations for
-`aiobotocore.create_client("elastictranscoder").create_preset` method.
+Type annotations for `session.create_client("elastictranscoder").create_preset`
+method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.create_preset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.create_preset)
@@ -244,7 +245,7 @@ Returns a `Coroutine` for
 The DeletePipeline operation removes a pipeline.
 
 Type annotations for
-`aiobotocore.create_client("elastictranscoder").delete_pipeline` method.
+`session.create_client("elastictranscoder").delete_pipeline` method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.delete_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.delete_pipeline)
@@ -266,8 +267,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 The DeletePreset operation removes a preset that you've added in an AWS region.
 
-Type annotations for
-`aiobotocore.create_client("elastictranscoder").delete_preset` method.
+Type annotations for `session.create_client("elastictranscoder").delete_preset`
+method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.delete_preset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.delete_preset)
@@ -290,7 +291,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("elastictranscoder").generate_presigned_url` method.
+`session.create_client("elastictranscoder").generate_presigned_url` method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.generate_presigned_url)
@@ -315,7 +316,7 @@ The ListJobsByPipeline operation gets a list of the jobs currently in a
 pipeline.
 
 Type annotations for
-`aiobotocore.create_client("elastictranscoder").list_jobs_by_pipeline` method.
+`session.create_client("elastictranscoder").list_jobs_by_pipeline` method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.list_jobs_by_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.list_jobs_by_pipeline)
@@ -343,7 +344,7 @@ The ListJobsByStatus operation gets a list of jobs that have a specified
 status.
 
 Type annotations for
-`aiobotocore.create_client("elastictranscoder").list_jobs_by_status` method.
+`session.create_client("elastictranscoder").list_jobs_by_status` method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.list_jobs_by_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.list_jobs_by_status)
@@ -371,7 +372,7 @@ The ListPipelines operation gets a list of the pipelines associated with the
 current AWS account.
 
 Type annotations for
-`aiobotocore.create_client("elastictranscoder").list_pipelines` method.
+`session.create_client("elastictranscoder").list_pipelines` method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.list_pipelines](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.list_pipelines)
@@ -396,8 +397,8 @@ Returns a `Coroutine` for
 The ListPresets operation gets a list of the default presets included with
 Elastic Transcoder and the presets that you've added in an AWS region.
 
-Type annotations for
-`aiobotocore.create_client("elastictranscoder").list_presets` method.
+Type annotations for `session.create_client("elastictranscoder").list_presets`
+method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.list_presets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.list_presets)
@@ -421,7 +422,7 @@ Returns a `Coroutine` for
 
 The ReadJob operation returns detailed information about a job.
 
-Type annotations for `aiobotocore.create_client("elastictranscoder").read_job`
+Type annotations for `session.create_client("elastictranscoder").read_job`
 method.
 
 Boto3 documentation:
@@ -445,8 +446,8 @@ Returns a `Coroutine` for
 
 The ReadPipeline operation gets detailed information about a pipeline.
 
-Type annotations for
-`aiobotocore.create_client("elastictranscoder").read_pipeline` method.
+Type annotations for `session.create_client("elastictranscoder").read_pipeline`
+method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.read_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.read_pipeline)
@@ -469,8 +470,8 @@ Returns a `Coroutine` for
 
 The ReadPreset operation gets detailed information about a preset.
 
-Type annotations for
-`aiobotocore.create_client("elastictranscoder").read_preset` method.
+Type annotations for `session.create_client("elastictranscoder").read_preset`
+method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.read_preset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.read_preset)
@@ -493,7 +494,7 @@ Returns a `Coroutine` for
 
 The TestRole operation tests the IAM role used to create the pipeline.
 
-Type annotations for `aiobotocore.create_client("elastictranscoder").test_role`
+Type annotations for `session.create_client("elastictranscoder").test_role`
 method.
 
 Boto3 documentation:
@@ -521,7 +522,7 @@ Returns a `Coroutine` for
 Use the `UpdatePipeline` operation to update settings for a pipeline.
 
 Type annotations for
-`aiobotocore.create_client("elastictranscoder").update_pipeline` method.
+`session.create_client("elastictranscoder").update_pipeline` method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.update_pipeline](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.update_pipeline)
@@ -555,7 +556,7 @@ With the UpdatePipelineNotifications operation, you can update Amazon Simple
 Notification Service (Amazon SNS) notifications for a pipeline.
 
 Type annotations for
-`aiobotocore.create_client("elastictranscoder").update_pipeline_notifications`
+`session.create_client("elastictranscoder").update_pipeline_notifications`
 method.
 
 Boto3 documentation:
@@ -584,7 +585,7 @@ The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that
 the pipeline stops or restarts the processing of jobs.
 
 Type annotations for
-`aiobotocore.create_client("elastictranscoder").update_pipeline_status` method.
+`session.create_client("elastictranscoder").update_pipeline_status` method.
 
 Boto3 documentation:
 [ElasticTranscoder.Client.update_pipeline_status](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.update_pipeline_status)
@@ -603,13 +604,46 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdatePipelineStatusResponseTypeDef](./type_defs.md#updatepipelinestatusresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("elastictranscoder").__aenter__`
+method.
+
+Boto3 documentation:
+[ElasticTranscoder.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ElasticTranscoderClient](#elastictranscoderclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("elastictranscoder").__aexit__`
+method.
+
+Boto3 documentation:
+[ElasticTranscoder.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elastictranscoder.html#ElasticTranscoder.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for
-`aiobotocore.create_client("elastictranscoder").get_paginator` method with
-overloads.
+Type annotations for `session.create_client("elastictranscoder").get_paginator`
+method with overloads.
 
 - `client.get_paginator("list_jobs_by_pipeline")` ->
   [ListJobsByPipelinePaginator](./paginators.md#listjobsbypipelinepaginator)
@@ -624,9 +658,8 @@ overloads.
 
 ### get_waiter
 
-Type annotations for
-`aiobotocore.create_client("elastictranscoder").get_waiter` method with
-overloads.
+Type annotations for `session.create_client("elastictranscoder").get_waiter`
+method with overloads.
 
 - `client.get_waiter("job_complete")` ->
   [JobCompleteWaiter](./waiters.md#jobcompletewaiter)

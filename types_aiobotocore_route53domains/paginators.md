@@ -20,17 +20,19 @@ type annotations stubs module
 ## ListDomainsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53domains").get_paginator("list_domains")`.
+`session.create_client("route53domains").get_paginator("list_domains")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53domains.paginator import ListDomainsPaginator
 
-def get_list_domains_paginator() -> ListDomainsPaginator:
-    return Session().create_client("route53domains").get_paginator("list_domains")
+session = get_session()
+async with session.create_client("route53domains") as client:
+    client: Route53DomainsClient
+    paginator: ListDomainsPaginator = client.get_paginator("list_domains")
 ```
 
 Boto3 documentation:
@@ -52,17 +54,19 @@ Arguments for `ListDomainsPaginator.paginate` method:
 ## ListOperationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53domains").get_paginator("list_operations")`.
+`session.create_client("route53domains").get_paginator("list_operations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53domains.paginator import ListOperationsPaginator
 
-def get_list_operations_paginator() -> ListOperationsPaginator:
-    return Session().create_client("route53domains").get_paginator("list_operations")
+session = get_session()
+async with session.create_client("route53domains") as client:
+    client: Route53DomainsClient
+    paginator: ListOperationsPaginator = client.get_paginator("list_operations")
 ```
 
 Boto3 documentation:
@@ -82,17 +86,19 @@ Arguments for `ListOperationsPaginator.paginate` method:
 ## ListPricesPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53domains").get_paginator("list_prices")`.
+`session.create_client("route53domains").get_paginator("list_prices")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53domains.paginator import ListPricesPaginator
 
-def get_list_prices_paginator() -> ListPricesPaginator:
-    return Session().create_client("route53domains").get_paginator("list_prices")
+session = get_session()
+async with session.create_client("route53domains") as client:
+    client: Route53DomainsClient
+    paginator: ListPricesPaginator = client.get_paginator("list_prices")
 ```
 
 Boto3 documentation:
@@ -112,17 +118,19 @@ Arguments for `ListPricesPaginator.paginate` method:
 ## ViewBillingPaginator
 
 Type annotations for
-`aiobotocore.create_client("route53domains").get_paginator("view_billing")`.
+`session.create_client("route53domains").get_paginator("view_billing")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_route53domains.paginator import ViewBillingPaginator
 
-def get_view_billing_paginator() -> ViewBillingPaginator:
-    return Session().create_client("route53domains").get_paginator("view_billing")
+session = get_session()
+async with session.create_client("route53domains") as client:
+    client: Route53DomainsClient
+    paginator: ViewBillingPaginator = client.get_paginator("view_billing")
 ```
 
 Boto3 documentation:

@@ -18,21 +18,24 @@ type annotations stubs module
     - [generate_presigned_url](#generate_presigned_url)
     - [invoke_endpoint](#invoke_endpoint)
     - [invoke_endpoint_async](#invoke_endpoint_async)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="sagemakerruntimeclient"></a>
 
 ## SageMakerRuntimeClient
 
-Type annotations for `aiobotocore.create_client("sagemaker-runtime")`
+Type annotations for `session.create_client("sagemaker-runtime")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_sagemaker_runtime.client import SageMakerRuntimeClient
 
-def get_sagemaker-runtime_client() -> SageMakerRuntimeClient:
-    return Session().client("sagemaker-runtime")
+session = get_session()
+async with session.create_client("sagemaker-runtime") as client:
+    client: SageMakerRuntimeClient
 ```
 
 Boto3 documentation:
@@ -72,8 +75,8 @@ Exceptions:
 
 SageMakerRuntimeClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker-runtime").exceptions` method.
+Type annotations for `session.create_client("sagemaker-runtime").exceptions`
+method.
 
 Boto3 documentation:
 [SageMakerRuntime.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker-runtime.html#SageMakerRuntime.Client.exceptions)
@@ -86,19 +89,17 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("sagemaker-runtime").can_paginate` method.
+Type annotations for `session.create_client("sagemaker-runtime").can_paginate`
+method.
 
 Boto3 documentation:
 [SageMakerRuntime.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker-runtime.html#SageMakerRuntime.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="generate_presigned_url"></a>
 
@@ -107,7 +108,7 @@ Returns a `Coroutine` for `bool`.
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker-runtime").generate_presigned_url` method.
+`session.create_client("sagemaker-runtime").generate_presigned_url` method.
 
 Boto3 documentation:
 [SageMakerRuntime.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker-runtime.html#SageMakerRuntime.Client.generate_presigned_url)
@@ -133,7 +134,7 @@ services, your client applications use this API to get inferences from the
 model hosted at the specified endpoint.
 
 Type annotations for
-`aiobotocore.create_client("sagemaker-runtime").invoke_endpoint` method.
+`session.create_client("sagemaker-runtime").invoke_endpoint` method.
 
 Boto3 documentation:
 [SageMakerRuntime.Client.invoke_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker-runtime.html#SageMakerRuntime.Client.invoke_endpoint)
@@ -165,7 +166,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("sagemaker-runtime").invoke_endpoint_async` method.
+`session.create_client("sagemaker-runtime").invoke_endpoint_async` method.
 
 Boto3 documentation:
 [SageMakerRuntime.Client.invoke_endpoint_async](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker-runtime.html#SageMakerRuntime.Client.invoke_endpoint_async)
@@ -188,3 +189,37 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [InvokeEndpointAsyncOutputTypeDef](./type_defs.md#invokeendpointasyncoutputtypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("sagemaker-runtime").__aenter__`
+method.
+
+Boto3 documentation:
+[SageMakerRuntime.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker-runtime.html#SageMakerRuntime.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [SageMakerRuntimeClient](#sagemakerruntimeclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("sagemaker-runtime").__aexit__`
+method.
+
+Boto3 documentation:
+[SageMakerRuntime.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker-runtime.html#SageMakerRuntime.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

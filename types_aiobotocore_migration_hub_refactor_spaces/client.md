@@ -40,23 +40,25 @@ type annotations stubs module
     - [put_resource_policy](#put_resource_policy)
     - [tag_resource](#tag_resource)
     - [untag_resource](#untag_resource)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="migrationhubrefactorspacesclient"></a>
 
 ## MigrationHubRefactorSpacesClient
 
-Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces")`
+Type annotations for `session.create_client("migration-hub-refactor-spaces")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_migration_hub_refactor_spaces.client import MigrationHubRefactorSpacesClient
 
-def get_migration-hub-refactor-spaces_client() -> MigrationHubRefactorSpacesClient:
-    return Session().client("migration-hub-refactor-spaces")
+session = get_session()
+async with session.create_client("migration-hub-refactor-spaces") as client:
+    client: MigrationHubRefactorSpacesClient
 ```
 
 Boto3 documentation:
@@ -99,7 +101,7 @@ Exceptions:
 MigrationHubRefactorSpacesClient exceptions.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").exceptions` method.
+`session.create_client("migration-hub-refactor-spaces").exceptions` method.
 
 Boto3 documentation:
 [MigrationHubRefactorSpaces.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migration-hub-refactor-spaces.html#MigrationHubRefactorSpaces.Client.exceptions)
@@ -113,19 +115,16 @@ Returns [Exceptions](#exceptions).
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").can_paginate`
-method.
+`session.create_client("migration-hub-refactor-spaces").can_paginate` method.
 
 Boto3 documentation:
 [MigrationHubRefactorSpaces.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migration-hub-refactor-spaces.html#MigrationHubRefactorSpaces.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_application"></a>
 
@@ -134,7 +133,7 @@ Returns a `Coroutine` for `bool`.
 Creates an Amazon Web Services Migration Hub Refactor Spaces application.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").create_application`
+`session.create_client("migration-hub-refactor-spaces").create_application`
 method.
 
 Boto3 documentation:
@@ -168,7 +167,7 @@ Returns a `Coroutine` for
 Creates an Amazon Web Services Migration Hub Refactor Spaces environment.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").create_environment`
+`session.create_client("migration-hub-refactor-spaces").create_environment`
 method.
 
 Boto3 documentation:
@@ -199,8 +198,7 @@ Returns a `Coroutine` for
 Creates an Amazon Web Services Migration Hub Refactor Spaces route.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").create_route`
-method.
+`session.create_client("migration-hub-refactor-spaces").create_route` method.
 
 Boto3 documentation:
 [MigrationHubRefactorSpaces.Client.create_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migration-hub-refactor-spaces.html#MigrationHubRefactorSpaces.Client.create_route)
@@ -231,8 +229,7 @@ Returns a `Coroutine` for
 Creates an Amazon Web Services Migration Hub Refactor Spaces service.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").create_service`
-method.
+`session.create_client("migration-hub-refactor-spaces").create_service` method.
 
 Boto3 documentation:
 [MigrationHubRefactorSpaces.Client.create_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migration-hub-refactor-spaces.html#MigrationHubRefactorSpaces.Client.create_service)
@@ -268,7 +265,7 @@ Returns a `Coroutine` for
 Deletes an Amazon Web Services Migration Hub Refactor Spaces application.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").delete_application`
+`session.create_client("migration-hub-refactor-spaces").delete_application`
 method.
 
 Boto3 documentation:
@@ -295,7 +292,7 @@ Returns a `Coroutine` for
 Deletes an Amazon Web Services Migration Hub Refactor Spaces environment.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").delete_environment`
+`session.create_client("migration-hub-refactor-spaces").delete_environment`
 method.
 
 Boto3 documentation:
@@ -321,7 +318,7 @@ Returns a `Coroutine` for
 Deletes the resource policy set for the environment.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").delete_resource_policy`
+`session.create_client("migration-hub-refactor-spaces").delete_resource_policy`
 method.
 
 Boto3 documentation:
@@ -346,8 +343,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes an Amazon Web Services Migration Hub Refactor Spaces route.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").delete_route`
-method.
+`session.create_client("migration-hub-refactor-spaces").delete_route` method.
 
 Boto3 documentation:
 [MigrationHubRefactorSpaces.Client.delete_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migration-hub-refactor-spaces.html#MigrationHubRefactorSpaces.Client.delete_route)
@@ -373,8 +369,7 @@ Returns a `Coroutine` for
 Deletes an Amazon Web Services Migration Hub Refactor Spaces service.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").delete_service`
-method.
+`session.create_client("migration-hub-refactor-spaces").delete_service` method.
 
 Boto3 documentation:
 [MigrationHubRefactorSpaces.Client.delete_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migration-hub-refactor-spaces.html#MigrationHubRefactorSpaces.Client.delete_service)
@@ -400,7 +395,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").generate_presigned_url`
+`session.create_client("migration-hub-refactor-spaces").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -425,7 +420,7 @@ Returns a `Coroutine` for `str`.
 Gets an Amazon Web Services Migration Hub Refactor Spaces application.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").get_application`
+`session.create_client("migration-hub-refactor-spaces").get_application`
 method.
 
 Boto3 documentation:
@@ -451,7 +446,7 @@ Returns a `Coroutine` for
 Gets an Amazon Web Services Migration Hub Refactor Spaces environment.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").get_environment`
+`session.create_client("migration-hub-refactor-spaces").get_environment`
 method.
 
 Boto3 documentation:
@@ -477,7 +472,7 @@ Gets the resource-based permission policy that is set for the given
 environment.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").get_resource_policy`
+`session.create_client("migration-hub-refactor-spaces").get_resource_policy`
 method.
 
 Boto3 documentation:
@@ -503,7 +498,7 @@ Returns a `Coroutine` for
 Gets an Amazon Web Services Migration Hub Refactor Spaces route.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").get_route` method.
+`session.create_client("migration-hub-refactor-spaces").get_route` method.
 
 Boto3 documentation:
 [MigrationHubRefactorSpaces.Client.get_route](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migration-hub-refactor-spaces.html#MigrationHubRefactorSpaces.Client.get_route)
@@ -529,8 +524,7 @@ Returns a `Coroutine` for
 Gets an Amazon Web Services Migration Hub Refactor Spaces service.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").get_service`
-method.
+`session.create_client("migration-hub-refactor-spaces").get_service` method.
 
 Boto3 documentation:
 [MigrationHubRefactorSpaces.Client.get_service](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migration-hub-refactor-spaces.html#MigrationHubRefactorSpaces.Client.get_service)
@@ -557,7 +551,7 @@ Lists all the Amazon Web Services Migration Hub Refactor Spaces applications
 within an environment.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").list_applications`
+`session.create_client("migration-hub-refactor-spaces").list_applications`
 method.
 
 Boto3 documentation:
@@ -585,7 +579,7 @@ Lists all the virtual private clouds (VPCs) that are part of an Amazon Web
 Services Migration Hub Refactor Spaces environment.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").list_environment_vpcs`
+`session.create_client("migration-hub-refactor-spaces").list_environment_vpcs`
 method.
 
 Boto3 documentation:
@@ -614,7 +608,7 @@ Lists Amazon Web Services Migration Hub Refactor Spaces environments owned by a
 caller account or shared with the caller account.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").list_environments`
+`session.create_client("migration-hub-refactor-spaces").list_environments`
 method.
 
 Boto3 documentation:
@@ -641,8 +635,7 @@ Lists all the Amazon Web Services Migration Hub Refactor Spaces routes within
 an application.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").list_routes`
-method.
+`session.create_client("migration-hub-refactor-spaces").list_routes` method.
 
 Boto3 documentation:
 [MigrationHubRefactorSpaces.Client.list_routes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migration-hub-refactor-spaces.html#MigrationHubRefactorSpaces.Client.list_routes)
@@ -670,8 +663,7 @@ Lists all the Amazon Web Services Migration Hub Refactor Spaces services within
 an application.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").list_services`
-method.
+`session.create_client("migration-hub-refactor-spaces").list_services` method.
 
 Boto3 documentation:
 [MigrationHubRefactorSpaces.Client.list_services](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migration-hub-refactor-spaces.html#MigrationHubRefactorSpaces.Client.list_services)
@@ -698,7 +690,7 @@ Returns a `Coroutine` for
 Lists the tags of a resource.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").list_tags_for_resource`
+`session.create_client("migration-hub-refactor-spaces").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -725,7 +717,7 @@ Attaches a resource-based permission policy to the Amazon Web Services
 Migration Hub Refactor Spaces environment.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").put_resource_policy`
+`session.create_client("migration-hub-refactor-spaces").put_resource_policy`
 method.
 
 Boto3 documentation:
@@ -751,8 +743,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes the tags of a given resource.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").tag_resource`
-method.
+`session.create_client("migration-hub-refactor-spaces").tag_resource` method.
 
 Boto3 documentation:
 [MigrationHubRefactorSpaces.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migration-hub-refactor-spaces.html#MigrationHubRefactorSpaces.Client.tag_resource)
@@ -776,8 +767,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds to or modifies the tags of the given resource.
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").untag_resource`
-method.
+`session.create_client("migration-hub-refactor-spaces").untag_resource` method.
 
 Boto3 documentation:
 [MigrationHubRefactorSpaces.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migration-hub-refactor-spaces.html#MigrationHubRefactorSpaces.Client.untag_resource)
@@ -794,13 +784,48 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for
+`session.create_client("migration-hub-refactor-spaces").__aenter__` method.
+
+Boto3 documentation:
+[MigrationHubRefactorSpaces.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migration-hub-refactor-spaces.html#MigrationHubRefactorSpaces.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for
+[MigrationHubRefactorSpacesClient](#migrationhubrefactorspacesclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for
+`session.create_client("migration-hub-refactor-spaces").__aexit__` method.
+
+Boto3 documentation:
+[MigrationHubRefactorSpaces.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/migration-hub-refactor-spaces.html#MigrationHubRefactorSpaces.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
 Type annotations for
-`aiobotocore.create_client("migration-hub-refactor-spaces").get_paginator`
-method with overloads.
+`session.create_client("migration-hub-refactor-spaces").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_applications")` ->
   [ListApplicationsPaginator](./paginators.md#listapplicationspaginator)

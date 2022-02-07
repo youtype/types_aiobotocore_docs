@@ -19,7 +19,7 @@ type annotations stubs module
 ## AnyInstanceInServiceWaiter
 
 Type annotations for
-`aiobotocore.create_client("elb").get_waiter("any_instance_in_service")`.
+`session.create_client("elb").get_waiter("any_instance_in_service")`.
 
 Can be used directly:
 
@@ -29,7 +29,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_elb.waiter import AnyInstanceInServiceWaiter
 
 def get_any_instance_in_service_waiter() -> AnyInstanceInServiceWaiter:
-    return Session().create_client("elb").get_waiter("any_instance_in_service")
+    return Session().client("elb").get_waiter("any_instance_in_service")
 ```
 
 Boto3 documentation:
@@ -46,7 +46,7 @@ Arguments for `AnyInstanceInServiceWaiter.wait` method:
 ## InstanceDeregisteredWaiter
 
 Type annotations for
-`aiobotocore.create_client("elb").get_waiter("instance_deregistered")`.
+`session.create_client("elb").get_waiter("instance_deregistered")`.
 
 Can be used directly:
 
@@ -56,7 +56,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_elb.waiter import InstanceDeregisteredWaiter
 
 def get_instance_deregistered_waiter() -> InstanceDeregisteredWaiter:
-    return Session().create_client("elb").get_waiter("instance_deregistered")
+    return Session().client("elb").get_waiter("instance_deregistered")
 ```
 
 Boto3 documentation:
@@ -73,7 +73,7 @@ Arguments for `InstanceDeregisteredWaiter.wait` method:
 ## InstanceInServiceWaiter
 
 Type annotations for
-`aiobotocore.create_client("elb").get_waiter("instance_in_service")`.
+`session.create_client("elb").get_waiter("instance_in_service")`.
 
 Can be used directly:
 
@@ -83,7 +83,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_elb.waiter import InstanceInServiceWaiter
 
 def get_instance_in_service_waiter() -> InstanceInServiceWaiter:
-    return Session().create_client("elb").get_waiter("instance_in_service")
+    return Session().client("elb").get_waiter("instance_in_service")
 ```
 
 Boto3 documentation:

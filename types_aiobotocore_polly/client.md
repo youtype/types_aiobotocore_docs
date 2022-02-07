@@ -25,22 +25,25 @@ type annotations stubs module
     - [put_lexicon](#put_lexicon)
     - [start_speech_synthesis_task](#start_speech_synthesis_task)
     - [synthesize_speech](#synthesize_speech)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="pollyclient"></a>
 
 ## PollyClient
 
-Type annotations for `aiobotocore.create_client("polly")`
+Type annotations for `session.create_client("polly")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_polly.client import PollyClient
 
-def get_polly_client() -> PollyClient:
-    return Session().client("polly")
+session = get_session()
+async with session.create_client("polly") as client:
+    client: PollyClient
 ```
 
 Boto3 documentation:
@@ -95,7 +98,7 @@ Exceptions:
 
 PollyClient exceptions.
 
-Type annotations for `aiobotocore.create_client("polly").exceptions` method.
+Type annotations for `session.create_client("polly").exceptions` method.
 
 Boto3 documentation:
 [Polly.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly.Client.exceptions)
@@ -108,18 +111,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("polly").can_paginate` method.
+Type annotations for `session.create_client("polly").can_paginate` method.
 
 Boto3 documentation:
 [Polly.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="delete_lexicon"></a>
 
@@ -128,8 +129,7 @@ Returns a `Coroutine` for `bool`.
 Deletes the specified pronunciation lexicon stored in an Amazon Web Services
 Region.
 
-Type annotations for `aiobotocore.create_client("polly").delete_lexicon`
-method.
+Type annotations for `session.create_client("polly").delete_lexicon` method.
 
 Boto3 documentation:
 [Polly.Client.delete_lexicon](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly.Client.delete_lexicon)
@@ -152,8 +152,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Returns the list of voices that are available for use when requesting speech
 synthesis.
 
-Type annotations for `aiobotocore.create_client("polly").describe_voices`
-method.
+Type annotations for `session.create_client("polly").describe_voices` method.
 
 Boto3 documentation:
 [Polly.Client.describe_voices](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly.Client.describe_voices)
@@ -179,8 +178,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("polly").generate_presigned_url` method.
+Type annotations for `session.create_client("polly").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Polly.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly.Client.generate_presigned_url)
@@ -204,7 +203,7 @@ Returns a `Coroutine` for `str`.
 Returns the content of the specified pronunciation lexicon stored in an Amazon
 Web Services Region.
 
-Type annotations for `aiobotocore.create_client("polly").get_lexicon` method.
+Type annotations for `session.create_client("polly").get_lexicon` method.
 
 Boto3 documentation:
 [Polly.Client.get_lexicon](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly.Client.get_lexicon)
@@ -227,8 +226,8 @@ Returns a `Coroutine` for
 
 Retrieves a specific SpeechSynthesisTask object based on its TaskID.
 
-Type annotations for
-`aiobotocore.create_client("polly").get_speech_synthesis_task` method.
+Type annotations for `session.create_client("polly").get_speech_synthesis_task`
+method.
 
 Boto3 documentation:
 [Polly.Client.get_speech_synthesis_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly.Client.get_speech_synthesis_task)
@@ -253,7 +252,7 @@ Returns a `Coroutine` for
 Returns a list of pronunciation lexicons stored in an Amazon Web Services
 Region.
 
-Type annotations for `aiobotocore.create_client("polly").list_lexicons` method.
+Type annotations for `session.create_client("polly").list_lexicons` method.
 
 Boto3 documentation:
 [Polly.Client.list_lexicons](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly.Client.list_lexicons)
@@ -277,7 +276,7 @@ Returns a `Coroutine` for
 Returns a list of SpeechSynthesisTask objects ordered by their creation date.
 
 Type annotations for
-`aiobotocore.create_client("polly").list_speech_synthesis_tasks` method.
+`session.create_client("polly").list_speech_synthesis_tasks` method.
 
 Boto3 documentation:
 [Polly.Client.list_speech_synthesis_tasks](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly.Client.list_speech_synthesis_tasks)
@@ -303,7 +302,7 @@ Returns a `Coroutine` for
 
 Stores a pronunciation lexicon in an Amazon Web Services Region.
 
-Type annotations for `aiobotocore.create_client("polly").put_lexicon` method.
+Type annotations for `session.create_client("polly").put_lexicon` method.
 
 Boto3 documentation:
 [Polly.Client.put_lexicon](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly.Client.put_lexicon)
@@ -328,7 +327,7 @@ Allows the creation of an asynchronous synthesis task, by starting a new
 `SpeechSynthesisTask`.
 
 Type annotations for
-`aiobotocore.create_client("polly").start_speech_synthesis_task` method.
+`session.create_client("polly").start_speech_synthesis_task` method.
 
 Boto3 documentation:
 [Polly.Client.start_speech_synthesis_task](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly.Client.start_speech_synthesis_task)
@@ -365,8 +364,7 @@ Returns a `Coroutine` for
 
 Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes.
 
-Type annotations for `aiobotocore.create_client("polly").synthesize_speech`
-method.
+Type annotations for `session.create_client("polly").synthesize_speech` method.
 
 Boto3 documentation:
 [Polly.Client.synthesize_speech](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly.Client.synthesize_speech)
@@ -393,12 +391,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [SynthesizeSpeechOutputTypeDef](./type_defs.md#synthesizespeechoutputtypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("polly").__aenter__` method.
+
+Boto3 documentation:
+[Polly.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [PollyClient](#pollyclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("polly").__aexit__` method.
+
+Boto3 documentation:
+[Polly.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html#Polly.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("polly").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("polly").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_voices")` ->
   [DescribeVoicesPaginator](./paginators.md#describevoicespaginator)

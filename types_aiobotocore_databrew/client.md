@@ -60,22 +60,25 @@ type annotations stubs module
     - [update_recipe_job](#update_recipe_job)
     - [update_ruleset](#update_ruleset)
     - [update_schedule](#update_schedule)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="gluedatabrewclient"></a>
 
 ## GlueDataBrewClient
 
-Type annotations for `aiobotocore.create_client("databrew")`
+Type annotations for `session.create_client("databrew")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_databrew.client import GlueDataBrewClient
 
-def get_databrew_client() -> GlueDataBrewClient:
-    return Session().client("databrew")
+session = get_session()
+async with session.create_client("databrew") as client:
+    client: GlueDataBrewClient
 ```
 
 Boto3 documentation:
@@ -115,7 +118,7 @@ Exceptions:
 
 GlueDataBrewClient exceptions.
 
-Type annotations for `aiobotocore.create_client("databrew").exceptions` method.
+Type annotations for `session.create_client("databrew").exceptions` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.exceptions)
@@ -129,7 +132,7 @@ Returns [Exceptions](#exceptions).
 Deletes one or more versions of a recipe at a time.
 
 Type annotations for
-`aiobotocore.create_client("databrew").batch_delete_recipe_version` method.
+`session.create_client("databrew").batch_delete_recipe_version` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.batch_delete_recipe_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.batch_delete_recipe_version)
@@ -154,19 +157,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("databrew").can_paginate`
-method.
+Type annotations for `session.create_client("databrew").can_paginate` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_dataset"></a>
 
@@ -174,8 +174,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates a new DataBrew dataset.
 
-Type annotations for `aiobotocore.create_client("databrew").create_dataset`
-method.
+Type annotations for `session.create_client("databrew").create_dataset` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.create_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.create_dataset)
@@ -203,7 +202,7 @@ Returns a `Coroutine` for
 
 Creates a new job to analyze a dataset and create its data profile.
 
-Type annotations for `aiobotocore.create_client("databrew").create_profile_job`
+Type annotations for `session.create_client("databrew").create_profile_job`
 method.
 
 Boto3 documentation:
@@ -244,8 +243,7 @@ Returns a `Coroutine` for
 
 Creates a new DataBrew project.
 
-Type annotations for `aiobotocore.create_client("databrew").create_project`
-method.
+Type annotations for `session.create_client("databrew").create_project` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.create_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.create_project)
@@ -273,8 +271,7 @@ Returns a `Coroutine` for
 
 Creates a new DataBrew recipe.
 
-Type annotations for `aiobotocore.create_client("databrew").create_recipe`
-method.
+Type annotations for `session.create_client("databrew").create_recipe` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.create_recipe](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.create_recipe)
@@ -303,7 +300,7 @@ Creates a new job to transform input data, using steps defined in an existing
 Glue DataBrew recipe See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/databrew-2017-07-25/CreateRecipeJob).
 
-Type annotations for `aiobotocore.create_client("databrew").create_recipe_job`
+Type annotations for `session.create_client("databrew").create_recipe_job`
 method.
 
 Boto3 documentation:
@@ -345,8 +342,7 @@ Returns a `Coroutine` for
 Creates a new ruleset that can be used in a profile job to validate the data
 quality of a dataset.
 
-Type annotations for `aiobotocore.create_client("databrew").create_ruleset`
-method.
+Type annotations for `session.create_client("databrew").create_ruleset` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.create_ruleset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.create_ruleset)
@@ -373,7 +369,7 @@ Returns a `Coroutine` for
 
 Creates a new schedule for one or more DataBrew jobs.
 
-Type annotations for `aiobotocore.create_client("databrew").create_schedule`
+Type annotations for `session.create_client("databrew").create_schedule`
 method.
 
 Boto3 documentation:
@@ -400,8 +396,7 @@ Returns a `Coroutine` for
 
 Deletes a dataset from DataBrew.
 
-Type annotations for `aiobotocore.create_client("databrew").delete_dataset`
-method.
+Type annotations for `session.create_client("databrew").delete_dataset` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.delete_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.delete_dataset)
@@ -424,7 +419,7 @@ Returns a `Coroutine` for
 
 Deletes the specified DataBrew job.
 
-Type annotations for `aiobotocore.create_client("databrew").delete_job` method.
+Type annotations for `session.create_client("databrew").delete_job` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.delete_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.delete_job)
@@ -447,8 +442,7 @@ Returns a `Coroutine` for
 
 Deletes an existing DataBrew project.
 
-Type annotations for `aiobotocore.create_client("databrew").delete_project`
-method.
+Type annotations for `session.create_client("databrew").delete_project` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.delete_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.delete_project)
@@ -471,8 +465,8 @@ Returns a `Coroutine` for
 
 Deletes a single version of a DataBrew recipe.
 
-Type annotations for
-`aiobotocore.create_client("databrew").delete_recipe_version` method.
+Type annotations for `session.create_client("databrew").delete_recipe_version`
+method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.delete_recipe_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.delete_recipe_version)
@@ -497,8 +491,7 @@ Returns a `Coroutine` for
 
 Deletes a ruleset.
 
-Type annotations for `aiobotocore.create_client("databrew").delete_ruleset`
-method.
+Type annotations for `session.create_client("databrew").delete_ruleset` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.delete_ruleset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.delete_ruleset)
@@ -521,7 +514,7 @@ Returns a `Coroutine` for
 
 Deletes the specified DataBrew schedule.
 
-Type annotations for `aiobotocore.create_client("databrew").delete_schedule`
+Type annotations for `session.create_client("databrew").delete_schedule`
 method.
 
 Boto3 documentation:
@@ -545,7 +538,7 @@ Returns a `Coroutine` for
 
 Returns the definition of a specific DataBrew dataset.
 
-Type annotations for `aiobotocore.create_client("databrew").describe_dataset`
+Type annotations for `session.create_client("databrew").describe_dataset`
 method.
 
 Boto3 documentation:
@@ -569,8 +562,7 @@ Returns a `Coroutine` for
 
 Returns the definition of a specific DataBrew job.
 
-Type annotations for `aiobotocore.create_client("databrew").describe_job`
-method.
+Type annotations for `session.create_client("databrew").describe_job` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.describe_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.describe_job)
@@ -593,7 +585,7 @@ Returns a `Coroutine` for
 
 Represents one run of a DataBrew job.
 
-Type annotations for `aiobotocore.create_client("databrew").describe_job_run`
+Type annotations for `session.create_client("databrew").describe_job_run`
 method.
 
 Boto3 documentation:
@@ -618,7 +610,7 @@ Returns a `Coroutine` for
 
 Returns the definition of a specific DataBrew project.
 
-Type annotations for `aiobotocore.create_client("databrew").describe_project`
+Type annotations for `session.create_client("databrew").describe_project`
 method.
 
 Boto3 documentation:
@@ -643,7 +635,7 @@ Returns a `Coroutine` for
 Returns the definition of a specific DataBrew recipe corresponding to a
 particular version.
 
-Type annotations for `aiobotocore.create_client("databrew").describe_recipe`
+Type annotations for `session.create_client("databrew").describe_recipe`
 method.
 
 Boto3 documentation:
@@ -668,7 +660,7 @@ Returns a `Coroutine` for
 
 Retrieves detailed information about the ruleset.
 
-Type annotations for `aiobotocore.create_client("databrew").describe_ruleset`
+Type annotations for `session.create_client("databrew").describe_ruleset`
 method.
 
 Boto3 documentation:
@@ -692,7 +684,7 @@ Returns a `Coroutine` for
 
 Returns the definition of a specific DataBrew schedule.
 
-Type annotations for `aiobotocore.create_client("databrew").describe_schedule`
+Type annotations for `session.create_client("databrew").describe_schedule`
 method.
 
 Boto3 documentation:
@@ -716,8 +708,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("databrew").generate_presigned_url` method.
+Type annotations for `session.create_client("databrew").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.generate_presigned_url)
@@ -740,8 +732,7 @@ Returns a `Coroutine` for `str`.
 
 Lists all of the DataBrew datasets.
 
-Type annotations for `aiobotocore.create_client("databrew").list_datasets`
-method.
+Type annotations for `session.create_client("databrew").list_datasets` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.list_datasets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.list_datasets)
@@ -765,8 +756,7 @@ Returns a `Coroutine` for
 
 Lists all of the previous runs of a particular DataBrew job.
 
-Type annotations for `aiobotocore.create_client("databrew").list_job_runs`
-method.
+Type annotations for `session.create_client("databrew").list_job_runs` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.list_job_runs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.list_job_runs)
@@ -791,7 +781,7 @@ Returns a `Coroutine` for
 
 Lists all of the DataBrew jobs that are defined.
 
-Type annotations for `aiobotocore.create_client("databrew").list_jobs` method.
+Type annotations for `session.create_client("databrew").list_jobs` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.list_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.list_jobs)
@@ -817,8 +807,7 @@ Returns a `Coroutine` for
 
 Lists all of the DataBrew projects that are defined.
 
-Type annotations for `aiobotocore.create_client("databrew").list_projects`
-method.
+Type annotations for `session.create_client("databrew").list_projects` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.list_projects](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.list_projects)
@@ -843,8 +832,8 @@ Returns a `Coroutine` for
 Lists the versions of a particular DataBrew recipe, except for `LATEST_WORKING`
 .
 
-Type annotations for
-`aiobotocore.create_client("databrew").list_recipe_versions` method.
+Type annotations for `session.create_client("databrew").list_recipe_versions`
+method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.list_recipe_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.list_recipe_versions)
@@ -870,8 +859,7 @@ Returns a `Coroutine` for
 
 Lists all of the DataBrew recipes that are defined.
 
-Type annotations for `aiobotocore.create_client("databrew").list_recipes`
-method.
+Type annotations for `session.create_client("databrew").list_recipes` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.list_recipes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.list_recipes)
@@ -897,8 +885,7 @@ Returns a `Coroutine` for
 List all rulesets available in the current account or rulesets associated with
 a specific resource (dataset).
 
-Type annotations for `aiobotocore.create_client("databrew").list_rulesets`
-method.
+Type annotations for `session.create_client("databrew").list_rulesets` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.list_rulesets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.list_rulesets)
@@ -923,8 +910,7 @@ Returns a `Coroutine` for
 
 Lists the DataBrew schedules that are defined.
 
-Type annotations for `aiobotocore.create_client("databrew").list_schedules`
-method.
+Type annotations for `session.create_client("databrew").list_schedules` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.list_schedules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.list_schedules)
@@ -949,8 +935,8 @@ Returns a `Coroutine` for
 
 Lists all the tags for a DataBrew resource.
 
-Type annotations for
-`aiobotocore.create_client("databrew").list_tags_for_resource` method.
+Type annotations for `session.create_client("databrew").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.list_tags_for_resource)
@@ -974,8 +960,7 @@ Returns a `Coroutine` for
 
 Publishes a new version of a DataBrew recipe.
 
-Type annotations for `aiobotocore.create_client("databrew").publish_recipe`
-method.
+Type annotations for `session.create_client("databrew").publish_recipe` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.publish_recipe](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.publish_recipe)
@@ -1001,7 +986,7 @@ Performs a recipe step within an interactive DataBrew session that's currently
 open.
 
 Type annotations for
-`aiobotocore.create_client("databrew").send_project_session_action` method.
+`session.create_client("databrew").send_project_session_action` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.send_project_session_action](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.send_project_session_action)
@@ -1030,8 +1015,7 @@ Returns a `Coroutine` for
 
 Runs a DataBrew job.
 
-Type annotations for `aiobotocore.create_client("databrew").start_job_run`
-method.
+Type annotations for `session.create_client("databrew").start_job_run` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.start_job_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.start_job_run)
@@ -1055,8 +1039,8 @@ Returns a `Coroutine` for
 Creates an interactive session, enabling you to manipulate data in a DataBrew
 project.
 
-Type annotations for
-`aiobotocore.create_client("databrew").start_project_session` method.
+Type annotations for `session.create_client("databrew").start_project_session`
+method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.start_project_session](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.start_project_session)
@@ -1081,8 +1065,7 @@ Returns a `Coroutine` for
 
 Stops a particular run of a job.
 
-Type annotations for `aiobotocore.create_client("databrew").stop_job_run`
-method.
+Type annotations for `session.create_client("databrew").stop_job_run` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.stop_job_run](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.stop_job_run)
@@ -1107,8 +1090,7 @@ Returns a `Coroutine` for
 Adds metadata tags to a DataBrew resource, such as a dataset, project, recipe,
 job, or schedule.
 
-Type annotations for `aiobotocore.create_client("databrew").tag_resource`
-method.
+Type annotations for `session.create_client("databrew").tag_resource` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.tag_resource)
@@ -1131,8 +1113,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes metadata tags from a DataBrew resource.
 
-Type annotations for `aiobotocore.create_client("databrew").untag_resource`
-method.
+Type annotations for `session.create_client("databrew").untag_resource` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.untag_resource)
@@ -1155,8 +1136,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Modifies the definition of an existing DataBrew dataset.
 
-Type annotations for `aiobotocore.create_client("databrew").update_dataset`
-method.
+Type annotations for `session.create_client("databrew").update_dataset` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.update_dataset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.update_dataset)
@@ -1183,7 +1163,7 @@ Returns a `Coroutine` for
 
 Modifies the definition of an existing profile job.
 
-Type annotations for `aiobotocore.create_client("databrew").update_profile_job`
+Type annotations for `session.create_client("databrew").update_profile_job`
 method.
 
 Boto3 documentation:
@@ -1222,8 +1202,7 @@ Returns a `Coroutine` for
 
 Modifies the definition of an existing DataBrew project.
 
-Type annotations for `aiobotocore.create_client("databrew").update_project`
-method.
+Type annotations for `session.create_client("databrew").update_project` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.update_project](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.update_project)
@@ -1248,8 +1227,7 @@ Returns a `Coroutine` for
 
 Modifies the definition of the `LATEST_WORKING` version of a DataBrew recipe.
 
-Type annotations for `aiobotocore.create_client("databrew").update_recipe`
-method.
+Type annotations for `session.create_client("databrew").update_recipe` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.update_recipe](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.update_recipe)
@@ -1274,7 +1252,7 @@ Returns a `Coroutine` for
 
 Modifies the definition of an existing DataBrew recipe job.
 
-Type annotations for `aiobotocore.create_client("databrew").update_recipe_job`
+Type annotations for `session.create_client("databrew").update_recipe_job`
 method.
 
 Boto3 documentation:
@@ -1310,8 +1288,7 @@ Returns a `Coroutine` for
 
 Updates specified ruleset.
 
-Type annotations for `aiobotocore.create_client("databrew").update_ruleset`
-method.
+Type annotations for `session.create_client("databrew").update_ruleset` method.
 
 Boto3 documentation:
 [GlueDataBrew.Client.update_ruleset](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.update_ruleset)
@@ -1336,7 +1313,7 @@ Returns a `Coroutine` for
 
 Modifies the definition of an existing DataBrew schedule.
 
-Type annotations for `aiobotocore.create_client("databrew").update_schedule`
+Type annotations for `session.create_client("databrew").update_schedule`
 method.
 
 Boto3 documentation:
@@ -1356,12 +1333,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateScheduleResponseTypeDef](./type_defs.md#updatescheduleresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("databrew").__aenter__` method.
+
+Boto3 documentation:
+[GlueDataBrew.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [GlueDataBrewClient](#gluedatabrewclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("databrew").__aexit__` method.
+
+Boto3 documentation:
+[GlueDataBrew.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html#GlueDataBrew.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("databrew").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("databrew").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_datasets")` ->
   [ListDatasetsPaginator](./paginators.md#listdatasetspaginator)

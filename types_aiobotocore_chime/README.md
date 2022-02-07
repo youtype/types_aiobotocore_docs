@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[chime]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[chime]'
+
+# standalone installation
 pip install types-aiobotocore-chime
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-chime
 
 ## ChimeClient
 
-Type annotations for `aiobotocore.create_client("chime")` as
+Type annotations for `session.create_client("chime")` as
 [ChimeClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_chime.client import ChimeClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_phone_number_with_user](./client.md#associate_phone_number_with_user)
 - [associate_phone_numbers_with_voice_connector](./client.md#associate_phone_numbers_with_voice_connector)
 - [associate_phone_numbers_with_voice_connector_group](./client.md#associate_phone_numbers_with_voice_connector_group)
@@ -266,7 +272,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_chime.paginators import ListAccountsPaginator, ...
+from types_aiobotocore_chime.paginator import ListAccountsPaginator, ...
 ```
 
 - [ListAccountsPaginator](./paginators.md#listaccountspaginator)

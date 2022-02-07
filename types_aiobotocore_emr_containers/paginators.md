@@ -19,17 +19,19 @@ type annotations stubs module
 ## ListJobRunsPaginator
 
 Type annotations for
-`aiobotocore.create_client("emr-containers").get_paginator("list_job_runs")`.
+`session.create_client("emr-containers").get_paginator("list_job_runs")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_emr_containers.paginator import ListJobRunsPaginator
 
-def get_list_job_runs_paginator() -> ListJobRunsPaginator:
-    return Session().create_client("emr-containers").get_paginator("list_job_runs")
+session = get_session()
+async with session.create_client("emr-containers") as client:
+    client: EMRContainersClient
+    paginator: ListJobRunsPaginator = client.get_paginator("list_job_runs")
 ```
 
 Boto3 documentation:
@@ -53,17 +55,19 @@ Arguments for `ListJobRunsPaginator.paginate` method:
 ## ListManagedEndpointsPaginator
 
 Type annotations for
-`aiobotocore.create_client("emr-containers").get_paginator("list_managed_endpoints")`.
+`session.create_client("emr-containers").get_paginator("list_managed_endpoints")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_emr_containers.paginator import ListManagedEndpointsPaginator
 
-def get_list_managed_endpoints_paginator() -> ListManagedEndpointsPaginator:
-    return Session().create_client("emr-containers").get_paginator("list_managed_endpoints")
+session = get_session()
+async with session.create_client("emr-containers") as client:
+    client: EMRContainersClient
+    paginator: ListManagedEndpointsPaginator = client.get_paginator("list_managed_endpoints")
 ```
 
 Boto3 documentation:
@@ -87,17 +91,19 @@ Arguments for `ListManagedEndpointsPaginator.paginate` method:
 ## ListVirtualClustersPaginator
 
 Type annotations for
-`aiobotocore.create_client("emr-containers").get_paginator("list_virtual_clusters")`.
+`session.create_client("emr-containers").get_paginator("list_virtual_clusters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_emr_containers.paginator import ListVirtualClustersPaginator
 
-def get_list_virtual_clusters_paginator() -> ListVirtualClustersPaginator:
-    return Session().create_client("emr-containers").get_paginator("list_virtual_clusters")
+session = get_session()
+async with session.create_client("emr-containers") as client:
+    client: EMRContainersClient
+    paginator: ListVirtualClustersPaginator = client.get_paginator("list_virtual_clusters")
 ```
 
 Boto3 documentation:

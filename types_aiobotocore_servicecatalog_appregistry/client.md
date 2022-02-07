@@ -37,22 +37,25 @@ type annotations stubs module
     - [untag_resource](#untag_resource)
     - [update_application](#update_application)
     - [update_attribute_group](#update_attribute_group)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="appregistryclient"></a>
 
 ## AppRegistryClient
 
-Type annotations for `aiobotocore.create_client("servicecatalog-appregistry")`
+Type annotations for `session.create_client("servicecatalog-appregistry")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_servicecatalog_appregistry.client import AppRegistryClient
 
-def get_servicecatalog-appregistry_client() -> AppRegistryClient:
-    return Session().client("servicecatalog-appregistry")
+session = get_session()
+async with session.create_client("servicecatalog-appregistry") as client:
+    client: AppRegistryClient
 ```
 
 Boto3 documentation:
@@ -92,7 +95,7 @@ Exceptions:
 AppRegistryClient exceptions.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").exceptions` method.
+`session.create_client("servicecatalog-appregistry").exceptions` method.
 
 Boto3 documentation:
 [AppRegistry.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.exceptions)
@@ -107,7 +110,7 @@ Associates an attribute group with an application to augment the application's
 metadata with the group's attributes.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").associate_attribute_group`
+`session.create_client("servicecatalog-appregistry").associate_attribute_group`
 method.
 
 Boto3 documentation:
@@ -134,7 +137,7 @@ Returns a `Coroutine` for
 Associates a resource with an application.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").associate_resource`
+`session.create_client("servicecatalog-appregistry").associate_resource`
 method.
 
 Boto3 documentation:
@@ -163,18 +166,16 @@ Returns a `Coroutine` for
 Check if an operation can be paginated.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").can_paginate` method.
+`session.create_client("servicecatalog-appregistry").can_paginate` method.
 
 Boto3 documentation:
 [AppRegistry.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_application"></a>
 
@@ -184,7 +185,7 @@ Creates a new application that is the top-level node in a hierarchy of related
 cloud resource abstractions.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").create_application`
+`session.create_client("servicecatalog-appregistry").create_application`
 method.
 
 Boto3 documentation:
@@ -213,7 +214,7 @@ Returns a `Coroutine` for
 Creates a new attribute group as a container for user-defined attributes.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").create_attribute_group`
+`session.create_client("servicecatalog-appregistry").create_attribute_group`
 method.
 
 Boto3 documentation:
@@ -243,7 +244,7 @@ Returns a `Coroutine` for
 Deletes an application that is specified either by its application ID or name.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").delete_application`
+`session.create_client("servicecatalog-appregistry").delete_application`
 method.
 
 Boto3 documentation:
@@ -269,7 +270,7 @@ Returns a `Coroutine` for
 Deletes an attribute group, specified either by its attribute group ID or name.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").delete_attribute_group`
+`session.create_client("servicecatalog-appregistry").delete_attribute_group`
 method.
 
 Boto3 documentation:
@@ -296,7 +297,7 @@ Disassociates an attribute group from an application to remove the extra
 attributes contained in the attribute group from the application's metadata.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").disassociate_attribute_group`
+`session.create_client("servicecatalog-appregistry").disassociate_attribute_group`
 method.
 
 Boto3 documentation:
@@ -323,7 +324,7 @@ Returns a `Coroutine` for
 Disassociates a resource from application.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").disassociate_resource`
+`session.create_client("servicecatalog-appregistry").disassociate_resource`
 method.
 
 Boto3 documentation:
@@ -352,7 +353,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").generate_presigned_url`
+`session.create_client("servicecatalog-appregistry").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -377,8 +378,7 @@ Returns a `Coroutine` for `str`.
 Retrieves metadata information about one of your applications.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").get_application`
-method.
+`session.create_client("servicecatalog-appregistry").get_application` method.
 
 Boto3 documentation:
 [AppRegistry.Client.get_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.get_application)
@@ -402,7 +402,7 @@ Returns a `Coroutine` for
 Gets the resource associated with the application.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").get_associated_resource`
+`session.create_client("servicecatalog-appregistry").get_associated_resource`
 method.
 
 Boto3 documentation:
@@ -431,7 +431,7 @@ Returns a `Coroutine` for
 Retrieves an attribute group, either by its name or its ID.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").get_attribute_group`
+`session.create_client("servicecatalog-appregistry").get_attribute_group`
 method.
 
 Boto3 documentation:
@@ -457,8 +457,7 @@ Returns a `Coroutine` for
 Retrieves a list of all of your applications.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").list_applications`
-method.
+`session.create_client("servicecatalog-appregistry").list_applications` method.
 
 Boto3 documentation:
 [AppRegistry.Client.list_applications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.list_applications)
@@ -483,7 +482,7 @@ Returns a `Coroutine` for
 Lists all attribute groups that are associated with specified application.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").list_associated_attribute_groups`
+`session.create_client("servicecatalog-appregistry").list_associated_attribute_groups`
 method.
 
 Boto3 documentation:
@@ -511,7 +510,7 @@ Returns a `Coroutine` for
 Lists all resources that are associated with specified application.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").list_associated_resources`
+`session.create_client("servicecatalog-appregistry").list_associated_resources`
 method.
 
 Boto3 documentation:
@@ -539,7 +538,7 @@ Returns a `Coroutine` for
 Lists all attribute groups which you have access to.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").list_attribute_groups`
+`session.create_client("servicecatalog-appregistry").list_attribute_groups`
 method.
 
 Boto3 documentation:
@@ -566,7 +565,7 @@ Returns a `Coroutine` for
 Lists all of the tags on the resource.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").list_tags_for_resource`
+`session.create_client("servicecatalog-appregistry").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -592,7 +591,7 @@ Returns a `Coroutine` for
 Syncs the resource with current AppRegistry records.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").sync_resource` method.
+`session.create_client("servicecatalog-appregistry").sync_resource` method.
 
 Boto3 documentation:
 [AppRegistry.Client.sync_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.sync_resource)
@@ -618,7 +617,7 @@ Returns a `Coroutine` for
 Assigns one or more tags (key-value pairs) to the specified resource.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").tag_resource` method.
+`session.create_client("servicecatalog-appregistry").tag_resource` method.
 
 Boto3 documentation:
 [AppRegistry.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.tag_resource)
@@ -642,8 +641,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes tags from a resource.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").untag_resource`
-method.
+`session.create_client("servicecatalog-appregistry").untag_resource` method.
 
 Boto3 documentation:
 [AppRegistry.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.untag_resource)
@@ -667,7 +665,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates an existing application with new attributes.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").update_application`
+`session.create_client("servicecatalog-appregistry").update_application`
 method.
 
 Boto3 documentation:
@@ -695,7 +693,7 @@ Returns a `Coroutine` for
 Updates an existing attribute group with new details.
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").update_attribute_group`
+`session.create_client("servicecatalog-appregistry").update_attribute_group`
 method.
 
 Boto3 documentation:
@@ -717,13 +715,47 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateAttributeGroupResponseTypeDef](./type_defs.md#updateattributegroupresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for
+`session.create_client("servicecatalog-appregistry").__aenter__` method.
+
+Boto3 documentation:
+[AppRegistry.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [AppRegistryClient](#appregistryclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for
+`session.create_client("servicecatalog-appregistry").__aexit__` method.
+
+Boto3 documentation:
+[AppRegistry.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
 Type annotations for
-`aiobotocore.create_client("servicecatalog-appregistry").get_paginator` method
-with overloads.
+`session.create_client("servicecatalog-appregistry").get_paginator` method with
+overloads.
 
 - `client.get_paginator("list_applications")` ->
   [ListApplicationsPaginator](./paginators.md#listapplicationspaginator)

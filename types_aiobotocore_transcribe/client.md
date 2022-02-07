@@ -55,21 +55,24 @@ type annotations stubs module
     - [update_medical_vocabulary](#update_medical_vocabulary)
     - [update_vocabulary](#update_vocabulary)
     - [update_vocabulary_filter](#update_vocabulary_filter)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="transcribeserviceclient"></a>
 
 ## TranscribeServiceClient
 
-Type annotations for `aiobotocore.create_client("transcribe")`
+Type annotations for `session.create_client("transcribe")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_transcribe.client import TranscribeServiceClient
 
-def get_transcribe_client() -> TranscribeServiceClient:
-    return Session().client("transcribe")
+session = get_session()
+async with session.create_client("transcribe") as client:
+    client: TranscribeServiceClient
 ```
 
 Boto3 documentation:
@@ -108,8 +111,7 @@ Exceptions:
 
 TranscribeServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("transcribe").exceptions`
-method.
+Type annotations for `session.create_client("transcribe").exceptions` method.
 
 Boto3 documentation:
 [TranscribeService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.exceptions)
@@ -122,19 +124,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("transcribe").can_paginate`
-method.
+Type annotations for `session.create_client("transcribe").can_paginate` method.
 
 Boto3 documentation:
 [TranscribeService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_call_analytics_category"></a>
 
@@ -143,8 +142,7 @@ Returns a `Coroutine` for `bool`.
 Creates an analytics category.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").create_call_analytics_category`
-method.
+`session.create_client("transcribe").create_call_analytics_category` method.
 
 Boto3 documentation:
 [TranscribeService.Client.create_call_analytics_category](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.create_call_analytics_category)
@@ -170,7 +168,7 @@ Returns a `Coroutine` for
 Creates a new custom language model.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").create_language_model` method.
+`session.create_client("transcribe").create_language_model` method.
 
 Boto3 documentation:
 [TranscribeService.Client.create_language_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.create_language_model)
@@ -203,7 +201,7 @@ Creates a new custom vocabulary that you can use to modify how Amazon
 Transcribe Medical transcribes your audio file.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").create_medical_vocabulary` method.
+`session.create_client("transcribe").create_medical_vocabulary` method.
 
 Boto3 documentation:
 [TranscribeService.Client.create_medical_vocabulary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.create_medical_vocabulary)
@@ -232,8 +230,8 @@ Returns a `Coroutine` for
 Creates a new custom vocabulary that you can use to change the way Amazon
 Transcribe handles transcription of an audio file.
 
-Type annotations for
-`aiobotocore.create_client("transcribe").create_vocabulary` method.
+Type annotations for `session.create_client("transcribe").create_vocabulary`
+method.
 
 Boto3 documentation:
 [TranscribeService.Client.create_vocabulary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.create_vocabulary)
@@ -263,7 +261,7 @@ Creates a new vocabulary filter that you can use to filter words, such as
 profane words, from the output of a transcription job.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").create_vocabulary_filter` method.
+`session.create_client("transcribe").create_vocabulary_filter` method.
 
 Boto3 documentation:
 [TranscribeService.Client.create_vocabulary_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.create_vocabulary_filter)
@@ -293,8 +291,7 @@ Returns a `Coroutine` for
 Deletes a call analytics category using its name.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").delete_call_analytics_category`
-method.
+`session.create_client("transcribe").delete_call_analytics_category` method.
 
 Boto3 documentation:
 [TranscribeService.Client.delete_call_analytics_category](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.delete_call_analytics_category)
@@ -318,7 +315,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a call analytics job using its name.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").delete_call_analytics_job` method.
+`session.create_client("transcribe").delete_call_analytics_job` method.
 
 Boto3 documentation:
 [TranscribeService.Client.delete_call_analytics_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.delete_call_analytics_job)
@@ -342,7 +339,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a custom language model using its name.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").delete_language_model` method.
+`session.create_client("transcribe").delete_language_model` method.
 
 Boto3 documentation:
 [TranscribeService.Client.delete_language_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.delete_language_model)
@@ -365,8 +362,7 @@ Deletes a transcription job generated by Amazon Transcribe Medical and any
 related information.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").delete_medical_transcription_job`
-method.
+`session.create_client("transcribe").delete_medical_transcription_job` method.
 
 Boto3 documentation:
 [TranscribeService.Client.delete_medical_transcription_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.delete_medical_transcription_job)
@@ -388,7 +384,7 @@ Keyword-only arguments:
 Deletes a vocabulary from Amazon Transcribe Medical.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").delete_medical_vocabulary` method.
+`session.create_client("transcribe").delete_medical_vocabulary` method.
 
 Boto3 documentation:
 [TranscribeService.Client.delete_medical_vocabulary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.delete_medical_vocabulary)
@@ -411,7 +407,7 @@ Deletes a previously submitted transcription job along with any other generated
 results such as the transcription, models, and so on.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").delete_transcription_job` method.
+`session.create_client("transcribe").delete_transcription_job` method.
 
 Boto3 documentation:
 [TranscribeService.Client.delete_transcription_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.delete_transcription_job)
@@ -432,8 +428,8 @@ Keyword-only arguments:
 
 Deletes a vocabulary from Amazon Transcribe.
 
-Type annotations for
-`aiobotocore.create_client("transcribe").delete_vocabulary` method.
+Type annotations for `session.create_client("transcribe").delete_vocabulary`
+method.
 
 Boto3 documentation:
 [TranscribeService.Client.delete_vocabulary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.delete_vocabulary)
@@ -454,7 +450,7 @@ Keyword-only arguments:
 Removes a vocabulary filter.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").delete_vocabulary_filter` method.
+`session.create_client("transcribe").delete_vocabulary_filter` method.
 
 Boto3 documentation:
 [TranscribeService.Client.delete_vocabulary_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.delete_vocabulary_filter)
@@ -476,7 +472,7 @@ Keyword-only arguments:
 Gets information about a single custom language model.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").describe_language_model` method.
+`session.create_client("transcribe").describe_language_model` method.
 
 Boto3 documentation:
 [TranscribeService.Client.describe_language_model](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.describe_language_model)
@@ -501,7 +497,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").generate_presigned_url` method.
+`session.create_client("transcribe").generate_presigned_url` method.
 
 Boto3 documentation:
 [TranscribeService.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.generate_presigned_url)
@@ -525,7 +521,7 @@ Returns a `Coroutine` for `str`.
 Retrieves information about a call analytics category.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").get_call_analytics_category` method.
+`session.create_client("transcribe").get_call_analytics_category` method.
 
 Boto3 documentation:
 [TranscribeService.Client.get_call_analytics_category](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.get_call_analytics_category)
@@ -550,7 +546,7 @@ Returns a `Coroutine` for
 Returns information about a call analytics job.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").get_call_analytics_job` method.
+`session.create_client("transcribe").get_call_analytics_job` method.
 
 Boto3 documentation:
 [TranscribeService.Client.get_call_analytics_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.get_call_analytics_job)
@@ -575,7 +571,7 @@ Returns a `Coroutine` for
 Returns information about a transcription job from Amazon Transcribe Medical.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").get_medical_transcription_job` method.
+`session.create_client("transcribe").get_medical_transcription_job` method.
 
 Boto3 documentation:
 [TranscribeService.Client.get_medical_transcription_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.get_medical_transcription_job)
@@ -600,7 +596,7 @@ Returns a `Coroutine` for
 Retrieves information about a medical vocabulary.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").get_medical_vocabulary` method.
+`session.create_client("transcribe").get_medical_vocabulary` method.
 
 Boto3 documentation:
 [TranscribeService.Client.get_medical_vocabulary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.get_medical_vocabulary)
@@ -625,7 +621,7 @@ Returns a `Coroutine` for
 Returns information about a transcription job.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").get_transcription_job` method.
+`session.create_client("transcribe").get_transcription_job` method.
 
 Boto3 documentation:
 [TranscribeService.Client.get_transcription_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.get_transcription_job)
@@ -649,7 +645,7 @@ Returns a `Coroutine` for
 
 Gets information about a vocabulary.
 
-Type annotations for `aiobotocore.create_client("transcribe").get_vocabulary`
+Type annotations for `session.create_client("transcribe").get_vocabulary`
 method.
 
 Boto3 documentation:
@@ -674,7 +670,7 @@ Returns a `Coroutine` for
 Returns information about a vocabulary filter.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").get_vocabulary_filter` method.
+`session.create_client("transcribe").get_vocabulary_filter` method.
 
 Boto3 documentation:
 [TranscribeService.Client.get_vocabulary_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.get_vocabulary_filter)
@@ -700,8 +696,7 @@ Provides more information about the call analytics categories that you've
 created.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").list_call_analytics_categories`
-method.
+`session.create_client("transcribe").list_call_analytics_categories` method.
 
 Boto3 documentation:
 [TranscribeService.Client.list_call_analytics_categories](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_call_analytics_categories)
@@ -728,7 +723,7 @@ List call analytics jobs with a specified status or substring that matches
 their names.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").list_call_analytics_jobs` method.
+`session.create_client("transcribe").list_call_analytics_jobs` method.
 
 Boto3 documentation:
 [TranscribeService.Client.list_call_analytics_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_call_analytics_jobs)
@@ -756,8 +751,8 @@ Returns a `Coroutine` for
 
 Provides more information about the custom language models you've created.
 
-Type annotations for
-`aiobotocore.create_client("transcribe").list_language_models` method.
+Type annotations for `session.create_client("transcribe").list_language_models`
+method.
 
 Boto3 documentation:
 [TranscribeService.Client.list_language_models](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_language_models)
@@ -786,8 +781,7 @@ Lists medical transcription jobs with a specified status or substring that
 matches their names.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").list_medical_transcription_jobs`
-method.
+`session.create_client("transcribe").list_medical_transcription_jobs` method.
 
 Boto3 documentation:
 [TranscribeService.Client.list_medical_transcription_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_medical_transcription_jobs)
@@ -816,7 +810,7 @@ Returns a `Coroutine` for
 Returns a list of vocabularies that match the specified criteria.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").list_medical_vocabularies` method.
+`session.create_client("transcribe").list_medical_vocabularies` method.
 
 Boto3 documentation:
 [TranscribeService.Client.list_medical_vocabularies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_medical_vocabularies)
@@ -845,7 +839,7 @@ Lists all tags associated with a given transcription job, vocabulary, or
 resource.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").list_tags_for_resource` method.
+`session.create_client("transcribe").list_tags_for_resource` method.
 
 Boto3 documentation:
 [TranscribeService.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_tags_for_resource)
@@ -870,7 +864,7 @@ Returns a `Coroutine` for
 Lists transcription jobs with the specified status.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").list_transcription_jobs` method.
+`session.create_client("transcribe").list_transcription_jobs` method.
 
 Boto3 documentation:
 [TranscribeService.Client.list_transcription_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_transcription_jobs)
@@ -898,8 +892,8 @@ Returns a `Coroutine` for
 
 Returns a list of vocabularies that match the specified criteria.
 
-Type annotations for
-`aiobotocore.create_client("transcribe").list_vocabularies` method.
+Type annotations for `session.create_client("transcribe").list_vocabularies`
+method.
 
 Boto3 documentation:
 [TranscribeService.Client.list_vocabularies](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_vocabularies)
@@ -926,7 +920,7 @@ Returns a `Coroutine` for
 Gets information about vocabulary filters.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").list_vocabulary_filters` method.
+`session.create_client("transcribe").list_vocabulary_filters` method.
 
 Boto3 documentation:
 [TranscribeService.Client.list_vocabulary_filters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.list_vocabulary_filters)
@@ -954,7 +948,7 @@ Starts an asynchronous analytics job that not only transcribes the audio
 recording of a caller and agent, but also returns additional insights.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").start_call_analytics_job` method.
+`session.create_client("transcribe").start_call_analytics_job` method.
 
 Boto3 documentation:
 [TranscribeService.Client.start_call_analytics_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.start_call_analytics_job)
@@ -987,8 +981,7 @@ Returns a `Coroutine` for
 Starts a batch job to transcribe medical speech to text.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").start_medical_transcription_job`
-method.
+`session.create_client("transcribe").start_medical_transcription_job` method.
 
 Boto3 documentation:
 [TranscribeService.Client.start_medical_transcription_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.start_medical_transcription_job)
@@ -1030,7 +1023,7 @@ Returns a `Coroutine` for
 Starts an asynchronous job to transcribe speech to text.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").start_transcription_job` method.
+`session.create_client("transcribe").start_transcription_job` method.
 
 Boto3 documentation:
 [TranscribeService.Client.start_transcription_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.start_transcription_job)
@@ -1076,8 +1069,7 @@ Returns a `Coroutine` for
 
 Tags an Amazon Transcribe resource with the given list of tags.
 
-Type annotations for `aiobotocore.create_client("transcribe").tag_resource`
-method.
+Type annotations for `session.create_client("transcribe").tag_resource` method.
 
 Boto3 documentation:
 [TranscribeService.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.tag_resource)
@@ -1100,7 +1092,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes specified tags from a specified Amazon Transcribe resource.
 
-Type annotations for `aiobotocore.create_client("transcribe").untag_resource`
+Type annotations for `session.create_client("transcribe").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1125,8 +1117,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the call analytics category with new values.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").update_call_analytics_category`
-method.
+`session.create_client("transcribe").update_call_analytics_category` method.
 
 Boto3 documentation:
 [TranscribeService.Client.update_call_analytics_category](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.update_call_analytics_category)
@@ -1153,7 +1144,7 @@ Updates a vocabulary with new values that you provide in a different text file
 from the one you used to create the vocabulary.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").update_medical_vocabulary` method.
+`session.create_client("transcribe").update_medical_vocabulary` method.
 
 Boto3 documentation:
 [TranscribeService.Client.update_medical_vocabulary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.update_medical_vocabulary)
@@ -1180,8 +1171,8 @@ Returns a `Coroutine` for
 
 Updates an existing vocabulary with new values.
 
-Type annotations for
-`aiobotocore.create_client("transcribe").update_vocabulary` method.
+Type annotations for `session.create_client("transcribe").update_vocabulary`
+method.
 
 Boto3 documentation:
 [TranscribeService.Client.update_vocabulary](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.update_vocabulary)
@@ -1209,7 +1200,7 @@ Returns a `Coroutine` for
 Updates a vocabulary filter with a new list of filtered words.
 
 Type annotations for
-`aiobotocore.create_client("transcribe").update_vocabulary_filter` method.
+`session.create_client("transcribe").update_vocabulary_filter` method.
 
 Boto3 documentation:
 [TranscribeService.Client.update_vocabulary_filter](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.update_vocabulary_filter)
@@ -1228,3 +1219,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [UpdateVocabularyFilterResponseTypeDef](./type_defs.md#updatevocabularyfilterresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("transcribe").__aenter__` method.
+
+Boto3 documentation:
+[TranscribeService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [TranscribeServiceClient](#transcribeserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("transcribe").__aexit__` method.
+
+Boto3 documentation:
+[TranscribeService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html#TranscribeService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

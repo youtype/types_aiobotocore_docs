@@ -18,7 +18,7 @@ type annotations stubs module
 ## TableExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").get_waiter("table_exists")`.
+`session.create_client("dynamodb").get_waiter("table_exists")`.
 
 Can be used directly:
 
@@ -28,7 +28,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_dynamodb.waiter import TableExistsWaiter
 
 def get_table_exists_waiter() -> TableExistsWaiter:
-    return Session().create_client("dynamodb").get_waiter("table_exists")
+    return Session().client("dynamodb").get_waiter("table_exists")
 ```
 
 Boto3 documentation:
@@ -44,7 +44,7 @@ Arguments for `TableExistsWaiter.wait` method:
 ## TableNotExistsWaiter
 
 Type annotations for
-`aiobotocore.create_client("dynamodb").get_waiter("table_not_exists")`.
+`session.create_client("dynamodb").get_waiter("table_not_exists")`.
 
 Can be used directly:
 
@@ -54,7 +54,7 @@ from aiobotocore.session import Session
 from types_aiobotocore_dynamodb.waiter import TableNotExistsWaiter
 
 def get_table_not_exists_waiter() -> TableNotExistsWaiter:
-    return Session().create_client("dynamodb").get_waiter("table_not_exists")
+    return Session().client("dynamodb").get_waiter("table_not_exists")
 ```
 
 Boto3 documentation:

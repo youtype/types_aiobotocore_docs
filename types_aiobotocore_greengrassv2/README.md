@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[greengrassv2]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[greengrassv2]'
+
+# standalone installation
 pip install types-aiobotocore-greengrassv2
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-greengrassv2
 
 ## GreengrassV2Client
 
-Type annotations for `aiobotocore.create_client("greengrassv2")` as
+Type annotations for `session.create_client("greengrassv2")` as
 [GreengrassV2Client](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_greengrassv2.client import GreengrassV2Client
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [batch_associate_client_device_with_core_device](./client.md#batch_associate_client_device_with_core_device)
 - [batch_disassociate_client_device_from_core_device](./client.md#batch_disassociate_client_device_from_core_device)
 - [can_paginate](./client.md#can_paginate)
@@ -96,7 +102,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_greengrassv2.paginators import ListClientDevicesAssociatedWithCoreDevicePaginator, ...
+from types_aiobotocore_greengrassv2.paginator import ListClientDevicesAssociatedWithCoreDevicePaginator, ...
 ```
 
 - [ListClientDevicesAssociatedWithCoreDevicePaginator](./paginators.md#listclientdevicesassociatedwithcoredevicepaginator)

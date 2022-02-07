@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[appsync]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[appsync]'
+
+# standalone installation
 pip install types-aiobotocore-appsync
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-appsync
 
 ## AppSyncClient
 
-Type annotations for `aiobotocore.create_client("appsync")` as
+Type annotations for `session.create_client("appsync")` as
 [AppSyncClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_appsync.client import AppSyncClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [associate_api](./client.md#associate_api)
 - [can_paginate](./client.md#can_paginate)
 - [create_api_cache](./client.md#create_api_cache)
@@ -125,7 +131,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_appsync.paginators import ListApiKeysPaginator, ...
+from types_aiobotocore_appsync.paginator import ListApiKeysPaginator, ...
 ```
 
 - [ListApiKeysPaginator](./paginators.md#listapikeyspaginator)

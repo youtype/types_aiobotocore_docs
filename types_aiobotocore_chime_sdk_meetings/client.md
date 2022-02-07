@@ -27,21 +27,24 @@ type annotations stubs module
     - [list_attendees](#list_attendees)
     - [start_meeting_transcription](#start_meeting_transcription)
     - [stop_meeting_transcription](#stop_meeting_transcription)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="chimesdkmeetingsclient"></a>
 
 ## ChimeSDKMeetingsClient
 
-Type annotations for `aiobotocore.create_client("chime-sdk-meetings")`
+Type annotations for `session.create_client("chime-sdk-meetings")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_chime_sdk_meetings.client import ChimeSDKMeetingsClient
 
-def get_chime-sdk-meetings_client() -> ChimeSDKMeetingsClient:
-    return Session().client("chime-sdk-meetings")
+session = get_session()
+async with session.create_client("chime-sdk-meetings") as client:
+    client: ChimeSDKMeetingsClient
 ```
 
 Boto3 documentation:
@@ -82,8 +85,8 @@ Exceptions:
 
 ChimeSDKMeetingsClient exceptions.
 
-Type annotations for
-`aiobotocore.create_client("chime-sdk-meetings").exceptions` method.
+Type annotations for `session.create_client("chime-sdk-meetings").exceptions`
+method.
 
 Boto3 documentation:
 [ChimeSDKMeetings.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings.Client.exceptions)
@@ -97,7 +100,7 @@ Returns [Exceptions](#exceptions).
 Creates up to 100 attendees for an active Amazon Chime SDK meeting.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-meetings").batch_create_attendee` method.
+`session.create_client("chime-sdk-meetings").batch_create_attendee` method.
 
 Boto3 documentation:
 [ChimeSDKMeetings.Client.batch_create_attendee](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings.Client.batch_create_attendee)
@@ -124,19 +127,17 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for
-`aiobotocore.create_client("chime-sdk-meetings").can_paginate` method.
+Type annotations for `session.create_client("chime-sdk-meetings").can_paginate`
+method.
 
 Boto3 documentation:
 [ChimeSDKMeetings.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_attendee"></a>
 
@@ -145,7 +146,7 @@ Returns a `Coroutine` for `bool`.
 Creates a new attendee for an active Amazon Chime SDK meeting.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-meetings").create_attendee` method.
+`session.create_client("chime-sdk-meetings").create_attendee` method.
 
 Boto3 documentation:
 [ChimeSDKMeetings.Client.create_attendee](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings.Client.create_attendee)
@@ -171,7 +172,7 @@ Creates a new Amazon Chime SDK meeting in the specified media Region with no
 initial attendees.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-meetings").create_meeting` method.
+`session.create_client("chime-sdk-meetings").create_meeting` method.
 
 Boto3 documentation:
 [ChimeSDKMeetings.Client.create_meeting](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings.Client.create_meeting)
@@ -203,7 +204,7 @@ Creates a new Amazon Chime SDK meeting in the specified media Region, with
 attendees.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-meetings").create_meeting_with_attendees`
+`session.create_client("chime-sdk-meetings").create_meeting_with_attendees`
 method.
 
 Boto3 documentation:
@@ -240,7 +241,7 @@ Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
 their `JoinToken`.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-meetings").delete_attendee` method.
+`session.create_client("chime-sdk-meetings").delete_attendee` method.
 
 Boto3 documentation:
 [ChimeSDKMeetings.Client.delete_attendee](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings.Client.delete_attendee)
@@ -262,7 +263,7 @@ Keyword-only arguments:
 Deletes the specified Amazon Chime SDK meeting.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-meetings").delete_meeting` method.
+`session.create_client("chime-sdk-meetings").delete_meeting` method.
 
 Boto3 documentation:
 [ChimeSDKMeetings.Client.delete_meeting](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings.Client.delete_meeting)
@@ -283,8 +284,7 @@ Keyword-only arguments:
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-meetings").generate_presigned_url`
-method.
+`session.create_client("chime-sdk-meetings").generate_presigned_url` method.
 
 Boto3 documentation:
 [ChimeSDKMeetings.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings.Client.generate_presigned_url)
@@ -308,8 +308,8 @@ Returns a `Coroutine` for `str`.
 Gets the Amazon Chime SDK attendee details for a specified meeting ID and
 attendee ID.
 
-Type annotations for
-`aiobotocore.create_client("chime-sdk-meetings").get_attendee` method.
+Type annotations for `session.create_client("chime-sdk-meetings").get_attendee`
+method.
 
 Boto3 documentation:
 [ChimeSDKMeetings.Client.get_attendee](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings.Client.get_attendee)
@@ -333,8 +333,8 @@ Returns a `Coroutine` for
 
 Gets the Amazon Chime SDK meeting details for the specified meeting ID.
 
-Type annotations for
-`aiobotocore.create_client("chime-sdk-meetings").get_meeting` method.
+Type annotations for `session.create_client("chime-sdk-meetings").get_meeting`
+method.
 
 Boto3 documentation:
 [ChimeSDKMeetings.Client.get_meeting](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings.Client.get_meeting)
@@ -358,7 +358,7 @@ Returns a `Coroutine` for
 Lists the attendees for the specified Amazon Chime SDK meeting.
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-meetings").list_attendees` method.
+`session.create_client("chime-sdk-meetings").list_attendees` method.
 
 Boto3 documentation:
 [ChimeSDKMeetings.Client.list_attendees](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings.Client.list_attendees)
@@ -384,7 +384,7 @@ Returns a `Coroutine` for
 Starts transcription for the specified `meetingId` .
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-meetings").start_meeting_transcription`
+`session.create_client("chime-sdk-meetings").start_meeting_transcription`
 method.
 
 Boto3 documentation:
@@ -410,7 +410,7 @@ Keyword-only arguments:
 Stops transcription for the specified `meetingId` .
 
 Type annotations for
-`aiobotocore.create_client("chime-sdk-meetings").stop_meeting_transcription`
+`session.create_client("chime-sdk-meetings").stop_meeting_transcription`
 method.
 
 Boto3 documentation:
@@ -425,3 +425,37 @@ Arguments mapping described in
 Keyword-only arguments:
 
 - `MeetingId`: `str` *(required)*
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("chime-sdk-meetings").__aenter__`
+method.
+
+Boto3 documentation:
+[ChimeSDKMeetings.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [ChimeSDKMeetingsClient](#chimesdkmeetingsclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("chime-sdk-meetings").__aexit__`
+method.
+
+Boto3 documentation:
+[ChimeSDKMeetings.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

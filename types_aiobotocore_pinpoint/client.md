@@ -135,21 +135,24 @@ type annotations stubs module
     - [update_voice_channel](#update_voice_channel)
     - [update_voice_template](#update_voice_template)
     - [verify_otp_message](#verify_otp_message)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
 
 <a id="pinpointclient"></a>
 
 ## PinpointClient
 
-Type annotations for `aiobotocore.create_client("pinpoint")`
+Type annotations for `session.create_client("pinpoint")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_pinpoint.client import PinpointClient
 
-def get_pinpoint_client() -> PinpointClient:
-    return Session().client("pinpoint")
+session = get_session()
+async with session.create_client("pinpoint") as client:
+    client: PinpointClient
 ```
 
 Boto3 documentation:
@@ -191,7 +194,7 @@ Exceptions:
 
 PinpointClient exceptions.
 
-Type annotations for `aiobotocore.create_client("pinpoint").exceptions` method.
+Type annotations for `session.create_client("pinpoint").exceptions` method.
 
 Boto3 documentation:
 [Pinpoint.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.exceptions)
@@ -204,19 +207,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("pinpoint").can_paginate`
-method.
+Type annotations for `session.create_client("pinpoint").can_paginate` method.
 
 Boto3 documentation:
 [Pinpoint.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_app"></a>
 
@@ -224,7 +224,7 @@ Returns a `Coroutine` for `bool`.
 
 Creates an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").create_app` method.
+Type annotations for `session.create_client("pinpoint").create_app` method.
 
 Boto3 documentation:
 [Pinpoint.Client.create_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.create_app)
@@ -250,7 +250,7 @@ Returns a `Coroutine` for
 Creates a new campaign for an application or updates the settings of an
 existing campaign for an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").create_campaign`
+Type annotations for `session.create_client("pinpoint").create_campaign`
 method.
 
 Boto3 documentation:
@@ -278,8 +278,8 @@ Returns a `Coroutine` for
 Creates a message template for messages that are sent through the email
 channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").create_email_template` method.
+Type annotations for `session.create_client("pinpoint").create_email_template`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.create_email_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.create_email_template)
@@ -306,7 +306,7 @@ Returns a `Coroutine` for
 
 Creates an export job for an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").create_export_job`
+Type annotations for `session.create_client("pinpoint").create_export_job`
 method.
 
 Boto3 documentation:
@@ -333,7 +333,7 @@ Returns a `Coroutine` for
 
 Creates an import job for an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").create_import_job`
+Type annotations for `session.create_client("pinpoint").create_import_job`
 method.
 
 Boto3 documentation:
@@ -360,8 +360,8 @@ Returns a `Coroutine` for
 
 Creates a new message template for messages using the in-app message channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").create_in_app_template` method.
+Type annotations for `session.create_client("pinpoint").create_in_app_template`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.create_in_app_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.create_in_app_template)
@@ -388,8 +388,7 @@ Returns a `Coroutine` for
 
 Creates a journey for an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").create_journey`
-method.
+Type annotations for `session.create_client("pinpoint").create_journey` method.
 
 Boto3 documentation:
 [Pinpoint.Client.create_journey](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.create_journey)
@@ -416,8 +415,8 @@ Returns a `Coroutine` for
 Creates a message template for messages that are sent through a push
 notification channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").create_push_template` method.
+Type annotations for `session.create_client("pinpoint").create_push_template`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.create_push_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.create_push_template)
@@ -445,8 +444,7 @@ Returns a `Coroutine` for
 Creates an Amazon Pinpoint configuration for a recommender model.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").create_recommender_configuration`
-method.
+`session.create_client("pinpoint").create_recommender_configuration` method.
 
 Boto3 documentation:
 [Pinpoint.Client.create_recommender_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.create_recommender_configuration)
@@ -474,8 +472,7 @@ Creates a new segment for an application or updates the configuration,
 dimension, and other settings for an existing segment that's associated with an
 application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").create_segment`
-method.
+Type annotations for `session.create_client("pinpoint").create_segment` method.
 
 Boto3 documentation:
 [Pinpoint.Client.create_segment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.create_segment)
@@ -501,8 +498,8 @@ Returns a `Coroutine` for
 
 Creates a message template for messages that are sent through the SMS channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").create_sms_template` method.
+Type annotations for `session.create_client("pinpoint").create_sms_template`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.create_sms_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.create_sms_template)
@@ -530,8 +527,8 @@ Returns a `Coroutine` for
 Creates a message template for messages that are sent through the voice
 channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").create_voice_template` method.
+Type annotations for `session.create_client("pinpoint").create_voice_template`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.create_voice_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.create_voice_template)
@@ -559,7 +556,7 @@ Returns a `Coroutine` for
 Disables the ADM channel for an application and deletes any existing settings
 for the channel.
 
-Type annotations for `aiobotocore.create_client("pinpoint").delete_adm_channel`
+Type annotations for `session.create_client("pinpoint").delete_adm_channel`
 method.
 
 Boto3 documentation:
@@ -585,8 +582,8 @@ Returns a `Coroutine` for
 Disables the APNs channel for an application and deletes any existing settings
 for the channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").delete_apns_channel` method.
+Type annotations for `session.create_client("pinpoint").delete_apns_channel`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_apns_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_apns_channel)
@@ -612,7 +609,7 @@ Disables the APNs sandbox channel for an application and deletes any existing
 settings for the channel.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").delete_apns_sandbox_channel` method.
+`session.create_client("pinpoint").delete_apns_sandbox_channel` method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_apns_sandbox_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_apns_sandbox_channel)
@@ -638,7 +635,7 @@ Disables the APNs VoIP channel for an application and deletes any existing
 settings for the channel.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").delete_apns_voip_channel` method.
+`session.create_client("pinpoint").delete_apns_voip_channel` method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_apns_voip_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_apns_voip_channel)
@@ -664,8 +661,7 @@ Disables the APNs VoIP sandbox channel for an application and deletes any
 existing settings for the channel.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").delete_apns_voip_sandbox_channel`
-method.
+`session.create_client("pinpoint").delete_apns_voip_sandbox_channel` method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_apns_voip_sandbox_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_apns_voip_sandbox_channel)
@@ -689,7 +685,7 @@ Returns a `Coroutine` for
 
 Deletes an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").delete_app` method.
+Type annotations for `session.create_client("pinpoint").delete_app` method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_app)
@@ -713,8 +709,8 @@ Returns a `Coroutine` for
 Disables the Baidu channel for an application and deletes any existing settings
 for the channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").delete_baidu_channel` method.
+Type annotations for `session.create_client("pinpoint").delete_baidu_channel`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_baidu_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_baidu_channel)
@@ -738,7 +734,7 @@ Returns a `Coroutine` for
 
 Deletes a campaign from an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").delete_campaign`
+Type annotations for `session.create_client("pinpoint").delete_campaign`
 method.
 
 Boto3 documentation:
@@ -764,8 +760,8 @@ Returns a `Coroutine` for
 Disables the email channel for an application and deletes any existing settings
 for the channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").delete_email_channel` method.
+Type annotations for `session.create_client("pinpoint").delete_email_channel`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_email_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_email_channel)
@@ -790,8 +786,8 @@ Returns a `Coroutine` for
 Deletes a message template for messages that were sent through the email
 channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").delete_email_template` method.
+Type annotations for `session.create_client("pinpoint").delete_email_template`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_email_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_email_template)
@@ -816,7 +812,7 @@ Returns a `Coroutine` for
 
 Deletes an endpoint from an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").delete_endpoint`
+Type annotations for `session.create_client("pinpoint").delete_endpoint`
 method.
 
 Boto3 documentation:
@@ -841,8 +837,8 @@ Returns a `Coroutine` for
 
 Deletes the event stream for an application.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").delete_event_stream` method.
+Type annotations for `session.create_client("pinpoint").delete_event_stream`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_event_stream](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_event_stream)
@@ -867,7 +863,7 @@ Returns a `Coroutine` for
 Disables the GCM channel for an application and deletes any existing settings
 for the channel.
 
-Type annotations for `aiobotocore.create_client("pinpoint").delete_gcm_channel`
+Type annotations for `session.create_client("pinpoint").delete_gcm_channel`
 method.
 
 Boto3 documentation:
@@ -892,8 +888,8 @@ Returns a `Coroutine` for
 
 Deletes a message template for messages sent using the in-app message channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").delete_in_app_template` method.
+Type annotations for `session.create_client("pinpoint").delete_in_app_template`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_in_app_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_in_app_template)
@@ -918,8 +914,7 @@ Returns a `Coroutine` for
 
 Deletes a journey from an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").delete_journey`
-method.
+Type annotations for `session.create_client("pinpoint").delete_journey` method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_journey](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_journey)
@@ -944,8 +939,8 @@ Returns a `Coroutine` for
 Deletes a message template for messages that were sent through a push
 notification channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").delete_push_template` method.
+Type annotations for `session.create_client("pinpoint").delete_push_template`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_push_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_push_template)
@@ -971,8 +966,7 @@ Returns a `Coroutine` for
 Deletes an Amazon Pinpoint configuration for a recommender model.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").delete_recommender_configuration`
-method.
+`session.create_client("pinpoint").delete_recommender_configuration` method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_recommender_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_recommender_configuration)
@@ -996,8 +990,7 @@ Returns a `Coroutine` for
 
 Deletes a segment from an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").delete_segment`
-method.
+Type annotations for `session.create_client("pinpoint").delete_segment` method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_segment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_segment)
@@ -1022,7 +1015,7 @@ Returns a `Coroutine` for
 Disables the SMS channel for an application and deletes any existing settings
 for the channel.
 
-Type annotations for `aiobotocore.create_client("pinpoint").delete_sms_channel`
+Type annotations for `session.create_client("pinpoint").delete_sms_channel`
 method.
 
 Boto3 documentation:
@@ -1047,8 +1040,8 @@ Returns a `Coroutine` for
 
 Deletes a message template for messages that were sent through the SMS channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").delete_sms_template` method.
+Type annotations for `session.create_client("pinpoint").delete_sms_template`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_sms_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_sms_template)
@@ -1073,8 +1066,8 @@ Returns a `Coroutine` for
 
 Deletes all the endpoints that are associated with a specific user ID.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").delete_user_endpoints` method.
+Type annotations for `session.create_client("pinpoint").delete_user_endpoints`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_user_endpoints](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_user_endpoints)
@@ -1100,8 +1093,8 @@ Returns a `Coroutine` for
 Disables the voice channel for an application and deletes any existing settings
 for the channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").delete_voice_channel` method.
+Type annotations for `session.create_client("pinpoint").delete_voice_channel`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_voice_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_voice_channel)
@@ -1126,8 +1119,8 @@ Returns a `Coroutine` for
 Deletes a message template for messages that were sent through the voice
 channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").delete_voice_template` method.
+Type annotations for `session.create_client("pinpoint").delete_voice_template`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.delete_voice_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.delete_voice_template)
@@ -1152,8 +1145,8 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").generate_presigned_url` method.
+Type annotations for `session.create_client("pinpoint").generate_presigned_url`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.generate_presigned_url)
@@ -1177,7 +1170,7 @@ Returns a `Coroutine` for `str`.
 Retrieves information about the status and settings of the ADM channel for an
 application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_adm_channel`
+Type annotations for `session.create_client("pinpoint").get_adm_channel`
 method.
 
 Boto3 documentation:
@@ -1202,7 +1195,7 @@ Returns a `Coroutine` for
 Retrieves information about the status and settings of the APNs channel for an
 application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_apns_channel`
+Type annotations for `session.create_client("pinpoint").get_apns_channel`
 method.
 
 Boto3 documentation:
@@ -1228,7 +1221,7 @@ Retrieves information about the status and settings of the APNs sandbox channel
 for an application.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").get_apns_sandbox_channel` method.
+`session.create_client("pinpoint").get_apns_sandbox_channel` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_apns_sandbox_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_apns_sandbox_channel)
@@ -1253,8 +1246,8 @@ Returns a `Coroutine` for
 Retrieves information about the status and settings of the APNs VoIP channel
 for an application.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").get_apns_voip_channel` method.
+Type annotations for `session.create_client("pinpoint").get_apns_voip_channel`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_apns_voip_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_apns_voip_channel)
@@ -1280,7 +1273,7 @@ Retrieves information about the status and settings of the APNs VoIP sandbox
 channel for an application.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").get_apns_voip_sandbox_channel` method.
+`session.create_client("pinpoint").get_apns_voip_sandbox_channel` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_apns_voip_sandbox_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_apns_voip_sandbox_channel)
@@ -1304,7 +1297,7 @@ Returns a `Coroutine` for
 
 Retrieves information about an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_app` method.
+Type annotations for `session.create_client("pinpoint").get_app` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_app](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_app)
@@ -1329,7 +1322,7 @@ Retrieves (queries) pre-aggregated data for a standard metric that applies to
 an application.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").get_application_date_range_kpi` method.
+`session.create_client("pinpoint").get_application_date_range_kpi` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_application_date_range_kpi](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_application_date_range_kpi)
@@ -1359,7 +1352,7 @@ Returns a `Coroutine` for
 Retrieves information about the settings for an application.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").get_application_settings` method.
+`session.create_client("pinpoint").get_application_settings` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_application_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_application_settings)
@@ -1384,7 +1377,7 @@ Returns a `Coroutine` for
 Retrieves information about all the applications that are associated with your
 Amazon Pinpoint account.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_apps` method.
+Type annotations for `session.create_client("pinpoint").get_apps` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_apps](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_apps)
@@ -1409,7 +1402,7 @@ Returns a `Coroutine` for
 Retrieves information about the status and settings of the Baidu channel for an
 application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_baidu_channel`
+Type annotations for `session.create_client("pinpoint").get_baidu_channel`
 method.
 
 Boto3 documentation:
@@ -1434,8 +1427,7 @@ Returns a `Coroutine` for
 Retrieves information about the status, configuration, and other settings for a
 campaign.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_campaign`
-method.
+Type annotations for `session.create_client("pinpoint").get_campaign` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_campaign](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_campaign)
@@ -1460,7 +1452,7 @@ Returns a `Coroutine` for
 Retrieves information about all the activities for a campaign.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").get_campaign_activities` method.
+`session.create_client("pinpoint").get_campaign_activities` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_campaign_activities](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_campaign_activities)
@@ -1489,7 +1481,7 @@ Retrieves (queries) pre-aggregated data for a standard metric that applies to a
 campaign.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").get_campaign_date_range_kpi` method.
+`session.create_client("pinpoint").get_campaign_date_range_kpi` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_campaign_date_range_kpi](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_campaign_date_range_kpi)
@@ -1520,8 +1512,8 @@ Returns a `Coroutine` for
 Retrieves information about the status, configuration, and other settings for a
 specific version of a campaign.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").get_campaign_version` method.
+Type annotations for `session.create_client("pinpoint").get_campaign_version`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_campaign_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_campaign_version)
@@ -1548,8 +1540,8 @@ Returns a `Coroutine` for
 Retrieves information about the status, configuration, and other settings for
 all versions of a campaign.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").get_campaign_versions` method.
+Type annotations for `session.create_client("pinpoint").get_campaign_versions`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_campaign_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_campaign_versions)
@@ -1577,8 +1569,7 @@ Returns a `Coroutine` for
 Retrieves information about the status, configuration, and other settings for
 all the campaigns that are associated with an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_campaigns`
-method.
+Type annotations for `session.create_client("pinpoint").get_campaigns` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_campaigns](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_campaigns)
@@ -1604,8 +1595,7 @@ Returns a `Coroutine` for
 Retrieves information about the history and status of each channel for an
 application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_channels`
-method.
+Type annotations for `session.create_client("pinpoint").get_channels` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_channels](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_channels)
@@ -1629,7 +1619,7 @@ Returns a `Coroutine` for
 Retrieves information about the status and settings of the email channel for an
 application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_email_channel`
+Type annotations for `session.create_client("pinpoint").get_email_channel`
 method.
 
 Boto3 documentation:
@@ -1654,7 +1644,7 @@ Returns a `Coroutine` for
 Retrieves the content and settings of a message template for messages that are
 sent through the email channel.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_email_template`
+Type annotations for `session.create_client("pinpoint").get_email_template`
 method.
 
 Boto3 documentation:
@@ -1681,8 +1671,7 @@ Returns a `Coroutine` for
 Retrieves information about the settings and attributes of a specific endpoint
 for an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_endpoint`
-method.
+Type annotations for `session.create_client("pinpoint").get_endpoint` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_endpoint](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_endpoint)
@@ -1706,7 +1695,7 @@ Returns a `Coroutine` for
 
 Retrieves information about the event stream settings for an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_event_stream`
+Type annotations for `session.create_client("pinpoint").get_event_stream`
 method.
 
 Boto3 documentation:
@@ -1731,8 +1720,7 @@ Returns a `Coroutine` for
 Retrieves information about the status and settings of a specific export job
 for an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_export_job`
-method.
+Type annotations for `session.create_client("pinpoint").get_export_job` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_export_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_export_job)
@@ -1757,7 +1745,7 @@ Returns a `Coroutine` for
 Retrieves information about the status and settings of all the export jobs for
 an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_export_jobs`
+Type annotations for `session.create_client("pinpoint").get_export_jobs`
 method.
 
 Boto3 documentation:
@@ -1784,7 +1772,7 @@ Returns a `Coroutine` for
 Retrieves information about the status and settings of the GCM channel for an
 application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_gcm_channel`
+Type annotations for `session.create_client("pinpoint").get_gcm_channel`
 method.
 
 Boto3 documentation:
@@ -1809,8 +1797,7 @@ Returns a `Coroutine` for
 Retrieves information about the status and settings of a specific import job
 for an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_import_job`
-method.
+Type annotations for `session.create_client("pinpoint").get_import_job` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_import_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_import_job)
@@ -1835,7 +1822,7 @@ Returns a `Coroutine` for
 Retrieves information about the status and settings of all the import jobs for
 an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_import_jobs`
+Type annotations for `session.create_client("pinpoint").get_import_jobs`
 method.
 
 Boto3 documentation:
@@ -1861,8 +1848,8 @@ Returns a `Coroutine` for
 
 Retrieves the in-app messages targeted for the provided endpoint ID.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").get_in_app_messages` method.
+Type annotations for `session.create_client("pinpoint").get_in_app_messages`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_in_app_messages](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_in_app_messages)
@@ -1888,8 +1875,8 @@ Returns a `Coroutine` for
 Retrieves the content and settings of a message template for messages sent
 through the in-app channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").get_in_app_template` method.
+Type annotations for `session.create_client("pinpoint").get_in_app_template`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_in_app_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_in_app_template)
@@ -1915,8 +1902,7 @@ Returns a `Coroutine` for
 Retrieves information about the status, configuration, and other settings for a
 journey.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_journey`
-method.
+Type annotations for `session.create_client("pinpoint").get_journey` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_journey](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_journey)
@@ -1942,7 +1928,7 @@ Retrieves (queries) pre-aggregated data for a standard engagement metric that
 applies to a journey.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").get_journey_date_range_kpi` method.
+`session.create_client("pinpoint").get_journey_date_range_kpi` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_journey_date_range_kpi](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_journey_date_range_kpi)
@@ -1974,7 +1960,7 @@ Retrieves (queries) pre-aggregated data for a standard execution metric that
 applies to a journey activity.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").get_journey_execution_activity_metrics`
+`session.create_client("pinpoint").get_journey_execution_activity_metrics`
 method.
 
 Boto3 documentation:
@@ -2005,7 +1991,7 @@ Retrieves (queries) pre-aggregated data for a standard execution metric that
 applies to a journey.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").get_journey_execution_metrics` method.
+`session.create_client("pinpoint").get_journey_execution_metrics` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_journey_execution_metrics](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_journey_execution_metrics)
@@ -2033,7 +2019,7 @@ Returns a `Coroutine` for
 Retrieves the content and settings of a message template for messages that are
 sent through a push notification channel.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_push_template`
+Type annotations for `session.create_client("pinpoint").get_push_template`
 method.
 
 Boto3 documentation:
@@ -2060,7 +2046,7 @@ Retrieves information about an Amazon Pinpoint configuration for a recommender
 model.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").get_recommender_configuration` method.
+`session.create_client("pinpoint").get_recommender_configuration` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_recommender_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_recommender_configuration)
@@ -2086,7 +2072,7 @@ Retrieves information about all the recommender model configurations that are
 associated with your Amazon Pinpoint account.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").get_recommender_configurations` method.
+`session.create_client("pinpoint").get_recommender_configurations` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_recommender_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_recommender_configurations)
@@ -2112,8 +2098,7 @@ Returns a `Coroutine` for
 Retrieves information about the configuration, dimension, and other settings
 for a specific segment that's associated with an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_segment`
-method.
+Type annotations for `session.create_client("pinpoint").get_segment` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_segment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_segment)
@@ -2139,7 +2124,7 @@ Retrieves information about the status and settings of the export jobs for a
 segment.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").get_segment_export_jobs` method.
+`session.create_client("pinpoint").get_segment_export_jobs` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_segment_export_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_segment_export_jobs)
@@ -2168,7 +2153,7 @@ Retrieves information about the status and settings of the import jobs for a
 segment.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").get_segment_import_jobs` method.
+`session.create_client("pinpoint").get_segment_import_jobs` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_segment_import_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_segment_import_jobs)
@@ -2196,8 +2181,8 @@ Returns a `Coroutine` for
 Retrieves information about the configuration, dimension, and other settings
 for a specific version of a segment that's associated with an application.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").get_segment_version` method.
+Type annotations for `session.create_client("pinpoint").get_segment_version`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_segment_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_segment_version)
@@ -2225,8 +2210,8 @@ Retrieves information about the configuration, dimension, and other settings
 for all the versions of a specific segment that's associated with an
 application.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").get_segment_versions` method.
+Type annotations for `session.create_client("pinpoint").get_segment_versions`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_segment_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_segment_versions)
@@ -2254,8 +2239,7 @@ Returns a `Coroutine` for
 Retrieves information about the configuration, dimension, and other settings
 for all the segments that are associated with an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_segments`
-method.
+Type annotations for `session.create_client("pinpoint").get_segments` method.
 
 Boto3 documentation:
 [Pinpoint.Client.get_segments](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.get_segments)
@@ -2281,7 +2265,7 @@ Returns a `Coroutine` for
 Retrieves information about the status and settings of the SMS channel for an
 application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_sms_channel`
+Type annotations for `session.create_client("pinpoint").get_sms_channel`
 method.
 
 Boto3 documentation:
@@ -2306,7 +2290,7 @@ Returns a `Coroutine` for
 Retrieves the content and settings of a message template for messages that are
 sent through the SMS channel.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_sms_template`
+Type annotations for `session.create_client("pinpoint").get_sms_template`
 method.
 
 Boto3 documentation:
@@ -2332,7 +2316,7 @@ Returns a `Coroutine` for
 Retrieves information about all the endpoints that are associated with a
 specific user ID.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_user_endpoints`
+Type annotations for `session.create_client("pinpoint").get_user_endpoints`
 method.
 
 Boto3 documentation:
@@ -2359,7 +2343,7 @@ Returns a `Coroutine` for
 Retrieves information about the status and settings of the voice channel for an
 application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_voice_channel`
+Type annotations for `session.create_client("pinpoint").get_voice_channel`
 method.
 
 Boto3 documentation:
@@ -2384,7 +2368,7 @@ Returns a `Coroutine` for
 Retrieves the content and settings of a message template for messages that are
 sent through the voice channel.
 
-Type annotations for `aiobotocore.create_client("pinpoint").get_voice_template`
+Type annotations for `session.create_client("pinpoint").get_voice_template`
 method.
 
 Boto3 documentation:
@@ -2411,8 +2395,7 @@ Returns a `Coroutine` for
 Retrieves information about the status, configuration, and other settings for
 all the journeys that are associated with an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").list_journeys`
-method.
+Type annotations for `session.create_client("pinpoint").list_journeys` method.
 
 Boto3 documentation:
 [Pinpoint.Client.list_journeys](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.list_journeys)
@@ -2438,8 +2421,8 @@ Returns a `Coroutine` for
 Retrieves all the tags (keys and values) that are associated with an
 application, campaign, message template, or segment.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").list_tags_for_resource` method.
+Type annotations for `session.create_client("pinpoint").list_tags_for_resource`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.list_tags_for_resource)
@@ -2463,8 +2446,8 @@ Returns a `Coroutine` for
 
 Retrieves information about all the versions of a specific message template.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").list_template_versions` method.
+Type annotations for `session.create_client("pinpoint").list_template_versions`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.list_template_versions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.list_template_versions)
@@ -2492,8 +2475,7 @@ Returns a `Coroutine` for
 Retrieves information about all the message templates that are associated with
 your Amazon Pinpoint account.
 
-Type annotations for `aiobotocore.create_client("pinpoint").list_templates`
-method.
+Type annotations for `session.create_client("pinpoint").list_templates` method.
 
 Boto3 documentation:
 [Pinpoint.Client.list_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.list_templates)
@@ -2519,8 +2501,8 @@ Returns a `Coroutine` for
 
 Retrieves information about a phone number.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").phone_number_validate` method.
+Type annotations for `session.create_client("pinpoint").phone_number_validate`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.phone_number_validate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.phone_number_validate)
@@ -2547,7 +2529,7 @@ Returns a `Coroutine` for
 Creates a new event stream for an application or updates the settings of an
 existing event stream for an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").put_event_stream`
+Type annotations for `session.create_client("pinpoint").put_event_stream`
 method.
 
 Boto3 documentation:
@@ -2575,7 +2557,7 @@ Returns a `Coroutine` for
 Creates a new event to record for endpoints, or creates or updates endpoint
 data that existing events are associated with.
 
-Type annotations for `aiobotocore.create_client("pinpoint").put_events` method.
+Type annotations for `session.create_client("pinpoint").put_events` method.
 
 Boto3 documentation:
 [Pinpoint.Client.put_events](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.put_events)
@@ -2601,7 +2583,7 @@ Returns a `Coroutine` for
 Removes one or more attributes, of the same attribute type, from all the
 endpoints that are associated with an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").remove_attributes`
+Type annotations for `session.create_client("pinpoint").remove_attributes`
 method.
 
 Boto3 documentation:
@@ -2629,8 +2611,7 @@ Returns a `Coroutine` for
 
 Creates and sends a direct message.
 
-Type annotations for `aiobotocore.create_client("pinpoint").send_messages`
-method.
+Type annotations for `session.create_client("pinpoint").send_messages` method.
 
 Boto3 documentation:
 [Pinpoint.Client.send_messages](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.send_messages)
@@ -2656,7 +2637,7 @@ Returns a `Coroutine` for
 Send an OTP message See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendOTPMessage).
 
-Type annotations for `aiobotocore.create_client("pinpoint").send_otp_message`
+Type annotations for `session.create_client("pinpoint").send_otp_message`
 method.
 
 Boto3 documentation:
@@ -2683,8 +2664,8 @@ Returns a `Coroutine` for
 
 Creates and sends a message to a list of users.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").send_users_messages` method.
+Type annotations for `session.create_client("pinpoint").send_users_messages`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.send_users_messages](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.send_users_messages)
@@ -2712,8 +2693,7 @@ Returns a `Coroutine` for
 Adds one or more tags (keys and values) to an application, campaign, message
 template, or segment.
 
-Type annotations for `aiobotocore.create_client("pinpoint").tag_resource`
-method.
+Type annotations for `session.create_client("pinpoint").tag_resource` method.
 
 Boto3 documentation:
 [Pinpoint.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.tag_resource)
@@ -2735,8 +2715,7 @@ Keyword-only arguments:
 Removes one or more tags (keys and values) from an application, campaign,
 message template, or segment.
 
-Type annotations for `aiobotocore.create_client("pinpoint").untag_resource`
-method.
+Type annotations for `session.create_client("pinpoint").untag_resource` method.
 
 Boto3 documentation:
 [Pinpoint.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.untag_resource)
@@ -2758,7 +2737,7 @@ Keyword-only arguments:
 Enables the ADM channel for an application or updates the status and settings
 of the ADM channel for an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").update_adm_channel`
+Type annotations for `session.create_client("pinpoint").update_adm_channel`
 method.
 
 Boto3 documentation:
@@ -2787,8 +2766,8 @@ Returns a `Coroutine` for
 Enables the APNs channel for an application or updates the status and settings
 of the APNs channel for an application.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").update_apns_channel` method.
+Type annotations for `session.create_client("pinpoint").update_apns_channel`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_apns_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_apns_channel)
@@ -2817,7 +2796,7 @@ Enables the APNs sandbox channel for an application or updates the status and
 settings of the APNs sandbox channel for an application.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").update_apns_sandbox_channel` method.
+`session.create_client("pinpoint").update_apns_sandbox_channel` method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_apns_sandbox_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_apns_sandbox_channel)
@@ -2846,7 +2825,7 @@ Enables the APNs VoIP channel for an application or updates the status and
 settings of the APNs VoIP channel for an application.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").update_apns_voip_channel` method.
+`session.create_client("pinpoint").update_apns_voip_channel` method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_apns_voip_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_apns_voip_channel)
@@ -2875,8 +2854,7 @@ Enables the APNs VoIP sandbox channel for an application or updates the status
 and settings of the APNs VoIP sandbox channel for an application.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").update_apns_voip_sandbox_channel`
-method.
+`session.create_client("pinpoint").update_apns_voip_sandbox_channel` method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_apns_voip_sandbox_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_apns_voip_sandbox_channel)
@@ -2904,7 +2882,7 @@ Returns a `Coroutine` for
 Updates the settings for an application.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").update_application_settings` method.
+`session.create_client("pinpoint").update_application_settings` method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_application_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_application_settings)
@@ -2932,8 +2910,8 @@ Returns a `Coroutine` for
 Enables the Baidu channel for an application or updates the status and settings
 of the Baidu channel for an application.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").update_baidu_channel` method.
+Type annotations for `session.create_client("pinpoint").update_baidu_channel`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_baidu_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_baidu_channel)
@@ -2960,7 +2938,7 @@ Returns a `Coroutine` for
 
 Updates the configuration and other settings for a campaign.
 
-Type annotations for `aiobotocore.create_client("pinpoint").update_campaign`
+Type annotations for `session.create_client("pinpoint").update_campaign`
 method.
 
 Boto3 documentation:
@@ -2989,8 +2967,8 @@ Returns a `Coroutine` for
 Enables the email channel for an application or updates the status and settings
 of the email channel for an application.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").update_email_channel` method.
+Type annotations for `session.create_client("pinpoint").update_email_channel`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_email_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_email_channel)
@@ -3018,8 +2996,8 @@ Returns a `Coroutine` for
 Updates an existing message template for messages that are sent through the
 email channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").update_email_template` method.
+Type annotations for `session.create_client("pinpoint").update_email_template`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_email_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_email_template)
@@ -3049,7 +3027,7 @@ Returns a `Coroutine` for
 Creates a new endpoint for an application or updates the settings and
 attributes of an existing endpoint for an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").update_endpoint`
+Type annotations for `session.create_client("pinpoint").update_endpoint`
 method.
 
 Boto3 documentation:
@@ -3077,8 +3055,8 @@ Returns a `Coroutine` for
 Creates a new batch of endpoints for an application or updates the settings and
 attributes of a batch of existing endpoints for an application.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").update_endpoints_batch` method.
+Type annotations for `session.create_client("pinpoint").update_endpoints_batch`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_endpoints_batch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_endpoints_batch)
@@ -3106,7 +3084,7 @@ Returns a `Coroutine` for
 Enables the GCM channel for an application or updates the status and settings
 of the GCM channel for an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").update_gcm_channel`
+Type annotations for `session.create_client("pinpoint").update_gcm_channel`
 method.
 
 Boto3 documentation:
@@ -3135,8 +3113,8 @@ Returns a `Coroutine` for
 Updates an existing message template for messages sent through the in-app
 message channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").update_in_app_template` method.
+Type annotations for `session.create_client("pinpoint").update_in_app_template`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_in_app_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_in_app_template)
@@ -3165,8 +3143,7 @@ Returns a `Coroutine` for
 
 Updates the configuration and other settings for a journey.
 
-Type annotations for `aiobotocore.create_client("pinpoint").update_journey`
-method.
+Type annotations for `session.create_client("pinpoint").update_journey` method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_journey](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_journey)
@@ -3193,8 +3170,8 @@ Returns a `Coroutine` for
 
 Cancels (stops) an active journey.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").update_journey_state` method.
+Type annotations for `session.create_client("pinpoint").update_journey_state`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_journey_state](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_journey_state)
@@ -3223,8 +3200,8 @@ Returns a `Coroutine` for
 Updates an existing message template for messages that are sent through a push
 notification channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").update_push_template` method.
+Type annotations for `session.create_client("pinpoint").update_push_template`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_push_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_push_template)
@@ -3254,8 +3231,7 @@ Returns a `Coroutine` for
 Updates an Amazon Pinpoint configuration for a recommender model.
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").update_recommender_configuration`
-method.
+`session.create_client("pinpoint").update_recommender_configuration` method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_recommender_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_recommender_configuration)
@@ -3284,8 +3260,7 @@ Creates a new segment for an application or updates the configuration,
 dimension, and other settings for an existing segment that's associated with an
 application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").update_segment`
-method.
+Type annotations for `session.create_client("pinpoint").update_segment` method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_segment](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_segment)
@@ -3313,7 +3288,7 @@ Returns a `Coroutine` for
 Enables the SMS channel for an application or updates the status and settings
 of the SMS channel for an application.
 
-Type annotations for `aiobotocore.create_client("pinpoint").update_sms_channel`
+Type annotations for `session.create_client("pinpoint").update_sms_channel`
 method.
 
 Boto3 documentation:
@@ -3342,8 +3317,8 @@ Returns a `Coroutine` for
 Updates an existing message template for messages that are sent through the SMS
 channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").update_sms_template` method.
+Type annotations for `session.create_client("pinpoint").update_sms_template`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_sms_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_sms_template)
@@ -3373,7 +3348,7 @@ Returns a `Coroutine` for
 Changes the status of a specific version of a message template to *active* .
 
 Type annotations for
-`aiobotocore.create_client("pinpoint").update_template_active_version` method.
+`session.create_client("pinpoint").update_template_active_version` method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_template_active_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_template_active_version)
@@ -3402,8 +3377,8 @@ Returns a `Coroutine` for
 Enables the voice channel for an application or updates the status and settings
 of the voice channel for an application.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").update_voice_channel` method.
+Type annotations for `session.create_client("pinpoint").update_voice_channel`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_voice_channel](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_voice_channel)
@@ -3431,8 +3406,8 @@ Returns a `Coroutine` for
 Updates an existing message template for messages that are sent through the
 voice channel.
 
-Type annotations for
-`aiobotocore.create_client("pinpoint").update_voice_template` method.
+Type annotations for `session.create_client("pinpoint").update_voice_template`
+method.
 
 Boto3 documentation:
 [Pinpoint.Client.update_voice_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.update_voice_template)
@@ -3462,7 +3437,7 @@ Returns a `Coroutine` for
 Verify an OTP See also:
 [AWS API Documentation](https://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/VerifyOTPMessage).
 
-Type annotations for `aiobotocore.create_client("pinpoint").verify_otp_message`
+Type annotations for `session.create_client("pinpoint").verify_otp_message`
 method.
 
 Boto3 documentation:
@@ -3483,3 +3458,35 @@ Keyword-only arguments:
 
 Returns a `Coroutine` for
 [VerifyOTPMessageResponseTypeDef](./type_defs.md#verifyotpmessageresponsetypedef).
+
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("pinpoint").__aenter__` method.
+
+Boto3 documentation:
+[Pinpoint.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [PinpointClient](#pinpointclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("pinpoint").__aexit__` method.
+
+Boto3 documentation:
+[Pinpoint.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pinpoint.html#Pinpoint.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.

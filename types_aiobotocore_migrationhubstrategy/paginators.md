@@ -21,17 +21,19 @@ type annotations stubs module
 ## GetServerDetailsPaginator
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").get_paginator("get_server_details")`.
+`session.create_client("migrationhubstrategy").get_paginator("get_server_details")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_migrationhubstrategy.paginator import GetServerDetailsPaginator
 
-def get_get_server_details_paginator() -> GetServerDetailsPaginator:
-    return Session().create_client("migrationhubstrategy").get_paginator("get_server_details")
+session = get_session()
+async with session.create_client("migrationhubstrategy") as client:
+    client: MigrationHubStrategyRecommendationsClient
+    paginator: GetServerDetailsPaginator = client.get_paginator("get_server_details")
 ```
 
 Boto3 documentation:
@@ -51,17 +53,19 @@ Arguments for `GetServerDetailsPaginator.paginate` method:
 ## ListApplicationComponentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").get_paginator("list_application_components")`.
+`session.create_client("migrationhubstrategy").get_paginator("list_application_components")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_migrationhubstrategy.paginator import ListApplicationComponentsPaginator
 
-def get_list_application_components_paginator() -> ListApplicationComponentsPaginator:
-    return Session().create_client("migrationhubstrategy").get_paginator("list_application_components")
+session = get_session()
+async with session.create_client("migrationhubstrategy") as client:
+    client: MigrationHubStrategyRecommendationsClient
+    paginator: ListApplicationComponentsPaginator = client.get_paginator("list_application_components")
 ```
 
 Boto3 documentation:
@@ -85,17 +89,19 @@ Arguments for `ListApplicationComponentsPaginator.paginate` method:
 ## ListCollectorsPaginator
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").get_paginator("list_collectors")`.
+`session.create_client("migrationhubstrategy").get_paginator("list_collectors")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_migrationhubstrategy.paginator import ListCollectorsPaginator
 
-def get_list_collectors_paginator() -> ListCollectorsPaginator:
-    return Session().create_client("migrationhubstrategy").get_paginator("list_collectors")
+session = get_session()
+async with session.create_client("migrationhubstrategy") as client:
+    client: MigrationHubStrategyRecommendationsClient
+    paginator: ListCollectorsPaginator = client.get_paginator("list_collectors")
 ```
 
 Boto3 documentation:
@@ -114,17 +120,19 @@ Arguments for `ListCollectorsPaginator.paginate` method:
 ## ListImportFileTaskPaginator
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").get_paginator("list_import_file_task")`.
+`session.create_client("migrationhubstrategy").get_paginator("list_import_file_task")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_migrationhubstrategy.paginator import ListImportFileTaskPaginator
 
-def get_list_import_file_task_paginator() -> ListImportFileTaskPaginator:
-    return Session().create_client("migrationhubstrategy").get_paginator("list_import_file_task")
+session = get_session()
+async with session.create_client("migrationhubstrategy") as client:
+    client: MigrationHubStrategyRecommendationsClient
+    paginator: ListImportFileTaskPaginator = client.get_paginator("list_import_file_task")
 ```
 
 Boto3 documentation:
@@ -143,17 +151,19 @@ Arguments for `ListImportFileTaskPaginator.paginate` method:
 ## ListServersPaginator
 
 Type annotations for
-`aiobotocore.create_client("migrationhubstrategy").get_paginator("list_servers")`.
+`session.create_client("migrationhubstrategy").get_paginator("list_servers")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_migrationhubstrategy.paginator import ListServersPaginator
 
-def get_list_servers_paginator() -> ListServersPaginator:
-    return Session().create_client("migrationhubstrategy").get_paginator("list_servers")
+session = get_session()
+async with session.create_client("migrationhubstrategy") as client:
+    client: MigrationHubStrategyRecommendationsClient
+    paginator: ListServersPaginator = client.get_paginator("list_servers")
 ```
 
 Boto3 documentation:

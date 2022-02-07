@@ -73,22 +73,25 @@ type annotations stubs module
     - [update_robot_application](#update_robot_application)
     - [update_simulation_application](#update_simulation_application)
     - [update_world_template](#update_world_template)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="robomakerclient"></a>
 
 ## RoboMakerClient
 
-Type annotations for `aiobotocore.create_client("robomaker")`
+Type annotations for `session.create_client("robomaker")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_robomaker.client import RoboMakerClient
 
-def get_robomaker_client() -> RoboMakerClient:
-    return Session().client("robomaker")
+session = get_session()
+async with session.create_client("robomaker") as client:
+    client: RoboMakerClient
 ```
 
 Boto3 documentation:
@@ -131,8 +134,7 @@ Exceptions:
 
 RoboMakerClient exceptions.
 
-Type annotations for `aiobotocore.create_client("robomaker").exceptions`
-method.
+Type annotations for `session.create_client("robomaker").exceptions` method.
 
 Boto3 documentation:
 [RoboMaker.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.exceptions)
@@ -145,8 +147,8 @@ Returns [Exceptions](#exceptions).
 
 Deletes one or more worlds in a batch operation.
 
-Type annotations for
-`aiobotocore.create_client("robomaker").batch_delete_worlds` method.
+Type annotations for `session.create_client("robomaker").batch_delete_worlds`
+method.
 
 Boto3 documentation:
 [RoboMaker.Client.batch_delete_worlds](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.batch_delete_worlds)
@@ -171,7 +173,7 @@ Returns a `Coroutine` for
 Describes one or more simulation jobs.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").batch_describe_simulation_job` method.
+`session.create_client("robomaker").batch_describe_simulation_job` method.
 
 Boto3 documentation:
 [RoboMaker.Client.batch_describe_simulation_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.batch_describe_simulation_job)
@@ -195,19 +197,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("robomaker").can_paginate`
-method.
+Type annotations for `session.create_client("robomaker").can_paginate` method.
 
 Boto3 documentation:
 [RoboMaker.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_deployment_job"></a>
 
@@ -215,8 +214,8 @@ Returns a `Coroutine` for `bool`.
 
 Cancels the specified deployment job.
 
-Type annotations for
-`aiobotocore.create_client("robomaker").cancel_deployment_job` method.
+Type annotations for `session.create_client("robomaker").cancel_deployment_job`
+method.
 
 Boto3 documentation:
 [RoboMaker.Client.cancel_deployment_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.cancel_deployment_job)
@@ -239,8 +238,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Cancels the specified simulation job.
 
-Type annotations for
-`aiobotocore.create_client("robomaker").cancel_simulation_job` method.
+Type annotations for `session.create_client("robomaker").cancel_simulation_job`
+method.
 
 Boto3 documentation:
 [RoboMaker.Client.cancel_simulation_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.cancel_simulation_job)
@@ -264,7 +263,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Cancels a simulation job batch.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").cancel_simulation_job_batch` method.
+`session.create_client("robomaker").cancel_simulation_job_batch` method.
 
 Boto3 documentation:
 [RoboMaker.Client.cancel_simulation_job_batch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.cancel_simulation_job_batch)
@@ -288,7 +287,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Cancels the specified export job.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").cancel_world_export_job` method.
+`session.create_client("robomaker").cancel_world_export_job` method.
 
 Boto3 documentation:
 [RoboMaker.Client.cancel_world_export_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.cancel_world_export_job)
@@ -312,7 +311,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Cancels the specified world generator job.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").cancel_world_generation_job` method.
+`session.create_client("robomaker").cancel_world_generation_job` method.
 
 Boto3 documentation:
 [RoboMaker.Client.cancel_world_generation_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.cancel_world_generation_job)
@@ -335,8 +334,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deploys a specific version of a robot application to robots in a fleet.
 
-Type annotations for
-`aiobotocore.create_client("robomaker").create_deployment_job` method.
+Type annotations for `session.create_client("robomaker").create_deployment_job`
+method.
 
 Boto3 documentation:
 [RoboMaker.Client.create_deployment_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.create_deployment_job)
@@ -367,8 +366,7 @@ Returns a `Coroutine` for
 
 Creates a fleet, a logical group of robots running the same robot application.
 
-Type annotations for `aiobotocore.create_client("robomaker").create_fleet`
-method.
+Type annotations for `session.create_client("robomaker").create_fleet` method.
 
 Boto3 documentation:
 [RoboMaker.Client.create_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.create_fleet)
@@ -392,8 +390,7 @@ Returns a `Coroutine` for
 
 Creates a robot.
 
-Type annotations for `aiobotocore.create_client("robomaker").create_robot`
-method.
+Type annotations for `session.create_client("robomaker").create_robot` method.
 
 Boto3 documentation:
 [RoboMaker.Client.create_robot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.create_robot)
@@ -421,7 +418,7 @@ Returns a `Coroutine` for
 Creates a robot application.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").create_robot_application` method.
+`session.create_client("robomaker").create_robot_application` method.
 
 Boto3 documentation:
 [RoboMaker.Client.create_robot_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.create_robot_application)
@@ -453,8 +450,7 @@ Returns a `Coroutine` for
 Creates a version of a robot application.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").create_robot_application_version`
-method.
+`session.create_client("robomaker").create_robot_application_version` method.
 
 Boto3 documentation:
 [RoboMaker.Client.create_robot_application_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.create_robot_application_version)
@@ -482,7 +478,7 @@ Returns a `Coroutine` for
 Creates a simulation application.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").create_simulation_application` method.
+`session.create_client("robomaker").create_simulation_application` method.
 
 Boto3 documentation:
 [RoboMaker.Client.create_simulation_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.create_simulation_application)
@@ -519,7 +515,7 @@ Returns a `Coroutine` for
 Creates a simulation application with a specific revision id.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").create_simulation_application_version`
+`session.create_client("robomaker").create_simulation_application_version`
 method.
 
 Boto3 documentation:
@@ -547,8 +543,8 @@ Returns a `Coroutine` for
 
 Creates a simulation job.
 
-Type annotations for
-`aiobotocore.create_client("robomaker").create_simulation_job` method.
+Type annotations for `session.create_client("robomaker").create_simulation_job`
+method.
 
 Boto3 documentation:
 [RoboMaker.Client.create_simulation_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.create_simulation_job)
@@ -588,7 +584,7 @@ Returns a `Coroutine` for
 Creates a world export job.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").create_world_export_job` method.
+`session.create_client("robomaker").create_world_export_job` method.
 
 Boto3 documentation:
 [RoboMaker.Client.create_world_export_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.create_world_export_job)
@@ -618,7 +614,7 @@ Returns a `Coroutine` for
 Creates worlds using the specified template.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").create_world_generation_job` method.
+`session.create_client("robomaker").create_world_generation_job` method.
 
 Boto3 documentation:
 [RoboMaker.Client.create_world_generation_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.create_world_generation_job)
@@ -647,8 +643,8 @@ Returns a `Coroutine` for
 
 Creates a world template.
 
-Type annotations for
-`aiobotocore.create_client("robomaker").create_world_template` method.
+Type annotations for `session.create_client("robomaker").create_world_template`
+method.
 
 Boto3 documentation:
 [RoboMaker.Client.create_world_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.create_world_template)
@@ -677,8 +673,7 @@ Returns a `Coroutine` for
 
 Deletes a fleet.
 
-Type annotations for `aiobotocore.create_client("robomaker").delete_fleet`
-method.
+Type annotations for `session.create_client("robomaker").delete_fleet` method.
 
 Boto3 documentation:
 [RoboMaker.Client.delete_fleet](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.delete_fleet)
@@ -700,8 +695,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a robot.
 
-Type annotations for `aiobotocore.create_client("robomaker").delete_robot`
-method.
+Type annotations for `session.create_client("robomaker").delete_robot` method.
 
 Boto3 documentation:
 [RoboMaker.Client.delete_robot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.delete_robot)
@@ -724,7 +718,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a robot application.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").delete_robot_application` method.
+`session.create_client("robomaker").delete_robot_application` method.
 
 Boto3 documentation:
 [RoboMaker.Client.delete_robot_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.delete_robot_application)
@@ -749,7 +743,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Deletes a simulation application.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").delete_simulation_application` method.
+`session.create_client("robomaker").delete_simulation_application` method.
 
 Boto3 documentation:
 [RoboMaker.Client.delete_simulation_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.delete_simulation_application)
@@ -773,8 +767,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a world template.
 
-Type annotations for
-`aiobotocore.create_client("robomaker").delete_world_template` method.
+Type annotations for `session.create_client("robomaker").delete_world_template`
+method.
 
 Boto3 documentation:
 [RoboMaker.Client.delete_world_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.delete_world_template)
@@ -797,7 +791,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deregisters a robot.
 
-Type annotations for `aiobotocore.create_client("robomaker").deregister_robot`
+Type annotations for `session.create_client("robomaker").deregister_robot`
 method.
 
 Boto3 documentation:
@@ -823,7 +817,7 @@ Returns a `Coroutine` for
 Describes a deployment job.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").describe_deployment_job` method.
+`session.create_client("robomaker").describe_deployment_job` method.
 
 Boto3 documentation:
 [RoboMaker.Client.describe_deployment_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.describe_deployment_job)
@@ -847,7 +841,7 @@ Returns a `Coroutine` for
 
 Describes a fleet.
 
-Type annotations for `aiobotocore.create_client("robomaker").describe_fleet`
+Type annotations for `session.create_client("robomaker").describe_fleet`
 method.
 
 Boto3 documentation:
@@ -871,7 +865,7 @@ Returns a `Coroutine` for
 
 Describes a robot.
 
-Type annotations for `aiobotocore.create_client("robomaker").describe_robot`
+Type annotations for `session.create_client("robomaker").describe_robot`
 method.
 
 Boto3 documentation:
@@ -896,7 +890,7 @@ Returns a `Coroutine` for
 Describes a robot application.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").describe_robot_application` method.
+`session.create_client("robomaker").describe_robot_application` method.
 
 Boto3 documentation:
 [RoboMaker.Client.describe_robot_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.describe_robot_application)
@@ -922,8 +916,7 @@ Returns a `Coroutine` for
 Describes a simulation application.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").describe_simulation_application`
-method.
+`session.create_client("robomaker").describe_simulation_application` method.
 
 Boto3 documentation:
 [RoboMaker.Client.describe_simulation_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.describe_simulation_application)
@@ -949,7 +942,7 @@ Returns a `Coroutine` for
 Describes a simulation job.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").describe_simulation_job` method.
+`session.create_client("robomaker").describe_simulation_job` method.
 
 Boto3 documentation:
 [RoboMaker.Client.describe_simulation_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.describe_simulation_job)
@@ -974,7 +967,7 @@ Returns a `Coroutine` for
 Describes a simulation job batch.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").describe_simulation_job_batch` method.
+`session.create_client("robomaker").describe_simulation_job_batch` method.
 
 Boto3 documentation:
 [RoboMaker.Client.describe_simulation_job_batch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.describe_simulation_job_batch)
@@ -998,7 +991,7 @@ Returns a `Coroutine` for
 
 Describes a world.
 
-Type annotations for `aiobotocore.create_client("robomaker").describe_world`
+Type annotations for `session.create_client("robomaker").describe_world`
 method.
 
 Boto3 documentation:
@@ -1023,7 +1016,7 @@ Returns a `Coroutine` for
 Describes a world export job.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").describe_world_export_job` method.
+`session.create_client("robomaker").describe_world_export_job` method.
 
 Boto3 documentation:
 [RoboMaker.Client.describe_world_export_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.describe_world_export_job)
@@ -1048,7 +1041,7 @@ Returns a `Coroutine` for
 Describes a world generation job.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").describe_world_generation_job` method.
+`session.create_client("robomaker").describe_world_generation_job` method.
 
 Boto3 documentation:
 [RoboMaker.Client.describe_world_generation_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.describe_world_generation_job)
@@ -1073,7 +1066,7 @@ Returns a `Coroutine` for
 Describes a world template.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").describe_world_template` method.
+`session.create_client("robomaker").describe_world_template` method.
 
 Boto3 documentation:
 [RoboMaker.Client.describe_world_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.describe_world_template)
@@ -1098,7 +1091,7 @@ Returns a `Coroutine` for
 Generate a presigned url given a client, its method, and arguments.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").generate_presigned_url` method.
+`session.create_client("robomaker").generate_presigned_url` method.
 
 Boto3 documentation:
 [RoboMaker.Client.generate_presigned_url](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.generate_presigned_url)
@@ -1122,7 +1115,7 @@ Returns a `Coroutine` for `str`.
 Gets the world template body.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").get_world_template_body` method.
+`session.create_client("robomaker").get_world_template_body` method.
 
 Boto3 documentation:
 [RoboMaker.Client.get_world_template_body](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.get_world_template_body)
@@ -1147,8 +1140,8 @@ Returns a `Coroutine` for
 
 Returns a list of deployment jobs for a fleet.
 
-Type annotations for
-`aiobotocore.create_client("robomaker").list_deployment_jobs` method.
+Type annotations for `session.create_client("robomaker").list_deployment_jobs`
+method.
 
 Boto3 documentation:
 [RoboMaker.Client.list_deployment_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.list_deployment_jobs)
@@ -1174,8 +1167,7 @@ Returns a `Coroutine` for
 
 Returns a list of fleets.
 
-Type annotations for `aiobotocore.create_client("robomaker").list_fleets`
-method.
+Type annotations for `session.create_client("robomaker").list_fleets` method.
 
 Boto3 documentation:
 [RoboMaker.Client.list_fleets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.list_fleets)
@@ -1201,7 +1193,7 @@ Returns a `Coroutine` for
 Returns a list of robot application.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").list_robot_applications` method.
+`session.create_client("robomaker").list_robot_applications` method.
 
 Boto3 documentation:
 [RoboMaker.Client.list_robot_applications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.list_robot_applications)
@@ -1228,8 +1220,7 @@ Returns a `Coroutine` for
 
 Returns a list of robots.
 
-Type annotations for `aiobotocore.create_client("robomaker").list_robots`
-method.
+Type annotations for `session.create_client("robomaker").list_robots` method.
 
 Boto3 documentation:
 [RoboMaker.Client.list_robots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.list_robots)
@@ -1255,7 +1246,7 @@ Returns a `Coroutine` for
 Returns a list of simulation applications.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").list_simulation_applications` method.
+`session.create_client("robomaker").list_simulation_applications` method.
 
 Boto3 documentation:
 [RoboMaker.Client.list_simulation_applications](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.list_simulation_applications)
@@ -1283,7 +1274,7 @@ Returns a `Coroutine` for
 Returns a list simulation job batches.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").list_simulation_job_batches` method.
+`session.create_client("robomaker").list_simulation_job_batches` method.
 
 Boto3 documentation:
 [RoboMaker.Client.list_simulation_job_batches](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.list_simulation_job_batches)
@@ -1309,8 +1300,8 @@ Returns a `Coroutine` for
 
 Returns a list of simulation jobs.
 
-Type annotations for
-`aiobotocore.create_client("robomaker").list_simulation_jobs` method.
+Type annotations for `session.create_client("robomaker").list_simulation_jobs`
+method.
 
 Boto3 documentation:
 [RoboMaker.Client.list_simulation_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.list_simulation_jobs)
@@ -1337,7 +1328,7 @@ Returns a `Coroutine` for
 Lists all tags on a AWS RoboMaker resource.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").list_tags_for_resource` method.
+`session.create_client("robomaker").list_tags_for_resource` method.
 
 Boto3 documentation:
 [RoboMaker.Client.list_tags_for_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.list_tags_for_resource)
@@ -1362,7 +1353,7 @@ Returns a `Coroutine` for
 Lists world export jobs.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").list_world_export_jobs` method.
+`session.create_client("robomaker").list_world_export_jobs` method.
 
 Boto3 documentation:
 [RoboMaker.Client.list_world_export_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.list_world_export_jobs)
@@ -1389,7 +1380,7 @@ Returns a `Coroutine` for
 Lists world generator jobs.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").list_world_generation_jobs` method.
+`session.create_client("robomaker").list_world_generation_jobs` method.
 
 Boto3 documentation:
 [RoboMaker.Client.list_world_generation_jobs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.list_world_generation_jobs)
@@ -1415,8 +1406,8 @@ Returns a `Coroutine` for
 
 Lists world templates.
 
-Type annotations for
-`aiobotocore.create_client("robomaker").list_world_templates` method.
+Type annotations for `session.create_client("robomaker").list_world_templates`
+method.
 
 Boto3 documentation:
 [RoboMaker.Client.list_world_templates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.list_world_templates)
@@ -1441,8 +1432,7 @@ Returns a `Coroutine` for
 
 Lists worlds.
 
-Type annotations for `aiobotocore.create_client("robomaker").list_worlds`
-method.
+Type annotations for `session.create_client("robomaker").list_worlds` method.
 
 Boto3 documentation:
 [RoboMaker.Client.list_worlds](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.list_worlds)
@@ -1467,7 +1457,7 @@ Returns a `Coroutine` for
 
 Registers a robot with a fleet.
 
-Type annotations for `aiobotocore.create_client("robomaker").register_robot`
+Type annotations for `session.create_client("robomaker").register_robot`
 method.
 
 Boto3 documentation:
@@ -1493,7 +1483,7 @@ Returns a `Coroutine` for
 Restarts a running simulation job.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").restart_simulation_job` method.
+`session.create_client("robomaker").restart_simulation_job` method.
 
 Boto3 documentation:
 [RoboMaker.Client.restart_simulation_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.restart_simulation_job)
@@ -1517,7 +1507,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Starts a new simulation job batch.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").start_simulation_job_batch` method.
+`session.create_client("robomaker").start_simulation_job_batch` method.
 
 Boto3 documentation:
 [RoboMaker.Client.start_simulation_job_batch](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.start_simulation_job_batch)
@@ -1546,8 +1536,8 @@ Returns a `Coroutine` for
 
 Syncrhonizes robots in a fleet to the latest deployment.
 
-Type annotations for
-`aiobotocore.create_client("robomaker").sync_deployment_job` method.
+Type annotations for `session.create_client("robomaker").sync_deployment_job`
+method.
 
 Boto3 documentation:
 [RoboMaker.Client.sync_deployment_job](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.sync_deployment_job)
@@ -1572,8 +1562,7 @@ Returns a `Coroutine` for
 
 Adds or edits tags for a AWS RoboMaker resource.
 
-Type annotations for `aiobotocore.create_client("robomaker").tag_resource`
-method.
+Type annotations for `session.create_client("robomaker").tag_resource` method.
 
 Boto3 documentation:
 [RoboMaker.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.tag_resource)
@@ -1596,7 +1585,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 .
 
-Type annotations for `aiobotocore.create_client("robomaker").untag_resource`
+Type annotations for `session.create_client("robomaker").untag_resource`
 method.
 
 Boto3 documentation:
@@ -1621,7 +1610,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates a robot application.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").update_robot_application` method.
+`session.create_client("robomaker").update_robot_application` method.
 
 Boto3 documentation:
 [RoboMaker.Client.update_robot_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.update_robot_application)
@@ -1653,7 +1642,7 @@ Returns a `Coroutine` for
 Updates a simulation application.
 
 Type annotations for
-`aiobotocore.create_client("robomaker").update_simulation_application` method.
+`session.create_client("robomaker").update_simulation_application` method.
 
 Boto3 documentation:
 [RoboMaker.Client.update_simulation_application](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.update_simulation_application)
@@ -1689,8 +1678,8 @@ Returns a `Coroutine` for
 
 Updates a world template.
 
-Type annotations for
-`aiobotocore.create_client("robomaker").update_world_template` method.
+Type annotations for `session.create_client("robomaker").update_world_template`
+method.
 
 Boto3 documentation:
 [RoboMaker.Client.update_world_template](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.update_world_template)
@@ -1712,12 +1701,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateWorldTemplateResponseTypeDef](./type_defs.md#updateworldtemplateresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("robomaker").__aenter__` method.
+
+Boto3 documentation:
+[RoboMaker.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [RoboMakerClient](#robomakerclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("robomaker").__aexit__` method.
+
+Boto3 documentation:
+[RoboMaker.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/robomaker.html#RoboMaker.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("robomaker").get_paginator`
-method with overloads.
+Type annotations for `session.create_client("robomaker").get_paginator` method
+with overloads.
 
 - `client.get_paginator("list_deployment_jobs")` ->
   [ListDeploymentJobsPaginator](./paginators.md#listdeploymentjobspaginator)

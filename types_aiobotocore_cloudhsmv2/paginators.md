@@ -19,17 +19,19 @@ type annotations stubs module
 ## DescribeBackupsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudhsmv2").get_paginator("describe_backups")`.
+`session.create_client("cloudhsmv2").get_paginator("describe_backups")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudhsmv2.paginator import DescribeBackupsPaginator
 
-def get_describe_backups_paginator() -> DescribeBackupsPaginator:
-    return Session().create_client("cloudhsmv2").get_paginator("describe_backups")
+session = get_session()
+async with session.create_client("cloudhsmv2") as client:
+    client: CloudHSMV2Client
+    paginator: DescribeBackupsPaginator = client.get_paginator("describe_backups")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `DescribeBackupsPaginator.paginate` method:
 ## DescribeClustersPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudhsmv2").get_paginator("describe_clusters")`.
+`session.create_client("cloudhsmv2").get_paginator("describe_clusters")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudhsmv2.paginator import DescribeClustersPaginator
 
-def get_describe_clusters_paginator() -> DescribeClustersPaginator:
-    return Session().create_client("cloudhsmv2").get_paginator("describe_clusters")
+session = get_session()
+async with session.create_client("cloudhsmv2") as client:
+    client: CloudHSMV2Client
+    paginator: DescribeClustersPaginator = client.get_paginator("describe_clusters")
 ```
 
 Boto3 documentation:
@@ -80,17 +84,19 @@ Arguments for `DescribeClustersPaginator.paginate` method:
 ## ListTagsPaginator
 
 Type annotations for
-`aiobotocore.create_client("cloudhsmv2").get_paginator("list_tags")`.
+`session.create_client("cloudhsmv2").get_paginator("list_tags")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_cloudhsmv2.paginator import ListTagsPaginator
 
-def get_list_tags_paginator() -> ListTagsPaginator:
-    return Session().create_client("cloudhsmv2").get_paginator("list_tags")
+session = get_session()
+async with session.create_client("cloudhsmv2") as client:
+    client: CloudHSMV2Client
+    paginator: ListTagsPaginator = client.get_paginator("list_tags")
 ```
 
 Boto3 documentation:

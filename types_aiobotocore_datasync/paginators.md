@@ -21,17 +21,19 @@ type annotations stubs module
 ## ListAgentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("datasync").get_paginator("list_agents")`.
+`session.create_client("datasync").get_paginator("list_agents")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_datasync.paginator import ListAgentsPaginator
 
-def get_list_agents_paginator() -> ListAgentsPaginator:
-    return Session().create_client("datasync").get_paginator("list_agents")
+session = get_session()
+async with session.create_client("datasync") as client:
+    client: DataSyncClient
+    paginator: ListAgentsPaginator = client.get_paginator("list_agents")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `ListAgentsPaginator.paginate` method:
 ## ListLocationsPaginator
 
 Type annotations for
-`aiobotocore.create_client("datasync").get_paginator("list_locations")`.
+`session.create_client("datasync").get_paginator("list_locations")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_datasync.paginator import ListLocationsPaginator
 
-def get_list_locations_paginator() -> ListLocationsPaginator:
-    return Session().create_client("datasync").get_paginator("list_locations")
+session = get_session()
+async with session.create_client("datasync") as client:
+    client: DataSyncClient
+    paginator: ListLocationsPaginator = client.get_paginator("list_locations")
 ```
 
 Boto3 documentation:
@@ -81,17 +85,19 @@ Arguments for `ListLocationsPaginator.paginate` method:
 ## ListTagsForResourcePaginator
 
 Type annotations for
-`aiobotocore.create_client("datasync").get_paginator("list_tags_for_resource")`.
+`session.create_client("datasync").get_paginator("list_tags_for_resource")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_datasync.paginator import ListTagsForResourcePaginator
 
-def get_list_tags_for_resource_paginator() -> ListTagsForResourcePaginator:
-    return Session().create_client("datasync").get_paginator("list_tags_for_resource")
+session = get_session()
+async with session.create_client("datasync") as client:
+    client: DataSyncClient
+    paginator: ListTagsForResourcePaginator = client.get_paginator("list_tags_for_resource")
 ```
 
 Boto3 documentation:
@@ -111,17 +117,19 @@ Arguments for `ListTagsForResourcePaginator.paginate` method:
 ## ListTaskExecutionsPaginator
 
 Type annotations for
-`aiobotocore.create_client("datasync").get_paginator("list_task_executions")`.
+`session.create_client("datasync").get_paginator("list_task_executions")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_datasync.paginator import ListTaskExecutionsPaginator
 
-def get_list_task_executions_paginator() -> ListTaskExecutionsPaginator:
-    return Session().create_client("datasync").get_paginator("list_task_executions")
+session = get_session()
+async with session.create_client("datasync") as client:
+    client: DataSyncClient
+    paginator: ListTaskExecutionsPaginator = client.get_paginator("list_task_executions")
 ```
 
 Boto3 documentation:
@@ -141,17 +149,19 @@ Arguments for `ListTaskExecutionsPaginator.paginate` method:
 ## ListTasksPaginator
 
 Type annotations for
-`aiobotocore.create_client("datasync").get_paginator("list_tasks")`.
+`session.create_client("datasync").get_paginator("list_tasks")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_datasync.paginator import ListTasksPaginator
 
-def get_list_tasks_paginator() -> ListTasksPaginator:
-    return Session().create_client("datasync").get_paginator("list_tasks")
+session = get_session()
+async with session.create_client("datasync") as client:
+    client: DataSyncClient
+    paginator: ListTasksPaginator = client.get_paginator("list_tasks")
 ```
 
 Boto3 documentation:

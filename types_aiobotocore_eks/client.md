@@ -50,6 +50,8 @@ type annotations stubs module
     - [update_cluster_version](#update_cluster_version)
     - [update_nodegroup_config](#update_nodegroup_config)
     - [update_nodegroup_version](#update_nodegroup_version)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
     - [get_waiter](#get_waiter)
 
@@ -57,16 +59,17 @@ type annotations stubs module
 
 ## EKSClient
 
-Type annotations for `aiobotocore.create_client("eks")`
+Type annotations for `session.create_client("eks")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_eks.client import EKSClient
 
-def get_eks_client() -> EKSClient:
-    return Session().client("eks")
+session = get_session()
+async with session.create_client("eks") as client:
+    client: EKSClient
 ```
 
 Boto3 documentation:
@@ -113,7 +116,7 @@ Exceptions:
 
 EKSClient exceptions.
 
-Type annotations for `aiobotocore.create_client("eks").exceptions` method.
+Type annotations for `session.create_client("eks").exceptions` method.
 
 Boto3 documentation:
 [EKS.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.exceptions)
@@ -126,8 +129,8 @@ Returns [Exceptions](#exceptions).
 
 Associate encryption configuration to an existing cluster.
 
-Type annotations for
-`aiobotocore.create_client("eks").associate_encryption_config` method.
+Type annotations for `session.create_client("eks").associate_encryption_config`
+method.
 
 Boto3 documentation:
 [EKS.Client.associate_encryption_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.associate_encryption_config)
@@ -156,7 +159,7 @@ Returns a `Coroutine` for
 Associate an identity provider configuration to a cluster.
 
 Type annotations for
-`aiobotocore.create_client("eks").associate_identity_provider_config` method.
+`session.create_client("eks").associate_identity_provider_config` method.
 
 Boto3 documentation:
 [EKS.Client.associate_identity_provider_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.associate_identity_provider_config)
@@ -185,18 +188,16 @@ Returns a `Coroutine` for
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("eks").can_paginate` method.
+Type annotations for `session.create_client("eks").can_paginate` method.
 
 Boto3 documentation:
 [EKS.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_addon"></a>
 
@@ -204,7 +205,7 @@ Returns a `Coroutine` for `bool`.
 
 .
 
-Type annotations for `aiobotocore.create_client("eks").create_addon` method.
+Type annotations for `session.create_client("eks").create_addon` method.
 
 Boto3 documentation:
 [EKS.Client.create_addon](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.create_addon)
@@ -234,7 +235,7 @@ Returns a `Coroutine` for
 
 Creates an Amazon EKS control plane.
 
-Type annotations for `aiobotocore.create_client("eks").create_cluster` method.
+Type annotations for `session.create_client("eks").create_cluster` method.
 
 Boto3 documentation:
 [EKS.Client.create_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.create_cluster)
@@ -269,7 +270,7 @@ Returns a `Coroutine` for
 
 Creates an Fargate profile for your Amazon EKS cluster.
 
-Type annotations for `aiobotocore.create_client("eks").create_fargate_profile`
+Type annotations for `session.create_client("eks").create_fargate_profile`
 method.
 
 Boto3 documentation:
@@ -301,8 +302,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("eks").create_nodegroup`
-method.
+Type annotations for `session.create_client("eks").create_nodegroup` method.
 
 Boto3 documentation:
 [EKS.Client.create_nodegroup](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.create_nodegroup)
@@ -346,7 +346,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("eks").delete_addon` method.
+Type annotations for `session.create_client("eks").delete_addon` method.
 
 Boto3 documentation:
 [EKS.Client.delete_addon](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.delete_addon)
@@ -371,7 +371,7 @@ Returns a `Coroutine` for
 
 Deletes the Amazon EKS cluster control plane.
 
-Type annotations for `aiobotocore.create_client("eks").delete_cluster` method.
+Type annotations for `session.create_client("eks").delete_cluster` method.
 
 Boto3 documentation:
 [EKS.Client.delete_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.delete_cluster)
@@ -394,7 +394,7 @@ Returns a `Coroutine` for
 
 Deletes an Fargate profile.
 
-Type annotations for `aiobotocore.create_client("eks").delete_fargate_profile`
+Type annotations for `session.create_client("eks").delete_fargate_profile`
 method.
 
 Boto3 documentation:
@@ -420,8 +420,7 @@ Returns a `Coroutine` for
 
 Deletes an Amazon EKS node group for a cluster.
 
-Type annotations for `aiobotocore.create_client("eks").delete_nodegroup`
-method.
+Type annotations for `session.create_client("eks").delete_nodegroup` method.
 
 Boto3 documentation:
 [EKS.Client.delete_nodegroup](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.delete_nodegroup)
@@ -445,8 +444,7 @@ Returns a `Coroutine` for
 
 Deregisters a connected cluster to remove it from the Amazon EKS control plane.
 
-Type annotations for `aiobotocore.create_client("eks").deregister_cluster`
-method.
+Type annotations for `session.create_client("eks").deregister_cluster` method.
 
 Boto3 documentation:
 [EKS.Client.deregister_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.deregister_cluster)
@@ -470,7 +468,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("eks").describe_addon` method.
+Type annotations for `session.create_client("eks").describe_addon` method.
 
 Boto3 documentation:
 [EKS.Client.describe_addon](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.describe_addon)
@@ -494,7 +492,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("eks").describe_addon_versions`
+Type annotations for `session.create_client("eks").describe_addon_versions`
 method.
 
 Boto3 documentation:
@@ -522,8 +520,7 @@ Returns a `Coroutine` for
 
 Returns descriptive information about an Amazon EKS cluster.
 
-Type annotations for `aiobotocore.create_client("eks").describe_cluster`
-method.
+Type annotations for `session.create_client("eks").describe_cluster` method.
 
 Boto3 documentation:
 [EKS.Client.describe_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.describe_cluster)
@@ -546,8 +543,8 @@ Returns a `Coroutine` for
 
 Returns descriptive information about an Fargate profile.
 
-Type annotations for
-`aiobotocore.create_client("eks").describe_fargate_profile` method.
+Type annotations for `session.create_client("eks").describe_fargate_profile`
+method.
 
 Boto3 documentation:
 [EKS.Client.describe_fargate_profile](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.describe_fargate_profile)
@@ -573,7 +570,7 @@ Returns a `Coroutine` for
 Returns descriptive information about an identity provider configuration.
 
 Type annotations for
-`aiobotocore.create_client("eks").describe_identity_provider_config` method.
+`session.create_client("eks").describe_identity_provider_config` method.
 
 Boto3 documentation:
 [EKS.Client.describe_identity_provider_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.describe_identity_provider_config)
@@ -600,8 +597,7 @@ Returns a `Coroutine` for
 
 Returns descriptive information about an Amazon EKS node group.
 
-Type annotations for `aiobotocore.create_client("eks").describe_nodegroup`
-method.
+Type annotations for `session.create_client("eks").describe_nodegroup` method.
 
 Boto3 documentation:
 [EKS.Client.describe_nodegroup](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.describe_nodegroup)
@@ -626,7 +622,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("eks").describe_update` method.
+Type annotations for `session.create_client("eks").describe_update` method.
 
 Boto3 documentation:
 [EKS.Client.describe_update](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.describe_update)
@@ -653,8 +649,7 @@ Returns a `Coroutine` for
 Disassociates an identity provider configuration from a cluster.
 
 Type annotations for
-`aiobotocore.create_client("eks").disassociate_identity_provider_config`
-method.
+`session.create_client("eks").disassociate_identity_provider_config` method.
 
 Boto3 documentation:
 [EKS.Client.disassociate_identity_provider_config](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.disassociate_identity_provider_config)
@@ -682,7 +677,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("eks").generate_presigned_url`
+Type annotations for `session.create_client("eks").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -706,7 +701,7 @@ Returns a `Coroutine` for `str`.
 
 Lists the available add-ons.
 
-Type annotations for `aiobotocore.create_client("eks").list_addons` method.
+Type annotations for `session.create_client("eks").list_addons` method.
 
 Boto3 documentation:
 [EKS.Client.list_addons](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.list_addons)
@@ -732,7 +727,7 @@ Returns a `Coroutine` for
 Lists the Amazon EKS clusters in your Amazon Web Services account in the
 specified Region.
 
-Type annotations for `aiobotocore.create_client("eks").list_clusters` method.
+Type annotations for `session.create_client("eks").list_clusters` method.
 
 Boto3 documentation:
 [EKS.Client.list_clusters](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.list_clusters)
@@ -758,7 +753,7 @@ Returns a `Coroutine` for
 Lists the Fargate profiles associated with the specified cluster in your Amazon
 Web Services account in the specified Region.
 
-Type annotations for `aiobotocore.create_client("eks").list_fargate_profiles`
+Type annotations for `session.create_client("eks").list_fargate_profiles`
 method.
 
 Boto3 documentation:
@@ -786,7 +781,7 @@ Returns a `Coroutine` for
 A list of identity provider configurations.
 
 Type annotations for
-`aiobotocore.create_client("eks").list_identity_provider_configs` method.
+`session.create_client("eks").list_identity_provider_configs` method.
 
 Boto3 documentation:
 [EKS.Client.list_identity_provider_configs](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.list_identity_provider_configs)
@@ -813,7 +808,7 @@ Returns a `Coroutine` for
 Lists the Amazon EKS managed node groups associated with the specified cluster
 in your Amazon Web Services account in the specified Region.
 
-Type annotations for `aiobotocore.create_client("eks").list_nodegroups` method.
+Type annotations for `session.create_client("eks").list_nodegroups` method.
 
 Boto3 documentation:
 [EKS.Client.list_nodegroups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.list_nodegroups)
@@ -838,7 +833,7 @@ Returns a `Coroutine` for
 
 List the tags for an Amazon EKS resource.
 
-Type annotations for `aiobotocore.create_client("eks").list_tags_for_resource`
+Type annotations for `session.create_client("eks").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -864,7 +859,7 @@ Returns a `Coroutine` for
 Lists the updates associated with an Amazon EKS cluster or managed node group
 in your Amazon Web Services account, in the specified Region.
 
-Type annotations for `aiobotocore.create_client("eks").list_updates` method.
+Type annotations for `session.create_client("eks").list_updates` method.
 
 Boto3 documentation:
 [EKS.Client.list_updates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.list_updates)
@@ -891,8 +886,7 @@ Returns a `Coroutine` for
 
 Connects a Kubernetes cluster to the Amazon EKS control plane.
 
-Type annotations for `aiobotocore.create_client("eks").register_cluster`
-method.
+Type annotations for `session.create_client("eks").register_cluster` method.
 
 Boto3 documentation:
 [EKS.Client.register_cluster](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.register_cluster)
@@ -920,7 +914,7 @@ Returns a `Coroutine` for
 
 Associates the specified tags to a resource with the specified `resourceArn`.
 
-Type annotations for `aiobotocore.create_client("eks").tag_resource` method.
+Type annotations for `session.create_client("eks").tag_resource` method.
 
 Boto3 documentation:
 [EKS.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.tag_resource)
@@ -943,7 +937,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes specified tags from a resource.
 
-Type annotations for `aiobotocore.create_client("eks").untag_resource` method.
+Type annotations for `session.create_client("eks").untag_resource` method.
 
 Boto3 documentation:
 [EKS.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.untag_resource)
@@ -966,7 +960,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 .
 
-Type annotations for `aiobotocore.create_client("eks").update_addon` method.
+Type annotations for `session.create_client("eks").update_addon` method.
 
 Boto3 documentation:
 [EKS.Client.update_addon](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.update_addon)
@@ -995,7 +989,7 @@ Returns a `Coroutine` for
 
 Updates an Amazon EKS cluster configuration.
 
-Type annotations for `aiobotocore.create_client("eks").update_cluster_config`
+Type annotations for `session.create_client("eks").update_cluster_config`
 method.
 
 Boto3 documentation:
@@ -1024,7 +1018,7 @@ Returns a `Coroutine` for
 
 Updates an Amazon EKS cluster to the specified Kubernetes version.
 
-Type annotations for `aiobotocore.create_client("eks").update_cluster_version`
+Type annotations for `session.create_client("eks").update_cluster_version`
 method.
 
 Boto3 documentation:
@@ -1051,7 +1045,7 @@ Returns a `Coroutine` for
 
 Updates an Amazon EKS managed node group configuration.
 
-Type annotations for `aiobotocore.create_client("eks").update_nodegroup_config`
+Type annotations for `session.create_client("eks").update_nodegroup_config`
 method.
 
 Boto3 documentation:
@@ -1087,8 +1081,8 @@ Returns a `Coroutine` for
 Updates the Kubernetes version or AMI version of an Amazon EKS managed node
 group.
 
-Type annotations for
-`aiobotocore.create_client("eks").update_nodegroup_version` method.
+Type annotations for `session.create_client("eks").update_nodegroup_version`
+method.
 
 Boto3 documentation:
 [EKS.Client.update_nodegroup_version](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.update_nodegroup_version)
@@ -1113,12 +1107,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateNodegroupVersionResponseTypeDef](./type_defs.md#updatenodegroupversionresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("eks").__aenter__` method.
+
+Boto3 documentation:
+[EKS.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [EKSClient](#eksclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("eks").__aexit__` method.
+
+Boto3 documentation:
+[EKS.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html#EKS.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("eks").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("eks").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_addon_versions")` ->
   [DescribeAddonVersionsPaginator](./paginators.md#describeaddonversionspaginator)
@@ -1139,7 +1165,7 @@ with overloads.
 
 ### get_waiter
 
-Type annotations for `aiobotocore.create_client("eks").get_waiter` method with
+Type annotations for `session.create_client("eks").get_waiter` method with
 overloads.
 
 - `client.get_waiter("addon_active")` ->

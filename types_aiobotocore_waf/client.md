@@ -93,22 +93,25 @@ type annotations stubs module
     - [update_sql_injection_match_set](#update_sql_injection_match_set)
     - [update_web_acl](#update_web_acl)
     - [update_xss_match_set](#update_xss_match_set)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="wafclient"></a>
 
 ## WAFClient
 
-Type annotations for `aiobotocore.create_client("waf")`
+Type annotations for `session.create_client("waf")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_waf.client import WAFClient
 
-def get_waf_client() -> WAFClient:
-    return Session().client("waf")
+session = get_session()
+async with session.create_client("waf") as client:
+    client: WAFClient
 ```
 
 Boto3 documentation:
@@ -161,7 +164,7 @@ Exceptions:
 
 WAFClient exceptions.
 
-Type annotations for `aiobotocore.create_client("waf").exceptions` method.
+Type annotations for `session.create_client("waf").exceptions` method.
 
 Boto3 documentation:
 [WAF.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.exceptions)
@@ -174,18 +177,16 @@ Returns [Exceptions](#exceptions).
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("waf").can_paginate` method.
+Type annotations for `session.create_client("waf").can_paginate` method.
 
 Boto3 documentation:
 [WAF.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="create_byte_match_set"></a>
 
@@ -193,7 +194,7 @@ Returns a `Coroutine` for `bool`.
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").create_byte_match_set`
+Type annotations for `session.create_client("waf").create_byte_match_set`
 method.
 
 Boto3 documentation:
@@ -219,7 +220,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").create_geo_match_set`
+Type annotations for `session.create_client("waf").create_geo_match_set`
 method.
 
 Boto3 documentation:
@@ -245,7 +246,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").create_ip_set` method.
+Type annotations for `session.create_client("waf").create_ip_set` method.
 
 Boto3 documentation:
 [WAF.Client.create_ip_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.create_ip_set)
@@ -269,7 +270,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").create_rate_based_rule`
+Type annotations for `session.create_client("waf").create_rate_based_rule`
 method.
 
 Boto3 documentation:
@@ -300,7 +301,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").create_regex_match_set`
+Type annotations for `session.create_client("waf").create_regex_match_set`
 method.
 
 Boto3 documentation:
@@ -326,8 +327,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf").create_regex_pattern_set` method.
+Type annotations for `session.create_client("waf").create_regex_pattern_set`
+method.
 
 Boto3 documentation:
 [WAF.Client.create_regex_pattern_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.create_regex_pattern_set)
@@ -352,7 +353,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").create_rule` method.
+Type annotations for `session.create_client("waf").create_rule` method.
 
 Boto3 documentation:
 [WAF.Client.create_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.create_rule)
@@ -378,8 +379,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").create_rule_group`
-method.
+Type annotations for `session.create_client("waf").create_rule_group` method.
 
 Boto3 documentation:
 [WAF.Client.create_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.create_rule_group)
@@ -405,8 +405,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf").create_size_constraint_set` method.
+Type annotations for `session.create_client("waf").create_size_constraint_set`
+method.
 
 Boto3 documentation:
 [WAF.Client.create_size_constraint_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.create_size_constraint_set)
@@ -432,7 +432,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf").create_sql_injection_match_set` method.
+`session.create_client("waf").create_sql_injection_match_set` method.
 
 Boto3 documentation:
 [WAF.Client.create_sql_injection_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.create_sql_injection_match_set)
@@ -457,7 +457,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").create_web_acl` method.
+Type annotations for `session.create_client("waf").create_web_acl` method.
 
 Boto3 documentation:
 [WAF.Client.create_web_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.create_web_acl)
@@ -487,7 +487,7 @@ Creates an AWS CloudFormation WAFV2 template for the specified web ACL in the
 specified Amazon S3 bucket.
 
 Type annotations for
-`aiobotocore.create_client("waf").create_web_acl_migration_stack` method.
+`session.create_client("waf").create_web_acl_migration_stack` method.
 
 Boto3 documentation:
 [WAF.Client.create_web_acl_migration_stack](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.create_web_acl_migration_stack)
@@ -513,7 +513,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").create_xss_match_set`
+Type annotations for `session.create_client("waf").create_xss_match_set`
 method.
 
 Boto3 documentation:
@@ -539,7 +539,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").delete_byte_match_set`
+Type annotations for `session.create_client("waf").delete_byte_match_set`
 method.
 
 Boto3 documentation:
@@ -565,7 +565,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").delete_geo_match_set`
+Type annotations for `session.create_client("waf").delete_geo_match_set`
 method.
 
 Boto3 documentation:
@@ -591,7 +591,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").delete_ip_set` method.
+Type annotations for `session.create_client("waf").delete_ip_set` method.
 
 Boto3 documentation:
 [WAF.Client.delete_ip_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.delete_ip_set)
@@ -616,7 +616,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf").delete_logging_configuration` method.
+`session.create_client("waf").delete_logging_configuration` method.
 
 Boto3 documentation:
 [WAF.Client.delete_logging_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.delete_logging_configuration)
@@ -639,8 +639,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf").delete_permission_policy` method.
+Type annotations for `session.create_client("waf").delete_permission_policy`
+method.
 
 Boto3 documentation:
 [WAF.Client.delete_permission_policy](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.delete_permission_policy)
@@ -663,7 +663,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").delete_rate_based_rule`
+Type annotations for `session.create_client("waf").delete_rate_based_rule`
 method.
 
 Boto3 documentation:
@@ -689,7 +689,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").delete_regex_match_set`
+Type annotations for `session.create_client("waf").delete_regex_match_set`
 method.
 
 Boto3 documentation:
@@ -715,8 +715,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf").delete_regex_pattern_set` method.
+Type annotations for `session.create_client("waf").delete_regex_pattern_set`
+method.
 
 Boto3 documentation:
 [WAF.Client.delete_regex_pattern_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.delete_regex_pattern_set)
@@ -741,7 +741,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").delete_rule` method.
+Type annotations for `session.create_client("waf").delete_rule` method.
 
 Boto3 documentation:
 [WAF.Client.delete_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.delete_rule)
@@ -765,8 +765,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").delete_rule_group`
-method.
+Type annotations for `session.create_client("waf").delete_rule_group` method.
 
 Boto3 documentation:
 [WAF.Client.delete_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.delete_rule_group)
@@ -790,8 +789,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf").delete_size_constraint_set` method.
+Type annotations for `session.create_client("waf").delete_size_constraint_set`
+method.
 
 Boto3 documentation:
 [WAF.Client.delete_size_constraint_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.delete_size_constraint_set)
@@ -817,7 +816,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf").delete_sql_injection_match_set` method.
+`session.create_client("waf").delete_sql_injection_match_set` method.
 
 Boto3 documentation:
 [WAF.Client.delete_sql_injection_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.delete_sql_injection_match_set)
@@ -842,7 +841,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").delete_web_acl` method.
+Type annotations for `session.create_client("waf").delete_web_acl` method.
 
 Boto3 documentation:
 [WAF.Client.delete_web_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.delete_web_acl)
@@ -866,7 +865,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").delete_xss_match_set`
+Type annotations for `session.create_client("waf").delete_xss_match_set`
 method.
 
 Boto3 documentation:
@@ -892,7 +891,7 @@ Returns a `Coroutine` for
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("waf").generate_presigned_url`
+Type annotations for `session.create_client("waf").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -916,8 +915,7 @@ Returns a `Coroutine` for `str`.
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").get_byte_match_set`
-method.
+Type annotations for `session.create_client("waf").get_byte_match_set` method.
 
 Boto3 documentation:
 [WAF.Client.get_byte_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.get_byte_match_set)
@@ -941,8 +939,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").get_change_token`
-method.
+Type annotations for `session.create_client("waf").get_change_token` method.
 
 Boto3 documentation:
 [WAF.Client.get_change_token](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.get_change_token)
@@ -958,7 +955,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").get_change_token_status`
+Type annotations for `session.create_client("waf").get_change_token_status`
 method.
 
 Boto3 documentation:
@@ -983,8 +980,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").get_geo_match_set`
-method.
+Type annotations for `session.create_client("waf").get_geo_match_set` method.
 
 Boto3 documentation:
 [WAF.Client.get_geo_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.get_geo_match_set)
@@ -1007,7 +1003,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").get_ip_set` method.
+Type annotations for `session.create_client("waf").get_ip_set` method.
 
 Boto3 documentation:
 [WAF.Client.get_ip_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.get_ip_set)
@@ -1030,8 +1026,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf").get_logging_configuration` method.
+Type annotations for `session.create_client("waf").get_logging_configuration`
+method.
 
 Boto3 documentation:
 [WAF.Client.get_logging_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.get_logging_configuration)
@@ -1055,7 +1051,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").get_permission_policy`
+Type annotations for `session.create_client("waf").get_permission_policy`
 method.
 
 Boto3 documentation:
@@ -1080,8 +1076,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").get_rate_based_rule`
-method.
+Type annotations for `session.create_client("waf").get_rate_based_rule` method.
 
 Boto3 documentation:
 [WAF.Client.get_rate_based_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.get_rate_based_rule)
@@ -1106,7 +1101,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf").get_rate_based_rule_managed_keys` method.
+`session.create_client("waf").get_rate_based_rule_managed_keys` method.
 
 Boto3 documentation:
 [WAF.Client.get_rate_based_rule_managed_keys](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.get_rate_based_rule_managed_keys)
@@ -1131,8 +1126,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").get_regex_match_set`
-method.
+Type annotations for `session.create_client("waf").get_regex_match_set` method.
 
 Boto3 documentation:
 [WAF.Client.get_regex_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.get_regex_match_set)
@@ -1156,7 +1150,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").get_regex_pattern_set`
+Type annotations for `session.create_client("waf").get_regex_pattern_set`
 method.
 
 Boto3 documentation:
@@ -1181,7 +1175,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").get_rule` method.
+Type annotations for `session.create_client("waf").get_rule` method.
 
 Boto3 documentation:
 [WAF.Client.get_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.get_rule)
@@ -1204,7 +1198,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").get_rule_group` method.
+Type annotations for `session.create_client("waf").get_rule_group` method.
 
 Boto3 documentation:
 [WAF.Client.get_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.get_rule_group)
@@ -1227,7 +1221,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").get_sampled_requests`
+Type annotations for `session.create_client("waf").get_sampled_requests`
 method.
 
 Boto3 documentation:
@@ -1256,7 +1250,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").get_size_constraint_set`
+Type annotations for `session.create_client("waf").get_size_constraint_set`
 method.
 
 Boto3 documentation:
@@ -1281,8 +1275,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf").get_sql_injection_match_set` method.
+Type annotations for `session.create_client("waf").get_sql_injection_match_set`
+method.
 
 Boto3 documentation:
 [WAF.Client.get_sql_injection_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.get_sql_injection_match_set)
@@ -1306,7 +1300,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").get_web_acl` method.
+Type annotations for `session.create_client("waf").get_web_acl` method.
 
 Boto3 documentation:
 [WAF.Client.get_web_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.get_web_acl)
@@ -1329,8 +1323,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").get_xss_match_set`
-method.
+Type annotations for `session.create_client("waf").get_xss_match_set` method.
 
 Boto3 documentation:
 [WAF.Client.get_xss_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.get_xss_match_set)
@@ -1354,7 +1347,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf").list_activated_rules_in_rule_group` method.
+`session.create_client("waf").list_activated_rules_in_rule_group` method.
 
 Boto3 documentation:
 [WAF.Client.list_activated_rules_in_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.list_activated_rules_in_rule_group)
@@ -1380,7 +1373,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").list_byte_match_sets`
+Type annotations for `session.create_client("waf").list_byte_match_sets`
 method.
 
 Boto3 documentation:
@@ -1406,8 +1399,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").list_geo_match_sets`
-method.
+Type annotations for `session.create_client("waf").list_geo_match_sets` method.
 
 Boto3 documentation:
 [WAF.Client.list_geo_match_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.list_geo_match_sets)
@@ -1432,7 +1424,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").list_ip_sets` method.
+Type annotations for `session.create_client("waf").list_ip_sets` method.
 
 Boto3 documentation:
 [WAF.Client.list_ip_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.list_ip_sets)
@@ -1456,8 +1448,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf").list_logging_configurations` method.
+Type annotations for `session.create_client("waf").list_logging_configurations`
+method.
 
 Boto3 documentation:
 [WAF.Client.list_logging_configurations](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.list_logging_configurations)
@@ -1482,7 +1474,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").list_rate_based_rules`
+Type annotations for `session.create_client("waf").list_rate_based_rules`
 method.
 
 Boto3 documentation:
@@ -1508,7 +1500,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").list_regex_match_sets`
+Type annotations for `session.create_client("waf").list_regex_match_sets`
 method.
 
 Boto3 documentation:
@@ -1534,7 +1526,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").list_regex_pattern_sets`
+Type annotations for `session.create_client("waf").list_regex_pattern_sets`
 method.
 
 Boto3 documentation:
@@ -1560,8 +1552,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").list_rule_groups`
-method.
+Type annotations for `session.create_client("waf").list_rule_groups` method.
 
 Boto3 documentation:
 [WAF.Client.list_rule_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.list_rule_groups)
@@ -1585,7 +1576,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").list_rules` method.
+Type annotations for `session.create_client("waf").list_rules` method.
 
 Boto3 documentation:
 [WAF.Client.list_rules](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.list_rules)
@@ -1609,8 +1600,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf").list_size_constraint_sets` method.
+Type annotations for `session.create_client("waf").list_size_constraint_sets`
+method.
 
 Boto3 documentation:
 [WAF.Client.list_size_constraint_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.list_size_constraint_sets)
@@ -1636,7 +1627,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf").list_sql_injection_match_sets` method.
+`session.create_client("waf").list_sql_injection_match_sets` method.
 
 Boto3 documentation:
 [WAF.Client.list_sql_injection_match_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.list_sql_injection_match_sets)
@@ -1661,8 +1652,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf").list_subscribed_rule_groups` method.
+Type annotations for `session.create_client("waf").list_subscribed_rule_groups`
+method.
 
 Boto3 documentation:
 [WAF.Client.list_subscribed_rule_groups](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.list_subscribed_rule_groups)
@@ -1687,7 +1678,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").list_tags_for_resource`
+Type annotations for `session.create_client("waf").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -1714,7 +1705,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").list_web_acls` method.
+Type annotations for `session.create_client("waf").list_web_acls` method.
 
 Boto3 documentation:
 [WAF.Client.list_web_acls](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.list_web_acls)
@@ -1738,8 +1729,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").list_xss_match_sets`
-method.
+Type annotations for `session.create_client("waf").list_xss_match_sets` method.
 
 Boto3 documentation:
 [WAF.Client.list_xss_match_sets](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.list_xss_match_sets)
@@ -1764,8 +1754,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf").put_logging_configuration` method.
+Type annotations for `session.create_client("waf").put_logging_configuration`
+method.
 
 Boto3 documentation:
 [WAF.Client.put_logging_configuration](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.put_logging_configuration)
@@ -1791,7 +1781,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").put_permission_policy`
+Type annotations for `session.create_client("waf").put_permission_policy`
 method.
 
 Boto3 documentation:
@@ -1816,7 +1806,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").tag_resource` method.
+Type annotations for `session.create_client("waf").tag_resource` method.
 
 Boto3 documentation:
 [WAF.Client.tag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.tag_resource)
@@ -1839,7 +1829,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").untag_resource` method.
+Type annotations for `session.create_client("waf").untag_resource` method.
 
 Boto3 documentation:
 [WAF.Client.untag_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.untag_resource)
@@ -1862,7 +1852,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").update_byte_match_set`
+Type annotations for `session.create_client("waf").update_byte_match_set`
 method.
 
 Boto3 documentation:
@@ -1891,7 +1881,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").update_geo_match_set`
+Type annotations for `session.create_client("waf").update_geo_match_set`
 method.
 
 Boto3 documentation:
@@ -1920,7 +1910,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").update_ip_set` method.
+Type annotations for `session.create_client("waf").update_ip_set` method.
 
 Boto3 documentation:
 [WAF.Client.update_ip_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.update_ip_set)
@@ -1947,7 +1937,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").update_rate_based_rule`
+Type annotations for `session.create_client("waf").update_rate_based_rule`
 method.
 
 Boto3 documentation:
@@ -1977,7 +1967,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").update_regex_match_set`
+Type annotations for `session.create_client("waf").update_regex_match_set`
 method.
 
 Boto3 documentation:
@@ -2006,8 +1996,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf").update_regex_pattern_set` method.
+Type annotations for `session.create_client("waf").update_regex_pattern_set`
+method.
 
 Boto3 documentation:
 [WAF.Client.update_regex_pattern_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.update_regex_pattern_set)
@@ -2035,7 +2025,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").update_rule` method.
+Type annotations for `session.create_client("waf").update_rule` method.
 
 Boto3 documentation:
 [WAF.Client.update_rule](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.update_rule)
@@ -2062,8 +2052,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").update_rule_group`
-method.
+Type annotations for `session.create_client("waf").update_rule_group` method.
 
 Boto3 documentation:
 [WAF.Client.update_rule_group](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.update_rule_group)
@@ -2090,8 +2079,8 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for
-`aiobotocore.create_client("waf").update_size_constraint_set` method.
+Type annotations for `session.create_client("waf").update_size_constraint_set`
+method.
 
 Boto3 documentation:
 [WAF.Client.update_size_constraint_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.update_size_constraint_set)
@@ -2120,7 +2109,7 @@ Returns a `Coroutine` for
 .
 
 Type annotations for
-`aiobotocore.create_client("waf").update_sql_injection_match_set` method.
+`session.create_client("waf").update_sql_injection_match_set` method.
 
 Boto3 documentation:
 [WAF.Client.update_sql_injection_match_set](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.update_sql_injection_match_set)
@@ -2148,7 +2137,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").update_web_acl` method.
+Type annotations for `session.create_client("waf").update_web_acl` method.
 
 Boto3 documentation:
 [WAF.Client.update_web_acl](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.update_web_acl)
@@ -2175,7 +2164,7 @@ Returns a `Coroutine` for
 
 .
 
-Type annotations for `aiobotocore.create_client("waf").update_xss_match_set`
+Type annotations for `session.create_client("waf").update_xss_match_set`
 method.
 
 Boto3 documentation:
@@ -2198,12 +2187,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [UpdateXssMatchSetResponseTypeDef](./type_defs.md#updatexssmatchsetresponsetypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("waf").__aenter__` method.
+
+Boto3 documentation:
+[WAF.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [WAFClient](#wafclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("waf").__aexit__` method.
+
+Boto3 documentation:
+[WAF.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/waf.html#WAF.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("waf").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("waf").get_paginator` method with
+overloads.
 
 - `client.get_paginator("get_rate_based_rule_managed_keys")` ->
   [GetRateBasedRuleManagedKeysPaginator](./paginators.md#getratebasedrulemanagedkeyspaginator)

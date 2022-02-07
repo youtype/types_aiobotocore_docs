@@ -20,17 +20,19 @@ type annotations stubs module
 ## ListExperimentsPaginator
 
 Type annotations for
-`aiobotocore.create_client("evidently").get_paginator("list_experiments")`.
+`session.create_client("evidently").get_paginator("list_experiments")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_evidently.paginator import ListExperimentsPaginator
 
-def get_list_experiments_paginator() -> ListExperimentsPaginator:
-    return Session().create_client("evidently").get_paginator("list_experiments")
+session = get_session()
+async with session.create_client("evidently") as client:
+    client: CloudWatchEvidentlyClient
+    paginator: ListExperimentsPaginator = client.get_paginator("list_experiments")
 ```
 
 Boto3 documentation:
@@ -50,17 +52,19 @@ Arguments for `ListExperimentsPaginator.paginate` method:
 ## ListFeaturesPaginator
 
 Type annotations for
-`aiobotocore.create_client("evidently").get_paginator("list_features")`.
+`session.create_client("evidently").get_paginator("list_features")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_evidently.paginator import ListFeaturesPaginator
 
-def get_list_features_paginator() -> ListFeaturesPaginator:
-    return Session().create_client("evidently").get_paginator("list_features")
+session = get_session()
+async with session.create_client("evidently") as client:
+    client: CloudWatchEvidentlyClient
+    paginator: ListFeaturesPaginator = client.get_paginator("list_features")
 ```
 
 Boto3 documentation:
@@ -80,17 +84,19 @@ Arguments for `ListFeaturesPaginator.paginate` method:
 ## ListLaunchesPaginator
 
 Type annotations for
-`aiobotocore.create_client("evidently").get_paginator("list_launches")`.
+`session.create_client("evidently").get_paginator("list_launches")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_evidently.paginator import ListLaunchesPaginator
 
-def get_list_launches_paginator() -> ListLaunchesPaginator:
-    return Session().create_client("evidently").get_paginator("list_launches")
+session = get_session()
+async with session.create_client("evidently") as client:
+    client: CloudWatchEvidentlyClient
+    paginator: ListLaunchesPaginator = client.get_paginator("list_launches")
 ```
 
 Boto3 documentation:
@@ -110,17 +116,19 @@ Arguments for `ListLaunchesPaginator.paginate` method:
 ## ListProjectsPaginator
 
 Type annotations for
-`aiobotocore.create_client("evidently").get_paginator("list_projects")`.
+`session.create_client("evidently").get_paginator("list_projects")`.
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 
 from types_aiobotocore_evidently.paginator import ListProjectsPaginator
 
-def get_list_projects_paginator() -> ListProjectsPaginator:
-    return Session().create_client("evidently").get_paginator("list_projects")
+session = get_session()
+async with session.create_client("evidently") as client:
+    client: CloudWatchEvidentlyClient
+    paginator: ListProjectsPaginator = client.get_paginator("list_projects")
 ```
 
 Boto3 documentation:

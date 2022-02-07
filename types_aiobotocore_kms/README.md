@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[kms]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[kms]'
+
+# standalone installation
 pip install types-aiobotocore-kms
 ```
 
@@ -29,8 +33,7 @@ pip install types-aiobotocore-kms
 
 ## KMSClient
 
-Type annotations for `aiobotocore.create_client("kms")` as
-[KMSClient](./client.md)
+Type annotations for `session.create_client("kms")` as [KMSClient](./client.md)
 
 Can be used directly:
 
@@ -42,6 +45,8 @@ from types_aiobotocore_kms.client import KMSClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_key_deletion](./client.md#cancel_key_deletion)
 - [connect_custom_key_store](./client.md#connect_custom_key_store)
@@ -146,7 +151,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_kms.paginators import ListAliasesPaginator, ...
+from types_aiobotocore_kms.paginator import ListAliasesPaginator, ...
 ```
 
 - [ListAliasesPaginator](./paginators.md#listaliasespaginator)

@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[neptune]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[neptune]'
+
+# standalone installation
 pip install types-aiobotocore-neptune
 ```
 
@@ -30,7 +34,7 @@ pip install types-aiobotocore-neptune
 
 ## NeptuneClient
 
-Type annotations for `aiobotocore.create_client("neptune")` as
+Type annotations for `session.create_client("neptune")` as
 [NeptuneClient](./client.md)
 
 Can be used directly:
@@ -43,6 +47,8 @@ from types_aiobotocore_neptune.client import NeptuneClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [add_role_to_db_cluster](./client.md#add_role_to_db_cluster)
 - [add_source_identifier_to_subscription](./client.md#add_source_identifier_to_subscription)
 - [add_tags_to_resource](./client.md#add_tags_to_resource)
@@ -193,7 +199,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_neptune.paginators import DescribeDBClusterEndpointsPaginator, ...
+from types_aiobotocore_neptune.paginator import DescribeDBClusterEndpointsPaginator, ...
 ```
 
 - [DescribeDBClusterEndpointsPaginator](./paginators.md#describedbclusterendpointspaginator)
@@ -222,7 +228,7 @@ Type annotations for [waiters](./waiters.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_neptune.waiters import DBInstanceAvailableWaiter, ...
+from types_aiobotocore_neptune.waiter import DBInstanceAvailableWaiter, ...
 ```
 
 - [DBInstanceAvailableWaiter](./waiters.md#dbinstanceavailablewaiter)

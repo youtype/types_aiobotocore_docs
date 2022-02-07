@@ -79,22 +79,25 @@ type annotations stubs module
     - [update_radius](#update_radius)
     - [update_trust](#update_trust)
     - [verify_trust](#verify_trust)
+    - [__aenter__](#__aenter__)
+    - [__aexit__](#__aexit__)
     - [get_paginator](#get_paginator)
 
 <a id="directoryserviceclient"></a>
 
 ## DirectoryServiceClient
 
-Type annotations for `aiobotocore.create_client("ds")`
+Type annotations for `session.create_client("ds")`
 
 Can be used directly:
 
 ```python
-from aiobotocore.session import Session
+from aiobotocore.session import get_session
 from types_aiobotocore_ds.client import DirectoryServiceClient
 
-def get_ds_client() -> DirectoryServiceClient:
-    return Session().client("ds")
+session = get_session()
+async with session.create_client("ds") as client:
+    client: DirectoryServiceClient
 ```
 
 Boto3 documentation:
@@ -162,7 +165,7 @@ Exceptions:
 
 DirectoryServiceClient exceptions.
 
-Type annotations for `aiobotocore.create_client("ds").exceptions` method.
+Type annotations for `session.create_client("ds").exceptions` method.
 
 Boto3 documentation:
 [DirectoryService.Client.exceptions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.exceptions)
@@ -176,7 +179,7 @@ Returns [Exceptions](#exceptions).
 Accepts a directory sharing request that was sent from the directory owner
 account.
 
-Type annotations for `aiobotocore.create_client("ds").accept_shared_directory`
+Type annotations for `session.create_client("ds").accept_shared_directory`
 method.
 
 Boto3 documentation:
@@ -203,7 +206,7 @@ If the DNS server for your self-managed domain uses a publicly addressable IP
 address, you must add a CIDR address block to correctly route traffic to and
 from your Microsoft AD on Amazon Web Services.
 
-Type annotations for `aiobotocore.create_client("ds").add_ip_routes` method.
+Type annotations for `session.create_client("ds").add_ip_routes` method.
 
 Boto3 documentation:
 [DirectoryService.Client.add_ip_routes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.add_ip_routes)
@@ -229,7 +232,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds two domain controllers in the specified Region for the specified
 directory.
 
-Type annotations for `aiobotocore.create_client("ds").add_region` method.
+Type annotations for `session.create_client("ds").add_region` method.
 
 Boto3 documentation:
 [DirectoryService.Client.add_region](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.add_region)
@@ -255,8 +258,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Adds or overwrites one or more tags for the specified directory.
 
-Type annotations for `aiobotocore.create_client("ds").add_tags_to_resource`
-method.
+Type annotations for `session.create_client("ds").add_tags_to_resource` method.
 
 Boto3 documentation:
 [DirectoryService.Client.add_tags_to_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.add_tags_to_resource)
@@ -280,18 +282,16 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Check if an operation can be paginated.
 
-Type annotations for `aiobotocore.create_client("ds").can_paginate` method.
+Type annotations for `session.create_client("ds").can_paginate` method.
 
 Boto3 documentation:
 [DirectoryService.Client.can_paginate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.can_paginate)
-
-Asynchronous method. Use `await can_paginate(...)` for a synchronous call.
 
 Arguments:
 
 - `operation_name`: `str` *(required)*
 
-Returns a `Coroutine` for `bool`.
+Returns `bool`.
 
 <a id="cancel_schema_extension"></a>
 
@@ -299,7 +299,7 @@ Returns a `Coroutine` for `bool`.
 
 Cancels an in-progress schema extension to a Microsoft AD directory.
 
-Type annotations for `aiobotocore.create_client("ds").cancel_schema_extension`
+Type annotations for `session.create_client("ds").cancel_schema_extension`
 method.
 
 Boto3 documentation:
@@ -324,8 +324,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates an AD Connector to connect to a self-managed directory.
 
-Type annotations for `aiobotocore.create_client("ds").connect_directory`
-method.
+Type annotations for `session.create_client("ds").connect_directory` method.
 
 Boto3 documentation:
 [DirectoryService.Client.connect_directory](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.connect_directory)
@@ -356,7 +355,7 @@ Returns a `Coroutine` for
 
 Creates an alias for a directory and assigns the alias to the directory.
 
-Type annotations for `aiobotocore.create_client("ds").create_alias` method.
+Type annotations for `session.create_client("ds").create_alias` method.
 
 Boto3 documentation:
 [DirectoryService.Client.create_alias](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.create_alias)
@@ -380,7 +379,7 @@ Returns a `Coroutine` for
 
 Creates an Active Directory computer object in the specified directory.
 
-Type annotations for `aiobotocore.create_client("ds").create_computer` method.
+Type annotations for `session.create_client("ds").create_computer` method.
 
 Boto3 documentation:
 [DirectoryService.Client.create_computer](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.create_computer)
@@ -409,8 +408,8 @@ Returns a `Coroutine` for
 Creates a conditional forwarder associated with your Amazon Web Services
 directory.
 
-Type annotations for
-`aiobotocore.create_client("ds").create_conditional_forwarder` method.
+Type annotations for `session.create_client("ds").create_conditional_forwarder`
+method.
 
 Boto3 documentation:
 [DirectoryService.Client.create_conditional_forwarder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.create_conditional_forwarder)
@@ -435,7 +434,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a Simple AD directory.
 
-Type annotations for `aiobotocore.create_client("ds").create_directory` method.
+Type annotations for `session.create_client("ds").create_directory` method.
 
 Boto3 documentation:
 [DirectoryService.Client.create_directory](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.create_directory)
@@ -467,7 +466,7 @@ Creates a subscription to forward real-time Directory Service domain controller
 security logs to the specified Amazon CloudWatch log group in your Amazon Web
 Services account.
 
-Type annotations for `aiobotocore.create_client("ds").create_log_subscription`
+Type annotations for `session.create_client("ds").create_log_subscription`
 method.
 
 Boto3 documentation:
@@ -492,8 +491,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Creates a Microsoft AD directory in the Amazon Web Services Cloud.
 
-Type annotations for `aiobotocore.create_client("ds").create_microsoft_ad`
-method.
+Type annotations for `session.create_client("ds").create_microsoft_ad` method.
 
 Boto3 documentation:
 [DirectoryService.Client.create_microsoft_ad](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.create_microsoft_ad)
@@ -526,7 +524,7 @@ Returns a `Coroutine` for
 Creates a snapshot of a Simple AD or Microsoft AD directory in the Amazon Web
 Services cloud.
 
-Type annotations for `aiobotocore.create_client("ds").create_snapshot` method.
+Type annotations for `session.create_client("ds").create_snapshot` method.
 
 Boto3 documentation:
 [DirectoryService.Client.create_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.create_snapshot)
@@ -551,7 +549,7 @@ Returns a `Coroutine` for
 Directory Service for Microsoft Active Directory allows you to configure trust
 relationships.
 
-Type annotations for `aiobotocore.create_client("ds").create_trust` method.
+Type annotations for `session.create_client("ds").create_trust` method.
 
 Boto3 documentation:
 [DirectoryService.Client.create_trust](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.create_trust)
@@ -582,8 +580,8 @@ Returns a `Coroutine` for
 Deletes a conditional forwarder that has been set up for your Amazon Web
 Services directory.
 
-Type annotations for
-`aiobotocore.create_client("ds").delete_conditional_forwarder` method.
+Type annotations for `session.create_client("ds").delete_conditional_forwarder`
+method.
 
 Boto3 documentation:
 [DirectoryService.Client.delete_conditional_forwarder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.delete_conditional_forwarder)
@@ -607,7 +605,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes an Directory Service directory.
 
-Type annotations for `aiobotocore.create_client("ds").delete_directory` method.
+Type annotations for `session.create_client("ds").delete_directory` method.
 
 Boto3 documentation:
 [DirectoryService.Client.delete_directory](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.delete_directory)
@@ -630,7 +628,7 @@ Returns a `Coroutine` for
 
 Deletes the specified log subscription.
 
-Type annotations for `aiobotocore.create_client("ds").delete_log_subscription`
+Type annotations for `session.create_client("ds").delete_log_subscription`
 method.
 
 Boto3 documentation:
@@ -654,7 +652,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deletes a directory snapshot.
 
-Type annotations for `aiobotocore.create_client("ds").delete_snapshot` method.
+Type annotations for `session.create_client("ds").delete_snapshot` method.
 
 Boto3 documentation:
 [DirectoryService.Client.delete_snapshot](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.delete_snapshot)
@@ -678,7 +676,7 @@ Returns a `Coroutine` for
 Deletes an existing trust relationship between your Managed Microsoft AD
 directory and an external domain.
 
-Type annotations for `aiobotocore.create_client("ds").delete_trust` method.
+Type annotations for `session.create_client("ds").delete_trust` method.
 
 Boto3 documentation:
 [DirectoryService.Client.delete_trust](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.delete_trust)
@@ -703,7 +701,7 @@ Returns a `Coroutine` for
 Deletes from the system the certificate that was registered for secure LDAP or
 client certificate authentication.
 
-Type annotations for `aiobotocore.create_client("ds").deregister_certificate`
+Type annotations for `session.create_client("ds").deregister_certificate`
 method.
 
 Boto3 documentation:
@@ -729,7 +727,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Removes the specified directory as a publisher to the specified Amazon SNS
 topic.
 
-Type annotations for `aiobotocore.create_client("ds").deregister_event_topic`
+Type annotations for `session.create_client("ds").deregister_event_topic`
 method.
 
 Boto3 documentation:
@@ -755,8 +753,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Displays information about the certificate registered for secure LDAP or client
 certificate authentication.
 
-Type annotations for `aiobotocore.create_client("ds").describe_certificate`
-method.
+Type annotations for `session.create_client("ds").describe_certificate` method.
 
 Boto3 documentation:
 [DirectoryService.Client.describe_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.describe_certificate)
@@ -783,8 +780,7 @@ Retrieves information about the type of client authentication for the specified
 directory, if the type is specified.
 
 Type annotations for
-`aiobotocore.create_client("ds").describe_client_authentication_settings`
-method.
+`session.create_client("ds").describe_client_authentication_settings` method.
 
 Boto3 documentation:
 [DirectoryService.Client.describe_client_authentication_settings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.describe_client_authentication_settings)
@@ -813,7 +809,7 @@ Returns a `Coroutine` for
 Obtains information about the conditional forwarders for this account.
 
 Type annotations for
-`aiobotocore.create_client("ds").describe_conditional_forwarders` method.
+`session.create_client("ds").describe_conditional_forwarders` method.
 
 Boto3 documentation:
 [DirectoryService.Client.describe_conditional_forwarders](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.describe_conditional_forwarders)
@@ -838,8 +834,7 @@ Returns a `Coroutine` for
 
 Obtains information about the directories that belong to this account.
 
-Type annotations for `aiobotocore.create_client("ds").describe_directories`
-method.
+Type annotations for `session.create_client("ds").describe_directories` method.
 
 Boto3 documentation:
 [DirectoryService.Client.describe_directories](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.describe_directories)
@@ -865,8 +860,8 @@ Returns a `Coroutine` for
 
 Provides information about any domain controllers in your directory.
 
-Type annotations for
-`aiobotocore.create_client("ds").describe_domain_controllers` method.
+Type annotations for `session.create_client("ds").describe_domain_controllers`
+method.
 
 Boto3 documentation:
 [DirectoryService.Client.describe_domain_controllers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.describe_domain_controllers)
@@ -894,7 +889,7 @@ Returns a `Coroutine` for
 Obtains information about which Amazon SNS topics receive status messages from
 the specified directory.
 
-Type annotations for `aiobotocore.create_client("ds").describe_event_topics`
+Type annotations for `session.create_client("ds").describe_event_topics`
 method.
 
 Boto3 documentation:
@@ -920,7 +915,7 @@ Returns a `Coroutine` for
 
 Describes the status of LDAP security for the specified directory.
 
-Type annotations for `aiobotocore.create_client("ds").describe_ldaps_settings`
+Type annotations for `session.create_client("ds").describe_ldaps_settings`
 method.
 
 Boto3 documentation:
@@ -950,7 +945,7 @@ Returns a `Coroutine` for
 Provides information about the Regions that are configured for multi-Region
 replication.
 
-Type annotations for `aiobotocore.create_client("ds").describe_regions` method.
+Type annotations for `session.create_client("ds").describe_regions` method.
 
 Boto3 documentation:
 [DirectoryService.Client.describe_regions](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.describe_regions)
@@ -975,8 +970,8 @@ Returns a `Coroutine` for
 
 Returns the shared directories in your account.
 
-Type annotations for
-`aiobotocore.create_client("ds").describe_shared_directories` method.
+Type annotations for `session.create_client("ds").describe_shared_directories`
+method.
 
 Boto3 documentation:
 [DirectoryService.Client.describe_shared_directories](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.describe_shared_directories)
@@ -1003,8 +998,7 @@ Returns a `Coroutine` for
 
 Obtains information about the directory snapshots that belong to this account.
 
-Type annotations for `aiobotocore.create_client("ds").describe_snapshots`
-method.
+Type annotations for `session.create_client("ds").describe_snapshots` method.
 
 Boto3 documentation:
 [DirectoryService.Client.describe_snapshots](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.describe_snapshots)
@@ -1031,7 +1025,7 @@ Returns a `Coroutine` for
 
 Obtains information about the trust relationships for this account.
 
-Type annotations for `aiobotocore.create_client("ds").describe_trusts` method.
+Type annotations for `session.create_client("ds").describe_trusts` method.
 
 Boto3 documentation:
 [DirectoryService.Client.describe_trusts](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.describe_trusts)
@@ -1058,7 +1052,7 @@ Returns a `Coroutine` for
 Disables alternative client authentication methods for the specified directory.
 
 Type annotations for
-`aiobotocore.create_client("ds").disable_client_authentication` method.
+`session.create_client("ds").disable_client_authentication` method.
 
 Boto3 documentation:
 [DirectoryService.Client.disable_client_authentication](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.disable_client_authentication)
@@ -1084,7 +1078,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Deactivates LDAP secure calls for the specified directory.
 
-Type annotations for `aiobotocore.create_client("ds").disable_ldaps` method.
+Type annotations for `session.create_client("ds").disable_ldaps` method.
 
 Boto3 documentation:
 [DirectoryService.Client.disable_ldaps](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.disable_ldaps)
@@ -1109,7 +1103,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Disables multi-factor authentication (MFA) with the Remote Authentication Dial
 In User Service (RADIUS) server for an AD Connector or Microsoft AD directory.
 
-Type annotations for `aiobotocore.create_client("ds").disable_radius` method.
+Type annotations for `session.create_client("ds").disable_radius` method.
 
 Boto3 documentation:
 [DirectoryService.Client.disable_radius](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.disable_radius)
@@ -1131,7 +1125,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Disables single-sign on for a directory.
 
-Type annotations for `aiobotocore.create_client("ds").disable_sso` method.
+Type annotations for `session.create_client("ds").disable_sso` method.
 
 Boto3 documentation:
 [DirectoryService.Client.disable_sso](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.disable_sso)
@@ -1155,8 +1149,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Enables alternative client authentication methods for the specified directory.
 
-Type annotations for
-`aiobotocore.create_client("ds").enable_client_authentication` method.
+Type annotations for `session.create_client("ds").enable_client_authentication`
+method.
 
 Boto3 documentation:
 [DirectoryService.Client.enable_client_authentication](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.enable_client_authentication)
@@ -1183,7 +1177,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Activates the switch for the specific directory to always use LDAP secure
 calls.
 
-Type annotations for `aiobotocore.create_client("ds").enable_ldaps` method.
+Type annotations for `session.create_client("ds").enable_ldaps` method.
 
 Boto3 documentation:
 [DirectoryService.Client.enable_ldaps](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.enable_ldaps)
@@ -1208,7 +1202,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Enables multi-factor authentication (MFA) with the Remote Authentication Dial
 In User Service (RADIUS) server for an AD Connector or Microsoft AD directory.
 
-Type annotations for `aiobotocore.create_client("ds").enable_radius` method.
+Type annotations for `session.create_client("ds").enable_radius` method.
 
 Boto3 documentation:
 [DirectoryService.Client.enable_radius](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.enable_radius)
@@ -1232,7 +1226,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Enables single sign-on for a directory.
 
-Type annotations for `aiobotocore.create_client("ds").enable_sso` method.
+Type annotations for `session.create_client("ds").enable_sso` method.
 
 Boto3 documentation:
 [DirectoryService.Client.enable_sso](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.enable_sso)
@@ -1256,7 +1250,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Generate a presigned url given a client, its method, and arguments.
 
-Type annotations for `aiobotocore.create_client("ds").generate_presigned_url`
+Type annotations for `session.create_client("ds").generate_presigned_url`
 method.
 
 Boto3 documentation:
@@ -1280,8 +1274,7 @@ Returns a `Coroutine` for `str`.
 
 Obtains directory limit information for the current Region.
 
-Type annotations for `aiobotocore.create_client("ds").get_directory_limits`
-method.
+Type annotations for `session.create_client("ds").get_directory_limits` method.
 
 Boto3 documentation:
 [DirectoryService.Client.get_directory_limits](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.get_directory_limits)
@@ -1298,8 +1291,7 @@ Returns a `Coroutine` for
 
 Obtains the manual snapshot limits for a directory.
 
-Type annotations for `aiobotocore.create_client("ds").get_snapshot_limits`
-method.
+Type annotations for `session.create_client("ds").get_snapshot_limits` method.
 
 Boto3 documentation:
 [DirectoryService.Client.get_snapshot_limits](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.get_snapshot_limits)
@@ -1324,8 +1316,7 @@ Returns a `Coroutine` for
 For the specified directory, lists all the certificates registered for a secure
 LDAP or client certificate authentication.
 
-Type annotations for `aiobotocore.create_client("ds").list_certificates`
-method.
+Type annotations for `session.create_client("ds").list_certificates` method.
 
 Boto3 documentation:
 [DirectoryService.Client.list_certificates](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.list_certificates)
@@ -1350,7 +1341,7 @@ Returns a `Coroutine` for
 
 Lists the address blocks that you have added to a directory.
 
-Type annotations for `aiobotocore.create_client("ds").list_ip_routes` method.
+Type annotations for `session.create_client("ds").list_ip_routes` method.
 
 Boto3 documentation:
 [DirectoryService.Client.list_ip_routes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.list_ip_routes)
@@ -1375,7 +1366,7 @@ Returns a `Coroutine` for
 
 Lists the active log subscriptions for the Amazon Web Services account.
 
-Type annotations for `aiobotocore.create_client("ds").list_log_subscriptions`
+Type annotations for `session.create_client("ds").list_log_subscriptions`
 method.
 
 Boto3 documentation:
@@ -1402,7 +1393,7 @@ Returns a `Coroutine` for
 
 Lists all schema extensions applied to a Microsoft AD Directory.
 
-Type annotations for `aiobotocore.create_client("ds").list_schema_extensions`
+Type annotations for `session.create_client("ds").list_schema_extensions`
 method.
 
 Boto3 documentation:
@@ -1429,7 +1420,7 @@ Returns a `Coroutine` for
 
 Lists all tags on a directory.
 
-Type annotations for `aiobotocore.create_client("ds").list_tags_for_resource`
+Type annotations for `session.create_client("ds").list_tags_for_resource`
 method.
 
 Boto3 documentation:
@@ -1456,8 +1447,7 @@ Returns a `Coroutine` for
 
 Registers a certificate for a secure LDAP or client certificate authentication.
 
-Type annotations for `aiobotocore.create_client("ds").register_certificate`
-method.
+Type annotations for `session.create_client("ds").register_certificate` method.
 
 Boto3 documentation:
 [DirectoryService.Client.register_certificate](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.register_certificate)
@@ -1485,8 +1475,7 @@ Returns a `Coroutine` for
 
 Associates a directory with an Amazon SNS topic.
 
-Type annotations for `aiobotocore.create_client("ds").register_event_topic`
-method.
+Type annotations for `session.create_client("ds").register_event_topic` method.
 
 Boto3 documentation:
 [DirectoryService.Client.register_event_topic](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.register_event_topic)
@@ -1511,7 +1500,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Rejects a directory sharing request that was sent from the directory owner
 account.
 
-Type annotations for `aiobotocore.create_client("ds").reject_shared_directory`
+Type annotations for `session.create_client("ds").reject_shared_directory`
 method.
 
 Boto3 documentation:
@@ -1536,7 +1525,7 @@ Returns a `Coroutine` for
 
 Removes IP address blocks from a directory.
 
-Type annotations for `aiobotocore.create_client("ds").remove_ip_routes` method.
+Type annotations for `session.create_client("ds").remove_ip_routes` method.
 
 Boto3 documentation:
 [DirectoryService.Client.remove_ip_routes](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.remove_ip_routes)
@@ -1560,7 +1549,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Stops all replication and removes the domain controllers from the specified
 Region.
 
-Type annotations for `aiobotocore.create_client("ds").remove_region` method.
+Type annotations for `session.create_client("ds").remove_region` method.
 
 Boto3 documentation:
 [DirectoryService.Client.remove_region](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.remove_region)
@@ -1582,8 +1571,8 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Removes tags from a directory.
 
-Type annotations for
-`aiobotocore.create_client("ds").remove_tags_from_resource` method.
+Type annotations for `session.create_client("ds").remove_tags_from_resource`
+method.
 
 Boto3 documentation:
 [DirectoryService.Client.remove_tags_from_resource](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.remove_tags_from_resource)
@@ -1608,8 +1597,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Resets the password for any user in your Managed Microsoft AD or Simple AD
 directory.
 
-Type annotations for `aiobotocore.create_client("ds").reset_user_password`
-method.
+Type annotations for `session.create_client("ds").reset_user_password` method.
 
 Boto3 documentation:
 [DirectoryService.Client.reset_user_password](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.reset_user_password)
@@ -1634,7 +1622,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 
 Restores a directory using an existing directory snapshot.
 
-Type annotations for `aiobotocore.create_client("ds").restore_from_snapshot`
+Type annotations for `session.create_client("ds").restore_from_snapshot`
 method.
 
 Boto3 documentation:
@@ -1660,7 +1648,7 @@ Shares a specified directory (`DirectoryId` ) in your Amazon Web Services
 account (directory owner) with another Amazon Web Services account (directory
 consumer).
 
-Type annotations for `aiobotocore.create_client("ds").share_directory` method.
+Type annotations for `session.create_client("ds").share_directory` method.
 
 Boto3 documentation:
 [DirectoryService.Client.share_directory](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.share_directory)
@@ -1687,7 +1675,7 @@ Returns a `Coroutine` for
 
 Applies a schema extension to a Microsoft AD directory.
 
-Type annotations for `aiobotocore.create_client("ds").start_schema_extension`
+Type annotations for `session.create_client("ds").start_schema_extension`
 method.
 
 Boto3 documentation:
@@ -1715,8 +1703,7 @@ Returns a `Coroutine` for
 
 Stops the directory sharing between the directory owner and consumer accounts.
 
-Type annotations for `aiobotocore.create_client("ds").unshare_directory`
-method.
+Type annotations for `session.create_client("ds").unshare_directory` method.
 
 Boto3 documentation:
 [DirectoryService.Client.unshare_directory](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.unshare_directory)
@@ -1742,8 +1729,8 @@ Returns a `Coroutine` for
 Updates a conditional forwarder that has been set up for your Amazon Web
 Services directory.
 
-Type annotations for
-`aiobotocore.create_client("ds").update_conditional_forwarder` method.
+Type annotations for `session.create_client("ds").update_conditional_forwarder`
+method.
 
 Boto3 documentation:
 [DirectoryService.Client.update_conditional_forwarder](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.update_conditional_forwarder)
@@ -1769,7 +1756,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Adds or removes domain controllers to or from the directory.
 
 Type annotations for
-`aiobotocore.create_client("ds").update_number_of_domain_controllers` method.
+`session.create_client("ds").update_number_of_domain_controllers` method.
 
 Boto3 documentation:
 [DirectoryService.Client.update_number_of_domain_controllers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.update_number_of_domain_controllers)
@@ -1794,7 +1781,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the Remote Authentication Dial In User Service (RADIUS) server
 information for an AD Connector or Microsoft AD directory.
 
-Type annotations for `aiobotocore.create_client("ds").update_radius` method.
+Type annotations for `session.create_client("ds").update_radius` method.
 
 Boto3 documentation:
 [DirectoryService.Client.update_radius](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.update_radius)
@@ -1819,7 +1806,7 @@ Returns a `Coroutine` for `Dict`\[`str`, `Any`\].
 Updates the trust that has been set up between your Managed Microsoft AD
 directory and an self-managed Active Directory.
 
-Type annotations for `aiobotocore.create_client("ds").update_trust` method.
+Type annotations for `session.create_client("ds").update_trust` method.
 
 Boto3 documentation:
 [DirectoryService.Client.update_trust](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.update_trust)
@@ -1844,7 +1831,7 @@ Returns a `Coroutine` for
 Directory Service for Microsoft Active Directory allows you to configure and
 verify trust relationships.
 
-Type annotations for `aiobotocore.create_client("ds").verify_trust` method.
+Type annotations for `session.create_client("ds").verify_trust` method.
 
 Boto3 documentation:
 [DirectoryService.Client.verify_trust](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.verify_trust)
@@ -1861,12 +1848,44 @@ Keyword-only arguments:
 Returns a `Coroutine` for
 [VerifyTrustResultTypeDef](./type_defs.md#verifytrustresulttypedef).
 
+<a id="__aenter__"></a>
+
+### __aenter__
+
+Type annotations for `session.create_client("ds").__aenter__` method.
+
+Boto3 documentation:
+[DirectoryService.Client.__aenter__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.__aenter__)
+
+Asynchronous method. Use `await __aenter__(...)` for a synchronous call.
+
+Returns a `Coroutine` for [DirectoryServiceClient](#directoryserviceclient).
+
+<a id="__aexit__"></a>
+
+### __aexit__
+
+Type annotations for `session.create_client("ds").__aexit__` method.
+
+Boto3 documentation:
+[DirectoryService.Client.__aexit__](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ds.html#DirectoryService.Client.__aexit__)
+
+Asynchronous method. Use `await __aexit__(...)` for a synchronous call.
+
+Arguments:
+
+- `exc_type`: `Any` *(required)*
+- `exc_val`: `Any` *(required)*
+- `exc_tb`: `Any` *(required)*
+
+Returns a `Coroutine` for `Any`.
+
 <a id="get_paginator"></a>
 
 ### get_paginator
 
-Type annotations for `aiobotocore.create_client("ds").get_paginator` method
-with overloads.
+Type annotations for `session.create_client("ds").get_paginator` method with
+overloads.
 
 - `client.get_paginator("describe_directories")` ->
   [DescribeDirectoriesPaginator](./paginators.md#describedirectoriespaginator)

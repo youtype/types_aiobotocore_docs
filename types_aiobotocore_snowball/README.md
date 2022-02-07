@@ -13,7 +13,11 @@ type annotations stubs module
 # install with types-aiobotocore
 pip install 'types-aiobotocore[snowball]'
 
-# install as a standalone
+# Lite version does not provide session.create_client overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[snowball]'
+
+# standalone installation
 pip install types-aiobotocore-snowball
 ```
 
@@ -29,7 +33,7 @@ pip install types-aiobotocore-snowball
 
 ## SnowballClient
 
-Type annotations for `aiobotocore.create_client("snowball")` as
+Type annotations for `session.create_client("snowball")` as
 [SnowballClient](./client.md)
 
 Can be used directly:
@@ -42,6 +46,8 @@ from types_aiobotocore_snowball.client import SnowballClient
 
 ### Methods
 
+- [__aenter__](./client.md#__aenter__)
+- [__aexit__](./client.md#__aexit__)
 - [can_paginate](./client.md#can_paginate)
 - [cancel_cluster](./client.md#cancel_cluster)
 - [cancel_job](./client.md#cancel_job)
@@ -101,7 +107,7 @@ Type annotations for [paginators](./paginators.md) from
 Can be used directly:
 
 ```python
-from types_aiobotocore_snowball.paginators import DescribeAddressesPaginator, ...
+from types_aiobotocore_snowball.paginator import DescribeAddressesPaginator, ...
 ```
 
 - [DescribeAddressesPaginator](./paginators.md#describeaddressespaginator)
