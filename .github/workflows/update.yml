@@ -55,15 +55,6 @@ jobs:
           script: |
             const { extractAioBotocoreDownloadLinks } = require('./.github/workflows/helpers.js')
             await extractAioBotocoreDownloadLinks({ core })
-      - name: Install aiobotocore
-        if: steps.vars.outputs.version
-        run: |
-          mkdir installtemp
-          cd installtemp
-          wget ${{ steps.links.outputs.aiobotocore-url }}
-          pip install aiobotocore*.whl
-          cd ..
-          rm -rf installtemp
       - name: Install builder
         if: steps.vars.outputs.version
         run: |
@@ -72,6 +63,15 @@ jobs:
         if: steps.vars.outputs.version
         run: |
           python -m mypy_boto3_builder . --product aiobotocore-docs
+      - name: Install aiobotocore
+        if: steps.vars.outputs.version
+        run: |
+          mkdir installtemp
+          cd installtemp
+          wget ${{ steps.links.outputs.aiobotocore-url }}
+          pip install aiobotocore*
+          cd ..
+          rm -rf installtemp
       - name: Update marker file
         if: steps.vars.outputs.version
         env:
