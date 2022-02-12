@@ -59,10 +59,6 @@ jobs:
         if: steps.vars.outputs.version
         run: |
           python -m pip install -U mypy_boto3_builder
-      - name: Build docs
-        if: steps.vars.outputs.version
-        run: |
-          python -m mypy_boto3_builder . --product aiobotocore-docs
       - name: Install aiobotocore
         if: steps.vars.outputs.version
         run: |
@@ -72,6 +68,10 @@ jobs:
           pip install aiobotocore*
           cd ..
           rm -rf installtemp
+      - name: Build docs
+        if: steps.vars.outputs.version
+        run: |
+          python -m mypy_boto3_builder . --product aiobotocore-docs
       - name: Update marker file
         if: steps.vars.outputs.version
         env:
