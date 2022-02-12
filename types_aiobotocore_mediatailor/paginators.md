@@ -49,7 +49,7 @@ Arguments for `GetChannelSchedulePaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetChannelSchedulePaginator.paginate` returns
-`_PageIterator`\[[GetChannelScheduleResponseTypeDef](./type_defs.md#getchannelscheduleresponsetypedef)\].
+`AsyncIterable`\[[GetChannelScheduleResponseTypeDef](./type_defs.md#getchannelscheduleresponsetypedef)\].
 
 <a id="listalertspaginator"></a>
 
@@ -81,7 +81,7 @@ Arguments for `ListAlertsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAlertsPaginator.paginate` returns
-`_PageIterator`\[[ListAlertsResponseTypeDef](./type_defs.md#listalertsresponsetypedef)\].
+`AsyncIterable`\[[ListAlertsResponseTypeDef](./type_defs.md#listalertsresponsetypedef)\].
 
 <a id="listchannelspaginator"></a>
 
@@ -112,7 +112,7 @@ Arguments for `ListChannelsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListChannelsPaginator.paginate` returns
-`_PageIterator`\[[ListChannelsResponseTypeDef](./type_defs.md#listchannelsresponsetypedef)\].
+`AsyncIterable`\[[ListChannelsResponseTypeDef](./type_defs.md#listchannelsresponsetypedef)\].
 
 <a id="listplaybackconfigurationspaginator"></a>
 
@@ -143,7 +143,7 @@ Arguments for `ListPlaybackConfigurationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPlaybackConfigurationsPaginator.paginate` returns
-`_PageIterator`\[[ListPlaybackConfigurationsResponseTypeDef](./type_defs.md#listplaybackconfigurationsresponsetypedef)\].
+`AsyncIterable`\[[ListPlaybackConfigurationsResponseTypeDef](./type_defs.md#listplaybackconfigurationsresponsetypedef)\].
 
 <a id="listprefetchschedulespaginator"></a>
 
@@ -176,7 +176,7 @@ Arguments for `ListPrefetchSchedulesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPrefetchSchedulesPaginator.paginate` returns
-`_PageIterator`\[[ListPrefetchSchedulesResponseTypeDef](./type_defs.md#listprefetchschedulesresponsetypedef)\].
+`AsyncIterable`\[[ListPrefetchSchedulesResponseTypeDef](./type_defs.md#listprefetchschedulesresponsetypedef)\].
 
 <a id="listsourcelocationspaginator"></a>
 
@@ -207,7 +207,7 @@ Arguments for `ListSourceLocationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSourceLocationsPaginator.paginate` returns
-`_PageIterator`\[[ListSourceLocationsResponseTypeDef](./type_defs.md#listsourcelocationsresponsetypedef)\].
+`AsyncIterable`\[[ListSourceLocationsResponseTypeDef](./type_defs.md#listsourcelocationsresponsetypedef)\].
 
 <a id="listvodsourcespaginator"></a>
 
@@ -239,4 +239,4 @@ Arguments for `ListVodSourcesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListVodSourcesPaginator.paginate` returns
-`_PageIterator`\[[ListVodSourcesResponseTypeDef](./type_defs.md#listvodsourcesresponsetypedef)\].
+`AsyncIterable`\[[ListVodSourcesResponseTypeDef](./type_defs.md#listvodsourcesresponsetypedef)\].

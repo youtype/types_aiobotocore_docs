@@ -47,7 +47,7 @@ Arguments for `ListChannelsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListChannelsPaginator.paginate` returns
-`_PageIterator`\[[ListChannelsResponseTypeDef](./type_defs.md#listchannelsresponsetypedef)\].
+`AsyncIterable`\[[ListChannelsResponseTypeDef](./type_defs.md#listchannelsresponsetypedef)\].
 
 <a id="listplaybackkeypairspaginator"></a>
 
@@ -78,7 +78,7 @@ Arguments for `ListPlaybackKeyPairsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPlaybackKeyPairsPaginator.paginate` returns
-`_PageIterator`\[[ListPlaybackKeyPairsResponseTypeDef](./type_defs.md#listplaybackkeypairsresponsetypedef)\].
+`AsyncIterable`\[[ListPlaybackKeyPairsResponseTypeDef](./type_defs.md#listplaybackkeypairsresponsetypedef)\].
 
 <a id="listrecordingconfigurationspaginator"></a>
 
@@ -109,7 +109,7 @@ Arguments for `ListRecordingConfigurationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRecordingConfigurationsPaginator.paginate` returns
-`_PageIterator`\[[ListRecordingConfigurationsResponseTypeDef](./type_defs.md#listrecordingconfigurationsresponsetypedef)\].
+`AsyncIterable`\[[ListRecordingConfigurationsResponseTypeDef](./type_defs.md#listrecordingconfigurationsresponsetypedef)\].
 
 <a id="liststreamkeyspaginator"></a>
 
@@ -141,7 +141,7 @@ Arguments for `ListStreamKeysPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListStreamKeysPaginator.paginate` returns
-`_PageIterator`\[[ListStreamKeysResponseTypeDef](./type_defs.md#liststreamkeysresponsetypedef)\].
+`AsyncIterable`\[[ListStreamKeysResponseTypeDef](./type_defs.md#liststreamkeysresponsetypedef)\].
 
 <a id="liststreamspaginator"></a>
 
@@ -173,4 +173,4 @@ Arguments for `ListStreamsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListStreamsPaginator.paginate` returns
-`_PageIterator`\[[ListStreamsResponseTypeDef](./type_defs.md#liststreamsresponsetypedef)\].
+`AsyncIterable`\[[ListStreamsResponseTypeDef](./type_defs.md#liststreamsresponsetypedef)\].

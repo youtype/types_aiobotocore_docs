@@ -50,7 +50,7 @@ Arguments for `DescribeDestinationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeDestinationsPaginator.paginate` returns
-`_PageIterator`\[[DescribeDestinationsResponseTypeDef](./type_defs.md#describedestinationsresponsetypedef)\].
+`AsyncIterable`\[[DescribeDestinationsResponseTypeDef](./type_defs.md#describedestinationsresponsetypedef)\].
 
 <a id="describeexporttaskspaginator"></a>
 
@@ -84,7 +84,7 @@ Arguments for `DescribeExportTasksPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeExportTasksPaginator.paginate` returns
-`_PageIterator`\[[DescribeExportTasksResponseTypeDef](./type_defs.md#describeexporttasksresponsetypedef)\].
+`AsyncIterable`\[[DescribeExportTasksResponseTypeDef](./type_defs.md#describeexporttasksresponsetypedef)\].
 
 <a id="describeloggroupspaginator"></a>
 
@@ -116,7 +116,7 @@ Arguments for `DescribeLogGroupsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeLogGroupsPaginator.paginate` returns
-`_PageIterator`\[[DescribeLogGroupsResponseTypeDef](./type_defs.md#describeloggroupsresponsetypedef)\].
+`AsyncIterable`\[[DescribeLogGroupsResponseTypeDef](./type_defs.md#describeloggroupsresponsetypedef)\].
 
 <a id="describelogstreamspaginator"></a>
 
@@ -151,7 +151,7 @@ Arguments for `DescribeLogStreamsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeLogStreamsPaginator.paginate` returns
-`_PageIterator`\[[DescribeLogStreamsResponseTypeDef](./type_defs.md#describelogstreamsresponsetypedef)\].
+`AsyncIterable`\[[DescribeLogStreamsResponseTypeDef](./type_defs.md#describelogstreamsresponsetypedef)\].
 
 <a id="describemetricfilterspaginator"></a>
 
@@ -186,7 +186,7 @@ Arguments for `DescribeMetricFiltersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeMetricFiltersPaginator.paginate` returns
-`_PageIterator`\[[DescribeMetricFiltersResponseTypeDef](./type_defs.md#describemetricfiltersresponsetypedef)\].
+`AsyncIterable`\[[DescribeMetricFiltersResponseTypeDef](./type_defs.md#describemetricfiltersresponsetypedef)\].
 
 <a id="describequeriespaginator"></a>
 
@@ -219,7 +219,7 @@ Arguments for `DescribeQueriesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeQueriesPaginator.paginate` returns
-`_PageIterator`\[[DescribeQueriesResponseTypeDef](./type_defs.md#describequeriesresponsetypedef)\].
+`AsyncIterable`\[[DescribeQueriesResponseTypeDef](./type_defs.md#describequeriesresponsetypedef)\].
 
 <a id="describeresourcepoliciespaginator"></a>
 
@@ -250,7 +250,7 @@ Arguments for `DescribeResourcePoliciesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeResourcePoliciesPaginator.paginate` returns
-`_PageIterator`\[[DescribeResourcePoliciesResponseTypeDef](./type_defs.md#describeresourcepoliciesresponsetypedef)\].
+`AsyncIterable`\[[DescribeResourcePoliciesResponseTypeDef](./type_defs.md#describeresourcepoliciesresponsetypedef)\].
 
 <a id="describesubscriptionfilterspaginator"></a>
 
@@ -283,7 +283,7 @@ Arguments for `DescribeSubscriptionFiltersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeSubscriptionFiltersPaginator.paginate` returns
-`_PageIterator`\[[DescribeSubscriptionFiltersResponseTypeDef](./type_defs.md#describesubscriptionfiltersresponsetypedef)\].
+`AsyncIterable`\[[DescribeSubscriptionFiltersResponseTypeDef](./type_defs.md#describesubscriptionfiltersresponsetypedef)\].
 
 <a id="filterlogeventspaginator"></a>
 
@@ -321,4 +321,4 @@ Arguments for `FilterLogEventsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `FilterLogEventsPaginator.paginate` returns
-`_PageIterator`\[[FilterLogEventsResponseTypeDef](./type_defs.md#filterlogeventsresponsetypedef)\].
+`AsyncIterable`\[[FilterLogEventsResponseTypeDef](./type_defs.md#filterlogeventsresponsetypedef)\].

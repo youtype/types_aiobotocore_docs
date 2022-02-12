@@ -48,7 +48,7 @@ Arguments for `DescribeAgentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeAgentsPaginator.paginate` returns
-`_PageIterator`\[[DescribeAgentsResponseTypeDef](./type_defs.md#describeagentsresponsetypedef)\].
+`AsyncIterable`\[[DescribeAgentsResponseTypeDef](./type_defs.md#describeagentsresponsetypedef)\].
 
 <a id="describecontinuousexportspaginator"></a>
 
@@ -80,7 +80,7 @@ Arguments for `DescribeContinuousExportsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeContinuousExportsPaginator.paginate` returns
-`_PageIterator`\[[DescribeContinuousExportsResponseTypeDef](./type_defs.md#describecontinuousexportsresponsetypedef)\].
+`AsyncIterable`\[[DescribeContinuousExportsResponseTypeDef](./type_defs.md#describecontinuousexportsresponsetypedef)\].
 
 <a id="describeexportconfigurationspaginator"></a>
 
@@ -112,7 +112,7 @@ Arguments for `DescribeExportConfigurationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeExportConfigurationsPaginator.paginate` returns
-`_PageIterator`\[[DescribeExportConfigurationsResponseTypeDef](./type_defs.md#describeexportconfigurationsresponsetypedef)\].
+`AsyncIterable`\[[DescribeExportConfigurationsResponseTypeDef](./type_defs.md#describeexportconfigurationsresponsetypedef)\].
 
 <a id="describeexporttaskspaginator"></a>
 
@@ -146,7 +146,7 @@ Arguments for `DescribeExportTasksPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeExportTasksPaginator.paginate` returns
-`_PageIterator`\[[DescribeExportTasksResponseTypeDef](./type_defs.md#describeexporttasksresponsetypedef)\].
+`AsyncIterable`\[[DescribeExportTasksResponseTypeDef](./type_defs.md#describeexporttasksresponsetypedef)\].
 
 <a id="describetagspaginator"></a>
 
@@ -178,7 +178,7 @@ Arguments for `DescribeTagsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeTagsPaginator.paginate` returns
-`_PageIterator`\[[DescribeTagsResponseTypeDef](./type_defs.md#describetagsresponsetypedef)\].
+`AsyncIterable`\[[DescribeTagsResponseTypeDef](./type_defs.md#describetagsresponsetypedef)\].
 
 <a id="listconfigurationspaginator"></a>
 
@@ -215,4 +215,4 @@ Arguments for `ListConfigurationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListConfigurationsPaginator.paginate` returns
-`_PageIterator`\[[ListConfigurationsResponseTypeDef](./type_defs.md#listconfigurationsresponsetypedef)\].
+`AsyncIterable`\[[ListConfigurationsResponseTypeDef](./type_defs.md#listconfigurationsresponsetypedef)\].

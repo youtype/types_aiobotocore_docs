@@ -50,7 +50,7 @@ Arguments for `DescribeDirectoriesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeDirectoriesPaginator.paginate` returns
-`_PageIterator`\[[DescribeDirectoriesResultTypeDef](./type_defs.md#describedirectoriesresulttypedef)\].
+`AsyncIterable`\[[DescribeDirectoriesResultTypeDef](./type_defs.md#describedirectoriesresulttypedef)\].
 
 <a id="describedomaincontrollerspaginator"></a>
 
@@ -83,7 +83,7 @@ Arguments for `DescribeDomainControllersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeDomainControllersPaginator.paginate` returns
-`_PageIterator`\[[DescribeDomainControllersResultTypeDef](./type_defs.md#describedomaincontrollersresulttypedef)\].
+`AsyncIterable`\[[DescribeDomainControllersResultTypeDef](./type_defs.md#describedomaincontrollersresulttypedef)\].
 
 <a id="describeshareddirectoriespaginator"></a>
 
@@ -116,7 +116,7 @@ Arguments for `DescribeSharedDirectoriesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeSharedDirectoriesPaginator.paginate` returns
-`_PageIterator`\[[DescribeSharedDirectoriesResultTypeDef](./type_defs.md#describeshareddirectoriesresulttypedef)\].
+`AsyncIterable`\[[DescribeSharedDirectoriesResultTypeDef](./type_defs.md#describeshareddirectoriesresulttypedef)\].
 
 <a id="describesnapshotspaginator"></a>
 
@@ -149,7 +149,7 @@ Arguments for `DescribeSnapshotsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeSnapshotsPaginator.paginate` returns
-`_PageIterator`\[[DescribeSnapshotsResultTypeDef](./type_defs.md#describesnapshotsresulttypedef)\].
+`AsyncIterable`\[[DescribeSnapshotsResultTypeDef](./type_defs.md#describesnapshotsresulttypedef)\].
 
 <a id="describetrustspaginator"></a>
 
@@ -182,7 +182,7 @@ Arguments for `DescribeTrustsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeTrustsPaginator.paginate` returns
-`_PageIterator`\[[DescribeTrustsResultTypeDef](./type_defs.md#describetrustsresulttypedef)\].
+`AsyncIterable`\[[DescribeTrustsResultTypeDef](./type_defs.md#describetrustsresulttypedef)\].
 
 <a id="listiproutespaginator"></a>
 
@@ -214,7 +214,7 @@ Arguments for `ListIpRoutesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListIpRoutesPaginator.paginate` returns
-`_PageIterator`\[[ListIpRoutesResultTypeDef](./type_defs.md#listiproutesresulttypedef)\].
+`AsyncIterable`\[[ListIpRoutesResultTypeDef](./type_defs.md#listiproutesresulttypedef)\].
 
 <a id="listlogsubscriptionspaginator"></a>
 
@@ -246,7 +246,7 @@ Arguments for `ListLogSubscriptionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListLogSubscriptionsPaginator.paginate` returns
-`_PageIterator`\[[ListLogSubscriptionsResultTypeDef](./type_defs.md#listlogsubscriptionsresulttypedef)\].
+`AsyncIterable`\[[ListLogSubscriptionsResultTypeDef](./type_defs.md#listlogsubscriptionsresulttypedef)\].
 
 <a id="listschemaextensionspaginator"></a>
 
@@ -278,7 +278,7 @@ Arguments for `ListSchemaExtensionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSchemaExtensionsPaginator.paginate` returns
-`_PageIterator`\[[ListSchemaExtensionsResultTypeDef](./type_defs.md#listschemaextensionsresulttypedef)\].
+`AsyncIterable`\[[ListSchemaExtensionsResultTypeDef](./type_defs.md#listschemaextensionsresulttypedef)\].
 
 <a id="listtagsforresourcepaginator"></a>
 
@@ -310,4 +310,4 @@ Arguments for `ListTagsForResourcePaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTagsForResourcePaginator.paginate` returns
-`_PageIterator`\[[ListTagsForResourceResultTypeDef](./type_defs.md#listtagsforresourceresulttypedef)\].
+`AsyncIterable`\[[ListTagsForResourceResultTypeDef](./type_defs.md#listtagsforresourceresulttypedef)\].

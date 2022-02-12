@@ -42,7 +42,7 @@ Arguments for `ListBundlesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListBundlesPaginator.paginate` returns
-`_PageIterator`\[[ListBundlesResultTypeDef](./type_defs.md#listbundlesresulttypedef)\].
+`AsyncIterable`\[[ListBundlesResultTypeDef](./type_defs.md#listbundlesresulttypedef)\].
 
 <a id="listprojectspaginator"></a>
 
@@ -73,4 +73,4 @@ Arguments for `ListProjectsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListProjectsPaginator.paginate` returns
-`_PageIterator`\[[ListProjectsResultTypeDef](./type_defs.md#listprojectsresulttypedef)\].
+`AsyncIterable`\[[ListProjectsResultTypeDef](./type_defs.md#listprojectsresulttypedef)\].

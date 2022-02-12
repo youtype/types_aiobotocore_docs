@@ -9,25 +9,57 @@ Auto-generated documentation for
 type annotations stubs module
 [types-aiobotocore-mgn](https://pypi.org/project/types-aiobotocore-mgn/).
 
-```bash
-# install with types-aiobotocore
-pip install 'types-aiobotocore[mgn]'
-
-# Lite version does not provide session.create_client overloads
-# it is more RAM-friendly, but requires explicit type annotations
-python -m pip install 'types-aiobotocore-lite[mgn]'
-
-# standalone installation
-pip install types-aiobotocore-mgn
-```
-
 - [Type annotations for aiobotocore mgn module](#type-annotations-for-aiobotocore-mgn-module)
+  - [How to install](#how-to-install)
+    - [VSCode extension](#vscode-extension)
+    - [From PyPI with pip](#from-pypi-with-pip)
+  - [How to uninstall](#how-to-uninstall)
   - [mgnClient](#mgnclient)
     - [Methods](#methods)
     - [Exceptions](#exceptions)
   - [Paginators](#paginators)
   - [Literals](#literals)
   - [Typed dictionaries](#typed-dictionaries)
+
+<a id="how-to-install"></a>
+
+## How to install
+
+<a id="vscode-extension"></a>
+
+### VSCode extension
+
+Add
+[AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
+extension to your VSCode and run `AWS boto3: Quick Start` command.
+
+Click `Modify` and select `boto3 common` and `mgn`.
+
+<a id="from-pypi-with-pip"></a>
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `mgn` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[mgn]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[mgn]'
+
+# standalone installation
+python -m pip install types-aiobotocore-mgn
+```
+
+<a id="how-to-uninstall"></a>
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-mgn
+```
 
 <a id="mgnclient"></a>
 

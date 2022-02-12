@@ -46,7 +46,7 @@ Arguments for `ListApplicationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListApplicationsPaginator.paginate` returns
-`_PageIterator`\[[ListApplicationsResponseTypeDef](./type_defs.md#listapplicationsresponsetypedef)\].
+`AsyncIterable`\[[ListApplicationsResponseTypeDef](./type_defs.md#listapplicationsresponsetypedef)\].
 
 <a id="listenvironmentvpcspaginator"></a>
 
@@ -78,7 +78,7 @@ Arguments for `ListEnvironmentVpcsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListEnvironmentVpcsPaginator.paginate` returns
-`_PageIterator`\[[ListEnvironmentVpcsResponseTypeDef](./type_defs.md#listenvironmentvpcsresponsetypedef)\].
+`AsyncIterable`\[[ListEnvironmentVpcsResponseTypeDef](./type_defs.md#listenvironmentvpcsresponsetypedef)\].
 
 <a id="listenvironmentspaginator"></a>
 
@@ -109,7 +109,7 @@ Arguments for `ListEnvironmentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListEnvironmentsPaginator.paginate` returns
-`_PageIterator`\[[ListEnvironmentsResponseTypeDef](./type_defs.md#listenvironmentsresponsetypedef)\].
+`AsyncIterable`\[[ListEnvironmentsResponseTypeDef](./type_defs.md#listenvironmentsresponsetypedef)\].
 
 <a id="listroutespaginator"></a>
 
@@ -142,7 +142,7 @@ Arguments for `ListRoutesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRoutesPaginator.paginate` returns
-`_PageIterator`\[[ListRoutesResponseTypeDef](./type_defs.md#listroutesresponsetypedef)\].
+`AsyncIterable`\[[ListRoutesResponseTypeDef](./type_defs.md#listroutesresponsetypedef)\].
 
 <a id="listservicespaginator"></a>
 
@@ -175,4 +175,4 @@ Arguments for `ListServicesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListServicesPaginator.paginate` returns
-`_PageIterator`\[[ListServicesResponseTypeDef](./type_defs.md#listservicesresponsetypedef)\].
+`AsyncIterable`\[[ListServicesResponseTypeDef](./type_defs.md#listservicesresponsetypedef)\].

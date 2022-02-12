@@ -46,7 +46,7 @@ Arguments for `DescribeJobLogItemsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeJobLogItemsPaginator.paginate` returns
-`_PageIterator`\[[DescribeJobLogItemsResponseTypeDef](./type_defs.md#describejoblogitemsresponsetypedef)\].
+`AsyncIterable`\[[DescribeJobLogItemsResponseTypeDef](./type_defs.md#describejoblogitemsresponsetypedef)\].
 
 <a id="describejobspaginator"></a>
 
@@ -80,7 +80,7 @@ Arguments for `DescribeJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeJobsPaginator.paginate` returns
-`_PageIterator`\[[DescribeJobsResponseTypeDef](./type_defs.md#describejobsresponsetypedef)\].
+`AsyncIterable`\[[DescribeJobsResponseTypeDef](./type_defs.md#describejobsresponsetypedef)\].
 
 <a id="describereplicationconfigurationtemplatespaginator"></a>
 
@@ -113,7 +113,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeReplicationConfigurationTemplatesPaginator.paginate` returns
-`_PageIterator`\[[DescribeReplicationConfigurationTemplatesResponseTypeDef](./type_defs.md#describereplicationconfigurationtemplatesresponsetypedef)\].
+`AsyncIterable`\[[DescribeReplicationConfigurationTemplatesResponseTypeDef](./type_defs.md#describereplicationconfigurationtemplatesresponsetypedef)\].
 
 <a id="describesourceserverspaginator"></a>
 
@@ -147,7 +147,7 @@ Arguments for `DescribeSourceServersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeSourceServersPaginator.paginate` returns
-`_PageIterator`\[[DescribeSourceServersResponseTypeDef](./type_defs.md#describesourceserversresponsetypedef)\].
+`AsyncIterable`\[[DescribeSourceServersResponseTypeDef](./type_defs.md#describesourceserversresponsetypedef)\].
 
 <a id="describevcenterclientspaginator"></a>
 
@@ -178,4 +178,4 @@ Arguments for `DescribeVcenterClientsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeVcenterClientsPaginator.paginate` returns
-`_PageIterator`\[[DescribeVcenterClientsResponseTypeDef](./type_defs.md#describevcenterclientsresponsetypedef)\].
+`AsyncIterable`\[[DescribeVcenterClientsResponseTypeDef](./type_defs.md#describevcenterclientsresponsetypedef)\].

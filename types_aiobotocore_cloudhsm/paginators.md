@@ -43,7 +43,7 @@ Arguments for `ListHapgsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListHapgsPaginator.paginate` returns
-`_PageIterator`\[[ListHapgsResponseTypeDef](./type_defs.md#listhapgsresponsetypedef)\].
+`AsyncIterable`\[[ListHapgsResponseTypeDef](./type_defs.md#listhapgsresponsetypedef)\].
 
 <a id="listhsmspaginator"></a>
 
@@ -74,7 +74,7 @@ Arguments for `ListHsmsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListHsmsPaginator.paginate` returns
-`_PageIterator`\[[ListHsmsResponseTypeDef](./type_defs.md#listhsmsresponsetypedef)\].
+`AsyncIterable`\[[ListHsmsResponseTypeDef](./type_defs.md#listhsmsresponsetypedef)\].
 
 <a id="listlunaclientspaginator"></a>
 
@@ -105,4 +105,4 @@ Arguments for `ListLunaClientsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListLunaClientsPaginator.paginate` returns
-`_PageIterator`\[[ListLunaClientsResponseTypeDef](./type_defs.md#listlunaclientsresponsetypedef)\].
+`AsyncIterable`\[[ListLunaClientsResponseTypeDef](./type_defs.md#listlunaclientsresponsetypedef)\].

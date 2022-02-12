@@ -47,7 +47,7 @@ Arguments for `ListDomainsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDomainsPaginator.paginate` returns
-`_PageIterator`\[[ListDomainsResponseTypeDef](./type_defs.md#listdomainsresponsetypedef)\].
+`AsyncIterable`\[[ListDomainsResponseTypeDef](./type_defs.md#listdomainsresponsetypedef)\].
 
 <a id="listoperationspaginator"></a>
 
@@ -79,7 +79,7 @@ Arguments for `ListOperationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListOperationsPaginator.paginate` returns
-`_PageIterator`\[[ListOperationsResponseTypeDef](./type_defs.md#listoperationsresponsetypedef)\].
+`AsyncIterable`\[[ListOperationsResponseTypeDef](./type_defs.md#listoperationsresponsetypedef)\].
 
 <a id="listpricespaginator"></a>
 
@@ -111,7 +111,7 @@ Arguments for `ListPricesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPricesPaginator.paginate` returns
-`_PageIterator`\[[ListPricesResponseTypeDef](./type_defs.md#listpricesresponsetypedef)\].
+`AsyncIterable`\[[ListPricesResponseTypeDef](./type_defs.md#listpricesresponsetypedef)\].
 
 <a id="viewbillingpaginator"></a>
 
@@ -144,4 +144,4 @@ Arguments for `ViewBillingPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ViewBillingPaginator.paginate` returns
-`_PageIterator`\[[ViewBillingResponseTypeDef](./type_defs.md#viewbillingresponsetypedef)\].
+`AsyncIterable`\[[ViewBillingResponseTypeDef](./type_defs.md#viewbillingresponsetypedef)\].

@@ -49,7 +49,7 @@ Arguments for `BatchGetTracesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `BatchGetTracesPaginator.paginate` returns
-`_PageIterator`\[[BatchGetTracesResultTypeDef](./type_defs.md#batchgettracesresulttypedef)\].
+`AsyncIterable`\[[BatchGetTracesResultTypeDef](./type_defs.md#batchgettracesresulttypedef)\].
 
 <a id="getgroupspaginator"></a>
 
@@ -80,7 +80,7 @@ Arguments for `GetGroupsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetGroupsPaginator.paginate` returns
-`_PageIterator`\[[GetGroupsResultTypeDef](./type_defs.md#getgroupsresulttypedef)\].
+`AsyncIterable`\[[GetGroupsResultTypeDef](./type_defs.md#getgroupsresulttypedef)\].
 
 <a id="getsamplingrulespaginator"></a>
 
@@ -111,7 +111,7 @@ Arguments for `GetSamplingRulesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetSamplingRulesPaginator.paginate` returns
-`_PageIterator`\[[GetSamplingRulesResultTypeDef](./type_defs.md#getsamplingrulesresulttypedef)\].
+`AsyncIterable`\[[GetSamplingRulesResultTypeDef](./type_defs.md#getsamplingrulesresulttypedef)\].
 
 <a id="getsamplingstatisticsummariespaginator"></a>
 
@@ -142,7 +142,7 @@ Arguments for `GetSamplingStatisticSummariesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetSamplingStatisticSummariesPaginator.paginate` returns
-`_PageIterator`\[[GetSamplingStatisticSummariesResultTypeDef](./type_defs.md#getsamplingstatisticsummariesresulttypedef)\].
+`AsyncIterable`\[[GetSamplingStatisticSummariesResultTypeDef](./type_defs.md#getsamplingstatisticsummariesresulttypedef)\].
 
 <a id="getservicegraphpaginator"></a>
 
@@ -177,7 +177,7 @@ Arguments for `GetServiceGraphPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetServiceGraphPaginator.paginate` returns
-`_PageIterator`\[[GetServiceGraphResultTypeDef](./type_defs.md#getservicegraphresulttypedef)\].
+`AsyncIterable`\[[GetServiceGraphResultTypeDef](./type_defs.md#getservicegraphresulttypedef)\].
 
 <a id="gettimeseriesservicestatisticspaginator"></a>
 
@@ -215,7 +215,7 @@ Arguments for `GetTimeSeriesServiceStatisticsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetTimeSeriesServiceStatisticsPaginator.paginate` returns
-`_PageIterator`\[[GetTimeSeriesServiceStatisticsResultTypeDef](./type_defs.md#gettimeseriesservicestatisticsresulttypedef)\].
+`AsyncIterable`\[[GetTimeSeriesServiceStatisticsResultTypeDef](./type_defs.md#gettimeseriesservicestatisticsresulttypedef)\].
 
 <a id="gettracegraphpaginator"></a>
 
@@ -247,7 +247,7 @@ Arguments for `GetTraceGraphPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetTraceGraphPaginator.paginate` returns
-`_PageIterator`\[[GetTraceGraphResultTypeDef](./type_defs.md#gettracegraphresulttypedef)\].
+`AsyncIterable`\[[GetTraceGraphResultTypeDef](./type_defs.md#gettracegraphresulttypedef)\].
 
 <a id="gettracesummariespaginator"></a>
 
@@ -285,4 +285,4 @@ Arguments for `GetTraceSummariesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetTraceSummariesPaginator.paginate` returns
-`_PageIterator`\[[GetTraceSummariesResultTypeDef](./type_defs.md#gettracesummariesresulttypedef)\].
+`AsyncIterable`\[[GetTraceSummariesResultTypeDef](./type_defs.md#gettracesummariesresulttypedef)\].

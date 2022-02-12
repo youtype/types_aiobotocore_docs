@@ -9,24 +9,56 @@ Auto-generated documentation for
 type annotations stubs module
 [types-aiobotocore-dynamodbstreams](https://pypi.org/project/types-aiobotocore-dynamodbstreams/).
 
-```bash
-# install with types-aiobotocore
-pip install 'types-aiobotocore[dynamodbstreams]'
-
-# Lite version does not provide session.create_client overloads
-# it is more RAM-friendly, but requires explicit type annotations
-python -m pip install 'types-aiobotocore-lite[dynamodbstreams]'
-
-# standalone installation
-pip install types-aiobotocore-dynamodbstreams
-```
-
 - [Type annotations for aiobotocore DynamoDBStreams module](#type-annotations-for-aiobotocore-dynamodbstreams-module)
+  - [How to install](#how-to-install)
+    - [VSCode extension](#vscode-extension)
+    - [From PyPI with pip](#from-pypi-with-pip)
+  - [How to uninstall](#how-to-uninstall)
   - [DynamoDBStreamsClient](#dynamodbstreamsclient)
     - [Methods](#methods)
     - [Exceptions](#exceptions)
   - [Literals](#literals)
   - [Typed dictionaries](#typed-dictionaries)
+
+<a id="how-to-install"></a>
+
+## How to install
+
+<a id="vscode-extension"></a>
+
+### VSCode extension
+
+Add
+[AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
+extension to your VSCode and run `AWS boto3: Quick Start` command.
+
+Click `Modify` and select `boto3 common` and `DynamoDBStreams`.
+
+<a id="from-pypi-with-pip"></a>
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `DynamoDBStreams` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[dynamodbstreams]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[dynamodbstreams]'
+
+# standalone installation
+python -m pip install types-aiobotocore-dynamodbstreams
+```
+
+<a id="how-to-uninstall"></a>
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-dynamodbstreams
+```
 
 <a id="dynamodbstreamsclient"></a>
 

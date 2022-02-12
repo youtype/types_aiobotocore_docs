@@ -45,7 +45,7 @@ Arguments for `ListRuleNamesByTargetPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRuleNamesByTargetPaginator.paginate` returns
-`_PageIterator`\[[ListRuleNamesByTargetResponseTypeDef](./type_defs.md#listrulenamesbytargetresponsetypedef)\].
+`AsyncIterable`\[[ListRuleNamesByTargetResponseTypeDef](./type_defs.md#listrulenamesbytargetresponsetypedef)\].
 
 <a id="listrulespaginator"></a>
 
@@ -78,7 +78,7 @@ Arguments for `ListRulesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRulesPaginator.paginate` returns
-`_PageIterator`\[[ListRulesResponseTypeDef](./type_defs.md#listrulesresponsetypedef)\].
+`AsyncIterable`\[[ListRulesResponseTypeDef](./type_defs.md#listrulesresponsetypedef)\].
 
 <a id="listtargetsbyrulepaginator"></a>
 
@@ -111,4 +111,4 @@ Arguments for `ListTargetsByRulePaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTargetsByRulePaginator.paginate` returns
-`_PageIterator`\[[ListTargetsByRuleResponseTypeDef](./type_defs.md#listtargetsbyruleresponsetypedef)\].
+`AsyncIterable`\[[ListTargetsByRuleResponseTypeDef](./type_defs.md#listtargetsbyruleresponsetypedef)\].

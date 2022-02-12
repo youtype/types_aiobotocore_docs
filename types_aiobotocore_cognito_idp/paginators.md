@@ -51,7 +51,7 @@ Arguments for `AdminListGroupsForUserPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `AdminListGroupsForUserPaginator.paginate` returns
-`_PageIterator`\[[AdminListGroupsForUserResponseTypeDef](./type_defs.md#adminlistgroupsforuserresponsetypedef)\].
+`AsyncIterable`\[[AdminListGroupsForUserResponseTypeDef](./type_defs.md#adminlistgroupsforuserresponsetypedef)\].
 
 <a id="adminlistuserautheventspaginator"></a>
 
@@ -84,7 +84,7 @@ Arguments for `AdminListUserAuthEventsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `AdminListUserAuthEventsPaginator.paginate` returns
-`_PageIterator`\[[AdminListUserAuthEventsResponseTypeDef](./type_defs.md#adminlistuserautheventsresponsetypedef)\].
+`AsyncIterable`\[[AdminListUserAuthEventsResponseTypeDef](./type_defs.md#adminlistuserautheventsresponsetypedef)\].
 
 <a id="listgroupspaginator"></a>
 
@@ -116,7 +116,7 @@ Arguments for `ListGroupsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListGroupsPaginator.paginate` returns
-`_PageIterator`\[[ListGroupsResponseTypeDef](./type_defs.md#listgroupsresponsetypedef)\].
+`AsyncIterable`\[[ListGroupsResponseTypeDef](./type_defs.md#listgroupsresponsetypedef)\].
 
 <a id="listidentityproviderspaginator"></a>
 
@@ -148,7 +148,7 @@ Arguments for `ListIdentityProvidersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListIdentityProvidersPaginator.paginate` returns
-`_PageIterator`\[[ListIdentityProvidersResponseTypeDef](./type_defs.md#listidentityprovidersresponsetypedef)\].
+`AsyncIterable`\[[ListIdentityProvidersResponseTypeDef](./type_defs.md#listidentityprovidersresponsetypedef)\].
 
 <a id="listresourceserverspaginator"></a>
 
@@ -180,7 +180,7 @@ Arguments for `ListResourceServersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListResourceServersPaginator.paginate` returns
-`_PageIterator`\[[ListResourceServersResponseTypeDef](./type_defs.md#listresourceserversresponsetypedef)\].
+`AsyncIterable`\[[ListResourceServersResponseTypeDef](./type_defs.md#listresourceserversresponsetypedef)\].
 
 <a id="listuserpoolclientspaginator"></a>
 
@@ -212,7 +212,7 @@ Arguments for `ListUserPoolClientsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListUserPoolClientsPaginator.paginate` returns
-`_PageIterator`\[[ListUserPoolClientsResponseTypeDef](./type_defs.md#listuserpoolclientsresponsetypedef)\].
+`AsyncIterable`\[[ListUserPoolClientsResponseTypeDef](./type_defs.md#listuserpoolclientsresponsetypedef)\].
 
 <a id="listuserpoolspaginator"></a>
 
@@ -243,7 +243,7 @@ Arguments for `ListUserPoolsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListUserPoolsPaginator.paginate` returns
-`_PageIterator`\[[ListUserPoolsResponseTypeDef](./type_defs.md#listuserpoolsresponsetypedef)\].
+`AsyncIterable`\[[ListUserPoolsResponseTypeDef](./type_defs.md#listuserpoolsresponsetypedef)\].
 
 <a id="listuserspaginator"></a>
 
@@ -277,7 +277,7 @@ Arguments for `ListUsersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListUsersPaginator.paginate` returns
-`_PageIterator`\[[ListUsersResponseTypeDef](./type_defs.md#listusersresponsetypedef)\].
+`AsyncIterable`\[[ListUsersResponseTypeDef](./type_defs.md#listusersresponsetypedef)\].
 
 <a id="listusersingrouppaginator"></a>
 
@@ -310,4 +310,4 @@ Arguments for `ListUsersInGroupPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListUsersInGroupPaginator.paginate` returns
-`_PageIterator`\[[ListUsersInGroupResponseTypeDef](./type_defs.md#listusersingroupresponsetypedef)\].
+`AsyncIterable`\[[ListUsersInGroupResponseTypeDef](./type_defs.md#listusersingroupresponsetypedef)\].

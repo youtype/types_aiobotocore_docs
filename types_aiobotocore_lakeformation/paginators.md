@@ -46,7 +46,7 @@ Arguments for `GetWorkUnitsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetWorkUnitsPaginator.paginate` returns
-`_PageIterator`\[[GetWorkUnitsResponseTypeDef](./type_defs.md#getworkunitsresponsetypedef)\].
+`AsyncIterable`\[[GetWorkUnitsResponseTypeDef](./type_defs.md#getworkunitsresponsetypedef)\].
 
 <a id="listdatacellsfilterpaginator"></a>
 
@@ -78,7 +78,7 @@ Arguments for `ListDataCellsFilterPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDataCellsFilterPaginator.paginate` returns
-`_PageIterator`\[[ListDataCellsFilterResponseTypeDef](./type_defs.md#listdatacellsfilterresponsetypedef)\].
+`AsyncIterable`\[[ListDataCellsFilterResponseTypeDef](./type_defs.md#listdatacellsfilterresponsetypedef)\].
 
 <a id="listlftagspaginator"></a>
 
@@ -112,7 +112,7 @@ Arguments for `ListLFTagsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListLFTagsPaginator.paginate` returns
-`_PageIterator`\[[ListLFTagsResponseTypeDef](./type_defs.md#listlftagsresponsetypedef)\].
+`AsyncIterable`\[[ListLFTagsResponseTypeDef](./type_defs.md#listlftagsresponsetypedef)\].
 
 <a id="searchdatabasesbylftagspaginator"></a>
 
@@ -146,7 +146,7 @@ Arguments for `SearchDatabasesByLFTagsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchDatabasesByLFTagsPaginator.paginate` returns
-`_PageIterator`\[[SearchDatabasesByLFTagsResponseTypeDef](./type_defs.md#searchdatabasesbylftagsresponsetypedef)\].
+`AsyncIterable`\[[SearchDatabasesByLFTagsResponseTypeDef](./type_defs.md#searchdatabasesbylftagsresponsetypedef)\].
 
 <a id="searchtablesbylftagspaginator"></a>
 
@@ -180,4 +180,4 @@ Arguments for `SearchTablesByLFTagsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchTablesByLFTagsPaginator.paginate` returns
-`_PageIterator`\[[SearchTablesByLFTagsResponseTypeDef](./type_defs.md#searchtablesbylftagsresponsetypedef)\].
+`AsyncIterable`\[[SearchTablesByLFTagsResponseTypeDef](./type_defs.md#searchtablesbylftagsresponsetypedef)\].

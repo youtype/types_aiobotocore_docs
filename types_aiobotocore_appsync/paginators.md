@@ -48,7 +48,7 @@ Arguments for `ListApiKeysPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListApiKeysPaginator.paginate` returns
-`_PageIterator`\[[ListApiKeysResponseTypeDef](./type_defs.md#listapikeysresponsetypedef)\].
+`AsyncIterable`\[[ListApiKeysResponseTypeDef](./type_defs.md#listapikeysresponsetypedef)\].
 
 <a id="listdatasourcespaginator"></a>
 
@@ -80,7 +80,7 @@ Arguments for `ListDataSourcesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDataSourcesPaginator.paginate` returns
-`_PageIterator`\[[ListDataSourcesResponseTypeDef](./type_defs.md#listdatasourcesresponsetypedef)\].
+`AsyncIterable`\[[ListDataSourcesResponseTypeDef](./type_defs.md#listdatasourcesresponsetypedef)\].
 
 <a id="listfunctionspaginator"></a>
 
@@ -112,7 +112,7 @@ Arguments for `ListFunctionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListFunctionsPaginator.paginate` returns
-`_PageIterator`\[[ListFunctionsResponseTypeDef](./type_defs.md#listfunctionsresponsetypedef)\].
+`AsyncIterable`\[[ListFunctionsResponseTypeDef](./type_defs.md#listfunctionsresponsetypedef)\].
 
 <a id="listgraphqlapispaginator"></a>
 
@@ -143,7 +143,7 @@ Arguments for `ListGraphqlApisPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListGraphqlApisPaginator.paginate` returns
-`_PageIterator`\[[ListGraphqlApisResponseTypeDef](./type_defs.md#listgraphqlapisresponsetypedef)\].
+`AsyncIterable`\[[ListGraphqlApisResponseTypeDef](./type_defs.md#listgraphqlapisresponsetypedef)\].
 
 <a id="listresolverspaginator"></a>
 
@@ -176,7 +176,7 @@ Arguments for `ListResolversPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListResolversPaginator.paginate` returns
-`_PageIterator`\[[ListResolversResponseTypeDef](./type_defs.md#listresolversresponsetypedef)\].
+`AsyncIterable`\[[ListResolversResponseTypeDef](./type_defs.md#listresolversresponsetypedef)\].
 
 <a id="listresolversbyfunctionpaginator"></a>
 
@@ -209,7 +209,7 @@ Arguments for `ListResolversByFunctionPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListResolversByFunctionPaginator.paginate` returns
-`_PageIterator`\[[ListResolversByFunctionResponseTypeDef](./type_defs.md#listresolversbyfunctionresponsetypedef)\].
+`AsyncIterable`\[[ListResolversByFunctionResponseTypeDef](./type_defs.md#listresolversbyfunctionresponsetypedef)\].
 
 <a id="listtypespaginator"></a>
 
@@ -243,4 +243,4 @@ Arguments for `ListTypesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTypesPaginator.paginate` returns
-`_PageIterator`\[[ListTypesResponseTypeDef](./type_defs.md#listtypesresponsetypedef)\].
+`AsyncIterable`\[[ListTypesResponseTypeDef](./type_defs.md#listtypesresponsetypedef)\].

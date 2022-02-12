@@ -51,7 +51,7 @@ Arguments for `ListMultipartUploadsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListMultipartUploadsPaginator.paginate` returns
-`_PageIterator`\[[ListMultipartUploadsOutputTypeDef](./type_defs.md#listmultipartuploadsoutputtypedef)\].
+`AsyncIterable`\[[ListMultipartUploadsOutputTypeDef](./type_defs.md#listmultipartuploadsoutputtypedef)\].
 
 <a id="listobjectversionspaginator"></a>
 
@@ -88,7 +88,7 @@ Arguments for `ListObjectVersionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListObjectVersionsPaginator.paginate` returns
-`_PageIterator`\[[ListObjectVersionsOutputTypeDef](./type_defs.md#listobjectversionsoutputtypedef)\].
+`AsyncIterable`\[[ListObjectVersionsOutputTypeDef](./type_defs.md#listobjectversionsoutputtypedef)\].
 
 <a id="listobjectspaginator"></a>
 
@@ -127,7 +127,7 @@ Arguments for `ListObjectsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListObjectsPaginator.paginate` returns
-`_PageIterator`\[[ListObjectsOutputTypeDef](./type_defs.md#listobjectsoutputtypedef)\].
+`AsyncIterable`\[[ListObjectsOutputTypeDef](./type_defs.md#listobjectsoutputtypedef)\].
 
 <a id="listobjectsv2paginator"></a>
 
@@ -168,7 +168,7 @@ Arguments for `ListObjectsV2Paginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListObjectsV2Paginator.paginate` returns
-`_PageIterator`\[[ListObjectsV2OutputTypeDef](./type_defs.md#listobjectsv2outputtypedef)\].
+`AsyncIterable`\[[ListObjectsV2OutputTypeDef](./type_defs.md#listobjectsv2outputtypedef)\].
 
 <a id="listpartspaginator"></a>
 
@@ -204,4 +204,4 @@ Arguments for `ListPartsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPartsPaginator.paginate` returns
-`_PageIterator`\[[ListPartsOutputTypeDef](./type_defs.md#listpartsoutputtypedef)\].
+`AsyncIterable`\[[ListPartsOutputTypeDef](./type_defs.md#listpartsoutputtypedef)\].

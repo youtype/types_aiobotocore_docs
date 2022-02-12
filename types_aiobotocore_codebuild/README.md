@@ -9,25 +9,57 @@ Auto-generated documentation for
 type annotations stubs module
 [types-aiobotocore-codebuild](https://pypi.org/project/types-aiobotocore-codebuild/).
 
-```bash
-# install with types-aiobotocore
-pip install 'types-aiobotocore[codebuild]'
-
-# Lite version does not provide session.create_client overloads
-# it is more RAM-friendly, but requires explicit type annotations
-python -m pip install 'types-aiobotocore-lite[codebuild]'
-
-# standalone installation
-pip install types-aiobotocore-codebuild
-```
-
 - [Type annotations for aiobotocore CodeBuild module](#type-annotations-for-aiobotocore-codebuild-module)
+  - [How to install](#how-to-install)
+    - [VSCode extension](#vscode-extension)
+    - [From PyPI with pip](#from-pypi-with-pip)
+  - [How to uninstall](#how-to-uninstall)
   - [CodeBuildClient](#codebuildclient)
     - [Methods](#methods)
     - [Exceptions](#exceptions)
   - [Paginators](#paginators)
   - [Literals](#literals)
   - [Typed dictionaries](#typed-dictionaries)
+
+<a id="how-to-install"></a>
+
+## How to install
+
+<a id="vscode-extension"></a>
+
+### VSCode extension
+
+Add
+[AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
+extension to your VSCode and run `AWS boto3: Quick Start` command.
+
+Click `Modify` and select `boto3 common` and `CodeBuild`.
+
+<a id="from-pypi-with-pip"></a>
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `CodeBuild` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[codebuild]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[codebuild]'
+
+# standalone installation
+python -m pip install types-aiobotocore-codebuild
+```
+
+<a id="how-to-uninstall"></a>
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-codebuild
+```
 
 <a id="codebuildclient"></a>
 

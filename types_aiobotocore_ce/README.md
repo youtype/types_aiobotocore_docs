@@ -9,24 +9,56 @@ Auto-generated documentation for
 type annotations stubs module
 [types-aiobotocore-ce](https://pypi.org/project/types-aiobotocore-ce/).
 
-```bash
-# install with types-aiobotocore
-pip install 'types-aiobotocore[ce]'
-
-# Lite version does not provide session.create_client overloads
-# it is more RAM-friendly, but requires explicit type annotations
-python -m pip install 'types-aiobotocore-lite[ce]'
-
-# standalone installation
-pip install types-aiobotocore-ce
-```
-
 - [Type annotations for aiobotocore CostExplorer module](#type-annotations-for-aiobotocore-costexplorer-module)
+  - [How to install](#how-to-install)
+    - [VSCode extension](#vscode-extension)
+    - [From PyPI with pip](#from-pypi-with-pip)
+  - [How to uninstall](#how-to-uninstall)
   - [CostExplorerClient](#costexplorerclient)
     - [Methods](#methods)
     - [Exceptions](#exceptions)
   - [Literals](#literals)
   - [Typed dictionaries](#typed-dictionaries)
+
+<a id="how-to-install"></a>
+
+## How to install
+
+<a id="vscode-extension"></a>
+
+### VSCode extension
+
+Add
+[AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
+extension to your VSCode and run `AWS boto3: Quick Start` command.
+
+Click `Modify` and select `boto3 common` and `CostExplorer`.
+
+<a id="from-pypi-with-pip"></a>
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `CostExplorer` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[ce]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[ce]'
+
+# standalone installation
+python -m pip install types-aiobotocore-ce
+```
+
+<a id="how-to-uninstall"></a>
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-ce
+```
 
 <a id="costexplorerclient"></a>
 

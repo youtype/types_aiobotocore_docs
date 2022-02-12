@@ -58,7 +58,7 @@ Arguments for `DescribeCodeCoveragesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeCodeCoveragesPaginator.paginate` returns
-`_PageIterator`\[[DescribeCodeCoveragesOutputTypeDef](./type_defs.md#describecodecoveragesoutputtypedef)\].
+`AsyncIterable`\[[DescribeCodeCoveragesOutputTypeDef](./type_defs.md#describecodecoveragesoutputtypedef)\].
 
 <a id="describetestcasespaginator"></a>
 
@@ -91,7 +91,7 @@ Arguments for `DescribeTestCasesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeTestCasesPaginator.paginate` returns
-`_PageIterator`\[[DescribeTestCasesOutputTypeDef](./type_defs.md#describetestcasesoutputtypedef)\].
+`AsyncIterable`\[[DescribeTestCasesOutputTypeDef](./type_defs.md#describetestcasesoutputtypedef)\].
 
 <a id="listbuildbatchespaginator"></a>
 
@@ -124,7 +124,7 @@ Arguments for `ListBuildBatchesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListBuildBatchesPaginator.paginate` returns
-`_PageIterator`\[[ListBuildBatchesOutputTypeDef](./type_defs.md#listbuildbatchesoutputtypedef)\].
+`AsyncIterable`\[[ListBuildBatchesOutputTypeDef](./type_defs.md#listbuildbatchesoutputtypedef)\].
 
 <a id="listbuildbatchesforprojectpaginator"></a>
 
@@ -158,7 +158,7 @@ Arguments for `ListBuildBatchesForProjectPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListBuildBatchesForProjectPaginator.paginate` returns
-`_PageIterator`\[[ListBuildBatchesForProjectOutputTypeDef](./type_defs.md#listbuildbatchesforprojectoutputtypedef)\].
+`AsyncIterable`\[[ListBuildBatchesForProjectOutputTypeDef](./type_defs.md#listbuildbatchesforprojectoutputtypedef)\].
 
 <a id="listbuildspaginator"></a>
 
@@ -190,7 +190,7 @@ Arguments for `ListBuildsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListBuildsPaginator.paginate` returns
-`_PageIterator`\[[ListBuildsOutputTypeDef](./type_defs.md#listbuildsoutputtypedef)\].
+`AsyncIterable`\[[ListBuildsOutputTypeDef](./type_defs.md#listbuildsoutputtypedef)\].
 
 <a id="listbuildsforprojectpaginator"></a>
 
@@ -223,7 +223,7 @@ Arguments for `ListBuildsForProjectPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListBuildsForProjectPaginator.paginate` returns
-`_PageIterator`\[[ListBuildsForProjectOutputTypeDef](./type_defs.md#listbuildsforprojectoutputtypedef)\].
+`AsyncIterable`\[[ListBuildsForProjectOutputTypeDef](./type_defs.md#listbuildsforprojectoutputtypedef)\].
 
 <a id="listprojectspaginator"></a>
 
@@ -256,7 +256,7 @@ Arguments for `ListProjectsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListProjectsPaginator.paginate` returns
-`_PageIterator`\[[ListProjectsOutputTypeDef](./type_defs.md#listprojectsoutputtypedef)\].
+`AsyncIterable`\[[ListProjectsOutputTypeDef](./type_defs.md#listprojectsoutputtypedef)\].
 
 <a id="listreportgroupspaginator"></a>
 
@@ -290,7 +290,7 @@ Arguments for `ListReportGroupsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListReportGroupsPaginator.paginate` returns
-`_PageIterator`\[[ListReportGroupsOutputTypeDef](./type_defs.md#listreportgroupsoutputtypedef)\].
+`AsyncIterable`\[[ListReportGroupsOutputTypeDef](./type_defs.md#listreportgroupsoutputtypedef)\].
 
 <a id="listreportspaginator"></a>
 
@@ -323,7 +323,7 @@ Arguments for `ListReportsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListReportsPaginator.paginate` returns
-`_PageIterator`\[[ListReportsOutputTypeDef](./type_defs.md#listreportsoutputtypedef)\].
+`AsyncIterable`\[[ListReportsOutputTypeDef](./type_defs.md#listreportsoutputtypedef)\].
 
 <a id="listreportsforreportgrouppaginator"></a>
 
@@ -357,7 +357,7 @@ Arguments for `ListReportsForReportGroupPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListReportsForReportGroupPaginator.paginate` returns
-`_PageIterator`\[[ListReportsForReportGroupOutputTypeDef](./type_defs.md#listreportsforreportgroupoutputtypedef)\].
+`AsyncIterable`\[[ListReportsForReportGroupOutputTypeDef](./type_defs.md#listreportsforreportgroupoutputtypedef)\].
 
 <a id="listsharedprojectspaginator"></a>
 
@@ -391,7 +391,7 @@ Arguments for `ListSharedProjectsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSharedProjectsPaginator.paginate` returns
-`_PageIterator`\[[ListSharedProjectsOutputTypeDef](./type_defs.md#listsharedprojectsoutputtypedef)\].
+`AsyncIterable`\[[ListSharedProjectsOutputTypeDef](./type_defs.md#listsharedprojectsoutputtypedef)\].
 
 <a id="listsharedreportgroupspaginator"></a>
 
@@ -425,4 +425,4 @@ Arguments for `ListSharedReportGroupsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSharedReportGroupsPaginator.paginate` returns
-`_PageIterator`\[[ListSharedReportGroupsOutputTypeDef](./type_defs.md#listsharedreportgroupsoutputtypedef)\].
+`AsyncIterable`\[[ListSharedReportGroupsOutputTypeDef](./type_defs.md#listsharedreportgroupsoutputtypedef)\].

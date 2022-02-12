@@ -41,4 +41,4 @@ Arguments for `ListRetainedMessagesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRetainedMessagesPaginator.paginate` returns
-`_PageIterator`\[[ListRetainedMessagesResponseTypeDef](./type_defs.md#listretainedmessagesresponsetypedef)\].
+`AsyncIterable`\[[ListRetainedMessagesResponseTypeDef](./type_defs.md#listretainedmessagesresponsetypedef)\].

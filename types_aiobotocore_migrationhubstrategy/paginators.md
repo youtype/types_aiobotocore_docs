@@ -46,7 +46,7 @@ Arguments for `GetServerDetailsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetServerDetailsPaginator.paginate` returns
-`_PageIterator`\[[GetServerDetailsResponseTypeDef](./type_defs.md#getserverdetailsresponsetypedef)\].
+`AsyncIterable`\[[GetServerDetailsResponseTypeDef](./type_defs.md#getserverdetailsresponsetypedef)\].
 
 <a id="listapplicationcomponentspaginator"></a>
 
@@ -82,7 +82,7 @@ Arguments for `ListApplicationComponentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListApplicationComponentsPaginator.paginate` returns
-`_PageIterator`\[[ListApplicationComponentsResponseTypeDef](./type_defs.md#listapplicationcomponentsresponsetypedef)\].
+`AsyncIterable`\[[ListApplicationComponentsResponseTypeDef](./type_defs.md#listapplicationcomponentsresponsetypedef)\].
 
 <a id="listcollectorspaginator"></a>
 
@@ -113,7 +113,7 @@ Arguments for `ListCollectorsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListCollectorsPaginator.paginate` returns
-`_PageIterator`\[[ListCollectorsResponseTypeDef](./type_defs.md#listcollectorsresponsetypedef)\].
+`AsyncIterable`\[[ListCollectorsResponseTypeDef](./type_defs.md#listcollectorsresponsetypedef)\].
 
 <a id="listimportfiletaskpaginator"></a>
 
@@ -144,7 +144,7 @@ Arguments for `ListImportFileTaskPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListImportFileTaskPaginator.paginate` returns
-`_PageIterator`\[[ListImportFileTaskResponseTypeDef](./type_defs.md#listimportfiletaskresponsetypedef)\].
+`AsyncIterable`\[[ListImportFileTaskResponseTypeDef](./type_defs.md#listimportfiletaskresponsetypedef)\].
 
 <a id="listserverspaginator"></a>
 
@@ -179,4 +179,4 @@ Arguments for `ListServersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListServersPaginator.paginate` returns
-`_PageIterator`\[[ListServersResponseTypeDef](./type_defs.md#listserversresponsetypedef)\].
+`AsyncIterable`\[[ListServersResponseTypeDef](./type_defs.md#listserversresponsetypedef)\].

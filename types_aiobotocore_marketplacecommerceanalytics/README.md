@@ -9,24 +9,56 @@ Auto-generated documentation for
 type annotations stubs module
 [types-aiobotocore-marketplacecommerceanalytics](https://pypi.org/project/types-aiobotocore-marketplacecommerceanalytics/).
 
-```bash
-# install with types-aiobotocore
-pip install 'types-aiobotocore[marketplacecommerceanalytics]'
-
-# Lite version does not provide session.create_client overloads
-# it is more RAM-friendly, but requires explicit type annotations
-python -m pip install 'types-aiobotocore-lite[marketplacecommerceanalytics]'
-
-# standalone installation
-pip install types-aiobotocore-marketplacecommerceanalytics
-```
-
 - [Type annotations for aiobotocore MarketplaceCommerceAnalytics module](#type-annotations-for-aiobotocore-marketplacecommerceanalytics-module)
+  - [How to install](#how-to-install)
+    - [VSCode extension](#vscode-extension)
+    - [From PyPI with pip](#from-pypi-with-pip)
+  - [How to uninstall](#how-to-uninstall)
   - [MarketplaceCommerceAnalyticsClient](#marketplacecommerceanalyticsclient)
     - [Methods](#methods)
     - [Exceptions](#exceptions)
   - [Literals](#literals)
   - [Typed dictionaries](#typed-dictionaries)
+
+<a id="how-to-install"></a>
+
+## How to install
+
+<a id="vscode-extension"></a>
+
+### VSCode extension
+
+Add
+[AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
+extension to your VSCode and run `AWS boto3: Quick Start` command.
+
+Click `Modify` and select `boto3 common` and `MarketplaceCommerceAnalytics`.
+
+<a id="from-pypi-with-pip"></a>
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `MarketplaceCommerceAnalytics` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[marketplacecommerceanalytics]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[marketplacecommerceanalytics]'
+
+# standalone installation
+python -m pip install types-aiobotocore-marketplacecommerceanalytics
+```
+
+<a id="how-to-uninstall"></a>
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-marketplacecommerceanalytics
+```
 
 <a id="marketplacecommerceanalyticsclient"></a>
 

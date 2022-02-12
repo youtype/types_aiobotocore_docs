@@ -46,7 +46,7 @@ Arguments for `ListPublicKeysPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPublicKeysPaginator.paginate` returns
-`_PageIterator`\[[ListPublicKeysResponseTypeDef](./type_defs.md#listpublickeysresponsetypedef)\].
+`AsyncIterable`\[[ListPublicKeysResponseTypeDef](./type_defs.md#listpublickeysresponsetypedef)\].
 
 <a id="listtagspaginator"></a>
 
@@ -78,7 +78,7 @@ Arguments for `ListTagsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTagsPaginator.paginate` returns
-`_PageIterator`\[[ListTagsResponseTypeDef](./type_defs.md#listtagsresponsetypedef)\].
+`AsyncIterable`\[[ListTagsResponseTypeDef](./type_defs.md#listtagsresponsetypedef)\].
 
 <a id="listtrailspaginator"></a>
 
@@ -109,7 +109,7 @@ Arguments for `ListTrailsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTrailsPaginator.paginate` returns
-`_PageIterator`\[[ListTrailsResponseTypeDef](./type_defs.md#listtrailsresponsetypedef)\].
+`AsyncIterable`\[[ListTrailsResponseTypeDef](./type_defs.md#listtrailsresponsetypedef)\].
 
 <a id="lookupeventspaginator"></a>
 
@@ -146,4 +146,4 @@ Arguments for `LookupEventsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `LookupEventsPaginator.paginate` returns
-`_PageIterator`\[[LookupEventsResponseTypeDef](./type_defs.md#lookupeventsresponsetypedef)\].
+`AsyncIterable`\[[LookupEventsResponseTypeDef](./type_defs.md#lookupeventsresponsetypedef)\].

@@ -46,7 +46,7 @@ Arguments for `DescribeComputeEnvironmentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeComputeEnvironmentsPaginator.paginate` returns
-`_PageIterator`\[[DescribeComputeEnvironmentsResponseTypeDef](./type_defs.md#describecomputeenvironmentsresponsetypedef)\].
+`AsyncIterable`\[[DescribeComputeEnvironmentsResponseTypeDef](./type_defs.md#describecomputeenvironmentsresponsetypedef)\].
 
 <a id="describejobdefinitionspaginator"></a>
 
@@ -80,7 +80,7 @@ Arguments for `DescribeJobDefinitionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeJobDefinitionsPaginator.paginate` returns
-`_PageIterator`\[[DescribeJobDefinitionsResponseTypeDef](./type_defs.md#describejobdefinitionsresponsetypedef)\].
+`AsyncIterable`\[[DescribeJobDefinitionsResponseTypeDef](./type_defs.md#describejobdefinitionsresponsetypedef)\].
 
 <a id="describejobqueuespaginator"></a>
 
@@ -112,7 +112,7 @@ Arguments for `DescribeJobQueuesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeJobQueuesPaginator.paginate` returns
-`_PageIterator`\[[DescribeJobQueuesResponseTypeDef](./type_defs.md#describejobqueuesresponsetypedef)\].
+`AsyncIterable`\[[DescribeJobQueuesResponseTypeDef](./type_defs.md#describejobqueuesresponsetypedef)\].
 
 <a id="listjobspaginator"></a>
 
@@ -149,7 +149,7 @@ Arguments for `ListJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListJobsPaginator.paginate` returns
-`_PageIterator`\[[ListJobsResponseTypeDef](./type_defs.md#listjobsresponsetypedef)\].
+`AsyncIterable`\[[ListJobsResponseTypeDef](./type_defs.md#listjobsresponsetypedef)\].
 
 <a id="listschedulingpoliciespaginator"></a>
 
@@ -180,4 +180,4 @@ Arguments for `ListSchedulingPoliciesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSchedulingPoliciesPaginator.paginate` returns
-`_PageIterator`\[[ListSchedulingPoliciesResponseTypeDef](./type_defs.md#listschedulingpoliciesresponsetypedef)\].
+`AsyncIterable`\[[ListSchedulingPoliciesResponseTypeDef](./type_defs.md#listschedulingpoliciesresponsetypedef)\].

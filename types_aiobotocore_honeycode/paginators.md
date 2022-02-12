@@ -46,7 +46,7 @@ Arguments for `ListTableColumnsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTableColumnsPaginator.paginate` returns
-`_PageIterator`\[[ListTableColumnsResultTypeDef](./type_defs.md#listtablecolumnsresulttypedef)\].
+`AsyncIterable`\[[ListTableColumnsResultTypeDef](./type_defs.md#listtablecolumnsresulttypedef)\].
 
 <a id="listtablerowspaginator"></a>
 
@@ -80,7 +80,7 @@ Arguments for `ListTableRowsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTableRowsPaginator.paginate` returns
-`_PageIterator`\[[ListTableRowsResultTypeDef](./type_defs.md#listtablerowsresulttypedef)\].
+`AsyncIterable`\[[ListTableRowsResultTypeDef](./type_defs.md#listtablerowsresulttypedef)\].
 
 <a id="listtablespaginator"></a>
 
@@ -112,7 +112,7 @@ Arguments for `ListTablesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTablesPaginator.paginate` returns
-`_PageIterator`\[[ListTablesResultTypeDef](./type_defs.md#listtablesresulttypedef)\].
+`AsyncIterable`\[[ListTablesResultTypeDef](./type_defs.md#listtablesresulttypedef)\].
 
 <a id="querytablerowspaginator"></a>
 
@@ -146,4 +146,4 @@ Arguments for `QueryTableRowsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `QueryTableRowsPaginator.paginate` returns
-`_PageIterator`\[[QueryTableRowsResultTypeDef](./type_defs.md#querytablerowsresulttypedef)\].
+`AsyncIterable`\[[QueryTableRowsResultTypeDef](./type_defs.md#querytablerowsresulttypedef)\].

@@ -45,7 +45,7 @@ Arguments for `DescribeStreamPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeStreamPaginator.paginate` returns
-`_PageIterator`\[[DescribeStreamOutputTypeDef](./type_defs.md#describestreamoutputtypedef)\].
+`AsyncIterable`\[[DescribeStreamOutputTypeDef](./type_defs.md#describestreamoutputtypedef)\].
 
 <a id="listshardspaginator"></a>
 
@@ -80,7 +80,7 @@ Arguments for `ListShardsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListShardsPaginator.paginate` returns
-`_PageIterator`\[[ListShardsOutputTypeDef](./type_defs.md#listshardsoutputtypedef)\].
+`AsyncIterable`\[[ListShardsOutputTypeDef](./type_defs.md#listshardsoutputtypedef)\].
 
 <a id="liststreamconsumerspaginator"></a>
 
@@ -113,7 +113,7 @@ Arguments for `ListStreamConsumersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListStreamConsumersPaginator.paginate` returns
-`_PageIterator`\[[ListStreamConsumersOutputTypeDef](./type_defs.md#liststreamconsumersoutputtypedef)\].
+`AsyncIterable`\[[ListStreamConsumersOutputTypeDef](./type_defs.md#liststreamconsumersoutputtypedef)\].
 
 <a id="liststreamspaginator"></a>
 
@@ -144,4 +144,4 @@ Arguments for `ListStreamsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListStreamsPaginator.paginate` returns
-`_PageIterator`\[[ListStreamsOutputTypeDef](./type_defs.md#liststreamsoutputtypedef)\].
+`AsyncIterable`\[[ListStreamsOutputTypeDef](./type_defs.md#liststreamsoutputtypedef)\].

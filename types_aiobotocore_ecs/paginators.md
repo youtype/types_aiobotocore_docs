@@ -52,7 +52,7 @@ Arguments for `ListAccountSettingsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAccountSettingsPaginator.paginate` returns
-`_PageIterator`\[[ListAccountSettingsResponseTypeDef](./type_defs.md#listaccountsettingsresponsetypedef)\].
+`AsyncIterable`\[[ListAccountSettingsResponseTypeDef](./type_defs.md#listaccountsettingsresponsetypedef)\].
 
 <a id="listattributespaginator"></a>
 
@@ -88,7 +88,7 @@ Arguments for `ListAttributesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAttributesPaginator.paginate` returns
-`_PageIterator`\[[ListAttributesResponseTypeDef](./type_defs.md#listattributesresponsetypedef)\].
+`AsyncIterable`\[[ListAttributesResponseTypeDef](./type_defs.md#listattributesresponsetypedef)\].
 
 <a id="listclusterspaginator"></a>
 
@@ -119,7 +119,7 @@ Arguments for `ListClustersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListClustersPaginator.paginate` returns
-`_PageIterator`\[[ListClustersResponseTypeDef](./type_defs.md#listclustersresponsetypedef)\].
+`AsyncIterable`\[[ListClustersResponseTypeDef](./type_defs.md#listclustersresponsetypedef)\].
 
 <a id="listcontainerinstancespaginator"></a>
 
@@ -154,7 +154,7 @@ Arguments for `ListContainerInstancesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListContainerInstancesPaginator.paginate` returns
-`_PageIterator`\[[ListContainerInstancesResponseTypeDef](./type_defs.md#listcontainerinstancesresponsetypedef)\].
+`AsyncIterable`\[[ListContainerInstancesResponseTypeDef](./type_defs.md#listcontainerinstancesresponsetypedef)\].
 
 <a id="listservicespaginator"></a>
 
@@ -189,7 +189,7 @@ Arguments for `ListServicesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListServicesPaginator.paginate` returns
-`_PageIterator`\[[ListServicesResponseTypeDef](./type_defs.md#listservicesresponsetypedef)\].
+`AsyncIterable`\[[ListServicesResponseTypeDef](./type_defs.md#listservicesresponsetypedef)\].
 
 <a id="listtaskdefinitionfamiliespaginator"></a>
 
@@ -223,7 +223,7 @@ Arguments for `ListTaskDefinitionFamiliesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTaskDefinitionFamiliesPaginator.paginate` returns
-`_PageIterator`\[[ListTaskDefinitionFamiliesResponseTypeDef](./type_defs.md#listtaskdefinitionfamiliesresponsetypedef)\].
+`AsyncIterable`\[[ListTaskDefinitionFamiliesResponseTypeDef](./type_defs.md#listtaskdefinitionfamiliesresponsetypedef)\].
 
 <a id="listtaskdefinitionspaginator"></a>
 
@@ -257,7 +257,7 @@ Arguments for `ListTaskDefinitionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTaskDefinitionsPaginator.paginate` returns
-`_PageIterator`\[[ListTaskDefinitionsResponseTypeDef](./type_defs.md#listtaskdefinitionsresponsetypedef)\].
+`AsyncIterable`\[[ListTaskDefinitionsResponseTypeDef](./type_defs.md#listtaskdefinitionsresponsetypedef)\].
 
 <a id="listtaskspaginator"></a>
 
@@ -295,4 +295,4 @@ Arguments for `ListTasksPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTasksPaginator.paginate` returns
-`_PageIterator`\[[ListTasksResponseTypeDef](./type_defs.md#listtasksresponsetypedef)\].
+`AsyncIterable`\[[ListTasksResponseTypeDef](./type_defs.md#listtasksresponsetypedef)\].

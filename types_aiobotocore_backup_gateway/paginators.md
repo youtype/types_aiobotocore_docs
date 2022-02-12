@@ -43,7 +43,7 @@ Arguments for `ListGatewaysPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListGatewaysPaginator.paginate` returns
-`_PageIterator`\[[ListGatewaysOutputTypeDef](./type_defs.md#listgatewaysoutputtypedef)\].
+`AsyncIterable`\[[ListGatewaysOutputTypeDef](./type_defs.md#listgatewaysoutputtypedef)\].
 
 <a id="listhypervisorspaginator"></a>
 
@@ -74,7 +74,7 @@ Arguments for `ListHypervisorsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListHypervisorsPaginator.paginate` returns
-`_PageIterator`\[[ListHypervisorsOutputTypeDef](./type_defs.md#listhypervisorsoutputtypedef)\].
+`AsyncIterable`\[[ListHypervisorsOutputTypeDef](./type_defs.md#listhypervisorsoutputtypedef)\].
 
 <a id="listvirtualmachinespaginator"></a>
 
@@ -105,4 +105,4 @@ Arguments for `ListVirtualMachinesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListVirtualMachinesPaginator.paginate` returns
-`_PageIterator`\[[ListVirtualMachinesOutputTypeDef](./type_defs.md#listvirtualmachinesoutputtypedef)\].
+`AsyncIterable`\[[ListVirtualMachinesOutputTypeDef](./type_defs.md#listvirtualmachinesoutputtypedef)\].

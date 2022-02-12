@@ -49,7 +49,7 @@ Arguments for `DescribeAddonVersionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeAddonVersionsPaginator.paginate` returns
-`_PageIterator`\[[DescribeAddonVersionsResponseTypeDef](./type_defs.md#describeaddonversionsresponsetypedef)\].
+`AsyncIterable`\[[DescribeAddonVersionsResponseTypeDef](./type_defs.md#describeaddonversionsresponsetypedef)\].
 
 <a id="listaddonspaginator"></a>
 
@@ -81,7 +81,7 @@ Arguments for `ListAddonsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAddonsPaginator.paginate` returns
-`_PageIterator`\[[ListAddonsResponseTypeDef](./type_defs.md#listaddonsresponsetypedef)\].
+`AsyncIterable`\[[ListAddonsResponseTypeDef](./type_defs.md#listaddonsresponsetypedef)\].
 
 <a id="listclusterspaginator"></a>
 
@@ -113,7 +113,7 @@ Arguments for `ListClustersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListClustersPaginator.paginate` returns
-`_PageIterator`\[[ListClustersResponseTypeDef](./type_defs.md#listclustersresponsetypedef)\].
+`AsyncIterable`\[[ListClustersResponseTypeDef](./type_defs.md#listclustersresponsetypedef)\].
 
 <a id="listfargateprofilespaginator"></a>
 
@@ -145,7 +145,7 @@ Arguments for `ListFargateProfilesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListFargateProfilesPaginator.paginate` returns
-`_PageIterator`\[[ListFargateProfilesResponseTypeDef](./type_defs.md#listfargateprofilesresponsetypedef)\].
+`AsyncIterable`\[[ListFargateProfilesResponseTypeDef](./type_defs.md#listfargateprofilesresponsetypedef)\].
 
 <a id="listidentityproviderconfigspaginator"></a>
 
@@ -177,7 +177,7 @@ Arguments for `ListIdentityProviderConfigsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListIdentityProviderConfigsPaginator.paginate` returns
-`_PageIterator`\[[ListIdentityProviderConfigsResponseTypeDef](./type_defs.md#listidentityproviderconfigsresponsetypedef)\].
+`AsyncIterable`\[[ListIdentityProviderConfigsResponseTypeDef](./type_defs.md#listidentityproviderconfigsresponsetypedef)\].
 
 <a id="listnodegroupspaginator"></a>
 
@@ -209,7 +209,7 @@ Arguments for `ListNodegroupsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListNodegroupsPaginator.paginate` returns
-`_PageIterator`\[[ListNodegroupsResponseTypeDef](./type_defs.md#listnodegroupsresponsetypedef)\].
+`AsyncIterable`\[[ListNodegroupsResponseTypeDef](./type_defs.md#listnodegroupsresponsetypedef)\].
 
 <a id="listupdatespaginator"></a>
 
@@ -243,4 +243,4 @@ Arguments for `ListUpdatesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListUpdatesPaginator.paginate` returns
-`_PageIterator`\[[ListUpdatesResponseTypeDef](./type_defs.md#listupdatesresponsetypedef)\].
+`AsyncIterable`\[[ListUpdatesResponseTypeDef](./type_defs.md#listupdatesresponsetypedef)\].

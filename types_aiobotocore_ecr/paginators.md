@@ -50,7 +50,7 @@ Arguments for `DescribeImageScanFindingsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeImageScanFindingsPaginator.paginate` returns
-`_PageIterator`\[[DescribeImageScanFindingsResponseTypeDef](./type_defs.md#describeimagescanfindingsresponsetypedef)\].
+`AsyncIterable`\[[DescribeImageScanFindingsResponseTypeDef](./type_defs.md#describeimagescanfindingsresponsetypedef)\].
 
 <a id="describeimagespaginator"></a>
 
@@ -87,7 +87,7 @@ Arguments for `DescribeImagesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeImagesPaginator.paginate` returns
-`_PageIterator`\[[DescribeImagesResponseTypeDef](./type_defs.md#describeimagesresponsetypedef)\].
+`AsyncIterable`\[[DescribeImagesResponseTypeDef](./type_defs.md#describeimagesresponsetypedef)\].
 
 <a id="describepullthroughcacherulespaginator"></a>
 
@@ -120,7 +120,7 @@ Arguments for `DescribePullThroughCacheRulesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribePullThroughCacheRulesPaginator.paginate` returns
-`_PageIterator`\[[DescribePullThroughCacheRulesResponseTypeDef](./type_defs.md#describepullthroughcacherulesresponsetypedef)\].
+`AsyncIterable`\[[DescribePullThroughCacheRulesResponseTypeDef](./type_defs.md#describepullthroughcacherulesresponsetypedef)\].
 
 <a id="describerepositoriespaginator"></a>
 
@@ -153,7 +153,7 @@ Arguments for `DescribeRepositoriesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeRepositoriesPaginator.paginate` returns
-`_PageIterator`\[[DescribeRepositoriesResponseTypeDef](./type_defs.md#describerepositoriesresponsetypedef)\].
+`AsyncIterable`\[[DescribeRepositoriesResponseTypeDef](./type_defs.md#describerepositoriesresponsetypedef)\].
 
 <a id="getlifecyclepolicypreviewpaginator"></a>
 
@@ -190,7 +190,7 @@ Arguments for `GetLifecyclePolicyPreviewPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetLifecyclePolicyPreviewPaginator.paginate` returns
-`_PageIterator`\[[GetLifecyclePolicyPreviewResponseTypeDef](./type_defs.md#getlifecyclepolicypreviewresponsetypedef)\].
+`AsyncIterable`\[[GetLifecyclePolicyPreviewResponseTypeDef](./type_defs.md#getlifecyclepolicypreviewresponsetypedef)\].
 
 <a id="listimagespaginator"></a>
 
@@ -224,4 +224,4 @@ Arguments for `ListImagesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListImagesPaginator.paginate` returns
-`_PageIterator`\[[ListImagesResponseTypeDef](./type_defs.md#listimagesresponsetypedef)\].
+`AsyncIterable`\[[ListImagesResponseTypeDef](./type_defs.md#listimagesresponsetypedef)\].

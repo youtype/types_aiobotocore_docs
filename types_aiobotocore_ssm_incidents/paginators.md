@@ -47,7 +47,7 @@ Arguments for `GetResourcePoliciesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetResourcePoliciesPaginator.paginate` returns
-`_PageIterator`\[[GetResourcePoliciesOutputTypeDef](./type_defs.md#getresourcepoliciesoutputtypedef)\].
+`AsyncIterable`\[[GetResourcePoliciesOutputTypeDef](./type_defs.md#getresourcepoliciesoutputtypedef)\].
 
 <a id="listincidentrecordspaginator"></a>
 
@@ -79,7 +79,7 @@ Arguments for `ListIncidentRecordsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListIncidentRecordsPaginator.paginate` returns
-`_PageIterator`\[[ListIncidentRecordsOutputTypeDef](./type_defs.md#listincidentrecordsoutputtypedef)\].
+`AsyncIterable`\[[ListIncidentRecordsOutputTypeDef](./type_defs.md#listincidentrecordsoutputtypedef)\].
 
 <a id="listrelateditemspaginator"></a>
 
@@ -111,7 +111,7 @@ Arguments for `ListRelatedItemsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRelatedItemsPaginator.paginate` returns
-`_PageIterator`\[[ListRelatedItemsOutputTypeDef](./type_defs.md#listrelateditemsoutputtypedef)\].
+`AsyncIterable`\[[ListRelatedItemsOutputTypeDef](./type_defs.md#listrelateditemsoutputtypedef)\].
 
 <a id="listreplicationsetspaginator"></a>
 
@@ -142,7 +142,7 @@ Arguments for `ListReplicationSetsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListReplicationSetsPaginator.paginate` returns
-`_PageIterator`\[[ListReplicationSetsOutputTypeDef](./type_defs.md#listreplicationsetsoutputtypedef)\].
+`AsyncIterable`\[[ListReplicationSetsOutputTypeDef](./type_defs.md#listreplicationsetsoutputtypedef)\].
 
 <a id="listresponseplanspaginator"></a>
 
@@ -173,7 +173,7 @@ Arguments for `ListResponsePlansPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListResponsePlansPaginator.paginate` returns
-`_PageIterator`\[[ListResponsePlansOutputTypeDef](./type_defs.md#listresponseplansoutputtypedef)\].
+`AsyncIterable`\[[ListResponsePlansOutputTypeDef](./type_defs.md#listresponseplansoutputtypedef)\].
 
 <a id="listtimelineeventspaginator"></a>
 
@@ -209,4 +209,4 @@ Arguments for `ListTimelineEventsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTimelineEventsPaginator.paginate` returns
-`_PageIterator`\[[ListTimelineEventsOutputTypeDef](./type_defs.md#listtimelineeventsoutputtypedef)\].
+`AsyncIterable`\[[ListTimelineEventsOutputTypeDef](./type_defs.md#listtimelineeventsoutputtypedef)\].

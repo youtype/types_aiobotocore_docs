@@ -48,7 +48,7 @@ Arguments for `GetResourcePoliciesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetResourcePoliciesPaginator.paginate` returns
-`_PageIterator`\[[GetResourcePoliciesResponseTypeDef](./type_defs.md#getresourcepoliciesresponsetypedef)\].
+`AsyncIterable`\[[GetResourcePoliciesResponseTypeDef](./type_defs.md#getresourcepoliciesresponsetypedef)\].
 
 <a id="getresourceshareassociationspaginator"></a>
 
@@ -87,7 +87,7 @@ Arguments for `GetResourceShareAssociationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetResourceShareAssociationsPaginator.paginate` returns
-`_PageIterator`\[[GetResourceShareAssociationsResponseTypeDef](./type_defs.md#getresourceshareassociationsresponsetypedef)\].
+`AsyncIterable`\[[GetResourceShareAssociationsResponseTypeDef](./type_defs.md#getresourceshareassociationsresponsetypedef)\].
 
 <a id="getresourceshareinvitationspaginator"></a>
 
@@ -120,7 +120,7 @@ Arguments for `GetResourceShareInvitationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetResourceShareInvitationsPaginator.paginate` returns
-`_PageIterator`\[[GetResourceShareInvitationsResponseTypeDef](./type_defs.md#getresourceshareinvitationsresponsetypedef)\].
+`AsyncIterable`\[[GetResourceShareInvitationsResponseTypeDef](./type_defs.md#getresourceshareinvitationsresponsetypedef)\].
 
 <a id="getresourcesharespaginator"></a>
 
@@ -160,7 +160,7 @@ Arguments for `GetResourceSharesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetResourceSharesPaginator.paginate` returns
-`_PageIterator`\[[GetResourceSharesResponseTypeDef](./type_defs.md#getresourcesharesresponsetypedef)\].
+`AsyncIterable`\[[GetResourceSharesResponseTypeDef](./type_defs.md#getresourcesharesresponsetypedef)\].
 
 <a id="listprincipalspaginator"></a>
 
@@ -197,7 +197,7 @@ Arguments for `ListPrincipalsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPrincipalsPaginator.paginate` returns
-`_PageIterator`\[[ListPrincipalsResponseTypeDef](./type_defs.md#listprincipalsresponsetypedef)\].
+`AsyncIterable`\[[ListPrincipalsResponseTypeDef](./type_defs.md#listprincipalsresponsetypedef)\].
 
 <a id="listresourcespaginator"></a>
 
@@ -236,4 +236,4 @@ Arguments for `ListResourcesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListResourcesPaginator.paginate` returns
-`_PageIterator`\[[ListResourcesResponseTypeDef](./type_defs.md#listresourcesresponsetypedef)\].
+`AsyncIterable`\[[ListResourcesResponseTypeDef](./type_defs.md#listresourcesresponsetypedef)\].

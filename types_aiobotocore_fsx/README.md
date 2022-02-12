@@ -9,25 +9,57 @@ Auto-generated documentation for
 type annotations stubs module
 [types-aiobotocore-fsx](https://pypi.org/project/types-aiobotocore-fsx/).
 
-```bash
-# install with types-aiobotocore
-pip install 'types-aiobotocore[fsx]'
-
-# Lite version does not provide session.create_client overloads
-# it is more RAM-friendly, but requires explicit type annotations
-python -m pip install 'types-aiobotocore-lite[fsx]'
-
-# standalone installation
-pip install types-aiobotocore-fsx
-```
-
 - [Type annotations for aiobotocore FSx module](#type-annotations-for-aiobotocore-fsx-module)
+  - [How to install](#how-to-install)
+    - [VSCode extension](#vscode-extension)
+    - [From PyPI with pip](#from-pypi-with-pip)
+  - [How to uninstall](#how-to-uninstall)
   - [FSxClient](#fsxclient)
     - [Methods](#methods)
     - [Exceptions](#exceptions)
   - [Paginators](#paginators)
   - [Literals](#literals)
   - [Typed dictionaries](#typed-dictionaries)
+
+<a id="how-to-install"></a>
+
+## How to install
+
+<a id="vscode-extension"></a>
+
+### VSCode extension
+
+Add
+[AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
+extension to your VSCode and run `AWS boto3: Quick Start` command.
+
+Click `Modify` and select `boto3 common` and `FSx`.
+
+<a id="from-pypi-with-pip"></a>
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `FSx` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[fsx]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[fsx]'
+
+# standalone installation
+python -m pip install types-aiobotocore-fsx
+```
+
+<a id="how-to-uninstall"></a>
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-fsx
+```
 
 <a id="fsxclient"></a>
 

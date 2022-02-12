@@ -48,7 +48,7 @@ Arguments for `ListJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListJobsPaginator.paginate` returns
-`_PageIterator`\[[ListJobsOutputTypeDef](./type_defs.md#listjobsoutputtypedef)\].
+`AsyncIterable`\[[ListJobsOutputTypeDef](./type_defs.md#listjobsoutputtypedef)\].
 
 <a id="listmultipartuploadspaginator"></a>
 
@@ -81,7 +81,7 @@ Arguments for `ListMultipartUploadsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListMultipartUploadsPaginator.paginate` returns
-`_PageIterator`\[[ListMultipartUploadsOutputTypeDef](./type_defs.md#listmultipartuploadsoutputtypedef)\].
+`AsyncIterable`\[[ListMultipartUploadsOutputTypeDef](./type_defs.md#listmultipartuploadsoutputtypedef)\].
 
 <a id="listpartspaginator"></a>
 
@@ -115,7 +115,7 @@ Arguments for `ListPartsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPartsPaginator.paginate` returns
-`_PageIterator`\[[ListPartsOutputTypeDef](./type_defs.md#listpartsoutputtypedef)\].
+`AsyncIterable`\[[ListPartsOutputTypeDef](./type_defs.md#listpartsoutputtypedef)\].
 
 <a id="listvaultspaginator"></a>
 
@@ -147,4 +147,4 @@ Arguments for `ListVaultsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListVaultsPaginator.paginate` returns
-`_PageIterator`\[[ListVaultsOutputTypeDef](./type_defs.md#listvaultsoutputtypedef)\].
+`AsyncIterable`\[[ListVaultsOutputTypeDef](./type_defs.md#listvaultsoutputtypedef)\].

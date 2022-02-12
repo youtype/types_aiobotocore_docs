@@ -9,19 +9,11 @@ Auto-generated documentation for
 type annotations stubs module
 [types-aiobotocore-route53](https://pypi.org/project/types-aiobotocore-route53/).
 
-```bash
-# install with types-aiobotocore
-pip install 'types-aiobotocore[route53]'
-
-# Lite version does not provide session.create_client overloads
-# it is more RAM-friendly, but requires explicit type annotations
-python -m pip install 'types-aiobotocore-lite[route53]'
-
-# standalone installation
-pip install types-aiobotocore-route53
-```
-
 - [Type annotations for aiobotocore Route53 module](#type-annotations-for-aiobotocore-route53-module)
+  - [How to install](#how-to-install)
+    - [VSCode extension](#vscode-extension)
+    - [From PyPI with pip](#from-pypi-with-pip)
+  - [How to uninstall](#how-to-uninstall)
   - [Route53Client](#route53client)
     - [Methods](#methods)
     - [Exceptions](#exceptions)
@@ -29,6 +21,46 @@ pip install types-aiobotocore-route53
   - [Waiters](#waiters)
   - [Literals](#literals)
   - [Typed dictionaries](#typed-dictionaries)
+
+<a id="how-to-install"></a>
+
+## How to install
+
+<a id="vscode-extension"></a>
+
+### VSCode extension
+
+Add
+[AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
+extension to your VSCode and run `AWS boto3: Quick Start` command.
+
+Click `Modify` and select `boto3 common` and `Route53`.
+
+<a id="from-pypi-with-pip"></a>
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `Route53` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[route53]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[route53]'
+
+# standalone installation
+python -m pip install types-aiobotocore-route53
+```
+
+<a id="how-to-uninstall"></a>
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-route53
+```
 
 <a id="route53client"></a>
 

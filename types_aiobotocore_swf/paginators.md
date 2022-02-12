@@ -52,7 +52,7 @@ Arguments for `GetWorkflowExecutionHistoryPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetWorkflowExecutionHistoryPaginator.paginate` returns
-`_PageIterator`\[[HistoryTypeDef](./type_defs.md#historytypedef)\].
+`AsyncIterable`\[[HistoryTypeDef](./type_defs.md#historytypedef)\].
 
 <a id="listactivitytypespaginator"></a>
 
@@ -88,7 +88,7 @@ Arguments for `ListActivityTypesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListActivityTypesPaginator.paginate` returns
-`_PageIterator`\[[ActivityTypeInfosTypeDef](./type_defs.md#activitytypeinfostypedef)\].
+`AsyncIterable`\[[ActivityTypeInfosTypeDef](./type_defs.md#activitytypeinfostypedef)\].
 
 <a id="listclosedworkflowexecutionspaginator"></a>
 
@@ -132,7 +132,7 @@ Arguments for `ListClosedWorkflowExecutionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListClosedWorkflowExecutionsPaginator.paginate` returns
-`_PageIterator`\[[WorkflowExecutionInfosTypeDef](./type_defs.md#workflowexecutioninfostypedef)\].
+`AsyncIterable`\[[WorkflowExecutionInfosTypeDef](./type_defs.md#workflowexecutioninfostypedef)\].
 
 <a id="listdomainspaginator"></a>
 
@@ -166,7 +166,7 @@ Arguments for `ListDomainsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDomainsPaginator.paginate` returns
-`_PageIterator`\[[DomainInfosTypeDef](./type_defs.md#domaininfostypedef)\].
+`AsyncIterable`\[[DomainInfosTypeDef](./type_defs.md#domaininfostypedef)\].
 
 <a id="listopenworkflowexecutionspaginator"></a>
 
@@ -207,7 +207,7 @@ Arguments for `ListOpenWorkflowExecutionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListOpenWorkflowExecutionsPaginator.paginate` returns
-`_PageIterator`\[[WorkflowExecutionInfosTypeDef](./type_defs.md#workflowexecutioninfostypedef)\].
+`AsyncIterable`\[[WorkflowExecutionInfosTypeDef](./type_defs.md#workflowexecutioninfostypedef)\].
 
 <a id="listworkflowtypespaginator"></a>
 
@@ -243,7 +243,7 @@ Arguments for `ListWorkflowTypesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListWorkflowTypesPaginator.paginate` returns
-`_PageIterator`\[[WorkflowTypeInfosTypeDef](./type_defs.md#workflowtypeinfostypedef)\].
+`AsyncIterable`\[[WorkflowTypeInfosTypeDef](./type_defs.md#workflowtypeinfostypedef)\].
 
 <a id="pollfordecisiontaskpaginator"></a>
 
@@ -278,4 +278,4 @@ Arguments for `PollForDecisionTaskPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `PollForDecisionTaskPaginator.paginate` returns
-`_PageIterator`\[[DecisionTaskTypeDef](./type_defs.md#decisiontasktypedef)\].
+`AsyncIterable`\[[DecisionTaskTypeDef](./type_defs.md#decisiontasktypedef)\].

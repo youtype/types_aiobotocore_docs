@@ -44,7 +44,7 @@ Arguments for `ListChangesetsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListChangesetsPaginator.paginate` returns
-`_PageIterator`\[[ListChangesetsResponseTypeDef](./type_defs.md#listchangesetsresponsetypedef)\].
+`AsyncIterable`\[[ListChangesetsResponseTypeDef](./type_defs.md#listchangesetsresponsetypedef)\].
 
 <a id="listdataviewspaginator"></a>
 
@@ -76,7 +76,7 @@ Arguments for `ListDataViewsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDataViewsPaginator.paginate` returns
-`_PageIterator`\[[ListDataViewsResponseTypeDef](./type_defs.md#listdataviewsresponsetypedef)\].
+`AsyncIterable`\[[ListDataViewsResponseTypeDef](./type_defs.md#listdataviewsresponsetypedef)\].
 
 <a id="listdatasetspaginator"></a>
 
@@ -107,4 +107,4 @@ Arguments for `ListDatasetsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDatasetsPaginator.paginate` returns
-`_PageIterator`\[[ListDatasetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef)\].
+`AsyncIterable`\[[ListDatasetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef)\].

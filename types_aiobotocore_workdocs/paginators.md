@@ -57,7 +57,7 @@ Arguments for `DescribeActivitiesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeActivitiesPaginator.paginate` returns
-`_PageIterator`\[[DescribeActivitiesResponseTypeDef](./type_defs.md#describeactivitiesresponsetypedef)\].
+`AsyncIterable`\[[DescribeActivitiesResponseTypeDef](./type_defs.md#describeactivitiesresponsetypedef)\].
 
 <a id="describecommentspaginator"></a>
 
@@ -91,7 +91,7 @@ Arguments for `DescribeCommentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeCommentsPaginator.paginate` returns
-`_PageIterator`\[[DescribeCommentsResponseTypeDef](./type_defs.md#describecommentsresponsetypedef)\].
+`AsyncIterable`\[[DescribeCommentsResponseTypeDef](./type_defs.md#describecommentsresponsetypedef)\].
 
 <a id="describedocumentversionspaginator"></a>
 
@@ -126,7 +126,7 @@ Arguments for `DescribeDocumentVersionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeDocumentVersionsPaginator.paginate` returns
-`_PageIterator`\[[DescribeDocumentVersionsResponseTypeDef](./type_defs.md#describedocumentversionsresponsetypedef)\].
+`AsyncIterable`\[[DescribeDocumentVersionsResponseTypeDef](./type_defs.md#describedocumentversionsresponsetypedef)\].
 
 <a id="describefoldercontentspaginator"></a>
 
@@ -163,7 +163,7 @@ Arguments for `DescribeFolderContentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeFolderContentsPaginator.paginate` returns
-`_PageIterator`\[[DescribeFolderContentsResponseTypeDef](./type_defs.md#describefoldercontentsresponsetypedef)\].
+`AsyncIterable`\[[DescribeFolderContentsResponseTypeDef](./type_defs.md#describefoldercontentsresponsetypedef)\].
 
 <a id="describegroupspaginator"></a>
 
@@ -197,7 +197,7 @@ Arguments for `DescribeGroupsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeGroupsPaginator.paginate` returns
-`_PageIterator`\[[DescribeGroupsResponseTypeDef](./type_defs.md#describegroupsresponsetypedef)\].
+`AsyncIterable`\[[DescribeGroupsResponseTypeDef](./type_defs.md#describegroupsresponsetypedef)\].
 
 <a id="describenotificationsubscriptionspaginator"></a>
 
@@ -229,7 +229,7 @@ Arguments for `DescribeNotificationSubscriptionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeNotificationSubscriptionsPaginator.paginate` returns
-`_PageIterator`\[[DescribeNotificationSubscriptionsResponseTypeDef](./type_defs.md#describenotificationsubscriptionsresponsetypedef)\].
+`AsyncIterable`\[[DescribeNotificationSubscriptionsResponseTypeDef](./type_defs.md#describenotificationsubscriptionsresponsetypedef)\].
 
 <a id="describeresourcepermissionspaginator"></a>
 
@@ -263,7 +263,7 @@ Arguments for `DescribeResourcePermissionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeResourcePermissionsPaginator.paginate` returns
-`_PageIterator`\[[DescribeResourcePermissionsResponseTypeDef](./type_defs.md#describeresourcepermissionsresponsetypedef)\].
+`AsyncIterable`\[[DescribeResourcePermissionsResponseTypeDef](./type_defs.md#describeresourcepermissionsresponsetypedef)\].
 
 <a id="describerootfolderspaginator"></a>
 
@@ -295,7 +295,7 @@ Arguments for `DescribeRootFoldersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeRootFoldersPaginator.paginate` returns
-`_PageIterator`\[[DescribeRootFoldersResponseTypeDef](./type_defs.md#describerootfoldersresponsetypedef)\].
+`AsyncIterable`\[[DescribeRootFoldersResponseTypeDef](./type_defs.md#describerootfoldersresponsetypedef)\].
 
 <a id="describeuserspaginator"></a>
 
@@ -334,4 +334,4 @@ Arguments for `DescribeUsersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeUsersPaginator.paginate` returns
-`_PageIterator`\[[DescribeUsersResponseTypeDef](./type_defs.md#describeusersresponsetypedef)\].
+`AsyncIterable`\[[DescribeUsersResponseTypeDef](./type_defs.md#describeusersresponsetypedef)\].

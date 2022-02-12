@@ -53,7 +53,7 @@ Arguments for `ListBusinessReportSchedulesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListBusinessReportSchedulesPaginator.paginate` returns
-`_PageIterator`\[[ListBusinessReportSchedulesResponseTypeDef](./type_defs.md#listbusinessreportschedulesresponsetypedef)\].
+`AsyncIterable`\[[ListBusinessReportSchedulesResponseTypeDef](./type_defs.md#listbusinessreportschedulesresponsetypedef)\].
 
 <a id="listconferenceproviderspaginator"></a>
 
@@ -84,7 +84,7 @@ Arguments for `ListConferenceProvidersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListConferenceProvidersPaginator.paginate` returns
-`_PageIterator`\[[ListConferenceProvidersResponseTypeDef](./type_defs.md#listconferenceprovidersresponsetypedef)\].
+`AsyncIterable`\[[ListConferenceProvidersResponseTypeDef](./type_defs.md#listconferenceprovidersresponsetypedef)\].
 
 <a id="listdeviceeventspaginator"></a>
 
@@ -117,7 +117,7 @@ Arguments for `ListDeviceEventsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDeviceEventsPaginator.paginate` returns
-`_PageIterator`\[[ListDeviceEventsResponseTypeDef](./type_defs.md#listdeviceeventsresponsetypedef)\].
+`AsyncIterable`\[[ListDeviceEventsResponseTypeDef](./type_defs.md#listdeviceeventsresponsetypedef)\].
 
 <a id="listskillspaginator"></a>
 
@@ -152,7 +152,7 @@ Arguments for `ListSkillsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSkillsPaginator.paginate` returns
-`_PageIterator`\[[ListSkillsResponseTypeDef](./type_defs.md#listskillsresponsetypedef)\].
+`AsyncIterable`\[[ListSkillsResponseTypeDef](./type_defs.md#listskillsresponsetypedef)\].
 
 <a id="listskillsstorecategoriespaginator"></a>
 
@@ -183,7 +183,7 @@ Arguments for `ListSkillsStoreCategoriesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSkillsStoreCategoriesPaginator.paginate` returns
-`_PageIterator`\[[ListSkillsStoreCategoriesResponseTypeDef](./type_defs.md#listskillsstorecategoriesresponsetypedef)\].
+`AsyncIterable`\[[ListSkillsStoreCategoriesResponseTypeDef](./type_defs.md#listskillsstorecategoriesresponsetypedef)\].
 
 <a id="listskillsstoreskillsbycategorypaginator"></a>
 
@@ -215,7 +215,7 @@ Arguments for `ListSkillsStoreSkillsByCategoryPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSkillsStoreSkillsByCategoryPaginator.paginate` returns
-`_PageIterator`\[[ListSkillsStoreSkillsByCategoryResponseTypeDef](./type_defs.md#listskillsstoreskillsbycategoryresponsetypedef)\].
+`AsyncIterable`\[[ListSkillsStoreSkillsByCategoryResponseTypeDef](./type_defs.md#listskillsstoreskillsbycategoryresponsetypedef)\].
 
 <a id="listsmarthomeappliancespaginator"></a>
 
@@ -247,7 +247,7 @@ Arguments for `ListSmartHomeAppliancesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSmartHomeAppliancesPaginator.paginate` returns
-`_PageIterator`\[[ListSmartHomeAppliancesResponseTypeDef](./type_defs.md#listsmarthomeappliancesresponsetypedef)\].
+`AsyncIterable`\[[ListSmartHomeAppliancesResponseTypeDef](./type_defs.md#listsmarthomeappliancesresponsetypedef)\].
 
 <a id="listtagspaginator"></a>
 
@@ -279,7 +279,7 @@ Arguments for `ListTagsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTagsPaginator.paginate` returns
-`_PageIterator`\[[ListTagsResponseTypeDef](./type_defs.md#listtagsresponsetypedef)\].
+`AsyncIterable`\[[ListTagsResponseTypeDef](./type_defs.md#listtagsresponsetypedef)\].
 
 <a id="searchdevicespaginator"></a>
 
@@ -312,7 +312,7 @@ Arguments for `SearchDevicesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchDevicesPaginator.paginate` returns
-`_PageIterator`\[[SearchDevicesResponseTypeDef](./type_defs.md#searchdevicesresponsetypedef)\].
+`AsyncIterable`\[[SearchDevicesResponseTypeDef](./type_defs.md#searchdevicesresponsetypedef)\].
 
 <a id="searchprofilespaginator"></a>
 
@@ -345,7 +345,7 @@ Arguments for `SearchProfilesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchProfilesPaginator.paginate` returns
-`_PageIterator`\[[SearchProfilesResponseTypeDef](./type_defs.md#searchprofilesresponsetypedef)\].
+`AsyncIterable`\[[SearchProfilesResponseTypeDef](./type_defs.md#searchprofilesresponsetypedef)\].
 
 <a id="searchroomspaginator"></a>
 
@@ -378,7 +378,7 @@ Arguments for `SearchRoomsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchRoomsPaginator.paginate` returns
-`_PageIterator`\[[SearchRoomsResponseTypeDef](./type_defs.md#searchroomsresponsetypedef)\].
+`AsyncIterable`\[[SearchRoomsResponseTypeDef](./type_defs.md#searchroomsresponsetypedef)\].
 
 <a id="searchskillgroupspaginator"></a>
 
@@ -411,7 +411,7 @@ Arguments for `SearchSkillGroupsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchSkillGroupsPaginator.paginate` returns
-`_PageIterator`\[[SearchSkillGroupsResponseTypeDef](./type_defs.md#searchskillgroupsresponsetypedef)\].
+`AsyncIterable`\[[SearchSkillGroupsResponseTypeDef](./type_defs.md#searchskillgroupsresponsetypedef)\].
 
 <a id="searchuserspaginator"></a>
 
@@ -444,4 +444,4 @@ Arguments for `SearchUsersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchUsersPaginator.paginate` returns
-`_PageIterator`\[[SearchUsersResponseTypeDef](./type_defs.md#searchusersresponsetypedef)\].
+`AsyncIterable`\[[SearchUsersResponseTypeDef](./type_defs.md#searchusersresponsetypedef)\].

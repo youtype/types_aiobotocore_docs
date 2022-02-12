@@ -46,7 +46,7 @@ Arguments for `ListApplicationStatesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListApplicationStatesPaginator.paginate` returns
-`_PageIterator`\[[ListApplicationStatesResultTypeDef](./type_defs.md#listapplicationstatesresulttypedef)\].
+`AsyncIterable`\[[ListApplicationStatesResultTypeDef](./type_defs.md#listapplicationstatesresulttypedef)\].
 
 <a id="listcreatedartifactspaginator"></a>
 
@@ -79,7 +79,7 @@ Arguments for `ListCreatedArtifactsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListCreatedArtifactsPaginator.paginate` returns
-`_PageIterator`\[[ListCreatedArtifactsResultTypeDef](./type_defs.md#listcreatedartifactsresulttypedef)\].
+`AsyncIterable`\[[ListCreatedArtifactsResultTypeDef](./type_defs.md#listcreatedartifactsresulttypedef)\].
 
 <a id="listdiscoveredresourcespaginator"></a>
 
@@ -112,7 +112,7 @@ Arguments for `ListDiscoveredResourcesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDiscoveredResourcesPaginator.paginate` returns
-`_PageIterator`\[[ListDiscoveredResourcesResultTypeDef](./type_defs.md#listdiscoveredresourcesresulttypedef)\].
+`AsyncIterable`\[[ListDiscoveredResourcesResultTypeDef](./type_defs.md#listdiscoveredresourcesresulttypedef)\].
 
 <a id="listmigrationtaskspaginator"></a>
 
@@ -144,7 +144,7 @@ Arguments for `ListMigrationTasksPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListMigrationTasksPaginator.paginate` returns
-`_PageIterator`\[[ListMigrationTasksResultTypeDef](./type_defs.md#listmigrationtasksresulttypedef)\].
+`AsyncIterable`\[[ListMigrationTasksResultTypeDef](./type_defs.md#listmigrationtasksresulttypedef)\].
 
 <a id="listprogressupdatestreamspaginator"></a>
 
@@ -175,4 +175,4 @@ Arguments for `ListProgressUpdateStreamsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListProgressUpdateStreamsPaginator.paginate` returns
-`_PageIterator`\[[ListProgressUpdateStreamsResultTypeDef](./type_defs.md#listprogressupdatestreamsresulttypedef)\].
+`AsyncIterable`\[[ListProgressUpdateStreamsResultTypeDef](./type_defs.md#listprogressupdatestreamsresulttypedef)\].

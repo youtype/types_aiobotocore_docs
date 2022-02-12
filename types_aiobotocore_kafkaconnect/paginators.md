@@ -44,7 +44,7 @@ Arguments for `ListConnectorsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListConnectorsPaginator.paginate` returns
-`_PageIterator`\[[ListConnectorsResponseTypeDef](./type_defs.md#listconnectorsresponsetypedef)\].
+`AsyncIterable`\[[ListConnectorsResponseTypeDef](./type_defs.md#listconnectorsresponsetypedef)\].
 
 <a id="listcustompluginspaginator"></a>
 
@@ -75,7 +75,7 @@ Arguments for `ListCustomPluginsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListCustomPluginsPaginator.paginate` returns
-`_PageIterator`\[[ListCustomPluginsResponseTypeDef](./type_defs.md#listcustompluginsresponsetypedef)\].
+`AsyncIterable`\[[ListCustomPluginsResponseTypeDef](./type_defs.md#listcustompluginsresponsetypedef)\].
 
 <a id="listworkerconfigurationspaginator"></a>
 
@@ -106,4 +106,4 @@ Arguments for `ListWorkerConfigurationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListWorkerConfigurationsPaginator.paginate` returns
-`_PageIterator`\[[ListWorkerConfigurationsResponseTypeDef](./type_defs.md#listworkerconfigurationsresponsetypedef)\].
+`AsyncIterable`\[[ListWorkerConfigurationsResponseTypeDef](./type_defs.md#listworkerconfigurationsresponsetypedef)\].

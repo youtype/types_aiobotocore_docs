@@ -52,7 +52,7 @@ Arguments for `GetBotAliasesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetBotAliasesPaginator.paginate` returns
-`_PageIterator`\[[GetBotAliasesResponseTypeDef](./type_defs.md#getbotaliasesresponsetypedef)\].
+`AsyncIterable`\[[GetBotAliasesResponseTypeDef](./type_defs.md#getbotaliasesresponsetypedef)\].
 
 <a id="getbotchannelassociationspaginator"></a>
 
@@ -86,7 +86,7 @@ Arguments for `GetBotChannelAssociationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetBotChannelAssociationsPaginator.paginate` returns
-`_PageIterator`\[[GetBotChannelAssociationsResponseTypeDef](./type_defs.md#getbotchannelassociationsresponsetypedef)\].
+`AsyncIterable`\[[GetBotChannelAssociationsResponseTypeDef](./type_defs.md#getbotchannelassociationsresponsetypedef)\].
 
 <a id="getbotversionspaginator"></a>
 
@@ -118,7 +118,7 @@ Arguments for `GetBotVersionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetBotVersionsPaginator.paginate` returns
-`_PageIterator`\[[GetBotVersionsResponseTypeDef](./type_defs.md#getbotversionsresponsetypedef)\].
+`AsyncIterable`\[[GetBotVersionsResponseTypeDef](./type_defs.md#getbotversionsresponsetypedef)\].
 
 <a id="getbotspaginator"></a>
 
@@ -150,7 +150,7 @@ Arguments for `GetBotsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetBotsPaginator.paginate` returns
-`_PageIterator`\[[GetBotsResponseTypeDef](./type_defs.md#getbotsresponsetypedef)\].
+`AsyncIterable`\[[GetBotsResponseTypeDef](./type_defs.md#getbotsresponsetypedef)\].
 
 <a id="getbuiltinintentspaginator"></a>
 
@@ -183,7 +183,7 @@ Arguments for `GetBuiltinIntentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetBuiltinIntentsPaginator.paginate` returns
-`_PageIterator`\[[GetBuiltinIntentsResponseTypeDef](./type_defs.md#getbuiltinintentsresponsetypedef)\].
+`AsyncIterable`\[[GetBuiltinIntentsResponseTypeDef](./type_defs.md#getbuiltinintentsresponsetypedef)\].
 
 <a id="getbuiltinslottypespaginator"></a>
 
@@ -216,7 +216,7 @@ Arguments for `GetBuiltinSlotTypesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetBuiltinSlotTypesPaginator.paginate` returns
-`_PageIterator`\[[GetBuiltinSlotTypesResponseTypeDef](./type_defs.md#getbuiltinslottypesresponsetypedef)\].
+`AsyncIterable`\[[GetBuiltinSlotTypesResponseTypeDef](./type_defs.md#getbuiltinslottypesresponsetypedef)\].
 
 <a id="getintentversionspaginator"></a>
 
@@ -248,7 +248,7 @@ Arguments for `GetIntentVersionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetIntentVersionsPaginator.paginate` returns
-`_PageIterator`\[[GetIntentVersionsResponseTypeDef](./type_defs.md#getintentversionsresponsetypedef)\].
+`AsyncIterable`\[[GetIntentVersionsResponseTypeDef](./type_defs.md#getintentversionsresponsetypedef)\].
 
 <a id="getintentspaginator"></a>
 
@@ -280,7 +280,7 @@ Arguments for `GetIntentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetIntentsPaginator.paginate` returns
-`_PageIterator`\[[GetIntentsResponseTypeDef](./type_defs.md#getintentsresponsetypedef)\].
+`AsyncIterable`\[[GetIntentsResponseTypeDef](./type_defs.md#getintentsresponsetypedef)\].
 
 <a id="getslottypeversionspaginator"></a>
 
@@ -312,7 +312,7 @@ Arguments for `GetSlotTypeVersionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetSlotTypeVersionsPaginator.paginate` returns
-`_PageIterator`\[[GetSlotTypeVersionsResponseTypeDef](./type_defs.md#getslottypeversionsresponsetypedef)\].
+`AsyncIterable`\[[GetSlotTypeVersionsResponseTypeDef](./type_defs.md#getslottypeversionsresponsetypedef)\].
 
 <a id="getslottypespaginator"></a>
 
@@ -344,4 +344,4 @@ Arguments for `GetSlotTypesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetSlotTypesPaginator.paginate` returns
-`_PageIterator`\[[GetSlotTypesResponseTypeDef](./type_defs.md#getslottypesresponsetypedef)\].
+`AsyncIterable`\[[GetSlotTypesResponseTypeDef](./type_defs.md#getslottypesresponsetypedef)\].

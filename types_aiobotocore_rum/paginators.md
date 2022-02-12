@@ -46,7 +46,7 @@ Arguments for `GetAppMonitorDataPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetAppMonitorDataPaginator.paginate` returns
-`_PageIterator`\[[GetAppMonitorDataResponseTypeDef](./type_defs.md#getappmonitordataresponsetypedef)\].
+`AsyncIterable`\[[GetAppMonitorDataResponseTypeDef](./type_defs.md#getappmonitordataresponsetypedef)\].
 
 <a id="listappmonitorspaginator"></a>
 
@@ -77,4 +77,4 @@ Arguments for `ListAppMonitorsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAppMonitorsPaginator.paginate` returns
-`_PageIterator`\[[ListAppMonitorsResponseTypeDef](./type_defs.md#listappmonitorsresponsetypedef)\].
+`AsyncIterable`\[[ListAppMonitorsResponseTypeDef](./type_defs.md#listappmonitorsresponsetypedef)\].

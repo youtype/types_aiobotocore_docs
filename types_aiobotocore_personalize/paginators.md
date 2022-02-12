@@ -55,7 +55,7 @@ Arguments for `ListBatchInferenceJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListBatchInferenceJobsPaginator.paginate` returns
-`_PageIterator`\[[ListBatchInferenceJobsResponseTypeDef](./type_defs.md#listbatchinferencejobsresponsetypedef)\].
+`AsyncIterable`\[[ListBatchInferenceJobsResponseTypeDef](./type_defs.md#listbatchinferencejobsresponsetypedef)\].
 
 <a id="listbatchsegmentjobspaginator"></a>
 
@@ -87,7 +87,7 @@ Arguments for `ListBatchSegmentJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListBatchSegmentJobsPaginator.paginate` returns
-`_PageIterator`\[[ListBatchSegmentJobsResponseTypeDef](./type_defs.md#listbatchsegmentjobsresponsetypedef)\].
+`AsyncIterable`\[[ListBatchSegmentJobsResponseTypeDef](./type_defs.md#listbatchsegmentjobsresponsetypedef)\].
 
 <a id="listcampaignspaginator"></a>
 
@@ -119,7 +119,7 @@ Arguments for `ListCampaignsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListCampaignsPaginator.paginate` returns
-`_PageIterator`\[[ListCampaignsResponseTypeDef](./type_defs.md#listcampaignsresponsetypedef)\].
+`AsyncIterable`\[[ListCampaignsResponseTypeDef](./type_defs.md#listcampaignsresponsetypedef)\].
 
 <a id="listdatasetexportjobspaginator"></a>
 
@@ -151,7 +151,7 @@ Arguments for `ListDatasetExportJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDatasetExportJobsPaginator.paginate` returns
-`_PageIterator`\[[ListDatasetExportJobsResponseTypeDef](./type_defs.md#listdatasetexportjobsresponsetypedef)\].
+`AsyncIterable`\[[ListDatasetExportJobsResponseTypeDef](./type_defs.md#listdatasetexportjobsresponsetypedef)\].
 
 <a id="listdatasetgroupspaginator"></a>
 
@@ -182,7 +182,7 @@ Arguments for `ListDatasetGroupsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDatasetGroupsPaginator.paginate` returns
-`_PageIterator`\[[ListDatasetGroupsResponseTypeDef](./type_defs.md#listdatasetgroupsresponsetypedef)\].
+`AsyncIterable`\[[ListDatasetGroupsResponseTypeDef](./type_defs.md#listdatasetgroupsresponsetypedef)\].
 
 <a id="listdatasetimportjobspaginator"></a>
 
@@ -214,7 +214,7 @@ Arguments for `ListDatasetImportJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDatasetImportJobsPaginator.paginate` returns
-`_PageIterator`\[[ListDatasetImportJobsResponseTypeDef](./type_defs.md#listdatasetimportjobsresponsetypedef)\].
+`AsyncIterable`\[[ListDatasetImportJobsResponseTypeDef](./type_defs.md#listdatasetimportjobsresponsetypedef)\].
 
 <a id="listdatasetspaginator"></a>
 
@@ -246,7 +246,7 @@ Arguments for `ListDatasetsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDatasetsPaginator.paginate` returns
-`_PageIterator`\[[ListDatasetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef)\].
+`AsyncIterable`\[[ListDatasetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef)\].
 
 <a id="listeventtrackerspaginator"></a>
 
@@ -278,7 +278,7 @@ Arguments for `ListEventTrackersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListEventTrackersPaginator.paginate` returns
-`_PageIterator`\[[ListEventTrackersResponseTypeDef](./type_defs.md#listeventtrackersresponsetypedef)\].
+`AsyncIterable`\[[ListEventTrackersResponseTypeDef](./type_defs.md#listeventtrackersresponsetypedef)\].
 
 <a id="listfilterspaginator"></a>
 
@@ -310,7 +310,7 @@ Arguments for `ListFiltersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListFiltersPaginator.paginate` returns
-`_PageIterator`\[[ListFiltersResponseTypeDef](./type_defs.md#listfiltersresponsetypedef)\].
+`AsyncIterable`\[[ListFiltersResponseTypeDef](./type_defs.md#listfiltersresponsetypedef)\].
 
 <a id="listrecipespaginator"></a>
 
@@ -344,7 +344,7 @@ Arguments for `ListRecipesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRecipesPaginator.paginate` returns
-`_PageIterator`\[[ListRecipesResponseTypeDef](./type_defs.md#listrecipesresponsetypedef)\].
+`AsyncIterable`\[[ListRecipesResponseTypeDef](./type_defs.md#listrecipesresponsetypedef)\].
 
 <a id="listrecommenderspaginator"></a>
 
@@ -376,7 +376,7 @@ Arguments for `ListRecommendersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRecommendersPaginator.paginate` returns
-`_PageIterator`\[[ListRecommendersResponseTypeDef](./type_defs.md#listrecommendersresponsetypedef)\].
+`AsyncIterable`\[[ListRecommendersResponseTypeDef](./type_defs.md#listrecommendersresponsetypedef)\].
 
 <a id="listschemaspaginator"></a>
 
@@ -407,7 +407,7 @@ Arguments for `ListSchemasPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSchemasPaginator.paginate` returns
-`_PageIterator`\[[ListSchemasResponseTypeDef](./type_defs.md#listschemasresponsetypedef)\].
+`AsyncIterable`\[[ListSchemasResponseTypeDef](./type_defs.md#listschemasresponsetypedef)\].
 
 <a id="listsolutionversionspaginator"></a>
 
@@ -439,7 +439,7 @@ Arguments for `ListSolutionVersionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSolutionVersionsPaginator.paginate` returns
-`_PageIterator`\[[ListSolutionVersionsResponseTypeDef](./type_defs.md#listsolutionversionsresponsetypedef)\].
+`AsyncIterable`\[[ListSolutionVersionsResponseTypeDef](./type_defs.md#listsolutionversionsresponsetypedef)\].
 
 <a id="listsolutionspaginator"></a>
 
@@ -471,4 +471,4 @@ Arguments for `ListSolutionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSolutionsPaginator.paginate` returns
-`_PageIterator`\[[ListSolutionsResponseTypeDef](./type_defs.md#listsolutionsresponsetypedef)\].
+`AsyncIterable`\[[ListSolutionsResponseTypeDef](./type_defs.md#listsolutionsresponsetypedef)\].

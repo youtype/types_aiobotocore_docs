@@ -46,7 +46,7 @@ Arguments for `GetDedicatedIpsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetDedicatedIpsPaginator.paginate` returns
-`_PageIterator`\[[GetDedicatedIpsResponseTypeDef](./type_defs.md#getdedicatedipsresponsetypedef)\].
+`AsyncIterable`\[[GetDedicatedIpsResponseTypeDef](./type_defs.md#getdedicatedipsresponsetypedef)\].
 
 <a id="listconfigurationsetspaginator"></a>
 
@@ -77,7 +77,7 @@ Arguments for `ListConfigurationSetsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListConfigurationSetsPaginator.paginate` returns
-`_PageIterator`\[[ListConfigurationSetsResponseTypeDef](./type_defs.md#listconfigurationsetsresponsetypedef)\].
+`AsyncIterable`\[[ListConfigurationSetsResponseTypeDef](./type_defs.md#listconfigurationsetsresponsetypedef)\].
 
 <a id="listdedicatedippoolspaginator"></a>
 
@@ -108,7 +108,7 @@ Arguments for `ListDedicatedIpPoolsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDedicatedIpPoolsPaginator.paginate` returns
-`_PageIterator`\[[ListDedicatedIpPoolsResponseTypeDef](./type_defs.md#listdedicatedippoolsresponsetypedef)\].
+`AsyncIterable`\[[ListDedicatedIpPoolsResponseTypeDef](./type_defs.md#listdedicatedippoolsresponsetypedef)\].
 
 <a id="listdeliverabilitytestreportspaginator"></a>
 
@@ -139,7 +139,7 @@ Arguments for `ListDeliverabilityTestReportsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDeliverabilityTestReportsPaginator.paginate` returns
-`_PageIterator`\[[ListDeliverabilityTestReportsResponseTypeDef](./type_defs.md#listdeliverabilitytestreportsresponsetypedef)\].
+`AsyncIterable`\[[ListDeliverabilityTestReportsResponseTypeDef](./type_defs.md#listdeliverabilitytestreportsresponsetypedef)\].
 
 <a id="listemailidentitiespaginator"></a>
 
@@ -170,4 +170,4 @@ Arguments for `ListEmailIdentitiesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListEmailIdentitiesPaginator.paginate` returns
-`_PageIterator`\[[ListEmailIdentitiesResponseTypeDef](./type_defs.md#listemailidentitiesresponsetypedef)\].
+`AsyncIterable`\[[ListEmailIdentitiesResponseTypeDef](./type_defs.md#listemailidentitiesresponsetypedef)\].

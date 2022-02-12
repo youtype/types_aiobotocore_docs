@@ -46,7 +46,7 @@ Arguments for `SearchDevicesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchDevicesPaginator.paginate` returns
-`_PageIterator`\[[SearchDevicesResponseTypeDef](./type_defs.md#searchdevicesresponsetypedef)\].
+`AsyncIterable`\[[SearchDevicesResponseTypeDef](./type_defs.md#searchdevicesresponsetypedef)\].
 
 <a id="searchjobspaginator"></a>
 
@@ -80,7 +80,7 @@ Arguments for `SearchJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchJobsPaginator.paginate` returns
-`_PageIterator`\[[SearchJobsResponseTypeDef](./type_defs.md#searchjobsresponsetypedef)\].
+`AsyncIterable`\[[SearchJobsResponseTypeDef](./type_defs.md#searchjobsresponsetypedef)\].
 
 <a id="searchquantumtaskspaginator"></a>
 
@@ -114,4 +114,4 @@ Arguments for `SearchQuantumTasksPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchQuantumTasksPaginator.paginate` returns
-`_PageIterator`\[[SearchQuantumTasksResponseTypeDef](./type_defs.md#searchquantumtasksresponsetypedef)\].
+`AsyncIterable`\[[SearchQuantumTasksResponseTypeDef](./type_defs.md#searchquantumtasksresponsetypedef)\].

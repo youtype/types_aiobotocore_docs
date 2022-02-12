@@ -55,7 +55,7 @@ Arguments for `ListAnalysesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAnalysesPaginator.paginate` returns
-`_PageIterator`\[[ListAnalysesResponseTypeDef](./type_defs.md#listanalysesresponsetypedef)\].
+`AsyncIterable`\[[ListAnalysesResponseTypeDef](./type_defs.md#listanalysesresponsetypedef)\].
 
 <a id="listdashboardversionspaginator"></a>
 
@@ -88,7 +88,7 @@ Arguments for `ListDashboardVersionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDashboardVersionsPaginator.paginate` returns
-`_PageIterator`\[[ListDashboardVersionsResponseTypeDef](./type_defs.md#listdashboardversionsresponsetypedef)\].
+`AsyncIterable`\[[ListDashboardVersionsResponseTypeDef](./type_defs.md#listdashboardversionsresponsetypedef)\].
 
 <a id="listdashboardspaginator"></a>
 
@@ -120,7 +120,7 @@ Arguments for `ListDashboardsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDashboardsPaginator.paginate` returns
-`_PageIterator`\[[ListDashboardsResponseTypeDef](./type_defs.md#listdashboardsresponsetypedef)\].
+`AsyncIterable`\[[ListDashboardsResponseTypeDef](./type_defs.md#listdashboardsresponsetypedef)\].
 
 <a id="listdatasetspaginator"></a>
 
@@ -152,7 +152,7 @@ Arguments for `ListDataSetsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDataSetsPaginator.paginate` returns
-`_PageIterator`\[[ListDataSetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef)\].
+`AsyncIterable`\[[ListDataSetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef)\].
 
 <a id="listdatasourcespaginator"></a>
 
@@ -184,7 +184,7 @@ Arguments for `ListDataSourcesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDataSourcesPaginator.paginate` returns
-`_PageIterator`\[[ListDataSourcesResponseTypeDef](./type_defs.md#listdatasourcesresponsetypedef)\].
+`AsyncIterable`\[[ListDataSourcesResponseTypeDef](./type_defs.md#listdatasourcesresponsetypedef)\].
 
 <a id="listingestionspaginator"></a>
 
@@ -217,7 +217,7 @@ Arguments for `ListIngestionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListIngestionsPaginator.paginate` returns
-`_PageIterator`\[[ListIngestionsResponseTypeDef](./type_defs.md#listingestionsresponsetypedef)\].
+`AsyncIterable`\[[ListIngestionsResponseTypeDef](./type_defs.md#listingestionsresponsetypedef)\].
 
 <a id="listnamespacespaginator"></a>
 
@@ -249,7 +249,7 @@ Arguments for `ListNamespacesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListNamespacesPaginator.paginate` returns
-`_PageIterator`\[[ListNamespacesResponseTypeDef](./type_defs.md#listnamespacesresponsetypedef)\].
+`AsyncIterable`\[[ListNamespacesResponseTypeDef](./type_defs.md#listnamespacesresponsetypedef)\].
 
 <a id="listtemplatealiasespaginator"></a>
 
@@ -282,7 +282,7 @@ Arguments for `ListTemplateAliasesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTemplateAliasesPaginator.paginate` returns
-`_PageIterator`\[[ListTemplateAliasesResponseTypeDef](./type_defs.md#listtemplatealiasesresponsetypedef)\].
+`AsyncIterable`\[[ListTemplateAliasesResponseTypeDef](./type_defs.md#listtemplatealiasesresponsetypedef)\].
 
 <a id="listtemplateversionspaginator"></a>
 
@@ -315,7 +315,7 @@ Arguments for `ListTemplateVersionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTemplateVersionsPaginator.paginate` returns
-`_PageIterator`\[[ListTemplateVersionsResponseTypeDef](./type_defs.md#listtemplateversionsresponsetypedef)\].
+`AsyncIterable`\[[ListTemplateVersionsResponseTypeDef](./type_defs.md#listtemplateversionsresponsetypedef)\].
 
 <a id="listtemplatespaginator"></a>
 
@@ -347,7 +347,7 @@ Arguments for `ListTemplatesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTemplatesPaginator.paginate` returns
-`_PageIterator`\[[ListTemplatesResponseTypeDef](./type_defs.md#listtemplatesresponsetypedef)\].
+`AsyncIterable`\[[ListTemplatesResponseTypeDef](./type_defs.md#listtemplatesresponsetypedef)\].
 
 <a id="listthemeversionspaginator"></a>
 
@@ -380,7 +380,7 @@ Arguments for `ListThemeVersionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListThemeVersionsPaginator.paginate` returns
-`_PageIterator`\[[ListThemeVersionsResponseTypeDef](./type_defs.md#listthemeversionsresponsetypedef)\].
+`AsyncIterable`\[[ListThemeVersionsResponseTypeDef](./type_defs.md#listthemeversionsresponsetypedef)\].
 
 <a id="listthemespaginator"></a>
 
@@ -413,7 +413,7 @@ Arguments for `ListThemesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListThemesPaginator.paginate` returns
-`_PageIterator`\[[ListThemesResponseTypeDef](./type_defs.md#listthemesresponsetypedef)\].
+`AsyncIterable`\[[ListThemesResponseTypeDef](./type_defs.md#listthemesresponsetypedef)\].
 
 <a id="searchanalysespaginator"></a>
 
@@ -448,7 +448,7 @@ Arguments for `SearchAnalysesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchAnalysesPaginator.paginate` returns
-`_PageIterator`\[[SearchAnalysesResponseTypeDef](./type_defs.md#searchanalysesresponsetypedef)\].
+`AsyncIterable`\[[SearchAnalysesResponseTypeDef](./type_defs.md#searchanalysesresponsetypedef)\].
 
 <a id="searchdashboardspaginator"></a>
 
@@ -483,4 +483,4 @@ Arguments for `SearchDashboardsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchDashboardsPaginator.paginate` returns
-`_PageIterator`\[[SearchDashboardsResponseTypeDef](./type_defs.md#searchdashboardsresponsetypedef)\].
+`AsyncIterable`\[[SearchDashboardsResponseTypeDef](./type_defs.md#searchdashboardsresponsetypedef)\].

@@ -45,7 +45,7 @@ Arguments for `DescribeServicesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeServicesPaginator.paginate` returns
-`_PageIterator`\[[DescribeServicesResponseTypeDef](./type_defs.md#describeservicesresponsetypedef)\].
+`AsyncIterable`\[[DescribeServicesResponseTypeDef](./type_defs.md#describeservicesresponsetypedef)\].
 
 <a id="getattributevaluespaginator"></a>
 
@@ -78,7 +78,7 @@ Arguments for `GetAttributeValuesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetAttributeValuesPaginator.paginate` returns
-`_PageIterator`\[[GetAttributeValuesResponseTypeDef](./type_defs.md#getattributevaluesresponsetypedef)\].
+`AsyncIterable`\[[GetAttributeValuesResponseTypeDef](./type_defs.md#getattributevaluesresponsetypedef)\].
 
 <a id="getproductspaginator"></a>
 
@@ -112,4 +112,4 @@ Arguments for `GetProductsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetProductsPaginator.paginate` returns
-`_PageIterator`\[[GetProductsResponseTypeDef](./type_defs.md#getproductsresponsetypedef)\].
+`AsyncIterable`\[[GetProductsResponseTypeDef](./type_defs.md#getproductsresponsetypedef)\].

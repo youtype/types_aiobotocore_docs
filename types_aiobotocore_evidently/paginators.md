@@ -45,7 +45,7 @@ Arguments for `ListExperimentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListExperimentsPaginator.paginate` returns
-`_PageIterator`\[[ListExperimentsResponseTypeDef](./type_defs.md#listexperimentsresponsetypedef)\].
+`AsyncIterable`\[[ListExperimentsResponseTypeDef](./type_defs.md#listexperimentsresponsetypedef)\].
 
 <a id="listfeaturespaginator"></a>
 
@@ -77,7 +77,7 @@ Arguments for `ListFeaturesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListFeaturesPaginator.paginate` returns
-`_PageIterator`\[[ListFeaturesResponseTypeDef](./type_defs.md#listfeaturesresponsetypedef)\].
+`AsyncIterable`\[[ListFeaturesResponseTypeDef](./type_defs.md#listfeaturesresponsetypedef)\].
 
 <a id="listlaunchespaginator"></a>
 
@@ -109,7 +109,7 @@ Arguments for `ListLaunchesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListLaunchesPaginator.paginate` returns
-`_PageIterator`\[[ListLaunchesResponseTypeDef](./type_defs.md#listlaunchesresponsetypedef)\].
+`AsyncIterable`\[[ListLaunchesResponseTypeDef](./type_defs.md#listlaunchesresponsetypedef)\].
 
 <a id="listprojectspaginator"></a>
 
@@ -140,4 +140,4 @@ Arguments for `ListProjectsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListProjectsPaginator.paginate` returns
-`_PageIterator`\[[ListProjectsResponseTypeDef](./type_defs.md#listprojectsresponsetypedef)\].
+`AsyncIterable`\[[ListProjectsResponseTypeDef](./type_defs.md#listprojectsresponsetypedef)\].

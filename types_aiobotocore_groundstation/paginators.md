@@ -46,7 +46,7 @@ Arguments for `ListConfigsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListConfigsPaginator.paginate` returns
-`_PageIterator`\[[ListConfigsResponseTypeDef](./type_defs.md#listconfigsresponsetypedef)\].
+`AsyncIterable`\[[ListConfigsResponseTypeDef](./type_defs.md#listconfigsresponsetypedef)\].
 
 <a id="listcontactspaginator"></a>
 
@@ -85,7 +85,7 @@ Arguments for `ListContactsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListContactsPaginator.paginate` returns
-`_PageIterator`\[[ListContactsResponseTypeDef](./type_defs.md#listcontactsresponsetypedef)\].
+`AsyncIterable`\[[ListContactsResponseTypeDef](./type_defs.md#listcontactsresponsetypedef)\].
 
 <a id="listdataflowendpointgroupspaginator"></a>
 
@@ -116,7 +116,7 @@ Arguments for `ListDataflowEndpointGroupsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDataflowEndpointGroupsPaginator.paginate` returns
-`_PageIterator`\[[ListDataflowEndpointGroupsResponseTypeDef](./type_defs.md#listdataflowendpointgroupsresponsetypedef)\].
+`AsyncIterable`\[[ListDataflowEndpointGroupsResponseTypeDef](./type_defs.md#listdataflowendpointgroupsresponsetypedef)\].
 
 <a id="listgroundstationspaginator"></a>
 
@@ -148,7 +148,7 @@ Arguments for `ListGroundStationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListGroundStationsPaginator.paginate` returns
-`_PageIterator`\[[ListGroundStationsResponseTypeDef](./type_defs.md#listgroundstationsresponsetypedef)\].
+`AsyncIterable`\[[ListGroundStationsResponseTypeDef](./type_defs.md#listgroundstationsresponsetypedef)\].
 
 <a id="listmissionprofilespaginator"></a>
 
@@ -179,7 +179,7 @@ Arguments for `ListMissionProfilesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListMissionProfilesPaginator.paginate` returns
-`_PageIterator`\[[ListMissionProfilesResponseTypeDef](./type_defs.md#listmissionprofilesresponsetypedef)\].
+`AsyncIterable`\[[ListMissionProfilesResponseTypeDef](./type_defs.md#listmissionprofilesresponsetypedef)\].
 
 <a id="listsatellitespaginator"></a>
 
@@ -210,4 +210,4 @@ Arguments for `ListSatellitesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSatellitesPaginator.paginate` returns
-`_PageIterator`\[[ListSatellitesResponseTypeDef](./type_defs.md#listsatellitesresponsetypedef)\].
+`AsyncIterable`\[[ListSatellitesResponseTypeDef](./type_defs.md#listsatellitesresponsetypedef)\].

@@ -51,7 +51,7 @@ Arguments for `ListAssessmentRunAgentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAssessmentRunAgentsPaginator.paginate` returns
-`_PageIterator`\[[ListAssessmentRunAgentsResponseTypeDef](./type_defs.md#listassessmentrunagentsresponsetypedef)\].
+`AsyncIterable`\[[ListAssessmentRunAgentsResponseTypeDef](./type_defs.md#listassessmentrunagentsresponsetypedef)\].
 
 <a id="listassessmentrunspaginator"></a>
 
@@ -85,7 +85,7 @@ Arguments for `ListAssessmentRunsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAssessmentRunsPaginator.paginate` returns
-`_PageIterator`\[[ListAssessmentRunsResponseTypeDef](./type_defs.md#listassessmentrunsresponsetypedef)\].
+`AsyncIterable`\[[ListAssessmentRunsResponseTypeDef](./type_defs.md#listassessmentrunsresponsetypedef)\].
 
 <a id="listassessmenttargetspaginator"></a>
 
@@ -118,7 +118,7 @@ Arguments for `ListAssessmentTargetsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAssessmentTargetsPaginator.paginate` returns
-`_PageIterator`\[[ListAssessmentTargetsResponseTypeDef](./type_defs.md#listassessmenttargetsresponsetypedef)\].
+`AsyncIterable`\[[ListAssessmentTargetsResponseTypeDef](./type_defs.md#listassessmenttargetsresponsetypedef)\].
 
 <a id="listassessmenttemplatespaginator"></a>
 
@@ -152,7 +152,7 @@ Arguments for `ListAssessmentTemplatesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAssessmentTemplatesPaginator.paginate` returns
-`_PageIterator`\[[ListAssessmentTemplatesResponseTypeDef](./type_defs.md#listassessmenttemplatesresponsetypedef)\].
+`AsyncIterable`\[[ListAssessmentTemplatesResponseTypeDef](./type_defs.md#listassessmenttemplatesresponsetypedef)\].
 
 <a id="listeventsubscriptionspaginator"></a>
 
@@ -184,7 +184,7 @@ Arguments for `ListEventSubscriptionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListEventSubscriptionsPaginator.paginate` returns
-`_PageIterator`\[[ListEventSubscriptionsResponseTypeDef](./type_defs.md#listeventsubscriptionsresponsetypedef)\].
+`AsyncIterable`\[[ListEventSubscriptionsResponseTypeDef](./type_defs.md#listeventsubscriptionsresponsetypedef)\].
 
 <a id="listexclusionspaginator"></a>
 
@@ -216,7 +216,7 @@ Arguments for `ListExclusionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListExclusionsPaginator.paginate` returns
-`_PageIterator`\[[ListExclusionsResponseTypeDef](./type_defs.md#listexclusionsresponsetypedef)\].
+`AsyncIterable`\[[ListExclusionsResponseTypeDef](./type_defs.md#listexclusionsresponsetypedef)\].
 
 <a id="listfindingspaginator"></a>
 
@@ -249,7 +249,7 @@ Arguments for `ListFindingsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListFindingsPaginator.paginate` returns
-`_PageIterator`\[[ListFindingsResponseTypeDef](./type_defs.md#listfindingsresponsetypedef)\].
+`AsyncIterable`\[[ListFindingsResponseTypeDef](./type_defs.md#listfindingsresponsetypedef)\].
 
 <a id="listrulespackagespaginator"></a>
 
@@ -280,7 +280,7 @@ Arguments for `ListRulesPackagesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRulesPackagesPaginator.paginate` returns
-`_PageIterator`\[[ListRulesPackagesResponseTypeDef](./type_defs.md#listrulespackagesresponsetypedef)\].
+`AsyncIterable`\[[ListRulesPackagesResponseTypeDef](./type_defs.md#listrulespackagesresponsetypedef)\].
 
 <a id="previewagentspaginator"></a>
 
@@ -312,4 +312,4 @@ Arguments for `PreviewAgentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `PreviewAgentsPaginator.paginate` returns
-`_PageIterator`\[[PreviewAgentsResponseTypeDef](./type_defs.md#previewagentsresponsetypedef)\].
+`AsyncIterable`\[[PreviewAgentsResponseTypeDef](./type_defs.md#previewagentsresponsetypedef)\].

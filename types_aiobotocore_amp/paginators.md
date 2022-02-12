@@ -44,7 +44,7 @@ Arguments for `ListRuleGroupsNamespacesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRuleGroupsNamespacesPaginator.paginate` returns
-`_PageIterator`\[[ListRuleGroupsNamespacesResponseTypeDef](./type_defs.md#listrulegroupsnamespacesresponsetypedef)\].
+`AsyncIterable`\[[ListRuleGroupsNamespacesResponseTypeDef](./type_defs.md#listrulegroupsnamespacesresponsetypedef)\].
 
 <a id="listworkspacespaginator"></a>
 
@@ -76,4 +76,4 @@ Arguments for `ListWorkspacesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListWorkspacesPaginator.paginate` returns
-`_PageIterator`\[[ListWorkspacesResponseTypeDef](./type_defs.md#listworkspacesresponsetypedef)\].
+`AsyncIterable`\[[ListWorkspacesResponseTypeDef](./type_defs.md#listworkspacesresponsetypedef)\].

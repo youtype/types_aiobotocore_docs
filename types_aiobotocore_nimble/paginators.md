@@ -51,7 +51,7 @@ Arguments for `ListEulaAcceptancesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListEulaAcceptancesPaginator.paginate` returns
-`_PageIterator`\[[ListEulaAcceptancesResponseTypeDef](./type_defs.md#listeulaacceptancesresponsetypedef)\].
+`AsyncIterable`\[[ListEulaAcceptancesResponseTypeDef](./type_defs.md#listeulaacceptancesresponsetypedef)\].
 
 <a id="listeulaspaginator"></a>
 
@@ -83,7 +83,7 @@ Arguments for `ListEulasPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListEulasPaginator.paginate` returns
-`_PageIterator`\[[ListEulasResponseTypeDef](./type_defs.md#listeulasresponsetypedef)\].
+`AsyncIterable`\[[ListEulasResponseTypeDef](./type_defs.md#listeulasresponsetypedef)\].
 
 <a id="listlaunchprofilememberspaginator"></a>
 
@@ -116,7 +116,7 @@ Arguments for `ListLaunchProfileMembersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListLaunchProfileMembersPaginator.paginate` returns
-`_PageIterator`\[[ListLaunchProfileMembersResponseTypeDef](./type_defs.md#listlaunchprofilemembersresponsetypedef)\].
+`AsyncIterable`\[[ListLaunchProfileMembersResponseTypeDef](./type_defs.md#listlaunchprofilemembersresponsetypedef)\].
 
 <a id="listlaunchprofilespaginator"></a>
 
@@ -150,7 +150,7 @@ Arguments for `ListLaunchProfilesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListLaunchProfilesPaginator.paginate` returns
-`_PageIterator`\[[ListLaunchProfilesResponseTypeDef](./type_defs.md#listlaunchprofilesresponsetypedef)\].
+`AsyncIterable`\[[ListLaunchProfilesResponseTypeDef](./type_defs.md#listlaunchprofilesresponsetypedef)\].
 
 <a id="liststreamingimagespaginator"></a>
 
@@ -183,7 +183,7 @@ Arguments for `ListStreamingImagesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListStreamingImagesPaginator.paginate` returns
-`_PageIterator`\[[ListStreamingImagesResponseTypeDef](./type_defs.md#liststreamingimagesresponsetypedef)\].
+`AsyncIterable`\[[ListStreamingImagesResponseTypeDef](./type_defs.md#liststreamingimagesresponsetypedef)\].
 
 <a id="liststreamingsessionspaginator"></a>
 
@@ -218,7 +218,7 @@ Arguments for `ListStreamingSessionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListStreamingSessionsPaginator.paginate` returns
-`_PageIterator`\[[ListStreamingSessionsResponseTypeDef](./type_defs.md#liststreamingsessionsresponsetypedef)\].
+`AsyncIterable`\[[ListStreamingSessionsResponseTypeDef](./type_defs.md#liststreamingsessionsresponsetypedef)\].
 
 <a id="liststudiocomponentspaginator"></a>
 
@@ -252,7 +252,7 @@ Arguments for `ListStudioComponentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListStudioComponentsPaginator.paginate` returns
-`_PageIterator`\[[ListStudioComponentsResponseTypeDef](./type_defs.md#liststudiocomponentsresponsetypedef)\].
+`AsyncIterable`\[[ListStudioComponentsResponseTypeDef](./type_defs.md#liststudiocomponentsresponsetypedef)\].
 
 <a id="liststudiomemberspaginator"></a>
 
@@ -284,7 +284,7 @@ Arguments for `ListStudioMembersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListStudioMembersPaginator.paginate` returns
-`_PageIterator`\[[ListStudioMembersResponseTypeDef](./type_defs.md#liststudiomembersresponsetypedef)\].
+`AsyncIterable`\[[ListStudioMembersResponseTypeDef](./type_defs.md#liststudiomembersresponsetypedef)\].
 
 <a id="liststudiospaginator"></a>
 
@@ -315,4 +315,4 @@ Arguments for `ListStudiosPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListStudiosPaginator.paginate` returns
-`_PageIterator`\[[ListStudiosResponseTypeDef](./type_defs.md#liststudiosresponsetypedef)\].
+`AsyncIterable`\[[ListStudiosResponseTypeDef](./type_defs.md#liststudiosresponsetypedef)\].

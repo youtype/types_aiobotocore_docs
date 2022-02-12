@@ -49,7 +49,7 @@ Arguments for `DescribeProjectVersionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeProjectVersionsPaginator.paginate` returns
-`_PageIterator`\[[DescribeProjectVersionsResponseTypeDef](./type_defs.md#describeprojectversionsresponsetypedef)\].
+`AsyncIterable`\[[DescribeProjectVersionsResponseTypeDef](./type_defs.md#describeprojectversionsresponsetypedef)\].
 
 <a id="describeprojectspaginator"></a>
 
@@ -81,7 +81,7 @@ Arguments for `DescribeProjectsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeProjectsPaginator.paginate` returns
-`_PageIterator`\[[DescribeProjectsResponseTypeDef](./type_defs.md#describeprojectsresponsetypedef)\].
+`AsyncIterable`\[[DescribeProjectsResponseTypeDef](./type_defs.md#describeprojectsresponsetypedef)\].
 
 <a id="listcollectionspaginator"></a>
 
@@ -112,7 +112,7 @@ Arguments for `ListCollectionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListCollectionsPaginator.paginate` returns
-`_PageIterator`\[[ListCollectionsResponseTypeDef](./type_defs.md#listcollectionsresponsetypedef)\].
+`AsyncIterable`\[[ListCollectionsResponseTypeDef](./type_defs.md#listcollectionsresponsetypedef)\].
 
 <a id="listdatasetentriespaginator"></a>
 
@@ -148,7 +148,7 @@ Arguments for `ListDatasetEntriesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDatasetEntriesPaginator.paginate` returns
-`_PageIterator`\[[ListDatasetEntriesResponseTypeDef](./type_defs.md#listdatasetentriesresponsetypedef)\].
+`AsyncIterable`\[[ListDatasetEntriesResponseTypeDef](./type_defs.md#listdatasetentriesresponsetypedef)\].
 
 <a id="listdatasetlabelspaginator"></a>
 
@@ -180,7 +180,7 @@ Arguments for `ListDatasetLabelsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDatasetLabelsPaginator.paginate` returns
-`_PageIterator`\[[ListDatasetLabelsResponseTypeDef](./type_defs.md#listdatasetlabelsresponsetypedef)\].
+`AsyncIterable`\[[ListDatasetLabelsResponseTypeDef](./type_defs.md#listdatasetlabelsresponsetypedef)\].
 
 <a id="listfacespaginator"></a>
 
@@ -212,7 +212,7 @@ Arguments for `ListFacesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListFacesPaginator.paginate` returns
-`_PageIterator`\[[ListFacesResponseTypeDef](./type_defs.md#listfacesresponsetypedef)\].
+`AsyncIterable`\[[ListFacesResponseTypeDef](./type_defs.md#listfacesresponsetypedef)\].
 
 <a id="liststreamprocessorspaginator"></a>
 
@@ -243,4 +243,4 @@ Arguments for `ListStreamProcessorsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListStreamProcessorsPaginator.paginate` returns
-`_PageIterator`\[[ListStreamProcessorsResponseTypeDef](./type_defs.md#liststreamprocessorsresponsetypedef)\].
+`AsyncIterable`\[[ListStreamProcessorsResponseTypeDef](./type_defs.md#liststreamprocessorsresponsetypedef)\].

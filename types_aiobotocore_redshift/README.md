@@ -9,19 +9,11 @@ Auto-generated documentation for
 type annotations stubs module
 [types-aiobotocore-redshift](https://pypi.org/project/types-aiobotocore-redshift/).
 
-```bash
-# install with types-aiobotocore
-pip install 'types-aiobotocore[redshift]'
-
-# Lite version does not provide session.create_client overloads
-# it is more RAM-friendly, but requires explicit type annotations
-python -m pip install 'types-aiobotocore-lite[redshift]'
-
-# standalone installation
-pip install types-aiobotocore-redshift
-```
-
 - [Type annotations for aiobotocore Redshift module](#type-annotations-for-aiobotocore-redshift-module)
+  - [How to install](#how-to-install)
+    - [VSCode extension](#vscode-extension)
+    - [From PyPI with pip](#from-pypi-with-pip)
+  - [How to uninstall](#how-to-uninstall)
   - [RedshiftClient](#redshiftclient)
     - [Methods](#methods)
     - [Exceptions](#exceptions)
@@ -29,6 +21,46 @@ pip install types-aiobotocore-redshift
   - [Waiters](#waiters)
   - [Literals](#literals)
   - [Typed dictionaries](#typed-dictionaries)
+
+<a id="how-to-install"></a>
+
+## How to install
+
+<a id="vscode-extension"></a>
+
+### VSCode extension
+
+Add
+[AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
+extension to your VSCode and run `AWS boto3: Quick Start` command.
+
+Click `Modify` and select `boto3 common` and `Redshift`.
+
+<a id="from-pypi-with-pip"></a>
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `Redshift` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[redshift]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[redshift]'
+
+# standalone installation
+python -m pip install types-aiobotocore-redshift
+```
+
+<a id="how-to-uninstall"></a>
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-redshift
+```
 
 <a id="redshiftclient"></a>
 

@@ -47,7 +47,7 @@ Arguments for `ListDatasetGroupsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDatasetGroupsPaginator.paginate` returns
-`_PageIterator`\[[ListDatasetGroupsResponseTypeDef](./type_defs.md#listdatasetgroupsresponsetypedef)\].
+`AsyncIterable`\[[ListDatasetGroupsResponseTypeDef](./type_defs.md#listdatasetgroupsresponsetypedef)\].
 
 <a id="listdatasetimportjobspaginator"></a>
 
@@ -79,7 +79,7 @@ Arguments for `ListDatasetImportJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDatasetImportJobsPaginator.paginate` returns
-`_PageIterator`\[[ListDatasetImportJobsResponseTypeDef](./type_defs.md#listdatasetimportjobsresponsetypedef)\].
+`AsyncIterable`\[[ListDatasetImportJobsResponseTypeDef](./type_defs.md#listdatasetimportjobsresponsetypedef)\].
 
 <a id="listdatasetspaginator"></a>
 
@@ -110,7 +110,7 @@ Arguments for `ListDatasetsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDatasetsPaginator.paginate` returns
-`_PageIterator`\[[ListDatasetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef)\].
+`AsyncIterable`\[[ListDatasetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef)\].
 
 <a id="listforecastexportjobspaginator"></a>
 
@@ -142,7 +142,7 @@ Arguments for `ListForecastExportJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListForecastExportJobsPaginator.paginate` returns
-`_PageIterator`\[[ListForecastExportJobsResponseTypeDef](./type_defs.md#listforecastexportjobsresponsetypedef)\].
+`AsyncIterable`\[[ListForecastExportJobsResponseTypeDef](./type_defs.md#listforecastexportjobsresponsetypedef)\].
 
 <a id="listforecastspaginator"></a>
 
@@ -174,7 +174,7 @@ Arguments for `ListForecastsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListForecastsPaginator.paginate` returns
-`_PageIterator`\[[ListForecastsResponseTypeDef](./type_defs.md#listforecastsresponsetypedef)\].
+`AsyncIterable`\[[ListForecastsResponseTypeDef](./type_defs.md#listforecastsresponsetypedef)\].
 
 <a id="listpredictorbacktestexportjobspaginator"></a>
 
@@ -206,7 +206,7 @@ Arguments for `ListPredictorBacktestExportJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPredictorBacktestExportJobsPaginator.paginate` returns
-`_PageIterator`\[[ListPredictorBacktestExportJobsResponseTypeDef](./type_defs.md#listpredictorbacktestexportjobsresponsetypedef)\].
+`AsyncIterable`\[[ListPredictorBacktestExportJobsResponseTypeDef](./type_defs.md#listpredictorbacktestexportjobsresponsetypedef)\].
 
 <a id="listpredictorspaginator"></a>
 
@@ -238,4 +238,4 @@ Arguments for `ListPredictorsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPredictorsPaginator.paginate` returns
-`_PageIterator`\[[ListPredictorsResponseTypeDef](./type_defs.md#listpredictorsresponsetypedef)\].
+`AsyncIterable`\[[ListPredictorsResponseTypeDef](./type_defs.md#listpredictorsresponsetypedef)\].

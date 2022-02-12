@@ -47,7 +47,7 @@ Arguments for `DescribeAccountLimitsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeAccountLimitsPaginator.paginate` returns
-`_PageIterator`\[[DescribeAccountLimitsOutputTypeDef](./type_defs.md#describeaccountlimitsoutputtypedef)\].
+`AsyncIterable`\[[DescribeAccountLimitsOutputTypeDef](./type_defs.md#describeaccountlimitsoutputtypedef)\].
 
 <a id="describelistenercertificatespaginator"></a>
 
@@ -79,7 +79,7 @@ Arguments for `DescribeListenerCertificatesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeListenerCertificatesPaginator.paginate` returns
-`_PageIterator`\[[DescribeListenerCertificatesOutputTypeDef](./type_defs.md#describelistenercertificatesoutputtypedef)\].
+`AsyncIterable`\[[DescribeListenerCertificatesOutputTypeDef](./type_defs.md#describelistenercertificatesoutputtypedef)\].
 
 <a id="describelistenerspaginator"></a>
 
@@ -112,7 +112,7 @@ Arguments for `DescribeListenersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeListenersPaginator.paginate` returns
-`_PageIterator`\[[DescribeListenersOutputTypeDef](./type_defs.md#describelistenersoutputtypedef)\].
+`AsyncIterable`\[[DescribeListenersOutputTypeDef](./type_defs.md#describelistenersoutputtypedef)\].
 
 <a id="describeloadbalancerspaginator"></a>
 
@@ -145,7 +145,7 @@ Arguments for `DescribeLoadBalancersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeLoadBalancersPaginator.paginate` returns
-`_PageIterator`\[[DescribeLoadBalancersOutputTypeDef](./type_defs.md#describeloadbalancersoutputtypedef)\].
+`AsyncIterable`\[[DescribeLoadBalancersOutputTypeDef](./type_defs.md#describeloadbalancersoutputtypedef)\].
 
 <a id="describerulespaginator"></a>
 
@@ -178,7 +178,7 @@ Arguments for `DescribeRulesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeRulesPaginator.paginate` returns
-`_PageIterator`\[[DescribeRulesOutputTypeDef](./type_defs.md#describerulesoutputtypedef)\].
+`AsyncIterable`\[[DescribeRulesOutputTypeDef](./type_defs.md#describerulesoutputtypedef)\].
 
 <a id="describesslpoliciespaginator"></a>
 
@@ -212,7 +212,7 @@ Arguments for `DescribeSSLPoliciesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeSSLPoliciesPaginator.paginate` returns
-`_PageIterator`\[[DescribeSSLPoliciesOutputTypeDef](./type_defs.md#describesslpoliciesoutputtypedef)\].
+`AsyncIterable`\[[DescribeSSLPoliciesOutputTypeDef](./type_defs.md#describesslpoliciesoutputtypedef)\].
 
 <a id="describetargetgroupspaginator"></a>
 
@@ -246,4 +246,4 @@ Arguments for `DescribeTargetGroupsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeTargetGroupsPaginator.paginate` returns
-`_PageIterator`\[[DescribeTargetGroupsOutputTypeDef](./type_defs.md#describetargetgroupsoutputtypedef)\].
+`AsyncIterable`\[[DescribeTargetGroupsOutputTypeDef](./type_defs.md#describetargetgroupsoutputtypedef)\].

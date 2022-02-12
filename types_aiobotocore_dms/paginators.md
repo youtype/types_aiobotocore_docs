@@ -54,7 +54,7 @@ Arguments for `DescribeCertificatesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeCertificatesPaginator.paginate` returns
-`_PageIterator`\[[DescribeCertificatesResponseTypeDef](./type_defs.md#describecertificatesresponsetypedef)\].
+`AsyncIterable`\[[DescribeCertificatesResponseTypeDef](./type_defs.md#describecertificatesresponsetypedef)\].
 
 <a id="describeconnectionspaginator"></a>
 
@@ -86,7 +86,7 @@ Arguments for `DescribeConnectionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeConnectionsPaginator.paginate` returns
-`_PageIterator`\[[DescribeConnectionsResponseTypeDef](./type_defs.md#describeconnectionsresponsetypedef)\].
+`AsyncIterable`\[[DescribeConnectionsResponseTypeDef](./type_defs.md#describeconnectionsresponsetypedef)\].
 
 <a id="describeendpointtypespaginator"></a>
 
@@ -118,7 +118,7 @@ Arguments for `DescribeEndpointTypesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeEndpointTypesPaginator.paginate` returns
-`_PageIterator`\[[DescribeEndpointTypesResponseTypeDef](./type_defs.md#describeendpointtypesresponsetypedef)\].
+`AsyncIterable`\[[DescribeEndpointTypesResponseTypeDef](./type_defs.md#describeendpointtypesresponsetypedef)\].
 
 <a id="describeendpointspaginator"></a>
 
@@ -150,7 +150,7 @@ Arguments for `DescribeEndpointsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeEndpointsPaginator.paginate` returns
-`_PageIterator`\[[DescribeEndpointsResponseTypeDef](./type_defs.md#describeendpointsresponsetypedef)\].
+`AsyncIterable`\[[DescribeEndpointsResponseTypeDef](./type_defs.md#describeendpointsresponsetypedef)\].
 
 <a id="describeeventsubscriptionspaginator"></a>
 
@@ -183,7 +183,7 @@ Arguments for `DescribeEventSubscriptionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeEventSubscriptionsPaginator.paginate` returns
-`_PageIterator`\[[DescribeEventSubscriptionsResponseTypeDef](./type_defs.md#describeeventsubscriptionsresponsetypedef)\].
+`AsyncIterable`\[[DescribeEventSubscriptionsResponseTypeDef](./type_defs.md#describeeventsubscriptionsresponsetypedef)\].
 
 <a id="describeeventspaginator"></a>
 
@@ -222,7 +222,7 @@ Arguments for `DescribeEventsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeEventsPaginator.paginate` returns
-`_PageIterator`\[[DescribeEventsResponseTypeDef](./type_defs.md#describeeventsresponsetypedef)\].
+`AsyncIterable`\[[DescribeEventsResponseTypeDef](./type_defs.md#describeeventsresponsetypedef)\].
 
 <a id="describeorderablereplicationinstancespaginator"></a>
 
@@ -253,7 +253,7 @@ Arguments for `DescribeOrderableReplicationInstancesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeOrderableReplicationInstancesPaginator.paginate` returns
-`_PageIterator`\[[DescribeOrderableReplicationInstancesResponseTypeDef](./type_defs.md#describeorderablereplicationinstancesresponsetypedef)\].
+`AsyncIterable`\[[DescribeOrderableReplicationInstancesResponseTypeDef](./type_defs.md#describeorderablereplicationinstancesresponsetypedef)\].
 
 <a id="describereplicationinstancespaginator"></a>
 
@@ -285,7 +285,7 @@ Arguments for `DescribeReplicationInstancesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeReplicationInstancesPaginator.paginate` returns
-`_PageIterator`\[[DescribeReplicationInstancesResponseTypeDef](./type_defs.md#describereplicationinstancesresponsetypedef)\].
+`AsyncIterable`\[[DescribeReplicationInstancesResponseTypeDef](./type_defs.md#describereplicationinstancesresponsetypedef)\].
 
 <a id="describereplicationsubnetgroupspaginator"></a>
 
@@ -317,7 +317,7 @@ Arguments for `DescribeReplicationSubnetGroupsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeReplicationSubnetGroupsPaginator.paginate` returns
-`_PageIterator`\[[DescribeReplicationSubnetGroupsResponseTypeDef](./type_defs.md#describereplicationsubnetgroupsresponsetypedef)\].
+`AsyncIterable`\[[DescribeReplicationSubnetGroupsResponseTypeDef](./type_defs.md#describereplicationsubnetgroupsresponsetypedef)\].
 
 <a id="describereplicationtaskassessmentresultspaginator"></a>
 
@@ -350,7 +350,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeReplicationTaskAssessmentResultsPaginator.paginate` returns
-`_PageIterator`\[[DescribeReplicationTaskAssessmentResultsResponseTypeDef](./type_defs.md#describereplicationtaskassessmentresultsresponsetypedef)\].
+`AsyncIterable`\[[DescribeReplicationTaskAssessmentResultsResponseTypeDef](./type_defs.md#describereplicationtaskassessmentresultsresponsetypedef)\].
 
 <a id="describereplicationtaskspaginator"></a>
 
@@ -383,7 +383,7 @@ Arguments for `DescribeReplicationTasksPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeReplicationTasksPaginator.paginate` returns
-`_PageIterator`\[[DescribeReplicationTasksResponseTypeDef](./type_defs.md#describereplicationtasksresponsetypedef)\].
+`AsyncIterable`\[[DescribeReplicationTasksResponseTypeDef](./type_defs.md#describereplicationtasksresponsetypedef)\].
 
 <a id="describeschemaspaginator"></a>
 
@@ -415,7 +415,7 @@ Arguments for `DescribeSchemasPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeSchemasPaginator.paginate` returns
-`_PageIterator`\[[DescribeSchemasResponseTypeDef](./type_defs.md#describeschemasresponsetypedef)\].
+`AsyncIterable`\[[DescribeSchemasResponseTypeDef](./type_defs.md#describeschemasresponsetypedef)\].
 
 <a id="describetablestatisticspaginator"></a>
 
@@ -448,4 +448,4 @@ Arguments for `DescribeTableStatisticsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeTableStatisticsPaginator.paginate` returns
-`_PageIterator`\[[DescribeTableStatisticsResponseTypeDef](./type_defs.md#describetablestatisticsresponsetypedef)\].
+`AsyncIterable`\[[DescribeTableStatisticsResponseTypeDef](./type_defs.md#describetablestatisticsresponsetypedef)\].

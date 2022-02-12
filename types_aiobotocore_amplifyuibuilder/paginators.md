@@ -44,7 +44,7 @@ Arguments for `ListComponentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListComponentsPaginator.paginate` returns
-`_PageIterator`\[[ListComponentsResponseTypeDef](./type_defs.md#listcomponentsresponsetypedef)\].
+`AsyncIterable`\[[ListComponentsResponseTypeDef](./type_defs.md#listcomponentsresponsetypedef)\].
 
 <a id="listthemespaginator"></a>
 
@@ -77,4 +77,4 @@ Arguments for `ListThemesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListThemesPaginator.paginate` returns
-`_PageIterator`\[[ListThemesResponseTypeDef](./type_defs.md#listthemesresponsetypedef)\].
+`AsyncIterable`\[[ListThemesResponseTypeDef](./type_defs.md#listthemesresponsetypedef)\].

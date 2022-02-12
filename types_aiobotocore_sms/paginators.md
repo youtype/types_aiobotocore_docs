@@ -45,7 +45,7 @@ Arguments for `GetConnectorsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetConnectorsPaginator.paginate` returns
-`_PageIterator`\[[GetConnectorsResponseTypeDef](./type_defs.md#getconnectorsresponsetypedef)\].
+`AsyncIterable`\[[GetConnectorsResponseTypeDef](./type_defs.md#getconnectorsresponsetypedef)\].
 
 <a id="getreplicationjobspaginator"></a>
 
@@ -77,7 +77,7 @@ Arguments for `GetReplicationJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetReplicationJobsPaginator.paginate` returns
-`_PageIterator`\[[GetReplicationJobsResponseTypeDef](./type_defs.md#getreplicationjobsresponsetypedef)\].
+`AsyncIterable`\[[GetReplicationJobsResponseTypeDef](./type_defs.md#getreplicationjobsresponsetypedef)\].
 
 <a id="getreplicationrunspaginator"></a>
 
@@ -109,7 +109,7 @@ Arguments for `GetReplicationRunsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetReplicationRunsPaginator.paginate` returns
-`_PageIterator`\[[GetReplicationRunsResponseTypeDef](./type_defs.md#getreplicationrunsresponsetypedef)\].
+`AsyncIterable`\[[GetReplicationRunsResponseTypeDef](./type_defs.md#getreplicationrunsresponsetypedef)\].
 
 <a id="getserverspaginator"></a>
 
@@ -142,7 +142,7 @@ Arguments for `GetServersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetServersPaginator.paginate` returns
-`_PageIterator`\[[GetServersResponseTypeDef](./type_defs.md#getserversresponsetypedef)\].
+`AsyncIterable`\[[GetServersResponseTypeDef](./type_defs.md#getserversresponsetypedef)\].
 
 <a id="listappspaginator"></a>
 
@@ -173,4 +173,4 @@ Arguments for `ListAppsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAppsPaginator.paginate` returns
-`_PageIterator`\[[ListAppsResponseTypeDef](./type_defs.md#listappsresponsetypedef)\].
+`AsyncIterable`\[[ListAppsResponseTypeDef](./type_defs.md#listappsresponsetypedef)\].

@@ -48,7 +48,7 @@ Arguments for `ListAcceleratorsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAcceleratorsPaginator.paginate` returns
-`_PageIterator`\[[ListAcceleratorsResponseTypeDef](./type_defs.md#listacceleratorsresponsetypedef)\].
+`AsyncIterable`\[[ListAcceleratorsResponseTypeDef](./type_defs.md#listacceleratorsresponsetypedef)\].
 
 <a id="listbyoipcidrspaginator"></a>
 
@@ -79,7 +79,7 @@ Arguments for `ListByoipCidrsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListByoipCidrsPaginator.paginate` returns
-`_PageIterator`\[[ListByoipCidrsResponseTypeDef](./type_defs.md#listbyoipcidrsresponsetypedef)\].
+`AsyncIterable`\[[ListByoipCidrsResponseTypeDef](./type_defs.md#listbyoipcidrsresponsetypedef)\].
 
 <a id="listcustomroutingacceleratorspaginator"></a>
 
@@ -110,7 +110,7 @@ Arguments for `ListCustomRoutingAcceleratorsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListCustomRoutingAcceleratorsPaginator.paginate` returns
-`_PageIterator`\[[ListCustomRoutingAcceleratorsResponseTypeDef](./type_defs.md#listcustomroutingacceleratorsresponsetypedef)\].
+`AsyncIterable`\[[ListCustomRoutingAcceleratorsResponseTypeDef](./type_defs.md#listcustomroutingacceleratorsresponsetypedef)\].
 
 <a id="listcustomroutinglistenerspaginator"></a>
 
@@ -142,7 +142,7 @@ Arguments for `ListCustomRoutingListenersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListCustomRoutingListenersPaginator.paginate` returns
-`_PageIterator`\[[ListCustomRoutingListenersResponseTypeDef](./type_defs.md#listcustomroutinglistenersresponsetypedef)\].
+`AsyncIterable`\[[ListCustomRoutingListenersResponseTypeDef](./type_defs.md#listcustomroutinglistenersresponsetypedef)\].
 
 <a id="listcustomroutingportmappingspaginator"></a>
 
@@ -175,7 +175,7 @@ Arguments for `ListCustomRoutingPortMappingsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListCustomRoutingPortMappingsPaginator.paginate` returns
-`_PageIterator`\[[ListCustomRoutingPortMappingsResponseTypeDef](./type_defs.md#listcustomroutingportmappingsresponsetypedef)\].
+`AsyncIterable`\[[ListCustomRoutingPortMappingsResponseTypeDef](./type_defs.md#listcustomroutingportmappingsresponsetypedef)\].
 
 <a id="listcustomroutingportmappingsbydestinationpaginator"></a>
 
@@ -209,7 +209,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListCustomRoutingPortMappingsByDestinationPaginator.paginate` returns
-`_PageIterator`\[[ListCustomRoutingPortMappingsByDestinationResponseTypeDef](./type_defs.md#listcustomroutingportmappingsbydestinationresponsetypedef)\].
+`AsyncIterable`\[[ListCustomRoutingPortMappingsByDestinationResponseTypeDef](./type_defs.md#listcustomroutingportmappingsbydestinationresponsetypedef)\].
 
 <a id="listendpointgroupspaginator"></a>
 
@@ -241,7 +241,7 @@ Arguments for `ListEndpointGroupsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListEndpointGroupsPaginator.paginate` returns
-`_PageIterator`\[[ListEndpointGroupsResponseTypeDef](./type_defs.md#listendpointgroupsresponsetypedef)\].
+`AsyncIterable`\[[ListEndpointGroupsResponseTypeDef](./type_defs.md#listendpointgroupsresponsetypedef)\].
 
 <a id="listlistenerspaginator"></a>
 
@@ -273,4 +273,4 @@ Arguments for `ListListenersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListListenersPaginator.paginate` returns
-`_PageIterator`\[[ListListenersResponseTypeDef](./type_defs.md#listlistenersresponsetypedef)\].
+`AsyncIterable`\[[ListListenersResponseTypeDef](./type_defs.md#listlistenersresponsetypedef)\].

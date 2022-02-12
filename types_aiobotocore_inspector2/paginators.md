@@ -50,7 +50,7 @@ Arguments for `ListAccountPermissionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAccountPermissionsPaginator.paginate` returns
-`_PageIterator`\[[ListAccountPermissionsResponseTypeDef](./type_defs.md#listaccountpermissionsresponsetypedef)\].
+`AsyncIterable`\[[ListAccountPermissionsResponseTypeDef](./type_defs.md#listaccountpermissionsresponsetypedef)\].
 
 <a id="listcoveragepaginator"></a>
 
@@ -83,7 +83,7 @@ Arguments for `ListCoveragePaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListCoveragePaginator.paginate` returns
-`_PageIterator`\[[ListCoverageResponseTypeDef](./type_defs.md#listcoverageresponsetypedef)\].
+`AsyncIterable`\[[ListCoverageResponseTypeDef](./type_defs.md#listcoverageresponsetypedef)\].
 
 <a id="listcoveragestatisticspaginator"></a>
 
@@ -117,7 +117,7 @@ Arguments for `ListCoverageStatisticsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListCoverageStatisticsPaginator.paginate` returns
-`_PageIterator`\[[ListCoverageStatisticsResponseTypeDef](./type_defs.md#listcoveragestatisticsresponsetypedef)\].
+`AsyncIterable`\[[ListCoverageStatisticsResponseTypeDef](./type_defs.md#listcoveragestatisticsresponsetypedef)\].
 
 <a id="listdelegatedadminaccountspaginator"></a>
 
@@ -148,7 +148,7 @@ Arguments for `ListDelegatedAdminAccountsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDelegatedAdminAccountsPaginator.paginate` returns
-`_PageIterator`\[[ListDelegatedAdminAccountsResponseTypeDef](./type_defs.md#listdelegatedadminaccountsresponsetypedef)\].
+`AsyncIterable`\[[ListDelegatedAdminAccountsResponseTypeDef](./type_defs.md#listdelegatedadminaccountsresponsetypedef)\].
 
 <a id="listfilterspaginator"></a>
 
@@ -181,7 +181,7 @@ Arguments for `ListFiltersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListFiltersPaginator.paginate` returns
-`_PageIterator`\[[ListFiltersResponseTypeDef](./type_defs.md#listfiltersresponsetypedef)\].
+`AsyncIterable`\[[ListFiltersResponseTypeDef](./type_defs.md#listfiltersresponsetypedef)\].
 
 <a id="listfindingaggregationspaginator"></a>
 
@@ -218,7 +218,7 @@ Arguments for `ListFindingAggregationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListFindingAggregationsPaginator.paginate` returns
-`_PageIterator`\[[ListFindingAggregationsResponseTypeDef](./type_defs.md#listfindingaggregationsresponsetypedef)\].
+`AsyncIterable`\[[ListFindingAggregationsResponseTypeDef](./type_defs.md#listfindingaggregationsresponsetypedef)\].
 
 <a id="listfindingspaginator"></a>
 
@@ -252,7 +252,7 @@ Arguments for `ListFindingsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListFindingsPaginator.paginate` returns
-`_PageIterator`\[[ListFindingsResponseTypeDef](./type_defs.md#listfindingsresponsetypedef)\].
+`AsyncIterable`\[[ListFindingsResponseTypeDef](./type_defs.md#listfindingsresponsetypedef)\].
 
 <a id="listmemberspaginator"></a>
 
@@ -284,7 +284,7 @@ Arguments for `ListMembersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListMembersPaginator.paginate` returns
-`_PageIterator`\[[ListMembersResponseTypeDef](./type_defs.md#listmembersresponsetypedef)\].
+`AsyncIterable`\[[ListMembersResponseTypeDef](./type_defs.md#listmembersresponsetypedef)\].
 
 <a id="listusagetotalspaginator"></a>
 
@@ -316,4 +316,4 @@ Arguments for `ListUsageTotalsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListUsageTotalsPaginator.paginate` returns
-`_PageIterator`\[[ListUsageTotalsResponseTypeDef](./type_defs.md#listusagetotalsresponsetypedef)\].
+`AsyncIterable`\[[ListUsageTotalsResponseTypeDef](./type_defs.md#listusagetotalsresponsetypedef)\].

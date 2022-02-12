@@ -45,7 +45,7 @@ Arguments for `DescribeAddressesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeAddressesPaginator.paginate` returns
-`_PageIterator`\[[DescribeAddressesResultTypeDef](./type_defs.md#describeaddressesresulttypedef)\].
+`AsyncIterable`\[[DescribeAddressesResultTypeDef](./type_defs.md#describeaddressesresulttypedef)\].
 
 <a id="listclusterjobspaginator"></a>
 
@@ -77,7 +77,7 @@ Arguments for `ListClusterJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListClusterJobsPaginator.paginate` returns
-`_PageIterator`\[[ListClusterJobsResultTypeDef](./type_defs.md#listclusterjobsresulttypedef)\].
+`AsyncIterable`\[[ListClusterJobsResultTypeDef](./type_defs.md#listclusterjobsresulttypedef)\].
 
 <a id="listclusterspaginator"></a>
 
@@ -108,7 +108,7 @@ Arguments for `ListClustersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListClustersPaginator.paginate` returns
-`_PageIterator`\[[ListClustersResultTypeDef](./type_defs.md#listclustersresulttypedef)\].
+`AsyncIterable`\[[ListClustersResultTypeDef](./type_defs.md#listclustersresulttypedef)\].
 
 <a id="listcompatibleimagespaginator"></a>
 
@@ -139,7 +139,7 @@ Arguments for `ListCompatibleImagesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListCompatibleImagesPaginator.paginate` returns
-`_PageIterator`\[[ListCompatibleImagesResultTypeDef](./type_defs.md#listcompatibleimagesresulttypedef)\].
+`AsyncIterable`\[[ListCompatibleImagesResultTypeDef](./type_defs.md#listcompatibleimagesresulttypedef)\].
 
 <a id="listjobspaginator"></a>
 
@@ -170,4 +170,4 @@ Arguments for `ListJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListJobsPaginator.paginate` returns
-`_PageIterator`\[[ListJobsResultTypeDef](./type_defs.md#listjobsresulttypedef)\].
+`AsyncIterable`\[[ListJobsResultTypeDef](./type_defs.md#listjobsresulttypedef)\].

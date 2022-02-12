@@ -59,7 +59,7 @@ Arguments for `ListAcceptedPortfolioSharesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAcceptedPortfolioSharesPaginator.paginate` returns
-`_PageIterator`\[[ListAcceptedPortfolioSharesOutputTypeDef](./type_defs.md#listacceptedportfoliosharesoutputtypedef)\].
+`AsyncIterable`\[[ListAcceptedPortfolioSharesOutputTypeDef](./type_defs.md#listacceptedportfoliosharesoutputtypedef)\].
 
 <a id="listconstraintsforportfoliopaginator"></a>
 
@@ -93,7 +93,7 @@ Arguments for `ListConstraintsForPortfolioPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListConstraintsForPortfolioPaginator.paginate` returns
-`_PageIterator`\[[ListConstraintsForPortfolioOutputTypeDef](./type_defs.md#listconstraintsforportfoliooutputtypedef)\].
+`AsyncIterable`\[[ListConstraintsForPortfolioOutputTypeDef](./type_defs.md#listconstraintsforportfoliooutputtypedef)\].
 
 <a id="listlaunchpathspaginator"></a>
 
@@ -126,7 +126,7 @@ Arguments for `ListLaunchPathsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListLaunchPathsPaginator.paginate` returns
-`_PageIterator`\[[ListLaunchPathsOutputTypeDef](./type_defs.md#listlaunchpathsoutputtypedef)\].
+`AsyncIterable`\[[ListLaunchPathsOutputTypeDef](./type_defs.md#listlaunchpathsoutputtypedef)\].
 
 <a id="listorganizationportfolioaccesspaginator"></a>
 
@@ -162,7 +162,7 @@ Arguments for `ListOrganizationPortfolioAccessPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListOrganizationPortfolioAccessPaginator.paginate` returns
-`_PageIterator`\[[ListOrganizationPortfolioAccessOutputTypeDef](./type_defs.md#listorganizationportfolioaccessoutputtypedef)\].
+`AsyncIterable`\[[ListOrganizationPortfolioAccessOutputTypeDef](./type_defs.md#listorganizationportfolioaccessoutputtypedef)\].
 
 <a id="listportfoliospaginator"></a>
 
@@ -194,7 +194,7 @@ Arguments for `ListPortfoliosPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPortfoliosPaginator.paginate` returns
-`_PageIterator`\[[ListPortfoliosOutputTypeDef](./type_defs.md#listportfoliosoutputtypedef)\].
+`AsyncIterable`\[[ListPortfoliosOutputTypeDef](./type_defs.md#listportfoliosoutputtypedef)\].
 
 <a id="listportfoliosforproductpaginator"></a>
 
@@ -227,7 +227,7 @@ Arguments for `ListPortfoliosForProductPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPortfoliosForProductPaginator.paginate` returns
-`_PageIterator`\[[ListPortfoliosForProductOutputTypeDef](./type_defs.md#listportfoliosforproductoutputtypedef)\].
+`AsyncIterable`\[[ListPortfoliosForProductOutputTypeDef](./type_defs.md#listportfoliosforproductoutputtypedef)\].
 
 <a id="listprincipalsforportfoliopaginator"></a>
 
@@ -260,7 +260,7 @@ Arguments for `ListPrincipalsForPortfolioPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPrincipalsForPortfolioPaginator.paginate` returns
-`_PageIterator`\[[ListPrincipalsForPortfolioOutputTypeDef](./type_defs.md#listprincipalsforportfoliooutputtypedef)\].
+`AsyncIterable`\[[ListPrincipalsForPortfolioOutputTypeDef](./type_defs.md#listprincipalsforportfoliooutputtypedef)\].
 
 <a id="listprovisionedproductplanspaginator"></a>
 
@@ -295,7 +295,7 @@ Arguments for `ListProvisionedProductPlansPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListProvisionedProductPlansPaginator.paginate` returns
-`_PageIterator`\[[ListProvisionedProductPlansOutputTypeDef](./type_defs.md#listprovisionedproductplansoutputtypedef)\].
+`AsyncIterable`\[[ListProvisionedProductPlansOutputTypeDef](./type_defs.md#listprovisionedproductplansoutputtypedef)\].
 
 <a id="listprovisioningartifactsforserviceactionpaginator"></a>
 
@@ -329,7 +329,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListProvisioningArtifactsForServiceActionPaginator.paginate` returns
-`_PageIterator`\[[ListProvisioningArtifactsForServiceActionOutputTypeDef](./type_defs.md#listprovisioningartifactsforserviceactionoutputtypedef)\].
+`AsyncIterable`\[[ListProvisioningArtifactsForServiceActionOutputTypeDef](./type_defs.md#listprovisioningartifactsforserviceactionoutputtypedef)\].
 
 <a id="listrecordhistorypaginator"></a>
 
@@ -365,7 +365,7 @@ Arguments for `ListRecordHistoryPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRecordHistoryPaginator.paginate` returns
-`_PageIterator`\[[ListRecordHistoryOutputTypeDef](./type_defs.md#listrecordhistoryoutputtypedef)\].
+`AsyncIterable`\[[ListRecordHistoryOutputTypeDef](./type_defs.md#listrecordhistoryoutputtypedef)\].
 
 <a id="listresourcesfortagoptionpaginator"></a>
 
@@ -398,7 +398,7 @@ Arguments for `ListResourcesForTagOptionPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListResourcesForTagOptionPaginator.paginate` returns
-`_PageIterator`\[[ListResourcesForTagOptionOutputTypeDef](./type_defs.md#listresourcesfortagoptionoutputtypedef)\].
+`AsyncIterable`\[[ListResourcesForTagOptionOutputTypeDef](./type_defs.md#listresourcesfortagoptionoutputtypedef)\].
 
 <a id="listserviceactionspaginator"></a>
 
@@ -430,7 +430,7 @@ Arguments for `ListServiceActionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListServiceActionsPaginator.paginate` returns
-`_PageIterator`\[[ListServiceActionsOutputTypeDef](./type_defs.md#listserviceactionsoutputtypedef)\].
+`AsyncIterable`\[[ListServiceActionsOutputTypeDef](./type_defs.md#listserviceactionsoutputtypedef)\].
 
 <a id="listserviceactionsforprovisioningartifactpaginator"></a>
 
@@ -465,7 +465,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListServiceActionsForProvisioningArtifactPaginator.paginate` returns
-`_PageIterator`\[[ListServiceActionsForProvisioningArtifactOutputTypeDef](./type_defs.md#listserviceactionsforprovisioningartifactoutputtypedef)\].
+`AsyncIterable`\[[ListServiceActionsForProvisioningArtifactOutputTypeDef](./type_defs.md#listserviceactionsforprovisioningartifactoutputtypedef)\].
 
 <a id="listtagoptionspaginator"></a>
 
@@ -498,7 +498,7 @@ Arguments for `ListTagOptionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTagOptionsPaginator.paginate` returns
-`_PageIterator`\[[ListTagOptionsOutputTypeDef](./type_defs.md#listtagoptionsoutputtypedef)\].
+`AsyncIterable`\[[ListTagOptionsOutputTypeDef](./type_defs.md#listtagoptionsoutputtypedef)\].
 
 <a id="scanprovisionedproductspaginator"></a>
 
@@ -532,7 +532,7 @@ Arguments for `ScanProvisionedProductsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ScanProvisionedProductsPaginator.paginate` returns
-`_PageIterator`\[[ScanProvisionedProductsOutputTypeDef](./type_defs.md#scanprovisionedproductsoutputtypedef)\].
+`AsyncIterable`\[[ScanProvisionedProductsOutputTypeDef](./type_defs.md#scanprovisionedproductsoutputtypedef)\].
 
 <a id="searchproductsasadminpaginator"></a>
 
@@ -572,4 +572,4 @@ Arguments for `SearchProductsAsAdminPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchProductsAsAdminPaginator.paginate` returns
-`_PageIterator`\[[SearchProductsAsAdminOutputTypeDef](./type_defs.md#searchproductsasadminoutputtypedef)\].
+`AsyncIterable`\[[SearchProductsAsAdminOutputTypeDef](./type_defs.md#searchproductsasadminoutputtypedef)\].

@@ -43,7 +43,7 @@ Arguments for `ListScheduledQueriesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListScheduledQueriesPaginator.paginate` returns
-`_PageIterator`\[[ListScheduledQueriesResponseTypeDef](./type_defs.md#listscheduledqueriesresponsetypedef)\].
+`AsyncIterable`\[[ListScheduledQueriesResponseTypeDef](./type_defs.md#listscheduledqueriesresponsetypedef)\].
 
 <a id="listtagsforresourcepaginator"></a>
 
@@ -75,7 +75,7 @@ Arguments for `ListTagsForResourcePaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTagsForResourcePaginator.paginate` returns
-`_PageIterator`\[[ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)\].
+`AsyncIterable`\[[ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)\].
 
 <a id="querypaginator"></a>
 
@@ -108,4 +108,4 @@ Arguments for `QueryPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `QueryPaginator.paginate` returns
-`_PageIterator`\[[QueryResponseTypeDef](./type_defs.md#queryresponsetypedef)\].
+`AsyncIterable`\[[QueryResponseTypeDef](./type_defs.md#queryresponsetypedef)\].

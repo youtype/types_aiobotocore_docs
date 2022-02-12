@@ -9,25 +9,57 @@ Auto-generated documentation for
 type annotations stubs module
 [types-aiobotocore-cloud9](https://pypi.org/project/types-aiobotocore-cloud9/).
 
-```bash
-# install with types-aiobotocore
-pip install 'types-aiobotocore[cloud9]'
-
-# Lite version does not provide session.create_client overloads
-# it is more RAM-friendly, but requires explicit type annotations
-python -m pip install 'types-aiobotocore-lite[cloud9]'
-
-# standalone installation
-pip install types-aiobotocore-cloud9
-```
-
 - [Type annotations for aiobotocore Cloud9 module](#type-annotations-for-aiobotocore-cloud9-module)
+  - [How to install](#how-to-install)
+    - [VSCode extension](#vscode-extension)
+    - [From PyPI with pip](#from-pypi-with-pip)
+  - [How to uninstall](#how-to-uninstall)
   - [Cloud9Client](#cloud9client)
     - [Methods](#methods)
     - [Exceptions](#exceptions)
   - [Paginators](#paginators)
   - [Literals](#literals)
   - [Typed dictionaries](#typed-dictionaries)
+
+<a id="how-to-install"></a>
+
+## How to install
+
+<a id="vscode-extension"></a>
+
+### VSCode extension
+
+Add
+[AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
+extension to your VSCode and run `AWS boto3: Quick Start` command.
+
+Click `Modify` and select `boto3 common` and `Cloud9`.
+
+<a id="from-pypi-with-pip"></a>
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `Cloud9` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[cloud9]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[cloud9]'
+
+# standalone installation
+python -m pip install types-aiobotocore-cloud9
+```
+
+<a id="how-to-uninstall"></a>
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-cloud9
+```
 
 <a id="cloud9client"></a>
 

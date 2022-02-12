@@ -45,4 +45,4 @@ Arguments for `ListRulesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRulesPaginator.paginate` returns
-`_PageIterator`\[[ListRulesResponseTypeDef](./type_defs.md#listrulesresponsetypedef)\].
+`AsyncIterable`\[[ListRulesResponseTypeDef](./type_defs.md#listrulesresponsetypedef)\].

@@ -53,7 +53,7 @@ Arguments for `DescribeActionTargetsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeActionTargetsPaginator.paginate` returns
-`_PageIterator`\[[DescribeActionTargetsResponseTypeDef](./type_defs.md#describeactiontargetsresponsetypedef)\].
+`AsyncIterable`\[[DescribeActionTargetsResponseTypeDef](./type_defs.md#describeactiontargetsresponsetypedef)\].
 
 <a id="describeproductspaginator"></a>
 
@@ -85,7 +85,7 @@ Arguments for `DescribeProductsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeProductsPaginator.paginate` returns
-`_PageIterator`\[[DescribeProductsResponseTypeDef](./type_defs.md#describeproductsresponsetypedef)\].
+`AsyncIterable`\[[DescribeProductsResponseTypeDef](./type_defs.md#describeproductsresponsetypedef)\].
 
 <a id="describestandardspaginator"></a>
 
@@ -116,7 +116,7 @@ Arguments for `DescribeStandardsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeStandardsPaginator.paginate` returns
-`_PageIterator`\[[DescribeStandardsResponseTypeDef](./type_defs.md#describestandardsresponsetypedef)\].
+`AsyncIterable`\[[DescribeStandardsResponseTypeDef](./type_defs.md#describestandardsresponsetypedef)\].
 
 <a id="describestandardscontrolspaginator"></a>
 
@@ -148,7 +148,7 @@ Arguments for `DescribeStandardsControlsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeStandardsControlsPaginator.paginate` returns
-`_PageIterator`\[[DescribeStandardsControlsResponseTypeDef](./type_defs.md#describestandardscontrolsresponsetypedef)\].
+`AsyncIterable`\[[DescribeStandardsControlsResponseTypeDef](./type_defs.md#describestandardscontrolsresponsetypedef)\].
 
 <a id="getenabledstandardspaginator"></a>
 
@@ -180,7 +180,7 @@ Arguments for `GetEnabledStandardsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetEnabledStandardsPaginator.paginate` returns
-`_PageIterator`\[[GetEnabledStandardsResponseTypeDef](./type_defs.md#getenabledstandardsresponsetypedef)\].
+`AsyncIterable`\[[GetEnabledStandardsResponseTypeDef](./type_defs.md#getenabledstandardsresponsetypedef)\].
 
 <a id="getfindingspaginator"></a>
 
@@ -215,7 +215,7 @@ Arguments for `GetFindingsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetFindingsPaginator.paginate` returns
-`_PageIterator`\[[GetFindingsResponseTypeDef](./type_defs.md#getfindingsresponsetypedef)\].
+`AsyncIterable`\[[GetFindingsResponseTypeDef](./type_defs.md#getfindingsresponsetypedef)\].
 
 <a id="getinsightspaginator"></a>
 
@@ -247,7 +247,7 @@ Arguments for `GetInsightsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetInsightsPaginator.paginate` returns
-`_PageIterator`\[[GetInsightsResponseTypeDef](./type_defs.md#getinsightsresponsetypedef)\].
+`AsyncIterable`\[[GetInsightsResponseTypeDef](./type_defs.md#getinsightsresponsetypedef)\].
 
 <a id="listenabledproductsforimportpaginator"></a>
 
@@ -278,7 +278,7 @@ Arguments for `ListEnabledProductsForImportPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListEnabledProductsForImportPaginator.paginate` returns
-`_PageIterator`\[[ListEnabledProductsForImportResponseTypeDef](./type_defs.md#listenabledproductsforimportresponsetypedef)\].
+`AsyncIterable`\[[ListEnabledProductsForImportResponseTypeDef](./type_defs.md#listenabledproductsforimportresponsetypedef)\].
 
 <a id="listfindingaggregatorspaginator"></a>
 
@@ -309,7 +309,7 @@ Arguments for `ListFindingAggregatorsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListFindingAggregatorsPaginator.paginate` returns
-`_PageIterator`\[[ListFindingAggregatorsResponseTypeDef](./type_defs.md#listfindingaggregatorsresponsetypedef)\].
+`AsyncIterable`\[[ListFindingAggregatorsResponseTypeDef](./type_defs.md#listfindingaggregatorsresponsetypedef)\].
 
 <a id="listinvitationspaginator"></a>
 
@@ -340,7 +340,7 @@ Arguments for `ListInvitationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListInvitationsPaginator.paginate` returns
-`_PageIterator`\[[ListInvitationsResponseTypeDef](./type_defs.md#listinvitationsresponsetypedef)\].
+`AsyncIterable`\[[ListInvitationsResponseTypeDef](./type_defs.md#listinvitationsresponsetypedef)\].
 
 <a id="listmemberspaginator"></a>
 
@@ -372,7 +372,7 @@ Arguments for `ListMembersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListMembersPaginator.paginate` returns
-`_PageIterator`\[[ListMembersResponseTypeDef](./type_defs.md#listmembersresponsetypedef)\].
+`AsyncIterable`\[[ListMembersResponseTypeDef](./type_defs.md#listmembersresponsetypedef)\].
 
 <a id="listorganizationadminaccountspaginator"></a>
 
@@ -403,4 +403,4 @@ Arguments for `ListOrganizationAdminAccountsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListOrganizationAdminAccountsPaginator.paginate` returns
-`_PageIterator`\[[ListOrganizationAdminAccountsResponseTypeDef](./type_defs.md#listorganizationadminaccountsresponsetypedef)\].
+`AsyncIterable`\[[ListOrganizationAdminAccountsResponseTypeDef](./type_defs.md#listorganizationadminaccountsresponsetypedef)\].

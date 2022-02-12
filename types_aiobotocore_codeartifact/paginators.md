@@ -46,7 +46,7 @@ Arguments for `ListDomainsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDomainsPaginator.paginate` returns
-`_PageIterator`\[[ListDomainsResultTypeDef](./type_defs.md#listdomainsresulttypedef)\].
+`AsyncIterable`\[[ListDomainsResultTypeDef](./type_defs.md#listdomainsresulttypedef)\].
 
 <a id="listpackageversionassetspaginator"></a>
 
@@ -84,7 +84,7 @@ Arguments for `ListPackageVersionAssetsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPackageVersionAssetsPaginator.paginate` returns
-`_PageIterator`\[[ListPackageVersionAssetsResultTypeDef](./type_defs.md#listpackageversionassetsresulttypedef)\].
+`AsyncIterable`\[[ListPackageVersionAssetsResultTypeDef](./type_defs.md#listpackageversionassetsresulttypedef)\].
 
 <a id="listpackageversionspaginator"></a>
 
@@ -124,7 +124,7 @@ Arguments for `ListPackageVersionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPackageVersionsPaginator.paginate` returns
-`_PageIterator`\[[ListPackageVersionsResultTypeDef](./type_defs.md#listpackageversionsresulttypedef)\].
+`AsyncIterable`\[[ListPackageVersionsResultTypeDef](./type_defs.md#listpackageversionsresulttypedef)\].
 
 <a id="listpackagespaginator"></a>
 
@@ -161,7 +161,7 @@ Arguments for `ListPackagesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPackagesPaginator.paginate` returns
-`_PageIterator`\[[ListPackagesResultTypeDef](./type_defs.md#listpackagesresulttypedef)\].
+`AsyncIterable`\[[ListPackagesResultTypeDef](./type_defs.md#listpackagesresulttypedef)\].
 
 <a id="listrepositoriespaginator"></a>
 
@@ -193,7 +193,7 @@ Arguments for `ListRepositoriesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRepositoriesPaginator.paginate` returns
-`_PageIterator`\[[ListRepositoriesResultTypeDef](./type_defs.md#listrepositoriesresulttypedef)\].
+`AsyncIterable`\[[ListRepositoriesResultTypeDef](./type_defs.md#listrepositoriesresulttypedef)\].
 
 <a id="listrepositoriesindomainpaginator"></a>
 
@@ -228,4 +228,4 @@ Arguments for `ListRepositoriesInDomainPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRepositoriesInDomainPaginator.paginate` returns
-`_PageIterator`\[[ListRepositoriesInDomainResultTypeDef](./type_defs.md#listrepositoriesindomainresulttypedef)\].
+`AsyncIterable`\[[ListRepositoriesInDomainResultTypeDef](./type_defs.md#listrepositoriesindomainresulttypedef)\].

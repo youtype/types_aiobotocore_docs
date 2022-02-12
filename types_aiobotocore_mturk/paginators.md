@@ -52,7 +52,7 @@ Arguments for `ListAssignmentsForHITPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAssignmentsForHITPaginator.paginate` returns
-`_PageIterator`\[[ListAssignmentsForHITResponseTypeDef](./type_defs.md#listassignmentsforhitresponsetypedef)\].
+`AsyncIterable`\[[ListAssignmentsForHITResponseTypeDef](./type_defs.md#listassignmentsforhitresponsetypedef)\].
 
 <a id="listbonuspaymentspaginator"></a>
 
@@ -85,7 +85,7 @@ Arguments for `ListBonusPaymentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListBonusPaymentsPaginator.paginate` returns
-`_PageIterator`\[[ListBonusPaymentsResponseTypeDef](./type_defs.md#listbonuspaymentsresponsetypedef)\].
+`AsyncIterable`\[[ListBonusPaymentsResponseTypeDef](./type_defs.md#listbonuspaymentsresponsetypedef)\].
 
 <a id="listhitspaginator"></a>
 
@@ -116,7 +116,7 @@ Arguments for `ListHITsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListHITsPaginator.paginate` returns
-`_PageIterator`\[[ListHITsResponseTypeDef](./type_defs.md#listhitsresponsetypedef)\].
+`AsyncIterable`\[[ListHITsResponseTypeDef](./type_defs.md#listhitsresponsetypedef)\].
 
 <a id="listhitsforqualificationtypepaginator"></a>
 
@@ -148,7 +148,7 @@ Arguments for `ListHITsForQualificationTypePaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListHITsForQualificationTypePaginator.paginate` returns
-`_PageIterator`\[[ListHITsForQualificationTypeResponseTypeDef](./type_defs.md#listhitsforqualificationtyperesponsetypedef)\].
+`AsyncIterable`\[[ListHITsForQualificationTypeResponseTypeDef](./type_defs.md#listhitsforqualificationtyperesponsetypedef)\].
 
 <a id="listqualificationrequestspaginator"></a>
 
@@ -180,7 +180,7 @@ Arguments for `ListQualificationRequestsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListQualificationRequestsPaginator.paginate` returns
-`_PageIterator`\[[ListQualificationRequestsResponseTypeDef](./type_defs.md#listqualificationrequestsresponsetypedef)\].
+`AsyncIterable`\[[ListQualificationRequestsResponseTypeDef](./type_defs.md#listqualificationrequestsresponsetypedef)\].
 
 <a id="listqualificationtypespaginator"></a>
 
@@ -214,7 +214,7 @@ Arguments for `ListQualificationTypesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListQualificationTypesPaginator.paginate` returns
-`_PageIterator`\[[ListQualificationTypesResponseTypeDef](./type_defs.md#listqualificationtypesresponsetypedef)\].
+`AsyncIterable`\[[ListQualificationTypesResponseTypeDef](./type_defs.md#listqualificationtypesresponsetypedef)\].
 
 <a id="listreviewablehitspaginator"></a>
 
@@ -247,7 +247,7 @@ Arguments for `ListReviewableHITsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListReviewableHITsPaginator.paginate` returns
-`_PageIterator`\[[ListReviewableHITsResponseTypeDef](./type_defs.md#listreviewablehitsresponsetypedef)\].
+`AsyncIterable`\[[ListReviewableHITsResponseTypeDef](./type_defs.md#listreviewablehitsresponsetypedef)\].
 
 <a id="listworkerblockspaginator"></a>
 
@@ -278,7 +278,7 @@ Arguments for `ListWorkerBlocksPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListWorkerBlocksPaginator.paginate` returns
-`_PageIterator`\[[ListWorkerBlocksResponseTypeDef](./type_defs.md#listworkerblocksresponsetypedef)\].
+`AsyncIterable`\[[ListWorkerBlocksResponseTypeDef](./type_defs.md#listworkerblocksresponsetypedef)\].
 
 <a id="listworkerswithqualificationtypepaginator"></a>
 
@@ -311,4 +311,4 @@ Arguments for `ListWorkersWithQualificationTypePaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListWorkersWithQualificationTypePaginator.paginate` returns
-`_PageIterator`\[[ListWorkersWithQualificationTypeResponseTypeDef](./type_defs.md#listworkerswithqualificationtyperesponsetypedef)\].
+`AsyncIterable`\[[ListWorkersWithQualificationTypeResponseTypeDef](./type_defs.md#listworkerswithqualificationtyperesponsetypedef)\].

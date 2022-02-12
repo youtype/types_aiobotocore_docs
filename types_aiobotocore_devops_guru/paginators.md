@@ -59,7 +59,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeOrganizationResourceCollectionHealthPaginator.paginate` returns
-`_PageIterator`\[[DescribeOrganizationResourceCollectionHealthResponseTypeDef](./type_defs.md#describeorganizationresourcecollectionhealthresponsetypedef)\].
+`AsyncIterable`\[[DescribeOrganizationResourceCollectionHealthResponseTypeDef](./type_defs.md#describeorganizationresourcecollectionhealthresponsetypedef)\].
 
 <a id="describeresourcecollectionhealthpaginator"></a>
 
@@ -93,7 +93,7 @@ Arguments for `DescribeResourceCollectionHealthPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeResourceCollectionHealthPaginator.paginate` returns
-`_PageIterator`\[[DescribeResourceCollectionHealthResponseTypeDef](./type_defs.md#describeresourcecollectionhealthresponsetypedef)\].
+`AsyncIterable`\[[DescribeResourceCollectionHealthResponseTypeDef](./type_defs.md#describeresourcecollectionhealthresponsetypedef)\].
 
 <a id="getcostestimationpaginator"></a>
 
@@ -124,7 +124,7 @@ Arguments for `GetCostEstimationPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetCostEstimationPaginator.paginate` returns
-`_PageIterator`\[[GetCostEstimationResponseTypeDef](./type_defs.md#getcostestimationresponsetypedef)\].
+`AsyncIterable`\[[GetCostEstimationResponseTypeDef](./type_defs.md#getcostestimationresponsetypedef)\].
 
 <a id="getresourcecollectionpaginator"></a>
 
@@ -158,7 +158,7 @@ Arguments for `GetResourceCollectionPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetResourceCollectionPaginator.paginate` returns
-`_PageIterator`\[[GetResourceCollectionResponseTypeDef](./type_defs.md#getresourcecollectionresponsetypedef)\].
+`AsyncIterable`\[[GetResourceCollectionResponseTypeDef](./type_defs.md#getresourcecollectionresponsetypedef)\].
 
 <a id="listanomaliesforinsightpaginator"></a>
 
@@ -193,7 +193,7 @@ Arguments for `ListAnomaliesForInsightPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAnomaliesForInsightPaginator.paginate` returns
-`_PageIterator`\[[ListAnomaliesForInsightResponseTypeDef](./type_defs.md#listanomaliesforinsightresponsetypedef)\].
+`AsyncIterable`\[[ListAnomaliesForInsightResponseTypeDef](./type_defs.md#listanomaliesforinsightresponsetypedef)\].
 
 <a id="listeventspaginator"></a>
 
@@ -228,7 +228,7 @@ Arguments for `ListEventsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListEventsPaginator.paginate` returns
-`_PageIterator`\[[ListEventsResponseTypeDef](./type_defs.md#listeventsresponsetypedef)\].
+`AsyncIterable`\[[ListEventsResponseTypeDef](./type_defs.md#listeventsresponsetypedef)\].
 
 <a id="listinsightspaginator"></a>
 
@@ -262,7 +262,7 @@ Arguments for `ListInsightsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListInsightsPaginator.paginate` returns
-`_PageIterator`\[[ListInsightsResponseTypeDef](./type_defs.md#listinsightsresponsetypedef)\].
+`AsyncIterable`\[[ListInsightsResponseTypeDef](./type_defs.md#listinsightsresponsetypedef)\].
 
 <a id="listnotificationchannelspaginator"></a>
 
@@ -293,7 +293,7 @@ Arguments for `ListNotificationChannelsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListNotificationChannelsPaginator.paginate` returns
-`_PageIterator`\[[ListNotificationChannelsResponseTypeDef](./type_defs.md#listnotificationchannelsresponsetypedef)\].
+`AsyncIterable`\[[ListNotificationChannelsResponseTypeDef](./type_defs.md#listnotificationchannelsresponsetypedef)\].
 
 <a id="listorganizationinsightspaginator"></a>
 
@@ -329,7 +329,7 @@ Arguments for `ListOrganizationInsightsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListOrganizationInsightsPaginator.paginate` returns
-`_PageIterator`\[[ListOrganizationInsightsResponseTypeDef](./type_defs.md#listorganizationinsightsresponsetypedef)\].
+`AsyncIterable`\[[ListOrganizationInsightsResponseTypeDef](./type_defs.md#listorganizationinsightsresponsetypedef)\].
 
 <a id="listrecommendationspaginator"></a>
 
@@ -363,7 +363,7 @@ Arguments for `ListRecommendationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRecommendationsPaginator.paginate` returns
-`_PageIterator`\[[ListRecommendationsResponseTypeDef](./type_defs.md#listrecommendationsresponsetypedef)\].
+`AsyncIterable`\[[ListRecommendationsResponseTypeDef](./type_defs.md#listrecommendationsresponsetypedef)\].
 
 <a id="searchinsightspaginator"></a>
 
@@ -399,7 +399,7 @@ Arguments for `SearchInsightsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchInsightsPaginator.paginate` returns
-`_PageIterator`\[[SearchInsightsResponseTypeDef](./type_defs.md#searchinsightsresponsetypedef)\].
+`AsyncIterable`\[[SearchInsightsResponseTypeDef](./type_defs.md#searchinsightsresponsetypedef)\].
 
 <a id="searchorganizationinsightspaginator"></a>
 
@@ -436,4 +436,4 @@ Arguments for `SearchOrganizationInsightsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchOrganizationInsightsPaginator.paginate` returns
-`_PageIterator`\[[SearchOrganizationInsightsResponseTypeDef](./type_defs.md#searchorganizationinsightsresponsetypedef)\].
+`AsyncIterable`\[[SearchOrganizationInsightsResponseTypeDef](./type_defs.md#searchorganizationinsightsresponsetypedef)\].

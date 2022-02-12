@@ -47,7 +47,7 @@ Arguments for `DescribeJobLogItemsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeJobLogItemsPaginator.paginate` returns
-`_PageIterator`\[[DescribeJobLogItemsResponseTypeDef](./type_defs.md#describejoblogitemsresponsetypedef)\].
+`AsyncIterable`\[[DescribeJobLogItemsResponseTypeDef](./type_defs.md#describejoblogitemsresponsetypedef)\].
 
 <a id="describejobspaginator"></a>
 
@@ -81,7 +81,7 @@ Arguments for `DescribeJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeJobsPaginator.paginate` returns
-`_PageIterator`\[[DescribeJobsResponseTypeDef](./type_defs.md#describejobsresponsetypedef)\].
+`AsyncIterable`\[[DescribeJobsResponseTypeDef](./type_defs.md#describejobsresponsetypedef)\].
 
 <a id="describerecoveryinstancespaginator"></a>
 
@@ -115,7 +115,7 @@ Arguments for `DescribeRecoveryInstancesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeRecoveryInstancesPaginator.paginate` returns
-`_PageIterator`\[[DescribeRecoveryInstancesResponseTypeDef](./type_defs.md#describerecoveryinstancesresponsetypedef)\].
+`AsyncIterable`\[[DescribeRecoveryInstancesResponseTypeDef](./type_defs.md#describerecoveryinstancesresponsetypedef)\].
 
 <a id="describerecoverysnapshotspaginator"></a>
 
@@ -151,7 +151,7 @@ Arguments for `DescribeRecoverySnapshotsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeRecoverySnapshotsPaginator.paginate` returns
-`_PageIterator`\[[DescribeRecoverySnapshotsResponseTypeDef](./type_defs.md#describerecoverysnapshotsresponsetypedef)\].
+`AsyncIterable`\[[DescribeRecoverySnapshotsResponseTypeDef](./type_defs.md#describerecoverysnapshotsresponsetypedef)\].
 
 <a id="describereplicationconfigurationtemplatespaginator"></a>
 
@@ -184,7 +184,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeReplicationConfigurationTemplatesPaginator.paginate` returns
-`_PageIterator`\[[DescribeReplicationConfigurationTemplatesResponseTypeDef](./type_defs.md#describereplicationconfigurationtemplatesresponsetypedef)\].
+`AsyncIterable`\[[DescribeReplicationConfigurationTemplatesResponseTypeDef](./type_defs.md#describereplicationconfigurationtemplatesresponsetypedef)\].
 
 <a id="describesourceserverspaginator"></a>
 
@@ -218,4 +218,4 @@ Arguments for `DescribeSourceServersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeSourceServersPaginator.paginate` returns
-`_PageIterator`\[[DescribeSourceServersResponseTypeDef](./type_defs.md#describesourceserversresponsetypedef)\].
+`AsyncIterable`\[[DescribeSourceServersResponseTypeDef](./type_defs.md#describesourceserversresponsetypedef)\].

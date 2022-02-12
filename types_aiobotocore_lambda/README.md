@@ -9,19 +9,12 @@ Auto-generated documentation for
 type annotations stubs module
 [types-aiobotocore-lambda](https://pypi.org/project/types-aiobotocore-lambda/).
 
-```bash
-# install with types-aiobotocore
-pip install 'types-aiobotocore[lambda]'
-
-# Lite version does not provide session.create_client overloads
-# it is more RAM-friendly, but requires explicit type annotations
-python -m pip install 'types-aiobotocore-lite[lambda]'
-
-# standalone installation
-pip install types-aiobotocore-lambda
-```
-
 - [Type annotations for aiobotocore Lambda module](#type-annotations-for-aiobotocore-lambda-module)
+  - [How to install](#how-to-install)
+    - [VSCode extension](#vscode-extension)
+    - [From PyPI with pip](#from-pypi-with-pip)
+    - [From conda-forge](#from-conda-forge)
+  - [How to uninstall](#how-to-uninstall)
   - [LambdaClient](#lambdaclient)
     - [Methods](#methods)
     - [Exceptions](#exceptions)
@@ -29,6 +22,72 @@ pip install types-aiobotocore-lambda
   - [Waiters](#waiters)
   - [Literals](#literals)
   - [Typed dictionaries](#typed-dictionaries)
+
+<a id="how-to-install"></a>
+
+## How to install
+
+<a id="vscode-extension"></a>
+
+### VSCode extension
+
+Add
+[AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
+extension to your VSCode and run `AWS boto3: Quick Start` command.
+
+Click `Modify` and select `boto3 common` and `Lambda`.
+
+<a id="from-pypi-with-pip"></a>
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `Lambda` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[lambda]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[lambda]'
+
+# standalone installation
+python -m pip install types-aiobotocore-lambda
+```
+
+<a id="from-conda-forge"></a>
+
+### From conda-forge
+
+Installing `types-aiobotocore-lambda` from the `conda-forge` channel can be
+achieved by adding `conda-forge` to your channels with:
+
+```bash
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+```
+
+Once the `conda-forge` channel has been enabled, `types-aiobotocore-lambda` can
+be installed with:
+
+```bash
+conda install types-aiobotocore-lambda
+```
+
+It is possible to list all of the versions of `types-aiobotocore-lambda`
+available on your platform with:
+
+```bash
+conda search types-aiobotocore-lambda --channel conda-forge
+```
+
+<a id="how-to-uninstall"></a>
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-lambda
+```
 
 <a id="lambdaclient"></a>
 

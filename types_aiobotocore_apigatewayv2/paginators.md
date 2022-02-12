@@ -50,7 +50,7 @@ Arguments for `GetApisPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetApisPaginator.paginate` returns
-`_PageIterator`\[[GetApisResponseTypeDef](./type_defs.md#getapisresponsetypedef)\].
+`AsyncIterable`\[[GetApisResponseTypeDef](./type_defs.md#getapisresponsetypedef)\].
 
 <a id="getauthorizerspaginator"></a>
 
@@ -82,7 +82,7 @@ Arguments for `GetAuthorizersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetAuthorizersPaginator.paginate` returns
-`_PageIterator`\[[GetAuthorizersResponseTypeDef](./type_defs.md#getauthorizersresponsetypedef)\].
+`AsyncIterable`\[[GetAuthorizersResponseTypeDef](./type_defs.md#getauthorizersresponsetypedef)\].
 
 <a id="getdeploymentspaginator"></a>
 
@@ -114,7 +114,7 @@ Arguments for `GetDeploymentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetDeploymentsPaginator.paginate` returns
-`_PageIterator`\[[GetDeploymentsResponseTypeDef](./type_defs.md#getdeploymentsresponsetypedef)\].
+`AsyncIterable`\[[GetDeploymentsResponseTypeDef](./type_defs.md#getdeploymentsresponsetypedef)\].
 
 <a id="getdomainnamespaginator"></a>
 
@@ -145,7 +145,7 @@ Arguments for `GetDomainNamesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetDomainNamesPaginator.paginate` returns
-`_PageIterator`\[[GetDomainNamesResponseTypeDef](./type_defs.md#getdomainnamesresponsetypedef)\].
+`AsyncIterable`\[[GetDomainNamesResponseTypeDef](./type_defs.md#getdomainnamesresponsetypedef)\].
 
 <a id="getintegrationresponsespaginator"></a>
 
@@ -178,7 +178,7 @@ Arguments for `GetIntegrationResponsesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetIntegrationResponsesPaginator.paginate` returns
-`_PageIterator`\[[GetIntegrationResponsesResponseTypeDef](./type_defs.md#getintegrationresponsesresponsetypedef)\].
+`AsyncIterable`\[[GetIntegrationResponsesResponseTypeDef](./type_defs.md#getintegrationresponsesresponsetypedef)\].
 
 <a id="getintegrationspaginator"></a>
 
@@ -210,7 +210,7 @@ Arguments for `GetIntegrationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetIntegrationsPaginator.paginate` returns
-`_PageIterator`\[[GetIntegrationsResponseTypeDef](./type_defs.md#getintegrationsresponsetypedef)\].
+`AsyncIterable`\[[GetIntegrationsResponseTypeDef](./type_defs.md#getintegrationsresponsetypedef)\].
 
 <a id="getmodelspaginator"></a>
 
@@ -242,7 +242,7 @@ Arguments for `GetModelsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetModelsPaginator.paginate` returns
-`_PageIterator`\[[GetModelsResponseTypeDef](./type_defs.md#getmodelsresponsetypedef)\].
+`AsyncIterable`\[[GetModelsResponseTypeDef](./type_defs.md#getmodelsresponsetypedef)\].
 
 <a id="getrouteresponsespaginator"></a>
 
@@ -275,7 +275,7 @@ Arguments for `GetRouteResponsesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetRouteResponsesPaginator.paginate` returns
-`_PageIterator`\[[GetRouteResponsesResponseTypeDef](./type_defs.md#getrouteresponsesresponsetypedef)\].
+`AsyncIterable`\[[GetRouteResponsesResponseTypeDef](./type_defs.md#getrouteresponsesresponsetypedef)\].
 
 <a id="getroutespaginator"></a>
 
@@ -307,7 +307,7 @@ Arguments for `GetRoutesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetRoutesPaginator.paginate` returns
-`_PageIterator`\[[GetRoutesResponseTypeDef](./type_defs.md#getroutesresponsetypedef)\].
+`AsyncIterable`\[[GetRoutesResponseTypeDef](./type_defs.md#getroutesresponsetypedef)\].
 
 <a id="getstagespaginator"></a>
 
@@ -339,4 +339,4 @@ Arguments for `GetStagesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetStagesPaginator.paginate` returns
-`_PageIterator`\[[GetStagesResponseTypeDef](./type_defs.md#getstagesresponsetypedef)\].
+`AsyncIterable`\[[GetStagesResponseTypeDef](./type_defs.md#getstagesresponsetypedef)\].

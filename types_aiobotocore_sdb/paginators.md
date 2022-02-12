@@ -42,7 +42,7 @@ Arguments for `ListDomainsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDomainsPaginator.paginate` returns
-`_PageIterator`\[[ListDomainsResultTypeDef](./type_defs.md#listdomainsresulttypedef)\].
+`AsyncIterable`\[[ListDomainsResultTypeDef](./type_defs.md#listdomainsresulttypedef)\].
 
 <a id="selectpaginator"></a>
 
@@ -74,4 +74,4 @@ Arguments for `SelectPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SelectPaginator.paginate` returns
-`_PageIterator`\[[SelectResultTypeDef](./type_defs.md#selectresulttypedef)\].
+`AsyncIterable`\[[SelectResultTypeDef](./type_defs.md#selectresulttypedef)\].

@@ -74,7 +74,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeAggregateComplianceByConfigRulesPaginator.paginate` returns
-`_PageIterator`\[[DescribeAggregateComplianceByConfigRulesResponseTypeDef](./type_defs.md#describeaggregatecompliancebyconfigrulesresponsetypedef)\].
+`AsyncIterable`\[[DescribeAggregateComplianceByConfigRulesResponseTypeDef](./type_defs.md#describeaggregatecompliancebyconfigrulesresponsetypedef)\].
 
 <a id="describeaggregatecompliancebyconformancepackspaginator"></a>
 
@@ -109,7 +109,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeAggregateComplianceByConformancePacksPaginator.paginate` returns
-`_PageIterator`\[[DescribeAggregateComplianceByConformancePacksResponseTypeDef](./type_defs.md#describeaggregatecompliancebyconformancepacksresponsetypedef)\].
+`AsyncIterable`\[[DescribeAggregateComplianceByConformancePacksResponseTypeDef](./type_defs.md#describeaggregatecompliancebyconformancepacksresponsetypedef)\].
 
 <a id="describeaggregationauthorizationspaginator"></a>
 
@@ -140,7 +140,7 @@ Arguments for `DescribeAggregationAuthorizationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeAggregationAuthorizationsPaginator.paginate` returns
-`_PageIterator`\[[DescribeAggregationAuthorizationsResponseTypeDef](./type_defs.md#describeaggregationauthorizationsresponsetypedef)\].
+`AsyncIterable`\[[DescribeAggregationAuthorizationsResponseTypeDef](./type_defs.md#describeaggregationauthorizationsresponsetypedef)\].
 
 <a id="describecompliancebyconfigrulepaginator"></a>
 
@@ -174,7 +174,7 @@ Arguments for `DescribeComplianceByConfigRulePaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeComplianceByConfigRulePaginator.paginate` returns
-`_PageIterator`\[[DescribeComplianceByConfigRuleResponseTypeDef](./type_defs.md#describecompliancebyconfigruleresponsetypedef)\].
+`AsyncIterable`\[[DescribeComplianceByConfigRuleResponseTypeDef](./type_defs.md#describecompliancebyconfigruleresponsetypedef)\].
 
 <a id="describecompliancebyresourcepaginator"></a>
 
@@ -209,7 +209,7 @@ Arguments for `DescribeComplianceByResourcePaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeComplianceByResourcePaginator.paginate` returns
-`_PageIterator`\[[DescribeComplianceByResourceResponseTypeDef](./type_defs.md#describecompliancebyresourceresponsetypedef)\].
+`AsyncIterable`\[[DescribeComplianceByResourceResponseTypeDef](./type_defs.md#describecompliancebyresourceresponsetypedef)\].
 
 <a id="describeconfigruleevaluationstatuspaginator"></a>
 
@@ -241,7 +241,7 @@ Arguments for `DescribeConfigRuleEvaluationStatusPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeConfigRuleEvaluationStatusPaginator.paginate` returns
-`_PageIterator`\[[DescribeConfigRuleEvaluationStatusResponseTypeDef](./type_defs.md#describeconfigruleevaluationstatusresponsetypedef)\].
+`AsyncIterable`\[[DescribeConfigRuleEvaluationStatusResponseTypeDef](./type_defs.md#describeconfigruleevaluationstatusresponsetypedef)\].
 
 <a id="describeconfigrulespaginator"></a>
 
@@ -273,7 +273,7 @@ Arguments for `DescribeConfigRulesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeConfigRulesPaginator.paginate` returns
-`_PageIterator`\[[DescribeConfigRulesResponseTypeDef](./type_defs.md#describeconfigrulesresponsetypedef)\].
+`AsyncIterable`\[[DescribeConfigRulesResponseTypeDef](./type_defs.md#describeconfigrulesresponsetypedef)\].
 
 <a id="describeconfigurationaggregatorsourcesstatuspaginator"></a>
 
@@ -308,7 +308,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeConfigurationAggregatorSourcesStatusPaginator.paginate` returns
-`_PageIterator`\[[DescribeConfigurationAggregatorSourcesStatusResponseTypeDef](./type_defs.md#describeconfigurationaggregatorsourcesstatusresponsetypedef)\].
+`AsyncIterable`\[[DescribeConfigurationAggregatorSourcesStatusResponseTypeDef](./type_defs.md#describeconfigurationaggregatorsourcesstatusresponsetypedef)\].
 
 <a id="describeconfigurationaggregatorspaginator"></a>
 
@@ -340,7 +340,7 @@ Arguments for `DescribeConfigurationAggregatorsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeConfigurationAggregatorsPaginator.paginate` returns
-`_PageIterator`\[[DescribeConfigurationAggregatorsResponseTypeDef](./type_defs.md#describeconfigurationaggregatorsresponsetypedef)\].
+`AsyncIterable`\[[DescribeConfigurationAggregatorsResponseTypeDef](./type_defs.md#describeconfigurationaggregatorsresponsetypedef)\].
 
 <a id="describeconformancepackstatuspaginator"></a>
 
@@ -372,7 +372,7 @@ Arguments for `DescribeConformancePackStatusPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeConformancePackStatusPaginator.paginate` returns
-`_PageIterator`\[[DescribeConformancePackStatusResponseTypeDef](./type_defs.md#describeconformancepackstatusresponsetypedef)\].
+`AsyncIterable`\[[DescribeConformancePackStatusResponseTypeDef](./type_defs.md#describeconformancepackstatusresponsetypedef)\].
 
 <a id="describeconformancepackspaginator"></a>
 
@@ -404,7 +404,7 @@ Arguments for `DescribeConformancePacksPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeConformancePacksPaginator.paginate` returns
-`_PageIterator`\[[DescribeConformancePacksResponseTypeDef](./type_defs.md#describeconformancepacksresponsetypedef)\].
+`AsyncIterable`\[[DescribeConformancePacksResponseTypeDef](./type_defs.md#describeconformancepacksresponsetypedef)\].
 
 <a id="describeorganizationconfigrulestatusespaginator"></a>
 
@@ -437,7 +437,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeOrganizationConfigRuleStatusesPaginator.paginate` returns
-`_PageIterator`\[[DescribeOrganizationConfigRuleStatusesResponseTypeDef](./type_defs.md#describeorganizationconfigrulestatusesresponsetypedef)\].
+`AsyncIterable`\[[DescribeOrganizationConfigRuleStatusesResponseTypeDef](./type_defs.md#describeorganizationconfigrulestatusesresponsetypedef)\].
 
 <a id="describeorganizationconfigrulespaginator"></a>
 
@@ -469,7 +469,7 @@ Arguments for `DescribeOrganizationConfigRulesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeOrganizationConfigRulesPaginator.paginate` returns
-`_PageIterator`\[[DescribeOrganizationConfigRulesResponseTypeDef](./type_defs.md#describeorganizationconfigrulesresponsetypedef)\].
+`AsyncIterable`\[[DescribeOrganizationConfigRulesResponseTypeDef](./type_defs.md#describeorganizationconfigrulesresponsetypedef)\].
 
 <a id="describeorganizationconformancepackstatusespaginator"></a>
 
@@ -502,7 +502,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeOrganizationConformancePackStatusesPaginator.paginate` returns
-`_PageIterator`\[[DescribeOrganizationConformancePackStatusesResponseTypeDef](./type_defs.md#describeorganizationconformancepackstatusesresponsetypedef)\].
+`AsyncIterable`\[[DescribeOrganizationConformancePackStatusesResponseTypeDef](./type_defs.md#describeorganizationconformancepackstatusesresponsetypedef)\].
 
 <a id="describeorganizationconformancepackspaginator"></a>
 
@@ -534,7 +534,7 @@ Arguments for `DescribeOrganizationConformancePacksPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeOrganizationConformancePacksPaginator.paginate` returns
-`_PageIterator`\[[DescribeOrganizationConformancePacksResponseTypeDef](./type_defs.md#describeorganizationconformancepacksresponsetypedef)\].
+`AsyncIterable`\[[DescribeOrganizationConformancePacksResponseTypeDef](./type_defs.md#describeorganizationconformancepacksresponsetypedef)\].
 
 <a id="describependingaggregationrequestspaginator"></a>
 
@@ -565,7 +565,7 @@ Arguments for `DescribePendingAggregationRequestsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribePendingAggregationRequestsPaginator.paginate` returns
-`_PageIterator`\[[DescribePendingAggregationRequestsResponseTypeDef](./type_defs.md#describependingaggregationrequestsresponsetypedef)\].
+`AsyncIterable`\[[DescribePendingAggregationRequestsResponseTypeDef](./type_defs.md#describependingaggregationrequestsresponsetypedef)\].
 
 <a id="describeremediationexecutionstatuspaginator"></a>
 
@@ -599,7 +599,7 @@ Arguments for `DescribeRemediationExecutionStatusPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeRemediationExecutionStatusPaginator.paginate` returns
-`_PageIterator`\[[DescribeRemediationExecutionStatusResponseTypeDef](./type_defs.md#describeremediationexecutionstatusresponsetypedef)\].
+`AsyncIterable`\[[DescribeRemediationExecutionStatusResponseTypeDef](./type_defs.md#describeremediationexecutionstatusresponsetypedef)\].
 
 <a id="describeretentionconfigurationspaginator"></a>
 
@@ -631,7 +631,7 @@ Arguments for `DescribeRetentionConfigurationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeRetentionConfigurationsPaginator.paginate` returns
-`_PageIterator`\[[DescribeRetentionConfigurationsResponseTypeDef](./type_defs.md#describeretentionconfigurationsresponsetypedef)\].
+`AsyncIterable`\[[DescribeRetentionConfigurationsResponseTypeDef](./type_defs.md#describeretentionconfigurationsresponsetypedef)\].
 
 <a id="getaggregatecompliancedetailsbyconfigrulepaginator"></a>
 
@@ -668,7 +668,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetAggregateComplianceDetailsByConfigRulePaginator.paginate` returns
-`_PageIterator`\[[GetAggregateComplianceDetailsByConfigRuleResponseTypeDef](./type_defs.md#getaggregatecompliancedetailsbyconfigruleresponsetypedef)\].
+`AsyncIterable`\[[GetAggregateComplianceDetailsByConfigRuleResponseTypeDef](./type_defs.md#getaggregatecompliancedetailsbyconfigruleresponsetypedef)\].
 
 <a id="getcompliancedetailsbyconfigrulepaginator"></a>
 
@@ -702,7 +702,7 @@ Arguments for `GetComplianceDetailsByConfigRulePaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetComplianceDetailsByConfigRulePaginator.paginate` returns
-`_PageIterator`\[[GetComplianceDetailsByConfigRuleResponseTypeDef](./type_defs.md#getcompliancedetailsbyconfigruleresponsetypedef)\].
+`AsyncIterable`\[[GetComplianceDetailsByConfigRuleResponseTypeDef](./type_defs.md#getcompliancedetailsbyconfigruleresponsetypedef)\].
 
 <a id="getcompliancedetailsbyresourcepaginator"></a>
 
@@ -737,7 +737,7 @@ Arguments for `GetComplianceDetailsByResourcePaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetComplianceDetailsByResourcePaginator.paginate` returns
-`_PageIterator`\[[GetComplianceDetailsByResourceResponseTypeDef](./type_defs.md#getcompliancedetailsbyresourceresponsetypedef)\].
+`AsyncIterable`\[[GetComplianceDetailsByResourceResponseTypeDef](./type_defs.md#getcompliancedetailsbyresourceresponsetypedef)\].
 
 <a id="getconformancepackcompliancesummarypaginator"></a>
 
@@ -769,7 +769,7 @@ Arguments for `GetConformancePackComplianceSummaryPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetConformancePackComplianceSummaryPaginator.paginate` returns
-`_PageIterator`\[[GetConformancePackComplianceSummaryResponseTypeDef](./type_defs.md#getconformancepackcompliancesummaryresponsetypedef)\].
+`AsyncIterable`\[[GetConformancePackComplianceSummaryResponseTypeDef](./type_defs.md#getconformancepackcompliancesummaryresponsetypedef)\].
 
 <a id="getorganizationconfigruledetailedstatuspaginator"></a>
 
@@ -804,7 +804,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetOrganizationConfigRuleDetailedStatusPaginator.paginate` returns
-`_PageIterator`\[[GetOrganizationConfigRuleDetailedStatusResponseTypeDef](./type_defs.md#getorganizationconfigruledetailedstatusresponsetypedef)\].
+`AsyncIterable`\[[GetOrganizationConfigRuleDetailedStatusResponseTypeDef](./type_defs.md#getorganizationconfigruledetailedstatusresponsetypedef)\].
 
 <a id="getorganizationconformancepackdetailedstatuspaginator"></a>
 
@@ -839,7 +839,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetOrganizationConformancePackDetailedStatusPaginator.paginate` returns
-`_PageIterator`\[[GetOrganizationConformancePackDetailedStatusResponseTypeDef](./type_defs.md#getorganizationconformancepackdetailedstatusresponsetypedef)\].
+`AsyncIterable`\[[GetOrganizationConformancePackDetailedStatusResponseTypeDef](./type_defs.md#getorganizationconformancepackdetailedstatusresponsetypedef)\].
 
 <a id="getresourceconfighistorypaginator"></a>
 
@@ -877,7 +877,7 @@ Arguments for `GetResourceConfigHistoryPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetResourceConfigHistoryPaginator.paginate` returns
-`_PageIterator`\[[GetResourceConfigHistoryResponseTypeDef](./type_defs.md#getresourceconfighistoryresponsetypedef)\].
+`AsyncIterable`\[[GetResourceConfigHistoryResponseTypeDef](./type_defs.md#getresourceconfighistoryresponsetypedef)\].
 
 <a id="listaggregatediscoveredresourcespaginator"></a>
 
@@ -912,7 +912,7 @@ Arguments for `ListAggregateDiscoveredResourcesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAggregateDiscoveredResourcesPaginator.paginate` returns
-`_PageIterator`\[[ListAggregateDiscoveredResourcesResponseTypeDef](./type_defs.md#listaggregatediscoveredresourcesresponsetypedef)\].
+`AsyncIterable`\[[ListAggregateDiscoveredResourcesResponseTypeDef](./type_defs.md#listaggregatediscoveredresourcesresponsetypedef)\].
 
 <a id="listdiscoveredresourcespaginator"></a>
 
@@ -948,7 +948,7 @@ Arguments for `ListDiscoveredResourcesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDiscoveredResourcesPaginator.paginate` returns
-`_PageIterator`\[[ListDiscoveredResourcesResponseTypeDef](./type_defs.md#listdiscoveredresourcesresponsetypedef)\].
+`AsyncIterable`\[[ListDiscoveredResourcesResponseTypeDef](./type_defs.md#listdiscoveredresourcesresponsetypedef)\].
 
 <a id="listtagsforresourcepaginator"></a>
 
@@ -980,7 +980,7 @@ Arguments for `ListTagsForResourcePaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTagsForResourcePaginator.paginate` returns
-`_PageIterator`\[[ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)\].
+`AsyncIterable`\[[ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)\].
 
 <a id="selectaggregateresourceconfigpaginator"></a>
 
@@ -1014,7 +1014,7 @@ Arguments for `SelectAggregateResourceConfigPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SelectAggregateResourceConfigPaginator.paginate` returns
-`_PageIterator`\[[SelectAggregateResourceConfigResponseTypeDef](./type_defs.md#selectaggregateresourceconfigresponsetypedef)\].
+`AsyncIterable`\[[SelectAggregateResourceConfigResponseTypeDef](./type_defs.md#selectaggregateresourceconfigresponsetypedef)\].
 
 <a id="selectresourceconfigpaginator"></a>
 
@@ -1046,4 +1046,4 @@ Arguments for `SelectResourceConfigPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SelectResourceConfigPaginator.paginate` returns
-`_PageIterator`\[[SelectResourceConfigResponseTypeDef](./type_defs.md#selectresourceconfigresponsetypedef)\].
+`AsyncIterable`\[[SelectResourceConfigResponseTypeDef](./type_defs.md#selectresourceconfigresponsetypedef)\].

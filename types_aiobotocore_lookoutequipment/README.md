@@ -9,24 +9,56 @@ Auto-generated documentation for
 type annotations stubs module
 [types-aiobotocore-lookoutequipment](https://pypi.org/project/types-aiobotocore-lookoutequipment/).
 
-```bash
-# install with types-aiobotocore
-pip install 'types-aiobotocore[lookoutequipment]'
-
-# Lite version does not provide session.create_client overloads
-# it is more RAM-friendly, but requires explicit type annotations
-python -m pip install 'types-aiobotocore-lite[lookoutequipment]'
-
-# standalone installation
-pip install types-aiobotocore-lookoutequipment
-```
-
 - [Type annotations for aiobotocore LookoutEquipment module](#type-annotations-for-aiobotocore-lookoutequipment-module)
+  - [How to install](#how-to-install)
+    - [VSCode extension](#vscode-extension)
+    - [From PyPI with pip](#from-pypi-with-pip)
+  - [How to uninstall](#how-to-uninstall)
   - [LookoutEquipmentClient](#lookoutequipmentclient)
     - [Methods](#methods)
     - [Exceptions](#exceptions)
   - [Literals](#literals)
   - [Typed dictionaries](#typed-dictionaries)
+
+<a id="how-to-install"></a>
+
+## How to install
+
+<a id="vscode-extension"></a>
+
+### VSCode extension
+
+Add
+[AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
+extension to your VSCode and run `AWS boto3: Quick Start` command.
+
+Click `Modify` and select `boto3 common` and `LookoutEquipment`.
+
+<a id="from-pypi-with-pip"></a>
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `LookoutEquipment` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[lookoutequipment]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[lookoutequipment]'
+
+# standalone installation
+python -m pip install types-aiobotocore-lookoutequipment
+```
+
+<a id="how-to-uninstall"></a>
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-lookoutequipment
+```
 
 <a id="lookoutequipmentclient"></a>
 

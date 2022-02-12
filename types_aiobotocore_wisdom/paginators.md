@@ -48,7 +48,7 @@ Arguments for `ListAssistantAssociationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAssistantAssociationsPaginator.paginate` returns
-`_PageIterator`\[[ListAssistantAssociationsResponseTypeDef](./type_defs.md#listassistantassociationsresponsetypedef)\].
+`AsyncIterable`\[[ListAssistantAssociationsResponseTypeDef](./type_defs.md#listassistantassociationsresponsetypedef)\].
 
 <a id="listassistantspaginator"></a>
 
@@ -79,7 +79,7 @@ Arguments for `ListAssistantsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAssistantsPaginator.paginate` returns
-`_PageIterator`\[[ListAssistantsResponseTypeDef](./type_defs.md#listassistantsresponsetypedef)\].
+`AsyncIterable`\[[ListAssistantsResponseTypeDef](./type_defs.md#listassistantsresponsetypedef)\].
 
 <a id="listcontentspaginator"></a>
 
@@ -111,7 +111,7 @@ Arguments for `ListContentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListContentsPaginator.paginate` returns
-`_PageIterator`\[[ListContentsResponseTypeDef](./type_defs.md#listcontentsresponsetypedef)\].
+`AsyncIterable`\[[ListContentsResponseTypeDef](./type_defs.md#listcontentsresponsetypedef)\].
 
 <a id="listknowledgebasespaginator"></a>
 
@@ -142,7 +142,7 @@ Arguments for `ListKnowledgeBasesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListKnowledgeBasesPaginator.paginate` returns
-`_PageIterator`\[[ListKnowledgeBasesResponseTypeDef](./type_defs.md#listknowledgebasesresponsetypedef)\].
+`AsyncIterable`\[[ListKnowledgeBasesResponseTypeDef](./type_defs.md#listknowledgebasesresponsetypedef)\].
 
 <a id="queryassistantpaginator"></a>
 
@@ -175,7 +175,7 @@ Arguments for `QueryAssistantPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `QueryAssistantPaginator.paginate` returns
-`_PageIterator`\[[QueryAssistantResponseTypeDef](./type_defs.md#queryassistantresponsetypedef)\].
+`AsyncIterable`\[[QueryAssistantResponseTypeDef](./type_defs.md#queryassistantresponsetypedef)\].
 
 <a id="searchcontentpaginator"></a>
 
@@ -210,7 +210,7 @@ Arguments for `SearchContentPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchContentPaginator.paginate` returns
-`_PageIterator`\[[SearchContentResponseTypeDef](./type_defs.md#searchcontentresponsetypedef)\].
+`AsyncIterable`\[[SearchContentResponseTypeDef](./type_defs.md#searchcontentresponsetypedef)\].
 
 <a id="searchsessionspaginator"></a>
 
@@ -245,4 +245,4 @@ Arguments for `SearchSessionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchSessionsPaginator.paginate` returns
-`_PageIterator`\[[SearchSessionsResponseTypeDef](./type_defs.md#searchsessionsresponsetypedef)\].
+`AsyncIterable`\[[SearchSessionsResponseTypeDef](./type_defs.md#searchsessionsresponsetypedef)\].

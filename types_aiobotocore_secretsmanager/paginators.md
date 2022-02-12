@@ -43,4 +43,4 @@ Arguments for `ListSecretsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSecretsPaginator.paginate` returns
-`_PageIterator`\[[ListSecretsResponseTypeDef](./type_defs.md#listsecretsresponsetypedef)\].
+`AsyncIterable`\[[ListSecretsResponseTypeDef](./type_defs.md#listsecretsresponsetypedef)\].

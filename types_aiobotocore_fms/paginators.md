@@ -46,7 +46,7 @@ Arguments for `ListAppsListsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAppsListsPaginator.paginate` returns
-`_PageIterator`\[[ListAppsListsResponseTypeDef](./type_defs.md#listappslistsresponsetypedef)\].
+`AsyncIterable`\[[ListAppsListsResponseTypeDef](./type_defs.md#listappslistsresponsetypedef)\].
 
 <a id="listcompliancestatuspaginator"></a>
 
@@ -78,7 +78,7 @@ Arguments for `ListComplianceStatusPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListComplianceStatusPaginator.paginate` returns
-`_PageIterator`\[[ListComplianceStatusResponseTypeDef](./type_defs.md#listcompliancestatusresponsetypedef)\].
+`AsyncIterable`\[[ListComplianceStatusResponseTypeDef](./type_defs.md#listcompliancestatusresponsetypedef)\].
 
 <a id="listmemberaccountspaginator"></a>
 
@@ -109,7 +109,7 @@ Arguments for `ListMemberAccountsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListMemberAccountsPaginator.paginate` returns
-`_PageIterator`\[[ListMemberAccountsResponseTypeDef](./type_defs.md#listmemberaccountsresponsetypedef)\].
+`AsyncIterable`\[[ListMemberAccountsResponseTypeDef](./type_defs.md#listmemberaccountsresponsetypedef)\].
 
 <a id="listpoliciespaginator"></a>
 
@@ -140,7 +140,7 @@ Arguments for `ListPoliciesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPoliciesPaginator.paginate` returns
-`_PageIterator`\[[ListPoliciesResponseTypeDef](./type_defs.md#listpoliciesresponsetypedef)\].
+`AsyncIterable`\[[ListPoliciesResponseTypeDef](./type_defs.md#listpoliciesresponsetypedef)\].
 
 <a id="listprotocolslistspaginator"></a>
 
@@ -172,4 +172,4 @@ Arguments for `ListProtocolsListsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListProtocolsListsPaginator.paginate` returns
-`_PageIterator`\[[ListProtocolsListsResponseTypeDef](./type_defs.md#listprotocolslistsresponsetypedef)\].
+`AsyncIterable`\[[ListProtocolsListsResponseTypeDef](./type_defs.md#listprotocolslistsresponsetypedef)\].

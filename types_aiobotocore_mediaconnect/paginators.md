@@ -44,7 +44,7 @@ Arguments for `ListEntitlementsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListEntitlementsPaginator.paginate` returns
-`_PageIterator`\[[ListEntitlementsResponseTypeDef](./type_defs.md#listentitlementsresponsetypedef)\].
+`AsyncIterable`\[[ListEntitlementsResponseTypeDef](./type_defs.md#listentitlementsresponsetypedef)\].
 
 <a id="listflowspaginator"></a>
 
@@ -75,7 +75,7 @@ Arguments for `ListFlowsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListFlowsPaginator.paginate` returns
-`_PageIterator`\[[ListFlowsResponseTypeDef](./type_defs.md#listflowsresponsetypedef)\].
+`AsyncIterable`\[[ListFlowsResponseTypeDef](./type_defs.md#listflowsresponsetypedef)\].
 
 <a id="listofferingspaginator"></a>
 
@@ -106,7 +106,7 @@ Arguments for `ListOfferingsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListOfferingsPaginator.paginate` returns
-`_PageIterator`\[[ListOfferingsResponseTypeDef](./type_defs.md#listofferingsresponsetypedef)\].
+`AsyncIterable`\[[ListOfferingsResponseTypeDef](./type_defs.md#listofferingsresponsetypedef)\].
 
 <a id="listreservationspaginator"></a>
 
@@ -137,4 +137,4 @@ Arguments for `ListReservationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListReservationsPaginator.paginate` returns
-`_PageIterator`\[[ListReservationsResponseTypeDef](./type_defs.md#listreservationsresponsetypedef)\].
+`AsyncIterable`\[[ListReservationsResponseTypeDef](./type_defs.md#listreservationsresponsetypedef)\].

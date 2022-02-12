@@ -47,7 +47,7 @@ Arguments for `ListContactChannelsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListContactChannelsPaginator.paginate` returns
-`_PageIterator`\[[ListContactChannelsResultTypeDef](./type_defs.md#listcontactchannelsresulttypedef)\].
+`AsyncIterable`\[[ListContactChannelsResultTypeDef](./type_defs.md#listcontactchannelsresulttypedef)\].
 
 <a id="listcontactspaginator"></a>
 
@@ -80,7 +80,7 @@ Arguments for `ListContactsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListContactsPaginator.paginate` returns
-`_PageIterator`\[[ListContactsResultTypeDef](./type_defs.md#listcontactsresulttypedef)\].
+`AsyncIterable`\[[ListContactsResultTypeDef](./type_defs.md#listcontactsresulttypedef)\].
 
 <a id="listengagementspaginator"></a>
 
@@ -113,7 +113,7 @@ Arguments for `ListEngagementsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListEngagementsPaginator.paginate` returns
-`_PageIterator`\[[ListEngagementsResultTypeDef](./type_defs.md#listengagementsresulttypedef)\].
+`AsyncIterable`\[[ListEngagementsResultTypeDef](./type_defs.md#listengagementsresulttypedef)\].
 
 <a id="listpagereceiptspaginator"></a>
 
@@ -145,7 +145,7 @@ Arguments for `ListPageReceiptsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPageReceiptsPaginator.paginate` returns
-`_PageIterator`\[[ListPageReceiptsResultTypeDef](./type_defs.md#listpagereceiptsresulttypedef)\].
+`AsyncIterable`\[[ListPageReceiptsResultTypeDef](./type_defs.md#listpagereceiptsresulttypedef)\].
 
 <a id="listpagesbycontactpaginator"></a>
 
@@ -177,7 +177,7 @@ Arguments for `ListPagesByContactPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPagesByContactPaginator.paginate` returns
-`_PageIterator`\[[ListPagesByContactResultTypeDef](./type_defs.md#listpagesbycontactresulttypedef)\].
+`AsyncIterable`\[[ListPagesByContactResultTypeDef](./type_defs.md#listpagesbycontactresulttypedef)\].
 
 <a id="listpagesbyengagementpaginator"></a>
 
@@ -209,4 +209,4 @@ Arguments for `ListPagesByEngagementPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListPagesByEngagementPaginator.paginate` returns
-`_PageIterator`\[[ListPagesByEngagementResultTypeDef](./type_defs.md#listpagesbyengagementresulttypedef)\].
+`AsyncIterable`\[[ListPagesByEngagementResultTypeDef](./type_defs.md#listpagesbyengagementresulttypedef)\].

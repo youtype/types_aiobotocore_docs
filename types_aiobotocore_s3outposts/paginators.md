@@ -41,4 +41,4 @@ Arguments for `ListEndpointsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListEndpointsPaginator.paginate` returns
-`_PageIterator`\[[ListEndpointsResultTypeDef](./type_defs.md#listendpointsresulttypedef)\].
+`AsyncIterable`\[[ListEndpointsResultTypeDef](./type_defs.md#listendpointsresulttypedef)\].

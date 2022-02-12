@@ -9,25 +9,57 @@ Auto-generated documentation for
 type annotations stubs module
 [types-aiobotocore-appmesh](https://pypi.org/project/types-aiobotocore-appmesh/).
 
-```bash
-# install with types-aiobotocore
-pip install 'types-aiobotocore[appmesh]'
-
-# Lite version does not provide session.create_client overloads
-# it is more RAM-friendly, but requires explicit type annotations
-python -m pip install 'types-aiobotocore-lite[appmesh]'
-
-# standalone installation
-pip install types-aiobotocore-appmesh
-```
-
 - [Type annotations for aiobotocore AppMesh module](#type-annotations-for-aiobotocore-appmesh-module)
+  - [How to install](#how-to-install)
+    - [VSCode extension](#vscode-extension)
+    - [From PyPI with pip](#from-pypi-with-pip)
+  - [How to uninstall](#how-to-uninstall)
   - [AppMeshClient](#appmeshclient)
     - [Methods](#methods)
     - [Exceptions](#exceptions)
   - [Paginators](#paginators)
   - [Literals](#literals)
   - [Typed dictionaries](#typed-dictionaries)
+
+<a id="how-to-install"></a>
+
+## How to install
+
+<a id="vscode-extension"></a>
+
+### VSCode extension
+
+Add
+[AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
+extension to your VSCode and run `AWS boto3: Quick Start` command.
+
+Click `Modify` and select `boto3 common` and `AppMesh`.
+
+<a id="from-pypi-with-pip"></a>
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `AppMesh` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[appmesh]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[appmesh]'
+
+# standalone installation
+python -m pip install types-aiobotocore-appmesh
+```
+
+<a id="how-to-uninstall"></a>
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-appmesh
+```
 
 <a id="appmeshclient"></a>
 

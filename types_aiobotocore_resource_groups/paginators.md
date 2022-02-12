@@ -47,7 +47,7 @@ Arguments for `ListGroupResourcesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListGroupResourcesPaginator.paginate` returns
-`_PageIterator`\[[ListGroupResourcesOutputTypeDef](./type_defs.md#listgroupresourcesoutputtypedef)\].
+`AsyncIterable`\[[ListGroupResourcesOutputTypeDef](./type_defs.md#listgroupresourcesoutputtypedef)\].
 
 <a id="listgroupspaginator"></a>
 
@@ -80,7 +80,7 @@ Arguments for `ListGroupsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListGroupsPaginator.paginate` returns
-`_PageIterator`\[[ListGroupsOutputTypeDef](./type_defs.md#listgroupsoutputtypedef)\].
+`AsyncIterable`\[[ListGroupsOutputTypeDef](./type_defs.md#listgroupsoutputtypedef)\].
 
 <a id="searchresourcespaginator"></a>
 
@@ -113,4 +113,4 @@ Arguments for `SearchResourcesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `SearchResourcesPaginator.paginate` returns
-`_PageIterator`\[[SearchResourcesOutputTypeDef](./type_defs.md#searchresourcesoutputtypedef)\].
+`AsyncIterable`\[[SearchResourcesOutputTypeDef](./type_defs.md#searchresourcesoutputtypedef)\].

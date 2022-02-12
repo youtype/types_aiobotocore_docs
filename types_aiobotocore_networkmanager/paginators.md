@@ -60,7 +60,7 @@ Arguments for `DescribeGlobalNetworksPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeGlobalNetworksPaginator.paginate` returns
-`_PageIterator`\[[DescribeGlobalNetworksResponseTypeDef](./type_defs.md#describeglobalnetworksresponsetypedef)\].
+`AsyncIterable`\[[DescribeGlobalNetworksResponseTypeDef](./type_defs.md#describeglobalnetworksresponsetypedef)\].
 
 <a id="getconnectpeerassociationspaginator"></a>
 
@@ -93,7 +93,7 @@ Arguments for `GetConnectPeerAssociationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetConnectPeerAssociationsPaginator.paginate` returns
-`_PageIterator`\[[GetConnectPeerAssociationsResponseTypeDef](./type_defs.md#getconnectpeerassociationsresponsetypedef)\].
+`AsyncIterable`\[[GetConnectPeerAssociationsResponseTypeDef](./type_defs.md#getconnectpeerassociationsresponsetypedef)\].
 
 <a id="getconnectionspaginator"></a>
 
@@ -127,7 +127,7 @@ Arguments for `GetConnectionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetConnectionsPaginator.paginate` returns
-`_PageIterator`\[[GetConnectionsResponseTypeDef](./type_defs.md#getconnectionsresponsetypedef)\].
+`AsyncIterable`\[[GetConnectionsResponseTypeDef](./type_defs.md#getconnectionsresponsetypedef)\].
 
 <a id="getcorenetworkchangesetpaginator"></a>
 
@@ -160,7 +160,7 @@ Arguments for `GetCoreNetworkChangeSetPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetCoreNetworkChangeSetPaginator.paginate` returns
-`_PageIterator`\[[GetCoreNetworkChangeSetResponseTypeDef](./type_defs.md#getcorenetworkchangesetresponsetypedef)\].
+`AsyncIterable`\[[GetCoreNetworkChangeSetResponseTypeDef](./type_defs.md#getcorenetworkchangesetresponsetypedef)\].
 
 <a id="getcustomergatewayassociationspaginator"></a>
 
@@ -193,7 +193,7 @@ Arguments for `GetCustomerGatewayAssociationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetCustomerGatewayAssociationsPaginator.paginate` returns
-`_PageIterator`\[[GetCustomerGatewayAssociationsResponseTypeDef](./type_defs.md#getcustomergatewayassociationsresponsetypedef)\].
+`AsyncIterable`\[[GetCustomerGatewayAssociationsResponseTypeDef](./type_defs.md#getcustomergatewayassociationsresponsetypedef)\].
 
 <a id="getdevicespaginator"></a>
 
@@ -227,7 +227,7 @@ Arguments for `GetDevicesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetDevicesPaginator.paginate` returns
-`_PageIterator`\[[GetDevicesResponseTypeDef](./type_defs.md#getdevicesresponsetypedef)\].
+`AsyncIterable`\[[GetDevicesResponseTypeDef](./type_defs.md#getdevicesresponsetypedef)\].
 
 <a id="getlinkassociationspaginator"></a>
 
@@ -261,7 +261,7 @@ Arguments for `GetLinkAssociationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetLinkAssociationsPaginator.paginate` returns
-`_PageIterator`\[[GetLinkAssociationsResponseTypeDef](./type_defs.md#getlinkassociationsresponsetypedef)\].
+`AsyncIterable`\[[GetLinkAssociationsResponseTypeDef](./type_defs.md#getlinkassociationsresponsetypedef)\].
 
 <a id="getlinkspaginator"></a>
 
@@ -297,7 +297,7 @@ Arguments for `GetLinksPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetLinksPaginator.paginate` returns
-`_PageIterator`\[[GetLinksResponseTypeDef](./type_defs.md#getlinksresponsetypedef)\].
+`AsyncIterable`\[[GetLinksResponseTypeDef](./type_defs.md#getlinksresponsetypedef)\].
 
 <a id="getnetworkresourcecountspaginator"></a>
 
@@ -330,7 +330,7 @@ Arguments for `GetNetworkResourceCountsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetNetworkResourceCountsPaginator.paginate` returns
-`_PageIterator`\[[GetNetworkResourceCountsResponseTypeDef](./type_defs.md#getnetworkresourcecountsresponsetypedef)\].
+`AsyncIterable`\[[GetNetworkResourceCountsResponseTypeDef](./type_defs.md#getnetworkresourcecountsresponsetypedef)\].
 
 <a id="getnetworkresourcerelationshipspaginator"></a>
 
@@ -368,7 +368,7 @@ Arguments for `GetNetworkResourceRelationshipsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetNetworkResourceRelationshipsPaginator.paginate` returns
-`_PageIterator`\[[GetNetworkResourceRelationshipsResponseTypeDef](./type_defs.md#getnetworkresourcerelationshipsresponsetypedef)\].
+`AsyncIterable`\[[GetNetworkResourceRelationshipsResponseTypeDef](./type_defs.md#getnetworkresourcerelationshipsresponsetypedef)\].
 
 <a id="getnetworkresourcespaginator"></a>
 
@@ -406,7 +406,7 @@ Arguments for `GetNetworkResourcesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetNetworkResourcesPaginator.paginate` returns
-`_PageIterator`\[[GetNetworkResourcesResponseTypeDef](./type_defs.md#getnetworkresourcesresponsetypedef)\].
+`AsyncIterable`\[[GetNetworkResourcesResponseTypeDef](./type_defs.md#getnetworkresourcesresponsetypedef)\].
 
 <a id="getnetworktelemetrypaginator"></a>
 
@@ -444,7 +444,7 @@ Arguments for `GetNetworkTelemetryPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetNetworkTelemetryPaginator.paginate` returns
-`_PageIterator`\[[GetNetworkTelemetryResponseTypeDef](./type_defs.md#getnetworktelemetryresponsetypedef)\].
+`AsyncIterable`\[[GetNetworkTelemetryResponseTypeDef](./type_defs.md#getnetworktelemetryresponsetypedef)\].
 
 <a id="getsitespaginator"></a>
 
@@ -477,7 +477,7 @@ Arguments for `GetSitesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetSitesPaginator.paginate` returns
-`_PageIterator`\[[GetSitesResponseTypeDef](./type_defs.md#getsitesresponsetypedef)\].
+`AsyncIterable`\[[GetSitesResponseTypeDef](./type_defs.md#getsitesresponsetypedef)\].
 
 <a id="gettransitgatewayconnectpeerassociationspaginator"></a>
 
@@ -511,7 +511,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetTransitGatewayConnectPeerAssociationsPaginator.paginate` returns
-`_PageIterator`\[[GetTransitGatewayConnectPeerAssociationsResponseTypeDef](./type_defs.md#gettransitgatewayconnectpeerassociationsresponsetypedef)\].
+`AsyncIterable`\[[GetTransitGatewayConnectPeerAssociationsResponseTypeDef](./type_defs.md#gettransitgatewayconnectpeerassociationsresponsetypedef)\].
 
 <a id="gettransitgatewayregistrationspaginator"></a>
 
@@ -544,7 +544,7 @@ Arguments for `GetTransitGatewayRegistrationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetTransitGatewayRegistrationsPaginator.paginate` returns
-`_PageIterator`\[[GetTransitGatewayRegistrationsResponseTypeDef](./type_defs.md#gettransitgatewayregistrationsresponsetypedef)\].
+`AsyncIterable`\[[GetTransitGatewayRegistrationsResponseTypeDef](./type_defs.md#gettransitgatewayregistrationsresponsetypedef)\].
 
 <a id="listattachmentspaginator"></a>
 
@@ -579,7 +579,7 @@ Arguments for `ListAttachmentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListAttachmentsPaginator.paginate` returns
-`_PageIterator`\[[ListAttachmentsResponseTypeDef](./type_defs.md#listattachmentsresponsetypedef)\].
+`AsyncIterable`\[[ListAttachmentsResponseTypeDef](./type_defs.md#listattachmentsresponsetypedef)\].
 
 <a id="listconnectpeerspaginator"></a>
 
@@ -612,7 +612,7 @@ Arguments for `ListConnectPeersPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListConnectPeersPaginator.paginate` returns
-`_PageIterator`\[[ListConnectPeersResponseTypeDef](./type_defs.md#listconnectpeersresponsetypedef)\].
+`AsyncIterable`\[[ListConnectPeersResponseTypeDef](./type_defs.md#listconnectpeersresponsetypedef)\].
 
 <a id="listcorenetworkpolicyversionspaginator"></a>
 
@@ -644,7 +644,7 @@ Arguments for `ListCoreNetworkPolicyVersionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListCoreNetworkPolicyVersionsPaginator.paginate` returns
-`_PageIterator`\[[ListCoreNetworkPolicyVersionsResponseTypeDef](./type_defs.md#listcorenetworkpolicyversionsresponsetypedef)\].
+`AsyncIterable`\[[ListCoreNetworkPolicyVersionsResponseTypeDef](./type_defs.md#listcorenetworkpolicyversionsresponsetypedef)\].
 
 <a id="listcorenetworkspaginator"></a>
 
@@ -675,4 +675,4 @@ Arguments for `ListCoreNetworksPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListCoreNetworksPaginator.paginate` returns
-`_PageIterator`\[[ListCoreNetworksResponseTypeDef](./type_defs.md#listcorenetworksresponsetypedef)\].
+`AsyncIterable`\[[ListCoreNetworksResponseTypeDef](./type_defs.md#listcorenetworksresponsetypedef)\].

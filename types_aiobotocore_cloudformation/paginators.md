@@ -54,7 +54,7 @@ Arguments for `DescribeAccountLimitsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeAccountLimitsPaginator.paginate` returns
-`_PageIterator`\[[DescribeAccountLimitsOutputTypeDef](./type_defs.md#describeaccountlimitsoutputtypedef)\].
+`AsyncIterable`\[[DescribeAccountLimitsOutputTypeDef](./type_defs.md#describeaccountlimitsoutputtypedef)\].
 
 <a id="describechangesetpaginator"></a>
 
@@ -87,7 +87,7 @@ Arguments for `DescribeChangeSetPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeChangeSetPaginator.paginate` returns
-`_PageIterator`\[[DescribeChangeSetOutputTypeDef](./type_defs.md#describechangesetoutputtypedef)\].
+`AsyncIterable`\[[DescribeChangeSetOutputTypeDef](./type_defs.md#describechangesetoutputtypedef)\].
 
 <a id="describestackeventspaginator"></a>
 
@@ -119,7 +119,7 @@ Arguments for `DescribeStackEventsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeStackEventsPaginator.paginate` returns
-`_PageIterator`\[[DescribeStackEventsOutputTypeDef](./type_defs.md#describestackeventsoutputtypedef)\].
+`AsyncIterable`\[[DescribeStackEventsOutputTypeDef](./type_defs.md#describestackeventsoutputtypedef)\].
 
 <a id="describestackspaginator"></a>
 
@@ -151,7 +151,7 @@ Arguments for `DescribeStacksPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeStacksPaginator.paginate` returns
-`_PageIterator`\[[DescribeStacksOutputTypeDef](./type_defs.md#describestacksoutputtypedef)\].
+`AsyncIterable`\[[DescribeStacksOutputTypeDef](./type_defs.md#describestacksoutputtypedef)\].
 
 <a id="listchangesetspaginator"></a>
 
@@ -183,7 +183,7 @@ Arguments for `ListChangeSetsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListChangeSetsPaginator.paginate` returns
-`_PageIterator`\[[ListChangeSetsOutputTypeDef](./type_defs.md#listchangesetsoutputtypedef)\].
+`AsyncIterable`\[[ListChangeSetsOutputTypeDef](./type_defs.md#listchangesetsoutputtypedef)\].
 
 <a id="listexportspaginator"></a>
 
@@ -214,7 +214,7 @@ Arguments for `ListExportsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListExportsPaginator.paginate` returns
-`_PageIterator`\[[ListExportsOutputTypeDef](./type_defs.md#listexportsoutputtypedef)\].
+`AsyncIterable`\[[ListExportsOutputTypeDef](./type_defs.md#listexportsoutputtypedef)\].
 
 <a id="listimportspaginator"></a>
 
@@ -246,7 +246,7 @@ Arguments for `ListImportsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListImportsPaginator.paginate` returns
-`_PageIterator`\[[ListImportsOutputTypeDef](./type_defs.md#listimportsoutputtypedef)\].
+`AsyncIterable`\[[ListImportsOutputTypeDef](./type_defs.md#listimportsoutputtypedef)\].
 
 <a id="liststackinstancespaginator"></a>
 
@@ -283,7 +283,7 @@ Arguments for `ListStackInstancesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListStackInstancesPaginator.paginate` returns
-`_PageIterator`\[[ListStackInstancesOutputTypeDef](./type_defs.md#liststackinstancesoutputtypedef)\].
+`AsyncIterable`\[[ListStackInstancesOutputTypeDef](./type_defs.md#liststackinstancesoutputtypedef)\].
 
 <a id="liststackresourcespaginator"></a>
 
@@ -315,7 +315,7 @@ Arguments for `ListStackResourcesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListStackResourcesPaginator.paginate` returns
-`_PageIterator`\[[ListStackResourcesOutputTypeDef](./type_defs.md#liststackresourcesoutputtypedef)\].
+`AsyncIterable`\[[ListStackResourcesOutputTypeDef](./type_defs.md#liststackresourcesoutputtypedef)\].
 
 <a id="liststacksetoperationresultspaginator"></a>
 
@@ -349,7 +349,7 @@ Arguments for `ListStackSetOperationResultsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListStackSetOperationResultsPaginator.paginate` returns
-`_PageIterator`\[[ListStackSetOperationResultsOutputTypeDef](./type_defs.md#liststacksetoperationresultsoutputtypedef)\].
+`AsyncIterable`\[[ListStackSetOperationResultsOutputTypeDef](./type_defs.md#liststacksetoperationresultsoutputtypedef)\].
 
 <a id="liststacksetoperationspaginator"></a>
 
@@ -382,7 +382,7 @@ Arguments for `ListStackSetOperationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListStackSetOperationsPaginator.paginate` returns
-`_PageIterator`\[[ListStackSetOperationsOutputTypeDef](./type_defs.md#liststacksetoperationsoutputtypedef)\].
+`AsyncIterable`\[[ListStackSetOperationsOutputTypeDef](./type_defs.md#liststacksetoperationsoutputtypedef)\].
 
 <a id="liststacksetspaginator"></a>
 
@@ -415,7 +415,7 @@ Arguments for `ListStackSetsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListStackSetsPaginator.paginate` returns
-`_PageIterator`\[[ListStackSetsOutputTypeDef](./type_defs.md#liststacksetsoutputtypedef)\].
+`AsyncIterable`\[[ListStackSetsOutputTypeDef](./type_defs.md#liststacksetsoutputtypedef)\].
 
 <a id="liststackspaginator"></a>
 
@@ -448,7 +448,7 @@ Arguments for `ListStacksPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListStacksPaginator.paginate` returns
-`_PageIterator`\[[ListStacksOutputTypeDef](./type_defs.md#liststacksoutputtypedef)\].
+`AsyncIterable`\[[ListStacksOutputTypeDef](./type_defs.md#liststacksoutputtypedef)\].
 
 <a id="listtypespaginator"></a>
 
@@ -486,4 +486,4 @@ Arguments for `ListTypesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTypesPaginator.paginate` returns
-`_PageIterator`\[[ListTypesOutputTypeDef](./type_defs.md#listtypesoutputtypedef)\].
+`AsyncIterable`\[[ListTypesOutputTypeDef](./type_defs.md#listtypesoutputtypedef)\].

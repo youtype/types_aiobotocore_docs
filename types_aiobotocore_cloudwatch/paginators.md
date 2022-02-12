@@ -51,7 +51,7 @@ Arguments for `DescribeAlarmHistoryPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeAlarmHistoryPaginator.paginate` returns
-`_PageIterator`\[[DescribeAlarmHistoryOutputTypeDef](./type_defs.md#describealarmhistoryoutputtypedef)\].
+`AsyncIterable`\[[DescribeAlarmHistoryOutputTypeDef](./type_defs.md#describealarmhistoryoutputtypedef)\].
 
 <a id="describealarmspaginator"></a>
 
@@ -89,7 +89,7 @@ Arguments for `DescribeAlarmsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeAlarmsPaginator.paginate` returns
-`_PageIterator`\[[DescribeAlarmsOutputTypeDef](./type_defs.md#describealarmsoutputtypedef)\].
+`AsyncIterable`\[[DescribeAlarmsOutputTypeDef](./type_defs.md#describealarmsoutputtypedef)\].
 
 <a id="getmetricdatapaginator"></a>
 
@@ -127,7 +127,7 @@ Arguments for `GetMetricDataPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetMetricDataPaginator.paginate` returns
-`_PageIterator`\[[GetMetricDataOutputTypeDef](./type_defs.md#getmetricdataoutputtypedef)\].
+`AsyncIterable`\[[GetMetricDataOutputTypeDef](./type_defs.md#getmetricdataoutputtypedef)\].
 
 <a id="listdashboardspaginator"></a>
 
@@ -159,7 +159,7 @@ Arguments for `ListDashboardsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDashboardsPaginator.paginate` returns
-`_PageIterator`\[[ListDashboardsOutputTypeDef](./type_defs.md#listdashboardsoutputtypedef)\].
+`AsyncIterable`\[[ListDashboardsOutputTypeDef](./type_defs.md#listdashboardsoutputtypedef)\].
 
 <a id="listmetricspaginator"></a>
 
@@ -196,4 +196,4 @@ Arguments for `ListMetricsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListMetricsPaginator.paginate` returns
-`_PageIterator`\[[ListMetricsOutputTypeDef](./type_defs.md#listmetricsoutputtypedef)\].
+`AsyncIterable`\[[ListMetricsOutputTypeDef](./type_defs.md#listmetricsoutputtypedef)\].

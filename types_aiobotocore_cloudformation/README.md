@@ -9,19 +9,12 @@ Auto-generated documentation for
 type annotations stubs module
 [types-aiobotocore-cloudformation](https://pypi.org/project/types-aiobotocore-cloudformation/).
 
-```bash
-# install with types-aiobotocore
-pip install 'types-aiobotocore[cloudformation]'
-
-# Lite version does not provide session.create_client overloads
-# it is more RAM-friendly, but requires explicit type annotations
-python -m pip install 'types-aiobotocore-lite[cloudformation]'
-
-# standalone installation
-pip install types-aiobotocore-cloudformation
-```
-
 - [Type annotations for aiobotocore CloudFormation module](#type-annotations-for-aiobotocore-cloudformation-module)
+  - [How to install](#how-to-install)
+    - [VSCode extension](#vscode-extension)
+    - [From PyPI with pip](#from-pypi-with-pip)
+    - [From conda-forge](#from-conda-forge)
+  - [How to uninstall](#how-to-uninstall)
   - [CloudFormationClient](#cloudformationclient)
     - [Methods](#methods)
     - [Exceptions](#exceptions)
@@ -32,6 +25,72 @@ pip install types-aiobotocore-cloudformation
   - [Waiters](#waiters)
   - [Literals](#literals)
   - [Typed dictionaries](#typed-dictionaries)
+
+<a id="how-to-install"></a>
+
+## How to install
+
+<a id="vscode-extension"></a>
+
+### VSCode extension
+
+Add
+[AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
+extension to your VSCode and run `AWS boto3: Quick Start` command.
+
+Click `Modify` and select `boto3 common` and `CloudFormation`.
+
+<a id="from-pypi-with-pip"></a>
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `CloudFormation` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[cloudformation]'
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[cloudformation]'
+
+# standalone installation
+python -m pip install types-aiobotocore-cloudformation
+```
+
+<a id="from-conda-forge"></a>
+
+### From conda-forge
+
+Installing `types-aiobotocore-cloudformation` from the `conda-forge` channel
+can be achieved by adding `conda-forge` to your channels with:
+
+```bash
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+```
+
+Once the `conda-forge` channel has been enabled,
+`types-aiobotocore-cloudformation` can be installed with:
+
+```bash
+conda install types-aiobotocore-cloudformation
+```
+
+It is possible to list all of the versions of
+`types-aiobotocore-cloudformation` available on your platform with:
+
+```bash
+conda search types-aiobotocore-cloudformation --channel conda-forge
+```
+
+<a id="how-to-uninstall"></a>
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-cloudformation
+```
 
 <a id="cloudformationclient"></a>
 

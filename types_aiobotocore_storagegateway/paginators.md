@@ -52,7 +52,7 @@ Arguments for `DescribeTapeArchivesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeTapeArchivesPaginator.paginate` returns
-`_PageIterator`\[[DescribeTapeArchivesOutputTypeDef](./type_defs.md#describetapearchivesoutputtypedef)\].
+`AsyncIterable`\[[DescribeTapeArchivesOutputTypeDef](./type_defs.md#describetapearchivesoutputtypedef)\].
 
 <a id="describetaperecoverypointspaginator"></a>
 
@@ -84,7 +84,7 @@ Arguments for `DescribeTapeRecoveryPointsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeTapeRecoveryPointsPaginator.paginate` returns
-`_PageIterator`\[[DescribeTapeRecoveryPointsOutputTypeDef](./type_defs.md#describetaperecoverypointsoutputtypedef)\].
+`AsyncIterable`\[[DescribeTapeRecoveryPointsOutputTypeDef](./type_defs.md#describetaperecoverypointsoutputtypedef)\].
 
 <a id="describetapespaginator"></a>
 
@@ -117,7 +117,7 @@ Arguments for `DescribeTapesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeTapesPaginator.paginate` returns
-`_PageIterator`\[[DescribeTapesOutputTypeDef](./type_defs.md#describetapesoutputtypedef)\].
+`AsyncIterable`\[[DescribeTapesOutputTypeDef](./type_defs.md#describetapesoutputtypedef)\].
 
 <a id="describevtldevicespaginator"></a>
 
@@ -150,7 +150,7 @@ Arguments for `DescribeVTLDevicesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeVTLDevicesPaginator.paginate` returns
-`_PageIterator`\[[DescribeVTLDevicesOutputTypeDef](./type_defs.md#describevtldevicesoutputtypedef)\].
+`AsyncIterable`\[[DescribeVTLDevicesOutputTypeDef](./type_defs.md#describevtldevicesoutputtypedef)\].
 
 <a id="listfilesharespaginator"></a>
 
@@ -182,7 +182,7 @@ Arguments for `ListFileSharesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListFileSharesPaginator.paginate` returns
-`_PageIterator`\[[ListFileSharesOutputTypeDef](./type_defs.md#listfilesharesoutputtypedef)\].
+`AsyncIterable`\[[ListFileSharesOutputTypeDef](./type_defs.md#listfilesharesoutputtypedef)\].
 
 <a id="listfilesystemassociationspaginator"></a>
 
@@ -214,7 +214,7 @@ Arguments for `ListFileSystemAssociationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListFileSystemAssociationsPaginator.paginate` returns
-`_PageIterator`\[[ListFileSystemAssociationsOutputTypeDef](./type_defs.md#listfilesystemassociationsoutputtypedef)\].
+`AsyncIterable`\[[ListFileSystemAssociationsOutputTypeDef](./type_defs.md#listfilesystemassociationsoutputtypedef)\].
 
 <a id="listgatewayspaginator"></a>
 
@@ -245,7 +245,7 @@ Arguments for `ListGatewaysPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListGatewaysPaginator.paginate` returns
-`_PageIterator`\[[ListGatewaysOutputTypeDef](./type_defs.md#listgatewaysoutputtypedef)\].
+`AsyncIterable`\[[ListGatewaysOutputTypeDef](./type_defs.md#listgatewaysoutputtypedef)\].
 
 <a id="listtagsforresourcepaginator"></a>
 
@@ -277,7 +277,7 @@ Arguments for `ListTagsForResourcePaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTagsForResourcePaginator.paginate` returns
-`_PageIterator`\[[ListTagsForResourceOutputTypeDef](./type_defs.md#listtagsforresourceoutputtypedef)\].
+`AsyncIterable`\[[ListTagsForResourceOutputTypeDef](./type_defs.md#listtagsforresourceoutputtypedef)\].
 
 <a id="listtapepoolspaginator"></a>
 
@@ -309,7 +309,7 @@ Arguments for `ListTapePoolsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTapePoolsPaginator.paginate` returns
-`_PageIterator`\[[ListTapePoolsOutputTypeDef](./type_defs.md#listtapepoolsoutputtypedef)\].
+`AsyncIterable`\[[ListTapePoolsOutputTypeDef](./type_defs.md#listtapepoolsoutputtypedef)\].
 
 <a id="listtapespaginator"></a>
 
@@ -341,7 +341,7 @@ Arguments for `ListTapesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListTapesPaginator.paginate` returns
-`_PageIterator`\[[ListTapesOutputTypeDef](./type_defs.md#listtapesoutputtypedef)\].
+`AsyncIterable`\[[ListTapesOutputTypeDef](./type_defs.md#listtapesoutputtypedef)\].
 
 <a id="listvolumespaginator"></a>
 
@@ -373,4 +373,4 @@ Arguments for `ListVolumesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListVolumesPaginator.paginate` returns
-`_PageIterator`\[[ListVolumesOutputTypeDef](./type_defs.md#listvolumesoutputtypedef)\].
+`AsyncIterable`\[[ListVolumesOutputTypeDef](./type_defs.md#listvolumesoutputtypedef)\].

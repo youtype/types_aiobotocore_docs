@@ -47,7 +47,7 @@ Arguments for
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeReservedElasticsearchInstanceOfferingsPaginator.paginate` returns
-`_PageIterator`\[[DescribeReservedElasticsearchInstanceOfferingsResponseTypeDef](./type_defs.md#describereservedelasticsearchinstanceofferingsresponsetypedef)\].
+`AsyncIterable`\[[DescribeReservedElasticsearchInstanceOfferingsResponseTypeDef](./type_defs.md#describereservedelasticsearchinstanceofferingsresponsetypedef)\].
 
 <a id="describereservedelasticsearchinstancespaginator"></a>
 
@@ -80,7 +80,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `DescribeReservedElasticsearchInstancesPaginator.paginate` returns
-`_PageIterator`\[[DescribeReservedElasticsearchInstancesResponseTypeDef](./type_defs.md#describereservedelasticsearchinstancesresponsetypedef)\].
+`AsyncIterable`\[[DescribeReservedElasticsearchInstancesResponseTypeDef](./type_defs.md#describereservedelasticsearchinstancesresponsetypedef)\].
 
 <a id="getupgradehistorypaginator"></a>
 
@@ -112,7 +112,7 @@ Arguments for `GetUpgradeHistoryPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `GetUpgradeHistoryPaginator.paginate` returns
-`_PageIterator`\[[GetUpgradeHistoryResponseTypeDef](./type_defs.md#getupgradehistoryresponsetypedef)\].
+`AsyncIterable`\[[GetUpgradeHistoryResponseTypeDef](./type_defs.md#getupgradehistoryresponsetypedef)\].
 
 <a id="listelasticsearchinstancetypespaginator"></a>
 
@@ -145,7 +145,7 @@ Arguments for `ListElasticsearchInstanceTypesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListElasticsearchInstanceTypesPaginator.paginate` returns
-`_PageIterator`\[[ListElasticsearchInstanceTypesResponseTypeDef](./type_defs.md#listelasticsearchinstancetypesresponsetypedef)\].
+`AsyncIterable`\[[ListElasticsearchInstanceTypesResponseTypeDef](./type_defs.md#listelasticsearchinstancetypesresponsetypedef)\].
 
 <a id="listelasticsearchversionspaginator"></a>
 
@@ -176,4 +176,4 @@ Arguments for `ListElasticsearchVersionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListElasticsearchVersionsPaginator.paginate` returns
-`_PageIterator`\[[ListElasticsearchVersionsResponseTypeDef](./type_defs.md#listelasticsearchversionsresponsetypedef)\].
+`AsyncIterable`\[[ListElasticsearchVersionsResponseTypeDef](./type_defs.md#listelasticsearchversionsresponsetypedef)\].

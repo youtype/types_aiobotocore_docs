@@ -52,7 +52,7 @@ Arguments for `ListDeploymentJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDeploymentJobsPaginator.paginate` returns
-`_PageIterator`\[[ListDeploymentJobsResponseTypeDef](./type_defs.md#listdeploymentjobsresponsetypedef)\].
+`AsyncIterable`\[[ListDeploymentJobsResponseTypeDef](./type_defs.md#listdeploymentjobsresponsetypedef)\].
 
 <a id="listfleetspaginator"></a>
 
@@ -84,7 +84,7 @@ Arguments for `ListFleetsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListFleetsPaginator.paginate` returns
-`_PageIterator`\[[ListFleetsResponseTypeDef](./type_defs.md#listfleetsresponsetypedef)\].
+`AsyncIterable`\[[ListFleetsResponseTypeDef](./type_defs.md#listfleetsresponsetypedef)\].
 
 <a id="listrobotapplicationspaginator"></a>
 
@@ -117,7 +117,7 @@ Arguments for `ListRobotApplicationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRobotApplicationsPaginator.paginate` returns
-`_PageIterator`\[[ListRobotApplicationsResponseTypeDef](./type_defs.md#listrobotapplicationsresponsetypedef)\].
+`AsyncIterable`\[[ListRobotApplicationsResponseTypeDef](./type_defs.md#listrobotapplicationsresponsetypedef)\].
 
 <a id="listrobotspaginator"></a>
 
@@ -149,7 +149,7 @@ Arguments for `ListRobotsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRobotsPaginator.paginate` returns
-`_PageIterator`\[[ListRobotsResponseTypeDef](./type_defs.md#listrobotsresponsetypedef)\].
+`AsyncIterable`\[[ListRobotsResponseTypeDef](./type_defs.md#listrobotsresponsetypedef)\].
 
 <a id="listsimulationapplicationspaginator"></a>
 
@@ -182,7 +182,7 @@ Arguments for `ListSimulationApplicationsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSimulationApplicationsPaginator.paginate` returns
-`_PageIterator`\[[ListSimulationApplicationsResponseTypeDef](./type_defs.md#listsimulationapplicationsresponsetypedef)\].
+`AsyncIterable`\[[ListSimulationApplicationsResponseTypeDef](./type_defs.md#listsimulationapplicationsresponsetypedef)\].
 
 <a id="listsimulationjobbatchespaginator"></a>
 
@@ -214,7 +214,7 @@ Arguments for `ListSimulationJobBatchesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSimulationJobBatchesPaginator.paginate` returns
-`_PageIterator`\[[ListSimulationJobBatchesResponseTypeDef](./type_defs.md#listsimulationjobbatchesresponsetypedef)\].
+`AsyncIterable`\[[ListSimulationJobBatchesResponseTypeDef](./type_defs.md#listsimulationjobbatchesresponsetypedef)\].
 
 <a id="listsimulationjobspaginator"></a>
 
@@ -246,7 +246,7 @@ Arguments for `ListSimulationJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSimulationJobsPaginator.paginate` returns
-`_PageIterator`\[[ListSimulationJobsResponseTypeDef](./type_defs.md#listsimulationjobsresponsetypedef)\].
+`AsyncIterable`\[[ListSimulationJobsResponseTypeDef](./type_defs.md#listsimulationjobsresponsetypedef)\].
 
 <a id="listworldexportjobspaginator"></a>
 
@@ -278,7 +278,7 @@ Arguments for `ListWorldExportJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListWorldExportJobsPaginator.paginate` returns
-`_PageIterator`\[[ListWorldExportJobsResponseTypeDef](./type_defs.md#listworldexportjobsresponsetypedef)\].
+`AsyncIterable`\[[ListWorldExportJobsResponseTypeDef](./type_defs.md#listworldexportjobsresponsetypedef)\].
 
 <a id="listworldgenerationjobspaginator"></a>
 
@@ -310,7 +310,7 @@ Arguments for `ListWorldGenerationJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListWorldGenerationJobsPaginator.paginate` returns
-`_PageIterator`\[[ListWorldGenerationJobsResponseTypeDef](./type_defs.md#listworldgenerationjobsresponsetypedef)\].
+`AsyncIterable`\[[ListWorldGenerationJobsResponseTypeDef](./type_defs.md#listworldgenerationjobsresponsetypedef)\].
 
 <a id="listworldtemplatespaginator"></a>
 
@@ -341,7 +341,7 @@ Arguments for `ListWorldTemplatesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListWorldTemplatesPaginator.paginate` returns
-`_PageIterator`\[[ListWorldTemplatesResponseTypeDef](./type_defs.md#listworldtemplatesresponsetypedef)\].
+`AsyncIterable`\[[ListWorldTemplatesResponseTypeDef](./type_defs.md#listworldtemplatesresponsetypedef)\].
 
 <a id="listworldspaginator"></a>
 
@@ -373,4 +373,4 @@ Arguments for `ListWorldsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListWorldsPaginator.paginate` returns
-`_PageIterator`\[[ListWorldsResponseTypeDef](./type_defs.md#listworldsresponsetypedef)\].
+`AsyncIterable`\[[ListWorldsResponseTypeDef](./type_defs.md#listworldsresponsetypedef)\].

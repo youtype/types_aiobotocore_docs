@@ -49,7 +49,7 @@ method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListClientDevicesAssociatedWithCoreDevicePaginator.paginate` returns
-`_PageIterator`\[[ListClientDevicesAssociatedWithCoreDeviceResponseTypeDef](./type_defs.md#listclientdevicesassociatedwithcoredeviceresponsetypedef)\].
+`AsyncIterable`\[[ListClientDevicesAssociatedWithCoreDeviceResponseTypeDef](./type_defs.md#listclientdevicesassociatedwithcoredeviceresponsetypedef)\].
 
 <a id="listcomponentversionspaginator"></a>
 
@@ -81,7 +81,7 @@ Arguments for `ListComponentVersionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListComponentVersionsPaginator.paginate` returns
-`_PageIterator`\[[ListComponentVersionsResponseTypeDef](./type_defs.md#listcomponentversionsresponsetypedef)\].
+`AsyncIterable`\[[ListComponentVersionsResponseTypeDef](./type_defs.md#listcomponentversionsresponsetypedef)\].
 
 <a id="listcomponentspaginator"></a>
 
@@ -114,7 +114,7 @@ Arguments for `ListComponentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListComponentsPaginator.paginate` returns
-`_PageIterator`\[[ListComponentsResponseTypeDef](./type_defs.md#listcomponentsresponsetypedef)\].
+`AsyncIterable`\[[ListComponentsResponseTypeDef](./type_defs.md#listcomponentsresponsetypedef)\].
 
 <a id="listcoredevicespaginator"></a>
 
@@ -147,7 +147,7 @@ Arguments for `ListCoreDevicesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListCoreDevicesPaginator.paginate` returns
-`_PageIterator`\[[ListCoreDevicesResponseTypeDef](./type_defs.md#listcoredevicesresponsetypedef)\].
+`AsyncIterable`\[[ListCoreDevicesResponseTypeDef](./type_defs.md#listcoredevicesresponsetypedef)\].
 
 <a id="listdeploymentspaginator"></a>
 
@@ -181,7 +181,7 @@ Arguments for `ListDeploymentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDeploymentsPaginator.paginate` returns
-`_PageIterator`\[[ListDeploymentsResponseTypeDef](./type_defs.md#listdeploymentsresponsetypedef)\].
+`AsyncIterable`\[[ListDeploymentsResponseTypeDef](./type_defs.md#listdeploymentsresponsetypedef)\].
 
 <a id="listeffectivedeploymentspaginator"></a>
 
@@ -213,7 +213,7 @@ Arguments for `ListEffectiveDeploymentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListEffectiveDeploymentsPaginator.paginate` returns
-`_PageIterator`\[[ListEffectiveDeploymentsResponseTypeDef](./type_defs.md#listeffectivedeploymentsresponsetypedef)\].
+`AsyncIterable`\[[ListEffectiveDeploymentsResponseTypeDef](./type_defs.md#listeffectivedeploymentsresponsetypedef)\].
 
 <a id="listinstalledcomponentspaginator"></a>
 
@@ -245,4 +245,4 @@ Arguments for `ListInstalledComponentsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListInstalledComponentsPaginator.paginate` returns
-`_PageIterator`\[[ListInstalledComponentsResponseTypeDef](./type_defs.md#listinstalledcomponentsresponsetypedef)\].
+`AsyncIterable`\[[ListInstalledComponentsResponseTypeDef](./type_defs.md#listinstalledcomponentsresponsetypedef)\].

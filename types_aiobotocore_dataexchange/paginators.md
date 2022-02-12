@@ -46,7 +46,7 @@ Arguments for `ListDataSetRevisionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDataSetRevisionsPaginator.paginate` returns
-`_PageIterator`\[[ListDataSetRevisionsResponseTypeDef](./type_defs.md#listdatasetrevisionsresponsetypedef)\].
+`AsyncIterable`\[[ListDataSetRevisionsResponseTypeDef](./type_defs.md#listdatasetrevisionsresponsetypedef)\].
 
 <a id="listdatasetspaginator"></a>
 
@@ -78,7 +78,7 @@ Arguments for `ListDataSetsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListDataSetsPaginator.paginate` returns
-`_PageIterator`\[[ListDataSetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef)\].
+`AsyncIterable`\[[ListDataSetsResponseTypeDef](./type_defs.md#listdatasetsresponsetypedef)\].
 
 <a id="listeventactionspaginator"></a>
 
@@ -110,7 +110,7 @@ Arguments for `ListEventActionsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListEventActionsPaginator.paginate` returns
-`_PageIterator`\[[ListEventActionsResponseTypeDef](./type_defs.md#listeventactionsresponsetypedef)\].
+`AsyncIterable`\[[ListEventActionsResponseTypeDef](./type_defs.md#listeventactionsresponsetypedef)\].
 
 <a id="listjobspaginator"></a>
 
@@ -143,7 +143,7 @@ Arguments for `ListJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListJobsPaginator.paginate` returns
-`_PageIterator`\[[ListJobsResponseTypeDef](./type_defs.md#listjobsresponsetypedef)\].
+`AsyncIterable`\[[ListJobsResponseTypeDef](./type_defs.md#listjobsresponsetypedef)\].
 
 <a id="listrevisionassetspaginator"></a>
 
@@ -176,4 +176,4 @@ Arguments for `ListRevisionAssetsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListRevisionAssetsPaginator.paginate` returns
-`_PageIterator`\[[ListRevisionAssetsResponseTypeDef](./type_defs.md#listrevisionassetsresponsetypedef)\].
+`AsyncIterable`\[[ListRevisionAssetsResponseTypeDef](./type_defs.md#listrevisionassetsresponsetypedef)\].

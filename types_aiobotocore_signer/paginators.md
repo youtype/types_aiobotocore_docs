@@ -50,7 +50,7 @@ Arguments for `ListSigningJobsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSigningJobsPaginator.paginate` returns
-`_PageIterator`\[[ListSigningJobsResponseTypeDef](./type_defs.md#listsigningjobsresponsetypedef)\].
+`AsyncIterable`\[[ListSigningJobsResponseTypeDef](./type_defs.md#listsigningjobsresponsetypedef)\].
 
 <a id="listsigningplatformspaginator"></a>
 
@@ -84,7 +84,7 @@ Arguments for `ListSigningPlatformsPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSigningPlatformsPaginator.paginate` returns
-`_PageIterator`\[[ListSigningPlatformsResponseTypeDef](./type_defs.md#listsigningplatformsresponsetypedef)\].
+`AsyncIterable`\[[ListSigningPlatformsResponseTypeDef](./type_defs.md#listsigningplatformsresponsetypedef)\].
 
 <a id="listsigningprofilespaginator"></a>
 
@@ -119,4 +119,4 @@ Arguments for `ListSigningProfilesPaginator.paginate` method:
   [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
 
 `ListSigningProfilesPaginator.paginate` returns
-`_PageIterator`\[[ListSigningProfilesResponseTypeDef](./type_defs.md#listsigningprofilesresponsetypedef)\].
+`AsyncIterable`\[[ListSigningProfilesResponseTypeDef](./type_defs.md#listsigningprofilesresponsetypedef)\].
