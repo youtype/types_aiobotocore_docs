@@ -72,10 +72,8 @@ jobs:
       - name: Build docs
         if: steps.vars.outputs.version
         run: |
-          python -m mypy_boto3_builder . --product aiobotocore-docs
           mkdir -p docs
-          cp README.md docs
-          cp -r types_aiobotocore_* docs
+          python -m mypy_boto3_builder ./docs --product aiobotocore-docs
       - name: Update marker file
         if: steps.vars.outputs.version
         env:
