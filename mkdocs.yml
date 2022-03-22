@@ -1,0 +1,8 @@
+site_name: "Type annotations for aiobotocore"
+repo_url: "https://github.com/vemel/types_aiobotocore_docs/"
+site_dir: "site"
+docs_dir: "docs"
+
+theme:
+  name: readthedocs
+  include_sidebar: true
