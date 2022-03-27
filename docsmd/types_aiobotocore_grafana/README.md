@@ -1,0 +1,176 @@
+# ManagedGrafana module
+
+> [Index](../README.md) > ManagedGrafana
+
+
+!!! note ""
+
+    Auto-generated documentation for [ManagedGrafana](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana)
+    type annotations stubs module [types-aiobotocore-grafana](https://pypi.org/project/types-aiobotocore-grafana/).
+
+## How to install
+
+### VSCode extension
+
+Add [AWS Boto3](https://marketplace.visualstudio.com/items?itemName=Boto3typed.boto3-ide)
+extension to your VSCode and run `AWS boto3: Quick Start` command.
+
+Click `Modify` and select `boto3 common` and `ManagedGrafana`.
+
+### From PyPI with pip
+
+Install `types-aiobotocore` for `ManagedGrafana` service.
+
+```bash
+# install with aiobotocore type annotations
+python -m pip install 'types-aiobotocore[grafana]'
+
+
+# Lite version does not provide session.client/resource overloads
+# it is more RAM-friendly, but requires explicit type annotations
+python -m pip install 'types-aiobotocore-lite[grafana]'
+
+
+# standalone installation
+python -m pip install types-aiobotocore-grafana
+```
+
+
+
+## How to uninstall
+
+```bash
+python -m pip uninstall -y types-aiobotocore-grafana
+```
+
+## Usage
+
+Code samples can be found in [Examples](./usage.md).
+
+## ManagedGrafanaClient
+
+Type annotations and code completion for  `#!python session.create_client("grafana")` as [ManagedGrafanaClient](./client.md)
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/grafana.html#ManagedGrafana.Client)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_grafana.client import ManagedGrafanaClient
+
+
+session = get_session()
+async with session.create_client("grafana") as client:
+    client: ManagedGrafanaClient
+```
+
+
+## Paginators
+
+Type annotations and code completion for
+[paginators](./paginators.md)
+from `#!python session.create_client("grafana").get_paginator("...")`.
+
+```python title="Usage example"
+from types_aiobotocore_grafana.paginator import ListPermissionsPaginator
+
+def get_list_permissions_paginator() -> ListPermissionsPaginator:
+    return client.get_paginator("list_permissions"))
+```
+
+- [ListPermissionsPaginator](./paginators.md#listpermissionspaginator)
+- [ListWorkspacesPaginator](./paginators.md#listworkspacespaginator)
+
+
+
+
+
+
+
+
+## Literals
+
+Type annotations for [literals](./literals.md) used in methods and schema.
+
+```python title="Usage example"
+from types_aiobotocore_grafana.literals import AccountAccessTypeType
+
+def get_value() -> AccountAccessTypeType:
+    return "CURRENT_ACCOUNT"
+```
+
+- [AccountAccessTypeType](./literals.md#accountaccesstypetype)
+- [AuthenticationProviderTypesType](./literals.md#authenticationprovidertypestype)
+- [DataSourceTypeType](./literals.md#datasourcetypetype)
+- [LicenseTypeType](./literals.md#licensetypetype)
+- [ListPermissionsPaginatorName](./literals.md#listpermissionspaginatorname)
+- [ListWorkspacesPaginatorName](./literals.md#listworkspacespaginatorname)
+- [NotificationDestinationTypeType](./literals.md#notificationdestinationtypetype)
+- [PermissionTypeType](./literals.md#permissiontypetype)
+- [RoleType](./literals.md#roletype)
+- [SamlConfigurationStatusType](./literals.md#samlconfigurationstatustype)
+- [UpdateActionType](./literals.md#updateactiontype)
+- [UserTypeType](./literals.md#usertypetype)
+- [WorkspaceStatusType](./literals.md#workspacestatustype)
+- [ManagedGrafanaServiceName](./literals.md#managedgrafanaservicename)
+- [ServiceName](./literals.md#servicename)
+- [ResourceServiceName](./literals.md#resourceservicename)
+- [PaginatorName](./literals.md#paginatorname)
+- [RegionName](./literals.md#regionname)
+
+
+
+
+## Typed dictionaries
+
+Type annotations for [typed dictionaries](./type_defs.md) used in methods and schema.
+
+```python title="Usage example"
+from types_aiobotocore_grafana.type_defs import AssertionAttributesTypeDef
+
+def get_value() -> AssertionAttributesTypeDef:
+    return {
+        "email": ...,
+    }
+```
+
+- [AssertionAttributesTypeDef](./type_defs.md#assertionattributestypedef)
+- [AssociateLicenseRequestRequestTypeDef](./type_defs.md#associatelicenserequestrequesttypedef)
+- [AssociateLicenseResponseTypeDef](./type_defs.md#associatelicenseresponsetypedef)
+- [AuthenticationDescriptionTypeDef](./type_defs.md#authenticationdescriptiontypedef)
+- [AuthenticationSummaryTypeDef](./type_defs.md#authenticationsummarytypedef)
+- [AwsSsoAuthenticationTypeDef](./type_defs.md#awsssoauthenticationtypedef)
+- [CreateWorkspaceRequestRequestTypeDef](./type_defs.md#createworkspacerequestrequesttypedef)
+- [CreateWorkspaceResponseTypeDef](./type_defs.md#createworkspaceresponsetypedef)
+- [DeleteWorkspaceRequestRequestTypeDef](./type_defs.md#deleteworkspacerequestrequesttypedef)
+- [DeleteWorkspaceResponseTypeDef](./type_defs.md#deleteworkspaceresponsetypedef)
+- [DescribeWorkspaceAuthenticationRequestRequestTypeDef](./type_defs.md#describeworkspaceauthenticationrequestrequesttypedef)
+- [DescribeWorkspaceAuthenticationResponseTypeDef](./type_defs.md#describeworkspaceauthenticationresponsetypedef)
+- [DescribeWorkspaceRequestRequestTypeDef](./type_defs.md#describeworkspacerequestrequesttypedef)
+- [DescribeWorkspaceResponseTypeDef](./type_defs.md#describeworkspaceresponsetypedef)
+- [DisassociateLicenseRequestRequestTypeDef](./type_defs.md#disassociatelicenserequestrequesttypedef)
+- [DisassociateLicenseResponseTypeDef](./type_defs.md#disassociatelicenseresponsetypedef)
+- [IdpMetadataTypeDef](./type_defs.md#idpmetadatatypedef)
+- [ListPermissionsRequestListPermissionsPaginateTypeDef](./type_defs.md#listpermissionsrequestlistpermissionspaginatetypedef)
+- [ListPermissionsRequestRequestTypeDef](./type_defs.md#listpermissionsrequestrequesttypedef)
+- [ListPermissionsResponseTypeDef](./type_defs.md#listpermissionsresponsetypedef)
+- [ListWorkspacesRequestListWorkspacesPaginateTypeDef](./type_defs.md#listworkspacesrequestlistworkspacespaginatetypedef)
+- [ListWorkspacesRequestRequestTypeDef](./type_defs.md#listworkspacesrequestrequesttypedef)
+- [ListWorkspacesResponseTypeDef](./type_defs.md#listworkspacesresponsetypedef)
+- [PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef)
+- [PermissionEntryTypeDef](./type_defs.md#permissionentrytypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [RoleValuesTypeDef](./type_defs.md#rolevaluestypedef)
+- [SamlAuthenticationTypeDef](./type_defs.md#samlauthenticationtypedef)
+- [SamlConfigurationTypeDef](./type_defs.md#samlconfigurationtypedef)
+- [UpdateErrorTypeDef](./type_defs.md#updateerrortypedef)
+- [UpdateInstructionTypeDef](./type_defs.md#updateinstructiontypedef)
+- [UpdatePermissionsRequestRequestTypeDef](./type_defs.md#updatepermissionsrequestrequesttypedef)
+- [UpdatePermissionsResponseTypeDef](./type_defs.md#updatepermissionsresponsetypedef)
+- [UpdateWorkspaceAuthenticationRequestRequestTypeDef](./type_defs.md#updateworkspaceauthenticationrequestrequesttypedef)
+- [UpdateWorkspaceAuthenticationResponseTypeDef](./type_defs.md#updateworkspaceauthenticationresponsetypedef)
+- [UpdateWorkspaceRequestRequestTypeDef](./type_defs.md#updateworkspacerequestrequesttypedef)
+- [UpdateWorkspaceResponseTypeDef](./type_defs.md#updateworkspaceresponsetypedef)
+- [UserTypeDef](./type_defs.md#usertypedef)
+- [WorkspaceDescriptionTypeDef](./type_defs.md#workspacedescriptiontypedef)
+- [WorkspaceSummaryTypeDef](./type_defs.md#workspacesummarytypedef)
+
