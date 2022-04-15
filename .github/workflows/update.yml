@@ -17,12 +17,10 @@ jobs:
       PIP_USER: 1
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v3
       - name: Extract versions
         id: vars
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         with:
           script: |
             const fs = require('fs')
@@ -43,13 +41,13 @@ jobs:
             core.setOutput('aiobotocore-version', aioBotocoreVersion)
       - name: Set up Python
         if: steps.vars.outputs.version
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: "3.10"
       - name: Get aiobotocore download links
         id: links
         if: steps.vars.outputs.version
-        uses: actions/github-script@v4
+        uses: actions/github-script@v6
         env:
           AIOBOTOCORE_VERSION: ${{ steps.vars.outputs.aiobotocore-version }}
         with:
