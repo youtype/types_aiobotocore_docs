@@ -35,6 +35,7 @@ def get_value() -> ApplicationInstanceStatusType:
 ```python title="Definition"
 ApplicationInstanceStatusType = Literal[
     "DEPLOYMENT_ERROR",
+    "DEPLOYMENT_FAILED",
     "DEPLOYMENT_IN_PROGRESS",
     "DEPLOYMENT_PENDING",
     "DEPLOYMENT_REQUESTED",
@@ -59,6 +60,21 @@ def get_value() -> ConnectionTypeType:
 ConnectionTypeType = Literal[
     "DHCP",
     "STATIC_IP",
+]
+```
+## DeviceBrandType
+
+```python title="Usage Example"
+from types_aiobotocore_panorama.literals import DeviceBrandType
+
+def get_value() -> DeviceBrandType:
+    return "AWS_PANORAMA"
+```
+
+```python title="Definition"
+DeviceBrandType = Literal[
+    "AWS_PANORAMA",
+    "LENOVO",
 ]
 ```
 ## DeviceConnectionStatusType
@@ -284,6 +300,7 @@ def get_value() -> StatusFilterType:
 ```python title="Definition"
 StatusFilterType = Literal[
     "DEPLOYMENT_ERROR",
+    "DEPLOYMENT_FAILED",
     "DEPLOYMENT_SUCCEEDED",
     "PROCESSING_DEPLOYMENT",
     "PROCESSING_REMOVAL",
@@ -386,6 +403,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -501,6 +519,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -569,6 +588,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

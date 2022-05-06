@@ -128,6 +128,26 @@ ConnectionStateType = Literal[
     "UPDATING",
 ]
 ```
+## EndpointStateType
+
+```python title="Usage Example"
+from types_aiobotocore_events.literals import EndpointStateType
+
+def get_value() -> EndpointStateType:
+    return "ACTIVE"
+```
+
+```python title="Definition"
+EndpointStateType = Literal[
+    "ACTIVE",
+    "CREATE_FAILED",
+    "CREATING",
+    "DELETE_FAILED",
+    "DELETING",
+    "UPDATE_FAILED",
+    "UPDATING",
+]
+```
 ## EventSourceStateType
 
 ```python title="Usage Example"
@@ -266,6 +286,21 @@ ReplayStateType = Literal[
     "STARTING",
 ]
 ```
+## ReplicationStateType
+
+```python title="Usage Example"
+from types_aiobotocore_events.literals import ReplicationStateType
+
+def get_value() -> ReplicationStateType:
+    return "DISABLED"
+```
+
+```python title="Definition"
+ReplicationStateType = Literal[
+    "DISABLED",
+    "ENABLED",
+]
+```
 ## RuleStateType
 
 ```python title="Usage Example"
@@ -342,6 +377,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -457,6 +493,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -525,6 +562,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

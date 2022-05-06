@@ -44,14 +44,14 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("kinesis-video-archived-media") as client:  # (1)
-        paginator = client.get_paginator("list_fragments")  # (2)
+        paginator = client.get_paginator("get_images")  # (2)
         async for item in paginator.paginate(...):
             print(item)  # (3)
     ```
 
     1. client: [KinesisVideoArchivedMediaClient](./client.md)
-    2. paginator: [ListFragmentsPaginator](./paginators.md#listfragmentspaginator)
-    3. item: [:material-code-braces: ListFragmentsOutputTypeDef](./type_defs.md#listfragmentsoutputtypedef) 
+    2. paginator: [GetImagesPaginator](./paginators.md#getimagespaginator)
+    3. item: [:material-code-braces: GetImagesOutputTypeDef](./type_defs.md#getimagesoutputtypedef) 
 
 
 
@@ -92,17 +92,17 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_kinesis_video_archived_media.client import KinesisVideoArchivedMediaClient
-    from types_aiobotocore_kinesis_video_archived_media.paginator import ListFragmentsPaginator
-    from types_aiobotocore_kinesis_video_archived_media.type_defs import ListFragmentsOutputTypeDef
+    from types_aiobotocore_kinesis_video_archived_media.paginator import GetImagesPaginator
+    from types_aiobotocore_kinesis_video_archived_media.type_defs import GetImagesOutputTypeDef
 
 
     session = get_session()
 
     async with session.create_client("kinesis-video-archived-media") as client:
         client: KinesisVideoArchivedMediaClient
-        paginator: ListFragmentsPaginator = client.get_paginator("list_fragments")
+        paginator: GetImagesPaginator = client.get_paginator("get_images")
         async for item in paginator.paginate(...):
-            item: ListFragmentsOutputTypeDef
+            item: GetImagesOutputTypeDef
             print(item)
     ```
 

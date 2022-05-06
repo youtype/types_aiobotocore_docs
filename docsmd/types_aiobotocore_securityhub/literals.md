@@ -22,6 +22,21 @@ AdminStatusType = Literal[
     "ENABLED",
 ]
 ```
+## AutoEnableStandardsType
+
+```python title="Usage Example"
+from types_aiobotocore_securityhub.literals import AutoEnableStandardsType
+
+def get_value() -> AutoEnableStandardsType:
+    return "DEFAULT"
+```
+
+```python title="Definition"
+AutoEnableStandardsType = Literal[
+    "DEFAULT",
+    "NONE",
+]
+```
 ## AwsIamAccessKeyStatusType
 
 ```python title="Usage Example"
@@ -643,6 +658,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -758,6 +774,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -826,6 +843,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

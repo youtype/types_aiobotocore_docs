@@ -864,6 +864,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -979,6 +980,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1047,6 +1049,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -1208,11 +1211,12 @@ WaiterName = Literal[
 from types_aiobotocore_nimble.literals import RegionName
 
 def get_value() -> RegionName:
-    return "ap-southeast-2"
+    return "ap-northeast-1"
 ```
 
 ```python title="Definition"
 RegionName = Literal[
+    "ap-northeast-1",
     "ap-southeast-2",
     "ca-central-1",
     "eu-west-2",

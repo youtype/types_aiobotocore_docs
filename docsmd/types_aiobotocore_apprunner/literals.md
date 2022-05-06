@@ -135,6 +135,21 @@ ImageRepositoryTypeType = Literal[
     "ECR_PUBLIC",
 ]
 ```
+## ObservabilityConfigurationStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_apprunner.literals import ObservabilityConfigurationStatusType
+
+def get_value() -> ObservabilityConfigurationStatusType:
+    return "ACTIVE"
+```
+
+```python title="Definition"
+ObservabilityConfigurationStatusType = Literal[
+    "ACTIVE",
+    "INACTIVE",
+]
+```
 ## OperationStatusType
 
 ```python title="Usage Example"
@@ -238,6 +253,20 @@ SourceCodeVersionTypeType = Literal[
     "BRANCH",
 ]
 ```
+## TracingVendorType
+
+```python title="Usage Example"
+from types_aiobotocore_apprunner.literals import TracingVendorType
+
+def get_value() -> TracingVendorType:
+    return "AWSXRAY"
+```
+
+```python title="Definition"
+TracingVendorType = Literal[
+    "AWSXRAY",
+]
+```
 ## VpcConnectorStatusType
 
 ```python title="Usage Example"
@@ -314,6 +343,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -429,6 +459,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -497,6 +528,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

@@ -501,7 +501,7 @@ parent.delete_assessment_framework_share(**kwargs)
 
 ### delete\_assessment\_report
 
-Deletes an assessment report from an assessment in Audit Manager.
+Deletes an assessment report in Audit Manager.
 
 Type annotations and code completion for `#!python session.create_client("auditmanager").delete_assessment_report` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.delete_assessment_report)
@@ -575,8 +575,8 @@ await def deregister_account(
 
 ### deregister\_organization\_admin\_account
 
-Removes the specified member Amazon Web Services account as a delegated
-administrator for Audit Manager.
+Removes the specified Amazon Web Services account as a delegated administrator
+for Audit Manager.
 
 Type annotations and code completion for `#!python session.create_client("auditmanager").deregister_organization_admin_account` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.deregister_organization_admin_account)

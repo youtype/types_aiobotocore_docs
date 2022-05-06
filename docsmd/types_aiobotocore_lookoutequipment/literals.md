@@ -106,6 +106,37 @@ ModelStatusType = Literal[
     "SUCCESS",
 ]
 ```
+## MonotonicityType
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.literals import MonotonicityType
+
+def get_value() -> MonotonicityType:
+    return "DECREASING"
+```
+
+```python title="Definition"
+MonotonicityType = Literal[
+    "DECREASING",
+    "INCREASING",
+    "STATIC",
+]
+```
+## StatisticalIssueStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutequipment.literals import StatisticalIssueStatusType
+
+def get_value() -> StatisticalIssueStatusType:
+    return "NO_ISSUE_DETECTED"
+```
+
+```python title="Definition"
+StatisticalIssueStatusType = Literal[
+    "NO_ISSUE_DETECTED",
+    "POTENTIAL_ISSUE_DETECTED",
+]
+```
 ## TargetSamplingRateType
 
 ```python title="Usage Example"
@@ -191,6 +222,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -306,6 +338,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -374,6 +407,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

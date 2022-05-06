@@ -65,6 +65,27 @@ class AccessRulesTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: AccessTypeType](./literals.md#accesstypetype) 
+## AccountLevelBpaSyncTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lightsail.type_defs import AccountLevelBpaSyncTypeDef
+
+def get_value() -> AccountLevelBpaSyncTypeDef:
+    return {
+        "status": ...,
+    }
+```
+
+```python title="Definition"
+class AccountLevelBpaSyncTypeDef(TypedDict):
+    status: NotRequired[AccountLevelBpaSyncStatusType],  # (1)
+    lastSyncedAt: NotRequired[datetime],
+    message: NotRequired[BPAStatusMessageType],  # (2)
+    bpaImpactsLightsail: NotRequired[bool],
+```
+
+1. See [:material-code-brackets: AccountLevelBpaSyncStatusType](./literals.md#accountlevelbpasyncstatustype) 
+2. See [:material-code-brackets: BPAStatusMessageType](./literals.md#bpastatusmessagetype) 
 ## AddOnRequestTypeDef
 
 ```python title="Usage Example"
@@ -1936,6 +1957,7 @@ class CreateLoadBalancerRequestRequestTypeDef(TypedDict):
     certificateAlternativeNames: NotRequired[Sequence[str]],
     tags: NotRequired[Sequence[TagTypeDef]],  # (1)
     ipAddressType: NotRequired[IpAddressTypeType],  # (2)
+    tlsPolicyName: NotRequired[str],
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
@@ -3802,6 +3824,7 @@ def get_value() -> GetBucketsResultTypeDef:
     return {
         "buckets": ...,
         "nextPageToken": ...,
+        "accountLevelBpaSync": ...,
         "ResponseMetadata": ...,
     }
 ```
@@ -3810,11 +3833,13 @@ def get_value() -> GetBucketsResultTypeDef:
 class GetBucketsResultTypeDef(TypedDict):
     buckets: List[BucketTypeDef],  # (1)
     nextPageToken: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+    accountLevelBpaSync: AccountLevelBpaSyncTypeDef,  # (2)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
 ```
 
 1. See [:material-code-braces: BucketTypeDef](./type_defs.md#buckettypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+2. See [:material-code-braces: AccountLevelBpaSyncTypeDef](./type_defs.md#accountlevelbpasynctypedef) 
+3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## GetBundlesRequestGetBundlesPaginateTypeDef
 
 ```python title="Usage Example"
@@ -5267,6 +5292,44 @@ class GetLoadBalancerTlsCertificatesResultTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: LoadBalancerTlsCertificateTypeDef](./type_defs.md#loadbalancertlscertificatetypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## GetLoadBalancerTlsPoliciesRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lightsail.type_defs import GetLoadBalancerTlsPoliciesRequestRequestTypeDef
+
+def get_value() -> GetLoadBalancerTlsPoliciesRequestRequestTypeDef:
+    return {
+        "pageToken": ...,
+    }
+```
+
+```python title="Definition"
+class GetLoadBalancerTlsPoliciesRequestRequestTypeDef(TypedDict):
+    pageToken: NotRequired[str],
+```
+
+## GetLoadBalancerTlsPoliciesResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lightsail.type_defs import GetLoadBalancerTlsPoliciesResultTypeDef
+
+def get_value() -> GetLoadBalancerTlsPoliciesResultTypeDef:
+    return {
+        "tlsPolicies": ...,
+        "nextPageToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class GetLoadBalancerTlsPoliciesResultTypeDef(TypedDict):
+    tlsPolicies: List[LoadBalancerTlsPolicyTypeDef],  # (1)
+    nextPageToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: LoadBalancerTlsPolicyTypeDef](./type_defs.md#loadbalancertlspolicytypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## GetLoadBalancersRequestGetLoadBalancersPaginateTypeDef
 
@@ -6753,6 +6816,26 @@ class LoadBalancerTlsCertificateTypeDef(TypedDict):
 6. See [:material-code-brackets: LoadBalancerTlsCertificateFailureReasonType](./literals.md#loadbalancertlscertificatefailurereasontype) 
 7. See [:material-code-braces: LoadBalancerTlsCertificateRenewalSummaryTypeDef](./type_defs.md#loadbalancertlscertificaterenewalsummarytypedef) 
 8. See [:material-code-brackets: LoadBalancerTlsCertificateRevocationReasonType](./literals.md#loadbalancertlscertificaterevocationreasontype) 
+## LoadBalancerTlsPolicyTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_lightsail.type_defs import LoadBalancerTlsPolicyTypeDef
+
+def get_value() -> LoadBalancerTlsPolicyTypeDef:
+    return {
+        "name": ...,
+    }
+```
+
+```python title="Definition"
+class LoadBalancerTlsPolicyTypeDef(TypedDict):
+    name: NotRequired[str],
+    isDefault: NotRequired[bool],
+    description: NotRequired[str],
+    protocols: NotRequired[List[str]],
+    ciphers: NotRequired[List[str]],
+```
+
 ## LoadBalancerTypeDef
 
 ```python title="Usage Example"
@@ -6783,6 +6866,8 @@ class LoadBalancerTypeDef(TypedDict):
     tlsCertificateSummaries: NotRequired[List[LoadBalancerTlsCertificateSummaryTypeDef]],  # (7)
     configurationOptions: NotRequired[Dict[LoadBalancerAttributeNameType, str]],  # (8)
     ipAddressType: NotRequired[IpAddressTypeType],  # (9)
+    httpsRedirectionEnabled: NotRequired[bool],
+    tlsPolicyName: NotRequired[str],
 ```
 
 1. See [:material-code-braces: ResourceLocationTypeDef](./type_defs.md#resourcelocationtypedef) 

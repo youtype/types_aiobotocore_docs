@@ -35,6 +35,24 @@ type checking and code completion should work out of the box.
 
 
 
+=== "Paginators"
+
+    ```python title="Paginator usage example"
+    from aiobotocore.session import get_session
+
+
+    session = get_session()
+
+    async with session.create_client("route53-recovery-cluster") as client:  # (1)
+        paginator = client.get_paginator("list_routing_controls")  # (2)
+        async for item in paginator.paginate(...):
+            print(item)  # (3)
+    ```
+
+    1. client: [Route53RecoveryClusterClient](./client.md)
+    2. paginator: [ListRoutingControlsPaginator](./paginators.md#listroutingcontrolspaginator)
+    3. item: [:material-code-braces: ListRoutingControlsResponseTypeDef](./type_defs.md#listroutingcontrolsresponsetypedef) 
+
 
 
 
@@ -67,5 +85,25 @@ However, these type annotations can be helpful in your functions and methods.
     ```
 
 
+
+=== "Paginators"
+
+    ```python title="Paginator usage example"
+    from aiobotocore.session import get_session
+
+    from types_aiobotocore_route53_recovery_cluster.client import Route53RecoveryClusterClient
+    from types_aiobotocore_route53_recovery_cluster.paginator import ListRoutingControlsPaginator
+    from types_aiobotocore_route53_recovery_cluster.type_defs import ListRoutingControlsResponseTypeDef
+
+
+    session = get_session()
+
+    async with session.create_client("route53-recovery-cluster") as client:
+        client: Route53RecoveryClusterClient
+        paginator: ListRoutingControlsPaginator = client.get_paginator("list_routing_controls")
+        async for item in paginator.paginate(...):
+            item: ListRoutingControlsResponseTypeDef
+            print(item)
+    ```
 
 

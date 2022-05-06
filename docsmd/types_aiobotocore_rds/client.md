@@ -38,9 +38,7 @@ async with session.create_client("rds") as client:
         client.BackupPolicyNotFoundFault,
         client.CertificateNotFoundFault,
         client.ClientError,
-        client.CustomAvailabilityZoneAlreadyExistsFault,
         client.CustomAvailabilityZoneNotFoundFault,
-        client.CustomAvailabilityZoneQuotaExceededFault,
         client.CustomDBEngineVersionAlreadyExistsFault,
         client.CustomDBEngineVersionNotFoundFault,
         client.CustomDBEngineVersionQuotaExceededFault,
@@ -99,8 +97,6 @@ async with session.create_client("rds") as client:
         client.GlobalClusterQuotaExceededFault,
         client.IamRoleMissingPermissionsFault,
         client.IamRoleNotFoundFault,
-        client.InstallationMediaAlreadyExistsFault,
-        client.InstallationMediaNotFoundFault,
         client.InstanceQuotaExceededFault,
         client.InsufficientAvailableIPsInSubnetFault,
         client.InsufficientDBClusterCapacityFault,
@@ -132,6 +128,7 @@ async with session.create_client("rds") as client:
         client.InvalidSubnet,
         client.InvalidVPCNetworkStateFault,
         client.KMSKeyNotAccessibleFault,
+        client.NetworkTypeNotSupported,
         client.OptionGroupAlreadyExistsFault,
         client.OptionGroupNotFoundFault,
         client.OptionGroupQuotaExceededFault,
@@ -621,38 +618,6 @@ parent.copy_option_group(**kwargs)
 
 1. See [:material-code-braces: CopyOptionGroupMessageRequestTypeDef](./type_defs.md#copyoptiongroupmessagerequesttypedef) 
 
-### create\_custom\_availability\_zone
-
-Creates a custom Availability Zone (AZ).
-
-Type annotations and code completion for `#!python session.create_client("rds").create_custom_availability_zone` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.create_custom_availability_zone)
-
-```python title="Method definition"
-await def create_custom_availability_zone(
-    self,
-    *,
-    CustomAvailabilityZoneName: str,
-    ExistingVpnId: str = ...,
-    NewVpnTunnelName: str = ...,
-    VpnTunnelOriginatorIP: str = ...,
-) -> CreateCustomAvailabilityZoneResultTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: CreateCustomAvailabilityZoneResultTypeDef](./type_defs.md#createcustomavailabilityzoneresulttypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: CreateCustomAvailabilityZoneMessageRequestTypeDef = {  # (1)
-    "CustomAvailabilityZoneName": ...,
-}
-
-parent.create_custom_availability_zone(**kwargs)
-```
-
-1. See [:material-code-braces: CreateCustomAvailabilityZoneMessageRequestTypeDef](./type_defs.md#createcustomavailabilityzonemessagerequesttypedef) 
-
 ### create\_custom\_db\_engine\_version
 
 Creates a custom DB engine version (CEV).
@@ -749,14 +714,16 @@ await def create_db_cluster(
     EnablePerformanceInsights: bool = ...,
     PerformanceInsightsKMSKeyId: str = ...,
     PerformanceInsightsRetentionPeriod: int = ...,
+    ServerlessV2ScalingConfiguration: ServerlessV2ScalingConfigurationTypeDef = ...,  # (3)
     SourceRegion: str = ...,
-) -> CreateDBClusterResultTypeDef:  # (3)
+) -> CreateDBClusterResultTypeDef:  # (4)
     ...
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 2. See [:material-code-braces: ScalingConfigurationTypeDef](./type_defs.md#scalingconfigurationtypedef) 
-3. See [:material-code-braces: CreateDBClusterResultTypeDef](./type_defs.md#createdbclusterresulttypedef) 
+3. See [:material-code-braces: ServerlessV2ScalingConfigurationTypeDef](./type_defs.md#serverlessv2scalingconfigurationtypedef) 
+4. See [:material-code-braces: CreateDBClusterResultTypeDef](./type_defs.md#createdbclusterresulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -937,6 +904,7 @@ await def create_db_instance(
     EnableCustomerOwnedIp: bool = ...,
     CustomIamInstanceProfile: str = ...,
     BackupTarget: str = ...,
+    NetworkType: str = ...,
 ) -> CreateDBInstanceResultTypeDef:  # (3)
     ...
 ```
@@ -1003,6 +971,7 @@ await def create_db_instance_read_replica(
     ReplicaMode: ReplicaModeType = ...,  # (3)
     MaxAllocatedStorage: int = ...,
     CustomIamInstanceProfile: str = ...,
+    NetworkType: str = ...,
     SourceRegion: str = ...,
 ) -> CreateDBInstanceReadReplicaResultTypeDef:  # (4)
     ...
@@ -1353,35 +1322,6 @@ parent.create_option_group(**kwargs)
 ```
 
 1. See [:material-code-braces: CreateOptionGroupMessageRequestTypeDef](./type_defs.md#createoptiongroupmessagerequesttypedef) 
-
-### delete\_custom\_availability\_zone
-
-Deletes a custom Availability Zone (AZ).
-
-Type annotations and code completion for `#!python session.create_client("rds").delete_custom_availability_zone` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_custom_availability_zone)
-
-```python title="Method definition"
-await def delete_custom_availability_zone(
-    self,
-    *,
-    CustomAvailabilityZoneId: str,
-) -> DeleteCustomAvailabilityZoneResultTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: DeleteCustomAvailabilityZoneResultTypeDef](./type_defs.md#deletecustomavailabilityzoneresulttypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DeleteCustomAvailabilityZoneMessageRequestTypeDef = {  # (1)
-    "CustomAvailabilityZoneId": ...,
-}
-
-parent.delete_custom_availability_zone(**kwargs)
-```
-
-1. See [:material-code-braces: DeleteCustomAvailabilityZoneMessageRequestTypeDef](./type_defs.md#deletecustomavailabilityzonemessagerequesttypedef) 
 
 ### delete\_custom\_db\_engine\_version
 
@@ -1823,36 +1763,6 @@ parent.delete_global_cluster(**kwargs)
 
 1. See [:material-code-braces: DeleteGlobalClusterMessageRequestTypeDef](./type_defs.md#deleteglobalclustermessagerequesttypedef) 
 
-### delete\_installation\_media
-
-Deletes the installation medium for a DB engine that requires an on-premises
-customer provided license, such as Microsoft SQL Server.
-
-Type annotations and code completion for `#!python session.create_client("rds").delete_installation_media` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.delete_installation_media)
-
-```python title="Method definition"
-await def delete_installation_media(
-    self,
-    *,
-    InstallationMediaId: str,
-) -> InstallationMediaResponseMetadataTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: InstallationMediaResponseMetadataTypeDef](./type_defs.md#installationmediaresponsemetadatatypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DeleteInstallationMediaMessageRequestTypeDef = {  # (1)
-    "InstallationMediaId": ...,
-}
-
-parent.delete_installation_media(**kwargs)
-```
-
-1. See [:material-code-braces: DeleteInstallationMediaMessageRequestTypeDef](./type_defs.md#deleteinstallationmediamessagerequesttypedef) 
-
 ### delete\_option\_group
 
 Deletes an existing option group.
@@ -1962,39 +1872,6 @@ parent.describe_certificates(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeCertificatesMessageRequestTypeDef](./type_defs.md#describecertificatesmessagerequesttypedef) 
-
-### describe\_custom\_availability\_zones
-
-Returns information about custom Availability Zones (AZs).
-
-Type annotations and code completion for `#!python session.create_client("rds").describe_custom_availability_zones` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_custom_availability_zones)
-
-```python title="Method definition"
-await def describe_custom_availability_zones(
-    self,
-    *,
-    CustomAvailabilityZoneId: str = ...,
-    Filters: Sequence[FilterTypeDef] = ...,  # (1)
-    MaxRecords: int = ...,
-    Marker: str = ...,
-) -> CustomAvailabilityZoneMessageTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
-2. See [:material-code-braces: CustomAvailabilityZoneMessageTypeDef](./type_defs.md#customavailabilityzonemessagetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DescribeCustomAvailabilityZonesMessageRequestTypeDef = {  # (1)
-    "CustomAvailabilityZoneId": ...,
-}
-
-parent.describe_custom_availability_zones(**kwargs)
-```
-
-1. See [:material-code-braces: DescribeCustomAvailabilityZonesMessageRequestTypeDef](./type_defs.md#describecustomavailabilityzonesmessagerequesttypedef) 
 
 ### describe\_db\_cluster\_backtracks
 
@@ -2952,40 +2829,6 @@ parent.describe_global_clusters(**kwargs)
 
 1. See [:material-code-braces: DescribeGlobalClustersMessageRequestTypeDef](./type_defs.md#describeglobalclustersmessagerequesttypedef) 
 
-### describe\_installation\_media
-
-Describes the available installation media for a DB engine that requires an on-
-premises customer provided license, such as Microsoft SQL Server.
-
-Type annotations and code completion for `#!python session.create_client("rds").describe_installation_media` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.describe_installation_media)
-
-```python title="Method definition"
-await def describe_installation_media(
-    self,
-    *,
-    InstallationMediaId: str = ...,
-    Filters: Sequence[FilterTypeDef] = ...,  # (1)
-    MaxRecords: int = ...,
-    Marker: str = ...,
-) -> InstallationMediaMessageTypeDef:  # (2)
-    ...
-```
-
-1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
-2. See [:material-code-braces: InstallationMediaMessageTypeDef](./type_defs.md#installationmediamessagetypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: DescribeInstallationMediaMessageRequestTypeDef = {  # (1)
-    "InstallationMediaId": ...,
-}
-
-parent.describe_installation_media(**kwargs)
-```
-
-1. See [:material-code-braces: DescribeInstallationMediaMessageRequestTypeDef](./type_defs.md#describeinstallationmediamessagerequesttypedef) 
-
 ### describe\_option\_group\_options
 
 Describes all available options.
@@ -3417,44 +3260,6 @@ await def generate_presigned_url(
 ```
 
 
-### import\_installation\_media
-
-Imports the installation media for a DB engine that requires an on-premises
-customer provided license, such as SQL Server.
-
-Type annotations and code completion for `#!python session.create_client("rds").import_installation_media` method.
-[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.import_installation_media)
-
-```python title="Method definition"
-await def import_installation_media(
-    self,
-    *,
-    CustomAvailabilityZoneId: str,
-    Engine: str,
-    EngineVersion: str,
-    EngineInstallationMediaPath: str,
-    OSInstallationMediaPath: str,
-) -> InstallationMediaResponseMetadataTypeDef:  # (1)
-    ...
-```
-
-1. See [:material-code-braces: InstallationMediaResponseMetadataTypeDef](./type_defs.md#installationmediaresponsemetadatatypedef) 
-
-
-```python title="Usage example with kwargs"
-kwargs: ImportInstallationMediaMessageRequestTypeDef = {  # (1)
-    "CustomAvailabilityZoneId": ...,
-    "Engine": ...,
-    "EngineVersion": ...,
-    "EngineInstallationMediaPath": ...,
-    "OSInstallationMediaPath": ...,
-}
-
-parent.import_installation_media(**kwargs)
-```
-
-1. See [:material-code-braces: ImportInstallationMediaMessageRequestTypeDef](./type_defs.md#importinstallationmediamessagerequesttypedef) 
-
 ### list\_tags\_for\_resource
 
 Lists all tags on an Amazon RDS resource.
@@ -3489,8 +3294,8 @@ parent.list_tags_for_resource(**kwargs)
 ### modify\_certificates
 
 Override the system-default Secure Sockets Layer/Transport Layer Security
-(SSL/TLS) certificate for Amazon RDS for new DB instances temporarily, or remove
-the override.
+(SSL/TLS) certificate for Amazon RDS for new DB instances, or remove the
+override.
 
 Type annotations and code completion for `#!python session.create_client("rds").modify_certificates` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html#RDS.Client.modify_certificates)
@@ -3629,13 +3434,15 @@ await def modify_db_cluster(
     EnablePerformanceInsights: bool = ...,
     PerformanceInsightsKMSKeyId: str = ...,
     PerformanceInsightsRetentionPeriod: int = ...,
-) -> ModifyDBClusterResultTypeDef:  # (3)
+    ServerlessV2ScalingConfiguration: ServerlessV2ScalingConfigurationTypeDef = ...,  # (3)
+) -> ModifyDBClusterResultTypeDef:  # (4)
     ...
 ```
 
 1. See [:material-code-braces: CloudwatchLogsExportConfigurationTypeDef](./type_defs.md#cloudwatchlogsexportconfigurationtypedef) 
 2. See [:material-code-braces: ScalingConfigurationTypeDef](./type_defs.md#scalingconfigurationtypedef) 
-3. See [:material-code-braces: ModifyDBClusterResultTypeDef](./type_defs.md#modifydbclusterresulttypedef) 
+3. See [:material-code-braces: ServerlessV2ScalingConfigurationTypeDef](./type_defs.md#serverlessv2scalingconfigurationtypedef) 
+4. See [:material-code-braces: ModifyDBClusterResultTypeDef](./type_defs.md#modifydbclusterresulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -3804,6 +3611,7 @@ await def modify_db_instance(
     AwsBackupRecoveryPointArn: str = ...,
     AutomationMode: AutomationModeType = ...,  # (4)
     ResumeFullAutomationModeMinutes: int = ...,
+    NetworkType: str = ...,
 ) -> ModifyDBInstanceResultTypeDef:  # (5)
     ...
 ```
@@ -4605,12 +4413,14 @@ await def restore_db_cluster_from_s3(
     CopyTagsToSnapshot: bool = ...,
     Domain: str = ...,
     DomainIAMRoleName: str = ...,
-) -> RestoreDBClusterFromS3ResultTypeDef:  # (2)
+    ServerlessV2ScalingConfiguration: ServerlessV2ScalingConfigurationTypeDef = ...,  # (2)
+) -> RestoreDBClusterFromS3ResultTypeDef:  # (3)
     ...
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
-2. See [:material-code-braces: RestoreDBClusterFromS3ResultTypeDef](./type_defs.md#restoredbclusterfroms3resulttypedef) 
+2. See [:material-code-braces: ServerlessV2ScalingConfigurationTypeDef](./type_defs.md#serverlessv2scalingconfigurationtypedef) 
+3. See [:material-code-braces: RestoreDBClusterFromS3ResultTypeDef](./type_defs.md#restoredbclusterfroms3resulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -4667,13 +4477,15 @@ await def restore_db_cluster_from_snapshot(
     StorageType: str = ...,
     Iops: int = ...,
     PubliclyAccessible: bool = ...,
-) -> RestoreDBClusterFromSnapshotResultTypeDef:  # (3)
+    ServerlessV2ScalingConfiguration: ServerlessV2ScalingConfigurationTypeDef = ...,  # (3)
+) -> RestoreDBClusterFromSnapshotResultTypeDef:  # (4)
     ...
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 2. See [:material-code-braces: ScalingConfigurationTypeDef](./type_defs.md#scalingconfigurationtypedef) 
-3. See [:material-code-braces: RestoreDBClusterFromSnapshotResultTypeDef](./type_defs.md#restoredbclusterfromsnapshotresulttypedef) 
+3. See [:material-code-braces: ServerlessV2ScalingConfigurationTypeDef](./type_defs.md#serverlessv2scalingconfigurationtypedef) 
+4. See [:material-code-braces: RestoreDBClusterFromSnapshotResultTypeDef](./type_defs.md#restoredbclusterfromsnapshotresulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -4724,13 +4536,15 @@ await def restore_db_cluster_to_point_in_time(
     StorageType: str = ...,
     PubliclyAccessible: bool = ...,
     Iops: int = ...,
-) -> RestoreDBClusterToPointInTimeResultTypeDef:  # (3)
+    ServerlessV2ScalingConfiguration: ServerlessV2ScalingConfigurationTypeDef = ...,  # (3)
+) -> RestoreDBClusterToPointInTimeResultTypeDef:  # (4)
     ...
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 2. See [:material-code-braces: ScalingConfigurationTypeDef](./type_defs.md#scalingconfigurationtypedef) 
-3. See [:material-code-braces: RestoreDBClusterToPointInTimeResultTypeDef](./type_defs.md#restoredbclustertopointintimeresulttypedef) 
+3. See [:material-code-braces: ServerlessV2ScalingConfigurationTypeDef](./type_defs.md#serverlessv2scalingconfigurationtypedef) 
+4. See [:material-code-braces: RestoreDBClusterToPointInTimeResultTypeDef](./type_defs.md#restoredbclustertopointintimeresulttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -4786,6 +4600,7 @@ await def restore_db_instance_from_db_snapshot(
     EnableCustomerOwnedIp: bool = ...,
     CustomIamInstanceProfile: str = ...,
     BackupTarget: str = ...,
+    NetworkType: str = ...,
 ) -> RestoreDBInstanceFromDBSnapshotResultTypeDef:  # (3)
     ...
 ```
@@ -4862,6 +4677,7 @@ await def restore_db_instance_from_s3(
     UseDefaultProcessorFeatures: bool = ...,
     DeletionProtection: bool = ...,
     MaxAllocatedStorage: int = ...,
+    NetworkType: str = ...,
 ) -> RestoreDBInstanceFromS3ResultTypeDef:  # (3)
     ...
 ```
@@ -4934,6 +4750,7 @@ await def restore_db_instance_to_point_in_time(
     EnableCustomerOwnedIp: bool = ...,
     CustomIamInstanceProfile: str = ...,
     BackupTarget: str = ...,
+    NetworkType: str = ...,
 ) -> RestoreDBInstanceToPointInTimeResultTypeDef:  # (3)
     ...
 ```
@@ -5316,7 +5133,6 @@ await def __aexit__(
 Type annotations and code completion for `#!python session.create_client("rds").get_paginator` method with overloads.
 
 - `client.get_paginator("describe_certificates")` -> [DescribeCertificatesPaginator](./paginators.md#describecertificatespaginator)
-- `client.get_paginator("describe_custom_availability_zones")` -> [DescribeCustomAvailabilityZonesPaginator](./paginators.md#describecustomavailabilityzonespaginator)
 - `client.get_paginator("describe_db_cluster_backtracks")` -> [DescribeDBClusterBacktracksPaginator](./paginators.md#describedbclusterbacktrackspaginator)
 - `client.get_paginator("describe_db_cluster_endpoints")` -> [DescribeDBClusterEndpointsPaginator](./paginators.md#describedbclusterendpointspaginator)
 - `client.get_paginator("describe_db_cluster_parameter_groups")` -> [DescribeDBClusterParameterGroupsPaginator](./paginators.md#describedbclusterparametergroupspaginator)
@@ -5342,7 +5158,6 @@ Type annotations and code completion for `#!python session.create_client("rds").
 - `client.get_paginator("describe_events")` -> [DescribeEventsPaginator](./paginators.md#describeeventspaginator)
 - `client.get_paginator("describe_export_tasks")` -> [DescribeExportTasksPaginator](./paginators.md#describeexporttaskspaginator)
 - `client.get_paginator("describe_global_clusters")` -> [DescribeGlobalClustersPaginator](./paginators.md#describeglobalclusterspaginator)
-- `client.get_paginator("describe_installation_media")` -> [DescribeInstallationMediaPaginator](./paginators.md#describeinstallationmediapaginator)
 - `client.get_paginator("describe_option_group_options")` -> [DescribeOptionGroupOptionsPaginator](./paginators.md#describeoptiongroupoptionspaginator)
 - `client.get_paginator("describe_option_groups")` -> [DescribeOptionGroupsPaginator](./paginators.md#describeoptiongroupspaginator)
 - `client.get_paginator("describe_orderable_db_instance_options")` -> [DescribeOrderableDBInstanceOptionsPaginator](./paginators.md#describeorderabledbinstanceoptionspaginator)

@@ -184,6 +184,50 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListFunctionEventInvokeConfigsRequestListFunctionEventInvokeConfigsPaginateTypeDef](./type_defs.md#listfunctioneventinvokeconfigsrequestlistfunctioneventinvokeconfigspaginatetypedef) 
+## ListFunctionUrlConfigsPaginator
+
+Type annotations and code completion for `#!python session.create_client("lambda").get_paginator("list_function_url_configs")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html#Lambda.Paginator.ListFunctionUrlConfigs)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_lambda.paginator import ListFunctionUrlConfigsPaginator
+
+session = get_session()
+async with session.create_client("lambda") as client:
+    client: LambdaClient
+    paginator: ListFunctionUrlConfigsPaginator = client.get_paginator("list_function_url_configs")
+```
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListFunctionUrlConfigsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    FunctionName: str,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListFunctionUrlConfigsResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListFunctionUrlConfigsResponseTypeDef](./type_defs.md#listfunctionurlconfigsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListFunctionUrlConfigsRequestListFunctionUrlConfigsPaginateTypeDef = {  # (1)
+    "FunctionName": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListFunctionUrlConfigsRequestListFunctionUrlConfigsPaginateTypeDef](./type_defs.md#listfunctionurlconfigsrequestlistfunctionurlconfigspaginatetypedef) 
 ## ListFunctionsPaginator
 
 Type annotations and code completion for `#!python session.create_client("lambda").get_paginator("list_functions")`.

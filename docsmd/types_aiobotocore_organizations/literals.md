@@ -34,6 +34,7 @@ def get_value() -> AccountStatusType:
 ```python title="Definition"
 AccountStatusType = Literal[
     "ACTIVE",
+    "PENDING_CLOSURE",
     "SUSPENDED",
 ]
 ```
@@ -89,6 +90,7 @@ CreateAccountFailureReasonType = Literal[
     "INVALID_ADDRESS",
     "INVALID_EMAIL",
     "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION",
+    "INVALID_PAYMENT_INSTRUMENT",
     "MISSING_BUSINESS_VALIDATION",
     "MISSING_PAYMENT_INSTRUMENT",
     "PENDING_BUSINESS_VALIDATION",
@@ -562,6 +564,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -677,6 +680,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -745,6 +749,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

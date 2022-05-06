@@ -119,6 +119,21 @@ CRTypeType = Literal[
     "SPOT",
 ]
 ```
+## CRUpdateAllocationStrategyType
+
+```python title="Usage Example"
+from types_aiobotocore_batch.literals import CRUpdateAllocationStrategyType
+
+def get_value() -> CRUpdateAllocationStrategyType:
+    return "BEST_FIT_PROGRESSIVE"
+```
+
+```python title="Definition"
+CRUpdateAllocationStrategyType = Literal[
+    "BEST_FIT_PROGRESSIVE",
+    "SPOT_CAPACITY_OPTIMIZED",
+]
+```
 ## DescribeComputeEnvironmentsPaginatorName
 
 ```python title="Usage Example"
@@ -431,6 +446,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -546,6 +562,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -614,6 +631,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

@@ -222,6 +222,26 @@ class AssociateLexBotRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: LexBotTypeDef](./type_defs.md#lexbottypedef) 
+## AssociatePhoneNumberContactFlowRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import AssociatePhoneNumberContactFlowRequestRequestTypeDef
+
+def get_value() -> AssociatePhoneNumberContactFlowRequestRequestTypeDef:
+    return {
+        "PhoneNumberId": ...,
+        "InstanceId": ...,
+        "ContactFlowId": ...,
+    }
+```
+
+```python title="Definition"
+class AssociatePhoneNumberContactFlowRequestRequestTypeDef(TypedDict):
+    PhoneNumberId: str,
+    InstanceId: str,
+    ContactFlowId: str,
+```
+
 ## AssociateQueueQuickConnectsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -337,6 +357,26 @@ class AttributeTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: InstanceAttributeTypeType](./literals.md#instanceattributetypetype) 
+## AvailableNumberSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import AvailableNumberSummaryTypeDef
+
+def get_value() -> AvailableNumberSummaryTypeDef:
+    return {
+        "PhoneNumber": ...,
+    }
+```
+
+```python title="Definition"
+class AvailableNumberSummaryTypeDef(TypedDict):
+    PhoneNumber: NotRequired[str],
+    PhoneNumberCountryCode: NotRequired[PhoneNumberCountryCodeType],  # (1)
+    PhoneNumberType: NotRequired[PhoneNumberTypeType],  # (2)
+```
+
+1. See [:material-code-brackets: PhoneNumberCountryCodeType](./literals.md#phonenumbercountrycodetype) 
+2. See [:material-code-brackets: PhoneNumberTypeType](./literals.md#phonenumbertypetype) 
 ## ChatMessageTypeDef
 
 ```python title="Usage Example"
@@ -371,6 +411,75 @@ class ChatStreamingConfigurationTypeDef(TypedDict):
     StreamingEndpointArn: str,
 ```
 
+## ClaimPhoneNumberRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import ClaimPhoneNumberRequestRequestTypeDef
+
+def get_value() -> ClaimPhoneNumberRequestRequestTypeDef:
+    return {
+        "TargetArn": ...,
+        "PhoneNumber": ...,
+    }
+```
+
+```python title="Definition"
+class ClaimPhoneNumberRequestRequestTypeDef(TypedDict):
+    TargetArn: str,
+    PhoneNumber: str,
+    PhoneNumberDescription: NotRequired[str],
+    Tags: NotRequired[Mapping[str, str]],
+    ClientToken: NotRequired[str],
+```
+
+## ClaimPhoneNumberResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import ClaimPhoneNumberResponseTypeDef
+
+def get_value() -> ClaimPhoneNumberResponseTypeDef:
+    return {
+        "PhoneNumberId": ...,
+        "PhoneNumberArn": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ClaimPhoneNumberResponseTypeDef(TypedDict):
+    PhoneNumberId: str,
+    PhoneNumberArn: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ClaimedPhoneNumberSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import ClaimedPhoneNumberSummaryTypeDef
+
+def get_value() -> ClaimedPhoneNumberSummaryTypeDef:
+    return {
+        "PhoneNumberId": ...,
+    }
+```
+
+```python title="Definition"
+class ClaimedPhoneNumberSummaryTypeDef(TypedDict):
+    PhoneNumberId: NotRequired[str],
+    PhoneNumberArn: NotRequired[str],
+    PhoneNumber: NotRequired[str],
+    PhoneNumberCountryCode: NotRequired[PhoneNumberCountryCodeType],  # (1)
+    PhoneNumberType: NotRequired[PhoneNumberTypeType],  # (2)
+    PhoneNumberDescription: NotRequired[str],
+    TargetArn: NotRequired[str],
+    Tags: NotRequired[Dict[str, str]],
+    PhoneNumberStatus: NotRequired[PhoneNumberStatusTypeDef],  # (3)
+```
+
+1. See [:material-code-brackets: PhoneNumberCountryCodeType](./literals.md#phonenumbercountrycodetype) 
+2. See [:material-code-brackets: PhoneNumberTypeType](./literals.md#phonenumbertypetype) 
+3. See [:material-code-braces: PhoneNumberStatusTypeDef](./type_defs.md#phonenumberstatustypedef) 
 ## ContactFlowModuleSummaryTypeDef
 
 ```python title="Usage Example"
@@ -496,6 +605,27 @@ class ContactTypeDef(TypedDict):
 2. See [:material-code-brackets: ChannelType](./literals.md#channeltype) 
 3. See [:material-code-braces: QueueInfoTypeDef](./type_defs.md#queueinfotypedef) 
 4. See [:material-code-braces: AgentInfoTypeDef](./type_defs.md#agentinfotypedef) 
+## ControlPlaneTagFilterTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import ControlPlaneTagFilterTypeDef
+
+def get_value() -> ControlPlaneTagFilterTypeDef:
+    return {
+        "OrConditions": ...,
+    }
+```
+
+```python title="Definition"
+class ControlPlaneTagFilterTypeDef(TypedDict):
+    OrConditions: NotRequired[Sequence[Sequence[TagConditionTypeDef]]],  # (1)
+    AndConditions: NotRequired[Sequence[TagConditionTypeDef]],  # (2)
+    TagCondition: NotRequired[TagConditionTypeDef],  # (3)
+```
+
+1. See [:material-code-braces: TagConditionTypeDef](./type_defs.md#tagconditiontypedef) 
+2. See [:material-code-braces: TagConditionTypeDef](./type_defs.md#tagconditiontypedef) 
+3. See [:material-code-braces: TagConditionTypeDef](./type_defs.md#tagconditiontypedef) 
 ## CreateAgentStatusRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1762,6 +1892,42 @@ class DescribeInstanceStorageConfigResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: InstanceStorageConfigTypeDef](./type_defs.md#instancestorageconfigtypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DescribePhoneNumberRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import DescribePhoneNumberRequestRequestTypeDef
+
+def get_value() -> DescribePhoneNumberRequestRequestTypeDef:
+    return {
+        "PhoneNumberId": ...,
+    }
+```
+
+```python title="Definition"
+class DescribePhoneNumberRequestRequestTypeDef(TypedDict):
+    PhoneNumberId: str,
+```
+
+## DescribePhoneNumberResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import DescribePhoneNumberResponseTypeDef
+
+def get_value() -> DescribePhoneNumberResponseTypeDef:
+    return {
+        "ClaimedPhoneNumberSummary": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DescribePhoneNumberResponseTypeDef(TypedDict):
+    ClaimedPhoneNumberSummary: ClaimedPhoneNumberSummaryTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: ClaimedPhoneNumberSummaryTypeDef](./type_defs.md#claimedphonenumbersummarytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DescribeQueueRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -2180,6 +2346,24 @@ class DisassociateLexBotRequestRequestTypeDef(TypedDict):
     LexRegion: str,
 ```
 
+## DisassociatePhoneNumberContactFlowRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import DisassociatePhoneNumberContactFlowRequestRequestTypeDef
+
+def get_value() -> DisassociatePhoneNumberContactFlowRequestRequestTypeDef:
+    return {
+        "PhoneNumberId": ...,
+        "InstanceId": ...,
+    }
+```
+
+```python title="Definition"
+class DisassociatePhoneNumberContactFlowRequestRequestTypeDef(TypedDict):
+    PhoneNumberId: str,
+    InstanceId: str,
+```
+
 ## DisassociateQueueQuickConnectsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -2481,6 +2665,24 @@ class GetMetricDataResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: HistoricalMetricResultTypeDef](./type_defs.md#historicalmetricresulttypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## HierarchyGroupConditionTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import HierarchyGroupConditionTypeDef
+
+def get_value() -> HierarchyGroupConditionTypeDef:
+    return {
+        "Value": ...,
+    }
+```
+
+```python title="Definition"
+class HierarchyGroupConditionTypeDef(TypedDict):
+    Value: NotRequired[str],
+    HierarchyGroupMatchType: NotRequired[HierarchyGroupMatchTypeType],  # (1)
+```
+
+1. See [:material-code-brackets: HierarchyGroupMatchTypeType](./literals.md#hierarchygroupmatchtypetype) 
 ## HierarchyGroupSummaryTypeDef
 
 ```python title="Usage Example"
@@ -3913,6 +4115,97 @@ class ListPhoneNumbersResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: PhoneNumberSummaryTypeDef](./type_defs.md#phonenumbersummarytypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ListPhoneNumbersSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import ListPhoneNumbersSummaryTypeDef
+
+def get_value() -> ListPhoneNumbersSummaryTypeDef:
+    return {
+        "PhoneNumberId": ...,
+    }
+```
+
+```python title="Definition"
+class ListPhoneNumbersSummaryTypeDef(TypedDict):
+    PhoneNumberId: NotRequired[str],
+    PhoneNumberArn: NotRequired[str],
+    PhoneNumber: NotRequired[str],
+    PhoneNumberCountryCode: NotRequired[PhoneNumberCountryCodeType],  # (1)
+    PhoneNumberType: NotRequired[PhoneNumberTypeType],  # (2)
+    TargetArn: NotRequired[str],
+```
+
+1. See [:material-code-brackets: PhoneNumberCountryCodeType](./literals.md#phonenumbercountrycodetype) 
+2. See [:material-code-brackets: PhoneNumberTypeType](./literals.md#phonenumbertypetype) 
+## ListPhoneNumbersV2RequestListPhoneNumbersV2PaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import ListPhoneNumbersV2RequestListPhoneNumbersV2PaginateTypeDef
+
+def get_value() -> ListPhoneNumbersV2RequestListPhoneNumbersV2PaginateTypeDef:
+    return {
+        "TargetArn": ...,
+    }
+```
+
+```python title="Definition"
+class ListPhoneNumbersV2RequestListPhoneNumbersV2PaginateTypeDef(TypedDict):
+    TargetArn: NotRequired[str],
+    PhoneNumberCountryCodes: NotRequired[Sequence[PhoneNumberCountryCodeType]],  # (1)
+    PhoneNumberTypes: NotRequired[Sequence[PhoneNumberTypeType]],  # (2)
+    PhoneNumberPrefix: NotRequired[str],
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (3)
+```
+
+1. See [:material-code-brackets: PhoneNumberCountryCodeType](./literals.md#phonenumbercountrycodetype) 
+2. See [:material-code-brackets: PhoneNumberTypeType](./literals.md#phonenumbertypetype) 
+3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## ListPhoneNumbersV2RequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import ListPhoneNumbersV2RequestRequestTypeDef
+
+def get_value() -> ListPhoneNumbersV2RequestRequestTypeDef:
+    return {
+        "TargetArn": ...,
+    }
+```
+
+```python title="Definition"
+class ListPhoneNumbersV2RequestRequestTypeDef(TypedDict):
+    TargetArn: NotRequired[str],
+    MaxResults: NotRequired[int],
+    NextToken: NotRequired[str],
+    PhoneNumberCountryCodes: NotRequired[Sequence[PhoneNumberCountryCodeType]],  # (1)
+    PhoneNumberTypes: NotRequired[Sequence[PhoneNumberTypeType]],  # (2)
+    PhoneNumberPrefix: NotRequired[str],
+```
+
+1. See [:material-code-brackets: PhoneNumberCountryCodeType](./literals.md#phonenumbercountrycodetype) 
+2. See [:material-code-brackets: PhoneNumberTypeType](./literals.md#phonenumbertypetype) 
+## ListPhoneNumbersV2ResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import ListPhoneNumbersV2ResponseTypeDef
+
+def get_value() -> ListPhoneNumbersV2ResponseTypeDef:
+    return {
+        "NextToken": ...,
+        "ListPhoneNumbersSummaryList": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListPhoneNumbersV2ResponseTypeDef(TypedDict):
+    NextToken: str,
+    ListPhoneNumbersSummaryList: List[ListPhoneNumbersSummaryTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: ListPhoneNumbersSummaryTypeDef](./type_defs.md#listphonenumberssummarytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListPromptsRequestListPromptsPaginateTypeDef
 
 ```python title="Usage Example"
@@ -4754,6 +5047,24 @@ class PhoneNumberQuickConnectConfigTypeDef(TypedDict):
     PhoneNumber: str,
 ```
 
+## PhoneNumberStatusTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import PhoneNumberStatusTypeDef
+
+def get_value() -> PhoneNumberStatusTypeDef:
+    return {
+        "Status": ...,
+    }
+```
+
+```python title="Definition"
+class PhoneNumberStatusTypeDef(TypedDict):
+    Status: NotRequired[PhoneNumberWorkflowStatusType],  # (1)
+    Message: NotRequired[str],
+```
+
+1. See [:material-code-brackets: PhoneNumberWorkflowStatusType](./literals.md#phonenumberworkflowstatustype) 
 ## PhoneNumberSummaryTypeDef
 
 ```python title="Usage Example"
@@ -4792,6 +5103,26 @@ class PromptSummaryTypeDef(TypedDict):
     Id: NotRequired[str],
     Arn: NotRequired[str],
     Name: NotRequired[str],
+```
+
+## PutUserStatusRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import PutUserStatusRequestRequestTypeDef
+
+def get_value() -> PutUserStatusRequestRequestTypeDef:
+    return {
+        "UserId": ...,
+        "InstanceId": ...,
+        "AgentStatusId": ...,
+    }
+```
+
+```python title="Definition"
+class PutUserStatusRequestRequestTypeDef(TypedDict):
+    UserId: str,
+    InstanceId: str,
+    AgentStatusId: str,
 ```
 
 ## QueueInfoTypeDef
@@ -4995,6 +5326,23 @@ class ReferenceTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: ReferenceTypeType](./literals.md#referencetypetype) 
+## ReleasePhoneNumberRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import ReleasePhoneNumberRequestRequestTypeDef
+
+def get_value() -> ReleasePhoneNumberRequestRequestTypeDef:
+    return {
+        "PhoneNumberId": ...,
+    }
+```
+
+```python title="Definition"
+class ReleasePhoneNumberRequestRequestTypeDef(TypedDict):
+    PhoneNumberId: str,
+    ClientToken: NotRequired[str],
+```
+
 ## ResponseMetadataTypeDef
 
 ```python title="Usage Example"
@@ -5168,6 +5516,146 @@ class S3ConfigTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: EncryptionConfigTypeDef](./type_defs.md#encryptionconfigtypedef) 
+## SearchAvailablePhoneNumbersRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import SearchAvailablePhoneNumbersRequestRequestTypeDef
+
+def get_value() -> SearchAvailablePhoneNumbersRequestRequestTypeDef:
+    return {
+        "TargetArn": ...,
+        "PhoneNumberCountryCode": ...,
+        "PhoneNumberType": ...,
+    }
+```
+
+```python title="Definition"
+class SearchAvailablePhoneNumbersRequestRequestTypeDef(TypedDict):
+    TargetArn: str,
+    PhoneNumberCountryCode: PhoneNumberCountryCodeType,  # (1)
+    PhoneNumberType: PhoneNumberTypeType,  # (2)
+    PhoneNumberPrefix: NotRequired[str],
+    MaxResults: NotRequired[int],
+    NextToken: NotRequired[str],
+```
+
+1. See [:material-code-brackets: PhoneNumberCountryCodeType](./literals.md#phonenumbercountrycodetype) 
+2. See [:material-code-brackets: PhoneNumberTypeType](./literals.md#phonenumbertypetype) 
+## SearchAvailablePhoneNumbersRequestSearchAvailablePhoneNumbersPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import SearchAvailablePhoneNumbersRequestSearchAvailablePhoneNumbersPaginateTypeDef
+
+def get_value() -> SearchAvailablePhoneNumbersRequestSearchAvailablePhoneNumbersPaginateTypeDef:
+    return {
+        "TargetArn": ...,
+        "PhoneNumberCountryCode": ...,
+        "PhoneNumberType": ...,
+    }
+```
+
+```python title="Definition"
+class SearchAvailablePhoneNumbersRequestSearchAvailablePhoneNumbersPaginateTypeDef(TypedDict):
+    TargetArn: str,
+    PhoneNumberCountryCode: PhoneNumberCountryCodeType,  # (1)
+    PhoneNumberType: PhoneNumberTypeType,  # (2)
+    PhoneNumberPrefix: NotRequired[str],
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (3)
+```
+
+1. See [:material-code-brackets: PhoneNumberCountryCodeType](./literals.md#phonenumbercountrycodetype) 
+2. See [:material-code-brackets: PhoneNumberTypeType](./literals.md#phonenumbertypetype) 
+3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## SearchAvailablePhoneNumbersResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import SearchAvailablePhoneNumbersResponseTypeDef
+
+def get_value() -> SearchAvailablePhoneNumbersResponseTypeDef:
+    return {
+        "NextToken": ...,
+        "AvailableNumbersList": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class SearchAvailablePhoneNumbersResponseTypeDef(TypedDict):
+    NextToken: str,
+    AvailableNumbersList: List[AvailableNumberSummaryTypeDef],  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: AvailableNumberSummaryTypeDef](./type_defs.md#availablenumbersummarytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## SearchUsersRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import SearchUsersRequestRequestTypeDef
+
+def get_value() -> SearchUsersRequestRequestTypeDef:
+    return {
+        "InstanceId": ...,
+    }
+```
+
+```python title="Definition"
+class SearchUsersRequestRequestTypeDef(TypedDict):
+    InstanceId: NotRequired[str],
+    NextToken: NotRequired[str],
+    MaxResults: NotRequired[int],
+    SearchFilter: NotRequired[UserSearchFilterTypeDef],  # (1)
+    SearchCriteria: NotRequired[UserSearchCriteriaTypeDef],  # (2)
+```
+
+1. See [:material-code-braces: UserSearchFilterTypeDef](./type_defs.md#usersearchfiltertypedef) 
+2. See [:material-code-braces: UserSearchCriteriaTypeDef](./type_defs.md#usersearchcriteriatypedef) 
+## SearchUsersRequestSearchUsersPaginateTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import SearchUsersRequestSearchUsersPaginateTypeDef
+
+def get_value() -> SearchUsersRequestSearchUsersPaginateTypeDef:
+    return {
+        "InstanceId": ...,
+    }
+```
+
+```python title="Definition"
+class SearchUsersRequestSearchUsersPaginateTypeDef(TypedDict):
+    InstanceId: NotRequired[str],
+    SearchFilter: NotRequired[UserSearchFilterTypeDef],  # (1)
+    SearchCriteria: NotRequired[UserSearchCriteriaTypeDef],  # (2)
+    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (3)
+```
+
+1. See [:material-code-braces: UserSearchFilterTypeDef](./type_defs.md#usersearchfiltertypedef) 
+2. See [:material-code-braces: UserSearchCriteriaTypeDef](./type_defs.md#usersearchcriteriatypedef) 
+3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+## SearchUsersResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import SearchUsersResponseTypeDef
+
+def get_value() -> SearchUsersResponseTypeDef:
+    return {
+        "Users": ...,
+        "NextToken": ...,
+        "ApproximateTotalCount": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class SearchUsersResponseTypeDef(TypedDict):
+    Users: List[UserSearchSummaryTypeDef],  # (1)
+    NextToken: str,
+    ApproximateTotalCount: int,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: UserSearchSummaryTypeDef](./type_defs.md#usersearchsummarytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## SearchVocabulariesRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -5560,6 +6048,25 @@ class StopContactStreamingRequestRequestTypeDef(TypedDict):
     StreamingId: str,
 ```
 
+## StringConditionTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import StringConditionTypeDef
+
+def get_value() -> StringConditionTypeDef:
+    return {
+        "FieldName": ...,
+    }
+```
+
+```python title="Definition"
+class StringConditionTypeDef(TypedDict):
+    FieldName: NotRequired[str],
+    Value: NotRequired[str],
+    ComparisonType: NotRequired[StringComparisonTypeType],  # (1)
+```
+
+1. See [:material-code-brackets: StringComparisonTypeType](./literals.md#stringcomparisontypetype) 
 ## SuspendContactRecordingRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -5578,6 +6085,23 @@ class SuspendContactRecordingRequestRequestTypeDef(TypedDict):
     InstanceId: str,
     ContactId: str,
     InitialContactId: str,
+```
+
+## TagConditionTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import TagConditionTypeDef
+
+def get_value() -> TagConditionTypeDef:
+    return {
+        "TagKey": ...,
+    }
+```
+
+```python title="Definition"
+class TagConditionTypeDef(TypedDict):
+    TagKey: NotRequired[str],
+    TagValue: NotRequired[str],
 ```
 
 ## TagResourceRequestRequestTypeDef
@@ -5892,6 +6416,46 @@ class UpdateInstanceStorageConfigRequestRequestTypeDef(TypedDict):
 
 1. See [:material-code-brackets: InstanceStorageResourceTypeType](./literals.md#instancestorageresourcetypetype) 
 2. See [:material-code-braces: InstanceStorageConfigTypeDef](./type_defs.md#instancestorageconfigtypedef) 
+## UpdatePhoneNumberRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import UpdatePhoneNumberRequestRequestTypeDef
+
+def get_value() -> UpdatePhoneNumberRequestRequestTypeDef:
+    return {
+        "PhoneNumberId": ...,
+        "TargetArn": ...,
+    }
+```
+
+```python title="Definition"
+class UpdatePhoneNumberRequestRequestTypeDef(TypedDict):
+    PhoneNumberId: str,
+    TargetArn: str,
+    ClientToken: NotRequired[str],
+```
+
+## UpdatePhoneNumberResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import UpdatePhoneNumberResponseTypeDef
+
+def get_value() -> UpdatePhoneNumberResponseTypeDef:
+    return {
+        "PhoneNumberId": ...,
+        "PhoneNumberArn": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class UpdatePhoneNumberResponseTypeDef(TypedDict):
+    PhoneNumberId: str,
+    PhoneNumberArn: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## UpdateQueueHoursOfOperationRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -6312,6 +6876,23 @@ class UseCaseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: UseCaseTypeType](./literals.md#usecasetypetype) 
+## UserIdentityInfoLiteTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import UserIdentityInfoLiteTypeDef
+
+def get_value() -> UserIdentityInfoLiteTypeDef:
+    return {
+        "FirstName": ...,
+    }
+```
+
+```python title="Definition"
+class UserIdentityInfoLiteTypeDef(TypedDict):
+    FirstName: NotRequired[str],
+    LastName: NotRequired[str],
+```
+
 ## UserIdentityInfoTypeDef
 
 ```python title="Usage Example"
@@ -6368,6 +6949,73 @@ class UserQuickConnectConfigTypeDef(TypedDict):
     ContactFlowId: str,
 ```
 
+## UserSearchCriteriaTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import UserSearchCriteriaTypeDef
+
+def get_value() -> UserSearchCriteriaTypeDef:
+    return {
+        "OrConditions": ...,
+    }
+```
+
+```python title="Definition"
+class UserSearchCriteriaTypeDef(TypedDict):
+    OrConditions: NotRequired[Sequence[UserSearchCriteriaTypeDef]],  # (1)
+    AndConditions: NotRequired[Sequence[UserSearchCriteriaTypeDef]],  # (1)
+    StringCondition: NotRequired[StringConditionTypeDef],  # (3)
+    HierarchyGroupCondition: NotRequired[HierarchyGroupConditionTypeDef],  # (4)
+```
+
+1. See [:material-code-braces: UserSearchCriteriaTypeDef](./type_defs.md#usersearchcriteriatypedef) 
+2. See [:material-code-braces: UserSearchCriteriaTypeDef](./type_defs.md#usersearchcriteriatypedef) 
+3. See [:material-code-braces: StringConditionTypeDef](./type_defs.md#stringconditiontypedef) 
+4. See [:material-code-braces: HierarchyGroupConditionTypeDef](./type_defs.md#hierarchygroupconditiontypedef) 
+## UserSearchFilterTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import UserSearchFilterTypeDef
+
+def get_value() -> UserSearchFilterTypeDef:
+    return {
+        "TagFilter": ...,
+    }
+```
+
+```python title="Definition"
+class UserSearchFilterTypeDef(TypedDict):
+    TagFilter: NotRequired[ControlPlaneTagFilterTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: ControlPlaneTagFilterTypeDef](./type_defs.md#controlplanetagfiltertypedef) 
+## UserSearchSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_connect.type_defs import UserSearchSummaryTypeDef
+
+def get_value() -> UserSearchSummaryTypeDef:
+    return {
+        "Arn": ...,
+    }
+```
+
+```python title="Definition"
+class UserSearchSummaryTypeDef(TypedDict):
+    Arn: NotRequired[str],
+    DirectoryUserId: NotRequired[str],
+    HierarchyGroupId: NotRequired[str],
+    Id: NotRequired[str],
+    IdentityInfo: NotRequired[UserIdentityInfoLiteTypeDef],  # (1)
+    PhoneConfig: NotRequired[UserPhoneConfigTypeDef],  # (2)
+    RoutingProfileId: NotRequired[str],
+    SecurityProfileIds: NotRequired[List[str]],
+    Tags: NotRequired[Dict[str, str]],
+    Username: NotRequired[str],
+```
+
+1. See [:material-code-braces: UserIdentityInfoLiteTypeDef](./type_defs.md#useridentityinfolitetypedef) 
+2. See [:material-code-braces: UserPhoneConfigTypeDef](./type_defs.md#userphoneconfigtypedef) 
 ## UserSummaryTypeDef
 
 ```python title="Usage Example"

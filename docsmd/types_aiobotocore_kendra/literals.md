@@ -210,17 +210,19 @@ DataSourceSyncJobStatusType = Literal[
 from types_aiobotocore_kendra.literals import DataSourceTypeType
 
 def get_value() -> DataSourceTypeType:
-    return "CONFLUENCE"
+    return "BOX"
 ```
 
 ```python title="Definition"
 DataSourceTypeType = Literal[
+    "BOX",
     "CONFLUENCE",
     "CUSTOM",
     "DATABASE",
     "FSX",
     "GOOGLEDRIVE",
     "ONEDRIVE",
+    "QUIP",
     "S3",
     "SALESFORCE",
     "SERVICENOW",
@@ -964,6 +966,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -1079,6 +1082,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1147,6 +1151,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

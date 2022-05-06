@@ -747,6 +747,55 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListPhoneNumbersRequestListPhoneNumbersPaginateTypeDef](./type_defs.md#listphonenumbersrequestlistphonenumberspaginatetypedef) 
+## ListPhoneNumbersV2Paginator
+
+Type annotations and code completion for `#!python session.create_client("connect").get_paginator("list_phone_numbers_v2")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Paginator.ListPhoneNumbersV2)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_connect.paginator import ListPhoneNumbersV2Paginator
+
+session = get_session()
+async with session.create_client("connect") as client:
+    client: ConnectClient
+    paginator: ListPhoneNumbersV2Paginator = client.get_paginator("list_phone_numbers_v2")
+```
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListPhoneNumbersV2Paginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    TargetArn: str = ...,
+    PhoneNumberCountryCodes: Sequence[PhoneNumberCountryCodeType] = ...,  # (1)
+    PhoneNumberTypes: Sequence[PhoneNumberTypeType] = ...,  # (2)
+    PhoneNumberPrefix: str = ...,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (3)
+) -> AsyncIterator[ListPhoneNumbersV2ResponseTypeDef]:  # (4)
+    ...
+```
+
+1. See [:material-code-brackets: PhoneNumberCountryCodeType](./literals.md#phonenumbercountrycodetype) 
+2. See [:material-code-brackets: PhoneNumberTypeType](./literals.md#phonenumbertypetype) 
+3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+4. See [:material-code-braces: ListPhoneNumbersV2ResponseTypeDef](./type_defs.md#listphonenumbersv2responsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListPhoneNumbersV2RequestListPhoneNumbersV2PaginateTypeDef = {  # (1)
+    "TargetArn": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListPhoneNumbersV2RequestListPhoneNumbersV2PaginateTypeDef](./type_defs.md#listphonenumbersv2requestlistphonenumbersv2paginatetypedef) 
 ## ListPromptsPaginator
 
 Type annotations and code completion for `#!python session.create_client("connect").get_paginator("list_prompts")`.
@@ -1287,6 +1336,105 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListUsersRequestListUsersPaginateTypeDef](./type_defs.md#listusersrequestlistuserspaginatetypedef) 
+## SearchAvailablePhoneNumbersPaginator
+
+Type annotations and code completion for `#!python session.create_client("connect").get_paginator("search_available_phone_numbers")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Paginator.SearchAvailablePhoneNumbers)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_connect.paginator import SearchAvailablePhoneNumbersPaginator
+
+session = get_session()
+async with session.create_client("connect") as client:
+    client: ConnectClient
+    paginator: SearchAvailablePhoneNumbersPaginator = client.get_paginator("search_available_phone_numbers")
+```
+
+
+### paginate
+
+Type annotations and code completion for `#!python SearchAvailablePhoneNumbersPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    TargetArn: str,
+    PhoneNumberCountryCode: PhoneNumberCountryCodeType,  # (1)
+    PhoneNumberType: PhoneNumberTypeType,  # (2)
+    PhoneNumberPrefix: str = ...,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (3)
+) -> AsyncIterator[SearchAvailablePhoneNumbersResponseTypeDef]:  # (4)
+    ...
+```
+
+1. See [:material-code-brackets: PhoneNumberCountryCodeType](./literals.md#phonenumbercountrycodetype) 
+2. See [:material-code-brackets: PhoneNumberTypeType](./literals.md#phonenumbertypetype) 
+3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+4. See [:material-code-braces: SearchAvailablePhoneNumbersResponseTypeDef](./type_defs.md#searchavailablephonenumbersresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: SearchAvailablePhoneNumbersRequestSearchAvailablePhoneNumbersPaginateTypeDef = {  # (1)
+    "TargetArn": ...,
+    "PhoneNumberCountryCode": ...,
+    "PhoneNumberType": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: SearchAvailablePhoneNumbersRequestSearchAvailablePhoneNumbersPaginateTypeDef](./type_defs.md#searchavailablephonenumbersrequestsearchavailablephonenumberspaginatetypedef) 
+## SearchUsersPaginator
+
+Type annotations and code completion for `#!python session.create_client("connect").get_paginator("search_users")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Paginator.SearchUsers)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_connect.paginator import SearchUsersPaginator
+
+session = get_session()
+async with session.create_client("connect") as client:
+    client: ConnectClient
+    paginator: SearchUsersPaginator = client.get_paginator("search_users")
+```
+
+
+### paginate
+
+Type annotations and code completion for `#!python SearchUsersPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    InstanceId: str = ...,
+    SearchFilter: UserSearchFilterTypeDef = ...,  # (1)
+    SearchCriteria: UserSearchCriteriaTypeDef = ...,  # (2)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (3)
+) -> AsyncIterator[SearchUsersResponseTypeDef]:  # (4)
+    ...
+```
+
+1. See [:material-code-braces: UserSearchFilterTypeDef](./type_defs.md#usersearchfiltertypedef) 
+2. See [:material-code-braces: UserSearchCriteriaTypeDef](./type_defs.md#usersearchcriteriatypedef) 
+3. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+4. See [:material-code-braces: SearchUsersResponseTypeDef](./type_defs.md#searchusersresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: SearchUsersRequestSearchUsersPaginateTypeDef = {  # (1)
+    "InstanceId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: SearchUsersRequestSearchUsersPaginateTypeDef](./type_defs.md#searchusersrequestsearchuserspaginatetypedef) 
 ## SearchVocabulariesPaginator
 
 Type annotations and code completion for `#!python session.create_client("connect").get_paginator("search_vocabularies")`.

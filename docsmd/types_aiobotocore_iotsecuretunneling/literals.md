@@ -7,6 +7,22 @@
     Auto-generated documentation for [IoTSecureTunneling](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsecuretunneling.html#IoTSecureTunneling)
     type annotations stubs module [types-aiobotocore-iotsecuretunneling](https://pypi.org/project/types-aiobotocore-iotsecuretunneling/).
 
+## ClientModeType
+
+```python title="Usage Example"
+from types_aiobotocore_iotsecuretunneling.literals import ClientModeType
+
+def get_value() -> ClientModeType:
+    return "ALL"
+```
+
+```python title="Definition"
+ClientModeType = Literal[
+    "ALL",
+    "DESTINATION",
+    "SOURCE",
+]
+```
 ## ConnectionStatusType
 
 ```python title="Usage Example"
@@ -98,6 +114,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -213,6 +230,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -281,6 +299,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

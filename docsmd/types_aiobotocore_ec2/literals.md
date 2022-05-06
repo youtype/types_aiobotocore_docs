@@ -3555,6 +3555,21 @@ InstanceAttributeNameType = Literal[
     "userData",
 ]
 ```
+## InstanceAutoRecoveryStateType
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.literals import InstanceAutoRecoveryStateType
+
+def get_value() -> InstanceAutoRecoveryStateType:
+    return "default"
+```
+
+```python title="Definition"
+InstanceAutoRecoveryStateType = Literal[
+    "default",
+    "disabled",
+]
+```
 ## InstanceEventWindowStateType
 
 ```python title="Usage Example"
@@ -3912,6 +3927,17 @@ InstanceTypeType = Literal[
     "c5n.large",
     "c5n.metal",
     "c5n.xlarge",
+    "c6a.12xlarge",
+    "c6a.16xlarge",
+    "c6a.24xlarge",
+    "c6a.2xlarge",
+    "c6a.32xlarge",
+    "c6a.48xlarge",
+    "c6a.4xlarge",
+    "c6a.8xlarge",
+    "c6a.large",
+    "c6a.metal",
+    "c6a.xlarge",
     "c6g.12xlarge",
     "c6g.16xlarge",
     "c6g.2xlarge",
@@ -4028,6 +4054,13 @@ InstanceTypeType = Literal[
     "i3en.large",
     "i3en.metal",
     "i3en.xlarge",
+    "i4i.16xlarge",
+    "i4i.2xlarge",
+    "i4i.32xlarge",
+    "i4i.4xlarge",
+    "i4i.8xlarge",
+    "i4i.large",
+    "i4i.xlarge",
     "im4gn.16xlarge",
     "im4gn.2xlarge",
     "im4gn.4xlarge",
@@ -4129,6 +4162,7 @@ InstanceTypeType = Literal[
     "m6a.4xlarge",
     "m6a.8xlarge",
     "m6a.large",
+    "m6a.metal",
     "m6a.xlarge",
     "m6g.12xlarge",
     "m6g.16xlarge",
@@ -4325,6 +4359,16 @@ InstanceTypeType = Literal[
     "x2gd.medium",
     "x2gd.metal",
     "x2gd.xlarge",
+    "x2idn.16xlarge",
+    "x2idn.24xlarge",
+    "x2idn.32xlarge",
+    "x2iedn.16xlarge",
+    "x2iedn.24xlarge",
+    "x2iedn.2xlarge",
+    "x2iedn.32xlarge",
+    "x2iedn.4xlarge",
+    "x2iedn.8xlarge",
+    "x2iedn.xlarge",
     "x2iezn.12xlarge",
     "x2iezn.2xlarge",
     "x2iezn.4xlarge",
@@ -4631,6 +4675,21 @@ Ipv6SupportValueType = Literal[
     "enable",
 ]
 ```
+## KeyFormatType
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.literals import KeyFormatType
+
+def get_value() -> KeyFormatType:
+    return "pem"
+```
+
+```python title="Definition"
+KeyFormatType = Literal[
+    "pem",
+    "ppk",
+]
+```
 ## KeyPairExistsWaiterName
 
 ```python title="Usage Example"
@@ -4658,6 +4717,21 @@ def get_value() -> KeyTypeType:
 KeyTypeType = Literal[
     "ed25519",
     "rsa",
+]
+```
+## LaunchTemplateAutoRecoveryStateType
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.literals import LaunchTemplateAutoRecoveryStateType
+
+def get_value() -> LaunchTemplateAutoRecoveryStateType:
+    return "default"
+```
+
+```python title="Definition"
+LaunchTemplateAutoRecoveryStateType = Literal[
+    "default",
+    "disabled",
 ]
 ```
 ## LaunchTemplateErrorCodeType
@@ -5014,6 +5088,20 @@ def get_value() -> NatGatewayAvailableWaiterName:
 ```python title="Definition"
 NatGatewayAvailableWaiterName = Literal[
     "nat_gateway_available",
+]
+```
+## NatGatewayDeletedWaiterName
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.literals import NatGatewayDeletedWaiterName
+
+def get_value() -> NatGatewayDeletedWaiterName:
+    return "nat_gateway_deleted"
+```
+
+```python title="Definition"
+NatGatewayDeletedWaiterName = Literal[
+    "nat_gateway_deleted",
 ]
 ```
 ## NatGatewayStateType
@@ -7194,6 +7282,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -7309,6 +7398,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -7377,6 +7467,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -7646,6 +7737,7 @@ WaiterName = Literal[
     "internet_gateway_exists",
     "key_pair_exists",
     "nat_gateway_available",
+    "nat_gateway_deleted",
     "network_interface_available",
     "password_data_available",
     "security_group_exists",

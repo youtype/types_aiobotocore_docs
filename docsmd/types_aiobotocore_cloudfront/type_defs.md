@@ -819,7 +819,7 @@ def get_value() -> CreateFunctionRequestRequestTypeDef:
 class CreateFunctionRequestRequestTypeDef(TypedDict):
     Name: str,
     FunctionConfig: FunctionConfigTypeDef,  # (1)
-    FunctionCode: Union[bytes, IO[bytes], StreamingBody],
+    FunctionCode: Union[str, bytes, IO[Any], StreamingBody],
 ```
 
 1. See [:material-code-braces: FunctionConfigTypeDef](./type_defs.md#functionconfigtypedef) 
@@ -5135,11 +5135,13 @@ class ResponseHeadersPolicyConfigTypeDef(TypedDict):
     CorsConfig: NotRequired[ResponseHeadersPolicyCorsConfigTypeDef],  # (1)
     SecurityHeadersConfig: NotRequired[ResponseHeadersPolicySecurityHeadersConfigTypeDef],  # (2)
     CustomHeadersConfig: NotRequired[ResponseHeadersPolicyCustomHeadersConfigTypeDef],  # (3)
+    ServerTimingHeadersConfig: NotRequired[ResponseHeadersPolicyServerTimingHeadersConfigTypeDef],  # (4)
 ```
 
 1. See [:material-code-braces: ResponseHeadersPolicyCorsConfigTypeDef](./type_defs.md#responseheaderspolicycorsconfigtypedef) 
 2. See [:material-code-braces: ResponseHeadersPolicySecurityHeadersConfigTypeDef](./type_defs.md#responseheaderspolicysecurityheadersconfigtypedef) 
 3. See [:material-code-braces: ResponseHeadersPolicyCustomHeadersConfigTypeDef](./type_defs.md#responseheaderspolicycustomheadersconfigtypedef) 
+4. See [:material-code-braces: ResponseHeadersPolicyServerTimingHeadersConfigTypeDef](./type_defs.md#responseheaderspolicyservertimingheadersconfigtypedef) 
 ## ResponseHeadersPolicyContentSecurityPolicyTypeDef
 
 ```python title="Usage Example"
@@ -5328,6 +5330,23 @@ class ResponseHeadersPolicySecurityHeadersConfigTypeDef(TypedDict):
 4. See [:material-code-braces: ResponseHeadersPolicyContentSecurityPolicyTypeDef](./type_defs.md#responseheaderspolicycontentsecuritypolicytypedef) 
 5. See [:material-code-braces: ResponseHeadersPolicyContentTypeOptionsTypeDef](./type_defs.md#responseheaderspolicycontenttypeoptionstypedef) 
 6. See [:material-code-braces: ResponseHeadersPolicyStrictTransportSecurityTypeDef](./type_defs.md#responseheaderspolicystricttransportsecuritytypedef) 
+## ResponseHeadersPolicyServerTimingHeadersConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_cloudfront.type_defs import ResponseHeadersPolicyServerTimingHeadersConfigTypeDef
+
+def get_value() -> ResponseHeadersPolicyServerTimingHeadersConfigTypeDef:
+    return {
+        "Enabled": ...,
+    }
+```
+
+```python title="Definition"
+class ResponseHeadersPolicyServerTimingHeadersConfigTypeDef(TypedDict):
+    Enabled: bool,
+    SamplingRate: NotRequired[float],
+```
+
 ## ResponseHeadersPolicyStrictTransportSecurityTypeDef
 
 ```python title="Usage Example"
@@ -5772,7 +5791,7 @@ def get_value() -> TestFunctionRequestRequestTypeDef:
 class TestFunctionRequestRequestTypeDef(TypedDict):
     Name: str,
     IfMatch: str,
-    EventObject: Union[bytes, IO[bytes], StreamingBody],
+    EventObject: Union[str, bytes, IO[Any], StreamingBody],
     Stage: NotRequired[FunctionStageType],  # (1)
 ```
 
@@ -6104,7 +6123,7 @@ class UpdateFunctionRequestRequestTypeDef(TypedDict):
     Name: str,
     IfMatch: str,
     FunctionConfig: FunctionConfigTypeDef,  # (1)
-    FunctionCode: Union[bytes, IO[bytes], StreamingBody],
+    FunctionCode: Union[str, bytes, IO[Any], StreamingBody],
 ```
 
 1. See [:material-code-braces: FunctionConfigTypeDef](./type_defs.md#functionconfigtypedef) 

@@ -692,10 +692,12 @@ class AutoMLChannelTypeDef(TypedDict):
     TargetAttributeName: str,
     CompressionType: NotRequired[CompressionTypeType],  # (2)
     ContentType: NotRequired[str],
+    ChannelType: NotRequired[AutoMLChannelTypeType],  # (3)
 ```
 
 1. See [:material-code-braces: AutoMLDataSourceTypeDef](./type_defs.md#automldatasourcetypedef) 
 2. See [:material-code-brackets: CompressionTypeType](./literals.md#compressiontypetype) 
+3. See [:material-code-brackets: AutoMLChannelTypeType](./literals.md#automlchanneltypetype) 
 ## AutoMLContainerDefinitionTypeDef
 
 ```python title="Usage Example"
@@ -732,6 +734,22 @@ class AutoMLDataSourceTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: AutoMLS3DataSourceTypeDef](./type_defs.md#automls3datasourcetypedef) 
+## AutoMLDataSplitConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import AutoMLDataSplitConfigTypeDef
+
+def get_value() -> AutoMLDataSplitConfigTypeDef:
+    return {
+        "ValidationFraction": ...,
+    }
+```
+
+```python title="Definition"
+class AutoMLDataSplitConfigTypeDef(TypedDict):
+    ValidationFraction: NotRequired[float],
+```
+
 ## AutoMLJobArtifactsTypeDef
 
 ```python title="Usage Example"
@@ -782,10 +800,12 @@ def get_value() -> AutoMLJobConfigTypeDef:
 class AutoMLJobConfigTypeDef(TypedDict):
     CompletionCriteria: NotRequired[AutoMLJobCompletionCriteriaTypeDef],  # (1)
     SecurityConfig: NotRequired[AutoMLSecurityConfigTypeDef],  # (2)
+    DataSplitConfig: NotRequired[AutoMLDataSplitConfigTypeDef],  # (3)
 ```
 
 1. See [:material-code-braces: AutoMLJobCompletionCriteriaTypeDef](./type_defs.md#automljobcompletioncriteriatypedef) 
 2. See [:material-code-braces: AutoMLSecurityConfigTypeDef](./type_defs.md#automlsecurityconfigtypedef) 
+3. See [:material-code-braces: AutoMLDataSplitConfigTypeDef](./type_defs.md#automldatasplitconfigtypedef) 
 ## AutoMLJobObjectiveTypeDef
 
 ```python title="Usage Example"
@@ -2547,13 +2567,15 @@ class CreateInferenceRecommendationsJobRequestRequestTypeDef(TypedDict):
     InputConfig: RecommendationJobInputConfigTypeDef,  # (2)
     JobDescription: NotRequired[str],
     StoppingConditions: NotRequired[RecommendationJobStoppingConditionsTypeDef],  # (3)
-    Tags: NotRequired[Sequence[TagTypeDef]],  # (4)
+    OutputConfig: NotRequired[RecommendationJobOutputConfigTypeDef],  # (4)
+    Tags: NotRequired[Sequence[TagTypeDef]],  # (5)
 ```
 
 1. See [:material-code-brackets: RecommendationJobTypeType](./literals.md#recommendationjobtypetype) 
 2. See [:material-code-braces: RecommendationJobInputConfigTypeDef](./type_defs.md#recommendationjobinputconfigtypedef) 
 3. See [:material-code-braces: RecommendationJobStoppingConditionsTypeDef](./type_defs.md#recommendationjobstoppingconditionstypedef) 
-4. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+4. See [:material-code-braces: RecommendationJobOutputConfigTypeDef](./type_defs.md#recommendationjoboutputconfigtypedef) 
+5. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 ## CreateInferenceRecommendationsJobResponseTypeDef
 
 ```python title="Usage Example"
@@ -14450,10 +14472,12 @@ class MetricDatumTypeDef(TypedDict):
     MetricName: NotRequired[AutoMLMetricEnumType],  # (1)
     Value: NotRequired[float],
     Set: NotRequired[MetricSetSourceType],  # (2)
+    StandardMetricName: NotRequired[AutoMLMetricExtendedEnumType],  # (3)
 ```
 
 1. See [:material-code-brackets: AutoMLMetricEnumType](./literals.md#automlmetricenumtype) 
 2. See [:material-code-brackets: MetricSetSourceType](./literals.md#metricsetsourcetype) 
+3. See [:material-code-brackets: AutoMLMetricExtendedEnumType](./literals.md#automlmetricextendedenumtype) 
 ## MetricDefinitionTypeDef
 
 ```python title="Usage Example"
@@ -17090,6 +17114,25 @@ class QueryLineageResponseTypeDef(TypedDict):
 1. See [:material-code-braces: VertexTypeDef](./type_defs.md#vertextypedef) 
 2. See [:material-code-braces: EdgeTypeDef](./type_defs.md#edgetypedef) 
 3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## RSessionAppSettingsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import RSessionAppSettingsTypeDef
+
+def get_value() -> RSessionAppSettingsTypeDef:
+    return {
+        "DefaultResourceSpec": ...,
+    }
+```
+
+```python title="Definition"
+class RSessionAppSettingsTypeDef(TypedDict):
+    DefaultResourceSpec: NotRequired[ResourceSpecTypeDef],  # (1)
+    CustomImages: NotRequired[Sequence[CustomImageTypeDef]],  # (2)
+```
+
+1. See [:material-code-braces: ResourceSpecTypeDef](./type_defs.md#resourcespectypedef) 
+2. See [:material-code-braces: CustomImageTypeDef](./type_defs.md#customimagetypedef) 
 ## RStudioServerProAppSettingsTypeDef
 
 ```python title="Usage Example"
@@ -17147,6 +17190,22 @@ class RStudioServerProDomainSettingsTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResourceSpecTypeDef](./type_defs.md#resourcespectypedef) 
+## RecommendationJobCompiledOutputConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import RecommendationJobCompiledOutputConfigTypeDef
+
+def get_value() -> RecommendationJobCompiledOutputConfigTypeDef:
+    return {
+        "S3OutputUri": ...,
+    }
+```
+
+```python title="Definition"
+class RecommendationJobCompiledOutputConfigTypeDef(TypedDict):
+    S3OutputUri: NotRequired[str],
+```
+
 ## RecommendationJobInputConfigTypeDef
 
 ```python title="Usage Example"
@@ -17165,11 +17224,30 @@ class RecommendationJobInputConfigTypeDef(TypedDict):
     TrafficPattern: NotRequired[TrafficPatternTypeDef],  # (1)
     ResourceLimit: NotRequired[RecommendationJobResourceLimitTypeDef],  # (2)
     EndpointConfigurations: NotRequired[Sequence[EndpointInputConfigurationTypeDef]],  # (3)
+    VolumeKmsKeyId: NotRequired[str],
 ```
 
 1. See [:material-code-braces: TrafficPatternTypeDef](./type_defs.md#trafficpatterntypedef) 
 2. See [:material-code-braces: RecommendationJobResourceLimitTypeDef](./type_defs.md#recommendationjobresourcelimittypedef) 
 3. See [:material-code-braces: EndpointInputConfigurationTypeDef](./type_defs.md#endpointinputconfigurationtypedef) 
+## RecommendationJobOutputConfigTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.type_defs import RecommendationJobOutputConfigTypeDef
+
+def get_value() -> RecommendationJobOutputConfigTypeDef:
+    return {
+        "KmsKeyId": ...,
+    }
+```
+
+```python title="Definition"
+class RecommendationJobOutputConfigTypeDef(TypedDict):
+    KmsKeyId: NotRequired[str],
+    CompiledOutputConfig: NotRequired[RecommendationJobCompiledOutputConfigTypeDef],  # (1)
+```
+
+1. See [:material-code-braces: RecommendationJobCompiledOutputConfigTypeDef](./type_defs.md#recommendationjobcompiledoutputconfigtypedef) 
 ## RecommendationJobResourceLimitTypeDef
 
 ```python title="Usage Example"
@@ -20242,7 +20320,7 @@ class UserSettingsTypeDef(TypedDict):
     KernelGatewayAppSettings: NotRequired[KernelGatewayAppSettingsTypeDef],  # (3)
     TensorBoardAppSettings: NotRequired[TensorBoardAppSettingsTypeDef],  # (4)
     RStudioServerProAppSettings: NotRequired[RStudioServerProAppSettingsTypeDef],  # (5)
-    RSessionAppSettings: NotRequired[Mapping[str, Any]],
+    RSessionAppSettings: NotRequired[RSessionAppSettingsTypeDef],  # (6)
 ```
 
 1. See [:material-code-braces: SharingSettingsTypeDef](./type_defs.md#sharingsettingstypedef) 
@@ -20250,6 +20328,7 @@ class UserSettingsTypeDef(TypedDict):
 3. See [:material-code-braces: KernelGatewayAppSettingsTypeDef](./type_defs.md#kernelgatewayappsettingstypedef) 
 4. See [:material-code-braces: TensorBoardAppSettingsTypeDef](./type_defs.md#tensorboardappsettingstypedef) 
 5. See [:material-code-braces: RStudioServerProAppSettingsTypeDef](./type_defs.md#rstudioserverproappsettingstypedef) 
+6. See [:material-code-braces: RSessionAppSettingsTypeDef](./type_defs.md#rsessionappsettingstypedef) 
 ## VariantPropertyTypeDef
 
 ```python title="Usage Example"

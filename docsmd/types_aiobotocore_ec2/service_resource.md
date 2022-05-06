@@ -961,6 +961,7 @@ await def create_instances(
     MetadataOptions: InstanceMetadataOptionsRequestTypeDef = ...,  # (19)
     EnclaveOptions: EnclaveOptionsRequestTypeDef = ...,  # (20)
     PrivateDnsNameOptions: PrivateDnsNameOptionsRequestTypeDef = ...,  # (21)
+    MaintenanceOptions: InstanceMaintenanceOptionsRequestTypeDef = ...,  # (22)
 ) -> List[Instance]:
     ...
 ```
@@ -986,6 +987,7 @@ await def create_instances(
 19. See [:material-code-braces: InstanceMetadataOptionsRequestTypeDef](./type_defs.md#instancemetadataoptionsrequesttypedef) 
 20. See [:material-code-braces: EnclaveOptionsRequestTypeDef](./type_defs.md#enclaveoptionsrequesttypedef) 
 21. See [:material-code-braces: PrivateDnsNameOptionsRequestTypeDef](./type_defs.md#privatednsnameoptionsrequesttypedef) 
+22. See [:material-code-braces: InstanceMaintenanceOptionsRequestTypeDef](./type_defs.md#instancemaintenanceoptionsrequesttypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1031,7 +1033,8 @@ parent.create_internet_gateway(**kwargs)
 
 ### EC2ServiceResource.create\_key\_pair method
 
-Creates an ED25519 or 2048-bit RSA key pair with the specified name.
+Creates an ED25519 or 2048-bit RSA key pair with the specified name and in the
+specified PEM or PPK format.
 
 Type annotations and code completion for `#!python session.resource("ec2").create_key_pair` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.ServiceResource.create_key_pair)
@@ -1044,12 +1047,14 @@ await def create_key_pair(
     DryRun: bool = ...,
     KeyType: KeyTypeType = ...,  # (1)
     TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (2)
+    KeyFormat: KeyFormatType = ...,  # (3)
 ) -> KeyPair:
     ...
 ```
 
 1. See [:material-code-brackets: KeyTypeType](./literals.md#keytypetype) 
 2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
+3. See [:material-code-brackets: KeyFormatType](./literals.md#keyformattype) 
 
 
 ```python title="Usage example with kwargs"
@@ -1519,7 +1524,7 @@ await def import_key_pair(
     self,
     *,
     KeyName: str,
-    PublicKeyMaterial: Union[bytes, IO[bytes], StreamingBody],
+    PublicKeyMaterial: Union[str, bytes, IO[Any], StreamingBody],
     DryRun: bool = ...,
     TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (1)
 ) -> KeyPairInfo:
@@ -2288,6 +2293,7 @@ def get_resource() -> Instance:
 - `usage_operation_update_time`: `datetime`
 - `private_dns_name_options`: [PrivateDnsNameOptionsResponseResponseMetadataTypeDef](./type_defs.md#privatednsnameoptionsresponseresponsemetadatatypedef)
 - `ipv6_address`: `str`
+- `maintenance_options`: [InstanceMaintenanceOptionsResponseMetadataTypeDef](./type_defs.md#instancemaintenanceoptionsresponsemetadatatypedef)
 - `id`: `str`
 - `classic_address`: [ClassicAddress](#classicaddress)
 - `image`: [Image](#image)
@@ -3446,6 +3452,8 @@ def get_resource() -> KeyPairInfo:
 - `key_name`: `str`
 - `key_type`: [KeyTypeType](./literals.md#keytypetype)
 - `tags`: `List`[[TagTypeDef](./type_defs.md#tagtypedef)]
+- `public_key`: `str`
+- `create_time`: `datetime`
 - `name`: `str`
 
 
@@ -5653,6 +5661,7 @@ await def create_instances(
     MetadataOptions: InstanceMetadataOptionsRequestTypeDef = ...,  # (19)
     EnclaveOptions: EnclaveOptionsRequestTypeDef = ...,  # (20)
     PrivateDnsNameOptions: PrivateDnsNameOptionsRequestTypeDef = ...,  # (21)
+    MaintenanceOptions: InstanceMaintenanceOptionsRequestTypeDef = ...,  # (22)
 ) -> List[Instance]:
     ...
 ```
@@ -5678,6 +5687,7 @@ await def create_instances(
 19. See [:material-code-braces: InstanceMetadataOptionsRequestTypeDef](./type_defs.md#instancemetadataoptionsrequesttypedef) 
 20. See [:material-code-braces: EnclaveOptionsRequestTypeDef](./type_defs.md#enclaveoptionsrequesttypedef) 
 21. See [:material-code-braces: PrivateDnsNameOptionsRequestTypeDef](./type_defs.md#privatednsnameoptionsrequesttypedef) 
+22. See [:material-code-braces: InstanceMaintenanceOptionsRequestTypeDef](./type_defs.md#instancemaintenanceoptionsrequesttypedef) 
 
 
 ```python title="Usage example with kwargs"

@@ -55,6 +55,25 @@ AssociationStatusType = Literal[
     "PENDING_DISASSOCIATION",
 ]
 ```
+## ClientDeviceTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_workspaces.literals import ClientDeviceTypeType
+
+def get_value() -> ClientDeviceTypeType:
+    return "DeviceTypeAndroid"
+```
+
+```python title="Definition"
+ClientDeviceTypeType = Literal[
+    "DeviceTypeAndroid",
+    "DeviceTypeIos",
+    "DeviceTypeLinux",
+    "DeviceTypeOsx",
+    "DeviceTypeWeb",
+    "DeviceTypeWindows",
+]
+```
 ## ComputeType
 
 ```python title="Usage Example"
@@ -67,7 +86,9 @@ def get_value() -> ComputeType:
 ```python title="Definition"
 ComputeType = Literal[
     "GRAPHICS",
+    "GRAPHICS_G4DN",
     "GRAPHICSPRO",
+    "GRAPHICSPRO_G4DN",
     "PERFORMANCE",
     "POWER",
     "POWERPRO",
@@ -430,6 +451,7 @@ def get_value() -> WorkspaceImageIngestionProcessType:
 ```python title="Definition"
 WorkspaceImageIngestionProcessType = Literal[
     "BYOL_GRAPHICS",
+    "BYOL_GRAPHICS_G4DN",
     "BYOL_GRAPHICSPRO",
     "BYOL_REGULAR",
     "BYOL_REGULAR_WSP",
@@ -557,6 +579,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -672,6 +695,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -740,6 +764,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

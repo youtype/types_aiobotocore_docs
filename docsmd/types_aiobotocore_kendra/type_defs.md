@@ -413,6 +413,40 @@ class BatchPutDocumentResponseTypeDef(TypedDict):
 
 1. See [:material-code-braces: BatchPutDocumentResponseFailedDocumentTypeDef](./type_defs.md#batchputdocumentresponsefaileddocumenttypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## BoxConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import BoxConfigurationTypeDef
+
+def get_value() -> BoxConfigurationTypeDef:
+    return {
+        "EnterpriseId": ...,
+        "SecretArn": ...,
+    }
+```
+
+```python title="Definition"
+class BoxConfigurationTypeDef(TypedDict):
+    EnterpriseId: str,
+    SecretArn: str,
+    UseChangeLog: NotRequired[bool],
+    CrawlComments: NotRequired[bool],
+    CrawlTasks: NotRequired[bool],
+    CrawlWebLinks: NotRequired[bool],
+    FileFieldMappings: NotRequired[Sequence[DataSourceToIndexFieldMappingTypeDef]],  # (1)
+    TaskFieldMappings: NotRequired[Sequence[DataSourceToIndexFieldMappingTypeDef]],  # (1)
+    CommentFieldMappings: NotRequired[Sequence[DataSourceToIndexFieldMappingTypeDef]],  # (1)
+    WebLinkFieldMappings: NotRequired[Sequence[DataSourceToIndexFieldMappingTypeDef]],  # (1)
+    InclusionPatterns: NotRequired[Sequence[str]],
+    ExclusionPatterns: NotRequired[Sequence[str]],
+    VpcConfiguration: NotRequired[DataSourceVpcConfigurationTypeDef],  # (5)
+```
+
+1. See [:material-code-braces: DataSourceToIndexFieldMappingTypeDef](./type_defs.md#datasourcetoindexfieldmappingtypedef) 
+2. See [:material-code-braces: DataSourceToIndexFieldMappingTypeDef](./type_defs.md#datasourcetoindexfieldmappingtypedef) 
+3. See [:material-code-braces: DataSourceToIndexFieldMappingTypeDef](./type_defs.md#datasourcetoindexfieldmappingtypedef) 
+4. See [:material-code-braces: DataSourceToIndexFieldMappingTypeDef](./type_defs.md#datasourcetoindexfieldmappingtypedef) 
+5. See [:material-code-braces: DataSourceVpcConfigurationTypeDef](./type_defs.md#datasourcevpcconfigurationtypedef) 
 ## CapacityUnitsConfigurationTypeDef
 
 ```python title="Usage Example"
@@ -1063,6 +1097,8 @@ class DataSourceConfigurationTypeDef(TypedDict):
     WorkDocsConfiguration: NotRequired[WorkDocsConfigurationTypeDef],  # (10)
     FsxConfiguration: NotRequired[FsxConfigurationTypeDef],  # (11)
     SlackConfiguration: NotRequired[SlackConfigurationTypeDef],  # (12)
+    BoxConfiguration: NotRequired[BoxConfigurationTypeDef],  # (13)
+    QuipConfiguration: NotRequired[QuipConfigurationTypeDef],  # (14)
 ```
 
 1. See [:material-code-braces: S3DataSourceConfigurationTypeDef](./type_defs.md#s3datasourceconfigurationtypedef) 
@@ -1077,6 +1113,8 @@ class DataSourceConfigurationTypeDef(TypedDict):
 10. See [:material-code-braces: WorkDocsConfigurationTypeDef](./type_defs.md#workdocsconfigurationtypedef) 
 11. See [:material-code-braces: FsxConfigurationTypeDef](./type_defs.md#fsxconfigurationtypedef) 
 12. See [:material-code-braces: SlackConfigurationTypeDef](./type_defs.md#slackconfigurationtypedef) 
+13. See [:material-code-braces: BoxConfigurationTypeDef](./type_defs.md#boxconfigurationtypedef) 
+14. See [:material-code-braces: QuipConfigurationTypeDef](./type_defs.md#quipconfigurationtypedef) 
 ## DataSourceGroupTypeDef
 
 ```python title="Usage Example"
@@ -2014,9 +2052,11 @@ def get_value() -> DocumentAttributeValueCountPairTypeDef:
 class DocumentAttributeValueCountPairTypeDef(TypedDict):
     DocumentAttributeValue: NotRequired[DocumentAttributeValueTypeDef],  # (1)
     Count: NotRequired[int],
+    FacetResults: NotRequired[List[FacetResultTypeDef]],  # (2)
 ```
 
 1. See [:material-code-braces: DocumentAttributeValueTypeDef](./type_defs.md#documentattributevaluetypedef) 
+2. See [:material-code-braces: FacetResultTypeDef](./type_defs.md#facetresulttypedef) 
 ## DocumentAttributeValueTypeDef
 
 ```python title="Usage Example"
@@ -2111,7 +2151,7 @@ def get_value() -> DocumentTypeDef:
 class DocumentTypeDef(TypedDict):
     Id: str,
     Title: NotRequired[str],
-    Blob: NotRequired[Union[bytes, IO[bytes], StreamingBody]],
+    Blob: NotRequired[Union[str, bytes, IO[Any], StreamingBody]],
     S3Path: NotRequired[S3PathTypeDef],  # (1)
     Attributes: NotRequired[Sequence[DocumentAttributeTypeDef]],  # (2)
     AccessControlList: NotRequired[Sequence[PrincipalTypeDef]],  # (3)
@@ -2311,8 +2351,11 @@ def get_value() -> FacetTypeDef:
 ```python title="Definition"
 class FacetTypeDef(TypedDict):
     DocumentAttributeKey: NotRequired[str],
+    Facets: NotRequired[Sequence[FacetTypeDef]],  # (1)
+    MaxResults: NotRequired[int],
 ```
 
+1. See [:material-code-braces: FacetTypeDef](./type_defs.md#facettypedef) 
 ## FailedEntityTypeDef
 
 ```python title="Usage Example"
@@ -3465,6 +3508,38 @@ class QuerySuggestionsBlockListSummaryTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: QuerySuggestionsBlockListStatusType](./literals.md#querysuggestionsblockliststatustype) 
+## QuipConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.type_defs import QuipConfigurationTypeDef
+
+def get_value() -> QuipConfigurationTypeDef:
+    return {
+        "Domain": ...,
+        "SecretArn": ...,
+    }
+```
+
+```python title="Definition"
+class QuipConfigurationTypeDef(TypedDict):
+    Domain: str,
+    SecretArn: str,
+    CrawlFileComments: NotRequired[bool],
+    CrawlChatRooms: NotRequired[bool],
+    CrawlAttachments: NotRequired[bool],
+    FolderIds: NotRequired[Sequence[str]],
+    ThreadFieldMappings: NotRequired[Sequence[DataSourceToIndexFieldMappingTypeDef]],  # (1)
+    MessageFieldMappings: NotRequired[Sequence[DataSourceToIndexFieldMappingTypeDef]],  # (1)
+    AttachmentFieldMappings: NotRequired[Sequence[DataSourceToIndexFieldMappingTypeDef]],  # (1)
+    InclusionPatterns: NotRequired[Sequence[str]],
+    ExclusionPatterns: NotRequired[Sequence[str]],
+    VpcConfiguration: NotRequired[DataSourceVpcConfigurationTypeDef],  # (4)
+```
+
+1. See [:material-code-braces: DataSourceToIndexFieldMappingTypeDef](./type_defs.md#datasourcetoindexfieldmappingtypedef) 
+2. See [:material-code-braces: DataSourceToIndexFieldMappingTypeDef](./type_defs.md#datasourcetoindexfieldmappingtypedef) 
+3. See [:material-code-braces: DataSourceToIndexFieldMappingTypeDef](./type_defs.md#datasourcetoindexfieldmappingtypedef) 
+4. See [:material-code-braces: DataSourceVpcConfigurationTypeDef](./type_defs.md#datasourcevpcconfigurationtypedef) 
 ## RelevanceFeedbackTypeDef
 
 ```python title="Usage Example"

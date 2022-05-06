@@ -76,7 +76,7 @@ Type annotations and code completion for `#!python DescribeJobsPaginator.paginat
 def paginate(
     self,
     *,
-    filters: DescribeJobsRequestFiltersTypeDef,  # (1)
+    filters: DescribeJobsRequestFiltersTypeDef = ...,  # (1)
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
 ) -> AsyncIterator[DescribeJobsResponseTypeDef]:  # (3)
     ...
@@ -121,7 +121,7 @@ Type annotations and code completion for `#!python DescribeReplicationConfigurat
 def paginate(
     self,
     *,
-    replicationConfigurationTemplateIDs: Sequence[str],
+    replicationConfigurationTemplateIDs: Sequence[str] = ...,
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
 ) -> AsyncIterator[DescribeReplicationConfigurationTemplatesResponseTypeDef]:  # (2)
     ...
@@ -165,7 +165,7 @@ Type annotations and code completion for `#!python DescribeSourceServersPaginato
 def paginate(
     self,
     *,
-    filters: DescribeSourceServersRequestFiltersTypeDef,  # (1)
+    filters: DescribeSourceServersRequestFiltersTypeDef = ...,  # (1)
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
 ) -> AsyncIterator[DescribeSourceServersResponseTypeDef]:  # (3)
     ...

@@ -217,7 +217,7 @@ Type annotations and code completion for `#!python session.create_client("medias
 await def put_object(
     self,
     *,
-    Body: Union[bytes, IO[bytes], StreamingBody],
+    Body: Union[str, bytes, IO[Any], StreamingBody],
     Path: str,
     ContentType: str = ...,
     CacheControl: str = ...,

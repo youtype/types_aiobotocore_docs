@@ -612,6 +612,21 @@ GetReservedNodeExchangeOfferingsPaginatorName = Literal[
     "get_reserved_node_exchange_offerings",
 ]
 ```
+## LogDestinationTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_redshift.literals import LogDestinationTypeType
+
+def get_value() -> LogDestinationTypeType:
+    return "cloudwatch"
+```
+
+```python title="Definition"
+LogDestinationTypeType = Literal[
+    "cloudwatch",
+    "s3",
+]
+```
 ## ModeType
 
 ```python title="Usage Example"
@@ -1012,6 +1027,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -1127,6 +1143,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1195,6 +1212,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

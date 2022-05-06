@@ -486,7 +486,7 @@ parent.get_policy(**kwargs)
 
 ### import\_certificate\_authority\_certificate
 
-Imports a signed private CA certificate into Amazon Web Services Private CA.
+Imports a signed private CA certificate into ACM Private CA.
 
 Type annotations and code completion for `#!python session.create_client("acm-pca").import_certificate_authority_certificate` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.import_certificate_authority_certificate)
@@ -496,8 +496,8 @@ await def import_certificate_authority_certificate(
     self,
     *,
     CertificateAuthorityArn: str,
-    Certificate: Union[bytes, IO[bytes], StreamingBody],
-    CertificateChain: Union[bytes, IO[bytes], StreamingBody] = ...,
+    Certificate: Union[str, bytes, IO[Any], StreamingBody],
+    CertificateChain: Union[str, bytes, IO[Any], StreamingBody] = ...,
 ) -> None:
     ...
 ```
@@ -528,7 +528,7 @@ await def issue_certificate(
     self,
     *,
     CertificateAuthorityArn: str,
-    Csr: Union[bytes, IO[bytes], StreamingBody],
+    Csr: Union[str, bytes, IO[Any], StreamingBody],
     SigningAlgorithm: SigningAlgorithmType,  # (1)
     Validity: ValidityTypeDef,  # (2)
     ApiPassthrough: ApiPassthroughTypeDef = ...,  # (3)
@@ -717,7 +717,7 @@ parent.restore_certificate_authority(**kwargs)
 
 ### revoke\_certificate
 
-Revokes a certificate that was issued inside Amazon Web Services Private CA.
+Revokes a certificate that was issued inside ACM Private CA.
 
 Type annotations and code completion for `#!python session.create_client("acm-pca").revoke_certificate` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/acm-pca.html#ACMPCA.Client.revoke_certificate)

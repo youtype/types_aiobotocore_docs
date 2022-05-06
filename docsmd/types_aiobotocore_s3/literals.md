@@ -88,7 +88,7 @@ BucketExistsWaiterName = Literal[
 from types_aiobotocore_s3.literals import BucketLocationConstraintType
 
 def get_value() -> BucketLocationConstraintType:
-    return "EU"
+    return "af-south-1"
 ```
 
 ```python title="Definition"
@@ -101,10 +101,8 @@ BucketLocationConstraintType = Literal[
     "ap-south-1",
     "ap-southeast-1",
     "ap-southeast-2",
+    "ap-southeast-3",
     "ca-central-1",
-    "cn-north-1",
-    "cn-northwest-1",
-    "EU",
     "eu-central-1",
     "eu-north-1",
     "eu-south-1",
@@ -113,9 +111,8 @@ BucketLocationConstraintType = Literal[
     "eu-west-3",
     "me-south-1",
     "sa-east-1",
+    "us-east-1",
     "us-east-2",
-    "us-gov-east-1",
-    "us-gov-west-1",
     "us-west-1",
     "us-west-2",
 ]
@@ -1154,6 +1151,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -1269,6 +1267,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1337,6 +1336,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

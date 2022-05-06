@@ -151,6 +151,21 @@ FunctionUpdatedWaiterName = Literal[
     "function_updated",
 ]
 ```
+## FunctionUrlAuthTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.literals import FunctionUrlAuthTypeType
+
+def get_value() -> FunctionUrlAuthTypeType:
+    return "AWS_IAM"
+```
+
+```python title="Definition"
+FunctionUrlAuthTypeType = Literal[
+    "AWS_IAM",
+    "NONE",
+]
+```
 ## FunctionVersionType
 
 ```python title="Usage Example"
@@ -274,6 +289,20 @@ def get_value() -> ListFunctionEventInvokeConfigsPaginatorName:
 ```python title="Definition"
 ListFunctionEventInvokeConfigsPaginatorName = Literal[
     "list_function_event_invoke_configs",
+]
+```
+## ListFunctionUrlConfigsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_lambda.literals import ListFunctionUrlConfigsPaginatorName
+
+def get_value() -> ListFunctionUrlConfigsPaginatorName:
+    return "list_function_url_configs"
+```
+
+```python title="Definition"
+ListFunctionUrlConfigsPaginatorName = Literal[
+    "list_function_url_configs",
 ]
 ```
 ## ListFunctionsByCodeSigningConfigPaginatorName
@@ -585,6 +614,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -700,6 +730,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -768,6 +799,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -891,6 +923,7 @@ PaginatorName = Literal[
     "list_code_signing_configs",
     "list_event_source_mappings",
     "list_function_event_invoke_configs",
+    "list_function_url_configs",
     "list_functions",
     "list_functions_by_code_signing_config",
     "list_layer_versions",

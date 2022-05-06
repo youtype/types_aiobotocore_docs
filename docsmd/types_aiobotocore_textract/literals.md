@@ -23,6 +23,8 @@ BlockTypeType = Literal[
     "LINE",
     "MERGED_CELL",
     "PAGE",
+    "QUERY",
+    "QUERY_RESULT",
     "SELECTION_ELEMENT",
     "TABLE",
     "TITLE",
@@ -72,6 +74,7 @@ def get_value() -> FeatureTypeType:
 ```python title="Definition"
 FeatureTypeType = Literal[
     "FORMS",
+    "QUERIES",
     "TABLES",
 ]
 ```
@@ -98,11 +101,12 @@ JobStatusType = Literal[
 from types_aiobotocore_textract.literals import RelationshipTypeType
 
 def get_value() -> RelationshipTypeType:
-    return "CHILD"
+    return "ANSWER"
 ```
 
 ```python title="Definition"
 RelationshipTypeType = Literal[
+    "ANSWER",
     "CHILD",
     "COMPLEX_FEATURES",
     "MERGED_CELL",
@@ -215,6 +219,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -330,6 +335,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -398,6 +404,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

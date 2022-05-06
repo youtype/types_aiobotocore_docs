@@ -239,6 +239,21 @@ GroupingType = Literal[
     "QUEUE",
 ]
 ```
+## HierarchyGroupMatchTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_connect.literals import HierarchyGroupMatchTypeType
+
+def get_value() -> HierarchyGroupMatchTypeType:
+    return "EXACT"
+```
+
+```python title="Definition"
+HierarchyGroupMatchTypeType = Literal[
+    "EXACT",
+    "WITH_CHILD_GROUPS",
+]
+```
 ## HistoricalMetricNameType
 
 ```python title="Usage Example"
@@ -313,6 +328,7 @@ InstanceAttributeTypeType = Literal[
     "CONTACTFLOW_LOGS",
     "EARLY_MEDIA",
     "INBOUND_CALLS",
+    "MULTI_PARTY_CONFERENCE",
     "OUTBOUND_CALLS",
     "USE_CUSTOM_TTS_VOICES",
 ]
@@ -594,6 +610,20 @@ def get_value() -> ListPhoneNumbersPaginatorName:
 ```python title="Definition"
 ListPhoneNumbersPaginatorName = Literal[
     "list_phone_numbers",
+]
+```
+## ListPhoneNumbersV2PaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_connect.literals import ListPhoneNumbersV2PaginatorName
+
+def get_value() -> ListPhoneNumbersV2PaginatorName:
+    return "list_phone_numbers_v2"
+```
+
+```python title="Definition"
+ListPhoneNumbersV2PaginatorName = Literal[
+    "list_phone_numbers_v2",
 ]
 ```
 ## ListPromptsPaginatorName
@@ -1029,6 +1059,22 @@ PhoneNumberTypeType = Literal[
     "TOLL_FREE",
 ]
 ```
+## PhoneNumberWorkflowStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_connect.literals import PhoneNumberWorkflowStatusType
+
+def get_value() -> PhoneNumberWorkflowStatusType:
+    return "CLAIMED"
+```
+
+```python title="Definition"
+PhoneNumberWorkflowStatusType = Literal[
+    "CLAIMED",
+    "FAILED",
+    "IN_PROGRESS",
+]
+```
 ## PhoneTypeType
 
 ```python title="Usage Example"
@@ -1120,6 +1166,34 @@ ReferenceTypeType = Literal[
     "URL",
 ]
 ```
+## SearchAvailablePhoneNumbersPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_connect.literals import SearchAvailablePhoneNumbersPaginatorName
+
+def get_value() -> SearchAvailablePhoneNumbersPaginatorName:
+    return "search_available_phone_numbers"
+```
+
+```python title="Definition"
+SearchAvailablePhoneNumbersPaginatorName = Literal[
+    "search_available_phone_numbers",
+]
+```
+## SearchUsersPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_connect.literals import SearchUsersPaginatorName
+
+def get_value() -> SearchUsersPaginatorName:
+    return "search_users"
+```
+
+```python title="Definition"
+SearchUsersPaginatorName = Literal[
+    "search_users",
+]
+```
 ## SearchVocabulariesPaginatorName
 
 ```python title="Usage Example"
@@ -1180,6 +1254,22 @@ StorageTypeType = Literal[
     "KINESIS_STREAM",
     "KINESIS_VIDEO_STREAM",
     "S3",
+]
+```
+## StringComparisonTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_connect.literals import StringComparisonTypeType
+
+def get_value() -> StringComparisonTypeType:
+    return "CONTAINS"
+```
+
+```python title="Definition"
+StringComparisonTypeType = Literal[
+    "CONTAINS",
+    "EXACT",
+    "STARTS_WITH",
 ]
 ```
 ## TrafficTypeType
@@ -1356,6 +1446,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -1471,6 +1562,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1539,6 +1631,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -1674,6 +1767,7 @@ PaginatorName = Literal[
     "list_lambda_functions",
     "list_lex_bots",
     "list_phone_numbers",
+    "list_phone_numbers_v2",
     "list_prompts",
     "list_queue_quick_connects",
     "list_queues",
@@ -1686,6 +1780,8 @@ PaginatorName = Literal[
     "list_use_cases",
     "list_user_hierarchy_groups",
     "list_users",
+    "search_available_phone_numbers",
+    "search_users",
     "search_vocabularies",
 ]
 ```

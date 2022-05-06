@@ -693,7 +693,7 @@ await def put_record(
     self,
     *,
     StreamName: str,
-    Data: Union[bytes, IO[bytes], StreamingBody],
+    Data: Union[str, bytes, IO[Any], StreamingBody],
     PartitionKey: str,
     ExplicitHashKey: str = ...,
     SequenceNumberForOrdering: str = ...,

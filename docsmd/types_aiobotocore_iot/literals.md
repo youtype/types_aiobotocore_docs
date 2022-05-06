@@ -1097,6 +1097,20 @@ ListJobsPaginatorName = Literal[
     "list_jobs",
 ]
 ```
+## ListMetricValuesPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_iot.literals import ListMetricValuesPaginatorName
+
+def get_value() -> ListMetricValuesPaginatorName:
+    return "list_metric_values"
+```
+
+```python title="Definition"
+ListMetricValuesPaginatorName = Literal[
+    "list_metric_values",
+]
+```
 ## ListMitigationActionsPaginatorName
 
 ```python title="Usage Example"
@@ -1938,6 +1952,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -2053,6 +2068,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -2121,6 +2137,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -2264,6 +2281,7 @@ PaginatorName = Literal[
     "list_job_executions_for_thing",
     "list_job_templates",
     "list_jobs",
+    "list_metric_values",
     "list_mitigation_actions",
     "list_ota_updates",
     "list_outgoing_certificates",

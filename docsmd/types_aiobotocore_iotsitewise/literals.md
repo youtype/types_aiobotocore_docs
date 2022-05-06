@@ -162,6 +162,69 @@ AuthModeType = Literal[
     "SSO",
 ]
 ```
+## BatchEntryCompletionStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.literals import BatchEntryCompletionStatusType
+
+def get_value() -> BatchEntryCompletionStatusType:
+    return "ERROR"
+```
+
+```python title="Definition"
+BatchEntryCompletionStatusType = Literal[
+    "ERROR",
+    "SUCCESS",
+]
+```
+## BatchGetAssetPropertyAggregatesErrorCodeType
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.literals import BatchGetAssetPropertyAggregatesErrorCodeType
+
+def get_value() -> BatchGetAssetPropertyAggregatesErrorCodeType:
+    return "AccessDeniedException"
+```
+
+```python title="Definition"
+BatchGetAssetPropertyAggregatesErrorCodeType = Literal[
+    "AccessDeniedException",
+    "InvalidRequestException",
+    "ResourceNotFoundException",
+]
+```
+## BatchGetAssetPropertyValueErrorCodeType
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.literals import BatchGetAssetPropertyValueErrorCodeType
+
+def get_value() -> BatchGetAssetPropertyValueErrorCodeType:
+    return "AccessDeniedException"
+```
+
+```python title="Definition"
+BatchGetAssetPropertyValueErrorCodeType = Literal[
+    "AccessDeniedException",
+    "InvalidRequestException",
+    "ResourceNotFoundException",
+]
+```
+## BatchGetAssetPropertyValueHistoryErrorCodeType
+
+```python title="Usage Example"
+from types_aiobotocore_iotsitewise.literals import BatchGetAssetPropertyValueHistoryErrorCodeType
+
+def get_value() -> BatchGetAssetPropertyValueHistoryErrorCodeType:
+    return "AccessDeniedException"
+```
+
+```python title="Definition"
+BatchGetAssetPropertyValueHistoryErrorCodeType = Literal[
+    "AccessDeniedException",
+    "InvalidRequestException",
+    "ResourceNotFoundException",
+]
+```
 ## BatchPutAssetPropertyValueErrorCodeType
 
 ```python title="Usage Example"
@@ -840,6 +903,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -955,6 +1019,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1023,6 +1088,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

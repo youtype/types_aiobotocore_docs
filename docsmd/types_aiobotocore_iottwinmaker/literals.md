@@ -88,11 +88,12 @@ ParentEntityUpdateTypeType = Literal[
 from types_aiobotocore_iottwinmaker.literals import PropertyUpdateTypeType
 
 def get_value() -> PropertyUpdateTypeType:
-    return "DELETE"
+    return "CREATE"
 ```
 
 ```python title="Definition"
 PropertyUpdateTypeType = Literal[
+    "CREATE",
     "DELETE",
     "UPDATE",
 ]
@@ -212,6 +213,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -327,6 +329,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -395,6 +398,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -501,5 +505,24 @@ ResourceServiceName = Literal[
     "s3",
     "sns",
     "sqs",
+]
+```
+## RegionName
+
+```python title="Usage Example"
+from types_aiobotocore_iottwinmaker.literals import RegionName
+
+def get_value() -> RegionName:
+    return "ap-southeast-1"
+```
+
+```python title="Definition"
+RegionName = Literal[
+    "ap-southeast-1",
+    "ap-southeast-2",
+    "eu-central-1",
+    "eu-west-1",
+    "us-east-1",
+    "us-west-2",
 ]
 ```

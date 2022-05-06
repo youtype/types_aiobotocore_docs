@@ -323,6 +323,7 @@ await def allocate_hosts(
     InstanceFamily: str = ...,
     TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (2)
     HostRecovery: HostRecoveryType = ...,  # (3)
+    OutpostArn: str = ...,
 ) -> AllocateHostsResultTypeDef:  # (4)
     ...
 ```
@@ -2422,7 +2423,8 @@ parent.create_ipam_scope(**kwargs)
 
 ### create\_key\_pair
 
-Creates an ED25519 or 2048-bit RSA key pair with the specified name.
+Creates an ED25519 or 2048-bit RSA key pair with the specified name and in the
+specified PEM or PPK format.
 
 Type annotations and code completion for `#!python session.create_client("ec2").create_key_pair` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_key_pair)
@@ -2435,13 +2437,15 @@ await def create_key_pair(
     DryRun: bool = ...,
     KeyType: KeyTypeType = ...,  # (1)
     TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (2)
-) -> KeyPairTypeDef:  # (3)
+    KeyFormat: KeyFormatType = ...,  # (3)
+) -> KeyPairTypeDef:  # (4)
     ...
 ```
 
 1. See [:material-code-brackets: KeyTypeType](./literals.md#keytypetype) 
 2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
-3. See [:material-code-braces: KeyPairTypeDef](./type_defs.md#keypairtypedef) 
+3. See [:material-code-brackets: KeyFormatType](./literals.md#keyformattype) 
+4. See [:material-code-braces: KeyPairTypeDef](./type_defs.md#keypairtypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -4089,8 +4093,8 @@ parent.create_vpc_endpoint_connection_notification(**kwargs)
 
 ### create\_vpc\_endpoint\_service\_configuration
 
-Creates a VPC endpoint service configuration to which service consumers (Amazon
-Web Services accounts, IAM users, and IAM roles) can connect.
+Creates a VPC endpoint service to which service consumers (Amazon Web Services
+accounts, IAM users, and IAM roles) can connect.
 
 Type annotations and code completion for `#!python session.create_client("ec2").create_vpc_endpoint_service_configuration` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_vpc_endpoint_service_configuration)
@@ -8221,6 +8225,7 @@ await def describe_key_pairs(
     KeyNames: Sequence[str] = ...,
     KeyPairIds: Sequence[str] = ...,
     DryRun: bool = ...,
+    IncludePublicKey: bool = ...,
 ) -> DescribeKeyPairsResultTypeDef:  # (2)
     ...
 ```
@@ -13449,7 +13454,7 @@ await def import_key_pair(
     self,
     *,
     KeyName: str,
-    PublicKeyMaterial: Union[bytes, IO[bytes], StreamingBody],
+    PublicKeyMaterial: Union[str, bytes, IO[Any], StreamingBody],
     DryRun: bool = ...,
     TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (1)
 ) -> ImportKeyPairResultTypeDef:  # (2)
@@ -14266,6 +14271,39 @@ parent.modify_instance_event_window(**kwargs)
 ```
 
 1. See [:material-code-braces: ModifyInstanceEventWindowRequestRequestTypeDef](./type_defs.md#modifyinstanceeventwindowrequestrequesttypedef) 
+
+### modify\_instance\_maintenance\_options
+
+Modifies the recovery behavior of your instance to disable simplified automatic
+recovery or set the recovery behavior to default.
+
+Type annotations and code completion for `#!python session.create_client("ec2").modify_instance_maintenance_options` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_instance_maintenance_options)
+
+```python title="Method definition"
+await def modify_instance_maintenance_options(
+    self,
+    *,
+    InstanceId: str,
+    AutoRecovery: InstanceAutoRecoveryStateType = ...,  # (1)
+    DryRun: bool = ...,
+) -> ModifyInstanceMaintenanceOptionsResultTypeDef:  # (2)
+    ...
+```
+
+1. See [:material-code-brackets: InstanceAutoRecoveryStateType](./literals.md#instanceautorecoverystatetype) 
+2. See [:material-code-braces: ModifyInstanceMaintenanceOptionsResultTypeDef](./type_defs.md#modifyinstancemaintenanceoptionsresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ModifyInstanceMaintenanceOptionsRequestRequestTypeDef = {  # (1)
+    "InstanceId": ...,
+}
+
+parent.modify_instance_maintenance_options(**kwargs)
+```
+
+1. See [:material-code-braces: ModifyInstanceMaintenanceOptionsRequestRequestTypeDef](./type_defs.md#modifyinstancemaintenanceoptionsrequestrequesttypedef) 
 
 ### modify\_instance\_metadata\_options
 
@@ -15308,9 +15346,7 @@ parent.modify_vpc_endpoint_service_payer_responsibility(**kwargs)
 
 ### modify\_vpc\_endpoint\_service\_permissions
 
-Modifies the permissions for your [VPC endpoint
-service](https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-
-service.html)_.
+Modifies the permissions for your VPC endpoint service.
 
 Type annotations and code completion for `#!python session.create_client("ec2").modify_vpc_endpoint_service_permissions` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.modify_vpc_endpoint_service_permissions)
@@ -17149,7 +17185,8 @@ await def run_instances(
     MetadataOptions: InstanceMetadataOptionsRequestTypeDef = ...,  # (19)
     EnclaveOptions: EnclaveOptionsRequestTypeDef = ...,  # (20)
     PrivateDnsNameOptions: PrivateDnsNameOptionsRequestTypeDef = ...,  # (21)
-) -> ReservationResponseMetadataTypeDef:  # (22)
+    MaintenanceOptions: InstanceMaintenanceOptionsRequestTypeDef = ...,  # (22)
+) -> ReservationResponseMetadataTypeDef:  # (23)
     ...
 ```
 
@@ -17174,7 +17211,8 @@ await def run_instances(
 19. See [:material-code-braces: InstanceMetadataOptionsRequestTypeDef](./type_defs.md#instancemetadataoptionsrequesttypedef) 
 20. See [:material-code-braces: EnclaveOptionsRequestTypeDef](./type_defs.md#enclaveoptionsrequesttypedef) 
 21. See [:material-code-braces: PrivateDnsNameOptionsRequestTypeDef](./type_defs.md#privatednsnameoptionsrequesttypedef) 
-22. See [:material-code-braces: ReservationResponseMetadataTypeDef](./type_defs.md#reservationresponsemetadatatypedef) 
+22. See [:material-code-braces: InstanceMaintenanceOptionsRequestTypeDef](./type_defs.md#instancemaintenanceoptionsrequesttypedef) 
+23. See [:material-code-braces: ReservationResponseMetadataTypeDef](./type_defs.md#reservationresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -17959,6 +17997,7 @@ Type annotations and code completion for `#!python session.create_client("ec2").
 - `client.get_waiter("internet_gateway_exists")` -> [InternetGatewayExistsWaiter](./waiters.md#internetgatewayexistswaiter)
 - `client.get_waiter("key_pair_exists")` -> [KeyPairExistsWaiter](./waiters.md#keypairexistswaiter)
 - `client.get_waiter("nat_gateway_available")` -> [NatGatewayAvailableWaiter](./waiters.md#natgatewayavailablewaiter)
+- `client.get_waiter("nat_gateway_deleted")` -> [NatGatewayDeletedWaiter](./waiters.md#natgatewaydeletedwaiter)
 - `client.get_waiter("network_interface_available")` -> [NetworkInterfaceAvailableWaiter](./waiters.md#networkinterfaceavailablewaiter)
 - `client.get_waiter("password_data_available")` -> [PasswordDataAvailableWaiter](./waiters.md#passworddataavailablewaiter)
 - `client.get_waiter("security_group_exists")` -> [SecurityGroupExistsWaiter](./waiters.md#securitygroupexistswaiter)

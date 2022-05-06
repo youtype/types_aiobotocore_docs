@@ -124,6 +124,21 @@ ProfileType = Literal[
     "NONE",
 ]
 ```
+## ScteMarkersSourceType
+
+```python title="Usage Example"
+from types_aiobotocore_mediapackage_vod.literals import ScteMarkersSourceType
+
+def get_value() -> ScteMarkersSourceType:
+    return "MANIFEST"
+```
+
+```python title="Definition"
+ScteMarkersSourceType = Literal[
+    "MANIFEST",
+    "SEGMENTS",
+]
+```
 ## SegmentTemplateFormatType
 
 ```python title="Usage Example"
@@ -217,6 +232,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -332,6 +348,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -400,6 +417,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

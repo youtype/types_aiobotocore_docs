@@ -139,6 +139,22 @@ class ChildTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: ChildTypeType](./literals.md#childtypetype) 
+## CloseAccountRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_organizations.type_defs import CloseAccountRequestRequestTypeDef
+
+def get_value() -> CloseAccountRequestRequestTypeDef:
+    return {
+        "AccountId": ...,
+    }
+```
+
+```python title="Definition"
+class CloseAccountRequestRequestTypeDef(TypedDict):
+    AccountId: str,
+```
+
 ## CreateAccountRequestRequestTypeDef
 
 ```python title="Usage Example"

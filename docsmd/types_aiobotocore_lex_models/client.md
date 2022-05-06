@@ -1351,7 +1351,7 @@ Type annotations and code completion for `#!python session.create_client("lex-mo
 await def start_import(
     self,
     *,
-    payload: Union[bytes, IO[bytes], StreamingBody],
+    payload: Union[str, bytes, IO[Any], StreamingBody],
     resourceType: ResourceTypeType,  # (1)
     mergeStrategy: MergeStrategyType,  # (2)
     tags: Sequence[TagTypeDef] = ...,  # (3)

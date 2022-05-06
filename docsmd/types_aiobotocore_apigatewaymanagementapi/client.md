@@ -155,7 +155,7 @@ Type annotations and code completion for `#!python session.create_client("apigat
 await def post_to_connection(
     self,
     *,
-    Data: Union[bytes, IO[bytes], StreamingBody],
+    Data: Union[str, bytes, IO[Any], StreamingBody],
     ConnectionId: str,
 ) -> None:
     ...

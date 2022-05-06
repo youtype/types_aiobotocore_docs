@@ -75,7 +75,7 @@ class CanaryCodeInputTypeDef(TypedDict):
     S3Bucket: NotRequired[str],
     S3Key: NotRequired[str],
     S3Version: NotRequired[str],
-    ZipFile: NotRequired[Union[bytes, IO[bytes], StreamingBody]],
+    ZipFile: NotRequired[Union[str, bytes, IO[Any], StreamingBody]],
 ```
 
 ## CanaryCodeOutputTypeDef
@@ -393,6 +393,7 @@ def get_value() -> DeleteCanaryRequestRequestTypeDef:
 ```python title="Definition"
 class DeleteCanaryRequestRequestTypeDef(TypedDict):
     Name: str,
+    DeleteLambda: NotRequired[bool],
 ```
 
 ## DescribeCanariesLastRunRequestRequestTypeDef

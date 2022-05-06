@@ -315,6 +315,21 @@ AuthModeType = Literal[
     "SSO",
 ]
 ```
+## AutoMLChannelTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.literals import AutoMLChannelTypeType
+
+def get_value() -> AutoMLChannelTypeType:
+    return "training"
+```
+
+```python title="Definition"
+AutoMLChannelTypeType = Literal[
+    "training",
+    "validation",
+]
+```
 ## AutoMLJobObjectiveTypeType
 
 ```python title="Usage Example"
@@ -394,6 +409,33 @@ AutoMLMetricEnumType = Literal[
     "F1",
     "F1macro",
     "MSE",
+]
+```
+## AutoMLMetricExtendedEnumType
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.literals import AutoMLMetricExtendedEnumType
+
+def get_value() -> AutoMLMetricExtendedEnumType:
+    return "AUC"
+```
+
+```python title="Definition"
+AutoMLMetricExtendedEnumType = Literal[
+    "Accuracy",
+    "AUC",
+    "BalancedAccuracy",
+    "F1",
+    "F1macro",
+    "LogLoss",
+    "MAE",
+    "MSE",
+    "Precision",
+    "PrecisionMacro",
+    "R2",
+    "Recall",
+    "RecallMacro",
+    "RMSE",
 ]
 ```
 ## AutoMLS3DataTypeType
@@ -1417,6 +1459,14 @@ InstanceTypeType = Literal[
     "ml.g4dn.4xlarge",
     "ml.g4dn.8xlarge",
     "ml.g4dn.xlarge",
+    "ml.g5.12xlarge",
+    "ml.g5.16xlarge",
+    "ml.g5.24xlarge",
+    "ml.g5.2xlarge",
+    "ml.g5.48xlarge",
+    "ml.g5.4xlarge",
+    "ml.g5.8xlarge",
+    "ml.g5.xlarge",
     "ml.m4.10xlarge",
     "ml.m4.16xlarge",
     "ml.m4.2xlarge",
@@ -4331,6 +4381,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -4446,6 +4497,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -4514,6 +4566,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

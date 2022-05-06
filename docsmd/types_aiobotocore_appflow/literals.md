@@ -312,6 +312,21 @@ MarketoConnectorOperatorType = Literal[
     "VALIDATE_NUMERIC",
 ]
 ```
+## OAuth2CustomPropTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_appflow.literals import OAuth2CustomPropTypeType
+
+def get_value() -> OAuth2CustomPropTypeType:
+    return "AUTH_URL"
+```
+
+```python title="Definition"
+OAuth2CustomPropTypeType = Literal[
+    "AUTH_URL",
+    "TOKEN_URL",
+]
+```
 ## OAuth2GrantTypeType
 
 ```python title="Usage Example"
@@ -923,6 +938,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -1038,6 +1054,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1106,6 +1123,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

@@ -39,6 +39,21 @@ ConfigurationSyncStateType = Literal[
     "PENDING",
 ]
 ```
+## EncryptionTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_network_firewall.literals import EncryptionTypeType
+
+def get_value() -> EncryptionTypeType:
+    return "AWS_OWNED_KMS_KEY"
+```
+
+```python title="Definition"
+EncryptionTypeType = Literal[
+    "AWS_OWNED_KMS_KEY",
+    "CUSTOMER_KMS",
+]
+```
 ## FirewallStatusValueType
 
 ```python title="Usage Example"
@@ -199,6 +214,21 @@ def get_value() -> ResourceManagedStatusType:
 ResourceManagedStatusType = Literal[
     "ACCOUNT",
     "MANAGED",
+]
+```
+## ResourceManagedTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_network_firewall.literals import ResourceManagedTypeType
+
+def get_value() -> ResourceManagedTypeType:
+    return "AWS_MANAGED_DOMAIN_LISTS"
+```
+
+```python title="Definition"
+ResourceManagedTypeType = Literal[
+    "AWS_MANAGED_DOMAIN_LISTS",
+    "AWS_MANAGED_THREAT_SIGNATURES",
 ]
 ```
 ## ResourceStatusType
@@ -406,6 +436,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -521,6 +552,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -589,6 +621,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

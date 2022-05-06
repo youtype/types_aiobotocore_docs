@@ -21,6 +21,7 @@ APINameType = Literal[
     "GET_CLIP",
     "GET_DASH_STREAMING_SESSION_URL",
     "GET_HLS_STREAMING_SESSION_URL",
+    "GET_IMAGES",
     "GET_MEDIA",
     "GET_MEDIA_FOR_FRAGMENT_LIST",
     "LIST_FRAGMENTS",
@@ -63,11 +64,12 @@ ChannelRoleType = Literal[
 from types_aiobotocore_kinesisvideo.literals import ChannelTypeType
 
 def get_value() -> ChannelTypeType:
-    return "SINGLE_MASTER"
+    return "FULL_MESH"
 ```
 
 ```python title="Definition"
 ChannelTypeType = Literal[
+    "FULL_MESH",
     "SINGLE_MASTER",
 ]
 ```
@@ -83,6 +85,65 @@ def get_value() -> ComparisonOperatorType:
 ```python title="Definition"
 ComparisonOperatorType = Literal[
     "BEGINS_WITH",
+]
+```
+## ConfigurationStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.literals import ConfigurationStatusType
+
+def get_value() -> ConfigurationStatusType:
+    return "DISABLED"
+```
+
+```python title="Definition"
+ConfigurationStatusType = Literal[
+    "DISABLED",
+    "ENABLED",
+]
+```
+## FormatConfigKeyType
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.literals import FormatConfigKeyType
+
+def get_value() -> FormatConfigKeyType:
+    return "JPEGQuality"
+```
+
+```python title="Definition"
+FormatConfigKeyType = Literal[
+    "JPEGQuality",
+]
+```
+## FormatType
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.literals import FormatType
+
+def get_value() -> FormatType:
+    return "JPEG"
+```
+
+```python title="Definition"
+FormatType = Literal[
+    "JPEG",
+    "PNG",
+]
+```
+## ImageSelectorTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_kinesisvideo.literals import ImageSelectorTypeType
+
+def get_value() -> ImageSelectorTypeType:
+    return "PRODUCER_TIMESTAMP"
+```
+
+```python title="Definition"
+ImageSelectorTypeType = Literal[
+    "PRODUCER_TIMESTAMP",
+    "SERVER_TIMESTAMP",
 ]
 ```
 ## ListSignalingChannelsPaginatorName
@@ -206,6 +267,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -321,6 +383,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -389,6 +452,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

@@ -229,7 +229,7 @@ await def create_configuration(
     self,
     *,
     Name: str,
-    ServerProperties: Union[bytes, IO[bytes], StreamingBody],
+    ServerProperties: Union[str, bytes, IO[Any], StreamingBody],
     Description: str = ...,
     KafkaVersions: Sequence[str] = ...,
 ) -> CreateConfigurationResponseTypeDef:  # (1)
@@ -1086,7 +1086,7 @@ await def update_configuration(
     self,
     *,
     Arn: str,
-    ServerProperties: Union[bytes, IO[bytes], StreamingBody],
+    ServerProperties: Union[str, bytes, IO[Any], StreamingBody],
     Description: str = ...,
 ) -> UpdateConfigurationResponseTypeDef:  # (1)
     ...

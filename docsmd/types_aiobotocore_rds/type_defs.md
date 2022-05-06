@@ -668,45 +668,6 @@ class CopyOptionGroupResultTypeDef(TypedDict):
 
 1. See [:material-code-braces: OptionGroupTypeDef](./type_defs.md#optiongrouptypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## CreateCustomAvailabilityZoneMessageRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import CreateCustomAvailabilityZoneMessageRequestTypeDef
-
-def get_value() -> CreateCustomAvailabilityZoneMessageRequestTypeDef:
-    return {
-        "CustomAvailabilityZoneName": ...,
-    }
-```
-
-```python title="Definition"
-class CreateCustomAvailabilityZoneMessageRequestTypeDef(TypedDict):
-    CustomAvailabilityZoneName: str,
-    ExistingVpnId: NotRequired[str],
-    NewVpnTunnelName: NotRequired[str],
-    VpnTunnelOriginatorIP: NotRequired[str],
-```
-
-## CreateCustomAvailabilityZoneResultTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import CreateCustomAvailabilityZoneResultTypeDef
-
-def get_value() -> CreateCustomAvailabilityZoneResultTypeDef:
-    return {
-        "CustomAvailabilityZone": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class CreateCustomAvailabilityZoneResultTypeDef(TypedDict):
-    CustomAvailabilityZone: CustomAvailabilityZoneTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: CustomAvailabilityZoneTypeDef](./type_defs.md#customavailabilityzonetypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## CreateCustomDBEngineVersionMessageRequestTypeDef
 
 ```python title="Usage Example"
@@ -817,11 +778,13 @@ class CreateDBClusterMessageRequestTypeDef(TypedDict):
     EnablePerformanceInsights: NotRequired[bool],
     PerformanceInsightsKMSKeyId: NotRequired[str],
     PerformanceInsightsRetentionPeriod: NotRequired[int],
+    ServerlessV2ScalingConfiguration: NotRequired[ServerlessV2ScalingConfigurationTypeDef],  # (3)
     SourceRegion: NotRequired[str],
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 2. See [:material-code-braces: ScalingConfigurationTypeDef](./type_defs.md#scalingconfigurationtypedef) 
+3. See [:material-code-braces: ServerlessV2ScalingConfigurationTypeDef](./type_defs.md#serverlessv2scalingconfigurationtypedef) 
 ## CreateDBClusterParameterGroupMessageRequestTypeDef
 
 ```python title="Usage Example"
@@ -989,6 +952,7 @@ class CreateDBInstanceMessageRequestTypeDef(TypedDict):
     EnableCustomerOwnedIp: NotRequired[bool],
     CustomIamInstanceProfile: NotRequired[str],
     BackupTarget: NotRequired[str],
+    NetworkType: NotRequired[str],
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
@@ -1040,6 +1004,7 @@ class CreateDBInstanceReadReplicaMessageRequestTypeDef(TypedDict):
     ReplicaMode: NotRequired[ReplicaModeType],  # (3)
     MaxAllocatedStorage: NotRequired[int],
     CustomIamInstanceProfile: NotRequired[str],
+    NetworkType: NotRequired[str],
     SourceRegion: NotRequired[str],
 ```
 
@@ -1477,48 +1442,6 @@ class CreateOptionGroupResultTypeDef(TypedDict):
 
 1. See [:material-code-braces: OptionGroupTypeDef](./type_defs.md#optiongrouptypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## CustomAvailabilityZoneMessageTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import CustomAvailabilityZoneMessageTypeDef
-
-def get_value() -> CustomAvailabilityZoneMessageTypeDef:
-    return {
-        "Marker": ...,
-        "CustomAvailabilityZones": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class CustomAvailabilityZoneMessageTypeDef(TypedDict):
-    Marker: str,
-    CustomAvailabilityZones: List[CustomAvailabilityZoneTypeDef],  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: CustomAvailabilityZoneTypeDef](./type_defs.md#customavailabilityzonetypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## CustomAvailabilityZoneTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import CustomAvailabilityZoneTypeDef
-
-def get_value() -> CustomAvailabilityZoneTypeDef:
-    return {
-        "CustomAvailabilityZoneId": ...,
-    }
-```
-
-```python title="Definition"
-class CustomAvailabilityZoneTypeDef(TypedDict):
-    CustomAvailabilityZoneId: NotRequired[str],
-    CustomAvailabilityZoneName: NotRequired[str],
-    CustomAvailabilityZoneStatus: NotRequired[str],
-    VpnDetails: NotRequired[VpnDetailsTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: VpnDetailsTypeDef](./type_defs.md#vpndetailstypedef) 
 ## DBClusterBacktrackMessageTypeDef
 
 ```python title="Usage Example"
@@ -2035,6 +1958,7 @@ class DBClusterTypeDef(TypedDict):
     PerformanceInsightsEnabled: NotRequired[bool],
     PerformanceInsightsKMSKeyId: NotRequired[str],
     PerformanceInsightsRetentionPeriod: NotRequired[int],
+    ServerlessV2ScalingConfiguration: NotRequired[ServerlessV2ScalingConfigurationInfoTypeDef],  # (12)
 ```
 
 1. See [:material-code-braces: DBClusterOptionGroupStatusTypeDef](./type_defs.md#dbclusteroptiongroupstatustypedef) 
@@ -2048,6 +1972,7 @@ class DBClusterTypeDef(TypedDict):
 9. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 10. See [:material-code-brackets: WriteForwardingStatusType](./literals.md#writeforwardingstatustype) 
 11. See [:material-code-braces: ClusterPendingModifiedValuesTypeDef](./type_defs.md#clusterpendingmodifiedvaluestypedef) 
+12. See [:material-code-braces: ServerlessV2ScalingConfigurationInfoTypeDef](./type_defs.md#serverlessv2scalingconfigurationinfotypedef) 
 ## DBEngineVersionMessageTypeDef
 
 ```python title="Usage Example"
@@ -2420,6 +2345,7 @@ class DBInstanceTypeDef(TypedDict):
     ResumeFullAutomationModeTime: NotRequired[datetime],
     CustomIamInstanceProfile: NotRequired[str],
     BackupTarget: NotRequired[str],
+    NetworkType: NotRequired[str],
 ```
 
 1. See [:material-code-braces: EndpointTypeDef](./type_defs.md#endpointtypedef) 
@@ -2858,45 +2784,10 @@ class DBSubnetGroupTypeDef(TypedDict):
     SubnetGroupStatus: NotRequired[str],
     Subnets: NotRequired[List[SubnetTypeDef]],  # (1)
     DBSubnetGroupArn: NotRequired[str],
+    SupportedNetworkTypes: NotRequired[List[str]],
 ```
 
 1. See [:material-code-braces: SubnetTypeDef](./type_defs.md#subnettypedef) 
-## DeleteCustomAvailabilityZoneMessageRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import DeleteCustomAvailabilityZoneMessageRequestTypeDef
-
-def get_value() -> DeleteCustomAvailabilityZoneMessageRequestTypeDef:
-    return {
-        "CustomAvailabilityZoneId": ...,
-    }
-```
-
-```python title="Definition"
-class DeleteCustomAvailabilityZoneMessageRequestTypeDef(TypedDict):
-    CustomAvailabilityZoneId: str,
-```
-
-## DeleteCustomAvailabilityZoneResultTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import DeleteCustomAvailabilityZoneResultTypeDef
-
-def get_value() -> DeleteCustomAvailabilityZoneResultTypeDef:
-    return {
-        "CustomAvailabilityZone": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class DeleteCustomAvailabilityZoneResultTypeDef(TypedDict):
-    CustomAvailabilityZone: CustomAvailabilityZoneTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: CustomAvailabilityZoneTypeDef](./type_defs.md#customavailabilityzonetypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## DeleteCustomDBEngineVersionMessageRequestTypeDef
 
 ```python title="Usage Example"
@@ -3325,22 +3216,6 @@ class DeleteGlobalClusterResultTypeDef(TypedDict):
 
 1. See [:material-code-braces: GlobalClusterTypeDef](./type_defs.md#globalclustertypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## DeleteInstallationMediaMessageRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import DeleteInstallationMediaMessageRequestTypeDef
-
-def get_value() -> DeleteInstallationMediaMessageRequestTypeDef:
-    return {
-        "InstallationMediaId": ...,
-    }
-```
-
-```python title="Definition"
-class DeleteInstallationMediaMessageRequestTypeDef(TypedDict):
-    InstallationMediaId: str,
-```
-
 ## DeleteOptionGroupMessageRequestTypeDef
 
 ```python title="Usage Example"
@@ -3410,46 +3285,6 @@ def get_value() -> DescribeCertificatesMessageRequestTypeDef:
 ```python title="Definition"
 class DescribeCertificatesMessageRequestTypeDef(TypedDict):
     CertificateIdentifier: NotRequired[str],
-    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
-    MaxRecords: NotRequired[int],
-    Marker: NotRequired[str],
-```
-
-1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
-## DescribeCustomAvailabilityZonesMessageDescribeCustomAvailabilityZonesPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import DescribeCustomAvailabilityZonesMessageDescribeCustomAvailabilityZonesPaginateTypeDef
-
-def get_value() -> DescribeCustomAvailabilityZonesMessageDescribeCustomAvailabilityZonesPaginateTypeDef:
-    return {
-        "CustomAvailabilityZoneId": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeCustomAvailabilityZonesMessageDescribeCustomAvailabilityZonesPaginateTypeDef(TypedDict):
-    CustomAvailabilityZoneId: NotRequired[str],
-    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
-```
-
-1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
-2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## DescribeCustomAvailabilityZonesMessageRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import DescribeCustomAvailabilityZonesMessageRequestTypeDef
-
-def get_value() -> DescribeCustomAvailabilityZonesMessageRequestTypeDef:
-    return {
-        "CustomAvailabilityZoneId": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeCustomAvailabilityZonesMessageRequestTypeDef(TypedDict):
-    CustomAvailabilityZoneId: NotRequired[str],
     Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
     MaxRecords: NotRequired[int],
     Marker: NotRequired[str],
@@ -4961,46 +4796,6 @@ class DescribeGlobalClustersMessageRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
-## DescribeInstallationMediaMessageDescribeInstallationMediaPaginateTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import DescribeInstallationMediaMessageDescribeInstallationMediaPaginateTypeDef
-
-def get_value() -> DescribeInstallationMediaMessageDescribeInstallationMediaPaginateTypeDef:
-    return {
-        "InstallationMediaId": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeInstallationMediaMessageDescribeInstallationMediaPaginateTypeDef(TypedDict):
-    InstallationMediaId: NotRequired[str],
-    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
-    PaginationConfig: NotRequired[PaginatorConfigTypeDef],  # (2)
-```
-
-1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
-2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## DescribeInstallationMediaMessageRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import DescribeInstallationMediaMessageRequestTypeDef
-
-def get_value() -> DescribeInstallationMediaMessageRequestTypeDef:
-    return {
-        "InstallationMediaId": ...,
-    }
-```
-
-```python title="Definition"
-class DescribeInstallationMediaMessageRequestTypeDef(TypedDict):
-    InstallationMediaId: NotRequired[str],
-    Filters: NotRequired[Sequence[FilterTypeDef]],  # (1)
-    MaxRecords: NotRequired[int],
-    Marker: NotRequired[str],
-```
-
-1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
 ## DescribeOptionGroupOptionsMessageDescribeOptionGroupOptionsPaginateTypeDef
 
 ```python title="Usage Example"
@@ -5938,126 +5733,6 @@ class IPRangeTypeDef(TypedDict):
     CIDRIP: NotRequired[str],
 ```
 
-## ImportInstallationMediaMessageRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import ImportInstallationMediaMessageRequestTypeDef
-
-def get_value() -> ImportInstallationMediaMessageRequestTypeDef:
-    return {
-        "CustomAvailabilityZoneId": ...,
-        "Engine": ...,
-        "EngineVersion": ...,
-        "EngineInstallationMediaPath": ...,
-        "OSInstallationMediaPath": ...,
-    }
-```
-
-```python title="Definition"
-class ImportInstallationMediaMessageRequestTypeDef(TypedDict):
-    CustomAvailabilityZoneId: str,
-    Engine: str,
-    EngineVersion: str,
-    EngineInstallationMediaPath: str,
-    OSInstallationMediaPath: str,
-```
-
-## InstallationMediaFailureCauseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import InstallationMediaFailureCauseTypeDef
-
-def get_value() -> InstallationMediaFailureCauseTypeDef:
-    return {
-        "Message": ...,
-    }
-```
-
-```python title="Definition"
-class InstallationMediaFailureCauseTypeDef(TypedDict):
-    Message: NotRequired[str],
-```
-
-## InstallationMediaMessageTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import InstallationMediaMessageTypeDef
-
-def get_value() -> InstallationMediaMessageTypeDef:
-    return {
-        "Marker": ...,
-        "InstallationMedia": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class InstallationMediaMessageTypeDef(TypedDict):
-    Marker: str,
-    InstallationMedia: List[InstallationMediaTypeDef],  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: InstallationMediaTypeDef](./type_defs.md#installationmediatypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## InstallationMediaResponseMetadataTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import InstallationMediaResponseMetadataTypeDef
-
-def get_value() -> InstallationMediaResponseMetadataTypeDef:
-    return {
-        "InstallationMediaId": ...,
-        "CustomAvailabilityZoneId": ...,
-        "Engine": ...,
-        "EngineVersion": ...,
-        "EngineInstallationMediaPath": ...,
-        "OSInstallationMediaPath": ...,
-        "Status": ...,
-        "FailureCause": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class InstallationMediaResponseMetadataTypeDef(TypedDict):
-    InstallationMediaId: str,
-    CustomAvailabilityZoneId: str,
-    Engine: str,
-    EngineVersion: str,
-    EngineInstallationMediaPath: str,
-    OSInstallationMediaPath: str,
-    Status: str,
-    FailureCause: InstallationMediaFailureCauseTypeDef,  # (1)
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: InstallationMediaFailureCauseTypeDef](./type_defs.md#installationmediafailurecausetypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## InstallationMediaTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import InstallationMediaTypeDef
-
-def get_value() -> InstallationMediaTypeDef:
-    return {
-        "InstallationMediaId": ...,
-    }
-```
-
-```python title="Definition"
-class InstallationMediaTypeDef(TypedDict):
-    InstallationMediaId: NotRequired[str],
-    CustomAvailabilityZoneId: NotRequired[str],
-    Engine: NotRequired[str],
-    EngineVersion: NotRequired[str],
-    EngineInstallationMediaPath: NotRequired[str],
-    OSInstallationMediaPath: NotRequired[str],
-    Status: NotRequired[str],
-    FailureCause: NotRequired[InstallationMediaFailureCauseTypeDef],  # (1)
-```
-
-1. See [:material-code-braces: InstallationMediaFailureCauseTypeDef](./type_defs.md#installationmediafailurecausetypedef) 
 ## ListTagsForResourceMessageRequestTypeDef
 
 ```python title="Usage Example"
@@ -6236,10 +5911,12 @@ class ModifyDBClusterMessageRequestTypeDef(TypedDict):
     EnablePerformanceInsights: NotRequired[bool],
     PerformanceInsightsKMSKeyId: NotRequired[str],
     PerformanceInsightsRetentionPeriod: NotRequired[int],
+    ServerlessV2ScalingConfiguration: NotRequired[ServerlessV2ScalingConfigurationTypeDef],  # (3)
 ```
 
 1. See [:material-code-braces: CloudwatchLogsExportConfigurationTypeDef](./type_defs.md#cloudwatchlogsexportconfigurationtypedef) 
 2. See [:material-code-braces: ScalingConfigurationTypeDef](./type_defs.md#scalingconfigurationtypedef) 
+3. See [:material-code-braces: ServerlessV2ScalingConfigurationTypeDef](./type_defs.md#serverlessv2scalingconfigurationtypedef) 
 ## ModifyDBClusterParameterGroupMessageRequestTypeDef
 
 ```python title="Usage Example"
@@ -6379,6 +6056,7 @@ class ModifyDBInstanceMessageRequestTypeDef(TypedDict):
     AwsBackupRecoveryPointArn: NotRequired[str],
     AutomationMode: NotRequired[AutomationModeType],  # (4)
     ResumeFullAutomationModeMinutes: NotRequired[int],
+    NetworkType: NotRequired[str],
 ```
 
 1. See [:material-code-braces: CloudwatchLogsExportConfigurationTypeDef](./type_defs.md#cloudwatchlogsexportconfigurationtypedef) 
@@ -7058,6 +6736,7 @@ class OrderableDBInstanceOptionTypeDef(TypedDict):
     SupportedActivityStreamModes: NotRequired[List[str]],
     SupportsGlobalDatabases: NotRequired[bool],
     SupportsClusters: NotRequired[bool],
+    SupportedNetworkTypes: NotRequired[List[str]],
 ```
 
 1. See [:material-code-braces: AvailabilityZoneTypeDef](./type_defs.md#availabilityzonetypedef) 
@@ -7884,9 +7563,11 @@ class RestoreDBClusterFromS3MessageRequestTypeDef(TypedDict):
     CopyTagsToSnapshot: NotRequired[bool],
     Domain: NotRequired[str],
     DomainIAMRoleName: NotRequired[str],
+    ServerlessV2ScalingConfiguration: NotRequired[ServerlessV2ScalingConfigurationTypeDef],  # (2)
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+2. See [:material-code-braces: ServerlessV2ScalingConfigurationTypeDef](./type_defs.md#serverlessv2scalingconfigurationtypedef) 
 ## RestoreDBClusterFromS3ResultTypeDef
 
 ```python title="Usage Example"
@@ -7948,10 +7629,12 @@ class RestoreDBClusterFromSnapshotMessageRequestTypeDef(TypedDict):
     StorageType: NotRequired[str],
     Iops: NotRequired[int],
     PubliclyAccessible: NotRequired[bool],
+    ServerlessV2ScalingConfiguration: NotRequired[ServerlessV2ScalingConfigurationTypeDef],  # (3)
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 2. See [:material-code-braces: ScalingConfigurationTypeDef](./type_defs.md#scalingconfigurationtypedef) 
+3. See [:material-code-braces: ServerlessV2ScalingConfigurationTypeDef](./type_defs.md#serverlessv2scalingconfigurationtypedef) 
 ## RestoreDBClusterFromSnapshotResultTypeDef
 
 ```python title="Usage Example"
@@ -8011,10 +7694,12 @@ class RestoreDBClusterToPointInTimeMessageRequestTypeDef(TypedDict):
     StorageType: NotRequired[str],
     PubliclyAccessible: NotRequired[bool],
     Iops: NotRequired[int],
+    ServerlessV2ScalingConfiguration: NotRequired[ServerlessV2ScalingConfigurationTypeDef],  # (3)
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
 2. See [:material-code-braces: ScalingConfigurationTypeDef](./type_defs.md#scalingconfigurationtypedef) 
+3. See [:material-code-braces: ServerlessV2ScalingConfigurationTypeDef](./type_defs.md#serverlessv2scalingconfigurationtypedef) 
 ## RestoreDBClusterToPointInTimeResultTypeDef
 
 ```python title="Usage Example"
@@ -8080,6 +7765,7 @@ class RestoreDBInstanceFromDBSnapshotMessageRequestTypeDef(TypedDict):
     EnableCustomerOwnedIp: NotRequired[bool],
     CustomIamInstanceProfile: NotRequired[str],
     BackupTarget: NotRequired[str],
+    NetworkType: NotRequired[str],
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
@@ -8167,6 +7853,7 @@ class RestoreDBInstanceFromS3MessageRequestTypeDef(TypedDict):
     UseDefaultProcessorFeatures: NotRequired[bool],
     DeletionProtection: NotRequired[bool],
     MaxAllocatedStorage: NotRequired[int],
+    NetworkType: NotRequired[str],
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
@@ -8240,6 +7927,7 @@ class RestoreDBInstanceToPointInTimeMessageRequestTypeDef(TypedDict):
     EnableCustomerOwnedIp: NotRequired[bool],
     CustomIamInstanceProfile: NotRequired[str],
     BackupTarget: NotRequired[str],
+    NetworkType: NotRequired[str],
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
@@ -8361,6 +8049,40 @@ class ScalingConfigurationTypeDef(TypedDict):
     SecondsUntilAutoPause: NotRequired[int],
     TimeoutAction: NotRequired[str],
     SecondsBeforeTimeout: NotRequired[int],
+```
+
+## ServerlessV2ScalingConfigurationInfoTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rds.type_defs import ServerlessV2ScalingConfigurationInfoTypeDef
+
+def get_value() -> ServerlessV2ScalingConfigurationInfoTypeDef:
+    return {
+        "MinCapacity": ...,
+    }
+```
+
+```python title="Definition"
+class ServerlessV2ScalingConfigurationInfoTypeDef(TypedDict):
+    MinCapacity: NotRequired[float],
+    MaxCapacity: NotRequired[float],
+```
+
+## ServerlessV2ScalingConfigurationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_rds.type_defs import ServerlessV2ScalingConfigurationTypeDef
+
+def get_value() -> ServerlessV2ScalingConfigurationTypeDef:
+    return {
+        "MinCapacity": ...,
+    }
+```
+
+```python title="Definition"
+class ServerlessV2ScalingConfigurationTypeDef(TypedDict):
+    MinCapacity: NotRequired[float],
+    MaxCapacity: NotRequired[float],
 ```
 
 ## SourceRegionMessageTypeDef
@@ -8965,27 +8687,6 @@ def get_value() -> VpcSecurityGroupMembershipTypeDef:
 class VpcSecurityGroupMembershipTypeDef(TypedDict):
     VpcSecurityGroupId: NotRequired[str],
     Status: NotRequired[str],
-```
-
-## VpnDetailsTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_rds.type_defs import VpnDetailsTypeDef
-
-def get_value() -> VpnDetailsTypeDef:
-    return {
-        "VpnId": ...,
-    }
-```
-
-```python title="Definition"
-class VpnDetailsTypeDef(TypedDict):
-    VpnId: NotRequired[str],
-    VpnTunnelOriginatorIP: NotRequired[str],
-    VpnGatewayIp: NotRequired[str],
-    VpnPSK: NotRequired[str],
-    VpnName: NotRequired[str],
-    VpnState: NotRequired[str],
 ```
 
 ## WaiterConfigTypeDef

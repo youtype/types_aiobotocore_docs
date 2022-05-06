@@ -82,6 +82,7 @@ def get_value() -> AddressTypeType:
 ```
 
 - [AddressTypeType](./literals.md#addresstypetype)
+- [AssetTypeType](./literals.md#assettypetype)
 - [CatalogItemClassType](./literals.md#catalogitemclasstype)
 - [CatalogItemStatusType](./literals.md#catalogitemstatustype)
 - [FiberOpticCableTypeType](./literals.md#fiberopticcabletypetype)
@@ -126,8 +127,10 @@ def get_value() -> AddressTypeDef:
 ```
 
 - [AddressTypeDef](./type_defs.md#addresstypedef)
+- [AssetInfoTypeDef](./type_defs.md#assetinfotypedef)
 - [CancelOrderInputRequestTypeDef](./type_defs.md#cancelorderinputrequesttypedef)
 - [CatalogItemTypeDef](./type_defs.md#catalogitemtypedef)
+- [ComputeAttributesTypeDef](./type_defs.md#computeattributestypedef)
 - [CreateOrderInputRequestTypeDef](./type_defs.md#createorderinputrequesttypedef)
 - [CreateOrderOutputTypeDef](./type_defs.md#createorderoutputtypedef)
 - [CreateOutpostInputRequestTypeDef](./type_defs.md#createoutpostinputrequesttypedef)
@@ -152,6 +155,8 @@ def get_value() -> AddressTypeDef:
 - [InstanceTypeItemTypeDef](./type_defs.md#instancetypeitemtypedef)
 - [LineItemRequestTypeDef](./type_defs.md#lineitemrequesttypedef)
 - [LineItemTypeDef](./type_defs.md#lineitemtypedef)
+- [ListAssetsInputRequestTypeDef](./type_defs.md#listassetsinputrequesttypedef)
+- [ListAssetsOutputTypeDef](./type_defs.md#listassetsoutputtypedef)
 - [ListCatalogItemsInputRequestTypeDef](./type_defs.md#listcatalogitemsinputrequesttypedef)
 - [ListCatalogItemsOutputTypeDef](./type_defs.md#listcatalogitemsoutputtypedef)
 - [ListOrdersInputRequestTypeDef](./type_defs.md#listordersinputrequesttypedef)

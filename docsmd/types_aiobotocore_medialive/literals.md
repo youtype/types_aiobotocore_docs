@@ -3234,6 +3234,26 @@ M3u8TimedMetadataBehaviorType = Literal[
     "PASSTHROUGH",
 ]
 ```
+## MaintenanceDayType
+
+```python title="Usage Example"
+from types_aiobotocore_medialive.literals import MaintenanceDayType
+
+def get_value() -> MaintenanceDayType:
+    return "FRIDAY"
+```
+
+```python title="Definition"
+MaintenanceDayType = Literal[
+    "FRIDAY",
+    "MONDAY",
+    "SATURDAY",
+    "SUNDAY",
+    "THURSDAY",
+    "TUESDAY",
+    "WEDNESDAY",
+]
+```
 ## MotionGraphicsInsertionType
 
 ```python title="Usage Example"
@@ -4367,6 +4387,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -4482,6 +4503,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -4550,6 +4572,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

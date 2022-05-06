@@ -36,6 +36,22 @@ CodeReviewCompletedWaiterName = Literal[
     "code_review_completed",
 ]
 ```
+## ConfigFileStateType
+
+```python title="Usage Example"
+from types_aiobotocore_codeguru_reviewer.literals import ConfigFileStateType
+
+def get_value() -> ConfigFileStateType:
+    return "Absent"
+```
+
+```python title="Definition"
+ConfigFileStateType = Literal[
+    "Absent",
+    "Present",
+    "PresentWithErrors",
+]
+```
 ## EncryptionOptionType
 
 ```python title="Usage Example"
@@ -281,6 +297,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -396,6 +413,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -464,6 +482,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

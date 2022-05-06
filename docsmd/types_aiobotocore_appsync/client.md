@@ -1332,7 +1332,7 @@ await def start_schema_creation(
     self,
     *,
     apiId: str,
-    definition: Union[bytes, IO[bytes], StreamingBody],
+    definition: Union[str, bytes, IO[Any], StreamingBody],
 ) -> StartSchemaCreationResponseTypeDef:  # (1)
     ...
 ```

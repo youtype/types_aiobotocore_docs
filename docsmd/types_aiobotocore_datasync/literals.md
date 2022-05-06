@@ -282,6 +282,21 @@ ObjectStorageServerProtocolType = Literal[
     "HTTPS",
 ]
 ```
+## ObjectTagsType
+
+```python title="Usage Example"
+from types_aiobotocore_datasync.literals import ObjectTagsType
+
+def get_value() -> ObjectTagsType:
+    return "NONE"
+```
+
+```python title="Definition"
+ObjectTagsType = Literal[
+    "NONE",
+    "PRESERVE",
+]
+```
 ## OperatorType
 
 ```python title="Usage Example"
@@ -610,6 +625,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -725,6 +741,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -793,6 +810,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -938,6 +956,7 @@ RegionName = Literal[
     "ap-south-1",
     "ap-southeast-1",
     "ap-southeast-2",
+    "ap-southeast-3",
     "ca-central-1",
     "eu-central-1",
     "eu-north-1",

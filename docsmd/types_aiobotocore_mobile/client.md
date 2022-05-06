@@ -85,7 +85,7 @@ await def create_project(
     *,
     name: str = ...,
     region: str = ...,
-    contents: Union[bytes, IO[bytes], StreamingBody] = ...,
+    contents: Union[str, bytes, IO[Any], StreamingBody] = ...,
     snapshotId: str = ...,
 ) -> CreateProjectResultTypeDef:  # (1)
     ...
@@ -345,7 +345,7 @@ await def update_project(
     self,
     *,
     projectId: str,
-    contents: Union[bytes, IO[bytes], StreamingBody] = ...,
+    contents: Union[str, bytes, IO[Any], StreamingBody] = ...,
 ) -> UpdateProjectResultTypeDef:  # (1)
     ...
 ```

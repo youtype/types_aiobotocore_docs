@@ -1301,6 +1301,21 @@ CmfcIFrameOnlyManifestType = Literal[
     "INCLUDE",
 ]
 ```
+## CmfcKlvMetadataType
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconvert.literals import CmfcKlvMetadataType
+
+def get_value() -> CmfcKlvMetadataType:
+    return "NONE"
+```
+
+```python title="Definition"
+CmfcKlvMetadataType = Literal[
+    "NONE",
+    "PASSTHROUGH",
+]
+```
 ## CmfcScte35EsamType
 
 ```python title="Usage Example"
@@ -1726,6 +1741,21 @@ DolbyVisionLevel6ModeType = Literal[
     "SPECIFY",
 ]
 ```
+## DolbyVisionMappingType
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconvert.literals import DolbyVisionMappingType
+
+def get_value() -> DolbyVisionMappingType:
+    return "HDR10_1000"
+```
+
+```python title="Definition"
+DolbyVisionMappingType = Literal[
+    "HDR10_1000",
+    "HDR10_NOMAP",
+]
+```
 ## DolbyVisionProfileType
 
 ```python title="Usage Example"
@@ -1738,6 +1768,7 @@ def get_value() -> DolbyVisionProfileType:
 ```python title="Definition"
 DolbyVisionProfileType = Literal[
     "PROFILE_5",
+    "PROFILE_8_1",
 ]
 ```
 ## DropFrameTimecodeType
@@ -4238,6 +4269,21 @@ M2tsForceTsVideoEbpOrderType = Literal[
     "FORCE",
 ]
 ```
+## M2tsKlvMetadataType
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconvert.literals import M2tsKlvMetadataType
+
+def get_value() -> M2tsKlvMetadataType:
+    return "NONE"
+```
+
+```python title="Definition"
+M2tsKlvMetadataType = Literal[
+    "NONE",
+    "PASSTHROUGH",
+]
+```
 ## M2tsNielsenId3Type
 
 ```python title="Usage Example"
@@ -4615,6 +4661,21 @@ def get_value() -> MpdCaptionContainerTypeType:
 MpdCaptionContainerTypeType = Literal[
     "FRAGMENTED_MP4",
     "RAW",
+]
+```
+## MpdKlvMetadataType
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconvert.literals import MpdKlvMetadataType
+
+def get_value() -> MpdKlvMetadataType:
+    return "NONE"
+```
+
+```python title="Definition"
+MpdKlvMetadataType = Literal[
+    "NONE",
+    "PASSTHROUGH",
 ]
 ```
 ## MpdScte35EsamType
@@ -5199,6 +5260,21 @@ OutputSdtType = Literal[
     "SDT_FOLLOW_IF_PRESENT",
     "SDT_MANUAL",
     "SDT_NONE",
+]
+```
+## PadVideoType
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconvert.literals import PadVideoType
+
+def get_value() -> PadVideoType:
+    return "BLACK"
+```
+
+```python title="Definition"
+PadVideoType = Literal[
+    "BLACK",
+    "DISABLED",
 ]
 ```
 ## PresetListByType
@@ -6062,6 +6138,7 @@ def get_value() -> WebvttStylePassthroughType:
 WebvttStylePassthroughType = Literal[
     "DISABLED",
     "ENABLED",
+    "STRICT",
 ]
 ```
 ## Xavc4kIntraCbgProfileClassType
@@ -6445,6 +6522,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -6560,6 +6638,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -6628,6 +6707,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

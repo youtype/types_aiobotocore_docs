@@ -38,6 +38,7 @@ async with session.create_client("route53-recovery-cluster") as client:
         client.EndpointTemporarilyUnavailableException,
         client.InternalServerException,
         client.ResourceNotFoundException,
+        client.ServiceLimitExceededException,
         client.ThrottlingException,
         client.ValidationException,
     ) as e:
@@ -118,6 +119,39 @@ parent.get_routing_control_state(**kwargs)
 ```
 
 1. See [:material-code-braces: GetRoutingControlStateRequestRequestTypeDef](./type_defs.md#getroutingcontrolstaterequestrequesttypedef) 
+
+### list\_routing\_controls
+
+List routing control names and Amazon Resource Names (ARNs), as well as the
+routing control state for each routing control, along with the control panel
+name and control panel ARN for the routing controls.
+
+Type annotations and code completion for `#!python session.create_client("route53-recovery-cluster").list_routing_controls` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/route53-recovery-cluster.html#Route53RecoveryCluster.Client.list_routing_controls)
+
+```python title="Method definition"
+await def list_routing_controls(
+    self,
+    *,
+    ControlPanelArn: str = ...,
+    NextToken: str = ...,
+    MaxResults: int = ...,
+) -> ListRoutingControlsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListRoutingControlsResponseTypeDef](./type_defs.md#listroutingcontrolsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListRoutingControlsRequestRequestTypeDef = {  # (1)
+    "ControlPanelArn": ...,
+}
+
+parent.list_routing_controls(**kwargs)
+```
+
+1. See [:material-code-braces: ListRoutingControlsRequestRequestTypeDef](./type_defs.md#listroutingcontrolsrequestrequesttypedef) 
 
 ### update\_routing\_control\_state
 
@@ -214,6 +248,13 @@ await def __aexit__(
 ```
 
 
+
+
+### get_paginator
+
+Type annotations and code completion for `#!python session.create_client("route53-recovery-cluster").get_paginator` method with overloads.
+
+- `client.get_paginator("list_routing_controls")` -> [ListRoutingControlsPaginator](./paginators.md#listroutingcontrolspaginator)
 
 
 

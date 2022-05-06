@@ -107,6 +107,7 @@ async with session.create_client("ssm") as client:
         client.InvalidRole,
         client.InvalidSchedule,
         client.InvalidTarget,
+        client.InvalidTargetMaps,
         client.InvalidTypeNameException,
         client.InvalidUpdate,
         client.InvocationDoesNotExist,
@@ -381,6 +382,8 @@ await def create_association(
     ApplyOnlyAtCronInterval: bool = ...,
     CalendarNames: Sequence[str] = ...,
     TargetLocations: Sequence[TargetLocationTypeDef] = ...,  # (5)
+    ScheduleOffset: int = ...,
+    TargetMaps: Sequence[Mapping[str, Sequence[str]]] = ...,
 ) -> CreateAssociationResultTypeDef:  # (6)
     ...
 ```
@@ -4291,6 +4294,8 @@ await def update_association(
     ApplyOnlyAtCronInterval: bool = ...,
     CalendarNames: Sequence[str] = ...,
     TargetLocations: Sequence[TargetLocationTypeDef] = ...,  # (5)
+    ScheduleOffset: int = ...,
+    TargetMaps: Sequence[Mapping[str, Sequence[str]]] = ...,
 ) -> UpdateAssociationResultTypeDef:  # (6)
     ...
 ```

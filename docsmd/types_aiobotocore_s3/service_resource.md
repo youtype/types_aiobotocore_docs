@@ -1130,7 +1130,7 @@ await def put_object(
     *,
     Key: str,
     ACL: ObjectCannedACLType = ...,  # (1)
-    Body: Union[bytes, IO[bytes], StreamingBody] = ...,
+    Body: Union[str, bytes, IO[Any], StreamingBody] = ...,
     CacheControl: str = ...,
     ContentDisposition: str = ...,
     ContentEncoding: str = ...,
@@ -3190,7 +3190,7 @@ Type annotations and code completion for `#!python aiobotocore.resource("s3").up
 await def upload(
     self,
     *,
-    Body: Union[bytes, IO[bytes], StreamingBody] = ...,
+    Body: Union[str, bytes, IO[Any], StreamingBody] = ...,
     ContentLength: int = ...,
     ContentMD5: str = ...,
     ChecksumAlgorithm: ChecksumAlgorithmType = ...,  # (1)
@@ -3726,7 +3726,7 @@ await def put(
     self,
     *,
     ACL: ObjectCannedACLType = ...,  # (1)
-    Body: Union[bytes, IO[bytes], StreamingBody] = ...,
+    Body: Union[str, bytes, IO[Any], StreamingBody] = ...,
     CacheControl: str = ...,
     ContentDisposition: str = ...,
     ContentEncoding: str = ...,
@@ -4464,7 +4464,7 @@ await def put(
     self,
     *,
     ACL: ObjectCannedACLType = ...,  # (1)
-    Body: Union[bytes, IO[bytes], StreamingBody] = ...,
+    Body: Union[str, bytes, IO[Any], StreamingBody] = ...,
     CacheControl: str = ...,
     ContentDisposition: str = ...,
     ContentEncoding: str = ...,

@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("fms") as client:  # (1)
-        result = await client.get_apps_list()  # (2)
+        result = await client.associate_third_party_firewall()  # (2)
     ```
 
     1. client: [FMSClient](./client.md)
-    2. result: [:material-code-braces: GetAppsListResponseTypeDef](./type_defs.md#getappslistresponsetypedef) 
+    2. result: [:material-code-braces: AssociateThirdPartyFirewallResponseTypeDef](./type_defs.md#associatethirdpartyfirewallresponsetypedef) 
 
 
 
@@ -72,16 +72,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_fms.client import FMSClient
-    from types_aiobotocore_fms.type_defs import GetAppsListResponseTypeDef
-    from types_aiobotocore_fms.type_defs import GetAppsListRequestRequestTypeDef
+    from types_aiobotocore_fms.type_defs import AssociateThirdPartyFirewallResponseTypeDef
+    from types_aiobotocore_fms.type_defs import AssociateThirdPartyFirewallRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("fms") as client:
         client: FMSClient
-        kwargs: GetAppsListRequestRequestTypeDef = {...}
-        result: GetAppsListResponseTypeDef = await client.get_apps_list(**kwargs)
+        kwargs: AssociateThirdPartyFirewallRequestRequestTypeDef = {...}
+        result: AssociateThirdPartyFirewallResponseTypeDef = await client.associate_third_party_firewall(**kwargs)
     ```
 
 

@@ -44,12 +44,23 @@ CanaryRunStateType = Literal[
 from types_aiobotocore_synthetics.literals import CanaryStateReasonCodeType
 
 def get_value() -> CanaryStateReasonCodeType:
-    return "INVALID_PERMISSIONS"
+    return "CREATE_FAILED"
 ```
 
 ```python title="Definition"
 CanaryStateReasonCodeType = Literal[
+    "CREATE_FAILED",
+    "CREATE_IN_PROGRESS",
+    "CREATE_PENDING",
+    "DELETE_FAILED",
+    "DELETE_IN_PROGRESS",
     "INVALID_PERMISSIONS",
+    "ROLLBACK_COMPLETE",
+    "ROLLBACK_FAILED",
+    "SYNC_DELETE_IN_PROGRESS",
+    "UPDATE_COMPLETE",
+    "UPDATE_IN_PROGRESS",
+    "UPDATE_PENDING",
 ]
 ```
 ## CanaryStateType
@@ -150,6 +161,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -265,6 +277,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -333,6 +346,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

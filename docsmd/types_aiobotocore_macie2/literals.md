@@ -574,6 +574,20 @@ OrderByType = Literal[
     "DESC",
 ]
 ```
+## OriginTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_macie2.literals import OriginTypeType
+
+def get_value() -> OriginTypeType:
+    return "SENSITIVE_DATA_DISCOVERY_JOB"
+```
+
+```python title="Definition"
+OriginTypeType = Literal[
+    "SENSITIVE_DATA_DISCOVERY_JOB",
+]
+```
 ## RelationshipStatusType
 
 ```python title="Usage Example"
@@ -972,6 +986,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -1087,6 +1102,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -1155,6 +1171,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",

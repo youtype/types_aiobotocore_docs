@@ -481,6 +481,7 @@ ServiceName = Literal[
     "ce",
     "chime",
     "chime-sdk-identity",
+    "chime-sdk-media-pipelines",
     "chime-sdk-meetings",
     "chime-sdk-messaging",
     "cloud9",
@@ -596,6 +597,7 @@ ServiceName = Literal[
     "iottwinmaker",
     "iotwireless",
     "ivs",
+    "ivschat",
     "kafka",
     "kafkaconnect",
     "kendra",
@@ -664,6 +666,7 @@ ServiceName = Literal[
     "pinpoint",
     "pinpoint-email",
     "pinpoint-sms-voice",
+    "pinpoint-sms-voice-v2",
     "polly",
     "pricing",
     "proton",
@@ -778,12 +781,14 @@ ResourceServiceName = Literal[
 from types_aiobotocore_customer_profiles.literals import RegionName
 
 def get_value() -> RegionName:
-    return "ap-northeast-1"
+    return "af-south-1"
 ```
 
 ```python title="Definition"
 RegionName = Literal[
+    "af-south-1",
     "ap-northeast-1",
+    "ap-northeast-2",
     "ap-southeast-1",
     "ap-southeast-2",
     "ca-central-1",
