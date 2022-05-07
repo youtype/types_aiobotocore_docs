@@ -51,7 +51,7 @@ type checking and code completion should work out of the box.
 
     1. client: [DynamoDBClient](./client.md)
     2. paginator: [ListBackupsPaginator](./paginators.md#listbackupspaginator)
-    3. item: [:material-code-braces: ListBackupsOutputTypeDef](./type_defs.md#listbackupsoutputtypedef) 
+    3. item: [:material-code-braces: ListBackupsOutputTableTypeDef](./type_defs.md#listbackupsoutputtabletypedef) 
 
 
 
@@ -109,7 +109,7 @@ However, these type annotations can be helpful in your functions and methods.
 
     from types_aiobotocore_dynamodb.client import DynamoDBClient
     from types_aiobotocore_dynamodb.paginator import ListBackupsPaginator
-    from types_aiobotocore_dynamodb.type_defs import ListBackupsOutputTypeDef
+    from types_aiobotocore_dynamodb.type_defs import ListBackupsOutputTableTypeDef
 
 
     session = get_session()
@@ -118,7 +118,7 @@ However, these type annotations can be helpful in your functions and methods.
         client: DynamoDBClient
         paginator: ListBackupsPaginator = client.get_paginator("list_backups")
         async for item in paginator.paginate(...):
-            item: ListBackupsOutputTypeDef
+            item: ListBackupsOutputTableTypeDef
             print(item)
     ```
 

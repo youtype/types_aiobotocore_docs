@@ -1196,6 +1196,7 @@ await def list_geofences(
     self,
     *,
     CollectionName: str,
+    MaxResults: int = ...,
     NextToken: str = ...,
 ) -> ListGeofencesResponseTypeDef:  # (1)
     ...
