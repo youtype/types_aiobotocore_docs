@@ -2542,6 +2542,23 @@ DnsNameStateType = Literal[
     "verified",
 ]
 ```
+## DnsRecordIpTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.literals import DnsRecordIpTypeType
+
+def get_value() -> DnsRecordIpTypeType:
+    return "dualstack"
+```
+
+```python title="Definition"
+DnsRecordIpTypeType = Literal[
+    "dualstack",
+    "ipv4",
+    "ipv6",
+    "service-defined",
+]
+```
 ## DnsSupportValueType
 
 ```python title="Usage Example"
@@ -3461,6 +3478,8 @@ ImageAttributeNameType = Literal[
     "productCodes",
     "ramdisk",
     "sriovNetSupport",
+    "tpmSupport",
+    "uefiData",
 ]
 ```
 ## ImageAvailableWaiterName
@@ -3539,6 +3558,7 @@ def get_value() -> InstanceAttributeNameType:
 ```python title="Definition"
 InstanceAttributeNameType = Literal[
     "blockDeviceMapping",
+    "disableApiStop",
     "disableApiTermination",
     "ebsOptimized",
     "enaSupport",
@@ -3974,6 +3994,14 @@ InstanceTypeType = Literal[
     "c6i.large",
     "c6i.metal",
     "c6i.xlarge",
+    "c7g.12xlarge",
+    "c7g.16xlarge",
+    "c7g.2xlarge",
+    "c7g.4xlarge",
+    "c7g.8xlarge",
+    "c7g.large",
+    "c7g.medium",
+    "c7g.xlarge",
     "cc1.4xlarge",
     "cc2.8xlarge",
     "cg1.4xlarge",
@@ -4060,6 +4088,7 @@ InstanceTypeType = Literal[
     "i4i.4xlarge",
     "i4i.8xlarge",
     "i4i.large",
+    "i4i.metal",
     "i4i.xlarge",
     "im4gn.16xlarge",
     "im4gn.2xlarge",
@@ -4362,12 +4391,14 @@ InstanceTypeType = Literal[
     "x2idn.16xlarge",
     "x2idn.24xlarge",
     "x2idn.32xlarge",
+    "x2idn.metal",
     "x2iedn.16xlarge",
     "x2iedn.24xlarge",
     "x2iedn.2xlarge",
     "x2iedn.32xlarge",
     "x2iedn.4xlarge",
     "x2iedn.8xlarge",
+    "x2iedn.metal",
     "x2iedn.xlarge",
     "x2iezn.12xlarge",
     "x2iezn.2xlarge",
@@ -4426,6 +4457,22 @@ def get_value() -> InternetGatewayExistsWaiterName:
 ```python title="Definition"
 InternetGatewayExistsWaiterName = Literal[
     "internet_gateway_exists",
+]
+```
+## IpAddressTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.literals import IpAddressTypeType
+
+def get_value() -> IpAddressTypeType:
+    return "dualstack"
+```
+
+```python title="Definition"
+IpAddressTypeType = Literal[
+    "dualstack",
+    "ipv4",
+    "ipv6",
 ]
 ```
 ## IpamAddressHistoryResourceTypeType
@@ -5916,6 +5963,21 @@ SelfServicePortalType = Literal[
     "enabled",
 ]
 ```
+## ServiceConnectivityTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.literals import ServiceConnectivityTypeType
+
+def get_value() -> ServiceConnectivityTypeType:
+    return "ipv4"
+```
+
+```python title="Definition"
+ServiceConnectivityTypeType = Literal[
+    "ipv4",
+    "ipv6",
+]
+```
 ## ServiceStateType
 
 ```python title="Usage Example"
@@ -6368,6 +6430,20 @@ TieringOperationStatusType = Literal[
     "temporary-restore-in-progress",
 ]
 ```
+## TpmSupportValuesType
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.literals import TpmSupportValuesType
+
+def get_value() -> TpmSupportValuesType:
+    return "v2.0"
+```
+
+```python title="Definition"
+TpmSupportValuesType = Literal[
+    "v2.0",
+]
+```
 ## TrafficDirectionType
 
 ```python title="Usage Example"
@@ -6451,11 +6527,12 @@ TrafficMirrorSessionFieldType = Literal[
 from types_aiobotocore_ec2.literals import TrafficMirrorTargetTypeType
 
 def get_value() -> TrafficMirrorTargetTypeType:
-    return "network-interface"
+    return "gateway-load-balancer-endpoint"
 ```
 
 ```python title="Definition"
 TrafficMirrorTargetTypeType = Literal[
+    "gateway-load-balancer-endpoint",
     "network-interface",
     "network-load-balancer",
 ]
@@ -7360,6 +7437,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -7433,6 +7511,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -7489,6 +7568,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

@@ -23,6 +23,30 @@ class DeleteConnectionRequestRequestTypeDef(TypedDict):
     ConnectionId: str,
 ```
 
+## ResponseMetadataTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_apigatewaymanagementapi.type_defs import ResponseMetadataTypeDef
+
+def get_value() -> ResponseMetadataTypeDef:
+    return {
+        "RequestId": ...,
+        "HostId": ...,
+        "HTTPStatusCode": ...,
+        "HTTPHeaders": ...,
+        "RetryAttempts": ...,
+    }
+```
+
+```python title="Definition"
+class ResponseMetadataTypeDef(TypedDict):
+    RequestId: str,
+    HostId: str,
+    HTTPStatusCode: int,
+    HTTPHeaders: Dict[str, str],
+    RetryAttempts: int,
+```
+
 ## GetConnectionRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -39,30 +63,6 @@ class GetConnectionRequestRequestTypeDef(TypedDict):
     ConnectionId: str,
 ```
 
-## GetConnectionResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_apigatewaymanagementapi.type_defs import GetConnectionResponseTypeDef
-
-def get_value() -> GetConnectionResponseTypeDef:
-    return {
-        "ConnectedAt": ...,
-        "Identity": ...,
-        "LastActiveAt": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetConnectionResponseTypeDef(TypedDict):
-    ConnectedAt: datetime,
-    Identity: IdentityTypeDef,  # (1)
-    LastActiveAt: datetime,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
-```
-
-1. See [:material-code-braces: IdentityTypeDef](./type_defs.md#identitytypedef) 
-2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## IdentityTypeDef
 
 ```python title="Usage Example"
@@ -99,27 +99,44 @@ class PostToConnectionRequestRequestTypeDef(TypedDict):
     ConnectionId: str,
 ```
 
-## ResponseMetadataTypeDef
+## EmptyResponseMetadataTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_apigatewaymanagementapi.type_defs import ResponseMetadataTypeDef
+from types_aiobotocore_apigatewaymanagementapi.type_defs import EmptyResponseMetadataTypeDef
 
-def get_value() -> ResponseMetadataTypeDef:
+def get_value() -> EmptyResponseMetadataTypeDef:
     return {
-        "RequestId": ...,
-        "HostId": ...,
-        "HTTPStatusCode": ...,
-        "HTTPHeaders": ...,
-        "RetryAttempts": ...,
+        "ResponseMetadata": ...,
     }
 ```
 
 ```python title="Definition"
-class ResponseMetadataTypeDef(TypedDict):
-    RequestId: str,
-    HostId: str,
-    HTTPStatusCode: int,
-    HTTPHeaders: Dict[str, str],
-    RetryAttempts: int,
+class EmptyResponseMetadataTypeDef(TypedDict):
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
 ```
 
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## GetConnectionResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_apigatewaymanagementapi.type_defs import GetConnectionResponseTypeDef
+
+def get_value() -> GetConnectionResponseTypeDef:
+    return {
+        "ConnectedAt": ...,
+        "Identity": ...,
+        "LastActiveAt": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class GetConnectionResponseTypeDef(TypedDict):
+    ConnectedAt: datetime,
+    Identity: IdentityTypeDef,  # (1)
+    LastActiveAt: datetime,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: IdentityTypeDef](./type_defs.md#identitytypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 

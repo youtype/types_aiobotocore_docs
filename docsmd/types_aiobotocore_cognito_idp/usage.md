@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("cognito-idp") as client:  # (1)
-        result = await client.admin_create_user()  # (2)
+        result = await client.admin_add_user_to_group()  # (2)
     ```
 
     1. client: [CognitoIdentityProviderClient](./client.md)
-    2. result: [:material-code-braces: AdminCreateUserResponseTypeDef](./type_defs.md#admincreateuserresponsetypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -72,16 +72,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_cognito_idp.client import CognitoIdentityProviderClient
-    from types_aiobotocore_cognito_idp.type_defs import AdminCreateUserResponseTypeDef
-    from types_aiobotocore_cognito_idp.type_defs import AdminCreateUserRequestRequestTypeDef
+    from types_aiobotocore_cognito_idp.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_cognito_idp.type_defs import AdminAddUserToGroupRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("cognito-idp") as client:
         client: CognitoIdentityProviderClient
-        kwargs: AdminCreateUserRequestRequestTypeDef = {...}
-        result: AdminCreateUserResponseTypeDef = await client.admin_create_user(**kwargs)
+        kwargs: AdminAddUserToGroupRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.admin_add_user_to_group(**kwargs)
     ```
 
 

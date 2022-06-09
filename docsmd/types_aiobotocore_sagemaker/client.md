@@ -391,7 +391,7 @@ parent.create_artifact(**kwargs)
 
 ### create\_auto\_ml\_job
 
-Creates an Autopilot job.
+.
 
 Type annotations and code completion for `#!python session.create_client("sagemaker").create_auto_ml_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.create_auto_ml_job)
@@ -621,12 +621,13 @@ await def create_device_fleet(
     Description: str = ...,
     Tags: Sequence[TagTypeDef] = ...,  # (2)
     EnableIotRoleAlias: bool = ...,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (3)
     ...
 ```
 
 1. See [:material-code-braces: EdgeOutputConfigTypeDef](./type_defs.md#edgeoutputconfigtypedef) 
 2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+3. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -708,12 +709,13 @@ await def create_edge_packaging_job(
     OutputConfig: EdgeOutputConfigTypeDef,  # (1)
     ResourceKey: str = ...,
     Tags: Sequence[TagTypeDef] = ...,  # (2)
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (3)
     ...
 ```
 
 1. See [:material-code-braces: EdgeOutputConfigTypeDef](./type_defs.md#edgeoutputconfigtypedef) 
 2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+3. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1505,7 +1507,8 @@ await def create_notebook_instance(
     AdditionalCodeRepositories: Sequence[str] = ...,
     RootAccess: RootAccessType = ...,  # (5)
     PlatformIdentifier: str = ...,
-) -> CreateNotebookInstanceOutputTypeDef:  # (6)
+    InstanceMetadataServiceConfiguration: InstanceMetadataServiceConfigurationTypeDef = ...,  # (6)
+) -> CreateNotebookInstanceOutputTypeDef:  # (7)
     ...
 ```
 
@@ -1514,7 +1517,8 @@ await def create_notebook_instance(
 3. See [:material-code-brackets: DirectInternetAccessType](./literals.md#directinternetaccesstype) 
 4. See [:material-code-brackets: NotebookInstanceAcceleratorTypeType](./literals.md#notebookinstanceacceleratortypetype) 
 5. See [:material-code-brackets: RootAccessType](./literals.md#rootaccesstype) 
-6. See [:material-code-braces: CreateNotebookInstanceOutputTypeDef](./type_defs.md#createnotebookinstanceoutputtypedef) 
+6. See [:material-code-braces: InstanceMetadataServiceConfigurationTypeDef](./type_defs.md#instancemetadataserviceconfigurationtypedef) 
+7. See [:material-code-braces: CreateNotebookInstanceOutputTypeDef](./type_defs.md#createnotebookinstanceoutputtypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2148,10 +2152,11 @@ await def delete_algorithm(
     self,
     *,
     AlgorithmName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2179,11 +2184,12 @@ await def delete_app(
     UserProfileName: str,
     AppType: AppTypeType,  # (1)
     AppName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (2)
     ...
 ```
 
 1. See [:material-code-brackets: AppTypeType](./literals.md#apptypetype) 
+2. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2211,10 +2217,11 @@ await def delete_app_image_config(
     self,
     *,
     AppImageConfigName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2301,10 +2308,11 @@ await def delete_code_repository(
     self,
     *,
     CodeRepositoryName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2358,10 +2366,11 @@ await def delete_data_quality_job_definition(
     self,
     *,
     JobDefinitionName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2386,10 +2395,11 @@ await def delete_device_fleet(
     self,
     *,
     DeviceFleetName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2415,11 +2425,12 @@ await def delete_domain(
     *,
     DomainId: str,
     RetentionPolicy: RetentionPolicyTypeDef = ...,  # (1)
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (2)
     ...
 ```
 
 1. See [:material-code-braces: RetentionPolicyTypeDef](./type_defs.md#retentionpolicytypedef) 
+2. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2444,10 +2455,11 @@ await def delete_endpoint(
     self,
     *,
     EndpointName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2472,10 +2484,11 @@ await def delete_endpoint_config(
     self,
     *,
     EndpointConfigName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2530,10 +2543,11 @@ await def delete_feature_group(
     self,
     *,
     FeatureGroupName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2672,10 +2686,11 @@ await def delete_model(
     self,
     *,
     ModelName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2700,10 +2715,11 @@ await def delete_model_bias_job_definition(
     self,
     *,
     JobDefinitionName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2728,10 +2744,11 @@ await def delete_model_explainability_job_definition(
     self,
     *,
     JobDefinitionName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2756,10 +2773,11 @@ await def delete_model_package(
     self,
     *,
     ModelPackageName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2784,10 +2802,11 @@ await def delete_model_package_group(
     self,
     *,
     ModelPackageGroupName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2812,10 +2831,11 @@ await def delete_model_package_group_policy(
     self,
     *,
     ModelPackageGroupName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2840,10 +2860,11 @@ await def delete_model_quality_job_definition(
     self,
     *,
     JobDefinitionName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2868,10 +2889,11 @@ await def delete_monitoring_schedule(
     self,
     *,
     MonitoringScheduleName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2896,10 +2918,11 @@ await def delete_notebook_instance(
     self,
     *,
     NotebookInstanceName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2924,10 +2947,11 @@ await def delete_notebook_instance_lifecycle_config(
     self,
     *,
     NotebookInstanceLifecycleConfigName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2983,10 +3007,11 @@ await def delete_project(
     self,
     *,
     ProjectName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -3011,10 +3036,11 @@ await def delete_studio_lifecycle_config(
     self,
     *,
     StudioLifecycleConfigName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -3128,10 +3154,11 @@ await def delete_user_profile(
     *,
     DomainId: str,
     UserProfileName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -3215,10 +3242,11 @@ await def deregister_devices(
     *,
     DeviceFleetName: str,
     DeviceNames: Sequence[str],
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -3386,7 +3414,7 @@ parent.describe_artifact(**kwargs)
 
 ### describe\_auto\_ml\_job
 
-Returns information about an Amazon SageMaker AutoML job.
+.
 
 Type annotations and code completion for `#!python session.create_client("sagemaker").describe_auto_ml_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.describe_auto_ml_job)
@@ -5160,7 +5188,7 @@ parent.list_auto_ml_jobs(**kwargs)
 
 ### list\_candidates\_for\_auto\_ml\_job
 
-List the candidates created for the job.
+.
 
 Type annotations and code completion for `#!python session.create_client("sagemaker").list_candidates_for_auto_ml_job` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html#SageMaker.Client.list_candidates_for_auto_ml_job)
@@ -7142,12 +7170,13 @@ await def register_devices(
     DeviceFleetName: str,
     Devices: Sequence[DeviceTypeDef],  # (1)
     Tags: Sequence[TagTypeDef] = ...,  # (2)
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (3)
     ...
 ```
 
 1. See [:material-code-braces: DeviceTypeDef](./type_defs.md#devicetypedef) 
 2. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+3. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -7343,10 +7372,11 @@ await def start_monitoring_schedule(
     self,
     *,
     MonitoringScheduleName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -7372,10 +7402,11 @@ await def start_notebook_instance(
     self,
     *,
     NotebookInstanceName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -7437,10 +7468,11 @@ await def stop_auto_ml_job(
     self,
     *,
     AutoMLJobName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -7465,10 +7497,11 @@ await def stop_compilation_job(
     self,
     *,
     CompilationJobName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -7493,10 +7526,11 @@ await def stop_edge_packaging_job(
     self,
     *,
     EdgePackagingJobName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -7522,10 +7556,11 @@ await def stop_hyper_parameter_tuning_job(
     self,
     *,
     HyperParameterTuningJobName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -7550,10 +7585,11 @@ await def stop_inference_recommendations_job(
     self,
     *,
     JobName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -7578,10 +7614,11 @@ await def stop_labeling_job(
     self,
     *,
     LabelingJobName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -7606,10 +7643,11 @@ await def stop_monitoring_schedule(
     self,
     *,
     MonitoringScheduleName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -7634,10 +7672,11 @@ await def stop_notebook_instance(
     self,
     *,
     NotebookInstanceName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -7693,10 +7732,11 @@ await def stop_processing_job(
     self,
     *,
     ProcessingJobName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -7721,10 +7761,11 @@ await def stop_training_job(
     self,
     *,
     TrainingJobName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -7749,10 +7790,11 @@ await def stop_transform_job(
     self,
     *,
     TransformJobName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -7941,11 +7983,12 @@ await def update_device_fleet(
     RoleArn: str = ...,
     Description: str = ...,
     EnableIotRoleAlias: bool = ...,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (2)
     ...
 ```
 
 1. See [:material-code-braces: EdgeOutputConfigTypeDef](./type_defs.md#edgeoutputconfigtypedef) 
+2. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -7972,11 +8015,12 @@ await def update_devices(
     *,
     DeviceFleetName: str,
     Devices: Sequence[DeviceTypeDef],  # (1)
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (2)
     ...
 ```
 
 1. See [:material-code-braces: DeviceTypeDef](./type_defs.md#devicetypedef) 
+2. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -8251,6 +8295,7 @@ await def update_notebook_instance(
     DisassociateDefaultCodeRepository: bool = ...,
     DisassociateAdditionalCodeRepositories: bool = ...,
     RootAccess: RootAccessType = ...,  # (3)
+    InstanceMetadataServiceConfiguration: InstanceMetadataServiceConfigurationTypeDef = ...,  # (4)
 ) -> Dict[str, Any]:
     ...
 ```
@@ -8258,6 +8303,7 @@ await def update_notebook_instance(
 1. See [:material-code-brackets: InstanceTypeType](./literals.md#instancetypetype) 
 2. See [:material-code-brackets: NotebookInstanceAcceleratorTypeType](./literals.md#notebookinstanceacceleratortypetype) 
 3. See [:material-code-brackets: RootAccessType](./literals.md#rootaccesstype) 
+4. See [:material-code-braces: InstanceMetadataServiceConfigurationTypeDef](./type_defs.md#instancemetadataserviceconfigurationtypedef) 
 
 
 ```python title="Usage example with kwargs"

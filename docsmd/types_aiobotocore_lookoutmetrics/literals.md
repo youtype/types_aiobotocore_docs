@@ -189,6 +189,22 @@ RelationshipTypeType = Literal[
     "EFFECT_OF_INPUT_ANOMALY_GROUP",
 ]
 ```
+## SnsFormatType
+
+```python title="Usage Example"
+from types_aiobotocore_lookoutmetrics.literals import SnsFormatType
+
+def get_value() -> SnsFormatType:
+    return "JSON"
+```
+
+```python title="Definition"
+SnsFormatType = Literal[
+    "JSON",
+    "LONG_TEXT",
+    "SHORT_TEXT",
+]
+```
 ## LookoutMetricsServiceName
 
 ```python title="Usage Example"
@@ -319,6 +335,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -392,6 +409,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -448,6 +466,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

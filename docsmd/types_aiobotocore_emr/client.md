@@ -326,11 +326,12 @@ await def create_studio_session_mapping(
     SessionPolicyArn: str,
     IdentityId: str = ...,
     IdentityName: str = ...,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (2)
     ...
 ```
 
 1. See [:material-code-brackets: IdentityTypeType](./literals.md#identitytypetype) 
+2. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -385,10 +386,11 @@ await def delete_studio(
     self,
     *,
     StudioId: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -416,11 +418,12 @@ await def delete_studio_session_mapping(
     IdentityType: IdentityTypeType,  # (1)
     IdentityId: str = ...,
     IdentityName: str = ...,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (2)
     ...
 ```
 
 1. See [:material-code-brackets: IdentityTypeType](./literals.md#identitytypetype) 
+2. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -528,9 +531,7 @@ parent.describe_notebook_execution(**kwargs)
 
 ### describe\_release\_label
 
-Provides EMR release label details, such as releases available the region where
-the API request is run, and the available applications for a specific EMR
-release label.
+.
 
 Type annotations and code completion for `#!python session.create_client("emr").describe_release_label` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html#EMR.Client.describe_release_label)
@@ -1179,11 +1180,12 @@ await def modify_instance_fleet(
     *,
     ClusterId: str,
     InstanceFleet: InstanceFleetModifyConfigTypeDef,  # (1)
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (2)
     ...
 ```
 
 1. See [:material-code-braces: InstanceFleetModifyConfigTypeDef](./type_defs.md#instancefleetmodifyconfigtypedef) 
+2. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1211,11 +1213,12 @@ await def modify_instance_groups(
     *,
     ClusterId: str = ...,
     InstanceGroups: Sequence[InstanceGroupModifyConfigTypeDef] = ...,  # (1)
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (2)
     ...
 ```
 
 1. See [:material-code-braces: InstanceGroupModifyConfigTypeDef](./type_defs.md#instancegroupmodifyconfigtypedef) 
+2. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1511,6 +1514,7 @@ await def run_job_flow(
     ManagedScalingPolicy: ManagedScalingPolicyTypeDef = ...,  # (11)
     PlacementGroupConfigs: Sequence[PlacementGroupConfigTypeDef] = ...,  # (12)
     AutoTerminationPolicy: AutoTerminationPolicyTypeDef = ...,  # (13)
+    OSReleaseLabel: str = ...,
 ) -> RunJobFlowOutputTypeDef:  # (14)
     ...
 ```
@@ -1557,10 +1561,11 @@ await def set_termination_protection(
     *,
     JobFlowIds: Sequence[str],
     TerminationProtected: bool,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1587,10 +1592,11 @@ await def set_visible_to_all_users(
     *,
     JobFlowIds: Sequence[str],
     VisibleToAllUsers: bool,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1657,10 +1663,11 @@ await def stop_notebook_execution(
     self,
     *,
     NotebookExecutionId: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1685,10 +1692,11 @@ await def terminate_job_flows(
     self,
     *,
     JobFlowIds: Sequence[str],
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1718,10 +1726,11 @@ await def update_studio(
     Description: str = ...,
     SubnetIds: Sequence[str] = ...,
     DefaultS3Location: str = ...,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1751,11 +1760,12 @@ await def update_studio_session_mapping(
     SessionPolicyArn: str,
     IdentityId: str = ...,
     IdentityName: str = ...,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (2)
     ...
 ```
 
 1. See [:material-code-brackets: IdentityTypeType](./literals.md#identitytypetype) 
+2. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"

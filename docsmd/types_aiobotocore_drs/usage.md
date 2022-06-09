@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("drs") as client:  # (1)
-        result = await client.create_replication_configuration_template()  # (2)
+        result = await client.create_extended_source_server()  # (2)
     ```
 
     1. client: [drsClient](./client.md)
-    2. result: [:material-code-braces: ReplicationConfigurationTemplateResponseMetadataTypeDef](./type_defs.md#replicationconfigurationtemplateresponsemetadatatypedef) 
+    2. result: [:material-code-braces: CreateExtendedSourceServerResponseTypeDef](./type_defs.md#createextendedsourceserverresponsetypedef) 
 
 
 
@@ -72,16 +72,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_drs.client import drsClient
-    from types_aiobotocore_drs.type_defs import ReplicationConfigurationTemplateResponseMetadataTypeDef
-    from types_aiobotocore_drs.type_defs import CreateReplicationConfigurationTemplateRequestRequestTypeDef
+    from types_aiobotocore_drs.type_defs import CreateExtendedSourceServerResponseTypeDef
+    from types_aiobotocore_drs.type_defs import CreateExtendedSourceServerRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("drs") as client:
         client: drsClient
-        kwargs: CreateReplicationConfigurationTemplateRequestRequestTypeDef = {...}
-        result: ReplicationConfigurationTemplateResponseMetadataTypeDef = await client.create_replication_configuration_template(**kwargs)
+        kwargs: CreateExtendedSourceServerRequestRequestTypeDef = {...}
+        result: CreateExtendedSourceServerResponseTypeDef = await client.create_extended_source_server(**kwargs)
     ```
 
 

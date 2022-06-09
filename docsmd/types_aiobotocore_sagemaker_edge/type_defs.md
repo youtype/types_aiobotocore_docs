@@ -26,66 +26,6 @@ class EdgeMetricTypeDef(TypedDict):
     Timestamp: NotRequired[Union[datetime, str]],
 ```
 
-## GetDeviceRegistrationRequestRequestTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker_edge.type_defs import GetDeviceRegistrationRequestRequestTypeDef
-
-def get_value() -> GetDeviceRegistrationRequestRequestTypeDef:
-    return {
-        "DeviceName": ...,
-        "DeviceFleetName": ...,
-    }
-```
-
-```python title="Definition"
-class GetDeviceRegistrationRequestRequestTypeDef(TypedDict):
-    DeviceName: str,
-    DeviceFleetName: str,
-```
-
-## GetDeviceRegistrationResultTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker_edge.type_defs import GetDeviceRegistrationResultTypeDef
-
-def get_value() -> GetDeviceRegistrationResultTypeDef:
-    return {
-        "DeviceRegistration": ...,
-        "CacheTTL": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetDeviceRegistrationResultTypeDef(TypedDict):
-    DeviceRegistration: str,
-    CacheTTL: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
-```
-
-1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## ModelTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_sagemaker_edge.type_defs import ModelTypeDef
-
-def get_value() -> ModelTypeDef:
-    return {
-        "ModelName": ...,
-    }
-```
-
-```python title="Definition"
-class ModelTypeDef(TypedDict):
-    ModelName: NotRequired[str],
-    ModelVersion: NotRequired[str],
-    LatestSampleTime: NotRequired[Union[datetime, str]],
-    LatestInference: NotRequired[Union[datetime, str]],
-    ModelMetrics: NotRequired[Sequence[EdgeMetricTypeDef]],  # (1)
-```
-
-1. See [:material-code-braces: EdgeMetricTypeDef](./type_defs.md#edgemetrictypedef) 
 ## ResponseMetadataTypeDef
 
 ```python title="Usage Example"
@@ -110,6 +50,83 @@ class ResponseMetadataTypeDef(TypedDict):
     RetryAttempts: int,
 ```
 
+## GetDeviceRegistrationRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker_edge.type_defs import GetDeviceRegistrationRequestRequestTypeDef
+
+def get_value() -> GetDeviceRegistrationRequestRequestTypeDef:
+    return {
+        "DeviceName": ...,
+        "DeviceFleetName": ...,
+    }
+```
+
+```python title="Definition"
+class GetDeviceRegistrationRequestRequestTypeDef(TypedDict):
+    DeviceName: str,
+    DeviceFleetName: str,
+```
+
+## ModelTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker_edge.type_defs import ModelTypeDef
+
+def get_value() -> ModelTypeDef:
+    return {
+        "ModelName": ...,
+    }
+```
+
+```python title="Definition"
+class ModelTypeDef(TypedDict):
+    ModelName: NotRequired[str],
+    ModelVersion: NotRequired[str],
+    LatestSampleTime: NotRequired[Union[datetime, str]],
+    LatestInference: NotRequired[Union[datetime, str]],
+    ModelMetrics: NotRequired[Sequence[EdgeMetricTypeDef]],  # (1)
+```
+
+1. See [:material-code-braces: EdgeMetricTypeDef](./type_defs.md#edgemetrictypedef) 
+## EmptyResponseMetadataTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker_edge.type_defs import EmptyResponseMetadataTypeDef
+
+def get_value() -> EmptyResponseMetadataTypeDef:
+    return {
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class EmptyResponseMetadataTypeDef(TypedDict):
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## GetDeviceRegistrationResultTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker_edge.type_defs import GetDeviceRegistrationResultTypeDef
+
+def get_value() -> GetDeviceRegistrationResultTypeDef:
+    return {
+        "DeviceRegistration": ...,
+        "CacheTTL": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class GetDeviceRegistrationResultTypeDef(TypedDict):
+    DeviceRegistration: str,
+    CacheTTL: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## SendHeartbeatRequestRequestTypeDef
 
 ```python title="Usage Example"

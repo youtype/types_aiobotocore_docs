@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("iotsitewise") as client:  # (1)
-        result = await client.batch_associate_project_assets()  # (2)
+        result = await client.associate_assets()  # (2)
     ```
 
     1. client: [IoTSiteWiseClient](./client.md)
-    2. result: [:material-code-braces: BatchAssociateProjectAssetsResponseTypeDef](./type_defs.md#batchassociateprojectassetsresponsetypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -88,16 +88,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_iotsitewise.client import IoTSiteWiseClient
-    from types_aiobotocore_iotsitewise.type_defs import BatchAssociateProjectAssetsResponseTypeDef
-    from types_aiobotocore_iotsitewise.type_defs import BatchAssociateProjectAssetsRequestRequestTypeDef
+    from types_aiobotocore_iotsitewise.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_iotsitewise.type_defs import AssociateAssetsRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("iotsitewise") as client:
         client: IoTSiteWiseClient
-        kwargs: BatchAssociateProjectAssetsRequestRequestTypeDef = {...}
-        result: BatchAssociateProjectAssetsResponseTypeDef = await client.batch_associate_project_assets(**kwargs)
+        kwargs: AssociateAssetsRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.associate_assets(**kwargs)
     ```
 
 

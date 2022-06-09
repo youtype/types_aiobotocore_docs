@@ -672,6 +672,21 @@ PlacementGroupStrategyType = Literal[
     "SPREAD",
 ]
 ```
+## ReconfigurationTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_emr.literals import ReconfigurationTypeType
+
+def get_value() -> ReconfigurationTypeType:
+    return "MERGE"
+```
+
+```python title="Definition"
+ReconfigurationTypeType = Literal[
+    "MERGE",
+    "OVERWRITE",
+]
+```
 ## RepoUpgradeOnBootType
 
 ```python title="Usage Example"
@@ -1002,6 +1017,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -1075,6 +1091,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -1131,6 +1148,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

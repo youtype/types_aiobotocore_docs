@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("cloudfront") as client:  # (1)
-        result = await client.create_cache_policy()  # (2)
+        result = await client.associate_alias()  # (2)
     ```
 
     1. client: [CloudFrontClient](./client.md)
-    2. result: [:material-code-braces: CreateCachePolicyResultTypeDef](./type_defs.md#createcachepolicyresulttypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -88,16 +88,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_cloudfront.client import CloudFrontClient
-    from types_aiobotocore_cloudfront.type_defs import CreateCachePolicyResultTypeDef
-    from types_aiobotocore_cloudfront.type_defs import CreateCachePolicyRequestRequestTypeDef
+    from types_aiobotocore_cloudfront.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_cloudfront.type_defs import AssociateAliasRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("cloudfront") as client:
         client: CloudFrontClient
-        kwargs: CreateCachePolicyRequestRequestTypeDef = {...}
-        result: CreateCachePolicyResultTypeDef = await client.create_cache_policy(**kwargs)
+        kwargs: AssociateAliasRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.associate_alias(**kwargs)
     ```
 
 

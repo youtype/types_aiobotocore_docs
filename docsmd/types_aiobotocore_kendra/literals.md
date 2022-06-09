@@ -220,7 +220,9 @@ DataSourceTypeType = Literal[
     "CUSTOM",
     "DATABASE",
     "FSX",
+    "GITHUB",
     "GOOGLEDRIVE",
+    "JIRA",
     "ONEDRIVE",
     "QUIP",
     "S3",
@@ -460,6 +462,22 @@ IntervalType = Literal[
     "THIS_WEEK",
     "TWO_MONTHS_AGO",
     "TWO_WEEKS_AGO",
+]
+```
+## IssueSubEntityType
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.literals import IssueSubEntityType
+
+def get_value() -> IssueSubEntityType:
+    return "ATTACHMENTS"
+```
+
+```python title="Definition"
+IssueSubEntityType = Literal[
+    "ATTACHMENTS",
+    "COMMENTS",
+    "WORKLOGS",
 ]
 ```
 ## KeyLocationType
@@ -845,6 +863,21 @@ ThesaurusStatusType = Literal[
     "UPDATING",
 ]
 ```
+## TypeType
+
+```python title="Usage Example"
+from types_aiobotocore_kendra.literals import TypeType
+
+def get_value() -> TypeType:
+    return "ON_PREMISE"
+```
+
+```python title="Definition"
+TypeType = Literal[
+    "ON_PREMISE",
+    "SAAS",
+]
+```
 ## UserContextPolicyType
 
 ```python title="Usage Example"
@@ -1035,6 +1068,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -1108,6 +1142,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -1164,6 +1199,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("codecommit") as client:  # (1)
-        result = await client.batch_associate_approval_rule_template_with_repositories()  # (2)
+        result = await client.associate_approval_rule_template_with_repository()  # (2)
     ```
 
     1. client: [CodeCommitClient](./client.md)
-    2. result: [:material-code-braces: BatchAssociateApprovalRuleTemplateWithRepositoriesOutputTypeDef](./type_defs.md#batchassociateapprovalruletemplatewithrepositoriesoutputtypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -72,16 +72,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_codecommit.client import CodeCommitClient
-    from types_aiobotocore_codecommit.type_defs import BatchAssociateApprovalRuleTemplateWithRepositoriesOutputTypeDef
-    from types_aiobotocore_codecommit.type_defs import BatchAssociateApprovalRuleTemplateWithRepositoriesInputRequestTypeDef
+    from types_aiobotocore_codecommit.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_codecommit.type_defs import AssociateApprovalRuleTemplateWithRepositoryInputRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("codecommit") as client:
         client: CodeCommitClient
-        kwargs: BatchAssociateApprovalRuleTemplateWithRepositoriesInputRequestTypeDef = {...}
-        result: BatchAssociateApprovalRuleTemplateWithRepositoriesOutputTypeDef = await client.batch_associate_approval_rule_template_with_repositories(**kwargs)
+        kwargs: AssociateApprovalRuleTemplateWithRepositoryInputRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.associate_approval_rule_template_with_repository(**kwargs)
     ```
 
 

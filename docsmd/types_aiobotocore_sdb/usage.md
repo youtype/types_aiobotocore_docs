@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("sdb") as client:  # (1)
-        result = await client.domain_metadata()  # (2)
+        result = await client.batch_delete_attributes()  # (2)
     ```
 
     1. client: [SimpleDBClient](./client.md)
-    2. result: [:material-code-braces: DomainMetadataResultTypeDef](./type_defs.md#domainmetadataresulttypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -72,16 +72,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_sdb.client import SimpleDBClient
-    from types_aiobotocore_sdb.type_defs import DomainMetadataResultTypeDef
-    from types_aiobotocore_sdb.type_defs import DomainMetadataRequestRequestTypeDef
+    from types_aiobotocore_sdb.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_sdb.type_defs import BatchDeleteAttributesRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("sdb") as client:
         client: SimpleDBClient
-        kwargs: DomainMetadataRequestRequestTypeDef = {...}
-        result: DomainMetadataResultTypeDef = await client.domain_metadata(**kwargs)
+        kwargs: BatchDeleteAttributesRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.batch_delete_attributes(**kwargs)
     ```
 
 

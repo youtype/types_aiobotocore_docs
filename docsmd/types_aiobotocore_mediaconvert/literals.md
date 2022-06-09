@@ -5496,6 +5496,21 @@ RenewalTypeType = Literal[
     "EXPIRE",
 ]
 ```
+## RequiredFlagType
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconvert.literals import RequiredFlagType
+
+def get_value() -> RequiredFlagType:
+    return "DISABLED"
+```
+
+```python title="Definition"
+RequiredFlagType = Literal[
+    "DISABLED",
+    "ENABLED",
+]
+```
 ## ReservationPlanStatusType
 
 ```python title="Usage Example"
@@ -5525,6 +5540,23 @@ RespondToAfdType = Literal[
     "NONE",
     "PASSTHROUGH",
     "RESPOND",
+]
+```
+## RuleTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconvert.literals import RuleTypeType
+
+def get_value() -> RuleTypeType:
+    return "ALLOWED_RENDITIONS"
+```
+
+```python title="Definition"
+RuleTypeType = Literal[
+    "ALLOWED_RENDITIONS",
+    "FORCE_INCLUDE_RENDITIONS",
+    "MIN_BOTTOM_RENDITION_SIZE",
+    "MIN_TOP_RENDITION_SIZE",
 ]
 ```
 ## S3ObjectCannedAclType
@@ -6591,6 +6623,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -6664,6 +6697,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -6720,6 +6754,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

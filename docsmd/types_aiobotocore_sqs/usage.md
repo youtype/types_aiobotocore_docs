@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("sqs") as client:  # (1)
-        result = await client.change_message_visibility_batch()  # (2)
+        result = await client.add_permission()  # (2)
     ```
 
     1. client: [SQSClient](./client.md)
-    2. result: [:material-code-braces: ChangeMessageVisibilityBatchResultTypeDef](./type_defs.md#changemessagevisibilitybatchresulttypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -72,16 +72,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_sqs.client import SQSClient
-    from types_aiobotocore_sqs.type_defs import ChangeMessageVisibilityBatchResultTypeDef
-    from types_aiobotocore_sqs.type_defs import ChangeMessageVisibilityBatchRequestRequestTypeDef
+    from types_aiobotocore_sqs.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_sqs.type_defs import AddPermissionRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("sqs") as client:
         client: SQSClient
-        kwargs: ChangeMessageVisibilityBatchRequestRequestTypeDef = {...}
-        result: ChangeMessageVisibilityBatchResultTypeDef = await client.change_message_visibility_batch(**kwargs)
+        kwargs: AddPermissionRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.add_permission(**kwargs)
     ```
 
 

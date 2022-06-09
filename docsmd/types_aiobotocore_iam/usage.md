@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("iam") as client:  # (1)
-        result = await client.create_access_key()  # (2)
+        result = await client.add_client_id_to_open_id_connect_provider()  # (2)
     ```
 
     1. client: [IAMClient](./client.md)
-    2. result: [:material-code-braces: CreateAccessKeyResponseTypeDef](./type_defs.md#createaccesskeyresponsetypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -88,16 +88,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_iam.client import IAMClient
-    from types_aiobotocore_iam.type_defs import CreateAccessKeyResponseTypeDef
-    from types_aiobotocore_iam.type_defs import CreateAccessKeyRequestRequestTypeDef
+    from types_aiobotocore_iam.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_iam.type_defs import AddClientIDToOpenIDConnectProviderRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("iam") as client:
         client: IAMClient
-        kwargs: CreateAccessKeyRequestRequestTypeDef = {...}
-        result: CreateAccessKeyResponseTypeDef = await client.create_access_key(**kwargs)
+        kwargs: AddClientIDToOpenIDConnectProviderRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.add_client_id_to_open_id_connect_provider(**kwargs)
     ```
 
 

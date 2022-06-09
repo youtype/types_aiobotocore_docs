@@ -76,7 +76,7 @@ Type annotations and code completion for `#!python DescribeJobsPaginator.paginat
 def paginate(
     self,
     *,
-    filters: DescribeJobsRequestFiltersTypeDef,  # (1)
+    filters: DescribeJobsRequestFiltersTypeDef = ...,  # (1)
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
 ) -> AsyncIterator[DescribeJobsResponseTypeDef]:  # (3)
     ...
@@ -121,7 +121,7 @@ Type annotations and code completion for `#!python DescribeRecoveryInstancesPagi
 def paginate(
     self,
     *,
-    filters: DescribeRecoveryInstancesRequestFiltersTypeDef,  # (1)
+    filters: DescribeRecoveryInstancesRequestFiltersTypeDef = ...,  # (1)
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
 ) -> AsyncIterator[DescribeRecoveryInstancesResponseTypeDef]:  # (3)
     ...
@@ -214,7 +214,7 @@ Type annotations and code completion for `#!python DescribeReplicationConfigurat
 def paginate(
     self,
     *,
-    replicationConfigurationTemplateIDs: Sequence[str],
+    replicationConfigurationTemplateIDs: Sequence[str] = ...,
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
 ) -> AsyncIterator[DescribeReplicationConfigurationTemplatesResponseTypeDef]:  # (2)
     ...
@@ -258,7 +258,7 @@ Type annotations and code completion for `#!python DescribeSourceServersPaginato
 def paginate(
     self,
     *,
-    filters: DescribeSourceServersRequestFiltersTypeDef,  # (1)
+    filters: DescribeSourceServersRequestFiltersTypeDef = ...,  # (1)
     PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
 ) -> AsyncIterator[DescribeSourceServersResponseTypeDef]:  # (3)
     ...
@@ -278,3 +278,90 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeSourceServersRequestDescribeSourceServersPaginateTypeDef](./type_defs.md#describesourceserversrequestdescribesourceserverspaginatetypedef) 
+## ListExtensibleSourceServersPaginator
+
+Type annotations and code completion for `#!python session.create_client("drs").get_paginator("list_extensible_source_servers")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Paginator.ListExtensibleSourceServers)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_drs.paginator import ListExtensibleSourceServersPaginator
+
+session = get_session()
+async with session.create_client("drs") as client:
+    client: drsClient
+    paginator: ListExtensibleSourceServersPaginator = client.get_paginator("list_extensible_source_servers")
+```
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListExtensibleSourceServersPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    stagingAccountID: str,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListExtensibleSourceServersResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListExtensibleSourceServersResponseTypeDef](./type_defs.md#listextensiblesourceserversresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListExtensibleSourceServersRequestListExtensibleSourceServersPaginateTypeDef = {  # (1)
+    "stagingAccountID": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListExtensibleSourceServersRequestListExtensibleSourceServersPaginateTypeDef](./type_defs.md#listextensiblesourceserversrequestlistextensiblesourceserverspaginatetypedef) 
+## ListStagingAccountsPaginator
+
+Type annotations and code completion for `#!python session.create_client("drs").get_paginator("list_staging_accounts")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/drs.html#drs.Paginator.ListStagingAccounts)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_drs.paginator import ListStagingAccountsPaginator
+
+session = get_session()
+async with session.create_client("drs") as client:
+    client: drsClient
+    paginator: ListStagingAccountsPaginator = client.get_paginator("list_staging_accounts")
+```
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListStagingAccountsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[ListStagingAccountsResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: ListStagingAccountsResponseTypeDef](./type_defs.md#liststagingaccountsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListStagingAccountsRequestListStagingAccountsPaginateTypeDef = {  # (1)
+    "PaginationConfig": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListStagingAccountsRequestListStagingAccountsPaginateTypeDef](./type_defs.md#liststagingaccountsrequestliststagingaccountspaginatetypedef) 

@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("workdocs") as client:  # (1)
-        result = await client.activate_user()  # (2)
+        result = await client.abort_document_version_upload()  # (2)
     ```
 
     1. client: [WorkDocsClient](./client.md)
-    2. result: [:material-code-braces: ActivateUserResponseTypeDef](./type_defs.md#activateuserresponsetypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -72,16 +72,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_workdocs.client import WorkDocsClient
-    from types_aiobotocore_workdocs.type_defs import ActivateUserResponseTypeDef
-    from types_aiobotocore_workdocs.type_defs import ActivateUserRequestRequestTypeDef
+    from types_aiobotocore_workdocs.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_workdocs.type_defs import AbortDocumentVersionUploadRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("workdocs") as client:
         client: WorkDocsClient
-        kwargs: ActivateUserRequestRequestTypeDef = {...}
-        result: ActivateUserResponseTypeDef = await client.activate_user(**kwargs)
+        kwargs: AbortDocumentVersionUploadRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.abort_document_version_upload(**kwargs)
     ```
 
 

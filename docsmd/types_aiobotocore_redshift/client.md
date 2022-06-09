@@ -1048,11 +1048,12 @@ await def create_tags(
     *,
     ResourceName: str,
     Tags: Sequence[TagTypeDef],  # (1)
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (2)
     ...
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+2. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1215,10 +1216,11 @@ await def delete_cluster_parameter_group(
     self,
     *,
     ParameterGroupName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1243,10 +1245,11 @@ await def delete_cluster_security_group(
     self,
     *,
     ClusterSecurityGroupName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1301,10 +1304,11 @@ await def delete_cluster_subnet_group(
     self,
     *,
     ClusterSubnetGroupName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1358,10 +1362,11 @@ await def delete_event_subscription(
     self,
     *,
     SubscriptionName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1386,10 +1391,11 @@ await def delete_hsm_client_certificate(
     self,
     *,
     HsmClientCertificateIdentifier: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1414,10 +1420,11 @@ await def delete_hsm_configuration(
     self,
     *,
     HsmConfigurationIdentifier: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1477,10 +1484,11 @@ await def delete_scheduled_action(
     self,
     *,
     ScheduledActionName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1505,10 +1513,11 @@ await def delete_snapshot_copy_grant(
     self,
     *,
     SnapshotCopyGrantName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1533,10 +1542,11 @@ await def delete_snapshot_schedule(
     self,
     *,
     ScheduleIdentifier: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1562,10 +1572,11 @@ await def delete_tags(
     *,
     ResourceName: str,
     TagKeys: Sequence[str],
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -1591,10 +1602,11 @@ await def delete_usage_limit(
     self,
     *,
     UsageLimitId: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -3038,6 +3050,38 @@ parent.get_cluster_credentials(**kwargs)
 
 1. See [:material-code-braces: GetClusterCredentialsMessageRequestTypeDef](./type_defs.md#getclustercredentialsmessagerequesttypedef) 
 
+### get\_cluster\_credentials\_with\_iam
+
+Returns a database user name and temporary password with temporary authorization
+to log in to an Amazon Redshift database.
+
+Type annotations and code completion for `#!python session.create_client("redshift").get_cluster_credentials_with_iam` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift.Client.get_cluster_credentials_with_iam)
+
+```python title="Method definition"
+await def get_cluster_credentials_with_iam(
+    self,
+    *,
+    ClusterIdentifier: str,
+    DbName: str = ...,
+    DurationSeconds: int = ...,
+) -> ClusterExtendedCredentialsTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ClusterExtendedCredentialsTypeDef](./type_defs.md#clusterextendedcredentialstypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetClusterCredentialsWithIAMMessageRequestTypeDef = {  # (1)
+    "ClusterIdentifier": ...,
+}
+
+parent.get_cluster_credentials_with_iam(**kwargs)
+```
+
+1. See [:material-code-braces: GetClusterCredentialsWithIAMMessageRequestTypeDef](./type_defs.md#getclustercredentialswithiammessagerequesttypedef) 
+
 ### get\_reserved\_node\_exchange\_configuration\_options
 
 Gets the configuration options for the reserved-node exchange.
@@ -3394,10 +3438,11 @@ await def modify_cluster_snapshot_schedule(
     ClusterIdentifier: str,
     ScheduleIdentifier: str = ...,
     DisassociateSchedule: bool = ...,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"

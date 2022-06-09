@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("wellarchitected") as client:  # (1)
-        result = await client.create_lens_share()  # (2)
+        result = await client.associate_lenses()  # (2)
     ```
 
     1. client: [WellArchitectedClient](./client.md)
-    2. result: [:material-code-braces: CreateLensShareOutputTypeDef](./type_defs.md#createlensshareoutputtypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -54,16 +54,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_wellarchitected.client import WellArchitectedClient
-    from types_aiobotocore_wellarchitected.type_defs import CreateLensShareOutputTypeDef
-    from types_aiobotocore_wellarchitected.type_defs import CreateLensShareInputRequestTypeDef
+    from types_aiobotocore_wellarchitected.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_wellarchitected.type_defs import AssociateLensesInputRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("wellarchitected") as client:
         client: WellArchitectedClient
-        kwargs: CreateLensShareInputRequestTypeDef = {...}
-        result: CreateLensShareOutputTypeDef = await client.create_lens_share(**kwargs)
+        kwargs: AssociateLensesInputRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.associate_lenses(**kwargs)
     ```
 
 

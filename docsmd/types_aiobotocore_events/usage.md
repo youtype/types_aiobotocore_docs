@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("events") as client:  # (1)
-        result = await client.cancel_replay()  # (2)
+        result = await client.activate_event_source()  # (2)
     ```
 
     1. client: [EventBridgeClient](./client.md)
-    2. result: [:material-code-braces: CancelReplayResponseTypeDef](./type_defs.md#cancelreplayresponsetypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -72,16 +72,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_events.client import EventBridgeClient
-    from types_aiobotocore_events.type_defs import CancelReplayResponseTypeDef
-    from types_aiobotocore_events.type_defs import CancelReplayRequestRequestTypeDef
+    from types_aiobotocore_events.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_events.type_defs import ActivateEventSourceRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("events") as client:
         client: EventBridgeClient
-        kwargs: CancelReplayRequestRequestTypeDef = {...}
-        result: CancelReplayResponseTypeDef = await client.cancel_replay(**kwargs)
+        kwargs: ActivateEventSourceRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.activate_event_source(**kwargs)
     ```
 
 

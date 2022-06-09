@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("connect") as client:  # (1)
-        result = await client.associate_instance_storage_config()  # (2)
+        result = await client.associate_approved_origin()  # (2)
     ```
 
     1. client: [ConnectClient](./client.md)
-    2. result: [:material-code-braces: AssociateInstanceStorageConfigResponseTypeDef](./type_defs.md#associateinstancestorageconfigresponsetypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -72,16 +72,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_connect.client import ConnectClient
-    from types_aiobotocore_connect.type_defs import AssociateInstanceStorageConfigResponseTypeDef
-    from types_aiobotocore_connect.type_defs import AssociateInstanceStorageConfigRequestRequestTypeDef
+    from types_aiobotocore_connect.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_connect.type_defs import AssociateApprovedOriginRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("connect") as client:
         client: ConnectClient
-        kwargs: AssociateInstanceStorageConfigRequestRequestTypeDef = {...}
-        result: AssociateInstanceStorageConfigResponseTypeDef = await client.associate_instance_storage_config(**kwargs)
+        kwargs: AssociateApprovedOriginRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.associate_approved_origin(**kwargs)
     ```
 
 

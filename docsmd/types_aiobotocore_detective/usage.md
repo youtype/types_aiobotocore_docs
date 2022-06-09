@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("detective") as client:  # (1)
-        result = await client.create_graph()  # (2)
+        result = await client.accept_invitation()  # (2)
     ```
 
     1. client: [DetectiveClient](./client.md)
-    2. result: [:material-code-braces: CreateGraphResponseTypeDef](./type_defs.md#creategraphresponsetypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -54,16 +54,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_detective.client import DetectiveClient
-    from types_aiobotocore_detective.type_defs import CreateGraphResponseTypeDef
-    from types_aiobotocore_detective.type_defs import CreateGraphRequestRequestTypeDef
+    from types_aiobotocore_detective.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_detective.type_defs import AcceptInvitationRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("detective") as client:
         client: DetectiveClient
-        kwargs: CreateGraphRequestRequestTypeDef = {...}
-        result: CreateGraphResponseTypeDef = await client.create_graph(**kwargs)
+        kwargs: AcceptInvitationRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.accept_invitation(**kwargs)
     ```
 
 

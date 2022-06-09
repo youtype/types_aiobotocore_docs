@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("glacier") as client:  # (1)
-        result = await client.complete_multipart_upload()  # (2)
+        result = await client.abort_multipart_upload()  # (2)
     ```
 
     1. client: [GlacierClient](./client.md)
-    2. result: [:material-code-braces: ArchiveCreationOutputTypeDef](./type_defs.md#archivecreationoutputtypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -88,16 +88,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_glacier.client import GlacierClient
-    from types_aiobotocore_glacier.type_defs import ArchiveCreationOutputTypeDef
-    from types_aiobotocore_glacier.type_defs import CompleteMultipartUploadInputRequestTypeDef
+    from types_aiobotocore_glacier.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_glacier.type_defs import AbortMultipartUploadInputRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("glacier") as client:
         client: GlacierClient
-        kwargs: CompleteMultipartUploadInputRequestTypeDef = {...}
-        result: ArchiveCreationOutputTypeDef = await client.complete_multipart_upload(**kwargs)
+        kwargs: AbortMultipartUploadInputRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.abort_multipart_upload(**kwargs)
     ```
 
 

@@ -25,6 +25,21 @@ AlarmTypeType = Literal[
     "Metric",
 ]
 ```
+## AppAssessmentScheduleTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_resiliencehub.literals import AppAssessmentScheduleTypeType
+
+def get_value() -> AppAssessmentScheduleTypeType:
+    return "Daily"
+```
+
+```python title="Definition"
+AppAssessmentScheduleTypeType = Literal[
+    "Daily",
+    "Disabled",
+]
+```
 ## AppComplianceStatusTypeType
 
 ```python title="Usage Example"
@@ -321,6 +336,7 @@ ResourceMappingTypeType = Literal[
     "CfnStack",
     "Resource",
     "ResourceGroup",
+    "Terraform",
 ]
 ```
 ## ResourceResolutionStatusTypeType
@@ -532,6 +548,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -605,6 +622,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -661,6 +679,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
@@ -755,5 +774,38 @@ ResourceServiceName = Literal[
     "s3",
     "sns",
     "sqs",
+]
+```
+## RegionName
+
+```python title="Usage Example"
+from types_aiobotocore_resiliencehub.literals import RegionName
+
+def get_value() -> RegionName:
+    return "af-south-1"
+```
+
+```python title="Definition"
+RegionName = Literal[
+    "af-south-1",
+    "ap-east-1",
+    "ap-northeast-1",
+    "ap-northeast-2",
+    "ap-south-1",
+    "ap-southeast-1",
+    "ap-southeast-2",
+    "ca-central-1",
+    "eu-central-1",
+    "eu-north-1",
+    "eu-south-1",
+    "eu-west-1",
+    "eu-west-2",
+    "eu-west-3",
+    "me-south-1",
+    "sa-east-1",
+    "us-east-1",
+    "us-east-2",
+    "us-west-1",
+    "us-west-2",
 ]
 ```

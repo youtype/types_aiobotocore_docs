@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("acm") as client:  # (1)
-        result = await client.describe_certificate()  # (2)
+        result = await client.add_tags_to_certificate()  # (2)
     ```
 
     1. client: [ACMClient](./client.md)
-    2. result: [:material-code-braces: DescribeCertificateResponseTypeDef](./type_defs.md#describecertificateresponsetypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -88,16 +88,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_acm.client import ACMClient
-    from types_aiobotocore_acm.type_defs import DescribeCertificateResponseTypeDef
-    from types_aiobotocore_acm.type_defs import DescribeCertificateRequestRequestTypeDef
+    from types_aiobotocore_acm.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_acm.type_defs import AddTagsToCertificateRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("acm") as client:
         client: ACMClient
-        kwargs: DescribeCertificateRequestRequestTypeDef = {...}
-        result: DescribeCertificateResponseTypeDef = await client.describe_certificate(**kwargs)
+        kwargs: AddTagsToCertificateRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.add_tags_to_certificate(**kwargs)
     ```
 
 

@@ -94,21 +94,20 @@ def get_value() -> TargetTypeType:
 Type annotations for [typed dictionaries](./type_defs.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_migrationhub_config.type_defs import CreateHomeRegionControlRequestRequestTypeDef
+from types_aiobotocore_migrationhub_config.type_defs import TargetTypeDef
 
-def get_value() -> CreateHomeRegionControlRequestRequestTypeDef:
+def get_value() -> TargetTypeDef:
     return {
-        "HomeRegion": ...,
-        "Target": ...,
+        "Type": ...,
     }
 ```
 
-- [CreateHomeRegionControlRequestRequestTypeDef](./type_defs.md#createhomeregioncontrolrequestrequesttypedef)
-- [CreateHomeRegionControlResultTypeDef](./type_defs.md#createhomeregioncontrolresulttypedef)
-- [DescribeHomeRegionControlsRequestRequestTypeDef](./type_defs.md#describehomeregioncontrolsrequestrequesttypedef)
-- [DescribeHomeRegionControlsResultTypeDef](./type_defs.md#describehomeregioncontrolsresulttypedef)
-- [GetHomeRegionResultTypeDef](./type_defs.md#gethomeregionresulttypedef)
-- [HomeRegionControlTypeDef](./type_defs.md#homeregioncontroltypedef)
-- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
 - [TargetTypeDef](./type_defs.md#targettypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [CreateHomeRegionControlRequestRequestTypeDef](./type_defs.md#createhomeregioncontrolrequestrequesttypedef)
+- [DescribeHomeRegionControlsRequestRequestTypeDef](./type_defs.md#describehomeregioncontrolsrequestrequesttypedef)
+- [HomeRegionControlTypeDef](./type_defs.md#homeregioncontroltypedef)
+- [GetHomeRegionResultTypeDef](./type_defs.md#gethomeregionresulttypedef)
+- [CreateHomeRegionControlResultTypeDef](./type_defs.md#createhomeregioncontrolresulttypedef)
+- [DescribeHomeRegionControlsResultTypeDef](./type_defs.md#describehomeregioncontrolsresulttypedef)
 

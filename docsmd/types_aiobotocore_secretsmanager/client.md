@@ -353,7 +353,7 @@ parent.get_secret_value(**kwargs)
 
 ### list\_secret\_version\_ids
 
-Lists the versions for a secret.
+Lists the versions of a secret.
 
 Type annotations and code completion for `#!python session.create_client("secretsmanager").list_secret_version_ids` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html#SecretsManager.Client.list_secret_version_ids)
@@ -655,11 +655,12 @@ await def tag_resource(
     *,
     SecretId: str,
     Tags: Sequence[TagTypeDef],  # (1)
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (2)
     ...
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+2. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -686,10 +687,11 @@ await def untag_resource(
     *,
     SecretId: str,
     TagKeys: Sequence[str],
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"

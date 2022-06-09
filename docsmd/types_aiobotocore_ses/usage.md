@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("ses") as client:  # (1)
-        result = await client.describe_configuration_set()  # (2)
+        result = await client.create_custom_verification_email_template()  # (2)
     ```
 
     1. client: [SESClient](./client.md)
-    2. result: [:material-code-braces: DescribeConfigurationSetResponseTypeDef](./type_defs.md#describeconfigurationsetresponsetypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -88,16 +88,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_ses.client import SESClient
-    from types_aiobotocore_ses.type_defs import DescribeConfigurationSetResponseTypeDef
-    from types_aiobotocore_ses.type_defs import DescribeConfigurationSetRequestRequestTypeDef
+    from types_aiobotocore_ses.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_ses.type_defs import CreateCustomVerificationEmailTemplateRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("ses") as client:
         client: SESClient
-        kwargs: DescribeConfigurationSetRequestRequestTypeDef = {...}
-        result: DescribeConfigurationSetResponseTypeDef = await client.describe_configuration_set(**kwargs)
+        kwargs: CreateCustomVerificationEmailTemplateRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.create_custom_verification_email_template(**kwargs)
     ```
 
 

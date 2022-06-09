@@ -102,6 +102,20 @@ FeedbackValueType = Literal[
     "USEFUL",
 ]
 ```
+## GroupingTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_application_insights.literals import GroupingTypeType
+
+def get_value() -> GroupingTypeType:
+    return "ACCOUNT_BASED"
+```
+
+```python title="Definition"
+GroupingTypeType = Literal[
+    "ACCOUNT_BASED",
+]
+```
 ## LogFilterType
 
 ```python title="Usage Example"
@@ -145,6 +159,7 @@ def get_value() -> SeverityLevelType:
 ```python title="Definition"
 SeverityLevelType = Literal[
     "High",
+    "Informative",
     "Low",
     "Medium",
 ]
@@ -327,6 +342,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -400,6 +416,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -456,6 +473,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("codedeploy") as client:  # (1)
-        result = await client.batch_get_application_revisions()  # (2)
+        result = await client.add_tags_to_on_premises_instances()  # (2)
     ```
 
     1. client: [CodeDeployClient](./client.md)
-    2. result: [:material-code-braces: BatchGetApplicationRevisionsOutputTypeDef](./type_defs.md#batchgetapplicationrevisionsoutputtypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -88,16 +88,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_codedeploy.client import CodeDeployClient
-    from types_aiobotocore_codedeploy.type_defs import BatchGetApplicationRevisionsOutputTypeDef
-    from types_aiobotocore_codedeploy.type_defs import BatchGetApplicationRevisionsInputRequestTypeDef
+    from types_aiobotocore_codedeploy.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_codedeploy.type_defs import AddTagsToOnPremisesInstancesInputRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("codedeploy") as client:
         client: CodeDeployClient
-        kwargs: BatchGetApplicationRevisionsInputRequestTypeDef = {...}
-        result: BatchGetApplicationRevisionsOutputTypeDef = await client.batch_get_application_revisions(**kwargs)
+        kwargs: AddTagsToOnPremisesInstancesInputRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.add_tags_to_on_premises_instances(**kwargs)
     ```
 
 

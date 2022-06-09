@@ -70,6 +70,36 @@ ContextType = Literal[
     "SAVINGS_PLANS",
 ]
 ```
+## CostAllocationTagStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_ce.literals import CostAllocationTagStatusType
+
+def get_value() -> CostAllocationTagStatusType:
+    return "Active"
+```
+
+```python title="Definition"
+CostAllocationTagStatusType = Literal[
+    "Active",
+    "Inactive",
+]
+```
+## CostAllocationTagTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_ce.literals import CostAllocationTagTypeType
+
+def get_value() -> CostAllocationTagTypeType:
+    return "AWSGenerated"
+```
+
+```python title="Definition"
+CostAllocationTagTypeType = Literal[
+    "AWSGenerated",
+    "UserDefined",
+]
+```
 ## CostCategoryInheritedValueDimensionNameType
 
 ```python title="Usage Example"
@@ -688,6 +718,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -761,6 +792,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -817,6 +849,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

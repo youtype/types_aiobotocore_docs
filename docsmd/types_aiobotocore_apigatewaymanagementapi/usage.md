@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("apigatewaymanagementapi") as client:  # (1)
-        result = await client.get_connection()  # (2)
+        result = await client.delete_connection()  # (2)
     ```
 
     1. client: [ApiGatewayManagementApiClient](./client.md)
-    2. result: [:material-code-braces: GetConnectionResponseTypeDef](./type_defs.md#getconnectionresponsetypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -54,16 +54,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_apigatewaymanagementapi.client import ApiGatewayManagementApiClient
-    from types_aiobotocore_apigatewaymanagementapi.type_defs import GetConnectionResponseTypeDef
-    from types_aiobotocore_apigatewaymanagementapi.type_defs import GetConnectionRequestRequestTypeDef
+    from types_aiobotocore_apigatewaymanagementapi.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_apigatewaymanagementapi.type_defs import DeleteConnectionRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("apigatewaymanagementapi") as client:
         client: ApiGatewayManagementApiClient
-        kwargs: GetConnectionRequestRequestTypeDef = {...}
-        result: GetConnectionResponseTypeDef = await client.get_connection(**kwargs)
+        kwargs: DeleteConnectionRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.delete_connection(**kwargs)
     ```
 
 

@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("sns") as client:  # (1)
-        result = await client.check_if_phone_number_is_opted_out()  # (2)
+        result = await client.add_permission()  # (2)
     ```
 
     1. client: [SNSClient](./client.md)
-    2. result: [:material-code-braces: CheckIfPhoneNumberIsOptedOutResponseTypeDef](./type_defs.md#checkifphonenumberisoptedoutresponsetypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -72,16 +72,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_sns.client import SNSClient
-    from types_aiobotocore_sns.type_defs import CheckIfPhoneNumberIsOptedOutResponseTypeDef
-    from types_aiobotocore_sns.type_defs import CheckIfPhoneNumberIsOptedOutInputRequestTypeDef
+    from types_aiobotocore_sns.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_sns.type_defs import AddPermissionInputRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("sns") as client:
         client: SNSClient
-        kwargs: CheckIfPhoneNumberIsOptedOutInputRequestTypeDef = {...}
-        result: CheckIfPhoneNumberIsOptedOutResponseTypeDef = await client.check_if_phone_number_is_opted_out(**kwargs)
+        kwargs: AddPermissionInputRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.add_permission(**kwargs)
     ```
 
 

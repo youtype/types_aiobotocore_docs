@@ -56,6 +56,26 @@ DatasetTypeType = Literal[
     "TARGET_TIME_SERIES",
 ]
 ```
+## DayOfWeekType
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.literals import DayOfWeekType
+
+def get_value() -> DayOfWeekType:
+    return "FRIDAY"
+```
+
+```python title="Definition"
+DayOfWeekType = Literal[
+    "FRIDAY",
+    "MONDAY",
+    "SATURDAY",
+    "SUNDAY",
+    "THURSDAY",
+    "TUESDAY",
+    "WEDNESDAY",
+]
+```
 ## DomainType
 
 ```python title="Usage Example"
@@ -162,6 +182,34 @@ ListDatasetsPaginatorName = Literal[
     "list_datasets",
 ]
 ```
+## ListExplainabilitiesPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.literals import ListExplainabilitiesPaginatorName
+
+def get_value() -> ListExplainabilitiesPaginatorName:
+    return "list_explainabilities"
+```
+
+```python title="Definition"
+ListExplainabilitiesPaginatorName = Literal[
+    "list_explainabilities",
+]
+```
+## ListExplainabilityExportsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.literals import ListExplainabilityExportsPaginatorName
+
+def get_value() -> ListExplainabilityExportsPaginatorName:
+    return "list_explainability_exports"
+```
+
+```python title="Definition"
+ListExplainabilityExportsPaginatorName = Literal[
+    "list_explainability_exports",
+]
+```
 ## ListForecastExportJobsPaginatorName
 
 ```python title="Usage Example"
@@ -190,6 +238,34 @@ ListForecastsPaginatorName = Literal[
     "list_forecasts",
 ]
 ```
+## ListMonitorEvaluationsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.literals import ListMonitorEvaluationsPaginatorName
+
+def get_value() -> ListMonitorEvaluationsPaginatorName:
+    return "list_monitor_evaluations"
+```
+
+```python title="Definition"
+ListMonitorEvaluationsPaginatorName = Literal[
+    "list_monitor_evaluations",
+]
+```
+## ListMonitorsPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.literals import ListMonitorsPaginatorName
+
+def get_value() -> ListMonitorsPaginatorName:
+    return "list_monitors"
+```
+
+```python title="Definition"
+ListMonitorsPaginatorName = Literal[
+    "list_monitors",
+]
+```
 ## ListPredictorBacktestExportJobsPaginatorName
 
 ```python title="Usage Example"
@@ -216,6 +292,31 @@ def get_value() -> ListPredictorsPaginatorName:
 ```python title="Definition"
 ListPredictorsPaginatorName = Literal[
     "list_predictors",
+]
+```
+## MonthType
+
+```python title="Usage Example"
+from types_aiobotocore_forecast.literals import MonthType
+
+def get_value() -> MonthType:
+    return "APRIL"
+```
+
+```python title="Definition"
+MonthType = Literal[
+    "APRIL",
+    "AUGUST",
+    "DECEMBER",
+    "FEBRUARY",
+    "JANUARY",
+    "JULY",
+    "JUNE",
+    "MARCH",
+    "MAY",
+    "NOVEMBER",
+    "OCTOBER",
+    "SEPTEMBER",
 ]
 ```
 ## OptimizationMetricType
@@ -428,6 +529,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -501,6 +603,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -557,6 +660,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
@@ -667,8 +771,12 @@ PaginatorName = Literal[
     "list_dataset_groups",
     "list_dataset_import_jobs",
     "list_datasets",
+    "list_explainabilities",
+    "list_explainability_exports",
     "list_forecast_export_jobs",
     "list_forecasts",
+    "list_monitor_evaluations",
+    "list_monitors",
     "list_predictor_backtest_export_jobs",
     "list_predictors",
 ]

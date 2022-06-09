@@ -95,16 +95,16 @@ def get_value() -> StartSelectorTypeType:
 Type annotations for [typed dictionaries](./type_defs.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_kinesis_video_media.type_defs import GetMediaInputRequestTypeDef
+from types_aiobotocore_kinesis_video_media.type_defs import StartSelectorTypeDef
 
-def get_value() -> GetMediaInputRequestTypeDef:
+def get_value() -> StartSelectorTypeDef:
     return {
-        "StartSelector": ...,
+        "StartSelectorType": ...,
     }
 ```
 
+- [StartSelectorTypeDef](./type_defs.md#startselectortypedef)
+- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
 - [GetMediaInputRequestTypeDef](./type_defs.md#getmediainputrequesttypedef)
 - [GetMediaOutputTypeDef](./type_defs.md#getmediaoutputtypedef)
-- [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
-- [StartSelectorTypeDef](./type_defs.md#startselectortypedef)
 

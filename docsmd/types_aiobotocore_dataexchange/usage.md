@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("dataexchange") as client:  # (1)
-        result = await client.create_data_set()  # (2)
+        result = await client.cancel_job()  # (2)
     ```
 
     1. client: [DataExchangeClient](./client.md)
-    2. result: [:material-code-braces: CreateDataSetResponseTypeDef](./type_defs.md#createdatasetresponsetypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -72,16 +72,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_dataexchange.client import DataExchangeClient
-    from types_aiobotocore_dataexchange.type_defs import CreateDataSetResponseTypeDef
-    from types_aiobotocore_dataexchange.type_defs import CreateDataSetRequestRequestTypeDef
+    from types_aiobotocore_dataexchange.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_dataexchange.type_defs import CancelJobRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("dataexchange") as client:
         client: DataExchangeClient
-        kwargs: CreateDataSetRequestRequestTypeDef = {...}
-        result: CreateDataSetResponseTypeDef = await client.create_data_set(**kwargs)
+        kwargs: CancelJobRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.cancel_job(**kwargs)
     ```
 
 

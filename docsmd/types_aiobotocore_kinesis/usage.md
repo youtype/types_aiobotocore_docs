@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("kinesis") as client:  # (1)
-        result = await client.describe_stream()  # (2)
+        result = await client.add_tags_to_stream()  # (2)
     ```
 
     1. client: [KinesisClient](./client.md)
-    2. result: [:material-code-braces: DescribeStreamOutputTypeDef](./type_defs.md#describestreamoutputtypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -88,16 +88,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_kinesis.client import KinesisClient
-    from types_aiobotocore_kinesis.type_defs import DescribeStreamOutputTypeDef
-    from types_aiobotocore_kinesis.type_defs import DescribeStreamInputRequestTypeDef
+    from types_aiobotocore_kinesis.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_kinesis.type_defs import AddTagsToStreamInputRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("kinesis") as client:
         client: KinesisClient
-        kwargs: DescribeStreamInputRequestTypeDef = {...}
-        result: DescribeStreamOutputTypeDef = await client.describe_stream(**kwargs)
+        kwargs: AddTagsToStreamInputRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.add_tags_to_stream(**kwargs)
     ```
 
 

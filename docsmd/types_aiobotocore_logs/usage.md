@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("logs") as client:  # (1)
-        result = await client.create_export_task()  # (2)
+        result = await client.associate_kms_key()  # (2)
     ```
 
     1. client: [CloudWatchLogsClient](./client.md)
-    2. result: [:material-code-braces: CreateExportTaskResponseTypeDef](./type_defs.md#createexporttaskresponsetypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -72,16 +72,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_logs.client import CloudWatchLogsClient
-    from types_aiobotocore_logs.type_defs import CreateExportTaskResponseTypeDef
-    from types_aiobotocore_logs.type_defs import CreateExportTaskRequestRequestTypeDef
+    from types_aiobotocore_logs.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_logs.type_defs import AssociateKmsKeyRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("logs") as client:
         client: CloudWatchLogsClient
-        kwargs: CreateExportTaskRequestRequestTypeDef = {...}
-        result: CreateExportTaskResponseTypeDef = await client.create_export_task(**kwargs)
+        kwargs: AssociateKmsKeyRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.associate_kms_key(**kwargs)
     ```
 
 

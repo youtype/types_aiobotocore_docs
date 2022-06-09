@@ -279,6 +279,8 @@ python -m pip uninstall -y types-aiobotocore
 
 - [types-aiobotocore-emr-containers](./types_aiobotocore_emr_containers/README.md) for [EMRContainers](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-containers.html#EMRContainers) service
 
+- [types-aiobotocore-emr-serverless](./types_aiobotocore_emr_serverless/README.md) for [EMRServerless](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr-serverless.html#EMRServerless) service
+
 - [types-aiobotocore-es](./types_aiobotocore_es/README.md) for [ElasticsearchService](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/es.html#ElasticsearchService) service
 
 - [types-aiobotocore-events](./types_aiobotocore_events/README.md) for [EventBridge](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge) service
@@ -425,6 +427,8 @@ python -m pip uninstall -y types-aiobotocore
 
 - [types-aiobotocore-lookoutvision](./types_aiobotocore_lookoutvision/README.md) for [LookoutforVision](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutvision.html#LookoutforVision) service
 
+- [types-aiobotocore-m2](./types_aiobotocore_m2/README.md) for [MainframeModernization](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/m2.html#MainframeModernization) service
+
 - [types-aiobotocore-machinelearning](./types_aiobotocore_machinelearning/README.md) for [MachineLearning](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/machinelearning.html#MachineLearning) service
 
 - [types-aiobotocore-macie](./types_aiobotocore_macie/README.md) for [Macie](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie.html#Macie) service
@@ -536,6 +540,8 @@ python -m pip uninstall -y types-aiobotocore
 - [types-aiobotocore-redshift](./types_aiobotocore_redshift/README.md) for [Redshift](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift) service
 
 - [types-aiobotocore-redshift-data](./types_aiobotocore_redshift_data/README.md) for [RedshiftDataAPIService](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html#RedshiftDataAPIService) service
+
+- [types-aiobotocore-redshift-serverless](./types_aiobotocore_redshift_serverless/README.md) for [RedshiftServerless](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-serverless.html#RedshiftServerless) service
 
 - [types-aiobotocore-rekognition](./types_aiobotocore_rekognition/README.md) for [Rekognition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition) service
 

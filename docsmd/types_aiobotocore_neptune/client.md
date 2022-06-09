@@ -63,6 +63,9 @@ async with session.create_client("neptune") as client:
         client.DBUpgradeDependencyFailureFault,
         client.DomainNotFoundFault,
         client.EventSubscriptionQuotaExceededFault,
+        client.GlobalClusterAlreadyExistsFault,
+        client.GlobalClusterNotFoundFault,
+        client.GlobalClusterQuotaExceededFault,
         client.InstanceQuotaExceededFault,
         client.InsufficientDBClusterCapacityFault,
         client.InsufficientDBInstanceCapacityFault,
@@ -77,6 +80,7 @@ async with session.create_client("neptune") as client:
         client.InvalidDBSubnetGroupStateFault,
         client.InvalidDBSubnetStateFault,
         client.InvalidEventSubscriptionStateFault,
+        client.InvalidGlobalClusterStateFault,
         client.InvalidRestoreFault,
         client.InvalidSubnet,
         client.InvalidVPCNetworkStateFault,
@@ -126,10 +130,11 @@ await def add_role_to_db_cluster(
     DBClusterIdentifier: str,
     RoleArn: str,
     FeatureName: str = ...,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -187,11 +192,12 @@ await def add_tags_to_resource(
     *,
     ResourceName: str,
     Tags: Sequence[TagTypeDef],  # (1)
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (2)
     ...
 ```
 
 1. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+2. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -398,6 +404,7 @@ await def create_db_cluster(
     EnableIAMDatabaseAuthentication: bool = ...,
     EnableCloudwatchLogsExports: Sequence[str] = ...,
     DeletionProtection: bool = ...,
+    GlobalClusterIdentifier: str = ...,
     SourceRegion: str = ...,
 ) -> CreateDBClusterResultTypeDef:  # (2)
     ...
@@ -705,6 +712,40 @@ parent.create_event_subscription(**kwargs)
 
 1. See [:material-code-braces: CreateEventSubscriptionMessageRequestTypeDef](./type_defs.md#createeventsubscriptionmessagerequesttypedef) 
 
+### create\_global\_cluster
+
+Creates a Neptune global database spread across multiple Amazon Regions.
+
+Type annotations and code completion for `#!python session.create_client("neptune").create_global_cluster` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.create_global_cluster)
+
+```python title="Method definition"
+await def create_global_cluster(
+    self,
+    *,
+    GlobalClusterIdentifier: str,
+    SourceDBClusterIdentifier: str = ...,
+    Engine: str = ...,
+    EngineVersion: str = ...,
+    DeletionProtection: bool = ...,
+    StorageEncrypted: bool = ...,
+) -> CreateGlobalClusterResultTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: CreateGlobalClusterResultTypeDef](./type_defs.md#createglobalclusterresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: CreateGlobalClusterMessageRequestTypeDef = {  # (1)
+    "GlobalClusterIdentifier": ...,
+}
+
+parent.create_global_cluster(**kwargs)
+```
+
+1. See [:material-code-braces: CreateGlobalClusterMessageRequestTypeDef](./type_defs.md#createglobalclustermessagerequesttypedef) 
+
 ### delete\_db\_cluster
 
 The DeleteDBCluster action deletes a previously provisioned DB cluster.
@@ -777,10 +818,11 @@ await def delete_db_cluster_parameter_group(
     self,
     *,
     DBClusterParameterGroupName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -865,10 +907,11 @@ await def delete_db_parameter_group(
     self,
     *,
     DBParameterGroupName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -893,10 +936,11 @@ await def delete_db_subnet_group(
     self,
     *,
     DBSubnetGroupName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -937,6 +981,35 @@ parent.delete_event_subscription(**kwargs)
 ```
 
 1. See [:material-code-braces: DeleteEventSubscriptionMessageRequestTypeDef](./type_defs.md#deleteeventsubscriptionmessagerequesttypedef) 
+
+### delete\_global\_cluster
+
+Deletes a global database.
+
+Type annotations and code completion for `#!python session.create_client("neptune").delete_global_cluster` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.delete_global_cluster)
+
+```python title="Method definition"
+await def delete_global_cluster(
+    self,
+    *,
+    GlobalClusterIdentifier: str,
+) -> DeleteGlobalClusterResultTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: DeleteGlobalClusterResultTypeDef](./type_defs.md#deleteglobalclusterresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DeleteGlobalClusterMessageRequestTypeDef = {  # (1)
+    "GlobalClusterIdentifier": ...,
+}
+
+parent.delete_global_cluster(**kwargs)
+```
+
+1. See [:material-code-braces: DeleteGlobalClusterMessageRequestTypeDef](./type_defs.md#deleteglobalclustermessagerequesttypedef) 
 
 ### describe\_db\_cluster\_endpoints
 
@@ -1483,6 +1556,37 @@ parent.describe_events(**kwargs)
 
 1. See [:material-code-braces: DescribeEventsMessageRequestTypeDef](./type_defs.md#describeeventsmessagerequesttypedef) 
 
+### describe\_global\_clusters
+
+Returns information about Neptune global database clusters.
+
+Type annotations and code completion for `#!python session.create_client("neptune").describe_global_clusters` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.describe_global_clusters)
+
+```python title="Method definition"
+await def describe_global_clusters(
+    self,
+    *,
+    GlobalClusterIdentifier: str = ...,
+    MaxRecords: int = ...,
+    Marker: str = ...,
+) -> GlobalClustersMessageTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GlobalClustersMessageTypeDef](./type_defs.md#globalclustersmessagetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeGlobalClustersMessageRequestTypeDef = {  # (1)
+    "GlobalClusterIdentifier": ...,
+}
+
+parent.describe_global_clusters(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeGlobalClustersMessageRequestTypeDef](./type_defs.md#describeglobalclustersmessagerequesttypedef) 
+
 ### describe\_orderable\_db\_instance\_options
 
 Returns a list of orderable DB instance options for the specified engine.
@@ -1613,6 +1717,37 @@ parent.failover_db_cluster(**kwargs)
 ```
 
 1. See [:material-code-braces: FailoverDBClusterMessageRequestTypeDef](./type_defs.md#failoverdbclustermessagerequesttypedef) 
+
+### failover\_global\_cluster
+
+Initiates the failover process for a Neptune global database.
+
+Type annotations and code completion for `#!python session.create_client("neptune").failover_global_cluster` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.failover_global_cluster)
+
+```python title="Method definition"
+await def failover_global_cluster(
+    self,
+    *,
+    GlobalClusterIdentifier: str,
+    TargetDbClusterIdentifier: str,
+) -> FailoverGlobalClusterResultTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: FailoverGlobalClusterResultTypeDef](./type_defs.md#failoverglobalclusterresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: FailoverGlobalClusterMessageRequestTypeDef = {  # (1)
+    "GlobalClusterIdentifier": ...,
+    "TargetDbClusterIdentifier": ...,
+}
+
+parent.failover_global_cluster(**kwargs)
+```
+
+1. See [:material-code-braces: FailoverGlobalClusterMessageRequestTypeDef](./type_defs.md#failoverglobalclustermessagerequesttypedef) 
 
 ### generate\_presigned\_url
 
@@ -1972,6 +2107,39 @@ parent.modify_event_subscription(**kwargs)
 
 1. See [:material-code-braces: ModifyEventSubscriptionMessageRequestTypeDef](./type_defs.md#modifyeventsubscriptionmessagerequesttypedef) 
 
+### modify\_global\_cluster
+
+Modify a setting for an Amazon Neptune global cluster.
+
+Type annotations and code completion for `#!python session.create_client("neptune").modify_global_cluster` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.modify_global_cluster)
+
+```python title="Method definition"
+await def modify_global_cluster(
+    self,
+    *,
+    GlobalClusterIdentifier: str,
+    NewGlobalClusterIdentifier: str = ...,
+    DeletionProtection: bool = ...,
+    EngineVersion: str = ...,
+    AllowMajorVersionUpgrade: bool = ...,
+) -> ModifyGlobalClusterResultTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ModifyGlobalClusterResultTypeDef](./type_defs.md#modifyglobalclusterresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ModifyGlobalClusterMessageRequestTypeDef = {  # (1)
+    "GlobalClusterIdentifier": ...,
+}
+
+parent.modify_global_cluster(**kwargs)
+```
+
+1. See [:material-code-braces: ModifyGlobalClusterMessageRequestTypeDef](./type_defs.md#modifyglobalclustermessagerequesttypedef) 
+
 ### promote\_read\_replica\_db\_cluster
 
 Not supported.
@@ -2031,6 +2199,37 @@ parent.reboot_db_instance(**kwargs)
 
 1. See [:material-code-braces: RebootDBInstanceMessageRequestTypeDef](./type_defs.md#rebootdbinstancemessagerequesttypedef) 
 
+### remove\_from\_global\_cluster
+
+Detaches a Neptune DB cluster from a Neptune global database.
+
+Type annotations and code completion for `#!python session.create_client("neptune").remove_from_global_cluster` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html#Neptune.Client.remove_from_global_cluster)
+
+```python title="Method definition"
+await def remove_from_global_cluster(
+    self,
+    *,
+    GlobalClusterIdentifier: str,
+    DbClusterIdentifier: str,
+) -> RemoveFromGlobalClusterResultTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: RemoveFromGlobalClusterResultTypeDef](./type_defs.md#removefromglobalclusterresulttypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: RemoveFromGlobalClusterMessageRequestTypeDef = {  # (1)
+    "GlobalClusterIdentifier": ...,
+    "DbClusterIdentifier": ...,
+}
+
+parent.remove_from_global_cluster(**kwargs)
+```
+
+1. See [:material-code-braces: RemoveFromGlobalClusterMessageRequestTypeDef](./type_defs.md#removefromglobalclustermessagerequesttypedef) 
+
 ### remove\_role\_from\_db\_cluster
 
 Disassociates an Identity and Access Management (IAM) role from a DB cluster.
@@ -2045,10 +2244,11 @@ await def remove_role_from_db_cluster(
     DBClusterIdentifier: str,
     RoleArn: str,
     FeatureName: str = ...,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -2106,10 +2306,11 @@ await def remove_tags_from_resource(
     *,
     ResourceName: str,
     TagKeys: Sequence[str],
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"

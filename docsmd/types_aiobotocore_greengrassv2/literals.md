@@ -378,6 +378,22 @@ RecipeOutputFormatType = Literal[
     "YAML",
 ]
 ```
+## VendorGuidanceType
+
+```python title="Usage Example"
+from types_aiobotocore_greengrassv2.literals import VendorGuidanceType
+
+def get_value() -> VendorGuidanceType:
+    return "ACTIVE"
+```
+
+```python title="Definition"
+VendorGuidanceType = Literal[
+    "ACTIVE",
+    "DELETED",
+    "DISCONTINUED",
+]
+```
 ## GreengrassV2ServiceName
 
 ```python title="Usage Example"
@@ -508,6 +524,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -581,6 +598,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -637,6 +655,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

@@ -185,6 +185,22 @@ OperationType = Literal[
     "REPLACE",
 ]
 ```
+## ResultCodeType
+
+```python title="Usage Example"
+from types_aiobotocore_gamesparks.literals import ResultCodeType
+
+def get_value() -> ResultCodeType:
+    return "INVALID_ROLE_FAILURE"
+```
+
+```python title="Definition"
+ResultCodeType = Literal[
+    "INVALID_ROLE_FAILURE",
+    "SUCCESS",
+    "UNSPECIFIED_FAILURE",
+]
+```
 ## StageStateType
 
 ```python title="Usage Example"
@@ -330,6 +346,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -403,6 +420,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -459,6 +477,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

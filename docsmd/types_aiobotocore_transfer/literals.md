@@ -280,6 +280,21 @@ ServerOnlineWaiterName = Literal[
     "server_online",
 ]
 ```
+## SetStatOptionType
+
+```python title="Usage Example"
+from types_aiobotocore_transfer.literals import SetStatOptionType
+
+def get_value() -> SetStatOptionType:
+    return "DEFAULT"
+```
+
+```python title="Definition"
+SetStatOptionType = Literal[
+    "DEFAULT",
+    "ENABLE_NO_OP",
+]
+```
 ## StateType
 
 ```python title="Usage Example"
@@ -462,6 +477,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -535,6 +551,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -591,6 +608,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

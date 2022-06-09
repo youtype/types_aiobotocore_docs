@@ -104,8 +104,9 @@ def get_value() -> AlternateContactTypeDef:
 
 - [AlternateContactTypeDef](./type_defs.md#alternatecontacttypedef)
 - [DeleteAlternateContactRequestRequestTypeDef](./type_defs.md#deletealternatecontactrequestrequesttypedef)
-- [GetAlternateContactRequestRequestTypeDef](./type_defs.md#getalternatecontactrequestrequesttypedef)
-- [GetAlternateContactResponseTypeDef](./type_defs.md#getalternatecontactresponsetypedef)
-- [PutAlternateContactRequestRequestTypeDef](./type_defs.md#putalternatecontactrequestrequesttypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
+- [GetAlternateContactRequestRequestTypeDef](./type_defs.md#getalternatecontactrequestrequesttypedef)
+- [PutAlternateContactRequestRequestTypeDef](./type_defs.md#putalternatecontactrequestrequesttypedef)
+- [EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef)
+- [GetAlternateContactResponseTypeDef](./type_defs.md#getalternatecontactresponsetypedef)
 

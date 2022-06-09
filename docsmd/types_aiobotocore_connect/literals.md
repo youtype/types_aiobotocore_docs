@@ -154,6 +154,28 @@ ContactInitiationMethodType = Literal[
     "TRANSFER",
 ]
 ```
+## ContactStateType
+
+```python title="Usage Example"
+from types_aiobotocore_connect.literals import ContactStateType
+
+def get_value() -> ContactStateType:
+    return "CONNECTED"
+```
+
+```python title="Definition"
+ContactStateType = Literal[
+    "CONNECTED",
+    "CONNECTED_ONHOLD",
+    "CONNECTING",
+    "ENDED",
+    "ERROR",
+    "INCOMING",
+    "MISSED",
+    "PENDING",
+    "REJECTED",
+]
+```
 ## CurrentMetricNameType
 
 ```python title="Usage Example"
@@ -752,6 +774,20 @@ ListSecurityProfilesPaginatorName = Literal[
     "list_security_profiles",
 ]
 ```
+## ListTaskTemplatesPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_connect.literals import ListTaskTemplatesPaginatorName
+
+def get_value() -> ListTaskTemplatesPaginatorName:
+    return "list_task_templates"
+```
+
+```python title="Definition"
+ListTaskTemplatesPaginatorName = Literal[
+    "list_task_templates",
+]
+```
 ## ListUseCasesPaginatorName
 
 ```python title="Usage Example"
@@ -1163,6 +1199,10 @@ def get_value() -> ReferenceTypeType:
 ```python title="Definition"
 ReferenceTypeType = Literal[
     "ATTACHMENT",
+    "DATE",
+    "EMAIL",
+    "NUMBER",
+    "STRING",
     "URL",
 ]
 ```
@@ -1270,6 +1310,46 @@ StringComparisonTypeType = Literal[
     "CONTAINS",
     "EXACT",
     "STARTS_WITH",
+]
+```
+## TaskTemplateFieldTypeType
+
+```python title="Usage Example"
+from types_aiobotocore_connect.literals import TaskTemplateFieldTypeType
+
+def get_value() -> TaskTemplateFieldTypeType:
+    return "BOOLEAN"
+```
+
+```python title="Definition"
+TaskTemplateFieldTypeType = Literal[
+    "BOOLEAN",
+    "DATE_TIME",
+    "DESCRIPTION",
+    "EMAIL",
+    "NAME",
+    "NUMBER",
+    "QUICK_CONNECT",
+    "SCHEDULED_TIME",
+    "SINGLE_SELECT",
+    "TEXT",
+    "TEXT_AREA",
+    "URL",
+]
+```
+## TaskTemplateStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_connect.literals import TaskTemplateStatusType
+
+def get_value() -> TaskTemplateStatusType:
+    return "ACTIVE"
+```
+
+```python title="Definition"
+TaskTemplateStatusType = Literal[
+    "ACTIVE",
+    "INACTIVE",
 ]
 ```
 ## TrafficTypeType
@@ -1515,6 +1595,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -1588,6 +1669,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -1644,6 +1726,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
@@ -1777,6 +1860,7 @@ PaginatorName = Literal[
     "list_security_keys",
     "list_security_profile_permissions",
     "list_security_profiles",
+    "list_task_templates",
     "list_use_cases",
     "list_user_hierarchy_groups",
     "list_users",

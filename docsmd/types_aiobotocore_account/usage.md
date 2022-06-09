@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("account") as client:  # (1)
-        result = await client.get_alternate_contact()  # (2)
+        result = await client.delete_alternate_contact()  # (2)
     ```
 
     1. client: [AccountClient](./client.md)
-    2. result: [:material-code-braces: GetAlternateContactResponseTypeDef](./type_defs.md#getalternatecontactresponsetypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -54,16 +54,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_account.client import AccountClient
-    from types_aiobotocore_account.type_defs import GetAlternateContactResponseTypeDef
-    from types_aiobotocore_account.type_defs import GetAlternateContactRequestRequestTypeDef
+    from types_aiobotocore_account.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_account.type_defs import DeleteAlternateContactRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("account") as client:
         client: AccountClient
-        kwargs: GetAlternateContactRequestRequestTypeDef = {...}
-        result: GetAlternateContactResponseTypeDef = await client.get_alternate_contact(**kwargs)
+        kwargs: DeleteAlternateContactRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.delete_alternate_contact(**kwargs)
     ```
 
 

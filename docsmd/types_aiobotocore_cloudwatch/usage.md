@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("cloudwatch") as client:  # (1)
-        result = await client.delete_insight_rules()  # (2)
+        result = await client.delete_alarms()  # (2)
     ```
 
     1. client: [CloudWatchClient](./client.md)
-    2. result: [:material-code-braces: DeleteInsightRulesOutputTypeDef](./type_defs.md#deleteinsightrulesoutputtypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -88,16 +88,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_cloudwatch.client import CloudWatchClient
-    from types_aiobotocore_cloudwatch.type_defs import DeleteInsightRulesOutputTypeDef
-    from types_aiobotocore_cloudwatch.type_defs import DeleteInsightRulesInputRequestTypeDef
+    from types_aiobotocore_cloudwatch.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_cloudwatch.type_defs import DeleteAlarmsInputRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("cloudwatch") as client:
         client: CloudWatchClient
-        kwargs: DeleteInsightRulesInputRequestTypeDef = {...}
-        result: DeleteInsightRulesOutputTypeDef = await client.delete_insight_rules(**kwargs)
+        kwargs: DeleteAlarmsInputRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.delete_alarms(**kwargs)
     ```
 
 

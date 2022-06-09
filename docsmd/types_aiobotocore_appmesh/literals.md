@@ -138,6 +138,23 @@ HttpSchemeType = Literal[
     "https",
 ]
 ```
+## IpPreferenceType
+
+```python title="Usage Example"
+from types_aiobotocore_appmesh.literals import IpPreferenceType
+
+def get_value() -> IpPreferenceType:
+    return "IPv4_ONLY"
+```
+
+```python title="Definition"
+IpPreferenceType = Literal[
+    "IPv4_ONLY",
+    "IPv4_PREFERRED",
+    "IPv6_ONLY",
+    "IPv6_PREFERRED",
+]
+```
 ## ListGatewayRoutesPaginatorName
 
 ```python title="Usage Example"
@@ -555,6 +572,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -628,6 +646,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -684,6 +703,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

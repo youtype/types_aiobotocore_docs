@@ -18,6 +18,21 @@ type checking and code completion should work out of the box.
 
 
 
+=== "Client"
+
+    ```python title="Client usage example"
+    from aiobotocore.session import get_session
+
+
+    session = get_session()
+
+    async with session.create_client("personalize-events") as client:  # (1)
+        result = await client.put_events()  # (2)
+    ```
+
+    1. client: [PersonalizeEventsClient](./client.md)
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
+
 
 
 
@@ -32,6 +47,24 @@ or a standalone `types_aiobotocore_personalize_events` package, you have to expl
 All other type annotations are optional, as types should be discovered automatically.
 However, these type annotations can be helpful in your functions and methods.
 
+
+=== "Client"
+
+    ```python title="Client usage example"
+    from aiobotocore.session import get_session
+
+    from types_aiobotocore_personalize_events.client import PersonalizeEventsClient
+    from types_aiobotocore_personalize_events.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_personalize_events.type_defs import PutEventsRequestRequestTypeDef
+
+
+    session = get_session()
+
+    async with session.create_client("personalize-events") as client:
+        client: PersonalizeEventsClient
+        kwargs: PutEventsRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.put_events(**kwargs)
+    ```
 
 
 

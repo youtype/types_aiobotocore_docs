@@ -36,6 +36,7 @@ async with session.create_client("auditmanager") as client:
         client.ClientError,
         client.InternalServerException,
         client.ResourceNotFoundException,
+        client.ThrottlingException,
         client.ValidationException,
     ) as e:
         print(e)
@@ -1083,8 +1084,7 @@ await def get_organization_admin_account(
 
 ### get\_services\_in\_scope
 
-Returns a list of the in-scope Amazon Web Services services for the specified
-assessment.
+Returns a list of the in-scope Amazon Web Services for the specified assessment.
 
 Type annotations and code completion for `#!python session.create_client("auditmanager").get_services_in_scope` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/auditmanager.html#AuditManager.Client.get_services_in_scope)

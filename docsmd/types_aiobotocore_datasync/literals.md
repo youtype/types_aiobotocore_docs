@@ -37,6 +37,21 @@ AtimeType = Literal[
     "NONE",
 ]
 ```
+## EfsInTransitEncryptionType
+
+```python title="Usage Example"
+from types_aiobotocore_datasync.literals import EfsInTransitEncryptionType
+
+def get_value() -> EfsInTransitEncryptionType:
+    return "NONE"
+```
+
+```python title="Definition"
+EfsInTransitEncryptionType = Literal[
+    "NONE",
+    "TLS1_2",
+]
+```
 ## EndpointTypeType
 
 ```python title="Usage Example"
@@ -694,6 +709,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -767,6 +783,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -823,6 +840,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

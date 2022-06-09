@@ -143,6 +143,7 @@ def get_value() -> RoleType:
 RoleType = Literal[
     "ADMIN",
     "EDITOR",
+    "VIEWER",
 ]
 ```
 ## SamlConfigurationStatusType
@@ -344,6 +345,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -417,6 +419,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -473,6 +476,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("opsworks") as client:  # (1)
-        result = await client.clone_stack()  # (2)
+        result = await client.assign_instance()  # (2)
     ```
 
     1. client: [OpsWorksClient](./client.md)
-    2. result: [:material-code-braces: CloneStackResultTypeDef](./type_defs.md#clonestackresulttypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -88,16 +88,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_opsworks.client import OpsWorksClient
-    from types_aiobotocore_opsworks.type_defs import CloneStackResultTypeDef
-    from types_aiobotocore_opsworks.type_defs import CloneStackRequestRequestTypeDef
+    from types_aiobotocore_opsworks.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_opsworks.type_defs import AssignInstanceRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("opsworks") as client:
         client: OpsWorksClient
-        kwargs: CloneStackRequestRequestTypeDef = {...}
-        result: CloneStackResultTypeDef = await client.clone_stack(**kwargs)
+        kwargs: AssignInstanceRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.assign_instance(**kwargs)
     ```
 
 

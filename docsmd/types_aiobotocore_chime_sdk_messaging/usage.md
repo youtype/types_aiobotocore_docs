@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("chime-sdk-messaging") as client:  # (1)
-        result = await client.batch_create_channel_membership()  # (2)
+        result = await client.associate_channel_flow()  # (2)
     ```
 
     1. client: [ChimeSDKMessagingClient](./client.md)
-    2. result: [:material-code-braces: BatchCreateChannelMembershipResponseTypeDef](./type_defs.md#batchcreatechannelmembershipresponsetypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -54,16 +54,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_chime_sdk_messaging.client import ChimeSDKMessagingClient
-    from types_aiobotocore_chime_sdk_messaging.type_defs import BatchCreateChannelMembershipResponseTypeDef
-    from types_aiobotocore_chime_sdk_messaging.type_defs import BatchCreateChannelMembershipRequestRequestTypeDef
+    from types_aiobotocore_chime_sdk_messaging.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_chime_sdk_messaging.type_defs import AssociateChannelFlowRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("chime-sdk-messaging") as client:
         client: ChimeSDKMessagingClient
-        kwargs: BatchCreateChannelMembershipRequestRequestTypeDef = {...}
-        result: BatchCreateChannelMembershipResponseTypeDef = await client.batch_create_channel_membership(**kwargs)
+        kwargs: AssociateChannelFlowRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.associate_channel_flow(**kwargs)
     ```
 
 

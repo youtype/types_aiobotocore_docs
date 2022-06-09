@@ -7,6 +7,23 @@
     Auto-generated documentation for [ChimeSDKMeetings](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/chime-sdk-meetings.html#ChimeSDKMeetings)
     type annotations stubs module [types-aiobotocore-chime-sdk-meetings](https://pypi.org/project/types-aiobotocore-chime-sdk-meetings/).
 
+## MediaCapabilitiesType
+
+```python title="Usage Example"
+from types_aiobotocore_chime_sdk_meetings.literals import MediaCapabilitiesType
+
+def get_value() -> MediaCapabilitiesType:
+    return "None"
+```
+
+```python title="Definition"
+MediaCapabilitiesType = Literal[
+    "None",
+    "Receive",
+    "Send",
+    "SendReceive",
+]
+```
 ## MeetingFeatureStatusType
 
 ```python title="Usage Example"
@@ -344,6 +361,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -417,6 +435,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -473,6 +492,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("accessanalyzer") as client:  # (1)
-        result = await client.create_access_preview()  # (2)
+        result = await client.apply_archive_rule()  # (2)
     ```
 
     1. client: [AccessAnalyzerClient](./client.md)
-    2. result: [:material-code-braces: CreateAccessPreviewResponseTypeDef](./type_defs.md#createaccesspreviewresponsetypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -72,16 +72,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_accessanalyzer.client import AccessAnalyzerClient
-    from types_aiobotocore_accessanalyzer.type_defs import CreateAccessPreviewResponseTypeDef
-    from types_aiobotocore_accessanalyzer.type_defs import CreateAccessPreviewRequestRequestTypeDef
+    from types_aiobotocore_accessanalyzer.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_accessanalyzer.type_defs import ApplyArchiveRuleRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("accessanalyzer") as client:
         client: AccessAnalyzerClient
-        kwargs: CreateAccessPreviewRequestRequestTypeDef = {...}
-        result: CreateAccessPreviewResponseTypeDef = await client.create_access_preview(**kwargs)
+        kwargs: ApplyArchiveRuleRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.apply_archive_rule(**kwargs)
     ```
 
 

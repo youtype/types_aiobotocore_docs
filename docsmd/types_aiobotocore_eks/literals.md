@@ -22,7 +22,9 @@ AMITypesType = Literal[
     "AL2_x86_64",
     "AL2_x86_64_GPU",
     "BOTTLEROCKET_ARM_64",
+    "BOTTLEROCKET_ARM_64_NVIDIA",
     "BOTTLEROCKET_x86_64",
+    "BOTTLEROCKET_x86_64_NVIDIA",
     "CUSTOM",
 ]
 ```
@@ -717,6 +719,7 @@ ServiceName = Literal[
     "elbv2",
     "emr",
     "emr-containers",
+    "emr-serverless",
     "es",
     "events",
     "evidently",
@@ -790,6 +793,7 @@ ServiceName = Literal[
     "lookoutequipment",
     "lookoutmetrics",
     "lookoutvision",
+    "m2",
     "machinelearning",
     "macie",
     "macie2",
@@ -846,6 +850,7 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
+    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

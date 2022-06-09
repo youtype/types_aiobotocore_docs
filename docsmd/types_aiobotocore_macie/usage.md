@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("macie") as client:  # (1)
-        result = await client.associate_s3_resources()  # (2)
+        result = await client.associate_member_account()  # (2)
     ```
 
     1. client: [MacieClient](./client.md)
-    2. result: [:material-code-braces: AssociateS3ResourcesResultTypeDef](./type_defs.md#associates3resourcesresulttypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -72,16 +72,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_macie.client import MacieClient
-    from types_aiobotocore_macie.type_defs import AssociateS3ResourcesResultTypeDef
-    from types_aiobotocore_macie.type_defs import AssociateS3ResourcesRequestRequestTypeDef
+    from types_aiobotocore_macie.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_macie.type_defs import AssociateMemberAccountRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("macie") as client:
         client: MacieClient
-        kwargs: AssociateS3ResourcesRequestRequestTypeDef = {...}
-        result: AssociateS3ResourcesResultTypeDef = await client.associate_s3_resources(**kwargs)
+        kwargs: AssociateMemberAccountRequestRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.associate_member_account(**kwargs)
     ```
 
 

@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("neptune") as client:  # (1)
-        result = await client.add_source_identifier_to_subscription()  # (2)
+        result = await client.add_role_to_db_cluster()  # (2)
     ```
 
     1. client: [NeptuneClient](./client.md)
-    2. result: [:material-code-braces: AddSourceIdentifierToSubscriptionResultTypeDef](./type_defs.md#addsourceidentifiertosubscriptionresulttypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -88,16 +88,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_neptune.client import NeptuneClient
-    from types_aiobotocore_neptune.type_defs import AddSourceIdentifierToSubscriptionResultTypeDef
-    from types_aiobotocore_neptune.type_defs import AddSourceIdentifierToSubscriptionMessageRequestTypeDef
+    from types_aiobotocore_neptune.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_neptune.type_defs import AddRoleToDBClusterMessageRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("neptune") as client:
         client: NeptuneClient
-        kwargs: AddSourceIdentifierToSubscriptionMessageRequestTypeDef = {...}
-        result: AddSourceIdentifierToSubscriptionResultTypeDef = await client.add_source_identifier_to_subscription(**kwargs)
+        kwargs: AddRoleToDBClusterMessageRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.add_role_to_db_cluster(**kwargs)
     ```
 
 

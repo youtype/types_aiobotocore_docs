@@ -361,6 +361,7 @@ await def create_cache_cluster(
     PreferredOutpostArn: str = ...,
     PreferredOutpostArns: Sequence[str] = ...,
     LogDeliveryConfigurations: Sequence[LogDeliveryConfigurationRequestTypeDef] = ...,  # (4)
+    TransitEncryptionEnabled: bool = ...,
 ) -> CreateCacheClusterResultTypeDef:  # (5)
     ...
 ```
@@ -808,10 +809,11 @@ await def delete_cache_parameter_group(
     self,
     *,
     CacheParameterGroupName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -836,10 +838,11 @@ await def delete_cache_security_group(
     self,
     *,
     CacheSecurityGroupName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"
@@ -864,10 +867,11 @@ await def delete_cache_subnet_group(
     self,
     *,
     CacheSubnetGroupName: str,
-) -> None:
+) -> EmptyResponseMetadataTypeDef:  # (1)
     ...
 ```
 
+1. See [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 ```python title="Usage example with kwargs"

@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("autoscaling") as client:  # (1)
-        result = await client.batch_delete_scheduled_action()  # (2)
+        result = await client.attach_instances()  # (2)
     ```
 
     1. client: [AutoScalingClient](./client.md)
-    2. result: [:material-code-braces: BatchDeleteScheduledActionAnswerTypeDef](./type_defs.md#batchdeletescheduledactionanswertypedef) 
+    2. result: [:material-code-braces: EmptyResponseMetadataTypeDef](./type_defs.md#emptyresponsemetadatatypedef) 
 
 
 
@@ -72,16 +72,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_autoscaling.client import AutoScalingClient
-    from types_aiobotocore_autoscaling.type_defs import BatchDeleteScheduledActionAnswerTypeDef
-    from types_aiobotocore_autoscaling.type_defs import BatchDeleteScheduledActionTypeRequestTypeDef
+    from types_aiobotocore_autoscaling.type_defs import EmptyResponseMetadataTypeDef
+    from types_aiobotocore_autoscaling.type_defs import AttachInstancesQueryRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("autoscaling") as client:
         client: AutoScalingClient
-        kwargs: BatchDeleteScheduledActionTypeRequestTypeDef = {...}
-        result: BatchDeleteScheduledActionAnswerTypeDef = await client.batch_delete_scheduled_action(**kwargs)
+        kwargs: AttachInstancesQueryRequestTypeDef = {...}
+        result: EmptyResponseMetadataTypeDef = await client.attach_instances(**kwargs)
     ```
 
 

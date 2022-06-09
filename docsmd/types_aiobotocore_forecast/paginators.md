@@ -138,6 +138,96 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListDatasetsRequestListDatasetsPaginateTypeDef](./type_defs.md#listdatasetsrequestlistdatasetspaginatetypedef) 
+## ListExplainabilitiesPaginator
+
+Type annotations and code completion for `#!python session.create_client("forecast").get_paginator("list_explainabilities")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Paginator.ListExplainabilities)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_forecast.paginator import ListExplainabilitiesPaginator
+
+session = get_session()
+async with session.create_client("forecast") as client:
+    client: ForecastServiceClient
+    paginator: ListExplainabilitiesPaginator = client.get_paginator("list_explainabilities")
+```
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListExplainabilitiesPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[ListExplainabilitiesResponseTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: ListExplainabilitiesResponseTypeDef](./type_defs.md#listexplainabilitiesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListExplainabilitiesRequestListExplainabilitiesPaginateTypeDef = {  # (1)
+    "Filters": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListExplainabilitiesRequestListExplainabilitiesPaginateTypeDef](./type_defs.md#listexplainabilitiesrequestlistexplainabilitiespaginatetypedef) 
+## ListExplainabilityExportsPaginator
+
+Type annotations and code completion for `#!python session.create_client("forecast").get_paginator("list_explainability_exports")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Paginator.ListExplainabilityExports)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_forecast.paginator import ListExplainabilityExportsPaginator
+
+session = get_session()
+async with session.create_client("forecast") as client:
+    client: ForecastServiceClient
+    paginator: ListExplainabilityExportsPaginator = client.get_paginator("list_explainability_exports")
+```
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListExplainabilityExportsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[ListExplainabilityExportsResponseTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: ListExplainabilityExportsResponseTypeDef](./type_defs.md#listexplainabilityexportsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListExplainabilityExportsRequestListExplainabilityExportsPaginateTypeDef = {  # (1)
+    "Filters": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListExplainabilityExportsRequestListExplainabilityExportsPaginateTypeDef](./type_defs.md#listexplainabilityexportsrequestlistexplainabilityexportspaginatetypedef) 
 ## ListForecastExportJobsPaginator
 
 Type annotations and code completion for `#!python session.create_client("forecast").get_paginator("list_forecast_export_jobs")`.
@@ -228,6 +318,97 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListForecastsRequestListForecastsPaginateTypeDef](./type_defs.md#listforecastsrequestlistforecastspaginatetypedef) 
+## ListMonitorEvaluationsPaginator
+
+Type annotations and code completion for `#!python session.create_client("forecast").get_paginator("list_monitor_evaluations")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Paginator.ListMonitorEvaluations)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_forecast.paginator import ListMonitorEvaluationsPaginator
+
+session = get_session()
+async with session.create_client("forecast") as client:
+    client: ForecastServiceClient
+    paginator: ListMonitorEvaluationsPaginator = client.get_paginator("list_monitor_evaluations")
+```
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListMonitorEvaluationsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    MonitorArn: str,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[ListMonitorEvaluationsResponseTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: ListMonitorEvaluationsResponseTypeDef](./type_defs.md#listmonitorevaluationsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListMonitorEvaluationsRequestListMonitorEvaluationsPaginateTypeDef = {  # (1)
+    "MonitorArn": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListMonitorEvaluationsRequestListMonitorEvaluationsPaginateTypeDef](./type_defs.md#listmonitorevaluationsrequestlistmonitorevaluationspaginatetypedef) 
+## ListMonitorsPaginator
+
+Type annotations and code completion for `#!python session.create_client("forecast").get_paginator("list_monitors")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/forecast.html#ForecastService.Paginator.ListMonitors)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_forecast.paginator import ListMonitorsPaginator
+
+session = get_session()
+async with session.create_client("forecast") as client:
+    client: ForecastServiceClient
+    paginator: ListMonitorsPaginator = client.get_paginator("list_monitors")
+```
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListMonitorsPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    Filters: Sequence[FilterTypeDef] = ...,  # (1)
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[ListMonitorsResponseTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-braces: FilterTypeDef](./type_defs.md#filtertypedef) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: ListMonitorsResponseTypeDef](./type_defs.md#listmonitorsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListMonitorsRequestListMonitorsPaginateTypeDef = {  # (1)
+    "Filters": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListMonitorsRequestListMonitorsPaginateTypeDef](./type_defs.md#listmonitorsrequestlistmonitorspaginatetypedef) 
 ## ListPredictorBacktestExportJobsPaginator
 
 Type annotations and code completion for `#!python session.create_client("forecast").get_paginator("list_predictor_backtest_export_jobs")`.

@@ -1202,6 +1202,53 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: ListSecurityProfilesRequestListSecurityProfilesPaginateTypeDef](./type_defs.md#listsecurityprofilesrequestlistsecurityprofilespaginatetypedef) 
+## ListTaskTemplatesPaginator
+
+Type annotations and code completion for `#!python session.create_client("connect").get_paginator("list_task_templates")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect.html#Connect.Paginator.ListTaskTemplates)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_connect.paginator import ListTaskTemplatesPaginator
+
+session = get_session()
+async with session.create_client("connect") as client:
+    client: ConnectClient
+    paginator: ListTaskTemplatesPaginator = client.get_paginator("list_task_templates")
+```
+
+
+### paginate
+
+Type annotations and code completion for `#!python ListTaskTemplatesPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    InstanceId: str,
+    Status: TaskTemplateStatusType = ...,  # (1)
+    Name: str = ...,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (2)
+) -> AsyncIterator[ListTaskTemplatesResponseTypeDef]:  # (3)
+    ...
+```
+
+1. See [:material-code-brackets: TaskTemplateStatusType](./literals.md#tasktemplatestatustype) 
+2. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+3. See [:material-code-braces: ListTaskTemplatesResponseTypeDef](./type_defs.md#listtasktemplatesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListTaskTemplatesRequestListTaskTemplatesPaginateTypeDef = {  # (1)
+    "InstanceId": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: ListTaskTemplatesRequestListTaskTemplatesPaginateTypeDef](./type_defs.md#listtasktemplatesrequestlisttasktemplatespaginatetypedef) 
 ## ListUseCasesPaginator
 
 Type annotations and code completion for `#!python session.create_client("connect").get_paginator("list_use_cases")`.
