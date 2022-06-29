@@ -260,6 +260,22 @@ ListUsersPaginatorName = Literal[
     "list_users",
 ]
 ```
+## PermissionGroupMembershipStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.literals import PermissionGroupMembershipStatusType
+
+def get_value() -> PermissionGroupMembershipStatusType:
+    return "ADDITION_IN_PROGRESS"
+```
+
+```python title="Definition"
+PermissionGroupMembershipStatusType = Literal[
+    "ADDITION_IN_PROGRESS",
+    "ADDITION_SUCCESS",
+    "REMOVAL_IN_PROGRESS",
+]
+```
 ## UserStatusType
 
 ```python title="Usage Example"
@@ -400,6 +416,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -567,7 +584,6 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

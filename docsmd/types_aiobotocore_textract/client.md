@@ -176,6 +176,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.create_client("textract").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html#Textract.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### detect\_document\_text
 
 Detects text in the input document.

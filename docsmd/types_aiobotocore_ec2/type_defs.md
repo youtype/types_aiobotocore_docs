@@ -17563,11 +17563,13 @@ class PlacementGroupTypeDef(TypedDict):
     GroupId: NotRequired[str],
     Tags: NotRequired[List[TagTypeDef]],  # (3)
     GroupArn: NotRequired[str],
+    SpreadLevel: NotRequired[SpreadLevelType],  # (4)
 ```
 
 1. See [:material-code-brackets: PlacementGroupStateType](./literals.md#placementgroupstatetype) 
 2. See [:material-code-brackets: PlacementStrategyType](./literals.md#placementstrategytype) 
 3. See [:material-code-braces: TagTypeDef](./type_defs.md#tagtypedef) 
+4. See [:material-code-brackets: SpreadLevelType](./literals.md#spreadleveltype) 
 ## ReplaceRootVolumeTaskTypeDef
 
 ```python title="Usage Example"
@@ -31533,6 +31535,7 @@ class CreateCustomerGatewayRequestRequestTypeDef(TypedDict):
     CertificateArn: NotRequired[str],
     TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (2)
     DeviceName: NotRequired[str],
+    IpAddress: NotRequired[str],
     DryRun: NotRequired[bool],
 ```
 
@@ -32148,10 +32151,12 @@ class CreatePlacementGroupRequestRequestTypeDef(TypedDict):
     Strategy: NotRequired[PlacementStrategyType],  # (1)
     PartitionCount: NotRequired[int],
     TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (2)
+    SpreadLevel: NotRequired[SpreadLevelType],  # (3)
 ```
 
 1. See [:material-code-brackets: PlacementStrategyType](./literals.md#placementstrategytype) 
 2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
+3. See [:material-code-brackets: SpreadLevelType](./literals.md#spreadleveltype) 
 ## CreatePlacementGroupRequestServiceResourceCreatePlacementGroupTypeDef
 
 ```python title="Usage Example"
@@ -32170,10 +32175,12 @@ class CreatePlacementGroupRequestServiceResourceCreatePlacementGroupTypeDef(Type
     Strategy: NotRequired[PlacementStrategyType],  # (1)
     PartitionCount: NotRequired[int],
     TagSpecifications: NotRequired[Sequence[TagSpecificationTypeDef]],  # (2)
+    SpreadLevel: NotRequired[SpreadLevelType],  # (3)
 ```
 
 1. See [:material-code-brackets: PlacementStrategyType](./literals.md#placementstrategytype) 
 2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
+3. See [:material-code-brackets: SpreadLevelType](./literals.md#spreadleveltype) 
 ## CreatePublicIpv4PoolRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -36866,6 +36873,8 @@ class VpnConnectionOptionsSpecificationTypeDef(TypedDict):
     RemoteIpv4NetworkCidr: NotRequired[str],
     LocalIpv6NetworkCidr: NotRequired[str],
     RemoteIpv6NetworkCidr: NotRequired[str],
+    OutsideIpAddressType: NotRequired[str],
+    TransportTransitGatewayAttachmentId: NotRequired[str],
 ```
 
 1. See [:material-code-brackets: TunnelInsideIpVersionType](./literals.md#tunnelinsideipversiontype) 
@@ -37170,6 +37179,8 @@ class VpnConnectionOptionsTypeDef(TypedDict):
     RemoteIpv4NetworkCidr: NotRequired[str],
     LocalIpv6NetworkCidr: NotRequired[str],
     RemoteIpv6NetworkCidr: NotRequired[str],
+    OutsideIpAddressType: NotRequired[str],
+    TransportTransitGatewayAttachmentId: NotRequired[str],
     TunnelInsideIpVersion: NotRequired[TunnelInsideIpVersionType],  # (1)
     TunnelOptions: NotRequired[List[TunnelOptionTypeDef]],  # (2)
 ```

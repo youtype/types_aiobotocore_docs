@@ -135,6 +135,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_application
 
 Creates a new application that is the top-level node in a hierarchy of related
@@ -561,6 +576,38 @@ parent.list_attribute_groups(**kwargs)
 
 1. See [:material-code-braces: ListAttributeGroupsRequestRequestTypeDef](./type_defs.md#listattributegroupsrequestrequesttypedef) 
 
+### list\_attribute\_groups\_for\_application
+
+Lists the details of all attribute groups associated with a specific
+application.
+
+Type annotations and code completion for `#!python session.create_client("servicecatalog-appregistry").list_attribute_groups_for_application` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog-appregistry.html#AppRegistry.Client.list_attribute_groups_for_application)
+
+```python title="Method definition"
+await def list_attribute_groups_for_application(
+    self,
+    *,
+    application: str,
+    nextToken: str = ...,
+    maxResults: int = ...,
+) -> ListAttributeGroupsForApplicationResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListAttributeGroupsForApplicationResponseTypeDef](./type_defs.md#listattributegroupsforapplicationresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListAttributeGroupsForApplicationRequestRequestTypeDef = {  # (1)
+    "application": ...,
+}
+
+parent.list_attribute_groups_for_application(**kwargs)
+```
+
+1. See [:material-code-braces: ListAttributeGroupsForApplicationRequestRequestTypeDef](./type_defs.md#listattributegroupsforapplicationrequestrequesttypedef) 
+
 ### list\_tags\_for\_resource
 
 Lists all of the tags on the resource.
@@ -788,6 +835,7 @@ Type annotations and code completion for `#!python session.create_client("servic
 - `client.get_paginator("list_associated_attribute_groups")` -> [ListAssociatedAttributeGroupsPaginator](./paginators.md#listassociatedattributegroupspaginator)
 - `client.get_paginator("list_associated_resources")` -> [ListAssociatedResourcesPaginator](./paginators.md#listassociatedresourcespaginator)
 - `client.get_paginator("list_attribute_groups")` -> [ListAttributeGroupsPaginator](./paginators.md#listattributegroupspaginator)
+- `client.get_paginator("list_attribute_groups_for_application")` -> [ListAttributeGroupsForApplicationPaginator](./paginators.md#listattributegroupsforapplicationpaginator)
 
 
 

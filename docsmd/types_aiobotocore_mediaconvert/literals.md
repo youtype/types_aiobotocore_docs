@@ -415,6 +415,23 @@ AudioDefaultSelectionType = Literal[
     "NOT_DEFAULT",
 ]
 ```
+## AudioDurationCorrectionType
+
+```python title="Usage Example"
+from types_aiobotocore_mediaconvert.literals import AudioDurationCorrectionType
+
+def get_value() -> AudioDurationCorrectionType:
+    return "AUTO"
+```
+
+```python title="Definition"
+AudioDurationCorrectionType = Literal[
+    "AUTO",
+    "DISABLED",
+    "FRAME",
+    "TRACK",
+]
+```
 ## AudioLanguageCodeControlType
 
 ```python title="Usage Example"
@@ -6587,6 +6604,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -6754,7 +6772,6 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

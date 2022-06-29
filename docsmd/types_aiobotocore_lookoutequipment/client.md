@@ -71,6 +71,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.create_client("lookoutequipment").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_dataset
 
 Creates a container for a collection of data being ingested for analysis.
@@ -496,6 +511,42 @@ parent.list_datasets(**kwargs)
 ```
 
 1. See [:material-code-braces: ListDatasetsRequestRequestTypeDef](./type_defs.md#listdatasetsrequestrequesttypedef) 
+
+### list\_inference\_events
+
+Lists all inference events that have been found for the specified inference
+scheduler.
+
+Type annotations and code completion for `#!python session.create_client("lookoutequipment").list_inference_events` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lookoutequipment.html#LookoutEquipment.Client.list_inference_events)
+
+```python title="Method definition"
+await def list_inference_events(
+    self,
+    *,
+    InferenceSchedulerName: str,
+    IntervalStartTime: Union[datetime, str],
+    IntervalEndTime: Union[datetime, str],
+    NextToken: str = ...,
+    MaxResults: int = ...,
+) -> ListInferenceEventsResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: ListInferenceEventsResponseTypeDef](./type_defs.md#listinferenceeventsresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: ListInferenceEventsRequestRequestTypeDef = {  # (1)
+    "InferenceSchedulerName": ...,
+    "IntervalStartTime": ...,
+    "IntervalEndTime": ...,
+}
+
+parent.list_inference_events(**kwargs)
+```
+
+1. See [:material-code-braces: ListInferenceEventsRequestRequestTypeDef](./type_defs.md#listinferenceeventsrequestrequesttypedef) 
 
 ### list\_inference\_executions
 

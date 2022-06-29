@@ -1,229 +1,156 @@
 # Literals
 
-> [Index](../README.md) > [RedshiftServerless](./README.md) > Literals
+> [Index](../README.md) > [ConnectCampaignService](./README.md) > Literals
 
 !!! note ""
 
-    Auto-generated documentation for [RedshiftServerless](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-serverless.html#RedshiftServerless)
-    type annotations stubs module [types-aiobotocore-redshift-serverless](https://pypi.org/project/types-aiobotocore-redshift-serverless/).
+    Auto-generated documentation for [ConnectCampaignService](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connectcampaigns.html#ConnectCampaignService)
+    type annotations stubs module [types-aiobotocore-connectcampaigns](https://pypi.org/project/types-aiobotocore-connectcampaigns/).
 
-## ListEndpointAccessPaginatorName
+## CampaignStateType
 
 ```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import ListEndpointAccessPaginatorName
+from types_aiobotocore_connectcampaigns.literals import CampaignStateType
 
-def get_value() -> ListEndpointAccessPaginatorName:
-    return "list_endpoint_access"
+def get_value() -> CampaignStateType:
+    return "Failed"
 ```
 
 ```python title="Definition"
-ListEndpointAccessPaginatorName = Literal[
-    "list_endpoint_access",
+CampaignStateType = Literal[
+    "Failed",
+    "Initialized",
+    "Paused",
+    "Running",
+    "Stopped",
 ]
 ```
-## ListNamespacesPaginatorName
+## EncryptionTypeType
 
 ```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import ListNamespacesPaginatorName
+from types_aiobotocore_connectcampaigns.literals import EncryptionTypeType
 
-def get_value() -> ListNamespacesPaginatorName:
-    return "list_namespaces"
+def get_value() -> EncryptionTypeType:
+    return "KMS"
 ```
 
 ```python title="Definition"
-ListNamespacesPaginatorName = Literal[
-    "list_namespaces",
+EncryptionTypeType = Literal[
+    "KMS",
 ]
 ```
-## ListRecoveryPointsPaginatorName
+## FailureCodeType
 
 ```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import ListRecoveryPointsPaginatorName
+from types_aiobotocore_connectcampaigns.literals import FailureCodeType
 
-def get_value() -> ListRecoveryPointsPaginatorName:
-    return "list_recovery_points"
+def get_value() -> FailureCodeType:
+    return "InvalidInput"
 ```
 
 ```python title="Definition"
-ListRecoveryPointsPaginatorName = Literal[
-    "list_recovery_points",
+FailureCodeType = Literal[
+    "InvalidInput",
+    "RequestThrottled",
+    "UnknownError",
 ]
 ```
-## ListSnapshotsPaginatorName
+## GetCampaignStateBatchFailureCodeType
 
 ```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import ListSnapshotsPaginatorName
+from types_aiobotocore_connectcampaigns.literals import GetCampaignStateBatchFailureCodeType
 
-def get_value() -> ListSnapshotsPaginatorName:
-    return "list_snapshots"
+def get_value() -> GetCampaignStateBatchFailureCodeType:
+    return "ResourceNotFound"
 ```
 
 ```python title="Definition"
-ListSnapshotsPaginatorName = Literal[
-    "list_snapshots",
+GetCampaignStateBatchFailureCodeType = Literal[
+    "ResourceNotFound",
+    "UnknownError",
 ]
 ```
-## ListUsageLimitsPaginatorName
+## InstanceIdFilterOperatorType
 
 ```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import ListUsageLimitsPaginatorName
+from types_aiobotocore_connectcampaigns.literals import InstanceIdFilterOperatorType
 
-def get_value() -> ListUsageLimitsPaginatorName:
-    return "list_usage_limits"
+def get_value() -> InstanceIdFilterOperatorType:
+    return "Eq"
 ```
 
 ```python title="Definition"
-ListUsageLimitsPaginatorName = Literal[
-    "list_usage_limits",
+InstanceIdFilterOperatorType = Literal[
+    "Eq",
 ]
 ```
-## ListWorkgroupsPaginatorName
+## InstanceOnboardingJobFailureCodeType
 
 ```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import ListWorkgroupsPaginatorName
+from types_aiobotocore_connectcampaigns.literals import InstanceOnboardingJobFailureCodeType
 
-def get_value() -> ListWorkgroupsPaginatorName:
-    return "list_workgroups"
+def get_value() -> InstanceOnboardingJobFailureCodeType:
+    return "EVENT_BRIDGE_ACCESS_DENIED"
 ```
 
 ```python title="Definition"
-ListWorkgroupsPaginatorName = Literal[
-    "list_workgroups",
+InstanceOnboardingJobFailureCodeType = Literal[
+    "EVENT_BRIDGE_ACCESS_DENIED",
+    "EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED",
+    "IAM_ACCESS_DENIED",
+    "INTERNAL_FAILURE",
+    "KMS_ACCESS_DENIED",
+    "KMS_KEY_NOT_FOUND",
 ]
 ```
-## LogExportType
+## InstanceOnboardingJobStatusCodeType
 
 ```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import LogExportType
+from types_aiobotocore_connectcampaigns.literals import InstanceOnboardingJobStatusCodeType
 
-def get_value() -> LogExportType:
-    return "connectionlog"
+def get_value() -> InstanceOnboardingJobStatusCodeType:
+    return "FAILED"
 ```
 
 ```python title="Definition"
-LogExportType = Literal[
-    "connectionlog",
-    "useractivitylog",
-    "userlog",
-]
-```
-## NamespaceStatusType
-
-```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import NamespaceStatusType
-
-def get_value() -> NamespaceStatusType:
-    return "AVAILABLE"
-```
-
-```python title="Definition"
-NamespaceStatusType = Literal[
-    "AVAILABLE",
-    "DELETING",
-    "MODIFYING",
-]
-```
-## SnapshotStatusType
-
-```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import SnapshotStatusType
-
-def get_value() -> SnapshotStatusType:
-    return "AVAILABLE"
-```
-
-```python title="Definition"
-SnapshotStatusType = Literal[
-    "AVAILABLE",
-    "CANCELLED",
-    "COPYING",
-    "CREATING",
-    "DELETED",
+InstanceOnboardingJobStatusCodeType = Literal[
     "FAILED",
+    "IN_PROGRESS",
+    "SUCCEEDED",
 ]
 ```
-## UsageLimitBreachActionType
+## ListCampaignsPaginatorName
 
 ```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import UsageLimitBreachActionType
+from types_aiobotocore_connectcampaigns.literals import ListCampaignsPaginatorName
 
-def get_value() -> UsageLimitBreachActionType:
-    return "deactivate"
+def get_value() -> ListCampaignsPaginatorName:
+    return "list_campaigns"
 ```
 
 ```python title="Definition"
-UsageLimitBreachActionType = Literal[
-    "deactivate",
-    "emit-metric",
-    "log",
+ListCampaignsPaginatorName = Literal[
+    "list_campaigns",
 ]
 ```
-## UsageLimitPeriodType
+## ConnectCampaignServiceServiceName
 
 ```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import UsageLimitPeriodType
+from types_aiobotocore_connectcampaigns.literals import ConnectCampaignServiceServiceName
 
-def get_value() -> UsageLimitPeriodType:
-    return "daily"
+def get_value() -> ConnectCampaignServiceServiceName:
+    return "connectcampaigns"
 ```
 
 ```python title="Definition"
-UsageLimitPeriodType = Literal[
-    "daily",
-    "monthly",
-    "weekly",
-]
-```
-## UsageLimitUsageTypeType
-
-```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import UsageLimitUsageTypeType
-
-def get_value() -> UsageLimitUsageTypeType:
-    return "cross-region-datasharing"
-```
-
-```python title="Definition"
-UsageLimitUsageTypeType = Literal[
-    "cross-region-datasharing",
-    "serverless-compute",
-]
-```
-## WorkgroupStatusType
-
-```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import WorkgroupStatusType
-
-def get_value() -> WorkgroupStatusType:
-    return "AVAILABLE"
-```
-
-```python title="Definition"
-WorkgroupStatusType = Literal[
-    "AVAILABLE",
-    "CREATING",
-    "DELETING",
-    "MODIFYING",
-]
-```
-## RedshiftServerlessServiceName
-
-```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import RedshiftServerlessServiceName
-
-def get_value() -> RedshiftServerlessServiceName:
-    return "redshift-serverless"
-```
-
-```python title="Definition"
-RedshiftServerlessServiceName = Literal[
-    "redshift-serverless",
+ConnectCampaignServiceServiceName = Literal[
+    "connectcampaigns",
 ]
 ```
 ## ServiceName
 
 ```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import ServiceName
+from types_aiobotocore_connectcampaigns.literals import ServiceName
 
 def get_value() -> ServiceName:
     return "accessanalyzer"
@@ -300,6 +227,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -467,7 +395,6 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
@@ -544,7 +471,7 @@ ServiceName = Literal[
 ## ResourceServiceName
 
 ```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import ResourceServiceName
+from types_aiobotocore_connectcampaigns.literals import ResourceServiceName
 
 def get_value() -> ResourceServiceName:
     return "cloudformation"
@@ -567,43 +494,31 @@ ResourceServiceName = Literal[
 ## PaginatorName
 
 ```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import PaginatorName
+from types_aiobotocore_connectcampaigns.literals import PaginatorName
 
 def get_value() -> PaginatorName:
-    return "list_endpoint_access"
+    return "list_campaigns"
 ```
 
 ```python title="Definition"
 PaginatorName = Literal[
-    "list_endpoint_access",
-    "list_namespaces",
-    "list_recovery_points",
-    "list_snapshots",
-    "list_usage_limits",
-    "list_workgroups",
+    "list_campaigns",
 ]
 ```
 ## RegionName
 
 ```python title="Usage Example"
-from types_aiobotocore_redshift_serverless.literals import RegionName
+from types_aiobotocore_connectcampaigns.literals import RegionName
 
 def get_value() -> RegionName:
-    return "ap-northeast-1"
+    return "ap-southeast-2"
 ```
 
 ```python title="Definition"
 RegionName = Literal[
-    "ap-northeast-1",
-    "ap-northeast-2",
-    "ap-southeast-1",
     "ap-southeast-2",
-    "eu-central-1",
-    "eu-north-1",
-    "eu-west-1",
     "eu-west-2",
     "us-east-1",
-    "us-east-2",
     "us-west-2",
 ]
 ```

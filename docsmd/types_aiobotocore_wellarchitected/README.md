@@ -75,12 +75,13 @@ async with session.create_client("wellarchitected") as client:
 Type annotations for [literals](./literals.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_wellarchitected.literals import AnswerReasonType
+from types_aiobotocore_wellarchitected.literals import AdditionalResourceTypeType
 
-def get_value() -> AnswerReasonType:
-    return "ARCHITECTURE_CONSTRAINTS"
+def get_value() -> AdditionalResourceTypeType:
+    return "HELPFUL_RESOURCE"
 ```
 
+- [AdditionalResourceTypeType](./literals.md#additionalresourcetypetype)
 - [AnswerReasonType](./literals.md#answerreasontype)
 - [ChoiceReasonType](./literals.md#choicereasontype)
 - [ChoiceStatusType](./literals.md#choicestatustype)
@@ -110,18 +111,18 @@ def get_value() -> AnswerReasonType:
 Type annotations for [typed dictionaries](./type_defs.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_wellarchitected.type_defs import ChoiceAnswerSummaryTypeDef
+from types_aiobotocore_wellarchitected.type_defs import ChoiceContentTypeDef
 
-def get_value() -> ChoiceAnswerSummaryTypeDef:
+def get_value() -> ChoiceContentTypeDef:
     return {
-        "ChoiceId": ...,
+        "DisplayText": ...,
     }
 ```
 
+- [ChoiceContentTypeDef](./type_defs.md#choicecontenttypedef)
 - [ChoiceAnswerSummaryTypeDef](./type_defs.md#choiceanswersummarytypedef)
 - [ChoiceAnswerTypeDef](./type_defs.md#choiceanswertypedef)
 - [AssociateLensesInputRequestTypeDef](./type_defs.md#associatelensesinputrequesttypedef)
-- [ChoiceContentTypeDef](./type_defs.md#choicecontenttypedef)
 - [ChoiceImprovementPlanTypeDef](./type_defs.md#choiceimprovementplantypedef)
 - [ChoiceUpdateTypeDef](./type_defs.md#choiceupdatetypedef)
 - [CreateLensShareInputRequestTypeDef](./type_defs.md#createlensshareinputrequesttypedef)
@@ -176,7 +177,7 @@ def get_value() -> ChoiceAnswerSummaryTypeDef:
 - [UpdateWorkloadShareInputRequestTypeDef](./type_defs.md#updateworkloadshareinputrequesttypedef)
 - [WorkloadShareTypeDef](./type_defs.md#workloadsharetypedef)
 - [UpgradeLensReviewInputRequestTypeDef](./type_defs.md#upgradelensreviewinputrequesttypedef)
-- [ChoiceTypeDef](./type_defs.md#choicetypedef)
+- [AdditionalResourcesTypeDef](./type_defs.md#additionalresourcestypedef)
 - [ImprovementSummaryTypeDef](./type_defs.md#improvementsummarytypedef)
 - [UpdateAnswerInputRequestTypeDef](./type_defs.md#updateanswerinputrequesttypedef)
 - [CreateLensShareOutputTypeDef](./type_defs.md#createlensshareoutputtypedef)
@@ -205,8 +206,7 @@ def get_value() -> ChoiceAnswerSummaryTypeDef:
 - [PillarDifferenceTypeDef](./type_defs.md#pillardifferencetypedef)
 - [UpdateShareInvitationOutputTypeDef](./type_defs.md#updateshareinvitationoutputtypedef)
 - [UpdateWorkloadShareOutputTypeDef](./type_defs.md#updateworkloadshareoutputtypedef)
-- [AnswerSummaryTypeDef](./type_defs.md#answersummarytypedef)
-- [AnswerTypeDef](./type_defs.md#answertypedef)
+- [ChoiceTypeDef](./type_defs.md#choicetypedef)
 - [ListLensReviewImprovementsOutputTypeDef](./type_defs.md#listlensreviewimprovementsoutputtypedef)
 - [GetMilestoneOutputTypeDef](./type_defs.md#getmilestoneoutputtypedef)
 - [GetLensReviewOutputTypeDef](./type_defs.md#getlensreviewoutputtypedef)
@@ -214,8 +214,10 @@ def get_value() -> ChoiceAnswerSummaryTypeDef:
 - [ListNotificationsOutputTypeDef](./type_defs.md#listnotificationsoutputtypedef)
 - [ListMilestonesOutputTypeDef](./type_defs.md#listmilestonesoutputtypedef)
 - [VersionDifferencesTypeDef](./type_defs.md#versiondifferencestypedef)
+- [AnswerSummaryTypeDef](./type_defs.md#answersummarytypedef)
+- [AnswerTypeDef](./type_defs.md#answertypedef)
+- [GetLensVersionDifferenceOutputTypeDef](./type_defs.md#getlensversiondifferenceoutputtypedef)
 - [ListAnswersOutputTypeDef](./type_defs.md#listanswersoutputtypedef)
 - [GetAnswerOutputTypeDef](./type_defs.md#getansweroutputtypedef)
 - [UpdateAnswerOutputTypeDef](./type_defs.md#updateansweroutputtypedef)
-- [GetLensVersionDifferenceOutputTypeDef](./type_defs.md#getlensversiondifferenceoutputtypedef)
 

@@ -4328,6 +4328,24 @@ VariantStatusType = Literal[
     "Updating",
 ]
 ```
+## WorkforceStatusType
+
+```python title="Usage Example"
+from types_aiobotocore_sagemaker.literals import WorkforceStatusType
+
+def get_value() -> WorkforceStatusType:
+    return "Active"
+```
+
+```python title="Definition"
+WorkforceStatusType = Literal[
+    "Active",
+    "Deleting",
+    "Failed",
+    "Initializing",
+    "Updating",
+]
+```
 ## SageMakerServiceName
 
 ```python title="Usage Example"
@@ -4422,6 +4440,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -4589,7 +4608,6 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

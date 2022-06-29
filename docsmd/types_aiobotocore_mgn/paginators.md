@@ -96,6 +96,50 @@ parent.paginate(**kwargs)
 ```
 
 1. See [:material-code-braces: DescribeJobsRequestDescribeJobsPaginateTypeDef](./type_defs.md#describejobsrequestdescribejobspaginatetypedef) 
+## DescribeLaunchConfigurationTemplatesPaginator
+
+Type annotations and code completion for `#!python session.create_client("mgn").get_paginator("describe_launch_configuration_templates")`.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mgn.html#mgn.Paginator.DescribeLaunchConfigurationTemplates)
+
+```python title="Usage example"
+from aiobotocore.session import get_session
+
+from types_aiobotocore_mgn.paginator import DescribeLaunchConfigurationTemplatesPaginator
+
+session = get_session()
+async with session.create_client("mgn") as client:
+    client: mgnClient
+    paginator: DescribeLaunchConfigurationTemplatesPaginator = client.get_paginator("describe_launch_configuration_templates")
+```
+
+
+### paginate
+
+Type annotations and code completion for `#!python DescribeLaunchConfigurationTemplatesPaginator.paginate` method.
+
+```python title="Method definition"
+def paginate(
+    self,
+    *,
+    launchConfigurationTemplateIDs: Sequence[str] = ...,
+    PaginationConfig: PaginatorConfigTypeDef = ...,  # (1)
+) -> AsyncIterator[DescribeLaunchConfigurationTemplatesResponseTypeDef]:  # (2)
+    ...
+```
+
+1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
+2. See [:material-code-braces: DescribeLaunchConfigurationTemplatesResponseTypeDef](./type_defs.md#describelaunchconfigurationtemplatesresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: DescribeLaunchConfigurationTemplatesRequestDescribeLaunchConfigurationTemplatesPaginateTypeDef = {  # (1)
+    "launchConfigurationTemplateIDs": ...,
+}
+
+parent.paginate(**kwargs)
+```
+
+1. See [:material-code-braces: DescribeLaunchConfigurationTemplatesRequestDescribeLaunchConfigurationTemplatesPaginateTypeDef](./type_defs.md#describelaunchconfigurationtemplatesrequestdescribelaunchconfigurationtemplatespaginatetypedef) 
 ## DescribeReplicationConfigurationTemplatesPaginator
 
 Type annotations and code completion for `#!python session.create_client("mgn").get_paginator("describe_replication_configuration_templates")`.

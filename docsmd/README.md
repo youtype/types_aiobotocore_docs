@@ -207,6 +207,8 @@ python -m pip uninstall -y types-aiobotocore
 
 - [types-aiobotocore-connect-contact-lens](./types_aiobotocore_connect_contact_lens/README.md) for [ConnectContactLens](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connect-contact-lens.html#ConnectContactLens) service
 
+- [types-aiobotocore-connectcampaigns](./types_aiobotocore_connectcampaigns/README.md) for [ConnectCampaignService](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connectcampaigns.html#ConnectCampaignService) service
+
 - [types-aiobotocore-connectparticipant](./types_aiobotocore_connectparticipant/README.md) for [ConnectParticipant](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/connectparticipant.html#ConnectParticipant) service
 
 - [types-aiobotocore-cur](./types_aiobotocore_cur/README.md) for [CostandUsageReportService](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cur.html#CostandUsageReportService) service
@@ -540,8 +542,6 @@ python -m pip uninstall -y types-aiobotocore
 - [types-aiobotocore-redshift](./types_aiobotocore_redshift/README.md) for [Redshift](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html#Redshift) service
 
 - [types-aiobotocore-redshift-data](./types_aiobotocore_redshift_data/README.md) for [RedshiftDataAPIService](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html#RedshiftDataAPIService) service
-
-- [types-aiobotocore-redshift-serverless](./types_aiobotocore_redshift_serverless/README.md) for [RedshiftServerless](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-serverless.html#RedshiftServerless) service
 
 - [types-aiobotocore-rekognition](./types_aiobotocore_rekognition/README.md) for [Rekognition](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html#Rekognition) service
 

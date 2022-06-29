@@ -98,6 +98,21 @@ parent.cancel_order(**kwargs)
 
 1. See [:material-code-braces: CancelOrderInputRequestTypeDef](./type_defs.md#cancelorderinputrequesttypedef) 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.create_client("outposts").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_order
 
 Creates an order for an Outpost.
@@ -313,6 +328,35 @@ parent.get_catalog_item(**kwargs)
 ```
 
 1. See [:material-code-braces: GetCatalogItemInputRequestTypeDef](./type_defs.md#getcatalogiteminputrequesttypedef) 
+
+### get\_connection
+
+.
+
+Type annotations and code completion for `#!python session.create_client("outposts").get_connection` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.get_connection)
+
+```python title="Method definition"
+await def get_connection(
+    self,
+    *,
+    ConnectionId: str,
+) -> GetConnectionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: GetConnectionResponseTypeDef](./type_defs.md#getconnectionresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: GetConnectionRequestRequestTypeDef = {  # (1)
+    "ConnectionId": ...,
+}
+
+parent.get_connection(**kwargs)
+```
+
+1. See [:material-code-braces: GetConnectionRequestRequestTypeDef](./type_defs.md#getconnectionrequestrequesttypedef) 
 
 ### get\_order
 
@@ -656,6 +700,41 @@ parent.list_tags_for_resource(**kwargs)
 ```
 
 1. See [:material-code-braces: ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef) 
+
+### start\_connection
+
+.
+
+Type annotations and code completion for `#!python session.create_client("outposts").start_connection` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/outposts.html#Outposts.Client.start_connection)
+
+```python title="Method definition"
+await def start_connection(
+    self,
+    *,
+    DeviceSerialNumber: str,
+    AssetId: str,
+    ClientPublicKey: str,
+    NetworkInterfaceDeviceIndex: int,
+) -> StartConnectionResponseTypeDef:  # (1)
+    ...
+```
+
+1. See [:material-code-braces: StartConnectionResponseTypeDef](./type_defs.md#startconnectionresponsetypedef) 
+
+
+```python title="Usage example with kwargs"
+kwargs: StartConnectionRequestRequestTypeDef = {  # (1)
+    "DeviceSerialNumber": ...,
+    "AssetId": ...,
+    "ClientPublicKey": ...,
+    "NetworkInterfaceDeviceIndex": ...,
+}
+
+parent.start_connection(**kwargs)
+```
+
+1. See [:material-code-braces: StartConnectionRequestRequestTypeDef](./type_defs.md#startconnectionrequestrequesttypedef) 
 
 ### tag\_resource
 

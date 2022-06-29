@@ -7,6 +7,68 @@
     Auto-generated documentation for [FinSpaceData](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/finspace-data.html#FinSpaceData)
     type annotations stubs module [types-aiobotocore-finspace-data](https://pypi.org/project/types-aiobotocore-finspace-data/).
 
+## AssociateUserToPermissionGroupRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import AssociateUserToPermissionGroupRequestRequestTypeDef
+
+def get_value() -> AssociateUserToPermissionGroupRequestRequestTypeDef:
+    return {
+        "permissionGroupId": ...,
+        "userId": ...,
+    }
+```
+
+```python title="Definition"
+class AssociateUserToPermissionGroupRequestRequestTypeDef(TypedDict):
+    permissionGroupId: str,
+    userId: str,
+    clientToken: NotRequired[str],
+```
+
+## ResponseMetadataTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import ResponseMetadataTypeDef
+
+def get_value() -> ResponseMetadataTypeDef:
+    return {
+        "RequestId": ...,
+        "HostId": ...,
+        "HTTPStatusCode": ...,
+        "HTTPHeaders": ...,
+        "RetryAttempts": ...,
+    }
+```
+
+```python title="Definition"
+class ResponseMetadataTypeDef(TypedDict):
+    RequestId: str,
+    HostId: str,
+    HTTPStatusCode: int,
+    HTTPHeaders: Dict[str, str],
+    RetryAttempts: int,
+```
+
+## AwsCredentialsTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import AwsCredentialsTypeDef
+
+def get_value() -> AwsCredentialsTypeDef:
+    return {
+        "accessKeyId": ...,
+    }
+```
+
+```python title="Definition"
+class AwsCredentialsTypeDef(TypedDict):
+    accessKeyId: NotRequired[str],
+    secretAccessKey: NotRequired[str],
+    sessionToken: NotRequired[str],
+    expiration: NotRequired[int],
+```
+
 ## ChangesetErrorInfoTypeDef
 
 ```python title="Usage Example"
@@ -68,30 +130,6 @@ class CreateChangesetRequestRequestTypeDef(TypedDict):
 ```
 
 1. See [:material-code-brackets: ChangeTypeType](./literals.md#changetypetype) 
-## ResponseMetadataTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_finspace_data.type_defs import ResponseMetadataTypeDef
-
-def get_value() -> ResponseMetadataTypeDef:
-    return {
-        "RequestId": ...,
-        "HostId": ...,
-        "HTTPStatusCode": ...,
-        "HTTPHeaders": ...,
-        "RetryAttempts": ...,
-    }
-```
-
-```python title="Definition"
-class ResponseMetadataTypeDef(TypedDict):
-    RequestId: str,
-    HostId: str,
-    HTTPStatusCode: int,
-    HTTPHeaders: Dict[str, str],
-    RetryAttempts: int,
-```
-
 ## DataViewDestinationTypeParamsTypeDef
 
 ```python title="Usage Example"
@@ -262,6 +300,25 @@ class DisableUserRequestRequestTypeDef(TypedDict):
     clientToken: NotRequired[str],
 ```
 
+## DisassociateUserFromPermissionGroupRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import DisassociateUserFromPermissionGroupRequestRequestTypeDef
+
+def get_value() -> DisassociateUserFromPermissionGroupRequestRequestTypeDef:
+    return {
+        "permissionGroupId": ...,
+        "userId": ...,
+    }
+```
+
+```python title="Definition"
+class DisassociateUserFromPermissionGroupRequestRequestTypeDef(TypedDict):
+    permissionGroupId: str,
+    userId: str,
+    clientToken: NotRequired[str],
+```
+
 ## EnableUserRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -331,6 +388,82 @@ class GetDatasetRequestRequestTypeDef(TypedDict):
     datasetId: str,
 ```
 
+## GetExternalDataViewAccessDetailsRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import GetExternalDataViewAccessDetailsRequestRequestTypeDef
+
+def get_value() -> GetExternalDataViewAccessDetailsRequestRequestTypeDef:
+    return {
+        "dataViewId": ...,
+        "datasetId": ...,
+    }
+```
+
+```python title="Definition"
+class GetExternalDataViewAccessDetailsRequestRequestTypeDef(TypedDict):
+    dataViewId: str,
+    datasetId: str,
+```
+
+## S3LocationTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import S3LocationTypeDef
+
+def get_value() -> S3LocationTypeDef:
+    return {
+        "bucket": ...,
+        "key": ...,
+    }
+```
+
+```python title="Definition"
+class S3LocationTypeDef(TypedDict):
+    bucket: str,
+    key: str,
+```
+
+## GetPermissionGroupRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import GetPermissionGroupRequestRequestTypeDef
+
+def get_value() -> GetPermissionGroupRequestRequestTypeDef:
+    return {
+        "permissionGroupId": ...,
+    }
+```
+
+```python title="Definition"
+class GetPermissionGroupRequestRequestTypeDef(TypedDict):
+    permissionGroupId: str,
+```
+
+## PermissionGroupTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import PermissionGroupTypeDef
+
+def get_value() -> PermissionGroupTypeDef:
+    return {
+        "permissionGroupId": ...,
+    }
+```
+
+```python title="Definition"
+class PermissionGroupTypeDef(TypedDict):
+    permissionGroupId: NotRequired[str],
+    name: NotRequired[str],
+    description: NotRequired[str],
+    applicationPermissions: NotRequired[List[ApplicationPermissionType]],  # (1)
+    createTime: NotRequired[int],
+    lastModifiedTime: NotRequired[int],
+    membershipStatus: NotRequired[PermissionGroupMembershipStatusType],  # (2)
+```
+
+1. See [:material-code-brackets: ApplicationPermissionType](./literals.md#applicationpermissiontype) 
+2. See [:material-code-brackets: PermissionGroupMembershipStatusType](./literals.md#permissiongroupmembershipstatustype) 
 ## GetProgrammaticAccessCredentialsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -452,6 +585,44 @@ class ListDatasetsRequestRequestTypeDef(TypedDict):
     maxResults: NotRequired[int],
 ```
 
+## ListPermissionGroupsByUserRequestRequestTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import ListPermissionGroupsByUserRequestRequestTypeDef
+
+def get_value() -> ListPermissionGroupsByUserRequestRequestTypeDef:
+    return {
+        "userId": ...,
+        "maxResults": ...,
+    }
+```
+
+```python title="Definition"
+class ListPermissionGroupsByUserRequestRequestTypeDef(TypedDict):
+    userId: str,
+    maxResults: int,
+    nextToken: NotRequired[str],
+```
+
+## PermissionGroupByUserTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import PermissionGroupByUserTypeDef
+
+def get_value() -> PermissionGroupByUserTypeDef:
+    return {
+        "permissionGroupId": ...,
+    }
+```
+
+```python title="Definition"
+class PermissionGroupByUserTypeDef(TypedDict):
+    permissionGroupId: NotRequired[str],
+    name: NotRequired[str],
+    membershipStatus: NotRequired[PermissionGroupMembershipStatusType],  # (1)
+```
+
+1. See [:material-code-brackets: PermissionGroupMembershipStatusType](./literals.md#permissiongroupmembershipstatustype) 
 ## ListPermissionGroupsRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -469,28 +640,53 @@ class ListPermissionGroupsRequestRequestTypeDef(TypedDict):
     nextToken: NotRequired[str],
 ```
 
-## PermissionGroupTypeDef
+## ListUsersByPermissionGroupRequestRequestTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_finspace_data.type_defs import PermissionGroupTypeDef
+from types_aiobotocore_finspace_data.type_defs import ListUsersByPermissionGroupRequestRequestTypeDef
 
-def get_value() -> PermissionGroupTypeDef:
+def get_value() -> ListUsersByPermissionGroupRequestRequestTypeDef:
     return {
         "permissionGroupId": ...,
+        "maxResults": ...,
     }
 ```
 
 ```python title="Definition"
-class PermissionGroupTypeDef(TypedDict):
-    permissionGroupId: NotRequired[str],
-    name: NotRequired[str],
-    description: NotRequired[str],
-    applicationPermissions: NotRequired[List[ApplicationPermissionType]],  # (1)
-    createTime: NotRequired[int],
-    lastModifiedTime: NotRequired[int],
+class ListUsersByPermissionGroupRequestRequestTypeDef(TypedDict):
+    permissionGroupId: str,
+    maxResults: int,
+    nextToken: NotRequired[str],
 ```
 
-1. See [:material-code-brackets: ApplicationPermissionType](./literals.md#applicationpermissiontype) 
+## UserByPermissionGroupTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import UserByPermissionGroupTypeDef
+
+def get_value() -> UserByPermissionGroupTypeDef:
+    return {
+        "userId": ...,
+    }
+```
+
+```python title="Definition"
+class UserByPermissionGroupTypeDef(TypedDict):
+    userId: NotRequired[str],
+    status: NotRequired[UserStatusType],  # (1)
+    firstName: NotRequired[str],
+    lastName: NotRequired[str],
+    emailAddress: NotRequired[str],
+    type: NotRequired[UserTypeType],  # (2)
+    apiAccess: NotRequired[ApiAccessType],  # (3)
+    apiAccessPrincipalArn: NotRequired[str],
+    membershipStatus: NotRequired[PermissionGroupMembershipStatusType],  # (4)
+```
+
+1. See [:material-code-brackets: UserStatusType](./literals.md#userstatustype) 
+2. See [:material-code-brackets: UserTypeType](./literals.md#usertypetype) 
+3. See [:material-code-brackets: ApiAccessType](./literals.md#apiaccesstype) 
+4. See [:material-code-brackets: PermissionGroupMembershipStatusType](./literals.md#permissiongroupmembershipstatustype) 
 ## ListUsersRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -640,55 +836,25 @@ class UpdateUserRequestRequestTypeDef(TypedDict):
 
 1. See [:material-code-brackets: UserTypeType](./literals.md#usertypetype) 
 2. See [:material-code-brackets: ApiAccessType](./literals.md#apiaccesstype) 
-## ChangesetSummaryTypeDef
+## AssociateUserToPermissionGroupResponseTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_finspace_data.type_defs import ChangesetSummaryTypeDef
+from types_aiobotocore_finspace_data.type_defs import AssociateUserToPermissionGroupResponseTypeDef
 
-def get_value() -> ChangesetSummaryTypeDef:
+def get_value() -> AssociateUserToPermissionGroupResponseTypeDef:
     return {
-        "changesetId": ...,
+        "statusCode": ...,
+        "ResponseMetadata": ...,
     }
 ```
 
 ```python title="Definition"
-class ChangesetSummaryTypeDef(TypedDict):
-    changesetId: NotRequired[str],
-    changesetArn: NotRequired[str],
-    datasetId: NotRequired[str],
-    changeType: NotRequired[ChangeTypeType],  # (1)
-    sourceParams: NotRequired[Dict[str, str]],
-    formatParams: NotRequired[Dict[str, str]],
-    createTime: NotRequired[int],
-    status: NotRequired[IngestionStatusType],  # (2)
-    errorInfo: NotRequired[ChangesetErrorInfoTypeDef],  # (3)
-    activeUntilTimestamp: NotRequired[int],
-    activeFromTimestamp: NotRequired[int],
-    updatesChangesetId: NotRequired[str],
-    updatedByChangesetId: NotRequired[str],
+class AssociateUserToPermissionGroupResponseTypeDef(TypedDict):
+    statusCode: int,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
 ```
 
-1. See [:material-code-brackets: ChangeTypeType](./literals.md#changetypetype) 
-2. See [:material-code-brackets: IngestionStatusType](./literals.md#ingestionstatustype) 
-3. See [:material-code-braces: ChangesetErrorInfoTypeDef](./type_defs.md#changeseterrorinfotypedef) 
-## SchemaDefinitionTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_finspace_data.type_defs import SchemaDefinitionTypeDef
-
-def get_value() -> SchemaDefinitionTypeDef:
-    return {
-        "columns": ...,
-    }
-```
-
-```python title="Definition"
-class SchemaDefinitionTypeDef(TypedDict):
-    columns: NotRequired[Sequence[ColumnDefinitionTypeDef]],  # (1)
-    primaryKeyColumns: NotRequired[Sequence[str]],
-```
-
-1. See [:material-code-braces: ColumnDefinitionTypeDef](./type_defs.md#columndefinitiontypedef) 
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## CreateChangesetResponseTypeDef
 
 ```python title="Usage Example"
@@ -845,6 +1011,25 @@ class DisableUserResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## DisassociateUserFromPermissionGroupResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import DisassociateUserFromPermissionGroupResponseTypeDef
+
+def get_value() -> DisassociateUserFromPermissionGroupResponseTypeDef:
+    return {
+        "statusCode": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class DisassociateUserFromPermissionGroupResponseTypeDef(TypedDict):
+    statusCode: int,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (1)
+```
+
+1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## EnableUserResponseTypeDef
 
 ```python title="Usage Example"
@@ -864,52 +1049,6 @@ class EnableUserResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
-## GetChangesetResponseTypeDef
-
-```python title="Usage Example"
-from types_aiobotocore_finspace_data.type_defs import GetChangesetResponseTypeDef
-
-def get_value() -> GetChangesetResponseTypeDef:
-    return {
-        "changesetId": ...,
-        "changesetArn": ...,
-        "datasetId": ...,
-        "changeType": ...,
-        "sourceParams": ...,
-        "formatParams": ...,
-        "createTime": ...,
-        "status": ...,
-        "errorInfo": ...,
-        "activeUntilTimestamp": ...,
-        "activeFromTimestamp": ...,
-        "updatesChangesetId": ...,
-        "updatedByChangesetId": ...,
-        "ResponseMetadata": ...,
-    }
-```
-
-```python title="Definition"
-class GetChangesetResponseTypeDef(TypedDict):
-    changesetId: str,
-    changesetArn: str,
-    datasetId: str,
-    changeType: ChangeTypeType,  # (1)
-    sourceParams: Dict[str, str],
-    formatParams: Dict[str, str],
-    createTime: int,
-    status: IngestionStatusType,  # (2)
-    errorInfo: ChangesetErrorInfoTypeDef,  # (3)
-    activeUntilTimestamp: int,
-    activeFromTimestamp: int,
-    updatesChangesetId: str,
-    updatedByChangesetId: str,
-    ResponseMetadata: ResponseMetadataTypeDef,  # (4)
-```
-
-1. See [:material-code-brackets: ChangeTypeType](./literals.md#changetypetype) 
-2. See [:material-code-brackets: IngestionStatusType](./literals.md#ingestionstatustype) 
-3. See [:material-code-braces: ChangesetErrorInfoTypeDef](./type_defs.md#changeseterrorinfotypedef) 
-4. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## GetUserResponseTypeDef
 
 ```python title="Usage Example"
@@ -1078,6 +1217,101 @@ class UpdateUserResponseTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ChangesetSummaryTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import ChangesetSummaryTypeDef
+
+def get_value() -> ChangesetSummaryTypeDef:
+    return {
+        "changesetId": ...,
+    }
+```
+
+```python title="Definition"
+class ChangesetSummaryTypeDef(TypedDict):
+    changesetId: NotRequired[str],
+    changesetArn: NotRequired[str],
+    datasetId: NotRequired[str],
+    changeType: NotRequired[ChangeTypeType],  # (1)
+    sourceParams: NotRequired[Dict[str, str]],
+    formatParams: NotRequired[Dict[str, str]],
+    createTime: NotRequired[int],
+    status: NotRequired[IngestionStatusType],  # (2)
+    errorInfo: NotRequired[ChangesetErrorInfoTypeDef],  # (3)
+    activeUntilTimestamp: NotRequired[int],
+    activeFromTimestamp: NotRequired[int],
+    updatesChangesetId: NotRequired[str],
+    updatedByChangesetId: NotRequired[str],
+```
+
+1. See [:material-code-brackets: ChangeTypeType](./literals.md#changetypetype) 
+2. See [:material-code-brackets: IngestionStatusType](./literals.md#ingestionstatustype) 
+3. See [:material-code-braces: ChangesetErrorInfoTypeDef](./type_defs.md#changeseterrorinfotypedef) 
+## GetChangesetResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import GetChangesetResponseTypeDef
+
+def get_value() -> GetChangesetResponseTypeDef:
+    return {
+        "changesetId": ...,
+        "changesetArn": ...,
+        "datasetId": ...,
+        "changeType": ...,
+        "sourceParams": ...,
+        "formatParams": ...,
+        "createTime": ...,
+        "status": ...,
+        "errorInfo": ...,
+        "activeUntilTimestamp": ...,
+        "activeFromTimestamp": ...,
+        "updatesChangesetId": ...,
+        "updatedByChangesetId": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class GetChangesetResponseTypeDef(TypedDict):
+    changesetId: str,
+    changesetArn: str,
+    datasetId: str,
+    changeType: ChangeTypeType,  # (1)
+    sourceParams: Dict[str, str],
+    formatParams: Dict[str, str],
+    createTime: int,
+    status: IngestionStatusType,  # (2)
+    errorInfo: ChangesetErrorInfoTypeDef,  # (3)
+    activeUntilTimestamp: int,
+    activeFromTimestamp: int,
+    updatesChangesetId: str,
+    updatedByChangesetId: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (4)
+```
+
+1. See [:material-code-brackets: ChangeTypeType](./literals.md#changetypetype) 
+2. See [:material-code-brackets: IngestionStatusType](./literals.md#ingestionstatustype) 
+3. See [:material-code-braces: ChangesetErrorInfoTypeDef](./type_defs.md#changeseterrorinfotypedef) 
+4. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## SchemaDefinitionTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import SchemaDefinitionTypeDef
+
+def get_value() -> SchemaDefinitionTypeDef:
+    return {
+        "columns": ...,
+    }
+```
+
+```python title="Definition"
+class SchemaDefinitionTypeDef(TypedDict):
+    columns: NotRequired[Sequence[ColumnDefinitionTypeDef]],  # (1)
+    primaryKeyColumns: NotRequired[Sequence[str]],
+```
+
+1. See [:material-code-braces: ColumnDefinitionTypeDef](./type_defs.md#columndefinitiontypedef) 
 ## CreateDataViewRequestRequestTypeDef
 
 ```python title="Usage Example"
@@ -1198,6 +1432,71 @@ class GetDataViewResponseTypeDef(TypedDict):
 2. See [:material-code-braces: DataViewDestinationTypeParamsTypeDef](./type_defs.md#dataviewdestinationtypeparamstypedef) 
 3. See [:material-code-brackets: DataViewStatusType](./literals.md#dataviewstatustype) 
 4. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## GetExternalDataViewAccessDetailsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import GetExternalDataViewAccessDetailsResponseTypeDef
+
+def get_value() -> GetExternalDataViewAccessDetailsResponseTypeDef:
+    return {
+        "credentials": ...,
+        "s3Location": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class GetExternalDataViewAccessDetailsResponseTypeDef(TypedDict):
+    credentials: AwsCredentialsTypeDef,  # (1)
+    s3Location: S3LocationTypeDef,  # (2)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (3)
+```
+
+1. See [:material-code-braces: AwsCredentialsTypeDef](./type_defs.md#awscredentialstypedef) 
+2. See [:material-code-braces: S3LocationTypeDef](./type_defs.md#s3locationtypedef) 
+3. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## GetPermissionGroupResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import GetPermissionGroupResponseTypeDef
+
+def get_value() -> GetPermissionGroupResponseTypeDef:
+    return {
+        "permissionGroup": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class GetPermissionGroupResponseTypeDef(TypedDict):
+    permissionGroup: PermissionGroupTypeDef,  # (1)
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: PermissionGroupTypeDef](./type_defs.md#permissiongrouptypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ListPermissionGroupsResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import ListPermissionGroupsResponseTypeDef
+
+def get_value() -> ListPermissionGroupsResponseTypeDef:
+    return {
+        "permissionGroups": ...,
+        "nextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListPermissionGroupsResponseTypeDef(TypedDict):
+    permissionGroups: List[PermissionGroupTypeDef],  # (1)
+    nextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: PermissionGroupTypeDef](./type_defs.md#permissiongrouptypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListChangesetsRequestListChangesetsPaginateTypeDef
 
 ```python title="Usage Example"
@@ -1285,12 +1584,12 @@ class ListUsersRequestListUsersPaginateTypeDef(TypedDict):
 ```
 
 1. See [:material-code-braces: PaginatorConfigTypeDef](./type_defs.md#paginatorconfigtypedef) 
-## ListPermissionGroupsResponseTypeDef
+## ListPermissionGroupsByUserResponseTypeDef
 
 ```python title="Usage Example"
-from types_aiobotocore_finspace_data.type_defs import ListPermissionGroupsResponseTypeDef
+from types_aiobotocore_finspace_data.type_defs import ListPermissionGroupsByUserResponseTypeDef
 
-def get_value() -> ListPermissionGroupsResponseTypeDef:
+def get_value() -> ListPermissionGroupsByUserResponseTypeDef:
     return {
         "permissionGroups": ...,
         "nextToken": ...,
@@ -1299,13 +1598,35 @@ def get_value() -> ListPermissionGroupsResponseTypeDef:
 ```
 
 ```python title="Definition"
-class ListPermissionGroupsResponseTypeDef(TypedDict):
-    permissionGroups: List[PermissionGroupTypeDef],  # (1)
+class ListPermissionGroupsByUserResponseTypeDef(TypedDict):
+    permissionGroups: List[PermissionGroupByUserTypeDef],  # (1)
     nextToken: str,
     ResponseMetadata: ResponseMetadataTypeDef,  # (2)
 ```
 
-1. See [:material-code-braces: PermissionGroupTypeDef](./type_defs.md#permissiongrouptypedef) 
+1. See [:material-code-braces: PermissionGroupByUserTypeDef](./type_defs.md#permissiongroupbyusertypedef) 
+2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
+## ListUsersByPermissionGroupResponseTypeDef
+
+```python title="Usage Example"
+from types_aiobotocore_finspace_data.type_defs import ListUsersByPermissionGroupResponseTypeDef
+
+def get_value() -> ListUsersByPermissionGroupResponseTypeDef:
+    return {
+        "users": ...,
+        "nextToken": ...,
+        "ResponseMetadata": ...,
+    }
+```
+
+```python title="Definition"
+class ListUsersByPermissionGroupResponseTypeDef(TypedDict):
+    users: List[UserByPermissionGroupTypeDef],  # (1)
+    nextToken: str,
+    ResponseMetadata: ResponseMetadataTypeDef,  # (2)
+```
+
+1. See [:material-code-braces: UserByPermissionGroupTypeDef](./type_defs.md#userbypermissiongrouptypedef) 
 2. See [:material-code-braces: ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef) 
 ## ListUsersResponseTypeDef
 

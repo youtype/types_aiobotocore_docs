@@ -6154,6 +6154,21 @@ SpotInstanceTypeType = Literal[
     "persistent",
 ]
 ```
+## SpreadLevelType
+
+```python title="Usage Example"
+from types_aiobotocore_ec2.literals import SpreadLevelType
+
+def get_value() -> SpreadLevelType:
+    return "host"
+```
+
+```python title="Definition"
+SpreadLevelType = Literal[
+    "host",
+    "rack",
+]
+```
 ## StateType
 
 ```python title="Usage Example"
@@ -7401,6 +7416,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -7568,7 +7584,6 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

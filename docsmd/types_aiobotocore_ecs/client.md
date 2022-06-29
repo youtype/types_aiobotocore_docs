@@ -88,6 +88,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.create_client("ecs").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_capacity\_provider
 
 Creates a new capacity provider.
@@ -1829,7 +1844,7 @@ parent.update_container_instances_state(**kwargs)
 
 ### update\_service
 
-.
+Modifies the parameters of a service.
 
 Type annotations and code completion for `#!python session.create_client("ecs").update_service` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html#ECS.Client.update_service)

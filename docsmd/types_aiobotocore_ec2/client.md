@@ -1496,6 +1496,21 @@ parent.cancel_spot_instance_requests(**kwargs)
 
 1. See [:material-code-braces: CancelSpotInstanceRequestsRequestRequestTypeDef](./type_defs.md#cancelspotinstancerequestsrequestrequesttypedef) 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.create_client("ec2").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### confirm\_product\_instance
 
 Determines whether a product code is associated with an instance.
@@ -1862,8 +1877,7 @@ parent.create_client_vpn_route(**kwargs)
 
 ### create\_customer\_gateway
 
-Provides information to Amazon Web Services about your VPN customer gateway
-device.
+Provides information to Amazon Web Services about your customer gateway device.
 
 Type annotations and code completion for `#!python session.create_client("ec2").create_customer_gateway` method.
 [:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_customer_gateway)
@@ -1878,6 +1892,7 @@ await def create_customer_gateway(
     CertificateArn: str = ...,
     TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (2)
     DeviceName: str = ...,
+    IpAddress: str = ...,
     DryRun: bool = ...,
 ) -> CreateCustomerGatewayResultTypeDef:  # (3)
     ...
@@ -2935,13 +2950,15 @@ await def create_placement_group(
     Strategy: PlacementStrategyType = ...,  # (1)
     PartitionCount: int = ...,
     TagSpecifications: Sequence[TagSpecificationTypeDef] = ...,  # (2)
-) -> CreatePlacementGroupResultTypeDef:  # (3)
+    SpreadLevel: SpreadLevelType = ...,  # (3)
+) -> CreatePlacementGroupResultTypeDef:  # (4)
     ...
 ```
 
 1. See [:material-code-brackets: PlacementStrategyType](./literals.md#placementstrategytype) 
 2. See [:material-code-braces: TagSpecificationTypeDef](./type_defs.md#tagspecificationtypedef) 
-3. See [:material-code-braces: CreatePlacementGroupResultTypeDef](./type_defs.md#createplacementgroupresulttypedef) 
+3. See [:material-code-brackets: SpreadLevelType](./literals.md#spreadleveltype) 
+4. See [:material-code-braces: CreatePlacementGroupResultTypeDef](./type_defs.md#createplacementgroupresulttypedef) 
 
 
 ```python title="Usage example with kwargs"

@@ -69,6 +69,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.create_client("pricing").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/pricing.html#Pricing.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### describe\_services
 
 Returns the metadata for one service or a list of the metadata for all services.
@@ -164,7 +179,7 @@ Type annotations and code completion for `#!python session.create_client("pricin
 await def get_products(
     self,
     *,
-    ServiceCode: str = ...,
+    ServiceCode: str,
     Filters: Sequence[FilterTypeDef] = ...,  # (1)
     FormatVersion: str = ...,
     NextToken: str = ...,

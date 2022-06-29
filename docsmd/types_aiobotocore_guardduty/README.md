@@ -142,16 +142,17 @@ def get_value() -> AdminStatusType:
 Type annotations for [typed dictionaries](./type_defs.md) used in methods and schema.
 
 ```python title="Usage example"
-from types_aiobotocore_guardduty.type_defs import AcceptInvitationRequestRequestTypeDef
+from types_aiobotocore_guardduty.type_defs import AcceptAdministratorInvitationRequestRequestTypeDef
 
-def get_value() -> AcceptInvitationRequestRequestTypeDef:
+def get_value() -> AcceptAdministratorInvitationRequestRequestTypeDef:
     return {
         "DetectorId": ...,
-        "MasterId": ...,
+        "AdministratorId": ...,
         "InvitationId": ...,
     }
 ```
 
+- [AcceptAdministratorInvitationRequestRequestTypeDef](./type_defs.md#acceptadministratorinvitationrequestrequesttypedef)
 - [AcceptInvitationRequestRequestTypeDef](./type_defs.md#acceptinvitationrequestrequesttypedef)
 - [AccessControlListTypeDef](./type_defs.md#accesscontrollisttypedef)
 - [AccessKeyDetailsTypeDef](./type_defs.md#accesskeydetailstypedef)
@@ -159,6 +160,7 @@ def get_value() -> AcceptInvitationRequestRequestTypeDef:
 - [BlockPublicAccessTypeDef](./type_defs.md#blockpublicaccesstypedef)
 - [DnsRequestActionTypeDef](./type_defs.md#dnsrequestactiontypedef)
 - [AdminAccountTypeDef](./type_defs.md#adminaccounttypedef)
+- [AdministratorTypeDef](./type_defs.md#administratortypedef)
 - [ArchiveFindingsRequestRequestTypeDef](./type_defs.md#archivefindingsrequestrequesttypedef)
 - [DomainDetailsTypeDef](./type_defs.md#domaindetailstypedef)
 - [RemoteAccountDetailsTypeDef](./type_defs.md#remoteaccountdetailstypedef)
@@ -179,6 +181,7 @@ def get_value() -> AcceptInvitationRequestRequestTypeDef:
 - [FlowLogsConfigurationResultTypeDef](./type_defs.md#flowlogsconfigurationresulttypedef)
 - [S3LogsConfigurationResultTypeDef](./type_defs.md#s3logsconfigurationresulttypedef)
 - [S3LogsConfigurationTypeDef](./type_defs.md#s3logsconfigurationtypedef)
+- [DataSourceFreeTrialTypeDef](./type_defs.md#datasourcefreetrialtypedef)
 - [DeclineInvitationsRequestRequestTypeDef](./type_defs.md#declineinvitationsrequestrequesttypedef)
 - [DefaultServerSideEncryptionTypeDef](./type_defs.md#defaultserversideencryptiontypedef)
 - [DeleteDetectorRequestRequestTypeDef](./type_defs.md#deletedetectorrequestrequesttypedef)
@@ -192,6 +195,7 @@ def get_value() -> AcceptInvitationRequestRequestTypeDef:
 - [DescribePublishingDestinationRequestRequestTypeDef](./type_defs.md#describepublishingdestinationrequestrequesttypedef)
 - [DestinationTypeDef](./type_defs.md#destinationtypedef)
 - [DisableOrganizationAdminAccountRequestRequestTypeDef](./type_defs.md#disableorganizationadminaccountrequestrequesttypedef)
+- [DisassociateFromAdministratorAccountRequestRequestTypeDef](./type_defs.md#disassociatefromadministratoraccountrequestrequesttypedef)
 - [DisassociateFromMasterAccountRequestRequestTypeDef](./type_defs.md#disassociatefrommasteraccountrequestrequesttypedef)
 - [DisassociateMembersRequestRequestTypeDef](./type_defs.md#disassociatemembersrequestrequesttypedef)
 - [TagTypeDef](./type_defs.md#tagtypedef)
@@ -199,6 +203,7 @@ def get_value() -> AcceptInvitationRequestRequestTypeDef:
 - [ThreatIntelligenceDetailTypeDef](./type_defs.md#threatintelligencedetailtypedef)
 - [FindingStatisticsTypeDef](./type_defs.md#findingstatisticstypedef)
 - [GeoLocationTypeDef](./type_defs.md#geolocationtypedef)
+- [GetAdministratorAccountRequestRequestTypeDef](./type_defs.md#getadministratoraccountrequestrequesttypedef)
 - [GetDetectorRequestRequestTypeDef](./type_defs.md#getdetectorrequestrequesttypedef)
 - [GetFilterRequestRequestTypeDef](./type_defs.md#getfilterrequestrequesttypedef)
 - [SortCriteriaTypeDef](./type_defs.md#sortcriteriatypedef)
@@ -208,6 +213,7 @@ def get_value() -> AcceptInvitationRequestRequestTypeDef:
 - [GetMemberDetectorsRequestRequestTypeDef](./type_defs.md#getmemberdetectorsrequestrequesttypedef)
 - [GetMembersRequestRequestTypeDef](./type_defs.md#getmembersrequestrequesttypedef)
 - [MemberTypeDef](./type_defs.md#membertypedef)
+- [GetRemainingFreeTrialDaysRequestRequestTypeDef](./type_defs.md#getremainingfreetrialdaysrequestrequesttypedef)
 - [GetThreatIntelSetRequestRequestTypeDef](./type_defs.md#getthreatintelsetrequestrequesttypedef)
 - [UsageCriteriaTypeDef](./type_defs.md#usagecriteriatypedef)
 - [HostPathTypeDef](./type_defs.md#hostpathtypedef)
@@ -239,6 +245,7 @@ def get_value() -> AcceptInvitationRequestRequestTypeDef:
 - [OrganizationKubernetesAuditLogsConfigurationTypeDef](./type_defs.md#organizationkubernetesauditlogsconfigurationtypedef)
 - [OrganizationTypeDef](./type_defs.md#organizationtypedef)
 - [OwnerTypeDef](./type_defs.md#ownertypedef)
+- [ServiceAdditionalInfoTypeDef](./type_defs.md#serviceadditionalinfotypedef)
 - [StartMonitoringMembersRequestRequestTypeDef](./type_defs.md#startmonitoringmembersrequestrequesttypedef)
 - [StopMonitoringMembersRequestRequestTypeDef](./type_defs.md#stopmonitoringmembersrequestrequesttypedef)
 - [TagResourceRequestRequestTypeDef](./type_defs.md#tagresourcerequestrequesttypedef)
@@ -258,6 +265,7 @@ def get_value() -> AcceptInvitationRequestRequestTypeDef:
 - [CreateIPSetResponseTypeDef](./type_defs.md#createipsetresponsetypedef)
 - [CreatePublishingDestinationResponseTypeDef](./type_defs.md#createpublishingdestinationresponsetypedef)
 - [CreateThreatIntelSetResponseTypeDef](./type_defs.md#createthreatintelsetresponsetypedef)
+- [GetAdministratorAccountResponseTypeDef](./type_defs.md#getadministratoraccountresponsetypedef)
 - [GetIPSetResponseTypeDef](./type_defs.md#getipsetresponsetypedef)
 - [GetInvitationsCountResponseTypeDef](./type_defs.md#getinvitationscountresponsetypedef)
 - [GetThreatIntelSetResponseTypeDef](./type_defs.md#getthreatintelsetresponsetypedef)
@@ -281,6 +289,7 @@ def get_value() -> AcceptInvitationRequestRequestTypeDef:
 - [CreatePublishingDestinationRequestRequestTypeDef](./type_defs.md#createpublishingdestinationrequestrequesttypedef)
 - [DescribePublishingDestinationResponseTypeDef](./type_defs.md#describepublishingdestinationresponsetypedef)
 - [UpdatePublishingDestinationRequestRequestTypeDef](./type_defs.md#updatepublishingdestinationrequestrequesttypedef)
+- [KubernetesDataSourceFreeTrialTypeDef](./type_defs.md#kubernetesdatasourcefreetrialtypedef)
 - [ListPublishingDestinationsResponseTypeDef](./type_defs.md#listpublishingdestinationsresponsetypedef)
 - [EksClusterDetailsTypeDef](./type_defs.md#eksclusterdetailstypedef)
 - [EvidenceTypeDef](./type_defs.md#evidencetypedef)
@@ -315,6 +324,7 @@ def get_value() -> AcceptInvitationRequestRequestTypeDef:
 - [ListFindingsRequestListFindingsPaginateTypeDef](./type_defs.md#listfindingsrequestlistfindingspaginatetypedef)
 - [ListFindingsRequestRequestTypeDef](./type_defs.md#listfindingsrequestrequesttypedef)
 - [UpdateFilterRequestRequestTypeDef](./type_defs.md#updatefilterrequestrequesttypedef)
+- [DataSourcesFreeTrialTypeDef](./type_defs.md#datasourcesfreetrialtypedef)
 - [KubernetesWorkloadDetailsTypeDef](./type_defs.md#kubernetesworkloaddetailstypedef)
 - [DataSourceConfigurationsResultTypeDef](./type_defs.md#datasourceconfigurationsresulttypedef)
 - [DataSourceConfigurationsTypeDef](./type_defs.md#datasourceconfigurationstypedef)
@@ -327,6 +337,7 @@ def get_value() -> AcceptInvitationRequestRequestTypeDef:
 - [PortProbeDetailTypeDef](./type_defs.md#portprobedetailtypedef)
 - [UsageStatisticsTypeDef](./type_defs.md#usagestatisticstypedef)
 - [PublicAccessTypeDef](./type_defs.md#publicaccesstypedef)
+- [AccountFreeTrialInfoTypeDef](./type_defs.md#accountfreetrialinfotypedef)
 - [KubernetesDetailsTypeDef](./type_defs.md#kubernetesdetailstypedef)
 - [GetDetectorResponseTypeDef](./type_defs.md#getdetectorresponsetypedef)
 - [MemberDataSourceConfigurationTypeDef](./type_defs.md#memberdatasourceconfigurationtypedef)
@@ -338,6 +349,7 @@ def get_value() -> AcceptInvitationRequestRequestTypeDef:
 - [PortProbeActionTypeDef](./type_defs.md#portprobeactiontypedef)
 - [GetUsageStatisticsResponseTypeDef](./type_defs.md#getusagestatisticsresponsetypedef)
 - [S3BucketDetailTypeDef](./type_defs.md#s3bucketdetailtypedef)
+- [GetRemainingFreeTrialDaysResponseTypeDef](./type_defs.md#getremainingfreetrialdaysresponsetypedef)
 - [GetMemberDetectorsResponseTypeDef](./type_defs.md#getmemberdetectorsresponsetypedef)
 - [ActionTypeDef](./type_defs.md#actiontypedef)
 - [ResourceTypeDef](./type_defs.md#resourcetypedef)

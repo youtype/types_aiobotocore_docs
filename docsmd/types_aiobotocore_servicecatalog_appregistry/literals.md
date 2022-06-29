@@ -49,6 +49,20 @@ ListAssociatedResourcesPaginatorName = Literal[
     "list_associated_resources",
 ]
 ```
+## ListAttributeGroupsForApplicationPaginatorName
+
+```python title="Usage Example"
+from types_aiobotocore_servicecatalog_appregistry.literals import ListAttributeGroupsForApplicationPaginatorName
+
+def get_value() -> ListAttributeGroupsForApplicationPaginatorName:
+    return "list_attribute_groups_for_application"
+```
+
+```python title="Definition"
+ListAttributeGroupsForApplicationPaginatorName = Literal[
+    "list_attribute_groups_for_application",
+]
+```
 ## ListAttributeGroupsPaginatorName
 
 ```python title="Usage Example"
@@ -205,6 +219,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -372,7 +387,6 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",
@@ -484,6 +498,7 @@ PaginatorName = Literal[
     "list_associated_attribute_groups",
     "list_associated_resources",
     "list_attribute_groups",
+    "list_attribute_groups_for_application",
 ]
 ```
 ## RegionName

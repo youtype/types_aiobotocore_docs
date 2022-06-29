@@ -102,6 +102,21 @@ def can_paginate(
 ```
 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.create_client("wellarchitected").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/wellarchitected.html#WellArchitected.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_lens\_share
 
 Create a lens share.
@@ -216,7 +231,6 @@ await def create_workload(
     WorkloadName: str,
     Description: str,
     Environment: WorkloadEnvironmentType,  # (1)
-    ReviewOwner: str,
     Lenses: Sequence[str],
     ClientRequestToken: str,
     AccountIds: Sequence[str] = ...,
@@ -224,6 +238,7 @@ await def create_workload(
     NonAwsRegions: Sequence[str] = ...,
     PillarPriorities: Sequence[str] = ...,
     ArchitecturalDesign: str = ...,
+    ReviewOwner: str = ...,
     IndustryType: str = ...,
     Industry: str = ...,
     Notes: str = ...,
@@ -241,7 +256,6 @@ kwargs: CreateWorkloadInputRequestTypeDef = {  # (1)
     "WorkloadName": ...,
     "Description": ...,
     "Environment": ...,
-    "ReviewOwner": ...,
     "Lenses": ...,
     "ClientRequestToken": ...,
 }

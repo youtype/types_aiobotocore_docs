@@ -81,6 +81,7 @@ def get_list_applications_paginator() -> ListApplicationsPaginator:
 - [ListAssociatedAttributeGroupsPaginator](./paginators.md#listassociatedattributegroupspaginator)
 - [ListAssociatedResourcesPaginator](./paginators.md#listassociatedresourcespaginator)
 - [ListAttributeGroupsPaginator](./paginators.md#listattributegroupspaginator)
+- [ListAttributeGroupsForApplicationPaginator](./paginators.md#listattributegroupsforapplicationpaginator)
 
 
 
@@ -103,6 +104,7 @@ def get_value() -> ListApplicationsPaginatorName:
 - [ListApplicationsPaginatorName](./literals.md#listapplicationspaginatorname)
 - [ListAssociatedAttributeGroupsPaginatorName](./literals.md#listassociatedattributegroupspaginatorname)
 - [ListAssociatedResourcesPaginatorName](./literals.md#listassociatedresourcespaginatorname)
+- [ListAttributeGroupsForApplicationPaginatorName](./literals.md#listattributegroupsforapplicationpaginatorname)
 - [ListAttributeGroupsPaginatorName](./literals.md#listattributegroupspaginatorname)
 - [ResourceGroupStateType](./literals.md#resourcegroupstatetype)
 - [ResourceTypeType](./literals.md#resourcetypetype)
@@ -134,6 +136,7 @@ def get_value() -> ApplicationSummaryTypeDef:
 - [AssociateAttributeGroupRequestRequestTypeDef](./type_defs.md#associateattributegrouprequestrequesttypedef)
 - [ResponseMetadataTypeDef](./type_defs.md#responsemetadatatypedef)
 - [AssociateResourceRequestRequestTypeDef](./type_defs.md#associateresourcerequestrequesttypedef)
+- [AttributeGroupDetailsTypeDef](./type_defs.md#attributegroupdetailstypedef)
 - [AttributeGroupSummaryTypeDef](./type_defs.md#attributegroupsummarytypedef)
 - [AttributeGroupTypeDef](./type_defs.md#attributegrouptypedef)
 - [CreateApplicationRequestRequestTypeDef](./type_defs.md#createapplicationrequestrequesttypedef)
@@ -151,6 +154,7 @@ def get_value() -> ApplicationSummaryTypeDef:
 - [ListAssociatedAttributeGroupsRequestRequestTypeDef](./type_defs.md#listassociatedattributegroupsrequestrequesttypedef)
 - [ListAssociatedResourcesRequestRequestTypeDef](./type_defs.md#listassociatedresourcesrequestrequesttypedef)
 - [ResourceInfoTypeDef](./type_defs.md#resourceinfotypedef)
+- [ListAttributeGroupsForApplicationRequestRequestTypeDef](./type_defs.md#listattributegroupsforapplicationrequestrequesttypedef)
 - [ListAttributeGroupsRequestRequestTypeDef](./type_defs.md#listattributegroupsrequestrequesttypedef)
 - [ListTagsForResourceRequestRequestTypeDef](./type_defs.md#listtagsforresourcerequestrequesttypedef)
 - [SyncResourceRequestRequestTypeDef](./type_defs.md#syncresourcerequestrequesttypedef)
@@ -170,6 +174,7 @@ def get_value() -> ApplicationSummaryTypeDef:
 - [ListTagsForResourceResponseTypeDef](./type_defs.md#listtagsforresourceresponsetypedef)
 - [SyncResourceResponseTypeDef](./type_defs.md#syncresourceresponsetypedef)
 - [UpdateApplicationResponseTypeDef](./type_defs.md#updateapplicationresponsetypedef)
+- [ListAttributeGroupsForApplicationResponseTypeDef](./type_defs.md#listattributegroupsforapplicationresponsetypedef)
 - [DeleteAttributeGroupResponseTypeDef](./type_defs.md#deleteattributegroupresponsetypedef)
 - [ListAttributeGroupsResponseTypeDef](./type_defs.md#listattributegroupsresponsetypedef)
 - [CreateAttributeGroupResponseTypeDef](./type_defs.md#createattributegroupresponsetypedef)
@@ -179,6 +184,7 @@ def get_value() -> ApplicationSummaryTypeDef:
 - [ListApplicationsRequestListApplicationsPaginateTypeDef](./type_defs.md#listapplicationsrequestlistapplicationspaginatetypedef)
 - [ListAssociatedAttributeGroupsRequestListAssociatedAttributeGroupsPaginateTypeDef](./type_defs.md#listassociatedattributegroupsrequestlistassociatedattributegroupspaginatetypedef)
 - [ListAssociatedResourcesRequestListAssociatedResourcesPaginateTypeDef](./type_defs.md#listassociatedresourcesrequestlistassociatedresourcespaginatetypedef)
+- [ListAttributeGroupsForApplicationRequestListAttributeGroupsForApplicationPaginateTypeDef](./type_defs.md#listattributegroupsforapplicationrequestlistattributegroupsforapplicationpaginatetypedef)
 - [ListAttributeGroupsRequestListAttributeGroupsPaginateTypeDef](./type_defs.md#listattributegroupsrequestlistattributegroupspaginatetypedef)
 - [ListAssociatedResourcesResponseTypeDef](./type_defs.md#listassociatedresourcesresponsetypedef)
 - [GetApplicationResponseTypeDef](./type_defs.md#getapplicationresponsetypedef)

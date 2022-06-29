@@ -74,6 +74,7 @@ await def batch_execute_statement(
     SecretArn: str = ...,
     StatementName: str = ...,
     WithEvent: bool = ...,
+    WorkgroupName: str = ...,
 ) -> BatchExecuteStatementOutputTypeDef:  # (1)
     ...
 ```
@@ -137,6 +138,21 @@ parent.cancel_statement(**kwargs)
 
 1. See [:material-code-braces: CancelStatementRequestRequestTypeDef](./type_defs.md#cancelstatementrequestrequesttypedef) 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.create_client("redshift-data").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift-data.html#RedshiftDataAPIService.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### describe\_statement
 
 Describes the details about a specific instance when a query was run by the
@@ -187,6 +203,7 @@ await def describe_table(
     Schema: str = ...,
     SecretArn: str = ...,
     Table: str = ...,
+    WorkgroupName: str = ...,
 ) -> DescribeTableResponseTypeDef:  # (1)
     ...
 ```
@@ -224,6 +241,7 @@ await def execute_statement(
     SecretArn: str = ...,
     StatementName: str = ...,
     WithEvent: bool = ...,
+    WorkgroupName: str = ...,
 ) -> ExecuteStatementOutputTypeDef:  # (2)
     ...
 ```
@@ -309,6 +327,7 @@ await def list_databases(
     MaxResults: int = ...,
     NextToken: str = ...,
     SecretArn: str = ...,
+    WorkgroupName: str = ...,
 ) -> ListDatabasesResponseTypeDef:  # (1)
     ...
 ```
@@ -345,6 +364,7 @@ await def list_schemas(
     NextToken: str = ...,
     SchemaPattern: str = ...,
     SecretArn: str = ...,
+    WorkgroupName: str = ...,
 ) -> ListSchemasResponseTypeDef:  # (1)
     ...
 ```
@@ -416,6 +436,7 @@ await def list_tables(
     SchemaPattern: str = ...,
     SecretArn: str = ...,
     TablePattern: str = ...,
+    WorkgroupName: str = ...,
 ) -> ListTablesResponseTypeDef:  # (1)
     ...
 ```

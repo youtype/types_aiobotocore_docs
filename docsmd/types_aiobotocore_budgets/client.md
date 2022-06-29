@@ -42,6 +42,7 @@ async with session.create_client("budgets") as client:
         client.InvalidParameterException,
         client.NotFoundException,
         client.ResourceLockedException,
+        client.ThrottlingException,
     ) as e:
         print(e)
 ```
@@ -69,6 +70,21 @@ def can_paginate(
     self,
     operation_name: str,
 ) -> bool:
+    ...
+```
+
+
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.create_client("budgets").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html#Budgets.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
     ...
 ```
 

@@ -27,11 +27,11 @@ type checking and code completion should work out of the box.
     session = get_session()
 
     async with session.create_client("finspace-data") as client:  # (1)
-        result = await client.create_changeset()  # (2)
+        result = await client.associate_user_to_permission_group()  # (2)
     ```
 
     1. client: [FinSpaceDataClient](./client.md)
-    2. result: [:material-code-braces: CreateChangesetResponseTypeDef](./type_defs.md#createchangesetresponsetypedef) 
+    2. result: [:material-code-braces: AssociateUserToPermissionGroupResponseTypeDef](./type_defs.md#associateusertopermissiongroupresponsetypedef) 
 
 
 
@@ -72,16 +72,16 @@ However, these type annotations can be helpful in your functions and methods.
     from aiobotocore.session import get_session
 
     from types_aiobotocore_finspace_data.client import FinSpaceDataClient
-    from types_aiobotocore_finspace_data.type_defs import CreateChangesetResponseTypeDef
-    from types_aiobotocore_finspace_data.type_defs import CreateChangesetRequestRequestTypeDef
+    from types_aiobotocore_finspace_data.type_defs import AssociateUserToPermissionGroupResponseTypeDef
+    from types_aiobotocore_finspace_data.type_defs import AssociateUserToPermissionGroupRequestRequestTypeDef
 
 
     session = get_session()
 
     async with session.create_client("finspace-data") as client:
         client: FinSpaceDataClient
-        kwargs: CreateChangesetRequestRequestTypeDef = {...}
-        result: CreateChangesetResponseTypeDef = await client.create_changeset(**kwargs)
+        kwargs: AssociateUserToPermissionGroupRequestRequestTypeDef = {...}
+        result: AssociateUserToPermissionGroupResponseTypeDef = await client.associate_user_to_permission_group(**kwargs)
     ```
 
 

@@ -244,6 +244,7 @@ def get_value() -> RouteActivationStateType:
 ```python title="Definition"
 RouteActivationStateType = Literal[
     "ACTIVE",
+    "INACTIVE",
 ]
 ```
 ## RouteStateType
@@ -406,6 +407,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -573,7 +575,6 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

@@ -212,6 +212,7 @@ TranscribeRegionType = Literal[
     "sa-east-1",
     "us-east-1",
     "us-east-2",
+    "us-gov-west-1",
     "us-west-2",
 ]
 ```
@@ -325,6 +326,7 @@ ServiceName = Literal[
     "config",
     "connect",
     "connect-contact-lens",
+    "connectcampaigns",
     "connectparticipant",
     "cur",
     "customer-profiles",
@@ -492,7 +494,6 @@ ServiceName = Literal[
     "rds-data",
     "redshift",
     "redshift-data",
-    "redshift-serverless",
     "rekognition",
     "resiliencehub",
     "resource-groups",

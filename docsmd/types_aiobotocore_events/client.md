@@ -133,6 +133,21 @@ parent.cancel_replay(**kwargs)
 
 1. See [:material-code-braces: CancelReplayRequestRequestTypeDef](./type_defs.md#cancelreplayrequestrequesttypedef) 
 
+### close
+
+Closes underlying endpoint connections.
+
+Type annotations and code completion for `#!python session.create_client("events").close` method.
+[:material-aws: boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html#EventBridge.Client.close)
+
+```python title="Method definition"
+await def close(
+    self,
+) -> None:
+    ...
+```
+
+
 ### create\_api\_destination
 
 Creates an API destination, which is an HTTP invocation endpoint configured as a
